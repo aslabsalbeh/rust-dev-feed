@@ -1,5 +1,69 @@
 [
   {
+    "id": 614964,
+    "branch": "main/collider_physmat_test",
+    "changeset": "161051",
+    "created": "2026-08-17T18:18:01",
+    "message": "removed unnecessary prefab",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 614962,
+    "branch": "main/collider_physmat_test",
+    "changeset": "161049",
+    "created": "2026-08-17T18:14:59",
+    "message": "Added test_physmat_cube_COL, a per-face physics material test asset\r\n\r\nCube with 6 physics materials, one per face, each side of the cube split differently to test how material boundaries behave. \r\n6 is more than any real asset would need, deliberate headroom for finding the edges of the per-face lookup rather than a realistic case.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 614955,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161042",
+    "created": "2026-08-17T17:59:12",
+    "message": "Update: consolidate OS specific calls to RustNative\r\nStill gotta build and test linux and mac, gonna do that tomorrow\r\nTests: ran temp scene",
+    "author": "Daniel P"
+  },
+  {
+    "id": 614954,
+    "branch": "main/flex_color_picker_fixes",
+    "changeset": "161041",
+    "created": "2026-08-17T17:58:01",
+    "message": "Reverted previous idea, now using a better way of fixing it",
+    "author": "Raul"
+  },
+  {
+    "id": 614953,
+    "branch": "main/base_occlusion",
+    "changeset": "161040",
+    "created": "2026-08-17T17:57:09",
+    "message": "Don't hide rooms until they have been invisible for 5s+ (prevents room going invisible as the door is in it's closing animation + reduces churn from rooms being deleted and networked over and over",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 614952,
+    "branch": "main/fix_sqlite_clan_stuck",
+    "changeset": "161039",
+    "created": "2026-08-17T17:55:12",
+    "message": "Move code around, don't unload filestorage since domain reload should handle it",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 614950,
+    "branch": "main/automated_testing",
+    "changeset": "161037",
+    "created": "2026-08-17T17:44:16",
+    "message": "One more that I missed",
+    "author": "cipeaX"
+  },
+  {
+    "id": 614947,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "161036",
+    "created": "2026-08-17T17:39:06",
+    "message": "Simplified battery console commands",
+    "author": "Flavien"
+  },
+  {
     "id": 614946,
     "branch": "main/hackweek_iorewrite",
     "changeset": "161035",
@@ -222,53 +286,5 @@
     "created": "2026-08-17T13:12:35",
     "message": "Updated gate to look more \"gate-y\"",
     "author": "Lewis T"
-  },
-  {
-    "id": 614883,
-    "branch": "main",
-    "changeset": "160990",
-    "created": "2026-08-17T12:51:50",
-    "message": "fixed muzzle brake flash offset after 3p position corrections for: \r\nSKS, HMsmg, HMlmg, m92, mp5 and m4 shotgun \r\nnow matches assault rifle position",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 614881,
-    "branch": "main/store_image_descriptions_aug26",
-    "changeset": "160989",
-    "created": "2026-08-17T12:35:01",
-    "message": "square steam images for ice king set",
-    "author": "matt.i"
-  },
-  {
-    "id": 614877,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "160986",
-    "created": "2026-08-17T12:19:40",
-    "message": "Instant health 8 -> 10\r\nHealing over time 0 -> 4",
-    "author": "Lukester"
-  },
-  {
-    "id": 614876,
-    "branch": "main/store_image_descriptions_aug26",
-    "changeset": "160985",
-    "created": "2026-08-17T12:18:05",
-    "message": "new store description for ice king pack, and square steam images for patterned sofa",
-    "author": "matt.i"
-  },
-  {
-    "id": 614871,
-    "branch": "main/editor_multiplayer",
-    "changeset": "160984",
-    "created": "2026-08-17T11:59:24",
-    "message": "Add ability to test mutiple virtual clients through just one editor, meaning we no longer need  to maintain multiple projects to test multiplayer.\r\nUses the Unity multiplayer playmodepackage.\r\n\r\n- Setup scenarios for 2,3 and 4 players\r\n- Guard a bunch of steam stuff that results in NREs on multiplayer playmode",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 614870,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "160983",
-    "created": "2026-08-17T11:57:33",
-    "message": "Test list\r\nReapplied discarded network range changes",
-    "author": "Flavien"
   }
 ]
