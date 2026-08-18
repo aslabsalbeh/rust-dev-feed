@@ -115,14 +115,18 @@ def main():
         date_obj = datetime.fromisoformat(day)
         display_date = date_obj.strftime("%b %d")
 
-        if day == today:
-            label = "Today's Rust Updates"
+today_date = datetime.now(LOCAL_TZ).date()
+item_date = datetime.fromisoformat(day).date()
+days_ago = (today_date - item_date).days
 
-        elif position == 1:
-            label = "Yesterday's Rust Updates"
-
-        else:
-            label = "Rust Updates — 2 Days Ago"
+if days_ago == 0:
+    label = "Today's Rust Updates"
+elif days_ago == 1:
+    label = "Yesterday's Rust Updates"
+elif days_ago == 2:
+    label = "Rust Updates — 2 Days Ago"
+else:
+    label = "Rust Development Updates"
 
         item = SubElement(
             channel,
