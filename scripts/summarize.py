@@ -22,6 +22,7 @@ BAD_MARKERS = (
     "Let's identify themes",
     "We have many commits",
     "<unk>",
+    "AI summary temporarily unavailable",
 )
 
 
