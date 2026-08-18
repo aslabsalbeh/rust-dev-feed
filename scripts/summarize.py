@@ -20,8 +20,7 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OPENROUTER_MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-# Changing this forces one fresh summary.
-PROMPT_VERSION = "player-relevance-v2"
+PROMPT_VERSION = "player-relevance-v3-new3h"
 
 
 BAD_MARKERS = (
@@ -33,13 +32,7 @@ BAD_MARKERS = (
 )
 
 
-# -------------------------------------------------------------------
-# PLAYER-RELEVANCE FILTER
-# -------------------------------------------------------------------
-
-# Strong indicators that something affects actual Rust players.
 HIGH_VALUE_TERMS = (
-    # Bugs / broken behaviour
     "fix",
     "fixed",
     "bug",
@@ -62,8 +55,6 @@ HIGH_VALUE_TERMS = (
     "disconnect",
     "desync",
     "exploit",
-
-    # Gameplay
     "damage",
     "healing",
     "health",
@@ -82,8 +73,6 @@ HIGH_VALUE_TERMS = (
     "mountable",
     "mount",
     "vehicle",
-
-    # NPCs / animals
     "scientist",
     "npc",
     "animal",
@@ -95,8 +84,6 @@ HIGH_VALUE_TERMS = (
     "dog",
     "bear",
     "wolf",
-
-    # World / monuments
     "monument",
     "underwater lab",
     "underwater labs",
@@ -107,8 +94,6 @@ HIGH_VALUE_TERMS = (
     "gas station",
     "nexus",
     "map",
-
-    # Player-facing content
     "bandage",
     "flashlight",
     "catapult",
@@ -117,7 +102,6 @@ HIGH_VALUE_TERMS = (
 )
 
 
-# Especially strong bug symptoms. These get priority over visual polish.
 BUG_TERMS = (
     "fix",
     "fixed",
@@ -143,7 +127,6 @@ BUG_TERMS = (
 )
 
 
-# Things that are commonly internal development work.
 TECHNICAL_TERMS = (
     "refactor",
     "cleanup",
@@ -168,13 +151,10 @@ TECHNICAL_TERMS = (
     "serialization",
     "source control",
     "build pipeline",
-    "ci ",
     "compiler",
 )
 
 
-# Visual/asset implementation details that are usually not useful enough
-# for a player digest on their own.
 LOW_VALUE_VISUAL_TERMS = (
     "atlas",
     "glyph",
@@ -200,7 +180,6 @@ LOW_VALUE_VISUAL_TERMS = (
 )
 
 
-# Player-visible visual changes that can still be interesting.
 VISIBLE_VISUAL_TERMS = (
     "animation",
     "model",
@@ -248,9 +227,28 @@ def group_by_day(commits):
     return grouped
 
 
+def commit_ids(commits):
+    return {
+        str(commit["id"])
+        for commit in commits
+    }
+
+
 def commit_signature(commits):
-    ids = sorted(str(commit["id"]) for commit in commits)
-    return ",".join(ids)
+    return ",".join(
+        sorted(commit_ids(commits))
+    )
+
+
+def parse_signature(signature):
+    if not signature:
+        return set()
+
+    return {
+        item
+        for item in signature.split(",")
+        if item
+    }
 
 
 def is_bad_summary(text):
@@ -259,20 +257,13 @@ def is_bad_summary(text):
 
     lowered = text.lower()
 
-    for marker in BAD_MARKERS:
-        if marker.lower() in lowered:
-            return True
-
-    return False
+    return any(
+        marker.lower() in lowered
+        for marker in BAD_MARKERS
+    )
 
 
 def commit_search_text(commit):
-    """
-    Combine branch and commit message for relevance analysis.
-
-    Branch names are useful here because Facepunch branches often contain
-    descriptive phrases such as fix_scientists_not_spawning.
-    """
     return (
         f"{commit.get('branch', '')} "
         f"{commit.get('message', '')}"
@@ -280,34 +271,28 @@ def commit_search_text(commit):
 
 
 def contains_any(text, terms):
-    return any(term in text for term in terms)
+    return any(
+        term in text
+        for term in terms
+    )
 
 
 def player_relevance_score(commit):
-    """
-    Estimate how useful a commit is to a normal Rust player.
-
-    This does NOT decide what the final summary says.
-    It prevents obviously low-value development noise from crowding out
-    useful gameplay changes and bug fixes.
-    """
     text = commit_search_text(commit)
 
     score = 0
 
-    # Concrete bug/glitch fixes receive the strongest preference.
     if contains_any(text, BUG_TERMS):
         score += 6
 
-    # Player-facing subject matter.
     high_matches = sum(
-        1 for term in HIGH_VALUE_TERMS
+        1
+        for term in HIGH_VALUE_TERMS
         if term in text
     )
+
     score += min(high_matches, 4) * 2
 
-    # New gameplay/content additions can be interesting even if they are
-    # not bug fixes.
     if re.search(
         r"\b(add|added|new|introduce|introduced)\b",
         text,
@@ -315,7 +300,6 @@ def player_relevance_score(commit):
         if contains_any(text, HIGH_VALUE_TERMS):
             score += 3
 
-    # Balance / behaviour changes.
     if contains_any(
         text,
         (
@@ -332,37 +316,27 @@ def player_relevance_score(commit):
     ):
         score += 3
 
-    # Visible UI changes get some value, but much less than gameplay fixes.
     if contains_any(text, VISIBLE_VISUAL_TERMS):
         score += 1
 
-    # Internal development work.
     if contains_any(text, TECHNICAL_TERMS):
         score -= 5
 
-    # Asset/rendering trivia is heavily down-ranked.
     if contains_any(text, LOW_VALUE_VISUAL_TERMS):
         score -= 5
 
-    # Explicit tests should generally not appear as player news.
     if re.search(
         r"\b(test|tests|testing)\b",
         text,
     ):
         score -= 4
 
-    # Cleanup alone is almost never useful to players.
     if re.search(
         r"\b(cleanup|refactor|rename|renamed)\b",
         text,
     ):
         score -= 4
 
-    # A concrete bug fix can rescue a technical-looking commit.
-    #
-    # Example:
-    # "Fixed scientists not spawning in underwater labs"
-    # must survive regardless of implementation details.
     if (
         contains_any(text, BUG_TERMS)
         and contains_any(text, HIGH_VALUE_TERMS)
@@ -372,24 +346,16 @@ def player_relevance_score(commit):
     return score
 
 
-def filter_player_relevant_commits(commits):
-    """
-    Keep commits that have a reasonable chance of mattering to players.
-
-    We deliberately use a fairly permissive threshold so the deterministic
-    filter does not accidentally delete an unusual but important change.
-    Groq performs the final editorial selection.
-    """
+def filter_player_relevant_commits(
+    commits,
+    log_filtered=False,
+):
     scored = []
 
     for commit in commits:
         score = player_relevance_score(commit)
+        scored.append((score, commit))
 
-        scored.append(
-            (score, commit)
-        )
-
-    # Highest-value commits first so the AI sees important fixes first.
     scored.sort(
         key=lambda item: item[0],
         reverse=True,
@@ -404,27 +370,27 @@ def filter_player_relevant_commits(commits):
     print(
         f"Player relevance filter: "
         f"{len(commits)} raw commits -> "
-        f"{len(relevant)} candidates."
+        f"{len(relevant)} useful candidates."
     )
 
-    # Helpful workflow logging.
-    for score, commit in scored:
-        if score < 2:
-            message = (
-                commit.get("message", "")
-                .replace("\n", " ")
-                .replace("\r", " ")
-            )
+    if log_filtered:
+        for score, commit in scored:
+            if score < 2:
+                message = (
+                    commit.get("message", "")
+                    .replace("\n", " ")
+                    .replace("\r", " ")
+                )
 
-            print(
-                f"  Filtered ({score:+d}): "
-                f"{message[:100]}"
-            )
+                print(
+                    f"  Filtered ({score:+d}): "
+                    f"{message[:100]}"
+                )
 
     return relevant
 
 
-def build_prompt(day, commits):
+def build_full_prompt(day, commits):
     commit_text = []
 
     for commit in commits:
@@ -447,14 +413,9 @@ Create a concise daily Rust development digest for RUST PLAYERS.
 
 These are official Facepunch development commits from {day}.
 
-The commits have already passed an initial player-relevance filter.
-You must perform a SECOND, stricter editorial pass.
-
 COMMITS:
 
 {chr(10).join(commit_text)}
-
-CORE EDITORIAL RULE:
 
 The digest answers:
 
@@ -463,23 +424,19 @@ would actually want to know?"
 
 Do NOT try to represent every commit.
 
-It is better to publish 8 excellent bullets from 50 commits than
-25 bullets containing development trivia.
+PRIORITIZE:
+- Concrete player-facing bug and glitch fixes
+- Gameplay mechanic changes
+- Balance changes
+- Weapons, equipment, items and deployables
+- NPC and animal behavior
+- Monuments and world changes
+- Vehicles
+- Loot and resource changes
+- Crashes, disconnects and exploits
+- Meaningful player-visible UI problems
 
-PRIORITY 1 — ALWAYS PRESERVE WHEN SUPPORTED:
-
-Concrete player-facing bug and glitch fixes.
-
-Examples:
-- Scientists not spawning at Underwater Labs
-- An item not applying its healing effect
-- A vehicle seat becoming unusable
-- A weapon failing to reset after firing
-- Players becoming stuck
-- Incorrect damage or resource yields
-- Crashes, disconnects or exploits
-
-When a commit describes the actual symptom, PRESERVE THAT SYMPTOM.
+Preserve concrete bug symptoms.
 
 BAD:
 "Improved scientist spawning reliability."
@@ -487,107 +444,99 @@ BAD:
 GOOD:
 "Fixed scientists not spawning in Underwater Labs and Cargo Ship."
 
-Do not generalize a specific useful bug fix into vague wording.
-
-PRIORITY 2:
-
-- Gameplay mechanic changes
-- Balance changes
-- New weapons, items or usable content
-- NPC and animal behaviour changes
-- Monument and map changes
-- Vehicle changes
-- Weapons and equipment changes
-- Loot/resource changes
-- Meaningful server or client performance fixes with a stated
-  player-visible impact
-
-PRIORITY 3:
-
-Player-visible UI, animation, model, audio or visual changes ONLY when
-they are substantial enough that a normal player would reasonably notice
-or care about them.
-
 AGGRESSIVELY EXCLUDE:
-
 - Texture resolution changes
 - AO texture changes
 - Font atlas changes
 - Glyph generation
 - LOD implementation details
-- Radial blur implementation
-- Vignette tuning
+- Radial blur or vignette tuning
 - Shader/render-pipeline implementation details
-- Collider implementation changes unless they fix a gameplay problem
 - Asset optimization with no stated gameplay impact
-- Memory-size reductions with no stated gameplay impact
+- Memory reductions with no stated player impact
 - Prefab cleanup
 - Naming conventions
 - Code cleanup
 - Refactoring
 - Developer/editor tools
 - Automated tests
-- Test assets
 - Logging/debugging
-- Code generation
 - Internal implementation details
-- Branch-management work
 
-IMPORTANT:
-
-Something being visible does NOT automatically make it worth reporting.
-
-For example:
-
-"Radial blur added to the rendering pipeline and vignette toned down"
-
-is normally NOT useful enough for this player digest.
-
-Likewise:
-
-"AO texture reduced from 1k to 512px"
-
-is NOT useful unless the source explicitly connects it to a meaningful
-player-facing improvement.
+Something being visible does NOT automatically make it useful enough
+for this digest.
 
 Never sacrifice a concrete gameplay bug fix to make room for cosmetic,
 rendering or technical information.
 
-WORK IN PROGRESS:
-
 Development commits may describe unreleased work.
-
-Do not imply that a feature is currently live merely because developers
-are working on it.
-
-When necessary, describe it as:
-- development work
-- work in progress
-- upcoming content
-- being developed
+Clearly label work-in-progress or upcoming features when needed.
 
 OUTPUT:
-
-- Aim for roughly 8 to 15 bullets total when enough worthwhile changes exist.
-- Fewer than 8 is completely acceptable when little meaningful happened.
-- Never add weak bullets just to reach a number.
+- Aim for roughly 8 to 15 worthwhile bullets.
+- Fewer is fine when little meaningful happened.
 - Use 2 to 6 short topic sections.
-- Put the most player-important sections first.
+- Put the most important sections first.
 - Use Markdown headings beginning with ###.
 - Use "-" bullets.
-- Keep each bullet concise.
-- Combine duplicate commits describing the same underlying change.
-- Preserve specific item, NPC, monument and gameplay names.
-- Preserve useful concrete symptoms from bug-fix commits.
-- Do not mention developer names.
-- Do not mention commit IDs.
-- Do not mention branch names in the output.
+- Keep bullets concise.
+- Combine duplicate commits.
+- Preserve useful item, NPC, monument and gameplay names.
+- Preserve concrete bug symptoms.
+- Do not mention developers, commit IDs or branch names.
 - Do not speculate.
-- Do not invent effects or benefits not stated by the commits.
-- Do not include a title.
-- Do not include the date.
+- Do not include a title or date.
 - Start directly with the first section.
 - Return ONLY the finished digest.
+"""
+
+
+def build_new_prompt(commits):
+    commit_text = []
+
+    for commit in commits:
+        branch = commit.get("branch", "")
+
+        if branch.startswith("main/"):
+            branch = branch[5:]
+
+        commit_text.append(
+            "\n".join(
+                [
+                    f"Branch context: {branch}",
+                    f"Message: {commit.get('message', '')}",
+                ]
+            )
+        )
+
+    return f"""
+Summarize ONLY these newly-added Rust development commits for players.
+
+These commits appeared since the previous feed update.
+
+NEW COMMITS:
+
+{chr(10).join(commit_text)}
+
+This will appear under:
+
+NEW — LAST 3 HRS
+
+Rules:
+- Include only genuinely player-relevant information.
+- Preserve concrete bug symptoms.
+- Prefer gameplay fixes, bugs, content, NPCs, animals, weapons,
+  vehicles, monuments, items and balance changes.
+- Exclude technical implementation details.
+- Exclude tests, refactors, rendering trivia, asset optimization,
+  debugging and developer tooling.
+- Do not mention commit IDs, developers or branch names.
+- Combine commits that describe the same underlying change.
+- Do not create sections or headings.
+- Return ONLY a short Markdown bullet list.
+- Use "-" for every bullet.
+- 1 to 5 bullets is ideal.
+- Do not add filler just to reach a number.
 """
 
 
@@ -663,34 +612,15 @@ def call_chat_api(
     return text
 
 
-def summarize_day(
+def call_ai(
     groq_key,
     openrouter_key,
-    day,
-    commits,
+    prompt,
+    label,
 ):
-    relevant_commits = filter_player_relevant_commits(
-        commits
-    )
-
-    # Safety fallback:
-    # If our deterministic filter somehow rejects everything,
-    # let the AI inspect the raw commits rather than publishing nothing.
-    if not relevant_commits:
-        print(
-            "Relevance filter found no candidates; "
-            "using raw commits as safety fallback."
-        )
-        relevant_commits = commits
-
-    prompt = build_prompt(
-        day,
-        relevant_commits,
-    )
-
     if groq_key:
         print(
-            f"Trying Groq for {day}..."
+            f"Trying Groq for {label}..."
         )
 
         summary = call_chat_api(
@@ -703,14 +633,14 @@ def summarize_day(
 
         if summary is not None:
             print(
-                f"Groq succeeded for {day}."
+                f"Groq succeeded for {label}."
             )
             return summary
 
     if openrouter_key:
         print(
             f"Trying OpenRouter fallback "
-            f"for {day}..."
+            f"for {label}..."
         )
 
         summary = call_chat_api(
@@ -723,8 +653,7 @@ def summarize_day(
 
         if summary is not None:
             print(
-                f"OpenRouter succeeded "
-                f"for {day}."
+                f"OpenRouter succeeded for {label}."
             )
             return summary
 
@@ -770,15 +699,20 @@ def main():
     summaries = {}
 
     for day in valid_days:
-        commits_for_day = grouped[day]
+        raw_commits = grouped[day]
 
-        signature = commit_signature(
-            commits_for_day
+        relevant_commits = (
+            filter_player_relevant_commits(
+                raw_commits,
+                log_filtered=(day == today),
+            )
         )
 
-        old_entry = old_summaries.get(
-            day
+        relevant_signature = commit_signature(
+            relevant_commits
         )
+
+        old_entry = old_summaries.get(day)
 
         old_is_good = (
             old_entry
@@ -790,12 +724,37 @@ def main():
             )
         )
 
-        signature_matches = (
-            old_entry
-            and old_entry.get(
-                "commit_signature"
-            ) == signature
+        old_signature = (
+            old_entry.get(
+                "relevant_signature",
+                old_entry.get(
+                    "commit_signature",
+                    "",
+                ),
+            )
+            if old_entry
+            else ""
         )
+
+        old_ids = parse_signature(
+            old_signature
+        )
+
+        current_ids = commit_ids(
+            relevant_commits
+        )
+
+        new_ids = (
+            current_ids - old_ids
+            if old_entry
+            else set()
+        )
+
+        newly_relevant_commits = [
+            commit
+            for commit in relevant_commits
+            if str(commit["id"]) in new_ids
+        ]
 
         prompt_matches = (
             old_entry
@@ -804,90 +763,120 @@ def main():
             ) == PROMPT_VERSION
         )
 
+        relevant_changed = (
+            relevant_signature
+            != old_signature
+        )
+
+        # ------------------------------------------------------------
+        # FULL DAILY SUMMARY
+        # ------------------------------------------------------------
+
         if (
             old_is_good
-            and signature_matches
+            and not relevant_changed
             and prompt_matches
         ):
-            summaries[day] = old_entry
+            full_summary = old_entry["summary"]
 
-            if day == today:
-                print(
-                    f"No new commits for {day}; "
-                    "reusing cached summary."
+            print(
+                f"No player-relevant changes for {day}; "
+                "reusing full daily summary."
+            )
+
+        else:
+            if not relevant_commits:
+                full_summary = (
+                    old_entry.get("summary")
+                    if old_is_good
+                    else "No significant player-facing updates."
                 )
+
             else:
                 print(
-                    f"Keeping cached summary "
+                    f"Refreshing full summary for {day}; "
+                    f"{len(relevant_commits)} relevant commits."
+                )
+
+                full_summary = call_ai(
+                    groq_key,
+                    openrouter_key,
+                    build_full_prompt(
+                        day,
+                        relevant_commits,
+                    ),
+                    f"{day} full digest",
+                )
+
+                if full_summary is None:
+                    if old_is_good:
+                        full_summary = old_entry["summary"]
+                    else:
+                        full_summary = (
+                            "AI summary temporarily unavailable. "
+                            "The development commit archive "
+                            "was updated successfully."
+                        )
+
+        # ------------------------------------------------------------
+        # NEW — LAST 3 HRS
+        # ------------------------------------------------------------
+
+        new_summary = ""
+        new_relevant_count = 0
+
+        # Only the current day gets a NEW section.
+        if day == today:
+            if newly_relevant_commits:
+                new_relevant_count = len(
+                    newly_relevant_commits
+                )
+
+                print(
+                    f"{new_relevant_count} new player-relevant "
+                    f"commit(s) since previous update."
+                )
+
+                new_summary = call_ai(
+                    groq_key,
+                    openrouter_key,
+                    build_new_prompt(
+                        newly_relevant_commits
+                    ),
+                    f"{day} NEW — LAST 3 HRS",
+                )
+
+                if new_summary is None:
+                    # Better to omit NEW than show stale/incorrect data.
+                    new_summary = ""
+                    new_relevant_count = 0
+
+            else:
+                print(
+                    f"No new player-relevant commits "
                     f"for {day}."
                 )
 
-            continue
+        summaries[day] = {
+            # Raw development activity count
+            "commit_count": len(raw_commits),
 
-        if not signature_matches:
-            reason = "commits changed"
-        elif not prompt_matches:
-            reason = "prompt/filter changed"
-        else:
-            reason = "cached summary invalid"
+            # Number that actually passed our relevance filter
+            "relevant_commit_count": len(
+                relevant_commits
+            ),
 
-        print(
-            f"Summary refresh needed for {day} "
-            f"({reason}); evaluating "
-            f"{len(commits_for_day)} commits..."
-        )
+            # Signature is now based on player-relevant commits.
+            # Trivial commits therefore don't trigger AI unnecessarily.
+            "relevant_signature": relevant_signature,
 
-        new_summary = summarize_day(
-            groq_key,
-            openrouter_key,
-            day,
-            commits_for_day,
-        )
+            "prompt_version": PROMPT_VERSION,
+            "summary": full_summary,
 
-        if new_summary is not None:
-            summaries[day] = {
-                "commit_count": len(
-                    commits_for_day
-                ),
-                "commit_signature": signature,
-                "prompt_version": PROMPT_VERSION,
-                "summary": new_summary,
-            }
-
-            print(
-                f"Saved new summary for {day}."
-            )
-
-        elif old_is_good:
-            # Preserve the previous good summary.
-            #
-            # Its old prompt/signature values remain unchanged,
-            # so a future workflow run will automatically retry.
-            summaries[day] = old_entry
-
-            print(
-                f"Preserved previous good "
-                f"summary for {day}."
-            )
-
-        else:
-            summaries[day] = {
-                "commit_count": len(
-                    commits_for_day
-                ),
-                "commit_signature": "",
-                "prompt_version": "",
-                "summary": (
-                    "AI summary temporarily unavailable. "
-                    "The development commit archive was "
-                    "updated successfully."
-                ),
-            }
-
-            print(
-                f"No previous valid summary "
-                f"available for {day}."
-            )
+            # NEW section for the current 3-hour update window
+            "new_relevant_count": new_relevant_count,
+            "new_summary": new_summary,
+        }
 
     with open(
         SUMMARY_FILE,
