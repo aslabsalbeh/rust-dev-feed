@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
@@ -23,16 +24,26 @@ def is_noise(message):
     return text.startswith(noise_prefixes)
 
 
-def main():
+def load_existing():
+    if not OUTPUT_FILE.exists():
+        return []
+
+    try:
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except Exception:
+        return []
+
+
+def fetch_latest():
     response = requests.get(URL, timeout=30)
     response.raise_for_status()
 
     data = response.json()
-    commits = data["results"]
 
-    useful_commits = []
+    useful = []
 
-    for commit in commits:
+    for commit in data["results"]:
         message = commit.get("message", "").strip()
 
         if not message:
@@ -41,7 +52,7 @@ def main():
         if is_noise(message):
             continue
 
-        useful_commits.append(
+        useful.append(
             {
                 "id": commit["id"],
                 "branch": commit["branch"],
@@ -52,17 +63,48 @@ def main():
             }
         )
 
+    return useful
+
+
+def main():
     OUTPUT_DIR.mkdir(exist_ok=True)
+
+    existing = load_existing()
+    latest = fetch_latest()
+
+    by_id = {}
+
+    for commit in existing:
+        by_id[commit["id"]] = commit
+
+    for commit in latest:
+        by_id[commit["id"]] = commit
+
+    cutoff = datetime.now() - timedelta(days=3)
+
+    kept = []
+
+    for commit in by_id.values():
+        created = datetime.fromisoformat(commit["created"])
+
+        if created >= cutoff:
+            kept.append(commit)
+
+    kept.sort(
+        key=lambda commit: commit["created"],
+        reverse=True
+    )
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
         json.dump(
-            useful_commits,
+            kept,
             file,
             indent=2,
             ensure_ascii=False,
         )
 
-    print(f"Saved {len(useful_commits)} useful commits.")
+    print(f"Fetched {len(latest)} useful commits.")
+    print(f"Stored {len(kept)} commits from the last 3 days.")
 
 
 if __name__ == "__main__":
