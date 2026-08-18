@@ -1,3 +1,4 @@
+import xml.etree.ElementTree as ET
 import json
 from datetime import datetime
 from email.utils import format_datetime
@@ -68,7 +69,7 @@ def main():
         )
 
     tree = ElementTree(rss)
-    ElementTree.indent(tree, space="  ")
+    ET.indent(tree, space="  ")
 
     tree.write(
         OUTPUT_FILE,
