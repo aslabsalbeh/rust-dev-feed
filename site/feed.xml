@@ -6,66 +6,72 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 11:18:55 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 14:18:54 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;71 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;92 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;NPC &amp;amp; AI Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Scientists now reliably spawn in Underwater Labs, Cargo Ships, and Military Bases, and they correctly move and turn (old AI steering bug and odd crouch‑walk angle fixed).  &lt;/li&gt;
+&lt;li&gt;Fixed scientists not spawning in Underwater Labs, Cargo Ships, and Military Base.  &lt;/li&gt;
+&lt;li&gt;Fixed cargo scientists now move correctly instead of staying still.  &lt;/li&gt;
+&lt;li&gt;Fixed NPCs getting stuck when a navmesh tile rebuilds while they are inside or crossing it.  &lt;/li&gt;
+&lt;li&gt;Fixed Scientist 2 on the Oilrig crouch‑walking upstairs at an odd angle.  &lt;/li&gt;
+&lt;li&gt;Fixed old scientists steering incorrectly – they now turn instantly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Siege&lt;/h3&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Catapult ammo pooling bug fixed, preventing lost or duplicate shells.  &lt;/li&gt;
-&lt;li&gt;Siege weapons now reset properly after use.  &lt;/li&gt;
-&lt;li&gt;Vehicle seat pooling issues resolved: cached vehicle owner cleared and child transforms restored, reducing seat‑locking glitches.  &lt;/li&gt;
-&lt;li&gt;Helicopter rotors now reset to the correct speed on spawn, preventing abnormal flight behavior.  &lt;/li&gt;
+&lt;li&gt;Fixed several vehicle‑pooling bugs: catapult loaded ammo now works, horses persist correctly, siege weapons reset properly after use, and helicopter rotor speed is reset on init to prevent lingering spin.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;New Content&lt;/h3&gt;
+&lt;h3&gt;Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Added livestock animals: cows and sheep with separate male/female prefabs; sheep now have a sleeping animation and animals no longer move while sleeping.  &lt;/li&gt;
+&lt;li&gt;Fixed weapon visual and animation issues: flamethrower flame now aligns with the muzzle, salvaged hammer third‑person model offset corrected, and machete swing animation updated for smoother attacks.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Monument &amp;amp; Resource Tweaks&lt;/h3&gt;
+&lt;h3&gt;Items &amp;amp; Consumables&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Monument blockers now have consistent time‑to‑kill rates and resource yields, and bonus resource gathering on blockers has been disabled for balance.  &lt;/li&gt;
+&lt;li&gt;Fixed honey bandage effects now trigger as intended.  &lt;/li&gt;
+&lt;li&gt;Fixed the colour picker to accept pasted hex‑code inputs.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Items &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Monuments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Honey bandage now correctly applies its healing effect.  &lt;/li&gt;
-&lt;li&gt;Third‑person weapon model offset fixed, aligning weapons with the player’s hands.  &lt;/li&gt;
-&lt;li&gt;Machete animation updated for smoother swings.  &lt;/li&gt;
+&lt;li&gt;Fixed static chairs on the gas‑station roof now mountable.  &lt;/li&gt;
+&lt;li&gt;Adjusted monument blocker resource rates and melee time‑to‑kill for consistent behavior.  &lt;/li&gt;
+&lt;li&gt;Fixed monument toggle switches error.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Environment &amp;amp; Interactables&lt;/h3&gt;
+&lt;h3&gt;UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Static chairs on the gas station roof are now mountable (previous clipping prevented sitting).  &lt;/li&gt;
-&lt;li&gt;Shadows inside the Radtown master house and Oil Rig Level 6 rooms now render correctly, fixing dark patches.&lt;/li&gt;
+&lt;li&gt;Fixed tutorial modal size, added localization, and cleaned up the connection modal description.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 11:18:55 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 14:18:54 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;Gameplay &amp;amp; Item Fixes&lt;/h3&gt;
+&lt;h3&gt;Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed livestock animals being forced female and added proper breeding states, including a new bull prefab, so animal breeding now works as intended.  &lt;/li&gt;
-&lt;li&gt;Medical honey bandage effects now fire correctly, restoring its healing functionality.  &lt;/li&gt;
-&lt;li&gt;Water bucket UI bug resolved – you can now transfer water into a held bucket again.  &lt;/li&gt;
-&lt;li&gt;MaxPlayers count is now displayed accurately after recent changes.  &lt;/li&gt;
+&lt;li&gt;Fixed the gender bug: livestock now spawn with the correct male/female distribution instead of all being female.  &lt;/li&gt;
+&lt;li&gt;Added a breeding state machine, enabling animals to breed as intended.  &lt;/li&gt;
+&lt;li&gt;Introduced a Bull prefab, so bulls now appear in the world.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Nexus &amp;amp; Server UI&lt;/h3&gt;
+&lt;h3&gt;Server &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Nexus map UI issues fixed: the connect‑modal map button now enables correctly and the map no longer appears squished.  &lt;/li&gt;
-&lt;li&gt;Servers with Nexus enabled are now tagged (&lt;code&gt;nexuszone&lt;/code&gt;) and hidden from the public server list by default, with Nexus info exposed in A2S rules responses.  &lt;/li&gt;
+&lt;li&gt;Nexus connect modal now correctly enables the map button and no longer squishes the map view.  &lt;/li&gt;
+&lt;li&gt;Nexus map UI issues resolved, preventing the map from being distorted after recent changes.  &lt;/li&gt;
+&lt;li&gt;Server listings now hide zone servers by default and expose Nexus info in A2S rules responses.  &lt;/li&gt;
+&lt;li&gt;MaxPlayers count displayed correctly after recent adjustments.  &lt;/li&gt;
+&lt;li&gt;General Nexus connect modal fixes improve stability when joining servers.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Visual &amp;amp; Interface Improvements&lt;/h3&gt;
+&lt;h3&gt;Items &amp;amp; Equipment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Underwater Labs windows refraction texture corrected, improving visibility inside the labs.  &lt;/li&gt;
-&lt;li&gt;Crosshair null‑reference errors fixed, eliminating occasional crosshair‑related crashes.  &lt;/li&gt;
-&lt;li&gt;Added a new white “boomer” firework variant (item, mortar, shell, icon, and particle effect).&lt;/li&gt;
+&lt;li&gt;Medical honey bandage effects now fire properly, restoring the intended healing behavior.  &lt;/li&gt;
+&lt;li&gt;Water bucket UI bug fixed: players can now transfer water into a held bucket without errors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Resolved a pooling issue where runtime‑parented vehicle children caused null‑reference errors, improving vehicle spawn stability.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-17</guid>
