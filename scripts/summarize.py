@@ -13,56 +13,66 @@ SUMMARY_FILE = Path("site/summaries.json")
 MODEL = "gemini-2.5-flash-lite"
 
 
-def clean_branch(branch):
-    branch = branch.replace("main/", "")
-    branch = branch.replace("_", " ")
-    return branch
-
-
 def load_commits():
     with open(COMMITS_FILE, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
-def group_by_day_and_branch(commits):
-    grouped = defaultdict(lambda: defaultdict(list))
+def group_by_day(commits):
+    grouped = defaultdict(list)
 
     for commit in commits:
         day = datetime.fromisoformat(commit["created"]).date().isoformat()
-        branch = clean_branch(commit["branch"])
-
-        grouped[day][branch].append(commit)
+        grouped[day].append(commit)
 
     return grouped
 
 
-def summarize_group(client, branch, commits):
-    commit_text = "\n".join(
-        f"- {commit['message']}"
-        for commit in commits
-    )
+def summarize_day(client, day, commits):
+    commit_text = []
+
+    for commit in commits:
+        branch = commit["branch"].replace("main/", "")
+
+        commit_text.append(
+            f"""
+Branch: {branch}
+Author: {commit['author']}
+Message: {commit['message']}
+""".strip()
+        )
 
     prompt = f"""
-You are summarizing Rust game development commits from Facepunch.
+You are creating a concise daily development digest for the game Rust
+using official Facepunch source-control commit messages.
 
-Feature or branch:
-{branch}
+Date:
+{day}
 
 Commits:
-{commit_text}
 
-Write a concise player-friendly summary.
+{chr(10).join(commit_text)}
+
+Create a clean, player-friendly development summary.
 
 Rules:
+- Group related commits into logical feature/topic sections.
+- Use clear human-friendly section names.
+- Summarize related commits together.
 - Be factual.
 - Do not speculate.
-- Do not claim unfinished work is released.
-- Combine closely related changes.
-- Ignore internal merge/build noise.
-- Prefer one bullet point.
-- Use two bullet points only if the commits clearly describe separate changes.
-- Keep technical details when they matter to players.
+- Do not claim unfinished work is released or available in-game.
+- Distinguish experimental/development work from confirmed gameplay changes.
+- Ignore merge-only or administrative noise if any remains.
+- Preserve useful specific details, numbers, item names, fixes, and gameplay changes.
+- Avoid developer names unless they are important.
+- Avoid internal branch names unless they help explain a feature.
 - Do not mention commit IDs.
+- Keep the entire summary reasonably concise.
+- Prefer about 4 to 8 topic sections depending on how much meaningful work occurred.
+- Use Markdown headings and bullet points.
+
+Return only the finished digest.
 """
 
     response = client.models.generate_content(
@@ -82,32 +92,28 @@ def main():
     client = genai.Client(api_key=api_key)
 
     commits = load_commits()
-    grouped = group_by_day_and_branch(commits)
+    grouped = group_by_day(commits)
 
     summaries = {}
 
-    for day, branches in grouped.items():
-        summaries[day] = []
+    for day in sorted(grouped.keys(), reverse=True):
+        commits_for_day = grouped[day]
 
-        for branch, branch_commits in branches.items():
-            summary = summarize_group(
-                client,
-                branch,
-                branch_commits,
-            )
+        print(
+            f"Summarizing {day} "
+            f"({len(commits_for_day)} commits) in one Gemini request..."
+        )
 
-            summaries[day].append(
-                {
-                    "feature": branch,
-                    "summary": summary,
-                    "commit_count": len(branch_commits),
-                }
-            )
+        summary = summarize_day(
+            client,
+            day,
+            commits_for_day,
+        )
 
-            print(
-                f"Summarized {day} / {branch} "
-                f"({len(branch_commits)} commits)"
-            )
+        summaries[day] = {
+            "commit_count": len(commits_for_day),
+            "summary": summary,
+        }
 
     with open(SUMMARY_FILE, "w", encoding="utf-8") as file:
         json.dump(
@@ -117,7 +123,10 @@ def main():
             ensure_ascii=False,
         )
 
-    print(f"Saved summaries to {SUMMARY_FILE}")
+    print(
+        f"Saved {len(summaries)} daily summaries "
+        f"to {SUMMARY_FILE}"
+    )
 
 
 if __name__ == "__main__":
