@@ -13,7 +13,10 @@ SUMMARY_FILE = Path("site/summaries.json")
 
 LOCAL_TZ = ZoneInfo("America/Toronto")
 
-MODEL = "google/gemma-4-31b-it:free"
+GROQ_MODEL = "llama-3.3-70b-versatile"
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+
+OPENROUTER_MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
@@ -38,11 +41,6 @@ def load_json(path, default):
 
 
 def commit_local_date(commit):
-    """
-    Facepunch timestamps have no timezone suffix.
-    Treat them as UTC, then convert to Ottawa/Toronto time.
-    """
-
     created_utc = datetime.fromisoformat(
         commit["created"]
     ).replace(tzinfo=timezone.utc)
@@ -63,11 +61,6 @@ def group_by_day(commits):
 
 
 def commit_signature(commits):
-    """
-    Stable signature used to determine whether the day's
-    commit collection changed since the previous run.
-    """
-
     ids = sorted(str(commit["id"]) for commit in commits)
     return ",".join(ids)
 
@@ -85,7 +78,7 @@ def is_bad_summary(text):
     return False
 
 
-def summarize_day(api_key, day, commits):
+def build_prompt(day, commits):
     commit_text = []
 
     for commit in commits:
@@ -104,7 +97,7 @@ def summarize_day(api_key, day, commits):
             )
         )
 
-    prompt = f"""
+    return f"""
 You are creating a compact daily development digest for the game Rust
 using official Facepunch source-control commit messages.
 
@@ -143,66 +136,99 @@ Rules:
 - Return ONLY the finished digest.
 """
 
-    response = requests.post(
-        OPENROUTER_URL,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": MODEL,
-            "messages": [
-                {
-                    "role": "user",
-                    "content": prompt,
-                }
-            ],
-            "temperature": 0.2,
-        },
-        timeout=90,
-    )
+
+def call_chat_api(url, api_key, model, prompt, provider_name):
+    try:
+        response = requests.post(
+            url,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": model,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                "temperature": 0.2,
+            },
+            timeout=90,
+        )
+    except requests.RequestException as error:
+        print(f"{provider_name} network error: {error}")
+        return None
 
     if response.status_code == 429:
-        print(
-            f"OpenRouter rate-limited {day}; "
-            "keeping previous summary."
-        )
+        print(f"{provider_name} rate-limited.")
         return None
 
     if not response.ok:
         print(
-            f"OpenRouter error {response.status_code} "
-            f"for {day}: {response.text[:300]}"
+            f"{provider_name} error {response.status_code}: "
+            f"{response.text[:300]}"
         )
         return None
 
-    data = response.json()
-
     try:
-        text = (
-            data["choices"][0]["message"]["content"]
-            .strip()
-        )
+        data = response.json()
+        text = data["choices"][0]["message"]["content"].strip()
     except Exception:
-        print(f"Invalid OpenRouter response for {day}.")
+        print(f"{provider_name} returned an invalid response.")
         return None
 
     if is_bad_summary(text):
-        print(
-            f"Rejected bad AI output for {day}; "
-            "keeping previous summary."
-        )
+        print(f"{provider_name} returned rejected AI output.")
         return None
 
     return text
 
 
-def main():
-    api_key = os.environ.get("OPENROUTER_API_KEY")
+def summarize_day(groq_key, openrouter_key, day, commits):
+    prompt = build_prompt(day, commits)
 
-    if not api_key:
+    if groq_key:
+        print(f"Trying Groq for {day}...")
+
+        summary = call_chat_api(
+            GROQ_URL,
+            groq_key,
+            GROQ_MODEL,
+            prompt,
+            "Groq",
+        )
+
+        if summary is not None:
+            print(f"Groq succeeded for {day}.")
+            return summary
+
+    if openrouter_key:
+        print(f"Trying OpenRouter fallback for {day}...")
+
+        summary = call_chat_api(
+            OPENROUTER_URL,
+            openrouter_key,
+            OPENROUTER_MODEL,
+            prompt,
+            "OpenRouter",
+        )
+
+        if summary is not None:
+            print(f"OpenRouter succeeded for {day}.")
+            return summary
+
+    return None
+
+
+def main():
+    groq_key = os.environ.get("GROQ_API_KEY")
+    openrouter_key = os.environ.get("OPENROUTER_API_KEY")
+
+    if not groq_key and not openrouter_key:
         raise RuntimeError(
-            "OPENROUTER_API_KEY is not set."
+            "Neither GROQ_API_KEY nor OPENROUTER_API_KEY is set."
         )
 
     commits = load_json(COMMITS_FILE, [])
@@ -210,11 +236,8 @@ def main():
 
     grouped = group_by_day(commits)
 
-    now_local = datetime.now(LOCAL_TZ)
-    today = now_local.date().isoformat()
+    today = datetime.now(LOCAL_TZ).date().isoformat()
 
-    # Only keep the newest 3 calendar days that actually
-    # contain collected commits.
     valid_days = sorted(
         grouped.keys(),
         reverse=True,
@@ -235,31 +258,22 @@ def main():
             )
         )
 
-        # Historical day:
-        # reuse it if we already have a valid cached summary
-        # with the same commit signature.
         if (
-            day != today
-            and old_is_good
+            old_is_good
             and old_entry.get("commit_signature") == signature
         ):
             summaries[day] = old_entry
-            print(
-                f"Keeping cached summary for {day}."
-            )
-            continue
 
-        # Today's commits have not changed.
-        if (
-            day == today
-            and old_is_good
-            and old_entry.get("commit_signature") == signature
-        ):
-            summaries[day] = old_entry
-            print(
-                f"No new commits for {day}; "
-                "reusing cached summary."
-            )
+            if day == today:
+                print(
+                    f"No new commits for {day}; "
+                    "reusing cached summary."
+                )
+            else:
+                print(
+                    f"Keeping cached summary for {day}."
+                )
+
             continue
 
         print(
@@ -268,7 +282,8 @@ def main():
         )
 
         new_summary = summarize_day(
-            api_key,
+            groq_key,
+            openrouter_key,
             day,
             commits_for_day,
         )
@@ -280,26 +295,16 @@ def main():
                 "summary": new_summary,
             }
 
-            print(
-                f"Saved new summary for {day}."
-            )
+            print(f"Saved new summary for {day}.")
 
         elif old_is_good:
-            # IMPORTANT:
-            # Keep the OLD signature when AI fails.
-            # This makes the next workflow run try again.
             summaries[day] = old_entry
 
             print(
-                f"Preserved previous good summary "
-                f"for {day}."
+                f"Preserved previous good summary for {day}."
             )
 
         else:
-            # No usable AI summary exists yet.
-            #
-            # We intentionally don't pretend this signature
-            # has been summarized successfully.
             summaries[day] = {
                 "commit_count": len(commits_for_day),
                 "commit_signature": "",
@@ -311,8 +316,7 @@ def main():
             }
 
             print(
-                f"No previous valid summary available "
-                f"for {day}."
+                f"No previous valid summary available for {day}."
             )
 
     with open(
