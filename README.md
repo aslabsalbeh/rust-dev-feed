@@ -28,7 +28,6 @@ The widget provides:
 **Offline Start Page:**  
 https://chromewebstore.google.com/detail/offline-start-page-privat/eddedpnjieoihlkjgpheaffcpmbpmhap
 
-The extension only reads the already-generated RSS feed, so additional users do not generate additional AI requests.
 
 ### RSS Widget Preview with widget width set to [Auto]
 
