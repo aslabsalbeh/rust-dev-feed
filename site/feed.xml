@@ -6,38 +6,40 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 05:03:40 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 05:49:01 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;8 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;Weapon LOD Improvements&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;11 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;World Object Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed rapid LOD switching for muzzle brake and muzzle boost components; now matches weapon LOD distances.&lt;/li&gt;
+&lt;li&gt;Fixed static chairs on the gas station roof to be mountable by correcting a slight ground clipping issue.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Rendering Pipeline Updates (internal testing)&lt;/h3&gt;
+&lt;h3&gt;Weapon Attachment LOD Improvements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Added radial blur to the RRP, combined with optimized blur and explosion‑volume overlay.  &lt;/li&gt;
+&lt;li&gt;Updated laserlight world model and its LOD component for smoother transitions.  &lt;/li&gt;
+&lt;li&gt;Adjusted muzzle brake and muzzle boost LOD behavior to prevent overly rapid switching at close range, aligning them with standard weapon LOD distances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Rendering Pipeline Tweaks&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added experimental radial blur effect to the RRP, combined with optimized blur and explosion volume overlay.  &lt;/li&gt;
 &lt;li&gt;Reduced the intensity of the RRP vignette effect.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Animal Behavior&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Pets Updates&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Implemented sleeping animation for sheep and prevented movement while sleeping.  &lt;/li&gt;
-&lt;li&gt;Cleaned up obsolete &lt;code&gt;SetFlags&lt;/code&gt; usage.  &lt;/li&gt;
-&lt;li&gt;Added new livestock assets with gender‑specific prefabs for cows and sheep.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Dog Asset Integration (internal)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Extracted all dog models, materials, animations, and prefabs from the legacy Pets2 branch, including harness models; entity class still pending.&lt;/li&gt;
+&lt;li&gt;Cleaned up obsolete &lt;code&gt;SetFlags&lt;/code&gt; usage in animal code.  &lt;/li&gt;
+&lt;li&gt;Added new livestock species assets with gender‑specific prefabs for cows and sheep.  &lt;/li&gt;
+&lt;li&gt;Extracted all dog models, materials, animations, and prefabs (including harnesses) from the legacy Pets2 branch for future updates.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicle Entity Pooling&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Applied additional child‑pooling fixes, targeting the &lt;code&gt;OnParentDestroying&lt;/code&gt; routine.&lt;/li&gt;
+&lt;li&gt;Fixed additional child pooling issues, specifically handling of &lt;code&gt;OnParentDestroying&lt;/code&gt; events.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 05:03:41 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 05:49:01 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
