@@ -6,40 +6,46 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 05:49:01 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 06:32:04 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;11 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;World Object Fixes&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;17 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Weapon &amp;amp; Item Visual Updates&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed static chairs on the gas station roof to be mountable by correcting a slight ground clipping issue.&lt;/li&gt;
+&lt;li&gt;Optimized Salvaged Hammer textures: AO reduced from 2 K to 512 px; texture naming aligned to new convention (&lt;code&gt;hammer_bc&lt;/code&gt;).  &lt;/li&gt;
+&lt;li&gt;Fixed third‑person view offset for the Salvaged Hammer.  &lt;/li&gt;
+&lt;li&gt;Updated Laserlight world model and made its LOD component more forgiving.  &lt;/li&gt;
+&lt;li&gt;Adjusted muzzle brake and muzzle boost LOD switching to be smoother and distance‑consistent.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapon Attachment LOD Improvements&lt;/h3&gt;
+&lt;h3&gt;Environment &amp;amp; Collision Optimizations&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Updated laserlight world model and its LOD component for smoother transitions.  &lt;/li&gt;
-&lt;li&gt;Adjusted muzzle brake and muzzle boost LOD behavior to prevent overly rapid switching at close range, aligning them with standard weapon LOD distances.&lt;/li&gt;
+&lt;li&gt;Replaced multiple box colliders on Jungle Ziggurat Treatment Tank with a single mesh collider for better performance.  &lt;/li&gt;
+&lt;li&gt;Fixed mountability of static chairs on the gas‑station roof by correcting a slight ground clipping issue.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Rendering Pipeline Tweaks&lt;/h3&gt;
+&lt;h3&gt;Multiplayer &amp;amp; Editor Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Added experimental radial blur effect to the RRP, combined with optimized blur and explosion volume overlay.  &lt;/li&gt;
-&lt;li&gt;Reduced the intensity of the RRP vignette effect.&lt;/li&gt;
+&lt;li&gt;Resolved pink rendering bug in Multi‑Client Play Mode caused by missing package folder cloning.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Pets Updates&lt;/h3&gt;
+&lt;h3&gt;Render Pipeline Tweaks (internal testing)&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Implemented sleeping animation for sheep and prevented movement while sleeping.  &lt;/li&gt;
-&lt;li&gt;Cleaned up obsolete &lt;code&gt;SetFlags&lt;/code&gt; usage in animal code.  &lt;/li&gt;
-&lt;li&gt;Added new livestock species assets with gender‑specific prefabs for cows and sheep.  &lt;/li&gt;
-&lt;li&gt;Extracted all dog models, materials, animations, and prefabs (including harnesses) from the legacy Pets2 branch for future updates.&lt;/li&gt;
+&lt;li&gt;Added radial blur to the RRP, optimized combined blur, and set up explosion volume and overlay.  &lt;/li&gt;
+&lt;li&gt;Reduced the vignette effect strength in the RRP.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicle Entity Pooling&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Animal Systems&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed additional child pooling issues, specifically handling of &lt;code&gt;OnParentDestroying&lt;/code&gt; events.&lt;/li&gt;
+&lt;li&gt;Implemented sleeping animation for sheep and prevented animals from moving while sleeping.  &lt;/li&gt;
+&lt;li&gt;Added new livestock species assets, enabling separate male/female prefabs for cows and sheep.  &lt;/li&gt;
+&lt;li&gt;Imported all dog assets (models, materials, animations, prefabs, harnesses) from the legacy Pets2 branch.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicle Pooling Improvements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed additional child‑pooling issues, specifically handling of &lt;code&gt;OnParentDestroying&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 05:49:01 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 06:32:04 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
