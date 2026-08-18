@@ -78,27 +78,8 @@ def is_bad_summary(text):
     return False
 
 
-def build_prompt(day, commits):
-    commit_text = []
-
-    for commit in commits:
-        branch = commit["branch"]
-
-        if branch.startswith("main/"):
-            branch = branch[5:]
-
-        commit_text.append(
-            "\n".join(
-                [
-                    f"Branch: {branch}",
-                    f"Author: {commit['author']}",
-                    f"Message: {commit['message']}",
-                ]
-            )
-        )
-
-    return f"""
-You are creating a compact daily development digest for the game Rust
+return f"""
+You are creating a concise daily development digest for Rust players
 using official Facepunch source-control commit messages.
 
 Date:
@@ -108,31 +89,61 @@ Commits:
 
 {chr(10).join(commit_text)}
 
-Create a compact daily Rust development digest for an RSS/start-page widget.
+Your audience is RUST PLAYERS, not Rust developers.
 
-Rules:
-- Group related commits into 3 to 6 clear topic sections.
-- Use short, human-friendly section names.
-- Prefer concise bullets over paragraphs.
-- Keep most bullets to one sentence.
-- Combine closely related commits into one bullet.
-- Preserve useful specifics such as item names, numbers, affected systems,
-  and exact fixes.
+First decide which commits have meaningful player-facing relevance.
+Completely ignore commits that are purely internal unless they clearly
+produce a noticeable player-facing effect.
+
+INCLUDE:
+- Gameplay mechanic changes
+- New or changed weapons, items, deployables, animals, NPCs or content
+- Balance changes
+- Bug and glitch fixes players could encounter
+- Crash, disconnect, networking or server stability fixes
+- Exploit fixes
+- Monument, map or world changes
+- Player-visible UI changes
+- Visual, animation, audio or rendering changes players can notice
+- Performance improvements when the commit indicates a meaningful
+  effect on gameplay, server performance, FPS, stuttering or responsiveness
+- Work-in-progress features that are interesting to players, but clearly
+  label them as development/work-in-progress
+
+EXCLUDE:
+- Developer/editor tooling
+- Automated tests and test assets
+- Debugging/logging changes with no stated player impact
+- Code refactoring or cleanup
+- Renaming code, files, variables or conventions
+- Build pipeline or source-control work
+- Asset import/export housekeeping
+- Internal memory optimizations with no stated player-visible benefit
+- Shader/code implementation details unless they change what players see
+- Technical infrastructure that does not affect gameplay
+- Duplicate commits describing the same change
+
+IMPORTANT:
+Do not include a technical commit merely because it sounds impressive.
+Ask: "Would a normal Rust player care that this changed?"
+If the answer is no, omit it.
+
+OUTPUT:
+- Group remaining changes into 3 to 6 useful topic sections.
+- Order the most interesting/player-relevant sections first.
+- Use short human-friendly headings.
+- Use concise bullet points.
+- Combine related commits.
+- Preserve useful specifics such as item names, numbers and affected locations.
 - Be factual and neutral.
 - Do not speculate.
-- Do not claim unfinished work is released or available to players.
-- If work is experimental, internal, testing-related, or development-only,
-  make that clear.
-- Prefer wording such as "Added", "Fixed", "Updated",
-  "Continued work on", or "Experimental work on".
-- Ignore merge, administrative, build, and source-control noise.
-- Avoid developer names unless genuinely useful.
-- Avoid internal branch names unless genuinely useful.
-- Do not mention commit IDs.
-- Do not include a title or date at the beginning.
-- Start directly with the first topic heading.
-- Use Markdown headings and bullet points.
-- Keep the entire digest concise enough to skim in an RSS widget.
+- Do not imply unfinished work has been released.
+- Clearly identify work-in-progress or experimental features.
+- Do not mention developer names, commit IDs, internal branch names,
+  tests, implementation details, or code terminology unless essential.
+- Do not include a title or date.
+- Start directly with the first section heading.
+- Use Markdown headings and bullets.
 - Return ONLY the finished digest.
 """
 
