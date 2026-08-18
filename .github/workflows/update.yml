@@ -30,6 +30,27 @@ jobs:
       - name: Fetch latest commits
         run: python scripts/build_feed.py
 
+      - name: Check available Groq models
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          import requests
+
+          r = requests.get(
+              "https://api.groq.com/openai/v1/models",
+              headers={
+                  "Authorization": f"Bearer {os.environ['GROQ_API_KEY']}"
+              }
+          )
+
+          r.raise_for_status()
+
+          for model in r.json()["data"]:
+              print(model["id"])
+          PY
+      
       - name: Generate AI summaries
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
