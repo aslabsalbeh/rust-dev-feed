@@ -138,35 +138,35 @@ def main():
             f"{label} — {display_date}"
         )
 
-summary_html = markdown_to_html(
-    data["summary"]
-)
+        summary_html = markdown_to_html(
+            data["summary"]
+        )
 
-new_summary = data.get(
-    "new_summary",
-    "",
-).strip()
+        new_summary = data.get(
+            "new_summary",
+            "",
+        ).strip()
 
-new_count = data.get(
-    "new_relevant_count",
-    0,
-)
+        new_count = data.get(
+            "new_relevant_count",
+            0,
+        )
 
-new_html = ""
+        new_html = ""
 
-if new_summary and new_count > 0:
-    rendered_new = markdown_to_html(
-        new_summary
-    )
+        if new_summary and new_count > 0:
+            rendered_new = markdown_to_html(
+                new_summary
+            )
 
-    new_html = f"""
+            new_html = f"""
 <div class="rust-new-updates">
 <h3>✨ NEW — LAST 3 HRS</h3>
 {rendered_new}
 </div>
-"""
+""".strip()
 
-description_html = f"""
+        description_html = f"""
 <div class="rust-dev-summary">
 <p><strong>{data['commit_count']} development commits</strong></p>
 {new_html}
