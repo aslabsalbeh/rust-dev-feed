@@ -6,22 +6,78 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 01:21:06 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 01:22:41 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;4 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;AI summary temporarily unavailable. The development commit archive was updated successfully.&lt;/p&gt;
+&lt;h3&gt;Livestock Animal Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added new livestock species assets, enabling separate male and female prefabs for cows and sheep.  &lt;/li&gt;
+&lt;li&gt;Fixed a bug where animals could move while sleeping and removed obsolete &lt;code&gt;SetFlags&lt;/code&gt; usage.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dog Asset Integration&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Extracted all dog models, materials, animations, and prefabs (including harnesses) from the legacy Pets2 branch; entity class implementation is pending (internal/testing work).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Entity Pooling Improvements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed child pooling issues during &lt;code&gt;OnParentDestroying&lt;/code&gt;, improving stability of pooled entities.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 01:21:06 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 01:22:41 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;AI summary temporarily unavailable. The development commit archive was updated successfully.&lt;/p&gt;
+&lt;h3&gt;Nexus Server Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tagged servers with Nexus enabled using &lt;code&gt;nexuszone&lt;/code&gt; and exposed Nexus info in A2S rules.  &lt;/li&gt;
+&lt;li&gt;Added option to hide Nexus zones from the server list (&lt;code&gt;nexus.hideZones&lt;/code&gt;).  &lt;/li&gt;
+&lt;li&gt;Fixed map button activation on the connect modal for Nexus paths.  &lt;/li&gt;
+&lt;li&gt;Resolved map UI squishing after recent changes.  &lt;/li&gt;
+&lt;li&gt;Applied miscellaneous Nexus connect‑modal UI fixes.  &lt;/li&gt;
+&lt;li&gt;Corrected MaxPlayers value after Nexus modifications.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Editor Improvements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Redesigned Demo UI sandbox panel with parenting, revamped color picker, and key‑framed light intensity/range.  &lt;/li&gt;
+&lt;li&gt;Added scroll fade/gradient to Demo UI tabs and fixed left‑offset alignment on non‑keyframable rows.  &lt;/li&gt;
+&lt;li&gt;Sorted F1 menu category buttons alphabetically by translated label.  &lt;/li&gt;
+&lt;li&gt;Editor multiplayer: final name cleanup, performance‑logging NRE fix, hot‑reload fix, custom scenario dropdown, crosshair NRE fix, and additional second‑client NRE fixes.  &lt;/li&gt;
+&lt;li&gt;Updated conditional model handling to respect null slots and refresh only when changed.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stability &amp;amp; Performance Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Implemented threaded‑log handler so messages from other threads appear in console and RCON.  &lt;/li&gt;
+&lt;li&gt;Added tests confirming threaded‑log fix and captured exceptions from async tasks.  &lt;/li&gt;
+&lt;li&gt;Detached parented children before entering vehicle pool to stop NRE spamming.  &lt;/li&gt;
+&lt;li&gt;Prevented rooms from hiding until invisible for 5 seconds, reducing churn.  &lt;/li&gt;
+&lt;li&gt;Relocated file‑storage code to avoid unload during domain reload (SQLite clan fix).  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Animal &amp;amp; Livestock Updates&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Added bull prefab setup.  &lt;/li&gt;
+&lt;li&gt;Fixed all livestock being set to female and introduced breeding FSM states.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;IO &amp;amp; Power System Refactor (Hackweek)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed battery &lt;code&gt;ReceiveAdditionalData&lt;/code&gt; client RPC and removed legacy IO code from the battery class.  &lt;/li&gt;
+&lt;li&gt;Converted CCTV cameras, windmills, water wheel, Tesla coil, SolarPanel, and FuelGenerator; added dummy‑switch power slots.  &lt;/li&gt;
+&lt;li&gt;Simplified battery console commands and added related tests.  &lt;/li&gt;
+&lt;li&gt;Disabled &lt;code&gt;Unsafe.UseMultithreadedScripting&lt;/code&gt; on client and added tests for safe booting in both client and server modes.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Asset &amp;amp; Rendering Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed underwater labs window refraction texture with RRP.  &lt;/li&gt;
+&lt;li&gt;Added white boomer firework variant (new colour, icon, and PFX) to avoid misleading pack icon.  &lt;/li&gt;
+&lt;li&gt;Fixed jungle loot‑box gib material and crate_basic gib colliders; re‑exported crate_basic with zeroed scale.  &lt;/li&gt;
+&lt;li&gt;Removed unnecessary prefab and introduced per‑face physics‑material test cube.  &lt;/li&gt;
+&lt;li&gt;Reverted previous color‑picker fix and applied an improved solution.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-17</guid>
