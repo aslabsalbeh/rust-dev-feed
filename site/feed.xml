@@ -6,45 +6,47 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 07:42:50 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 08:03:49 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;23 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;UI &amp;amp; Asset Size Reductions&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;27 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;UI Font &amp;amp; Icon Optimizations&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Icon fonts now generated only for used glyphs, shrinking atlas sizes from 64 MB/4 MB to 0.5 MB each; fallback font set to dynamic and refreshed monthly with localization.  &lt;/li&gt;
-&lt;li&gt;Salvaged hammer textures downscaled from 2 k to 512 px and renamed to follow new naming conventions.  &lt;/li&gt;
-&lt;li&gt;Jungle Ziggurat treatment tank collider consolidated into a single mesh collider for better performance.  &lt;/li&gt;
-&lt;li&gt;All dog assets (models, materials, animations, prefabs, harnesses) extracted from the legacy Pets2 branch.&lt;/li&gt;
+&lt;li&gt;Added a confirmation popup before starting the icon‑font scan.  &lt;/li&gt;
+&lt;li&gt;Generated icon fonts only for used glyphs, shrinking atlas sizes from 64 MB/4 MB to 0.5 MB each; introduced an empty fallback font to keep dynamic UI icons functional.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Gameplay Fixes&lt;/h3&gt;
+&lt;h2&gt;Weapon &amp;amp; Attachment Visual Updates&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Custom shadow proxies fix shadows in Radtown master house and Oilrig level 6 rooms.  &lt;/li&gt;
-&lt;li&gt;Scientists now spawn correctly in underwater labs and cargo ships.  &lt;/li&gt;
-&lt;li&gt;Static chairs on the gas station roof are now mountable after correcting ground clipping.  &lt;/li&gt;
-&lt;li&gt;Livestock updates: sheep sleeping animation added, sleeping‑movement bug fixed, obsolete &lt;code&gt;SetFlags&lt;/code&gt; removed, and new male/female prefab support for cows and sheep.  &lt;/li&gt;
-&lt;li&gt;Animal fencing prototype fix applied after merge.&lt;/li&gt;
+&lt;li&gt;Updated machete animation for the weapon refresh.  &lt;/li&gt;
+&lt;li&gt;Optimized salvaged hammer textures (ambient occlusion reduced from 2 k to 512) and renamed texture set to match new naming conventions.  &lt;/li&gt;
+&lt;li&gt;Fixed third‑person hammer model offset from the player’s hand.  &lt;/li&gt;
+&lt;li&gt;Updated laser‑light world model and made its LOD component more forgiving.  &lt;/li&gt;
+&lt;li&gt;Adjusted muzzle‑brake and muzzle‑boost LOD switching to eliminate overly rapid transitions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Rendering &amp;amp; Visual Improvements&lt;/h3&gt;
+&lt;h2&gt;NPC &amp;amp; Animal Spawn &amp;amp; Behavior&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Radial blur added to the RRP pipeline with optimized blur, plus new explosion volume and overlay.  &lt;/li&gt;
-&lt;li&gt;RRP vignette effect reduced.  &lt;/li&gt;
-&lt;li&gt;Laserlight world model LOD improved; muzzle brake and muzzle boost LOD components adjusted to prevent overly rapid switching.&lt;/li&gt;
+&lt;li&gt;Fixed scientists not spawning on cargo ships, underwater labs, and the military base.  &lt;/li&gt;
+&lt;li&gt;Fixed static chairs on the gas‑station roof so they are mountable again.  &lt;/li&gt;
+&lt;li&gt;Added code generation for animal‑fencing and livestock systems.  &lt;/li&gt;
+&lt;li&gt;Introduced new livestock species assets with separate male/female prefabs for cows and sheep; added sheep sleeping animation and prevented movement while sleeping.  &lt;/li&gt;
+&lt;li&gt;Extracted complete dog assets (models, materials, animations, harnesses) from the legacy Pets2 branch.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Asset &amp;amp; Pooling Technical Tweaks&lt;/h3&gt;
+&lt;h2&gt;Art, Collision &amp;amp; Environment Fixes&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Attachment LOD component made more forgiving; early transition issue resolved.  &lt;/li&gt;
-&lt;li&gt;Additional child pooling fixes for &lt;code&gt;OnParentDestroying&lt;/code&gt; events.&lt;/li&gt;
+&lt;li&gt;Reapplied custom shadow proxy fixes for RadTown master house and Oil Rig level 6 rooms.  &lt;/li&gt;
+&lt;li&gt;Replaced multiple box colliders on the Jungle Ziggurat treatment tank with a single mesh collider for better performance.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Multiplayer &amp;amp; Editor Stability&lt;/h3&gt;
+&lt;h2&gt;Rendering &amp;amp; Engine Experiments&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Pink‑screen issue in multi‑client play mode fixed by correctly cloning the packages folder for each editor instance.&lt;/li&gt;
+&lt;li&gt;Added radial blur to the RRP, set up explosion volume overlay, and reduced the RRP vignette effect.  &lt;/li&gt;
+&lt;li&gt;Fixed the pink screen issue in multi‑client play mode by correctly cloning the packages folder.  &lt;/li&gt;
+&lt;li&gt;Applied additional child‑pooling fixes for vehicle destruction handling.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 07:42:50 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 08:03:49 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
