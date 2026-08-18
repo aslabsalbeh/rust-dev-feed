@@ -4,13 +4,14 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from google import genai
+import requests
 
 
 COMMITS_FILE = Path("site/commits.json")
 SUMMARY_FILE = Path("site/summaries.json")
 
-MODEL = "gemini-2.5-flash-lite"
+MODEL = "openai/gpt-oss-120b:free"
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
 def load_commits():
@@ -28,7 +29,7 @@ def group_by_day(commits):
     return grouped
 
 
-def summarize_day(client, day, commits):
+def summarize_day(api_key, day, commits):
     commit_text = []
 
     for commit in commits:
@@ -43,7 +44,7 @@ Message: {commit['message']}
         )
 
     prompt = f"""
-You are creating a concise daily development digest for the game Rust
+You are creating a compact daily development digest for the game Rust
 using official Facepunch source-control commit messages.
 
 Date:
@@ -52,8 +53,6 @@ Date:
 Commits:
 
 {chr(10).join(commit_text)}
-
-Create a clean, player-friendly development summary.
 
 Create a compact daily Rust development digest for an RSS/start-page widget.
 
@@ -71,28 +70,44 @@ Rules:
 - Avoid phrases like "significant work has been done" or "has been implemented".
 - Prefer wording like "Added", "Fixed", "Updated", "Continued work on", or "Experimental work on".
 - Ignore merge/admin/build noise.
-- Avoid developer names and internal branch names unless they are genuinely useful.
+- Avoid developer names and internal branch names unless genuinely useful.
 - Do not mention commit IDs.
 - Keep the entire digest concise enough to skim in an RSS widget.
 - Use Markdown headings and bullet points.
 - Return only the finished digest.
 """
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt,
+    response = requests.post(
+        OPENROUTER_URL,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "model": MODEL,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            "temperature": 0.2,
+        },
+        timeout=90,
     )
 
-    return response.text.strip()
+    response.raise_for_status()
+
+    data = response.json()
+
+    return data["choices"][0]["message"]["content"].strip()
 
 
 def main():
-    api_key = os.environ.get("GEMINI_API_KEY")
+    api_key = os.environ.get("OPENROUTER_API_KEY")
 
     if not api_key:
-        raise RuntimeError("GEMINI_API_KEY is not set.")
-
-    client = genai.Client(api_key=api_key)
+        raise RuntimeError("OPENROUTER_API_KEY is not set.")
 
     commits = load_commits()
     grouped = group_by_day(commits)
@@ -104,11 +119,11 @@ def main():
 
         print(
             f"Summarizing {day} "
-            f"({len(commits_for_day)} commits) in one Gemini request..."
+            f"({len(commits_for_day)} commits) with OpenRouter..."
         )
 
         summary = summarize_day(
-            client,
+            api_key,
             day,
             commits_for_day,
         )
