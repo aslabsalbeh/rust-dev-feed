@@ -10,7 +10,7 @@ import requests
 COMMITS_FILE = Path("site/commits.json")
 SUMMARY_FILE = Path("site/summaries.json")
 
-MODEL = "openrouter/free"
+MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
