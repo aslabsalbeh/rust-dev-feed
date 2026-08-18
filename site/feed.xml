@@ -6,106 +6,90 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 09:09:12 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 09:39:07 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;46 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;Icon Font &amp;amp; UI Optimizations&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;57 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Vehicle &amp;amp; Siege Weapon Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Auto‑clean dynamic icon fonts on play‑mode exit and added a confirmation popup before scanning updates.  &lt;/li&gt;
-&lt;li&gt;Increased icon‑font atlas to 1024×1024 and switched to on‑demand glyph generation, cutting atlas size from 64 MB/4 MB to ~0.5 MB each; added empty fallback dynamic font for community UI icons.  &lt;/li&gt;
-&lt;li&gt;Fixed tutorial modal size, removed unused background asset, localized text, and cleaned up the connection‑modal description.  &lt;/li&gt;
+&lt;li&gt;Catapults now correctly reset their loaded ammo after firing.  &lt;/li&gt;
+&lt;li&gt;Helicopters start with proper rotor speed on spawn.  &lt;/li&gt;
+&lt;li&gt;Siege weapons (e.g., ballistae) properly reset after use, preventing lingering states.  &lt;/li&gt;
+&lt;li&gt;Vehicle seat ownership is now cleared when a seat is pooled, fixing occasional seat‑ownership glitches.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Weapon &amp;amp; Equipment Refresh&lt;/h2&gt;
+&lt;h3&gt;Monument &amp;amp; Map Adjustments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Updated flashlight entity to reference a new model, rotated the 3‑person view for coherence, added a toggle flag, and reduced AO texture from 1 k to 512 px.  &lt;/li&gt;
-&lt;li&gt;Added ambient‑occlusion support to flashlight and renamed conventions to match the new naming scheme.  &lt;/li&gt;
-&lt;li&gt;Refreshed machete animation for the weapon refresh.  &lt;/li&gt;
-&lt;li&gt;Optimized salvaged hammer textures: AO reduced from 2 k to 512 px, renamed texture set to the new naming convention, and corrected third‑person hand offset.  &lt;/li&gt;
-&lt;li&gt;Fixed honey bandage effect trigger.  &lt;/li&gt;
+&lt;li&gt;Monument blockers no longer grant bonus resource rates; melee time‑to‑kill and resource yields have been balanced for consistency.  &lt;/li&gt;
+&lt;li&gt;Jungle Ziggurat treatment tank now uses a single mesh collider, improving performance and collision accuracy.  &lt;/li&gt;
+&lt;li&gt;Static chairs on the gas station roof are now mountable again.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Navmesh &amp;amp; AI Behavior Fixes&lt;/h2&gt;
+&lt;h3&gt;AI &amp;amp; Navmesh Overhaul&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Corrected independent navmesh bounds to use monument bounds and ensured AI spawned before navmesh build can locate it.  &lt;/li&gt;
-&lt;li&gt;Fixed cargo, underwater‑lab, and military‑base scientists not moving or spawning; also resolved scientists on oilrig crouch‑walking at odd angles.  &lt;/li&gt;
-&lt;li&gt;Adjusted old scientists to turn instantly instead of steering, and fixed Scientist2 oilrig crouch‑walk angle.  &lt;/li&gt;
-&lt;li&gt;Fixed scientists not spawning in underwater labs and cargo ships.  &lt;/li&gt;
+&lt;li&gt;Independent navmeshes now respect monument boundaries and build correctly, eliminating AI navigation errors.  &lt;/li&gt;
+&lt;li&gt;Scientists (including cargo, underwater lab, and oilrig variants) now spawn and move reliably in all locations.  &lt;/li&gt;
+&lt;li&gt;Old‑style scientists’ steering behavior fixed; they now turn instantly instead of wobbling.  &lt;/li&gt;
+&lt;li&gt;Scientist2 crouch‑walk angle on Oilrig corrected.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Vehicle &amp;amp; Asset Pooling Improvements&lt;/h2&gt;
+&lt;h3&gt;Weapon &amp;amp; Item Enhancements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Reset vehicle animators on pool reuse and restored child transforms during pooling.  &lt;/li&gt;
-&lt;li&gt;Captured component states during initialization (experimental, needs testing) and added fixes for child pooling on parent destroy.  &lt;/li&gt;
-&lt;li&gt;Additional child pooling fixes for &lt;code&gt;OnParentDestroying&lt;/code&gt;.  &lt;/li&gt;
+&lt;li&gt;Honey bandage now reliably applies its healing effect.  &lt;/li&gt;
+&lt;li&gt;Flashlight model updated: orientation matches the viewmodel, toggleable in‑game, and AO texture reduced for better performance.  &lt;/li&gt;
+&lt;li&gt;Machete animation refreshed for smoother swings.  &lt;/li&gt;
+&lt;li&gt;Salvaged hammer textures optimized (AO reduced) and third‑person positioning corrected.  &lt;/li&gt;
+&lt;li&gt;Laserlight and muzzle‑brake/boost models receive LOD improvements, reducing pop‑in at close range.  &lt;/li&gt;
+&lt;li&gt;Radial blur added to the rendering pipeline and vignette effect toned down for a cleaner visual experience.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Animal &amp;amp; Livestock Content&lt;/h2&gt;
+&lt;h3&gt;New Animals &amp;amp; Pets&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Added alternate implementation and new model for animal fencing (v2) and fixed missing codegen.  &lt;/li&gt;
-&lt;li&gt;Introduced new livestock species assets (cows, sheep) with male/female prefabs; hooked up sheep sleeping animation and prevented movement while sleeping.  &lt;/li&gt;
-&lt;li&gt;Extracted full dog asset set from Pets2 branch, including models, materials, animations, entity prefabs, and harness models.  &lt;/li&gt;
+&lt;li&gt;Livestock expansion: cows and sheep now spawn with distinct male/female prefabs; sheep feature a sleeping animation and no longer move while asleep.  &lt;/li&gt;
+&lt;li&gt;Dog assets fully integrated (models, materials, animations, harnesses), bringing updated canine appearances and behavior.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Rendering &amp;amp; Environment Fixes&lt;/h2&gt;
+&lt;h3&gt;UI &amp;amp; Visual Polish&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Added radial blur to RRP, optimized combined blur, set up explosion volume and overlay; reduced RRP vignette intensity.  &lt;/li&gt;
-&lt;li&gt;Updated laserlight world model and refined LOD components for muzzle brake and boost; fixed rapid LOD switching.  &lt;/li&gt;
-&lt;li&gt;Fixed white‑firework pooled strings.  &lt;/li&gt;
-&lt;li&gt;Reapplied shadow proxy fixes for RadTown and Oilrig level 6 rooms.  &lt;/li&gt;
-&lt;li&gt;Replaced multiple box colliders on Jungle Ziggurat treatment tank with a single mesh collider.  &lt;/li&gt;
-&lt;li&gt;Fixed static chairs on gas‑station roof mountability clipping issue.&lt;/li&gt;
+&lt;li&gt;Tutorial modal size fixed, background cleaned up, and fully localized text added.  &lt;/li&gt;
+&lt;li&gt;Connection modal description corrected and streamlined.  &lt;/li&gt;
+&lt;li&gt;Icon fonts auto‑cleaned on exit and now generate only needed glyphs, reducing memory usage.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 09:09:12 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 09:39:07 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;Nexus Server Enhancements&lt;/h3&gt;
+&lt;h2&gt;Animals &amp;amp; Breeding&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Tagged servers with Nexus enabled using &lt;code&gt;nexuszone&lt;/code&gt; and exposed Nexus info in A2S rules.  &lt;/li&gt;
-&lt;li&gt;Added option to hide Nexus zones from the server list (&lt;code&gt;nexus.hideZones&lt;/code&gt;).  &lt;/li&gt;
-&lt;li&gt;Fixed map button activation on the connect modal for Nexus paths.  &lt;/li&gt;
-&lt;li&gt;Resolved map UI squishing after recent changes.  &lt;/li&gt;
-&lt;li&gt;Applied miscellaneous Nexus connect‑modal UI fixes.  &lt;/li&gt;
-&lt;li&gt;Corrected MaxPlayers value after Nexus modifications.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bull&lt;/strong&gt; added as a new livestock animal.&lt;/li&gt;
+&lt;li&gt;All livestock now include both male and female variants, and a breeding state machine has been introduced, enabling animal breeding.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Editor Improvements&lt;/h3&gt;
+&lt;h2&gt;Deployables &amp;amp; Monument Updates&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Redesigned Demo UI sandbox panel with parenting, revamped color picker, and key‑framed light intensity/range.  &lt;/li&gt;
-&lt;li&gt;Added scroll fade/gradient to Demo UI tabs and fixed left‑offset alignment on non‑keyframable rows.  &lt;/li&gt;
-&lt;li&gt;Sorted F1 menu category buttons alphabetically by translated label.  &lt;/li&gt;
-&lt;li&gt;Editor multiplayer: final name cleanup, performance‑logging NRE fix, hot‑reload fix, custom scenario dropdown, crosshair NRE fix, and additional second‑client NRE fixes.  &lt;/li&gt;
-&lt;li&gt;Updated conditional model handling to respect null slots and refresh only when changed.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CCTV cameras&lt;/strong&gt; and &lt;strong&gt;windmills&lt;/strong&gt; are now functional in the world.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Water wheel&lt;/strong&gt; has been added/updated.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tesla coil&lt;/strong&gt;, &lt;strong&gt;solar panel&lt;/strong&gt;, and &lt;strong&gt;fuel generator&lt;/strong&gt; assets have been cleaned up for more reliable operation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Performance Fixes&lt;/h3&gt;
+&lt;h2&gt;Visual &amp;amp; Rendering Improvements&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Implemented threaded‑log handler so messages from other threads appear in console and RCON.  &lt;/li&gt;
-&lt;li&gt;Added tests confirming threaded‑log fix and captured exceptions from async tasks.  &lt;/li&gt;
-&lt;li&gt;Detached parented children before entering vehicle pool to stop NRE spamming.  &lt;/li&gt;
-&lt;li&gt;Prevented rooms from hiding until invisible for 5 seconds, reducing churn.  &lt;/li&gt;
-&lt;li&gt;Relocated file‑storage code to avoid unload during domain reload (SQLite clan fix).  &lt;/li&gt;
+&lt;li&gt;Underwater laboratory windows now show proper refraction textures.&lt;/li&gt;
+&lt;li&gt;Rooms stay visible while doors are closing, preventing brief disappearances.&lt;/li&gt;
+&lt;li&gt;New &lt;strong&gt;white boomer firework&lt;/strong&gt; variant added for a fresh visual effect.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animal &amp;amp; Livestock Updates&lt;/h3&gt;
+&lt;h2&gt;UI &amp;amp; Server Browser Updates&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Added bull prefab setup.  &lt;/li&gt;
-&lt;li&gt;Fixed all livestock being set to female and introduced breeding FSM states.  &lt;/li&gt;
+&lt;li&gt;Servers with Nexus enabled are now tagged in the server list; zone servers can be hidden (optional).&lt;/li&gt;
+&lt;li&gt;Connect‑modal map button works correctly for Nexus paths, and overall Nexus UI has been refined.&lt;/li&gt;
+&lt;li&gt;Max‑players count now displays accurately after recent changes.&lt;/li&gt;
+&lt;li&gt;F1 menu categories are sorted alphabetically for easier navigation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;IO &amp;amp; Power System Refactor (Hackweek)&lt;/h3&gt;
+&lt;h2&gt;Gameplay Fixes &amp;amp; Performance&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed battery &lt;code&gt;ReceiveAdditionalData&lt;/code&gt; client RPC and removed legacy IO code from the battery class.  &lt;/li&gt;
-&lt;li&gt;Converted CCTV cameras, windmills, water wheel, Tesla coil, SolarPanel, and FuelGenerator; added dummy‑switch power slots.  &lt;/li&gt;
-&lt;li&gt;Simplified battery console commands and added related tests.  &lt;/li&gt;
-&lt;li&gt;Disabled &lt;code&gt;Unsafe.UseMultithreadedScripting&lt;/code&gt; on client and added tests for safe booting in both client and server modes.  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Asset &amp;amp; Rendering Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Fixed underwater labs window refraction texture with RRP.  &lt;/li&gt;
-&lt;li&gt;Added white boomer firework variant (new colour, icon, and PFX) to avoid misleading pack icon.  &lt;/li&gt;
-&lt;li&gt;Fixed jungle loot‑box gib material and crate_basic gib colliders; re‑exported crate_basic with zeroed scale.  &lt;/li&gt;
-&lt;li&gt;Removed unnecessary prefab and introduced per‑face physics‑material test cube.  &lt;/li&gt;
-&lt;li&gt;Reverted previous color‑picker fix and applied an improved solution.&lt;/li&gt;
+&lt;li&gt;Water bucket UI bug fixed – you can now transfer water into a held bucket.&lt;/li&gt;
+&lt;li&gt;Honey bandage now correctly triggers its healing effects.&lt;/li&gt;
+&lt;li&gt;Server‑side planner bone hierarchy culled, reducing server load and improving performance.&lt;/li&gt;
+&lt;li&gt;Optimized room visibility handling reduces unnecessary network updates.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
