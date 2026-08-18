@@ -28,10 +28,15 @@ jobs:
       - name: Fetch latest commits
         run: python scripts/build_feed.py
 
+      - name: Generate AI summaries
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/summarize.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/commits.json
+          git add site/commits.json site/summaries.json
           git diff --cached --quiet || git commit -m "Update Rust commits"
           git push
