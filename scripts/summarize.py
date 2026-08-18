@@ -13,7 +13,7 @@ SUMMARY_FILE = Path("site/summaries.json")
 
 LOCAL_TZ = ZoneInfo("America/Toronto")
 
-GROQ_MODEL = "llama-3.3-70b-versatile"
+GROQ_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 OPENROUTER_MODEL = "google/gemma-4-31b-it:free"
