@@ -14,7 +14,7 @@ The feed contains summaries for the latest few days of Rust development activity
 
 ## Offline Start Page
 
-This feed was built to work especially well with the custom **Rust RSS widget** included in the **Offline Start Page** Chrome extension.
+This feed was built to work especially well with the custom **RSS widget** included in the **Offline Start Page** Chrome extension.
 
 The widget provides:
 
