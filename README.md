@@ -30,7 +30,7 @@ https://chromewebstore.google.com/detail/offline-start-page-privat/eddedpnjieoih
 
 The extension only reads the already-generated RSS feed, so additional users do not generate additional AI requests.
 
-### RSS Widget Preview
+### RSS Widget Preview with widget width set to [Auto]
 
 ![Rust Development RSS feed in Offline Start Page](image.png)
 
