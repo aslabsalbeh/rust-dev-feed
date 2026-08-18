@@ -19,6 +19,10 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OPENROUTER_MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
+# Increase this whenever you substantially change the AI prompt.
+# That forces one fresh summary even if the commits did not change.
+PROMPT_VERSION = "player-focused-v1"
+
 
 BAD_MARKERS = (
     "We need to produce",
@@ -78,7 +82,26 @@ def is_bad_summary(text):
     return False
 
 
-return f"""
+def build_prompt(day, commits):
+    commit_text = []
+
+    for commit in commits:
+        branch = commit["branch"]
+
+        if branch.startswith("main/"):
+            branch = branch[5:]
+
+        commit_text.append(
+            "\n".join(
+                [
+                    f"Branch: {branch}",
+                    f"Author: {commit['author']}",
+                    f"Message: {commit['message']}",
+                ]
+            )
+        )
+
+    return f"""
 You are creating a concise daily development digest for Rust players
 using official Facepunch source-control commit messages.
 
@@ -148,7 +171,13 @@ OUTPUT:
 """
 
 
-def call_chat_api(url, api_key, model, prompt, provider_name):
+def call_chat_api(
+    url,
+    api_key,
+    model,
+    prompt,
+    provider_name,
+):
     try:
         response = requests.post(
             url,
@@ -169,39 +198,62 @@ def call_chat_api(url, api_key, model, prompt, provider_name):
             timeout=90,
         )
     except requests.RequestException as error:
-        print(f"{provider_name} network error: {error}")
+        print(
+            f"{provider_name} network error: {error}"
+        )
         return None
 
     if response.status_code == 429:
-        print(f"{provider_name} rate-limited.")
+        print(
+            f"{provider_name} rate-limited."
+        )
         return None
 
     if not response.ok:
         print(
-            f"{provider_name} error {response.status_code}: "
+            f"{provider_name} error "
+            f"{response.status_code}: "
             f"{response.text[:300]}"
         )
         return None
 
     try:
         data = response.json()
-        text = data["choices"][0]["message"]["content"].strip()
+
+        text = (
+            data["choices"][0]["message"]["content"]
+            .strip()
+        )
+
     except Exception:
-        print(f"{provider_name} returned an invalid response.")
+        print(
+            f"{provider_name} returned "
+            "an invalid response."
+        )
         return None
 
     if is_bad_summary(text):
-        print(f"{provider_name} returned rejected AI output.")
+        print(
+            f"{provider_name} returned "
+            "rejected AI output."
+        )
         return None
 
     return text
 
 
-def summarize_day(groq_key, openrouter_key, day, commits):
+def summarize_day(
+    groq_key,
+    openrouter_key,
+    day,
+    commits,
+):
     prompt = build_prompt(day, commits)
 
     if groq_key:
-        print(f"Trying Groq for {day}...")
+        print(
+            f"Trying Groq for {day}..."
+        )
 
         summary = call_chat_api(
             GROQ_URL,
@@ -212,11 +264,16 @@ def summarize_day(groq_key, openrouter_key, day, commits):
         )
 
         if summary is not None:
-            print(f"Groq succeeded for {day}.")
+            print(
+                f"Groq succeeded for {day}."
+            )
             return summary
 
     if openrouter_key:
-        print(f"Trying OpenRouter fallback for {day}...")
+        print(
+            f"Trying OpenRouter fallback "
+            f"for {day}..."
+        )
 
         summary = call_chat_api(
             OPENROUTER_URL,
@@ -227,27 +284,45 @@ def summarize_day(groq_key, openrouter_key, day, commits):
         )
 
         if summary is not None:
-            print(f"OpenRouter succeeded for {day}.")
+            print(
+                f"OpenRouter succeeded "
+                f"for {day}."
+            )
             return summary
 
     return None
 
 
 def main():
-    groq_key = os.environ.get("GROQ_API_KEY")
-    openrouter_key = os.environ.get("OPENROUTER_API_KEY")
+    groq_key = os.environ.get(
+        "GROQ_API_KEY"
+    )
+
+    openrouter_key = os.environ.get(
+        "OPENROUTER_API_KEY"
+    )
 
     if not groq_key and not openrouter_key:
         raise RuntimeError(
-            "Neither GROQ_API_KEY nor OPENROUTER_API_KEY is set."
+            "Neither GROQ_API_KEY nor "
+            "OPENROUTER_API_KEY is set."
         )
 
-    commits = load_json(COMMITS_FILE, [])
-    old_summaries = load_json(SUMMARY_FILE, {})
+    commits = load_json(
+        COMMITS_FILE,
+        [],
+    )
+
+    old_summaries = load_json(
+        SUMMARY_FILE,
+        {},
+    )
 
     grouped = group_by_day(commits)
 
-    today = datetime.now(LOCAL_TZ).date().isoformat()
+    today = datetime.now(
+        LOCAL_TZ
+    ).date().isoformat()
 
     valid_days = sorted(
         grouped.keys(),
@@ -258,20 +333,46 @@ def main():
 
     for day in valid_days:
         commits_for_day = grouped[day]
-        signature = commit_signature(commits_for_day)
 
-        old_entry = old_summaries.get(day)
+        signature = commit_signature(
+            commits_for_day
+        )
+
+        old_entry = old_summaries.get(
+            day
+        )
 
         old_is_good = (
             old_entry
             and not is_bad_summary(
-                old_entry.get("summary", "")
+                old_entry.get(
+                    "summary",
+                    "",
+                )
             )
         )
 
+        signature_matches = (
+            old_entry
+            and old_entry.get(
+                "commit_signature"
+            ) == signature
+        )
+
+        prompt_matches = (
+            old_entry
+            and old_entry.get(
+                "prompt_version"
+            ) == PROMPT_VERSION
+        )
+
+        # Reuse only when BOTH:
+        # - commits have not changed
+        # - prompt version has not changed
         if (
             old_is_good
-            and old_entry.get("commit_signature") == signature
+            and signature_matches
+            and prompt_matches
         ):
             summaries[day] = old_entry
 
@@ -282,14 +383,23 @@ def main():
                 )
             else:
                 print(
-                    f"Keeping cached summary for {day}."
+                    f"Keeping cached summary "
+                    f"for {day}."
                 )
 
             continue
 
+        if not signature_matches:
+            reason = "commits changed"
+        elif not prompt_matches:
+            reason = "prompt changed"
+        else:
+            reason = "cached summary invalid"
+
         print(
-            f"New or changed commits detected for {day}; "
-            f"summarizing {len(commits_for_day)} commits..."
+            f"Summary refresh needed for {day} "
+            f"({reason}); summarizing "
+            f"{len(commits_for_day)} commits..."
         )
 
         new_summary = summarize_day(
@@ -301,24 +411,38 @@ def main():
 
         if new_summary is not None:
             summaries[day] = {
-                "commit_count": len(commits_for_day),
+                "commit_count": len(
+                    commits_for_day
+                ),
                 "commit_signature": signature,
+                "prompt_version": PROMPT_VERSION,
                 "summary": new_summary,
             }
 
-            print(f"Saved new summary for {day}.")
+            print(
+                f"Saved new summary for {day}."
+            )
 
         elif old_is_good:
+            # Preserve previous valid summary if
+            # both providers fail.
+            #
+            # Keep its old prompt/signature values,
+            # which means a future run will retry.
             summaries[day] = old_entry
 
             print(
-                f"Preserved previous good summary for {day}."
+                f"Preserved previous good "
+                f"summary for {day}."
             )
 
         else:
             summaries[day] = {
-                "commit_count": len(commits_for_day),
+                "commit_count": len(
+                    commits_for_day
+                ),
                 "commit_signature": "",
+                "prompt_version": "",
                 "summary": (
                     "AI summary temporarily unavailable. "
                     "The development commit archive was "
@@ -327,7 +451,8 @@ def main():
             }
 
             print(
-                f"No previous valid summary available for {day}."
+                f"No previous valid summary "
+                f"available for {day}."
             )
 
     with open(
@@ -343,7 +468,8 @@ def main():
         )
 
     print(
-        f"Saved {len(summaries)} daily summaries."
+        f"Saved {len(summaries)} "
+        "daily summaries."
     )
 
 
