@@ -6,50 +6,54 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 14:18:54 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 18:30:53 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;92 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;NPC &amp;amp; AI Fixes&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;115 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed scientists not spawning in Underwater Labs, Cargo Ships, and Military Base.  &lt;/li&gt;
-&lt;li&gt;Fixed cargo scientists now move correctly instead of staying still.  &lt;/li&gt;
-&lt;li&gt;Fixed NPCs getting stuck when a navmesh tile rebuilds while they are inside or crossing it.  &lt;/li&gt;
-&lt;li&gt;Fixed Scientist 2 on the Oilrig crouch‑walking upstairs at an odd angle.  &lt;/li&gt;
-&lt;li&gt;Fixed old scientists steering incorrectly – they now turn instantly.&lt;/li&gt;
+&lt;li&gt;Melee weapons now correctly damage foundations that include staircases when hitting from the soft side.  &lt;/li&gt;
+&lt;li&gt;Darts UI zoom control removed and the leaderboard (including score cards) now updates reliably after server restarts, with streamer‑mode compatibility.  &lt;/li&gt;
+&lt;li&gt;Wind turbine sound stops playing when the turbine isn’t spinning.  &lt;/li&gt;
+&lt;li&gt;Binocular glare effect is fixed and works again.  &lt;/li&gt;
+&lt;li&gt;Desk monument blockers now render properly, and larger blockers have reduced health; battering‑ram visuals are correctly reset in containers.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;/div&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed several vehicle‑pooling bugs: catapult loaded ammo now works, horses persist correctly, siege weapons reset properly after use, and helicopter rotor speed is reset on init to prevent lingering spin.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Weapons&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Fixed weapon visual and animation issues: flamethrower flame now aligns with the muzzle, salvaged hammer third‑person model offset corrected, and machete swing animation updated for smoother attacks.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Items &amp;amp; Consumables&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Fixed honey bandage effects now trigger as intended.  &lt;/li&gt;
-&lt;li&gt;Fixed the colour picker to accept pasted hex‑code inputs.&lt;/li&gt;
+&lt;li&gt;Fixed scientists not spawning in Underwater Labs, Cargo Ships, and Military Bases, and cargo scientists now move correctly.  &lt;/li&gt;
+&lt;li&gt;Old scientists now turn instantly; Scientist2 on Oilrig no longer crouch‑walk at odd angles.  &lt;/li&gt;
+&lt;li&gt;Navmesh fixes prevent NPCs from getting stuck during tile rebuilds and ensure AI spawned before a navmesh is built can locate it.  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;World &amp;amp; Monuments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed static chairs on the gas‑station roof now mountable.  &lt;/li&gt;
-&lt;li&gt;Adjusted monument blocker resource rates and melee time‑to‑kill for consistent behavior.  &lt;/li&gt;
-&lt;li&gt;Fixed monument toggle switches error.&lt;/li&gt;
+&lt;li&gt;Foundations with staircases now take melee damage correctly (soft‑side LOS fixed).  &lt;/li&gt;
+&lt;li&gt;Monument blockers’ health reduced, bonus resource rates disabled, and melee time‑to‑kill values standardized; desks blocker now renders.  &lt;/li&gt;
+&lt;li&gt;Static chairs on the gas‑station roof are mountable again.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Equipment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed tutorial modal size, added localization, and cleaned up the connection modal description.&lt;/li&gt;
+&lt;li&gt;Vehicle pooling bugs resolved: catapult ammo persists, siege weapons reset properly, wheel collider warnings removed, helicopter rotor speed resets on init, and horse spawning issues fixed.  &lt;/li&gt;
+&lt;li&gt;Honey bandage now reliably applies its healing effect.  &lt;/li&gt;
+&lt;li&gt;Binocular glare behavior corrected and wind turbine sound stops when not spinning.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Darts leaderboard UI fixed with streamer‑mode support and proper persistence after server restarts.  &lt;/li&gt;
+&lt;li&gt;New livestock species added: cows and sheep with male/female variants; animals no longer move while sleeping and sheep now have a sleeping animation.  &lt;/li&gt;
+&lt;li&gt;Animal fencing revamped: fence gates tweaked, hold‑to‑place removed, and an alternate implementation tested.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 14:18:54 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 18:30:53 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
+
 &lt;h3&gt;Animals&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Fixed the gender bug: livestock now spawn with the correct male/female distribution instead of all being female.  &lt;/li&gt;
