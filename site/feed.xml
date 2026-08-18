@@ -6,47 +6,57 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 08:03:49 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 09:09:12 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;27 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;UI Font &amp;amp; Icon Optimizations&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;46 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Icon Font &amp;amp; UI Optimizations&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Added a confirmation popup before starting the icon‑font scan.  &lt;/li&gt;
-&lt;li&gt;Generated icon fonts only for used glyphs, shrinking atlas sizes from 64 MB/4 MB to 0.5 MB each; introduced an empty fallback font to keep dynamic UI icons functional.&lt;/li&gt;
+&lt;li&gt;Auto‑clean dynamic icon fonts on play‑mode exit and added a confirmation popup before scanning updates.  &lt;/li&gt;
+&lt;li&gt;Increased icon‑font atlas to 1024×1024 and switched to on‑demand glyph generation, cutting atlas size from 64 MB/4 MB to ~0.5 MB each; added empty fallback dynamic font for community UI icons.  &lt;/li&gt;
+&lt;li&gt;Fixed tutorial modal size, removed unused background asset, localized text, and cleaned up the connection‑modal description.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Weapon &amp;amp; Attachment Visual Updates&lt;/h2&gt;
+&lt;h2&gt;Weapon &amp;amp; Equipment Refresh&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Updated machete animation for the weapon refresh.  &lt;/li&gt;
-&lt;li&gt;Optimized salvaged hammer textures (ambient occlusion reduced from 2 k to 512) and renamed texture set to match new naming conventions.  &lt;/li&gt;
-&lt;li&gt;Fixed third‑person hammer model offset from the player’s hand.  &lt;/li&gt;
-&lt;li&gt;Updated laser‑light world model and made its LOD component more forgiving.  &lt;/li&gt;
-&lt;li&gt;Adjusted muzzle‑brake and muzzle‑boost LOD switching to eliminate overly rapid transitions.&lt;/li&gt;
+&lt;li&gt;Updated flashlight entity to reference a new model, rotated the 3‑person view for coherence, added a toggle flag, and reduced AO texture from 1 k to 512 px.  &lt;/li&gt;
+&lt;li&gt;Added ambient‑occlusion support to flashlight and renamed conventions to match the new naming scheme.  &lt;/li&gt;
+&lt;li&gt;Refreshed machete animation for the weapon refresh.  &lt;/li&gt;
+&lt;li&gt;Optimized salvaged hammer textures: AO reduced from 2 k to 512 px, renamed texture set to the new naming convention, and corrected third‑person hand offset.  &lt;/li&gt;
+&lt;li&gt;Fixed honey bandage effect trigger.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;NPC &amp;amp; Animal Spawn &amp;amp; Behavior&lt;/h2&gt;
+&lt;h2&gt;Navmesh &amp;amp; AI Behavior Fixes&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed scientists not spawning on cargo ships, underwater labs, and the military base.  &lt;/li&gt;
-&lt;li&gt;Fixed static chairs on the gas‑station roof so they are mountable again.  &lt;/li&gt;
-&lt;li&gt;Added code generation for animal‑fencing and livestock systems.  &lt;/li&gt;
-&lt;li&gt;Introduced new livestock species assets with separate male/female prefabs for cows and sheep; added sheep sleeping animation and prevented movement while sleeping.  &lt;/li&gt;
-&lt;li&gt;Extracted complete dog assets (models, materials, animations, harnesses) from the legacy Pets2 branch.&lt;/li&gt;
+&lt;li&gt;Corrected independent navmesh bounds to use monument bounds and ensured AI spawned before navmesh build can locate it.  &lt;/li&gt;
+&lt;li&gt;Fixed cargo, underwater‑lab, and military‑base scientists not moving or spawning; also resolved scientists on oilrig crouch‑walking at odd angles.  &lt;/li&gt;
+&lt;li&gt;Adjusted old scientists to turn instantly instead of steering, and fixed Scientist2 oilrig crouch‑walk angle.  &lt;/li&gt;
+&lt;li&gt;Fixed scientists not spawning in underwater labs and cargo ships.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Art, Collision &amp;amp; Environment Fixes&lt;/h2&gt;
+&lt;h2&gt;Vehicle &amp;amp; Asset Pooling Improvements&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Reapplied custom shadow proxy fixes for RadTown master house and Oil Rig level 6 rooms.  &lt;/li&gt;
-&lt;li&gt;Replaced multiple box colliders on the Jungle Ziggurat treatment tank with a single mesh collider for better performance.  &lt;/li&gt;
+&lt;li&gt;Reset vehicle animators on pool reuse and restored child transforms during pooling.  &lt;/li&gt;
+&lt;li&gt;Captured component states during initialization (experimental, needs testing) and added fixes for child pooling on parent destroy.  &lt;/li&gt;
+&lt;li&gt;Additional child pooling fixes for &lt;code&gt;OnParentDestroying&lt;/code&gt;.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Rendering &amp;amp; Engine Experiments&lt;/h2&gt;
+&lt;h2&gt;Animal &amp;amp; Livestock Content&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Added radial blur to the RRP, set up explosion volume overlay, and reduced the RRP vignette effect.  &lt;/li&gt;
-&lt;li&gt;Fixed the pink screen issue in multi‑client play mode by correctly cloning the packages folder.  &lt;/li&gt;
-&lt;li&gt;Applied additional child‑pooling fixes for vehicle destruction handling.&lt;/li&gt;
+&lt;li&gt;Added alternate implementation and new model for animal fencing (v2) and fixed missing codegen.  &lt;/li&gt;
+&lt;li&gt;Introduced new livestock species assets (cows, sheep) with male/female prefabs; hooked up sheep sleeping animation and prevented movement while sleeping.  &lt;/li&gt;
+&lt;li&gt;Extracted full dog asset set from Pets2 branch, including models, materials, animations, entity prefabs, and harness models.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Rendering &amp;amp; Environment Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Added radial blur to RRP, optimized combined blur, set up explosion volume and overlay; reduced RRP vignette intensity.  &lt;/li&gt;
+&lt;li&gt;Updated laserlight world model and refined LOD components for muzzle brake and boost; fixed rapid LOD switching.  &lt;/li&gt;
+&lt;li&gt;Fixed white‑firework pooled strings.  &lt;/li&gt;
+&lt;li&gt;Reapplied shadow proxy fixes for RadTown and Oilrig level 6 rooms.  &lt;/li&gt;
+&lt;li&gt;Replaced multiple box colliders on Jungle Ziggurat treatment tank with a single mesh collider.  &lt;/li&gt;
+&lt;li&gt;Fixed static chairs on gas‑station roof mountability clipping issue.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <link>https://aslabsalbeh.github.io/rust-dev-feed/</link>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 08:03:49 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 09:09:12 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
