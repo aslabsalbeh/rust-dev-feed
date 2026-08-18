@@ -156,11 +156,6 @@ def main():
 
         SubElement(
             item,
-            "link",
-        ).text = SITE_URL
-
-        SubElement(
-            item,
             "guid",
             isPermaLink="false",
         ).text = f"rust-dev-{day}"
