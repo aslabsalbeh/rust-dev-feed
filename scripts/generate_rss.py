@@ -41,11 +41,8 @@ def make_pub_date(day, is_today):
     day_date = datetime.fromisoformat(day).date()
 
     if is_today:
-        # Today's entry carries the current local time.
         dt = datetime.now(LOCAL_TZ)
     else:
-        # Historical entries use noon rather than midnight.
-        # This avoids timezone/display weirdness in RSS readers.
         dt = datetime.combine(
             day_date,
             time(hour=12),
@@ -105,28 +102,29 @@ def main():
         reverse=True,
     )[:3]
 
-    today = datetime.now(
+    today_date = datetime.now(
         LOCAL_TZ
-    ).date().isoformat()
+    ).date()
 
-    for position, day in enumerate(dates):
+    for day in dates:
         data = summaries[day]
 
-        date_obj = datetime.fromisoformat(day)
-        display_date = date_obj.strftime("%b %d")
+        item_date = datetime.fromisoformat(day).date()
+        days_ago = (today_date - item_date).days
 
-today_date = datetime.now(LOCAL_TZ).date()
-item_date = datetime.fromisoformat(day).date()
-days_ago = (today_date - item_date).days
+        if days_ago == 0:
+            label = "Today's Rust Updates"
 
-if days_ago == 0:
-    label = "Today's Rust Updates"
-elif days_ago == 1:
-    label = "Yesterday's Rust Updates"
-elif days_ago == 2:
-    label = "Rust Updates — 2 Days Ago"
-else:
-    label = "Rust Development Updates"
+        elif days_ago == 1:
+            label = "Yesterday's Rust Updates"
+
+        elif days_ago == 2:
+            label = "Rust Updates — 2 Days Ago"
+
+        else:
+            label = "Rust Development Updates"
+
+        display_date = item_date.strftime("%b %d")
 
         item = SubElement(
             channel,
@@ -161,9 +159,6 @@ else:
             "link",
         ).text = SITE_URL
 
-        # Stable GUID per calendar day.
-        # Today's item can therefore update without appearing
-        # as a completely new RSS item each run.
         SubElement(
             item,
             "guid",
@@ -175,7 +170,7 @@ else:
             "pubDate",
         ).text = make_pub_date(
             day,
-            day == today,
+            days_ago == 0,
         )
 
     tree = ElementTree(rss)
