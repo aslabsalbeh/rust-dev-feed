@@ -14,8 +14,11 @@ MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
-def load_commits():
-    with open(COMMITS_FILE, "r", encoding="utf-8") as file:
+def load_json(path, default):
+    if not path.exists():
+        return default
+
+    with open(path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
@@ -27,6 +30,11 @@ def group_by_day(commits):
         grouped[day].append(commit)
 
     return grouped
+
+
+def commit_signature(commits):
+    ids = sorted(str(commit["id"]) for commit in commits)
+    return ",".join(ids)
 
 
 def summarize_day(api_key, day, commits):
@@ -96,11 +104,27 @@ Rules:
         timeout=90,
     )
 
+    if response.status_code == 429:
+        print(f"OpenRouter rate-limited {day}; keeping previous summary.")
+        return None
+
     response.raise_for_status()
 
     data = response.json()
+    text = data["choices"][0]["message"]["content"].strip()
 
-    return data["choices"][0]["message"]["content"].strip()
+    bad_markers = (
+        "We need to produce",
+        "Let's identify themes",
+        "<unk>",
+        "We have many commits",
+    )
+
+    if any(marker in text for marker in bad_markers):
+        print(f"Rejected bad AI output for {day}; keeping previous summary.")
+        return None
+
+    return text
 
 
 def main():
@@ -109,28 +133,66 @@ def main():
     if not api_key:
         raise RuntimeError("OPENROUTER_API_KEY is not set.")
 
-    commits = load_commits()
-    grouped = group_by_day(commits)
+    commits = load_json(COMMITS_FILE, [])
+    old_summaries = load_json(SUMMARY_FILE, {})
 
+    grouped = group_by_day(commits)
     summaries = {}
+
+    today = datetime.now().date().isoformat()
 
     for day in sorted(grouped.keys(), reverse=True):
         commits_for_day = grouped[day]
+        signature = commit_signature(commits_for_day)
+
+        old_entry = old_summaries.get(day)
+
+        # Keep historical days unchanged if already summarized
+        if day != today and old_entry:
+            summaries[day] = old_entry
+            print(f"Keeping cached summary for {day}.")
+            continue
+
+        # If today's commit set has not changed, reuse old summary
+        if (
+            old_entry
+            and old_entry.get("commit_signature") == signature
+        ):
+            summaries[day] = old_entry
+            print(f"No new commits for {day}; reusing cached summary.")
+            continue
 
         print(
-            f"Summarizing {day} "
-            f"({len(commits_for_day)} commits) with OpenRouter..."
+            f"New commits detected for {day}; "
+            f"summarizing {len(commits_for_day)} commits..."
         )
 
-        summary = summarize_day(
+        new_summary = summarize_day(
             api_key,
             day,
             commits_for_day,
         )
 
+        # If AI fails or rate-limits, preserve the previous good summary
+        if new_summary is None:
+            if old_entry:
+                summaries[day] = old_entry
+            else:
+                summaries[day] = {
+                    "commit_count": len(commits_for_day),
+                    "commit_signature": signature,
+                    "summary": (
+                        "AI summary temporarily unavailable. "
+                        "The commit archive was updated successfully."
+                    ),
+                }
+
+            continue
+
         summaries[day] = {
             "commit_count": len(commits_for_day),
-            "summary": summary,
+            "commit_signature": signature,
+            "summary": new_summary,
         }
 
     with open(SUMMARY_FILE, "w", encoding="utf-8") as file:
@@ -141,10 +203,7 @@ def main():
             ensure_ascii=False,
         )
 
-    print(
-        f"Saved {len(summaries)} daily summaries "
-        f"to {SUMMARY_FILE}"
-    )
+    print(f"Saved {len(summaries)} daily summaries.")
 
 
 if __name__ == "__main__":
