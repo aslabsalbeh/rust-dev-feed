@@ -10,7 +10,7 @@ import requests
 COMMITS_FILE = Path("site/commits.json")
 SUMMARY_FILE = Path("site/summaries.json")
 
-MODEL = "openai/gpt-oss-120b:free"
+MODEL = "openrouter/free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
