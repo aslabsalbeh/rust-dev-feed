@@ -55,24 +55,27 @@ Commits:
 
 Create a clean, player-friendly development summary.
 
-Rules:
-- Group related commits into logical feature/topic sections.
-- Use clear human-friendly section names.
-- Summarize related commits together.
-- Be factual.
-- Do not speculate.
-- Do not claim unfinished work is released or available in-game.
-- Distinguish experimental/development work from confirmed gameplay changes.
-- Ignore merge-only or administrative noise if any remains.
-- Preserve useful specific details, numbers, item names, fixes, and gameplay changes.
-- Avoid developer names unless they are important.
-- Avoid internal branch names unless they help explain a feature.
-- Do not mention commit IDs.
-- Keep the entire summary reasonably concise.
-- Prefer about 4 to 8 topic sections depending on how much meaningful work occurred.
-- Use Markdown headings and bullet points.
+Create a compact daily Rust development digest for an RSS/start-page widget.
 
-Return only the finished digest.
+Rules:
+- Group related commits into 3 to 6 clear topic sections.
+- Use short, human-friendly section names.
+- Prefer concise bullets over paragraphs.
+- Keep most bullets to one sentence.
+- Combine closely related commits into one bullet.
+- Preserve useful specifics such as item names, numbers, affected systems, and exact fixes.
+- Be factual and neutral.
+- Do not speculate.
+- Do not say unfinished work is released or available to players.
+- If work is experimental or development-only, say so clearly.
+- Avoid phrases like "significant work has been done" or "has been implemented".
+- Prefer wording like "Added", "Fixed", "Updated", "Continued work on", or "Experimental work on".
+- Ignore merge/admin/build noise.
+- Avoid developer names and internal branch names unless they are genuinely useful.
+- Do not mention commit IDs.
+- Keep the entire digest concise enough to skim in an RSS widget.
+- Use Markdown headings and bullet points.
+- Return only the finished digest.
 """
 
     response = client.models.generate_content(
