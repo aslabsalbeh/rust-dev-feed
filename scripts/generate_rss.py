@@ -161,7 +161,7 @@ def main():
 
             new_html = f"""
 <div class="rust-new-updates">
-<h3>✨ NEW — LAST 3 HRS</h3>
+<h3>✨ NEW — LAST 6 HRS</h3>
 {rendered_new}
 </div>
 """.strip()
