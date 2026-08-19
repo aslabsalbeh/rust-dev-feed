@@ -1,9 +1,9 @@
 {
   "2026-08-19": {
-    "commit_count": 70,
-    "relevant_commit_count": 36,
-    "relevant_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571",
-    "new_baseline_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571",
+    "commit_count": 78,
+    "relevant_commit_count": 42,
+    "relevant_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571,615572,615581,615583,615591,615592,615593",
+    "new_baseline_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571,615572,615581,615583,615591,615592,615593",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
@@ -11,9 +11,38 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed navmesh edge detection, prevented AI from favoring wall‑adjacent covers, stopped AI getting stuck when navmesh tiles rebuild, and exposed polyrefs for debugging.",
+            "text": "Fixed AI navigation: find closest edge now works, scientists correctly favor cover near walls, and agents no longer get stuck when navmesh tiles rebuild.",
             "commit_ids": [
               615466
+            ]
+          },
+          {
+            "text": "Improved pathfinding: agents use dtCorridor for smoother following and avoid getting wedged in navmesh corners.",
+            "commit_ids": [
+              615565
+            ]
+          },
+          {
+            "text": "Resolved tiger AI charging indefinitely at the base of vine trees.",
+            "commit_ids": [
+              615581
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles",
+        "items": [
+          {
+            "text": "Fixed server error in ModularCar decay damage caused by vehicle pooling.",
+            "commit_ids": [
+              615564
+            ]
+          },
+          {
+            "text": "Boat interaction UI now only shows fuel and engine controls to the driver.",
+            "commit_ids": [
+              615467
             ]
           }
         ]
@@ -22,13 +51,13 @@
         "title": "Animals",
         "items": [
           {
-            "text": "Livestock now retain parent information and a new CompletePregnancy console variable aids pregnancy debugging.",
+            "text": "Livestock now retain parent information and include a debug console variable for completing pregnancies.",
             "commit_ids": [
               615372
             ]
           },
           {
-            "text": "Infant animals stay close to their mothers, preventing them from wandering off.",
+            "text": "Infant animals remain close to their mother.",
             "commit_ids": [
               615374
             ]
@@ -36,40 +65,83 @@
         ]
       },
       {
-        "title": "Vehicles & Structures",
+        "title": "Items & Weapons",
         "items": [
           {
-            "text": "Added placement sockets to animal fences and gates, making building interactions easier.",
+            "text": "Enabled read/write access on primitive loot box gibs, fixing related loot issues.",
             "commit_ids": [
-              615402
+              615397
+            ]
+          },
+          {
+            "text": "Corrected pooling logic for pool balls, preventing incorrect behavior.",
+            "commit_ids": [
+              615499
+            ]
+          },
+          {
+            "text": "Enabled pooling for thrown darts, improving performance and consistency.",
+            "commit_ids": [
+              615498
+            ]
+          },
+          {
+            "text": "Glass AK now hides bullet models when ammo is depleted.",
+            "commit_ids": [
+              615491
             ]
           }
         ]
       },
       {
-        "title": "Monuments",
+        "title": "Monuments & Structures",
         "items": [
           {
-            "text": "Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments.",
+            "text": "Fixed blocker mesh issues and switched monument avoidance to use the PreventBuildingMonumentTag registry.",
             "commit_ids": [
+              615464,
               615571
+            ]
+          },
+          {
+            "text": "Added animal fence/gate placement module and introduced new S2P monuments such as military tunnel, oilrig, and launch site.",
+            "commit_ids": [
+              615402,
+              615420
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Systems",
+        "items": [
+          {
+            "text": "Re‑enabled unsafe scripting access for clients.",
+            "commit_ids": [
+              615521
+            ]
+          },
+          {
+            "text": "Adjusted entity flag toggles to resolve post‑change issues.",
+            "commit_ids": [
+              615427
             ]
           }
         ]
       }
     ],
-    "summary": "### NPC & AI\n- Fixed navmesh edge detection, prevented AI from favoring wall‑adjacent covers, stopped AI getting stuck when navmesh tiles rebuild, and exposed polyrefs for debugging.\n\n### Animals\n- Livestock now retain parent information and a new CompletePregnancy console variable aids pregnancy debugging.\n- Infant animals stay close to their mothers, preventing them from wandering off.\n\n### Vehicles & Structures\n- Added placement sockets to animal fences and gates, making building interactions easier.\n\n### Monuments\n- Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments.",
+    "summary": "### NPC & AI\n- Fixed AI navigation: find closest edge now works, scientists correctly favor cover near walls, and agents no longer get stuck when navmesh tiles rebuild.\n- Improved pathfinding: agents use dtCorridor for smoother following and avoid getting wedged in navmesh corners.\n- Resolved tiger AI charging indefinitely at the base of vine trees.\n\n### Vehicles\n- Fixed server error in ModularCar decay damage caused by vehicle pooling.\n- Boat interaction UI now only shows fuel and engine controls to the driver.\n\n### Animals\n- Livestock now retain parent information and include a debug console variable for completing pregnancies.\n- Infant animals remain close to their mother.\n\n### Items & Weapons\n- Enabled read/write access on primitive loot box gibs, fixing related loot issues.\n- Corrected pooling logic for pool balls, preventing incorrect behavior.\n- Enabled pooling for thrown darts, improving performance and consistency.\n- Glass AK now hides bullet models when ammo is depleted.\n\n### Monuments & Structures\n- Fixed blocker mesh issues and switched monument avoidance to use the PreventBuildingMonumentTag registry.\n- Added animal fence/gate placement module and introduced new S2P monuments such as military tunnel, oilrig, and launch site.\n\n### Gameplay & Systems\n- Re‑enabled unsafe scripting access for clients.\n- Adjusted entity flag toggles to resolve post‑change issues.",
     "new_items": [
       {
-        "text": "Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments.",
+        "text": "Resolved tiger AI charging indefinitely at the base of vine trees.",
         "commit_ids": [
-          615571
+          615581
         ],
-        "section": "Monuments"
+        "section": "NPC & AI"
       }
     ],
     "new_relevant_count": 1,
-    "new_summary": "- Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments."
+    "new_summary": "- Resolved tiger AI charging indefinitely at the base of vine trees."
   },
   "2026-08-18": {
     "commit_count": 144,
