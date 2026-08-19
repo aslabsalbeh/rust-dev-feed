@@ -1,17 +1,45 @@
 {
   "2026-08-19": {
-    "commit_count": 49,
-    "relevant_commit_count": 27,
-    "relevant_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522",
-    "new_baseline_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522",
+    "commit_count": 70,
+    "relevant_commit_count": 36,
+    "relevant_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571",
+    "new_baseline_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "NPC & AI",
+        "items": [
+          {
+            "text": "Fixed navmesh edge detection, prevented AI from favoring wall‑adjacent covers, stopped AI getting stuck when navmesh tiles rebuild, and exposed polyrefs for debugging.",
+            "commit_ids": [
+              615466
+            ]
+          }
+        ]
+      },
+      {
         "title": "Animals",
         "items": [
           {
-            "text": "Animal fences and gates now support socket placement for easier construction.",
+            "text": "Livestock now retain parent information and a new CompletePregnancy console variable aids pregnancy debugging.",
+            "commit_ids": [
+              615372
+            ]
+          },
+          {
+            "text": "Infant animals stay close to their mothers, preventing them from wandering off.",
+            "commit_ids": [
+              615374
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Structures",
+        "items": [
+          {
+            "text": "Added placement sockets to animal fences and gates, making building interactions easier.",
             "commit_ids": [
               615402
             ]
@@ -19,103 +47,29 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Monuments",
         "items": [
           {
-            "text": "Boat UI now shows fuel level and engine start/stop controls only to the driver, matching other vehicle interfaces.",
+            "text": "Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments.",
             "commit_ids": [
-              615467
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Monuments & World",
-        "items": [
-          {
-            "text": "Fixed mesh issues for player‑maintained monument blockers.",
-            "commit_ids": [
-              615464
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items & Weapons",
-        "items": [
-          {
-            "text": "Enabled read/write access on primitive lootbox gibs, allowing proper loot interactions.",
-            "commit_ids": [
-              615397
-            ]
-          },
-          {
-            "text": "Implemented object pooling for thrown darts, improving performance and consistency.",
-            "commit_ids": [
-              615498
-            ]
-          },
-          {
-            "text": "Glass AK ammo now hides bullet models when ammo count reaches zero.",
-            "commit_ids": [
-              615491
-            ]
-          },
-          {
-            "text": "Reduced wooden loot crate gib count from 90 to 22 and updated prefab settings, cutting visual clutter and boosting performance.",
-            "commit_ids": [
-              615520
-            ]
-          },
-          {
-            "text": "Added third‑person drop and pickup animations for the salvaged hammer, ensuring correct animation overrides when equipped or unequipped.",
-            "commit_ids": [
-              615432
+              615571
             ]
           }
         ]
       }
     ],
-    "summary": "### Animals\n- Animal fences and gates now support socket placement for easier construction.\n\n### Vehicles\n- Boat UI now shows fuel level and engine start/stop controls only to the driver, matching other vehicle interfaces.\n\n### Monuments & World\n- Fixed mesh issues for player‑maintained monument blockers.\n\n### Items & Weapons\n- Enabled read/write access on primitive lootbox gibs, allowing proper loot interactions.\n- Implemented object pooling for thrown darts, improving performance and consistency.\n- Glass AK ammo now hides bullet models when ammo count reaches zero.\n- Reduced wooden loot crate gib count from 90 to 22 and updated prefab settings, cutting visual clutter and boosting performance.\n- Added third‑person drop and pickup animations for the salvaged hammer, ensuring correct animation overrides when equipped or unequipped.",
+    "summary": "### NPC & AI\n- Fixed navmesh edge detection, prevented AI from favoring wall‑adjacent covers, stopped AI getting stuck when navmesh tiles rebuild, and exposed polyrefs for debugging.\n\n### Animals\n- Livestock now retain parent information and a new CompletePregnancy console variable aids pregnancy debugging.\n- Infant animals stay close to their mothers, preventing them from wandering off.\n\n### Vehicles & Structures\n- Added placement sockets to animal fences and gates, making building interactions easier.\n\n### Monuments\n- Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments.",
     "new_items": [
       {
-        "text": "Boat UI now shows fuel level and engine start/stop controls only to the driver, matching other vehicle interfaces.",
+        "text": "Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments.",
         "commit_ids": [
-          615467
+          615571
         ],
-        "section": "Vehicles"
-      },
-      {
-        "text": "Fixed mesh issues for player‑maintained monument blockers.",
-        "commit_ids": [
-          615464
-        ],
-        "section": "Monuments & World"
-      },
-      {
-        "text": "Implemented object pooling for thrown darts, improving performance and consistency.",
-        "commit_ids": [
-          615498
-        ],
-        "section": "Items & Weapons"
-      },
-      {
-        "text": "Glass AK ammo now hides bullet models when ammo count reaches zero.",
-        "commit_ids": [
-          615491
-        ],
-        "section": "Items & Weapons"
-      },
-      {
-        "text": "Reduced wooden loot crate gib count from 90 to 22 and updated prefab settings, cutting visual clutter and boosting performance.",
-        "commit_ids": [
-          615520
-        ],
-        "section": "Items & Weapons"
+        "section": "Monuments"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Boat UI now shows fuel level and engine start/stop controls only to the driver, matching other vehicle interfaces.\n- Fixed mesh issues for player‑maintained monument blockers.\n- Implemented object pooling for thrown darts, improving performance and consistency.\n- Glass AK ammo now hides bullet models when ammo count reaches zero.\n- Reduced wooden loot crate gib count from 90 to 22 and updated prefab settings, cutting visual clutter and boosting performance."
+    "new_relevant_count": 1,
+    "new_summary": "- Updated monument avoidance logic to use the PreventBuildingMonumentTag registry instead of expanding bounds, enhancing building placement near monuments."
   },
   "2026-08-18": {
     "commit_count": 144,

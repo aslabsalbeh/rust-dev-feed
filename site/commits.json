@@ -1,5 +1,173 @@
 [
   {
+    "id": 615571,
+    "branch": "main/wtp_maintainables_rework/waterpipe_spawning_rework",
+    "changeset": "161464",
+    "created": "2026-08-19T17:57:42",
+    "message": "switch monument avoidance to use PreventBuildingMonumentTag static registry instead of using monuments Bounds * 2",
+    "author": "ElliotH"
+  },
+  {
+    "id": 615567,
+    "branch": "main/vehicle_pooling",
+    "changeset": "161462",
+    "created": "2026-08-19T17:38:19",
+    "message": "Buildfix: wrap Ballista private members in relevant mode guards\r\nTests: ran compile test",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615566,
+    "branch": "main/wtp_maintainables_rework/waterpipe_spawning_rework",
+    "changeset": "161461",
+    "created": "2026-08-19T17:36:33",
+    "message": "cleanup and set values to palce pipes closer together, still only 20 on 4k map",
+    "author": "ElliotH"
+  },
+  {
+    "id": 615565,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161460",
+    "created": "2026-08-19T17:35:58",
+    "message": "Use dtCorridor for path following, fix some cases where agents get wedged in a navmesh corner while steering",
+    "author": "Maverick"
+  },
+  {
+    "id": 615564,
+    "branch": "main/vehicle_pooling",
+    "changeset": "161459",
+    "created": "2026-08-19T17:31:31",
+    "message": "Possibly fix a ModularCar.DoDecayDamage server error caused by vehicle pooling",
+    "author": "cipeaX"
+  },
+  {
+    "id": 615559,
+    "branch": "main/weapon_refresh_flashlight",
+    "changeset": "161458",
+    "created": "2026-08-19T17:16:06",
+    "message": "Deleted old materials/model/rig/anim files\r\n- Moved materials/model/rig/anim files to the original folder\r\n- Deleted 'New' folder\r\n- Deleted erroneous vm_flashlight prefab",
+    "author": "Alex Webster"
+  },
+  {
+    "id": 615557,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161456",
+    "created": "2026-08-19T17:11:10",
+    "message": "Update: grab binaries from the merged PR\r\n- addesses review feedback, functionality is same\r\nTests: ran unit tests on Win",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615554,
+    "branch": "main/vehicle_pooling",
+    "changeset": "161453",
+    "created": "2026-08-19T17:06:20",
+    "message": "a lot more resets for vehicles, \r\nundo a bunch of generic animator resets for poolables(its way easier to just reset parameters inside of individual scripts. \r\nadd automated pooling tests for all vehicles (spawn -> mount -> move -> respawn a couple of times -> validate its clean back in the pool)",
+    "author": "octo"
+  },
+  {
+    "id": 615551,
+    "branch": "main/weapon_refresh_flashlight",
+    "changeset": "161452",
+    "created": "2026-08-19T17:01:05",
+    "message": "worldmodel and static prefabs updated with new model",
+    "author": "Alex Webster"
+  },
+  {
+    "id": 615545,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161451",
+    "created": "2026-08-19T16:33:08",
+    "message": "Update: mark UseMultithreadedScripting explicitly defaulted to enabled\r\nIt kept disabling it despite underlying var being enabled\r\nTests: booted into craggy, looked at var state in console",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615542,
+    "branch": "main/wtp_maintainables_rework/waterpipe_spawning_rework",
+    "changeset": "161450",
+    "created": "2026-08-19T16:25:53",
+    "message": "initial pass at reworking how pipes spawn along roads",
+    "author": "ElliotH"
+  },
+  {
+    "id": 615541,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161449",
+    "created": "2026-08-19T16:23:37",
+    "message": "Update: codegen\r\nTests: none",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615540,
+    "branch": "main/underground_train_network_update",
+    "changeset": "161448",
+    "created": "2026-08-19T16:21:31",
+    "message": "WIP on large randomised rooms for train tunnels - control room and boiler room so far. Added placeholder blockouts for specific, bespoke props we'll need. Exploring look dev and room layout. Updated manifest",
+    "author": "hannah.watts"
+  },
+  {
+    "id": 615539,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161447",
+    "created": "2026-08-19T16:20:26",
+    "message": "Clean: unify style, add comments\r\nTests: none, trivial changes",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615537,
+    "branch": "main/launchsiren",
+    "changeset": "161445",
+    "created": "2026-08-19T16:17:18",
+    "message": "Fixes",
+    "author": "Adam W"
+  },
+  {
+    "id": 615536,
+    "branch": "main/Livestock_animals",
+    "changeset": "161444",
+    "created": "2026-08-19T16:11:30",
+    "message": "Imported new sheep lod to help with LOD issue. Updated prefab to help with LOD issue",
+    "author": "Toffer"
+  },
+  {
+    "id": 615535,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161443",
+    "created": "2026-08-19T16:10:24",
+    "message": "Clean: missed meta file deletion\r\nTests: none, trivial change",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615534,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161442",
+    "created": "2026-08-19T16:10:02",
+    "message": "Update: move UnsafeScriptingAccess to Facepunch.Unity\r\n- add unit tests\r\n- delete old TLStest and it's scene\r\nTests: ran unit tests",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615531,
+    "branch": "main/character_customisation",
+    "changeset": "161441",
+    "created": "2026-08-19T15:58:06",
+    "message": "Tiles setup",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 615526,
+    "branch": "main/launchsiren",
+    "changeset": "161440",
+    "created": "2026-08-19T15:22:43",
+    "message": "Code support for siren light.\r\nHook up to control computer in the launch site scene/prefab.\r\nS2P launch site",
+    "author": "Adam W"
+  },
+  {
+    "id": 615524,
+    "branch": "main/glass_ar",
+    "changeset": "161438",
+    "created": "2026-08-19T15:10:47",
+    "message": "icon transparency tweaks",
+    "author": "matt.i"
+  },
+  {
     "id": 615522,
     "branch": "main/glass_ar",
     "changeset": "161437",
