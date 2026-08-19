@@ -9,6 +9,10 @@ from zoneinfo import ZoneInfo
 import requests
 
 
+# ============================================================
+# FILES / SETTINGS
+# ============================================================
+
 COMMITS_FILE = Path("site/commits.json")
 SUMMARY_FILE = Path("site/summaries.json")
 
@@ -20,7 +24,10 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OPENROUTER_MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-PROMPT_VERSION = "player-relevance-v3-new3h"
+# Change this whenever the summary/filter structure changes.
+# This forces one fresh regeneration even when commit IDs
+# themselves have not changed.
+PROMPT_VERSION = "structured-read-state-v1"
 
 
 BAD_MARKERS = (
@@ -32,7 +39,12 @@ BAD_MARKERS = (
 )
 
 
+# ============================================================
+# PLAYER RELEVANCE FILTER
+# ============================================================
+
 HIGH_VALUE_TERMS = (
+    # Bugs / broken behaviour
     "fix",
     "fixed",
     "bug",
@@ -55,6 +67,8 @@ HIGH_VALUE_TERMS = (
     "disconnect",
     "desync",
     "exploit",
+
+    # Gameplay
     "damage",
     "healing",
     "health",
@@ -73,6 +87,8 @@ HIGH_VALUE_TERMS = (
     "mountable",
     "mount",
     "vehicle",
+
+    # NPCs / animals
     "scientist",
     "npc",
     "animal",
@@ -84,6 +100,8 @@ HIGH_VALUE_TERMS = (
     "dog",
     "bear",
     "wolf",
+
+    # World / monuments
     "monument",
     "underwater lab",
     "underwater labs",
@@ -91,9 +109,12 @@ HIGH_VALUE_TERMS = (
     "cargo",
     "oilrig",
     "oil rig",
+    "military base",
     "gas station",
     "nexus",
     "map",
+
+    # Player-facing items/features
     "bandage",
     "flashlight",
     "catapult",
@@ -196,6 +217,10 @@ VISIBLE_VISUAL_TERMS = (
 )
 
 
+# ============================================================
+# GENERAL HELPERS
+# ============================================================
+
 def load_json(path, default):
     if not path.exists():
         return default
@@ -210,9 +235,13 @@ def load_json(path, default):
 def commit_local_date(commit):
     created_utc = datetime.fromisoformat(
         commit["created"]
-    ).replace(tzinfo=timezone.utc)
+    ).replace(
+        tzinfo=timezone.utc
+    )
 
-    created_local = created_utc.astimezone(LOCAL_TZ)
+    created_local = created_utc.astimezone(
+        LOCAL_TZ
+    )
 
     return created_local.date().isoformat()
 
@@ -245,9 +274,9 @@ def parse_signature(signature):
         return set()
 
     return {
-        item
-        for item in signature.split(",")
-        if item
+        value
+        for value in signature.split(",")
+        if value
     }
 
 
@@ -262,6 +291,10 @@ def is_bad_summary(text):
         for marker in BAD_MARKERS
     )
 
+
+# ============================================================
+# PLAYER RELEVANCE SCORING
+# ============================================================
 
 def commit_search_text(commit):
     return (
@@ -282,24 +315,34 @@ def player_relevance_score(commit):
 
     score = 0
 
+    # Bug/glitch fixes get strong priority.
     if contains_any(text, BUG_TERMS):
         score += 6
 
+    # Player-facing subject matter.
     high_matches = sum(
         1
         for term in HIGH_VALUE_TERMS
         if term in text
     )
 
-    score += min(high_matches, 4) * 2
+    score += min(
+        high_matches,
+        4,
+    ) * 2
 
+    # New player-facing content.
     if re.search(
         r"\b(add|added|new|introduce|introduced)\b",
         text,
     ):
-        if contains_any(text, HIGH_VALUE_TERMS):
+        if contains_any(
+            text,
+            HIGH_VALUE_TERMS,
+        ):
             score += 3
 
+    # Gameplay/balance behaviour.
     if contains_any(
         text,
         (
@@ -316,30 +359,50 @@ def player_relevance_score(commit):
     ):
         score += 3
 
-    if contains_any(text, VISIBLE_VISUAL_TERMS):
+    # Visible changes receive a little weight,
+    # but are much weaker than gameplay fixes.
+    if contains_any(
+        text,
+        VISIBLE_VISUAL_TERMS,
+    ):
         score += 1
 
-    if contains_any(text, TECHNICAL_TERMS):
+    # Internal development work.
+    if contains_any(
+        text,
+        TECHNICAL_TERMS,
+    ):
         score -= 5
 
-    if contains_any(text, LOW_VALUE_VISUAL_TERMS):
+    # Rendering/asset trivia.
+    if contains_any(
+        text,
+        LOW_VALUE_VISUAL_TERMS,
+    ):
         score -= 5
 
+    # Tests normally aren't player news.
     if re.search(
         r"\b(test|tests|testing)\b",
         text,
     ):
         score -= 4
 
+    # Cleanup/refactoring.
     if re.search(
         r"\b(cleanup|refactor|rename|renamed)\b",
         text,
     ):
         score -= 4
 
+    # Concrete player-facing bugs should survive even if
+    # the commit also contains technical language.
     if (
         contains_any(text, BUG_TERMS)
-        and contains_any(text, HIGH_VALUE_TERMS)
+        and contains_any(
+            text,
+            HIGH_VALUE_TERMS,
+        )
     ):
         score += 5
 
@@ -353,8 +416,13 @@ def filter_player_relevant_commits(
     scored = []
 
     for commit in commits:
-        score = player_relevance_score(commit)
-        scored.append((score, commit))
+        score = player_relevance_score(
+            commit
+        )
+
+        scored.append(
+            (score, commit)
+        )
 
     scored.sort(
         key=lambda item: item[0],
@@ -377,7 +445,10 @@ def filter_player_relevant_commits(
         for score, commit in scored:
             if score < 2:
                 message = (
-                    commit.get("message", "")
+                    commit.get(
+                        "message",
+                        "",
+                    )
                     .replace("\n", " ")
                     .replace("\r", " ")
                 )
@@ -390,18 +461,26 @@ def filter_player_relevant_commits(
     return relevant
 
 
-def build_full_prompt(day, commits):
-    commit_text = []
+# ============================================================
+# AI PROMPT
+# ============================================================
+
+def build_prompt(day, commits):
+    commit_blocks = []
 
     for commit in commits:
-        branch = commit.get("branch", "")
+        branch = commit.get(
+            "branch",
+            "",
+        )
 
         if branch.startswith("main/"):
             branch = branch[5:]
 
-        commit_text.append(
+        commit_blocks.append(
             "\n".join(
                 [
+                    f"Commit ID: {commit['id']}",
                     f"Branch context: {branch}",
                     f"Message: {commit.get('message', '')}",
                 ]
@@ -413,9 +492,11 @@ Create a concise daily Rust development digest for RUST PLAYERS.
 
 These are official Facepunch development commits from {day}.
 
-COMMITS:
+Each source commit has a numeric Commit ID.
 
-{chr(10).join(commit_text)}
+SOURCE COMMITS:
+
+{chr(10).join(commit_blocks)}
 
 The digest answers:
 
@@ -429,7 +510,7 @@ PRIORITIZE:
 - Gameplay mechanic changes
 - Balance changes
 - Weapons, equipment, items and deployables
-- NPC and animal behavior
+- NPC and animal behaviour
 - Monuments and world changes
 - Vehicles
 - Loot and resource changes
@@ -472,73 +553,269 @@ rendering or technical information.
 Development commits may describe unreleased work.
 Clearly label work-in-progress or upcoming features when needed.
 
-OUTPUT:
-- Aim for roughly 8 to 15 worthwhile bullets.
+CRITICAL SOURCE-ID RULES:
+
+Every output bullet MUST include the exact source Commit IDs that support it.
+
+If several commits describe the same underlying change, combine them
+into one bullet and include all relevant Commit IDs.
+
+Never invent a Commit ID.
+
+Only use Commit IDs from SOURCE COMMITS above.
+
+Do not include a commit ID just because it is about a similar topic.
+The ID must genuinely support that exact bullet.
+
+A source commit should normally appear in only one output bullet.
+
+It is acceptable to omit source commits that are not important enough
+for the player digest.
+
+OUTPUT FORMAT:
+
+Return ONLY valid JSON.
+
+Do not return Markdown.
+Do not return a code fence.
+Do not return commentary before or after the JSON.
+
+Use exactly this structure:
+
+{{
+  "sections": [
+    {{
+      "title": "NPC & AI",
+      "items": [
+        {{
+          "text": "Fixed scientists not spawning in Underwater Labs and Cargo Ship.",
+          "commit_ids": [615201, 615204]
+        }}
+      ]
+    }}
+  ]
+}}
+
+OUTPUT RULES:
+- Aim for roughly 8 to 15 worthwhile bullets total.
 - Fewer is fine when little meaningful happened.
 - Use 2 to 6 short topic sections.
 - Put the most important sections first.
-- Use Markdown headings beginning with ###.
-- Use "-" bullets.
-- Keep bullets concise.
+- Keep bullet text concise.
 - Combine duplicate commits.
 - Preserve useful item, NPC, monument and gameplay names.
 - Preserve concrete bug symptoms.
-- Do not mention developers, commit IDs or branch names.
+- Do not mention developer names in text.
+- Do not mention commit IDs inside bullet text.
+- Do not mention branch names in bullet text.
 - Do not speculate.
 - Do not include a title or date.
-- Start directly with the first section.
-- Return ONLY the finished digest.
+- Return ONLY the JSON object.
 """
 
 
-def build_new_prompt(commits):
-    commit_text = []
+# ============================================================
+# STRUCTURED AI RESPONSE PARSING
+# ============================================================
 
-    for commit in commits:
-        branch = commit.get("branch", "")
+def strip_code_fence(text):
+    text = text.strip()
 
-        if branch.startswith("main/"):
-            branch = branch[5:]
+    if text.startswith("```"):
+        lines = text.splitlines()
 
-        commit_text.append(
-            "\n".join(
-                [
-                    f"Branch context: {branch}",
-                    f"Message: {commit.get('message', '')}",
-                ]
+        if lines:
+            lines = lines[1:]
+
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+
+        text = "\n".join(lines).strip()
+
+    return text
+
+
+def parse_structured_summary(
+    text,
+    allowed_commit_ids,
+):
+    text = strip_code_fence(text)
+
+    try:
+        data = json.loads(text)
+    except Exception as error:
+        print(
+            f"Could not parse AI JSON: {error}"
+        )
+        return None
+
+    raw_sections = data.get(
+        "sections"
+    )
+
+    if not isinstance(
+        raw_sections,
+        list,
+    ):
+        return None
+
+    sections = []
+
+    for raw_section in raw_sections:
+        if not isinstance(
+            raw_section,
+            dict,
+        ):
+            continue
+
+        title = str(
+            raw_section.get(
+                "title",
+                "",
             )
+        ).strip()
+
+        raw_items = raw_section.get(
+            "items",
+            [],
         )
 
-    return f"""
-Summarize ONLY these newly-added Rust development commits for players.
+        if (
+            not title
+            or not isinstance(
+                raw_items,
+                list,
+            )
+        ):
+            continue
 
-These commits appeared since the previous feed update.
+        items = []
 
-NEW COMMITS:
+        for raw_item in raw_items:
+            if not isinstance(
+                raw_item,
+                dict,
+            ):
+                continue
 
-{chr(10).join(commit_text)}
+            item_text = str(
+                raw_item.get(
+                    "text",
+                    "",
+                )
+            ).strip()
 
-This will appear under:
+            raw_ids = raw_item.get(
+                "commit_ids",
+                [],
+            )
 
-NEW — LAST 3 HRS
+            if (
+                not item_text
+                or not isinstance(
+                    raw_ids,
+                    list,
+                )
+            ):
+                continue
 
-Rules:
-- Include only genuinely player-relevant information.
-- Preserve concrete bug symptoms.
-- Prefer gameplay fixes, bugs, content, NPCs, animals, weapons,
-  vehicles, monuments, items and balance changes.
-- Exclude technical implementation details.
-- Exclude tests, refactors, rendering trivia, asset optimization,
-  debugging and developer tooling.
-- Do not mention commit IDs, developers or branch names.
-- Combine commits that describe the same underlying change.
-- Do not create sections or headings.
-- Return ONLY a short Markdown bullet list.
-- Use "-" for every bullet.
-- 1 to 5 bullets is ideal.
-- Do not add filler just to reach a number.
-"""
+            valid_ids = []
 
+            for raw_id in raw_ids:
+                try:
+                    commit_id = str(
+                        int(raw_id)
+                    )
+                except Exception:
+                    continue
+
+                if (
+                    commit_id
+                    in allowed_commit_ids
+                    and commit_id
+                    not in valid_ids
+                ):
+                    valid_ids.append(
+                        commit_id
+                    )
+
+            # Every bullet must map to at least one real source commit.
+            if not valid_ids:
+                print(
+                    "Dropped AI bullet with no "
+                    "valid source commit IDs: "
+                    f"{item_text[:80]}"
+                )
+                continue
+
+            items.append(
+                {
+                    "text": item_text,
+                    "commit_ids": [
+                        int(value)
+                        for value in valid_ids
+                    ],
+                }
+            )
+
+        if items:
+            sections.append(
+                {
+                    "title": title,
+                    "items": items,
+                }
+            )
+
+    if not sections:
+        return None
+
+    return sections
+
+
+# ============================================================
+# MARKDOWN BACKWARD-COMPATIBILITY
+# ============================================================
+
+def sections_to_markdown(sections):
+    """
+    Keep generating the old Markdown summary as well.
+
+    This means the existing RSS generator continues working
+    until we upgrade it to use structured section metadata.
+    """
+
+    parts = []
+
+    for section in sections:
+        parts.append(
+            f"### {section['title']}"
+        )
+
+        for item in section["items"]:
+            parts.append(
+                f"- {item['text']}"
+            )
+
+        parts.append("")
+
+    return "\n".join(
+        parts
+    ).strip()
+
+
+def items_to_markdown(items):
+    if not items:
+        return ""
+
+    return "\n".join(
+        f"- {item['text']}"
+        for item in items
+    )
+
+
+# ============================================================
+# AI PROVIDERS
+# ============================================================
 
 def call_chat_api(
     url,
@@ -546,13 +823,18 @@ def call_chat_api(
     model,
     prompt,
     provider_name,
+    allowed_commit_ids,
 ):
     try:
         response = requests.post(
             url,
             headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
+                "Authorization": (
+                    f"Bearer {api_key}"
+                ),
+                "Content-Type": (
+                    "application/json"
+                ),
             },
             json={
                 "model": model,
@@ -569,7 +851,8 @@ def call_chat_api(
 
     except requests.RequestException as error:
         print(
-            f"{provider_name} network error: {error}"
+            f"{provider_name} network error: "
+            f"{error}"
         )
         return None
 
@@ -591,14 +874,15 @@ def call_chat_api(
         data = response.json()
 
         text = (
-            data["choices"][0]["message"]["content"]
+            data["choices"][0]
+            ["message"]["content"]
             .strip()
         )
 
     except Exception:
         print(
             f"{provider_name} returned "
-            "an invalid response."
+            "an invalid API response."
         )
         return None
 
@@ -609,56 +893,146 @@ def call_chat_api(
         )
         return None
 
-    return text
+    sections = parse_structured_summary(
+        text,
+        allowed_commit_ids,
+    )
+
+    if sections is None:
+        print(
+            f"{provider_name} returned "
+            "invalid structured summary JSON."
+        )
+        return None
+
+    return sections
 
 
 def call_ai(
     groq_key,
     openrouter_key,
-    prompt,
-    label,
+    day,
+    commits,
 ):
+    prompt = build_prompt(
+        day,
+        commits,
+    )
+
+    allowed_ids = commit_ids(
+        commits
+    )
+
     if groq_key:
         print(
-            f"Trying Groq for {label}..."
+            f"Trying Groq for {day}..."
         )
 
-        summary = call_chat_api(
+        sections = call_chat_api(
             GROQ_URL,
             groq_key,
             GROQ_MODEL,
             prompt,
             "Groq",
+            allowed_ids,
         )
 
-        if summary is not None:
+        if sections is not None:
             print(
-                f"Groq succeeded for {label}."
+                f"Groq succeeded for {day}."
             )
-            return summary
+
+            return sections
 
     if openrouter_key:
         print(
             f"Trying OpenRouter fallback "
-            f"for {label}..."
+            f"for {day}..."
         )
 
-        summary = call_chat_api(
+        sections = call_chat_api(
             OPENROUTER_URL,
             openrouter_key,
             OPENROUTER_MODEL,
             prompt,
             "OpenRouter",
+            allowed_ids,
         )
 
-        if summary is not None:
+        if sections is not None:
             print(
-                f"OpenRouter succeeded for {label}."
+                f"OpenRouter succeeded "
+                f"for {day}."
             )
-            return summary
+
+            return sections
 
     return None
 
+
+# ============================================================
+# NEW — LAST 3 HRS
+# ============================================================
+
+def find_new_items(
+    sections,
+    new_commit_ids,
+):
+    """
+    A summary item appears in NEW when at least one of its
+    underlying source commit IDs arrived since the previous
+    successful summary update.
+
+    This means a bullet combining an old commit and a new
+    commit still appears in NEW, which is exactly what we want.
+    """
+
+    if not new_commit_ids:
+        return []
+
+    new_items = []
+
+    for section in sections:
+        for item in section["items"]:
+            item_ids = {
+                str(value)
+                for value
+                in item["commit_ids"]
+            }
+
+            if (
+                item_ids
+                & new_commit_ids
+            ):
+                new_items.append(
+                    {
+                        "text": item["text"],
+                        "commit_ids": item["commit_ids"],
+                        "section": section["title"],
+                    }
+                )
+
+    return new_items
+
+
+def represented_commit_ids(items):
+    represented = set()
+
+    for item in items:
+        for commit_id in item.get(
+            "commit_ids",
+            [],
+        ):
+            represented.add(
+                str(commit_id)
+            )
+
+    return represented
+
+
+# ============================================================
+# MAIN
+# ============================================================
 
 def main():
     groq_key = os.environ.get(
@@ -669,7 +1043,10 @@ def main():
         "OPENROUTER_API_KEY"
     )
 
-    if not groq_key and not openrouter_key:
+    if (
+        not groq_key
+        and not openrouter_key
+    ):
         raise RuntimeError(
             "Neither GROQ_API_KEY nor "
             "OPENROUTER_API_KEY is set."
@@ -685,7 +1062,9 @@ def main():
         {},
     )
 
-    grouped = group_by_day(commits)
+    grouped = group_by_day(
+        commits
+    )
 
     today = datetime.now(
         LOCAL_TZ
@@ -704,57 +1083,107 @@ def main():
         relevant_commits = (
             filter_player_relevant_commits(
                 raw_commits,
-                log_filtered=(day == today),
-            )
-        )
-
-        relevant_signature = commit_signature(
-            relevant_commits
-        )
-
-        old_entry = old_summaries.get(day)
-
-        old_is_good = (
-            old_entry
-            and not is_bad_summary(
-                old_entry.get(
-                    "summary",
-                    "",
-                )
-            )
-        )
-
-        old_signature = (
-            old_entry.get(
-                "relevant_signature",
-                old_entry.get(
-                    "commit_signature",
-                    "",
+                log_filtered=(
+                    day == today
                 ),
             )
-            if old_entry
-            else ""
         )
 
-        old_ids = parse_signature(
-            old_signature
+        current_signature = (
+            commit_signature(
+                relevant_commits
+            )
         )
 
         current_ids = commit_ids(
             relevant_commits
         )
 
-        new_ids = (
-            current_ids - old_ids
-            if old_entry
-            else set()
+        old_entry = old_summaries.get(
+            day
         )
 
-        newly_relevant_commits = [
-            commit
-            for commit in relevant_commits
-            if str(commit["id"]) in new_ids
-        ]
+        # ----------------------------------------------------
+        # PREVIOUS FULL-SUMMARY STATE
+        # ----------------------------------------------------
+
+        if old_entry:
+            old_full_signature = (
+                old_entry.get(
+                    "relevant_signature",
+                    old_entry.get(
+                        "commit_signature",
+                        "",
+                    ),
+                )
+            )
+        else:
+            old_full_signature = ""
+
+        old_full_ids = parse_signature(
+            old_full_signature
+        )
+
+        # NEW tracking has its own baseline.
+        #
+        # Older versions won't have this key, so fall back
+        # to the previous summary signature.
+        if old_entry:
+            old_new_baseline = (
+                old_entry.get(
+                    "new_baseline_signature",
+                    old_full_signature,
+                )
+            )
+        else:
+            old_new_baseline = (
+                current_signature
+            )
+
+        old_new_ids = parse_signature(
+            old_new_baseline
+        )
+
+        newly_added_ids = (
+            current_ids
+            - old_new_ids
+        )
+
+        # ----------------------------------------------------
+        # CACHE VALIDITY
+        # ----------------------------------------------------
+
+        old_summary_text = (
+            old_entry.get(
+                "summary",
+                "",
+            )
+            if old_entry
+            else ""
+        )
+
+        old_is_good = (
+            old_entry
+            and not is_bad_summary(
+                old_summary_text
+            )
+        )
+
+        old_sections = (
+            old_entry.get(
+                "sections"
+            )
+            if old_entry
+            else None
+        )
+
+        old_has_structured_sections = (
+            isinstance(
+                old_sections,
+                list,
+            )
+            and len(old_sections) > 0
+        )
 
         prompt_matches = (
             old_entry
@@ -764,118 +1193,291 @@ def main():
         )
 
         relevant_changed = (
-            relevant_signature
-            != old_signature
+            current_signature
+            != old_full_signature
         )
 
-        # ------------------------------------------------------------
-        # FULL DAILY SUMMARY
-        # ------------------------------------------------------------
+        needs_refresh = (
+            not old_is_good
+            or not old_has_structured_sections
+            or not prompt_matches
+            or relevant_changed
+        )
+
+        # ----------------------------------------------------
+        # GENERATE / REUSE FULL SUMMARY
+        # ----------------------------------------------------
+
+        generation_succeeded = False
 
         if (
-            old_is_good
-            and not relevant_changed
-            and prompt_matches
+            not needs_refresh
+            and old_entry
         ):
-            full_summary = old_entry["summary"]
+            sections = old_sections
 
-            print(
-                f"No player-relevant changes for {day}; "
-                "reusing full daily summary."
+            summary_markdown = (
+                old_entry["summary"]
             )
 
+            full_signature_out = (
+                old_full_signature
+            )
+
+            print(
+                f"No player-relevant changes for "
+                f"{day}; reusing structured "
+                "daily summary."
+            )
+
+        elif not relevant_commits:
+            sections = []
+
+            summary_markdown = (
+                "No significant player-facing "
+                "updates."
+            )
+
+            full_signature_out = (
+                current_signature
+            )
+
+            generation_succeeded = True
+
         else:
-            if not relevant_commits:
-                full_summary = (
-                    old_entry.get("summary")
-                    if old_is_good
-                    else "No significant player-facing updates."
+            if relevant_changed:
+                reason = (
+                    "player-relevant commits changed"
+                )
+            elif not prompt_matches:
+                reason = (
+                    "summary structure changed"
+                )
+            elif not old_has_structured_sections:
+                reason = (
+                    "structured commit metadata missing"
+                )
+            else:
+                reason = (
+                    "cached summary invalid"
+                )
+
+            print(
+                f"Refreshing {day} summary "
+                f"({reason}); "
+                f"{len(relevant_commits)} "
+                "relevant commits."
+            )
+
+            generated_sections = call_ai(
+                groq_key,
+                openrouter_key,
+                day,
+                relevant_commits,
+            )
+
+            if generated_sections is not None:
+                sections = generated_sections
+
+                summary_markdown = (
+                    sections_to_markdown(
+                        sections
+                    )
+                )
+
+                full_signature_out = (
+                    current_signature
+                )
+
+                generation_succeeded = True
+
+                print(
+                    f"Saved new structured "
+                    f"summary for {day}."
+                )
+
+            elif old_is_good:
+                # Keep the previous digest if AI fails.
+                sections = (
+                    old_sections
+                    if old_has_structured_sections
+                    else []
+                )
+
+                summary_markdown = (
+                    old_summary_text
+                )
+
+                full_signature_out = (
+                    old_full_signature
+                )
+
+                print(
+                    f"Preserved previous good "
+                    f"summary for {day}."
                 )
 
             else:
+                sections = []
+
+                summary_markdown = (
+                    "AI summary temporarily "
+                    "unavailable. "
+                    "The development commit archive "
+                    "was updated successfully."
+                )
+
+                full_signature_out = ""
+
                 print(
-                    f"Refreshing full summary for {day}; "
-                    f"{len(relevant_commits)} relevant commits."
+                    f"No previous valid summary "
+                    f"available for {day}."
                 )
 
-                full_summary = call_ai(
-                    groq_key,
-                    openrouter_key,
-                    build_full_prompt(
-                        day,
-                        relevant_commits,
-                    ),
-                    f"{day} full digest",
-                )
+        # ----------------------------------------------------
+        # BUILD NEW — LAST 3 HRS
+        # ----------------------------------------------------
 
-                if full_summary is None:
-                    if old_is_good:
-                        full_summary = old_entry["summary"]
-                    else:
-                        full_summary = (
-                            "AI summary temporarily unavailable. "
-                            "The development commit archive "
-                            "was updated successfully."
-                        )
-
-        # ------------------------------------------------------------
-        # NEW — LAST 3 HRS
-        # ------------------------------------------------------------
-
-        new_summary = ""
+        new_items = []
+        new_summary_markdown = ""
         new_relevant_count = 0
 
-        # Only the current day gets a NEW section.
         if day == today:
-            if newly_relevant_commits:
+            # Only advance the NEW baseline after a successful
+            # full summary that actually contains the new data.
+            if (
+                generation_succeeded
+                and sections
+            ):
+                new_items = find_new_items(
+                    sections,
+                    newly_added_ids,
+                )
+
+                new_summary_markdown = (
+                    items_to_markdown(
+                        new_items
+                    )
+                )
+
+                represented_new_ids = (
+                    represented_commit_ids(
+                        new_items
+                    )
+                )
+
                 new_relevant_count = len(
-                    newly_relevant_commits
+                    represented_new_ids
+                )
+
+                new_baseline_out = (
+                    current_signature
+                )
+
+                if new_items:
+                    print(
+                        f"NEW — LAST 3 HRS: "
+                        f"{len(new_items)} "
+                        "summary item(s), "
+                        f"{new_relevant_count} "
+                        "source commit(s)."
+                    )
+                else:
+                    print(
+                        "No summarized player-facing "
+                        "items for NEW — LAST 3 HRS."
+                    )
+
+            elif not needs_refresh:
+                # No relevant commits changed during this run.
+                #
+                # The previous NEW block is now older than
+                # the current 3-hour window, so clear it.
+                new_items = []
+                new_summary_markdown = ""
+                new_relevant_count = 0
+
+                new_baseline_out = (
+                    current_signature
                 )
 
                 print(
-                    f"{new_relevant_count} new player-relevant "
-                    f"commit(s) since previous update."
+                    "No new player-relevant commits "
+                    "in this update window."
                 )
-
-                new_summary = call_ai(
-                    groq_key,
-                    openrouter_key,
-                    build_new_prompt(
-                        newly_relevant_commits
-                    ),
-                    f"{day} NEW — LAST 3 HRS",
-                )
-
-                if new_summary is None:
-                    # Better to omit NEW than show stale/incorrect data.
-                    new_summary = ""
-                    new_relevant_count = 0
 
             else:
-                print(
-                    f"No new player-relevant commits "
-                    f"for {day}."
+                # AI refresh failed.
+                #
+                # Keep the OLD baseline so the same newly-added
+                # commits will be retried on the next run.
+                new_baseline_out = (
+                    old_new_baseline
                 )
 
-        summaries[day] = {
-            # Raw development activity count
-            "commit_count": len(raw_commits),
+                print(
+                    "NEW tracking baseline preserved "
+                    "because summary generation failed."
+                )
 
-            # Number that actually passed our relevance filter
+        else:
+            # Historical days never display NEW.
+            new_items = []
+            new_summary_markdown = ""
+            new_relevant_count = 0
+            new_baseline_out = (
+                current_signature
+            )
+
+        # ----------------------------------------------------
+        # SAVE
+        # ----------------------------------------------------
+
+        summaries[day] = {
+            # Total development activity.
+            "commit_count": len(
+                raw_commits
+            ),
+
+            # Commits surviving the deterministic
+            # player-relevance filter.
             "relevant_commit_count": len(
                 relevant_commits
             ),
 
-            # Signature is now based on player-relevant commits.
-            # Trivial commits therefore don't trigger AI unnecessarily.
-            "relevant_signature": relevant_signature,
+            # Stable source commit list represented by
+            # the full day's input.
+            "relevant_signature": (
+                full_signature_out
+            ),
 
-            "prompt_version": PROMPT_VERSION,
-            "summary": full_summary,
+            # Baseline used to calculate NEW on the
+            # next 3-hour update.
+            "new_baseline_signature": (
+                new_baseline_out
+            ),
 
-            # NEW section for the current 3-hour update window
-            "new_relevant_count": new_relevant_count,
-            "new_summary": new_summary,
+            "prompt_version": (
+                PROMPT_VERSION
+            ),
+
+            # NEW structured format.
+            "sections": sections,
+
+            # Backward-compatible Markdown.
+            "summary": summary_markdown,
+
+            # NEW — LAST 3 HRS metadata.
+            "new_items": new_items,
+            "new_relevant_count": (
+                new_relevant_count
+            ),
+
+            # Backward-compatible Markdown for the
+            # existing RSS generator.
+            "new_summary": (
+                new_summary_markdown
+            ),
         }
 
     with open(
