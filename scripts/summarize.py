@@ -28,7 +28,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 CHUNK_SIZE = 25
 
 # Change this whenever the summary logic/prompt structure changes.
-PROMPT_VERSION = "structured-read-state-v2-chunked"
+PROMPT_VERSION = "structured-read-state-v3-chunk-cache"
 
 
 BAD_MARKERS = (
@@ -1082,14 +1082,31 @@ def call_ai(
     openrouter_key,
     day,
     commits,
+    old_chunk_cache=None,
 ):
+    """
+    Generate a structured daily summary.
+
+    For large days, successful chunk summaries are cached in summaries.json.
+    If a later chunk is rate-limited or fails, the next workflow run reuses
+    the completed chunks and retries only the missing chunk(s).
+
+    Returns:
+        (final_sections_or_none, chunk_cache_to_save)
+    """
     allowed_ids = commit_ids(
         commits
     )
 
-    # Small day: one normal request.
+    old_chunk_cache = (
+        old_chunk_cache
+        if isinstance(old_chunk_cache, dict)
+        else {}
+    )
+
+    # Small day: one normal request and no chunk cache is needed.
     if len(commits) <= CHUNK_SIZE:
-        return request_sections(
+        sections = request_sections(
             groq_key,
             openrouter_key,
             build_full_prompt(
@@ -1100,7 +1117,12 @@ def call_ai(
             day,
         )
 
-    # Large day: chunk first.
+        if sections is not None:
+            return sections, {}
+
+        return None, old_chunk_cache
+
+    # Large day: split into deterministic chunks.
     chunks = [
         commits[
             index:index + CHUNK_SIZE
@@ -1118,17 +1140,50 @@ def call_ai(
         f"of up to {CHUNK_SIZE}."
     )
 
+    # Cache keys are based on the exact commit IDs in each chunk.
+    # If the commit set changes later, only chunks with different signatures
+    # need to be regenerated.
+    chunk_cache = dict(
+        old_chunk_cache
+    )
+
+    active_chunk_keys = set()
     chunk_sections = []
 
     for index, chunk in enumerate(
         chunks,
         start=1,
     ):
-        chunk_allowed_ids = (
-            commit_ids(
-                chunk
-            )
+        chunk_allowed_ids = commit_ids(
+            chunk
         )
+
+        chunk_key = commit_signature(
+            chunk
+        )
+
+        active_chunk_keys.add(
+            chunk_key
+        )
+
+        cached_sections = chunk_cache.get(
+            chunk_key
+        )
+
+        if (
+            isinstance(cached_sections, list)
+            and cached_sections
+        ):
+            print(
+                f"Reusing cached chunk "
+                f"{index}/{len(chunks)} "
+                f"({len(chunk)} commits)."
+            )
+
+            chunk_sections.extend(
+                cached_sections
+            )
+            continue
 
         print(
             f"Summarizing chunk "
@@ -1152,15 +1207,40 @@ def call_ai(
 
         if sections is None:
             print(
-                f"Chunk {index} failed."
+                f"Chunk {index} failed. "
+                "Completed chunks will be cached for the next run."
             )
-            return None
+
+            # Remove stale cache entries that no longer correspond to a
+            # current chunk. Keep all successful current chunks.
+            chunk_cache = {
+                key: value
+                for key, value in chunk_cache.items()
+                if key in active_chunk_keys
+                or key in {
+                    commit_signature(item)
+                    for item in chunks[index:]
+                }
+            }
+
+            return None, chunk_cache
+
+        chunk_cache[
+            chunk_key
+        ] = sections
 
         chunk_sections.extend(
             sections
         )
 
-    # Merge the chunk summaries.
+    # At this point every current chunk is available. Discard any stale
+    # cached chunks left over from a previous commit layout.
+    chunk_cache = {
+        key: value
+        for key, value in chunk_cache.items()
+        if key in active_chunk_keys
+    }
+
     print(
         f"Merging {len(chunks)} "
         f"chunk summaries for {day}..."
@@ -1177,7 +1257,16 @@ def call_ai(
         f"{day} final merge",
     )
 
-    return final_sections
+    if final_sections is None:
+        print(
+            "Final merge failed. Cached chunk summaries will be "
+            "reused on the next run."
+        )
+        return None, chunk_cache
+
+    # The final structured summary now exists, so the temporary chunk cache
+    # is no longer needed.
+    return final_sections, {}
 
 
 # ============================================================
@@ -1329,12 +1418,6 @@ def main():
         else:
             old_full_signature = ""
 
-        old_full_ids = (
-            parse_signature(
-                old_full_signature
-            )
-        )
-
         if old_entry:
             old_new_baseline = (
                 old_entry.get(
@@ -1343,21 +1426,27 @@ def main():
                 )
             )
         else:
-            # First structured run:
-            # don't mark the entire existing day as NEW.
+            # First structured run: don't mark the entire existing day NEW.
             old_new_baseline = (
                 current_signature
             )
 
-        old_new_ids = (
-            parse_signature(
-                old_new_baseline
-            )
+        old_new_ids = parse_signature(
+            old_new_baseline
         )
 
         newly_added_ids = (
             current_ids
             - old_new_ids
+        )
+
+        old_chunk_cache = (
+            old_entry.get(
+                "chunk_cache",
+                {},
+            )
+            if old_entry
+            else {}
         )
 
         # ----------------------------------------------------
@@ -1416,6 +1505,7 @@ def main():
         )
 
         generation_succeeded = False
+        chunk_cache_out = old_chunk_cache
 
         # ----------------------------------------------------
         # FULL DAILY SUMMARY
@@ -1434,6 +1524,9 @@ def main():
             full_signature_out = (
                 old_full_signature
             )
+
+            # A completed summary never needs temporary chunks.
+            chunk_cache_out = {}
 
             print(
                 f"No player-relevant changes for "
@@ -1454,6 +1547,7 @@ def main():
             )
 
             generation_succeeded = True
+            chunk_cache_out = {}
 
         else:
             if relevant_changed:
@@ -1480,13 +1574,15 @@ def main():
                 "relevant commits."
             )
 
-            generated_sections = (
-                call_ai(
-                    groq_key,
-                    openrouter_key,
-                    day,
-                    relevant_commits,
-                )
+            (
+                generated_sections,
+                chunk_cache_out,
+            ) = call_ai(
+                groq_key,
+                openrouter_key,
+                day,
+                relevant_commits,
+                old_chunk_cache,
             )
 
             if (
@@ -1527,6 +1623,8 @@ def main():
                     old_summary_text
                 )
 
+                # IMPORTANT: the new commit set has NOT been fully
+                # summarized yet, so keep the last successful signature.
                 full_signature_out = (
                     old_full_signature
                 )
@@ -1589,6 +1687,8 @@ def main():
                     represented_new_ids
                 )
 
+                # Advance NEW only after the complete structured summary
+                # successfully includes the current relevant commit set.
                 new_baseline_out = (
                     current_signature
                 )
@@ -1608,8 +1708,6 @@ def main():
                     )
 
             elif not needs_refresh:
-                # Nothing relevant changed during this
-                # 3-hour update window.
                 new_items = []
                 new_summary_markdown = ""
                 new_relevant_count = 0
@@ -1624,16 +1722,16 @@ def main():
                 )
 
             else:
-                # AI refresh failed.
-                # Keep the previous baseline so the same
-                # new commits are retried next time.
+                # Full structured generation failed. Do NOT advance the
+                # baseline; the same unsummarized commits must remain NEW
+                # candidates on the next retry.
                 new_baseline_out = (
                     old_new_baseline
                 )
 
                 print(
                     "NEW tracking baseline preserved "
-                    "because summary generation failed."
+                    "because full summary generation failed."
                 )
 
         else:
@@ -1641,8 +1739,11 @@ def main():
             new_summary_markdown = ""
             new_relevant_count = 0
 
+            # Historical days do not display NEW. Still keep this aligned
+            # with the last successfully structured full-summary signature,
+            # not with an unsuccessfully attempted newer commit set.
             new_baseline_out = (
-                current_signature
+                full_signature_out
             )
 
         # ----------------------------------------------------
@@ -1668,6 +1769,12 @@ def main():
 
             "prompt_version": (
                 PROMPT_VERSION
+            ),
+
+            # Temporary successful chunk results. This remains populated
+            # only while a large-day generation is incomplete.
+            "chunk_cache": (
+                chunk_cache_out
             ),
 
             # Structured form used for Mark as Read.
