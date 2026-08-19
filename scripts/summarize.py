@@ -24,10 +24,10 @@ GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 OPENROUTER_MODEL = "google/gemma-4-31b-it:free"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-# Change this whenever the summary/filter structure changes.
-# This forces one fresh regeneration even when commit IDs
-# themselves have not changed.
+# Maximum number of relevant source commits sent in one first-pass request.
 CHUNK_SIZE = 25
+
+# Change this whenever the summary logic/prompt structure changes.
 PROMPT_VERSION = "structured-read-state-v2-chunked"
 
 
@@ -316,11 +316,9 @@ def player_relevance_score(commit):
 
     score = 0
 
-    # Bug/glitch fixes get strong priority.
     if contains_any(text, BUG_TERMS):
         score += 6
 
-    # Player-facing subject matter.
     high_matches = sum(
         1
         for term in HIGH_VALUE_TERMS
@@ -332,7 +330,6 @@ def player_relevance_score(commit):
         4,
     ) * 2
 
-    # New player-facing content.
     if re.search(
         r"\b(add|added|new|introduce|introduced)\b",
         text,
@@ -343,7 +340,6 @@ def player_relevance_score(commit):
         ):
             score += 3
 
-    # Gameplay/balance behaviour.
     if contains_any(
         text,
         (
@@ -360,44 +356,37 @@ def player_relevance_score(commit):
     ):
         score += 3
 
-    # Visible changes receive a little weight,
-    # but are much weaker than gameplay fixes.
     if contains_any(
         text,
         VISIBLE_VISUAL_TERMS,
     ):
         score += 1
 
-    # Internal development work.
     if contains_any(
         text,
         TECHNICAL_TERMS,
     ):
         score -= 5
 
-    # Rendering/asset trivia.
     if contains_any(
         text,
         LOW_VALUE_VISUAL_TERMS,
     ):
         score -= 5
 
-    # Tests normally aren't player news.
     if re.search(
         r"\b(test|tests|testing)\b",
         text,
     ):
         score -= 4
 
-    # Cleanup/refactoring.
     if re.search(
         r"\b(cleanup|refactor|rename|renamed)\b",
         text,
     ):
         score -= 4
 
-    # Concrete player-facing bugs should survive even if
-    # the commit also contains technical language.
+    # Strong rescue rule for concrete player-facing bug fixes.
     if (
         contains_any(text, BUG_TERMS)
         and contains_any(
@@ -463,11 +452,11 @@ def filter_player_relevant_commits(
 
 
 # ============================================================
-# AI PROMPT
+# PROMPTS
 # ============================================================
 
-def build_prompt(day, commits):
-    commit_blocks = []
+def commits_to_prompt_text(commits):
+    blocks = []
 
     for commit in commits:
         branch = commit.get(
@@ -478,7 +467,7 @@ def build_prompt(day, commits):
         if branch.startswith("main/"):
             branch = branch[5:]
 
-        commit_blocks.append(
+        blocks.append(
             "\n".join(
                 [
                     f"Commit ID: {commit['id']}",
@@ -488,16 +477,22 @@ def build_prompt(day, commits):
             )
         )
 
+    return "\n\n".join(blocks)
+
+
+def build_full_prompt(day, commits):
+    source_text = commits_to_prompt_text(
+        commits
+    )
+
     return f"""
 Create a concise daily Rust development digest for RUST PLAYERS.
 
 These are official Facepunch development commits from {day}.
 
-Each source commit has a numeric Commit ID.
-
 SOURCE COMMITS:
 
-{chr(10).join(commit_blocks)}
+{source_text}
 
 The digest answers:
 
@@ -565,13 +560,8 @@ Never invent a Commit ID.
 
 Only use Commit IDs from SOURCE COMMITS above.
 
-Do not include a commit ID just because it is about a similar topic.
+Do not include a commit ID merely because it is about a similar topic.
 The ID must genuinely support that exact bullet.
-
-A source commit should normally appear in only one output bullet.
-
-It is acceptable to omit source commits that are not important enough
-for the player digest.
 
 OUTPUT FORMAT:
 
@@ -606,17 +596,118 @@ OUTPUT RULES:
 - Combine duplicate commits.
 - Preserve useful item, NPC, monument and gameplay names.
 - Preserve concrete bug symptoms.
-- Do not mention developer names in text.
+- Do not mention developer names.
 - Do not mention commit IDs inside bullet text.
-- Do not mention branch names in bullet text.
+- Do not mention branch names inside bullet text.
 - Do not speculate.
 - Do not include a title or date.
 - Return ONLY the JSON object.
 """
 
 
+def build_chunk_prompt(day, commits):
+    source_text = commits_to_prompt_text(
+        commits
+    )
+
+    return f"""
+Summarize this subset of Rust development commits for Rust players.
+
+Date:
+{day}
+
+SOURCE COMMITS:
+
+{source_text}
+
+This is only one chunk from a larger day.
+
+Return ONLY valid JSON using this structure:
+
+{{
+  "sections": [
+    {{
+      "title": "NPC & AI",
+      "items": [
+        {{
+          "text": "Fixed scientists not spawning in Underwater Labs.",
+          "commit_ids": [615201]
+        }}
+      ]
+    }}
+  ]
+}}
+
+Rules:
+- Keep only genuinely player-relevant changes.
+- Prefer bugs, gameplay, items, NPCs, animals, vehicles,
+  monuments, UI issues, exploits, crashes and balance changes.
+- Exclude tests, refactors, rendering trivia, asset optimization,
+  logging and developer tooling.
+- Preserve concrete bug symptoms.
+- Every bullet MUST include exact source Commit IDs.
+- Never invent commit IDs.
+- Only use Commit IDs supplied above.
+- Combine closely related commits.
+- Do not mention developer names.
+- Do not mention commit IDs inside bullet text.
+- Do not mention branch names inside bullet text.
+- Return ONLY JSON.
+"""
+
+
+def build_merge_prompt(day, chunk_sections):
+    input_json = json.dumps(
+        chunk_sections,
+        ensure_ascii=False,
+        indent=2,
+    )
+
+    return f"""
+Merge these structured Rust development summary fragments into one final
+player-focused daily digest for {day}.
+
+INPUT:
+
+{input_json}
+
+Return ONLY valid JSON using exactly this structure:
+
+{{
+  "sections": [
+    {{
+      "title": "NPC & AI",
+      "items": [
+        {{
+          "text": "Fixed scientists not spawning in Underwater Labs.",
+          "commit_ids": [615201]
+        }}
+      ]
+    }}
+  ]
+}}
+
+Rules:
+- Preserve all valid source commit IDs.
+- Never invent commit IDs.
+- When merging bullets, combine their commit_ids.
+- Merge duplicate or overlapping bullets.
+- Preserve concrete player-facing bug symptoms.
+- Prefer gameplay, bugs, NPCs, animals, items, weapons,
+  vehicles, monuments and meaningful UI fixes.
+- Drop technical/internal trivia if any remains.
+- Aim for 2 to 6 sections.
+- Aim for roughly 8 to 15 worthwhile bullets total.
+- Fewer is fine.
+- Do not mention developer names.
+- Do not mention commit IDs inside bullet text.
+- Do not include a title or date.
+- Return ONLY JSON.
+"""
+
+
 # ============================================================
-# STRUCTURED AI RESPONSE PARSING
+# STRUCTURED RESPONSE PARSING
 # ============================================================
 
 def strip_code_fence(text):
@@ -628,10 +719,15 @@ def strip_code_fence(text):
         if lines:
             lines = lines[1:]
 
-        if lines and lines[-1].strip() == "```":
+        if (
+            lines
+            and lines[-1].strip() == "```"
+        ):
             lines = lines[:-1]
 
-        text = "\n".join(lines).strip()
+        text = "\n".join(
+            lines
+        ).strip()
 
     return text
 
@@ -640,13 +736,18 @@ def parse_structured_summary(
     text,
     allowed_commit_ids,
 ):
-    text = strip_code_fence(text)
+    text = strip_code_fence(
+        text
+    )
 
     try:
-        data = json.loads(text)
+        data = json.loads(
+            text
+        )
     except Exception as error:
         print(
-            f"Could not parse AI JSON: {error}"
+            f"Could not parse AI JSON: "
+            f"{error}"
         )
         return None
 
@@ -740,7 +841,6 @@ def parse_structured_summary(
                         commit_id
                     )
 
-            # Every bullet must map to at least one real source commit.
             if not valid_ids:
                 print(
                     "Dropped AI bullet with no "
@@ -774,17 +874,12 @@ def parse_structured_summary(
 
 
 # ============================================================
-# MARKDOWN BACKWARD-COMPATIBILITY
+# MARKDOWN BACKWARD COMPATIBILITY
 # ============================================================
 
-def sections_to_markdown(sections):
-    """
-    Keep generating the old Markdown summary as well.
-
-    This means the existing RSS generator continues working
-    until we upgrade it to use structured section metadata.
-    """
-
+def sections_to_markdown(
+    sections,
+):
     parts = []
 
     for section in sections:
@@ -804,7 +899,9 @@ def sections_to_markdown(sections):
     ).strip()
 
 
-def items_to_markdown(items):
+def items_to_markdown(
+    items,
+):
     if not items:
         return ""
 
@@ -815,7 +912,7 @@ def items_to_markdown(items):
 
 
 # ============================================================
-# AI PROVIDERS
+# API CALL
 # ============================================================
 
 def call_chat_api(
@@ -826,6 +923,26 @@ def call_chat_api(
     provider_name,
     allowed_commit_ids,
 ):
+    payload = {
+        "model": model,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+        "temperature": 0.1,
+    }
+
+    # Groq supports JSON mode, which makes large structured
+    # responses much more reliable.
+    if provider_name == "Groq":
+        payload[
+            "response_format"
+        ] = {
+            "type": "json_object"
+        }
+
     try:
         response = requests.post(
             url,
@@ -837,30 +954,9 @@ def call_chat_api(
                     "application/json"
                 ),
             },
-            payload = {
-                "model": model,
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": prompt,
-                    }
-                ],
-                "temperature": 0.1,
-            }
-            if provider_name == "Groq":
-                payload["response_format"] = {
-                 "type": "json_object"
-                }
-            response = requests.post(
-                url,
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json",
-                },
-                json=payload,
-                timeout=90,
-            )
-                     
+            json=payload,
+            timeout=90,
+        )
 
     except requests.RequestException as error:
         print(
@@ -921,24 +1017,20 @@ def call_chat_api(
     return sections
 
 
-def call_ai(
+# ============================================================
+# PROVIDER WRAPPER
+# ============================================================
+
+def request_sections(
     groq_key,
     openrouter_key,
-    day,
-    commits,
+    prompt,
+    allowed_ids,
+    label,
 ):
-    prompt = build_prompt(
-        day,
-        commits,
-    )
-
-    allowed_ids = commit_ids(
-        commits
-    )
-
     if groq_key:
         print(
-            f"Trying Groq for {day}..."
+            f"Trying Groq for {label}..."
         )
 
         sections = call_chat_api(
@@ -952,15 +1044,14 @@ def call_ai(
 
         if sections is not None:
             print(
-                f"Groq succeeded for {day}."
+                f"Groq succeeded for {label}."
             )
-
             return sections
 
     if openrouter_key:
         print(
             f"Trying OpenRouter fallback "
-            f"for {day}..."
+            f"for {label}..."
         )
 
         sections = call_chat_api(
@@ -975,12 +1066,118 @@ def call_ai(
         if sections is not None:
             print(
                 f"OpenRouter succeeded "
-                f"for {day}."
+                f"for {label}."
             )
-
             return sections
 
     return None
+
+
+# ============================================================
+# CHUNKED SUMMARIZATION
+# ============================================================
+
+def call_ai(
+    groq_key,
+    openrouter_key,
+    day,
+    commits,
+):
+    allowed_ids = commit_ids(
+        commits
+    )
+
+    # Small day: one normal request.
+    if len(commits) <= CHUNK_SIZE:
+        return request_sections(
+            groq_key,
+            openrouter_key,
+            build_full_prompt(
+                day,
+                commits,
+            ),
+            allowed_ids,
+            day,
+        )
+
+    # Large day: chunk first.
+    chunks = [
+        commits[
+            index:index + CHUNK_SIZE
+        ]
+        for index in range(
+            0,
+            len(commits),
+            CHUNK_SIZE,
+        )
+    ]
+
+    print(
+        f"{day} has {len(commits)} relevant commits; "
+        f"splitting into {len(chunks)} chunks "
+        f"of up to {CHUNK_SIZE}."
+    )
+
+    chunk_sections = []
+
+    for index, chunk in enumerate(
+        chunks,
+        start=1,
+    ):
+        chunk_allowed_ids = (
+            commit_ids(
+                chunk
+            )
+        )
+
+        print(
+            f"Summarizing chunk "
+            f"{index}/{len(chunks)} "
+            f"({len(chunk)} commits)..."
+        )
+
+        sections = request_sections(
+            groq_key,
+            openrouter_key,
+            build_chunk_prompt(
+                day,
+                chunk,
+            ),
+            chunk_allowed_ids,
+            (
+                f"{day} chunk "
+                f"{index}/{len(chunks)}"
+            ),
+        )
+
+        if sections is None:
+            print(
+                f"Chunk {index} failed."
+            )
+            return None
+
+        chunk_sections.extend(
+            sections
+        )
+
+    # Merge the chunk summaries.
+    print(
+        f"Merging {len(chunks)} "
+        f"chunk summaries for {day}..."
+    )
+
+    final_sections = request_sections(
+        groq_key,
+        openrouter_key,
+        build_merge_prompt(
+            day,
+            chunk_sections,
+        ),
+        allowed_ids,
+        f"{day} final merge",
+    )
+
+    return final_sections
 
 
 # ============================================================
@@ -991,15 +1188,6 @@ def find_new_items(
     sections,
     new_commit_ids,
 ):
-    """
-    A summary item appears in NEW when at least one of its
-    underlying source commit IDs arrived since the previous
-    successful summary update.
-
-    This means a bullet combining an old commit and a new
-    commit still appears in NEW, which is exactly what we want.
-    """
-
     if not new_commit_ids:
         return []
 
@@ -1020,15 +1208,21 @@ def find_new_items(
                 new_items.append(
                     {
                         "text": item["text"],
-                        "commit_ids": item["commit_ids"],
-                        "section": section["title"],
+                        "commit_ids": (
+                            item["commit_ids"]
+                        ),
+                        "section": (
+                            section["title"]
+                        ),
                     }
                 )
 
     return new_items
 
 
-def represented_commit_ids(items):
+def represented_commit_ids(
+    items,
+):
     represented = set()
 
     for item in items:
@@ -1091,7 +1285,9 @@ def main():
     summaries = {}
 
     for day in valid_days:
-        raw_commits = grouped[day]
+        raw_commits = grouped[
+            day
+        ]
 
         relevant_commits = (
             filter_player_relevant_commits(
@@ -1117,7 +1313,7 @@ def main():
         )
 
         # ----------------------------------------------------
-        # PREVIOUS FULL-SUMMARY STATE
+        # OLD FULL SUMMARY STATE
         # ----------------------------------------------------
 
         if old_entry:
@@ -1133,14 +1329,12 @@ def main():
         else:
             old_full_signature = ""
 
-        old_full_ids = parse_signature(
-            old_full_signature
+        old_full_ids = (
+            parse_signature(
+                old_full_signature
+            )
         )
 
-        # NEW tracking has its own baseline.
-        #
-        # Older versions won't have this key, so fall back
-        # to the previous summary signature.
         if old_entry:
             old_new_baseline = (
                 old_entry.get(
@@ -1149,12 +1343,16 @@ def main():
                 )
             )
         else:
+            # First structured run:
+            # don't mark the entire existing day as NEW.
             old_new_baseline = (
                 current_signature
             )
 
-        old_new_ids = parse_signature(
-            old_new_baseline
+        old_new_ids = (
+            parse_signature(
+                old_new_baseline
+            )
         )
 
         newly_added_ids = (
@@ -1163,7 +1361,7 @@ def main():
         )
 
         # ----------------------------------------------------
-        # CACHE VALIDITY
+        # CACHE STATE
         # ----------------------------------------------------
 
         old_summary_text = (
@@ -1217,11 +1415,11 @@ def main():
             or relevant_changed
         )
 
-        # ----------------------------------------------------
-        # GENERATE / REUSE FULL SUMMARY
-        # ----------------------------------------------------
-
         generation_succeeded = False
+
+        # ----------------------------------------------------
+        # FULL DAILY SUMMARY
+        # ----------------------------------------------------
 
         if (
             not needs_refresh
@@ -1282,15 +1480,22 @@ def main():
                 "relevant commits."
             )
 
-            generated_sections = call_ai(
-                groq_key,
-                openrouter_key,
-                day,
-                relevant_commits,
+            generated_sections = (
+                call_ai(
+                    groq_key,
+                    openrouter_key,
+                    day,
+                    relevant_commits,
+                )
             )
 
-            if generated_sections is not None:
-                sections = generated_sections
+            if (
+                generated_sections
+                is not None
+            ):
+                sections = (
+                    generated_sections
+                )
 
                 summary_markdown = (
                     sections_to_markdown(
@@ -1302,7 +1507,9 @@ def main():
                     current_signature
                 )
 
-                generation_succeeded = True
+                generation_succeeded = (
+                    True
+                )
 
                 print(
                     f"Saved new structured "
@@ -1310,7 +1517,6 @@ def main():
                 )
 
             elif old_is_good:
-                # Keep the previous digest if AI fails.
                 sections = (
                     old_sections
                     if old_has_structured_sections
@@ -1348,7 +1554,7 @@ def main():
                 )
 
         # ----------------------------------------------------
-        # BUILD NEW — LAST 3 HRS
+        # NEW — LAST 3 HRS
         # ----------------------------------------------------
 
         new_items = []
@@ -1356,15 +1562,15 @@ def main():
         new_relevant_count = 0
 
         if day == today:
-            # Only advance the NEW baseline after a successful
-            # full summary that actually contains the new data.
             if (
                 generation_succeeded
                 and sections
             ):
-                new_items = find_new_items(
-                    sections,
-                    newly_added_ids,
+                new_items = (
+                    find_new_items(
+                        sections,
+                        newly_added_ids,
+                    )
                 )
 
                 new_summary_markdown = (
@@ -1402,10 +1608,8 @@ def main():
                     )
 
             elif not needs_refresh:
-                # No relevant commits changed during this run.
-                #
-                # The previous NEW block is now older than
-                # the current 3-hour window, so clear it.
+                # Nothing relevant changed during this
+                # 3-hour update window.
                 new_items = []
                 new_summary_markdown = ""
                 new_relevant_count = 0
@@ -1421,9 +1625,8 @@ def main():
 
             else:
                 # AI refresh failed.
-                #
-                # Keep the OLD baseline so the same newly-added
-                # commits will be retried on the next run.
+                # Keep the previous baseline so the same
+                # new commits are retried next time.
                 new_baseline_out = (
                     old_new_baseline
                 )
@@ -1434,38 +1637,31 @@ def main():
                 )
 
         else:
-            # Historical days never display NEW.
             new_items = []
             new_summary_markdown = ""
             new_relevant_count = 0
+
             new_baseline_out = (
                 current_signature
             )
 
         # ----------------------------------------------------
-        # SAVE
+        # SAVE DAY
         # ----------------------------------------------------
 
         summaries[day] = {
-            # Total development activity.
             "commit_count": len(
                 raw_commits
             ),
 
-            # Commits surviving the deterministic
-            # player-relevance filter.
             "relevant_commit_count": len(
                 relevant_commits
             ),
 
-            # Stable source commit list represented by
-            # the full day's input.
             "relevant_signature": (
                 full_signature_out
             ),
 
-            # Baseline used to calculate NEW on the
-            # next 3-hour update.
             "new_baseline_signature": (
                 new_baseline_out
             ),
@@ -1474,20 +1670,20 @@ def main():
                 PROMPT_VERSION
             ),
 
-            # NEW structured format.
+            # Structured form used for Mark as Read.
             "sections": sections,
 
-            # Backward-compatible Markdown.
+            # Existing Markdown form used by the current RSS.
             "summary": summary_markdown,
 
-            # NEW — LAST 3 HRS metadata.
+            # Structured NEW metadata.
             "new_items": new_items,
+
             "new_relevant_count": (
                 new_relevant_count
             ),
 
-            # Backward-compatible Markdown for the
-            # existing RSS generator.
+            # Existing Markdown NEW form used by current RSS.
             "new_summary": (
                 new_summary_markdown
             ),
