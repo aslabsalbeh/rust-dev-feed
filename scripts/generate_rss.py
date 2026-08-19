@@ -2,6 +2,7 @@ import json
 import xml.etree.ElementTree as ET
 from datetime import datetime, time
 from email.utils import format_datetime
+from html import escape
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 from zoneinfo import ZoneInfo
@@ -37,9 +38,60 @@ def markdown_to_html(text):
     )
 
 
+def structured_items_to_html(items):
+    rendered_items = []
+
+    for item in items:
+        commit_ids = ",".join(
+            str(commit_id)
+            for commit_id in item.get(
+                "commit_ids",
+                [],
+            )
+        )
+        rendered_items.append(
+            '<li data-rust-commits="'
+            f'{escape(commit_ids, quote=True)}">'
+            f'{escape(str(item.get("text", "")))}'
+            "</li>"
+        )
+
+    if not rendered_items:
+        return ""
+
+    return "<ul>\n" + "\n".join(rendered_items) + "\n</ul>"
+
+
+def structured_sections_to_html(sections):
+    rendered_sections = []
+
+    for section in sections:
+        items_html = structured_items_to_html(
+            section.get(
+                "items",
+                [],
+            )
+        )
+        if not items_html:
+            continue
+
+        title = escape(
+            str(
+                section.get(
+                    "title",
+                    "",
+                )
+            )
+        )
+        rendered_sections.append(
+            f"<h3>{title}</h3>\n{items_html}"
+        )
+
+    return "\n".join(rendered_sections)
+
+
 def make_pub_date(day, is_today):
     day_date = datetime.fromisoformat(day).date()
-
     if is_today:
         dt = datetime.now(LOCAL_TZ)
     else:
@@ -66,7 +118,6 @@ def main():
         channel,
         "title",
     ).text = "Rust Development Updates"
-
     SubElement(
         channel,
         "link",
@@ -89,7 +140,6 @@ def main():
         channel,
         "ttl",
     ).text = "15"
-
     SubElement(
         channel,
         "lastBuildDate",
@@ -114,7 +164,6 @@ def main():
 
         if days_ago == 0:
             label = "Today's Rust Updates"
-
         elif days_ago == 1:
             label = "Yesterday's Rust Updates"
 
@@ -138,28 +187,52 @@ def main():
             f"{label} — {display_date}"
         )
 
-        summary_html = markdown_to_html(
-            data["summary"]
+        sections = data.get(
+            "sections",
         )
-
-        new_summary = data.get(
-            "new_summary",
-            "",
-        ).strip()
-
-        new_count = data.get(
-            "new_relevant_count",
-            0,
-        )
-
-        new_html = ""
-
-        if new_summary and new_count > 0:
-            rendered_new = markdown_to_html(
-                new_summary
+        if isinstance(sections, list) and sections:
+            summary_html = structured_sections_to_html(
+                sections
+            )
+        else:
+            summary_html = markdown_to_html(
+                data["summary"]
             )
 
-            new_html = f"""
+        new_html = ""
+        if "new_items" in data:
+            new_items = data.get(
+                "new_items",
+            )
+            if isinstance(new_items, list) and new_items:
+                rendered_new = structured_items_to_html(
+                    new_items
+                )
+                if rendered_new:
+                    new_html = f"""
+<div class="rust-new-updates">
+<h3>✨ NEW — LAST 3 HRS</h3>
+{rendered_new}
+</div>
+""".strip()
+        else:
+            # Backward compatibility for summaries generated before
+            # structured NEW metadata was added.
+            new_summary = data.get(
+                "new_summary",
+                "",
+            ).strip()
+
+            new_count = data.get(
+                "new_relevant_count",
+                0,
+            )
+
+            if new_summary and new_count > 0:
+                rendered_new = markdown_to_html(
+                    new_summary
+                )
+                new_html = f"""
 <div class="rust-new-updates">
 <h3>✨ NEW — LAST 3 HRS</h3>
 {rendered_new}
@@ -178,7 +251,6 @@ def main():
             item,
             "description",
         ).text = description_html
-
         SubElement(
             item,
             "guid",
@@ -205,7 +277,6 @@ def main():
         encoding="utf-8",
         xml_declaration=True,
     )
-
     print(
         f"Generated RSS feed with "
         f"{len(dates)} daily items."
