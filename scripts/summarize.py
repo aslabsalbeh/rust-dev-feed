@@ -27,7 +27,8 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 # Change this whenever the summary/filter structure changes.
 # This forces one fresh regeneration even when commit IDs
 # themselves have not changed.
-PROMPT_VERSION = "structured-read-state-v1"
+CHUNK_SIZE = 25
+PROMPT_VERSION = "structured-read-state-v2-chunked"
 
 
 BAD_MARKERS = (
@@ -836,7 +837,7 @@ def call_chat_api(
                     "application/json"
                 ),
             },
-            json={
+            payload = {
                 "model": model,
                 "messages": [
                     {
@@ -845,12 +846,21 @@ def call_chat_api(
                     }
                 ],
                 "temperature": 0.1,
-                 "response_format": {
-                     "type": "json_object"
-                 },
-            },
-            timeout=90,
-        )
+            }
+            if provider_name == "Groq":
+                payload["response_format"] = {
+                 "type": "json_object"
+                }
+            response = requests.post(
+                url,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json=payload,
+                timeout=90,
+            )
+                     
 
     except requests.RequestException as error:
         print(
