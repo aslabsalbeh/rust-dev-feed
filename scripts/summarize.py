@@ -845,6 +845,9 @@ def call_chat_api(
                     }
                 ],
                 "temperature": 0.1,
+                 "response_format": {
+                     "type": "json_object"
+                 },
             },
             timeout=90,
         )
