@@ -6,48 +6,56 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 20:29:05 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 23:24:54 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;133 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;141 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;h3&gt;✨ NEW — LAST 6 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed a crash that could occur on game launch due to the hide‑services change.  &lt;/li&gt;
-&lt;li&gt;Added Apple tree content; apples now spawn, though they currently cannot be harvested.  &lt;/li&gt;
-&lt;li&gt;Livestock animals now drop horse dung.&lt;/li&gt;
+&lt;li&gt;Fixed circuit system leaks and out‑of‑bounds errors, improving stability of power and automation setups.  &lt;/li&gt;
+&lt;li&gt;Elevators now draw power from the correct battery slot, preventing unintended battery depletion.  &lt;/li&gt;
+&lt;li&gt;Fuel generators’ auxiliary inputs no longer drain connected batteries when downstream demand is present.  &lt;/li&gt;
+&lt;li&gt;HBHF sensors once again include “other” entities, restoring their full detection range.  &lt;/li&gt;
+&lt;li&gt;Pregnant livestock now sit as a visual cue and their vitals are frozen, so they won’t starve while gestating.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;NPC &amp;amp; Scientist Fixes&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed AI navigation with independent navmeshes and prevented AIs spawned before a navmesh was built from getting lost.  &lt;/li&gt;
-&lt;li&gt;NPCs no longer get stuck when a navmesh tile rebuilds while they are inside or crossing it.  &lt;/li&gt;
-&lt;li&gt;Cargo ship scientists now move correctly; Oil Rig Scientist 2 crouch‑walk angle fixed; old scientists now turn instantly instead of steering.  &lt;/li&gt;
-&lt;li&gt;Scientists now spawn reliably in Underwater Labs, Cargo Ships, and Military Bases.  &lt;/li&gt;
+&lt;li&gt;Fixed scientists not spawning in Underwater Labs, Cargo Ships, and Military Base.  &lt;/li&gt;
+&lt;li&gt;Fixed cargo scientists being immobile and Scientist 2 crouch‑walking oddly on the Oilrig.  &lt;/li&gt;
+&lt;li&gt;Fixed old scientists steering incorrectly; they now turn instantly.  &lt;/li&gt;
+&lt;li&gt;Fixed NPCs getting stuck when a navmesh tile rebuilds while they are inside or crossing it, and ensured AI spawned before an independent navmesh is built can locate it.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World &amp;amp; Monuments&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed static chairs on the gas‑station roof now mountable.  &lt;/li&gt;
+&lt;li&gt;Fixed monument blocker rendering (desks), balanced their health and resource rates, and added blockers to all monuments.  &lt;/li&gt;
+&lt;li&gt;Fixed wind‑turbine sound looping when the turbine isn’t spinning.  &lt;/li&gt;
+&lt;li&gt;Fixed Jungle Ziggurat water‑treatment tank to use a single mesh collider for better performance.  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicles &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Catapult ammo pooling bug fixed and siege weapons now reset properly after use.  &lt;/li&gt;
-&lt;li&gt;Helicopter rotor speed resets on init; vehicle pooling improvements merged.  &lt;/li&gt;
-&lt;li&gt;Salvaged hammer and flamethrower 3rd‑person models now align correctly with the player’s hand.  &lt;/li&gt;
-&lt;li&gt;Honey bandage now applies its healing effects; binocular glare bug fixed.  &lt;/li&gt;
+&lt;li&gt;Fixed catapult loaded‑ammo pooling bug and horse client pooling issues; cached vehicle owners are cleared when seats are pooled.  &lt;/li&gt;
+&lt;li&gt;Fixed siege weapons resetting properly after use.  &lt;/li&gt;
+&lt;li&gt;Reset helicopter rotor speed and animators on init to prevent odd behavior.  &lt;/li&gt;
+&lt;li&gt;Fixed flamethrower third‑person flame offset and salvaged hammer model offset.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Leaderboards&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Darts leaderboard UI fixed, works after server restarts and now supports streamer mode.  &lt;/li&gt;
-&lt;li&gt;Colour picker accepts pasted hex codes and no longer shares colour data between painting menus.  &lt;/li&gt;
-&lt;li&gt;Tutorial modal size fixed and fully localized.  &lt;/li&gt;
+&lt;li&gt;Fixed Darts leaderboard UI: removed zoom control, added streamer‑mode compatibility, and ensured persistence after server restarts.  &lt;/li&gt;
+&lt;li&gt;Fixed colour picker now accepts pasted hex‑code inputs.  &lt;/li&gt;
+&lt;li&gt;Fixed binocular glare bug caused by an inverted check.  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; World&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;New cow and sheep livestock prefabs added (male/female); livestock no longer move while sleeping and now drop dung.  &lt;/li&gt;
-&lt;li&gt;Monument toggle switches work; monument blockers added with balanced resource rates and time‑to‑kill values.  &lt;/li&gt;
-&lt;li&gt;Gas station roof chairs are now mountable; wind turbine sound stops when the turbine isn’t spinning.&lt;/li&gt;
+&lt;li&gt;Added new livestock species (cows and sheep) with male/female prefabs and proper spawning.  &lt;/li&gt;
+&lt;li&gt;Fixed livestock animals moving while sleeping; they now sit while pregnant and drop dung correctly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 20:29:05 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 23:24:54 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
