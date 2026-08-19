@@ -6,21 +6,12 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 18 Aug 2026 23:24:54 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 23:47:57 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;141 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 6 HRS&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Fixed circuit system leaks and out‑of‑bounds errors, improving stability of power and automation setups.  &lt;/li&gt;
-&lt;li&gt;Elevators now draw power from the correct battery slot, preventing unintended battery depletion.  &lt;/li&gt;
-&lt;li&gt;Fuel generators’ auxiliary inputs no longer drain connected batteries when downstream demand is present.  &lt;/li&gt;
-&lt;li&gt;HBHF sensors once again include “other” entities, restoring their full detection range.  &lt;/li&gt;
-&lt;li&gt;Pregnant livestock now sit as a visual cue and their vitals are frozen, so they won’t starve while gestating.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;143 development commits&lt;/strong&gt;&lt;/p&gt;
+
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Fixed scientists not spawning in Underwater Labs, Cargo Ships, and Military Base.  &lt;/li&gt;
@@ -55,35 +46,38 @@
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-18</guid>
-      <pubDate>Tue, 18 Aug 2026 23:24:54 -0400</pubDate>
+      <pubDate>Tue, 18 Aug 2026 23:47:57 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Animals&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Breeding&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Fixed the gender bug: livestock now spawn with the correct male/female distribution instead of all being female.  &lt;/li&gt;
-&lt;li&gt;Added a breeding state machine, enabling animals to breed as intended.  &lt;/li&gt;
-&lt;li&gt;Introduced a Bull prefab, so bulls now appear in the world.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Server &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Nexus connect modal now correctly enables the map button and no longer squishes the map view.  &lt;/li&gt;
-&lt;li&gt;Nexus map UI issues resolved, preventing the map from being distorted after recent changes.  &lt;/li&gt;
-&lt;li&gt;Server listings now hide zone servers by default and expose Nexus info in A2S rules responses.  &lt;/li&gt;
-&lt;li&gt;MaxPlayers count displayed correctly after recent adjustments.  &lt;/li&gt;
-&lt;li&gt;General Nexus connect modal fixes improve stability when joining servers.&lt;/li&gt;
+&lt;li&gt;All livestock animals now have correct genders and breeding state machine, fixing the issue where every animal was female.&lt;/li&gt;
+&lt;li&gt;Bull prefab added, introducing bulls as a new breedable livestock animal.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Items &amp;amp; Equipment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Medical honey bandage effects now fire properly, restoring the intended healing behavior.  &lt;/li&gt;
-&lt;li&gt;Water bucket UI bug fixed: players can now transfer water into a held bucket without errors.&lt;/li&gt;
+&lt;li&gt;Medical honey bandage now correctly triggers its healing effects.&lt;/li&gt;
+&lt;li&gt;Water bucket UI fixed so players can transfer water into a held bucket.&lt;/li&gt;
+&lt;li&gt;Battery items now properly receive additional data via client RPC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Server Connectivity&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Nexus connect modal UI bugs fixed: map button now enables, map no longer squishes, and overall modal stability improved.&lt;/li&gt;
+&lt;li&gt;Servers with Nexus enabled are now tagged with "nexuszone", hidden from the server list by default, and expose Nexus info in A2S rules.&lt;/li&gt;
+&lt;li&gt;MaxPlayers count displayed correctly after recent changes.&lt;/li&gt;
+&lt;li&gt;UI rows alignment corrected, removing the left offset on non-keyframable rows.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Resolved a pooling issue where runtime‑parented vehicle children caused null‑reference errors, improving vehicle spawn stability.&lt;/li&gt;
+&lt;li&gt;Vehicle pooling now detaches runtime‑parented children before pooling, preventing NRE spamming.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; World&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Underwater Labs windows refraction texture fixed, improving visibility inside labs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-17</guid>
