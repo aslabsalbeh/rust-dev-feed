@@ -1,5 +1,125 @@
 [
   {
+    "id": 615853,
+    "branch": "main/collision_naming_pass",
+    "changeset": "161619",
+    "created": "2026-08-20T20:36:55",
+    "message": "Disable tangent import on all collision meshes\r\nAll collision meshes were calculating and storing tangents that collision geometry never uses.\r\nSet tangentImportMode to None, removing around 33 MB of mesh data.\r\n\r\nImport settings only - no mesh or reference changes.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615850,
+    "branch": "main/vcc/glyph",
+    "changeset": "161617",
+    "created": "2026-08-20T19:43:09",
+    "message": "very wip glyph tests",
+    "author": "Adam W"
+  },
+  {
+    "id": 615849,
+    "branch": "main",
+    "changeset": "161616",
+    "created": "2026-08-20T19:41:29",
+    "message": "salvaged hammer refresh work\r\n\r\n- folder cleanup\r\n- removed old anims, models, files\r\n- updated naming of 3p anims\r\n- tweaked sound event timing on 3p anims",
+    "author": "Alex Webster"
+  },
+  {
+    "id": 615848,
+    "branch": "main/more_cliff_fixes",
+    "changeset": "161615",
+    "created": "2026-08-20T19:39:40",
+    "message": "Don't override bestRot before spawning",
+    "author": "Jakb"
+  },
+  {
+    "id": 615846,
+    "branch": "main/mesh_skip_col_support",
+    "changeset": "161613",
+    "created": "2026-08-20T19:34:17",
+    "message": "Look for COl when skipping meshes in building block highlights/upgrade",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 615845,
+    "branch": "main/more_cliff_fixes",
+    "changeset": "161612",
+    "created": "2026-08-20T19:32:50",
+    "message": "Applied terrain footprint to rock_formation_small_d to fix terrain gaps when it spawns over terrain erosion gutters - need to do a pass over all similar 'flat' rock prefabs",
+    "author": "Jakb"
+  },
+  {
+    "id": 615844,
+    "branch": "main/more_cliff_fixes",
+    "changeset": "161611",
+    "created": "2026-08-20T19:30:24",
+    "message": "Added footprint functionality into the CliffSandbox dev scene",
+    "author": "Jakb"
+  },
+  {
+    "id": 615843,
+    "branch": "main/character_customisation",
+    "changeset": "161610",
+    "created": "2026-08-20T19:30:00",
+    "message": "More tweaks and improvements.\r\nPopulate tiles in customizer with options defined in character manifest.\r\nFix two extra races being added for no reason",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 615842,
+    "branch": "main/more_cliff_fixes",
+    "changeset": "161609",
+    "created": "2026-08-20T19:29:19",
+    "message": "Apply TerrainFootprint's terrain changes in the PlaceCliffs procedural pipeline after all other component steps before spawn",
+    "author": "Jakb"
+  },
+  {
+    "id": 615841,
+    "branch": "main/base_occlusion",
+    "changeset": "161608",
+    "created": "2026-08-20T19:26:45",
+    "message": "Fix deployables that are inside multiple rooms not working\r\n- assign them to their own network groups similar to walls that share multiple rooms and subscribe appropriately",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 615838,
+    "branch": "main",
+    "changeset": "161605",
+    "created": "2026-08-20T19:02:15",
+    "message": "fixed small shark .worldmodel weird setup",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615836,
+    "branch": "main/more_cliff_fixes",
+    "changeset": "161604",
+    "created": "2026-08-20T18:52:47",
+    "message": "TerrainAnchorRingGenerator can now also generate a TerrainFootprint for the cliff to outline TerrainAnchor's and mark a perimeter where terrain should raise up to - this eliminates cases where the terrain erosion step creates gutters that rock formations spawn over, leaving a gap under the rock",
+    "author": "Jakb"
+  },
+  {
+    "id": 615835,
+    "branch": "main/collision_naming_pass",
+    "changeset": "161603",
+    "created": "2026-08-20T18:41:52",
+    "message": "Normalise 257 collision mesh filenames from _col to _COL\n\nCase-only rename for consistency with the other 2,557. GUIDs preserved, no path references, FBX contents untouched - no functional impact.\r\nFBX contents and internal mesh names untouched.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615834,
+    "branch": "main/more_cliff_fixes",
+    "changeset": "161602",
+    "created": "2026-08-20T18:41:06",
+    "message": "CliffSandbox scene can now get the `.map` file from the server's `levelurl`",
+    "author": "Jakb"
+  },
+  {
+    "id": 615833,
+    "branch": "main/base_occlusion",
+    "changeset": "161601",
+    "created": "2026-08-20T18:28:15",
+    "message": "Always show rooms that are within ~30m of the player\r\n- prevents us from having to blast the client with a ton of entities right when they open the door, allows us to stream them at a sane rate",
+    "author": "Jake_Rich"
+  },
+  {
     "id": 615828,
     "branch": "main/mt_snapshot_saving",
     "changeset": "161596",
@@ -2590,61 +2710,5 @@
     "created": "2026-08-17T21:21:56",
     "message": "Typo fix",
     "author": "Lukester"
-  },
-  {
-    "id": 614988,
-    "branch": "main/f1_menu_category_sort",
-    "changeset": "161059",
-    "created": "2026-08-17T21:03:01",
-    "message": "ordered f1 menu category buttons alphabetically\r\nSort by the translated button label instead, so the list reads A-Z",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 614983,
-    "branch": "main",
-    "changeset": "161058",
-    "created": "2026-08-17T20:24:20",
-    "message": "editor_multiplayer -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 614981,
-    "branch": "main/editor_multiplayer",
-    "changeset": "161057",
-    "created": "2026-08-17T20:21:35",
-    "message": "- Final name cleanup\r\n- Fix performance logging NRE\r\n- Hot reload fix",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 614978,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161056",
-    "created": "2026-08-17T20:16:14",
-    "message": "Fixed effects not firing",
-    "author": "Lukester"
-  },
-  {
-    "id": 614977,
-    "branch": "main/editor_multiplayer",
-    "changeset": "161055",
-    "created": "2026-08-17T20:01:50",
-    "message": "Custom FP Scenario dropdown to replace the default Unity one\r\n- Renames/improvements\r\n- Fix few more second client NRE's\r\n- Crosshair NRE fix",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 614976,
-    "branch": "main/locked_water_bucket_fix",
-    "changeset": "161054",
-    "created": "2026-08-17T19:56:08",
-    "message": "Fixed not being able to transfer water into the held water bucket via the UI.\r\n\r\nIncludes automated test. Fixed LocalPlayerTestFixture not waiting for the player to spawn in and asserting too early",
-    "author": "Jakb"
-  },
-  {
-    "id": 614970,
-    "branch": "main/demo_ui_2",
-    "changeset": "161053",
-    "created": "2026-08-17T19:08:56",
-    "message": "add a scroll fade/gradient to tabs",
-    "author": "octo"
   }
 ]
