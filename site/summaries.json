@@ -1,23 +1,94 @@
 {
   "2026-08-20": {
-    "commit_count": 19,
-    "relevant_commit_count": 14,
-    "relevant_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722",
-    "new_baseline_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722",
+    "commit_count": 37,
+    "relevant_commit_count": 27,
+    "relevant_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774",
+    "new_baseline_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "UI & Settings",
+        "title": "World & Creatures",
         "items": [
           {
-            "text": "Fixed \"Show use bind\" and \"Show belt bar binds\" settings so they now work correctly.",
+            "text": "Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.",
+            "commit_ids": [
+              615730
+            ]
+          },
+          {
+            "text": "Fixed animals getting stuck in jungle tree charge stacks.",
+            "commit_ids": [
+              615730
+            ]
+          },
+          {
+            "text": "Improved sheep visual quality at distance with better LODs and opaque fur material.",
+            "commit_ids": [
+              615667
+            ]
+          },
+          {
+            "text": "Fixed chainlink fence material overrides in all monuments.",
+            "commit_ids": [
+              615673
+            ]
+          },
+          {
+            "text": "Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.",
+            "commit_ids": [
+              615770,
+              615768
+            ]
+          },
+          {
+            "text": "Fixed empty procmap scene that caused missing map content.",
+            "commit_ids": [
+              615719
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Items",
+        "items": [
+          {
+            "text": "Added a repairable helipad at the bandit camp, unlocking air vehicle purchases after sufficient resource contributions.",
+            "commit_ids": [
+              615707
+            ]
+          },
+          {
+            "text": "Medical honey bandage now reduces radiation by 5.",
+            "commit_ids": [
+              615767
+            ]
+          },
+          {
+            "text": "Updated fireworks pack with new descriptions, icons, and added a white firework.",
+            "commit_ids": [
+              615741
+            ]
+          }
+        ]
+      },
+      {
+        "title": "User Interface & Dialogue",
+        "items": [
+          {
+            "text": "Fixed \"Show use bind\" and \"Show belt bar binds\" settings to apply correctly.",
             "commit_ids": [
               615675
             ]
           },
           {
-            "text": "Adjusted conversation readout timings for clearer dialogue.",
+            "text": "Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit.",
+            "commit_ids": [
+              615746
+            ]
+          },
+          {
+            "text": "Adjusted conversation readout timing for smoother dialogue flow.",
             "commit_ids": [
               615708
             ]
@@ -25,111 +96,65 @@
         ]
       },
       {
-        "title": "World & Structures",
+        "title": "Performance & Networking",
         "items": [
           {
-            "text": "Fixed crash when using the building planner to place collapsed structures.",
-            "commit_ids": [
-              615720
-            ]
-          },
-          {
-            "text": "Reduced network groups for indoor rooms, improving server stability and reducing lag.",
+            "text": "Reduced number of network groups for rooms, improving multiplayer performance.",
             "commit_ids": [
               615650
             ]
           }
         ]
-      },
-      {
-        "title": "Upcoming Features",
-        "items": [
-          {
-            "text": "Introduced a repairable helipad at the bandit camp; players must contribute resources to unlock air vehicle purchases. The helipad stays repaired across wipes.",
-            "commit_ids": [
-              615707
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Performance & Stability",
-        "items": [
-          {
-            "text": "Optimized map erosion processing, cutting erosion time from 47 seconds to 39 seconds.",
-            "commit_ids": [
-              615718
-            ]
-          },
-          {
-            "text": "Fixed empty procmap scene that could cause map loading issues.",
-            "commit_ids": [
-              615719
-            ]
-          },
-          {
-            "text": "Cached rocket ammo definitions for attack helicopters, reducing potential lag during rocket attacks.",
-            "commit_ids": [
-              615716
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### UI & Settings\n- Fixed \"Show use bind\" and \"Show belt bar binds\" settings so they now work correctly.\n- Adjusted conversation readout timings for clearer dialogue.\n\n### World & Structures\n- Fixed crash when using the building planner to place collapsed structures.\n- Reduced network groups for indoor rooms, improving server stability and reducing lag.\n\n### Upcoming Features\n- Introduced a repairable helipad at the bandit camp; players must contribute resources to unlock air vehicle purchases. The helipad stays repaired across wipes.\n\n### Performance & Stability\n- Optimized map erosion processing, cutting erosion time from 47 seconds to 39 seconds.\n- Fixed empty procmap scene that could cause map loading issues.\n- Cached rocket ammo definitions for attack helicopters, reducing potential lag during rocket attacks.",
+    "summary": "### World & Creatures\n- Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.\n- Fixed animals getting stuck in jungle tree charge stacks.\n- Improved sheep visual quality at distance with better LODs and opaque fur material.\n- Fixed chainlink fence material overrides in all monuments.\n- Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.\n- Fixed empty procmap scene that caused missing map content.\n\n### Vehicles & Items\n- Added a repairable helipad at the bandit camp, unlocking air vehicle purchases after sufficient resource contributions.\n- Medical honey bandage now reduces radiation by 5.\n- Updated fireworks pack with new descriptions, icons, and added a white firework.\n\n### User Interface & Dialogue\n- Fixed \"Show use bind\" and \"Show belt bar binds\" settings to apply correctly.\n- Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit.\n- Adjusted conversation readout timing for smoother dialogue flow.\n\n### Performance & Networking\n- Reduced number of network groups for rooms, improving multiplayer performance.",
     "new_items": [
       {
-        "text": "Fixed \"Show use bind\" and \"Show belt bar binds\" settings so they now work correctly.",
+        "text": "Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.",
         "commit_ids": [
-          615675
+          615730
         ],
-        "section": "UI & Settings"
+        "section": "World & Creatures"
       },
       {
-        "text": "Adjusted conversation readout timings for clearer dialogue.",
+        "text": "Fixed animals getting stuck in jungle tree charge stacks.",
         "commit_ids": [
-          615708
+          615730
         ],
-        "section": "UI & Settings"
+        "section": "World & Creatures"
       },
       {
-        "text": "Fixed crash when using the building planner to place collapsed structures.",
+        "text": "Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.",
         "commit_ids": [
-          615720
+          615770,
+          615768
         ],
-        "section": "World & Structures"
+        "section": "World & Creatures"
       },
       {
-        "text": "Introduced a repairable helipad at the bandit camp; players must contribute resources to unlock air vehicle purchases. The helipad stays repaired across wipes.",
+        "text": "Medical honey bandage now reduces radiation by 5.",
         "commit_ids": [
-          615707
+          615767
         ],
-        "section": "Upcoming Features"
+        "section": "Vehicles & Items"
       },
       {
-        "text": "Optimized map erosion processing, cutting erosion time from 47 seconds to 39 seconds.",
+        "text": "Updated fireworks pack with new descriptions, icons, and added a white firework.",
         "commit_ids": [
-          615718
+          615741
         ],
-        "section": "Performance & Stability"
+        "section": "Vehicles & Items"
       },
       {
-        "text": "Fixed empty procmap scene that could cause map loading issues.",
+        "text": "Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit.",
         "commit_ids": [
-          615719
+          615746
         ],
-        "section": "Performance & Stability"
-      },
-      {
-        "text": "Cached rocket ammo definitions for attack helicopters, reducing potential lag during rocket attacks.",
-        "commit_ids": [
-          615716
-        ],
-        "section": "Performance & Stability"
+        "section": "User Interface & Dialogue"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Fixed \"Show use bind\" and \"Show belt bar binds\" settings so they now work correctly.\n- Adjusted conversation readout timings for clearer dialogue.\n- Fixed crash when using the building planner to place collapsed structures.\n- Introduced a repairable helipad at the bandit camp; players must contribute resources to unlock air vehicle purchases. The helipad stays repaired across wipes.\n- Optimized map erosion processing, cutting erosion time from 47 seconds to 39 seconds.\n- Fixed empty procmap scene that could cause map loading issues.\n- Cached rocket ammo definitions for attack helicopters, reducing potential lag during rocket attacks."
+    "new_relevant_count": 6,
+    "new_summary": "- Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.\n- Fixed animals getting stuck in jungle tree charge stacks.\n- Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.\n- Medical honey bandage now reduces radiation by 5.\n- Updated fireworks pack with new descriptions, icons, and added a white firework.\n- Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit."
   },
   "2026-08-19": {
     "commit_count": 97,
