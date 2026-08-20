@@ -1,4 +1,40 @@
 {
+  "2026-08-20": {
+    "commit_count": 4,
+    "relevant_commit_count": 4,
+    "relevant_signature": "615643,615645,615647,615650",
+    "new_baseline_signature": "615643,615645,615647,615650",
+    "prompt_version": "structured-read-state-v3-chunk-cache",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "World & Physics",
+        "items": [
+          {
+            "text": "Fixed furnace collision issues by reducing collider triangle count to stay within the 255‑triangle limit.",
+            "commit_ids": [
+              615647
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Networking",
+        "items": [
+          {
+            "text": "Reduced the number of network groups per room, improving server performance and decreasing lag spikes.",
+            "commit_ids": [
+              615650
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "### World & Physics\n- Fixed furnace collision issues by reducing collider triangle count to stay within the 255‑triangle limit.\n\n### Networking\n- Reduced the number of network groups per room, improving server performance and decreasing lag spikes.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-08-19": {
     "commit_count": 97,
     "relevant_commit_count": 54,
@@ -20,17 +56,9 @@
       }
     ],
     "summary": "### NPC & AI\n- Console commands let you select, move, and release NPCs, supporting both legacy and FSM AI.",
-    "new_items": [
-      {
-        "text": "Console commands let you select, move, and release NPCs, supporting both legacy and FSM AI.",
-        "commit_ids": [
-          615636
-        ],
-        "section": "NPC & AI"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Console commands let you select, move, and release NPCs, supporting both legacy and FSM AI."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-18": {
     "commit_count": 144,
@@ -65,113 +93,6 @@
       }
     ],
     "summary": "### Gameplay & AI\n- Foundations with staircases now correctly pass line‑of‑sight checks for soft‑side melee damage.\n- Flag collision issues resolved, including the RidableHorse flag.\n- Honey bandage now correctly triggers its healing effects.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-08-17": {
-    "commit_count": 48,
-    "relevant_commit_count": 31,
-    "relevant_signature": "614944,614946,614952,614954,614976,614977,614978,614981,614990,614991,614992,614994,614996,615001,615002,615005,615007,615009,615010,615017,615022,615025,615027,615028,615029,615038,615044,615046,615047,615048,615049",
-    "new_baseline_signature": "614944,614946,614952,614954,614976,614977,614978,614981,614990,614991,614992,614994,614996,615001,615002,615005,615007,615009,615010,615017,615022,615025,615027,615028,615029,615038,615044,615046,615047,615048,615049",
-    "prompt_version": "structured-read-state-v3-chunk-cache",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Animals & Breeding",
-        "items": [
-          {
-            "text": "All livestock animals now have correct genders and breeding state machine, fixing the issue where every animal was female.",
-            "commit_ids": [
-              615028
-            ]
-          },
-          {
-            "text": "Bull prefab added, introducing bulls as a new breedable livestock animal.",
-            "commit_ids": [
-              615046
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items & Equipment",
-        "items": [
-          {
-            "text": "Medical honey bandage now correctly triggers its healing effects.",
-            "commit_ids": [
-              614978
-            ]
-          },
-          {
-            "text": "Water bucket UI fixed so players can transfer water into a held bucket.",
-            "commit_ids": [
-              614976
-            ]
-          },
-          {
-            "text": "Battery items now properly receive additional data via client RPC.",
-            "commit_ids": [
-              615038
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Server Connectivity",
-        "items": [
-          {
-            "text": "Nexus connect modal UI bugs fixed: map button now enables, map no longer squishes, and overall modal stability improved.",
-            "commit_ids": [
-              615029,
-              615027,
-              615010
-            ]
-          },
-          {
-            "text": "Servers with Nexus enabled are now tagged with \"nexuszone\", hidden from the server list by default, and expose Nexus info in A2S rules.",
-            "commit_ids": [
-              615044
-            ]
-          },
-          {
-            "text": "MaxPlayers count displayed correctly after recent changes.",
-            "commit_ids": [
-              615009
-            ]
-          },
-          {
-            "text": "UI rows alignment corrected, removing the left offset on non-keyframable rows.",
-            "commit_ids": [
-              614944
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Vehicle pooling now detaches runtime‑parented children before pooling, preventing NRE spamming.",
-            "commit_ids": [
-              615049
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & World",
-        "items": [
-          {
-            "text": "Underwater Labs windows refraction texture fixed, improving visibility inside labs.",
-            "commit_ids": [
-              615025
-            ]
-          }
-        ]
-      }
-    ],
-    "summary": "### Animals & Breeding\n- All livestock animals now have correct genders and breeding state machine, fixing the issue where every animal was female.\n- Bull prefab added, introducing bulls as a new breedable livestock animal.\n\n### Items & Equipment\n- Medical honey bandage now correctly triggers its healing effects.\n- Water bucket UI fixed so players can transfer water into a held bucket.\n- Battery items now properly receive additional data via client RPC.\n\n### UI & Server Connectivity\n- Nexus connect modal UI bugs fixed: map button now enables, map no longer squishes, and overall modal stability improved.\n- Servers with Nexus enabled are now tagged with \"nexuszone\", hidden from the server list by default, and expose Nexus info in A2S rules.\n- MaxPlayers count displayed correctly after recent changes.\n- UI rows alignment corrected, removing the left offset on non-keyframable rows.\n\n### Vehicles\n- Vehicle pooling now detaches runtime‑parented children before pooling, preventing NRE spamming.\n\n### Gameplay & World\n- Underwater Labs windows refraction texture fixed, improving visibility inside labs.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
