@@ -1,5 +1,149 @@
 [
   {
+    "id": 615828,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "161596",
+    "created": "2026-08-20T17:28:03",
+    "message": "Bugfix: make Underwear.ValidateForPlayer MT friendly on server\r\nFixes BasePlayer saving throwing unity exceptions\r\nTests: changed underwear with Jobs 4",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615824,
+    "branch": "main/base_occlusion",
+    "changeset": "161595",
+    "created": "2026-08-20T17:11:14",
+    "message": "Simple list of doors with transparency for testing",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 615823,
+    "branch": "main/character_customisation",
+    "changeset": "161594",
+    "created": "2026-08-20T17:10:24",
+    "message": "System to generate alpha'd player icons - allows us to setup desired shots with specific lighting setups\r\nManifest system based off Underwear manifest which allows us to link races/body types/hair to icons as well as things like steam items or specific seeds",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 615821,
+    "branch": "main/base_occlusion",
+    "changeset": "161593",
+    "created": "2026-08-20T17:04:15",
+    "message": "Add ddraw for network groups for rooms",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 615819,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "161592",
+    "created": "2026-08-20T16:46:39",
+    "message": "Bugfix: make FishMount.Save mt friendly - cache fish container index\r\nTests: placed a fish in a trophy display with Jobs 4",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615818,
+    "branch": "main/medical_honey_bandage",
+    "changeset": "161591",
+    "created": "2026-08-20T16:46:15",
+    "message": "Added honey bandage to medical crates and waterwell vendor",
+    "author": "Lukester"
+  },
+  {
+    "id": 615817,
+    "branch": "main/glass_ar",
+    "changeset": "161590",
+    "created": "2026-08-20T16:42:05",
+    "message": "exported latest vm glass ar admire animation",
+    "author": "julek"
+  },
+  {
+    "id": 615813,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "161589",
+    "created": "2026-08-20T16:34:04",
+    "message": "Update: wrap InvokeHandler internals in DebugMTLock\r\nTests: booted on craggy and ran around with EnableDebugMTLock",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615811,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "161588",
+    "created": "2026-08-20T16:32:25",
+    "message": "Update: add single-thread reentrant support to DebugMTLock to avoid deadlocks\r\n- added unit tests\r\nBecause of course InvokeHandler is non-trivially recursive\r\nTests: uni tests",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615805,
+    "branch": "main",
+    "changeset": "161586",
+    "created": "2026-08-20T16:18:17",
+    "message": "fixed muzzle flash fx slight incorrect position on the muzzle brake",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615804,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161585",
+    "created": "2026-08-20T16:13:46",
+    "message": "When sampling multiple potential destination around an agent, instead of snapping random points to the navmesh, floodfill around the agent and only sample on the reachable polygons\r\n- fix 7x spike of 2.64ms on oilrig, when all points land in unreachable navmesh islands, and we waste time trying to path to them and hitting our node exploration cap every time",
+    "author": "Maverick"
+  },
+  {
+    "id": 615795,
+    "branch": "main/glass_ar",
+    "changeset": "161582",
+    "created": "2026-08-20T15:59:12",
+    "message": "Glass AR - updated weapon rack positions",
+    "author": "alex.m"
+  },
+  {
+    "id": 615792,
+    "branch": "main/vcc",
+    "changeset": "161580",
+    "created": "2026-08-20T15:42:26",
+    "message": "Re-apply the steam init reflection hack now it's not needed and tested.",
+    "author": "Adam W"
+  },
+  {
+    "id": 615790,
+    "branch": "main/hackweek_command_palette",
+    "changeset": "161578",
+    "created": "2026-08-20T15:39:46",
+    "message": "Fix misaligned caret when the search is empty",
+    "author": "octo"
+  },
+  {
+    "id": 615784,
+    "branch": "main/kriegchainsword_rack_fix",
+    "changeset": "161575",
+    "created": "2026-08-20T15:21:11",
+    "message": "krieg chainsword small weaponrack positioning",
+    "author": "matt.i"
+  },
+  {
+    "id": 615783,
+    "branch": "main",
+    "changeset": "161574",
+    "created": "2026-08-20T15:20:41",
+    "message": "merge back from command_palette",
+    "author": "octo"
+  },
+  {
+    "id": 615780,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "161573",
+    "created": "2026-08-20T15:17:06",
+    "message": "Update: Move UnsafeScriptingAccess and DebugMTLock to Facepunch.UnityEngine\r\n- Cleanup empty asms\r\nTests: ran relevant unit tests",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615779,
+    "branch": "main",
+    "changeset": "161572",
+    "created": "2026-08-20T15:14:50",
+    "message": "fixed ladder.worldmodel from having two conflicting lod groups causing console errors",
+    "author": "Pilgrim"
+  },
+  {
     "id": 615774,
     "branch": "main/mt_snapshot_saving",
     "changeset": "161568",
@@ -2502,109 +2646,5 @@
     "created": "2026-08-17T19:08:56",
     "message": "add a scroll fade/gradient to tabs",
     "author": "octo"
-  },
-  {
-    "id": 614964,
-    "branch": "main/collider_physmat_test",
-    "changeset": "161051",
-    "created": "2026-08-17T18:18:01",
-    "message": "removed unnecessary prefab",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 614962,
-    "branch": "main/collider_physmat_test",
-    "changeset": "161049",
-    "created": "2026-08-17T18:14:59",
-    "message": "Added test_physmat_cube_COL, a per-face physics material test asset\r\n\r\nCube with 6 physics materials, one per face, each side of the cube split differently to test how material boundaries behave. \r\n6 is more than any real asset would need, deliberate headroom for finding the edges of the per-face lookup rather than a realistic case.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 614955,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161042",
-    "created": "2026-08-17T17:59:12",
-    "message": "Update: consolidate OS specific calls to RustNative\r\nStill gotta build and test linux and mac, gonna do that tomorrow\r\nTests: ran temp scene",
-    "author": "Daniel P"
-  },
-  {
-    "id": 614954,
-    "branch": "main/flex_color_picker_fixes",
-    "changeset": "161041",
-    "created": "2026-08-17T17:58:01",
-    "message": "Reverted previous idea, now using a better way of fixing it",
-    "author": "Raul"
-  },
-  {
-    "id": 614953,
-    "branch": "main/base_occlusion",
-    "changeset": "161040",
-    "created": "2026-08-17T17:57:09",
-    "message": "Don't hide rooms until they have been invisible for 5s+ (prevents room going invisible as the door is in it's closing animation + reduces churn from rooms being deleted and networked over and over",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 614952,
-    "branch": "main/fix_sqlite_clan_stuck",
-    "changeset": "161039",
-    "created": "2026-08-17T17:55:12",
-    "message": "Move code around, don't unload filestorage since domain reload should handle it",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 614950,
-    "branch": "main/automated_testing",
-    "changeset": "161037",
-    "created": "2026-08-17T17:44:16",
-    "message": "One more that I missed",
-    "author": "cipeaX"
-  },
-  {
-    "id": 614947,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161036",
-    "created": "2026-08-17T17:39:06",
-    "message": "Simplified battery console commands",
-    "author": "Flavien"
-  },
-  {
-    "id": 614946,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161035",
-    "created": "2026-08-17T17:34:21",
-    "message": "Set main power slots for EngineListener and AlarmSystem prefabs (DummySwitch from monuments)",
-    "author": "Flavien"
-  },
-  {
-    "id": 614945,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161034",
-    "created": "2026-08-17T17:33:56",
-    "message": "TeslaCoil, SolarPanel, FuelGenerator cleanup",
-    "author": "Flavien"
-  },
-  {
-    "id": 614944,
-    "branch": "main/demo_ui_2",
-    "changeset": "161033",
-    "created": "2026-08-17T17:31:26",
-    "message": "Fix alignment issues on non-keyframable rows, they had an ugly left offset before.",
-    "author": "octo"
-  },
-  {
-    "id": 614941,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161031",
-    "created": "2026-08-17T17:15:39",
-    "message": "Removed all the old IO code from the battery class (feels amazing)",
-    "author": "Flavien"
-  },
-  {
-    "id": 614937,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161029",
-    "created": "2026-08-17T16:59:10",
-    "message": "Update: disable Unsafe.UseMultithreadedScripting on CLIENT\r\n- codegen\r\nNeed to figure out how to better patch out the managed check when doing an IL2CPP build, will leave that for later\r\nTests: tested booting test scene both in CLIENT(ran on main thread) and SERVER(ran on thread pool) modes",
-    "author": "Daniel P"
   }
 ]

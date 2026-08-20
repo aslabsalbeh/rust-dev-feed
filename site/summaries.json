@@ -1,94 +1,52 @@
 {
   "2026-08-20": {
-    "commit_count": 37,
-    "relevant_commit_count": 27,
-    "relevant_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774",
-    "new_baseline_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774",
+    "commit_count": 55,
+    "relevant_commit_count": 38,
+    "relevant_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774,615779,615784,615790,615795,615804,615805,615811,615813,615818,615819,615828",
+    "new_baseline_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774,615779,615784,615790,615795,615804,615805,615811,615813,615818,615819,615828",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Creatures",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.",
+            "text": "Fixed old scientists not moving at multiple locations, corrected crouch‑walk angle on stairs, resolved AI getting stuck and slowed old AI behavior; also fixed an animal getting stuck in a charge stack around jungle trees.",
             "commit_ids": [
               615730
             ]
           },
           {
-            "text": "Fixed animals getting stuck in jungle tree charge stacks.",
+            "text": "Improved navmesh sampling by flood‑filling reachable polygons, eliminating a 7× spike in path‑finding time on the oilrig when points landed on unreachable islands.",
             "commit_ids": [
-              615730
-            ]
-          },
-          {
-            "text": "Improved sheep visual quality at distance with better LODs and opaque fur material.",
-            "commit_ids": [
-              615667
-            ]
-          },
-          {
-            "text": "Fixed chainlink fence material overrides in all monuments.",
-            "commit_ids": [
-              615673
-            ]
-          },
-          {
-            "text": "Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.",
-            "commit_ids": [
-              615770,
-              615768
-            ]
-          },
-          {
-            "text": "Fixed empty procmap scene that caused missing map content.",
-            "commit_ids": [
-              615719
+              615804
             ]
           }
         ]
       },
       {
-        "title": "Vehicles & Items",
+        "title": "UI",
         "items": [
           {
-            "text": "Added a repairable helipad at the bandit camp, unlocking air vehicle purchases after sufficient resource contributions.",
-            "commit_ids": [
-              615707
-            ]
-          },
-          {
-            "text": "Medical honey bandage now reduces radiation by 5.",
-            "commit_ids": [
-              615767
-            ]
-          },
-          {
-            "text": "Updated fireworks pack with new descriptions, icons, and added a white firework.",
-            "commit_ids": [
-              615741
-            ]
-          }
-        ]
-      },
-      {
-        "title": "User Interface & Dialogue",
-        "items": [
-          {
-            "text": "Fixed \"Show use bind\" and \"Show belt bar binds\" settings to apply correctly.",
-            "commit_ids": [
-              615675
-            ]
-          },
-          {
-            "text": "Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit.",
+            "text": "Fixed player preview eyes being black in the character customization UI and made the eyes follow the camera when orbiting the player.",
             "commit_ids": [
               615746
             ]
           },
           {
-            "text": "Adjusted conversation readout timing for smoother dialogue flow.",
+            "text": "Corrected misaligned caret in the command‑palette search when the query is empty.",
+            "commit_ids": [
+              615790
+            ]
+          },
+          {
+            "text": "Repaired \"Show use bind\" and \"Show belt bar binds\" settings so they now correctly toggle the corresponding UI elements.",
+            "commit_ids": [
+              615675
+            ]
+          },
+          {
+            "text": "Adjusted conversation readout timings for smoother dialogue pacing.",
             "commit_ids": [
               615708
             ]
@@ -96,65 +54,77 @@
         ]
       },
       {
-        "title": "Performance & Networking",
+        "title": "World Objects & Items",
         "items": [
           {
-            "text": "Reduced number of network groups for rooms, improving multiplayer performance.",
+            "text": "Adjusted positioning of the Krieg chainsword small weapon rack for proper placement.",
             "commit_ids": [
-              615650
+              615784
+            ]
+          },
+          {
+            "text": "Updated propane tank model and fixed random disappearing issue in its LODs.",
+            "commit_ids": [
+              615768
+            ]
+          },
+          {
+            "text": "Fixed double LOD renderers on corn and salvaged hammer world models, preventing visual glitches.",
+            "commit_ids": [
+              615770
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monuments",
+        "items": [
+          {
+            "text": "Fixed chainlink fences in monuments that had incorrect material overrides on LOD1.",
+            "commit_ids": [
+              615673
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Gameplay",
+        "items": [
+          {
+            "text": "Added a repairable helipad at Bandit Camp; players must contribute resources to unlock air‑vehicle purchases, functioning like siege‑weapon construction.",
+            "commit_ids": [
+              615707
             ]
           }
         ]
       }
     ],
-    "summary": "### World & Creatures\n- Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.\n- Fixed animals getting stuck in jungle tree charge stacks.\n- Improved sheep visual quality at distance with better LODs and opaque fur material.\n- Fixed chainlink fence material overrides in all monuments.\n- Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.\n- Fixed empty procmap scene that caused missing map content.\n\n### Vehicles & Items\n- Added a repairable helipad at the bandit camp, unlocking air vehicle purchases after sufficient resource contributions.\n- Medical honey bandage now reduces radiation by 5.\n- Updated fireworks pack with new descriptions, icons, and added a white firework.\n\n### User Interface & Dialogue\n- Fixed \"Show use bind\" and \"Show belt bar binds\" settings to apply correctly.\n- Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit.\n- Adjusted conversation readout timing for smoother dialogue flow.\n\n### Performance & Networking\n- Reduced number of network groups for rooms, improving multiplayer performance.",
+    "summary": "### NPC & AI\n- Fixed old scientists not moving at multiple locations, corrected crouch‑walk angle on stairs, resolved AI getting stuck and slowed old AI behavior; also fixed an animal getting stuck in a charge stack around jungle trees.\n- Improved navmesh sampling by flood‑filling reachable polygons, eliminating a 7× spike in path‑finding time on the oilrig when points landed on unreachable islands.\n\n### UI\n- Fixed player preview eyes being black in the character customization UI and made the eyes follow the camera when orbiting the player.\n- Corrected misaligned caret in the command‑palette search when the query is empty.\n- Repaired \"Show use bind\" and \"Show belt bar binds\" settings so they now correctly toggle the corresponding UI elements.\n- Adjusted conversation readout timings for smoother dialogue pacing.\n\n### World Objects & Items\n- Adjusted positioning of the Krieg chainsword small weapon rack for proper placement.\n- Updated propane tank model and fixed random disappearing issue in its LODs.\n- Fixed double LOD renderers on corn and salvaged hammer world models, preventing visual glitches.\n\n### Monuments\n- Fixed chainlink fences in monuments that had incorrect material overrides on LOD1.\n\n### Vehicles & Gameplay\n- Added a repairable helipad at Bandit Camp; players must contribute resources to unlock air‑vehicle purchases, functioning like siege‑weapon construction.",
     "new_items": [
       {
-        "text": "Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.",
+        "text": "Improved navmesh sampling by flood‑filling reachable polygons, eliminating a 7× spike in path‑finding time on the oilrig when points landed on unreachable islands.",
         "commit_ids": [
-          615730
+          615804
         ],
-        "section": "World & Creatures"
+        "section": "NPC & AI"
       },
       {
-        "text": "Fixed animals getting stuck in jungle tree charge stacks.",
+        "text": "Corrected misaligned caret in the command‑palette search when the query is empty.",
         "commit_ids": [
-          615730
+          615790
         ],
-        "section": "World & Creatures"
+        "section": "UI"
       },
       {
-        "text": "Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.",
+        "text": "Adjusted positioning of the Krieg chainsword small weapon rack for proper placement.",
         "commit_ids": [
-          615770,
-          615768
+          615784
         ],
-        "section": "World & Creatures"
-      },
-      {
-        "text": "Medical honey bandage now reduces radiation by 5.",
-        "commit_ids": [
-          615767
-        ],
-        "section": "Vehicles & Items"
-      },
-      {
-        "text": "Updated fireworks pack with new descriptions, icons, and added a white firework.",
-        "commit_ids": [
-          615741
-        ],
-        "section": "Vehicles & Items"
-      },
-      {
-        "text": "Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit.",
-        "commit_ids": [
-          615746
-        ],
-        "section": "User Interface & Dialogue"
+        "section": "World Objects & Items"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Fixed old scientists staying idle and getting stuck, corrected their crouch‑walk angle on stairs, and improved overall AI movement.\n- Fixed animals getting stuck in jungle tree charge stacks.\n- Fixed double LOD renderers on corn and salvaged hammer models and resolved disappearing LODs on propane tanks.\n- Medical honey bandage now reduces radiation by 5.\n- Updated fireworks pack with new descriptions, icons, and added a white firework.\n- Improved character customization UI: proper backdrop, fixed black eyes preview, and eyes now follow camera orbit."
+    "new_relevant_count": 3,
+    "new_summary": "- Improved navmesh sampling by flood‑filling reachable polygons, eliminating a 7× spike in path‑finding time on the oilrig when points landed on unreachable islands.\n- Corrected misaligned caret in the command‑palette search when the query is empty.\n- Adjusted positioning of the Krieg chainsword small weapon rack for proper placement."
   },
   "2026-08-19": {
     "commit_count": 97,
