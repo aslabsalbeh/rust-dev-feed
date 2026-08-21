@@ -1,52 +1,40 @@
 {
   "2026-08-20": {
-    "commit_count": 72,
-    "relevant_commit_count": 49,
-    "relevant_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774,615779,615784,615790,615795,615804,615805,615811,615813,615818,615819,615828,615834,615836,615838,615841,615842,615843,615844,615845,615846,615848,615860",
-    "new_baseline_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774,615779,615784,615790,615795,615804,615805,615811,615813,615818,615819,615828,615834,615836,615838,615841,615842,615843,615844,615845,615846,615848,615860",
+    "commit_count": 79,
+    "relevant_commit_count": 54,
+    "relevant_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774,615779,615784,615790,615795,615804,615805,615811,615813,615818,615819,615828,615834,615836,615837,615838,615841,615842,615843,615844,615845,615846,615848,615860,615872,615873,615877,615881",
+    "new_baseline_signature": "615643,615645,615647,615650,615667,615673,615675,615707,615708,615716,615718,615719,615720,615722,615726,615728,615730,615731,615734,615741,615746,615755,615765,615767,615768,615770,615774,615779,615784,615790,615795,615804,615805,615811,615813,615818,615819,615828,615834,615836,615837,615838,615841,615842,615843,615844,615845,615846,615848,615860,615872,615873,615877,615881",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & AI",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed various AI movement problems: scientists now navigate correctly, crouch‑walk angles on stairs are accurate, older AI no longer slows down, and agents no longer get stuck.",
+            "text": "Fixed old scientists movement and AI getting stuck, including crouch‑walk angle on stairs and slower behavior.",
             "commit_ids": [
               615730
             ]
           },
           {
-            "text": "Navmesh sampling now only uses reachable polygons, eliminating large frame‑time spikes on the oilrig when pathfinding to unreachable islands.",
+            "text": "Improved navmesh sampling to eliminate spikes from unreachable points.",
             "commit_ids": [
               615804
-            ]
-          },
-          {
-            "text": "Deployable objects that span multiple rooms now work properly by being placed in their own network groups.",
-            "commit_ids": [
-              615841
             ]
           }
         ]
       },
       {
-        "title": "Items & Structures",
+        "title": "Monuments & Structures",
         "items": [
           {
-            "text": "Advanced red toolbox loot crates now spawn debris (gibs) when emptied or destroyed.",
+            "text": "Deployables placed inside rooms now work via separate network groups.",
             "commit_ids": [
-              615860
+              615841
             ]
           },
           {
-            "text": "Krieg chainsword small weapon rack positioning corrected.",
-            "commit_ids": [
-              615784
-            ]
-          },
-          {
-            "text": "New repairable helipad at the bandit camp requires player‑contributed resources to unlock air vehicle purchases.",
+            "text": "Added a repairable helipad at the bandit camp; players must contribute resources to unlock air vehicle purchases, and it stays repaired until the next wipe.",
             "commit_ids": [
               615707
             ]
@@ -54,64 +42,21 @@
         ]
       },
       {
-        "title": "UI & Settings",
+        "title": "UI & Gameplay",
         "items": [
           {
-            "text": "‘Show use bind’ and ‘Show belt bar binds’ settings now function correctly.",
-            "commit_ids": [
-              615675
-            ]
-          },
-          {
-            "text": "Conversation readout timings adjusted for smoother dialogue flow.",
+            "text": "Tuned conversation readout timings for clearer dialogue pacing.",
             "commit_ids": [
               615708
             ]
           }
         ]
-      },
-      {
-        "title": "Server & Network Stability",
-        "items": [
-          {
-            "text": "Fixed server crash that occurred when validating player underwear during save.",
-            "commit_ids": [
-              615828
-            ]
-          },
-          {
-            "text": "Card table saving is now multithread‑friendly, preventing save errors.",
-            "commit_ids": [
-              615722
-            ]
-          },
-          {
-            "text": "Resolved null reference error when a planner places a collapsed renderer, eliminating related crashes.",
-            "commit_ids": [
-              615720
-            ]
-          },
-          {
-            "text": "Reduced the number of network groups for rooms, improving multiplayer performance.",
-            "commit_ids": [
-              615650
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### World & AI\n- Fixed various AI movement problems: scientists now navigate correctly, crouch‑walk angles on stairs are accurate, older AI no longer slows down, and agents no longer get stuck.\n- Navmesh sampling now only uses reachable polygons, eliminating large frame‑time spikes on the oilrig when pathfinding to unreachable islands.\n- Deployable objects that span multiple rooms now work properly by being placed in their own network groups.\n\n### Items & Structures\n- Advanced red toolbox loot crates now spawn debris (gibs) when emptied or destroyed.\n- Krieg chainsword small weapon rack positioning corrected.\n- New repairable helipad at the bandit camp requires player‑contributed resources to unlock air vehicle purchases.\n\n### UI & Settings\n- ‘Show use bind’ and ‘Show belt bar binds’ settings now function correctly.\n- Conversation readout timings adjusted for smoother dialogue flow.\n\n### Server & Network Stability\n- Fixed server crash that occurred when validating player underwear during save.\n- Card table saving is now multithread‑friendly, preventing save errors.\n- Resolved null reference error when a planner places a collapsed renderer, eliminating related crashes.\n- Reduced the number of network groups for rooms, improving multiplayer performance.",
-    "new_items": [
-      {
-        "text": "Advanced red toolbox loot crates now spawn debris (gibs) when emptied or destroyed.",
-        "commit_ids": [
-          615860
-        ],
-        "section": "Items & Structures"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Advanced red toolbox loot crates now spawn debris (gibs) when emptied or destroyed."
+    "summary": "### NPC & AI\n- Fixed old scientists movement and AI getting stuck, including crouch‑walk angle on stairs and slower behavior.\n- Improved navmesh sampling to eliminate spikes from unreachable points.\n\n### Monuments & Structures\n- Deployables placed inside rooms now work via separate network groups.\n- Added a repairable helipad at the bandit camp; players must contribute resources to unlock air vehicle purchases, and it stays repaired until the next wipe.\n\n### UI & Gameplay\n- Tuned conversation readout timings for clearer dialogue pacing.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-19": {
     "commit_count": 97,
