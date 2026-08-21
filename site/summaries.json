@@ -1,40 +1,23 @@
 {
   "2026-08-21": {
-    "commit_count": 48,
-    "relevant_commit_count": 20,
-    "relevant_signature": "615884,615900,615910,615915,615916,615921,615929,615942,615943,615947,615959,615960,615962,615967,615970,615971,615980,615985,615987,615988",
-    "new_baseline_signature": "615884,615900,615910,615915,615916,615921,615929,615942,615943,615947,615959,615960,615962,615967,615970,615971,615980,615985,615987,615988",
+    "commit_count": 71,
+    "relevant_commit_count": 40,
+    "relevant_signature": "615884,615900,615910,615915,615916,615921,615929,615942,615943,615947,615959,615960,615962,615967,615970,615971,615980,615985,615987,615988,616000,616002,616007,616009,616012,616013,616014,616015,616016,616019,616020,616026,616027,616028,616029,616030,616031,616034,616036,616040",
+    "new_baseline_signature": "615884,615900,615910,615915,615916,615921,615929,615942,615943,615947,615959,615960,615962,615967,615970,615971,615980,615985,615987,615988,616000,616002,616007,616009,616012,616013,616014,616015,616016,616019,616020,616026,616027,616028,616029,616030,616031,616034,616036,616040",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Items & Deployables",
+        "title": "Gameplay & Stability",
         "items": [
           {
-            "text": "Fixed honey bandage model collision size and outline referencing the correct model.",
+            "text": "Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.",
             "commit_ids": [
-              615929
+              616019
             ]
           },
           {
-            "text": "Fixed fireplace placement under existing floors by adjusting its deploy volume.",
-            "commit_ids": [
-              615967
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI",
-        "items": [
-          {
-            "text": "Fixed market terminal long names rendering over the sides.",
-            "commit_ids": [
-              615980
-            ]
-          },
-          {
-            "text": "Fixed crashes when switching cameras and reduced error spam.",
+            "text": "Fixed crash when switching cameras, eliminating error spam.",
             "commit_ids": [
               615987
             ]
@@ -42,21 +25,91 @@
         ]
       },
       {
-        "title": "Animals",
+        "title": "Items, Weapons & Structures",
         "items": [
           {
-            "text": "Added new Sea Turtle animal with meshes and textures.",
+            "text": "Fixed bandage world model collision size and outline reference, improving interaction.",
             "commit_ids": [
-              615970
+              615929
+            ]
+          },
+          {
+            "text": "Reduced fireplace deployment volume, allowing placement under existing floors.",
+            "commit_ids": [
+              615967
+            ]
+          },
+          {
+            "text": "Repaired corrupted hazmat suit prefab, restoring the item.",
+            "commit_ids": [
+              616007
+            ]
+          },
+          {
+            "text": "Fixed chainsaw world model highlight and reduced highlight draw count.",
+            "commit_ids": [
+              615960
+            ]
+          },
+          {
+            "text": "Added refreshed flashlight animation for third‑person view and new admire animation.",
+            "commit_ids": [
+              616002
+            ]
+          },
+          {
+            "text": "Blockers now play damage‑state visual effects when damaged.",
+            "commit_ids": [
+              615910
             ]
           }
         ]
       },
       {
-        "title": "Balance",
+        "title": "UI & Customization",
         "items": [
           {
-            "text": "Reduced craft costs: Mortar -5 HQM & -2 pipe, Hazmat suit -1 HQM & -1 tarp, HMLMG -30 HQM; Prisoner hood now default blueprint and removed from tech tree.",
+            "text": "Fixed long market terminal names overflow rendering.",
+            "commit_ids": [
+              615980
+            ]
+          },
+          {
+            "text": "Corrected smart alarm text typo and radial wheel label.",
+            "commit_ids": [
+              615971
+            ]
+          },
+          {
+            "text": "Improved toast notifications display.",
+            "commit_ids": [
+              615884
+            ]
+          },
+          {
+            "text": "Fixed preview player model bugs and improved live icon rendering in character customization UI.",
+            "commit_ids": [
+              616009
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & NPCs",
+        "items": [
+          {
+            "text": "Introduced frog critter with initial setup.",
+            "commit_ids": [
+              616020
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Balance Changes",
+        "items": [
+          {
+            "text": "Reduced craft costs for mortar, hazmat suit, and HMLMG; made prisoner hood a default blueprint and removed it from the tech tree.",
             "commit_ids": [
               615943
             ]
@@ -64,46 +117,46 @@
         ]
       }
     ],
-    "summary": "### Items & Deployables\n- Fixed honey bandage model collision size and outline referencing the correct model.\n- Fixed fireplace placement under existing floors by adjusting its deploy volume.\n\n### UI\n- Fixed market terminal long names rendering over the sides.\n- Fixed crashes when switching cameras and reduced error spam.\n\n### Animals\n- Added new Sea Turtle animal with meshes and textures.\n\n### Balance\n- Reduced craft costs: Mortar -5 HQM & -2 pipe, Hazmat suit -1 HQM & -1 tarp, HMLMG -30 HQM; Prisoner hood now default blueprint and removed from tech tree.",
+    "summary": "### Gameplay & Stability\n- Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.\n- Fixed crash when switching cameras, eliminating error spam.\n\n### Items, Weapons & Structures\n- Fixed bandage world model collision size and outline reference, improving interaction.\n- Reduced fireplace deployment volume, allowing placement under existing floors.\n- Repaired corrupted hazmat suit prefab, restoring the item.\n- Fixed chainsaw world model highlight and reduced highlight draw count.\n- Added refreshed flashlight animation for third‑person view and new admire animation.\n- Blockers now play damage‑state visual effects when damaged.\n\n### UI & Customization\n- Fixed long market terminal names overflow rendering.\n- Corrected smart alarm text typo and radial wheel label.\n- Improved toast notifications display.\n- Fixed preview player model bugs and improved live icon rendering in character customization UI.\n\n### Animals & NPCs\n- Introduced frog critter with initial setup.\n\n### Balance Changes\n- Reduced craft costs for mortar, hazmat suit, and HMLMG; made prisoner hood a default blueprint and removed it from the tech tree.",
     "new_items": [
       {
-        "text": "Fixed fireplace placement under existing floors by adjusting its deploy volume.",
+        "text": "Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.",
         "commit_ids": [
-          615967
+          616019
         ],
-        "section": "Items & Deployables"
+        "section": "Gameplay & Stability"
       },
       {
-        "text": "Fixed market terminal long names rendering over the sides.",
+        "text": "Repaired corrupted hazmat suit prefab, restoring the item.",
         "commit_ids": [
-          615980
+          616007
         ],
-        "section": "UI"
+        "section": "Items, Weapons & Structures"
       },
       {
-        "text": "Fixed crashes when switching cameras and reduced error spam.",
+        "text": "Added refreshed flashlight animation for third‑person view and new admire animation.",
         "commit_ids": [
-          615987
+          616002
         ],
-        "section": "UI"
+        "section": "Items, Weapons & Structures"
       },
       {
-        "text": "Added new Sea Turtle animal with meshes and textures.",
+        "text": "Fixed preview player model bugs and improved live icon rendering in character customization UI.",
         "commit_ids": [
-          615970
+          616009
         ],
-        "section": "Animals"
+        "section": "UI & Customization"
       },
       {
-        "text": "Reduced craft costs: Mortar -5 HQM & -2 pipe, Hazmat suit -1 HQM & -1 tarp, HMLMG -30 HQM; Prisoner hood now default blueprint and removed from tech tree.",
+        "text": "Introduced frog critter with initial setup.",
         "commit_ids": [
-          615943
+          616020
         ],
-        "section": "Balance"
+        "section": "Animals & NPCs"
       }
     ],
     "new_relevant_count": 5,
-    "new_summary": "- Fixed fireplace placement under existing floors by adjusting its deploy volume.\n- Fixed market terminal long names rendering over the sides.\n- Fixed crashes when switching cameras and reduced error spam.\n- Added new Sea Turtle animal with meshes and textures.\n- Reduced craft costs: Mortar -5 HQM & -2 pipe, Hazmat suit -1 HQM & -1 tarp, HMLMG -30 HQM; Prisoner hood now default blueprint and removed from tech tree."
+    "new_summary": "- Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.\n- Repaired corrupted hazmat suit prefab, restoring the item.\n- Added refreshed flashlight animation for third‑person view and new admire animation.\n- Fixed preview player model bugs and improved live icon rendering in character customization UI.\n- Introduced frog critter with initial setup."
   },
   "2026-08-20": {
     "commit_count": 79,
