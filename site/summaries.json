@@ -1,11 +1,175 @@
 {
   "2026-08-21": {
-    "commit_count": 71,
-    "relevant_commit_count": 40,
+    "commit_count": 78,
+    "relevant_commit_count": 46,
     "relevant_signature": "615884,615900,615910,615915,615916,615921,615929,615942,615943,615947,615959,615960,615962,615967,615970,615971,615980,615985,615987,615988,616000,616002,616007,616009,616012,616013,616014,616015,616016,616019,616020,616026,616027,616028,616029,616030,616031,616034,616036,616040",
     "new_baseline_signature": "615884,615900,615910,615915,615916,615921,615929,615942,615943,615947,615959,615960,615962,615967,615970,615971,615980,615985,615987,615988,616000,616002,616007,616009,616012,616013,616014,616015,616016,616019,616020,616026,616027,616028,616029,616030,616031,616034,616036,616040",
     "prompt_version": "structured-read-state-v3-chunk-cache",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "615916,615929,615942,615960,615967,615980,615985,615987,616007,616014,616015,616016,616026,616027,616028,616029,616030,616031,616034,616040,616045,616049,616050,616055,616063": [
+        {
+          "title": "World & Environment",
+          "items": [
+            {
+              "text": "Fixed world model collision size for the bandage and corrected its outline reference.",
+              "commit_ids": [
+                615929
+              ]
+            },
+            {
+              "text": "Fixed high external wall and gate collision meshes.",
+              "commit_ids": [
+                616063
+              ]
+            },
+            {
+              "text": "Adjusted fireplace deployment volume so it can be placed under existing floors.",
+              "commit_ids": [
+                615967
+              ]
+            },
+            {
+              "text": "Repaired chainsaw model highlight rendering.",
+              "commit_ids": [
+                615960
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Corrected scientist path success logic to prevent navigation failures.",
+              "commit_ids": [
+                615985
+              ]
+            },
+            {
+              "text": "Fixed navigation sample radius calculation to use the proper extent.",
+              "commit_ids": [
+                615942
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Items & Equipment",
+          "items": [
+            {
+              "text": "Repaired corrupt Hazmat suit item prefab.",
+              "commit_ids": [
+                616007
+              ]
+            },
+            {
+              "text": "Fixed Glass AR base color texture that broke ammo alpha clipping.",
+              "commit_ids": [
+                616016
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & HUD",
+          "items": [
+            {
+              "text": "Fixed long market terminal names rendering beyond panel edges.",
+              "commit_ids": [
+                615980
+              ]
+            },
+            {
+              "text": "Resolved crash when switching cameras and reduced error spam.",
+              "commit_ids": [
+                615987
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Gameplay & Mechanics",
+          "items": [
+            {
+              "text": "Various navigation and interaction fixes, including proper door‑open reporting and null‑guarding RustNavigation on scene teardown.",
+              "commit_ids": [
+                616045
+              ]
+            }
+          ]
+        }
+      ],
+      "615884,615900,615910,615915,615921,615943,615947,615959,615962,615970,615971,615988,616000,616002,616009,616012,616013,616019,616020,616036,616059": [
+        {
+          "title": "UI & HUD",
+          "items": [
+            {
+              "text": "Fixed typo in smart alarm text and sculpture radial wheel UI.",
+              "commit_ids": [
+                615971
+              ]
+            },
+            {
+              "text": "Improved toast notifications.",
+              "commit_ids": [
+                615884
+              ]
+            },
+            {
+              "text": "Updated character customization UI: live icon preview, fixed preview model bugs, auto-matching tabs, removed debug text.",
+              "commit_ids": [
+                616009
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Gameplay & Mechanics",
+          "items": [
+            {
+              "text": "Optimized train collision handling by caching HittableByTrains owner, reducing save component lookups.",
+              "commit_ids": [
+                616019
+              ]
+            },
+            {
+              "text": "Added damage-state visual effects to all blocker objects.",
+              "commit_ids": [
+                615910
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Creatures",
+          "items": [
+            {
+              "text": "Introduced new sea turtle animal with meshes and textures.",
+              "commit_ids": [
+                615970
+              ]
+            },
+            {
+              "text": "Added frog critter as first animal in new critter system.",
+              "commit_ids": [
+                616020
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Items & Balance",
+          "items": [
+            {
+              "text": "Reduced craft costs for mortar, hazmat suit, and HMLMG; made prisoner hood default blueprint and removed from tech tree.",
+              "commit_ids": [
+                615943
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Gameplay & Stability",
@@ -118,45 +282,9 @@
       }
     ],
     "summary": "### Gameplay & Stability\n- Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.\n- Fixed crash when switching cameras, eliminating error spam.\n\n### Items, Weapons & Structures\n- Fixed bandage world model collision size and outline reference, improving interaction.\n- Reduced fireplace deployment volume, allowing placement under existing floors.\n- Repaired corrupted hazmat suit prefab, restoring the item.\n- Fixed chainsaw world model highlight and reduced highlight draw count.\n- Added refreshed flashlight animation for third‑person view and new admire animation.\n- Blockers now play damage‑state visual effects when damaged.\n\n### UI & Customization\n- Fixed long market terminal names overflow rendering.\n- Corrected smart alarm text typo and radial wheel label.\n- Improved toast notifications display.\n- Fixed preview player model bugs and improved live icon rendering in character customization UI.\n\n### Animals & NPCs\n- Introduced frog critter with initial setup.\n\n### Balance Changes\n- Reduced craft costs for mortar, hazmat suit, and HMLMG; made prisoner hood a default blueprint and removed it from the tech tree.",
-    "new_items": [
-      {
-        "text": "Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.",
-        "commit_ids": [
-          616019
-        ],
-        "section": "Gameplay & Stability"
-      },
-      {
-        "text": "Repaired corrupted hazmat suit prefab, restoring the item.",
-        "commit_ids": [
-          616007
-        ],
-        "section": "Items, Weapons & Structures"
-      },
-      {
-        "text": "Added refreshed flashlight animation for third‑person view and new admire animation.",
-        "commit_ids": [
-          616002
-        ],
-        "section": "Items, Weapons & Structures"
-      },
-      {
-        "text": "Fixed preview player model bugs and improved live icon rendering in character customization UI.",
-        "commit_ids": [
-          616009
-        ],
-        "section": "UI & Customization"
-      },
-      {
-        "text": "Introduced frog critter with initial setup.",
-        "commit_ids": [
-          616020
-        ],
-        "section": "Animals & NPCs"
-      }
-    ],
-    "new_relevant_count": 5,
-    "new_summary": "- Fixed train collision lookup bug by caching HittableByTrains owner entity, improving barricade save performance.\n- Repaired corrupted hazmat suit prefab, restoring the item.\n- Added refreshed flashlight animation for third‑person view and new admire animation.\n- Fixed preview player model bugs and improved live icon rendering in character customization UI.\n- Introduced frog critter with initial setup."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-20": {
     "commit_count": 79,

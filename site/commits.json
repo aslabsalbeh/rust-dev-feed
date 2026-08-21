@@ -1,5 +1,61 @@
 [
   {
+    "id": 616063,
+    "branch": "main/high_external_wallgate_COLfix",
+    "changeset": "161746",
+    "created": "2026-08-21T20:59:27",
+    "message": "fix to high external wall and gate collision mesh",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616059,
+    "branch": "main/glass_ar",
+    "changeset": "161745",
+    "created": "2026-08-21T20:20:06",
+    "message": "glass AK:\r\n- Use a mip-filtered refraction texture with specular shimmer/firefly reduction for better looking blurry refraction\r\n- Some shader simplification, remove unncessary alpha blending and emission map\r\n- Remove unnecessary \"depth prime\" viewmodel pass\r\n- Fix inconsistencies with viewmodel renderer shader passes between BRP and RRP",
+    "author": "Brian"
+  },
+  {
+    "id": 616055,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161744",
+    "created": "2026-08-21T19:21:19",
+    "message": "9x improvement on the triangle culling for heightfield bounds by making it native",
+    "author": "Maverick"
+  },
+  {
+    "id": 616050,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161743",
+    "created": "2026-08-21T19:03:31",
+    "message": "Fix SpanHeightError",
+    "author": "Maverick"
+  },
+  {
+    "id": 616049,
+    "branch": "main/character_customisation",
+    "changeset": "161742",
+    "created": "2026-08-21T18:52:08",
+    "message": "- Missing files",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 616048,
+    "branch": "main/character_customisation",
+    "changeset": "161741",
+    "created": "2026-08-21T18:51:35",
+    "message": "- Added a dust effect in the background\r\n- Make sure orbital camera works (slow it down)\r\n- Invert controls",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 616045,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161740",
+    "created": "2026-08-21T18:13:00",
+    "message": "Various small fixes and cleanup:\r\n- Root the native log callback delegate in a static field (GC could collect it and crash the next DLL log)\r\n- RebuildTilesInBounds no longer skips the default navmesh when independent navmeshes overlap the bounds (stale tiles at island/monument seams)\r\n- IsNavMeshBuilt answers from the agent's bound navmesh with a lazy rebind instead of a fresh resolve that could disagree with every query\r\n- Restore rustnav.debugpath / debugraycast / debugsample, ported to the NavVector3 API with proper independent navmesh space transforms and a not-built guard\r\n- Delete dead code: GeometryUtils, NavmeshHelpers, TileExtractor (CreateBoxMesh moved into BackgroundTileBuilder), unused RecastWrapper P/Invokes pointing at removed exports, disabled MAX_BUILD_QUEUE throttle, GetOrigin, IsSprintingOnClient\r\n- Skip MeshColliders with no sharedMesh during tile collection, bounds-check FailTile/AddTile coords\r\n- TryOpenDoors reports whether a door actually opened (TryOpenDoorFor void -> bool)\r\n- Null-guard RustNavigation.Instance on scene teardown, clear the stale Instance in OnDestroy",
+    "author": "Maverick"
+  },
+  {
     "id": 616040,
     "branch": "main/new_navmesh_fixes",
     "changeset": "161739",
@@ -2278,109 +2334,5 @@
     "created": "2026-08-18T21:26:03",
     "message": "Stop Wind turbine SFX contuining to playing when the turbine is not spinning\r\n(Bug from 2019)",
     "author": "Ian Henderson"
-  },
-  {
-    "id": 615310,
-    "branch": "main/character_customisation",
-    "changeset": "161291",
-    "created": "2026-08-18T20:49:20",
-    "message": "More WIP",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615311,
-    "branch": "main/FoundationMeleeLOS_fix",
-    "changeset": "161290",
-    "created": "2026-08-18T20:49:19",
-    "message": "Fixed foundations with staircases failing LOS checks for softside damage with melee weapons",
-    "author": "Nick.H"
-  },
-  {
-    "id": 615307,
-    "branch": "main/texturecompression_pass_aug26/hair_pass",
-    "changeset": "161287",
-    "created": "2026-08-18T20:32:47",
-    "message": "ponytail textures resize",
-    "author": "Taylor Reynolds"
-  },
-  {
-    "id": 615306,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161286",
-    "created": "2026-08-18T20:11:01",
-    "message": "Can press E to configure test generators and change the power amount they output",
-    "author": "Flavien"
-  },
-  {
-    "id": 615303,
-    "branch": "main",
-    "changeset": "161285",
-    "created": "2026-08-18T19:55:05",
-    "message": "merge vehicle pooling to main",
-    "author": "octo"
-  },
-  {
-    "id": 615302,
-    "branch": "main/vehicle_pooling",
-    "changeset": "161284",
-    "created": "2026-08-18T19:54:48",
-    "message": "fix container ui: remove restore child transforms, manually reset battering ram visuals",
-    "author": "octo"
-  },
-  {
-    "id": 615299,
-    "branch": "main/fruit_trees",
-    "changeset": "161283",
-    "created": "2026-08-18T19:42:56",
-    "message": "Trees additions support multiple prefabs instead of just one",
-    "author": "Lukester"
-  },
-  {
-    "id": 615293,
-    "branch": "main/base_occlusion/optimize_building_blocks",
-    "changeset": "161281",
-    "created": "2026-08-18T19:24:40",
-    "message": "update base_occlusion/optimize_building_blocks",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 615291,
-    "branch": "main/base_occlusion",
-    "changeset": "161280",
-    "created": "2026-08-18T19:24:11",
-    "message": "Update testlist",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 615290,
-    "branch": "main/nexus_fixes",
-    "changeset": "161279",
-    "created": "2026-08-18T19:19:30",
-    "message": "Update FP.Nexus (prefer AssignedZoneKey over ConnectZoneKey for player client)",
-    "author": "lamalove"
-  },
-  {
-    "id": 615288,
-    "branch": "main/darts_leaderboard_fixes",
-    "changeset": "161278",
-    "created": "2026-08-18T19:13:54",
-    "message": "leaderboard fix v2 and streamermode for real on leaderboard and on score cards",
-    "author": "ElliotH"
-  },
-  {
-    "id": 615287,
-    "branch": "main/PlayerMaintainedMonuments/MonumentBlockers",
-    "changeset": "161277",
-    "created": "2026-08-18T18:58:27",
-    "message": "Fix desks blocker not rendering due to unassigned LOD component\r\nReduce health on the chonkier blockers",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615286,
-    "branch": "main/darts_leaderboard_fixes",
-    "changeset": "161276",
-    "created": "2026-08-18T18:42:03",
-    "message": "Darts fixes\r\n- remove control in UI for zoom\r\n- add streamer mod compat for leaderboard\r\n- attempt leaderboard fix after server restart",
-    "author": "ElliotH"
   }
 ]
