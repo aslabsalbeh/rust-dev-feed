@@ -1,5 +1,21 @@
 [
   {
+    "id": 615871,
+    "branch": "main/vehicle_pooling",
+    "changeset": "161622",
+    "created": "2026-08-20T23:52:06",
+    "message": "do a big pass removing server field resets from vehicle pooling, all tests still pass",
+    "author": "octo"
+  },
+  {
+    "id": 615860,
+    "branch": "main/gib_fixes",
+    "changeset": "161620",
+    "created": "2026-08-20T22:11:29",
+    "message": "advanced lootbox (the red toolbox loot crate) now has gibs when emptied/destroyed",
+    "author": "Pilgrim"
+  },
+  {
     "id": 615853,
     "branch": "main/collision_naming_pass",
     "changeset": "161619",
@@ -2574,141 +2590,5 @@
     "created": "2026-08-18T00:53:35",
     "message": "Fix underwater labs windows refraction texture with RRP",
     "author": "Dayaan"
-  },
-  {
-    "id": 615022,
-    "branch": "main",
-    "changeset": "161087",
-    "created": "2026-08-17T23:36:55",
-    "message": "Cull the bone hierarchy on the building/boat planner on the server\r\nShould remove 17 gameobjects per planner on the server",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615021,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161086",
-    "created": "2026-08-17T23:29:45",
-    "message": "Converted cctv cameras and windmills",
-    "author": "Flavien"
-  },
-  {
-    "id": 615020,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161085",
-    "created": "2026-08-17T23:26:42",
-    "message": "Tesla coil and igniter tests",
-    "author": "Flavien"
-  },
-  {
-    "id": 615017,
-    "branch": "main/white_firework_boomer",
-    "changeset": "161083",
-    "created": "2026-08-17T23:07:49",
-    "message": "Added white boomer firework so pack icon doesn't look misleading\r\nNew colour variant following the existing prefab setup - item, mortar, shell, icon and PFX. Recoloured from the blue variant. \r\nwill need a look over",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615010,
-    "branch": "main/nexus_fixes",
-    "changeset": "161077",
-    "created": "2026-08-17T22:43:14",
-    "message": "Nexus connect modal fixes",
-    "author": "lamalove"
-  },
-  {
-    "id": 615009,
-    "branch": "main/nexus_fixes",
-    "changeset": "161076",
-    "created": "2026-08-17T22:40:51",
-    "message": "Fix MaxPlayers being wrong after my changes",
-    "author": "lamalove"
-  },
-  {
-    "id": 615007,
-    "branch": "main/lootcrate_refresh",
-    "changeset": "161075",
-    "created": "2026-08-17T22:21:14",
-    "message": "fixed jungle primitive loot box gibs not using the proper material upon destroy",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615006,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161074",
-    "created": "2026-08-17T22:15:33",
-    "message": "Converted water wheel, added some tests",
-    "author": "Flavien"
-  },
-  {
-    "id": 615005,
-    "branch": "main/lootcrate_refresh",
-    "changeset": "161073",
-    "created": "2026-08-17T22:09:29",
-    "message": "fixed gibs for the crate_basic and its gib colliders.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615001,
-    "branch": "main/m15_modslots_fix",
-    "changeset": "161070",
-    "created": "2026-08-17T21:55:30",
-    "message": "RidableHorse.prefab",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615002,
-    "branch": "main/m15_modslots_fix",
-    "changeset": "161069",
-    "created": "2026-08-17T21:55:17",
-    "message": "Export test list",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615000,
-    "branch": "main/lootcrate_refresh",
-    "changeset": "161068",
-    "created": "2026-08-17T21:53:48",
-    "message": "re-exported crate_basic so the scale is zeroed out",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 614996,
-    "branch": "main/m15_modslots_fix",
-    "changeset": "161064",
-    "created": "2026-08-17T21:49:32",
-    "message": "Test feedback",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 614994,
-    "branch": "main/fix_threaded_logs",
-    "changeset": "161063",
-    "created": "2026-08-17T21:41:34",
-    "message": "Fix log messages from other threads not showing up in the console / RCON due to not having a threaded log handler\r\n- buffer in queue, swallow on main thread and feed into normal logging callback",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 614992,
-    "branch": "main/base_occlusion/optimize_building_blocks",
-    "changeset": "161062",
-    "created": "2026-08-17T21:33:23",
-    "message": "Update other conditional model code to take into account null slots in conditionals (since we cache the last state of each conditional instead of only storing the spawned conditionals)",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 614991,
-    "branch": "main/base_occlusion/optimize_building_blocks",
-    "changeset": "161061",
-    "created": "2026-08-17T21:32:10",
-    "message": "Optimize conditional models to only refresh if they are changed\r\n- fixes condition models all being destroyed and recreated every single time the model state was changed instead of only creating and deleting the conditionals that needed to be",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 614990,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161060",
-    "created": "2026-08-17T21:21:56",
-    "message": "Typo fix",
-    "author": "Lukester"
   }
 ]
