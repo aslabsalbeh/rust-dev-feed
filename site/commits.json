@@ -1,5 +1,29 @@
 [
   {
+    "id": 615900,
+    "branch": "main/2026_worldmodels",
+    "changeset": "161648",
+    "created": "2026-08-21T08:50:46",
+    "message": "World model LOD fixes - 6 prefabs drawing every LOD at once\r\n\r\nMilitaryFlamethrower, ak47u_jungle, scrap, crankshaft1/2/3 and stone had LODGroups with null or duplicated renderer refs, so every LOD drew at once regardless of distance.\r\nLOD0 optimisation pass on these too: 47,280 -> 22,675 tris\r\nworld models where applicable combiend into single worldmodel mesh for simplicity and optimisation, reducing highlight draws when item is dropped:\r\nflamethrower 4 → 1, jungle AK 3 → 1, crankshafts 3 → 1 each, scrap 2 → 1",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615899,
+    "branch": "main/automated_testing",
+    "changeset": "161647",
+    "created": "2026-08-21T08:50:06",
+    "message": "Reduced network range of watertreatment_pipe_waterproducer.prefab. Stops automated tests failing.",
+    "author": "Lukester"
+  },
+  {
+    "id": 615896,
+    "branch": "main/Stepladder",
+    "changeset": "161645",
+    "created": "2026-08-21T08:17:34",
+    "message": "Ladder Tall opee and closed variants LOD0",
+    "author": "Lewis T"
+  },
+  {
     "id": 615886,
     "branch": "main/rentableshop_improvments_aug_26",
     "changeset": "161638",
@@ -2486,53 +2510,5 @@
     "created": "2026-08-18T09:39:26",
     "message": "fixed 3p being offset from players hand",
     "author": "Pilgrim"
-  },
-  {
-    "id": 615085,
-    "branch": "main",
-    "changeset": "161135",
-    "created": "2026-08-18T09:20:24",
-    "message": "Fixed static chairs on gas station roof never being mountable due to being ever so slightly clipped into the ground (S2P)\r\nhttps://files.facepunch.com/cipeax/2026/August/18_11-18-MajorGalapagostortoise.jpg",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615082,
-    "branch": "main/animal_fencing",
-    "changeset": "161134",
-    "created": "2026-08-18T09:07:47",
-    "message": "proto fix after merge",
-    "author": "Adam W"
-  },
-  {
-    "id": 615076,
-    "branch": "main/attachment_LOD_fixes",
-    "changeset": "161130",
-    "created": "2026-08-18T08:57:06",
-    "message": "updated laserlight world model (improving lods) and also the lod component to be more forgiving like the muzzle brake and boost. \r\nsame nasty early transition issue",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615070,
-    "branch": "main/attachment_LOD_fixes",
-    "changeset": "161126",
-    "created": "2026-08-18T08:32:04",
-    "message": "adjusted muzzle brake and muzzle boost lod componenant.\r\nthe lods were switching way too quickly when close up - disgustingly fast. \r\nnow fixed and more consistent with weapon lod distances.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615057,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161121",
-    "created": "2026-08-18T06:36:23",
-    "message": "Add radial blur to RRP combined with blur optimized and setup explosion volume and overlay",
-    "author": "Dayaan"
-  },
-  {
-    "id": 615056,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161120",
-    "created": "2026-08-18T06:32:20",
-    "message": "Reduce RRP vignette effect",
-    "author": "Dayaan"
   }
 ]
