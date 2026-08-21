@@ -1,5 +1,133 @@
 [
   {
+    "id": 615942,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161671",
+    "created": "2026-08-21T12:05:10",
+    "message": "Fix using nav samples radius always being halved because detour uses half extent",
+    "author": "Maverick"
+  },
+  {
+    "id": 615941,
+    "branch": "main/glass_ar",
+    "changeset": "161670",
+    "created": "2026-08-21T12:03:35",
+    "message": "and again, glass ar description",
+    "author": "matt.i"
+  },
+  {
+    "id": 615940,
+    "branch": "main/async_serveroccl_gen",
+    "changeset": "161669",
+    "created": "2026-08-21T12:03:29",
+    "message": "Update: add GamePhysics.FindComponent<T> that supports async\r\nConfigured async to engage at more than 4 batches of 64 queries\r\nTests: ran perf tests. same perf up to 400 points, at 10k points is 2x faster 0.42ms batched+async vs 0.96ms batched vs 5.4ms serial",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615936,
+    "branch": "main/2026_worldmodels",
+    "changeset": "161668",
+    "created": "2026-08-21T11:47:50",
+    "message": "forgot the mesh",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615935,
+    "branch": "main/glass_ar",
+    "changeset": "161667",
+    "created": "2026-08-21T11:46:51",
+    "message": "updated glass assault rifle description",
+    "author": "matt.i"
+  },
+  {
+    "id": 615934,
+    "branch": "main/async_serveroccl_gen",
+    "changeset": "161666",
+    "created": "2026-08-21T11:45:59",
+    "message": "Update: add TerrainMeta.SampleTerrainMeshHeights\r\nConfigured to engage async after have more than 4 batches of 256 pos each\r\nTests: ran perf tests",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615933,
+    "branch": "main/async_serveroccl_gen",
+    "changeset": "161665",
+    "created": "2026-08-21T11:41:36",
+    "message": "Update(tests): add IsInsideTerrain perf comparison tests\r\nNeed them to tweak when to engage async and when to skip it internally\r\nTests: ran them",
+    "author": "Daniel P"
+  },
+  {
+    "id": 615932,
+    "branch": "main/2026_worldmodels",
+    "changeset": "161664",
+    "created": "2026-08-21T11:31:53",
+    "message": "ice ak world model optimisation\r\nconsolidated into one object, one LOD chain\r\nLOD0 tris 13.8k -> 9.5k\r\nhighlight draws 5 -> 1  \r\n\r\nremoved dead lod states in sunflower, rose, orchid world models",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615929,
+    "branch": "main/medical_honey_bandage",
+    "changeset": "161662",
+    "created": "2026-08-21T11:20:07",
+    "message": "Fixed world model collision being too small \r\nFixed world model outline referencing the old bandage instead of the new one",
+    "author": "Lukester"
+  },
+  {
+    "id": 615926,
+    "branch": "main/vcc",
+    "changeset": "161660",
+    "created": "2026-08-21T10:46:12",
+    "message": "Additional UI options for gamepad",
+    "author": "Adam W"
+  },
+  {
+    "id": 615924,
+    "branch": "main/vcc",
+    "changeset": "161659",
+    "created": "2026-08-21T10:34:12",
+    "message": "More gamepad tweaks and convars, actions.",
+    "author": "Adam W"
+  },
+  {
+    "id": 615923,
+    "branch": "main",
+    "changeset": "161657",
+    "created": "2026-08-21T10:31:22",
+    "message": "added and setup dedicated worldmodels for fire and bone arrow \r\nreducing highlight draws",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 615921,
+    "branch": "main/medical_honey_bandage",
+    "changeset": "161656",
+    "created": "2026-08-21T10:26:26",
+    "message": "Changed honeybandage worldmodel to new material and model",
+    "author": "Lewis T"
+  },
+  {
+    "id": 615916,
+    "branch": "main",
+    "changeset": "161654",
+    "created": "2026-08-21T10:12:12",
+    "message": "S2P water treatment, in hopes of fixing broken PreparePrefabs in builds causing a bunch of issues",
+    "author": "cipeaX"
+  },
+  {
+    "id": 615915,
+    "branch": "main/medical_honey_bandage",
+    "changeset": "161653",
+    "created": "2026-08-21T10:09:20",
+    "message": "Honey Bandage Material and Textures",
+    "author": "Lewis T"
+  },
+  {
+    "id": 615910,
+    "branch": "main/blockerfx",
+    "changeset": "161651",
+    "created": "2026-08-21T09:38:16",
+    "message": "Hook up damage state change FX on all blockers",
+    "author": "Martyn Chapman"
+  },
+  {
     "id": 615900,
     "branch": "main/2026_worldmodels",
     "changeset": "161648",
@@ -2294,221 +2422,5 @@
     "created": "2026-08-18T12:24:52",
     "message": "Animal fencing alternate implementation.",
     "author": "Adam W"
-  },
-  {
-    "id": 615165,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161195",
-    "created": "2026-08-18T12:17:02",
-    "message": "Fix cargo scientists not moving",
-    "author": "Maverick"
-  },
-  {
-    "id": 615164,
-    "branch": "main/tutorialmodal_fix",
-    "changeset": "161193",
-    "created": "2026-08-18T12:16:38",
-    "message": "Fixed tutorial modal size, removed unsused bg asset",
-    "author": "Flavien"
-  },
-  {
-    "id": 615162,
-    "branch": "main/white_firework_boomer",
-    "changeset": "161191",
-    "created": "2026-08-18T12:12:02",
-    "message": "fixed pooled strings",
-    "author": "matt.i"
-  },
-  {
-    "id": 615159,
-    "branch": "main/vehicle_pooling",
-    "changeset": "161190",
-    "created": "2026-08-18T12:08:22",
-    "message": "restore child transforms too",
-    "author": "octo"
-  },
-  {
-    "id": 615157,
-    "branch": "main/tutorialmodal_fix",
-    "changeset": "161189",
-    "created": "2026-08-18T12:04:45",
-    "message": "Fixed connection modal default description being\r\n\r\n adasd\nasdasfad\nsadg\nasdgasdg\nash\nasdg\nsda\nghash\nsa\ndh\nasfh\nasdgh\nsda\nh\nsH\nSDG\nASF\nH\nASFH\nASH\nASHF\nSDGSDG\nSDAG\nS\nDAG\nSAGD\nASG\nAS\nDG\nASDG\nSADG\nASD\nG\nSADG\nASDG\nAGSD\nGSD\nSAGD\nASD\r\n\r\n\r\nin editor 🙃",
-    "author": "Flavien"
-  },
-  {
-    "id": 615156,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161187",
-    "created": "2026-08-18T12:00:47",
-    "message": "Fix old scientists trying to steer instead of turning instantly",
-    "author": "Maverick"
-  },
-  {
-    "id": 615151,
-    "branch": "main/tutorialmodal_fix",
-    "changeset": "161183",
-    "created": "2026-08-18T11:58:50",
-    "message": "Localized the tutorial modal",
-    "author": "Flavien"
-  },
-  {
-    "id": 615148,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161180",
-    "created": "2026-08-18T11:57:44",
-    "message": "~Fix honey bandage effects not firing (for real this time)",
-    "author": "Lukester"
-  },
-  {
-    "id": 615147,
-    "branch": "main/tutorialmodal_fix",
-    "changeset": "161179",
-    "created": "2026-08-18T11:57:15",
-    "message": "Unfucked the menu tutorial modal",
-    "author": "Flavien"
-  },
-  {
-    "id": 615145,
-    "branch": "main/vehicle_pooling",
-    "changeset": "161177",
-    "created": "2026-08-18T11:55:20",
-    "message": "capture component states in init (needs more testing)",
-    "author": "octo"
-  },
-  {
-    "id": 615143,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161175",
-    "created": "2026-08-18T11:54:36",
-    "message": "Fix Scientist2 on Oilrig crouchwalks upstairs at a weird angle",
-    "author": "Maverick"
-  },
-  {
-    "id": 615132,
-    "branch": "main/iconfonts_optims",
-    "changeset": "161165",
-    "created": "2026-08-18T11:47:09",
-    "message": "Confirmation popup before starting the scan when updating the icon fonts",
-    "author": "Flavien"
-  },
-  {
-    "id": 615130,
-    "branch": "main/Weapon_Refresh_Machete",
-    "changeset": "161164",
-    "created": "2026-08-18T11:39:30",
-    "message": "Machete animation updates for weapon refresh",
-    "author": "wes.b"
-  },
-  {
-    "id": 615129,
-    "branch": "main",
-    "changeset": "161163",
-    "created": "2026-08-18T11:37:42",
-    "message": "Fix scientists not spawning on cargo, underwater lab and military base",
-    "author": "Maverick"
-  },
-  {
-    "id": 615128,
-    "branch": "main/animal_fencing",
-    "changeset": "161162",
-    "created": "2026-08-18T11:35:57",
-    "message": "Missing codegen from earlier",
-    "author": "Adam W"
-  },
-  {
-    "id": 615127,
-    "branch": "main/iconfonts_optims",
-    "changeset": "161161",
-    "created": "2026-08-18T11:26:50",
-    "message": "Rust icon fonts are now generated based on what glyphs we use, similar to the localization fonts:\r\n- Reduces the two fonts atlas size from 64MB to 0.5MB and 4MB to 0.5MB\r\n- Icon fonts now have an empty fallback font set to dynamic so community UI icons and adding new icons in editor still works\r\n- The static fonts are updated when we update the localization every month",
-    "author": "Flavien"
-  },
-  {
-    "id": 615126,
-    "branch": "main/non_critical_art_bugfixes_reapply",
-    "changeset": "161160",
-    "created": "2026-08-18T11:18:30",
-    "message": "Also reapply 138986 \"Fixed shadows inside radtown master house building with a custom shadow proxy\"",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615123,
-    "branch": "main/non_critical_art_bugfixes_reapply",
-    "changeset": "161158",
-    "created": "2026-08-18T11:07:31",
-    "message": "Reapply 138981 \"Fixed shadows inside oilrig level6 rooms. Modelled custom shadow proxy\" from 9 month old branch\r\nS2P large oilrig",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615122,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161157",
-    "created": "2026-08-18T10:59:48",
-    "message": "Fix scientists not spawning in underwater labs and cargo ships",
-    "author": "Maverick"
-  },
-  {
-    "id": 615121,
-    "branch": "main/Livestock_animals",
-    "changeset": "161156",
-    "created": "2026-08-18T10:57:06",
-    "message": "Codegen",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615104,
-    "branch": "main/PlayerMaintainedMonuments/MonumentBlockers",
-    "changeset": "161149",
-    "created": "2026-08-18T10:28:18",
-    "message": "More misc code cleanup",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615102,
-    "branch": "main",
-    "changeset": "161147",
-    "created": "2026-08-18T10:08:03",
-    "message": "merge salvaged hammer refresh",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615100,
-    "branch": "main/Weapon_Refresh_Salvaged_Hammer",
-    "changeset": "161145",
-    "created": "2026-08-18T09:59:41",
-    "message": "optimised salvaged hammer textures \r\nao from 2k -> 512 \r\nrenamed texture set to be inline with new naming conventions i.e hammer_AlbedoTransparency -> hammer_bc",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615095,
-    "branch": "main/water_treatment_tank_fix",
-    "changeset": "161143",
-    "created": "2026-08-18T09:43:18",
-    "message": "Fixed Jungle Ziggurat Treatment Tank Colliders from using multiple box colliders to using one mesh collider so its more optimized",
-    "author": "Alfie Birch"
-  },
-  {
-    "id": 615093,
-    "branch": "main",
-    "changeset": "161141",
-    "created": "2026-08-18T09:40:19",
-    "message": "editor_multiplayer -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615092,
-    "branch": "main/editor_multiplayer",
-    "changeset": "161140",
-    "created": "2026-08-18T09:40:00",
-    "message": "Fix multi client play mode showing up pink for some people.\r\nMPPM wasnt cloning an instance of the packages folder over to the other editors",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615090,
-    "branch": "main/Weapon_Refresh_Salvaged_Hammer",
-    "changeset": "161139",
-    "created": "2026-08-18T09:39:26",
-    "message": "fixed 3p being offset from players hand",
-    "author": "Pilgrim"
   }
 ]
