@@ -182,234 +182,140 @@
     "new_summary": ""
   },
   "2026-08-19": {
-    "commit_count": 95,
-    "relevant_commit_count": 52,
-    "relevant_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571,615572,615581,615583,615591,615592,615593,615601,615609,615613,615614,615615,615616,615619,615624,615625,615627,615629,615636",
-    "new_baseline_signature": "615372,615374,615397,615402,615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571,615572,615581,615583,615591,615592,615593,615601,615609,615613,615614,615615,615616,615619,615624,615625,615627,615629,615636",
+    "commit_count": 88,
+    "relevant_commit_count": 50,
+    "relevant_signature": "615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571,615572,615581,615583,615591,615592,615593,615601,615609,615613,615614,615615,615616,615619,615624,615625,615627,615629,615636",
+    "new_baseline_signature": "615419,615420,615427,615432,615442,615454,615459,615464,615466,615467,615468,615469,615472,615479,615482,615491,615498,615499,615502,615507,615520,615521,615522,615536,615537,615551,615554,615559,615564,615565,615567,615571,615572,615581,615583,615591,615592,615593,615601,615609,615613,615614,615615,615616,615619,615624,615625,615627,615629,615636",
     "prompt_version": "structured-read-state-v3-chunk-cache",
-    "chunk_cache": {
-      "615397,615454,615466,615467,615468,615472,615482,615499,615522,615564,615565,615572,615581,615583,615591,615592,615593,615613,615614,615615,615616,615619,615624,615629,615636": [
-        {
-          "title": "Navigation & Pathfinding",
-          "items": [
-            {
-              "text": "Fixed AI agents getting stuck on navmesh edges, corners, or when a navmesh tile is rebuilt, and prevented unnecessary path reprojection.",
-              "commit_ids": [
-                615466,
-                615613,
-                615565,
-                615472,
-                615468
-              ]
-            },
-            {
-              "text": "Resolved a crash caused by a collection‑modified exception when the navigation system was paused.",
-              "commit_ids": [
-                615614
-              ]
-            },
-            {
-              "text": "Fixed a tiger AI bug where it would charge indefinitely at the base of vine trees.",
-              "commit_ids": [
-                615581
-              ]
-            }
-          ]
-        },
-        {
-          "title": "NPC Commands",
-          "items": [
-            {
-              "text": "Added debug commands to select, move, and release NPCs, letting players direct individual AI with selectable movement types (sneak, walk, jog, run, sprint, full sprint).",
-              "commit_ids": [
-                615636
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Items & Loot",
-          "items": [
-            {
-              "text": "Construction resources, medical, and food crates now break apart into visible pieces when emptied instead of vanishing, using a shared wooden crate gib model.",
-              "commit_ids": [
-                615615
-              ]
-            },
-            {
-              "text": "Tier‑2 lootbox now retains its unique material on broken pieces, fixing missing tier markings.",
-              "commit_ids": [
-                615619
-              ]
-            },
-            {
-              "text": "Enabled read/write access for primitive lootbox gib data to support crate breaking behavior.",
-              "commit_ids": [
-                615397
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicles",
-          "items": [
-            {
-              "text": "Fixed a server error caused by vehicle pooling that could crash Modular Cars during decay damage.",
-              "commit_ids": [
-                615564
-              ]
-            },
-            {
-              "text": "Boat fuel, start engine, and stop engine options are now shown only to the driver, matching other vehicle UI behavior.",
-              "commit_ids": [
-                615467
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Monuments",
-          "items": [
-            {
-              "text": "Fixed chainlink fence issues across several monuments.",
-              "commit_ids": [
-                615482
-              ]
-            },
-            {
-              "text": "Corrected oil monument behavior after a stomp event.",
-              "commit_ids": [
-                615454
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Character Customization UI",
-          "items": [
-            {
-              "text": "Fixed missing inspector arguments, added tile prefabs, introduced a character preview, and added a toggle on the character creator page.",
-              "commit_ids": [
-                615624
-              ]
-            },
-            {
-              "text": "Implemented a fixed‑size grid system for flex UI grids, removing the need to compute gaps and column counts manually.",
-              "commit_ids": [
-                615591
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Glass Objects",
-          "items": [
-            {
-              "text": "Fixed world‑model sorting for AR glass objects so they render correctly with other glass items.",
-              "commit_ids": [
-                615572
-              ]
-            },
-            {
-              "text": "Adjusted glass icon rendering and rotation tweaks for proper visual alignment.",
-              "commit_ids": [
-                615522
-              ]
-            }
-          ]
-        }
-      ],
-      "615402,615419,615420,615427,615442,615459,615464,615469,615479,615491,615498,615502,615507,615521,615536,615537,615551,615554,615559,615567,615571,615601,615609,615625,615627": [
-        {
-          "title": "Vehicles",
-          "items": [
-            {
-              "text": "Fixed boat fuel interaction bug.",
-              "commit_ids": [
-                615469
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons",
-          "items": [
-            {
-              "text": "Refreshed flashlight weapon: new animator, subsystem setup, correct prop rotation, updated viewmodel and animation events for sounds.",
-              "commit_ids": [
-                615601
-              ]
-            },
-            {
-              "text": "Updated glass AK ammo script to hide bullet models when ammo is depleted.",
-              "commit_ids": [
-                615491
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI",
-          "items": [
-            {
-              "text": "Fixed character creator page setup issue.",
-              "commit_ids": [
-                615609
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animals",
-          "items": [
-            {
-              "text": "Added level placement socket to animal fences and gates.",
-              "commit_ids": [
-                615402
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Monuments",
-          "items": [
-            {
-              "text": "Fixed mesh issues for monument blockers.",
-              "commit_ids": [
-                615464
-              ]
-            },
-            {
-              "text": "Changed monument avoidance logic to use the PreventBuildingMonumentTag static registry.",
-              "commit_ids": [
-                615571
-              ]
-            },
-            {
-              "text": "Updated military tunnel, oilrig, and launch site monument placements.",
-              "commit_ids": [
-                615420,
-                615459
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Console commands let you select, move, and release NPCs, supporting both legacy and FSM AI.",
+            "text": "Navmesh and pathfinding overhaul fixes agents getting stuck, improves edge handling and performance.",
+            "commit_ids": [
+              615466,
+              615613,
+              615614,
+              615565,
+              615468,
+              615472,
+              615629
+            ]
+          },
+          {
+            "text": "Tiger charging behavior fixed to stop endless charging at vine trees.",
+            "commit_ids": [
+              615581
+            ]
+          },
+          {
+            "text": "Debug commands added to select, move, and release NPCs with adjustable speeds.",
             "commit_ids": [
               615636
             ]
           }
         ]
+      },
+      {
+        "title": "Gameplay Items & Weapons",
+        "items": [
+          {
+            "text": "Wooden loot crates now break into proper gibs and retain unique materials; Tier 2 lootbox uses its own material for gibs.",
+            "commit_ids": [
+              615615,
+              615619
+            ]
+          },
+          {
+            "text": "Flashlight weapon animation and viewmodel issues fixed; custom animator added and prop rotations corrected.",
+            "commit_ids": [
+              615601,
+              615502
+            ]
+          },
+          {
+            "text": "Salvaged hammer now has proper drop and pickup animations; AK ammo script hides bullet models when ammo is depleted.",
+            "commit_ids": [
+              615432,
+              615491
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles",
+        "items": [
+          {
+            "text": "Server error from modular car decay damage fixed; vehicle pooling resets improved and automated pooling tests added.",
+            "commit_ids": [
+              615564,
+              615554
+            ]
+          },
+          {
+            "text": "Boat UI now only shows fuel, start engine, and stop engine options for the driver; fuel interaction bug fixed.",
+            "commit_ids": [
+              615467,
+              615469
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monuments",
+        "items": [
+          {
+            "text": "Large oil spill and other monument updates fixed, including blocker mesh issues and improved avoidance logic using PreventBuildingMonumentTag.",
+            "commit_ids": [
+              615482,
+              615454,
+              615464,
+              615571
+            ]
+          },
+          {
+            "text": "Data updated for military tunnel, oilrig, and launch site monuments.",
+            "commit_ids": [
+              615459,
+              615420
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Character Customization & UI",
+        "items": [
+          {
+            "text": "Character creator page fixed with missing inspector arguments, added tile prefabs, character preview toggle, and fixed-size flex grid cells.",
+            "commit_ids": [
+              615624,
+              615591,
+              615609
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay",
+        "items": [
+          {
+            "text": "Thrown darts now use pooling, fixing leaderboard tracking.",
+            "commit_ids": [
+              615498
+            ]
+          },
+          {
+            "text": "Pool ball data pooling logic corrected to prevent incorrect behavior.",
+            "commit_ids": [
+              615499
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### NPC & AI\n- Console commands let you select, move, and release NPCs, supporting both legacy and FSM AI.",
+    "summary": "### NPC & AI\n- Navmesh and pathfinding overhaul fixes agents getting stuck, improves edge handling and performance.\n- Tiger charging behavior fixed to stop endless charging at vine trees.\n- Debug commands added to select, move, and release NPCs with adjustable speeds.\n\n### Gameplay Items & Weapons\n- Wooden loot crates now break into proper gibs and retain unique materials; Tier 2 lootbox uses its own material for gibs.\n- Flashlight weapon animation and viewmodel issues fixed; custom animator added and prop rotations corrected.\n- Salvaged hammer now has proper drop and pickup animations; AK ammo script hides bullet models when ammo is depleted.\n\n### Vehicles\n- Server error from modular car decay damage fixed; vehicle pooling resets improved and automated pooling tests added.\n- Boat UI now only shows fuel, start engine, and stop engine options for the driver; fuel interaction bug fixed.\n\n### Monuments\n- Large oil spill and other monument updates fixed, including blocker mesh issues and improved avoidance logic using PreventBuildingMonumentTag.\n- Data updated for military tunnel, oilrig, and launch site monuments.\n\n### Character Customization & UI\n- Character creator page fixed with missing inspector arguments, added tile prefabs, character preview toggle, and fixed-size flex grid cells.\n\n### Gameplay\n- Thrown darts now use pooling, fixing leaderboard tracking.\n- Pool ball data pooling logic corrected to prevent incorrect behavior.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
