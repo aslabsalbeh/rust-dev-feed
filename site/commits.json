@@ -1,5 +1,21 @@
 [
   {
+    "id": 616089,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161758",
+    "created": "2026-08-22T11:28:18",
+    "message": "Fix heavy scientists not moving after being dropped by the heli on some seeds (small oilrig only?), the AI zone was too small to encompass the drop points so they couldn't find them",
+    "author": "Maverick"
+  },
+  {
+    "id": 616087,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161756",
+    "created": "2026-08-22T10:01:38",
+    "message": "Another attempt at fixing old AIs not catching up to player",
+    "author": "Maverick"
+  },
+  {
     "id": 616081,
     "branch": "main/new_navmesh_fixes",
     "changeset": "161752",
@@ -1862,141 +1878,5 @@
     "created": "2026-08-19T12:20:03",
     "message": "Fix find closest edge not working (never worked), making scientists not actually favour covers close to walls, fix AIs getting stuck when navmesh tile is rebuilt under their feet / on their path, prevent findPath from the agent position reprojecting when we already have a valid polyref, expose polyrefs in path",
     "author": "Maverick"
-  },
-  {
-    "id": 615464,
-    "branch": "main/PlayerMaintainedMonuments/MonumentBlockers",
-    "changeset": "161403",
-    "created": "2026-08-19T12:11:16",
-    "message": "Fix blocker mesh issues flagged by automated tests",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615461,
-    "branch": "main",
-    "changeset": "161402",
-    "created": "2026-08-19T11:57:28",
-    "message": "merged uppdated salvaged hammer 3p anims and override controller",
-    "author": "julek"
-  },
-  {
-    "id": 615459,
-    "branch": "main/militarytunnels_lightdup_fix",
-    "changeset": "161400",
-    "created": "2026-08-19T11:53:00",
-    "message": "S2P military tunnels",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615454,
-    "branch": "main/non_critical_art_bugfixes_reapply",
-    "changeset": "161397",
-    "created": "2026-08-19T11:38:02",
-    "message": "Large oil S2P after stomp",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615442,
-    "branch": "main/static_chair_variant",
-    "changeset": "161386",
-    "created": "2026-08-19T11:25:49",
-    "message": "Remove all unnecessary components from the static chair\r\nS2P launch, outpost, bandit, gas station, junkyard, large oilrig, sewer branch",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615436,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161384",
-    "created": "2026-08-19T11:13:39",
-    "message": "optimised world models for the following weapons:\r\ncustom smg, skinning knife, diver assault rifle, cny dragon launcher, lr300\r\n\r\nall of these were using the rigged setup - skinned meshes, bone hierachies, unconsolodated LOD groups where the usage wasn't noticeable/used when dropped. \r\n\r\n- LOD0 triangles: 60,828 -> 26,234 across the 5 \r\n- LOD0 renderers: 17 -> 5\r\n- Skinned meshes: 59 -> 0 \r\n- Meshes: 64 -> 16",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615432,
-    "branch": "main/Weapon_Refresh_Salvaged_Hammer",
-    "changeset": "161383",
-    "created": "2026-08-19T10:46:29",
-    "message": "exported edited 3p slavaged hammer anims and assigned drop/pickup anims to override controller",
-    "author": "julek"
-  },
-  {
-    "id": 615430,
-    "branch": "main/glass_ar",
-    "changeset": "161382",
-    "created": "2026-08-19T10:39:23",
-    "message": "glass ar store icon placeholder, set correct steam id",
-    "author": "matt.i"
-  },
-  {
-    "id": 615427,
-    "branch": "main/automated_testing",
-    "changeset": "161379",
-    "created": "2026-08-19T10:36:23",
-    "message": "Update a bunch of entity flag toggles to fix issues after flag changes\r\nS2P floating cities",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615425,
-    "branch": "main/vcc/steam_input",
-    "changeset": "161377",
-    "created": "2026-08-19T10:33:57",
-    "message": "Reflection hack to call ISteamInput::Init",
-    "author": "Adam W"
-  },
-  {
-    "id": 615422,
-    "branch": "main/PlayerMaintainedMonuments/MonumentBlockers",
-    "changeset": "161375",
-    "created": "2026-08-19T10:21:10",
-    "message": "Codegen, manifest",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615420,
-    "branch": "main/PlayerMaintainedMonuments/MonumentBlockers",
-    "changeset": "161374",
-    "created": "2026-08-19T10:15:16",
-    "message": "S2P military tunnel, oilrig, launch site",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615419,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161373",
-    "created": "2026-08-19T10:15:05",
-    "message": "Bugfix: make sure we modify EnsureMainThread in release builds\r\nThat check is always active\r\nTests: booted TLS scene",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615415,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161371",
-    "created": "2026-08-19T09:52:53",
-    "message": "Update: integrate TLSTest into client bootstrap and server boot routines\r\n- copied over linux rustnative.so, to be tested\r\nTemp measure to test standalone builds\r\nTests: booted both bootstrap and craggy in win editor - saw output (disabled in client, enabled in server)",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615414,
-    "branch": "main/WoodArmour_skinnable",
-    "changeset": "161370",
-    "created": "2026-08-19T09:51:15",
-    "message": "triangulated wood armour gloves fbx file.",
-    "author": "Toffer"
-  },
-  {
-    "id": 615413,
-    "branch": "main/scrap_king_buildingskin_dlc",
-    "changeset": "161369",
-    "created": "2026-08-19T09:41:45",
-    "message": "building blocks test",
-    "author": "Lain"
-  },
-  {
-    "id": 615407,
-    "branch": "main/vcc/steam_input",
-    "changeset": "161367",
-    "created": "2026-08-19T09:26:03",
-    "message": "Codegen",
-    "author": "Adam W"
   }
 ]
