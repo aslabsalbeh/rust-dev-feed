@@ -1,5 +1,45 @@
 [
   {
+    "id": 616081,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161752",
+    "created": "2026-08-21T23:20:55",
+    "message": "Potential fix for oil rig scientists hitbox issues, seemed to happen mostly on stairs with arrows because of too strict anti hack padding",
+    "author": "Maverick"
+  },
+  {
+    "id": 616075,
+    "branch": "main/character_customisation",
+    "changeset": "161751",
+    "created": "2026-08-21T22:17:06",
+    "message": "- Add an animation when clicking on any of the customisations options\r\n- Ensure the players eyes blind\r\n- Try and reduce the jittering when zoomed in on the models face",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 616070,
+    "branch": "main/2026_worldmodels",
+    "changeset": "161749",
+    "created": "2026-08-21T21:41:54",
+    "message": "car radio now has a proper world model\r\nLOD 0 cheaper than burlap sack",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616068,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161748",
+    "created": "2026-08-21T21:20:38",
+    "message": "- Fix crocodile dying by themselves on some seeds, was caused by them by spawn more than 20m from rivers\r\n- Crocs spawning will now be constrained to river, but if they can't find one they won't break\r\n- Better logging when animals despawn because they can't find a valid move destination",
+    "author": "Maverick"
+  },
+  {
+    "id": 616064,
+    "branch": "main/character_customisation",
+    "changeset": "161747",
+    "created": "2026-08-21T21:01:05",
+    "message": "Add new animations to the character creator",
+    "author": "Ian Henderson"
+  },
+  {
     "id": 616063,
     "branch": "main/high_external_wallgate_COLfix",
     "changeset": "161746",
@@ -2118,221 +2158,5 @@
     "created": "2026-08-19T00:37:04",
     "message": "Fixed elevator billing batteries from the wrong slot",
     "author": "Flavien"
-  },
-  {
-    "id": 615348,
-    "branch": "main/testrunner_iterationprefs",
-    "changeset": "161324",
-    "created": "2026-08-19T00:08:00",
-    "message": "Force specific playmode iteration editor prefs when running tests in the editor\r\n- Make sure no iteration prefs can fuck up the tests\r\n- Make sure you enter playmode and run the tests as fast as possible",
-    "author": "Flavien"
-  },
-  {
-    "id": 615344,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161322",
-    "created": "2026-08-19T00:04:15",
-    "message": "Some naming cleanup",
-    "author": "Flavien"
-  },
-  {
-    "id": 615345,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161321",
-    "created": "2026-08-19T00:04:00",
-    "message": "Converted reactive target",
-    "author": "Flavien"
-  },
-  {
-    "id": 615343,
-    "branch": "main/hide_services",
-    "changeset": "161319",
-    "created": "2026-08-19T00:00:26",
-    "message": "Hide services menu no longer appears in the iteration speed section of the rust editor (it has nothing to do with iteration speed and unticking it is the undesired behaviour)",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615342,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161318",
-    "created": "2026-08-18T23:53:26",
-    "message": "Test lists",
-    "author": "Flavien"
-  },
-  {
-    "id": 615340,
-    "branch": "main/hide_services",
-    "changeset": "161316",
-    "created": "2026-08-18T23:40:59",
-    "message": "Hopefully prevent crash on boot from hide services change",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615338,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161314",
-    "created": "2026-08-18T23:21:47",
-    "message": "Circuit system tests, just two tests checking the throttling works",
-    "author": "Flavien"
-  },
-  {
-    "id": 615337,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161313",
-    "created": "2026-08-18T23:19:16",
-    "message": "Codegen",
-    "author": "Flavien"
-  },
-  {
-    "id": 615336,
-    "branch": "main/Livestock_animals",
-    "changeset": "161312",
-    "created": "2026-08-18T23:14:42",
-    "message": "Codegen",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615334,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161310",
-    "created": "2026-08-18T23:13:24",
-    "message": "Update: replacing with a remotely built dylib\nSurprisingly, it works\nTests: ran TLS test scene",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615333,
-    "branch": "main",
-    "changeset": "161309",
-    "created": "2026-08-18T23:12:28",
-    "message": "Fixed tests failing after the recent pooling changes",
-    "author": "Flavien"
-  },
-  {
-    "id": 615332,
-    "branch": "main/Livestock_animals",
-    "changeset": "161308",
-    "created": "2026-08-18T23:08:34",
-    "message": "Refactored the timers on livestock animal into a new PersistentTimer class\r\nMakes it easy to create new timer based behaviours (drop dung, get older, give birth, etc) and persist those timers through a save/load\r\nLivestock now drop horse dung (might need a rename)",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615331,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161307",
-    "created": "2026-08-18T23:04:49",
-    "message": "Update: add MacOS support for UnsafeScriptingAccess\n- using locally built debug dylib for now\nNeed to figure out if remotely built dylib is going to work or not (didn't when I broke sig locally)\nTests: using locally built dylib was able to run TLSTest setup",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615328,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161306",
-    "created": "2026-08-18T22:58:05",
-    "message": "Generator RPC name fix",
-    "author": "Flavien"
-  },
-  {
-    "id": 615329,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "161305",
-    "created": "2026-08-18T22:57:51",
-    "message": "Throttle everything to 30 ticks a frame so server fps variations doesnt change the io speed too much\r\nFlickering circuits are throttled to 10 flips/s (equivalent to old IO)",
-    "author": "Flavien"
-  },
-  {
-    "id": 615326,
-    "branch": "main/store_featured_tweaks",
-    "changeset": "161303",
-    "created": "2026-08-18T22:47:19",
-    "message": "Store featured tab changes, we now show featured items on both the left and right grids",
-    "author": "Flavien"
-  },
-  {
-    "id": 615325,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161302",
-    "created": "2026-08-18T22:28:14",
-    "message": "optimised the electric chandelier LOD0 \r\nLOD0 triangle count from 22,766 -> 9328 \r\nstill high but unavoidable for the complexity of the asset. \r\n\r\nreduced lodchain  from 5 -> 3",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615324,
-    "branch": "main/fruit_trees",
-    "changeset": "161301",
-    "created": "2026-08-18T22:24:03",
-    "message": "Added Apple.tree prefab and LootSpawn.Apple.\r\nAdded 3 apples to oak_d and they're all spawning correctly but dont spawn when trying to harvesting",
-    "author": "Lukester"
-  },
-  {
-    "id": 615323,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161300",
-    "created": "2026-08-18T22:06:35",
-    "message": "optimised Rustige egg world models\r\n\r\nEach egg's dropped world model now uses a dedicated w_*. fbx rather than using the animated deployed model. \r\nThe world models were carrying the whole deployed setup - skinned meshes, bone hierarchies, interior geometry and 4-5 LOD levels - none of which is visible when dropped. \r\n\r\n- LOD0 triangles: 46,772 -> 16,466 across the eight\r\n- Skinned meshes: 72 -> 0",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615322,
-    "branch": "main",
-    "changeset": "161299",
-    "created": "2026-08-18T21:58:25",
-    "message": "binocular_glare_fix -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615321,
-    "branch": "main/binocular_glare_fix",
-    "changeset": "161298",
-    "created": "2026-08-18T21:58:07",
-    "message": "Fix 154930 breaking binocular glare. Inverted check was used",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615320,
-    "branch": "main",
-    "changeset": "161297",
-    "created": "2026-08-18T21:57:47",
-    "message": "network_range_audit -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615319,
-    "branch": "main/network_range_audit",
-    "changeset": "161296",
-    "created": "2026-08-18T21:56:05",
-    "message": "bring labs crate normal down to 128m",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615318,
-    "branch": "main/network_range_audit",
-    "changeset": "161295",
-    "created": "2026-08-18T21:52:47",
-    "message": "Lower medium signs to 128m network range",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615317,
-    "branch": "main/network_range_audit",
-    "changeset": "161294",
-    "created": "2026-08-18T21:46:46",
-    "message": "main -> network_range_audit",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615315,
-    "branch": "main",
-    "changeset": "161293",
-    "created": "2026-08-18T21:26:22",
-    "message": "wind_turbine_sfx_fix -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615314,
-    "branch": "main/wind_turbine_sfx_fix",
-    "changeset": "161292",
-    "created": "2026-08-18T21:26:03",
-    "message": "Stop Wind turbine SFX contuining to playing when the turbine is not spinning\r\n(Bug from 2019)",
-    "author": "Ian Henderson"
   }
 ]
