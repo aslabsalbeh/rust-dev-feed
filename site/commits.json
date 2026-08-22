@@ -1,5 +1,29 @@
 [
   {
+    "id": 616101,
+    "branch": "main/gib_fixes",
+    "changeset": "161767",
+    "created": "2026-08-22T20:38:58",
+    "message": "Re-centred gib part origins on 8 deployables\n\nSame problem as the hot air balloon armour last commit - gib part origins weren't central to their mesh, so pieces rotated about a point outside themselves and the physics was inaccurate. Re-exported the gib meshes and re-assigned the collider boxes. should be much more accurate gib physics now.\r\nAlso on some gibs, they had parts that were self intersecting and were being discarded. Fixed that. \n\n- HotAirBalloon basket: 43 of 55 parts had their origin outside the piece, now 0\n- refinery_b (refinery_large_deployed): 24 of 83, now 0\n- windmill_main: 22 of 53, now 0\n- box.wooden.large: 19 of 33, now 0\n- fireplace: 19 of 53, now 0\n- lift_shaft_top (elevator): 18 of 33, now 0 - worst part sat 1183x its own half-extent off centre\n- tool_cupboard: 15 of 44, now 0\n- cannon: 14 of 24, now 0\n- component_box_wood: boxes re-fitted",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616100,
+    "branch": "main/gib_fixes",
+    "changeset": "161766",
+    "created": "2026-08-22T19:48:00",
+    "message": "Fixed gib collider overrides on 7 deployables\r\nBox overrides had drifted from their gib meshes, so colliders didn't match their mesh and clipped through the floor. Some overrides had more whilst others had less gib parts. \r\n\n- io.table: override list resynced 44 -> 29, boxes re-fitted (29 of 29 boxes were not a fit for their own mesh, now 6)\n- HotAirBalloon_armor_T1: gib FBX re-exported, list 52 -> 51 - their origins weren't central to the mesh causing innacurate physics \n- sculpture.ice: list extended 30 -> 33; the last 3 parts had been falling back to convex mesh colliders\n- mannequin: boxes re-fitted (18 of 18 mismatched, now 0)\n- chandelier, component.box.charcoal.large: boxes re-fitted",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616098,
+    "branch": "main/glass_ar",
+    "changeset": "161765",
+    "created": "2026-08-22T18:46:21",
+    "message": "Glass AR - material tweaks",
+    "author": "alex.m"
+  },
+  {
     "id": 616096,
     "branch": "main/gib_fixes",
     "changeset": "161764",
@@ -1470,85 +1494,5 @@
     "created": "2026-08-19T21:14:21",
     "message": "- deleted old anim folder\r\n- added bespoke animator for subsystem\r\n- set up subsystem and curves for one arm/two arm mask and blends\r\n- Updated 3p anims with correct prop rotation\r\n- re-zero'd rotations in entity prefab\r\n- added anim events for sounds\r\n- updated viewmodel animator naming",
     "author": "Alex Webster"
-  },
-  {
-    "id": 615599,
-    "branch": "main/character_customisation",
-    "changeset": "161478",
-    "created": "2026-08-19T21:08:23",
-    "message": "Add support to select race",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615598,
-    "branch": "main/character_customisation",
-    "changeset": "161477",
-    "created": "2026-08-19T21:08:00",
-    "message": "UI\r\n- More layout\r\n- More styles",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615593,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161475",
-    "created": "2026-08-19T20:50:55",
-    "message": "Build libs for all platforms",
-    "author": "Maverick"
-  },
-  {
-    "id": 615592,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161474",
-    "created": "2026-08-19T20:49:56",
-    "message": "Fix compile errors from the merge",
-    "author": "Maverick"
-  },
-  {
-    "id": 615591,
-    "branch": "main/character_customisation",
-    "changeset": "161473",
-    "created": "2026-08-19T20:18:52",
-    "message": "Setup a system for fixed square cells in flex grids, so theres no need to compute gap and column count to get it exactly square",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615588,
-    "branch": "main/glass_ar",
-    "changeset": "161472",
-    "created": "2026-08-19T20:07:05",
-    "message": "Adding hide events for glass ak magazine",
-    "author": "jeddooo"
-  },
-  {
-    "id": 615583,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161471",
-    "created": "2026-08-19T19:23:24",
-    "message": "Merge navpos",
-    "author": "Maverick"
-  },
-  {
-    "id": 615581,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161470",
-    "created": "2026-08-19T19:19:14",
-    "message": "Fix tiger charging forever at the bottom of vine trees",
-    "author": "Maverick"
-  },
-  {
-    "id": 615574,
-    "branch": "main/wtp_maintainables_rework/waterpipe_spawning_rework",
-    "changeset": "161466",
-    "created": "2026-08-19T18:23:44",
-    "message": "tweak numbers for generation distances",
-    "author": "ElliotH"
-  },
-  {
-    "id": 615572,
-    "branch": "main/glass_ar",
-    "changeset": "161465",
-    "created": "2026-08-19T18:16:21",
-    "message": "Glass AR - fixed worldmodel sorting issues with other in game glass objects",
-    "author": "alex.m"
   }
 ]
