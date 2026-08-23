@@ -1,9 +1,9 @@
 {
   "2026-08-23": {
     "commit_count": 12,
-    "relevant_commit_count": 7,
-    "relevant_signature": "616112,616113,616114,616115,616116,616121,616123",
-    "new_baseline_signature": "616112,616113,616114,616115,616116,616121,616123",
+    "relevant_commit_count": 8,
+    "relevant_signature": "616108,616112,616113,616114,616115,616116,616121,616123",
+    "new_baseline_signature": "616108,616112,616113,616114,616115,616116,616121,616123",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
@@ -11,24 +11,43 @@
         "title": "World & Navigation",
         "items": [
           {
-            "text": "Fixed missing navigation mesh on Ghost Ship A, restoring AI pathing on the monument.",
+            "text": "Fixed missing navigation mesh on Ghost Ship A, restoring AI pathfinding.",
             "commit_ids": [
               616115
             ]
           }
         ]
+      },
+      {
+        "title": "Inventory",
+        "items": [
+          {
+            "text": "Reduced beancan stack size from 5 to 4.",
+            "commit_ids": [
+              616108
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### World & Navigation\n- Fixed missing navigation mesh on Ghost Ship A, restoring AI pathing on the monument.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### World & Navigation\n- Fixed missing navigation mesh on Ghost Ship A, restoring AI pathfinding.\n\n### Inventory\n- Reduced beancan stack size from 5 to 4.",
+    "new_items": [
+      {
+        "text": "Reduced beancan stack size from 5 to 4.",
+        "commit_ids": [
+          616108
+        ],
+        "section": "Inventory"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- Reduced beancan stack size from 5 to 4."
   },
   "2026-08-22": {
     "commit_count": 11,
-    "relevant_commit_count": 8,
-    "relevant_signature": "616087,616089,616092,616094,616096,616100,616101,616102",
-    "new_baseline_signature": "616087,616089,616092,616094,616096,616100,616101,616102",
+    "relevant_commit_count": 9,
+    "relevant_signature": "616087,616089,616092,616094,616096,616100,616101,616102,616104",
+    "new_baseline_signature": "616087,616089,616092,616094,616096,616100,616101,616102,616104",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
@@ -36,45 +55,45 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed heavy scientists getting stuck after being dropped by the helicopter on certain seeds (e.g., small oilrig).",
+            "text": "Fixed heavy scientists getting stuck after being dropped by the helicopter on certain seeds (small oilrig).",
             "commit_ids": [
               616089
-            ]
-          },
-          {
-            "text": "Fixed old AI not catching up to players.",
-            "commit_ids": [
-              616087
             ]
           }
         ]
       },
       {
-        "title": "Deployables & Physics",
+        "title": "Deployable Physics & Collisions",
         "items": [
           {
-            "text": "Corrected mismatched gib collider boxes on several deployables (boxes, hot‑air‑balloon armor, sculpture.ice, mannequin, chandelier, etc.), preventing clipping through the floor.",
+            "text": "Fixed mismatched colliders and off‑center gib origins for multiple deployables (io.table, HotAirBalloon armor, sculpture.ice, mannequin, chandelier, component.box.charcoal.large, HotAirBalloon basket, refinery, windmill, wooden box, fireplace, lift shaft top, tool cupboard, cannon, component box wood), eliminating clipping and improving break‑apart physics.",
             "commit_ids": [
-              616100
+              616100,
+              616102,
+              616101
             ]
           },
           {
-            "text": "Re‑centered gib part origins on multiple deployables (hot‑air‑balloon basket, refinery, windmill, wooden box, fireplace, lift shaft, tool cupboard, cannon) for accurate physics and proper rotation.",
-            "commit_ids": [
-              616101,
-              616102
-            ]
-          },
-          {
-            "text": "Added missing gib meshes to the Frankenstein table so it now breaks apart correctly.",
+            "text": "Added gib pieces to the Frankenstein table so it now breaks apart correctly when destroyed.",
             "commit_ids": [
               616096
             ]
           }
         ]
+      },
+      {
+        "title": "Grenade Stack Sizes",
+        "items": [
+          {
+            "text": "Reduced stack sizes for F1 grenades, Bee grenades, Flashbangs, and Molotovs from 5 to 3.",
+            "commit_ids": [
+              616104
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### NPC & AI\n- Fixed heavy scientists getting stuck after being dropped by the helicopter on certain seeds (e.g., small oilrig).\n- Fixed old AI not catching up to players.\n\n### Deployables & Physics\n- Corrected mismatched gib collider boxes on several deployables (boxes, hot‑air‑balloon armor, sculpture.ice, mannequin, chandelier, etc.), preventing clipping through the floor.\n- Re‑centered gib part origins on multiple deployables (hot‑air‑balloon basket, refinery, windmill, wooden box, fireplace, lift shaft, tool cupboard, cannon) for accurate physics and proper rotation.\n- Added missing gib meshes to the Frankenstein table so it now breaks apart correctly.",
+    "summary": "### NPC & AI\n- Fixed heavy scientists getting stuck after being dropped by the helicopter on certain seeds (small oilrig).\n\n### Deployable Physics & Collisions\n- Fixed mismatched colliders and off‑center gib origins for multiple deployables (io.table, HotAirBalloon armor, sculpture.ice, mannequin, chandelier, component.box.charcoal.large, HotAirBalloon basket, refinery, windmill, wooden box, fireplace, lift shaft top, tool cupboard, cannon, component box wood), eliminating clipping and improving break‑apart physics.\n- Added gib pieces to the Frankenstein table so it now breaks apart correctly when destroyed.\n\n### Grenade Stack Sizes\n- Reduced stack sizes for F1 grenades, Bee grenades, Flashbangs, and Molotovs from 5 to 3.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
