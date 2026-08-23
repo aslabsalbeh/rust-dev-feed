@@ -1,5 +1,21 @@
 [
   {
+    "id": 616103,
+    "branch": "main/sleepingbag_collison_test",
+    "changeset": "161769",
+    "created": "2026-08-22T21:52:39",
+    "message": "speculative - added a collsiion mesh to sleeping bag to prevent dropped items from passing through it.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616102,
+    "branch": "main/gib_fixes",
+    "changeset": "161768",
+    "created": "2026-08-22T21:07:52",
+    "message": "re-centered gib parts again \r\n\r\n- hot_air_balloon: 67 of 67 parts had their origin outside the piece, now 0\r\n- got rid of a load of self intersections that caused the self intersected faces to be discarded despite unity triangulating on import. It can't triangulate self intersecting faces.",
+    "author": "Pilgrim"
+  },
+  {
     "id": 616101,
     "branch": "main/gib_fixes",
     "changeset": "161767",
@@ -1398,101 +1414,5 @@
     "created": "2026-08-20T00:48:32",
     "message": "Adjust the position threshold for collapsing a RendererLOD\r\nA positional shift of > 0.000000001f on any axis used to prevent collapsing, updated to 0.0001f\r\nCatches a lot more renderers with no visual difference\r\nFixed collapsed LODS switching to culling later than they should\r\nFixed collapsed LODS not registering to environment culling",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 615625,
-    "branch": "main/base_occlusion",
-    "changeset": "161491",
-    "created": "2026-08-20T00:14:31",
-    "message": "Fix lingering occlusion (wait 5s before hiding on client) not always working",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 615624,
-    "branch": "main/character_customisation",
-    "changeset": "161490",
-    "created": "2026-08-19T23:57:03",
-    "message": "- Fix missing inspector arguments on character customizer page\r\n- Setup tile prefabs\r\n- Initial work on Character Preview\r\n- Set toggle on character creator page",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615619,
-    "branch": "main/gib_fixes",
-    "changeset": "161489",
-    "created": "2026-08-19T22:54:54",
-    "message": "Wired the DM Tier2 Lootbox gibs to its own material\n\nThe crate already had gibs, but materialSource was unset so the pieces fell back to the shared WoodenCrate2 gib material and the tier 2 markings vanished as soon as it broke.\n\nmaterialSource now points at its own body renderer, so the gibs keep Crate_2_DMtier2_dif.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615616,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161488",
-    "created": "2026-08-19T22:47:29",
-    "message": "Fix rustnav.setnumthreads bugs",
-    "author": "Maverick"
-  },
-  {
-    "id": 615615,
-    "branch": "main/gib_fixes",
-    "changeset": "161487",
-    "created": "2026-08-19T22:43:45",
-    "message": "Add gibs to the DM wooden loot crates\n\nDM Construction Resources, DM Res, DM Medical and DM Food now break apart when emptied instead of vanishing.\n\nAll four use the same wooden loot crate model, so they share a single gib source (WoodenCrate1_GIBs). \r\nEach prefab's own Gibbable points materialSource at its body renderer, so the gibs keep that crate's label material instead of the generic shared one.\n\nscaleOverride is 0.8 to match the scaled prefab roots, so pieces spawn at the right size.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615614,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161486",
-    "created": "2026-08-19T22:40:02",
-    "message": "Fix IsPaused collection-modified exception in RustNavMeshAgent",
-    "author": "Maverick"
-  },
-  {
-    "id": 615613,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161485",
-    "created": "2026-08-19T22:34:38",
-    "message": "Fix agents getting stuck when walking exactly along a navmesh edge, dedpulicate state between currentpPolyRef and dtCorridor own polyref",
-    "author": "Maverick"
-  },
-  {
-    "id": 615611,
-    "branch": "main/WoodArmour_skinnable",
-    "changeset": "161484",
-    "created": "2026-08-19T22:09:02",
-    "message": "triangulated workshop source for wood armor gloves",
-    "author": "Taylor Reynolds"
-  },
-  {
-    "id": 615609,
-    "branch": "main/character_customisation",
-    "changeset": "161483",
-    "created": "2026-08-19T21:52:35",
-    "message": "Fix character creator page setup",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615608,
-    "branch": "main/new_achievements_sep26",
-    "changeset": "161482",
-    "created": "2026-08-19T21:43:24",
-    "message": "Setup 3 new clan related achievements",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615607,
-    "branch": "main/glass_ar",
-    "changeset": "161481",
-    "created": "2026-08-19T21:33:57",
-    "message": "different colour variants of glass AR",
-    "author": "matt.i"
-  },
-  {
-    "id": 615601,
-    "branch": "main/weapon_refresh_flashlight",
-    "changeset": "161480",
-    "created": "2026-08-19T21:14:21",
-    "message": "- deleted old anim folder\r\n- added bespoke animator for subsystem\r\n- set up subsystem and curves for one arm/two arm mask and blends\r\n- Updated 3p anims with correct prop rotation\r\n- re-zero'd rotations in entity prefab\r\n- added anim events for sounds\r\n- updated viewmodel animator naming",
-    "author": "Alex Webster"
   }
 ]
