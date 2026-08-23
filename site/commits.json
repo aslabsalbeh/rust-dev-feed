@@ -1,5 +1,61 @@
 [
   {
+    "id": 616121,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161781",
+    "created": "2026-08-23T11:37:11",
+    "message": "Replace libraries",
+    "author": "Maverick"
+  },
+  {
+    "id": 616116,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161778",
+    "created": "2026-08-23T10:54:00",
+    "message": "Gate per tile interlocked add needed for logging when logging is off",
+    "author": "Maverick"
+  },
+  {
+    "id": 616115,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161777",
+    "created": "2026-08-23T10:53:34",
+    "message": "Fix ghostship A having no navmesh",
+    "author": "Maverick"
+  },
+  {
+    "id": 616114,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161776",
+    "created": "2026-08-23T10:47:04",
+    "message": "Remove unused param in bake stats",
+    "author": "Maverick"
+  },
+  {
+    "id": 616113,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161775",
+    "created": "2026-08-23T10:45:28",
+    "message": "Remove some spammy and uninformative logs",
+    "author": "Maverick"
+  },
+  {
+    "id": 616112,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161774",
+    "created": "2026-08-23T10:34:55",
+    "message": "Adds lots of instrumentation, and increase navmesh build speed by around 30%, implemented common optimizations I've seen before or discussed with Lorenz:\r\n- when rasterizing triangles, reuse values between neighbors instead of re-clipping the triangle against every column (7%)\r\n- heightfield is supposed to have faster insertion than compact heightfield thanks to linked list, but because it wastes so much time pointer chasing during iteration it's actually slower, also instertion is not that bad when the column fits in cache (4%)\r\n- fuse some span filtering operation to iterate once instead of 3 times on the spans (only 1% for rust maps sadly...) + the pooling from sbox doesn't really benefit us\r\nAs well as some new findings found from profiling:\r\n- during heigthfield stage when comparing span A to span B for walkability tests, don't do everything from scratch when comparing B to A (9% whole map, but monuments and bases specifically x4 speed with this)\r\n- watershed iterates through the whole list of regions multiple times, faster with lookup (7%)\r\nCan get another 10% if we halve the detail mesh precision, automatically sampled lots of tiles for vertical differences to test and the difference is negligible\r\nThe real bigger order of magnitude gain is to not limit the number of threads and not time slice geometry collection, it stalls the server but goes 6x faster, could do it at server boot and just throttle the subsequent dynamic navmesh updates (player building bases, nodes etc).",
+    "author": "Maverick"
+  },
+  {
+    "id": 616111,
+    "branch": "main/automated_testing",
+    "changeset": "161773",
+    "created": "2026-08-23T09:24:08",
+    "message": "New automated test to check for immortal entities starting with health <= 0.",
+    "author": "Lukester"
+  },
+  {
     "id": 616108,
     "branch": "main/reduce_nade_stack_size",
     "changeset": "161772",
@@ -1238,101 +1294,5 @@
     "created": "2026-08-20T12:14:32",
     "message": "Commit libraries",
     "author": "Maverick"
-  },
-  {
-    "id": 615726,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161547",
-    "created": "2026-08-20T12:08:54",
-    "message": "Fix non-deterministic tests that only failed sometimes, remove extra long tests",
-    "author": "Maverick"
-  },
-  {
-    "id": 615722,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161546",
-    "created": "2026-08-20T11:53:10",
-    "message": "Bugfix: make card table saving MT-friendly\r\nDone by removing the concept of item \"busy\" or \"locking\" - was never set but checked against Time.time\r\nTests: none, trivial change",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615720,
-    "branch": "main/rendererlod_collapse_improvements",
-    "changeset": "161544",
-    "created": "2026-08-20T11:40:49",
-    "message": "Fix NRE when using a planner that is placing a collapsed renderer",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615719,
-    "branch": "main/erosion_optim",
-    "changeset": "161543",
-    "created": "2026-08-20T11:35:34",
-    "message": "fixed empty procmap scene",
-    "author": "Grigler"
-  },
-  {
-    "id": 615718,
-    "branch": "main/erosion_optim",
-    "changeset": "161542",
-    "created": "2026-08-20T11:34:00",
-    "message": "converted all jobs to batch by rows instead of pulling XY coordinates out of the flat array's index, fixed some other minor issues \r\n4500 map erosion time down from 47s to 39s",
-    "author": "Grigler"
-  },
-  {
-    "id": 615716,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161540",
-    "created": "2026-08-20T11:26:14",
-    "message": "Bugfix: cache rocket ammo def to avoid get_gameObject calls in AttackHelicopterRockets\r\nTests: spawned attack heli and geared it up - could see them in inventory",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615711,
-    "branch": "main/vcc/sw_test",
-    "changeset": "161539",
-    "created": "2026-08-20T11:04:51",
-    "message": "Remove the temporary reflection hack for steam input.\r\nSwitch to alloc free controllers call.\r\nTesting with locally built new Steamworks DLL",
-    "author": "Adam W"
-  },
-  {
-    "id": 615708,
-    "branch": "main/airwolf_repairable_pad",
-    "changeset": "161538",
-    "created": "2026-08-20T10:45:18",
-    "message": "Adjust conversation readout timings again",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615707,
-    "branch": "main/airwolf_repairable_pad",
-    "changeset": "161537",
-    "created": "2026-08-20T10:41:02",
-    "message": "Initial setup of repairable helipad at bandit camp\r\nBuying air vehicles from the vendor is disabled until players contribute enough resources to repair the helipad. Works similar to constructing siege weapons\r\nOnce repaired stays repaired for the wipe\r\nPlaceholder art whilst helipad is under construction",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615690,
-    "branch": "main/ArrowRevamp",
-    "changeset": "161534",
-    "created": "2026-08-20T09:51:23",
-    "message": "Reapply reduced network range on arrow.prefab\r\nTestlist",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615675,
-    "branch": "main/showusebind_settings_fix",
-    "changeset": "161522",
-    "created": "2026-08-20T09:30:43",
-    "message": "Fix \"Show use bind\" and \"Show belt bar binds\" settings not doing anything because they were pointing to the wrong convar",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615673,
-    "branch": "main/chainlink_fence_fix",
-    "changeset": "161521",
-    "created": "2026-08-20T09:26:44",
-    "message": "Fix all chainlink fences in all monuments manually since they had material overrides applied to LOD1 in the scene\r\nS2P",
-    "author": "cipeaX"
   }
 ]
