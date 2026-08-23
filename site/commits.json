@@ -1,5 +1,21 @@
 [
   {
+    "id": 616124,
+    "branch": "main/automated_testing",
+    "changeset": "161783",
+    "created": "2026-08-23T14:28:06",
+    "message": "S2P oilrigs, excavator and gas station",
+    "author": "Lukester"
+  },
+  {
+    "id": 616123,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161782",
+    "created": "2026-08-23T13:51:46",
+    "message": "Add convar to toggle navmesh optis on and off",
+    "author": "Maverick"
+  },
+  {
     "id": 616121,
     "branch": "main/new_navmesh_fixes",
     "changeset": "161781",
@@ -1158,141 +1174,5 @@
     "created": "2026-08-20T15:14:50",
     "message": "fixed ladder.worldmodel from having two conflicting lod groups causing console errors",
     "author": "Pilgrim"
-  },
-  {
-    "id": 615774,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161568",
-    "created": "2026-08-20T15:09:15",
-    "message": "Update: explicitly capture callstack when DebugMTLock is tripped\r\n- frame count can be limited to via unsafe.DebugMTLockMaxFrames (def 5)\r\nTests: ran unit tests",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615772,
-    "branch": "main/fp_steamworks_steaminput",
-    "changeset": "161567",
-    "created": "2026-08-20T15:05:04",
-    "message": "Update Facepunch.Steamworks files (b56e56a)\nInitialize ISteamInput with the interface lifecycle - previously SteamInput.Controllers always enumerated empty because Init was never called. \r\nRelease build from GitHub Actions.",
-    "author": "Adam W"
-  },
-  {
-    "id": 615770,
-    "branch": "main",
-    "changeset": "161566",
-    "created": "2026-08-20T15:02:28",
-    "message": "fixed both corn and salvaged hammer having double lod renderers on their world model",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615768,
-    "branch": "main",
-    "changeset": "161565",
-    "created": "2026-08-20T14:54:16",
-    "message": "update to propane tank .worldmodel \r\nfix for random disappearing act in the lods",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615767,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161564",
-    "created": "2026-08-20T14:53:08",
-    "message": "Added -5 radiation",
-    "author": "Lukester"
-  },
-  {
-    "id": 615765,
-    "branch": "main/hlod_improvements_aug_26",
-    "changeset": "161563",
-    "created": "2026-08-20T14:50:30",
-    "message": "Regenerate all the HLODs in the game\r\nHad to resave all monument scenes, if there's any conflicts on other branches just discard this change as another S2P should fix the issue\r\nCreated a new Scene2Prefab batch window, exposes all scenes with S2P and allows us batch generate HLODs/S2P",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615761,
-    "branch": "main/glass_ar",
-    "changeset": "161562",
-    "created": "2026-08-20T14:48:45",
-    "message": "Glass AR - removed unused materials, turned duplicate prefabs into prefab variants, added simpler worldmodel,",
-    "author": "alex.m"
-  },
-  {
-    "id": 615755,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161561",
-    "created": "2026-08-20T14:27:18",
-    "message": "New: DebugMTLock - a named lock guard that print an error on concurrent access\r\n- controlled by Unsafe.EnableDebugMTLock, disabled by default\r\n- codegen, unit tests\r\nNeed it to help chase down unobvious thread races, like InvokeHandler\r\nTests: ran unit tests",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615747,
-    "branch": "main/underground_train_network_update",
-    "changeset": "161559",
-    "created": "2026-08-20T14:08:31",
-    "message": "Added third variant of randomised (large) room for train tunnels - abandoned waiting room",
-    "author": "hannah.watts"
-  },
-  {
-    "id": 615746,
-    "branch": "main/character_customisation",
-    "changeset": "161558",
-    "created": "2026-08-20T14:07:54",
-    "message": "More UI changes\r\nBackdrop setup\r\nFIxed players eyes being black in the preview\r\nEyes now follow you around as you orbit around the player",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 615741,
-    "branch": "main/white_firework_boomer",
-    "changeset": "161555",
-    "created": "2026-08-20T13:12:41",
-    "message": "updated large fireworks pack description to add white firework. Updated all fireworks icons to use lewis's new icons. Updated small and large fireworks pack steam store icons",
-    "author": "matt.i"
-  },
-  {
-    "id": 615734,
-    "branch": "main/hlod_improvements_aug_26",
-    "changeset": "161554",
-    "created": "2026-08-20T12:46:04",
-    "message": "FIxed an issue where the to cull components on a HLOD mesh could get lost due to unity's dirty check\r\nRemoved a runtime allocation when a HLOD mesh enters/exits range\r\nImproved handling of biome visual meshes when generating HLOD meshes, now uses the Temperate mesh if available for rendering the HLOD mesh but adds all biome visuals to the to cull list so they are disabled at range (could cause cliff flickering at a distance)",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615733,
-    "branch": "main/new_achievements_sep26",
-    "changeset": "161553",
-    "created": "2026-08-20T12:41:37",
-    "message": "Better handling of clan score",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615732,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161552",
-    "created": "2026-08-20T12:34:12",
-    "message": "Optim: Jobs 4 - reduce server.ParallelNetworkQueueBatchSize to 16 by default\r\n256 was waaay to high for the per-frame workload we get, it basically disabled parallelization\r\nTests: none, trivial change",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615731,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161551",
-    "created": "2026-08-20T12:23:32",
-    "message": "Bugfix: fix 6 TestMTSave failures\r\nNo legit mt issues, just new entity types with missing unit test setup\r\nTests: ran all TestMTSave tests, pass",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615730,
-    "branch": "main",
-    "changeset": "161550",
-    "created": "2026-08-20T12:18:09",
-    "message": "Fix:\r\n- old scientists not moving at multiple locations\r\n- animal stuck in charge stack around jungle trees\r\n- ais getting stuck\r\n- move without polyref log spam\r\n- scientist crouchwalk weird angle on stairs\r\n- slower old ais",
-    "author": "Maverick"
-  },
-  {
-    "id": 615728,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161548",
-    "created": "2026-08-20T12:14:32",
-    "message": "Commit libraries",
-    "author": "Maverick"
   }
 ]
