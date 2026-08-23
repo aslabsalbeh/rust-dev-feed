@@ -1,5 +1,13 @@
 [
   {
+    "id": 616104,
+    "branch": "main/reduce_nade_stack_size",
+    "changeset": "161770",
+    "created": "2026-08-23T00:24:17",
+    "message": "Reduced stack size for:\r\n- F1s 5 > 3\r\n- Bee nades 5 > 3\r\n- Flashbangs 5 >3 \r\n- Molotovs 5 > 3",
+    "author": "elhog"
+  },
+  {
     "id": 616103,
     "branch": "main/sleepingbag_collison_test",
     "changeset": "161769",
@@ -1374,45 +1382,5 @@
     "created": "2026-08-20T04:00:34",
     "message": "Fix compile errors",
     "author": "Dayaan"
-  },
-  {
-    "id": 615642,
-    "branch": "main/base_occlusion",
-    "changeset": "161501",
-    "created": "2026-08-20T03:20:05",
-    "message": "Send network updates of room behind the door before the door's network update is sent",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 615639,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161498",
-    "created": "2026-08-20T03:08:44",
-    "message": "DLSS support for RRP",
-    "author": "Dayaan"
-  },
-  {
-    "id": 615636,
-    "branch": "main/Livestock_animals",
-    "changeset": "161497",
-    "created": "2026-08-20T02:30:33",
-    "message": "Add commands to select and direct a given NPC\r\nai.selectnpc will select the npc in front of the player\r\nai.movenpc will make the npc navigate to the point the player is looking at (takes a walk type sneak, walk, jog, run, sprint, fullsprint)\r\nai.releasenpc stops the debug control\r\nWorks on legacy AI and modern FSM based AI, needs to be manually added to every FSM AI but it's a one line change for each type",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615629,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161494",
-    "created": "2026-08-20T01:06:07",
-    "message": "Faster navmesh save and load, smaller save file sizes",
-    "author": "Maverick"
-  },
-  {
-    "id": 615627,
-    "branch": "main/rendererlod_collapse_improvements",
-    "changeset": "161492",
-    "created": "2026-08-20T00:48:32",
-    "message": "Adjust the position threshold for collapsing a RendererLOD\r\nA positional shift of > 0.000000001f on any axis used to prevent collapsing, updated to 0.0001f\r\nCatches a lot more renderers with no visual difference\r\nFixed collapsed LODS switching to culling later than they should\r\nFixed collapsed LODS not registering to environment culling",
-    "author": "Jarryd Campi"
   }
 ]
