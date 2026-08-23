@@ -88,6 +88,20 @@ HIGH_VALUE_TERMS = (
     "mountable",
     "mount",
     "vehicle",
+        # Player-facing balance / configuration
+    "stack size",
+    "stack sizes",
+    "inventory capacity",
+    "capacity",
+    "crafting cost",
+    "crafting costs",
+    "durability",
+    "fire rate",
+    "cooldown",
+    "respawn time",
+    "fuel consumption",
+    "gather rate",
+    "drop rate",
 
     # NPCs / animals
     "scientist",
@@ -352,9 +366,20 @@ def player_relevance_score(commit):
             "movement",
             "behaviour",
             "behavior",
+            "stack size",
+            "stack sizes",
+            "inventory capacity",
+            "crafting cost",
+            "durability",
+            "fire rate",
+            "cooldown",
+            "respawn time",
+            "fuel consumption",
+            "gather rate",
+            "drop rate",
         ),
     ):
-        score += 3
+        score += 5
 
     if contains_any(
         text,
@@ -505,6 +530,9 @@ PRIORITIZE:
 - Concrete player-facing bug and glitch fixes
 - Gameplay mechanic changes
 - Balance changes
+- Player-visible numeric/configuration changes such as stack sizes,
+  inventory limits, crafting costs, durability, damage, fire rate,
+  cooldowns, loot quantities, resource rates, fuel use, and timers
 - Weapons, equipment, items and deployables
 - NPC and animal behaviour
 - Monuments and world changes
@@ -545,6 +573,24 @@ for this digest.
 
 Never sacrifice a concrete gameplay bug fix to make room for cosmetic,
 rendering or technical information.
+
+PLAYER-FACING NUMERIC CHANGES:
+
+Do not exclude a commit merely because it is a simple numeric,
+configuration, prefab, or data-value change.
+
+If the changed value materially affects what players can carry, craft,
+use, damage, loot, gather, consume, or wait for, it belongs in the digest.
+
+For example, this MUST be included:
+
+"Reduced stack size for F1s 5 > 3, Bee nades 5 > 3,
+Flashbangs 5 > 3, Molotovs 5 > 3"
+
+A good summary would be:
+
+"Reduced F1 grenade, Bee grenade, Flashbang, and Molotov
+stack sizes from 5 to 3."
 
 Development commits may describe unreleased work.
 Clearly label work-in-progress or upcoming features when needed.
@@ -695,6 +741,10 @@ Rules:
 - Preserve concrete player-facing bug symptoms.
 - Prefer gameplay, bugs, NPCs, animals, items, weapons,
   vehicles, monuments and meaningful UI fixes.
+- Include player-facing numeric/configuration changes such as
+  stack sizes, inventory limits, crafting costs, durability,
+  damage, fire rate, cooldowns, loot quantities and resource rates.
+- Do not dismiss a change just because it is a simple numeric value edit.
 - Drop technical/internal trivia if any remains.
 - Aim for 2 to 6 sections.
 - Aim for roughly 8 to 15 worthwhile bullets total.
