@@ -1,5 +1,29 @@
 [
   {
+    "id": 616302,
+    "branch": "main/improved_event_saveloading",
+    "changeset": "161900",
+    "created": "2026-08-24T20:54:24",
+    "message": "WIP Oil rigs no longer despawn all crates when the server restarts, large rig converted, small rig to go\r\n- Reworked the reset setup, attached a generator to the main reset so it can be saved, removed the smaller puzzleresets for each of the rooms\r\n- Puzzle now force-resets on server restart, unless there's players nearby - this also fixes getting killed while sleeping if you happened to be near any puzzle when the server goes down\r\n- Crates get saved so if you were in the middle of hacking the locked crate, it just continues after restart\r\n- Various other stuff to allow the puzzlereset to correctly find its reset entities and reset objects again afterwards\r\n- Puzzle itself saveloads references to spawned crates so it doesn't spawn duplicates on the next reset\r\n- ScientistBoatOilrigManager is no longer an entity (not needed)\r\n- Slight refactor, lots more cleanup to be done",
+    "author": "cipeaX"
+  },
+  {
+    "id": 616294,
+    "branch": "main/cui_updates",
+    "changeset": "161895",
+    "created": "2026-08-24T19:10:36",
+    "message": "Fixed potential NRE in FadeCanvasGroup",
+    "author": "Raul"
+  },
+  {
+    "id": 616292,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "161893",
+    "created": "2026-08-24T18:59:15",
+    "message": "optimised ao textures for vehicles, generic textures and misc items. \n\nhalved 2k -> 1k  with almost zero visual difference, not enough to warrant the double res \n\n328 MB -> 192 MB vram",
+    "author": "Pilgrim"
+  },
+  {
     "id": 616288,
     "branch": "main/Livestock_animals/critter_animals",
     "changeset": "161891",
@@ -693,38 +717,6 @@
     "changeset": "161748",
     "created": "2026-08-21T21:20:38",
     "message": "- Fix crocodile dying by themselves on some seeds, was caused by them by spawn more than 20m from rivers\r\n- Crocs spawning will now be constrained to river, but if they can't find one they won't break\r\n- Better logging when animals despawn because they can't find a valid move destination",
-    "author": "Maverick"
-  },
-  {
-    "id": 616064,
-    "branch": "main/character_customisation",
-    "changeset": "161747",
-    "created": "2026-08-21T21:01:05",
-    "message": "Add new animations to the character creator",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 616063,
-    "branch": "main/high_external_wallgate_COLfix",
-    "changeset": "161746",
-    "created": "2026-08-21T20:59:27",
-    "message": "fix to high external wall and gate collision mesh",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616059,
-    "branch": "main/glass_ar",
-    "changeset": "161745",
-    "created": "2026-08-21T20:20:06",
-    "message": "glass AK:\r\n- Use a mip-filtered refraction texture with specular shimmer/firefly reduction for better looking blurry refraction\r\n- Some shader simplification, remove unncessary alpha blending and emission map\r\n- Remove unnecessary \"depth prime\" viewmodel pass\r\n- Fix inconsistencies with viewmodel renderer shader passes between BRP and RRP",
-    "author": "Brian"
-  },
-  {
-    "id": 616055,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161744",
-    "created": "2026-08-21T19:21:19",
-    "message": "9x improvement on the triangle culling for heightfield bounds by making it native",
     "author": "Maverick"
   }
 ]

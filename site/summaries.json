@@ -1,9 +1,9 @@
 {
   "2026-08-24": {
-    "commit_count": 52,
-    "relevant_commit_count": 35,
-    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288",
-    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288",
+    "commit_count": 55,
+    "relevant_commit_count": 37,
+    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302",
+    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302",
     "prompt_version": "structured-read-state-v4-balance",
     "chunk_cache": {},
     "sections": [
@@ -11,14 +11,19 @@
         "title": "Animals",
         "items": [
           {
-            "text": "Fixed frog animation glitches and corrected movement speed; added water‑drinking need for livestock animals, allowing them to drink from containers or natural water sources.",
+            "text": "Fixed frog animations not playing, corrected sideways skating and movement speed issues.",
             "commit_ids": [
-              616272,
+              616272
+            ]
+          },
+          {
+            "text": "Added a water‑drinking need and behavior to livestock, allowing them to drink from nearby containers or natural water sources.",
+            "commit_ids": [
               616165
             ]
           },
           {
-            "text": "Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.",
+            "text": "Frog NPC gains a new “interested” state: it searches for shallow water and starts croaking.",
             "commit_ids": [
               616288
             ]
@@ -29,10 +34,20 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Improved vehicle pooling handling with a restoreHierarchy flag, refined suspension, steering, grip and engine rev behavior (including removal of broken burnout launch and visual rear‑wheel lock during handbrake), and added aim sway that scales with movement speed when using held weapons from the helicopter passenger seat.",
+            "text": "Introduced a restoreHierarchy field for poolable objects applied to vehicles, fixing UI pooling issues.",
             "commit_ids": [
-              616225,
-              616176,
+              616225
+            ]
+          },
+          {
+            "text": "Adjusted suspension, steering, and grip; removed non‑functional burnout/launch; engine revs now use front wheel speed; rear wheels visually lock during handbrake.",
+            "commit_ids": [
+              616176
+            ]
+          },
+          {
+            "text": "Aim sway now scales with movement speed when aiming held weapons from the passenger seat of the attack helicopter.",
+            "commit_ids": [
               616169
             ]
           }
@@ -42,34 +57,22 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Prevented building volumes from being baked into the navmesh, fixed navmesh generation failures, and optimized path‑following logic, doubling NPC path‑following performance and reducing per‑frame calculations for steering agents.",
+            "text": "Building volumes are now correctly ignored during navmesh baking, and navmesh generation no longer creates unintended areas or fails, improving NPC path‑following reliability.",
             "commit_ids": [
               616231,
-              616282,
-              616274
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Inventory",
-        "items": [
-          {
-            "text": "Fixed store prop drawer rendering by adding a fallback image path and added DynamicResourceRef support to the UI Store takeover system, improving dynamic bundle handling.",
-            "commit_ids": [
-              616208,
-              616273,
-              616240
+              616282
             ]
           },
           {
-            "text": "Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.",
+            "text": "Fixed a potential null‑reference crash for mannequins.",
             "commit_ids": [
-              616262,
-              616190,
-              616196,
-              616177,
-              616285
+              616235
+            ]
+          },
+          {
+            "text": "Optimized NPC path‑following logic, roughly doubling performance via selective string‑pulling and reduced interop calls.",
+            "commit_ids": [
+              616274
             ]
           }
         ]
@@ -78,87 +81,83 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.",
+            "text": "SAM sites now have proximity fuses against drones, 2.25× lead speed, and can destroy drone‑dropped explosives mid‑air.",
             "commit_ids": [
-              616185,
-              616236
+              616185
             ]
           },
           {
-            "text": "Doubled duration for several pies and raised hunters pie bleed reduction to 90%.",
+            "text": "Unused pies receive doubled bonus durations, and hunters pie bleed reduction increased to 90%.",
             "commit_ids": [
               616252
             ]
           },
           {
-            "text": "Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.",
+            "text": "Medkits reduce radiation by 20; boat planner tech tree cost lowered to 30; longsword swing radius and delay adjusted for faster, more accurate attacks.",
             "commit_ids": [
-              616228,
-              616179,
-              616164
+              616228
             ]
-          }
-        ]
-      },
-      {
-        "title": "Cosmetics",
-        "items": [
+          },
           {
-            "text": "Random skin crafting now includes the default skin in the random pool.",
+            "text": "Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.",
             "commit_ids": [
+              616179,
+              616302
+            ]
+          },
+          {
+            "text": "Added a configurable convar for drone detonation distance; ammo models now display remaining rounds for applicable revolvers; tax collector upkeep cost scales with authenticated player count via tiered percentages; random skin crafting can now yield the default skin.",
+            "commit_ids": [
+              616236,
+              616285,
+              616164,
               616178
             ]
           }
         ]
+      },
+      {
+        "title": "UI",
+        "items": [
+          {
+            "text": "Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.",
+            "commit_ids": [
+              616208,
+              616294,
+              616196,
+              616262,
+              616190,
+              616177
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### Animals\n- Fixed frog animation glitches and corrected movement speed; added water‑drinking need for livestock animals, allowing them to drink from containers or natural water sources.\n- Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.\n\n### Vehicles\n- Improved vehicle pooling handling with a restoreHierarchy flag, refined suspension, steering, grip and engine rev behavior (including removal of broken burnout launch and visual rear‑wheel lock during handbrake), and added aim sway that scales with movement speed when using held weapons from the helicopter passenger seat.\n\n### NPC & AI\n- Prevented building volumes from being baked into the navmesh, fixed navmesh generation failures, and optimized path‑following logic, doubling NPC path‑following performance and reducing per‑frame calculations for steering agents.\n\n### UI & Inventory\n- Fixed store prop drawer rendering by adding a fallback image path and added DynamicResourceRef support to the UI Store takeover system, improving dynamic bundle handling.\n- Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.\n\n### Gameplay & Balance\n- Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.\n- Doubled duration for several pies and raised hunters pie bleed reduction to 90%.\n- Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.\n\n### Cosmetics\n- Random skin crafting now includes the default skin in the random pool.",
+    "summary": "### Animals\n- Fixed frog animations not playing, corrected sideways skating and movement speed issues.\n- Added a water‑drinking need and behavior to livestock, allowing them to drink from nearby containers or natural water sources.\n- Frog NPC gains a new “interested” state: it searches for shallow water and starts croaking.\n\n### Vehicles\n- Introduced a restoreHierarchy field for poolable objects applied to vehicles, fixing UI pooling issues.\n- Adjusted suspension, steering, and grip; removed non‑functional burnout/launch; engine revs now use front wheel speed; rear wheels visually lock during handbrake.\n- Aim sway now scales with movement speed when aiming held weapons from the passenger seat of the attack helicopter.\n\n### NPC & AI\n- Building volumes are now correctly ignored during navmesh baking, and navmesh generation no longer creates unintended areas or fails, improving NPC path‑following reliability.\n- Fixed a potential null‑reference crash for mannequins.\n- Optimized NPC path‑following logic, roughly doubling performance via selective string‑pulling and reduced interop calls.\n\n### Gameplay & Balance\n- SAM sites now have proximity fuses against drones, 2.25× lead speed, and can destroy drone‑dropped explosives mid‑air.\n- Unused pies receive doubled bonus durations, and hunters pie bleed reduction increased to 90%.\n- Medkits reduce radiation by 20; boat planner tech tree cost lowered to 30; longsword swing radius and delay adjusted for faster, more accurate attacks.\n- Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.\n- Added a configurable convar for drone detonation distance; ammo models now display remaining rounds for applicable revolvers; tax collector upkeep cost scales with authenticated player count via tiered percentages; random skin crafting can now yield the default skin.\n\n### UI\n- Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.",
     "new_items": [
       {
-        "text": "Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.",
+        "text": "Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.",
         "commit_ids": [
-          616288
+          616179,
+          616302
         ],
-        "section": "Animals"
+        "section": "Gameplay & Balance"
       },
       {
-        "text": "Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.",
+        "text": "Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.",
         "commit_ids": [
+          616208,
+          616294,
+          616196,
           616262,
           616190,
-          616196,
-          616177,
-          616285
+          616177
         ],
-        "section": "UI & Inventory"
-      },
-      {
-        "text": "Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.",
-        "commit_ids": [
-          616185,
-          616236
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Doubled duration for several pies and raised hunters pie bleed reduction to 90%.",
-        "commit_ids": [
-          616252
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.",
-        "commit_ids": [
-          616228,
-          616179,
-          616164
-        ],
-        "section": "Gameplay & Balance"
+        "section": "UI"
       }
     ],
-    "new_relevant_count": 12,
-    "new_summary": "- Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.\n- Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.\n- Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.\n- Doubled duration for several pies and raised hunters pie bleed reduction to 90%.\n- Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count."
+    "new_relevant_count": 8,
+    "new_summary": "- Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.\n- Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved."
   },
   "2026-08-23": {
     "commit_count": 20,
