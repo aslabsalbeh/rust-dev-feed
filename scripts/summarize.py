@@ -28,7 +28,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 CHUNK_SIZE = 25
 
 # Change this whenever the summary logic/prompt structure changes.
-PROMPT_VERSION = "structured-read-state-v3-chunk-cache"
+PROMPT_VERSION = "structured-read-state-v4-balance"
 
 
 BAD_MARKERS = (
@@ -68,6 +68,28 @@ HIGH_VALUE_TERMS = (
     "disconnect",
     "desync",
     "exploit",
+    
+    # Balance / buffs / nerfs
+    "buff",
+    "buffs",
+    "buffed",
+    "nerf",
+    "nerfs",
+    "nerfed",
+    "balance",
+    "rebalance",
+
+    # Combat systems
+    "sam site",
+    "sam sites",
+    "drone",
+    "drones",
+    "missile",
+    "missiles",
+    "explosive",
+    "explosives",
+    "proximity fuse",
+    "aim error",
 
     # Gameplay
     "damage",
@@ -366,6 +388,18 @@ def player_relevance_score(commit):
             "movement",
             "behaviour",
             "behavior",
+            "buff",
+            "buffs",
+            "buffed",
+            "nerf",
+            "nerfs",
+            "nerfed",
+            "rebalance",
+            "sam site",
+            "sam sites",
+            "drone",
+            "drones",
+            "proximity fuse",
             "stack size",
             "stack sizes",
             "inventory capacity",
@@ -380,6 +414,22 @@ def player_relevance_score(commit):
         ),
     ):
         score += 5
+
+    # Explicit buffs/nerfs and meaningful combat interaction changes
+    # are high-priority player information.
+    if contains_any(
+        text,
+        (
+            "buff",
+            "buffs",
+            "buffed",
+            "nerf",
+            "nerfs",
+            "nerfed",
+            "rebalance",
+        ),
+    ):
+        score += 6
 
     if contains_any(
         text,
@@ -540,6 +590,9 @@ PRIORITIZE:
 - Loot and resource changes
 - Crashes, disconnects and exploits
 - Meaningful player-visible UI problems
+- Buffs, nerfs and balance changes, including work-in-progress changes
+- Changes to combat interactions between existing systems, weapons,
+  defenses, vehicles, drones, explosives, NPCs or deployables
 
 Preserve concrete bug symptoms.
 
@@ -573,6 +626,29 @@ for this digest.
 
 Never sacrifice a concrete gameplay bug fix to make room for cosmetic,
 rendering or technical information.
+
+BUFFS / NERFS / GAMEPLAY INTERACTIONS:
+
+Buffs and nerfs are HIGH-PRIORITY information for Rust players.
+
+Include meaningful changes to how existing gameplay systems interact,
+even when no new item is being added and no bug is being fixed.
+
+Do not exclude a change merely because it is marked WIP.
+If it is work in progress, include it when player-relevant and clearly
+label it as work in progress rather than implying it is live.
+
+For example, this MUST be considered important:
+
+"SAM site vs drone buffs wip: Missiles use a proximity fuse against
+drones, lead vs them without aim error at 2.25x speed, and destroy
+drone-dropped explosives mid-air."
+
+A suitable summary would be:
+
+"SAM site anti-drone buffs are in development: missiles now use
+proximity fuses against drones, lead them at 2.25× speed without aim
+error, and can destroy drone-dropped explosives in mid-air."
 
 PLAYER-FACING NUMERIC CHANGES:
 
