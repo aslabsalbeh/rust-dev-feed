@@ -1,5 +1,125 @@
 [
   {
+    "id": 616247,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161871",
+    "created": "2026-08-24T15:09:56",
+    "message": "Clean: remove PathProxyFor\r\n- update StoreBundleTool to work with DynamicResourceRef\r\nTests: none, not in use yet",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616245,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "161870",
+    "created": "2026-08-24T15:03:08",
+    "message": "hab armour split off into chunks so they can break off individually. \r\nwhen all chunks are gone, it leaves the frame of the armour. \r\nre-exported hab armour and added armour chunks.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616241,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "161868",
+    "created": "2026-08-24T14:35:05",
+    "message": "optimised weapon ao textures.  68 were oversized on disk and nearly all were storing a\nsingle channel as rgb.  no weapons ships above 1024 now.\n\nmax size     2048 -> 1024        (52 files)\non disk      4096/2048 -> 1024/512/256 (68 files)\nbit depth     rgb -> 8-bit grey  (58 files)\n\nvram   114.8 MB -> 28.6 MB\r\n\r\nao convention on weapons is half the albedo, so 1024 against the usual 2048 albedo.\n80 already did this, we were just inconsistent about it. we could half again on a per asset basis depending on size of object.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616240,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161867",
+    "created": "2026-08-24T14:33:52",
+    "message": "Update: Add DynamicResourceRef<T> to replace PathProxyForAttrib\r\nAllows us to both automate more of the dynamic bundle assignment as well as help with future merge conflict resolution\r\nTests: added it to UI_StoreTakeover and it's drawer",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616237,
+    "branch": "main/glass_ar",
+    "changeset": "161865",
+    "created": "2026-08-24T14:20:06",
+    "message": "Glass AR - texture, material, naming updates, experimental SSS shader",
+    "author": "alex.m"
+  },
+  {
+    "id": 616236,
+    "branch": "main/sam_vs_drone",
+    "changeset": "161864",
+    "created": "2026-08-24T14:17:34",
+    "message": "Add tunble drone detonate distance convar.",
+    "author": "Adam W"
+  },
+  {
+    "id": 616235,
+    "branch": "main",
+    "changeset": "161863",
+    "created": "2026-08-24T14:14:25",
+    "message": "possible NRE fix for mannequins",
+    "author": "octo"
+  },
+  {
+    "id": 616234,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "161862",
+    "created": "2026-08-24T14:05:25",
+    "message": "optimised darts textures and max sizes.  we were shipping the radiation dart at 4k on all textures. \r\n\r\nRadiationDart_AO    4096 -> 512\nRadiationDart_bc    4096 -> 1024\nRadiationDart_mg    4096 -> 1024\nRadiationDart_nrm   4096 -> 1024\n\n42.7 MB → 2.17 MB VRAM\r\n\r\nlooking at other textures that are unnecessarily big too to optimise where applicable.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616231,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161861",
+    "created": "2026-08-24T13:12:52",
+    "message": "Fix prevent building volumes being baked into the navmesh instead of ignored",
+    "author": "Maverick"
+  },
+  {
+    "id": 616228,
+    "branch": "main/AugustQuickfire_Buffs1",
+    "changeset": "161859",
+    "created": "2026-08-24T13:01:21",
+    "message": "Medkit now gives -20 radiation, same as two individual syringes\r\nBoat Planner tech tree cost down from 120 to 30 \r\nLongsword swing radius 0.3 > 0.4, swing delay 2 > 1.5. Slightly more accurate swings and less time between swings.",
+    "author": "Nick.H"
+  },
+  {
+    "id": 616225,
+    "branch": "main/vehicle_pooling",
+    "changeset": "161857",
+    "created": "2026-08-24T12:53:31",
+    "message": "Add a \"restoreHierarchy\" field to poolables, flip it only on vehicles to minimize the amount of affected features by vehicle pooling - fixes UI pooling issues.",
+    "author": "octo"
+  },
+  {
+    "id": 616224,
+    "branch": "main/sam_vs_drone",
+    "changeset": "161856",
+    "created": "2026-08-24T12:44:21",
+    "message": "Codegen",
+    "author": "Adam W"
+  },
+  {
+    "id": 616221,
+    "branch": "main/demo_ui_2",
+    "changeset": "161852",
+    "created": "2026-08-24T12:24:41",
+    "message": "animation imports + keyframe curve editor",
+    "author": "octo"
+  },
+  {
+    "id": 616217,
+    "branch": "main/Stepladder",
+    "changeset": "161851",
+    "created": "2026-08-24T12:11:46",
+    "message": "Deleted old prefab location",
+    "author": "Lewis T"
+  },
+  {
+    "id": 616216,
+    "branch": "main/Stepladder",
+    "changeset": "161850",
+    "created": "2026-08-24T12:11:36",
+    "message": "Ladder collision and LOD setup",
+    "author": "Lewis T"
+  },
+  {
     "id": 616209,
     "branch": "main/hackweek_random_skin_crafting",
     "changeset": "161846",
@@ -710,221 +830,5 @@
     "created": "2026-08-21T15:34:59",
     "message": "Update(editor): add heightmap sample and isInside visualization to server occlusion editor debug\r\nSpent too long chasing non-existent domain reload ghosts\r\nTests: visualized occlusion of EU East 1. tested occlusion gen on craggy with 2p",
     "author": "Daniel P"
-  },
-  {
-    "id": 615990,
-    "branch": "main/Stepladder",
-    "changeset": "161708",
-    "created": "2026-08-21T15:01:17",
-    "message": "Ladder textures",
-    "author": "Lewis T"
-  },
-  {
-    "id": 615991,
-    "branch": "main/Stepladder",
-    "changeset": "161707",
-    "created": "2026-08-21T15:01:00",
-    "message": "Ladder bare variant",
-    "author": "Lewis T"
-  },
-  {
-    "id": 615988,
-    "branch": "main/Livestock_animals/Seaturtle",
-    "changeset": "161705",
-    "created": "2026-08-21T14:56:21",
-    "message": "updated Seaturtle model with LODs.",
-    "author": "Toffer"
-  },
-  {
-    "id": 615987,
-    "branch": "main/demo_ui_2",
-    "changeset": "161704",
-    "created": "2026-08-21T14:56:04",
-    "message": "Fix crashing when switching cameras, + error spam.",
-    "author": "octo"
-  },
-  {
-    "id": 615986,
-    "branch": "main/glass_ar",
-    "changeset": "161703",
-    "created": "2026-08-21T14:44:33",
-    "message": "Glass AR - texture and material update, more tint adjustments",
-    "author": "alex.m"
-  },
-  {
-    "id": 615985,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161702",
-    "created": "2026-08-21T14:43:39",
-    "message": "Fix scientist path success check being wrong (or instead of and)",
-    "author": "Maverick"
-  },
-  {
-    "id": 615982,
-    "branch": "main/add_static_satellite",
-    "changeset": "161701",
-    "created": "2026-08-21T14:40:53",
-    "message": "added Satellite.static.entity",
-    "author": "elhog"
-  },
-  {
-    "id": 615980,
-    "branch": "main/MarketTerminal_Names",
-    "changeset": "161700",
-    "created": "2026-08-21T14:35:13",
-    "message": "Fixed long names on the market terminal rendering over the sides",
-    "author": "Nick.H"
-  },
-  {
-    "id": 615978,
-    "branch": "main/grenade_drop_animations",
-    "changeset": "161699",
-    "created": "2026-08-21T14:03:12",
-    "message": "Setup the viewmodel drop animation that's been unused for years on various grenades",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 615973,
-    "branch": "main/erosion_optim",
-    "changeset": "161696",
-    "created": "2026-08-21T13:47:23",
-    "message": "helper class cleanup",
-    "author": "Grigler"
-  },
-  {
-    "id": 615971,
-    "branch": "main/Sculpture_SmartAlarm",
-    "changeset": "161694",
-    "created": "2026-08-21T13:39:56",
-    "message": "Reapplied sculpture radial wheel text fix, and a typo in the smart alarm text",
-    "author": "Nick.H"
-  },
-  {
-    "id": 615970,
-    "branch": "main/Livestock_animals/Seaturtle",
-    "changeset": "161693",
-    "created": "2026-08-21T13:39:09",
-    "message": "Added seaturtle mesh and textures, set up material.",
-    "author": "Toffer"
-  },
-  {
-    "id": 615967,
-    "branch": "main",
-    "changeset": "161691",
-    "created": "2026-08-21T13:35:45",
-    "message": "~Slightly decreased size of fireplace.deployed's deploy volume to fix bug where you couldn't place the fireplace under an existing floor",
-    "author": "Jakb"
-  },
-  {
-    "id": 615964,
-    "branch": "main",
-    "changeset": "161688",
-    "created": "2026-08-21T13:32:08",
-    "message": "removed gibbable from hv arrow, poison arrow, wood arrow and spear gun spear as they weren't used + causing an error for automated testing",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615962,
-    "branch": "main/automated_testing",
-    "changeset": "161686",
-    "created": "2026-08-21T13:28:00",
-    "message": "New automated test checking meshes used by monument blockers stage colliders are readable and don't import a material (will be stripped from server builds)\r\nFix the 4 found issues",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615961,
-    "branch": "main/vcc",
-    "changeset": "161685",
-    "created": "2026-08-21T13:21:29",
-    "message": "Remove the short \"hold left stick button\" delay before toggling run, feels much better instant.",
-    "author": "Adam W"
-  },
-  {
-    "id": 615960,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161684",
-    "created": "2026-08-21T13:20:48",
-    "message": "dedicated world model for chainsaw\r\nreduced highlight draw from 3->1  and model highlight was actually broken",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615959,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161683",
-    "created": "2026-08-21T13:20:32",
-    "message": "Bugfix: avoid out of bounds access in FindComponent<T>\r\n- also add editor ifdef guards for editor attribute\r\nResults array can be oversized, since we reuse it\r\nTests: ran unit tests - pass",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615958,
-    "branch": "main/erosion_optim",
-    "changeset": "161682",
-    "created": "2026-08-21T13:19:17",
-    "message": "inlined the work of some jobs to stress the job system less, takes another 5s off the time\r\n- water evap/accumulate inlined\r\n- slope calculation inlined",
-    "author": "Grigler"
-  },
-  {
-    "id": 615957,
-    "branch": "main/Stepladder",
-    "changeset": "161681",
-    "created": "2026-08-21T13:13:29",
-    "message": "Ladder LODs",
-    "author": "Lewis T"
-  },
-  {
-    "id": 615954,
-    "branch": "main/vcc",
-    "changeset": "161679",
-    "created": "2026-08-21T13:09:26",
-    "message": "Cleanup",
-    "author": "Adam W"
-  },
-  {
-    "id": 615951,
-    "branch": "main/erosion_optim",
-    "changeset": "161677",
-    "created": "2026-08-21T12:57:11",
-    "message": "reworked largest erosion job to use an inlined SoA view\r\n- reinterpret float array as a float4 in the loop, this lets you to get fully laned SIMD auto-vectorization without needing intrinsics\r\noriginal 47s erosion down to 29s with matching results",
-    "author": "Grigler"
-  },
-  {
-    "id": 615949,
-    "branch": "main/vcc",
-    "changeset": "161676",
-    "created": "2026-08-21T12:50:45",
-    "message": "Use gamepad cursor for inventory management by defaullt (dpad navigation is a convar)",
-    "author": "Adam W"
-  },
-  {
-    "id": 615947,
-    "branch": "main",
-    "changeset": "161675",
-    "created": "2026-08-21T12:41:45",
-    "message": "Jungle ziggurat LOD3 fix",
-    "author": "Damian Lazarski"
-  },
-  {
-    "id": 615946,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161674",
-    "created": "2026-08-21T12:40:08",
-    "message": "Optim: tweak batch size when calculating server occlusion narrow phase\r\nThis cuts down 4.5k world server occlusion generation from 45s to 35s in batched mode. Async further brings it down to 22s\r\nTests: ran generation in editor",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615944,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161673",
-    "created": "2026-08-21T12:38:17",
-    "message": "Update: make UnsafeScriptingAccess initialize on editor load\r\nAllows to use it in editor-only tools/workflows\r\nTests: ran server occclusion generation in editor, checked profile",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615943,
-    "branch": "main/AugustLowCraftBuffs",
-    "changeset": "161672",
-    "created": "2026-08-21T12:25:46",
-    "message": "Small buff to a couple more items with low craft rates \r\nMortar craft cost  -5 HQM, -2 pipe\r\nHazmat suit craft cost -1 HQM, -1 tarp\r\nPrisoner hood now default BP, removed from tech tree\r\nHMLMG craft cost -30 HQM",
-    "author": "Nick.H"
   }
 ]
