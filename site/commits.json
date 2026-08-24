@@ -1,5 +1,37 @@
 [
   {
+    "id": 616166,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "161816",
+    "created": "2026-08-24T05:08:56",
+    "message": "Apply UnityPixelLightIntensityCorrection for billboardlight-RRP to fix particle lighting",
+    "author": "Dayaan"
+  },
+  {
+    "id": 616165,
+    "branch": "main/Livestock_animals",
+    "changeset": "161815",
+    "created": "2026-08-24T04:38:35",
+    "message": "Added a drink water need and corresponding behaviour to livestock animals, they can drink from a nearby water container or river/lake",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 616164,
+    "branch": "main/tc_auth_group_tests",
+    "changeset": "161814",
+    "created": "2026-08-24T04:25:07",
+    "message": "Added functionality for a TC to modify upkeep rate based on how many players are authed\r\nBased on a tier system, we can set three group sizes and what percentage a player adds to the TC within that group\r\nSetup with some very placeholder values for now for testing\r\nTier 0 - first 4 players add 0% to upkeep\r\nTier 1 - next 6 players add 2% upkeep each\r\nTier 2 - any further players add 4% upkeep each\r\nThis means a TC with 6 players authed will have +4% upkeep, a TC with 12 players will have +20% upkeep\r\nWhen a player deauths from a TC it takes 24 hours in real time before that player is removed from the tax calculation, so authing, building and deauthing won't bypass the extra upkeep\r\nVery, very WIP, for internal evaluation for now",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 616162,
+    "branch": "main/base_occlusion",
+    "changeset": "161813",
+    "created": "2026-08-24T03:50:30",
+    "message": "Make sure we only send entiites when a door opens immediately based on a convar, so we can do normal slower snapshot queue when doors are opened and we send entiites and let the \"closer than 30m send everything\" prevent pop-in",
+    "author": "Jake_Rich"
+  },
+  {
     "id": 616154,
     "branch": "main/heavy_helmet_audio",
     "changeset": "161805",
@@ -886,21 +918,5 @@
     "created": "2026-08-21T08:17:34",
     "message": "Ladder Tall opee and closed variants LOD0",
     "author": "Lewis T"
-  },
-  {
-    "id": 615886,
-    "branch": "main/rentableshop_improvments_aug_26",
-    "changeset": "161638",
-    "created": "2026-08-21T04:55:06",
-    "message": "You can no longer access the open shop prompt on a rentable shop if you have stored items in it (prevents being the owner of a shop and having reclaim items at the same time)\r\nRentable shop vending machine stoarge is now refrigerated if the power plant is powered",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 615884,
-    "branch": "main/crude_drain_fix",
-    "changeset": "161636",
-    "created": "2026-08-21T04:15:26",
-    "message": "Better toast",
-    "author": "Jarryd Campi"
   }
 ]
