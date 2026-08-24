@@ -1,40 +1,23 @@
 {
   "2026-08-24": {
-    "commit_count": 38,
-    "relevant_commit_count": 20,
-    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616190,616195,616196,616197,616202,616203,616208,616209,616225,616231,616235,616240",
-    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616190,616195,616196,616197,616202,616203,616208,616209,616225,616231,616235,616240",
+    "commit_count": 50,
+    "relevant_commit_count": 27,
+    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616190,616195,616196,616197,616202,616203,616208,616209,616225,616231,616235,616240,616262,616272,616273,616274,616275,616276,616282",
+    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616190,616195,616196,616197,616202,616203,616208,616209,616225,616231,616235,616240,616262,616272,616273,616274,616275,616276,616282",
     "prompt_version": "structured-read-state-v3-chunk-cache",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Improved vehicle handling: refined suspension, steering and grip; removed burnout/launch attempt; engine revs now use front wheel speed; rear wheels lock during handbrake.",
-            "commit_ids": [
-              616176
-            ]
-          },
-          {
-            "text": "Helicopter passenger seat weapons now have aim sway that scales with movement speed.",
-            "commit_ids": [
-              616169
-            ]
-          },
-          {
-            "text": "Fixed UI pooling issue for vehicles, reducing UI glitches related to vehicle pooling.",
-            "commit_ids": [
-              616225
-            ]
-          }
-        ]
-      },
-      {
         "title": "Animals",
         "items": [
           {
-            "text": "Livestock now have a water need and will drink from nearby containers, rivers, or lakes.",
+            "text": "Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.",
+            "commit_ids": [
+              616272
+            ]
+          },
+          {
+            "text": "Livestock now need to drink water and will seek nearby water sources.",
             "commit_ids": [
               616165
             ]
@@ -42,21 +25,80 @@
         ]
       },
       {
-        "title": "Tool Cupboard",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "TC upkeep rate now scales with the number of authorized players: first 4 players add 0%, next 6 add 2% each, additional players add 4% each.",
+            "text": "Vehicle pooling UI restored hierarchy to prevent UI glitches for vehicles.",
             "commit_ids": [
-              616164
+              616225
+            ]
+          },
+          {
+            "text": "Vehicle handling improved: refined suspension, steering and grip; removed broken burnout/launch; engine revs now use front wheel speed; rear wheels lock visually during handbrake.",
+            "commit_ids": [
+              616176
             ]
           }
         ]
       },
       {
-        "title": "Gameplay",
+        "title": "Gameplay & UI",
         "items": [
           {
-            "text": "Random skin crafting now includes the default skin as a possible result.",
+            "text": "UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.",
+            "commit_ids": [
+              616208,
+              616275,
+              616273,
+              616240
+            ]
+          },
+          {
+            "text": "Arrow Revamp icons corrected.",
+            "commit_ids": [
+              616196
+            ]
+          },
+          {
+            "text": "Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.",
+            "commit_ids": [
+              616262
+            ]
+          },
+          {
+            "text": "Aim sway now scales with movement speed when firing weapons from the passenger seat of the attack helicopter.",
+            "commit_ids": [
+              616169
+            ]
+          }
+        ]
+      },
+      {
+        "title": "NPC & AI",
+        "items": [
+          {
+            "text": "Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.",
+            "commit_ids": [
+              616231,
+              616282,
+              616274
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Crafting & Items",
+        "items": [
+          {
+            "text": "Repair bench and cached skin ID issues resolved, improving stability of random skin crafting.",
+            "commit_ids": [
+              616190,
+              616177,
+              616175
+            ]
+          },
+          {
+            "text": "Default skin added to random skin pool, making it obtainable through random crafting.",
             "commit_ids": [
               616178
             ]
@@ -64,35 +106,67 @@
         ]
       },
       {
-        "title": "UI",
+        "title": "Stability & Economy",
         "items": [
           {
-            "text": "Store UI drawer bug fixed; missing image paths now fallback correctly, restoring proper display of store items.",
+            "text": "Rust.Native binaries updated to prevent stale binary crashes; game now boots without exception.",
             "commit_ids": [
-              616208
+              616197
             ]
           },
           {
-            "text": "Arrow icons refreshed and fixed, correcting visual inconsistencies in the UI.",
+            "text": "Potential null reference exception for mannequins fixed.",
             "commit_ids": [
-              616196
+              616235
+            ]
+          },
+          {
+            "text": "Tax Collector upkeep now scales with authorized players: first 4 add 0%, next 6 add 2% each, any beyond add 4% each; de‑authorization takes 24 h to affect upkeep.",
+            "commit_ids": [
+              616164
             ]
           }
         ]
       }
     ],
-    "summary": "### Vehicles\n- Improved vehicle handling: refined suspension, steering and grip; removed burnout/launch attempt; engine revs now use front wheel speed; rear wheels lock during handbrake.\n- Helicopter passenger seat weapons now have aim sway that scales with movement speed.\n- Fixed UI pooling issue for vehicles, reducing UI glitches related to vehicle pooling.\n\n### Animals\n- Livestock now have a water need and will drink from nearby containers, rivers, or lakes.\n\n### Tool Cupboard\n- TC upkeep rate now scales with the number of authorized players: first 4 players add 0%, next 6 add 2% each, additional players add 4% each.\n\n### Gameplay\n- Random skin crafting now includes the default skin as a possible result.\n\n### UI\n- Store UI drawer bug fixed; missing image paths now fallback correctly, restoring proper display of store items.\n- Arrow icons refreshed and fixed, correcting visual inconsistencies in the UI.",
+    "summary": "### Animals\n- Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.\n- Livestock now need to drink water and will seek nearby water sources.\n\n### Vehicles\n- Vehicle pooling UI restored hierarchy to prevent UI glitches for vehicles.\n- Vehicle handling improved: refined suspension, steering and grip; removed broken burnout/launch; engine revs now use front wheel speed; rear wheels lock visually during handbrake.\n\n### Gameplay & UI\n- UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.\n- Arrow Revamp icons corrected.\n- Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.\n- Aim sway now scales with movement speed when firing weapons from the passenger seat of the attack helicopter.\n\n### NPC & AI\n- Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.\n\n### Crafting & Items\n- Repair bench and cached skin ID issues resolved, improving stability of random skin crafting.\n- Default skin added to random skin pool, making it obtainable through random crafting.\n\n### Stability & Economy\n- Rust.Native binaries updated to prevent stale binary crashes; game now boots without exception.\n- Potential null reference exception for mannequins fixed.\n- Tax Collector upkeep now scales with authorized players: first 4 add 0%, next 6 add 2% each, any beyond add 4% each; de‑authorization takes 24 h to affect upkeep.",
     "new_items": [
       {
-        "text": "Fixed UI pooling issue for vehicles, reducing UI glitches related to vehicle pooling.",
+        "text": "Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.",
         "commit_ids": [
-          616225
+          616272
         ],
-        "section": "Vehicles"
+        "section": "Animals"
+      },
+      {
+        "text": "UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.",
+        "commit_ids": [
+          616208,
+          616275,
+          616273,
+          616240
+        ],
+        "section": "Gameplay & UI"
+      },
+      {
+        "text": "Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.",
+        "commit_ids": [
+          616262
+        ],
+        "section": "Gameplay & UI"
+      },
+      {
+        "text": "Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.",
+        "commit_ids": [
+          616231,
+          616282,
+          616274
+        ],
+        "section": "NPC & AI"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Fixed UI pooling issue for vehicles, reducing UI glitches related to vehicle pooling."
+    "new_relevant_count": 9,
+    "new_summary": "- Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.\n- UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.\n- Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.\n- Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized."
   },
   "2026-08-23": {
     "commit_count": 20,

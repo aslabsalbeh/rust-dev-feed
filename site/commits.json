@@ -1,5 +1,101 @@
 [
   {
+    "id": 616282,
+    "branch": "main",
+    "changeset": "161889",
+    "created": "2026-08-24T17:53:54",
+    "message": "Fix navmesh generating in places in shouldn't, potential fix for \"navmesh failed to be created\", and optimization of NPC path following",
+    "author": "Maverick"
+  },
+  {
+    "id": 616277,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161886",
+    "created": "2026-08-24T17:38:34",
+    "message": "Update: submitting the results of script run\r\nTests: none",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616276,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161885",
+    "created": "2026-08-24T17:38:01",
+    "message": "Update libraries",
+    "author": "Maverick"
+  },
+  {
+    "id": 616275,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161884",
+    "created": "2026-08-24T17:37:36",
+    "message": "Update(editor): automate copying of original resource to DynamicResourceRef\r\n- change DynamicResourceRef to be a class type (reflection modification on values is quite a bit oh hassle). Will try to fix later if I got time\r\nTests: ran the new script, checked the modified prefabs",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616274,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "161883",
+    "created": "2026-08-24T17:35:13",
+    "message": "Path following optimizations (around double perf), also a bunch of instrumentation and a benchmark setup:\r\n- only string pull the beginning of the path, we will string pull again eventually so not need to run the algo for the whole path (steering agents only)\r\n- only re-string pull the current path if we moved past a threshold or passed a path corner, not every frame (steering agents only)\r\n- when chasing a moving target, instead of recalculating a new path, try to extend the previous path a bit instead to save time\r\n- use unity transform SetPositionAndRotation instead of setting both independantly\r\n- fuse some native method calls, so that we only call one method and skip the interop cost for the other call\r\n- do not check corridor validity if no tile has changed since pathing",
+    "author": "Maverick"
+  },
+  {
+    "id": 616273,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161882",
+    "created": "2026-08-24T17:34:43",
+    "message": "Update: Add DynamicResourceRef to UI_StoreTakeover\r\n- amend prop drawer to invoke the right prop\r\nTests: none",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616272,
+    "branch": "main/Livestock_animals/Frog_Branch",
+    "changeset": "161881",
+    "created": "2026-08-24T17:31:57",
+    "message": "fix animations of frogs not playing, skating sideways, and movement speed issues",
+    "author": "ElliotH"
+  },
+  {
+    "id": 616262,
+    "branch": "main/fix_hotbar_swap_overstack",
+    "changeset": "161878",
+    "created": "2026-08-24T16:25:20",
+    "message": "Fix hotbar swapping not working with overstacks\r\n- move the RPC completely serverside so it can swap overstacks (thinking was we didn't need a network++ originally if we kept it clientside but forgot swapping overstacks is awkward)\r\n- keep existing admin checks",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 616254,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "161877",
+    "created": "2026-08-24T16:07:44",
+    "message": "optimised props ao textures as it was the same issue with 227 of them, most carrying sources far bigger than they ship at and storing a single channel as rgb.\n\nresized to existing max cap    110 files\nrgb -> 8-bit grey          183 files\nhalved 2k -> 1k             24 files\n\n146.3 MB -> 96.3 MB vram",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616252,
+    "branch": "main/AugustQuickfire_2Pie2Furious",
+    "changeset": "161875",
+    "created": "2026-08-24T15:47:29",
+    "message": "Small buffs for unused pies, doubled the bonus duration for: bigcat, hunters, pork (900→1800), fish (600→1200), chicken (300→600)\r\nHunters pie bleed reduction up to 90% from 75%",
+    "author": "Nick.H"
+  },
+  {
+    "id": 616251,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "161874",
+    "created": "2026-08-24T15:43:08",
+    "message": "optimised deployable ao textures where applicable.  245 of them, most carrying sources far bigger than they ship at and storing a single channel as rgb.\n\nresized to existing cap    126 files\nrgb -> 8-bit grey          148 files\nhalved 2k -> 1k             47 files\n\r\n186.6 MB -> 92.6 MB vram\r\n\r\nao is sampled from the green channel so rgb storage was never doing anything.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 616250,
+    "branch": "main/base_occlusion",
+    "changeset": "161873",
+    "created": "2026-08-24T15:42:29",
+    "message": "Refactor and cleanup of code",
+    "author": "Jake_Rich"
+  },
+  {
     "id": 616247,
     "branch": "main/ui_store_slim_ram",
     "changeset": "161871",
@@ -638,197 +734,5 @@
     "created": "2026-08-21T18:51:35",
     "message": "- Added a dust effect in the background\r\n- Make sure orbital camera works (slow it down)\r\n- Invert controls",
     "author": "Ian Henderson"
-  },
-  {
-    "id": 616045,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161740",
-    "created": "2026-08-21T18:13:00",
-    "message": "Various small fixes and cleanup:\r\n- Root the native log callback delegate in a static field (GC could collect it and crash the next DLL log)\r\n- RebuildTilesInBounds no longer skips the default navmesh when independent navmeshes overlap the bounds (stale tiles at island/monument seams)\r\n- IsNavMeshBuilt answers from the agent's bound navmesh with a lazy rebind instead of a fresh resolve that could disagree with every query\r\n- Restore rustnav.debugpath / debugraycast / debugsample, ported to the NavVector3 API with proper independent navmesh space transforms and a not-built guard\r\n- Delete dead code: GeometryUtils, NavmeshHelpers, TileExtractor (CreateBoxMesh moved into BackgroundTileBuilder), unused RecastWrapper P/Invokes pointing at removed exports, disabled MAX_BUILD_QUEUE throttle, GetOrigin, IsSprintingOnClient\r\n- Skip MeshColliders with no sharedMesh during tile collection, bounds-check FailTile/AddTile coords\r\n- TryOpenDoors reports whether a door actually opened (TryOpenDoorFor void -> bool)\r\n- Null-guard RustNavigation.Instance on scene teardown, clear the stale Instance in OnDestroy",
-    "author": "Maverick"
-  },
-  {
-    "id": 616040,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161739",
-    "created": "2026-08-21T17:36:05",
-    "message": "Limit nav drawing network use with kb instead of per tile, show grid again in editor, move label for tile coords to tile height",
-    "author": "Maverick"
-  },
-  {
-    "id": 616036,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161737",
-    "created": "2026-08-21T17:23:58",
-    "message": "fix brp error spam on low water quality",
-    "author": "Brian"
-  },
-  {
-    "id": 616034,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161736",
-    "created": "2026-08-21T17:17:23",
-    "message": "Terrain footprint for both variants of rock_formation_medium_e",
-    "author": "Jakb"
-  },
-  {
-    "id": 616031,
-    "branch": "main/setflag_remove",
-    "changeset": "161734",
-    "created": "2026-08-21T17:04:32",
-    "message": "Fix SetFlagLocal compile error",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 616030,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161733",
-    "created": "2026-08-21T17:02:31",
-    "message": "Terrain footprint for 3 variants of rock_formation_medium_d",
-    "author": "Jakb"
-  },
-  {
-    "id": 616029,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161732",
-    "created": "2026-08-21T16:59:26",
-    "message": "Terrain footprint for 3 variants of rock_formation_medium_c",
-    "author": "Jakb"
-  },
-  {
-    "id": 616028,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161731",
-    "created": "2026-08-21T16:55:55",
-    "message": "Terrain footprint for 3 variants of rock_formation_medium_b",
-    "author": "Jakb"
-  },
-  {
-    "id": 616027,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161730",
-    "created": "2026-08-21T16:51:18",
-    "message": "Terrain footprint for both variants of rock_formation_medium_a",
-    "author": "Jakb"
-  },
-  {
-    "id": 616026,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161729",
-    "created": "2026-08-21T16:50:23",
-    "message": "Add terrain footprint calls to PlaceDecorUniform, PlaceDecorValueNoise, PlaceDecorWhiteNoise so all rock types can make use of the new component",
-    "author": "Jakb"
-  },
-  {
-    "id": 616023,
-    "branch": "main/glass_ar",
-    "changeset": "161728",
-    "created": "2026-08-21T16:21:59",
-    "message": "slight edit to glass ar admire anim",
-    "author": "julek"
-  },
-  {
-    "id": 616020,
-    "branch": "main/Livestock_animals/Frog_Branch",
-    "changeset": "161727",
-    "created": "2026-08-21T16:16:20",
-    "message": "first pass on critter animals general setup\r\nstarting with the frog 🐸",
-    "author": "ElliotH"
-  },
-  {
-    "id": 616019,
-    "branch": "main/mt_snapshot_saving",
-    "changeset": "161725",
-    "created": "2026-08-21T16:15:22",
-    "message": "Bugfix: cache owner entity of HittableByTrains on init\r\nAvoids  lookups while running SaveComponent\r\nTests: spawned a wooden double barricade with jobs 4 enabled",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616016,
-    "branch": "main/glass_ar",
-    "changeset": "161724",
-    "created": "2026-08-21T16:09:44",
-    "message": "Glass AR - fix for borked base color texture breaking ammo alpha clip",
-    "author": "alex.m"
-  },
-  {
-    "id": 616015,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161723",
-    "created": "2026-08-21T16:04:35",
-    "message": "Removed lingering generator on hills_cliffs_small\\rock_formation_small_d, added terrain footprint for v3_rock_formations_small\\rock_formation_small_d",
-    "author": "Jakb"
-  },
-  {
-    "id": 616014,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161722",
-    "created": "2026-08-21T16:02:44",
-    "message": "Terrain footprint for both variants of rock_formation_small_c",
-    "author": "Jakb"
-  },
-  {
-    "id": 616013,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161721",
-    "created": "2026-08-21T15:59:15",
-    "message": "Terrain footprint for both variants of rock_formation_small_b",
-    "author": "Jakb"
-  },
-  {
-    "id": 616012,
-    "branch": "main/more_cliff_fixes",
-    "changeset": "161720",
-    "created": "2026-08-21T15:56:48",
-    "message": "Terrain footprint for both variants of rock_formation_small_a",
-    "author": "Jakb"
-  },
-  {
-    "id": 616009,
-    "branch": "main/character_customisation",
-    "changeset": "161717",
-    "created": "2026-08-21T15:52:27",
-    "message": "- Experiment with rendering the icons live, so if i change race then or skin colour then in the face tab it will show the correct race/skin color. \r\n- Fix various bugs with the preview player model\r\n- Remove the dodgy debug text\r\n- Tabs auto match the sub category labels\r\n- More tooling for taking/adjusting icon shots",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 616008,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161716",
-    "created": "2026-08-21T15:50:29",
-    "message": "Clean: extract GetBatchSize and WaitForTasks into ThreadingUtils\r\nTests: ran compile simulator",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616007,
-    "branch": "main",
-    "changeset": "161715",
-    "created": "2026-08-21T15:45:56",
-    "message": "Fix corrupt hazmat suit item prefab",
-    "author": "cipeaX"
-  },
-  {
-    "id": 616003,
-    "branch": "main/setflag_remove",
-    "changeset": "161713",
-    "created": "2026-08-21T15:42:39",
-    "message": "Remove obsolete SetFlag and replace existing usages with the disposable pattern",
-    "author": "Martyn Chapman"
-  },
-  {
-    "id": 616002,
-    "branch": "main/weapon_refresh_flashlight",
-    "changeset": "161712",
-    "created": "2026-08-21T15:42:01",
-    "message": "exported edited flashlight refresh 3p anims and new vm admire anim",
-    "author": "julek"
-  },
-  {
-    "id": 616000,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161710",
-    "created": "2026-08-21T15:34:59",
-    "message": "Update(editor): add heightmap sample and isInside visualization to server occlusion editor debug\r\nSpent too long chasing non-existent domain reload ghosts\r\nTests: visualized occlusion of EU East 1. tested occlusion gen on craggy with 2p",
-    "author": "Daniel P"
   }
 ]
