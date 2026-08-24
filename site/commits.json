@@ -1,5 +1,69 @@
 [
   {
+    "id": 616209,
+    "branch": "main/hackweek_random_skin_crafting",
+    "changeset": "161846",
+    "created": "2026-08-24T11:30:45",
+    "message": "GC optim",
+    "author": "Adam W"
+  },
+  {
+    "id": 616208,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161845",
+    "created": "2026-08-24T10:59:05",
+    "message": "Bugfix(editor): fix store prop drawer failing to draw\r\n- added a fallback path for original image property\r\nCuased by missing path proxy field that I ripped out during merge\r\nTests: inspected JungleShowcase ui prefab",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616204,
+    "branch": "main/skinnable_ladder_hatch",
+    "changeset": "161842",
+    "created": "2026-08-24T10:33:57",
+    "message": "Adjusted frame for triangle top tier hatch",
+    "author": "Tom.d"
+  },
+  {
+    "id": 616203,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "161841",
+    "created": "2026-08-24T10:06:32",
+    "message": "Fixed an issue where the Deferred+ lighting toggle wasn't been set currently when entering playmode due to the way we copy the pipeline asset",
+    "author": "aidan.m"
+  },
+  {
+    "id": 616202,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161840",
+    "created": "2026-08-24T09:56:56",
+    "message": "Buildfix: fix merge issues\r\nTests: editor opens",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616197,
+    "branch": "main/hackweek_unsafescriptingaccess",
+    "changeset": "161837",
+    "created": "2026-08-24T09:37:14",
+    "message": "Bugfix: grab latest binaries for Rust.Native\r\nOne of them was stale, breaking the feature\r\nTests: booted into craggy on windows - no more exception",
+    "author": "Daniel P"
+  },
+  {
+    "id": 616196,
+    "branch": "main/ArrowIcons",
+    "changeset": "161836",
+    "created": "2026-08-24T09:36:40",
+    "message": "Arrow Revamp Icon fixes",
+    "author": "Lewis T"
+  },
+  {
+    "id": 616195,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "161835",
+    "created": "2026-08-24T09:24:55",
+    "message": "Enabled Deferred+ by default and fixed he BillboardLight-RRP.cginc file to be compatible with the new Deferred+ code",
+    "author": "aidan.m"
+  },
+  {
     "id": 616192,
     "branch": "main/render_pipeline_testing",
     "changeset": "161832",
@@ -862,133 +926,5 @@
     "created": "2026-08-21T12:25:46",
     "message": "Small buff to a couple more items with low craft rates \r\nMortar craft cost  -5 HQM, -2 pipe\r\nHazmat suit craft cost -1 HQM, -1 tarp\r\nPrisoner hood now default BP, removed from tech tree\r\nHMLMG craft cost -30 HQM",
     "author": "Nick.H"
-  },
-  {
-    "id": 615942,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161671",
-    "created": "2026-08-21T12:05:10",
-    "message": "Fix using nav samples radius always being halved because detour uses half extent",
-    "author": "Maverick"
-  },
-  {
-    "id": 615941,
-    "branch": "main/glass_ar",
-    "changeset": "161670",
-    "created": "2026-08-21T12:03:35",
-    "message": "and again, glass ar description",
-    "author": "matt.i"
-  },
-  {
-    "id": 615940,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161669",
-    "created": "2026-08-21T12:03:29",
-    "message": "Update: add GamePhysics.FindComponent<T> that supports async\r\nConfigured async to engage at more than 4 batches of 64 queries\r\nTests: ran perf tests. same perf up to 400 points, at 10k points is 2x faster 0.42ms batched+async vs 0.96ms batched vs 5.4ms serial",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615936,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161668",
-    "created": "2026-08-21T11:47:50",
-    "message": "forgot the mesh",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615935,
-    "branch": "main/glass_ar",
-    "changeset": "161667",
-    "created": "2026-08-21T11:46:51",
-    "message": "updated glass assault rifle description",
-    "author": "matt.i"
-  },
-  {
-    "id": 615934,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161666",
-    "created": "2026-08-21T11:45:59",
-    "message": "Update: add TerrainMeta.SampleTerrainMeshHeights\r\nConfigured to engage async after have more than 4 batches of 256 pos each\r\nTests: ran perf tests",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615933,
-    "branch": "main/async_serveroccl_gen",
-    "changeset": "161665",
-    "created": "2026-08-21T11:41:36",
-    "message": "Update(tests): add IsInsideTerrain perf comparison tests\r\nNeed them to tweak when to engage async and when to skip it internally\r\nTests: ran them",
-    "author": "Daniel P"
-  },
-  {
-    "id": 615932,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161664",
-    "created": "2026-08-21T11:31:53",
-    "message": "ice ak world model optimisation\r\nconsolidated into one object, one LOD chain\r\nLOD0 tris 13.8k -> 9.5k\r\nhighlight draws 5 -> 1  \r\n\r\nremoved dead lod states in sunflower, rose, orchid world models",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615929,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161662",
-    "created": "2026-08-21T11:20:07",
-    "message": "Fixed world model collision being too small \r\nFixed world model outline referencing the old bandage instead of the new one",
-    "author": "Lukester"
-  },
-  {
-    "id": 615926,
-    "branch": "main/vcc",
-    "changeset": "161660",
-    "created": "2026-08-21T10:46:12",
-    "message": "Additional UI options for gamepad",
-    "author": "Adam W"
-  },
-  {
-    "id": 615924,
-    "branch": "main/vcc",
-    "changeset": "161659",
-    "created": "2026-08-21T10:34:12",
-    "message": "More gamepad tweaks and convars, actions.",
-    "author": "Adam W"
-  },
-  {
-    "id": 615923,
-    "branch": "main",
-    "changeset": "161657",
-    "created": "2026-08-21T10:31:22",
-    "message": "added and setup dedicated worldmodels for fire and bone arrow \r\nreducing highlight draws",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 615921,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161656",
-    "created": "2026-08-21T10:26:26",
-    "message": "Changed honeybandage worldmodel to new material and model",
-    "author": "Lewis T"
-  },
-  {
-    "id": 615916,
-    "branch": "main",
-    "changeset": "161654",
-    "created": "2026-08-21T10:12:12",
-    "message": "S2P water treatment, in hopes of fixing broken PreparePrefabs in builds causing a bunch of issues",
-    "author": "cipeaX"
-  },
-  {
-    "id": 615915,
-    "branch": "main/medical_honey_bandage",
-    "changeset": "161653",
-    "created": "2026-08-21T10:09:20",
-    "message": "Honey Bandage Material and Textures",
-    "author": "Lewis T"
-  },
-  {
-    "id": 615910,
-    "branch": "main/blockerfx",
-    "changeset": "161651",
-    "created": "2026-08-21T09:38:16",
-    "message": "Hook up damage state change FX on all blockers",
-    "author": "Martyn Chapman"
   }
 ]
