@@ -6,55 +6,52 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 24 Aug 2026 14:20:15 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 15:04:49 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 24</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;50 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;52 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616272"&gt;Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.&lt;/li&gt;
-&lt;li data-rust-commits="616208,616275,616273,616240"&gt;UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.&lt;/li&gt;
-&lt;li data-rust-commits="616262"&gt;Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.&lt;/li&gt;
-&lt;li data-rust-commits="616231,616282,616274"&gt;Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.&lt;/li&gt;
+&lt;li data-rust-commits="616288"&gt;Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.&lt;/li&gt;
+&lt;li data-rust-commits="616262,616190,616196,616177,616285"&gt;Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.&lt;/li&gt;
+&lt;li data-rust-commits="616185,616236"&gt;Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.&lt;/li&gt;
+&lt;li data-rust-commits="616252"&gt;Doubled duration for several pies and raised hunters pie bleed reduction to 90%.&lt;/li&gt;
+&lt;li data-rust-commits="616228,616179,616164"&gt;Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3&gt;Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616272"&gt;Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.&lt;/li&gt;
-&lt;li data-rust-commits="616165"&gt;Livestock now need to drink water and will seek nearby water sources.&lt;/li&gt;
+&lt;li data-rust-commits="616272,616165"&gt;Fixed frog animation glitches and corrected movement speed; added water‑drinking need for livestock animals, allowing them to drink from containers or natural water sources.&lt;/li&gt;
+&lt;li data-rust-commits="616288"&gt;Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616225"&gt;Vehicle pooling UI restored hierarchy to prevent UI glitches for vehicles.&lt;/li&gt;
-&lt;li data-rust-commits="616176"&gt;Vehicle handling improved: refined suspension, steering and grip; removed broken burnout/launch; engine revs now use front wheel speed; rear wheels lock visually during handbrake.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="616208,616275,616273,616240"&gt;UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.&lt;/li&gt;
-&lt;li data-rust-commits="616196"&gt;Arrow Revamp icons corrected.&lt;/li&gt;
-&lt;li data-rust-commits="616262"&gt;Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.&lt;/li&gt;
-&lt;li data-rust-commits="616169"&gt;Aim sway now scales with movement speed when firing weapons from the passenger seat of the attack helicopter.&lt;/li&gt;
+&lt;li data-rust-commits="616225,616176,616169"&gt;Improved vehicle pooling handling with a restoreHierarchy flag, refined suspension, steering, grip and engine rev behavior (including removal of broken burnout launch and visual rear‑wheel lock during handbrake), and added aim sway that scales with movement speed when using held weapons from the helicopter passenger seat.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616231,616282,616274"&gt;Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.&lt;/li&gt;
+&lt;li data-rust-commits="616231,616282,616274"&gt;Prevented building volumes from being baked into the navmesh, fixed navmesh generation failures, and optimized path‑following logic, doubling NPC path‑following performance and reducing per‑frame calculations for steering agents.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Crafting &amp;amp; Items&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Inventory&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616190,616177,616175"&gt;Repair bench and cached skin ID issues resolved, improving stability of random skin crafting.&lt;/li&gt;
-&lt;li data-rust-commits="616178"&gt;Default skin added to random skin pool, making it obtainable through random crafting.&lt;/li&gt;
+&lt;li data-rust-commits="616208,616273,616240"&gt;Fixed store prop drawer rendering by adding a fallback image path and added DynamicResourceRef support to the UI Store takeover system, improving dynamic bundle handling.&lt;/li&gt;
+&lt;li data-rust-commits="616262,616190,616196,616177,616285"&gt;Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Economy&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616197"&gt;Rust.Native binaries updated to prevent stale binary crashes; game now boots without exception.&lt;/li&gt;
-&lt;li data-rust-commits="616235"&gt;Potential null reference exception for mannequins fixed.&lt;/li&gt;
-&lt;li data-rust-commits="616164"&gt;Tax Collector upkeep now scales with authorized players: first 4 add 0%, next 6 add 2% each, any beyond add 4% each; de‑authorization takes 24 h to affect upkeep.&lt;/li&gt;
+&lt;li data-rust-commits="616185,616236"&gt;Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.&lt;/li&gt;
+&lt;li data-rust-commits="616252"&gt;Doubled duration for several pies and raised hunters pie bleed reduction to 90%.&lt;/li&gt;
+&lt;li data-rust-commits="616228,616179,616164"&gt;Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Cosmetics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="616178"&gt;Random skin crafting now includes the default skin in the random pool.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-24</guid>
-      <pubDate>Mon, 24 Aug 2026 14:20:15 -0400</pubDate>
+      <pubDate>Mon, 24 Aug 2026 15:04:49 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 23</title>

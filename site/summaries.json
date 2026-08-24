@@ -1,25 +1,26 @@
 {
   "2026-08-24": {
-    "commit_count": 50,
-    "relevant_commit_count": 27,
-    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616190,616195,616196,616197,616202,616203,616208,616209,616225,616231,616235,616240,616262,616272,616273,616274,616275,616276,616282",
-    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616190,616195,616196,616197,616202,616203,616208,616209,616225,616231,616235,616240,616262,616272,616273,616274,616275,616276,616282",
-    "prompt_version": "structured-read-state-v3-chunk-cache",
+    "commit_count": 52,
+    "relevant_commit_count": 35,
+    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288",
+    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288",
+    "prompt_version": "structured-read-state-v4-balance",
     "chunk_cache": {},
     "sections": [
       {
         "title": "Animals",
         "items": [
           {
-            "text": "Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.",
+            "text": "Fixed frog animation glitches and corrected movement speed; added water‑drinking need for livestock animals, allowing them to drink from containers or natural water sources.",
             "commit_ids": [
-              616272
+              616272,
+              616165
             ]
           },
           {
-            "text": "Livestock now need to drink water and will seek nearby water sources.",
+            "text": "Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.",
             "commit_ids": [
-              616165
+              616288
             ]
           }
         ]
@@ -28,46 +29,10 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Vehicle pooling UI restored hierarchy to prevent UI glitches for vehicles.",
+            "text": "Improved vehicle pooling handling with a restoreHierarchy flag, refined suspension, steering, grip and engine rev behavior (including removal of broken burnout launch and visual rear‑wheel lock during handbrake), and added aim sway that scales with movement speed when using held weapons from the helicopter passenger seat.",
             "commit_ids": [
-              616225
-            ]
-          },
-          {
-            "text": "Vehicle handling improved: refined suspension, steering and grip; removed broken burnout/launch; engine revs now use front wheel speed; rear wheels lock visually during handbrake.",
-            "commit_ids": [
-              616176
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & UI",
-        "items": [
-          {
-            "text": "UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.",
-            "commit_ids": [
-              616208,
-              616275,
-              616273,
-              616240
-            ]
-          },
-          {
-            "text": "Arrow Revamp icons corrected.",
-            "commit_ids": [
-              616196
-            ]
-          },
-          {
-            "text": "Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.",
-            "commit_ids": [
-              616262
-            ]
-          },
-          {
-            "text": "Aim sway now scales with movement speed when firing weapons from the passenger seat of the attack helicopter.",
-            "commit_ids": [
+              616225,
+              616176,
               616169
             ]
           }
@@ -77,7 +42,7 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.",
+            "text": "Prevented building volumes from being baked into the navmesh, fixed navmesh generation failures, and optimized path‑following logic, doubling NPC path‑following performance and reducing per‑frame calculations for steering agents.",
             "commit_ids": [
               616231,
               616282,
@@ -87,93 +52,120 @@
         ]
       },
       {
-        "title": "Crafting & Items",
+        "title": "UI & Inventory",
         "items": [
           {
-            "text": "Repair bench and cached skin ID issues resolved, improving stability of random skin crafting.",
+            "text": "Fixed store prop drawer rendering by adding a fallback image path and added DynamicResourceRef support to the UI Store takeover system, improving dynamic bundle handling.",
             "commit_ids": [
-              616190,
-              616177,
-              616175
+              616208,
+              616273,
+              616240
             ]
           },
           {
-            "text": "Default skin added to random skin pool, making it obtainable through random crafting.",
+            "text": "Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.",
+            "commit_ids": [
+              616262,
+              616190,
+              616196,
+              616177,
+              616285
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.",
+            "commit_ids": [
+              616185,
+              616236
+            ]
+          },
+          {
+            "text": "Doubled duration for several pies and raised hunters pie bleed reduction to 90%.",
+            "commit_ids": [
+              616252
+            ]
+          },
+          {
+            "text": "Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.",
+            "commit_ids": [
+              616228,
+              616179,
+              616164
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cosmetics",
+        "items": [
+          {
+            "text": "Random skin crafting now includes the default skin in the random pool.",
             "commit_ids": [
               616178
             ]
           }
         ]
-      },
-      {
-        "title": "Stability & Economy",
-        "items": [
-          {
-            "text": "Rust.Native binaries updated to prevent stale binary crashes; game now boots without exception.",
-            "commit_ids": [
-              616197
-            ]
-          },
-          {
-            "text": "Potential null reference exception for mannequins fixed.",
-            "commit_ids": [
-              616235
-            ]
-          },
-          {
-            "text": "Tax Collector upkeep now scales with authorized players: first 4 add 0%, next 6 add 2% each, any beyond add 4% each; de‑authorization takes 24 h to affect upkeep.",
-            "commit_ids": [
-              616164
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### Animals\n- Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.\n- Livestock now need to drink water and will seek nearby water sources.\n\n### Vehicles\n- Vehicle pooling UI restored hierarchy to prevent UI glitches for vehicles.\n- Vehicle handling improved: refined suspension, steering and grip; removed broken burnout/launch; engine revs now use front wheel speed; rear wheels lock visually during handbrake.\n\n### Gameplay & UI\n- UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.\n- Arrow Revamp icons corrected.\n- Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.\n- Aim sway now scales with movement speed when firing weapons from the passenger seat of the attack helicopter.\n\n### NPC & AI\n- Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.\n\n### Crafting & Items\n- Repair bench and cached skin ID issues resolved, improving stability of random skin crafting.\n- Default skin added to random skin pool, making it obtainable through random crafting.\n\n### Stability & Economy\n- Rust.Native binaries updated to prevent stale binary crashes; game now boots without exception.\n- Potential null reference exception for mannequins fixed.\n- Tax Collector upkeep now scales with authorized players: first 4 add 0%, next 6 add 2% each, any beyond add 4% each; de‑authorization takes 24 h to affect upkeep.",
+    "summary": "### Animals\n- Fixed frog animation glitches and corrected movement speed; added water‑drinking need for livestock animals, allowing them to drink from containers or natural water sources.\n- Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.\n\n### Vehicles\n- Improved vehicle pooling handling with a restoreHierarchy flag, refined suspension, steering, grip and engine rev behavior (including removal of broken burnout launch and visual rear‑wheel lock during handbrake), and added aim sway that scales with movement speed when using held weapons from the helicopter passenger seat.\n\n### NPC & AI\n- Prevented building volumes from being baked into the navmesh, fixed navmesh generation failures, and optimized path‑following logic, doubling NPC path‑following performance and reducing per‑frame calculations for steering agents.\n\n### UI & Inventory\n- Fixed store prop drawer rendering by adding a fallback image path and added DynamicResourceRef support to the UI Store takeover system, improving dynamic bundle handling.\n- Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.\n\n### Gameplay & Balance\n- Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.\n- Doubled duration for several pies and raised hunters pie bleed reduction to 90%.\n- Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.\n\n### Cosmetics\n- Random skin crafting now includes the default skin in the random pool.",
     "new_items": [
       {
-        "text": "Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.",
+        "text": "Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.",
         "commit_ids": [
-          616272
+          616288
         ],
         "section": "Animals"
       },
       {
-        "text": "UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.",
+        "text": "Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.",
         "commit_ids": [
-          616208,
-          616275,
-          616273,
-          616240
+          616262,
+          616190,
+          616196,
+          616177,
+          616285
         ],
-        "section": "Gameplay & UI"
+        "section": "UI & Inventory"
       },
       {
-        "text": "Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.",
+        "text": "Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.",
         "commit_ids": [
-          616262
+          616185,
+          616236
         ],
-        "section": "Gameplay & UI"
+        "section": "Gameplay & Balance"
       },
       {
-        "text": "Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized.",
+        "text": "Doubled duration for several pies and raised hunters pie bleed reduction to 90%.",
         "commit_ids": [
-          616231,
-          616282,
-          616274
+          616252
         ],
-        "section": "NPC & AI"
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count.",
+        "commit_ids": [
+          616228,
+          616179,
+          616164
+        ],
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 9,
-    "new_summary": "- Fixed frog animation issues: frogs now play correct animations, stop skating sideways, and have proper movement speed.\n- UI store prop drawer failures fixed, added fallback for missing images, and automated copying of original resources to DynamicResourceRef for better dynamic bundle handling.\n- Hotbar swapping with overstacks now works correctly; server‑side RPC moved while preserving admin checks.\n- Navmesh generation errors fixed: building volumes no longer baked, invalid navmesh creation prevented, and path‑following optimized."
+    "new_relevant_count": 12,
+    "new_summary": "- Added a work‑in‑progress “interested” state for frogs, causing them to seek shallow water and start croaking.\n- Enabled hotbar swapping of overstacks via server‑side RPC while preserving admin checks, repaired the repair bench, corrected arrow icon assets, fixed cached skin ID handling for skin crafting, and implemented ammo model types to visually indicate remaining rounds for applicable revolvers.\n- Added proximity fuses to SAM missiles against drones, increased missile lead speed, enabled destruction of drone‑dropped explosives mid‑air, and introduced a tunable drone detonation distance.\n- Doubled duration for several pies and raised hunters pie bleed reduction to 90%.\n- Medkits now reduce radiation by 20, boat planner tech tree cost lowered, longsword swing radius and delay adjusted for faster, more accurate attacks, swamp tree wood harvest amount increased from 300 to 1000, and tax collectors now have a tiered upkeep modifier based on player count."
   },
   "2026-08-23": {
     "commit_count": 20,
     "relevant_commit_count": 11,
     "relevant_signature": "616108,616112,616113,616114,616115,616116,616121,616123,616145,616147,616154",
     "new_baseline_signature": "616108,616112,616113,616114,616115,616116,616121,616123,616145,616147,616154",
-    "prompt_version": "structured-read-state-v3-chunk-cache",
+    "prompt_version": "structured-read-state-v4-balance",
     "chunk_cache": {},
     "sections": [
       {
@@ -231,7 +223,7 @@
     "relevant_commit_count": 9,
     "relevant_signature": "616087,616089,616092,616094,616096,616100,616101,616102,616104",
     "new_baseline_signature": "616087,616089,616092,616094,616096,616100,616101,616102,616104",
-    "prompt_version": "structured-read-state-v3-chunk-cache",
+    "prompt_version": "structured-read-state-v4-balance",
     "chunk_cache": {},
     "sections": [
       {
