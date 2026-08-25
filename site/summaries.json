@@ -1,71 +1,48 @@
 {
   "2026-08-25": {
     "commit_count": 48,
-    "relevant_commit_count": 27,
-    "relevant_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444",
-    "new_baseline_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444",
-    "prompt_version": "structured-read-state-v4-balance",
+    "relevant_commit_count": 28,
+    "relevant_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444",
+    "new_baseline_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444",
+    "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay & Balance",
+        "title": "Comfort & Deployables",
         "items": [
           {
-            "text": "Increased comfort values for bear rugs and rugs, restoring full comfort within the intended radius.",
+            "text": "Bear rug and regular rug now provide full (100%) comfort within closer ranges and gradual falloff, fixing previous 25% solo comfort values.",
             "commit_ids": [
               617419
-            ]
-          },
-          {
-            "text": "Fixed hackable crate flag and visual issues, and prevented puzzlereset alerts during forced resets.",
-            "commit_ids": [
-              617396
-            ]
-          },
-          {
-            "text": "Added a health threshold toggle to allow configurable health-based triggers.",
-            "commit_ids": [
-              617405
-            ]
-          },
-          {
-            "text": "Cargo ship event now preserves crate spawns and loot cycles across server restarts, fixing save/load behavior.",
-            "commit_ids": [
-              617438
-            ]
-          },
-          {
-            "text": "Adjusted spawn chances: increased SMG body weapon spawns and decreased Rifle body weapon spawns to improve mid‑game balance.",
-            "commit_ids": [
-              616389
             ]
           }
         ]
       },
       {
-        "title": "Items & Weapons",
+        "title": "Combat & Gear",
         "items": [
           {
-            "text": "Flashlight now toggles with right‑click like a torch; updated animations, tooltips, and server extinguish behavior.",
+            "text": "Flashlight weapon now toggles on/off with right-click like a torch, with updated animations and server‑side extinguish on sleep/disconnect.",
             "commit_ids": [
               617414
             ]
           },
           {
-            "text": "Semi‑automatic pistol damage now falls off more at range and its high‑quality craft cost increased from 4 to 6.",
+            "text": "Semi‑automatic pistol receives more damage falloff at range and its high‑quality craft cost increased from 4 to 6.",
             "commit_ids": [
               616356
             ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
+          },
           {
-            "text": "Old AI units no longer flee when the player jumps.",
+            "text": "HAB armour colliders set up correctly on client and server, allowing proper removal and adding a collision mesh for the frame.",
             "commit_ids": [
-              617437
+              617442
+            ]
+          },
+          {
+            "text": "Adjusted enemy body spawn chances: increased SMG body spawn chance slightly and decreased Rifle body spawn chance slightly to improve mid‑game balance.",
+            "commit_ids": [
+              616389
             ]
           }
         ]
@@ -74,13 +51,13 @@
         "title": "Animals & Livestock",
         "items": [
           {
-            "text": "Added missing rabbit assets (animation, model, prefabs).",
+            "text": "Rabbit assets (animation, model, prefab) added, making rabbits appear in the world.",
             "commit_ids": [
               616394
             ]
           },
           {
-            "text": "Implemented new Sell Animals and Animal Sale Preview UI panels for selling nearby livestock.",
+            "text": "New UI panels for selling animals and previewing sale rewards introduced, with sale info now displayed in‑game.",
             "commit_ids": [
               616348,
               616349
@@ -89,109 +66,65 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "AI & NPC",
         "items": [
           {
-            "text": "Correctly set up HAB armour colliders on both client and server, allowing proper removal and adding a collision mesh for the frame.",
+            "text": "Old AI units no longer flee when the player jumps, fixing erratic behavior.",
             "commit_ids": [
-              617442
+              617437
             ]
           }
         ]
       },
       {
-        "title": "UI",
+        "title": "Events, Crates & UI",
         "items": [
           {
-            "text": "Fixed session modal overflow and description scroll issues, preventing disconnect button from being hidden.",
+            "text": "Cargo ship event now preserves crate locations and loot cycles across server restarts, fixing despawn and save‑load issues.",
             "commit_ids": [
-              617443,
-              616384
+              617438
             ]
           },
           {
-            "text": "Added DynamicFullscreenSprite and DynamicGallerySprite handling to store item overlay pages, fixing layout and rendering of dynamic references.",
+            "text": "Hackable crates receive visual flag updates and puzzle‑reset alerts are skipped after forced resets, improving event stability.",
+            "commit_ids": [
+              617396
+            ]
+          },
+          {
+            "text": "Session modal overflow fixed: description scroll works and long texts no longer block disconnect button.",
+            "commit_ids": [
+              617443,
+              616384,
+              617444
+            ]
+          },
+          {
+            "text": "Store item overlay page now supports DynamicFullscreenSprite and DynamicGallerySprite fields, with updated inspector and layout handling.",
             "commit_ids": [
               617417
             ]
           },
           {
-            "text": "Corrected siren off‑state visibility.",
+            "text": "SteamFriendsList.Refresh optimized to eliminate large lag spikes when authorizing many friends to turrets or other objects.",
             "commit_ids": [
-              616357
-            ]
-          },
-          {
-            "text": "Added DynamicPagePrefab to the shadow PagePrefab field for ItemStoreTakeover, enabling default picker rendering in the store UI.",
-            "commit_ids": [
-              617401
+              616383
             ]
           }
         ]
       }
     ],
-    "summary": "### Gameplay & Balance\n- Increased comfort values for bear rugs and rugs, restoring full comfort within the intended radius.\n- Fixed hackable crate flag and visual issues, and prevented puzzlereset alerts during forced resets.\n- Added a health threshold toggle to allow configurable health-based triggers.\n- Cargo ship event now preserves crate spawns and loot cycles across server restarts, fixing save/load behavior.\n- Adjusted spawn chances: increased SMG body weapon spawns and decreased Rifle body weapon spawns to improve mid‑game balance.\n\n### Items & Weapons\n- Flashlight now toggles with right‑click like a torch; updated animations, tooltips, and server extinguish behavior.\n- Semi‑automatic pistol damage now falls off more at range and its high‑quality craft cost increased from 4 to 6.\n\n### NPC & AI\n- Old AI units no longer flee when the player jumps.\n\n### Animals & Livestock\n- Added missing rabbit assets (animation, model, prefabs).\n- Implemented new Sell Animals and Animal Sale Preview UI panels for selling nearby livestock.\n\n### Vehicles\n- Correctly set up HAB armour colliders on both client and server, allowing proper removal and adding a collision mesh for the frame.\n\n### UI\n- Fixed session modal overflow and description scroll issues, preventing disconnect button from being hidden.\n- Added DynamicFullscreenSprite and DynamicGallerySprite handling to store item overlay pages, fixing layout and rendering of dynamic references.\n- Corrected siren off‑state visibility.\n- Added DynamicPagePrefab to the shadow PagePrefab field for ItemStoreTakeover, enabling default picker rendering in the store UI.",
-    "new_items": [
-      {
-        "text": "Increased comfort values for bear rugs and rugs, restoring full comfort within the intended radius.",
-        "commit_ids": [
-          617419
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Cargo ship event now preserves crate spawns and loot cycles across server restarts, fixing save/load behavior.",
-        "commit_ids": [
-          617438
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Flashlight now toggles with right‑click like a torch; updated animations, tooltips, and server extinguish behavior.",
-        "commit_ids": [
-          617414
-        ],
-        "section": "Items & Weapons"
-      },
-      {
-        "text": "Old AI units no longer flee when the player jumps.",
-        "commit_ids": [
-          617437
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Correctly set up HAB armour colliders on both client and server, allowing proper removal and adding a collision mesh for the frame.",
-        "commit_ids": [
-          617442
-        ],
-        "section": "Vehicles"
-      },
-      {
-        "text": "Fixed session modal overflow and description scroll issues, preventing disconnect button from being hidden.",
-        "commit_ids": [
-          617443,
-          616384
-        ],
-        "section": "UI"
-      },
-      {
-        "text": "Added DynamicFullscreenSprite and DynamicGallerySprite handling to store item overlay pages, fixing layout and rendering of dynamic references.",
-        "commit_ids": [
-          617417
-        ],
-        "section": "UI"
-      }
-    ],
-    "new_relevant_count": 8,
-    "new_summary": "- Increased comfort values for bear rugs and rugs, restoring full comfort within the intended radius.\n- Cargo ship event now preserves crate spawns and loot cycles across server restarts, fixing save/load behavior.\n- Flashlight now toggles with right‑click like a torch; updated animations, tooltips, and server extinguish behavior.\n- Old AI units no longer flee when the player jumps.\n- Correctly set up HAB armour colliders on both client and server, allowing proper removal and adding a collision mesh for the frame.\n- Fixed session modal overflow and description scroll issues, preventing disconnect button from being hidden.\n- Added DynamicFullscreenSprite and DynamicGallerySprite handling to store item overlay pages, fixing layout and rendering of dynamic references."
+    "summary": "### Comfort & Deployables\n- Bear rug and regular rug now provide full (100%) comfort within closer ranges and gradual falloff, fixing previous 25% solo comfort values.\n\n### Combat & Gear\n- Flashlight weapon now toggles on/off with right-click like a torch, with updated animations and server‑side extinguish on sleep/disconnect.\n- Semi‑automatic pistol receives more damage falloff at range and its high‑quality craft cost increased from 4 to 6.\n- HAB armour colliders set up correctly on client and server, allowing proper removal and adding a collision mesh for the frame.\n- Adjusted enemy body spawn chances: increased SMG body spawn chance slightly and decreased Rifle body spawn chance slightly to improve mid‑game balance.\n\n### Animals & Livestock\n- Rabbit assets (animation, model, prefab) added, making rabbits appear in the world.\n- New UI panels for selling animals and previewing sale rewards introduced, with sale info now displayed in‑game.\n\n### AI & NPC\n- Old AI units no longer flee when the player jumps, fixing erratic behavior.\n\n### Events, Crates & UI\n- Cargo ship event now preserves crate locations and loot cycles across server restarts, fixing despawn and save‑load issues.\n- Hackable crates receive visual flag updates and puzzle‑reset alerts are skipped after forced resets, improving event stability.\n- Session modal overflow fixed: description scroll works and long texts no longer block disconnect button.\n- Store item overlay page now supports DynamicFullscreenSprite and DynamicGallerySprite fields, with updated inspector and layout handling.\n- SteamFriendsList.Refresh optimized to eliminate large lag spikes when authorizing many friends to turrets or other objects.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-24": {
     "commit_count": 68,
-    "relevant_commit_count": 46,
+    "relevant_commit_count": 48,
     "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322,616328,616332,616333,616338,616341,616344",
     "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322,616328,616332,616333,616338,616341,616344",
-    "prompt_version": "structured-read-state-v4-balance",
+    "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
@@ -289,7 +222,7 @@
     "relevant_commit_count": 11,
     "relevant_signature": "616108,616112,616113,616114,616115,616116,616121,616123,616145,616147,616154",
     "new_baseline_signature": "616108,616112,616113,616114,616115,616116,616121,616123,616145,616147,616154",
-    "prompt_version": "structured-read-state-v4-balance",
+    "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
