@@ -6,45 +6,52 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 24 Aug 2026 23:37:20 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 02:22:07 -0400</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Aug 24</title>
+      <title>Today's Rust Updates — Aug 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;67 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Trading&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616285"&gt;New ammo model indicators show remaining rounds and Russian roulette mode assets are now available.&lt;/li&gt;
-&lt;li data-rust-commits="616164"&gt;Tax collector upkeep now scales dynamically with the number of online players, using tiered percentage increases.&lt;/li&gt;
-&lt;li data-rust-commits="616252,616228,616179"&gt;Various balance tweaks: pies have doubled bonus durations and hunters pie bleed reduction increased to 90%; medkits reduce radiation by 20; Boat Planner tech cost lowered to 30; longsword swing radius increased to 0.4 and swing delay reduced to 1.5; swamp trees yield up to 1000 wood.&lt;/li&gt;
+&lt;li data-rust-commits="616348,616349"&gt;Added SellAnimals and AnimalSalePreview panels: view nearby sellable animals and see expected payout before selling.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-08-25</guid>
+      <pubDate>Tue, 25 Aug 2026 02:22:07 -0400</pubDate>
+    </item>
+    <item>
+      <title>Yesterday's Rust Updates — Aug 24</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;68 development commits&lt;/strong&gt;&lt;/p&gt;
+
 &lt;h3&gt;Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616272,616288"&gt;Frog behavior improved: animations now play correctly, they seek shallow water, start croaking, and have corrected movement speed.&lt;/li&gt;
-&lt;li data-rust-commits="616165"&gt;Livestock can now drink water from nearby containers, rivers, or lakes, satisfying a new water need.&lt;/li&gt;
+&lt;li data-rust-commits="616272,616288"&gt;Fixed frog animation glitches, corrected sideways skating and movement speed, and added a new water‑seeking &amp;#x27;interested&amp;#x27; state where frogs croak and move toward shallow water.&lt;/li&gt;
+&lt;li data-rust-commits="616165"&gt;Added a drinking water need for livestock, allowing them to hydrate from containers or natural water sources.&lt;/li&gt;
+&lt;li data-rust-commits="616344"&gt;Enabled Stable B for animal trading, introducing basic NPC conversation and selling mechanics for animals.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616231,616282"&gt;Navmesh issues fixed: building volumes no longer corrupt the navmesh and generation now succeeds in previously invalid areas, improving NPC pathfinding.&lt;/li&gt;
-&lt;li data-rust-commits="616274"&gt;Path‑following performance doubled with new optimizations and benchmarking instrumentation.&lt;/li&gt;
-&lt;li data-rust-commits="616235"&gt;Fixed a rare crash caused by a null reference in mannequin entities.&lt;/li&gt;
+&lt;li data-rust-commits="616225"&gt;Added restoreHierarchy flag to pooled vehicles, fixing UI pooling issues for vehicle objects.&lt;/li&gt;
+&lt;li data-rust-commits="616322,616176"&gt;Improved car handling: fixed handbrake logic, prevented duck toggle lock, applied raw tyre force, refined suspension, steering, grip, and added visual rear‑wheel lock during handbrake.&lt;/li&gt;
+&lt;li data-rust-commits="616236,616169"&gt;Introduced a configurable setting to adjust the drone detonation distance and updated helicopter passenger seat weapons to apply aim sway scaled by movement speed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Drones&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Inventory&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616322,616176"&gt;Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.&lt;/li&gt;
-&lt;li data-rust-commits="616225"&gt;Poolable vehicles now include a restoreHierarchy field to prevent UI pooling side‑effects.&lt;/li&gt;
-&lt;li data-rust-commits="616236,616169"&gt;Drone detonation distance is now configurable, and aim sway scales with movement speed when using passenger‑seat weapons in the attack helicopter.&lt;/li&gt;
+&lt;li data-rust-commits="616341,616208,616294,616196,616333"&gt;Various UI stability and visual fixes: health bar now shows when hitting monument blockers, store prop drawer fallback image added, FadeCanvasGroup null‑reference crash prevented, arrow revamp icons corrected, and homing launcher UI now displays &amp;#x27;Keep on target&amp;#x27; with lock‑on timer reduced by 30%.&lt;/li&gt;
+&lt;li data-rust-commits="616262,616190,616177,616178"&gt;Hotbar now allows swapping of overstacks via server‑side RPC, repair bench functionality fixed, and random skin crafting now includes the default skin as a possible outcome.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Store&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616208,616273,616240,616262,616294,616196"&gt;UI stability and store usability improved: fallback images for missing props, DynamicResourceRef support for easier resource assignment, hotbar swapping works with overstacks, FadeCanvasGroup null‑reference guarded, and Arrow Revamp icons display correctly.&lt;/li&gt;
+&lt;li data-rust-commits="616185"&gt;SAM sites receive new anti‑drone buffs: proximity‑fuse missiles, 2.25× speed lead without aim error, and ability to destroy drone‑dropped explosives mid‑air.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-24</guid>
-      <pubDate>Mon, 24 Aug 2026 23:37:20 -0400</pubDate>
+      <pubDate>Mon, 24 Aug 2026 12:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Aug 23</title>
+      <title>Rust Updates — 2 Days Ago — Aug 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;20 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -67,28 +74,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-23</guid>
       <pubDate>Sun, 23 Aug 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Updates — 2 Days Ago — Aug 22</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;11 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="616089"&gt;Fixed heavy scientists getting stuck after being dropped by the helicopter on certain seeds (small oilrig).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Deployable Physics &amp;amp; Collisions&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="616100,616102,616101"&gt;Fixed mismatched colliders and off‑center gib origins for multiple deployables (io.table, HotAirBalloon armor, sculpture.ice, mannequin, chandelier, component.box.charcoal.large, HotAirBalloon basket, refinery, windmill, wooden box, fireplace, lift shaft top, tool cupboard, cannon, component box wood), eliminating clipping and improving break‑apart physics.&lt;/li&gt;
-&lt;li data-rust-commits="616096"&gt;Added gib pieces to the Frankenstein table so it now breaks apart correctly when destroyed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Grenade Stack Sizes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="616104"&gt;Reduced stack sizes for F1 grenades, Bee grenades, Flashbangs, and Molotovs from 5 to 3.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-08-22</guid>
-      <pubDate>Sat, 22 Aug 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
