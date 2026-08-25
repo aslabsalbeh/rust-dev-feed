@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -80,12 +80,16 @@ def main():
     for commit in latest:
         by_id[commit["id"]] = commit
 
-    cutoff = datetime.now() - timedelta(days=3)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=3)
 
     kept = []
 
     for commit in by_id.values():
-        created = datetime.fromisoformat(commit["created"])
+        created = datetime.fromisoformat(
+            commit["created"]
+        ).replace(
+            tzinfo=timezone.utc
+        )
 
         if created >= cutoff:
             kept.append(commit)
