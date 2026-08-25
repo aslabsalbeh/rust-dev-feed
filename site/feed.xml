@@ -6,43 +6,56 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 25 Aug 2026 11:45:04 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 13:10:15 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Comfort &amp;amp; Deployables&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617419"&gt;Bear rug and regular rug now provide full (100%) comfort within closer ranges and gradual falloff, fixing previous 25% solo comfort values.&lt;/li&gt;
+&lt;li data-rust-commits="617458,616356,616389"&gt;Radwater now deals significant damage to full kits with damage scaling based on reduced rad amounts, the semi‑automatic pistol gains stronger damage falloff at range and its high‑quality metal crafting cost increased to 6, and weapon body spawn rates were tweaked – SMG bodies slightly up, Rifle bodies slightly down.&lt;/li&gt;
+&lt;li data-rust-commits="617414,617467"&gt;Flashlight toggles with right‑click like a torch, includes new animations, tooltip update, and automatically extinguishes when the player sleeps or disconnects.&lt;/li&gt;
+&lt;li data-rust-commits="617463,617442"&gt;Helicopter armor colliders for both HAB and attack helicopters are now correctly set up for client and server removal with unique collider group names.&lt;/li&gt;
+&lt;li data-rust-commits="616394,617462,616348"&gt;Rabbit assets added and renamed for consistency, and new SellAnimals and AnimalSalePreview panels let players view nearby sellable animals and preview rewards.&lt;/li&gt;
+&lt;li data-rust-commits="617472,617437"&gt;Low‑resolution navmesh on ghost ships fixed and old AI no longer flees when the player jumps.&lt;/li&gt;
+&lt;li data-rust-commits="617405,617454"&gt;Health Threshold toggle added, allowing players to set custom health warning levels in the HUD.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Gear&lt;/h3&gt;
+&lt;/div&gt;
+&lt;h3&gt;Combat &amp;amp; Weapon Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617414"&gt;Flashlight weapon now toggles on/off with right-click like a torch, with updated animations and server‑side extinguish on sleep/disconnect.&lt;/li&gt;
-&lt;li data-rust-commits="616356"&gt;Semi‑automatic pistol receives more damage falloff at range and its high‑quality craft cost increased from 4 to 6.&lt;/li&gt;
-&lt;li data-rust-commits="617442"&gt;HAB armour colliders set up correctly on client and server, allowing proper removal and adding a collision mesh for the frame.&lt;/li&gt;
-&lt;li data-rust-commits="616389"&gt;Adjusted enemy body spawn chances: increased SMG body spawn chance slightly and decreased Rifle body spawn chance slightly to improve mid‑game balance.&lt;/li&gt;
+&lt;li data-rust-commits="617458,616356,616389"&gt;Radwater now deals significant damage to full kits with damage scaling based on reduced rad amounts, the semi‑automatic pistol gains stronger damage falloff at range and its high‑quality metal crafting cost increased to 6, and weapon body spawn rates were tweaked – SMG bodies slightly up, Rifle bodies slightly down.&lt;/li&gt;
+&lt;li data-rust-commits="617414,617467"&gt;Flashlight toggles with right‑click like a torch, includes new animations, tooltip update, and automatically extinguishes when the player sleeps or disconnects.&lt;/li&gt;
+&lt;li data-rust-commits="617463,617442"&gt;Helicopter armor colliders for both HAB and attack helicopters are now correctly set up for client and server removal with unique collider group names.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617417,617401,616349"&gt;Store UI now supports DynamicFullscreenSprite and DynamicGallerySprite fields, includes a DynamicPagePrefab for the shadow page, default picker rendering, and shows integrated sale information (item prices and potential earnings) with layout fixes.&lt;/li&gt;
+&lt;li data-rust-commits="617443,616384,617444"&gt;Session modal overflow fixed – description scroll works and long texts no longer block the disconnect button.&lt;/li&gt;
+&lt;li data-rust-commits="617419"&gt;Bear rug and regular rug comfort radii increased: 100 % comfort within 2 m (bear) or 1 m (rug) with gradual falloff to 3 m/2 m respectively.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Animals &amp;amp; Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616394"&gt;Rabbit assets (animation, model, prefab) added, making rabbits appear in the world.&lt;/li&gt;
-&lt;li data-rust-commits="616348,616349"&gt;New UI panels for selling animals and previewing sale rewards introduced, with sale info now displayed in‑game.&lt;/li&gt;
+&lt;li data-rust-commits="616394,617462,616348"&gt;Rabbit assets added and renamed for consistency, and new SellAnimals and AnimalSalePreview panels let players view nearby sellable animals and preview rewards.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; NPC&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Handling&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617437"&gt;Old AI units no longer flee when the player jumps, fixing erratic behavior.&lt;/li&gt;
+&lt;li data-rust-commits="616395"&gt;Modular car handling improved: reduced body roll, prevented spin‑outs, and smoother steering at high speeds.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Events, Crates &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;AI, World &amp;amp; Events&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617438"&gt;Cargo ship event now preserves crate locations and loot cycles across server restarts, fixing despawn and save‑load issues.&lt;/li&gt;
-&lt;li data-rust-commits="617396"&gt;Hackable crates receive visual flag updates and puzzle‑reset alerts are skipped after forced resets, improving event stability.&lt;/li&gt;
-&lt;li data-rust-commits="617443,616384,617444"&gt;Session modal overflow fixed: description scroll works and long texts no longer block disconnect button.&lt;/li&gt;
-&lt;li data-rust-commits="617417"&gt;Store item overlay page now supports DynamicFullscreenSprite and DynamicGallerySprite fields, with updated inspector and layout handling.&lt;/li&gt;
-&lt;li data-rust-commits="616383"&gt;SteamFriendsList.Refresh optimized to eliminate large lag spikes when authorizing many friends to turrets or other objects.&lt;/li&gt;
+&lt;li data-rust-commits="617472,617437"&gt;Low‑resolution navmesh on ghost ships fixed and old AI no longer flees when the player jumps.&lt;/li&gt;
+&lt;li data-rust-commits="617438,617396"&gt;Cargo ship event now preserves crate positions and loot round progress across server restarts; spawn points are de‑duplicated.&lt;/li&gt;
+&lt;li data-rust-commits="616357"&gt;Launch siren off‑state visibility corrected.&lt;/li&gt;
+&lt;li data-rust-commits="616353"&gt;Terrain hole depth assignment fixed in pre‑pass rendering.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Health &amp;amp; Alerts&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617405,617454"&gt;Health Threshold toggle added, allowing players to set custom health warning levels in the HUD.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-25</guid>
-      <pubDate>Tue, 25 Aug 2026 11:45:04 -0400</pubDate>
+      <pubDate>Tue, 25 Aug 2026 13:10:15 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 24</title>
