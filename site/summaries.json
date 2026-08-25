@@ -1,11 +1,245 @@
 {
   "2026-08-24": {
-    "commit_count": 59,
-    "relevant_commit_count": 40,
+    "commit_count": 67,
+    "relevant_commit_count": 45,
     "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322",
     "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322",
     "prompt_version": "structured-read-state-v4-balance",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "616165,616175,616176,616177,616179,616185,616190,616196,616208,616225,616228,616231,616235,616252,616262,616272,616275,616276,616282,616294,616313,616322,616328,616338,616341": [
+        {
+          "title": "Animals",
+          "items": [
+            {
+              "text": "Fixed frog animation glitches, sideways skating, and movement speed issues.",
+              "commit_ids": [
+                616272
+              ]
+            },
+            {
+              "text": "Added drinking water need for livestock, allowing them to drink from containers or natural water sources.",
+              "commit_ids": [
+                616165
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Resources & Gathering",
+          "items": [
+            {
+              "text": "Increased swamp tree wood harvest from 300 to 1000 per tree.",
+              "commit_ids": [
+                616179
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicles",
+          "items": [
+            {
+              "text": "Added restoreHierarchy flag to pooled vehicles to fix UI pooling issues.",
+              "commit_ids": [
+                616225
+              ]
+            },
+            {
+              "text": "Improved car handling: prevented duck toggle handbrake lock, applied raw tyre force regardless of handbrake, fixed handbrake logic for non‑car vehicles, and refined suspension, steering, and grip; rear wheels now lock visually during handbrake.",
+              "commit_ids": [
+                616322,
+                616176
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & Inventory",
+          "items": [
+            {
+              "text": "Displayed health bar when hitting monument blockers.",
+              "commit_ids": [
+                616341
+              ]
+            },
+            {
+              "text": "Fixed store prop drawer failing to draw by adding fallback image path.",
+              "commit_ids": [
+                616208
+              ]
+            },
+            {
+              "text": "Prevented null reference crash in FadeCanvasGroup.",
+              "commit_ids": [
+                616294
+              ]
+            },
+            {
+              "text": "Enabled hotbar swapping of overstacks by moving RPC server‑side.",
+              "commit_ids": [
+                616262
+              ]
+            },
+            {
+              "text": "Fixed repair bench functionality.",
+              "commit_ids": [
+                616190
+              ]
+            },
+            {
+              "text": "Corrected cached skin ID handling for random skin crafting.",
+              "commit_ids": [
+                616177
+              ]
+            },
+            {
+              "text": "Fixed arrow revamp icon display issues.",
+              "commit_ids": [
+                616196
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Prevented building volumes from being baked into the navmesh.",
+              "commit_ids": [
+                616231
+              ]
+            },
+            {
+              "text": "Fixed navmesh generation errors and optimized NPC path following.",
+              "commit_ids": [
+                616282
+              ]
+            },
+            {
+              "text": "Potential null reference fix for mannequins.",
+              "commit_ids": [
+                616235
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Gameplay & Balance",
+          "items": [
+            {
+              "text": "Added SAM site buffs against drones: proximity fuse missiles, 2.25× speed lead without aim error, and mid‑air destruction of drone‑dropped explosives.",
+              "commit_ids": [
+                616185
+              ]
+            },
+            {
+              "text": "Buffed unused pies: doubled bonus durations for bigcat, hunters, pork, fish, and chicken; increased hunters pie bleed reduction to 90%.",
+              "commit_ids": [
+                616252
+              ]
+            },
+            {
+              "text": "Medkit now reduces radiation by 20, boat planner tech cost reduced to 30, and longsword swing radius increased to 0.4 with reduced swing delay.",
+              "commit_ids": [
+                616228
+              ]
+            }
+          ]
+        }
+      ],
+      "616164,616166,616169,616178,616195,616197,616202,616203,616209,616224,616236,616240,616273,616274,616285,616288,616302,616307,616332,616333": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Optimized path following for steering agents: only pull path start, re-pull on thresholds, extend paths when chasing moving targets, skip corridor checks when tiles unchanged.",
+              "commit_ids": [
+                616274
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Monuments & Events",
+          "items": [
+            {
+              "text": "Oil rig puzzles now preserve crate state across server restarts, prevent despawning, force‑reset only when no players nearby, and save progress on locked crates.",
+              "commit_ids": [
+                616302,
+                616307
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicles & Drones",
+          "items": [
+            {
+              "text": "Added configurable drone detonation distance.",
+              "commit_ids": [
+                616236
+              ]
+            },
+            {
+              "text": "Applied movement‑speed‑scaled aim sway for passenger‑seat weapons in the attack helicopter.",
+              "commit_ids": [
+                616169
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals",
+          "items": [
+            {
+              "text": "Introduced a frog “interested” state that seeks shallow water and croaks.",
+              "commit_ids": [
+                616288
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons",
+          "items": [
+            {
+              "text": "Homing launcher UI now shows “Keep on target” text and lock‑on timer reduced by 30%.",
+              "commit_ids": [
+                616333
+              ]
+            },
+            {
+              "text": "Updated ammo models to display remaining rounds and added chain connector model for python pick cases.",
+              "commit_ids": [
+                616285
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Items & Skins",
+          "items": [
+            {
+              "text": "Random skin crafting now includes the default skin in its pool.",
+              "commit_ids": [
+                616178
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Economy",
+          "items": [
+            {
+              "text": "Tax collector upkeep now scales with number of authorized players: first 4 add 0%, next 6 add 2% each, further players add 4% each; de‑auth removal delayed 24 h.",
+              "commit_ids": [
+                616164
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Gameplay & Balance",
@@ -117,18 +351,9 @@
       }
     ],
     "summary": "### Gameplay & Balance\n- New ammo model indicators show remaining rounds and Russian roulette mode assets are now available.\n- Tax collector upkeep now scales dynamically with the number of online players, using tiered percentage increases.\n- Various balance tweaks: pies have doubled bonus durations and hunters pie bleed reduction increased to 90%; medkits reduce radiation by 20; Boat Planner tech cost lowered to 30; longsword swing radius increased to 0.4 and swing delay reduced to 1.5; swamp trees yield up to 1000 wood.\n\n### Animals\n- Frog behavior improved: animations now play correctly, they seek shallow water, start croaking, and have corrected movement speed.\n- Livestock can now drink water from nearby containers, rivers, or lakes, satisfying a new water need.\n\n### NPC & AI\n- Navmesh issues fixed: building volumes no longer corrupt the navmesh and generation now succeeds in previously invalid areas, improving NPC pathfinding.\n- Path‑following performance doubled with new optimizations and benchmarking instrumentation.\n- Fixed a rare crash caused by a null reference in mannequin entities.\n\n### Vehicles & Drones\n- Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.\n- Poolable vehicles now include a restoreHierarchy field to prevent UI pooling side‑effects.\n- Drone detonation distance is now configurable, and aim sway scales with movement speed when using passenger‑seat weapons in the attack helicopter.\n\n### UI & Store\n- UI stability and store usability improved: fallback images for missing props, DynamicResourceRef support for easier resource assignment, hotbar swapping works with overstacks, FadeCanvasGroup null‑reference guarded, and Arrow Revamp icons display correctly.",
-    "new_items": [
-      {
-        "text": "Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.",
-        "commit_ids": [
-          616322,
-          616176
-        ],
-        "section": "Vehicles & Drones"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-23": {
     "commit_count": 20,
