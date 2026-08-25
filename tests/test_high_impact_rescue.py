@@ -93,7 +93,7 @@ def test_missing_high_impact_commit_triggers_rescue(monkeypatch):
     assert len(calls) == 1
     assert calls[0][0] == {"2"}
     assert "high-impact rescue" in calls[0][1]
-    assert summarize.represented_section_commit_ids(result) == {"2"}
+    assert summarize.represented_commit_ids_from_sections(result) == {"2"}
 
 
 def test_low_impact_omission_does_not_trigger_rescue(monkeypatch):
@@ -148,3 +148,104 @@ def test_rescue_failure_preserves_existing_summary(monkeypatch):
     )
 
     assert result == original
+
+
+def test_rescue_merges_matching_section_titles(monkeypatch):
+    commit = make_commit(5, "Major strategic gameplay change")
+
+    monkeypatch.setattr(
+        summarize,
+        "player_relevance_score",
+        lambda item: 12,
+    )
+
+    existing = [
+        {
+            "title": "Gameplay & Balance",
+            "items": [
+                {
+                    "text": "Existing balance change.",
+                    "commit_ids": [99],
+                }
+            ],
+        }
+    ]
+
+    rescue = [
+        {
+            "title": "gameplay   &   balance",
+            "items": [
+                {
+                    "text": "Rescued strategic change.",
+                    "commit_ids": [5],
+                }
+            ],
+        }
+    ]
+
+    monkeypatch.setattr(
+        summarize,
+        "request_sections",
+        lambda *args, **kwargs: rescue,
+    )
+
+    result = summarize.rescue_missing_high_impact_commits(
+        "groq",
+        "openrouter",
+        "2026-08-25",
+        [commit],
+        existing,
+    )
+
+    assert len(result) == 1
+    assert result[0]["title"] == "Gameplay & Balance"
+    assert len(result[0]["items"]) == 2
+    assert summarize.represented_commit_ids_from_sections(result) == {"5", "99"}
+
+
+def test_rescue_keeps_distinct_section_titles_separate(monkeypatch):
+    commit = make_commit(6, "Major vehicle gameplay change")
+
+    monkeypatch.setattr(
+        summarize,
+        "player_relevance_score",
+        lambda item: 12,
+    )
+
+    existing = sections_for(
+        99,
+        "Existing gameplay change.",
+    )
+
+    rescue = [
+        {
+            "title": "Vehicles",
+            "items": [
+                {
+                    "text": "Rescued vehicle change.",
+                    "commit_ids": [6],
+                }
+            ],
+        }
+    ]
+
+    monkeypatch.setattr(
+        summarize,
+        "request_sections",
+        lambda *args, **kwargs: rescue,
+    )
+
+    result = summarize.rescue_missing_high_impact_commits(
+        "groq",
+        "openrouter",
+        "2026-08-25",
+        [commit],
+        existing,
+    )
+
+    assert len(result) == 2
+    assert [section["title"] for section in result] == [
+        "Gameplay & Balance",
+        "Vehicles",
+    ]
+
