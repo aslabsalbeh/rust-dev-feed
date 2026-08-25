@@ -1,54 +1,45 @@
 {
   "2026-08-25": {
-    "commit_count": 65,
-    "relevant_commit_count": 37,
-    "relevant_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481",
-    "new_baseline_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481",
+    "commit_count": 66,
+    "relevant_commit_count": 38,
+    "relevant_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481,617485",
+    "new_baseline_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481,617485",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Combat & Weapon Balance",
         "items": [
           {
-            "text": "Radwater now scales damage with protection instead of flat values, flashlight toggles with right‑click and features new view‑model and third‑person animations, semi‑automatic pistol gains increased damage falloff at range and its high‑quality‑metal craft cost raised from 4 to 6, and weapon body spawn rates were rebalanced (SMG up, Rifle down).",
+            "text": "Radwater now deals significant damage to fully equipped kits, with damage scaling using protection values and interacting with sprinklers.",
             "commit_ids": [
-              617458,
-              617414,
-              617467,
-              616356,
-              616389
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Livestock",
-        "items": [
-          {
-            "text": "Rabbits added with full animation, model, prefab files and standardized naming.",
-            "commit_ids": [
-              616394,
-              617462
+              617458
             ]
           },
           {
-            "text": "New UI panels for selling animals: one lists nearby sellable animals, the other previews rewards (functionality pending).",
+            "text": "Flashlight toggles on/off with right‑click, includes new animations, sound events, tooltip updates, and extinguishes on sleep or disconnect.",
             "commit_ids": [
-              616348
+              617414,
+              617467
             ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Armour",
-        "items": [
+          },
           {
-            "text": "HAB vehicle armour colliders fixed for client/server removal and frame collision mesh added; attack helicopter armour damage system updated with proper collider/visual toggle groups and unique naming; modular car handling improved with reduced body roll, spin‑out prevention and smoother steering for high‑speed drifting.",
+            "text": "Semi‑automatic pistol damage now falls off more sharply at range, and its high‑quality metal crafting cost increased to six.",
+            "commit_ids": [
+              616356
+            ]
+          },
+          {
+            "text": "HAB vehicle and attack helicopter armor colliders corrected and made unique, improving client/server collision handling.",
             "commit_ids": [
               617442,
-              617463,
-              616395
+              617463
+            ]
+          },
+          {
+            "text": "Weapon spawn probabilities adjusted: SMG bodies are now more common while rifle bodies are less common, improving mid‑game balance.",
+            "commit_ids": [
+              616389
             ]
           }
         ]
@@ -57,55 +48,54 @@
         "title": "AI & Navigation",
         "items": [
           {
-            "text": "Low‑resolution navmesh issue on ghost ships fixed and old AI no longer flees when the player jumps; navmesh test framework dependency removed to avoid build breaks.",
+            "text": "Low‑resolution navmesh on ghost ships fixed, improving AI pathing on those vessels.",
             "commit_ids": [
-              617472,
-              617437,
-              616373
+              617472
+            ]
+          },
+          {
+            "text": "AI units no longer flee when the player jumps, reducing unwanted retreats.",
+            "commit_ids": [
+              617437
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "UI, Economy & Quality of Life",
         "items": [
           {
-            "text": "Session modal overflow fixed (description scroll works, long texts no longer block disconnect button), comfort rugs now provide 100 % comfort within a 1–2 m radius with gradual falloff, and siren off‑state visibility bug resolved.",
+            "text": "Session/connect modal overflow fixed (description scroll works and modal can be closed) and launch siren off‑state now visible, improving UI clarity.",
             "commit_ids": [
               617443,
               616384,
-              617444,
-              617419,
               616357
             ]
           },
           {
-            "text": "Store UI updated to render dynamic fullscreen and gallery sprites, now shows sale price and discount details, inspector includes private serialized fields and layout fixes; added HealthThresholdToggle to HUD for customizable health alerts.",
+            "text": "Store UI upgraded to support dynamic sprites and pages, layout issues resolved, and now displays sale information with new Sell Animals panels that list nearby livestock and preview rewards.",
             "commit_ids": [
               617417,
+              617401,
               616349,
-              617405,
-              617481,
-              617454
+              616348
             ]
           }
         ]
       },
       {
-        "title": "Events & Multiplayer",
+        "title": "Comfort & Performance",
         "items": [
           {
-            "text": "Hackable crates correctly flagged and visual fixes applied; cargo ship event now preserves crate despawn state and loot round progress across server restarts, preventing duplicate spawns; SteamFriendsList.Refresh optimized to eliminate large lag spikes when authorizing friends to turrets or other team interactions.",
+            "text": "Bear rugs and regular rugs now provide 100 % comfort within 2 m (bear) or 1 m (regular) radius, with gradual falloff to 3 m/2 m, enhancing base comfort.",
             "commit_ids": [
-              617396,
-              617438,
-              616383
+              617419
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Weapons\n- Radwater now scales damage with protection instead of flat values, flashlight toggles with right‑click and features new view‑model and third‑person animations, semi‑automatic pistol gains increased damage falloff at range and its high‑quality‑metal craft cost raised from 4 to 6, and weapon body spawn rates were rebalanced (SMG up, Rifle down).\n\n### Animals & Livestock\n- Rabbits added with full animation, model, prefab files and standardized naming.\n- New UI panels for selling animals: one lists nearby sellable animals, the other previews rewards (functionality pending).\n\n### Vehicles & Armour\n- HAB vehicle armour colliders fixed for client/server removal and frame collision mesh added; attack helicopter armour damage system updated with proper collider/visual toggle groups and unique naming; modular car handling improved with reduced body roll, spin‑out prevention and smoother steering for high‑speed drifting.\n\n### AI & Navigation\n- Low‑resolution navmesh issue on ghost ships fixed and old AI no longer flees when the player jumps; navmesh test framework dependency removed to avoid build breaks.\n\n### UI & Quality of Life\n- Session modal overflow fixed (description scroll works, long texts no longer block disconnect button), comfort rugs now provide 100 % comfort within a 1–2 m radius with gradual falloff, and siren off‑state visibility bug resolved.\n- Store UI updated to render dynamic fullscreen and gallery sprites, now shows sale price and discount details, inspector includes private serialized fields and layout fixes; added HealthThresholdToggle to HUD for customizable health alerts.\n\n### Events & Multiplayer\n- Hackable crates correctly flagged and visual fixes applied; cargo ship event now preserves crate despawn state and loot round progress across server restarts, preventing duplicate spawns; SteamFriendsList.Refresh optimized to eliminate large lag spikes when authorizing friends to turrets or other team interactions.",
+    "summary": "### Combat & Weapon Balance\n- Radwater now deals significant damage to fully equipped kits, with damage scaling using protection values and interacting with sprinklers.\n- Flashlight toggles on/off with right‑click, includes new animations, sound events, tooltip updates, and extinguishes on sleep or disconnect.\n- Semi‑automatic pistol damage now falls off more sharply at range, and its high‑quality metal crafting cost increased to six.\n- HAB vehicle and attack helicopter armor colliders corrected and made unique, improving client/server collision handling.\n- Weapon spawn probabilities adjusted: SMG bodies are now more common while rifle bodies are less common, improving mid‑game balance.\n\n### AI & Navigation\n- Low‑resolution navmesh on ghost ships fixed, improving AI pathing on those vessels.\n- AI units no longer flee when the player jumps, reducing unwanted retreats.\n\n### UI, Economy & Quality of Life\n- Session/connect modal overflow fixed (description scroll works and modal can be closed) and launch siren off‑state now visible, improving UI clarity.\n- Store UI upgraded to support dynamic sprites and pages, layout issues resolved, and now displays sale information with new Sell Animals panels that list nearby livestock and preview rewards.\n\n### Comfort & Performance\n- Bear rugs and regular rugs now provide 100 % comfort within 2 m (bear) or 1 m (regular) radius, with gradual falloff to 3 m/2 m, enhancing base comfort.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
