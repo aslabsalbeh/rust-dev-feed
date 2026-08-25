@@ -30,6 +30,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+      
+      - name: Run tests
+        run: python -m pytest -q
 
       - name: Fetch latest commits
         run: python scripts/build_feed.py
