@@ -1,5 +1,53 @@
 [
   {
+    "id": 617499,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162047",
+    "created": "2026-08-25T20:19:22",
+    "message": "Bugfix: rename a field to let StoreBundleTool find replicated ref field\r\n- ran dyn ref & bundle assigns\r\nTests: can click on featured tiles in store (but tile icon was still missing)",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617498,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "162046",
+    "created": "2026-08-25T20:18:27",
+    "message": "some more tweaks to textures that don't need to ship 2k \r\n\r\nvram 12.0MB -> 1.0MB",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617496,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "162045",
+    "created": "2026-08-25T19:55:05",
+    "message": "texture reduction pass - deployable, tools, food, component items: \n71 textures touched, 38 resolutions brought down\nan apple had a 2k ao map at runtime\r\n\nvram 55.1MB -> 9.5MB",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617491,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162043",
+    "created": "2026-08-25T18:55:27",
+    "message": "Update: ran \"Update UI bundle assignments\"\r\n- fixed it up to skip reimporting assets with correct bundle assignations\r\nTests: checked meta files",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617490,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162042",
+    "created": "2026-08-25T18:40:09",
+    "message": "Update: progress on reviving dynamic shop assets\r\n- restore most of ui logic to cache/uncache dynamic bundle\r\n- make storeitemdlc use dyn ref for page prefab\r\n- change store logic to create empty tiles on warmup, then fill with content once opened\r\nTests: ran through the store in the editor. it's broken in a bunch of different ways, but seeing signs of system engaging, so progress",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617489,
+    "branch": "main/high_stakes_dlc",
+    "changeset": "162041",
+    "created": "2026-08-25T18:35:48",
+    "message": "russian roulette;\r\n- updated textures\r\n- updated material\r\n- fixed suffix naming",
+    "author": "curt"
+  },
+  {
     "id": 617487,
     "branch": "main/car_wheel_fix",
     "changeset": "162039",
@@ -1254,37 +1302,5 @@
     "created": "2026-08-22T21:52:39",
     "message": "speculative - added a collsiion mesh to sleeping bag to prevent dropped items from passing through it.",
     "author": "Pilgrim"
-  },
-  {
-    "id": 616102,
-    "branch": "main/gib_fixes",
-    "changeset": "161768",
-    "created": "2026-08-22T21:07:52",
-    "message": "re-centered gib parts again \r\n\r\n- hot_air_balloon: 67 of 67 parts had their origin outside the piece, now 0\r\n- got rid of a load of self intersections that caused the self intersected faces to be discarded despite unity triangulating on import. It can't triangulate self intersecting faces.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616101,
-    "branch": "main/gib_fixes",
-    "changeset": "161767",
-    "created": "2026-08-22T20:38:58",
-    "message": "Re-centred gib part origins on 8 deployables\n\nSame problem as the hot air balloon armour last commit - gib part origins weren't central to their mesh, so pieces rotated about a point outside themselves and the physics was inaccurate. Re-exported the gib meshes and re-assigned the collider boxes. should be much more accurate gib physics now.\r\nAlso on some gibs, they had parts that were self intersecting and were being discarded. Fixed that. \n\n- HotAirBalloon basket: 43 of 55 parts had their origin outside the piece, now 0\n- refinery_b (refinery_large_deployed): 24 of 83, now 0\n- windmill_main: 22 of 53, now 0\n- box.wooden.large: 19 of 33, now 0\n- fireplace: 19 of 53, now 0\n- lift_shaft_top (elevator): 18 of 33, now 0 - worst part sat 1183x its own half-extent off centre\n- tool_cupboard: 15 of 44, now 0\n- cannon: 14 of 24, now 0\n- component_box_wood: boxes re-fitted",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616100,
-    "branch": "main/gib_fixes",
-    "changeset": "161766",
-    "created": "2026-08-22T19:48:00",
-    "message": "Fixed gib collider overrides on 7 deployables\r\nBox overrides had drifted from their gib meshes, so colliders didn't match their mesh and clipped through the floor. Some overrides had more whilst others had less gib parts. \r\n\n- io.table: override list resynced 44 -> 29, boxes re-fitted (29 of 29 boxes were not a fit for their own mesh, now 6)\n- HotAirBalloon_armor_T1: gib FBX re-exported, list 52 -> 51 - their origins weren't central to the mesh causing innacurate physics \n- sculpture.ice: list extended 30 -> 33; the last 3 parts had been falling back to convex mesh colliders\n- mannequin: boxes re-fitted (18 of 18 mismatched, now 0)\n- chandelier, component.box.charcoal.large: boxes re-fitted",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616098,
-    "branch": "main/glass_ar",
-    "changeset": "161765",
-    "created": "2026-08-22T18:46:21",
-    "message": "Glass AR - material tweaks",
-    "author": "alex.m"
   }
 ]

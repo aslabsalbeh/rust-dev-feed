@@ -6,57 +6,52 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 25 Aug 2026 14:39:39 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 17:15:10 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;67 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;73 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617487"&gt;Mirrored wheel models on modular cars corrected by fixing wheel mesh assignments and clearing leftover rotations.&lt;/li&gt;
+&lt;li data-rust-commits="617414,617467,617443,616384,617499"&gt;Flashlight toggles with right‑click like a torch, press F removed; session modal scrolling fixed; store featured tiles now clickable.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3&gt;Combat &amp;amp; Weapon Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617458"&gt;Radwater now deals significant damage to full kits and uses a new scaling system that reduces rad amounts via scaled protection rather than flat values.&lt;/li&gt;
-&lt;li data-rust-commits="617414,617467"&gt;Flashlight toggles on/off with right‑click like a torch; updated animations, sounds, tooltips, and it extinguishes on sleep or disconnect.&lt;/li&gt;
-&lt;li data-rust-commits="616356"&gt;Semi‑automatic pistol gains increased damage falloff at range and its high‑quality material crafting cost raised from 4 to 6.&lt;/li&gt;
-&lt;li data-rust-commits="616389"&gt;Adjusted loot spawn chances: SMG bodies spawn more frequently while Rifle bodies spawn less, improving mid‑game weapon balance.&lt;/li&gt;
+&lt;li data-rust-commits="617458"&gt;Radwater now deals significant damage to full kits with a new scaling system that reduces rad amounts via scaled protection.&lt;/li&gt;
+&lt;li data-rust-commits="616356"&gt;Semi‑automatic pistol damage now falls off more sharply at range and its craft cost increased.&lt;/li&gt;
+&lt;li data-rust-commits="617442"&gt;HAB armour colliders are correctly set up on client and server, with a proper collision mesh for the frame, ensuring reliable removal.&lt;/li&gt;
+&lt;li data-rust-commits="616389"&gt;Weapon spawn distribution adjusted: SMG bodies appear more often while Rifle bodies are less common, improving mid‑game load‑out variety.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Comfort &amp;amp; Environment&lt;/h3&gt;
+&lt;h3&gt;Comfort&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617419"&gt;Bear rug and rug comfort values raised to 100 % within 2 m/1 m respectively (gradual falloff thereafter), fixing the previous 25 % solo comfort issue.&lt;/li&gt;
+&lt;li data-rust-commits="617419"&gt;Bear rugs and regular rugs now provide full (100%) comfort within 2 m and 1 m respectively, with gradual falloff, fixing the previous low solo comfort.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; Navigation&lt;/h3&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617472"&gt;Low‑resolution navmesh on ghost ships fixed, improving AI pathing on those vessels.&lt;/li&gt;
-&lt;li data-rust-commits="617437"&gt;Old AI units no longer flee when the player jumps, correcting errant escape behavior.&lt;/li&gt;
+&lt;li data-rust-commits="617487"&gt;Modular car wheels corrected: left wheels use the proper model, eliminating mirrored wheels and flipped normals.&lt;/li&gt;
+&lt;li data-rust-commits="616395"&gt;Vehicle handling refined – reduced body roll, prevented spin‑outs, and smoothed steering for stable high‑speed drifting.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Armor&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616395"&gt;Modular car handling improved: reduced body roll, prevented spin‑outs, and smoothed steering for higher‑speed drifting.&lt;/li&gt;
-&lt;li data-rust-commits="617487"&gt;Mirrored wheel models on modular cars corrected by fixing wheel mesh assignments and clearing leftover rotations.&lt;/li&gt;
-&lt;li data-rust-commits="617442"&gt;HAB vehicle armor colliders set up correctly for client and server, with an added collision mesh for the frame.&lt;/li&gt;
-&lt;li data-rust-commits="617463"&gt;Attack helicopter armor collider groups renamed and toggled properly, ensuring unique inspector entries and correct removal.&lt;/li&gt;
+&lt;li data-rust-commits="616394,617462"&gt;Rabbit assets (animation, model, prefabs) added and naming standardized.&lt;/li&gt;
+&lt;li data-rust-commits="616348,616349"&gt;SellAnimals and AnimalSalePreview panels introduced, letting players view nearby sellable animals and see expected rewards.&lt;/li&gt;
+&lt;li data-rust-commits="617485"&gt;Basic squirrel critter added for wildlife interactions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals, Livestock &amp;amp; Critters&lt;/h3&gt;
+&lt;h3&gt;Events &amp;amp; Performance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616394,617462"&gt;Rabbit assets (animation, model, prefabs) added and standardized naming, enabling rabbits in the game world.&lt;/li&gt;
-&lt;li data-rust-commits="617485"&gt;Basic squirrel critter added to the game.&lt;/li&gt;
-&lt;li data-rust-commits="616348,616349"&gt;New UI panels for selling animals: a list of nearby sellable animals and a preview showing expected rewards, plus in‑game display of livestock sale information.&lt;/li&gt;
+&lt;li data-rust-commits="616383"&gt;SteamFriendsList.Refresh optimized to remove large lag spikes when authorizing friends to turrets and other objects.&lt;/li&gt;
+&lt;li data-rust-commits="617396"&gt;Hackable crates now have correct flags and visuals; puzzle‑reset alerts are skipped after forced resets.&lt;/li&gt;
+&lt;li data-rust-commits="617438"&gt;Cargo ship event now persists crate locations and loot round progress across server restarts, preventing despawn and overlapping spawns.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI, Session &amp;amp; Performance&lt;/h3&gt;
+&lt;h3&gt;UI Improvements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617443,616384"&gt;Session modal overflow fixed: description scroll works and flex elements are clamped, preventing the disconnect button from being hidden.&lt;/li&gt;
-&lt;li data-rust-commits="617417,617401"&gt;Store UI updated to support DynamicFullscreenSprite, DynamicGallerySprite, DynamicPagePrefab fields and default picker rendering, with layout and inspector fixes.&lt;/li&gt;
-&lt;li data-rust-commits="616383"&gt;SteamFriendsList.Refresh optimized, eliminating large lag spikes when authorizing friends to turrets or other team objects.&lt;/li&gt;
-&lt;li data-rust-commits="617396"&gt;Hackable crates now correctly flagged with visual fixes; puzzlereset alerts are skipped when a forced reset occurs after a restart.&lt;/li&gt;
-&lt;li data-rust-commits="617438"&gt;Cargo ship event now correctly saves crate locations and loot rounds across server restarts, preventing crates from despawning and avoiding overlapping spawns.&lt;/li&gt;
+&lt;li data-rust-commits="617414,617467,617443,616384,617499"&gt;Flashlight toggles with right‑click like a torch, press F removed; session modal scrolling fixed; store featured tiles now clickable.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-25</guid>
-      <pubDate>Tue, 25 Aug 2026 14:39:39 -0400</pubDate>
+      <pubDate>Tue, 25 Aug 2026 17:15:10 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 24</title>
