@@ -314,6 +314,22 @@ STRATEGIC_GAMEPLAY_TERMS = (
     "respawn",
 )
 
+SCORE_WEIGHTS = {
+    "strategic_gameplay": 7,
+    "bug": 6,
+    "high_value_term": 2,
+    "new_high_value": 3,
+    "balance_change": 5,
+    "explicit_buff_nerf": 6,
+    "visible_visual": 1,
+    "technical": -5,
+    "low_value_visual": -5,
+    "test_only": -4,
+    "cleanup_refactor": -4,
+    "player_facing_bug_rescue": 5,
+}
+
+RELEVANCE_THRESHOLD = 2
 
 # ============================================================
 # GENERAL HELPERS
@@ -419,10 +435,10 @@ def player_relevance_score(commit):
     )
 
     if strategic_change:
-        score += 7
+        score += SCORE_WEIGHTS["strategic_gameplay"]
 
     if contains_any(text, BUG_TERMS):
-        score += 6
+        score += SCORE_WEIGHTS["bug"]
 
     high_matches = sum(
         1
@@ -433,7 +449,7 @@ def player_relevance_score(commit):
     score += min(
         high_matches,
         4,
-    ) * 2
+    ) * SCORE_WEIGHTS["high_value_term"]
 
     if re.search(
         r"\b(add|added|new|introduce|introduced)\b",
@@ -443,8 +459,9 @@ def player_relevance_score(commit):
             text,
             HIGH_VALUE_TERMS,
         ):
-            score += 3
+            score += SCORE_WEIGHTS["new_high_value"]
 
+    
     if contains_any(
         text,
         (
@@ -482,7 +499,7 @@ def player_relevance_score(commit):
             "drop rate",
         ),
     ):
-        score += 5
+        score += SCORE_WEIGHTS["balance_change"]
 
     # Explicit buffs/nerfs and meaningful combat interaction changes
     # are high-priority player information.
@@ -498,25 +515,25 @@ def player_relevance_score(commit):
             "rebalance",
         ),
     ):
-        score += 6
+        score += SCORE_WEIGHTS["explicit_buff_nerf"]
 
     if contains_any(
         text,
         VISIBLE_VISUAL_TERMS,
     ):
-        score += 1
+        score += SCORE_WEIGHTS["visible_visual"]
 
     if contains_any(
         text,
         TECHNICAL_TERMS,
     ):
-        score -= 5
+        score += SCORE_WEIGHTS["technical"]
 
     if contains_any(
         text,
         LOW_VALUE_VISUAL_TERMS,
     ):
-        score -= 5
+        score += SCORE_WEIGHTS["low_value_visual"]
 
     # Test-related wording should only be penalized when the commit
     # does not also describe a meaningful player-facing gameplay change.
@@ -527,13 +544,13 @@ def player_relevance_score(commit):
         )
         and not strategic_change
     ):
-        score -= 4
+        score += SCORE_WEIGHTS["test_only"]
 
     if re.search(
         r"\b(cleanup|refactor|rename|renamed)\b",
         text,
     ):
-        score -= 4
+        score += SCORE_WEIGHTS["cleanup_refactor"]
 
     # Strong rescue rule for concrete player-facing bug fixes.
     if (
@@ -543,7 +560,7 @@ def player_relevance_score(commit):
             HIGH_VALUE_TERMS,
         )
     ):
-        score += 5
+        score += SCORE_WEIGHTS["player_facing_bug_rescue"]
 
     return score
 
@@ -571,7 +588,7 @@ def filter_player_relevant_commits(
     relevant = [
         commit
         for score, commit in scored
-        if score >= 2
+        if score >= RELEVANCE_THRESHOLD
     ]
 
     print(
@@ -582,7 +599,7 @@ def filter_player_relevant_commits(
 
     if log_filtered:
         for score, commit in scored:
-            if score < 2:
+            if score < RELEVANCE_THRESHOLD:
                 message = (
                     commit.get(
                         "message",
