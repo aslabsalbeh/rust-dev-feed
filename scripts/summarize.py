@@ -7,32 +7,19 @@ from zoneinfo import ZoneInfo
 
 try:
     # Package import: used by pytest (import scripts.summarize).
-    from scripts.prompts import (
-        build_chunk_prompt,
-        build_full_prompt,
-        build_merge_prompt,
-    )
-    from scripts.providers import (
-        is_bad_summary,
-        request_sections,
-    )
+    from scripts.prompts import build_chunk_prompt, build_full_prompt, build_merge_prompt
+    from scripts.providers import is_bad_summary, request_sections
     from scripts.relevance import (
         filter_player_relevant_commits,
+        player_relevance_score,
     )
-
 except ModuleNotFoundError:
     # Direct script execution: python scripts/summarize.py
-    from prompts import (
-        build_chunk_prompt,
-        build_full_prompt,
-        build_merge_prompt,
-    )
-    from providers import (
-        is_bad_summary,
-        request_sections,
-    )
+    from prompts import build_chunk_prompt, build_full_prompt, build_merge_prompt
+    from providers import is_bad_summary, request_sections
     from relevance import (
         filter_player_relevant_commits,
+        player_relevance_score,
     )
 
 
@@ -367,6 +354,19 @@ def find_new_items(
     return new_items
 
 
+
+
+def represented_section_commit_ids(sections):
+    """Return all source commit IDs represented by structured summary sections."""
+    ids = set()
+
+    for section in sections:
+        for item in section.get("items", []):
+            for commit_id in item.get("commit_ids", []):
+                ids.add(str(commit_id))
+
+    return ids
+
 def represented_commit_ids(
     items,
 ):
@@ -646,6 +646,38 @@ def main():
                 sections = (
                     generated_sections
                 )
+
+                represented_ids = represented_section_commit_ids(
+                    generated_sections
+                )
+
+                high_impact_missing = []
+
+                for commit in relevant_commits:
+                    score = player_relevance_score(commit)
+
+                    if (
+                        score >= 10
+                        and str(commit["id"]) not in represented_ids
+                    ):
+                        high_impact_missing.append(commit)
+
+                if high_impact_missing:
+                    print(
+                        "WARNING: High-impact relevant commits were "
+                        "not represented in the final summary:"
+                    )
+
+                    for commit in high_impact_missing:
+                        message = (
+                            commit.get("message", "")
+                            .replace("\n", " ")
+                            .replace("\r", " ")
+                        )
+
+                        print(
+                            f"  {commit['id']}: {message[:140]}"
+                        )
 
                 summary_markdown = (
                     sections_to_markdown(
