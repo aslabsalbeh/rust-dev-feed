@@ -7,14 +7,33 @@ from zoneinfo import ZoneInfo
 
 try:
     # Package import: used by pytest (import scripts.summarize).
-    from scripts.prompts import build_chunk_prompt, build_full_prompt, build_merge_prompt
-    from scripts.providers import request_sections
-    from scripts.relevance import filter_player_relevant_commits
+    from scripts.prompts import (
+        build_chunk_prompt,
+        build_full_prompt,
+        build_merge_prompt,
+    )
+    from scripts.providers import (
+        is_bad_summary,
+        request_sections,
+    )
+    from scripts.relevance import (
+        filter_player_relevant_commits,
+    )
+
 except ModuleNotFoundError:
     # Direct script execution: python scripts/summarize.py
-    from prompts import build_chunk_prompt, build_full_prompt, build_merge_prompt
-    from providers import request_sections
-    from relevance import filter_player_relevant_commits
+    from prompts import (
+        build_chunk_prompt,
+        build_full_prompt,
+        build_merge_prompt,
+    )
+    from providers import (
+        is_bad_summary,
+        request_sections,
+    )
+    from relevance import (
+        filter_player_relevant_commits,
+    )
 
 
 COMMITS_FILE = Path("site/commits.json")
