@@ -1,4 +1,4 @@
-from scripts.summarize import player_relevance_score
+from scripts.relevance import player_relevance_score
 
 
 def score(message):
