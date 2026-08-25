@@ -1,5 +1,125 @@
 [
   {
+    "id": 617447,
+    "branch": "main/analytics_wm_tris",
+    "changeset": "162009",
+    "created": "2026-08-25T15:08:41",
+    "message": "Add worldmodel tri count for LOD0 meshes as field in item definition dump",
+    "author": "Ryan"
+  },
+  {
+    "id": 617444,
+    "branch": "main",
+    "changeset": "162008",
+    "created": "2026-08-25T15:02:26",
+    "message": "session_modal_overflow_fix -> main",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617443,
+    "branch": "main/session_modal_overflow_fix",
+    "changeset": "162007",
+    "created": "2026-08-25T15:02:09",
+    "message": "Fix description scroll not working\r\nClamp some flex elements so the connect modal cant overspill anymore and stretch itself so much that you cant see disconnect",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617442,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162006",
+    "created": "2026-08-25T14:56:25",
+    "message": "same as attack heli  - setup hab armour colliders properly for both client+server so they can be removed properly \r\nadded collision mesh for the frame \r\nupdted prefab",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617441,
+    "branch": "main/underground_train_network_update",
+    "changeset": "162004",
+    "created": "2026-08-25T14:43:09",
+    "message": "First pass boiler room (random room) shell",
+    "author": "hannah.watts"
+  },
+  {
+    "id": 617437,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "162003",
+    "created": "2026-08-25T14:37:46",
+    "message": "Fix old ais fleeing when player jumps",
+    "author": "Maverick"
+  },
+  {
+    "id": 617438,
+    "branch": "main/improved_event_saveloading",
+    "changeset": "162002",
+    "created": "2026-08-25T14:37:37",
+    "message": "Cargo ship no longer despawns its crates on server restart / does more loot cycles but randomly starts leaving inbetween - whole event should now saveload correctly\r\n- Saves the loot rounds that have passed, re-schedules the remaining correctly\r\n- Saves available spawn point indices so crates don't spawn on top of each other",
+    "author": "cipeaX"
+  },
+  {
+    "id": 617435,
+    "branch": "main/hqm_ore",
+    "changeset": "162000",
+    "created": "2026-08-25T14:34:21",
+    "message": "HQM prefabs",
+    "author": "Damian Lazarski"
+  },
+  {
+    "id": 617433,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "161998",
+    "created": "2026-08-25T14:28:47",
+    "message": "give this a try cause why not",
+    "author": "Brian"
+  },
+  {
+    "id": 617430,
+    "branch": "main/hqm_ore",
+    "changeset": "161995",
+    "created": "2026-08-25T14:15:55",
+    "message": "HQM ore texture and HQM collectible art",
+    "author": "Damian Lazarski"
+  },
+  {
+    "id": 617429,
+    "branch": "main/attackheli_armour_damge",
+    "changeset": "161994",
+    "created": "2026-08-25T13:58:21",
+    "message": "made chanegs to the attack heli colliders left, front and right panels so tht they can be toggled off when removed.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617419,
+    "branch": "main/comfort_fixes",
+    "changeset": "161989",
+    "created": "2026-08-25T13:12:09",
+    "message": "Bear rug: 100% comfort within 2m of the comfort trigger spheres. Gradual falloff until 3m.\r\nRug: 100% comfort within 1m of the comfort trigger spheres. Gradual falloff until 2m.\r\n\r\nPrevious fixes would have meant these deployables would have only given a solo player 25% comfort. Boosted values to not destroy years long gameplay behaviour",
+    "author": "Jakb"
+  },
+  {
+    "id": 617417,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "161988",
+    "created": "2026-08-25T12:59:41",
+    "message": "Update: add DynamicFullscreenSprite and DynamicGallerySprite to shadow respective fields on UI_StoreItemOverlayPage\r\n- updated StoreBundleTool to also inspect private fields marked with SerializeField\r\n- updated PageElementDrawer to render DynamicRef fields (and fix layout issues)\r\n- ran UpdateDynRefs\r\nTests: inspected serialized prefabs",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617415,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "161986",
+    "created": "2026-08-25T12:52:50",
+    "message": "camera, obsidian knife, vampire stake texture reduction among others\n11 maps 2048 -> 1024,\nvram 24.8MB -> 6.2MB",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617414,
+    "branch": "main/weapon_refresh_flashlight",
+    "changeset": "161985",
+    "created": "2026-08-25T12:51:08",
+    "message": "Changed functionality of flashlight to be like the torch, now r/click to turn on/off (press f removed)\r\n\r\n- New flashlightWeapon.cs\r\n- Updated animator with new states (viewmodel wants_on/is_on/ignite/extinguish/lit_idle)\r\n- Added 1st pass anims (wip)\r\n- setup different admires based on state\r\n- 3p setup\r\n- updated 3p states, new child controller & anim for turning on/off\r\n- Tool tip updated to reflect changes\r\n= BasePlayer-Server.cs (extinguish on sleep/disconnect)\r\n- RpcCalls.cs (dispatch table for Ignite/Extinguish)",
+    "author": "Alex Webster"
+  },
+  {
     "id": 617405,
     "branch": "main",
     "changeset": "161980",
@@ -1021,22 +1141,6 @@
     "changeset": "161764",
     "created": "2026-08-22T16:55:44",
     "message": "frankenstein table now has gibs - it was setup to have them but there was no gib mesh. \r\nnow breaks apart as expected.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616094,
-    "branch": "main/demo_ui_2",
-    "changeset": "161763",
-    "created": "2026-08-22T15:25:54",
-    "message": "Fix parenting not working when set from the field.",
-    "author": "octo"
-  },
-  {
-    "id": 616092,
-    "branch": "main/gib_fixes",
-    "changeset": "161761",
-    "created": "2026-08-22T15:13:40",
-    "message": "removed ao from gibs on advanced lootbox and primitive lootbox variants. \r\nao looks great on the static asset but once destroyed the gibs looks nasty when they are in shadow. Now fixed.",
     "author": "Pilgrim"
   }
 ]
