@@ -28,7 +28,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 CHUNK_SIZE = 25
 
 # Change this whenever the summary logic/prompt structure changes.
-PROMPT_VERSION = "structured-read-state-v4-balance"
+PROMPT_VERSION = "structured-read-state-v4-strategic-gameplay"
 
 
 BAD_MARKERS = (
@@ -253,6 +253,67 @@ VISIBLE_VISUAL_TERMS = (
     "modal",
 )
 
+STRATEGIC_GAMEPLAY_TERMS = (
+    # Explicit balance
+    "buff",
+    "buffs",
+    "buffed",
+    "nerf",
+    "nerfs",
+    "nerfed",
+    "rebalance",
+    "balance",
+
+    # Base / upkeep / building rules
+    "upkeep",
+    "decay",
+    "tool cupboard",
+    "tc auth",
+    "code lock",
+    "building privilege",
+    "authorized",
+    "authed",
+
+    # Groups / player limits
+    "group",
+    "team",
+    "player limit",
+
+    # Inventory / economy
+    "stack size",
+    "stack sizes",
+    "capacity",
+    "crafting cost",
+    "resource cost",
+    "resource rate",
+    "gather rate",
+    "drop rate",
+
+    # Combat / counters / defenses
+    "sam site",
+    "sam sites",
+    "drone",
+    "drones",
+    "turret",
+    "missile",
+    "missiles",
+    "proximity fuse",
+    "target",
+    "targeting",
+    "counter",
+    "counterplay",
+    "explosive",
+    "explosives",
+
+    # Other strategic values
+    "damage",
+    "range",
+    "speed",
+    "fire rate",
+    "cooldown",
+    "respawn",
+)
+
 
 # ============================================================
 # GENERAL HELPERS
@@ -352,6 +413,14 @@ def player_relevance_score(commit):
 
     score = 0
 
+    strategic_change = contains_any(
+        text,
+        STRATEGIC_GAMEPLAY_TERMS,
+    )
+
+    if strategic_change:
+        score += 7
+
     if contains_any(text, BUG_TERMS):
         score += 6
 
@@ -449,9 +518,14 @@ def player_relevance_score(commit):
     ):
         score -= 5
 
-    if re.search(
-        r"\b(test|tests|testing)\b",
-        text,
+    # Test-related wording should only be penalized when the commit
+    # does not also describe a meaningful player-facing gameplay change.
+    if (
+        re.search(
+            r"\b(test|tests|testing)\b",
+            text,
+        )
+        and not strategic_change
     ):
         score -= 4
 
@@ -593,6 +667,12 @@ PRIORITIZE:
 - Buffs, nerfs and balance changes, including work-in-progress changes
 - Changes to combat interactions between existing systems, weapons,
   defenses, vehicles, drones, explosives, NPCs or deployables
+- Buffs, nerfs and balance changes
+- Strategic gameplay-rule changes, including base upkeep, decay,
+  TC/code-lock authorization, group mechanics, raiding, defenses,
+  counters, inventory limits and resource/economic changes
+- Changes to how existing gameplay systems interact, even if no
+  new item is added and no bug is being fixed
 
 Preserve concrete bug symptoms.
 
@@ -709,6 +789,37 @@ Use exactly this structure:
   ]
 }}
 
+STRATEGIC GAMEPLAY CHANGES:
+
+Treat changes to existing gameplay rules as HIGH PRIORITY.
+
+Ask:
+
+"Could knowing this change alter how a Rust player builds, raids,
+defends, fights, carries equipment, manages a base, organizes a group,
+farms resources, or chooses a strategy?"
+
+If YES, strongly prefer including it.
+
+Do not require the commit to use words like "buff", "nerf", "fix",
+or "balance".
+
+Do not exclude important gameplay changes merely because the same
+commit also contains tests, technical notes, configuration details,
+or implementation information.
+
+Work-in-progress changes may still be important to players.
+Include important WIP changes, but clearly describe them as
+in development rather than implying they are live.
+
+Examples that MUST be considered important:
+
+- Reducing grenade stack sizes from 5 to 3.
+- SAM sites gaining stronger anti-drone targeting and the ability
+  to destroy drone-dropped explosives.
+- Group upkeep counting players authorized on code locks controlled
+  by the TC even when they are not directly authorized on the TC.
+  
 OUTPUT RULES:
 - Aim for roughly 8 to 15 worthwhile bullets total.
 - Fewer is fine when little meaningful happened.
@@ -771,6 +882,12 @@ Rules:
 - Never invent commit IDs.
 - Only use Commit IDs supplied above.
 - Combine closely related commits.
+- HIGH PRIORITY: buffs, nerfs, balance changes and strategic gameplay-rule changes.
+- Include changes to upkeep, decay, TC/code-lock authorization, group mechanics,
+  combat counters, defenses, inventory limits, resource costs and other rules
+  that could change player strategy.
+- Do not dismiss an important gameplay change because the commit also mentions tests.
+- Include important WIP gameplay changes, but clearly identify them as work in progress.
 - Do not mention developer names.
 - Do not mention commit IDs inside bullet text.
 - Do not mention branch names inside bullet text.
@@ -814,6 +931,8 @@ Rules:
 - Never invent commit IDs.
 - When merging bullets, combine their commit_ids.
 - Merge duplicate or overlapping bullets.
+- Preserve strategic gameplay changes, buffs, nerfs, economy/upkeep changes
+  and new gameplay interactions; do not discard them in favor of minor bug fixes.
 - Preserve concrete player-facing bug symptoms.
 - Prefer gameplay, bugs, NPCs, animals, items, weapons,
   vehicles, monuments and meaningful UI fixes.
