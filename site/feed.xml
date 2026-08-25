@@ -6,51 +6,47 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 24 Aug 2026 17:16:46 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 24 Aug 2026 20:28:26 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 24</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;55 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;59 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616179,616302"&gt;Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.&lt;/li&gt;
-&lt;li data-rust-commits="616208,616294,616196,616262,616190,616177"&gt;Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.&lt;/li&gt;
+&lt;li data-rust-commits="616322,616176"&gt;Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="616285"&gt;New ammo model indicators show remaining rounds and Russian roulette mode assets are now available.&lt;/li&gt;
+&lt;li data-rust-commits="616164"&gt;Tax collector upkeep now scales dynamically with the number of online players, using tiered percentage increases.&lt;/li&gt;
+&lt;li data-rust-commits="616252,616228,616179"&gt;Various balance tweaks: pies have doubled bonus durations and hunters pie bleed reduction increased to 90%; medkits reduce radiation by 20; Boat Planner tech cost lowered to 30; longsword swing radius increased to 0.4 and swing delay reduced to 1.5; swamp trees yield up to 1000 wood.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616272"&gt;Fixed frog animations not playing, corrected sideways skating and movement speed issues.&lt;/li&gt;
-&lt;li data-rust-commits="616165"&gt;Added a water‑drinking need and behavior to livestock, allowing them to drink from nearby containers or natural water sources.&lt;/li&gt;
-&lt;li data-rust-commits="616288"&gt;Frog NPC gains a new “interested” state: it searches for shallow water and starts croaking.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="616225"&gt;Introduced a restoreHierarchy field for poolable objects applied to vehicles, fixing UI pooling issues.&lt;/li&gt;
-&lt;li data-rust-commits="616176"&gt;Adjusted suspension, steering, and grip; removed non‑functional burnout/launch; engine revs now use front wheel speed; rear wheels visually lock during handbrake.&lt;/li&gt;
-&lt;li data-rust-commits="616169"&gt;Aim sway now scales with movement speed when aiming held weapons from the passenger seat of the attack helicopter.&lt;/li&gt;
+&lt;li data-rust-commits="616272,616288"&gt;Frog behavior improved: animations now play correctly, they seek shallow water, start croaking, and have corrected movement speed.&lt;/li&gt;
+&lt;li data-rust-commits="616165"&gt;Livestock can now drink water from nearby containers, rivers, or lakes, satisfying a new water need.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616231,616282"&gt;Building volumes are now correctly ignored during navmesh baking, and navmesh generation no longer creates unintended areas or fails, improving NPC path‑following reliability.&lt;/li&gt;
-&lt;li data-rust-commits="616235"&gt;Fixed a potential null‑reference crash for mannequins.&lt;/li&gt;
-&lt;li data-rust-commits="616274"&gt;Optimized NPC path‑following logic, roughly doubling performance via selective string‑pulling and reduced interop calls.&lt;/li&gt;
+&lt;li data-rust-commits="616231,616282"&gt;Navmesh issues fixed: building volumes no longer corrupt the navmesh and generation now succeeds in previously invalid areas, improving NPC pathfinding.&lt;/li&gt;
+&lt;li data-rust-commits="616274"&gt;Path‑following performance doubled with new optimizations and benchmarking instrumentation.&lt;/li&gt;
+&lt;li data-rust-commits="616235"&gt;Fixed a rare crash caused by a null reference in mannequin entities.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Drones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616185"&gt;SAM sites now have proximity fuses against drones, 2.25× lead speed, and can destroy drone‑dropped explosives mid‑air.&lt;/li&gt;
-&lt;li data-rust-commits="616252"&gt;Unused pies receive doubled bonus durations, and hunters pie bleed reduction increased to 90%.&lt;/li&gt;
-&lt;li data-rust-commits="616228"&gt;Medkits reduce radiation by 20; boat planner tech tree cost lowered to 30; longsword swing radius and delay adjusted for faster, more accurate attacks.&lt;/li&gt;
-&lt;li data-rust-commits="616179,616302"&gt;Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.&lt;/li&gt;
-&lt;li data-rust-commits="616236,616285,616164,616178"&gt;Added a configurable convar for drone detonation distance; ammo models now display remaining rounds for applicable revolvers; tax collector upkeep cost scales with authenticated player count via tiered percentages; random skin crafting can now yield the default skin.&lt;/li&gt;
+&lt;li data-rust-commits="616322,616176"&gt;Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.&lt;/li&gt;
+&lt;li data-rust-commits="616225"&gt;Poolable vehicles now include a restoreHierarchy field to prevent UI pooling side‑effects.&lt;/li&gt;
+&lt;li data-rust-commits="616236,616169"&gt;Drone detonation distance is now configurable, and aim sway scales with movement speed when using passenger‑seat weapons in the attack helicopter.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Store&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="616208,616294,616196,616262,616190,616177"&gt;Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.&lt;/li&gt;
+&lt;li data-rust-commits="616208,616273,616240,616262,616294,616196"&gt;UI stability and store usability improved: fallback images for missing props, DynamicResourceRef support for easier resource assignment, hotbar swapping works with overstacks, FadeCanvasGroup null‑reference guarded, and Arrow Revamp icons display correctly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-24</guid>
-      <pubDate>Mon, 24 Aug 2026 17:16:46 -0400</pubDate>
+      <pubDate>Mon, 24 Aug 2026 20:28:26 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 23</title>

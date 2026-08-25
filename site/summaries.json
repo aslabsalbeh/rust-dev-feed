@@ -1,54 +1,51 @@
 {
   "2026-08-24": {
-    "commit_count": 55,
-    "relevant_commit_count": 37,
-    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302",
-    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302",
+    "commit_count": 59,
+    "relevant_commit_count": 40,
+    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322",
+    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322",
     "prompt_version": "structured-read-state-v4-balance",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed frog animations not playing, corrected sideways skating and movement speed issues.",
+            "text": "New ammo model indicators show remaining rounds and Russian roulette mode assets are now available.",
             "commit_ids": [
-              616272
+              616285
             ]
           },
           {
-            "text": "Added a water‑drinking need and behavior to livestock, allowing them to drink from nearby containers or natural water sources.",
+            "text": "Tax collector upkeep now scales dynamically with the number of online players, using tiered percentage increases.",
             "commit_ids": [
-              616165
+              616164
             ]
           },
           {
-            "text": "Frog NPC gains a new “interested” state: it searches for shallow water and starts croaking.",
+            "text": "Various balance tweaks: pies have doubled bonus durations and hunters pie bleed reduction increased to 90%; medkits reduce radiation by 20; Boat Planner tech cost lowered to 30; longsword swing radius increased to 0.4 and swing delay reduced to 1.5; swamp trees yield up to 1000 wood.",
             "commit_ids": [
-              616288
+              616252,
+              616228,
+              616179
             ]
           }
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Animals",
         "items": [
           {
-            "text": "Introduced a restoreHierarchy field for poolable objects applied to vehicles, fixing UI pooling issues.",
+            "text": "Frog behavior improved: animations now play correctly, they seek shallow water, start croaking, and have corrected movement speed.",
             "commit_ids": [
-              616225
+              616272,
+              616288
             ]
           },
           {
-            "text": "Adjusted suspension, steering, and grip; removed non‑functional burnout/launch; engine revs now use front wheel speed; rear wheels visually lock during handbrake.",
+            "text": "Livestock can now drink water from nearby containers, rivers, or lakes, satisfying a new water need.",
             "commit_ids": [
-              616176
-            ]
-          },
-          {
-            "text": "Aim sway now scales with movement speed when aiming held weapons from the passenger seat of the attack helicopter.",
-            "commit_ids": [
-              616169
+              616165
             ]
           }
         ]
@@ -57,107 +54,81 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Building volumes are now correctly ignored during navmesh baking, and navmesh generation no longer creates unintended areas or fails, improving NPC path‑following reliability.",
+            "text": "Navmesh issues fixed: building volumes no longer corrupt the navmesh and generation now succeeds in previously invalid areas, improving NPC pathfinding.",
             "commit_ids": [
               616231,
               616282
             ]
           },
           {
-            "text": "Fixed a potential null‑reference crash for mannequins.",
-            "commit_ids": [
-              616235
-            ]
-          },
-          {
-            "text": "Optimized NPC path‑following logic, roughly doubling performance via selective string‑pulling and reduced interop calls.",
+            "text": "Path‑following performance doubled with new optimizations and benchmarking instrumentation.",
             "commit_ids": [
               616274
             ]
+          },
+          {
+            "text": "Fixed a rare crash caused by a null reference in mannequin entities.",
+            "commit_ids": [
+              616235
+            ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Vehicles & Drones",
         "items": [
           {
-            "text": "SAM sites now have proximity fuses against drones, 2.25× lead speed, and can destroy drone‑dropped explosives mid‑air.",
+            "text": "Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.",
             "commit_ids": [
-              616185
+              616322,
+              616176
             ]
           },
           {
-            "text": "Unused pies receive doubled bonus durations, and hunters pie bleed reduction increased to 90%.",
+            "text": "Poolable vehicles now include a restoreHierarchy field to prevent UI pooling side‑effects.",
             "commit_ids": [
-              616252
+              616225
             ]
           },
           {
-            "text": "Medkits reduce radiation by 20; boat planner tech tree cost lowered to 30; longsword swing radius and delay adjusted for faster, more accurate attacks.",
-            "commit_ids": [
-              616228
-            ]
-          },
-          {
-            "text": "Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.",
-            "commit_ids": [
-              616179,
-              616302
-            ]
-          },
-          {
-            "text": "Added a configurable convar for drone detonation distance; ammo models now display remaining rounds for applicable revolvers; tax collector upkeep cost scales with authenticated player count via tiered percentages; random skin crafting can now yield the default skin.",
+            "text": "Drone detonation distance is now configurable, and aim sway scales with movement speed when using passenger‑seat weapons in the attack helicopter.",
             "commit_ids": [
               616236,
-              616285,
-              616164,
-              616178
+              616169
             ]
           }
         ]
       },
       {
-        "title": "UI",
+        "title": "UI & Store",
         "items": [
           {
-            "text": "Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.",
+            "text": "UI stability and store usability improved: fallback images for missing props, DynamicResourceRef support for easier resource assignment, hotbar swapping works with overstacks, FadeCanvasGroup null‑reference guarded, and Arrow Revamp icons display correctly.",
             "commit_ids": [
               616208,
-              616294,
-              616196,
+              616273,
+              616240,
               616262,
-              616190,
-              616177
+              616294,
+              616196
             ]
           }
         ]
       }
     ],
-    "summary": "### Animals\n- Fixed frog animations not playing, corrected sideways skating and movement speed issues.\n- Added a water‑drinking need and behavior to livestock, allowing them to drink from nearby containers or natural water sources.\n- Frog NPC gains a new “interested” state: it searches for shallow water and starts croaking.\n\n### Vehicles\n- Introduced a restoreHierarchy field for poolable objects applied to vehicles, fixing UI pooling issues.\n- Adjusted suspension, steering, and grip; removed non‑functional burnout/launch; engine revs now use front wheel speed; rear wheels visually lock during handbrake.\n- Aim sway now scales with movement speed when aiming held weapons from the passenger seat of the attack helicopter.\n\n### NPC & AI\n- Building volumes are now correctly ignored during navmesh baking, and navmesh generation no longer creates unintended areas or fails, improving NPC path‑following reliability.\n- Fixed a potential null‑reference crash for mannequins.\n- Optimized NPC path‑following logic, roughly doubling performance via selective string‑pulling and reduced interop calls.\n\n### Gameplay & Balance\n- SAM sites now have proximity fuses against drones, 2.25× lead speed, and can destroy drone‑dropped explosives mid‑air.\n- Unused pies receive doubled bonus durations, and hunters pie bleed reduction increased to 90%.\n- Medkits reduce radiation by 20; boat planner tech tree cost lowered to 30; longsword swing radius and delay adjusted for faster, more accurate attacks.\n- Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.\n- Added a configurable convar for drone detonation distance; ammo models now display remaining rounds for applicable revolvers; tax collector upkeep cost scales with authenticated player count via tiered percentages; random skin crafting can now yield the default skin.\n\n### UI\n- Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.",
+    "summary": "### Gameplay & Balance\n- New ammo model indicators show remaining rounds and Russian roulette mode assets are now available.\n- Tax collector upkeep now scales dynamically with the number of online players, using tiered percentage increases.\n- Various balance tweaks: pies have doubled bonus durations and hunters pie bleed reduction increased to 90%; medkits reduce radiation by 20; Boat Planner tech cost lowered to 30; longsword swing radius increased to 0.4 and swing delay reduced to 1.5; swamp trees yield up to 1000 wood.\n\n### Animals\n- Frog behavior improved: animations now play correctly, they seek shallow water, start croaking, and have corrected movement speed.\n- Livestock can now drink water from nearby containers, rivers, or lakes, satisfying a new water need.\n\n### NPC & AI\n- Navmesh issues fixed: building volumes no longer corrupt the navmesh and generation now succeeds in previously invalid areas, improving NPC pathfinding.\n- Path‑following performance doubled with new optimizations and benchmarking instrumentation.\n- Fixed a rare crash caused by a null reference in mannequin entities.\n\n### Vehicles & Drones\n- Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.\n- Poolable vehicles now include a restoreHierarchy field to prevent UI pooling side‑effects.\n- Drone detonation distance is now configurable, and aim sway scales with movement speed when using passenger‑seat weapons in the attack helicopter.\n\n### UI & Store\n- UI stability and store usability improved: fallback images for missing props, DynamicResourceRef support for easier resource assignment, hotbar swapping works with overstacks, FadeCanvasGroup null‑reference guarded, and Arrow Revamp icons display correctly.",
     "new_items": [
       {
-        "text": "Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.",
+        "text": "Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake.",
         "commit_ids": [
-          616179,
-          616302
+          616322,
+          616176
         ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved.",
-        "commit_ids": [
-          616208,
-          616294,
-          616196,
-          616262,
-          616190,
-          616177
-        ],
-        "section": "UI"
+        "section": "Vehicles & Drones"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Swamp tree wood harvest increased to 1000 and oil rig crates now persist across server restarts with refined puzzle resets and improved save/load logic.\n- Various UI fixes: store prop drawer fallback image, FadeCanvasGroup null‑reference protection, corrected arrow revamp icons, hotbar swapping with overstacks moved server‑side, repair bench functionality restored, and cached skin ID issue resolved."
+    "new_relevant_count": 2,
+    "new_summary": "- Vehicle handling overhauled: handbrake toggle‑duck no longer sticks, raw tyre force applied, suspension, steering and grip tuned, engine revs use front wheel speed, and rear wheels lock visually during handbrake."
   },
   "2026-08-23": {
     "commit_count": 20,
