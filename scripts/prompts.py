@@ -210,3 +210,45 @@ Return ONLY valid JSON:
   ]
 }}
 """
+
+def build_rescue_prompt(day, commits):
+    source_text = commits_to_prompt_text(commits)
+    return f"""
+A previous Rust player digest omitted the HIGH-IMPACT commits below.
+Create concise rescue bullets for ONLY the genuinely player-impacting changes
+in these commits so they can be appended to the existing daily digest for {day}.
+
+SOURCE COMMITS:
+{source_text}
+
+These commits were preselected because their relevance score is high, but still
+apply judgment. Prioritize gameplay mechanics, buffs/nerfs, strategic interactions,
+upkeep/economy, combat/defense changes, stack/inventory/configuration changes,
+and concrete player-facing bug fixes.
+
+IMPORTANT:
+- If a change is work in progress, explicitly say that it is WIP/in development.
+- Do not speculate or imply a WIP change is live.
+- Exclude purely technical/rendering/refactor/test/logging details with no meaningful
+  player-facing effect.
+- Every bullet MUST include exact source Commit IDs from the commits above.
+- Never invent Commit IDs.
+- Do not mention commit IDs or branch names inside bullet text.
+- Keep the result concise.
+
+Return ONLY valid JSON:
+{{
+  "sections": [
+    {{
+      "title": "Gameplay & Balance",
+      "items": [
+        {{
+          "text": "Concise player-facing description.",
+          "commit_ids": [615201]
+        }}
+      ]
+    }}
+  ]
+}}
+"""
+
