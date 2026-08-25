@@ -366,8 +366,8 @@ def find_new_items(
 
 
 
-def represented_section_commit_ids(sections):
-    """Return all source commit IDs represented by structured summary sections."""
+def represented_commit_ids_from_sections(sections):
+    """Return source commit IDs represented by structured summary sections."""
     ids = set()
 
     for section in sections:
@@ -377,9 +377,10 @@ def represented_section_commit_ids(sections):
 
     return ids
 
-def represented_commit_ids(
+def represented_commit_ids_from_items(
     items,
 ):
+    """Return source commit IDs represented by a flat list of summary items."""
     represented = set()
 
     for item in items:
@@ -395,11 +396,74 @@ def represented_commit_ids(
 
 
 
+def normalize_section_title(title):
+    """Normalize a section title for case-insensitive, whitespace-insensitive matching."""
+    return " ".join(
+        str(title).strip().casefold().split()
+    )
+
+
+def merge_sections_by_title(
+    sections,
+    extra_sections,
+):
+    """
+    Merge extra structured sections into existing sections by normalized title.
+
+    The title spelling/casing from the first occurrence is preserved.
+    Items are copied into a new result so callers' input lists are not mutated.
+    """
+    merged = []
+    by_title = {}
+
+    for section in list(sections) + list(extra_sections):
+        if not isinstance(section, dict):
+            continue
+
+        title = str(
+            section.get("title", "")
+        ).strip()
+
+        if not title:
+            continue
+
+        items = section.get(
+            "items",
+            [],
+        )
+
+        if not isinstance(items, list):
+            continue
+
+        key = normalize_section_title(
+            title
+        )
+
+        if key in by_title:
+            by_title[key]["items"].extend(
+                list(items)
+            )
+            continue
+
+        merged_section = {
+            "title": title,
+            "items": list(items),
+        }
+
+        merged.append(
+            merged_section
+        )
+
+        by_title[key] = merged_section
+
+    return merged
+
+
 HIGH_IMPACT_THRESHOLD = 10
 
 
 def high_impact_missing_commits(commits, sections):
-    represented_ids = represented_section_commit_ids(sections)
+    represented_ids = represented_commit_ids_from_sections(sections)
 
     return [
         commit
@@ -461,7 +525,7 @@ def rescue_missing_high_impact_commits(
         )
         return sections
 
-    rescued_ids = represented_section_commit_ids(
+    rescued_ids = represented_commit_ids_from_sections(
         rescue_sections
     )
 
@@ -477,7 +541,10 @@ def rescue_missing_high_impact_commits(
         f"{len(rescued_ids)} source commit(s)."
     )
 
-    return sections + rescue_sections
+    return merge_sections_by_title(
+        sections,
+        rescue_sections,
+    )
 
 def main():
     groq_key = os.environ.get(
@@ -835,7 +902,7 @@ def main():
                 )
 
                 represented_new_ids = (
-                    represented_commit_ids(
+                    represented_commit_ids_from_items(
                         new_items
                     )
                 )
