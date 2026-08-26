@@ -1,5 +1,61 @@
 [
   {
+    "id": 617519,
+    "branch": "main/tc_auth_group_tests",
+    "changeset": "162063",
+    "created": "2026-08-25T23:57:07",
+    "message": "Added info about the current group tax applied when hovering over the upkeep cost in the TC loot panel",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 617515,
+    "branch": "main/marketplace_power",
+    "changeset": "162059",
+    "created": "2026-08-25T23:22:40",
+    "message": "Hooked up a power icon on the marketplace terminal when the marketplace isn't powered",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 617513,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162057",
+    "created": "2026-08-25T22:36:39",
+    "message": "Bugfix: ensure coverImage is enabled when initialized after initEmpty\r\nThink it's time to move to standalone testing\r\nTests: navigated shop UI - all tiles had images",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617512,
+    "branch": "main/fruit_trees",
+    "changeset": "162056",
+    "created": "2026-08-25T22:13:39",
+    "message": "Added 3 apples to oak_d for now for testing\r\nAdded apple to the manifest\r\nRe-implemented all the previous logic from the hackweek branch",
+    "author": "Lukester"
+  },
+  {
+    "id": 617511,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162055",
+    "created": "2026-08-25T22:13:13",
+    "message": "Bugfix: restore DLC prefab setup which caused NREs on dlc tile click\r\n- ran dyn ref assign\r\nTests: clicked through all dlc items - all open",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617509,
+    "branch": "main/improved_event_saveloading",
+    "changeset": "162053",
+    "created": "2026-08-25T21:27:49",
+    "message": "Patrol heli, bradley, satellite crash sites get saved correctly instead of all crates disappearing when the server restarts\r\n- Enable saving on all of the crates and server gibs, the OnFire state persists\r\n- Converted satellite crates to the same LockedByEntCrate setup that heli and bradley use, got rid of TimedUnlootableCrate\r\n- Set all of the crate despawn time to 30 minutes from 60 (doesn't make sense for them to stick around longer than the gibs)\r\n- Fix heli crates landing on unloadable train wagons again (needed an extra fix now that they're saved)",
+    "author": "cipeaX"
+  },
+  {
+    "id": 617508,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162052",
+    "created": "2026-08-25T21:26:11",
+    "message": "Bugfix: avoid invalidating sprites when shop opens (caused by closing page on warmup)\r\n- Moved tab opening to OnOpened, after dynamic bundle resources were loaded\r\n- also implement better handling of overwrites\r\nToo much time chasing editor boot optim skipping warmup causing weirdness\r\nTests: could scroll in general shop page, most of the tiles were clickable, only special dlc items were throwing. Still missing icons",
+    "author": "Daniel P"
+  },
+  {
     "id": 617499,
     "branch": "main/ui_store_slim_ram",
     "changeset": "162047",
@@ -1286,21 +1342,5 @@
     "created": "2026-08-23T05:50:50",
     "message": "Tweaked steering values to make steering feel more responsive (hopefully better with some ping as well)\r\nAdded first itteration of a drift function, currently uses ctrl to lock the rear wheels\r\nhttps://files.facepunch.com/el-hog/2026/August/23_13-18-PettyDingo.mp4",
     "author": "elhog"
-  },
-  {
-    "id": 616104,
-    "branch": "main/reduce_nade_stack_size",
-    "changeset": "161770",
-    "created": "2026-08-23T00:24:17",
-    "message": "Reduced stack size for:\r\n- F1s 5 > 3\r\n- Bee nades 5 > 3\r\n- Flashbangs 5 >3 \r\n- Molotovs 5 > 3",
-    "author": "elhog"
-  },
-  {
-    "id": 616103,
-    "branch": "main/sleepingbag_collison_test",
-    "changeset": "161769",
-    "created": "2026-08-22T21:52:39",
-    "message": "speculative - added a collsiion mesh to sleeping bag to prevent dropped items from passing through it.",
-    "author": "Pilgrim"
   }
 ]

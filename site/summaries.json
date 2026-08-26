@@ -1,149 +1,160 @@
 {
   "2026-08-25": {
-    "commit_count": 73,
-    "relevant_commit_count": 44,
-    "relevant_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481,617485,617487,617489,617490,617491,617496,617499",
-    "new_baseline_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481,617485,617487,617489,617490,617491,617496,617499",
+    "commit_count": 80,
+    "relevant_commit_count": 49,
+    "relevant_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481,617485,617487,617489,617490,617491,617496,617499,617508,617509,617511,617513,617519",
+    "new_baseline_signature": "616348,616349,616353,616356,616357,616360,616373,616376,616383,616384,616389,616394,616395,617396,617397,617399,617400,617401,617405,617414,617415,617417,617419,617437,617438,617442,617443,617444,617454,617458,617460,617462,617463,617467,617472,617474,617481,617485,617487,617489,617490,617491,617496,617499,617508,617509,617511,617513,617519",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapon Balance",
+        "title": "Combat & Damage",
         "items": [
           {
-            "text": "Radwater now deals significant damage to full kits with a new scaling system that reduces rad amounts via scaled protection.",
+            "text": "Radwater now scales damage based on protection instead of flat values, increasing its threat to fully equipped kits.",
             "commit_ids": [
               617458
             ]
           },
           {
-            "text": "Semi‑automatic pistol damage now falls off more sharply at range and its craft cost increased.",
+            "text": "Weapon balance updates: semi‑automatic pistol damage falloff increased and craft cost raised; SMG body spawn chance increased while Rifle body spawn chance decreased.",
             "commit_ids": [
-              616356
-            ]
-          },
-          {
-            "text": "HAB armour colliders are correctly set up on client and server, with a proper collision mesh for the frame, ensuring reliable removal.",
-            "commit_ids": [
-              617442
-            ]
-          },
-          {
-            "text": "Weapon spawn distribution adjusted: SMG bodies appear more often while Rifle bodies are less common, improving mid‑game load‑out variety.",
-            "commit_ids": [
+              616356,
               616389
             ]
           }
         ]
       },
       {
-        "title": "Comfort",
+        "title": "Comfort & UI",
         "items": [
           {
-            "text": "Bear rugs and regular rugs now provide full (100%) comfort within 2 m and 1 m respectively, with gradual falloff, fixing the previous low solo comfort.",
+            "text": "Bear rugs provide full comfort within 2 m (falloff to 3 m) and regular rugs within 1 m (falloff to 2 m), fixing previous low solo comfort values.",
             "commit_ids": [
               617419
             ]
+          },
+          {
+            "text": "Various UI improvements: session modal description scroll works again with overflow clamped, and shop UI sprites remain valid and fully clickable for all tiles.",
+            "commit_ids": [
+              617443,
+              616384,
+              617508
+            ]
           }
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Tools & Vehicles",
         "items": [
           {
-            "text": "Modular car wheels corrected: left wheels use the proper model, eliminating mirrored wheels and flipped normals.",
+            "text": "Flashlight toggles on/off with right‑click, replacing the removed press‑F toggle.",
             "commit_ids": [
-              617487
+              617414
             ]
           },
           {
-            "text": "Vehicle handling refined – reduced body roll, prevented spin‑outs, and smoothed steering for stable high‑speed drifting.",
+            "text": "Modular car fixes: wheel mirroring corrected and handling refined (reduced body roll, prevented spin‑outs, smoother steering for high‑speed drifting).",
             "commit_ids": [
+              617487,
               616395
             ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Livestock",
-        "items": [
-          {
-            "text": "Rabbit assets (animation, model, prefabs) added and naming standardized.",
-            "commit_ids": [
-              616394,
-              617462
-            ]
           },
           {
-            "text": "SellAnimals and AnimalSalePreview panels introduced, letting players view nearby sellable animals and see expected rewards.",
+            "text": "HAB armor collider for attack helicopters fixed, ensuring proper removal and collision handling.",
             "commit_ids": [
-              616348,
-              616349
-            ]
-          },
-          {
-            "text": "Basic squirrel critter added for wildlife interactions.",
-            "commit_ids": [
-              617485
+              617442,
+              617463
             ]
           }
         ]
       },
       {
-        "title": "Events & Performance",
+        "title": "AI & Navigation",
         "items": [
           {
-            "text": "SteamFriendsList.Refresh optimized to remove large lag spikes when authorizing friends to turrets and other objects.",
+            "text": "Low‑resolution navmesh on ghost ships repaired, improving AI pathing.",
             "commit_ids": [
-              616383
+              617472
             ]
           },
           {
-            "text": "Hackable crates now have correct flags and visuals; puzzle‑reset alerts are skipped after forced resets.",
+            "text": "Old AI units no longer flee when the player jumps.",
             "commit_ids": [
-              617396
+              617437
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Events & Persistence",
+        "items": [
           {
-            "text": "Cargo ship event now persists crate locations and loot round progress across server restarts, preventing despawn and overlapping spawns.",
+            "text": "Crash‑site crates (helicopter, Bradley, satellite) now persist across server restarts with a 30 min despawn timer; heli crates no longer land on unloadable train wagons. Hackable crate flags and visuals fixed, and cargo ship event crates now save/load correctly, preventing duplicate spawns.",
             "commit_ids": [
+              617509,
+              617396,
               617438
             ]
           }
         ]
       },
       {
-        "title": "UI Improvements",
+        "title": "Economy & Trading",
         "items": [
           {
-            "text": "Flashlight toggles with right‑click like a torch, press F removed; session modal scrolling fixed; store featured tiles now clickable.",
+            "text": "Group tax is displayed when hovering over upkeep cost in the TC loot panel; animal trading UI now includes SellAnimals and AnimalSalePreview panels showing nearby sellable animals and expected rewards.",
             "commit_ids": [
-              617414,
-              617467,
-              617443,
-              616384,
-              617499
+              617519,
+              616348,
+              616349
+            ]
+          },
+          {
+            "text": "Store system enhancements: dynamic shop assets restored with UI caching, dynamic references for items, warm‑up tile creation, DynamicPagePrefab added to store takeover, and HealthThresholdToggle introduced for health‑based behavior configuration.",
+            "commit_ids": [
+              617490,
+              617401,
+              617405,
+              617454,
+              617481
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Weapon Balance\n- Radwater now deals significant damage to full kits with a new scaling system that reduces rad amounts via scaled protection.\n- Semi‑automatic pistol damage now falls off more sharply at range and its craft cost increased.\n- HAB armour colliders are correctly set up on client and server, with a proper collision mesh for the frame, ensuring reliable removal.\n- Weapon spawn distribution adjusted: SMG bodies appear more often while Rifle bodies are less common, improving mid‑game load‑out variety.\n\n### Comfort\n- Bear rugs and regular rugs now provide full (100%) comfort within 2 m and 1 m respectively, with gradual falloff, fixing the previous low solo comfort.\n\n### Vehicles\n- Modular car wheels corrected: left wheels use the proper model, eliminating mirrored wheels and flipped normals.\n- Vehicle handling refined – reduced body roll, prevented spin‑outs, and smoothed steering for stable high‑speed drifting.\n\n### Animals & Livestock\n- Rabbit assets (animation, model, prefabs) added and naming standardized.\n- SellAnimals and AnimalSalePreview panels introduced, letting players view nearby sellable animals and see expected rewards.\n- Basic squirrel critter added for wildlife interactions.\n\n### Events & Performance\n- SteamFriendsList.Refresh optimized to remove large lag spikes when authorizing friends to turrets and other objects.\n- Hackable crates now have correct flags and visuals; puzzle‑reset alerts are skipped after forced resets.\n- Cargo ship event now persists crate locations and loot round progress across server restarts, preventing despawn and overlapping spawns.\n\n### UI Improvements\n- Flashlight toggles with right‑click like a torch, press F removed; session modal scrolling fixed; store featured tiles now clickable.",
+    "summary": "### Combat & Damage\n- Radwater now scales damage based on protection instead of flat values, increasing its threat to fully equipped kits.\n- Weapon balance updates: semi‑automatic pistol damage falloff increased and craft cost raised; SMG body spawn chance increased while Rifle body spawn chance decreased.\n\n### Comfort & UI\n- Bear rugs provide full comfort within 2 m (falloff to 3 m) and regular rugs within 1 m (falloff to 2 m), fixing previous low solo comfort values.\n- Various UI improvements: session modal description scroll works again with overflow clamped, and shop UI sprites remain valid and fully clickable for all tiles.\n\n### Tools & Vehicles\n- Flashlight toggles on/off with right‑click, replacing the removed press‑F toggle.\n- Modular car fixes: wheel mirroring corrected and handling refined (reduced body roll, prevented spin‑outs, smoother steering for high‑speed drifting).\n- HAB armor collider for attack helicopters fixed, ensuring proper removal and collision handling.\n\n### AI & Navigation\n- Low‑resolution navmesh on ghost ships repaired, improving AI pathing.\n- Old AI units no longer flee when the player jumps.\n\n### Events & Persistence\n- Crash‑site crates (helicopter, Bradley, satellite) now persist across server restarts with a 30 min despawn timer; heli crates no longer land on unloadable train wagons. Hackable crate flags and visuals fixed, and cargo ship event crates now save/load correctly, preventing duplicate spawns.\n\n### Economy & Trading\n- Group tax is displayed when hovering over upkeep cost in the TC loot panel; animal trading UI now includes SellAnimals and AnimalSalePreview panels showing nearby sellable animals and expected rewards.\n- Store system enhancements: dynamic shop assets restored with UI caching, dynamic references for items, warm‑up tile creation, DynamicPagePrefab added to store takeover, and HealthThresholdToggle introduced for health‑based behavior configuration.",
     "new_items": [
       {
-        "text": "Flashlight toggles with right‑click like a torch, press F removed; session modal scrolling fixed; store featured tiles now clickable.",
+        "text": "Various UI improvements: session modal description scroll works again with overflow clamped, and shop UI sprites remain valid and fully clickable for all tiles.",
         "commit_ids": [
-          617414,
-          617467,
           617443,
           616384,
-          617499
+          617508
         ],
-        "section": "UI Improvements"
+        "section": "Comfort & UI"
+      },
+      {
+        "text": "Crash‑site crates (helicopter, Bradley, satellite) now persist across server restarts with a 30 min despawn timer; heli crates no longer land on unloadable train wagons. Hackable crate flags and visuals fixed, and cargo ship event crates now save/load correctly, preventing duplicate spawns.",
+        "commit_ids": [
+          617509,
+          617396,
+          617438
+        ],
+        "section": "Events & Persistence"
+      },
+      {
+        "text": "Group tax is displayed when hovering over upkeep cost in the TC loot panel; animal trading UI now includes SellAnimals and AnimalSalePreview panels showing nearby sellable animals and expected rewards.",
+        "commit_ids": [
+          617519,
+          616348,
+          616349
+        ],
+        "section": "Economy & Trading"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Flashlight toggles with right‑click like a torch, press F removed; session modal scrolling fixed; store featured tiles now clickable."
+    "new_relevant_count": 9,
+    "new_summary": "- Various UI improvements: session modal description scroll works again with overflow clamped, and shop UI sprites remain valid and fully clickable for all tiles.\n- Crash‑site crates (helicopter, Bradley, satellite) now persist across server restarts with a 30 min despawn timer; heli crates no longer land on unloadable train wagons. Hackable crate flags and visuals fixed, and cargo ship event crates now save/load correctly, preventing duplicate spawns.\n- Group tax is displayed when hovering over upkeep cost in the TC loot panel; animal trading UI now includes SellAnimals and AnimalSalePreview panels showing nearby sellable animals and expected rewards."
   },
   "2026-08-24": {
     "commit_count": 68,
