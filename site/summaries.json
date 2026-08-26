@@ -1,52 +1,29 @@
 {
   "2026-08-26": {
-    "commit_count": 39,
-    "relevant_commit_count": 23,
-    "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645",
-    "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645",
+    "commit_count": 57,
+    "relevant_commit_count": 35,
+    "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683",
+    "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay & Balance",
+        "title": "AI & Navigation",
         "items": [
           {
-            "text": "Monument blocker health reduced; can now be destroyed with 1 C4 or 5 satchels.",
+            "text": "Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.",
             "commit_ids": [
-              617645
+              617668
             ]
           },
           {
-            "text": "Heavy pot helmet crafting cost increased to 2 sheet metal and 8 high-quality metal.",
+            "text": "Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.",
             "commit_ids": [
-              617627
+              617650
             ]
           },
           {
-            "text": "Medical honey bandage now heals 8 instant health (down from 10), heals 6 over time (up from 4), and costs 4 cloth (down from 8).",
-            "commit_ids": [
-              617571
-            ]
-          },
-          {
-            "text": "HQM ore spawns are now rarer and new rare HQM collectable spawns added.",
-            "commit_ids": [
-              617557
-            ]
-          },
-          {
-            "text": "Oil rig radiation will reliably restart after a server restart even if the force reset fails.",
-            "commit_ids": [
-              617562
-            ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "You can now select and command multiple livestock at once; they receive offset positions to avoid stacking.",
+            "text": "AI select/move commands now work on multiple animals; added ai.selectinrange and ai.deselectnpc convars, and an ordering offset to avoid stacking.",
             "commit_ids": [
               617631
             ]
@@ -54,10 +31,34 @@
         ]
       },
       {
-        "title": "Vehicles & Submarines",
+        "title": "Gameplay Balance & Crafting",
         "items": [
           {
-            "text": "Looting player bodies while mounted on a submarine is blocked; you must exit the sub to loot.",
+            "text": "Monument blocker health reduced so they can be destroyed with 1 C4 or 5 satchels.",
+            "commit_ids": [
+              617645
+            ]
+          },
+          {
+            "text": "Minor adjustments to small oil rig, large rig, and launch site blockers.",
+            "commit_ids": [
+              617649
+            ]
+          },
+          {
+            "text": "Heavy Pot Helmet crafting cost increased: sheet metal 1→2, high‑quality metal 4→8.",
+            "commit_ids": [
+              617627
+            ]
+          },
+          {
+            "text": "Medical Honey Bandage tweaked: instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth cost lowered from 8 to 4.",
+            "commit_ids": [
+              617571
+            ]
+          },
+          {
+            "text": "Players can no longer loot clipping bodies while mounted on submarines; they must exit the submarine to loot.",
             "commit_ids": [
               617587
             ]
@@ -65,38 +66,79 @@
         ]
       },
       {
-        "title": "Visual & UI Fixes",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Wood armour gloves now display correctly in the viewmodel.",
+            "text": "High‑Quality Metal ore now spawns rarer by moving it to its own population and adding rare HQM collectible spawns.",
             "commit_ids": [
-              617639
+              617557
             ]
           },
           {
-            "text": "Third‑person flashlight animation and blending improved.",
+            "text": "Replaced mesh collider on HAB armour frame with box colliders to ensure proper collision handling.",
             "commit_ids": [
-              617640
+              617621
+            ]
+          },
+          {
+            "text": "Oil rig radiation now automatically restarts after a server restart even if the force reset fails.",
+            "commit_ids": [
+              617562
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "UI & Visual Fixes",
         "items": [
           {
-            "text": "Fixed collider read/write issues, improving hit detection and physics interactions.",
+            "text": "Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.",
+            "commit_ids": [
+              617663
+            ]
+          },
+          {
+            "text": "Fixed invisible Molotov bottle shadow by adding a stencil block and exposing a shadow intensity property.",
+            "commit_ids": [
+              617552
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Shields",
+        "items": [
+          {
+            "text": "Applied shield behavior fixes to the main branch.",
+            "commit_ids": [
+              617646
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.",
+            "commit_ids": [
+              617666
+            ]
+          },
+          {
+            "text": "Sprint speed while holding items now behaves correctly after animation subsystem fixes.",
+            "commit_ids": [
+              617654
+            ]
+          },
+          {
+            "text": "Collision detection issues resolved, improving hit registration and movement interactions.",
             "commit_ids": [
               617576
             ]
-          }
-        ]
-      },
-      {
-        "title": "Upcoming Changes",
-        "items": [
+          },
           {
-            "text": "Work-in-progress changes are currently in development.",
+            "text": "Workbench upgrade rug deployment fix is currently a work in progress.",
             "commit_ids": [
               617625
             ]
@@ -104,53 +146,60 @@
         ]
       }
     ],
-    "summary": "### Gameplay & Balance\n- Monument blocker health reduced; can now be destroyed with 1 C4 or 5 satchels.\n- Heavy pot helmet crafting cost increased to 2 sheet metal and 8 high-quality metal.\n- Medical honey bandage now heals 8 instant health (down from 10), heals 6 over time (up from 4), and costs 4 cloth (down from 8).\n- HQM ore spawns are now rarer and new rare HQM collectable spawns added.\n- Oil rig radiation will reliably restart after a server restart even if the force reset fails.\n\n### NPC & AI\n- You can now select and command multiple livestock at once; they receive offset positions to avoid stacking.\n\n### Vehicles & Submarines\n- Looting player bodies while mounted on a submarine is blocked; you must exit the sub to loot.\n\n### Visual & UI Fixes\n- Wood armour gloves now display correctly in the viewmodel.\n- Third‑person flashlight animation and blending improved.\n\n### Bug Fixes\n- Fixed collider read/write issues, improving hit detection and physics interactions.\n\n### Upcoming Changes\n- Work-in-progress changes are currently in development.",
+    "summary": "### AI & Navigation\n- Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.\n- Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.\n- AI select/move commands now work on multiple animals; added ai.selectinrange and ai.deselectnpc convars, and an ordering offset to avoid stacking.\n\n### Gameplay Balance & Crafting\n- Monument blocker health reduced so they can be destroyed with 1 C4 or 5 satchels.\n- Minor adjustments to small oil rig, large rig, and launch site blockers.\n- Heavy Pot Helmet crafting cost increased: sheet metal 1→2, high‑quality metal 4→8.\n- Medical Honey Bandage tweaked: instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth cost lowered from 8 to 4.\n- Players can no longer loot clipping bodies while mounted on submarines; they must exit the submarine to loot.\n\n### World & Environment\n- High‑Quality Metal ore now spawns rarer by moving it to its own population and adding rare HQM collectible spawns.\n- Replaced mesh collider on HAB armour frame with box colliders to ensure proper collision handling.\n- Oil rig radiation now automatically restarts after a server restart even if the force reset fails.\n\n### UI & Visual Fixes\n- Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.\n- Fixed invisible Molotov bottle shadow by adding a stencil block and exposing a shadow intensity property.\n\n### Combat & Shields\n- Applied shield behavior fixes to the main branch.\n\n### Gameplay & Balance\n- Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.\n- Sprint speed while holding items now behaves correctly after animation subsystem fixes.\n- Collision detection issues resolved, improving hit registration and movement interactions.\n- Workbench upgrade rug deployment fix is currently a work in progress.",
     "new_items": [
       {
-        "text": "Monument blocker health reduced; can now be destroyed with 1 C4 or 5 satchels.",
+        "text": "Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.",
         "commit_ids": [
-          617645
+          617668
+        ],
+        "section": "AI & Navigation"
+      },
+      {
+        "text": "Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.",
+        "commit_ids": [
+          617650
+        ],
+        "section": "AI & Navigation"
+      },
+      {
+        "text": "Minor adjustments to small oil rig, large rig, and launch site blockers.",
+        "commit_ids": [
+          617649
+        ],
+        "section": "Gameplay Balance & Crafting"
+      },
+      {
+        "text": "Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.",
+        "commit_ids": [
+          617663
+        ],
+        "section": "UI & Visual Fixes"
+      },
+      {
+        "text": "Applied shield behavior fixes to the main branch.",
+        "commit_ids": [
+          617646
+        ],
+        "section": "Combat & Shields"
+      },
+      {
+        "text": "Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.",
+        "commit_ids": [
+          617666
         ],
         "section": "Gameplay & Balance"
       },
       {
-        "text": "Heavy pot helmet crafting cost increased to 2 sheet metal and 8 high-quality metal.",
+        "text": "Sprint speed while holding items now behaves correctly after animation subsystem fixes.",
         "commit_ids": [
-          617627
+          617654
         ],
         "section": "Gameplay & Balance"
-      },
-      {
-        "text": "You can now select and command multiple livestock at once; they receive offset positions to avoid stacking.",
-        "commit_ids": [
-          617631
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Wood armour gloves now display correctly in the viewmodel.",
-        "commit_ids": [
-          617639
-        ],
-        "section": "Visual & UI Fixes"
-      },
-      {
-        "text": "Third‑person flashlight animation and blending improved.",
-        "commit_ids": [
-          617640
-        ],
-        "section": "Visual & UI Fixes"
-      },
-      {
-        "text": "Work-in-progress changes are currently in development.",
-        "commit_ids": [
-          617625
-        ],
-        "section": "Upcoming Changes"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Monument blocker health reduced; can now be destroyed with 1 C4 or 5 satchels.\n- Heavy pot helmet crafting cost increased to 2 sheet metal and 8 high-quality metal.\n- You can now select and command multiple livestock at once; they receive offset positions to avoid stacking.\n- Wood armour gloves now display correctly in the viewmodel.\n- Third‑person flashlight animation and blending improved.\n- Work-in-progress changes are currently in development."
+    "new_relevant_count": 7,
+    "new_summary": "- Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.\n- Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.\n- Minor adjustments to small oil rig, large rig, and launch site blockers.\n- Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.\n- Applied shield behavior fixes to the main branch.\n- Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.\n- Sprint speed while holding items now behaves correctly after animation subsystem fixes."
   },
   "2026-08-25": {
     "commit_count": 84,

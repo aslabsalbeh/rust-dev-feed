@@ -6,54 +6,62 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 26 Aug 2026 08:34:56 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 10:36:37 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 26</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;39 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;57 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617645"&gt;Monument blocker health reduced; can now be destroyed with 1 C4 or 5 satchels.&lt;/li&gt;
-&lt;li data-rust-commits="617627"&gt;Heavy pot helmet crafting cost increased to 2 sheet metal and 8 high-quality metal.&lt;/li&gt;
-&lt;li data-rust-commits="617631"&gt;You can now select and command multiple livestock at once; they receive offset positions to avoid stacking.&lt;/li&gt;
-&lt;li data-rust-commits="617639"&gt;Wood armour gloves now display correctly in the viewmodel.&lt;/li&gt;
-&lt;li data-rust-commits="617640"&gt;Third‑person flashlight animation and blending improved.&lt;/li&gt;
-&lt;li data-rust-commits="617625"&gt;Work-in-progress changes are currently in development.&lt;/li&gt;
+&lt;li data-rust-commits="617668"&gt;Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.&lt;/li&gt;
+&lt;li data-rust-commits="617650"&gt;Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.&lt;/li&gt;
+&lt;li data-rust-commits="617649"&gt;Minor adjustments to small oil rig, large rig, and launch site blockers.&lt;/li&gt;
+&lt;li data-rust-commits="617663"&gt;Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.&lt;/li&gt;
+&lt;li data-rust-commits="617646"&gt;Applied shield behavior fixes to the main branch.&lt;/li&gt;
+&lt;li data-rust-commits="617666"&gt;Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.&lt;/li&gt;
+&lt;li data-rust-commits="617654"&gt;Sprint speed while holding items now behaves correctly after animation subsystem fixes.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;h3&gt;AI &amp;amp; Navigation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617668"&gt;Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.&lt;/li&gt;
+&lt;li data-rust-commits="617650"&gt;Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.&lt;/li&gt;
+&lt;li data-rust-commits="617631"&gt;AI select/move commands now work on multiple animals; added ai.selectinrange and ai.deselectnpc convars, and an ordering offset to avoid stacking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay Balance &amp;amp; Crafting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617645"&gt;Monument blocker health reduced so they can be destroyed with 1 C4 or 5 satchels.&lt;/li&gt;
+&lt;li data-rust-commits="617649"&gt;Minor adjustments to small oil rig, large rig, and launch site blockers.&lt;/li&gt;
+&lt;li data-rust-commits="617627"&gt;Heavy Pot Helmet crafting cost increased: sheet metal 1→2, high‑quality metal 4→8.&lt;/li&gt;
+&lt;li data-rust-commits="617571"&gt;Medical Honey Bandage tweaked: instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth cost lowered from 8 to 4.&lt;/li&gt;
+&lt;li data-rust-commits="617587"&gt;Players can no longer loot clipping bodies while mounted on submarines; they must exit the submarine to loot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617557"&gt;High‑Quality Metal ore now spawns rarer by moving it to its own population and adding rare HQM collectible spawns.&lt;/li&gt;
+&lt;li data-rust-commits="617621"&gt;Replaced mesh collider on HAB armour frame with box colliders to ensure proper collision handling.&lt;/li&gt;
+&lt;li data-rust-commits="617562"&gt;Oil rig radiation now automatically restarts after a server restart even if the force reset fails.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Visual Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617663"&gt;Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.&lt;/li&gt;
+&lt;li data-rust-commits="617552"&gt;Fixed invisible Molotov bottle shadow by adding a stencil block and exposing a shadow intensity property.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Shields&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617646"&gt;Applied shield behavior fixes to the main branch.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617645"&gt;Monument blocker health reduced; can now be destroyed with 1 C4 or 5 satchels.&lt;/li&gt;
-&lt;li data-rust-commits="617627"&gt;Heavy pot helmet crafting cost increased to 2 sheet metal and 8 high-quality metal.&lt;/li&gt;
-&lt;li data-rust-commits="617571"&gt;Medical honey bandage now heals 8 instant health (down from 10), heals 6 over time (up from 4), and costs 4 cloth (down from 8).&lt;/li&gt;
-&lt;li data-rust-commits="617557"&gt;HQM ore spawns are now rarer and new rare HQM collectable spawns added.&lt;/li&gt;
-&lt;li data-rust-commits="617562"&gt;Oil rig radiation will reliably restart after a server restart even if the force reset fails.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617631"&gt;You can now select and command multiple livestock at once; they receive offset positions to avoid stacking.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Submarines&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617587"&gt;Looting player bodies while mounted on a submarine is blocked; you must exit the sub to loot.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Visual &amp;amp; UI Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617639"&gt;Wood armour gloves now display correctly in the viewmodel.&lt;/li&gt;
-&lt;li data-rust-commits="617640"&gt;Third‑person flashlight animation and blending improved.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Bug Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617576"&gt;Fixed collider read/write issues, improving hit detection and physics interactions.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Upcoming Changes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617625"&gt;Work-in-progress changes are currently in development.&lt;/li&gt;
+&lt;li data-rust-commits="617666"&gt;Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.&lt;/li&gt;
+&lt;li data-rust-commits="617654"&gt;Sprint speed while holding items now behaves correctly after animation subsystem fixes.&lt;/li&gt;
+&lt;li data-rust-commits="617576"&gt;Collision detection issues resolved, improving hit registration and movement interactions.&lt;/li&gt;
+&lt;li data-rust-commits="617625"&gt;Workbench upgrade rug deployment fix is currently a work in progress.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-26</guid>
-      <pubDate>Wed, 26 Aug 2026 08:34:56 -0400</pubDate>
+      <pubDate>Wed, 26 Aug 2026 10:36:37 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 25</title>
