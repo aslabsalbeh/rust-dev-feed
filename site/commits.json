@@ -1,5 +1,93 @@
 [
   {
+    "id": 617780,
+    "branch": "main/bed_optimisation",
+    "changeset": "162262",
+    "created": "2026-08-26T22:04:35",
+    "message": "optimised bed - LOD1 now under the batching vertex cap\n\nLOD1 998 verts, was over 1000 so it never batched\nnow batches 30 to a draw call in the LOD1 band\n\r\nalso fixed lod issue where the fold in the bed cover would disappear on LOD1 and reappear on LOD2",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617778,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "162261",
+    "created": "2026-08-26T21:36:24",
+    "message": "Fix navmesh building on dive sites",
+    "author": "Maverick"
+  },
+  {
+    "id": 617776,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162259",
+    "created": "2026-08-26T21:27:52",
+    "message": "Update: gather assets into dynamic UI bundle as a first step, to capture all deps (40MB -> 0.6GB)\r\n- mode ui/menu2 assets from props-other assetscene to prefabs (otherwise no idea how it used to work before)\r\n- also add a bit earlier error checking when loading from bundle\r\nTests: editor in bundle mode - able to see all but 2 icons, but prefabs are not loading",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617775,
+    "branch": "main/hqm_ore_random_spawner",
+    "changeset": "162258",
+    "created": "2026-08-26T21:27:20",
+    "message": "Added ore_hqm_spawner.prefab (with doubled min/max respawn delay)\r\nUpdated manifest",
+    "author": "Raul"
+  },
+  {
+    "id": 617774,
+    "branch": "main/large_wooden_storage_optimisation",
+    "changeset": "162257",
+    "created": "2026-08-26T21:21:20",
+    "message": "optimised large wooden box\r\n\r\nLOD0 999 verts, was over 1000 previously so it never batched at close range\nit can now batch around 30 to a draw call inside the 0-10m LOD0 band\ntris LOD0 1,552 > 1,346, LOD1 474 > 366, LOD2 100 > 84",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617769,
+    "branch": "main/hqm_ore_random_spawner",
+    "changeset": "162255",
+    "created": "2026-08-26T20:58:37",
+    "message": "Added HQM ore to ore_random_spawner.prefab (weight 5)",
+    "author": "Raul"
+  },
+  {
+    "id": 617766,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162253",
+    "created": "2026-08-26T20:49:45",
+    "message": "Enable RW on HAB armor gibs\r\nHAB armor now plays an effect when equipped, placeholder sound for now\r\nSwitch HAB door to chainlink door sounds instead of metal\r\nNow need to hold E for 3 seconds to put on the armor instead of instant, prevents misclicks",
+    "author": "cipeaX"
+  },
+  {
+    "id": 617763,
+    "branch": "main/mixing_table_optimisation",
+    "changeset": "162250",
+    "created": "2026-08-26T20:04:58",
+    "message": "Mixing table LOD optimisation\nMerged Glass01-08 + Water into the Table_LOD0/1/2 glass submesh\r\n\ndraw calls 10 > 2, FBX meshes 12 > 3, LOD components 10 > 1\r\nmuch more simplified.\r\n\r\nalso fixed opacity on the water in the bucket being completely transparent for years",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617762,
+    "branch": "main/Hackweek_CompostUI",
+    "changeset": "162249",
+    "created": "2026-08-26T19:57:59",
+    "message": "Make the code for \"cooking items\" in furnaces work on both compostable items and normal cookable items",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617760,
+    "branch": "main",
+    "changeset": "162248",
+    "created": "2026-08-26T19:49:35",
+    "message": "~Remove huge debug cube from water pipe access point",
+    "author": "cipeaX"
+  },
+  {
+    "id": 617758,
+    "branch": "main/mixing_table_optimisation",
+    "changeset": "162247",
+    "created": "2026-08-26T19:33:47",
+    "message": "optimisations to the mixing table - need to figure one thing out first",
+    "author": "Pilgrim"
+  },
+  {
     "id": 617754,
     "branch": "main/sv_console_terminal_fix",
     "changeset": "162246",
@@ -1902,21 +1990,5 @@
     "created": "2026-08-24T00:06:19",
     "message": "Added deepsea.terrain_everywhere replicated convar, enables the deep sea terrain splats everywhere when enabled",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 616138,
-    "branch": "main/cactus_impact_effects",
-    "changeset": "161790",
-    "created": "2026-08-23T22:21:38",
-    "message": "update manifest",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616137,
-    "branch": "main/cactus_impact_effects",
-    "changeset": "161789",
-    "created": "2026-08-23T22:17:52",
-    "message": "added new cactus decals by repurposing the wood decals looks much better \r\nhttps://files.facepunch.com/pilgrim/2026/August/23_22-55-SomeCicada.mp4",
-    "author": "Pilgrim"
   }
 ]
