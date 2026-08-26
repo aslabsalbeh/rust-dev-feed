@@ -6,51 +6,35 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 26 Aug 2026 12:42:53 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 15:39:53 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 26</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;70 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;80 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617718"&gt;Implemented client‑side prediction for grenades, making throws and drops feel more responsive.&lt;/li&gt;
-&lt;li data-rust-commits="617724"&gt;Added attackable variants of invisible admin cubes and walls (3x3), enabling melee and ranged interaction with these admin tools.&lt;/li&gt;
-&lt;li data-rust-commits="617695,617708"&gt;Corrected water pipe orientation and fixed gas station loot spawners to properly respawn after server restarts, applying necessary prefab fixes.&lt;/li&gt;
-&lt;li data-rust-commits="617694,617687"&gt;Fixed store UI issues: dynamic sprite loading for item overlays, made shop tiles clickable, corrected resource bundling, and restored missing icons on DLC pages.&lt;/li&gt;
+&lt;li data-rust-commits="617751"&gt;Improved critter movement with correct speed values, smoother animation blending, and no hovering above ground.&lt;/li&gt;
+&lt;li data-rust-commits="617743,617746"&gt;Player boats now retain their usage timer, preventing decay on daily restart servers, and error messages for invalid placement are clarified.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Exploration&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617668,617576"&gt;Fixed missing navmesh behind doors, allowing AI such as scientists to reach previously inaccessible rooms (e.g., missile silo, ghostship) and corrected collider read/write issues for attack helicopter armor damage, improving hit detection.&lt;/li&gt;
-&lt;li data-rust-commits="617650"&gt;Moved scientist corpses to the ragdoll layer so they no longer block player movement or projectiles.&lt;/li&gt;
-&lt;li data-rust-commits="617631"&gt;Enabled AI select/move commands for multiple animals, added console variables, and introduced positional offsets to prevent animals from stacking on the same spot.&lt;/li&gt;
+&lt;li data-rust-commits="617751"&gt;Improved critter movement with correct speed values, smoother animation blending, and no hovering above ground.&lt;/li&gt;
+&lt;li data-rust-commits="617631"&gt;AI selection commands now affect multiple livestock; offset positions prevent NPC stacking.&lt;/li&gt;
+&lt;li data-rust-commits="617650"&gt;Scientist corpses placed on ragdoll layer, no longer blocking movement or projectiles.&lt;/li&gt;
+&lt;li data-rust-commits="617668"&gt;Navmesh gaps behind doors fixed, restoring access to rooms such as missile silo and ghostship.&lt;/li&gt;
+&lt;li data-rust-commits="617695,617708"&gt;World objects spawn correctly: water pipes no longer appear at odd angles and gas station loot spawners persist after server restarts.&lt;/li&gt;
+&lt;li data-rust-commits="617587"&gt;Players cannot loot clipping bodies while mounted on submarines; must exit the mount to loot.&lt;/li&gt;
+&lt;li data-rust-commits="617743,617746"&gt;Player boats now retain their usage timer, preventing decay on daily restart servers, and error messages for invalid placement are clarified.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Damage&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617621,617590"&gt;Replaced the HAB armor frame mesh collider with box colliders and added threshold toggles, fixing hit detection and allowing finer damage control.&lt;/li&gt;
-&lt;li data-rust-commits="617718"&gt;Implemented client‑side prediction for grenades, making throws and drops feel more responsive.&lt;/li&gt;
-&lt;li data-rust-commits="617724"&gt;Added attackable variants of invisible admin cubes and walls (3x3), enabling melee and ranged interaction with these admin tools.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Loot&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617695,617708"&gt;Corrected water pipe orientation and fixed gas station loot spawners to properly respawn after server restarts, applying necessary prefab fixes.&lt;/li&gt;
-&lt;li data-rust-commits="617587"&gt;Prevented players from looting clipping bodies while mounted on submarines; they must exit the sub to loot.&lt;/li&gt;
-&lt;li data-rust-commits="617562"&gt;Made oil rig radiation events automatically restart after a server restart if the forced reset fails, ensuring consistent radiation hazards.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Crafting, Resources &amp;amp; Economy&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617627,617571"&gt;Increased the Heavy Pot Helmet crafting cost (sheet metal 1→2, high‑quality metal 4→8) and rebalanced honey bandage values (instant health 10→8, HoT 4→6) while lowering cloth craft cost from 8 to 4.&lt;/li&gt;
-&lt;li data-rust-commits="617557"&gt;Reduced the spawn rate of high‑quality metal ore significantly and introduced rare collectible spawns, making HQM a scarcer resource.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Monuments, Structures &amp;amp; Store UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="617649,617645"&gt;Rebalanced monument blockers: resized blockers for small and large oil rigs and launch sites, and lowered HP so they can be destroyed with 1 C4 or 5 satchels.&lt;/li&gt;
-&lt;li data-rust-commits="617694,617687"&gt;Fixed store UI issues: dynamic sprite loading for item overlays, made shop tiles clickable, corrected resource bundling, and restored missing icons on DLC pages.&lt;/li&gt;
+&lt;li data-rust-commits="617646"&gt;Shield mechanics now function correctly during combat.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-26</guid>
-      <pubDate>Wed, 26 Aug 2026 12:42:53 -0400</pubDate>
+      <pubDate>Wed, 26 Aug 2026 15:39:53 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 25</title>
