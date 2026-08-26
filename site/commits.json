@@ -1,5 +1,101 @@
 [
   {
+    "id": 617603,
+    "branch": "main/Diesel_generator",
+    "changeset": "162133",
+    "created": "2026-08-26T10:14:31",
+    "message": "Scale blockout and prefab setup",
+    "author": "Tom.d"
+  },
+  {
+    "id": 617601,
+    "branch": "main/automated_testing",
+    "changeset": "162131",
+    "created": "2026-08-26T10:01:02",
+    "message": "Memoized the test paremeters resolution, so we aren't resolving the same parameters multiple times when many tests are using the same source",
+    "author": "Flavien"
+  },
+  {
+    "id": 617600,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162130",
+    "created": "2026-08-26T09:53:44",
+    "message": "Gib improvements",
+    "author": "Adam W"
+  },
+  {
+    "id": 617598,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162129",
+    "created": "2026-08-26T09:44:27",
+    "message": "Codegen, test list",
+    "author": "Flavien"
+  },
+  {
+    "id": 617597,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162128",
+    "created": "2026-08-26T09:43:45",
+    "message": "manifest",
+    "author": "Taylor Reynolds"
+  },
+  {
+    "id": 617594,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162125",
+    "created": "2026-08-26T09:40:40",
+    "message": "Gib setup",
+    "author": "Adam W"
+  },
+  {
+    "id": 617590,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162122",
+    "created": "2026-08-26T09:30:59",
+    "message": "Setup threshold toggles",
+    "author": "Adam W"
+  },
+  {
+    "id": 617589,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162121",
+    "created": "2026-08-26T09:22:18",
+    "message": "Remove the client colliders, not needed",
+    "author": "Adam W"
+  },
+  {
+    "id": 617587,
+    "branch": "main/submarine_looting_fix",
+    "changeset": "162119",
+    "created": "2026-08-26T09:21:17",
+    "message": "Disallow looting of clipping player bodies etc. while mounted to submarines, need to get out to loot\r\n- Added blockLooting field on base mountables",
+    "author": "cipeaX"
+  },
+  {
+    "id": 617586,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162118",
+    "created": "2026-08-26T09:20:57",
+    "message": "WIP code",
+    "author": "Adam W"
+  },
+  {
+    "id": 617580,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "162113",
+    "created": "2026-08-26T08:59:33",
+    "message": "ao rreduction & optimisation pass on some structure assets\r\nthey were shipping 2k ao textures, now resized but visually no difference. \r\n11 ao maps touched, 9 were shipping at 2k\r\n\r\nvram 25.3MB -> 2.2MB",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617576,
+    "branch": "main/attackheli_armour_damge",
+    "changeset": "162110",
+    "created": "2026-08-26T08:49:42",
+    "message": "Collider r/w fixes",
+    "author": "Adam W"
+  },
+  {
     "id": 617571,
     "branch": "main/medical_honey_bandage",
     "changeset": "162106",
@@ -1438,13 +1534,5 @@
     "created": "2026-08-23T10:34:55",
     "message": "Adds lots of instrumentation, and increase navmesh build speed by around 30%, implemented common optimizations I've seen before or discussed with Lorenz:\r\n- when rasterizing triangles, reuse values between neighbors instead of re-clipping the triangle against every column (7%)\r\n- heightfield is supposed to have faster insertion than compact heightfield thanks to linked list, but because it wastes so much time pointer chasing during iteration it's actually slower, also instertion is not that bad when the column fits in cache (4%)\r\n- fuse some span filtering operation to iterate once instead of 3 times on the spans (only 1% for rust maps sadly...) + the pooling from sbox doesn't really benefit us\r\nAs well as some new findings found from profiling:\r\n- during heigthfield stage when comparing span A to span B for walkability tests, don't do everything from scratch when comparing B to A (9% whole map, but monuments and bases specifically x4 speed with this)\r\n- watershed iterates through the whole list of regions multiple times, faster with lookup (7%)\r\nCan get another 10% if we halve the detail mesh precision, automatically sampled lots of tiles for vertical differences to test and the difference is negligible\r\nThe real bigger order of magnitude gain is to not limit the number of threads and not time slice geometry collection, it stalls the server but goes 6x faster, could do it at server boot and just throttle the subsequent dynamic navmesh updates (player building bases, nodes etc).",
     "author": "Maverick"
-  },
-  {
-    "id": 616111,
-    "branch": "main/automated_testing",
-    "changeset": "161773",
-    "created": "2026-08-23T09:24:08",
-    "message": "New automated test to check for immortal entities starting with health <= 0.",
-    "author": "Lukester"
   }
 ]
