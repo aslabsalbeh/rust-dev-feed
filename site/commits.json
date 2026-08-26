@@ -1,5 +1,109 @@
 [
   {
+    "id": 617724,
+    "branch": "main/admin_invis_cube_variants",
+    "changeset": "162224",
+    "created": "2026-08-26T16:30:58",
+    "message": "Added admin_invis_cube_3x3_attack and admin_invis_wall_01_attack variants (they can be hit with melee or shot at)",
+    "author": "Raul"
+  },
+  {
+    "id": 617722,
+    "branch": "main/demo_ui_2",
+    "changeset": "162222",
+    "created": "2026-08-26T16:26:39",
+    "message": "Fix animation loader not working in builds, clips needed to be marked legacy",
+    "author": "octo"
+  },
+  {
+    "id": 617721,
+    "branch": "main/planter_optimisation",
+    "changeset": "162221",
+    "created": "2026-08-26T16:25:14",
+    "message": "attempt to optimise the three planters. noticed that they have 3 materials on last lod so baked small, large and triangle last LOD down to one 512 albedo and one material\nsoil now culls at 40m and hands off to the bake\nalso fixed 12 monument/static prefabs still on the pre-bake material arrays -will need checking over \n\nlod2 draw calls 3 -> 1 per planter\r\n\r\nhttps://files.facepunch.com/pilgrim/2026/August/26_17-21-OilyUrson.mp4",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617718,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "162220",
+    "created": "2026-08-26T16:12:17",
+    "message": "Initial general attempt at grenade client prediction. Works for drops as well as throws\r\nWorks for both grenade weapons and thrown weapons",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617712,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162216",
+    "created": "2026-08-26T15:59:11",
+    "message": "Clamping spolight cookie UVs",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617708,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162214",
+    "created": "2026-08-26T15:46:55",
+    "message": "S2P gas station, to apply prefab fixes",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617704,
+    "branch": "main",
+    "changeset": "162211",
+    "created": "2026-08-26T15:32:22",
+    "message": "Megre from attackheli_armour_damge",
+    "author": "elhog"
+  },
+  {
+    "id": 617697,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162206",
+    "created": "2026-08-26T15:18:25",
+    "message": "Fixed an issue that was causing spotlights to project backwards",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617694,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162205",
+    "created": "2026-08-26T15:16:48",
+    "message": "Bugfix: dynamically load sprites in store's item overlay\r\n- converted some ugly safety code to new IsValid extension\r\nTests: navigated and clicked through all the shop UI - stuff was there",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617695,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162204",
+    "created": "2026-08-26T15:16:35",
+    "message": "Maintainables fixes\r\n- potential fix for water pipes spawning at strange angles\r\n- fix gas station loot spawners not returning after server restart",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617688,
+    "branch": "main",
+    "changeset": "162201",
+    "created": "2026-08-26T14:54:00",
+    "message": "Ensure the occlusion culling convar gets disabled when RRP is active rather than just trying to disable it on the backend",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617687,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162200",
+    "created": "2026-08-26T14:35:23",
+    "message": "Bugfix: make shop tiles clickable\r\n- reassigned bundles to resources as some were stale and wrong\r\n- ripped out Update Dyn Ref action, as the data source is now not saved\r\n- also replaced manual FileSystem calls with Load method to keep it clean\r\n- improved dynamic resource logging to know which resource failed to load\r\nTests: was able to navigate through all menus of shop. gotta fix missing icons in places",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617686,
+    "branch": "main",
+    "changeset": "162199",
+    "created": "2026-08-26T14:31:55",
+    "message": "Prevented occlusion culling running while RRP is enabled at the moment, as it was causing visibility issues",
+    "author": "aidan.m"
+  },
+  {
     "id": 617684,
     "branch": "main/underground_train_network_update",
     "changeset": "162198",
@@ -1734,13 +1838,5 @@
     "created": "2026-08-23T22:17:52",
     "message": "added new cactus decals by repurposing the wood decals looks much better \r\nhttps://files.facepunch.com/pilgrim/2026/August/23_22-55-SomeCicada.mp4",
     "author": "Pilgrim"
-  },
-  {
-    "id": 616128,
-    "branch": "main/automated_testing",
-    "changeset": "161785",
-    "created": "2026-08-23T16:21:01",
-    "message": "Minor feedback tweaks",
-    "author": "Lukester"
   }
 ]

@@ -1,29 +1,30 @@
 {
   "2026-08-26": {
-    "commit_count": 57,
-    "relevant_commit_count": 35,
-    "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683",
-    "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683",
+    "commit_count": 70,
+    "relevant_commit_count": 44,
+    "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724",
+    "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "AI & Navigation",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.",
+            "text": "Fixed missing navmesh behind doors, allowing AI such as scientists to reach previously inaccessible rooms (e.g., missile silo, ghostship) and corrected collider read/write issues for attack helicopter armor damage, improving hit detection.",
             "commit_ids": [
-              617668
+              617668,
+              617576
             ]
           },
           {
-            "text": "Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.",
+            "text": "Moved scientist corpses to the ragdoll layer so they no longer block player movement or projectiles.",
             "commit_ids": [
               617650
             ]
           },
           {
-            "text": "AI select/move commands now work on multiple animals; added ai.selectinrange and ai.deselectnpc convars, and an ordering offset to avoid stacking.",
+            "text": "Enabled AI select/move commands for multiple animals, added console variables, and introduced positional offsets to prevent animals from stacking on the same spot.",
             "commit_ids": [
               617631
             ]
@@ -31,57 +32,47 @@
         ]
       },
       {
-        "title": "Gameplay Balance & Crafting",
+        "title": "Combat & Damage",
         "items": [
           {
-            "text": "Monument blocker health reduced so they can be destroyed with 1 C4 or 5 satchels.",
+            "text": "Replaced the HAB armor frame mesh collider with box colliders and added threshold toggles, fixing hit detection and allowing finer damage control.",
             "commit_ids": [
-              617645
+              617621,
+              617590
             ]
           },
           {
-            "text": "Minor adjustments to small oil rig, large rig, and launch site blockers.",
+            "text": "Implemented client‑side prediction for grenades, making throws and drops feel more responsive.",
             "commit_ids": [
-              617649
+              617718
             ]
           },
           {
-            "text": "Heavy Pot Helmet crafting cost increased: sheet metal 1→2, high‑quality metal 4→8.",
+            "text": "Added attackable variants of invisible admin cubes and walls (3x3), enabling melee and ranged interaction with these admin tools.",
             "commit_ids": [
-              617627
-            ]
-          },
-          {
-            "text": "Medical Honey Bandage tweaked: instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth cost lowered from 8 to 4.",
-            "commit_ids": [
-              617571
-            ]
-          },
-          {
-            "text": "Players can no longer loot clipping bodies while mounted on submarines; they must exit the submarine to loot.",
-            "commit_ids": [
-              617587
+              617724
             ]
           }
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "World & Loot",
         "items": [
           {
-            "text": "High‑Quality Metal ore now spawns rarer by moving it to its own population and adding rare HQM collectible spawns.",
+            "text": "Corrected water pipe orientation and fixed gas station loot spawners to properly respawn after server restarts, applying necessary prefab fixes.",
             "commit_ids": [
-              617557
+              617695,
+              617708
             ]
           },
           {
-            "text": "Replaced mesh collider on HAB armour frame with box colliders to ensure proper collision handling.",
+            "text": "Prevented players from looting clipping bodies while mounted on submarines; they must exit the sub to loot.",
             "commit_ids": [
-              617621
+              617587
             ]
           },
           {
-            "text": "Oil rig radiation now automatically restarts after a server restart even if the force reset fails.",
+            "text": "Made oil rig radiation events automatically restart after a server restart if the forced reset fails, ensuring consistent radiation hazards.",
             "commit_ids": [
               617562
             ]
@@ -89,117 +80,78 @@
         ]
       },
       {
-        "title": "UI & Visual Fixes",
+        "title": "Crafting, Resources & Economy",
         "items": [
           {
-            "text": "Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.",
+            "text": "Increased the Heavy Pot Helmet crafting cost (sheet metal 1→2, high‑quality metal 4→8) and rebalanced honey bandage values (instant health 10→8, HoT 4→6) while lowering cloth craft cost from 8 to 4.",
             "commit_ids": [
-              617663
+              617627,
+              617571
             ]
           },
           {
-            "text": "Fixed invisible Molotov bottle shadow by adding a stencil block and exposing a shadow intensity property.",
+            "text": "Reduced the spawn rate of high‑quality metal ore significantly and introduced rare collectible spawns, making HQM a scarcer resource.",
             "commit_ids": [
-              617552
+              617557
             ]
           }
         ]
       },
       {
-        "title": "Combat & Shields",
+        "title": "Monuments, Structures & Store UI",
         "items": [
           {
-            "text": "Applied shield behavior fixes to the main branch.",
+            "text": "Rebalanced monument blockers: resized blockers for small and large oil rigs and launch sites, and lowered HP so they can be destroyed with 1 C4 or 5 satchels.",
             "commit_ids": [
-              617646
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.",
-            "commit_ids": [
-              617666
+              617649,
+              617645
             ]
           },
           {
-            "text": "Sprint speed while holding items now behaves correctly after animation subsystem fixes.",
+            "text": "Fixed store UI issues: dynamic sprite loading for item overlays, made shop tiles clickable, corrected resource bundling, and restored missing icons on DLC pages.",
             "commit_ids": [
-              617654
-            ]
-          },
-          {
-            "text": "Collision detection issues resolved, improving hit registration and movement interactions.",
-            "commit_ids": [
-              617576
-            ]
-          },
-          {
-            "text": "Workbench upgrade rug deployment fix is currently a work in progress.",
-            "commit_ids": [
-              617625
+              617694,
+              617687
             ]
           }
         ]
       }
     ],
-    "summary": "### AI & Navigation\n- Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.\n- Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.\n- AI select/move commands now work on multiple animals; added ai.selectinrange and ai.deselectnpc convars, and an ordering offset to avoid stacking.\n\n### Gameplay Balance & Crafting\n- Monument blocker health reduced so they can be destroyed with 1 C4 or 5 satchels.\n- Minor adjustments to small oil rig, large rig, and launch site blockers.\n- Heavy Pot Helmet crafting cost increased: sheet metal 1→2, high‑quality metal 4→8.\n- Medical Honey Bandage tweaked: instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth cost lowered from 8 to 4.\n- Players can no longer loot clipping bodies while mounted on submarines; they must exit the submarine to loot.\n\n### World & Environment\n- High‑Quality Metal ore now spawns rarer by moving it to its own population and adding rare HQM collectible spawns.\n- Replaced mesh collider on HAB armour frame with box colliders to ensure proper collision handling.\n- Oil rig radiation now automatically restarts after a server restart even if the force reset fails.\n\n### UI & Visual Fixes\n- Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.\n- Fixed invisible Molotov bottle shadow by adding a stencil block and exposing a shadow intensity property.\n\n### Combat & Shields\n- Applied shield behavior fixes to the main branch.\n\n### Gameplay & Balance\n- Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.\n- Sprint speed while holding items now behaves correctly after animation subsystem fixes.\n- Collision detection issues resolved, improving hit registration and movement interactions.\n- Workbench upgrade rug deployment fix is currently a work in progress.",
+    "summary": "### NPC & AI\n- Fixed missing navmesh behind doors, allowing AI such as scientists to reach previously inaccessible rooms (e.g., missile silo, ghostship) and corrected collider read/write issues for attack helicopter armor damage, improving hit detection.\n- Moved scientist corpses to the ragdoll layer so they no longer block player movement or projectiles.\n- Enabled AI select/move commands for multiple animals, added console variables, and introduced positional offsets to prevent animals from stacking on the same spot.\n\n### Combat & Damage\n- Replaced the HAB armor frame mesh collider with box colliders and added threshold toggles, fixing hit detection and allowing finer damage control.\n- Implemented client‑side prediction for grenades, making throws and drops feel more responsive.\n- Added attackable variants of invisible admin cubes and walls (3x3), enabling melee and ranged interaction with these admin tools.\n\n### World & Loot\n- Corrected water pipe orientation and fixed gas station loot spawners to properly respawn after server restarts, applying necessary prefab fixes.\n- Prevented players from looting clipping bodies while mounted on submarines; they must exit the sub to loot.\n- Made oil rig radiation events automatically restart after a server restart if the forced reset fails, ensuring consistent radiation hazards.\n\n### Crafting, Resources & Economy\n- Increased the Heavy Pot Helmet crafting cost (sheet metal 1→2, high‑quality metal 4→8) and rebalanced honey bandage values (instant health 10→8, HoT 4→6) while lowering cloth craft cost from 8 to 4.\n- Reduced the spawn rate of high‑quality metal ore significantly and introduced rare collectible spawns, making HQM a scarcer resource.\n\n### Monuments, Structures & Store UI\n- Rebalanced monument blockers: resized blockers for small and large oil rigs and launch sites, and lowered HP so they can be destroyed with 1 C4 or 5 satchels.\n- Fixed store UI issues: dynamic sprite loading for item overlays, made shop tiles clickable, corrected resource bundling, and restored missing icons on DLC pages.",
     "new_items": [
       {
-        "text": "Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.",
+        "text": "Implemented client‑side prediction for grenades, making throws and drops feel more responsive.",
         "commit_ids": [
-          617668
+          617718
         ],
-        "section": "AI & Navigation"
+        "section": "Combat & Damage"
       },
       {
-        "text": "Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.",
+        "text": "Added attackable variants of invisible admin cubes and walls (3x3), enabling melee and ranged interaction with these admin tools.",
         "commit_ids": [
-          617650
+          617724
         ],
-        "section": "AI & Navigation"
+        "section": "Combat & Damage"
       },
       {
-        "text": "Minor adjustments to small oil rig, large rig, and launch site blockers.",
+        "text": "Corrected water pipe orientation and fixed gas station loot spawners to properly respawn after server restarts, applying necessary prefab fixes.",
         "commit_ids": [
-          617649
+          617695,
+          617708
         ],
-        "section": "Gameplay Balance & Crafting"
+        "section": "World & Loot"
       },
       {
-        "text": "Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.",
+        "text": "Fixed store UI issues: dynamic sprite loading for item overlays, made shop tiles clickable, corrected resource bundling, and restored missing icons on DLC pages.",
         "commit_ids": [
-          617663
+          617694,
+          617687
         ],
-        "section": "UI & Visual Fixes"
-      },
-      {
-        "text": "Applied shield behavior fixes to the main branch.",
-        "commit_ids": [
-          617646
-        ],
-        "section": "Combat & Shields"
-      },
-      {
-        "text": "Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.",
-        "commit_ids": [
-          617666
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Sprint speed while holding items now behaves correctly after animation subsystem fixes.",
-        "commit_ids": [
-          617654
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Monuments, Structures & Store UI"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Fixed missing navmesh behind doors that caused AI pathing issues in rooms such as missile silo and ghostship.\n- Scientists now use the ragdoll layer, preventing them from blocking movement and projectiles.\n- Minor adjustments to small oil rig, large rig, and launch site blockers.\n- Fixed store UI tiles that were unclickable or missing icons due to static asset props being marked NonSerialized.\n- Applied shield behavior fixes to the main branch.\n- Reduced game freeze when first deploying or mounting a musical instrument, eliminating a 10+ second pause.\n- Sprint speed while holding items now behaves correctly after animation subsystem fixes."
+    "new_relevant_count": 6,
+    "new_summary": "- Implemented client‑side prediction for grenades, making throws and drops feel more responsive.\n- Added attackable variants of invisible admin cubes and walls (3x3), enabling melee and ranged interaction with these admin tools.\n- Corrected water pipe orientation and fixed gas station loot spawners to properly respawn after server restarts, applying necessary prefab fixes.\n- Fixed store UI issues: dynamic sprite loading for item overlays, made shop tiles clickable, corrected resource bundling, and restored missing icons on DLC pages."
   },
   "2026-08-25": {
     "commit_count": 84,
