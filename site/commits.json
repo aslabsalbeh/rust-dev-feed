@@ -1,5 +1,333 @@
 [
   {
+    "id": 617966,
+    "branch": "main/Livestock_animals",
+    "changeset": "162391",
+    "created": "2026-08-27T16:18:25",
+    "message": "added more calf texture and material variants and an extra cow variant.",
+    "author": "Toffer"
+  },
+  {
+    "id": 617964,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162390",
+    "created": "2026-08-27T16:09:32",
+    "message": "Bugfix: make sure grids of general store tab get notified about closure\r\nAvoids growing asset bundle ref count\r\nTests: navigated through abunch of menus, no errors",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617963,
+    "branch": "main/UZI 9mm",
+    "changeset": "162389",
+    "created": "2026-08-27T16:05:04",
+    "message": "Updating izi world model rig",
+    "author": "jeddooo"
+  },
+  {
+    "id": 617960,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162387",
+    "created": "2026-08-27T15:43:16",
+    "message": "revert anchors to softer checks, too many was preventing them from spawning\r\nworks is carried by the terrain heigh raisers to try to fill terrain under the skirt in the prefab",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617958,
+    "branch": "main/character_customisation",
+    "changeset": "162385",
+    "created": "2026-08-27T15:30:15",
+    "message": "Swap live background over to a small apartment\r\nSetup custom lighting for icon rendering",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617954,
+    "branch": "main/character_customisation",
+    "changeset": "162383",
+    "created": "2026-08-27T15:14:38",
+    "message": "Use a live background in the character creator\r\nStreamline everything into a single CharacterStage prefab\r\nCleanup old crappy static shot renderer",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617952,
+    "branch": "main/binbagpile_optimisation",
+    "changeset": "162381",
+    "created": "2026-08-27T15:07:13",
+    "message": "optimised binbag pile - 41 renderers down to 1. There are 14 of these around the apartment complex alone. \n\nit was a pile of 34 nested binbag prefabs plus 6 ground_junk, each carrying its own mesh lod and renderer batch, sat under a parent that had its own mesh lod on top. all 41 drew at once at close range\n\ndraw calls 41 > 1, mesh lod components 41 > 1 rendererlod, gameobjects 41 > 3\r\ncollision 34 mesh colliders -> 1 i dont t",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617948,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162380",
+    "created": "2026-08-27T15:03:39",
+    "message": "Update: convert icons on DLC tab to be dynamic refs\r\n- updated StoreBundleTool to auto-update stale properties after bundle assignment\r\n- ran dyn ref bundle assign\r\n- also made CoverImage only do non-unity-null check as it was misfiring\r\nTests: navigated through in editor both in db and bundle backends, tried standalone",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617946,
+    "branch": "main/HAB_armour_damage",
+    "changeset": "162378",
+    "created": "2026-08-27T15:02:08",
+    "message": "HAB armour returns parent hotairballoon health.",
+    "author": "Adam W"
+  },
+  {
+    "id": 617945,
+    "branch": "main/paint_f1menu_fixes",
+    "changeset": "162377",
+    "created": "2026-08-27T14:58:36",
+    "message": "Fixed paintable dialog interactions executing (drawing, zooming, panning, orbiting) when the F1 menu is open\r\nFixed brush preview hiding the cursor while the F1 menu is open when hovering the cursor over the paintable area\r\nApplied the fix to paintings / canvases, pumpkin, sculpture and neon dialogs\r\nBefore: https://files.facepunch.com/raul/2026/August/27_16-56-RingedLimpkin.mp4\r\nAfter: https://files.facepunch.com/raul/2026/August/27_16-57-LawngreenSunbittern.mp4",
+    "author": "Raul"
+  },
+  {
+    "id": 617943,
+    "branch": "main/underground_train_network_update",
+    "changeset": "162375",
+    "created": "2026-08-27T14:46:01",
+    "message": "Bit more decal work on boiler room decals",
+    "author": "hannah.watts"
+  },
+  {
+    "id": 617937,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162372",
+    "created": "2026-08-27T14:16:24",
+    "message": "Attempting to fix pipe access point procgen spawning by generating an outter and inner terrain anchor ring to look for 'flat' terrain underneath the prefab, s2c",
+    "author": "Jakb"
+  },
+  {
+    "id": 617934,
+    "branch": "main/vcc",
+    "changeset": "162369",
+    "created": "2026-08-27T14:02:32",
+    "message": "Tooltip pass",
+    "author": "Adam W"
+  },
+  {
+    "id": 617932,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162367",
+    "created": "2026-08-27T13:54:01",
+    "message": "fix override in last change",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617931,
+    "branch": "main/underground_train_network_update",
+    "changeset": "162366",
+    "created": "2026-08-27T13:52:40",
+    "message": "Added 50x50cm pipe corner variant to Pipe Kit B. UV'd wires in boiler room + Decal polish.",
+    "author": "hannah.watts"
+  },
+  {
+    "id": 617930,
+    "branch": "main/vcc",
+    "changeset": "162365",
+    "created": "2026-08-27T13:49:52",
+    "message": "Set translation strings",
+    "author": "Adam W"
+  },
+  {
+    "id": 617929,
+    "branch": "main/vcc",
+    "changeset": "162364",
+    "created": "2026-08-27T13:45:25",
+    "message": "Move gamepad options to their new section in the left bar now that there's a bunch.",
+    "author": "Adam W"
+  },
+  {
+    "id": 617928,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162363",
+    "created": "2026-08-27T13:44:41",
+    "message": "reduce network range of critters",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617925,
+    "branch": "main/vcc",
+    "changeset": "162362",
+    "created": "2026-08-27T13:34:09",
+    "message": "Implement gamepad cursor acceleration and options",
+    "author": "Adam W"
+  },
+  {
+    "id": 617920,
+    "branch": "main",
+    "changeset": "162360",
+    "created": "2026-08-27T13:27:00",
+    "message": "Added the missing channel mixer post process effect to the nvg RRP volume asset",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617918,
+    "branch": "main/ocean_sim_waterlevel_trace_fix",
+    "changeset": "162359",
+    "created": "2026-08-27T13:25:00",
+    "message": "Boat building station deployment works with env.oceanlevel != 0\r\nAllowed setting env.oceanlevel to negative values, whats the worst that could happen...",
+    "author": "cipeaX"
+  },
+  {
+    "id": 617913,
+    "branch": "main/glass_ar",
+    "changeset": "162356",
+    "created": "2026-08-27T13:17:51",
+    "message": "Crystal AR - renamed entities for consistency with other AR's, fixed missing starting ammo",
+    "author": "alex.m"
+  },
+  {
+    "id": 617912,
+    "branch": "main/vcc",
+    "changeset": "162355",
+    "created": "2026-08-27T13:11:08",
+    "message": "Reduce gamepad cursor speed significantly when moving a UI slider.\r\nImplement value snapping for UI sliders when using gamepad cursor.\r\nLeft trigger also stacks with this to further reduce move speed for precise UI slider control.",
+    "author": "Adam W"
+  },
+  {
+    "id": 617903,
+    "branch": "main/vcc",
+    "changeset": "162350",
+    "created": "2026-08-27T12:28:36",
+    "message": "Holding left trigger reduces gamepad cursor speed.\r\nExposed cursor speed and left-trigger-held cursor speed values as convars. Add options to UI\r\nAdd left trigger to menu VDF config file.",
+    "author": "Adam W"
+  },
+  {
+    "id": 617900,
+    "branch": "main/midi_warmup",
+    "changeset": "162348",
+    "created": "2026-08-27T12:23:21",
+    "message": "remove debug logging",
+    "author": "Ryan"
+  },
+  {
+    "id": 617894,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "162345",
+    "created": "2026-08-27T11:48:13",
+    "message": "Missing files\r\nTurn off prediction for firecrackers and survery charges",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617895,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "162344",
+    "created": "2026-08-27T11:47:51",
+    "message": "Embed prediction code in GrenadeWeapon and ThrownWeapon - spawn an instance of PredictedThrowGhost instead\r\nCleanup previous single component setup",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617893,
+    "branch": "main/character_customisation",
+    "changeset": "162343",
+    "created": "2026-08-27T11:45:59",
+    "message": "main -> character_customisation",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 617892,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162342",
+    "created": "2026-08-27T11:45:56",
+    "message": "Fixed unpowered water pump acting as a gravity source",
+    "author": "Flavien"
+  },
+  {
+    "id": 617881,
+    "branch": "main/wooden_storage_box_optimisation",
+    "changeset": "162340",
+    "created": "2026-08-27T10:39:40",
+    "message": "optimised wooden storage box - LOD0 now under the batching vertex cap with no changes to skins\n\nLOD0 999 verts, was 1,391 so it never batched inside 10m\nthe whole chain LOD0-3 now batches, around 30 to a draw call per band",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617875,
+    "branch": "main",
+    "changeset": "162339",
+    "created": "2026-08-27T10:17:59",
+    "message": "Added the missing night light renderer feature to the DefaultRustRenderer asset",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617871,
+    "branch": "main/glass_ar",
+    "changeset": "162335",
+    "created": "2026-08-27T10:03:54",
+    "message": "Crystal AR - updated item names & descriptions, tweaked sapphire material",
+    "author": "alex.m"
+  },
+  {
+    "id": 617868,
+    "branch": "main",
+    "changeset": "162333",
+    "created": "2026-08-27T09:57:05",
+    "message": "Fixed the ambient lighting on view model objects being incorrect when looking at the sun",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617867,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162332",
+    "created": "2026-08-27T09:46:56",
+    "message": "Bugfix: fix loading prefabs from asset bundles via nested components\r\nTests: booted in bundle editor, was able to click on shop UI",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617866,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162331",
+    "created": "2026-08-27T09:43:38",
+    "message": "Undo: pulling in originals is unnecessary atm\r\nNot doing it avoids accidentally pulling in unexpected prefabs that can be used outside the dynamic bundle\r\nTests: none",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617865,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162330",
+    "created": "2026-08-27T09:37:46",
+    "message": "Industrial crafter doesnt need to be started again after a power loss",
+    "author": "Flavien"
+  },
+  {
+    "id": 617863,
+    "branch": "main",
+    "changeset": "162329",
+    "created": "2026-08-27T09:26:03",
+    "message": "Cherry Picked 162328 (Updated the dummy buffer name in the CommandBufferManager for the new light bins buffer)",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617862,
+    "branch": "main/glass_ar",
+    "changeset": "162328",
+    "created": "2026-08-27T09:14:32",
+    "message": "Updated the dummy buffer name in the CommandBufferManager for the new light bins buffer",
+    "author": "aidan.m"
+  },
+  {
+    "id": 617861,
+    "branch": "main/small_stash_optimisation",
+    "changeset": "162327",
+    "created": "2026-08-27T09:09:58",
+    "message": "optimised small stash and gave it a world model\n\nremoved the fraying geometry that carried a second material on LOD0/LOD1 tht was never displayed anyway. \r\nsubmeshes LOD0/LOD1 2 > 1 now both draw in one call instead of two\r\n\r\nconverted to MeshLOD - also removed a duplicate Model component that had been sat on the root since 2019\r\n\r\nnew small_stash.worldmodel so you can see what you're dropping instead of burlap sack. LOD0 is cheaper than burlap sack.\r\n\r\nUpdated MissionStash, DynamicMissionStash and LogStash which embeded the same meshes and still had the old 2-slot material array against a now 1-submesh mesh.\nconverted those to MeshLOD as well",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 617860,
+    "branch": "main/vcc",
+    "changeset": "162326",
+    "created": "2026-08-27T09:07:51",
+    "message": "Gamepad cursor can be resized. Added UI slider to gamepad options",
+    "author": "Adam W"
+  },
+  {
+    "id": 617859,
+    "branch": "main/vcc",
+    "changeset": "162325",
+    "created": "2026-08-27T08:55:56",
+    "message": "Create a nicer cursor in code for now.\r\nChange colour on hover state.",
+    "author": "Adam W"
+  },
+  {
     "id": 617831,
     "branch": "main/monument_blockers_fixes",
     "changeset": "162300",
@@ -1814,325 +2142,5 @@
     "created": "2026-08-24T17:31:57",
     "message": "fix animations of frogs not playing, skating sideways, and movement speed issues",
     "author": "ElliotH"
-  },
-  {
-    "id": 616262,
-    "branch": "main/fix_hotbar_swap_overstack",
-    "changeset": "161878",
-    "created": "2026-08-24T16:25:20",
-    "message": "Fix hotbar swapping not working with overstacks\r\n- move the RPC completely serverside so it can swap overstacks (thinking was we didn't need a network++ originally if we kept it clientside but forgot swapping overstacks is awkward)\r\n- keep existing admin checks",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 616254,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161877",
-    "created": "2026-08-24T16:07:44",
-    "message": "optimised props ao textures as it was the same issue with 227 of them, most carrying sources far bigger than they ship at and storing a single channel as rgb.\n\nresized to existing max cap    110 files\nrgb -> 8-bit grey          183 files\nhalved 2k -> 1k             24 files\n\n146.3 MB -> 96.3 MB vram",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616252,
-    "branch": "main/AugustQuickfire_2Pie2Furious",
-    "changeset": "161875",
-    "created": "2026-08-24T15:47:29",
-    "message": "Small buffs for unused pies, doubled the bonus duration for: bigcat, hunters, pork (900→1800), fish (600→1200), chicken (300→600)\r\nHunters pie bleed reduction up to 90% from 75%",
-    "author": "Nick.H"
-  },
-  {
-    "id": 616251,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161874",
-    "created": "2026-08-24T15:43:08",
-    "message": "optimised deployable ao textures where applicable.  245 of them, most carrying sources far bigger than they ship at and storing a single channel as rgb.\n\nresized to existing cap    126 files\nrgb -> 8-bit grey          148 files\nhalved 2k -> 1k             47 files\n\r\n186.6 MB -> 92.6 MB vram\r\n\r\nao is sampled from the green channel so rgb storage was never doing anything.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616250,
-    "branch": "main/base_occlusion",
-    "changeset": "161873",
-    "created": "2026-08-24T15:42:29",
-    "message": "Refactor and cleanup of code",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 616247,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161871",
-    "created": "2026-08-24T15:09:56",
-    "message": "Clean: remove PathProxyFor\r\n- update StoreBundleTool to work with DynamicResourceRef\r\nTests: none, not in use yet",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616245,
-    "branch": "main/HAB_armour_damage",
-    "changeset": "161870",
-    "created": "2026-08-24T15:03:08",
-    "message": "hab armour split off into chunks so they can break off individually. \r\nwhen all chunks are gone, it leaves the frame of the armour. \r\nre-exported hab armour and added armour chunks.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616241,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161868",
-    "created": "2026-08-24T14:35:05",
-    "message": "optimised weapon ao textures.  68 were oversized on disk and nearly all were storing a\nsingle channel as rgb.  no weapons ships above 1024 now.\n\nmax size     2048 -> 1024        (52 files)\non disk      4096/2048 -> 1024/512/256 (68 files)\nbit depth     rgb -> 8-bit grey  (58 files)\n\nvram   114.8 MB -> 28.6 MB\r\n\r\nao convention on weapons is half the albedo, so 1024 against the usual 2048 albedo.\n80 already did this, we were just inconsistent about it. we could half again on a per asset basis depending on size of object.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616240,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161867",
-    "created": "2026-08-24T14:33:52",
-    "message": "Update: Add DynamicResourceRef<T> to replace PathProxyForAttrib\r\nAllows us to both automate more of the dynamic bundle assignment as well as help with future merge conflict resolution\r\nTests: added it to UI_StoreTakeover and it's drawer",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616237,
-    "branch": "main/glass_ar",
-    "changeset": "161865",
-    "created": "2026-08-24T14:20:06",
-    "message": "Glass AR - texture, material, naming updates, experimental SSS shader",
-    "author": "alex.m"
-  },
-  {
-    "id": 616236,
-    "branch": "main/sam_vs_drone",
-    "changeset": "161864",
-    "created": "2026-08-24T14:17:34",
-    "message": "Add tunble drone detonate distance convar.",
-    "author": "Adam W"
-  },
-  {
-    "id": 616235,
-    "branch": "main",
-    "changeset": "161863",
-    "created": "2026-08-24T14:14:25",
-    "message": "possible NRE fix for mannequins",
-    "author": "octo"
-  },
-  {
-    "id": 616234,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161862",
-    "created": "2026-08-24T14:05:25",
-    "message": "optimised darts textures and max sizes.  we were shipping the radiation dart at 4k on all textures. \r\n\r\nRadiationDart_AO    4096 -> 512\nRadiationDart_bc    4096 -> 1024\nRadiationDart_mg    4096 -> 1024\nRadiationDart_nrm   4096 -> 1024\n\n42.7 MB → 2.17 MB VRAM\r\n\r\nlooking at other textures that are unnecessarily big too to optimise where applicable.",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616231,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161861",
-    "created": "2026-08-24T13:12:52",
-    "message": "Fix prevent building volumes being baked into the navmesh instead of ignored",
-    "author": "Maverick"
-  },
-  {
-    "id": 616228,
-    "branch": "main/AugustQuickfire_Buffs1",
-    "changeset": "161859",
-    "created": "2026-08-24T13:01:21",
-    "message": "Medkit now gives -20 radiation, same as two individual syringes\r\nBoat Planner tech tree cost down from 120 to 30 \r\nLongsword swing radius 0.3 > 0.4, swing delay 2 > 1.5. Slightly more accurate swings and less time between swings.",
-    "author": "Nick.H"
-  },
-  {
-    "id": 616225,
-    "branch": "main/vehicle_pooling",
-    "changeset": "161857",
-    "created": "2026-08-24T12:53:31",
-    "message": "Add a \"restoreHierarchy\" field to poolables, flip it only on vehicles to minimize the amount of affected features by vehicle pooling - fixes UI pooling issues.",
-    "author": "octo"
-  },
-  {
-    "id": 616224,
-    "branch": "main/sam_vs_drone",
-    "changeset": "161856",
-    "created": "2026-08-24T12:44:21",
-    "message": "Codegen",
-    "author": "Adam W"
-  },
-  {
-    "id": 616221,
-    "branch": "main/demo_ui_2",
-    "changeset": "161852",
-    "created": "2026-08-24T12:24:41",
-    "message": "animation imports + keyframe curve editor",
-    "author": "octo"
-  },
-  {
-    "id": 616217,
-    "branch": "main/Stepladder",
-    "changeset": "161851",
-    "created": "2026-08-24T12:11:46",
-    "message": "Deleted old prefab location",
-    "author": "Lewis T"
-  },
-  {
-    "id": 616216,
-    "branch": "main/Stepladder",
-    "changeset": "161850",
-    "created": "2026-08-24T12:11:36",
-    "message": "Ladder collision and LOD setup",
-    "author": "Lewis T"
-  },
-  {
-    "id": 616209,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161846",
-    "created": "2026-08-24T11:30:45",
-    "message": "GC optim",
-    "author": "Adam W"
-  },
-  {
-    "id": 616208,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161845",
-    "created": "2026-08-24T10:59:05",
-    "message": "Bugfix(editor): fix store prop drawer failing to draw\r\n- added a fallback path for original image property\r\nCuased by missing path proxy field that I ripped out during merge\r\nTests: inspected JungleShowcase ui prefab",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616204,
-    "branch": "main/skinnable_ladder_hatch",
-    "changeset": "161842",
-    "created": "2026-08-24T10:33:57",
-    "message": "Adjusted frame for triangle top tier hatch",
-    "author": "Tom.d"
-  },
-  {
-    "id": 616203,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161841",
-    "created": "2026-08-24T10:06:32",
-    "message": "Fixed an issue where the Deferred+ lighting toggle wasn't been set currently when entering playmode due to the way we copy the pipeline asset",
-    "author": "aidan.m"
-  },
-  {
-    "id": 616202,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161840",
-    "created": "2026-08-24T09:56:56",
-    "message": "Buildfix: fix merge issues\r\nTests: editor opens",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616197,
-    "branch": "main/hackweek_unsafescriptingaccess",
-    "changeset": "161837",
-    "created": "2026-08-24T09:37:14",
-    "message": "Bugfix: grab latest binaries for Rust.Native\r\nOne of them was stale, breaking the feature\r\nTests: booted into craggy on windows - no more exception",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616196,
-    "branch": "main/ArrowIcons",
-    "changeset": "161836",
-    "created": "2026-08-24T09:36:40",
-    "message": "Arrow Revamp Icon fixes",
-    "author": "Lewis T"
-  },
-  {
-    "id": 616195,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161835",
-    "created": "2026-08-24T09:24:55",
-    "message": "Enabled Deferred+ by default and fixed he BillboardLight-RRP.cginc file to be compatible with the new Deferred+ code",
-    "author": "aidan.m"
-  },
-  {
-    "id": 616192,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161832",
-    "created": "2026-08-24T09:12:12",
-    "message": "Added changes that should have been checked out with the last commit",
-    "author": "aidan.m"
-  },
-  {
-    "id": 616191,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161831",
-    "created": "2026-08-24T09:11:40",
-    "message": "Added support for Deferred+ lighting",
-    "author": "aidan.m"
-  },
-  {
-    "id": 616190,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161830",
-    "created": "2026-08-24T09:05:20",
-    "message": "Repair bench fix",
-    "author": "Adam W"
-  },
-  {
-    "id": 616185,
-    "branch": "main/sam_vs_drone",
-    "changeset": "161829",
-    "created": "2026-08-24T08:50:59",
-    "message": "SAM site vs drone buffs wip:\r\nMissiles use a proximity fuse against drones (reusing the MLRS trigger), lead vs them without aim error at 2.25x speed, and destroy drone-dropped explosives mid-air (no fireballs)",
-    "author": "Adam W"
-  },
-  {
-    "id": 616179,
-    "branch": "main/swamp_tree_buff",
-    "changeset": "161827",
-    "created": "2026-08-24T08:02:39",
-    "message": "Increase all swamp tree wood harvest from 300 to 1000",
-    "author": "Rin"
-  },
-  {
-    "id": 616178,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161826",
-    "created": "2026-08-24T07:51:38",
-    "message": "Random includes the default skin now too",
-    "author": "Adam W"
-  },
-  {
-    "id": 616177,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161825",
-    "created": "2026-08-24T07:41:17",
-    "message": "Cached skin id fix",
-    "author": "Adam W"
-  },
-  {
-    "id": 616176,
-    "branch": "main/modular_car_handling_improvements",
-    "changeset": "161824",
-    "created": "2026-08-24T07:34:55",
-    "message": "More suspension/steering/grip tweaks from testing, can be further tweaked after feedback\r\nRemoved the burnout/launch attempt, wasn't working right\r\nFixed engine revs to use front wheel speed instead of rear (AWD so no difference)\r\nRear wheels now visually lock during a handbrake instead spinning",
-    "author": "elhog"
-  },
-  {
-    "id": 616175,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161823",
-    "created": "2026-08-24T07:21:45",
-    "message": "Fixes",
-    "author": "Adam W"
-  },
-  {
-    "id": 616174,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161822",
-    "created": "2026-08-24T07:16:50",
-    "message": "Refactor",
-    "author": "Adam W"
-  },
-  {
-    "id": 616172,
-    "branch": "main/marketplace_power",
-    "changeset": "161820",
-    "created": "2026-08-24T06:57:20",
-    "message": "Market terminal now needs charge from the powerplant to function\r\nCan store 100 charge points, generates 0.15/s with a single heavy fuse and 1/s with a fully loaded power plant\r\nEach transaction costs 10 charge\r\nMarketplace terminal UI shows current charge",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616169,
-    "branch": "main/heli_gunner_vm_sway",
-    "changeset": "161818",
-    "created": "2026-08-24T06:19:03",
-    "message": "Apply aim sway scaled by movement speed when aiming held weapons in the passenger seat of the attack helicopter",
-    "author": "Jarryd Campi"
   }
 ]

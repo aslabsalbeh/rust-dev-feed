@@ -6,23 +6,70 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 27 Aug 2026 01:59:25 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 13:26:59 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Aug 27</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;5 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Monuments &amp;amp; World&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;46 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617828"&gt;Monument blockers now decay only once every 24 hours and are no longer damaged by fire.&lt;/li&gt;
+&lt;li data-rust-commits="617918"&gt;Boat building station deployment works when env.oceanlevel is non‑zero or negative.&lt;/li&gt;
+&lt;li data-rust-commits="617960"&gt;Maintainable anchors reverted to softer checks, fixing spawn failures for terrain skirts.&lt;/li&gt;
+&lt;li data-rust-commits="617937"&gt;Pipe access point procedural generation improved with outer/inner terrain anchor rings to ensure flat terrain spawning.&lt;/li&gt;
+&lt;li data-rust-commits="617892"&gt;Unpowered water pump no longer acts as a gravity source.&lt;/li&gt;
+&lt;li data-rust-commits="617894"&gt;Prediction disabled for firecrackers and survey charges to prevent errant behavior.&lt;/li&gt;
+&lt;li data-rust-commits="617913"&gt;Crystal AR entities renamed for consistency and missing starting ammo fixed.&lt;/li&gt;
+&lt;li data-rust-commits="617946"&gt;HAB armour now correctly returns parent hot‑air‑balloon health when damaged.&lt;/li&gt;
+&lt;li data-rust-commits="617865"&gt;Industrial crafter now retains its state after a power loss, eliminating the need to restart it.&lt;/li&gt;
+&lt;li data-rust-commits="617928"&gt;Network range of critters reduced to improve performance and limit visibility.&lt;/li&gt;
+&lt;li data-rust-commits="617945"&gt;Paintable dialog interactions (drawing, zooming, panning, orbiting) no longer trigger while the F1 menu is open; brush preview no longer hides the cursor.&lt;/li&gt;
+&lt;li data-rust-commits="617868"&gt;Corrected ambient lighting on first‑person view models when looking at the sun, so weapons and tools now display proper lighting.&lt;/li&gt;
+&lt;li data-rust-commits="617920"&gt;Restored the channel mixer post‑process effect for night‑vision goggles, improving visual clarity when using NVG.&lt;/li&gt;
+&lt;li data-rust-commits="617875"&gt;Added night‑light rendering to the default renderer, enhancing visibility of night‑lit objects for all players.&lt;/li&gt;
+&lt;li data-rust-commits="617964"&gt;Fixed a UI bug where the general store tab could fail to close properly, preventing interface glitches and asset‑bundle reference leaks.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;/div&gt;
+&lt;h3&gt;Monument &amp;amp; Structure Mechanics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="617831"&gt;All blocker monuments have been updated to the new S2P system, altering how they interact with player structures and movement.&lt;/li&gt;
+&lt;li data-rust-commits="617828"&gt;Decay grade period increased to 24 hours for all monument blockers; blockers no longer take fire damage.&lt;/li&gt;
+&lt;li data-rust-commits="617918"&gt;Boat building station deployment works when env.oceanlevel is non‑zero or negative.&lt;/li&gt;
+&lt;li data-rust-commits="617960"&gt;Maintainable anchors reverted to softer checks, fixing spawn failures for terrain skirts.&lt;/li&gt;
+&lt;li data-rust-commits="617937"&gt;Pipe access point procedural generation improved with outer/inner terrain anchor rings to ensure flat terrain spawning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Water &amp;amp; Fluid Systems&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617892"&gt;Unpowered water pump no longer acts as a gravity source.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Explosives&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617894"&gt;Prediction disabled for firecrackers and survey charges to prevent errant behavior.&lt;/li&gt;
+&lt;li data-rust-commits="617913"&gt;Crystal AR entities renamed for consistency and missing starting ammo fixed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Armor, Vehicles &amp;amp; Crafting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617946"&gt;HAB armour now correctly returns parent hot‑air‑balloon health when damaged.&lt;/li&gt;
+&lt;li data-rust-commits="617865"&gt;Industrial crafter now retains its state after a power loss, eliminating the need to restart it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Performance &amp;amp; UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617928"&gt;Network range of critters reduced to improve performance and limit visibility.&lt;/li&gt;
+&lt;li data-rust-commits="617945"&gt;Paintable dialog interactions (drawing, zooming, panning, orbiting) no longer trigger while the F1 menu is open; brush preview no longer hides the cursor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Visuals &amp;amp; Rendering&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617823"&gt;Fixed HLOD mesh bounds issue at the Launch Site monument, ensuring all structures render correctly within their intended range.&lt;/li&gt;
+&lt;li data-rust-commits="617868"&gt;Corrected ambient lighting on first‑person view models when looking at the sun, so weapons and tools now display proper lighting.&lt;/li&gt;
+&lt;li data-rust-commits="617920"&gt;Restored the channel mixer post‑process effect for night‑vision goggles, improving visual clarity when using NVG.&lt;/li&gt;
+&lt;li data-rust-commits="617875"&gt;Added night‑light rendering to the default renderer, enhancing visibility of night‑lit objects for all players.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="617964"&gt;Fixed a UI bug where the general store tab could fail to close properly, preventing interface glitches and asset‑bundle reference leaks.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-08-27</guid>
-      <pubDate>Thu, 27 Aug 2026 01:59:25 -0400</pubDate>
+      <pubDate>Thu, 27 Aug 2026 13:26:59 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Aug 26</title>
