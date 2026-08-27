@@ -1,5 +1,221 @@
 [
   {
+    "id": 617831,
+    "branch": "main/monument_blockers_fixes",
+    "changeset": "162300",
+    "created": "2026-08-27T05:46:41",
+    "message": "S2P all blocker monuments",
+    "author": "Rin"
+  },
+  {
+    "id": 617828,
+    "branch": "main/monument_blockers_fixes",
+    "changeset": "162297",
+    "created": "2026-08-27T05:35:42",
+    "message": "Increase decay grade period to 24 hours for all monument blockers\r\nMonument blockers can no longer take fire damage",
+    "author": "Rin"
+  },
+  {
+    "id": 617827,
+    "branch": "main/hlod_improvements_aug_26",
+    "changeset": "162296",
+    "created": "2026-08-27T05:32:34",
+    "message": "More than doubled the speed of the MeshTrimmer stage of HLOD generation \nOnly readback the texture once, not per ray\nNeighbouring tris now start with the successful ray of the previous triangle as that's likely to be valid\nDo the dot product check before the ray, halves the number of rays\nRemoved a bunch of allocations (it's editor code, but still useful)\nFull S2p with HLODs:\nLaunch Site 9:33 -> 2:18\nWater Treatment -> 2:23 -> 0:51\nS2P Launch site",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 617824,
+    "branch": "main/ArrowIcons",
+    "changeset": "162293",
+    "created": "2026-08-27T05:05:30",
+    "message": "Rerendered Arrow Icons",
+    "author": "Rin"
+  },
+  {
+    "id": 617823,
+    "branch": "main/hlod_improvements_aug_26",
+    "changeset": "162292",
+    "created": "2026-08-27T04:56:21",
+    "message": "Fixed previous HLODBounds BiomeVIsual changes accidentally including LOD components in a HLOD mesh that were outside of the range of the bounds\r\nOnly really an issue at launch site as it's the only monument where we run 2 HLODs, all other monuments use 1",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 617815,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162288",
+    "created": "2026-08-27T02:55:02",
+    "message": "Fix compile errors",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617814,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162287",
+    "created": "2026-08-27T02:43:25",
+    "message": "Fix a 4 year old bug: being able to move items into the output of a furnace by splitting them into the output slots\r\n- the reason I avoided it was you have to modify all the ItemFilter methods in the project and add a BasePlayer parameter\r\n- this allows us to block the player moving items into the output of the furnace but keep the furnace able to move cooked items into it's output",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617813,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162286",
+    "created": "2026-08-27T02:10:20",
+    "message": "Fix items that are both cookable and compostable (meat) using the lesser of the two times for composting instead of the correct time for each",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617812,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162285",
+    "created": "2026-08-27T02:09:34",
+    "message": "Fix the composter showing \"Furnace\" in the loot panel title instead of \"Composter\"",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617811,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162284",
+    "created": "2026-08-27T01:49:06",
+    "message": "Don't show the icon as burning when it's inside the composter",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617810,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162283",
+    "created": "2026-08-27T01:35:05",
+    "message": "Fix item creation loop running for 0 amount (due to chance of creating fertilizer) so early exit if chance fails",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617809,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162282",
+    "created": "2026-08-27T01:20:40",
+    "message": "Increase the smelt speed of the composter so it behaves the same as before when you were splitting stacks (same as furnaces were back in the day)",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617808,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162281",
+    "created": "2026-08-27T01:16:22",
+    "message": "Fix composter set to only accept food from old prefab / item filter setup",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617807,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162280",
+    "created": "2026-08-27T01:12:30",
+    "message": "Fix items that are compostable but don't produce any compost being allowed in the compost (because ItemModCompostable is used for bait value)",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617805,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162279",
+    "created": "2026-08-27T01:07:10",
+    "message": "Fix the loot panel for the composter not working the editor\r\n- OnValidate() was overwriting the offset of the inventory panel",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617804,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162278",
+    "created": "2026-08-27T00:44:07",
+    "message": "Fix loot panel not predicting cook time for composting because it was only checking the ItemModCookable",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617803,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162277",
+    "created": "2026-08-27T00:33:25",
+    "message": "Add the \"automatically start cooking\" code from the apartment stove to the BaseOven and enable it for the composter (so the composter automatically \"cooks\" items added into it)",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617802,
+    "branch": "main/monument_blockers_fixes",
+    "changeset": "162276",
+    "created": "2026-08-27T00:19:16",
+    "message": "Added decay to monument blockers\r\nHas an initial grace period where no decay will occur (DecayGracePeriodMinutes on prefab, default 12 hours), after that will apply DecayPerMinuteTick (1) damage per minute\r\nAdded debug.addmonumentblockergrace to process artificial time to the grace period for testing and debug.printmonumentblocker to print the current blocker results\r\nTime is saved through server restarts and scaled by timescale but will not take into account time spent offline\r\nAlso fixed a sneaky bug that restored blocker health to full on every server restart",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 617801,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162275",
+    "created": "2026-08-27T00:18:48",
+    "message": "Add prefab variant for composter loot panel (so we can remove / change the background icons for the composter inputs)",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617800,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162274",
+    "created": "2026-08-27T00:18:07",
+    "message": "Change the composter prefab",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617799,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162273",
+    "created": "2026-08-27T00:17:56",
+    "message": "Rewrite the hackweek composter UI to merge all of the composter code into normal cooking code\r\n- move ItemModCookable -> CookableItemInfo so we can create a \"cooking compost\" component at runtime\r\n- turn ItemModCompostable into an ItemMod\r\n- convert Composter class from StorageContainre -> BaseOven",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617798,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162272",
+    "created": "2026-08-26T23:32:37",
+    "message": "Update: pull prefab originals if prefab variants were assigned to dynamic bundle\r\nPulls just 1 prefab, but worth to do anyway. Still chasing why engine fails to load prefabs in bundle mode.\r\nTests: built new bundles, checked manifest and loaded in editor",
+    "author": "Daniel P"
+  },
+  {
+    "id": 617797,
+    "branch": "main",
+    "changeset": "162271",
+    "created": "2026-08-26T23:30:20",
+    "message": "fix empty mags dropping twice in third person",
+    "author": "octo"
+  },
+  {
+    "id": 617796,
+    "branch": "main",
+    "changeset": "162270",
+    "created": "2026-08-26T23:22:30",
+    "message": "Add support for Rust+ to kick players from our team (or yourself to leave the team)\r\nAlso fixes a couple unrelated bugs",
+    "author": "lamalove"
+  },
+  {
+    "id": 617793,
+    "branch": "main/deepsea_terrain_everywhere",
+    "changeset": "162267",
+    "created": "2026-08-26T23:15:47",
+    "message": "Fix foliage not loading when DeepSea.terrain_everywhere is enabled",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 617791,
+    "branch": "main",
+    "changeset": "162265",
+    "created": "2026-08-26T22:57:35",
+    "message": "Fix navmesh generated on divesites, not generated in some doorways, some monument rooms not having navmesh, and scientist corpse colliders on wrong layer",
+    "author": "Maverick"
+  },
+  {
+    "id": 617786,
+    "branch": "main",
+    "changeset": "162263",
+    "created": "2026-08-26T22:53:20",
+    "message": "three more asset optimsations that were over  the vertex cap\n\nAshtrayB1_LOD0                     1028 > 983 verts\nmatrix_display_tools_LOD1     1019 > 998 verts\nemptybarrel_LOD1                   1164 > 876 verts\n\nashtray now batches on its whole chain (LOD0-2)\ntools display and empty barrel batch from LOD1 down",
+    "author": "Pilgrim"
+  },
+  {
     "id": 617780,
     "branch": "main/bed_optimisation",
     "changeset": "162262",
@@ -1917,78 +2133,6 @@
     "changeset": "161818",
     "created": "2026-08-24T06:19:03",
     "message": "Apply aim sway scaled by movement speed when aiming held weapons in the passenger seat of the attack helicopter",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616166,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161816",
-    "created": "2026-08-24T05:08:56",
-    "message": "Apply UnityPixelLightIntensityCorrection for billboardlight-RRP to fix particle lighting",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616165,
-    "branch": "main/Livestock_animals",
-    "changeset": "161815",
-    "created": "2026-08-24T04:38:35",
-    "message": "Added a drink water need and corresponding behaviour to livestock animals, they can drink from a nearby water container or river/lake",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616164,
-    "branch": "main/tc_auth_group_tests",
-    "changeset": "161814",
-    "created": "2026-08-24T04:25:07",
-    "message": "Added functionality for a TC to modify upkeep rate based on how many players are authed\r\nBased on a tier system, we can set three group sizes and what percentage a player adds to the TC within that group\r\nSetup with some very placeholder values for now for testing\r\nTier 0 - first 4 players add 0% to upkeep\r\nTier 1 - next 6 players add 2% upkeep each\r\nTier 2 - any further players add 4% upkeep each\r\nThis means a TC with 6 players authed will have +4% upkeep, a TC with 12 players will have +20% upkeep\r\nWhen a player deauths from a TC it takes 24 hours in real time before that player is removed from the tax calculation, so authing, building and deauthing won't bypass the extra upkeep\r\nVery, very WIP, for internal evaluation for now",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616162,
-    "branch": "main/base_occlusion",
-    "changeset": "161813",
-    "created": "2026-08-24T03:50:30",
-    "message": "Make sure we only send entiites when a door opens immediately based on a convar, so we can do normal slower snapshot queue when doors are opened and we send entiites and let the \"closer than 30m send everything\" prevent pop-in",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 616154,
-    "branch": "main/heavy_helmet_audio",
-    "changeset": "161805",
-    "created": "2026-08-24T02:53:00",
-    "message": "Add audioMuffleAmount to ItemModWearable, allows us to muffle game audio based on specific clothing\r\nMuffled game audio when wearing heavy plate helmet",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616152,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161803",
-    "created": "2026-08-24T01:25:55",
-    "message": "Declare hair shader stencil block",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616147,
-    "branch": "main/dome_fuel_cap",
-    "changeset": "161799",
-    "created": "2026-08-24T00:33:13",
-    "message": "Capped fuel pump crude storage amount at dome to 1000 (per pump)\r\nS2P dome",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616145,
-    "branch": "main/deepsea_terrain_everywhere",
-    "changeset": "161797",
-    "created": "2026-08-24T00:15:59",
-    "message": "Fix merge issue",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616141,
-    "branch": "main/deepsea_terrain_everywhere",
-    "changeset": "161793",
-    "created": "2026-08-24T00:06:19",
-    "message": "Added deepsea.terrain_everywhere replicated convar, enables the deep sea terrain splats everywhere when enabled",
     "author": "Jarryd Campi"
   }
 ]

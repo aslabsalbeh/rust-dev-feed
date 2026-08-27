@@ -1,237 +1,245 @@
 {
+  "2026-08-27": {
+    "commit_count": 5,
+    "relevant_commit_count": 4,
+    "relevant_signature": "617823,617827,617828,617831",
+    "new_baseline_signature": "617823,617827,617828,617831",
+    "prompt_version": "structured-read-state-v4-strategic-gameplay",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Monuments & World",
+        "items": [
+          {
+            "text": "Monument blockers now decay only once every 24 hours and are no longer damaged by fire.",
+            "commit_ids": [
+              617828
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "All blocker monuments have been updated to the new S2P system, altering how they interact with player structures and movement.",
+            "commit_ids": [
+              617831
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "### Monuments & World\n- Monument blockers now decay only once every 24 hours and are no longer damaged by fire.\n\n### Gameplay & Balance\n- All blocker monuments have been updated to the new S2P system, altering how they interact with player structures and movement.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-08-26": {
-    "commit_count": 91,
-    "relevant_commit_count": 59,
+    "commit_count": 113,
+    "relevant_commit_count": 77,
     "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724,617726,617736,617738,617742,617743,617746,617751,617754",
     "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724,617726,617736,617738,617742,617743,617746,617751,617754",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {
-      "617554,617587,617627,617631,617639,617645,617649,617650,617654,617664,617666,617668,617683,617694,617695,617708,617722,617726,617736,617738,617743,617746,617751,617754,617778": [
+      "617587,617627,617631,617639,617645,617649,617650,617664,617668,617695,617722,617738,617743,617746,617751,617754,617778,617791,617796,617802,617804,617805,617810,617812,617814": [
         {
           "title": "NPC & AI",
           "items": [
             {
-              "text": "Improved critter movement: better speed values, smoother animation blending, and fixed hovering above ground.",
+              "text": "Improved critter movement speed and animation blending; fixed critters hovering above ground.",
               "commit_ids": [
                 617751
               ]
             },
             {
-              "text": "AI commands now work on multiple livestock animals; added selection/deselection console variables and offset positioning to prevent stacking.",
+              "text": "AI select/move commands now work on multiple animals with offset to avoid stacking; added ai.selectinrange and ai.deselectnpc console variables.",
               "commit_ids": [
                 617631
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Navmesh & Pathfinding",
+          "items": [
             {
-              "text": "Scientist2 corpses no longer sit on the ragdoll layer, preventing them from blocking player movement and projectiles.",
+              "text": "Fixed missing or disconnected navmesh in rooms behind doors, dive sites, and certain monument interiors; corrected scientist corpse collider layer to prevent blocking movement and projectiles.",
               "commit_ids": [
-                617650
+                617668,
+                617650,
+                617778,
+                617791
               ]
             }
           ]
         },
         {
-          "title": "Navigation & Navmesh",
+          "title": "Team & Permissions",
           "items": [
             {
-              "text": "Fixed missing navmesh in rooms behind doors (e.g., missile silo, ghostship) by preventing doors from being baked as islands and pruning disconnected regions.",
+              "text": "Rust+ now allows team leaders to kick players from the team or for players to leave the team voluntarily.",
               "commit_ids": [
-                617668
-              ]
-            },
-            {
-              "text": "Navmesh now builds correctly on dive sites.",
-              "commit_ids": [
-                617778
+                617796
               ]
             }
           ]
         },
         {
-          "title": "Gameplay & Balance",
+          "title": "Decay & Upkeep",
           "items": [
             {
-              "text": "Monument blockers rebalanced: lowered HP (1 C4 or 5 satchels), adjusted sizes for oil rigs, launch sites, silos, and added small oil rig blocker.",
+              "text": "Added decay to monument blockers with a 12‑hour grace period, per‑minute damage after, and debug commands; fixed bug that restored blocker health on server restart.",
               "commit_ids": [
-                617645,
+                617802
+              ]
+            },
+            {
+              "text": "Adjusted monument blocker health: lowered HP for various rigs and silos, making them destroyable with 1 C4 or 5 satchels.",
+              "commit_ids": [
                 617649,
+                617645,
                 617738
               ]
             },
             {
-              "text": "Heavy pot helmet crafting cost increased (1 → 2 sheet metal, 4 → 8 HQM).",
-              "commit_ids": [
-                617627
-              ]
-            },
-            {
-              "text": "Playerboats now persist `timeSinceLastUsed`, fixing the no‑decay bug on daily‑restart servers.",
+              "text": "Player boats now persist timeSinceLastUsed, restoring proper decay behavior on daily‑restart servers.",
               "commit_ids": [
                 617743
-              ]
-            },
-            {
-              "text": "Maintainables fixes: corrected water pipe spawn angles, ensured gas station loot spawners persist after server restarts, and applied prefab fixes to gas stations.",
-              "commit_ids": [
-                617695,
-                617708
-              ]
-            },
-            {
-              "text": "Disallowed looting of clipping player bodies while mounted to submarines; players must exit the submarine to loot.",
-              "commit_ids": [
-                617587
-              ]
-            },
-            {
-              "text": "Fixed incorrect \"Can't be deployed on boats\" message when a structure is badly placed.",
-              "commit_ids": [
-                617746
-              ]
-            },
-            {
-              "text": "Workbench upgrade rug deployment issues resolved.",
-              "commit_ids": [
-                617736
               ]
             }
           ]
         },
         {
-          "title": "UI & Store",
+          "title": "Maintainables & Loot",
           "items": [
             {
-              "text": "Store UI now dynamically loads item overlay sprites correctly, fixing missing icons.",
+              "text": "Fixed water pipe spawns at odd angles and ensured gas station loot spawners reset correctly after server restarts.",
+              "commit_ids": [
+                617695
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Submarine Looting",
+          "items": [
+            {
+              "text": "Prevented looting of clipping player bodies while mounted on submarines; players must exit the submarine to loot.",
+              "commit_ids": [
+                617587
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Compost UI Improvements",
+          "items": [
+            {
+              "text": "Blocked moving items into furnace output slots, fixed zero‑amount fertilizer creation loop, corrected loot panel editor offset, fixed title label to \"Composter\", and added proper cook‑time prediction for composting.",
+              "commit_ids": [
+                617814,
+                617810,
+                617805,
+                617812,
+                617804
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Server Console Compatibility",
+          "items": [
+            {
+              "text": "Added Windows Terminal compatibility to the Windows server console, fixing glitchy and unusable output.",
+              "commit_ids": [
+                617754
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crafting & Item Balance",
+          "items": [
+            {
+              "text": "Increased crafting cost for the heavy pot helmet from 1 to 2 sheet metal and from 4 to 8 high‑quality metal.",
+              "commit_ids": [
+                617627
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Deployment Messages",
+          "items": [
+            {
+              "text": "Corrected misleading \"Can't be deployed on boats\" error message to only appear when placement is actually invalid.",
+              "commit_ids": [
+                617746
+              ]
+            }
+          ]
+        }
+      ],
+      "617554,617576,617625,617635,617646,617654,617662,617663,617666,617683,617687,617694,617708,617721,617726,617736,617763,617766,617780,617793,617797,617807,617808,617813,617815": [
+        {
+          "title": "Store UI",
+          "items": [
+            {
+              "text": "Fixed dynamic loading of sprites in the store's item overlay, ensuring items display correctly.",
               "commit_ids": [
                 617694
               ]
             },
             {
-              "text": "Demo UI animation loader fixed by marking clips as legacy.",
+              "text": "Made shop tiles clickable by reassigning resource bundles and fixing stale references, improving navigation.",
               "commit_ids": [
-                617722
+                617687
               ]
             }
           ]
-        }
-      ],
-      "617552,617555,617571,617576,617586,617589,617590,617594,617600,617608,617625,617635,617646,617661,617662,617663,617687,617697,617721,617742,617760,617763,617766,617775,617780": [
+        },
         {
-          "title": "Combat & Equipment",
+          "title": "Composting System",
           "items": [
             {
-              "text": "Shield functionality fixes merged into main branch, improving defensive behavior.",
+              "text": "Corrected composting time for items that are both cookable and compostable (e.g., meat) to use the appropriate time per process.",
               "commit_ids": [
-                617646
+                617813
               ]
             },
             {
-              "text": "HAB armor now requires holding E for 3 seconds to equip, preventing accidental equips; added equip effect and placeholder sound, and switched door sounds to chainlink.",
+              "text": "Adjusted composter filter to accept only food items from the updated prefab/item filter setup.",
+              "commit_ids": [
+                617808
+              ]
+            },
+            {
+              "text": "Prevented compostable items that yield no compost from being placed in the composter.",
+              "commit_ids": [
+                617807
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapon Handling",
+          "items": [
+            {
+              "text": "Fixed a bug where empty magazines could drop twice when using third‑person view.",
+              "commit_ids": [
+                617797
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Armor & Equipment",
+          "items": [
+            {
+              "text": "Added a 3‑second hold‑E requirement to equip HAB armor, preventing accidental equips; also enabled armor gib read/write, added equip effect and placeholder sound, and switched door sounds to chainlink.",
               "commit_ids": [
                 617766
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Shop",
-          "items": [
-            {
-              "text": "Shop UI tiles are now clickable and missing icons fixed; static asset props marked NonSerialized to clean up dependencies.",
-              "commit_ids": [
-                617687,
-                617663
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Health & Crafting",
-          "items": [
-            {
-              "text": "Medical honey bandage instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth craft cost lowered from 8 to 4.",
-              "commit_ids": [
-                617571
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Resources & Spawning",
-          "items": [
-            {
-              "text": "High-quality ore spawner added with doubled min/max respawn delay, affecting ore availability.",
-              "commit_ids": [
-                617775
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Physics & Collisions",
-          "items": [
-            {
-              "text": "Collider read/write fixes applied to improve interaction accuracy.",
-              "commit_ids": [
-                617576
-              ]
-            },
-            {
-              "text": "Removed unnecessary client-side colliders for HAB armor, streamlining collision handling.",
-              "commit_ids": [
-                617589
-              ]
-            }
-          ]
-        }
-      ],
-      "617557,617562,617597,617621,617640,617658,617718,617724,617774": [
-        {
-          "title": "Combat & Weapons",
-          "items": [
-            {
-              "text": "Added admin invisible cube and wall attack variants that can be damaged by melee or shooting, enabling new combat interactions.",
-              "commit_ids": [
-                617724
-              ]
-            },
-            {
-              "text": "Implemented client-side prediction for grenades and thrown weapons, improving accuracy of drops and throws.",
-              "commit_ids": [
-                617718
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Resources & Spawning",
-          "items": [
-            {
-              "text": "Separated HQM ore into its own population, making it spawn much rarer and added rare HQM collectible spawns with placeholder resource values.",
-              "commit_ids": [
-                617557
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Environment & Hazards",
-          "items": [
-            {
-              "text": "Ensured oil rig radiation resets correctly on server restart if the force reset fails, maintaining intended hazard behavior.",
-              "commit_ids": [
-                617562
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Collision & Interactions",
-          "items": [
-            {
-              "text": "Replaced mesh collider on HAB armour frame with box colliders, fixing collision detection for armour interactions.",
-              "commit_ids": [
-                617621
               ]
             }
           ]
@@ -496,44 +504,6 @@
       }
     ],
     "summary": "### Combat & Weapon Balance\n- Radwater now scales its damage with protection, dealing significantly more damage to fully equipped kits.\n- Flashlight weapon toggles on/off with right‑click, removing the previous F‑key activation.\n- Semi‑automatic pistol gains stronger damage falloff at range and its high‑quality material craft cost increased; SMG spawn chance slightly up and Rifle spawn chance slightly down for better mid‑game weapon balance.\n\n### Comfort & Environment\n- Bear rug provides 100 % comfort within 2 m and regular rug within 1 m, fixing the prior 25 % solo comfort issue.\n- Monument blockers at Launch Site, Military Tunnels and Missile Silo have adjusted protection values and health for improved balance.\n\n### Vehicles & Handling\n- Modular car wheels now use correct models and normals, and car handling has been refined – less body roll, fewer spin‑outs, higher‑speed drifting and smoother steering.\n\n### Gameplay & Balance\n- Added rabbit animal with animation, model, and prefab.\n- Russian roulette DLC textures and material updated, fixing naming issues.\n- Hackable crates now correctly flagged and visually indicated; puzzlereset alerts suppressed after forced restart.\n- Group tax displayed when hovering over upkeep cost in the TC loot panel.\n- Event crates and server gibs now persist across server restarts; fire state saved; crate despawn time reduced to 30 minutes; heli crates no longer land on unloadable train wagons.\n\n### AI & Navigation\n- Low‑resolution navmesh on ghost ships corrected, improving AI navigation on those vessels.\n- Fixed AI fleeing behavior when players jump, ensuring enemies stay engaged.\n\n### Performance\n- Optimized friend list refresh, eliminating lag spikes when authorizing friends to turrets in large teams.\n\n### Vehicles & Combat\n- HAB armour colliders fixed for proper removal on client and server, adding a collision mesh for the frame.\n- WireTool now correctly overrides third‑person idle/relax running stance, fixing tool animation.\n\n### UI & UX\n- Fixed session modal overflow and description scroll, restoring ability to disconnect from long description sessions.\n- Store UI now avoids sprite invalidation on opening, making all shop tiles clickable and fixing missing icons.\n- Added support for dynamic fullscreen and gallery sprites in store item overlays, improving item preview rendering.\n- Siren off state now visible, clarifying when sirens are inactive.\n- Cover images in store items now enabled after initialization, ensuring proper visuals.\n- Restored DLC prefab setup to prevent errors when clicking DLC tiles in the store.\n- Improved dynamic shop asset loading; empty tiles created on warmup then filled, stabilizing store UI.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-08-24": {
-    "commit_count": 68,
-    "relevant_commit_count": 48,
-    "relevant_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616245,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322,616326,616328,616332,616333,616338,616341,616344",
-    "new_baseline_signature": "616164,616165,616166,616169,616175,616176,616177,616178,616179,616185,616190,616195,616196,616197,616202,616203,616208,616209,616224,616225,616228,616231,616235,616236,616240,616245,616252,616262,616272,616273,616274,616275,616276,616282,616285,616288,616294,616302,616307,616313,616322,616326,616328,616332,616333,616338,616341,616344",
-    "prompt_version": "structured-read-state-v4-strategic-gameplay",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Medkits now reduce radiation by 20, and longsword swings have a larger 0.4 radius with a faster 1.5‑second delay for more accurate attacks.",
-            "commit_ids": [
-              616228
-            ]
-          },
-          {
-            "text": "SAM sites fire proximity‑fuse missiles at drones, target 2.25× faster, can destroy drone‑dropped explosives mid‑air, and a new setting lets servers adjust the drone detonation distance.",
-            "commit_ids": [
-              616185,
-              616236
-            ]
-          },
-          {
-            "text": "Homing launchers now show a “Keep on target” label and their lock‑on timer is 30 % shorter.",
-            "commit_ids": [
-              616333
-            ]
-          }
-        ]
-      }
-    ],
-    "summary": "### Combat & Weapons\n- Medkits now reduce radiation by 20, and longsword swings have a larger 0.4 radius with a faster 1.5‑second delay for more accurate attacks.\n- SAM sites fire proximity‑fuse missiles at drones, target 2.25× faster, can destroy drone‑dropped explosives mid‑air, and a new setting lets servers adjust the drone detonation distance.\n- Homing launchers now show a “Keep on target” label and their lock‑on timer is 30 % shorter.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
