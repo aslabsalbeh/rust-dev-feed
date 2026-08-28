@@ -1,5 +1,141 @@
 [
   {
+    "id": 618033,
+    "branch": "main/Livestock_animals",
+    "changeset": "162435",
+    "created": "2026-08-28T01:36:48",
+    "message": "Codegen, compile fixes",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 618022,
+    "branch": "main/gutter_optimisations",
+    "changeset": "162425",
+    "created": "2026-08-27T23:59:44",
+    "message": "Gutter cornices: combined each into one MeshLOD\n\n    renderers      30 > 3\n    LOD components 30 > 3\n\nParts cull at different distances (supports 15, caps 35, rail 75), so each state is a mesh of only what's still visible - 802/88/24 tris, matching the originals at every band. Still batches, all states under the vert cap.\r\ntime for bed",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618021,
+    "branch": "main/tc_auth_group_tests",
+    "changeset": "162424",
+    "created": "2026-08-27T23:56:53",
+    "message": "If a code lock has 2 or less authed users skip that lock when calculating the door tax\r\nConfigurable by decay.upkeep_lock_min_users convar\r\nAttempting to exempt player run hotels from being overly taxed, may need to re-evaluate if abused",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 618020,
+    "branch": "main/abyss_vert_horizontal_barrel_optimisation",
+    "changeset": "162423",
+    "created": "2026-08-27T23:22:05",
+    "message": "Abyss barrels: combined the seaweed into one mesh per barrel\n\nMerged the seaweed clumps on both storage skins into a single mesh per LOD, driven by one MeshLOD (0/7, cull 15).\n\nseaweed clumps   107 > 2 meshes\nLOD components   109 > 4\nrenderers        115 > 10\nprefab size    518kb > 121kb\r\n\r\nGeometry and collision unchanged. Wind is preserved.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618015,
+    "branch": "main/binbagpile_optimisation",
+    "changeset": "162419",
+    "created": "2026-08-27T21:41:40",
+    "message": "optimized poker table variants:\r\n\r\nMerged every RendererLOD chain across the four static configs into one combined FBX each, driven by a single MeshLOD (1/10/25, cull 60).\n\n- RendererLOD chains:     34 > 4 MeshLOD\n- LOD components:          226 > 192\n- renderers:                       321 > 212\n- GameObjects:                143 fewer\n- LOD0 submesh draws:  49 > 14\n- prefab size :                   508kb > 122kb\r\n\r\nAlso cleared a dead LODGroup from _cardtable_base",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618006,
+    "branch": "main",
+    "changeset": "162411",
+    "created": "2026-08-27T20:38:50",
+    "message": "~ RidableHorse.prefab",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 618004,
+    "branch": "main/fix_masterkey_swipe",
+    "changeset": "162409",
+    "created": "2026-08-27T20:32:16",
+    "message": "Add tests to prove the swiping is correct",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 618003,
+    "branch": "main/fix_masterkey_swipe",
+    "changeset": "162408",
+    "created": "2026-08-27T20:32:03",
+    "message": "Fix the master key getting stuck in the animation state if you left click with key, as it derives from the keycard but has no swipe animation",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 618000,
+    "branch": "main/high_stakes_dlc",
+    "changeset": "162407",
+    "created": "2026-08-27T20:16:35",
+    "message": "russian roulette;\r\n- updated prefab\r\n- updated textures wip",
+    "author": "curt"
+  },
+  {
+    "id": 617993,
+    "branch": "main/storepage_crystalAR",
+    "changeset": "162406",
+    "created": "2026-08-27T18:46:59",
+    "message": "Crystal AR store page wip",
+    "author": "Flavien"
+  },
+  {
+    "id": 617992,
+    "branch": "main/skinviewer_sept26",
+    "changeset": "162405",
+    "created": "2026-08-27T18:43:02",
+    "message": "Wood armor gloves placeholder skin viewer mesh",
+    "author": "Flavien"
+  },
+  {
+    "id": 617991,
+    "branch": "main/skinviewer_sept26",
+    "changeset": "162404",
+    "created": "2026-08-27T18:42:44",
+    "message": "Added wooden armor parts and crystal AR to the skin viewer",
+    "author": "Flavien"
+  },
+  {
+    "id": 617988,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162401",
+    "created": "2026-08-27T18:32:58",
+    "message": "remove extra debug log",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617982,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162397",
+    "created": "2026-08-27T18:17:03",
+    "message": "Refactored PlaceDecorRoadside to use Dithering and retry placement of pipes a configurable amount of times to get past the terrain checks blocking >80% of spawns\r\n- Dithering only moves away from roads, to make sure it doesnt re-try with one directly in the path\r\n\r\nAlso fix PlaceWaterTreamentPipes to not use unnecessary statics",
+    "author": "ElliotH"
+  },
+  {
+    "id": 617981,
+    "branch": "main/skinviewer_cubemap_fix",
+    "changeset": "162396",
+    "created": "2026-08-27T18:09:05",
+    "message": "Fixed cubemap not working for viewmodels in the skin viewer unless you connected to a server",
+    "author": "Flavien"
+  },
+  {
+    "id": 617979,
+    "branch": "main/qol_compost_ui",
+    "changeset": "162394",
+    "created": "2026-08-27T18:07:27",
+    "message": "Codegen",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 617978,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162393",
+    "created": "2026-08-27T17:58:33",
+    "message": "Optim: consolidate bundle un-/sub to store opening closing\r\n- force reload the active tab when opening store page\r\nLets us unload resources while being ingame. Saves us 380MB in textures\r\nTests: both backends in editor, took snapshots in standalone client. Noticed reopening shop now has borked images in standalone >.>",
+    "author": "Daniel P"
+  },
+  {
     "id": 617966,
     "branch": "main/Livestock_animals",
     "changeset": "162391",
@@ -1966,181 +2102,5 @@
     "created": "2026-08-25T02:31:29",
     "message": "Compile fix (don't use editor only function)",
     "author": "Dayaan"
-  },
-  {
-    "id": 616336,
-    "branch": "main/terrain_holes_replace",
-    "changeset": "161924",
-    "created": "2026-08-25T01:56:30",
-    "message": "Run batch alpha fitter",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616335,
-    "branch": "main/terrain_holes_replace",
-    "changeset": "161923",
-    "created": "2026-08-25T01:54:58",
-    "message": "Add some padding to terrain depth prepass distance",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616333,
-    "branch": "main/homing_launcher_tweaks",
-    "changeset": "161921",
-    "created": "2026-08-25T01:35:51",
-    "message": "Added \"Keep on target\" text to homing launcher UI\n- Reduced the lock on timer by 30% \nhttps://files.facepunch.com/el-hog/2026/August/25_09-32-WorthlessDanishswedishfarmdog.mp4",
-    "author": "elhog"
-  },
-  {
-    "id": 616332,
-    "branch": "main/terrain_holes_replace",
-    "changeset": "161920",
-    "created": "2026-08-25T01:30:24",
-    "message": "AlphaBatchFitter improvements and alphamap toggle convar that switches between terrain material feature",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616328,
-    "branch": "main/terrain_holes_replace",
-    "changeset": "161918",
-    "created": "2026-08-25T01:25:34",
-    "message": "Fix merge issues",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616326,
-    "branch": "main/tc_auth_group_tests",
-    "changeset": "161917",
-    "created": "2026-08-25T01:08:08",
-    "message": "Group upkeep modifier now takes into account any unique players authed on a code lock\r\nIf a player is not authed on a TC but is authed on a code lock controlled by that TC then they will contribute to upkeep costs\r\nRuns through the same 24h window as TC auth\r\nCan be disabled via decay.upkeep_group_count_locks\r\nAdded tests to verify behaviour",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616322,
-    "branch": "main/modular_car_handling_improvements",
-    "changeset": "161913",
-    "created": "2026-08-25T00:17:02",
-    "message": "Minor tweaks\r\nPrevent players using toggle duck getting stuck with handbrake on\r\nApply the raw tyre force regardless of whether the handbrake is on\r\nFixed non car vehicles getting affected by handbrake changes (check if a wheel is handbraked, not just if it's the front wheel)",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616316,
-    "branch": "main/AugustQuickfire_2Pie2Furious",
-    "changeset": "161908",
-    "created": "2026-08-24T22:35:37",
-    "message": "Hunters and fish pie 2 > 1 mushroom",
-    "author": "Nick.H"
-  },
-  {
-    "id": 616313,
-    "branch": "main/gib_fixes",
-    "changeset": "161905",
-    "created": "2026-08-24T22:26:13",
-    "message": "dead log resource gib meshes and setup \r\nisn't currently supported as nothing in the resource family gibs",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616307,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "161902",
-    "created": "2026-08-24T21:43:55",
-    "message": "Small oilrig converted",
-    "author": "cipeaX"
-  },
-  {
-    "id": 616302,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "161900",
-    "created": "2026-08-24T20:54:24",
-    "message": "WIP Oil rigs no longer despawn all crates when the server restarts, large rig converted, small rig to go\r\n- Reworked the reset setup, attached a generator to the main reset so it can be saved, removed the smaller puzzleresets for each of the rooms\r\n- Puzzle now force-resets on server restart, unless there's players nearby - this also fixes getting killed while sleeping if you happened to be near any puzzle when the server goes down\r\n- Crates get saved so if you were in the middle of hacking the locked crate, it just continues after restart\r\n- Various other stuff to allow the puzzlereset to correctly find its reset entities and reset objects again afterwards\r\n- Puzzle itself saveloads references to spawned crates so it doesn't spawn duplicates on the next reset\r\n- ScientistBoatOilrigManager is no longer an entity (not needed)\r\n- Slight refactor, lots more cleanup to be done",
-    "author": "cipeaX"
-  },
-  {
-    "id": 616294,
-    "branch": "main/cui_updates",
-    "changeset": "161895",
-    "created": "2026-08-24T19:10:36",
-    "message": "Fixed potential NRE in FadeCanvasGroup",
-    "author": "Raul"
-  },
-  {
-    "id": 616292,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161893",
-    "created": "2026-08-24T18:59:15",
-    "message": "optimised ao textures for vehicles, generic textures and misc items. \n\nhalved 2k -> 1k  with almost zero visual difference, not enough to warrant the double res \n\n328 MB -> 192 MB vram",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616288,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "161891",
-    "created": "2026-08-24T18:53:07",
-    "message": "add WIP frog \"interested\" state, which currently makes it look for shallow water and then start croaking",
-    "author": "ElliotH"
-  },
-  {
-    "id": 616285,
-    "branch": "main/high_stakes_dlc",
-    "changeset": "161890",
-    "created": "2026-08-24T18:42:29",
-    "message": "russian roulette;\r\n- updated game model art\r\n- added both ammo model types to indicate rounds in play for applicable rev types\r\n- added chain connector model for python pick cases\r\n- added preview baked textures\r\n- updated material and prefab",
-    "author": "curt"
-  },
-  {
-    "id": 616282,
-    "branch": "main",
-    "changeset": "161889",
-    "created": "2026-08-24T17:53:54",
-    "message": "Fix navmesh generating in places in shouldn't, potential fix for \"navmesh failed to be created\", and optimization of NPC path following",
-    "author": "Maverick"
-  },
-  {
-    "id": 616277,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161886",
-    "created": "2026-08-24T17:38:34",
-    "message": "Update: submitting the results of script run\r\nTests: none",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616276,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161885",
-    "created": "2026-08-24T17:38:01",
-    "message": "Update libraries",
-    "author": "Maverick"
-  },
-  {
-    "id": 616275,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161884",
-    "created": "2026-08-24T17:37:36",
-    "message": "Update(editor): automate copying of original resource to DynamicResourceRef\r\n- change DynamicResourceRef to be a class type (reflection modification on values is quite a bit oh hassle). Will try to fix later if I got time\r\nTests: ran the new script, checked the modified prefabs",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616274,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161883",
-    "created": "2026-08-24T17:35:13",
-    "message": "Path following optimizations (around double perf), also a bunch of instrumentation and a benchmark setup:\r\n- only string pull the beginning of the path, we will string pull again eventually so not need to run the algo for the whole path (steering agents only)\r\n- only re-string pull the current path if we moved past a threshold or passed a path corner, not every frame (steering agents only)\r\n- when chasing a moving target, instead of recalculating a new path, try to extend the previous path a bit instead to save time\r\n- use unity transform SetPositionAndRotation instead of setting both independantly\r\n- fuse some native method calls, so that we only call one method and skip the interop cost for the other call\r\n- do not check corridor validity if no tile has changed since pathing",
-    "author": "Maverick"
-  },
-  {
-    "id": 616273,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161882",
-    "created": "2026-08-24T17:34:43",
-    "message": "Update: Add DynamicResourceRef to UI_StoreTakeover\r\n- amend prop drawer to invoke the right prop\r\nTests: none",
-    "author": "Daniel P"
-  },
-  {
-    "id": 616272,
-    "branch": "main/Livestock_animals/Frog_Branch",
-    "changeset": "161881",
-    "created": "2026-08-24T17:31:57",
-    "message": "fix animations of frogs not playing, skating sideways, and movement speed issues",
-    "author": "ElliotH"
   }
 ]

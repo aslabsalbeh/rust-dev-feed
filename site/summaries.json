@@ -1,63 +1,36 @@
 {
   "2026-08-27": {
-    "commit_count": 46,
-    "relevant_commit_count": 27,
-    "relevant_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966",
-    "new_baseline_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966",
+    "commit_count": 63,
+    "relevant_commit_count": 36,
+    "relevant_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033",
+    "new_baseline_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Monument & Structure Mechanics",
+        "title": "Gameplay & Economy",
         "items": [
           {
-            "text": "Decay grade period increased to 24 hours for all monument blockers; blockers no longer take fire damage.",
+            "text": "Monument blockers now sync to clients, have a 24‑hour decay period, and are immune to fire damage.",
             "commit_ids": [
-              617828
+              617828,
+              617831
             ]
           },
           {
-            "text": "Boat building station deployment works when env.oceanlevel is non‑zero or negative.",
+            "text": "Code locks with two or fewer authorized users are ignored in door tax calculations, lowering upkeep costs.",
             "commit_ids": [
-              617918
+              618021
             ]
           },
           {
-            "text": "Maintainable anchors reverted to softer checks, fixing spawn failures for terrain skirts.",
+            "text": "HAB armour now transfers damage to its parent hot‑air balloon instead of itself.",
             "commit_ids": [
-              617960
+              617946
             ]
           },
           {
-            "text": "Pipe access point procedural generation improved with outer/inner terrain anchor rings to ensure flat terrain spawning.",
-            "commit_ids": [
-              617937
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Water & Fluid Systems",
-        "items": [
-          {
-            "text": "Unpowered water pump no longer acts as a gravity source.",
-            "commit_ids": [
-              617892
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Explosives",
-        "items": [
-          {
-            "text": "Prediction disabled for firecrackers and survey charges to prevent errant behavior.",
-            "commit_ids": [
-              617894
-            ]
-          },
-          {
-            "text": "Crystal AR entities renamed for consistency and missing starting ammo fixed.",
+            "text": "AR entities spawn with the correct starting ammo.",
             "commit_ids": [
               617913
             ]
@@ -65,183 +38,110 @@
         ]
       },
       {
-        "title": "Armor, Vehicles & Crafting",
+        "title": "Building & Infrastructure",
         "items": [
           {
-            "text": "HAB armour now correctly returns parent hot‑air‑balloon health when damaged.",
+            "text": "Boat building stations can deploy when the ocean level setting is non‑zero or negative, supporting custom ocean levels.",
             "commit_ids": [
-              617946
+              617918
             ]
           },
           {
-            "text": "Industrial crafter now retains its state after a power loss, eliminating the need to restart it.",
+            "text": "Unpowered water pumps no longer act as gravity sources.",
             "commit_ids": [
-              617865
+              617892
+            ]
+          },
+          {
+            "text": "Maintainable prefabs now spawn correctly with relaxed anchor checks, added terrain anchor rings, and dithering with configurable retry logic to reduce pipe and roadside decor placement failures.",
+            "commit_ids": [
+              617960,
+              617937,
+              617982
             ]
           }
         ]
       },
       {
-        "title": "Performance & UI",
+        "title": "Items & Interaction",
         "items": [
           {
-            "text": "Network range of critters reduced to improve performance and limit visibility.",
+            "text": "Master key animation no longer sticks on left‑click, ensuring proper swipe behavior.",
             "commit_ids": [
-              617928
+              618003
             ]
           },
           {
-            "text": "Paintable dialog interactions (drawing, zooming, panning, orbiting) no longer trigger while the F1 menu is open; brush preview no longer hides the cursor.",
+            "text": "Paintable dialog interactions and brush cursor are disabled while the F1 menu is open.",
             "commit_ids": [
               617945
             ]
-          }
-        ]
-      },
-      {
-        "title": "Visuals & Rendering",
-        "items": [
-          {
-            "text": "Fixed HLOD mesh bounds issue at the Launch Site monument, ensuring all structures render correctly within their intended range.",
-            "commit_ids": [
-              617823
-            ]
           },
           {
-            "text": "Corrected ambient lighting on first‑person view models when looking at the sun, so weapons and tools now display proper lighting.",
-            "commit_ids": [
-              617868
-            ]
-          },
-          {
-            "text": "Restored the channel mixer post‑process effect for night‑vision goggles, improving visual clarity when using NVG.",
-            "commit_ids": [
-              617920
-            ]
-          },
-          {
-            "text": "Added night‑light rendering to the default renderer, enhancing visibility of night‑lit objects for all players.",
-            "commit_ids": [
-              617875
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Fixed a UI bug where the general store tab could fail to close properly, preventing interface glitches and asset‑bundle reference leaks.",
+            "text": "General store UI grids now receive closure notifications, preventing asset bundle reference leaks.",
             "commit_ids": [
               617964
             ]
           }
         ]
+      },
+      {
+        "title": "Performance & Network",
+        "items": [
+          {
+            "text": "Network update range for critters reduced to improve performance.",
+            "commit_ids": [
+              617928
+            ]
+          },
+          {
+            "text": "Client prediction disabled for firecrackers and survey charges to prevent missing‑file errors.",
+            "commit_ids": [
+              617894
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Crafting & Power",
+        "items": [
+          {
+            "text": "Industrial crafter machines retain their active state after a power loss, removing the need for manual restart.",
+            "commit_ids": [
+              617865
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### Monument & Structure Mechanics\n- Decay grade period increased to 24 hours for all monument blockers; blockers no longer take fire damage.\n- Boat building station deployment works when env.oceanlevel is non‑zero or negative.\n- Maintainable anchors reverted to softer checks, fixing spawn failures for terrain skirts.\n- Pipe access point procedural generation improved with outer/inner terrain anchor rings to ensure flat terrain spawning.\n\n### Water & Fluid Systems\n- Unpowered water pump no longer acts as a gravity source.\n\n### Combat & Explosives\n- Prediction disabled for firecrackers and survey charges to prevent errant behavior.\n- Crystal AR entities renamed for consistency and missing starting ammo fixed.\n\n### Armor, Vehicles & Crafting\n- HAB armour now correctly returns parent hot‑air‑balloon health when damaged.\n- Industrial crafter now retains its state after a power loss, eliminating the need to restart it.\n\n### Performance & UI\n- Network range of critters reduced to improve performance and limit visibility.\n- Paintable dialog interactions (drawing, zooming, panning, orbiting) no longer trigger while the F1 menu is open; brush preview no longer hides the cursor.\n\n### Visuals & Rendering\n- Fixed HLOD mesh bounds issue at the Launch Site monument, ensuring all structures render correctly within their intended range.\n- Corrected ambient lighting on first‑person view models when looking at the sun, so weapons and tools now display proper lighting.\n- Restored the channel mixer post‑process effect for night‑vision goggles, improving visual clarity when using NVG.\n- Added night‑light rendering to the default renderer, enhancing visibility of night‑lit objects for all players.\n\n### UI & Quality of Life\n- Fixed a UI bug where the general store tab could fail to close properly, preventing interface glitches and asset‑bundle reference leaks.",
+    "summary": "### Gameplay & Economy\n- Monument blockers now sync to clients, have a 24‑hour decay period, and are immune to fire damage.\n- Code locks with two or fewer authorized users are ignored in door tax calculations, lowering upkeep costs.\n- HAB armour now transfers damage to its parent hot‑air balloon instead of itself.\n- AR entities spawn with the correct starting ammo.\n\n### Building & Infrastructure\n- Boat building stations can deploy when the ocean level setting is non‑zero or negative, supporting custom ocean levels.\n- Unpowered water pumps no longer act as gravity sources.\n- Maintainable prefabs now spawn correctly with relaxed anchor checks, added terrain anchor rings, and dithering with configurable retry logic to reduce pipe and roadside decor placement failures.\n\n### Items & Interaction\n- Master key animation no longer sticks on left‑click, ensuring proper swipe behavior.\n- Paintable dialog interactions and brush cursor are disabled while the F1 menu is open.\n- General store UI grids now receive closure notifications, preventing asset bundle reference leaks.\n\n### Performance & Network\n- Network update range for critters reduced to improve performance.\n- Client prediction disabled for firecrackers and survey charges to prevent missing‑file errors.\n\n### Crafting & Power\n- Industrial crafter machines retain their active state after a power loss, removing the need for manual restart.",
     "new_items": [
       {
-        "text": "Boat building station deployment works when env.oceanlevel is non‑zero or negative.",
+        "text": "Code locks with two or fewer authorized users are ignored in door tax calculations, lowering upkeep costs.",
         "commit_ids": [
-          617918
+          618021
         ],
-        "section": "Monument & Structure Mechanics"
+        "section": "Gameplay & Economy"
       },
       {
-        "text": "Maintainable anchors reverted to softer checks, fixing spawn failures for terrain skirts.",
+        "text": "Maintainable prefabs now spawn correctly with relaxed anchor checks, added terrain anchor rings, and dithering with configurable retry logic to reduce pipe and roadside decor placement failures.",
         "commit_ids": [
-          617960
+          617960,
+          617937,
+          617982
         ],
-        "section": "Monument & Structure Mechanics"
+        "section": "Building & Infrastructure"
       },
       {
-        "text": "Pipe access point procedural generation improved with outer/inner terrain anchor rings to ensure flat terrain spawning.",
+        "text": "Master key animation no longer sticks on left‑click, ensuring proper swipe behavior.",
         "commit_ids": [
-          617937
+          618003
         ],
-        "section": "Monument & Structure Mechanics"
-      },
-      {
-        "text": "Unpowered water pump no longer acts as a gravity source.",
-        "commit_ids": [
-          617892
-        ],
-        "section": "Water & Fluid Systems"
-      },
-      {
-        "text": "Prediction disabled for firecrackers and survey charges to prevent errant behavior.",
-        "commit_ids": [
-          617894
-        ],
-        "section": "Combat & Explosives"
-      },
-      {
-        "text": "Crystal AR entities renamed for consistency and missing starting ammo fixed.",
-        "commit_ids": [
-          617913
-        ],
-        "section": "Combat & Explosives"
-      },
-      {
-        "text": "HAB armour now correctly returns parent hot‑air‑balloon health when damaged.",
-        "commit_ids": [
-          617946
-        ],
-        "section": "Armor, Vehicles & Crafting"
-      },
-      {
-        "text": "Industrial crafter now retains its state after a power loss, eliminating the need to restart it.",
-        "commit_ids": [
-          617865
-        ],
-        "section": "Armor, Vehicles & Crafting"
-      },
-      {
-        "text": "Network range of critters reduced to improve performance and limit visibility.",
-        "commit_ids": [
-          617928
-        ],
-        "section": "Performance & UI"
-      },
-      {
-        "text": "Paintable dialog interactions (drawing, zooming, panning, orbiting) no longer trigger while the F1 menu is open; brush preview no longer hides the cursor.",
-        "commit_ids": [
-          617945
-        ],
-        "section": "Performance & UI"
-      },
-      {
-        "text": "Corrected ambient lighting on first‑person view models when looking at the sun, so weapons and tools now display proper lighting.",
-        "commit_ids": [
-          617868
-        ],
-        "section": "Visuals & Rendering"
-      },
-      {
-        "text": "Restored the channel mixer post‑process effect for night‑vision goggles, improving visual clarity when using NVG.",
-        "commit_ids": [
-          617920
-        ],
-        "section": "Visuals & Rendering"
-      },
-      {
-        "text": "Added night‑light rendering to the default renderer, enhancing visibility of night‑lit objects for all players.",
-        "commit_ids": [
-          617875
-        ],
-        "section": "Visuals & Rendering"
-      },
-      {
-        "text": "Fixed a UI bug where the general store tab could fail to close properly, preventing interface glitches and asset‑bundle reference leaks.",
-        "commit_ids": [
-          617964
-        ],
-        "section": "UI & Quality of Life"
+        "section": "Items & Interaction"
       }
     ],
-    "new_relevant_count": 14,
-    "new_summary": "- Boat building station deployment works when env.oceanlevel is non‑zero or negative.\n- Maintainable anchors reverted to softer checks, fixing spawn failures for terrain skirts.\n- Pipe access point procedural generation improved with outer/inner terrain anchor rings to ensure flat terrain spawning.\n- Unpowered water pump no longer acts as a gravity source.\n- Prediction disabled for firecrackers and survey charges to prevent errant behavior.\n- Crystal AR entities renamed for consistency and missing starting ammo fixed.\n- HAB armour now correctly returns parent hot‑air‑balloon health when damaged.\n- Industrial crafter now retains its state after a power loss, eliminating the need to restart it.\n- Network range of critters reduced to improve performance and limit visibility.\n- Paintable dialog interactions (drawing, zooming, panning, orbiting) no longer trigger while the F1 menu is open; brush preview no longer hides the cursor.\n- Corrected ambient lighting on first‑person view models when looking at the sun, so weapons and tools now display proper lighting.\n- Restored the channel mixer post‑process effect for night‑vision goggles, improving visual clarity when using NVG.\n- Added night‑light rendering to the default renderer, enhancing visibility of night‑lit objects for all players.\n- Fixed a UI bug where the general store tab could fail to close properly, preventing interface glitches and asset‑bundle reference leaks."
+    "new_relevant_count": 5,
+    "new_summary": "- Code locks with two or fewer authorized users are ignored in door tax calculations, lowering upkeep costs.\n- Maintainable prefabs now spawn correctly with relaxed anchor checks, added terrain anchor rings, and dithering with configurable retry logic to reduce pipe and roadside decor placement failures.\n- Master key animation no longer sticks on left‑click, ensuring proper swipe behavior."
   },
   "2026-08-26": {
     "commit_count": 113,
