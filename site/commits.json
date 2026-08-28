@@ -1,5 +1,277 @@
 [
   {
+    "id": 618114,
+    "branch": "main/character_customisation",
+    "changeset": "162493",
+    "created": "2026-08-28T13:04:59",
+    "message": "New cinematic lighting\r\nVarious polish and minor animation changes\r\nEnsure older baked textures aren't re-handed out\r\nFix indirect instancing bricking renderers in the character creator view\r\nAlways use best LODs for character creator view props\r\nRebuild all the static icons\r\nSwap to medium apartment",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618112,
+    "branch": "main/glass_ar",
+    "changeset": "162491",
+    "created": "2026-08-28T12:41:16",
+    "message": "further mag drop updates",
+    "author": "Alex Webster"
+  },
+  {
+    "id": 618111,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162490",
+    "created": "2026-08-28T12:38:37",
+    "message": "Render DDraw on beginCameraRendering for RRP",
+    "author": "Dayaan"
+  },
+  {
+    "id": 618110,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162489",
+    "created": "2026-08-28T12:35:41",
+    "message": "Bugfix: recache icons when opening menu via escape and arriving at the store\r\nTests: standalone - connected to the server and opened-closed menu multiple times",
+    "author": "Daniel P"
+  },
+  {
+    "id": 618109,
+    "branch": "main/demo_ui_2",
+    "changeset": "162488",
+    "created": "2026-08-28T12:34:18",
+    "message": "Strip occlusion culling from the dolly preview too",
+    "author": "octo"
+  },
+  {
+    "id": 618107,
+    "branch": "main/vehicle_pooling",
+    "changeset": "162487",
+    "created": "2026-08-28T12:24:10",
+    "message": "disable wheel colliders on the client during preprocessing so they don't spam errors during pool prewarm",
+    "author": "octo"
+  },
+  {
+    "id": 618102,
+    "branch": "main/cui_draggable_anchor_fix",
+    "changeset": "162485",
+    "created": "2026-08-28T11:50:59",
+    "message": "Fixed Draggable anchorMax setting to offsetMax",
+    "author": "Raul"
+  },
+  {
+    "id": 618100,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162484",
+    "created": "2026-08-28T11:41:00",
+    "message": "Fix BlurOptimize shader typo",
+    "author": "Dayaan"
+  },
+  {
+    "id": 618098,
+    "branch": "main/prop_optimisations",
+    "changeset": "162483",
+    "created": "2026-08-28T11:38:35",
+    "message": "gun display racks - merged weapons and hooks on all three. \r\n\r\neach rack was 10-12 renderers with a separate MeshLOD chain each. weapons combined into one mesh per LOD band, hooks into one, one MeshLOD each\r\n\r\nLOD components   32 -> 10\r\ngameobjects          44 -> 19\r\ndraw calls               35 -> 20\r\ncolliders                  32 ->  3\r\nlast LOD tris            15,282 -> 6,486",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618097,
+    "branch": "main/demo_ui_2",
+    "changeset": "162482",
+    "created": "2026-08-28T11:37:58",
+    "message": "add cinematic shake to the demo options panel, to have the same shake we use in trailers",
+    "author": "octo"
+  },
+  {
+    "id": 618096,
+    "branch": "main/storepage_crystalAR",
+    "changeset": "162481",
+    "created": "2026-08-28T10:58:54",
+    "message": "Added crystal AR page to the weapons category",
+    "author": "Flavien"
+  },
+  {
+    "id": 618092,
+    "branch": "main/skinviewer_sept26",
+    "changeset": "162478",
+    "created": "2026-08-28T10:38:50",
+    "message": "minor tweaks to wood glove model for skinviewer",
+    "author": "Taylor Reynolds"
+  },
+  {
+    "id": 618090,
+    "branch": "main",
+    "changeset": "162477",
+    "created": "2026-08-28T10:36:23",
+    "message": "~Exclude composter from cooking tests",
+    "author": "Flavien"
+  },
+  {
+    "id": 618088,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162475",
+    "created": "2026-08-28T10:31:50",
+    "message": "Fixed the greyscale amount parameter and the color filter having the wrong color space when passed to the shader",
+    "author": "aidan.m"
+  },
+  {
+    "id": 618087,
+    "branch": "main/DeployableFenceGate",
+    "changeset": "162474",
+    "created": "2026-08-28T10:31:07",
+    "message": "Fence Gate LODs and COL update",
+    "author": "Lewis T"
+  },
+  {
+    "id": 618080,
+    "branch": "main/skinviewer_sept26",
+    "changeset": "162473",
+    "created": "2026-08-28T10:20:40",
+    "message": "Fixed bucket helmet clipping in the skin viewer",
+    "author": "Flavien"
+  },
+  {
+    "id": 618079,
+    "branch": "main/skinviewer_sept26",
+    "changeset": "162472",
+    "created": "2026-08-28T10:20:13",
+    "message": "Added wood armor gloves to the skin viewer",
+    "author": "Flavien"
+  },
+  {
+    "id": 618076,
+    "branch": "main",
+    "changeset": "162470",
+    "created": "2026-08-28T10:16:56",
+    "message": "Added posed wood gloves for store page",
+    "author": "Taylor Reynolds"
+  },
+  {
+    "id": 618073,
+    "branch": "main/ocean_sim_waterlevel_trace_fix",
+    "changeset": "162468",
+    "created": "2026-08-28T09:41:48",
+    "message": "More player boat building fixes to not assume oceanlevel is at 0\r\nFix hull placement, boat creation, deployable height limit",
+    "author": "cipeaX"
+  },
+  {
+    "id": 618072,
+    "branch": "main/prop_optimisations",
+    "changeset": "162467",
+    "created": "2026-08-28T09:34:24",
+    "message": "cherry picking from wooden box storage optimsation",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618071,
+    "branch": "main/prop_optimisations",
+    "changeset": "162466",
+    "created": "2026-08-28T09:33:29",
+    "message": "cherry pick from bed optimisations",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618070,
+    "branch": "main/prop_optimisations",
+    "changeset": "162465",
+    "created": "2026-08-28T09:32:58",
+    "message": "cherry pick from large wooden box",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618069,
+    "branch": "main/prop_optimisations",
+    "changeset": "162464",
+    "created": "2026-08-28T09:32:34",
+    "message": "cherry pick from mixtable prt2",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618068,
+    "branch": "main/prop_optimisations",
+    "changeset": "162463",
+    "created": "2026-08-28T09:32:01",
+    "message": "chery picking from mixing table optimsations",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618067,
+    "branch": "main/prop_optimisations",
+    "changeset": "162462",
+    "created": "2026-08-28T09:30:45",
+    "message": "cherry picking from small stash improvements",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618066,
+    "branch": "main/prop_optimisations",
+    "changeset": "162461",
+    "created": "2026-08-28T09:30:09",
+    "message": "cherry picking from gutter opts",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618065,
+    "branch": "main/prop_optimisations",
+    "changeset": "162460",
+    "created": "2026-08-28T09:28:55",
+    "message": "cherry picking from binbag_pile and card table optimisations",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618062,
+    "branch": "main",
+    "changeset": "162458",
+    "created": "2026-08-28T08:59:41",
+    "message": "Phrase update",
+    "author": "Flavien"
+  },
+  {
+    "id": 618060,
+    "branch": "main/glass_ar",
+    "changeset": "162457",
+    "created": "2026-08-28T08:49:29",
+    "message": "Crystal AR - added charm support, small gloss tweaks",
+    "author": "alex.m"
+  },
+  {
+    "id": 618056,
+    "branch": "main/Livestock_animals/Seaturtle",
+    "changeset": "162455",
+    "created": "2026-08-28T08:13:43",
+    "message": "Adding sea turtle rig",
+    "author": "jeddooo"
+  },
+  {
+    "id": 618055,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162454",
+    "created": "2026-08-28T07:08:21",
+    "message": "Change BlurOptimized downsample param to nointerp and replace BlitPass with raster pass",
+    "author": "Dayaan"
+  },
+  {
+    "id": 618044,
+    "branch": "main/statesync_event_fix",
+    "changeset": "162445",
+    "created": "2026-08-28T03:06:51",
+    "message": "Proper fix for events double firing when using the StateSync component\r\nWhen scrubbing an animation from normalized time 1 -> 0 Unity plays all events in reverse order :(\r\nWe now suppress animatione vents for a frame any time we scrub the state backwards \r\nRemoved the previous fix for this issue in DoEffect as now we've solved the root cause of the issue",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 618041,
+    "branch": "main/glass_ar",
+    "changeset": "162442",
+    "created": "2026-08-28T02:11:58",
+    "message": "Set up glass mag drop (using mesh renderer instead of particle system)",
+    "author": "Alex Webster"
+  },
+  {
+    "id": 618036,
+    "branch": "main/Livestock_animals",
+    "changeset": "162438",
+    "created": "2026-08-28T01:49:18",
+    "message": "Manifest",
+    "author": "Jarryd Campi"
+  },
+  {
     "id": 618033,
     "branch": "main/Livestock_animals",
     "changeset": "162435",
@@ -1782,325 +2054,5 @@
     "created": "2026-08-25T13:58:21",
     "message": "made chanegs to the attack heli colliders left, front and right panels so tht they can be toggled off when removed.",
     "author": "Pilgrim"
-  },
-  {
-    "id": 617419,
-    "branch": "main/comfort_fixes",
-    "changeset": "161989",
-    "created": "2026-08-25T13:12:09",
-    "message": "Bear rug: 100% comfort within 2m of the comfort trigger spheres. Gradual falloff until 3m.\r\nRug: 100% comfort within 1m of the comfort trigger spheres. Gradual falloff until 2m.\r\n\r\nPrevious fixes would have meant these deployables would have only given a solo player 25% comfort. Boosted values to not destroy years long gameplay behaviour",
-    "author": "Jakb"
-  },
-  {
-    "id": 617417,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161988",
-    "created": "2026-08-25T12:59:41",
-    "message": "Update: add DynamicFullscreenSprite and DynamicGallerySprite to shadow respective fields on UI_StoreItemOverlayPage\r\n- updated StoreBundleTool to also inspect private fields marked with SerializeField\r\n- updated PageElementDrawer to render DynamicRef fields (and fix layout issues)\r\n- ran UpdateDynRefs\r\nTests: inspected serialized prefabs",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617415,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161986",
-    "created": "2026-08-25T12:52:50",
-    "message": "camera, obsidian knife, vampire stake texture reduction among others\n11 maps 2048 -> 1024,\nvram 24.8MB -> 6.2MB",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617414,
-    "branch": "main/weapon_refresh_flashlight",
-    "changeset": "161985",
-    "created": "2026-08-25T12:51:08",
-    "message": "Changed functionality of flashlight to be like the torch, now r/click to turn on/off (press f removed)\r\n\r\n- New flashlightWeapon.cs\r\n- Updated animator with new states (viewmodel wants_on/is_on/ignite/extinguish/lit_idle)\r\n- Added 1st pass anims (wip)\r\n- setup different admires based on state\r\n- 3p setup\r\n- updated 3p states, new child controller & anim for turning on/off\r\n- Tool tip updated to reflect changes\r\n= BasePlayer-Server.cs (extinguish on sleep/disconnect)\r\n- RpcCalls.cs (dispatch table for Ignite/Extinguish)",
-    "author": "Alex Webster"
-  },
-  {
-    "id": 617405,
-    "branch": "main",
-    "changeset": "161980",
-    "created": "2026-08-25T12:04:38",
-    "message": "Add HealthThresholdToggle",
-    "author": "Adam W"
-  },
-  {
-    "id": 617404,
-    "branch": "main",
-    "changeset": "161979",
-    "created": "2026-08-25T11:54:47",
-    "message": "set gib models to read/write enabled",
-    "author": "erik.b"
-  },
-  {
-    "id": 617403,
-    "branch": "main/underground_train_network_update",
-    "changeset": "161978",
-    "created": "2026-08-25T11:49:08",
-    "message": "removed blocker assets from branch & split up train tunnel parts",
-    "author": "erik.b"
-  },
-  {
-    "id": 617401,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "161976",
-    "created": "2026-08-25T11:38:27",
-    "message": "Update: Add DynamicPagePrefab to \"shadow\" PagePrefab field on ItemStoreTakeover\r\n- added default picker rendering to DynamicResourceRefDrawer\r\n- ran StoreBundleTool to auto-assign DynamicPagePrefab\r\nTests: inspected the prefab changes",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617400,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "161975",
-    "created": "2026-08-25T11:36:12",
-    "message": "Compile fix",
-    "author": "cipeaX"
-  },
-  {
-    "id": 617399,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "161974",
-    "created": "2026-08-25T11:26:31",
-    "message": "Remove debug logs, slight cleanup + formatting",
-    "author": "cipeaX"
-  },
-  {
-    "id": 617397,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "161973",
-    "created": "2026-08-25T11:17:24",
-    "message": "weapon + tool texture further reduction pass where applicable\r\n\n45 ao maps 1024/2048 -> 512, \r\nreduced m15 worldmodel bc/nrm/sg 2048 -> 1024 (almost no visual difference for 3rd person)\n\r\nvram 44.1mb -> 11.8mb",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617396,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "161972",
-    "created": "2026-08-25T11:10:42",
-    "message": "Hackable crate flag / visual fixes\r\nSkip puzzlereset alerts when force resetting after restart",
-    "author": "cipeaX"
-  },
-  {
-    "id": 616395,
-    "branch": "main/modular_car_handling_improvements",
-    "changeset": "161971",
-    "created": "2026-08-25T11:03:54",
-    "message": "First lot of feedback applied \r\n- Decreased body roll\r\n- Stopped cars from spinning out, can now handle drifting at higher speeds (cant have both atm)\r\n- Smoothed out steering again, was aggressive on roads",
-    "author": "elhog"
-  },
-  {
-    "id": 616394,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "161970",
-    "created": "2026-08-25T10:53:32",
-    "message": "added missing rabbit files. Animation, model and prefabs now added.",
-    "author": "Toffer"
-  },
-  {
-    "id": 616392,
-    "branch": "main/glass_ar",
-    "changeset": "161968",
-    "created": "2026-08-25T10:46:41",
-    "message": "Glass AR - worldmodel texture rebake",
-    "author": "alex.m"
-  },
-  {
-    "id": 616389,
-    "branch": "main/More_SMGbodies",
-    "changeset": "161966",
-    "created": "2026-08-25T10:34:57",
-    "message": "Minor increase to SMG body spawn chance\r\nMinor decrease to Rifle body spawn chance\r\n\r\nWhy? All rifle body weapons are Workbench Lvl 3, and most SMGs are Workbench Lvl 2. This should help the mid game.",
-    "author": "Rin"
-  },
-  {
-    "id": 616385,
-    "branch": "main/marketplace_power",
-    "changeset": "161964",
-    "created": "2026-08-25T10:21:53",
-    "message": "Some market terminal UI to explain the system",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616384,
-    "branch": "main/session_modal_overflow_fix",
-    "changeset": "161963",
-    "created": "2026-08-25T10:17:26",
-    "message": "Fix session modal overflowing on long descriptions - preventing you from disconnecting",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 616383,
-    "branch": "main/authorize_friend_lag_fix",
-    "changeset": "161962",
-    "created": "2026-08-25T10:14:43",
-    "message": "Optimize SteamFriendsList.Refresh, fixing huge lag spikes when authorizing friends to turrets etc. when theres a lot of players in your team",
-    "author": "cipeaX"
-  },
-  {
-    "id": 616382,
-    "branch": "main/character_customisation",
-    "changeset": "161961",
-    "created": "2026-08-25T09:59:23",
-    "message": "Merge conflicts",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 616381,
-    "branch": "main",
-    "changeset": "161960",
-    "created": "2026-08-25T09:52:42",
-    "message": "reset locations of gibbable stages",
-    "author": "erik.b"
-  },
-  {
-    "id": 616380,
-    "branch": "main/character_customisation",
-    "changeset": "161959",
-    "created": "2026-08-25T09:42:10",
-    "message": "main -> character_customisation",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 616376,
-    "branch": "main/hackweek_random_skin_crafting",
-    "changeset": "161956",
-    "created": "2026-08-25T09:25:55",
-    "message": "New random icon. Swap material for icon.\r\nCache some stuff.",
-    "author": "Adam W"
-  },
-  {
-    "id": 616375,
-    "branch": "main/2026_worldmodels",
-    "changeset": "161955",
-    "created": "2026-08-25T09:12:32",
-    "message": "tuna and bean cans now drop open empty cans when eaten instead of unopened versions \r\nempty version are lower in triangle count for LOD0 than the previous world models \r\n\r\nhttps://files.facepunch.com/pilgrim/2026/August/25_10-09-GullibleBangeltiger.mp4",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616373,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "161953",
-    "created": "2026-08-25T09:08:14",
-    "message": "Fix Assets/Scripts depending on the test framework, which could potentially break builds that exclude tests",
-    "author": "Maverick"
-  },
-  {
-    "id": 616371,
-    "branch": "main",
-    "changeset": "161952",
-    "created": "2026-08-25T08:46:35",
-    "message": "re exporting assets",
-    "author": "erik.b"
-  },
-  {
-    "id": 616368,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161950",
-    "created": "2026-08-25T08:42:50",
-    "message": "Updated Deferred+ to be compatible with SSS",
-    "author": "aidan.m"
-  },
-  {
-    "id": 616367,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161949",
-    "created": "2026-08-25T08:41:39",
-    "message": "Move SSAO (and motion vector) passes to before transparent",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616362,
-    "branch": "main",
-    "changeset": "161946",
-    "created": "2026-08-25T08:06:44",
-    "message": "heavy fuse now has a world model \r\nupdated .item to properly reference it instead of using the burlap sack",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 616360,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161945",
-    "created": "2026-08-25T07:55:34",
-    "message": "Fix ambient light flickering",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616357,
-    "branch": "main/launchsiren",
-    "changeset": "161943",
-    "created": "2026-08-25T07:37:30",
-    "message": "Fix the siren off state visibility",
-    "author": "Adam W"
-  },
-  {
-    "id": 616356,
-    "branch": "main/semi_pistol_tweaks",
-    "changeset": "161942",
-    "created": "2026-08-25T07:31:22",
-    "message": "Semi automatic pistol:\r\n- More damage falloff at range\r\n- HQM craft cost 4 -> 6",
-    "author": "cipeaX"
-  },
-  {
-    "id": 616353,
-    "branch": "main/terrain_holes_replace",
-    "changeset": "161939",
-    "created": "2026-08-25T06:45:53",
-    "message": "Fix depth assignment in terrain prepass",
-    "author": "Dayaan"
-  },
-  {
-    "id": 616351,
-    "branch": "main",
-    "changeset": "161937",
-    "created": "2026-08-25T06:25:28",
-    "message": "S2P swamps a,b,c",
-    "author": "Rin"
-  },
-  {
-    "id": 616349,
-    "branch": "main/Livestock_animals",
-    "changeset": "161936",
-    "created": "2026-08-25T05:41:34",
-    "message": "Hooked up sale info in-game UI",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616348,
-    "branch": "main/Livestock_animals",
-    "changeset": "161935",
-    "created": "2026-08-25T05:20:54",
-    "message": "Create new SellAnimals and AnimalSalePreview dialogue panels\r\nFirst one lists all nearby animals that are following the player (and can be sold) and the other shows what you will receive for selling that animal\r\nNo rewards hooked up yet, just panel flow",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616346,
-    "branch": "main/marketplace_power",
-    "changeset": "161934",
-    "created": "2026-08-25T04:37:49",
-    "message": "Rework power mechanic\r\nMarketplace will start charging once the powerplant has 4 or more fuses, once it reaches 50% it can start accepting orders\r\nWith 4 fuses in the powerplant it will take 21 minutes to charge to 50%, 5 minutes if the powerplant is completely full\r\nIf the power plant has at least one fuse active the charge will not decrease\r\nPower is no longer deducted per transaction",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616344,
-    "branch": "main/Livestock_animals",
-    "changeset": "161932",
-    "created": "2026-08-25T03:49:51",
-    "message": "Stables_b is now playable in editor\r\nStart of boilerplate animal selling mechanic, just set up NPC and basic conversation for now",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616341,
-    "branch": "main/monument_blockers_fixes",
-    "changeset": "161929",
-    "created": "2026-08-25T03:19:38",
-    "message": "Show health bar when hitting monument blockers\r\nHacky fix, had to create a new IHealthBarDisplay interface as ResourceEntity isn't a BaseCombatEntity\r\nRemoved StageResourceEntity.ResourceUpdate RPC, it wasn't used anywhere",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 616338,
-    "branch": "main/terrain_holes_replace",
-    "changeset": "161926",
-    "created": "2026-08-25T02:31:29",
-    "message": "Compile fix (don't use editor only function)",
-    "author": "Dayaan"
   }
 ]
