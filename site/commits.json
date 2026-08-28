@@ -1,5 +1,317 @@
 [
   {
+    "id": 618217,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "162553",
+    "created": "2026-08-28T23:03:10",
+    "message": "Rewrite some navmesh door bug repro test that passed even without its fix",
+    "author": "Maverick"
+  },
+  {
+    "id": 618213,
+    "branch": "main/prop_optimisations",
+    "changeset": "162552",
+    "created": "2026-08-28T22:12:06",
+    "message": "some additonal settings to carry over",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618212,
+    "branch": "main/prop_optimisations",
+    "changeset": "162551",
+    "created": "2026-08-28T22:02:01",
+    "message": "chinook locked crate optimisation\r\n\r\ncrates + cage combined into one mesh with a single MeshLOD (1/5/15/25, cull 150) chainlink merged into one mesh\r\nrenderers                   16 > 9\nLOD components      11 > 4\nobjects                       48 > 40\ndraw calls                  10 > 4 up close, 3 past 20m\nfence tris                   1,000 > 10\ntris at 25m                 4,064 > 1,032",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618209,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162549",
+    "created": "2026-08-28T21:59:57",
+    "message": "oops client guard",
+    "author": "Brian"
+  },
+  {
+    "id": 618208,
+    "branch": "main/sentry_upload",
+    "changeset": "162548",
+    "created": "2026-08-28T21:37:47",
+    "message": "Fixes\r\n- fix typo in URL\r\n- indicate when client is on the main menu (crashing ingame vs disconnecting from server then crashing)\r\n- cleanup modded framework check, just read the server tags instead of looking for Oxide.dll loaded",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 618206,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162546",
+    "created": "2026-08-28T21:31:56",
+    "message": "fix black player eyes in BRP in bandit camp (leaking spatial env volume shader props between cams), add pass to clear env volume shader props in RRP as well",
+    "author": "Brian"
+  },
+  {
+    "id": 618204,
+    "branch": "main",
+    "changeset": "162544",
+    "created": "2026-08-28T21:08:36",
+    "message": "Fixed mags not dropping in 3p for abyss ak, ice ak & space lr300",
+    "author": "Alex Webster"
+  },
+  {
+    "id": 618203,
+    "branch": "main/sentry_upload",
+    "changeset": "162543",
+    "created": "2026-08-28T20:43:47",
+    "message": "Tests",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 618201,
+    "branch": "main/sentry_upload",
+    "changeset": "162542",
+    "created": "2026-08-28T20:43:34",
+    "message": "Upload the crash dumps to our backend now that the crash handler is fixed\r\n- uploads client & server crashes, modded or vanilla then we filter on backend\r\n- write state of session every 30s and on scene changes: when the crash actually happens we won't have a chance to write the latest state",
+    "author": "Jake_Rich"
+  },
+  {
+    "id": 618177,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162534",
+    "created": "2026-08-28T17:27:22",
+    "message": "Big ass pass on all IO electricity tests:\r\n- Consistency, new tests and fixes\r\n- Added ScopedSky\r\n- Moved the save and restart utils to RustTestFixture, started using it for other tests",
+    "author": "Flavien"
+  },
+  {
+    "id": 618176,
+    "branch": "main/high_stakes_dlc",
+    "changeset": "162533",
+    "created": "2026-08-28T17:25:15",
+    "message": "russian roulette\r\n- updated textures, mostly there just some polish to do",
+    "author": "curt"
+  },
+  {
+    "id": 618173,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "162530",
+    "created": "2026-08-28T17:18:33",
+    "message": "Improve navmesh doors perf",
+    "author": "Maverick"
+  },
+  {
+    "id": 618172,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162529",
+    "created": "2026-08-28T17:07:24",
+    "message": "Update: add store.unloadAssets convar, default true\r\nControls whether hiding store unloads assets or not. To re-enable requires restarting the game\r\nTests: navigated store in bundled editor with convar disabled",
+    "author": "Daniel P"
+  },
+  {
+    "id": 618170,
+    "branch": "main",
+    "changeset": "162527",
+    "created": "2026-08-28T17:02:25",
+    "message": "merge vehicle pooling to main",
+    "author": "octo"
+  },
+  {
+    "id": 618168,
+    "branch": "main/salvaged_hammer_refresh_sounds",
+    "changeset": "162525",
+    "created": "2026-08-28T16:59:45",
+    "message": "Added new sounds for some of the new Salvaged Hammer actions",
+    "author": "diogo.c"
+  },
+  {
+    "id": 618167,
+    "branch": "main",
+    "changeset": "162524",
+    "created": "2026-08-28T16:57:53",
+    "message": "merge demo ui 2 to main",
+    "author": "octo"
+  },
+  {
+    "id": 618160,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "162521",
+    "created": "2026-08-28T16:27:16",
+    "message": "Bugfix: fix disconnect flow causing double unsubscribe\r\n- introduce UI_Windon::OnVisibilityChanged\r\n- move all the sub/unsub code to it\r\nTests: editor and standalone, connected to server then disconnected. tried connecting to bad ip while on store page",
+    "author": "Daniel P"
+  },
+  {
+    "id": 618157,
+    "branch": "main/underground_train_network_update",
+    "changeset": "162520",
+    "created": "2026-08-28T16:05:06",
+    "message": "Work on Vendor A Shell (for train tunnels, randomised rooms). WIP kiosk (blocking materials and shapes in)",
+    "author": "hannah.watts"
+  },
+  {
+    "id": 618154,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162519",
+    "created": "2026-08-28T15:38:21",
+    "message": "refactor critter interest overrideable methods\r\nrework how frogs try to find shallow water to croak in",
+    "author": "ElliotH"
+  },
+  {
+    "id": 618150,
+    "branch": "main",
+    "changeset": "162518",
+    "created": "2026-08-28T15:23:44",
+    "message": "pool_ball_moving_fix -> main",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618149,
+    "branch": "main/pool_ball_moving_fix",
+    "changeset": "162517",
+    "created": "2026-08-28T15:23:25",
+    "message": "Fix pool ball velocity creeping into the next shot",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618147,
+    "branch": "main/Livestock_animals",
+    "changeset": "162516",
+    "created": "2026-08-28T15:11:42",
+    "message": "- updated Sheep LODs. added LODs for the Calf. assigned correct material to sheep lod in prefab.",
+    "author": "Toffer"
+  },
+  {
+    "id": 618148,
+    "branch": "main/character_customisation",
+    "changeset": "162515",
+    "created": "2026-08-28T15:11:39",
+    "message": "New preview positions - way better",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618146,
+    "branch": "main/prop_optimisations",
+    "changeset": "162514",
+    "created": "2026-08-28T15:11:06",
+    "message": "ocean wreck buoys - combined the seaweed and mussels on all three\r\n\r\nrenderers                128 > 23 across the three\nLOD components   115 > 8\ngameobjects           153 > 48\nprefabs                    482kb > 124kb",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618143,
+    "branch": "main/character_customisation",
+    "changeset": "162513",
+    "created": "2026-08-28T15:07:48",
+    "message": "Fix dof being too shallow all the time",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618141,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162512",
+    "created": "2026-08-28T14:59:26",
+    "message": "rebuild manifest after merge issues",
+    "author": "ElliotH"
+  },
+  {
+    "id": 618139,
+    "branch": "main/prop_optimisations",
+    "changeset": "162511",
+    "created": "2026-08-28T14:50:07",
+    "message": "folding wicker beds B C D E - combined into one mesh each\n\nframe, fabric and pillow all share Folding_Wicker_Bed_A, so each bed combines into one mesh per LOD band with a single MeshLOD - every bed is one object now\r\n\r\nrenderers                10 > 4 across the four\nLOD components   10 > 4\ngameobjects          10 > 4\nprefabs                   44kb > 26kb\ntris at 18m              23,336 > 6,200\nlast lod under the vert cap on all four so they batch",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618137,
+    "branch": "main/character_customisation",
+    "changeset": "162510",
+    "created": "2026-08-28T14:44:20",
+    "message": "Missed files",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618138,
+    "branch": "main/character_customisation",
+    "changeset": "162509",
+    "created": "2026-08-28T14:44:11",
+    "message": "Swap the crappy overly complex multipel values for character camera shots over to the same orbit camera sty;e as the render images were",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618135,
+    "branch": "main/character_customisation",
+    "changeset": "162508",
+    "created": "2026-08-28T14:30:15",
+    "message": "Fix head icons being behind the player",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618134,
+    "branch": "main/character_customisation",
+    "changeset": "162507",
+    "created": "2026-08-28T14:28:18",
+    "message": "Constantly lerp the camera to the bone position rather than only setting it once on enter",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618133,
+    "branch": "main/character_customisation",
+    "changeset": "162506",
+    "created": "2026-08-28T14:24:33",
+    "message": "Better preview angles",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618132,
+    "branch": "main/new_navmesh_fixes",
+    "changeset": "162505",
+    "created": "2026-08-28T14:14:27",
+    "message": "Allow closing and opening door to be taken into account by the navmesh, but without a full rebuild",
+    "author": "Maverick"
+  },
+  {
+    "id": 618131,
+    "branch": "main/character_customisation",
+    "changeset": "162504",
+    "created": "2026-08-28T14:13:17",
+    "message": "Fix multiple idle animations playing at once - causing jittering and preventing the reaction anims from playing",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618127,
+    "branch": "main/character_customisation",
+    "changeset": "162503",
+    "created": "2026-08-28T13:55:23",
+    "message": "Better way to be able to preview rendering shots + category shots\r\nFix character customisation tiles showing up white initially\r\nClean up min/max yaw settings",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 618125,
+    "branch": "main/glass_ar",
+    "changeset": "162501",
+    "created": "2026-08-28T13:44:48",
+    "message": "Crystal AR - fixed attachment positions in 3p entity",
+    "author": "alex.m"
+  },
+  {
+    "id": 618124,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162500",
+    "created": "2026-08-28T13:38:35",
+    "message": "Fixed the white balance values and when the contrast should be applied in the post processing pass",
+    "author": "aidan.m"
+  },
+  {
+    "id": 618122,
+    "branch": "main/cave_contraptions/cave_modular_contraption_kit",
+    "changeset": "162499",
+    "created": "2026-08-28T13:33:52",
+    "message": "Add modular_contraption_kit_a meshes, materials and textures",
+    "author": "tom.be"
+  },
+  {
+    "id": 618118,
+    "branch": "main/maintainables_fixes",
+    "changeset": "162496",
+    "created": "2026-08-28T13:28:37",
+    "message": "Add edge-case terrain height raiser underneath skirt. Increase slope alignment and full gradient alignment.",
+    "author": "ElliotH"
+  },
+  {
     "id": 618114,
     "branch": "main/character_customisation",
     "changeset": "162493",
@@ -1718,341 +2030,5 @@
     "created": "2026-08-25T23:57:07",
     "message": "Added info about the current group tax applied when hovering over the upkeep cost in the TC loot panel",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 617515,
-    "branch": "main/marketplace_power",
-    "changeset": "162059",
-    "created": "2026-08-25T23:22:40",
-    "message": "Hooked up a power icon on the marketplace terminal when the marketplace isn't powered",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 617513,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162057",
-    "created": "2026-08-25T22:36:39",
-    "message": "Bugfix: ensure coverImage is enabled when initialized after initEmpty\r\nThink it's time to move to standalone testing\r\nTests: navigated shop UI - all tiles had images",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617512,
-    "branch": "main/fruit_trees",
-    "changeset": "162056",
-    "created": "2026-08-25T22:13:39",
-    "message": "Added 3 apples to oak_d for now for testing\r\nAdded apple to the manifest\r\nRe-implemented all the previous logic from the hackweek branch",
-    "author": "Lukester"
-  },
-  {
-    "id": 617511,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162055",
-    "created": "2026-08-25T22:13:13",
-    "message": "Bugfix: restore DLC prefab setup which caused NREs on dlc tile click\r\n- ran dyn ref assign\r\nTests: clicked through all dlc items - all open",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617509,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "162053",
-    "created": "2026-08-25T21:27:49",
-    "message": "Patrol heli, bradley, satellite crash sites get saved correctly instead of all crates disappearing when the server restarts\r\n- Enable saving on all of the crates and server gibs, the OnFire state persists\r\n- Converted satellite crates to the same LockedByEntCrate setup that heli and bradley use, got rid of TimedUnlootableCrate\r\n- Set all of the crate despawn time to 30 minutes from 60 (doesn't make sense for them to stick around longer than the gibs)\r\n- Fix heli crates landing on unloadable train wagons again (needed an extra fix now that they're saved)",
-    "author": "cipeaX"
-  },
-  {
-    "id": 617508,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162052",
-    "created": "2026-08-25T21:26:11",
-    "message": "Bugfix: avoid invalidating sprites when shop opens (caused by closing page on warmup)\r\n- Moved tab opening to OnOpened, after dynamic bundle resources were loaded\r\n- also implement better handling of overwrites\r\nToo much time chasing editor boot optim skipping warmup causing weirdness\r\nTests: could scroll in general shop page, most of the tiles were clickable, only special dlc items were throwing. Still missing icons",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617499,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162047",
-    "created": "2026-08-25T20:19:22",
-    "message": "Bugfix: rename a field to let StoreBundleTool find replicated ref field\r\n- ran dyn ref & bundle assigns\r\nTests: can click on featured tiles in store (but tile icon was still missing)",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617498,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "162046",
-    "created": "2026-08-25T20:18:27",
-    "message": "some more tweaks to textures that don't need to ship 2k \r\n\r\nvram 12.0MB -> 1.0MB",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617496,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "162045",
-    "created": "2026-08-25T19:55:05",
-    "message": "texture reduction pass - deployable, tools, food, component items: \n71 textures touched, 38 resolutions brought down\nan apple had a 2k ao map at runtime\r\n\nvram 55.1MB -> 9.5MB",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617491,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162043",
-    "created": "2026-08-25T18:55:27",
-    "message": "Update: ran \"Update UI bundle assignments\"\r\n- fixed it up to skip reimporting assets with correct bundle assignations\r\nTests: checked meta files",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617490,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162042",
-    "created": "2026-08-25T18:40:09",
-    "message": "Update: progress on reviving dynamic shop assets\r\n- restore most of ui logic to cache/uncache dynamic bundle\r\n- make storeitemdlc use dyn ref for page prefab\r\n- change store logic to create empty tiles on warmup, then fill with content once opened\r\nTests: ran through the store in the editor. it's broken in a bunch of different ways, but seeing signs of system engaging, so progress",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617489,
-    "branch": "main/high_stakes_dlc",
-    "changeset": "162041",
-    "created": "2026-08-25T18:35:48",
-    "message": "russian roulette;\r\n- updated textures\r\n- updated material\r\n- fixed suffix naming",
-    "author": "curt"
-  },
-  {
-    "id": 617487,
-    "branch": "main/car_wheel_fix",
-    "changeset": "162039",
-    "created": "2026-08-25T18:18:08",
-    "message": "modular car wheel fix\nleft wheels swapped over to use wheel_b.fbx instead of flipping wheel_a.fbx, right side stays on wheel_a\nno more mirrored wheels on 2, 3 or 4 module - fixes the flipped normals\ncleared the leftover rotations on the wheels\nhttps://files.facepunch.com/pilgrim/2026/August/25_19-17-ShadowyHerculesbeetle.png",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617485,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "162037",
-    "created": "2026-08-25T17:50:20",
-    "message": "basic squirrel setup",
-    "author": "ElliotH"
-  },
-  {
-    "id": 617481,
-    "branch": "main",
-    "changeset": "162033",
-    "created": "2026-08-25T17:30:18",
-    "message": "HealthThresholdToggle improvements",
-    "author": "Adam W"
-  },
-  {
-    "id": 617480,
-    "branch": "main/launchsite_walkway",
-    "changeset": "162032",
-    "created": "2026-08-25T16:59:04",
-    "message": "Launchsite / made the rocket factory ledge taller",
-    "author": "Damian Lazarski"
-  },
-  {
-    "id": 617474,
-    "branch": "main",
-    "changeset": "162028",
-    "created": "2026-08-25T16:32:30",
-    "message": "merged flashlight refresh",
-    "author": "Alex Webster"
-  },
-  {
-    "id": 617473,
-    "branch": "main/modular_car_handling_improvements",
-    "changeset": "162027",
-    "created": "2026-08-25T16:32:29",
-    "message": "More tweaks",
-    "author": "elhog"
-  },
-  {
-    "id": 617472,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "162026",
-    "created": "2026-08-25T16:27:58",
-    "message": "Fix low res navmesh on ghost ships",
-    "author": "Maverick"
-  },
-  {
-    "id": 617470,
-    "branch": "main/attackheli_armour_damge",
-    "changeset": "162025",
-    "created": "2026-08-25T16:12:44",
-    "message": "Reduce the size of the main cabin collider so it doesn't block shots through the newly exposed gaps when panels come off",
-    "author": "Adam W"
-  },
-  {
-    "id": 617467,
-    "branch": "main/weapon_refresh_flashlight",
-    "changeset": "162024",
-    "created": "2026-08-25T16:08:51",
-    "message": "- updated turn on/off viewmodel anims\r\n- set up events for switch sounds in 1p and 3p\r\n- edited current 1p and 3p deploy sounds to fit new anims",
-    "author": "Alex Webster"
-  },
-  {
-    "id": 617466,
-    "branch": "main/weapon_refresh_flashlight",
-    "changeset": "162023",
-    "created": "2026-08-25T16:07:58",
-    "message": "Codegen",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 617465,
-    "branch": "main/weapon_refresh_flashlight",
-    "changeset": "162022",
-    "created": "2026-08-25T16:06:47",
-    "message": "- Setup new Toggleable light weapon as a base type to cleanup the flashlight code\r\n- Prevent having to do two get components everytime TurnOffAllLights() is ran\r\n- Remove the hack in TipFlashlight",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 617464,
-    "branch": "main/glass_ar",
-    "changeset": "162021",
-    "created": "2026-08-25T16:01:22",
-    "message": "Glass AR - worldmodel texture update and resize, removed unused textures",
-    "author": "alex.m"
-  },
-  {
-    "id": 617463,
-    "branch": "main/attackheli_armour_damge",
-    "changeset": "162020",
-    "created": "2026-08-25T16:00:16",
-    "message": "Setup collider/visual toggle groups.\r\nAdded \"Col\" to collider group names so they're unique in inspector lists.",
-    "author": "Adam W"
-  },
-  {
-    "id": 617462,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "162019",
-    "created": "2026-08-25T15:57:17",
-    "message": "basic rabbit setup, renamed all animation files for consistent prefix and lowercase",
-    "author": "ElliotH"
-  },
-  {
-    "id": 617461,
-    "branch": "main/attackheli_armour_damge",
-    "changeset": "162018",
-    "created": "2026-08-25T15:49:51",
-    "message": "Attack heli specific code from earlier",
-    "author": "Adam W"
-  },
-  {
-    "id": 617460,
-    "branch": "main",
-    "changeset": "162017",
-    "created": "2026-08-25T15:48:45",
-    "message": "radwater_buff_2 -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 617458,
-    "branch": "main/radwater_buff_2",
-    "changeset": "162016",
-    "created": "2026-08-25T15:48:27",
-    "message": "Buff radwater so it does significant damage to full kits\r\nImplement new scaling system that reduces rad amounts via sacled protection rather than straight values - used with only sprinklers + rad water",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 617457,
-    "branch": "main/attackheli_armour_damge",
-    "changeset": "162015",
-    "created": "2026-08-25T15:47:25",
-    "message": "Remove the duplicate client colliders for front panel",
-    "author": "Adam W"
-  },
-  {
-    "id": 617454,
-    "branch": "main",
-    "changeset": "162012",
-    "created": "2026-08-25T15:38:52",
-    "message": "HealthThresholdToggle list support",
-    "author": "Adam W"
-  },
-  {
-    "id": 617447,
-    "branch": "main/analytics_wm_tris",
-    "changeset": "162009",
-    "created": "2026-08-25T15:08:41",
-    "message": "Add worldmodel tri count for LOD0 meshes as field in item definition dump",
-    "author": "Ryan"
-  },
-  {
-    "id": 617444,
-    "branch": "main",
-    "changeset": "162008",
-    "created": "2026-08-25T15:02:26",
-    "message": "session_modal_overflow_fix -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 617443,
-    "branch": "main/session_modal_overflow_fix",
-    "changeset": "162007",
-    "created": "2026-08-25T15:02:09",
-    "message": "Fix description scroll not working\r\nClamp some flex elements so the connect modal cant overspill anymore and stretch itself so much that you cant see disconnect",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 617442,
-    "branch": "main/HAB_armour_damage",
-    "changeset": "162006",
-    "created": "2026-08-25T14:56:25",
-    "message": "same as attack heli  - setup hab armour colliders properly for both client+server so they can be removed properly \r\nadded collision mesh for the frame \r\nupdted prefab",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617441,
-    "branch": "main/underground_train_network_update",
-    "changeset": "162004",
-    "created": "2026-08-25T14:43:09",
-    "message": "First pass boiler room (random room) shell",
-    "author": "hannah.watts"
-  },
-  {
-    "id": 617437,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "162003",
-    "created": "2026-08-25T14:37:46",
-    "message": "Fix old ais fleeing when player jumps",
-    "author": "Maverick"
-  },
-  {
-    "id": 617438,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "162002",
-    "created": "2026-08-25T14:37:37",
-    "message": "Cargo ship no longer despawns its crates on server restart / does more loot cycles but randomly starts leaving inbetween - whole event should now saveload correctly\r\n- Saves the loot rounds that have passed, re-schedules the remaining correctly\r\n- Saves available spawn point indices so crates don't spawn on top of each other",
-    "author": "cipeaX"
-  },
-  {
-    "id": 617435,
-    "branch": "main/hqm_ore",
-    "changeset": "162000",
-    "created": "2026-08-25T14:34:21",
-    "message": "HQM prefabs",
-    "author": "Damian Lazarski"
-  },
-  {
-    "id": 617433,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "161998",
-    "created": "2026-08-25T14:28:47",
-    "message": "give this a try cause why not",
-    "author": "Brian"
-  },
-  {
-    "id": 617430,
-    "branch": "main/hqm_ore",
-    "changeset": "161995",
-    "created": "2026-08-25T14:15:55",
-    "message": "HQM ore texture and HQM collectible art",
-    "author": "Damian Lazarski"
-  },
-  {
-    "id": 617429,
-    "branch": "main/attackheli_armour_damge",
-    "changeset": "161994",
-    "created": "2026-08-25T13:58:21",
-    "message": "made chanegs to the attack heli colliders left, front and right panels so tht they can be toggled off when removed.",
-    "author": "Pilgrim"
   }
 ]

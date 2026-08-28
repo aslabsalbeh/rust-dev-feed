@@ -1,17 +1,17 @@
 {
   "2026-08-28": {
-    "commit_count": 31,
-    "relevant_commit_count": 10,
-    "relevant_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114",
-    "new_baseline_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114",
+    "commit_count": 70,
+    "relevant_commit_count": 31,
+    "relevant_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114,618118,618124,618125,618127,618131,618132,618135,618141,618143,618147,618149,618150,618160,618170,618173,618177,618201,618204,618206,618208,618217",
+    "new_baseline_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114,618118,618124,618125,618127,618131,618132,618135,618141,618143,618147,618149,618150,618160,618170,618173,618177,618201,618204,618206,618208,618217",
     "prompt_version": "structured-read-state-v4-strategic-gameplay",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Boats & Deployables",
+        "title": "Construction & Vehicles",
         "items": [
           {
-            "text": "Boat building no longer assumes ocean level is zero, fixing hull placement, boat creation and deployable height limits.",
+            "text": "Fixed boat building to correctly handle non‑zero ocean level, fixing hull placement, boat creation, and deployable height limits.",
             "commit_ids": [
               618073
             ]
@@ -19,38 +19,45 @@
         ]
       },
       {
-        "title": "Animals",
+        "title": "AI Navigation",
         "items": [
           {
-            "text": "Added a new sea turtle animal with its own rig.",
+            "text": "Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.",
             "commit_ids": [
-              618056
+              618132,
+              618173
             ]
           }
         ]
       },
       {
-        "title": "UI & Menus",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Fixed draggable UI elements to correctly use anchorMax offsets.",
+            "text": "Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.",
             "commit_ids": [
-              618102
-            ]
-          },
-          {
-            "text": "Store icons now properly recache when reopening the menu via Escape.",
-            "commit_ids": [
-              618110
+              618204
             ]
           }
         ]
       },
       {
-        "title": "Store & Items",
+        "title": "Pool Mini‑Game",
         "items": [
           {
-            "text": "New Crystal AR page added under the weapons category in the in‑game store.",
+            "text": "Fixed pool ball velocity creep between shots, ensuring proper ball movement.",
+            "commit_ids": [
+              618149,
+              618150
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons UI",
+        "items": [
+          {
+            "text": "Added a new Crystal AR page under the Weapons category, exposing crystal AR weapons information to players.",
             "commit_ids": [
               618096
             ]
@@ -58,39 +65,95 @@
         ]
       },
       {
-        "title": "UI & Visuals",
+        "title": "Stability & Connectivity",
         "items": [
           {
-            "text": "Fixed helmet clipping when viewing buckets in the skin viewer.",
+            "text": "Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.",
             "commit_ids": [
-              618080
+              618160
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Animation",
+        "items": [
+          {
+            "text": "Corrected draggable UI anchor handling, ensuring UI elements stay positioned correctly when moved.",
+            "commit_ids": [
+              618102
             ]
           },
           {
-            "text": "Resolved rendering glitches (bricking) for indirect instanced objects in the character creator view.",
+            "text": "Adjusted head icon rendering so icons now appear in front of the player character.",
             "commit_ids": [
-              618114
+              618135
             ]
           },
           {
-            "text": "Ensured older baked textures display correctly in the character creator.",
+            "text": "Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly.",
             "commit_ids": [
-              618114
+              618131
             ]
           },
           {
-            "text": "Switched default apartment size to medium for new players.",
+            "text": "Fixed icon caching in the store menu, ensuring icons refresh correctly after opening via escape or re-entering the store.",
             "commit_ids": [
-              618114
+              618110
             ]
           }
         ]
       }
     ],
-    "summary": "### Boats & Deployables\n- Boat building no longer assumes ocean level is zero, fixing hull placement, boat creation and deployable height limits.\n\n### Animals\n- Added a new sea turtle animal with its own rig.\n\n### UI & Menus\n- Fixed draggable UI elements to correctly use anchorMax offsets.\n- Store icons now properly recache when reopening the menu via Escape.\n\n### Store & Items\n- New Crystal AR page added under the weapons category in the in‑game store.\n\n### UI & Visuals\n- Fixed helmet clipping when viewing buckets in the skin viewer.\n- Resolved rendering glitches (bricking) for indirect instanced objects in the character creator view.\n- Ensured older baked textures display correctly in the character creator.\n- Switched default apartment size to medium for new players.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Construction & Vehicles\n- Fixed boat building to correctly handle non‑zero ocean level, fixing hull placement, boat creation, and deployable height limits.\n\n### AI Navigation\n- Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.\n\n### Combat & Weapons\n- Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.\n\n### Pool Mini‑Game\n- Fixed pool ball velocity creep between shots, ensuring proper ball movement.\n\n### Weapons UI\n- Added a new Crystal AR page under the Weapons category, exposing crystal AR weapons information to players.\n\n### Stability & Connectivity\n- Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.\n\n### UI & Animation\n- Corrected draggable UI anchor handling, ensuring UI elements stay positioned correctly when moved.\n- Adjusted head icon rendering so icons now appear in front of the player character.\n- Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly.\n- Fixed icon caching in the store menu, ensuring icons refresh correctly after opening via escape or re-entering the store.",
+    "new_items": [
+      {
+        "text": "Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.",
+        "commit_ids": [
+          618132,
+          618173
+        ],
+        "section": "AI Navigation"
+      },
+      {
+        "text": "Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.",
+        "commit_ids": [
+          618204
+        ],
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Fixed pool ball velocity creep between shots, ensuring proper ball movement.",
+        "commit_ids": [
+          618149,
+          618150
+        ],
+        "section": "Pool Mini‑Game"
+      },
+      {
+        "text": "Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.",
+        "commit_ids": [
+          618160
+        ],
+        "section": "Stability & Connectivity"
+      },
+      {
+        "text": "Adjusted head icon rendering so icons now appear in front of the player character.",
+        "commit_ids": [
+          618135
+        ],
+        "section": "UI & Animation"
+      },
+      {
+        "text": "Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly.",
+        "commit_ids": [
+          618131
+        ],
+        "section": "UI & Animation"
+      }
+    ],
+    "new_relevant_count": 8,
+    "new_summary": "- Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.\n- Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.\n- Fixed pool ball velocity creep between shots, ensuring proper ball movement.\n- Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.\n- Adjusted head icon rendering so icons now appear in front of the player character.\n- Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly."
   },
   "2026-08-27": {
     "commit_count": 66,
@@ -193,6 +256,69 @@
               "text": "Network update range for critter animals reduced to lower bandwidth usage.",
               "commit_ids": [
                 617928
+              ]
+            }
+          ]
+        }
+      ],
+      "617827,617865,617900,617903,617912,617913,617952,617966,617982,618006,618015,618021,618036": [
+        {
+          "title": "Base Building & Placement",
+          "items": [
+            {
+              "text": "Pipe and roadside decor placements were frequently blocked by terrain checks, causing >80% spawn failures. Added dithering and configurable retry attempts, improving placement success.",
+              "commit_ids": [
+                617982
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Ammo",
+          "items": [
+            {
+              "text": "Crystal AR entities started without ammo, preventing players from firing. Fixed missing starting ammo and renamed entities for consistency.",
+              "commit_ids": [
+                617913
+              ]
+            }
+          ]
+        },
+        {
+          "title": "User Interface",
+          "items": [
+            {
+              "text": "Gamepad cursor moved too fast on UI sliders, making precise adjustments difficult. Cursor speed reduced and value snapping added for sliders when using a gamepad.",
+              "commit_ids": [
+                617912
+              ]
+            },
+            {
+              "text": "Holding left trigger further slows gamepad cursor for fine slider control; cursor speed values exposed as convars and added to UI options.",
+              "commit_ids": [
+                617903
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Security & Upkeep",
+          "items": [
+            {
+              "text": "Doors with code locks that have two or fewer authorized users were still counted in door tax calculations, leading to excessive upkeep costs for small player‑run hotels. Now such locks are ignored in tax calculations (configurable via decay.upkeep_lock_min_users).",
+              "commit_ids": [
+                618021
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crafting & Production",
+          "items": [
+            {
+              "text": "Industrial crafter would require a restart after a power loss, halting production. Now it remains active without needing a restart.",
+              "commit_ids": [
+                617865
               ]
             }
           ]
