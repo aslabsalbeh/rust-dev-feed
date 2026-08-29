@@ -31,7 +31,16 @@ SOURCE COMMITS:
 {source_text}
 
 The digest answers:
-"What happened in Rust development today that an ordinary Rust player would actually want to know?"
+"What happened in Rust development today that an ordinary Rust player would actually care about?"
+
+PLAYER-VALUE TEST:
+A change being technically visible to a player does NOT make it newsworthy.
+Include a change only when a typical Rust player would care enough that knowing it
+could change how they play, build, raid, defend, fight, farm, travel, manage a base,
+choose equipment, understand a meaningful bug, or anticipate an important feature.
+
+When in doubt, OMIT minor polish. This is a Rust-player intelligence feed, not a
+complete Facepunch changelog.
 
 Do NOT try to represent every commit.
 
@@ -94,6 +103,28 @@ AGGRESSIVELY EXCLUDE:
 - Automated tests that do not describe a meaningful gameplay change
 - Logging/debugging
 - Internal implementation details
+- Cosmetic polish and animation cleanup that do not affect gameplay decisions
+- Third-person prop details such as magazine/shell drop presentation
+- Tiny minigame physics corrections
+- Internal disconnect/subscription bookkeeping with no player-observable failure
+- UI draw-order/icon-rendering polish
+- Navmesh/rebuild/performance implementation details unless they materially change
+  NPC behavior that players encounter
+
+NEGATIVE EXAMPLES — OMIT THESE:
+- "Navmesh now accounts for opening/closing doors without a full rebuild and improves
+  door-handling performance."
+- "Ammunition magazines now drop correctly in third-person for Abyss AK, Ice AK and
+  Space LR300."
+- "Fixed pool ball velocity creep between shots, ensuring proper ball movement."
+- "Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network
+  stability when leaving servers."
+- "Adjusted head icon rendering so icons now appear in front of the player character."
+- "Resolved multiple idle animations playing simultaneously, eliminating jitter and
+  allowing reaction animations to trigger properly."
+
+These are technically visible or bug-related, but they are too minor for this feed
+unless the source commit also contains a separate, meaningful gameplay consequence.
 
 Never sacrifice a concrete gameplay or strategic change to make room for cosmetic,
 rendering or technical information.
@@ -154,7 +185,13 @@ HIGH PRIORITY:
 Do not dismiss an important gameplay change because the commit also mentions tests.
 Exclude refactors, rendering trivia, asset optimization, logging and developer tooling
 when they have no meaningful player-facing effect.
-Preserve concrete bug symptoms.
+Also exclude minor cosmetic/animation polish, third-person prop presentation,
+tiny minigame physics fixes, UI draw-order/icon polish, navmesh/performance
+implementation details, and internal disconnect/subscription bookkeeping unless
+there is a meaningful player-observable gameplay consequence.
+A change being visible is not enough: ask whether a typical Rust player would
+actually care about knowing it.
+Preserve concrete bug symptoms for bugs that pass that player-value test.
 
 Every bullet MUST include exact source Commit IDs. Never invent IDs and only use IDs above.
 Combine closely related commits.
@@ -191,6 +228,10 @@ Merge duplicates while preserving concrete player-facing bug symptoms.
 Preserve strategic gameplay changes, buffs, nerfs, economy/upkeep changes and new
 gameplay interactions; do not discard them in favor of minor bug fixes or cosmetic polish.
 Drop technical/internal trivia if any remains.
+Also drop minor cosmetic/animation polish, third-person prop presentation,
+tiny minigame physics fixes, UI draw-order/icon polish, navmesh/performance details,
+and internal disconnect/subscription bookkeeping unless they materially affect play.
+Prefer fewer, higher-signal bullets over padding the digest.
 Aim for 2 to 6 sections and roughly 8 to 15 worthwhile bullets total; fewer is fine.
 Do not mention developer names or commit IDs inside bullet text.
 Do not include a title or date.
@@ -231,6 +272,11 @@ IMPORTANT:
 - Do not speculate or imply a WIP change is live.
 - Exclude purely technical/rendering/refactor/test/logging details with no meaningful
   player-facing effect.
+- Also exclude minor cosmetic/animation polish, third-person prop presentation,
+  tiny minigame physics fixes, UI draw-order/icon polish, navmesh/performance details,
+  and internal disconnect/subscription bookkeeping.
+- A commit being technically visible or containing the word "fixed" is not enough;
+  include it only if a typical Rust player would actually care about the consequence.
 - Every bullet MUST include exact source Commit IDs from the commits above.
 - Never invent Commit IDs.
 - Do not mention commit IDs or branch names inside bullet text.
