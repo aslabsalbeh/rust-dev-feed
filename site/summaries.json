@@ -201,12 +201,303 @@
     "new_summary": ""
   },
   "2026-08-26": {
-    "commit_count": 113,
+    "commit_count": 112,
     "relevant_commit_count": 74,
     "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724,617726,617736,617738,617742,617743,617746,617751,617754",
     "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724,617726,617736,617738,617742,617743,617746,617751,617754",
     "prompt_version": "structured-read-state-v5-player-signal",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "617587,617627,617631,617639,617645,617649,617664,617666,617683,617695,617708,617722,617726,617738,617743,617746,617751,617754,617796,617802,617804,617805,617810,617812,617814": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Adjusted critter speed values, improved animation blending, and fixed critters hovering above ground.",
+              "commit_ids": [
+                617751
+              ]
+            },
+            {
+              "text": "Enabled AI select/move commands for multiple animals with offset handling and added related console variables.",
+              "commit_ids": [
+                617631
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Team Management",
+          "items": [
+            {
+              "text": "Added Rust+ support to allow players to kick teammates or leave the team themselves.",
+              "commit_ids": [
+                617796
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Monument Blocker Balance & Decay",
+          "items": [
+            {
+              "text": "Implemented decay for monument blockers with a configurable grace period and fixed a restart bug that restored blocker health.",
+              "commit_ids": [
+                617802
+              ]
+            },
+            {
+              "text": "Added a small oil rig blocker and made minor adjustments to large rig and launch site blockers.",
+              "commit_ids": [
+                617649
+              ]
+            },
+            {
+              "text": "Balanced additional blockers (mil tuns, silo, large oil) as part of the S2P update.",
+              "commit_ids": [
+                617738
+              ]
+            },
+            {
+              "text": "Reduced monument blocker HP to require 1 C4 or 5 satchels to destroy.",
+              "commit_ids": [
+                617645
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Maintainables & Loot Spawner Fixes",
+          "items": [
+            {
+              "text": "Fixed water pipes spawning at odd angles and ensured gas station loot spawners persist after server restarts.",
+              "commit_ids": [
+                617695,
+                617708
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Boat Decay",
+          "items": [
+            {
+              "text": "Persisted timeSinceLastUsed for playerboats, fixing the missing decay issue on daily restart servers.",
+              "commit_ids": [
+                617743
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Submarine Looting Restrictions",
+          "items": [
+            {
+              "text": "Prevented looting of clipping player bodies while mounted on submarines; players must exit to loot.",
+              "commit_ids": [
+                617587
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Compost & Furnace UI Fixes",
+          "items": [
+            {
+              "text": "Blocked moving items into furnace output slots, fixing a four‑year‑old exploit.",
+              "commit_ids": [
+                617814
+              ]
+            },
+            {
+              "text": "Added early exit for fertilizer creation when chance fails, preventing zero‑amount loops.",
+              "commit_ids": [
+                617810
+              ]
+            },
+            {
+              "text": "Corrected the composter UI title from \"Furnace\" to \"Composter\" in the loot panel.",
+              "commit_ids": [
+                617812
+              ]
+            },
+            {
+              "text": "Fixed the compost loot panel to correctly predict cook time by checking compost‑specific item data.",
+              "commit_ids": [
+                617804
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crafting Cost Adjustments",
+          "items": [
+            {
+              "text": "Increased the heavy pot helmet crafting cost to 2 sheet metal and 8 high‑quality metal.",
+              "commit_ids": [
+                617627
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Boat Deployment Message",
+          "items": [
+            {
+              "text": "Fixed the erroneous \"Can't be deployed on boats\" message shown for badly placed deployments.",
+              "commit_ids": [
+                617746
+              ]
+            }
+          ]
+        }
+      ],
+      "617554,617576,617590,617594,617600,617625,617635,617646,617654,617662,617663,617668,617687,617694,617721,617736,617763,617766,617780,617793,617797,617807,617808,617813,617815": [
+        {
+          "title": "UI & Store",
+          "items": [
+            {
+              "text": "Fixed missing sprites and icons in the shop UI, ensuring item overlays load correctly.",
+              "commit_ids": [
+                617694
+              ]
+            },
+            {
+              "text": "Made shop tiles clickable by fixing bundle assignments and resource loading.",
+              "commit_ids": [
+                617687
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Composting System",
+          "items": [
+            {
+              "text": "Corrected composting time for items that are both cookable and compostable, using the appropriate time per item.",
+              "commit_ids": [
+                617813
+              ]
+            },
+            {
+              "text": "Fixed composter filter to accept food from the new prefab/item filter setup.",
+              "commit_ids": [
+                617808
+              ]
+            },
+            {
+              "text": "Prevented items that produce no compost from being accepted into the composter.",
+              "commit_ids": [
+                617807
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons & Inventory",
+          "items": [
+            {
+              "text": "Resolved a bug where empty magazines could drop twice when playing in third‑person view.",
+              "commit_ids": [
+                617797
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Armor & Equipment",
+          "items": [
+            {
+              "text": "Added a 3‑second hold‑E requirement to equip HAB armor, preventing accidental equips, and introduced equip sound effects.",
+              "commit_ids": [
+                617766
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Fixed navmesh generation behind doors in certain rooms, restoring proper AI navigation in those areas.",
+              "commit_ids": [
+                617668
+              ]
+            }
+          ]
+        }
+      ],
+      "617552,617555,617557,617562,617571,617586,617589,617597,617608,617621,617640,617650,617658,617661,617697,617718,617724,617742,617760,617774,617775,617799,617801,617809": [
+        {
+          "title": "Combat & Weapons",
+          "items": [
+            {
+              "text": "Implemented client-side prediction for grenades, improving throw and drop accuracy for both grenade and thrown weapons.",
+              "commit_ids": [
+                617718
+              ]
+            },
+            {
+              "text": "Fixed armor damage detection by replacing mesh colliders with box colliders on HAB armor frames.",
+              "commit_ids": [
+                617589,
+                617621
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Health & Healing",
+          "items": [
+            {
+              "text": "Adjusted Honey Bandage values: instant health reduced from 10 to 8, healing over time increased from 4 to 6, and cloth craft cost lowered from 8 to 4.",
+              "commit_ids": [
+                617571
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Resource & Crafting",
+          "items": [
+            {
+              "text": "Increased composter smelt speed to match previous behavior when splitting stacks, making composting faster.",
+              "commit_ids": [
+                617809
+              ]
+            },
+            {
+              "text": "Made High‑Quality Metal (HQM) ore rarer by moving it to its own population and doubling respawn delays; added rare HQM collectable spawns.",
+              "commit_ids": [
+                617775,
+                617557
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Corrected scientist corpses to use the ragdoll layer, preventing them from blocking movement and projectile paths.",
+              "commit_ids": [
+                617650
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Environmental & Events",
+          "items": [
+            {
+              "text": "Ensured oil rig radiation restarts automatically after a server restart if a forced reset fails, keeping the event active.",
+              "commit_ids": [
+                617562
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "World & Exploration",
