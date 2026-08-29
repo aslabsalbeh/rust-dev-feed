@@ -39,7 +39,7 @@ LOCAL_TZ = ZoneInfo("America/Toronto")
 CHUNK_SIZE = 25
 
 # Prompt content now includes strategic gameplay/balance rules.
-PROMPT_VERSION = "structured-read-state-v4-strategic-gameplay"
+PROMPT_VERSION = "structured-read-state-v5-player-signal"
 
 
 
