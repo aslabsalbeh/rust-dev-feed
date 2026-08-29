@@ -1,70 +1,114 @@
-from scripts.relevance import player_relevance_score
+from scripts.relevance import (
+    RELEVANCE_THRESHOLD,
+    filter_player_relevant_commits,
+    player_relevance_score,
+)
 
 
-def score(message):
-    commit = {
-        "id": 999999,
-        "branch": "",
-        "message": message,
-        "created": "2026-08-25T12:00:00",
-    }
+def commit(message, branch="main"):
+    return {"id": 1, "branch": branch, "message": message}
 
-    return player_relevance_score(commit)
+
+def assert_relevant(message, branch="main"):
+    score = player_relevance_score(commit(message, branch))
+    assert score >= RELEVANCE_THRESHOLD, (message, score)
+
+
+def assert_not_relevant(message, branch="main"):
+    score = player_relevance_score(commit(message, branch))
+    assert score < RELEVANCE_THRESHOLD, (message, score)
 
 
 def test_grenade_stack_size_change_is_relevant():
-    message = (
-        "Reduced stack size for F1s 5 > 3, "
-        "Bee nades 5 > 3, Flashbangs 5 > 3, "
-        "Molotovs 5 > 3"
+    assert_relevant(
+        "Reduced F1 Grenade, Bee Grenade, Flashbang and Molotov stack sizes from 5 to 3"
     )
-
-    assert score(message) >= 2
 
 
 def test_sam_drone_buff_is_relevant():
-    message = (
-        "SAM site vs drone buffs wip: Missiles use a proximity "
-        "fuse against drones, lead vs them without aim error at "
-        "2.25x speed, and destroy drone-dropped explosives mid-air"
+    assert_relevant(
+        "WIP SAM site buffs: proximity fuse, lead drones at 2.25x speed, "
+        "destroy drone-dropped explosives mid-air"
     )
-
-    assert score(message) >= 2
 
 
 def test_code_lock_upkeep_change_is_relevant():
-    message = (
-        "Group upkeep modifier now takes into account any unique "
-        "players authed on a code lock. If a player is not authed "
-        "on a TC but is authed on a code lock controlled by that "
-        "TC then they will contribute to upkeep costs."
+    assert_relevant(
+        "Group upkeep modifier now counts players authed on code locks controlled by the TC",
+        "main/tc_auth_group_tests",
     )
 
-    assert score(message) >= 2
+
+def test_font_atlas_is_not_relevant():
+    assert_not_relevant("Updated dynamic font atlas glyph generation")
 
 
-def test_font_atlas_change_is_not_relevant():
-    message = (
-        "Increased icon-font atlas to 1024x1024 and switched "
-        "to on-demand glyph generation."
+def test_radial_blur_is_not_relevant():
+    assert_not_relevant("Adjusted radial blur and vignette rendering")
+
+
+def test_ao_texture_is_not_relevant():
+    assert_not_relevant("Reduced AO texture resolution for memory savings")
+
+
+def test_navmesh_door_performance_is_not_relevant():
+    assert_not_relevant(
+        "Navmesh now accounts for opening and closing doors without a full rebuild "
+        "and improves door-handling performance"
     )
 
-    assert score(message) < 2
 
-
-def test_radial_blur_change_is_not_relevant():
-    message = (
-        "Radial blur added to the rendering pipeline and "
-        "vignette effect toned down."
+def test_third_person_magazine_drop_is_not_relevant():
+    assert_not_relevant(
+        "Ammunition magazines now drop correctly in third-person for Abyss AK, "
+        "Ice AK and Space LR300"
     )
 
-    assert score(message) < 2
 
-
-def test_ao_texture_change_is_not_relevant():
-    message = (
-        "Reduced AO texture resolution from 1024 to 512 "
-        "for improved asset memory usage."
+def test_pool_ball_velocity_creep_is_not_relevant():
+    assert_not_relevant(
+        "Fixed pool ball velocity creep between shots, ensuring proper ball movement"
     )
 
-    assert score(message) < 2
+
+def test_duplicate_unsubscribe_disconnect_flow_is_not_relevant():
+    assert_not_relevant(
+        "Fixed disconnect flow to prevent duplicate unsubscribe errors when leaving servers"
+    )
+
+
+def test_head_icon_render_order_is_not_relevant():
+    assert_not_relevant(
+        "Adjusted head icon rendering so icons now appear in front of the player character"
+    )
+
+
+def test_idle_animation_jitter_is_not_relevant():
+    assert_not_relevant(
+        "Resolved multiple idle animations playing simultaneously, eliminating jitter "
+        "and allowing reaction animations to trigger properly"
+    )
+
+
+def test_real_disconnect_exploit_is_still_relevant():
+    assert_relevant(
+        "Fixed disconnect exploit allowing players to duplicate loot from storage"
+    )
+
+
+def test_meaningful_npc_behavior_change_is_still_relevant():
+    assert_relevant(
+        "Scientists now open doors while pursuing players and can continue attacking"
+    )
+
+
+def test_filter_keeps_signal_and_drops_polish():
+    commits = [
+        commit("Reduced grenade stack size from 5 to 3"),
+        {**commit("Fixed pool ball velocity creep between shots"), "id": 2},
+        {**commit("SAM sites now destroy drone-dropped explosives"), "id": 3},
+        {**commit("Adjusted head icon rendering order"), "id": 4},
+    ]
+    result = filter_player_relevant_commits(commits)
+    ids = {item["id"] for item in result}
+    assert ids == {1, 3}
