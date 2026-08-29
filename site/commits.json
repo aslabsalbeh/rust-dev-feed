@@ -1,5 +1,21 @@
 [
   {
+    "id": 618293,
+    "branch": "main/prop_optimisations",
+    "changeset": "162595",
+    "created": "2026-08-29T21:31:01",
+    "message": "boat building station optimisation\nits 7 buoys were embedded pre-merge copies of the ocean wreck buoy optimisation i did on changeset 162514 - replaced their 280 seaweed/mussel renderers with the buoy merge's existing combined meshes\ncombined the remaining seaweed clumps in the station and platform prefabs (6 -> 1 and 5 -> 1) with wind origins baked into UV2\r\nnone of the seaweed was ever batching at runtime\nrenderers 340 -> 65, prefab 1.4mb -> 296kb, seaweed is now 9 draw calls instead of 263!",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618287,
+    "branch": "main/prop_optimisations",
+    "changeset": "162594",
+    "created": "2026-08-29T20:43:15",
+    "message": "satellite crash remains optimisation\ncombined the 32 loose debris pieces into a single mesh with a MeshLOD - shadows now turn off past 25m for these, and it culls at 100m (previously it drew at every distance)\nconverted the dish from a LODGroup to a RendererLOD with the same switch distances, and zeroed the LOD child offsets so it collapses to a single renderer at runtime\nboth the dish and debris now register as occludees, so terrain and buildings can occlusion cull them - the LODGroup never could\nrenderers 44 -> 13, debris draw calls 32 -> 1",
+    "author": "Pilgrim"
+  },
+  {
     "id": 618280,
     "branch": "main/new_navmesh_fixes",
     "changeset": "162592",
@@ -1382,61 +1398,5 @@
     "created": "2026-08-26T22:53:20",
     "message": "three more asset optimsations that were over  the vertex cap\n\nAshtrayB1_LOD0                     1028 > 983 verts\nmatrix_display_tools_LOD1     1019 > 998 verts\nemptybarrel_LOD1                   1164 > 876 verts\n\nashtray now batches on its whole chain (LOD0-2)\ntools display and empty barrel batch from LOD1 down",
     "author": "Pilgrim"
-  },
-  {
-    "id": 617780,
-    "branch": "main/bed_optimisation",
-    "changeset": "162262",
-    "created": "2026-08-26T22:04:35",
-    "message": "optimised bed - LOD1 now under the batching vertex cap\n\nLOD1 998 verts, was over 1000 so it never batched\nnow batches 30 to a draw call in the LOD1 band\n\r\nalso fixed lod issue where the fold in the bed cover would disappear on LOD1 and reappear on LOD2",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617778,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "162261",
-    "created": "2026-08-26T21:36:24",
-    "message": "Fix navmesh building on dive sites",
-    "author": "Maverick"
-  },
-  {
-    "id": 617776,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162259",
-    "created": "2026-08-26T21:27:52",
-    "message": "Update: gather assets into dynamic UI bundle as a first step, to capture all deps (40MB -> 0.6GB)\r\n- mode ui/menu2 assets from props-other assetscene to prefabs (otherwise no idea how it used to work before)\r\n- also add a bit earlier error checking when loading from bundle\r\nTests: editor in bundle mode - able to see all but 2 icons, but prefabs are not loading",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617775,
-    "branch": "main/hqm_ore_random_spawner",
-    "changeset": "162258",
-    "created": "2026-08-26T21:27:20",
-    "message": "Added ore_hqm_spawner.prefab (with doubled min/max respawn delay)\r\nUpdated manifest",
-    "author": "Raul"
-  },
-  {
-    "id": 617774,
-    "branch": "main/large_wooden_storage_optimisation",
-    "changeset": "162257",
-    "created": "2026-08-26T21:21:20",
-    "message": "optimised large wooden box\r\n\r\nLOD0 999 verts, was over 1000 previously so it never batched at close range\nit can now batch around 30 to a draw call inside the 0-10m LOD0 band\ntris LOD0 1,552 > 1,346, LOD1 474 > 366, LOD2 100 > 84",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617769,
-    "branch": "main/hqm_ore_random_spawner",
-    "changeset": "162255",
-    "created": "2026-08-26T20:58:37",
-    "message": "Added HQM ore to ore_random_spawner.prefab (weight 5)",
-    "author": "Raul"
-  },
-  {
-    "id": 617766,
-    "branch": "main/HAB_armour_damage",
-    "changeset": "162253",
-    "created": "2026-08-26T20:49:45",
-    "message": "Enable RW on HAB armor gibs\r\nHAB armor now plays an effect when equipped, placeholder sound for now\r\nSwitch HAB door to chainlink door sounds instead of metal\r\nNow need to hold E for 3 seconds to put on the armor instead of instant, prevents misclicks",
-    "author": "cipeaX"
   }
 ]
