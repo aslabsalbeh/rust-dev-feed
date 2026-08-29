@@ -71,6 +71,31 @@ VISIBLE_VISUAL_TERMS = (
 )
 
 
+LOW_VALUE_PLAYER_POLISH_TERMS = (
+    # Cosmetic / animation polish that is technically visible but not useful news
+    "cosmetic polish", "visual polish", "animation polish",
+    "idle animation", "idle animations", "animation jitter",
+    "reaction animation", "reaction animations",
+    "head icon", "icon rendering", "render order", "draw order",
+
+    # Third-person prop/ejection details
+    "third-person magazine", "third person magazine",
+    "magazine drop", "magazines now drop", "magazine ejection",
+    "shell ejection", "third-person ejection", "third person ejection",
+
+    # Tiny recreational/minigame physics fixes
+    "pool ball", "pool balls", "billiard", "billiards",
+
+    # Internal disconnect/subscription bookkeeping
+    "unsubscribe error", "unsubscribe errors", "duplicate unsubscribe",
+    "disconnect flow", "subscription cleanup",
+
+    # Navigation/performance implementation details
+    "navmesh", "nav mesh", "full rebuild",
+    "door-handling performance", "door handling performance",
+)
+
+
 STRATEGIC_GAMEPLAY_TERMS = (
     # Explicit balance
     "buff", "buffs", "buffed", "nerf", "nerfs", "nerfed", "rebalance",
@@ -104,9 +129,10 @@ SCORE_WEIGHTS = {
     "new_high_value": 3,
     "balance_change": 5,
     "explicit_buff_nerf": 6,
-    "visible_visual": 1,
+    "visible_visual": 0,
     "technical": -5,
     "low_value_visual": -5,
+    "low_value_player_polish": -20,
     "test_only": -4,
     "cleanup_refactor": -4,
     "player_facing_bug_rescue": 5,
@@ -172,6 +198,9 @@ def player_relevance_score(commit):
 
     if contains_any(text, LOW_VALUE_VISUAL_TERMS):
         score += SCORE_WEIGHTS["low_value_visual"]
+
+    if contains_any(text, LOW_VALUE_PLAYER_POLISH_TERMS):
+        score += SCORE_WEIGHTS["low_value_player_polish"]
 
     # Test wording should not penalize a meaningful strategic gameplay change.
     if re.search(r"\b(test|tests|testing)\b", text) and not strategic_change:
