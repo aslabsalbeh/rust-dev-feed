@@ -1,5 +1,13 @@
 [
   {
+    "id": 618277,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162591",
+    "created": "2026-08-29T17:30:18",
+    "message": "Reduce network overhead of powered igniter, tesla coil and strobe lights\r\nEvery Hurt broadcasts a full entity update, self damage is now applied every so often to reduce overhead (time to die unchanged)",
+    "author": "Flavien"
+  },
+  {
     "id": 618273,
     "branch": "main/improved_event_saveloading",
     "changeset": "162588",
@@ -1478,85 +1486,5 @@
     "created": "2026-08-26T18:54:46",
     "message": "HQM Collectable 8 > 5\r\nHQM Node 30 > 20\r\nMore common in jungle than other biomes",
     "author": "Rin"
-  },
-  {
-    "id": 617746,
-    "branch": "main/boat_deploy_error_fix",
-    "changeset": "162241",
-    "created": "2026-08-26T18:07:45",
-    "message": "Fix the incorrect \"Can't be deployed on boats\" deploy message when something is just badly placed.",
-    "author": "Adam W"
-  },
-  {
-    "id": 617743,
-    "branch": "main/playerboat_decay_fix",
-    "changeset": "162239",
-    "created": "2026-08-26T17:41:27",
-    "message": "Persist timeSinceLastUsed for playerboats. Fixes no decay bug on daily restart servers.",
-    "author": "Adam W"
-  },
-  {
-    "id": 617742,
-    "branch": "main/Livestock_animals",
-    "changeset": "162238",
-    "created": "2026-08-26T17:37:41",
-    "message": "Added calf texture variations. set up with material variants.",
-    "author": "Toffer"
-  },
-  {
-    "id": 617738,
-    "branch": "main/Monument_Blocker_Balance",
-    "changeset": "162235",
-    "created": "2026-08-26T17:06:50",
-    "message": "S2P mil tuns, silo, large oil",
-    "author": "cipeaX"
-  },
-  {
-    "id": 617737,
-    "branch": "main",
-    "changeset": "162234",
-    "created": "2026-08-26T17:03:47",
-    "message": "~Changed TerrainFootprint's default MaxTiltDegrees to 35 after finding a tiny rock gap that was not resolved by the footprint terrain modifications because the rock was at 26 degrees, 1 degree over the existing MaxTiltDegrees",
-    "author": "Jakb"
-  },
-  {
-    "id": 617736,
-    "branch": "main/workbench_upgrade_rug_deploy_fix",
-    "changeset": "162233",
-    "created": "2026-08-26T17:02:42",
-    "message": "More fixes",
-    "author": "Adam W"
-  },
-  {
-    "id": 617726,
-    "branch": "main",
-    "changeset": "162226",
-    "created": "2026-08-26T16:35:50",
-    "message": "Removed mipmaps from the default unity spotlight cookie texture to fix light leaking issues",
-    "author": "aidan.m"
-  },
-  {
-    "id": 617724,
-    "branch": "main/admin_invis_cube_variants",
-    "changeset": "162224",
-    "created": "2026-08-26T16:30:58",
-    "message": "Added admin_invis_cube_3x3_attack and admin_invis_wall_01_attack variants (they can be hit with melee or shot at)",
-    "author": "Raul"
-  },
-  {
-    "id": 617722,
-    "branch": "main/demo_ui_2",
-    "changeset": "162222",
-    "created": "2026-08-26T16:26:39",
-    "message": "Fix animation loader not working in builds, clips needed to be marked legacy",
-    "author": "octo"
-  },
-  {
-    "id": 617721,
-    "branch": "main/planter_optimisation",
-    "changeset": "162221",
-    "created": "2026-08-26T16:25:14",
-    "message": "attempt to optimise the three planters. noticed that they have 3 materials on last lod so baked small, large and triangle last LOD down to one 512 albedo and one material\nsoil now culls at 40m and hands off to the bake\nalso fixed 12 monument/static prefabs still on the pre-bake material arrays -will need checking over \n\nlod2 draw calls 3 -> 1 per planter\r\n\r\nhttps://files.facepunch.com/pilgrim/2026/August/26_17-21-OilyUrson.mp4",
-    "author": "Pilgrim"
   }
 ]
