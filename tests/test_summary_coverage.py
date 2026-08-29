@@ -6,55 +6,39 @@ from scripts.relevance import (
 
 MUST_INCLUDE_COMMITS = [
     {
-        "id": 1,
-        "branch": "",
+        "id": 615001,
+        "branch": "main",
         "message": (
-            "Reduced stack size for F1s 5 > 3, "
-            "Bee nades 5 > 3, Flashbangs 5 > 3, "
-            "Molotovs 5 > 3"
+            "Reduced F1 Grenade, Bee Grenade, Flashbang and Molotov "
+            "stack sizes from 5 to 3"
         ),
-        "created": "2026-08-25T12:00:00",
     },
     {
-        "id": 2,
-        "branch": "",
+        "id": 615002,
+        "branch": "main/sam_drone_changes",
         "message": (
-            "SAM site vs drone buffs wip: Missiles use a proximity "
-            "fuse against drones, lead vs them without aim error at "
-            "2.25x speed, and destroy drone-dropped explosives mid-air"
+            "WIP SAM site buffs: added proximity fuse, lead drones without aim "
+            "error at 2.25x speed, destroy drone-dropped explosives mid-air"
         ),
-        "created": "2026-08-25T12:00:00",
     },
     {
-        "id": 3,
+        "id": 615003,
         "branch": "main/tc_auth_group_tests",
         "message": (
-            "Group upkeep modifier now takes into account any unique "
-            "players authed on a code lock. If a player is not authed "
-            "on a TC but is authed on a code lock controlled by that "
-            "TC then they will contribute to upkeep costs. "
-            "Added tests to verify behaviour."
+            "Group upkeep modifier now counts players authed on code locks "
+            "controlled by the TC. Added tests for TC auth group behavior."
         ),
-        "created": "2026-08-25T12:00:00",
     },
 ]
 
 
 def test_must_include_strategic_changes_pass_filter():
-    for commit in MUST_INCLUDE_COMMITS:
-        score = player_relevance_score(commit)
-
-        assert score >= RELEVANCE_THRESHOLD, (
-            f"Important commit was filtered out: "
-            f"{commit['message']} (score={score})"
-        )
+    for item in MUST_INCLUDE_COMMITS:
+        score = player_relevance_score(item)
+        assert score >= RELEVANCE_THRESHOLD, (item["message"], score)
 
 
 def test_must_include_changes_are_high_impact():
-    for commit in MUST_INCLUDE_COMMITS:
-        score = player_relevance_score(commit)
-
-        assert score >= 10, (
-            f"Important commit did not reach high-impact threshold: "
-            f"{commit['message']} (score={score})"
-        )
+    for item in MUST_INCLUDE_COMMITS:
+        score = player_relevance_score(item)
+        assert score >= 10, (item["message"], score)
