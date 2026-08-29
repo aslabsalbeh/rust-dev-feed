@@ -1,17 +1,17 @@
 {
   "2026-08-28": {
-    "commit_count": 70,
-    "relevant_commit_count": 31,
-    "relevant_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114,618118,618124,618125,618127,618131,618132,618135,618141,618143,618147,618149,618150,618160,618170,618173,618177,618201,618204,618206,618208,618217",
-    "new_baseline_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114,618118,618124,618125,618127,618131,618132,618135,618141,618143,618147,618149,618150,618160,618170,618173,618177,618201,618204,618206,618208,618217",
-    "prompt_version": "structured-read-state-v4-strategic-gameplay",
+    "commit_count": 72,
+    "relevant_commit_count": 23,
+    "relevant_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114,618118,618124,618125,618127,618141,618143,618147,618170,618177,618201,618204,618206,618208",
+    "new_baseline_signature": "618056,618073,618080,618088,618096,618100,618102,618107,618110,618114,618118,618124,618125,618127,618141,618143,618147,618170,618177,618201,618204,618206,618208",
+    "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Construction & Vehicles",
+        "title": "Boats & Watercraft",
         "items": [
           {
-            "text": "Fixed boat building to correctly handle non‑zero ocean level, fixing hull placement, boat creation, and deployable height limits.",
+            "text": "Fixed hull placement, boat creation, and deployable height limits when building boats, preventing errors from assuming ocean level is zero.",
             "commit_ids": [
               618073
             ]
@@ -19,85 +19,32 @@
         ]
       },
       {
-        "title": "AI Navigation",
+        "title": "Animals",
         "items": [
           {
-            "text": "Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.",
+            "text": "Added a new sea turtle rig, introducing sea turtles into the world.",
             "commit_ids": [
-              618132,
-              618173
+              618056
             ]
           }
         ]
       },
       {
-        "title": "Combat & Weapons",
+        "title": "Graphics Bugs",
         "items": [
           {
-            "text": "Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.",
+            "text": "Resolved black player eye rendering issue in Bandit Camp environments.",
             "commit_ids": [
-              618204
+              618206
             ]
           }
         ]
       },
       {
-        "title": "Pool Mini‑Game",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Fixed pool ball velocity creep between shots, ensuring proper ball movement.",
-            "commit_ids": [
-              618149,
-              618150
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons UI",
-        "items": [
-          {
-            "text": "Added a new Crystal AR page under the Weapons category, exposing crystal AR weapons information to players.",
-            "commit_ids": [
-              618096
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Stability & Connectivity",
-        "items": [
-          {
-            "text": "Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.",
-            "commit_ids": [
-              618160
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Animation",
-        "items": [
-          {
-            "text": "Corrected draggable UI anchor handling, ensuring UI elements stay positioned correctly when moved.",
-            "commit_ids": [
-              618102
-            ]
-          },
-          {
-            "text": "Adjusted head icon rendering so icons now appear in front of the player character.",
-            "commit_ids": [
-              618135
-            ]
-          },
-          {
-            "text": "Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly.",
-            "commit_ids": [
-              618131
-            ]
-          },
-          {
-            "text": "Fixed icon caching in the store menu, ensuring icons refresh correctly after opening via escape or re-entering the store.",
+            "text": "Store icons now correctly refresh when reopening the store via the escape menu, preventing missing or outdated icons.",
             "commit_ids": [
               618110
             ]
@@ -105,251 +52,73 @@
         ]
       }
     ],
-    "summary": "### Construction & Vehicles\n- Fixed boat building to correctly handle non‑zero ocean level, fixing hull placement, boat creation, and deployable height limits.\n\n### AI Navigation\n- Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.\n\n### Combat & Weapons\n- Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.\n\n### Pool Mini‑Game\n- Fixed pool ball velocity creep between shots, ensuring proper ball movement.\n\n### Weapons UI\n- Added a new Crystal AR page under the Weapons category, exposing crystal AR weapons information to players.\n\n### Stability & Connectivity\n- Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.\n\n### UI & Animation\n- Corrected draggable UI anchor handling, ensuring UI elements stay positioned correctly when moved.\n- Adjusted head icon rendering so icons now appear in front of the player character.\n- Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly.\n- Fixed icon caching in the store menu, ensuring icons refresh correctly after opening via escape or re-entering the store.",
-    "new_items": [
-      {
-        "text": "Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.",
-        "commit_ids": [
-          618132,
-          618173
-        ],
-        "section": "AI Navigation"
-      },
-      {
-        "text": "Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.",
-        "commit_ids": [
-          618204
-        ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Fixed pool ball velocity creep between shots, ensuring proper ball movement.",
-        "commit_ids": [
-          618149,
-          618150
-        ],
-        "section": "Pool Mini‑Game"
-      },
-      {
-        "text": "Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.",
-        "commit_ids": [
-          618160
-        ],
-        "section": "Stability & Connectivity"
-      },
-      {
-        "text": "Adjusted head icon rendering so icons now appear in front of the player character.",
-        "commit_ids": [
-          618135
-        ],
-        "section": "UI & Animation"
-      },
-      {
-        "text": "Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly.",
-        "commit_ids": [
-          618131
-        ],
-        "section": "UI & Animation"
-      }
-    ],
-    "new_relevant_count": 8,
-    "new_summary": "- Navmesh now accounts for opening/closing doors without a full rebuild and improves door‑handling performance.\n- Ammunition magazines now drop correctly in third‑person for Abyss AK, Ice AK and Space LR300.\n- Fixed pool ball velocity creep between shots, ensuring proper ball movement.\n- Fixed disconnect flow to prevent duplicate unsubscribe errors, improving network stability when leaving servers.\n- Adjusted head icon rendering so icons now appear in front of the player character.\n- Resolved multiple idle animations playing simultaneously, eliminating jitter and allowing reaction animations to trigger properly."
+    "summary": "### Boats & Watercraft\n- Fixed hull placement, boat creation, and deployable height limits when building boats, preventing errors from assuming ocean level is zero.\n\n### Animals\n- Added a new sea turtle rig, introducing sea turtles into the world.\n\n### Graphics Bugs\n- Resolved black player eye rendering issue in Bandit Camp environments.\n\n### UI & Quality of Life\n- Store icons now correctly refresh when reopening the store via the escape menu, preventing missing or outdated icons.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-27": {
     "commit_count": 66,
     "relevant_commit_count": 38,
-    "relevant_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033",
-    "new_baseline_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033",
-    "prompt_version": "structured-read-state-v4-strategic-gameplay",
-    "chunk_cache": {
-      "617823,617828,617831,617862,617863,617867,617868,617875,617892,617894,617918,617920,617928,617932,617937,617945,617946,617960,617964,617981,617988,618003,618004,618033,618044": [
-        {
-          "title": "Monument Blockers & Decay",
-          "items": [
-            {
-              "text": "Monument blockers now decay over a 24‑hour period, are immune to fire damage, and have server‑to‑client sync applied.",
-              "commit_ids": [
-                617828,
-                617831
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Master Key Interaction",
-          "items": [
-            {
-              "text": "Master key no longer gets stuck in its animation state when left‑clicked.",
-              "commit_ids": [
-                618003
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Water & Ocean Mechanics",
-          "items": [
-            {
-              "text": "Boat building stations can be deployed even when the ocean level is non‑zero or negative.",
-              "commit_ids": [
-                617918
-              ]
-            },
-            {
-              "text": "Unpowered water pumps no longer act as a gravity source pulling nearby objects.",
-              "commit_ids": [
-                617892
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Maintainables & Structure Spawning",
-          "items": [
-            {
-              "text": "Improved spawning checks for maintainable structures and pipe access points, allowing them to generate on flatter terrain and reducing false‑negative spawns.",
-              "commit_ids": [
-                617960,
-                617937
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Store UI & Asset Handling",
-          "items": [
-            {
-              "text": "General store UI grids now receive proper closure notifications, preventing asset‑bundle reference leaks; prefabs load correctly through nested components.",
-              "commit_ids": [
-                617964,
-                617867
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Grenade & Charge Prediction",
-          "items": [
-            {
-              "text": "Client‑side prediction disabled for firecrackers and survey charges to avoid desynchronisation.",
-              "commit_ids": [
-                617894
-              ]
-            }
-          ]
-        },
-        {
-          "title": "HAB Armour Damage",
-          "items": [
-            {
-              "text": "HAB armour now correctly forwards damage to its parent hot‑air balloon health pool.",
-              "commit_ids": [
-                617946
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Critter Network Range",
-          "items": [
-            {
-              "text": "Network update range for critter animals reduced to lower bandwidth usage.",
-              "commit_ids": [
-                617928
-              ]
-            }
-          ]
-        }
-      ],
-      "617827,617865,617900,617903,617912,617913,617952,617966,617982,618006,618015,618021,618036": [
-        {
-          "title": "Base Building & Placement",
-          "items": [
-            {
-              "text": "Pipe and roadside decor placements were frequently blocked by terrain checks, causing >80% spawn failures. Added dithering and configurable retry attempts, improving placement success.",
-              "commit_ids": [
-                617982
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Ammo",
-          "items": [
-            {
-              "text": "Crystal AR entities started without ammo, preventing players from firing. Fixed missing starting ammo and renamed entities for consistency.",
-              "commit_ids": [
-                617913
-              ]
-            }
-          ]
-        },
-        {
-          "title": "User Interface",
-          "items": [
-            {
-              "text": "Gamepad cursor moved too fast on UI sliders, making precise adjustments difficult. Cursor speed reduced and value snapping added for sliders when using a gamepad.",
-              "commit_ids": [
-                617912
-              ]
-            },
-            {
-              "text": "Holding left trigger further slows gamepad cursor for fine slider control; cursor speed values exposed as convars and added to UI options.",
-              "commit_ids": [
-                617903
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Security & Upkeep",
-          "items": [
-            {
-              "text": "Doors with code locks that have two or fewer authorized users were still counted in door tax calculations, leading to excessive upkeep costs for small player‑run hotels. Now such locks are ignored in tax calculations (configurable via decay.upkeep_lock_min_users).",
-              "commit_ids": [
-                618021
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Crafting & Production",
-          "items": [
-            {
-              "text": "Industrial crafter would require a restart after a power loss, halting production. Now it remains active without needing a restart.",
-              "commit_ids": [
-                617865
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "relevant_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033,618036,618044",
+    "new_baseline_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033,618036,618044",
+    "prompt_version": "structured-read-state-v5-player-signal",
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay & Economy",
+        "title": "World & Structures",
         "items": [
           {
-            "text": "Monument blockers now sync to clients, have a 24‑hour decay period, and are immune to fire damage.",
+            "text": "Monument blockers now decay over 24 hours, are fire‑immune, and sync correctly across server and client.",
             "commit_ids": [
               617828,
               617831
             ]
           },
           {
-            "text": "Code locks with two or fewer authorized users are ignored in door tax calculations, lowering upkeep costs.",
+            "text": "Boat building stations can be deployed even when the ocean level is non‑zero or negative.",
             "commit_ids": [
-              618021
+              617918
             ]
           },
           {
-            "text": "HAB armour now transfers damage to its parent hot‑air balloon instead of itself.",
+            "text": "Unpowered water pumps no longer act as gravity sources pulling nearby objects.",
+            "commit_ids": [
+              617892
+            ]
+          },
+          {
+            "text": "Maintainable structures and pipe access points now spawn on flatter terrain, reducing false‑negative spawns.",
+            "commit_ids": [
+              617960,
+              617937
+            ]
+          },
+          {
+            "text": "Pipe and roadside decor placements now succeed far more often thanks to dithering and configurable retry attempts.",
+            "commit_ids": [
+              617982
+            ]
+          },
+          {
+            "text": "HAB armour correctly forwards damage to its parent hot‑air balloon health pool.",
             "commit_ids": [
               617946
             ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Tools",
+        "items": [
+          {
+            "text": "Client‑side prediction disabled for firecrackers and survey charges to prevent desynchronisation.",
+            "commit_ids": [
+              617894
+            ]
           },
           {
-            "text": "AR entities spawn with the correct starting ammo.",
+            "text": "Crystal AR entities now start with ammo, allowing immediate firing.",
             "commit_ids": [
               617913
             ]
@@ -357,298 +126,87 @@
         ]
       },
       {
-        "title": "Building & Infrastructure",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Boat building stations can deploy when the ocean level setting is non‑zero or negative, supporting custom ocean levels.",
+            "text": "Gamepad cursor speed on UI sliders reduced, with fine‑control via left trigger, snapping, and exposed speed settings in options.",
             "commit_ids": [
-              617918
-            ]
-          },
-          {
-            "text": "Unpowered water pumps no longer act as gravity sources.",
-            "commit_ids": [
-              617892
-            ]
-          },
-          {
-            "text": "Maintainable prefabs now spawn correctly with relaxed anchor checks, added terrain anchor rings, and dithering with configurable retry logic to reduce pipe and roadside decor placement failures.",
-            "commit_ids": [
-              617960,
-              617937,
-              617982
+              617912,
+              617903
             ]
           }
         ]
       },
       {
-        "title": "Items & Interaction",
+        "title": "Economy & Upkeep",
         "items": [
           {
-            "text": "Master key animation no longer sticks on left‑click, ensuring proper swipe behavior.",
+            "text": "Code‑locked doors with two or fewer authorized users are excluded from door‑tax calculations, lowering upkeep costs for small player‑run hotels.",
+            "commit_ids": [
+              618021
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Network & Performance",
+        "items": [
+          {
+            "text": "Critter animal network update range reduced to lower bandwidth usage.",
+            "commit_ids": [
+              617928
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Skin viewer now correctly displays cubemap reflections on viewmodels even when offline",
+            "commit_ids": [
+              617981
+            ]
+          },
+          {
+            "text": "Viewmodel lighting now matches sun direction, fixing overly bright or dark appearance",
+            "commit_ids": [
+              617868
+            ]
+          },
+          {
+            "text": "Master key no longer gets stuck in its animation when left‑clicked, ensuring proper use",
             "commit_ids": [
               618003
             ]
           },
           {
-            "text": "Paintable dialog interactions and brush cursor are disabled while the F1 menu is open.",
+            "text": "Paintable dialogs (paintings, canvases, pumpkins, sculptures, neon signs) now respect the F1 menu: interactions stop and brush preview no longer hides the cursor",
             "commit_ids": [
               617945
             ]
           },
           {
-            "text": "General store UI grids now receive closure notifications, preventing asset bundle reference leaks.",
+            "text": "General store UI grids now properly refresh on closure, preventing UI glitches and asset bundle reference leaks",
             "commit_ids": [
               617964
             ]
           }
         ]
-      },
-      {
-        "title": "Performance & Network",
-        "items": [
-          {
-            "text": "Network update range for critters reduced to improve performance.",
-            "commit_ids": [
-              617928
-            ]
-          },
-          {
-            "text": "Client prediction disabled for firecrackers and survey charges to prevent missing‑file errors.",
-            "commit_ids": [
-              617894
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & Power",
-        "items": [
-          {
-            "text": "Industrial crafter machines retain their active state after a power loss, removing the need for manual restart.",
-            "commit_ids": [
-              617865
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### Gameplay & Economy\n- Monument blockers now sync to clients, have a 24‑hour decay period, and are immune to fire damage.\n- Code locks with two or fewer authorized users are ignored in door tax calculations, lowering upkeep costs.\n- HAB armour now transfers damage to its parent hot‑air balloon instead of itself.\n- AR entities spawn with the correct starting ammo.\n\n### Building & Infrastructure\n- Boat building stations can deploy when the ocean level setting is non‑zero or negative, supporting custom ocean levels.\n- Unpowered water pumps no longer act as gravity sources.\n- Maintainable prefabs now spawn correctly with relaxed anchor checks, added terrain anchor rings, and dithering with configurable retry logic to reduce pipe and roadside decor placement failures.\n\n### Items & Interaction\n- Master key animation no longer sticks on left‑click, ensuring proper swipe behavior.\n- Paintable dialog interactions and brush cursor are disabled while the F1 menu is open.\n- General store UI grids now receive closure notifications, preventing asset bundle reference leaks.\n\n### Performance & Network\n- Network update range for critters reduced to improve performance.\n- Client prediction disabled for firecrackers and survey charges to prevent missing‑file errors.\n\n### Crafting & Power\n- Industrial crafter machines retain their active state after a power loss, removing the need for manual restart.",
+    "summary": "### World & Structures\n- Monument blockers now decay over 24 hours, are fire‑immune, and sync correctly across server and client.\n- Boat building stations can be deployed even when the ocean level is non‑zero or negative.\n- Unpowered water pumps no longer act as gravity sources pulling nearby objects.\n- Maintainable structures and pipe access points now spawn on flatter terrain, reducing false‑negative spawns.\n- Pipe and roadside decor placements now succeed far more often thanks to dithering and configurable retry attempts.\n- HAB armour correctly forwards damage to its parent hot‑air balloon health pool.\n\n### Combat & Tools\n- Client‑side prediction disabled for firecrackers and survey charges to prevent desynchronisation.\n- Crystal AR entities now start with ammo, allowing immediate firing.\n\n### User Interface\n- Gamepad cursor speed on UI sliders reduced, with fine‑control via left trigger, snapping, and exposed speed settings in options.\n\n### Economy & Upkeep\n- Code‑locked doors with two or fewer authorized users are excluded from door‑tax calculations, lowering upkeep costs for small player‑run hotels.\n\n### Network & Performance\n- Critter animal network update range reduced to lower bandwidth usage.\n\n### Bug Fixes\n- Skin viewer now correctly displays cubemap reflections on viewmodels even when offline\n- Viewmodel lighting now matches sun direction, fixing overly bright or dark appearance\n- Master key no longer gets stuck in its animation when left‑clicked, ensuring proper use\n- Paintable dialogs (paintings, canvases, pumpkins, sculptures, neon signs) now respect the F1 menu: interactions stop and brush preview no longer hides the cursor\n- General store UI grids now properly refresh on closure, preventing UI glitches and asset bundle reference leaks",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
   },
   "2026-08-26": {
     "commit_count": 113,
-    "relevant_commit_count": 77,
+    "relevant_commit_count": 74,
     "relevant_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724,617726,617736,617738,617742,617743,617746,617751,617754",
     "new_baseline_signature": "617552,617554,617555,617557,617562,617571,617576,617586,617587,617589,617590,617594,617597,617600,617608,617621,617625,617627,617631,617635,617639,617640,617645,617646,617649,617650,617654,617658,617661,617662,617663,617664,617666,617668,617683,617687,617694,617695,617697,617708,617718,617721,617722,617724,617726,617736,617738,617742,617743,617746,617751,617754",
-    "prompt_version": "structured-read-state-v4-strategic-gameplay",
-    "chunk_cache": {
-      "617587,617627,617631,617639,617645,617649,617650,617664,617668,617695,617722,617738,617743,617746,617751,617754,617778,617791,617796,617802,617804,617805,617810,617812,617814": [
-        {
-          "title": "NPC & AI",
-          "items": [
-            {
-              "text": "Improved critter movement speed and animation blending; fixed critters hovering above ground.",
-              "commit_ids": [
-                617751
-              ]
-            },
-            {
-              "text": "AI select/move commands now work on multiple animals with offset to avoid stacking; added ai.selectinrange and ai.deselectnpc console variables.",
-              "commit_ids": [
-                617631
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Navmesh & Pathfinding",
-          "items": [
-            {
-              "text": "Fixed missing or disconnected navmesh in rooms behind doors, dive sites, and certain monument interiors; corrected scientist corpse collider layer to prevent blocking movement and projectiles.",
-              "commit_ids": [
-                617668,
-                617650,
-                617778,
-                617791
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Team & Permissions",
-          "items": [
-            {
-              "text": "Rust+ now allows team leaders to kick players from the team or for players to leave the team voluntarily.",
-              "commit_ids": [
-                617796
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Decay & Upkeep",
-          "items": [
-            {
-              "text": "Added decay to monument blockers with a 12‑hour grace period, per‑minute damage after, and debug commands; fixed bug that restored blocker health on server restart.",
-              "commit_ids": [
-                617802
-              ]
-            },
-            {
-              "text": "Adjusted monument blocker health: lowered HP for various rigs and silos, making them destroyable with 1 C4 or 5 satchels.",
-              "commit_ids": [
-                617649,
-                617645,
-                617738
-              ]
-            },
-            {
-              "text": "Player boats now persist timeSinceLastUsed, restoring proper decay behavior on daily‑restart servers.",
-              "commit_ids": [
-                617743
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Maintainables & Loot",
-          "items": [
-            {
-              "text": "Fixed water pipe spawns at odd angles and ensured gas station loot spawners reset correctly after server restarts.",
-              "commit_ids": [
-                617695
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Submarine Looting",
-          "items": [
-            {
-              "text": "Prevented looting of clipping player bodies while mounted on submarines; players must exit the submarine to loot.",
-              "commit_ids": [
-                617587
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Compost UI Improvements",
-          "items": [
-            {
-              "text": "Blocked moving items into furnace output slots, fixed zero‑amount fertilizer creation loop, corrected loot panel editor offset, fixed title label to \"Composter\", and added proper cook‑time prediction for composting.",
-              "commit_ids": [
-                617814,
-                617810,
-                617805,
-                617812,
-                617804
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Server Console Compatibility",
-          "items": [
-            {
-              "text": "Added Windows Terminal compatibility to the Windows server console, fixing glitchy and unusable output.",
-              "commit_ids": [
-                617754
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Crafting & Item Balance",
-          "items": [
-            {
-              "text": "Increased crafting cost for the heavy pot helmet from 1 to 2 sheet metal and from 4 to 8 high‑quality metal.",
-              "commit_ids": [
-                617627
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Deployment Messages",
-          "items": [
-            {
-              "text": "Corrected misleading \"Can't be deployed on boats\" error message to only appear when placement is actually invalid.",
-              "commit_ids": [
-                617746
-              ]
-            }
-          ]
-        }
-      ],
-      "617554,617576,617625,617635,617646,617654,617662,617663,617666,617683,617687,617694,617708,617721,617726,617736,617763,617766,617780,617793,617797,617807,617808,617813,617815": [
-        {
-          "title": "Store UI",
-          "items": [
-            {
-              "text": "Fixed dynamic loading of sprites in the store's item overlay, ensuring items display correctly.",
-              "commit_ids": [
-                617694
-              ]
-            },
-            {
-              "text": "Made shop tiles clickable by reassigning resource bundles and fixing stale references, improving navigation.",
-              "commit_ids": [
-                617687
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Composting System",
-          "items": [
-            {
-              "text": "Corrected composting time for items that are both cookable and compostable (e.g., meat) to use the appropriate time per process.",
-              "commit_ids": [
-                617813
-              ]
-            },
-            {
-              "text": "Adjusted composter filter to accept only food items from the updated prefab/item filter setup.",
-              "commit_ids": [
-                617808
-              ]
-            },
-            {
-              "text": "Prevented compostable items that yield no compost from being placed in the composter.",
-              "commit_ids": [
-                617807
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapon Handling",
-          "items": [
-            {
-              "text": "Fixed a bug where empty magazines could drop twice when using third‑person view.",
-              "commit_ids": [
-                617797
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Armor & Equipment",
-          "items": [
-            {
-              "text": "Added a 3‑second hold‑E requirement to equip HAB armor, preventing accidental equips; also enabled armor gib read/write, added equip effect and placeholder sound, and switched door sounds to chainlink.",
-              "commit_ids": [
-                617766
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "prompt_version": "structured-read-state-v5-player-signal",
+    "chunk_cache": {},
     "sections": [
       {
         "title": "World & Exploration",
