@@ -1,5 +1,21 @@
 [
   {
+    "id": 618302,
+    "branch": "main/prop_optimisations",
+    "changeset": "162597",
+    "created": "2026-08-29T23:34:43",
+    "message": "flamethrower world model optimisation\ncombined the two parts into one mesh per LOD in engine, converted to a MeshLOD\nrenderers 6 -> 1, highlight draws 2 -> 1, culls at 35m, triangles unchanged",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618297,
+    "branch": "main/prop_optimisations",
+    "changeset": "162596",
+    "created": "2026-08-29T22:53:07",
+    "message": "assault rifle world model optimisation\n - combined the 4 part FBXs into one model and converted the LOD group to a MeshLOD\n - renderers 12 -> 1, highlight draws 4 -> 1, triangles unchanged, culls at 35m\r\n - combined the ak47u's 4 part FBXs and the medieval's rifle+mag into single models\n - converted the ak47u, medieval and jungle world models from LOD groups to MeshLODs\n - removed the medieval's 23.6k tri LOD0 - its chain is now 13k/5.3k/2.1k\n - renderers: ak47u 12 -> 1, medieval 8 -> 1, jungle 3 -> 1; highlight draws all down to 1",
+    "author": "Pilgrim"
+  },
+  {
     "id": 618293,
     "branch": "main/prop_optimisations",
     "changeset": "162595",
@@ -1342,61 +1358,5 @@
     "created": "2026-08-27T00:18:07",
     "message": "Change the composter prefab",
     "author": "Jake_Rich"
-  },
-  {
-    "id": 617799,
-    "branch": "main/qol_compost_ui",
-    "changeset": "162273",
-    "created": "2026-08-27T00:17:56",
-    "message": "Rewrite the hackweek composter UI to merge all of the composter code into normal cooking code\r\n- move ItemModCookable -> CookableItemInfo so we can create a \"cooking compost\" component at runtime\r\n- turn ItemModCompostable into an ItemMod\r\n- convert Composter class from StorageContainre -> BaseOven",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 617798,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162272",
-    "created": "2026-08-26T23:32:37",
-    "message": "Update: pull prefab originals if prefab variants were assigned to dynamic bundle\r\nPulls just 1 prefab, but worth to do anyway. Still chasing why engine fails to load prefabs in bundle mode.\r\nTests: built new bundles, checked manifest and loaded in editor",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617797,
-    "branch": "main",
-    "changeset": "162271",
-    "created": "2026-08-26T23:30:20",
-    "message": "fix empty mags dropping twice in third person",
-    "author": "octo"
-  },
-  {
-    "id": 617796,
-    "branch": "main",
-    "changeset": "162270",
-    "created": "2026-08-26T23:22:30",
-    "message": "Add support for Rust+ to kick players from our team (or yourself to leave the team)\r\nAlso fixes a couple unrelated bugs",
-    "author": "lamalove"
-  },
-  {
-    "id": 617793,
-    "branch": "main/deepsea_terrain_everywhere",
-    "changeset": "162267",
-    "created": "2026-08-26T23:15:47",
-    "message": "Fix foliage not loading when DeepSea.terrain_everywhere is enabled",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 617791,
-    "branch": "main",
-    "changeset": "162265",
-    "created": "2026-08-26T22:57:35",
-    "message": "Fix navmesh generated on divesites, not generated in some doorways, some monument rooms not having navmesh, and scientist corpse colliders on wrong layer",
-    "author": "Maverick"
-  },
-  {
-    "id": 617786,
-    "branch": "main",
-    "changeset": "162263",
-    "created": "2026-08-26T22:53:20",
-    "message": "three more asset optimsations that were over  the vertex cap\n\nAshtrayB1_LOD0                     1028 > 983 verts\nmatrix_display_tools_LOD1     1019 > 998 verts\nemptybarrel_LOD1                   1164 > 876 verts\n\nashtray now batches on its whole chain (LOD0-2)\ntools display and empty barrel batch from LOD1 down",
-    "author": "Pilgrim"
   }
 ]
