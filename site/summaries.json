@@ -133,69 +133,91 @@
     "new_summary": ""
   },
   "2026-08-27": {
-    "commit_count": 66,
-    "relevant_commit_count": 38,
-    "relevant_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033,618036,618044",
-    "new_baseline_signature": "617823,617827,617828,617831,617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033,618036,618044",
+    "commit_count": 61,
+    "relevant_commit_count": 34,
+    "relevant_signature": "617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033,618036,618044",
+    "new_baseline_signature": "617862,617863,617865,617867,617868,617875,617892,617894,617900,617903,617912,617913,617918,617920,617928,617932,617937,617945,617946,617952,617960,617964,617966,617981,617982,617988,618003,618004,618006,618015,618021,618033,618036,618044",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Structures",
+        "title": "Tools & Locks",
         "items": [
           {
-            "text": "Monument blockers now decay over 24 hours, are fire‑immune, and sync correctly across server and client.",
+            "text": "Fixed master key animation so it no longer gets stuck when left‑clicked.",
             "commit_ids": [
-              617828,
-              617831
+              618003
             ]
           },
           {
-            "text": "Boat building stations can be deployed even when the ocean level is non‑zero or negative.",
+            "text": "Code locks with two or fewer authorized users are excluded from door tax calculations, reducing upkeep for small player‑run hotels.",
             "commit_ids": [
-              617918
-            ]
-          },
-          {
-            "text": "Unpowered water pumps no longer act as gravity sources pulling nearby objects.",
-            "commit_ids": [
-              617892
-            ]
-          },
-          {
-            "text": "Maintainable structures and pipe access points now spawn on flatter terrain, reducing false‑negative spawns.",
-            "commit_ids": [
-              617960,
-              617937
-            ]
-          },
-          {
-            "text": "Pipe and roadside decor placements now succeed far more often thanks to dithering and configurable retry attempts.",
-            "commit_ids": [
-              617982
-            ]
-          },
-          {
-            "text": "HAB armour correctly forwards damage to its parent hot‑air balloon health pool.",
-            "commit_ids": [
-              617946
+              618021
             ]
           }
         ]
       },
       {
-        "title": "Combat & Tools",
+        "title": "Building & Environment",
         "items": [
           {
-            "text": "Client‑side prediction disabled for firecrackers and survey charges to prevent desynchronisation.",
+            "text": "Boat building stations now deploy correctly regardless of ocean level.",
+            "commit_ids": [
+              617918
+            ]
+          },
+          {
+            "text": "Structure and pipe placement now retries with relaxed anchor checks, greatly reducing failed builds.",
+            "commit_ids": [
+              617960,
+              617937,
+              617982
+            ]
+          },
+          {
+            "text": "Industrial crafter retains its processing state after a power loss, eliminating manual restarts.",
+            "commit_ids": [
+              617865
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Systems",
+        "items": [
+          {
+            "text": "Unpowered water pumps no longer act as gravity sources.",
+            "commit_ids": [
+              617892
+            ]
+          },
+          {
+            "text": "Network update range for critters reduced, limiting how far they can be seen and interacted with.",
+            "commit_ids": [
+              617928
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat",
+        "items": [
+          {
+            "text": "Disabled client‑side prediction for firecrackers and survey charges to stop erratic behavior.",
             "commit_ids": [
               617894
             ]
           },
           {
-            "text": "Crystal AR entities now start with ammo, allowing immediate firing.",
+            "text": "Crystal AR now spawns with its starting ammunition.",
             "commit_ids": [
               617913
+            ]
+          },
+          {
+            "text": "HAB armor now correctly reports its own health instead of the parent balloon's health.",
+            "commit_ids": [
+              617946
             ]
           }
         ]
@@ -204,73 +226,22 @@
         "title": "User Interface",
         "items": [
           {
-            "text": "Gamepad cursor speed on UI sliders reduced, with fine‑control via left trigger, snapping, and exposed speed settings in options.",
+            "text": "Paintable dialogs (painting, pumpkin, sculpture, neon) now work while the F1 menu is open and brush preview no longer hides the cursor.",
+            "commit_ids": [
+              617945
+            ]
+          },
+          {
+            "text": "Gamepad cursor speed is reduced when moving UI sliders or holding the left trigger, with snapping and configurable speeds.",
             "commit_ids": [
               617912,
               617903
             ]
           }
         ]
-      },
-      {
-        "title": "Economy & Upkeep",
-        "items": [
-          {
-            "text": "Code‑locked doors with two or fewer authorized users are excluded from door‑tax calculations, lowering upkeep costs for small player‑run hotels.",
-            "commit_ids": [
-              618021
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Network & Performance",
-        "items": [
-          {
-            "text": "Critter animal network update range reduced to lower bandwidth usage.",
-            "commit_ids": [
-              617928
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bug Fixes",
-        "items": [
-          {
-            "text": "Skin viewer now correctly displays cubemap reflections on viewmodels even when offline",
-            "commit_ids": [
-              617981
-            ]
-          },
-          {
-            "text": "Viewmodel lighting now matches sun direction, fixing overly bright or dark appearance",
-            "commit_ids": [
-              617868
-            ]
-          },
-          {
-            "text": "Master key no longer gets stuck in its animation when left‑clicked, ensuring proper use",
-            "commit_ids": [
-              618003
-            ]
-          },
-          {
-            "text": "Paintable dialogs (paintings, canvases, pumpkins, sculptures, neon signs) now respect the F1 menu: interactions stop and brush preview no longer hides the cursor",
-            "commit_ids": [
-              617945
-            ]
-          },
-          {
-            "text": "General store UI grids now properly refresh on closure, preventing UI glitches and asset bundle reference leaks",
-            "commit_ids": [
-              617964
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### World & Structures\n- Monument blockers now decay over 24 hours, are fire‑immune, and sync correctly across server and client.\n- Boat building stations can be deployed even when the ocean level is non‑zero or negative.\n- Unpowered water pumps no longer act as gravity sources pulling nearby objects.\n- Maintainable structures and pipe access points now spawn on flatter terrain, reducing false‑negative spawns.\n- Pipe and roadside decor placements now succeed far more often thanks to dithering and configurable retry attempts.\n- HAB armour correctly forwards damage to its parent hot‑air balloon health pool.\n\n### Combat & Tools\n- Client‑side prediction disabled for firecrackers and survey charges to prevent desynchronisation.\n- Crystal AR entities now start with ammo, allowing immediate firing.\n\n### User Interface\n- Gamepad cursor speed on UI sliders reduced, with fine‑control via left trigger, snapping, and exposed speed settings in options.\n\n### Economy & Upkeep\n- Code‑locked doors with two or fewer authorized users are excluded from door‑tax calculations, lowering upkeep costs for small player‑run hotels.\n\n### Network & Performance\n- Critter animal network update range reduced to lower bandwidth usage.\n\n### Bug Fixes\n- Skin viewer now correctly displays cubemap reflections on viewmodels even when offline\n- Viewmodel lighting now matches sun direction, fixing overly bright or dark appearance\n- Master key no longer gets stuck in its animation when left‑clicked, ensuring proper use\n- Paintable dialogs (paintings, canvases, pumpkins, sculptures, neon signs) now respect the F1 menu: interactions stop and brush preview no longer hides the cursor\n- General store UI grids now properly refresh on closure, preventing UI glitches and asset bundle reference leaks",
+    "summary": "### Tools & Locks\n- Fixed master key animation so it no longer gets stuck when left‑clicked.\n- Code locks with two or fewer authorized users are excluded from door tax calculations, reducing upkeep for small player‑run hotels.\n\n### Building & Environment\n- Boat building stations now deploy correctly regardless of ocean level.\n- Structure and pipe placement now retries with relaxed anchor checks, greatly reducing failed builds.\n- Industrial crafter retains its processing state after a power loss, eliminating manual restarts.\n\n### World Systems\n- Unpowered water pumps no longer act as gravity sources.\n- Network update range for critters reduced, limiting how far they can be seen and interacted with.\n\n### Combat\n- Disabled client‑side prediction for firecrackers and survey charges to stop erratic behavior.\n- Crystal AR now spawns with its starting ammunition.\n- HAB armor now correctly reports its own health instead of the parent balloon's health.\n\n### User Interface\n- Paintable dialogs (painting, pumpkin, sculpture, neon) now work while the F1 menu is open and brush preview no longer hides the cursor.\n- Gamepad cursor speed is reduced when moving UI sliders or holding the left trigger, with snapping and configurable speeds.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
