@@ -1,5 +1,13 @@
 [
   {
+    "id": 618362,
+    "branch": "main/texture_optimisations_2026/character",
+    "changeset": "162608",
+    "created": "2026-08-30T20:31:48",
+    "message": "Animal AO caps: croc/stag/bears/panther/shark/wolf/chicken -> 1024/512, a further 17.5MB VRAM saved",
+    "author": "Pilgrim"
+  },
+  {
     "id": 618359,
     "branch": "main/texture_optimisations_2026/character",
     "changeset": "162607",
@@ -822,37 +830,5 @@
     "created": "2026-08-27T23:22:05",
     "message": "Abyss barrels: combined the seaweed into one mesh per barrel\n\nMerged the seaweed clumps on both storage skins into a single mesh per LOD, driven by one MeshLOD (0/7, cull 15).\n\nseaweed clumps   107 > 2 meshes\nLOD components   109 > 4\nrenderers        115 > 10\nprefab size    518kb > 121kb\r\n\r\nGeometry and collision unchanged. Wind is preserved.",
     "author": "Pilgrim"
-  },
-  {
-    "id": 618015,
-    "branch": "main/binbagpile_optimisation",
-    "changeset": "162419",
-    "created": "2026-08-27T21:41:40",
-    "message": "optimized poker table variants:\r\n\r\nMerged every RendererLOD chain across the four static configs into one combined FBX each, driven by a single MeshLOD (1/10/25, cull 60).\n\n- RendererLOD chains:     34 > 4 MeshLOD\n- LOD components:          226 > 192\n- renderers:                       321 > 212\n- GameObjects:                143 fewer\n- LOD0 submesh draws:  49 > 14\n- prefab size :                   508kb > 122kb\r\n\r\nAlso cleared a dead LODGroup from _cardtable_base",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618006,
-    "branch": "main",
-    "changeset": "162411",
-    "created": "2026-08-27T20:38:50",
-    "message": "~ RidableHorse.prefab",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 618004,
-    "branch": "main/fix_masterkey_swipe",
-    "changeset": "162409",
-    "created": "2026-08-27T20:32:16",
-    "message": "Add tests to prove the swiping is correct",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 618003,
-    "branch": "main/fix_masterkey_swipe",
-    "changeset": "162408",
-    "created": "2026-08-27T20:32:03",
-    "message": "Fix the master key getting stuck in the animation state if you left click with key, as it derives from the keycard but has no swipe animation",
-    "author": "Jake_Rich"
   }
 ]
