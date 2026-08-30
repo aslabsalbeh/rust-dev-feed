@@ -1,5 +1,21 @@
 [
   {
+    "id": 618311,
+    "branch": "main/prop_optimisations",
+    "changeset": "162599",
+    "created": "2026-08-30T09:02:15",
+    "message": "Medieval AK gem material tweak: fixed refraction scale 75cm -> 2cm, corundum IOR, proper transmittance - reads as gemstone instead of grey glass\r\nhttps://files.facepunch.com/pilgrim/2026/August/30_10-00-InsubstantialManta.mp4",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618310,
+    "branch": "main/prop_optimisations",
+    "changeset": "162598",
+    "created": "2026-08-30T08:34:49",
+    "message": "Medieval AK worldmodel: baked 6 materials / 3 texture sets down to one 1024 atlas material\r\n6 draws -> 1 per LOD; re-UV'd mesh, rebuilt LOD chain, gems baked opaque\r\n\r\narguably looks better than before for the gems especially as i can't justify 6 materials just for a world model of this scale. \r\nhttps://files.facepunch.com/pilgrim/2026/August/30_09-27-CoralBighornedsheep.mp4",
+    "author": "Pilgrim"
+  },
+  {
     "id": 618302,
     "branch": "main/prop_optimisations",
     "changeset": "162597",
@@ -1118,85 +1134,5 @@
     "created": "2026-08-27T10:17:59",
     "message": "Added the missing night light renderer feature to the DefaultRustRenderer asset",
     "author": "aidan.m"
-  },
-  {
-    "id": 617871,
-    "branch": "main/glass_ar",
-    "changeset": "162335",
-    "created": "2026-08-27T10:03:54",
-    "message": "Crystal AR - updated item names & descriptions, tweaked sapphire material",
-    "author": "alex.m"
-  },
-  {
-    "id": 617868,
-    "branch": "main",
-    "changeset": "162333",
-    "created": "2026-08-27T09:57:05",
-    "message": "Fixed the ambient lighting on view model objects being incorrect when looking at the sun",
-    "author": "aidan.m"
-  },
-  {
-    "id": 617867,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162332",
-    "created": "2026-08-27T09:46:56",
-    "message": "Bugfix: fix loading prefabs from asset bundles via nested components\r\nTests: booted in bundle editor, was able to click on shop UI",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617866,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162331",
-    "created": "2026-08-27T09:43:38",
-    "message": "Undo: pulling in originals is unnecessary atm\r\nNot doing it avoids accidentally pulling in unexpected prefabs that can be used outside the dynamic bundle\r\nTests: none",
-    "author": "Daniel P"
-  },
-  {
-    "id": 617865,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "162330",
-    "created": "2026-08-27T09:37:46",
-    "message": "Industrial crafter doesnt need to be started again after a power loss",
-    "author": "Flavien"
-  },
-  {
-    "id": 617863,
-    "branch": "main",
-    "changeset": "162329",
-    "created": "2026-08-27T09:26:03",
-    "message": "Cherry Picked 162328 (Updated the dummy buffer name in the CommandBufferManager for the new light bins buffer)",
-    "author": "aidan.m"
-  },
-  {
-    "id": 617862,
-    "branch": "main/glass_ar",
-    "changeset": "162328",
-    "created": "2026-08-27T09:14:32",
-    "message": "Updated the dummy buffer name in the CommandBufferManager for the new light bins buffer",
-    "author": "aidan.m"
-  },
-  {
-    "id": 617861,
-    "branch": "main/small_stash_optimisation",
-    "changeset": "162327",
-    "created": "2026-08-27T09:09:58",
-    "message": "optimised small stash and gave it a world model\n\nremoved the fraying geometry that carried a second material on LOD0/LOD1 tht was never displayed anyway. \r\nsubmeshes LOD0/LOD1 2 > 1 now both draw in one call instead of two\r\n\r\nconverted to MeshLOD - also removed a duplicate Model component that had been sat on the root since 2019\r\n\r\nnew small_stash.worldmodel so you can see what you're dropping instead of burlap sack. LOD0 is cheaper than burlap sack.\r\n\r\nUpdated MissionStash, DynamicMissionStash and LogStash which embeded the same meshes and still had the old 2-slot material array against a now 1-submesh mesh.\nconverted those to MeshLOD as well",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 617860,
-    "branch": "main/vcc",
-    "changeset": "162326",
-    "created": "2026-08-27T09:07:51",
-    "message": "Gamepad cursor can be resized. Added UI slider to gamepad options",
-    "author": "Adam W"
-  },
-  {
-    "id": 617859,
-    "branch": "main/vcc",
-    "changeset": "162325",
-    "created": "2026-08-27T08:55:56",
-    "message": "Create a nicer cursor in code for now.\r\nChange colour on hover state.",
-    "author": "Adam W"
   }
 ]
