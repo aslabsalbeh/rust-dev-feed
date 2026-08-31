@@ -1,5 +1,37 @@
 [
   {
+    "id": 618627,
+    "branch": "main/admin_status_indicators",
+    "changeset": "162679",
+    "created": "2026-08-31T17:35:51",
+    "message": "Added Infinite Ammo admin status indicator\r\nhttps://files.facepunch.com/raul/2026/August/31_19-35-AppropriateYosemitetoad.png",
+    "author": "Raul"
+  },
+  {
+    "id": 618626,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162678",
+    "created": "2026-08-31T17:24:28",
+    "message": "better FSM way to handle critter overrideable Interested states",
+    "author": "ElliotH"
+  },
+  {
+    "id": 618619,
+    "branch": "main/jukebox_snapping",
+    "changeset": "162671",
+    "created": "2026-08-31T16:41:32",
+    "message": "Added Jukebox deployment snapping\r\nhttps://files.facepunch.com/raul/2026/August/31_18-30-KeyWildebeast.mp4",
+    "author": "Raul"
+  },
+  {
+    "id": 618616,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "162669",
+    "created": "2026-08-31T16:15:17",
+    "message": "9 alpha-less BC7 albedo/em maps -> DXT1, 3 also halved (retro cupboard ems, m16a2_02, loot barrel): saved ~28 MB VRAM, no alpha lost \r\nno visual quality difference",
+    "author": "Pilgrim"
+  },
+  {
     "id": 618613,
     "branch": "main/hackweek_iorewrite",
     "changeset": "162668",
@@ -534,69 +566,5 @@
     "created": "2026-08-28T20:43:34",
     "message": "Upload the crash dumps to our backend now that the crash handler is fixed\r\n- uploads client & server crashes, modded or vanilla then we filter on backend\r\n- write state of session every 30s and on scene changes: when the crash actually happens we won't have a chance to write the latest state",
     "author": "Jake_Rich"
-  },
-  {
-    "id": 618177,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "162534",
-    "created": "2026-08-28T17:27:22",
-    "message": "Big ass pass on all IO electricity tests:\r\n- Consistency, new tests and fixes\r\n- Added ScopedSky\r\n- Moved the save and restart utils to RustTestFixture, started using it for other tests",
-    "author": "Flavien"
-  },
-  {
-    "id": 618176,
-    "branch": "main/high_stakes_dlc",
-    "changeset": "162533",
-    "created": "2026-08-28T17:25:15",
-    "message": "russian roulette\r\n- updated textures, mostly there just some polish to do",
-    "author": "curt"
-  },
-  {
-    "id": 618173,
-    "branch": "main/new_navmesh_fixes",
-    "changeset": "162530",
-    "created": "2026-08-28T17:18:33",
-    "message": "Improve navmesh doors perf",
-    "author": "Maverick"
-  },
-  {
-    "id": 618172,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162529",
-    "created": "2026-08-28T17:07:24",
-    "message": "Update: add store.unloadAssets convar, default true\r\nControls whether hiding store unloads assets or not. To re-enable requires restarting the game\r\nTests: navigated store in bundled editor with convar disabled",
-    "author": "Daniel P"
-  },
-  {
-    "id": 618170,
-    "branch": "main",
-    "changeset": "162527",
-    "created": "2026-08-28T17:02:25",
-    "message": "merge vehicle pooling to main",
-    "author": "octo"
-  },
-  {
-    "id": 618168,
-    "branch": "main/salvaged_hammer_refresh_sounds",
-    "changeset": "162525",
-    "created": "2026-08-28T16:59:45",
-    "message": "Added new sounds for some of the new Salvaged Hammer actions",
-    "author": "diogo.c"
-  },
-  {
-    "id": 618167,
-    "branch": "main",
-    "changeset": "162524",
-    "created": "2026-08-28T16:57:53",
-    "message": "merge demo ui 2 to main",
-    "author": "octo"
-  },
-  {
-    "id": 618160,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "162521",
-    "created": "2026-08-28T16:27:16",
-    "message": "Bugfix: fix disconnect flow causing double unsubscribe\r\n- introduce UI_Windon::OnVisibilityChanged\r\n- move all the sub/unsub code to it\r\nTests: editor and standalone, connected to server then disconnected. tried connecting to bad ip while on store page",
-    "author": "Daniel P"
   }
 ]
