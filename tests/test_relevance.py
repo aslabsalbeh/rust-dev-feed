@@ -39,6 +39,39 @@ def test_code_lock_upkeep_change_is_relevant():
     )
 
 
+
+
+def test_heavy_plate_helmet_voice_muffling_is_relevant():
+    assert_relevant(
+        "In game player voices are now also muffled by heavy plate helmet\n"
+        "Increased volume reduction (was 2400, now 1800)",
+        "main/heavy_helmet_audio",
+    )
+
+
+def test_medieval_ak_material_tweak_is_not_relevant():
+    assert_not_relevant(
+        "Medieval AK gem material tweak: fixed refraction scale 75cm -> 2cm, "
+        "corundum IOR, proper transmittance - reads as gemstone instead of grey glass",
+        "main/prop_optimisations",
+    )
+
+
+def test_clothing_ao_vram_optimization_is_not_relevant():
+    assert_not_relevant(
+        "Clothing AO pass: capped 57 maps 2048 -> 512/1024, ~120MB VRAM saved "
+        "with no visual difference",
+        "main/texture_optimisations_2026/character",
+    )
+
+
+def test_animal_ao_vram_optimization_is_not_relevant():
+    assert_not_relevant(
+        "Animal AO caps: croc/stag/bears/panther/shark/wolf/chicken -> 1024/512, "
+        "a further 17.5MB VRAM saved",
+        "main/texture_optimisations_2026/character",
+    )
+
 def test_font_atlas_is_not_relevant():
     assert_not_relevant("Updated dynamic font atlas glyph generation")
 
