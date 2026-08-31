@@ -65,6 +65,30 @@ LOW_VALUE_VISUAL_TERMS = (
 )
 
 
+LOW_VALUE_ASSET_OPTIMIZATION_TERMS = (
+    # Asset/renderer work that can mention weapons, animals, or fixes but is still
+    # implementation/cosmetic work rather than useful player-facing news.
+    "texture optimisation", "texture optimisations",
+    "texture optimization", "texture optimizations",
+    "vram saved", "memory saved", "memory savings", "no visual difference",
+    "ao pass", "ao caps", "material tweak", "material tweaks",
+    "refraction scale", "transmittance", "worldmodel", "world model",
+    "draws ->", "draw calls", "re-uv", "re-uv'd", "rebuilt lod",
+)
+
+
+EQUIPMENT_TERMS = (
+    "helmet", "heavy plate", "armor", "armour", "weapon", "gun",
+    "rifle", "pistol", "equipment", "equipped", "wearing", "worn",
+)
+
+
+PLAYER_AUDIO_EFFECT_TERMS = (
+    "muffled", "muffle", "player voice", "player voices", "voice", "voices",
+    "audio", "sound", "volume reduction", "volume",
+)
+
+
 VISIBLE_VISUAL_TERMS = (
     "animation", "model", "appearance", "icon", "effect", "visual",
     "third-person", "first-person", "viewmodel", "ui", "menu", "modal",
@@ -132,6 +156,8 @@ SCORE_WEIGHTS = {
     "visible_visual": 0,
     "technical": -5,
     "low_value_visual": -5,
+    "low_value_asset_optimization": -20,
+    "equipment_audio_change": 7,
     "low_value_player_polish": -20,
     "test_only": -4,
     "cleanup_refactor": -4,
@@ -159,6 +185,13 @@ def player_relevance_score(commit):
     strategic_change = contains_any(text, STRATEGIC_GAMEPLAY_TERMS)
     if strategic_change:
         score += SCORE_WEIGHTS["strategic_gameplay"]
+
+    equipment_audio_change = (
+        contains_any(text, EQUIPMENT_TERMS)
+        and contains_any(text, PLAYER_AUDIO_EFFECT_TERMS)
+    )
+    if equipment_audio_change:
+        score += SCORE_WEIGHTS["equipment_audio_change"]
 
     if contains_any(text, BUG_TERMS):
         score += SCORE_WEIGHTS["bug"]
@@ -198,6 +231,9 @@ def player_relevance_score(commit):
 
     if contains_any(text, LOW_VALUE_VISUAL_TERMS):
         score += SCORE_WEIGHTS["low_value_visual"]
+
+    if contains_any(text, LOW_VALUE_ASSET_OPTIMIZATION_TERMS):
+        score += SCORE_WEIGHTS["low_value_asset_optimization"]
 
     if contains_any(text, LOW_VALUE_PLAYER_POLISH_TERMS):
         score += SCORE_WEIGHTS["low_value_player_polish"]
