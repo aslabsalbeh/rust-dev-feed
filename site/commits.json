@@ -1,5 +1,29 @@
 [
   {
+    "id": 618659,
+    "branch": "main/prop_optimisations",
+    "changeset": "162694",
+    "created": "2026-08-31T21:58:46",
+    "message": "LOD pass on computer station + mixing table decor\n\n- computerstation.FBX re-exported with proper LOD meshes; computerstation.static LODGroup -> RendererLOD, deployed + apartmentcomplex variants updated for the new model\n- MixingTable.Decor: glassware/water existed twice - embedded invisible in the table LOD meshes and again as 9 separate LOD0-only renderers on top; re-exported as one clean 3-LOD mesh with the glass material live, 12 renderers -> 1, LODGroup -> MeshLOD",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618654,
+    "branch": "main",
+    "changeset": "162693",
+    "created": "2026-08-31T21:20:51",
+    "message": "fix glass portion of glass ak always rendering on top of rivers (with a caveat that may also need fixing)",
+    "author": "Brian"
+  },
+  {
+    "id": 618644,
+    "branch": "main/high_stakes_dlc",
+    "changeset": "162690",
+    "created": "2026-08-31T20:09:23",
+    "message": "russian roulette;\r\n- lods added\r\n- updated prefab\r\n- material updated",
+    "author": "curt"
+  },
+  {
     "id": 618639,
     "branch": "main/prop_optimisations",
     "changeset": "162688",
@@ -518,69 +542,5 @@
     "created": "2026-08-28T23:03:10",
     "message": "Rewrite some navmesh door bug repro test that passed even without its fix",
     "author": "Maverick"
-  },
-  {
-    "id": 618213,
-    "branch": "main/prop_optimisations",
-    "changeset": "162552",
-    "created": "2026-08-28T22:12:06",
-    "message": "some additonal settings to carry over",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618212,
-    "branch": "main/prop_optimisations",
-    "changeset": "162551",
-    "created": "2026-08-28T22:02:01",
-    "message": "chinook locked crate optimisation\r\n\r\ncrates + cage combined into one mesh with a single MeshLOD (1/5/15/25, cull 150) chainlink merged into one mesh\r\nrenderers                   16 > 9\nLOD components      11 > 4\nobjects                       48 > 40\ndraw calls                  10 > 4 up close, 3 past 20m\nfence tris                   1,000 > 10\ntris at 25m                 4,064 > 1,032",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618209,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "162549",
-    "created": "2026-08-28T21:59:57",
-    "message": "oops client guard",
-    "author": "Brian"
-  },
-  {
-    "id": 618208,
-    "branch": "main/sentry_upload",
-    "changeset": "162548",
-    "created": "2026-08-28T21:37:47",
-    "message": "Fixes\r\n- fix typo in URL\r\n- indicate when client is on the main menu (crashing ingame vs disconnecting from server then crashing)\r\n- cleanup modded framework check, just read the server tags instead of looking for Oxide.dll loaded",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 618206,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "162546",
-    "created": "2026-08-28T21:31:56",
-    "message": "fix black player eyes in BRP in bandit camp (leaking spatial env volume shader props between cams), add pass to clear env volume shader props in RRP as well",
-    "author": "Brian"
-  },
-  {
-    "id": 618204,
-    "branch": "main",
-    "changeset": "162544",
-    "created": "2026-08-28T21:08:36",
-    "message": "Fixed mags not dropping in 3p for abyss ak, ice ak & space lr300",
-    "author": "Alex Webster"
-  },
-  {
-    "id": 618203,
-    "branch": "main/sentry_upload",
-    "changeset": "162543",
-    "created": "2026-08-28T20:43:47",
-    "message": "Tests",
-    "author": "Jake_Rich"
-  },
-  {
-    "id": 618201,
-    "branch": "main/sentry_upload",
-    "changeset": "162542",
-    "created": "2026-08-28T20:43:34",
-    "message": "Upload the crash dumps to our backend now that the crash handler is fixed\r\n- uploads client & server crashes, modded or vanilla then we filter on backend\r\n- write state of session every 30s and on scene changes: when the crash actually happens we won't have a chance to write the latest state",
-    "author": "Jake_Rich"
   }
 ]
