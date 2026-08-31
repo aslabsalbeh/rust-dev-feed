@@ -1,5 +1,45 @@
 [
   {
+    "id": 618613,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162668",
+    "created": "2026-08-31T15:17:00",
+    "message": "Fixed igniter and tesla coil damage tests failing since the last optim",
+    "author": "Flavien"
+  },
+  {
+    "id": 618612,
+    "branch": "main/carvable_pumpkin_deploy_fix",
+    "changeset": "162667",
+    "created": "2026-08-31T15:14:15",
+    "message": "Improve carvable pumpkin deployment",
+    "author": "cipeaX"
+  },
+  {
+    "id": 618608,
+    "branch": "main/hackweek_iorewrite",
+    "changeset": "162663",
+    "created": "2026-08-31T14:51:40",
+    "message": "Batteries now add drain for the power actually reaching them\r\nUpdated tests",
+    "author": "Flavien"
+  },
+  {
+    "id": 618607,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "162662",
+    "created": "2026-08-31T14:25:52",
+    "message": "Regenerated MaterialIndex.json - was dated Aug 2021, so Tools/Optimize/Find Material Optimzations had been reporting 5-year-old state. Fresh scan covers 9,055 materials and flags 164 with compression savings (84 unique textures, ~68 MB VRAM potential)  for example m16a2 ao on high quality compression = 1.3mb, normal compression with no visual cost = 0.7mb \n\nFirst pass on the free wins: 15 alpha-less DXT5/BC7 textures -> DXT1, ~13 MB VRAM, no quality cost\n- m2bradley mainbody/armor: removed DXT5 standalone override (5.3 MB)\n- m16a2 AOs x3, flamethrower AO: HQ -> Normal compression (5.3 MB)\n- workbench upgrade AOs x2, apartment door mats AO, crate_2/gib/webbing AOs: HQ -> Normal compression (2.2 MB)",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618606,
+    "branch": "main",
+    "changeset": "162661",
+    "created": "2026-08-31T14:12:46",
+    "message": "Fixed wonky spark material offset. (Satchel charge and others...)",
+    "author": "Petur"
+  },
+  {
     "id": 618602,
     "branch": "main/hackweek_iorewrite",
     "changeset": "162658",
@@ -558,125 +598,5 @@
     "created": "2026-08-28T16:27:16",
     "message": "Bugfix: fix disconnect flow causing double unsubscribe\r\n- introduce UI_Windon::OnVisibilityChanged\r\n- move all the sub/unsub code to it\r\nTests: editor and standalone, connected to server then disconnected. tried connecting to bad ip while on store page",
     "author": "Daniel P"
-  },
-  {
-    "id": 618157,
-    "branch": "main/underground_train_network_update",
-    "changeset": "162520",
-    "created": "2026-08-28T16:05:06",
-    "message": "Work on Vendor A Shell (for train tunnels, randomised rooms). WIP kiosk (blocking materials and shapes in)",
-    "author": "hannah.watts"
-  },
-  {
-    "id": 618154,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "162519",
-    "created": "2026-08-28T15:38:21",
-    "message": "refactor critter interest overrideable methods\r\nrework how frogs try to find shallow water to croak in",
-    "author": "ElliotH"
-  },
-  {
-    "id": 618150,
-    "branch": "main",
-    "changeset": "162518",
-    "created": "2026-08-28T15:23:44",
-    "message": "pool_ball_moving_fix -> main",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618149,
-    "branch": "main/pool_ball_moving_fix",
-    "changeset": "162517",
-    "created": "2026-08-28T15:23:25",
-    "message": "Fix pool ball velocity creeping into the next shot",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618147,
-    "branch": "main/Livestock_animals",
-    "changeset": "162516",
-    "created": "2026-08-28T15:11:42",
-    "message": "- updated Sheep LODs. added LODs for the Calf. assigned correct material to sheep lod in prefab.",
-    "author": "Toffer"
-  },
-  {
-    "id": 618148,
-    "branch": "main/character_customisation",
-    "changeset": "162515",
-    "created": "2026-08-28T15:11:39",
-    "message": "New preview positions - way better",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618146,
-    "branch": "main/prop_optimisations",
-    "changeset": "162514",
-    "created": "2026-08-28T15:11:06",
-    "message": "ocean wreck buoys - combined the seaweed and mussels on all three\r\n\r\nrenderers                128 > 23 across the three\nLOD components   115 > 8\ngameobjects           153 > 48\nprefabs                    482kb > 124kb",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618143,
-    "branch": "main/character_customisation",
-    "changeset": "162513",
-    "created": "2026-08-28T15:07:48",
-    "message": "Fix dof being too shallow all the time",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618141,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "162512",
-    "created": "2026-08-28T14:59:26",
-    "message": "rebuild manifest after merge issues",
-    "author": "ElliotH"
-  },
-  {
-    "id": 618139,
-    "branch": "main/prop_optimisations",
-    "changeset": "162511",
-    "created": "2026-08-28T14:50:07",
-    "message": "folding wicker beds B C D E - combined into one mesh each\n\nframe, fabric and pillow all share Folding_Wicker_Bed_A, so each bed combines into one mesh per LOD band with a single MeshLOD - every bed is one object now\r\n\r\nrenderers                10 > 4 across the four\nLOD components   10 > 4\ngameobjects          10 > 4\nprefabs                   44kb > 26kb\ntris at 18m              23,336 > 6,200\nlast lod under the vert cap on all four so they batch",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618137,
-    "branch": "main/character_customisation",
-    "changeset": "162510",
-    "created": "2026-08-28T14:44:20",
-    "message": "Missed files",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618138,
-    "branch": "main/character_customisation",
-    "changeset": "162509",
-    "created": "2026-08-28T14:44:11",
-    "message": "Swap the crappy overly complex multipel values for character camera shots over to the same orbit camera sty;e as the render images were",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618135,
-    "branch": "main/character_customisation",
-    "changeset": "162508",
-    "created": "2026-08-28T14:30:15",
-    "message": "Fix head icons being behind the player",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618134,
-    "branch": "main/character_customisation",
-    "changeset": "162507",
-    "created": "2026-08-28T14:28:18",
-    "message": "Constantly lerp the camera to the bone position rather than only setting it once on enter",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618133,
-    "branch": "main/character_customisation",
-    "changeset": "162506",
-    "created": "2026-08-28T14:24:33",
-    "message": "Better preview angles",
-    "author": "Ian Henderson"
   }
 ]
