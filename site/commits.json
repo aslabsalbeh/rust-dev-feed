@@ -1,5 +1,21 @@
 [
   {
+    "id": 618639,
+    "branch": "main/prop_optimisations",
+    "changeset": "162688",
+    "created": "2026-08-31T19:04:28",
+    "message": "LODGroup/RendererLOD -> MeshLOD conversion pass on vending machines, covered ch47/bradley props and tin can alarm: 129 -> 75 renderers, 23 -> 6 LODGroups, brings them into the LOD grid + occlusion culling \n\n- vendingmachine family x5: RendererLODs collapsed to MeshLODs (55 -> 33 renderers) now can occlusion cull \n- covered bradley/ch47 x6: LODGroups converted, wraps stay RendererLOD where materials demand it (66 -> 39 renderers); ch47_covered, ch47_covered_wrap + bradley_covered_wrap FBXs re-exported so LOD material order matches\n- tincan.alarm: split into frame + cans MeshLODs so the rattle anim survives (8 -> 2 renderers); worldmodel onto MeshLOD too",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 618632,
+    "branch": "main/hackweek_parented_ddraw",
+    "changeset": "162683",
+    "created": "2026-08-31T18:14:52",
+    "message": "Parent DDraw objects onto the player model instead of the BasePlayer object",
+    "author": "Raul"
+  },
+  {
     "id": 618627,
     "branch": "main/admin_status_indicators",
     "changeset": "162679",
