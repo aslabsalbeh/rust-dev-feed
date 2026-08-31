@@ -1,5 +1,13 @@
 [
   {
+    "id": 618370,
+    "branch": "main/deepsea_terrain_everywhere",
+    "changeset": "162609",
+    "created": "2026-08-30T23:25:02",
+    "message": "Swap the ocean colour as well",
+    "author": "Jarryd Campi"
+  },
+  {
     "id": 618362,
     "branch": "main/texture_optimisations_2026/character",
     "changeset": "162608",
@@ -806,29 +814,5 @@
     "created": "2026-08-28T01:36:48",
     "message": "Codegen, compile fixes",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 618022,
-    "branch": "main/gutter_optimisations",
-    "changeset": "162425",
-    "created": "2026-08-27T23:59:44",
-    "message": "Gutter cornices: combined each into one MeshLOD\n\n    renderers      30 > 3\n    LOD components 30 > 3\n\nParts cull at different distances (supports 15, caps 35, rail 75), so each state is a mesh of only what's still visible - 802/88/24 tris, matching the originals at every band. Still batches, all states under the vert cap.\r\ntime for bed",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618021,
-    "branch": "main/tc_auth_group_tests",
-    "changeset": "162424",
-    "created": "2026-08-27T23:56:53",
-    "message": "If a code lock has 2 or less authed users skip that lock when calculating the door tax\r\nConfigurable by decay.upkeep_lock_min_users convar\r\nAttempting to exempt player run hotels from being overly taxed, may need to re-evaluate if abused",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 618020,
-    "branch": "main/abyss_vert_horizontal_barrel_optimisation",
-    "changeset": "162423",
-    "created": "2026-08-27T23:22:05",
-    "message": "Abyss barrels: combined the seaweed into one mesh per barrel\n\nMerged the seaweed clumps on both storage skins into a single mesh per LOD, driven by one MeshLOD (0/7, cull 15).\n\nseaweed clumps   107 > 2 meshes\nLOD components   109 > 4\nrenderers        115 > 10\nprefab size    518kb > 121kb\r\n\r\nGeometry and collision unchanged. Wind is preserved.",
-    "author": "Pilgrim"
   }
 ]
