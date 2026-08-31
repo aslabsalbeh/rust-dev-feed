@@ -798,13 +798,5 @@
     "created": "2026-08-28T07:08:21",
     "message": "Change BlurOptimized downsample param to nointerp and replace BlitPass with raster pass",
     "author": "Dayaan"
-  },
-  {
-    "id": 618044,
-    "branch": "main/statesync_event_fix",
-    "changeset": "162445",
-    "created": "2026-08-28T03:06:51",
-    "message": "Proper fix for events double firing when using the StateSync component\r\nWhen scrubbing an animation from normalized time 1 -> 0 Unity plays all events in reverse order :(\r\nWe now suppress animatione vents for a frame any time we scrub the state backwards \r\nRemoved the previous fix for this issue in DoEffect as now we've solved the root cause of the issue",
-    "author": "Jarryd Campi"
   }
 ]
