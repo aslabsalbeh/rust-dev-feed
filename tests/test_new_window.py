@@ -8,7 +8,7 @@ def commit(commit_id, created):
     return {
         "id": commit_id,
         "branch": "main",
-        "message": "player-facing change",
+        "message": "Fixed a race condition that could cause items in display box storage to disappear when saving.",
         "created": created,
     }
 
