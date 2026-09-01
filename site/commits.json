@@ -1,5 +1,37 @@
 [
   {
+    "id": 624781,
+    "branch": "main",
+    "changeset": "162839",
+    "created": "2026-09-01T21:57:33",
+    "message": "update flashlight icon",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 624779,
+    "branch": "main/sv_console_terminal_fix",
+    "changeset": "162838",
+    "created": "2026-09-01T21:53:08",
+    "message": "Stripped out the Windows Host-specific legacy implementation and polished the VT100 console compatibility (still backward compatible with Windows Host consoles)",
+    "author": "Raul"
+  },
+  {
+    "id": 624766,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "162831",
+    "created": "2026-09-01T20:59:54",
+    "message": "first pass at rabbit interest, added profiler sample marks, disabled debug cubes",
+    "author": "ElliotH"
+  },
+  {
+    "id": 624758,
+    "branch": "main",
+    "changeset": "162830",
+    "created": "2026-09-01T20:34:06",
+    "message": "Phrase update",
+    "author": "Flavien"
+  },
+  {
     "id": 624746,
     "branch": "main/demo_ui_2",
     "changeset": "162825",
@@ -941,22 +973,6 @@
     "changeset": "162596",
     "created": "2026-08-29T22:53:07",
     "message": "assault rifle world model optimisation\n - combined the 4 part FBXs into one model and converted the LOD group to a MeshLOD\n - renderers 12 -> 1, highlight draws 4 -> 1, triangles unchanged, culls at 35m\r\n - combined the ak47u's 4 part FBXs and the medieval's rifle+mag into single models\n - converted the ak47u, medieval and jungle world models from LOD groups to MeshLODs\n - removed the medieval's 23.6k tri LOD0 - its chain is now 13k/5.3k/2.1k\n - renderers: ak47u 12 -> 1, medieval 8 -> 1, jungle 3 -> 1; highlight draws all down to 1",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618293,
-    "branch": "main/prop_optimisations",
-    "changeset": "162595",
-    "created": "2026-08-29T21:31:01",
-    "message": "boat building station optimisation\nits 7 buoys were embedded pre-merge copies of the ocean wreck buoy optimisation i did on changeset 162514 - replaced their 280 seaweed/mussel renderers with the buoy merge's existing combined meshes\ncombined the remaining seaweed clumps in the station and platform prefabs (6 -> 1 and 5 -> 1) with wind origins baked into UV2\r\nnone of the seaweed was ever batching at runtime\nrenderers 340 -> 65, prefab 1.4mb -> 296kb, seaweed is now 9 draw calls instead of 263!",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618287,
-    "branch": "main/prop_optimisations",
-    "changeset": "162594",
-    "created": "2026-08-29T20:43:15",
-    "message": "satellite crash remains optimisation\ncombined the 32 loose debris pieces into a single mesh with a MeshLOD - shadows now turn off past 25m for these, and it culls at 100m (previously it drew at every distance)\nconverted the dish from a LODGroup to a RendererLOD with the same switch distances, and zeroed the LOD child offsets so it collapses to a single renderer at runtime\nboth the dish and debris now register as occludees, so terrain and buildings can occlusion cull them - the LODGroup never could\nrenderers 44 -> 13, debris draw calls 32 -> 1",
     "author": "Pilgrim"
   }
 ]
