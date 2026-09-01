@@ -1,11 +1,72 @@
 {
   "2026-08-31": {
-    "commit_count": 44,
-    "relevant_commit_count": 24,
+    "commit_count": 47,
+    "relevant_commit_count": 27,
     "relevant_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671,618677,618684,618687",
     "new_baseline_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671,618677,618684,618687",
     "prompt_version": "structured-read-state-v5-player-signal",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618667,618677,618684,618687,618691,618692,618693": [
+        {
+          "title": "Building & Structures",
+          "items": [
+            {
+              "text": "Fixed scale override on large rig monument blocker that caused collision issues and added missing vent cages.",
+              "commit_ids": [
+                618436
+              ]
+            },
+            {
+              "text": "Pipe access fixes: prevented trees from spawning inside pipes, improved terrain transition near pipes, and added beach to water pipe topology.",
+              "commit_ids": [
+                618585,
+                618592
+              ]
+            },
+            {
+              "text": "Improved deployment of carvable pumpkins.",
+              "commit_ids": [
+                618612
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Mechanics",
+          "items": [
+            {
+              "text": "Footstep sounds now play correctly when players are heavily armored or wearing diving fins while slowed.",
+              "commit_ids": [
+                618677
+              ]
+            },
+            {
+              "text": "Fixed a typo that prevented sleepers from being killed in safezones after a server restart.",
+              "commit_ids": [
+                618581
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Livestock",
+          "items": [
+            {
+              "text": "Animals will now eat from troughs, prioritizing them over grazing on grass.",
+              "commit_ids": [
+                618691
+              ]
+            },
+            {
+              "text": "Added shearing interaction for livestock.",
+              "commit_ids": [
+                618687
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Monuments & World",
@@ -92,24 +153,9 @@
       }
     ],
     "summary": "### Monuments & World\n- Large rig monument blocker collision fixed and missing vent cages added to monuments.\n- Beach area added to water pipe topology, expanding pipe placement options near coastlines.\n\n### Base Building\n- Pipe access improved: trees no longer spawn inside pipes and terrain transitions near pipes are smoother.\n\n### Gameplay Bugs\n- Sleepers are now correctly killed in safezones after a server restart.\n\n### Animals & Farming\n- New shearing interaction lets players shear livestock for resources.\n\n### Deployables\n- Carvable pumpkin deployment improved for more reliable placement.\n\n### Gameplay & Balance\n- Footstep sounds now play correctly when heavily armored or wearing diving fins, restoring audio feedback while moving.\n\n### UI & Quality of Life\n- High-Quality Metal collectable now displays its proper name token, fixing missing label issues.",
-    "new_items": [
-      {
-        "text": "New shearing interaction lets players shear livestock for resources.",
-        "commit_ids": [
-          618687
-        ],
-        "section": "Animals & Farming"
-      },
-      {
-        "text": "Footstep sounds now play correctly when heavily armored or wearing diving fins, restoring audio feedback while moving.",
-        "commit_ids": [
-          618677
-        ],
-        "section": "Gameplay & Balance"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- New shearing interaction lets players shear livestock for resources.\n- Footstep sounds now play correctly when heavily armored or wearing diving fins, restoring audio feedback while moving."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-30": {
     "commit_count": 12,
@@ -148,10 +194,10 @@
     "new_summary": ""
   },
   "2026-08-29": {
-    "commit_count": 17,
-    "relevant_commit_count": 10,
-    "relevant_signature": "618231,618232,618236,618240,618241,618243,618250,618252,618273,618277",
-    "new_baseline_signature": "618231,618232,618236,618240,618241,618243,618250,618252,618273,618277",
+    "commit_count": 15,
+    "relevant_commit_count": 8,
+    "relevant_signature": "618236,618240,618241,618243,618250,618252,618273,618277",
+    "new_baseline_signature": "618236,618240,618241,618243,618250,618252,618273,618277",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
@@ -178,10 +224,10 @@
         ]
       },
       {
-        "title": "Siege & Vehicles",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Siege tower doors function properly and NPCs no longer get stuck when doors slam on them.",
+            "text": "Siege tower doors now open and close reliably, and NPCs no longer get stuck when doors slam.",
             "commit_ids": [
               618243
             ]
@@ -192,15 +238,21 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed a bug where deployable structures could display random skins, ensuring they keep their intended appearance.",
+            "text": "Resolved a pooling issue that previously caused deployable structures to display random skins, ensuring visual consistency.",
             "commit_ids": [
               618250
+            ]
+          },
+          {
+            "text": "Silenced the high-frequency metal clink on heavy plate footsteps, reducing audio annoyance during movement.",
+            "commit_ids": [
+              618241
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Weapons\n- Explosive ammo now damages monument blockers as intended.\n\n### Monuments & World\n- Crates and barrels on both oil rigs now respawn correctly after being looted.\n\n### Siege & Vehicles\n- Siege tower doors function properly and NPCs no longer get stuck when doors slam on them.\n\n### Gameplay & Balance\n- Fixed a bug where deployable structures could display random skins, ensuring they keep their intended appearance.",
+    "summary": "### Combat & Weapons\n- Explosive ammo now damages monument blockers as intended.\n\n### Monuments & World\n- Crates and barrels on both oil rigs now respawn correctly after being looted.\n\n### Vehicles\n- Siege tower doors now open and close reliably, and NPCs no longer get stuck when doors slam.\n\n### Gameplay & Balance\n- Resolved a pooling issue that previously caused deployable structures to display random skins, ensuring visual consistency.\n- Silenced the high-frequency metal clink on heavy plate footsteps, reducing audio annoyance during movement.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
