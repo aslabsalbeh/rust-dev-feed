@@ -1,9 +1,9 @@
 {
   "2026-08-31": {
-    "commit_count": 36,
-    "relevant_commit_count": 19,
-    "relevant_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659",
-    "new_baseline_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659",
+    "commit_count": 38,
+    "relevant_commit_count": 21,
+    "relevant_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671",
+    "new_baseline_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
@@ -11,25 +11,36 @@
         "title": "Monuments & World",
         "items": [
           {
-            "text": "Fixed collision issues with the large rig monument blocker, preventing players from getting stuck.",
+            "text": "Fixed collision issues with the large rig monument blocker, preventing players from getting stuck near the rig.",
             "commit_ids": [
               618436
             ]
           },
           {
-            "text": "Added missing vent cages to oil rigs, restoring proper ventilation.",
+            "text": "Restored missing vent cages on the map, ensuring ventilation devices spawn correctly.",
             "commit_ids": [
               618436
             ]
           },
           {
-            "text": "Introduced new large and small oil rig variants (S2P), expanding oil rig locations.",
+            "text": "Added and updated large and small oilrig monuments (S2P), changing resource locations for players.",
             "commit_ids": [
               618436
             ]
+          }
+        ]
+      },
+      {
+        "title": "Base Building & Deployables",
+        "items": [
+          {
+            "text": "Improved carvable pumpkin deployment, making pumpkins place reliably for base decoration.",
+            "commit_ids": [
+              618612
+            ]
           },
           {
-            "text": "Prevented trees from spawning inside water pipe structures, reducing unwanted obstructions.",
+            "text": "Fixed pipe placement bugs: trees no longer spawn inside water pipes and terrain transitions near pipes are smoother.",
             "commit_ids": [
               618585
             ]
@@ -37,51 +48,40 @@
         ]
       },
       {
-        "title": "Safety & Raids",
+        "title": "NPC & Animals",
         "items": [
           {
-            "text": "Fixed a bug where sleepers in safe zones were not killed after a server restart.",
+            "text": "Fixed a bug where sleepers could not be killed in safezones after a server restart, restoring safezone combat.",
             "commit_ids": [
               618581
             ]
-          }
-        ]
-      },
-      {
-        "title": "Collectables & UI",
-        "items": [
+          },
           {
-            "text": "Corrected missing name token for HQM collectables, ensuring they display properly in inventories.",
-            "commit_ids": [
-              618593
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & NPCs",
-        "items": [
-          {
-            "text": "Fixed frog behavior issues, restoring expected frog movement and interactions.",
+            "text": "Fixed frog AI/spawning issues, restoring proper frog behavior.",
             "commit_ids": [
               618588
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "UI & HUD",
+        "items": [
           {
-            "text": "Improved critter state handling, making animal interest reactions more reliable.",
+            "text": "Adjusted clan tag alignment on player nameplates for clearer visibility.",
             "commit_ids": [
-              618626
+              618597
             ]
           }
         ]
       },
       {
-        "title": "Deployables",
+        "title": "Weapons & Visuals",
         "items": [
           {
-            "text": "Improved deployment of carvable pumpkins, fixing placement glitches.",
+            "text": "Fixed glass AK rendering so glass parts no longer appear over water surfaces.",
             "commit_ids": [
-              618612
+              618654
             ]
           }
         ]
@@ -90,21 +90,27 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Beach areas can now be connected to water pipe networks, allowing pipe placement on the shoreline.",
+            "text": "Electrical circuits now update correctly when modified mid‑tick, preventing delayed or missed activations.",
             "commit_ids": [
-              618592
+              618602
             ]
           },
           {
-            "text": "Electrical circuits now process mid‑tick changes immediately, fixing delayed reactions.",
+            "text": "High‑Quality Map collectables now display their proper names, fixing missing name tags.",
             "commit_ids": [
-              618602
+              618593
+            ]
+          },
+          {
+            "text": "Beach terrain is now included in water‑pipe topology, allowing pipes to be placed and function across beach areas.",
+            "commit_ids": [
+              618592
             ]
           }
         ]
       }
     ],
-    "summary": "### Monuments & World\n- Fixed collision issues with the large rig monument blocker, preventing players from getting stuck.\n- Added missing vent cages to oil rigs, restoring proper ventilation.\n- Introduced new large and small oil rig variants (S2P), expanding oil rig locations.\n- Prevented trees from spawning inside water pipe structures, reducing unwanted obstructions.\n\n### Safety & Raids\n- Fixed a bug where sleepers in safe zones were not killed after a server restart.\n\n### Collectables & UI\n- Corrected missing name token for HQM collectables, ensuring they display properly in inventories.\n\n### Animals & NPCs\n- Fixed frog behavior issues, restoring expected frog movement and interactions.\n- Improved critter state handling, making animal interest reactions more reliable.\n\n### Deployables\n- Improved deployment of carvable pumpkins, fixing placement glitches.\n\n### Gameplay & Balance\n- Beach areas can now be connected to water pipe networks, allowing pipe placement on the shoreline.\n- Electrical circuits now process mid‑tick changes immediately, fixing delayed reactions.",
+    "summary": "### Monuments & World\n- Fixed collision issues with the large rig monument blocker, preventing players from getting stuck near the rig.\n- Restored missing vent cages on the map, ensuring ventilation devices spawn correctly.\n- Added and updated large and small oilrig monuments (S2P), changing resource locations for players.\n\n### Base Building & Deployables\n- Improved carvable pumpkin deployment, making pumpkins place reliably for base decoration.\n- Fixed pipe placement bugs: trees no longer spawn inside water pipes and terrain transitions near pipes are smoother.\n\n### NPC & Animals\n- Fixed a bug where sleepers could not be killed in safezones after a server restart, restoring safezone combat.\n- Fixed frog AI/spawning issues, restoring proper frog behavior.\n\n### UI & HUD\n- Adjusted clan tag alignment on player nameplates for clearer visibility.\n\n### Weapons & Visuals\n- Fixed glass AK rendering so glass parts no longer appear over water surfaces.\n\n### Gameplay & Balance\n- Electrical circuits now update correctly when modified mid‑tick, preventing delayed or missed activations.\n- High‑Quality Map collectables now display their proper names, fixing missing name tags.\n- Beach terrain is now included in water‑pipe topology, allowing pipes to be placed and function across beach areas.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
