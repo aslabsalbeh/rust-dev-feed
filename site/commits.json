@@ -1,5 +1,93 @@
 [
   {
+    "id": 621299,
+    "branch": "main/vcc/control_sets/analogue_steering",
+    "changeset": "162800",
+    "created": "2026-09-01T15:56:20",
+    "message": "Analogue steering support WIP",
+    "author": "Adam W"
+  },
+  {
+    "id": 621100,
+    "branch": "main/worldmodel_sep_fixes",
+    "changeset": "162798",
+    "created": "2026-09-01T15:49:34",
+    "message": "world model fixes: \r\n- kick hazmat fixed missing back faces, now uses single lod texture set isntead of 4to 5 \r\n- fixed missing faces on the water pump world model \r\n- fixed divingsuit having offset texture on the world model",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 620719,
+    "branch": "main/vcc/control_sets",
+    "changeset": "162797",
+    "created": "2026-09-01T15:36:20",
+    "message": "Bunch of driving improvements + refactor.\r\nDriving control set updates.",
+    "author": "Adam W"
+  },
+  {
+    "id": 620356,
+    "branch": "main/async_serveroccl_gen",
+    "changeset": "162793",
+    "created": "2026-09-01T15:23:39",
+    "message": "Clean: remove profiler disabling on boot\r\nWas temp measure code that slipped in\r\nTests: none, trivial change",
+    "author": "Daniel P"
+  },
+  {
+    "id": 620083,
+    "branch": "main/storepage_crystalAR",
+    "changeset": "162790",
+    "created": "2026-09-01T15:14:10",
+    "message": "Added missing PostOpaqueDepth to skin viewer cameras",
+    "author": "Flavien"
+  },
+  {
+    "id": 619919,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "162789",
+    "created": "2026-09-01T15:03:02",
+    "message": "Bugfix: avoid thread race modifying same list when saving DisplayBoxStorage\r\n- cache is now an array rather than a list\r\nTests: setup a display box storage, showed items in it, could see contents inside change",
+    "author": "Daniel P"
+  },
+  {
+    "id": 619911,
+    "branch": "main/storepage_crystalAR",
+    "changeset": "162788",
+    "created": "2026-09-01T14:58:45",
+    "message": "Crystal AR page media",
+    "author": "Flavien"
+  },
+  {
+    "id": 619909,
+    "branch": "main/vcc/control_sets",
+    "changeset": "162787",
+    "created": "2026-09-01T14:54:55",
+    "message": "Driving controls wip",
+    "author": "Adam W"
+  },
+  {
+    "id": 619891,
+    "branch": "main/ArrowRevamp",
+    "changeset": "162785",
+    "created": "2026-09-01T14:40:46",
+    "message": "Arrow world model colider change",
+    "author": "Lewis T"
+  },
+  {
+    "id": 619803,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "162784",
+    "created": "2026-09-01T14:30:19",
+    "message": "Bugfix: eagerly instantiate PaintballColorLookup to avoid it happening on Save, which is not mt safe\r\nTests: spawned on craggy, switched on jobs 4 and shot with a paintball gun",
+    "author": "Daniel P"
+  },
+  {
+    "id": 619799,
+    "branch": "main",
+    "changeset": "162781",
+    "created": "2026-09-01T14:24:58",
+    "message": "champagne mortar icon tweak",
+    "author": "matt.i"
+  },
+  {
     "id": 619789,
     "branch": "main/settings_dropdowns_fix",
     "changeset": "162777",
@@ -750,13 +838,5 @@
     "created": "2026-08-29T17:30:18",
     "message": "Reduce network overhead of powered igniter, tesla coil and strobe lights\r\nEvery Hurt broadcasts a full entity update, self damage is now applied every so often to reduce overhead (time to die unchanged)",
     "author": "Flavien"
-  },
-  {
-    "id": 618273,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "162588",
-    "created": "2026-08-29T15:42:23",
-    "message": "Fix all non-puzzle crate and barrels spawns being set to never respawn on both oil rigs (happened because \"Process\" context menu messes them up)\r\nS2P",
-    "author": "cipeaX"
   }
 ]
