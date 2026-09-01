@@ -1,7 +1,7 @@
 import json
 import os
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -54,18 +54,64 @@ def load_json(path, default):
         return default
 
 
-def commit_local_date(commit):
-    created_utc = datetime.fromisoformat(
-        commit["created"]
-    ).replace(
-        tzinfo=timezone.utc
-    )
+NEW_WINDOW = timedelta(hours=3)
 
-    created_local = created_utc.astimezone(
+
+def commit_created_utc(commit):
+    """Return a commit's created timestamp as an aware UTC datetime."""
+    value = str(commit["created"]).strip()
+
+    # Facepunch currently returns naive ISO timestamps that represent UTC,
+    # but also accept explicit Z/offset timestamps so this remains robust.
+    if value.endswith("Z"):
+        value = value[:-1] + "+00:00"
+
+    created = datetime.fromisoformat(value)
+
+    if created.tzinfo is None:
+        created = created.replace(tzinfo=timezone.utc)
+    else:
+        created = created.astimezone(timezone.utc)
+
+    return created
+
+
+def commit_local_date(commit):
+    created_local = commit_created_utc(
+        commit
+    ).astimezone(
         LOCAL_TZ
     )
 
     return created_local.date().isoformat()
+
+
+def recent_commit_ids(
+    commits,
+    now_utc=None,
+    window=NEW_WINDOW,
+):
+    """Return commit IDs whose created timestamps are inside the rolling NEW window."""
+    if now_utc is None:
+        now_utc = datetime.now(
+            timezone.utc
+        )
+    elif now_utc.tzinfo is None:
+        now_utc = now_utc.replace(
+            tzinfo=timezone.utc
+        )
+    else:
+        now_utc = now_utc.astimezone(
+            timezone.utc
+        )
+
+    cutoff = now_utc - window
+
+    return {
+        str(commit["id"])
+        for commit in commits
+        if cutoff <= commit_created_utc(commit) <= now_utc
+    }
 
 
 def group_by_day(commits):
@@ -609,10 +655,6 @@ def main():
             )
         )
 
-        current_ids = commit_ids(
-            relevant_commits
-        )
-
         old_entry = old_summaries.get(
             day
         )
@@ -633,28 +675,6 @@ def main():
             )
         else:
             old_full_signature = ""
-
-        if old_entry:
-            old_new_baseline = (
-                old_entry.get(
-                    "new_baseline_signature",
-                    old_full_signature,
-                )
-            )
-        else:
-            # First structured run: don't mark the entire existing day NEW.
-            old_new_baseline = (
-                current_signature
-            )
-
-        old_new_ids = parse_signature(
-            old_new_baseline
-        )
-
-        newly_added_ids = (
-            current_ids
-            - old_new_ids
-        )
 
         old_chunk_cache = (
             old_entry.get(
@@ -883,92 +903,54 @@ def main():
         new_summary_markdown = ""
         new_relevant_count = 0
 
-        if day == today:
-            if (
-                generation_succeeded
-                and sections
-            ):
-                new_items = (
-                    find_new_items(
-                        sections,
-                        newly_added_ids,
-                    )
-                )
-
-                new_summary_markdown = (
-                    items_to_markdown(
-                        new_items
-                    )
-                )
-
-                represented_new_ids = (
-                    represented_commit_ids_from_items(
-                        new_items
-                    )
-                )
-
-                new_relevant_count = len(
-                    represented_new_ids
-                )
-
-                # Advance NEW only after the complete structured summary
-                # successfully includes the current relevant commit set.
-                new_baseline_out = (
-                    current_signature
-                )
-
-                if new_items:
-                    print(
-                        f"NEW — LAST 3 HRS: "
-                        f"{len(new_items)} "
-                        "summary item(s), "
-                        f"{new_relevant_count} "
-                        "source commit(s)."
-                    )
-                else:
-                    print(
-                        "No summarized player-facing "
-                        "items for NEW — LAST 3 HRS."
-                    )
-
-            elif not needs_refresh:
-                new_items = []
-                new_summary_markdown = ""
-                new_relevant_count = 0
-
-                new_baseline_out = (
-                    current_signature
-                )
-
-                print(
-                    "No new player-relevant commits "
-                    "in this update window."
-                )
-
-            else:
-                # Full structured generation failed. Do NOT advance the
-                # baseline; the same unsummarized commits must remain NEW
-                # candidates on the next retry.
-                new_baseline_out = (
-                    old_new_baseline
-                )
-
-                print(
-                    "NEW tracking baseline preserved "
-                    "because full summary generation failed."
-                )
-
-        else:
-            new_items = []
-            new_summary_markdown = ""
-            new_relevant_count = 0
-
-            # Historical days do not display NEW. Still keep this aligned
-            # with the last successfully structured full-summary signature,
-            # not with an unsuccessfully attempted newer commit set.
-            new_baseline_out = (
-                full_signature_out
+        if day == today and sections:
+            # NEW is a true rolling time window. Recalculate it on every
+            # workflow run, even when the full AI summary is reused.
+            recent_ids = recent_commit_ids(
+                relevant_commits,
             )
+
+            new_items = find_new_items(
+                sections,
+                recent_ids,
+            )
+
+            new_summary_markdown = (
+                items_to_markdown(
+                    new_items
+                )
+            )
+
+            represented_new_ids = (
+                represented_commit_ids_from_items(
+                    new_items
+                )
+            )
+
+            new_relevant_count = len(
+                represented_new_ids
+            )
+
+            if new_items:
+                print(
+                    f"NEW — LAST 3 HRS: "
+                    f"{len(new_items)} "
+                    "summary item(s), "
+                    f"{new_relevant_count} "
+                    "source commit(s)."
+                )
+            else:
+                print(
+                    "No summarized player-facing "
+                    "items currently inside the "
+                    "rolling 3-hour NEW window."
+                )
+
+        # Retain this field for backwards compatibility with existing
+        # summaries/readers, but NEW no longer depends on a baseline.
+        new_baseline_out = (
+            full_signature_out
+        )
 
         # ----------------------------------------------------
         # SAVE DAY
