@@ -1,9 +1,9 @@
 {
   "2026-09-01": {
-    "commit_count": 40,
-    "relevant_commit_count": 20,
-    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083",
-    "new_baseline_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083",
+    "commit_count": 49,
+    "relevant_commit_count": 25,
+    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809",
+    "new_baseline_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
@@ -11,7 +11,7 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Attack heli frame no longer deals unintended damage due to missing colliders.",
+            "text": "Attack heli frame colliders fixed, preventing unintended damage to players.",
             "commit_ids": [
               619743
             ]
@@ -22,40 +22,70 @@
         "title": "Radiation & Environment",
         "items": [
           {
-            "text": "Radwater sprinklers now emit double the radiation output.",
+            "text": "Radwater‑powered sprinklers now emit 1.5× more radiation (effectively doubling output).",
             "commit_ids": [
+              621777,
               619788
             ]
           }
         ]
       },
       {
-        "title": "Monuments & Doors",
+        "title": "Monuments & NPCs",
         "items": [
           {
-            "text": "Monument blockers added to Underwater Labs red key‑card doors, affecting access.",
+            "text": "Monument blockers added to Underwater Labs red‑key‑card doors, blocking entry without the proper key.",
             "commit_ids": [
               619737
             ]
-          }
-        ]
-      },
-      {
-        "title": "Cooking & Items",
-        "items": [
+          },
           {
-            "text": "Teas now correctly spawn a kettle when cooked on the workbench.",
+            "text": "Underwater Labs NPC spawner moved slightly away from the new monument blocker.",
             "commit_ids": [
-              619745
+              619740
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Fixed a race condition that could cause items in display box storage to disappear or become inconsistent when saving.",
+            "text": "Settings menu dropdown text now updates dynamically and matches UI colors.",
+            "commit_ids": [
+              619786
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & Physics",
+        "items": [
+          {
+            "text": "Loot crate gib colliders resized, reducing crate physics glitches and stuck crates.",
+            "commit_ids": [
+              619722
+            ]
+          },
+          {
+            "text": "Burstcloth chains can be attached to any bone, allowing chain connections at either end for builds.",
+            "commit_ids": [
+              623803
+            ]
+          },
+          {
+            "text": "Crossbow and other bows now display the arrowhead during reload, syncing visual with actual shot.",
+            "commit_ids": [
+              622982
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Items & Storage",
+        "items": [
+          {
+            "text": "Thread‑race fix in DisplayBoxStorage saving prevents possible item loss during saves.",
             "commit_ids": [
               619919
             ]
@@ -63,18 +93,33 @@
         ]
       }
     ],
-    "summary": "### Vehicles\n- Attack heli frame no longer deals unintended damage due to missing colliders.\n\n### Radiation & Environment\n- Radwater sprinklers now emit double the radiation output.\n\n### Monuments & Doors\n- Monument blockers added to Underwater Labs red key‑card doors, affecting access.\n\n### Cooking & Items\n- Teas now correctly spawn a kettle when cooked on the workbench.\n\n### Bug Fixes\n- Fixed a race condition that could cause items in display box storage to disappear or become inconsistent when saving.",
+    "summary": "### Vehicles\n- Attack heli frame colliders fixed, preventing unintended damage to players.\n\n### Radiation & Environment\n- Radwater‑powered sprinklers now emit 1.5× more radiation (effectively doubling output).\n\n### Monuments & NPCs\n- Monument blockers added to Underwater Labs red‑key‑card doors, blocking entry without the proper key.\n- Underwater Labs NPC spawner moved slightly away from the new monument blocker.\n\n### UI & Quality of Life\n- Settings menu dropdown text now updates dynamically and matches UI colors.\n\n### Building & Physics\n- Loot crate gib colliders resized, reducing crate physics glitches and stuck crates.\n- Burstcloth chains can be attached to any bone, allowing chain connections at either end for builds.\n- Crossbow and other bows now display the arrowhead during reload, syncing visual with actual shot.\n\n### Items & Storage\n- Thread‑race fix in DisplayBoxStorage saving prevents possible item loss during saves.",
     "new_items": [
       {
-        "text": "Fixed a race condition that could cause items in display box storage to disappear or become inconsistent when saving.",
+        "text": "Radwater‑powered sprinklers now emit 1.5× more radiation (effectively doubling output).",
         "commit_ids": [
-          619919
+          621777,
+          619788
         ],
-        "section": "Bug Fixes"
+        "section": "Radiation & Environment"
+      },
+      {
+        "text": "Burstcloth chains can be attached to any bone, allowing chain connections at either end for builds.",
+        "commit_ids": [
+          623803
+        ],
+        "section": "Building & Physics"
+      },
+      {
+        "text": "Crossbow and other bows now display the arrowhead during reload, syncing visual with actual shot.",
+        "commit_ids": [
+          622982
+        ],
+        "section": "Building & Physics"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Fixed a race condition that could cause items in display box storage to disappear or become inconsistent when saving."
+    "new_relevant_count": 4,
+    "new_summary": "- Radwater‑powered sprinklers now emit 1.5× more radiation (effectively doubling output).\n- Burstcloth chains can be attached to any bone, allowing chain connections at either end for builds.\n- Crossbow and other bows now display the arrowhead during reload, syncing visual with actual shot."
   },
   "2026-08-31": {
     "commit_count": 47,

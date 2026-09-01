@@ -1,5 +1,77 @@
 [
   {
+    "id": 624215,
+    "branch": "main/async_serveroccl_gen",
+    "changeset": "162811",
+    "created": "2026-09-01T17:35:37",
+    "message": "Clean(editor): a bit more dead code removal\r\nTests: used LoadMapTool to investigate server occlusion concerns",
+    "author": "Daniel P"
+  },
+  {
+    "id": 623809,
+    "branch": "main/bc_multiple_fix_bones",
+    "changeset": "162810",
+    "created": "2026-09-01T17:21:41",
+    "message": "test scene fluff",
+    "author": "Grigler"
+  },
+  {
+    "id": 623803,
+    "branch": "main/bc_multiple_fix_bones",
+    "changeset": "162809",
+    "created": "2026-09-01T17:21:27",
+    "message": "support for burstcloth chains to be fixed at any arbitrary bone, allowing connections at either end",
+    "author": "Grigler"
+  },
+  {
+    "id": 623408,
+    "branch": "main/arrow_breaking_fix",
+    "changeset": "162808",
+    "created": "2026-09-01T17:07:56",
+    "message": "arrows were supposed to gib when on the off-chance they break but they weren't being referenced properly making them just vanish \r\nbut now they break. \n\r\nadded gibbable to the arrow worldmodel",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 623330,
+    "branch": "main/glass_ar",
+    "changeset": "162807",
+    "created": "2026-09-01T17:05:25",
+    "message": "Crystal AK - removed old material, adjusted worldmodel materials with better opacity and refraction levels, tweaked worldmodel lods to avoid opaque pieces/shadows culling too soon",
+    "author": "alex.m"
+  },
+  {
+    "id": 622982,
+    "branch": "main/arrowhead_load_fix_2",
+    "changeset": "162805",
+    "created": "2026-09-01T16:53:22",
+    "message": "Show the crossbow + other bows arrowhead from the reload animation instead of the network update so it lands on the same frame as the arrow",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 621889,
+    "branch": "main",
+    "changeset": "162803",
+    "created": "2026-09-01T16:15:42",
+    "message": "radwater_buff_2 -> main",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 621777,
+    "branch": "main/radwater_buff_2",
+    "changeset": "162802",
+    "created": "2026-09-01T16:12:39",
+    "message": "Buff sprinkler rads by another 1.5x",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 621691,
+    "branch": "main/high_stakes_dlc",
+    "changeset": "162801",
+    "created": "2026-09-01T16:09:43",
+    "message": "russian roulette;\r\n- vm for chain parts that connect to guns\r\n- reference model to help with anim of chains over the table",
+    "author": "curt"
+  },
+  {
     "id": 621299,
     "branch": "main/vcc/control_sets/analogue_steering",
     "changeset": "162800",
@@ -830,13 +902,5 @@
     "created": "2026-08-29T18:39:18",
     "message": "Improve navmesh doors perf, doors now remember which polys are theirs instead of searching the\r\nnavmesh on every open/close",
     "author": "Maverick"
-  },
-  {
-    "id": 618277,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "162591",
-    "created": "2026-08-29T17:30:18",
-    "message": "Reduce network overhead of powered igniter, tesla coil and strobe lights\r\nEvery Hurt broadcasts a full entity update, self damage is now applied every so often to reduce overhead (time to die unchanged)",
-    "author": "Flavien"
   }
 ]
