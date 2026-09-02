@@ -38,7 +38,14 @@ def test_recent_commit_ids_accepts_z_and_offset_timestamps():
 def _write_reuse_fixture(tmp_path):
     site = tmp_path / "site"
     site.mkdir()
-    commits = [commit(619919, "2026-09-01T15:03:00")]
+
+    # Keep this fixture independent of the date when CI happens to run.
+    # The production code only exposes NEW for the current local day.
+    now_utc = datetime.now(timezone.utc)
+    today = now_utc.astimezone(summarize.LOCAL_TZ).date().isoformat()
+    created = now_utc.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+    commits = [commit(619919, created)]
     (site / "commits.json").write_text(json.dumps(commits), encoding="utf-8")
 
     sections = [{
@@ -49,7 +56,7 @@ def _write_reuse_fixture(tmp_path):
         }],
     }]
     summaries = {
-        "2026-09-01": {
+        today: {
             "commit_count": 1,
             "relevant_commit_count": 1,
             "relevant_signature": "619919",
@@ -68,11 +75,11 @@ def _write_reuse_fixture(tmp_path):
         }
     }
     (site / "summaries.json").write_text(json.dumps(summaries), encoding="utf-8")
-    return site
+    return site, today
 
 
 def test_new_items_recalculated_when_daily_summary_is_reused(tmp_path, monkeypatch):
-    site = _write_reuse_fixture(tmp_path)
+    site, today_key = _write_reuse_fixture(tmp_path)
     monkeypatch.setattr(summarize, "COMMITS_FILE", site / "commits.json")
     monkeypatch.setattr(summarize, "SUMMARY_FILE", site / "summaries.json")
     monkeypatch.setenv("GROQ_API_KEY", "test")
@@ -81,7 +88,7 @@ def test_new_items_recalculated_when_daily_summary_is_reused(tmp_path, monkeypat
     summarize.main()
 
     saved = json.loads((site / "summaries.json").read_text(encoding="utf-8"))
-    today = saved["2026-09-01"]
+    today = saved[today_key]
     assert today["new_items"] == [{
         "text": "Fixed display box storage race condition.",
         "commit_ids": [619919],
@@ -90,7 +97,7 @@ def test_new_items_recalculated_when_daily_summary_is_reused(tmp_path, monkeypat
 
 
 def test_expired_new_items_are_cleared_even_when_summary_is_reused(tmp_path, monkeypatch):
-    site = _write_reuse_fixture(tmp_path)
+    site, today_key = _write_reuse_fixture(tmp_path)
     monkeypatch.setattr(summarize, "COMMITS_FILE", site / "commits.json")
     monkeypatch.setattr(summarize, "SUMMARY_FILE", site / "summaries.json")
     monkeypatch.setenv("GROQ_API_KEY", "test")
@@ -99,7 +106,7 @@ def test_expired_new_items_are_cleared_even_when_summary_is_reused(tmp_path, mon
     summarize.main()
 
     saved = json.loads((site / "summaries.json").read_text(encoding="utf-8"))
-    today = saved["2026-09-01"]
+    today = saved[today_key]
     assert today["new_items"] == []
     assert today["new_summary"] == ""
     assert today["new_relevant_count"] == 0
