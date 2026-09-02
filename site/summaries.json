@@ -1,11 +1,87 @@
 {
   "2026-09-02": {
-    "commit_count": 33,
-    "relevant_commit_count": 24,
+    "commit_count": 40,
+    "relevant_commit_count": 26,
     "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923",
     "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923",
     "prompt_version": "structured-read-state-v5-player-signal",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004": [
+        {
+          "title": "Livestock & Animals",
+          "items": [
+            {
+              "text": "Fixed null reference error when a livestock animal dies, preventing crashes",
+              "commit_ids": [
+                624823
+              ]
+            },
+            {
+              "text": "Added overgrazing mechanic: livestock can deplete grass, stopping grazing and showing a label",
+              "commit_ids": [
+                624822
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Deployables & Structures",
+          "items": [
+            {
+              "text": "Fixed triangle hatch deployment being blocked by nearby deployables",
+              "commit_ids": [
+                629883
+              ]
+            },
+            {
+              "text": "Fixed mismatched enabled colliders on server/client for monument blockers and corrected collapse blocker reference",
+              "commit_ids": [
+                628427
+              ]
+            },
+            {
+              "text": "Added persistent prevent‑movement colliders to barrel blockers across destruction stages",
+              "commit_ids": [
+                629671
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Equipment",
+          "items": [
+            {
+              "text": "Disabled shield compatibility with flashlights (shields no longer function while flashlight equipped)",
+              "commit_ids": [
+                624820
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Item Handling",
+          "items": [
+            {
+              "text": "Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures",
+              "commit_ids": [
+                628066
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Upgrade Visuals",
+          "items": [
+            {
+              "text": "Corrected efficiency upgrade size bug where it appeared excessively large",
+              "commit_ids": [
+                624829
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Base & Building",
@@ -101,38 +177,10 @@
           629883
         ],
         "section": "Base & Building"
-      },
-      {
-        "text": "Barrel blockers retain movement colliders across destruction stages, keeping them functional.",
-        "commit_ids": [
-          629671
-        ],
-        "section": "Base & Building"
-      },
-      {
-        "text": "Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.",
-        "commit_ids": [
-          628427
-        ],
-        "section": "Base & Building"
-      },
-      {
-        "text": "Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.",
-        "commit_ids": [
-          628066
-        ],
-        "section": "Server Stability & UI"
-      },
-      {
-        "text": "ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.",
-        "commit_ids": [
-          628182
-        ],
-        "section": "Server Stability & UI"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Triangle hatch deployment no longer blocked by nearby deployables.\n- Barrel blockers retain movement colliders across destruction stages, keeping them functional.\n- Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.\n- Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.\n- ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages."
+    "new_relevant_count": 1,
+    "new_summary": "- Triangle hatch deployment no longer blocked by nearby deployables."
   },
   "2026-09-01": {
     "commit_count": 74,
