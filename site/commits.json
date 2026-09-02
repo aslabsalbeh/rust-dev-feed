@@ -1,5 +1,109 @@
 [
   {
+    "id": 628460,
+    "branch": "main/Livestock_animals",
+    "changeset": "162899",
+    "created": "2026-09-02T10:03:58",
+    "message": "Manifest",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 628447,
+    "branch": "main/Livestock_animals",
+    "changeset": "162898",
+    "created": "2026-09-02T10:03:39",
+    "message": "New RagdollCopyTool, allows us to copy a ragdoll (joints/ragdolls/colliders) from one hierarchy to another\r\nSetup cow corpse/ragdoll, joints are a horror show right now but at least it's setup\r\nShould make copying the setup over to the other rigs faster",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 628427,
+    "branch": "main/monumentblocker_fixes",
+    "changeset": "162896",
+    "created": "2026-09-02T10:02:54",
+    "message": "Fix potential mismatch of enabled colliders on server and client on monument blockers\r\nFix collapse blocker holding invalid reference to one of its colliders",
+    "author": "Martyn Chapman"
+  },
+  {
+    "id": 628345,
+    "branch": "main/sv_console_terminal_fix",
+    "changeset": "162894",
+    "created": "2026-09-02T09:59:36",
+    "message": "Finalized full implementation of the server console on Linux - behaves the same as on Windows, including overriding -logfile\r\nhttps://files.facepunch.com/raul/2026/September/02_11-59-CaringPeacock.mp4",
+    "author": "Raul"
+  },
+  {
+    "id": 628182,
+    "branch": "main/handbrake_toast",
+    "changeset": "162893",
+    "created": "2026-09-02T09:54:08",
+    "message": "Fixed ShowToast_Translated not parsing tokenized phrase",
+    "author": "Flavien"
+  },
+  {
+    "id": 628168,
+    "branch": "main/animal_fencing_v2",
+    "changeset": "162892",
+    "created": "2026-09-02T09:53:37",
+    "message": "Post merge manifest",
+    "author": "Adam W"
+  },
+  {
+    "id": 628066,
+    "branch": "main/guid_empty_error_fix",
+    "changeset": "162891",
+    "created": "2026-09-02T09:50:06",
+    "message": "Fix \"guid is empty\" server error when first dropping certain items",
+    "author": "cipeaX"
+  },
+  {
+    "id": 627774,
+    "branch": "main/prop_optimisations",
+    "changeset": "162890",
+    "created": "2026-09-02T09:39:43",
+    "message": "workbench upgrade visuals now share the workbench LOD distances 1/50/150 cull 250, this also matches the workbench upgrade empty states \r\nadded the missing cull states on recyclebin, salvage and efficiency and fixed engineer culling at 25m \r\nnow a lot more consistent and unified",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 627359,
+    "branch": "main/prop_optimisations",
+    "changeset": "162889",
+    "created": "2026-09-02T09:25:03",
+    "message": "added the missing cull state to 5 props that drew their last LOD forever - pork and wolf oven meat, small battery, satellite control console, kayak paddle",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 627060,
+    "branch": "main/glass_ar",
+    "changeset": "162888",
+    "created": "2026-09-02T09:14:14",
+    "message": "Crystal AK - adjusted entity LOD distances, final LOD was too close when in character's hands",
+    "author": "alex.m"
+  },
+  {
+    "id": 626016,
+    "branch": "main/static_piano_fix",
+    "changeset": "162882",
+    "created": "2026-09-02T08:37:53",
+    "message": "Remove unnecessary components from static piano\r\nS2P floating cities, outpost",
+    "author": "cipeaX"
+  },
+  {
+    "id": 625902,
+    "branch": "main/prop_optimisations",
+    "changeset": "162881",
+    "created": "2026-09-02T08:33:31",
+    "message": "fixed raw and spoiled pork ran LOD0, 1, 2, 3, then LOD0 again at 35 m, so past 35 m they draw eight times more than at 15 m never culling. \r\nfixed Human meat and wolf meat (oven and raw) had a similar issue but repeated their cheapest mesh instead of culling.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 625756,
+    "branch": "main/glass_ar",
+    "changeset": "162880",
+    "created": "2026-09-02T08:27:48",
+    "message": "Crystal AK - fixed blur levels that were off after shader tweak, magazine and worldmodel LOD fixes",
+    "author": "alex.m"
+  },
+  {
     "id": 625182,
     "branch": "main/lod_preview/LOD_texture_optimization",
     "changeset": "162879",
@@ -1126,21 +1230,5 @@
     "created": "2026-08-30T18:33:48",
     "message": "Improvements",
     "author": "Jake_Rich"
-  },
-  {
-    "id": 618311,
-    "branch": "main/prop_optimisations",
-    "changeset": "162599",
-    "created": "2026-08-30T09:02:15",
-    "message": "Medieval AK gem material tweak: fixed refraction scale 75cm -> 2cm, corundum IOR, proper transmittance - reads as gemstone instead of grey glass\r\nhttps://files.facepunch.com/pilgrim/2026/August/30_10-00-InsubstantialManta.mp4",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618310,
-    "branch": "main/prop_optimisations",
-    "changeset": "162598",
-    "created": "2026-08-30T08:34:49",
-    "message": "Medieval AK worldmodel: baked 6 materials / 3 texture sets down to one 1024 atlas material\r\n6 draws -> 1 per LOD; re-UV'd mesh, rebuilt LOD chain, gems baked opaque\r\n\r\narguably looks better than before for the gems especially as i can't justify 6 materials just for a world model of this scale. \r\nhttps://files.facepunch.com/pilgrim/2026/August/30_09-27-CoralBighornedsheep.mp4",
-    "author": "Pilgrim"
   }
 ]

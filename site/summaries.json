@@ -1,9 +1,9 @@
 {
   "2026-09-02": {
-    "commit_count": 10,
-    "relevant_commit_count": 5,
-    "relevant_signature": "624820,624822,624823,624829,624830",
-    "new_baseline_signature": "624820,624822,624823,624829,624830",
+    "commit_count": 23,
+    "relevant_commit_count": 16,
+    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460",
+    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
@@ -11,13 +11,13 @@
         "title": "Animals & Farming",
         "items": [
           {
-            "text": "Introduced overgrazing: livestock will stop eating grass in heavily grazed areas and show a warning label; move them to fresh grass or use a trough.",
+            "text": "New overgrazing system stops livestock from eating grass when an area is depleted and shows a label on the animal.",
             "commit_ids": [
               624822
             ]
           },
           {
-            "text": "Fixed crash when a livestock animal dies, preventing server errors.",
+            "text": "Fixed server crash caused by a null reference when a livestock animal dies.",
             "commit_ids": [
               624823
             ]
@@ -25,10 +25,10 @@
         ]
       },
       {
-        "title": "Combat & Gear",
+        "title": "Equipment",
         "items": [
           {
-            "text": "Shield items no longer work with flashlights; you must choose one or the other.",
+            "text": "Shields are no longer compatible with flashlights; you cannot use a flashlight while a shield is equipped.",
             "commit_ids": [
               624820
             ]
@@ -36,10 +36,38 @@
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Inventory & Items",
         "items": [
           {
-            "text": "Contact list notes now display correctly, fixing the issue where notes were missing or unreadable.",
+            "text": "Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.",
+            "commit_ids": [
+              628066
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Monuments",
+        "items": [
+          {
+            "text": "Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.",
+            "commit_ids": [
+              628427
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.",
+            "commit_ids": [
+              628182
+            ]
+          },
+          {
+            "text": "Contact list notes display and save properly, restoring player ability to annotate contacts.",
             "commit_ids": [
               624830
             ]
@@ -47,25 +75,39 @@
         ]
       }
     ],
-    "summary": "### Animals & Farming\n- Introduced overgrazing: livestock will stop eating grass in heavily grazed areas and show a warning label; move them to fresh grass or use a trough.\n- Fixed crash when a livestock animal dies, preventing server errors.\n\n### Combat & Gear\n- Shield items no longer work with flashlights; you must choose one or the other.\n\n### Bug Fixes\n- Contact list notes now display correctly, fixing the issue where notes were missing or unreadable.",
+    "summary": "### Animals & Farming\n- New overgrazing system stops livestock from eating grass when an area is depleted and shows a label on the animal.\n- Fixed server crash caused by a null reference when a livestock animal dies.\n\n### Equipment\n- Shields are no longer compatible with flashlights; you cannot use a flashlight while a shield is equipped.\n\n### Inventory & Items\n- Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.\n\n### World & Monuments\n- Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.\n\n### UI & Quality of Life\n- Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.\n- Contact list notes display and save properly, restoring player ability to annotate contacts.",
     "new_items": [
       {
-        "text": "Fixed crash when a livestock animal dies, preventing server errors.",
+        "text": "Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.",
         "commit_ids": [
-          624823
+          628066
         ],
-        "section": "Animals & Farming"
+        "section": "Inventory & Items"
       },
       {
-        "text": "Contact list notes now display correctly, fixing the issue where notes were missing or unreadable.",
+        "text": "Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.",
+        "commit_ids": [
+          628427
+        ],
+        "section": "World & Monuments"
+      },
+      {
+        "text": "Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.",
+        "commit_ids": [
+          628182
+        ],
+        "section": "UI & Quality of Life"
+      },
+      {
+        "text": "Contact list notes display and save properly, restoring player ability to annotate contacts.",
         "commit_ids": [
           624830
         ],
-        "section": "Bug Fixes"
+        "section": "UI & Quality of Life"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Fixed crash when a livestock animal dies, preventing server errors.\n- Contact list notes now display correctly, fixing the issue where notes were missing or unreadable."
+    "new_relevant_count": 4,
+    "new_summary": "- Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.\n- Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.\n- Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.\n- Contact list notes display and save properly, restoring player ability to annotate contacts."
   },
   "2026-09-01": {
     "commit_count": 74,
