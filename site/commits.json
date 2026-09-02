@@ -1,5 +1,85 @@
 [
   {
+    "id": 629923,
+    "branch": "main/arrowhead_load_fix_2",
+    "changeset": "162916",
+    "created": "2026-09-02T12:06:27",
+    "message": "Refactored BowWeapon and CrossbowWeapon to have a shared ArrowWeapon class\r\nStandardise them to have a single exposed 'Extra Arrow Renderers' list that can arrows outside arrowRoot\r\nStandardise turret workflow",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 629906,
+    "branch": "main/blockerfx",
+    "changeset": "162914",
+    "created": "2026-09-02T11:59:15",
+    "message": "Disabled playOnShow on blocker stage change particle FX",
+    "author": "Martyn Chapman"
+  },
+  {
+    "id": 629883,
+    "branch": "main/TriangleHatchDeployfix",
+    "changeset": "162913",
+    "created": "2026-09-02T11:50:22",
+    "message": "Possible fix for deployment of the triangle hatches sometimes being blocked by nearby deployables",
+    "author": "Nick.H"
+  },
+  {
+    "id": 629671,
+    "branch": "main/monumentblocker_preventmovement",
+    "changeset": "162906",
+    "created": "2026-09-02T10:53:44",
+    "message": "Add some prevent movement colliders to the barrel blockers which persist between destruction stages",
+    "author": "Martyn Chapman"
+  },
+  {
+    "id": 629558,
+    "branch": "main/vcc/control_sets/analogue_steering",
+    "changeset": "162905",
+    "created": "2026-09-02T10:45:16",
+    "message": "Disable steering input when UI visible",
+    "author": "Adam W"
+  },
+  {
+    "id": 629557,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162904",
+    "created": "2026-09-02T10:44:52",
+    "message": "Fixed the GrabPass error spam coming from the Simple Water shader",
+    "author": "aidan.m"
+  },
+  {
+    "id": 629556,
+    "branch": "main/handbrake_toast",
+    "changeset": "162903",
+    "created": "2026-09-02T10:44:45",
+    "message": "Phrase fix",
+    "author": "elhog"
+  },
+  {
+    "id": 629417,
+    "branch": "main/bc_multiple_fix_bones",
+    "changeset": "162902",
+    "created": "2026-09-02T10:40:22",
+    "message": "cleaned up test scene and meshes",
+    "author": "Grigler"
+  },
+  {
+    "id": 629377,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "162901",
+    "created": "2026-09-02T10:39:04",
+    "message": "Fixed the GrabPass error spam coming from the Particle/Refraction shader",
+    "author": "aidan.m"
+  },
+  {
+    "id": 629158,
+    "branch": "main/fuel_tanks_LOD_fix",
+    "changeset": "162900",
+    "created": "2026-09-02T10:30:40",
+    "message": "fixed the fuel tank and fridge junk LOD chains as they were broken\nfuel_tank_a_600 and a_900 had their LOD3 at 300m, the same distance as the cull, so it never showed - moved to 150m and gave a_900 the cull state it was missing whcih meant it was never culling \nfuel_tank_b_300/600/900/900_alt moved their last LOD switch from 50m to 150m to match, and the last LOD on all six tanks no longer casts shadows\r\nfuel tanks LOD distances are unified now\r\n\nfridge_junk door had the same dead state at 80m - LOD2 now switches at 50m\r\n\r\nran s2p",
+    "author": "Pilgrim"
+  },
+  {
     "id": 628460,
     "branch": "main/Livestock_animals",
     "changeset": "162899",

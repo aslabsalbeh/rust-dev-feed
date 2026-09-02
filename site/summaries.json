@@ -1,56 +1,29 @@
 {
   "2026-09-02": {
-    "commit_count": 23,
-    "relevant_commit_count": 16,
-    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460",
-    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460",
+    "commit_count": 33,
+    "relevant_commit_count": 24,
+    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923",
+    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "Base & Building",
         "items": [
           {
-            "text": "New overgrazing system stops livestock from eating grass when an area is depleted and shows a label on the animal.",
+            "text": "Triangle hatch deployment no longer blocked by nearby deployables.",
             "commit_ids": [
-              624822
+              629883
             ]
           },
           {
-            "text": "Fixed server crash caused by a null reference when a livestock animal dies.",
+            "text": "Barrel blockers retain movement colliders across destruction stages, keeping them functional.",
             "commit_ids": [
-              624823
+              629671
             ]
-          }
-        ]
-      },
-      {
-        "title": "Equipment",
-        "items": [
+          },
           {
-            "text": "Shields are no longer compatible with flashlights; you cannot use a flashlight while a shield is equipped.",
-            "commit_ids": [
-              624820
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & Items",
-        "items": [
-          {
-            "text": "Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.",
-            "commit_ids": [
-              628066
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Monuments",
-        "items": [
-          {
-            "text": "Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.",
+            "text": "Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.",
             "commit_ids": [
               628427
             ]
@@ -58,56 +31,108 @@
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Combat & Equipment",
         "items": [
           {
-            "text": "Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.",
+            "text": "Shields are no longer compatible with flashlights; using a flashlight will not affect shield behavior.",
             "commit_ids": [
-              628182
+              624820
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & Farming",
+        "items": [
+          {
+            "text": "Overgrazing mechanic added: livestock can deplete grass, stopping grazing until grass regrows or a trough is used.",
+            "commit_ids": [
+              624822
             ]
           },
           {
-            "text": "Contact list notes display and save properly, restoring player ability to annotate contacts.",
+            "text": "Server crash fixed when livestock animals die, improving stability for farms.",
+            "commit_ids": [
+              624823
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server Stability & UI",
+        "items": [
+          {
+            "text": "Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.",
+            "commit_ids": [
+              628066
+            ]
+          },
+          {
+            "text": "ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.",
+            "commit_ids": [
+              628182
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Contact list notes now save and display correctly, fixing previous missing or broken entries.",
             "commit_ids": [
               624830
+            ]
+          },
+          {
+            "text": "Efficiency upgrade model size corrected, preventing it from appearing oversized when placed.",
+            "commit_ids": [
+              624829
             ]
           }
         ]
       }
     ],
-    "summary": "### Animals & Farming\n- New overgrazing system stops livestock from eating grass when an area is depleted and shows a label on the animal.\n- Fixed server crash caused by a null reference when a livestock animal dies.\n\n### Equipment\n- Shields are no longer compatible with flashlights; you cannot use a flashlight while a shield is equipped.\n\n### Inventory & Items\n- Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.\n\n### World & Monuments\n- Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.\n\n### UI & Quality of Life\n- Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.\n- Contact list notes display and save properly, restoring player ability to annotate contacts.",
+    "summary": "### Base & Building\n- Triangle hatch deployment no longer blocked by nearby deployables.\n- Barrel blockers retain movement colliders across destruction stages, keeping them functional.\n- Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.\n\n### Combat & Equipment\n- Shields are no longer compatible with flashlights; using a flashlight will not affect shield behavior.\n\n### Animals & Farming\n- Overgrazing mechanic added: livestock can deplete grass, stopping grazing until grass regrows or a trough is used.\n- Server crash fixed when livestock animals die, improving stability for farms.\n\n### Server Stability & UI\n- Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.\n- ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.\n\n### Quality of Life\n- Contact list notes now save and display correctly, fixing previous missing or broken entries.\n- Efficiency upgrade model size corrected, preventing it from appearing oversized when placed.",
     "new_items": [
       {
-        "text": "Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.",
+        "text": "Triangle hatch deployment no longer blocked by nearby deployables.",
         "commit_ids": [
-          628066
+          629883
         ],
-        "section": "Inventory & Items"
+        "section": "Base & Building"
       },
       {
-        "text": "Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.",
+        "text": "Barrel blockers retain movement colliders across destruction stages, keeping them functional.",
+        "commit_ids": [
+          629671
+        ],
+        "section": "Base & Building"
+      },
+      {
+        "text": "Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.",
         "commit_ids": [
           628427
         ],
-        "section": "World & Monuments"
+        "section": "Base & Building"
       },
       {
-        "text": "Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.",
+        "text": "Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.",
+        "commit_ids": [
+          628066
+        ],
+        "section": "Server Stability & UI"
+      },
+      {
+        "text": "ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.",
         "commit_ids": [
           628182
         ],
-        "section": "UI & Quality of Life"
-      },
-      {
-        "text": "Contact list notes display and save properly, restoring player ability to annotate contacts.",
-        "commit_ids": [
-          624830
-        ],
-        "section": "UI & Quality of Life"
+        "section": "Server Stability & UI"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Dropping items no longer triggers the \"guid is empty\" server error, preventing item loss.\n- Monument blockers now correctly sync enabled colliders between server and client, fixing invisible blockers and related crashes.\n- Toast notifications now correctly parse tokenized phrases, fixing missing or garbled messages.\n- Contact list notes display and save properly, restoring player ability to annotate contacts."
+    "new_relevant_count": 5,
+    "new_summary": "- Triangle hatch deployment no longer blocked by nearby deployables.\n- Barrel blockers retain movement colliders across destruction stages, keeping them functional.\n- Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.\n- Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.\n- ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages."
   },
   "2026-09-01": {
     "commit_count": 74,
