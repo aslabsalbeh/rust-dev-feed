@@ -1,17 +1,17 @@
 {
   "2026-09-01": {
-    "commit_count": 67,
-    "relevant_commit_count": 36,
-    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800",
-    "new_baseline_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800",
+    "commit_count": 72,
+    "relevant_commit_count": 39,
+    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800,624805,624806,624814",
+    "new_baseline_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800,624805,624806,624814",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles & Combat",
+        "title": "Combat & Vehicles",
         "items": [
           {
-            "text": "Fixed missing colliders on the attack helicopter frame that were causing unintended damage to players and structures.",
+            "text": "Fixed missing colliders on the attack helicopter frame that caused unintended damage.",
             "commit_ids": [
               619743
             ]
@@ -19,10 +19,10 @@
         ]
       },
       {
-        "title": "Radiation & Environmental Hazards",
+        "title": "Environment & Hazards",
         "items": [
           {
-            "text": "Increased radiation output of sprinklers when using radwater: the base output is now doubled, and an additional 1.5× multiplier is applied on top of that.",
+            "text": "Increased radiation output of radwater sprinklers: doubled output and an additional 1.5× boost.",
             "commit_ids": [
               619788,
               621777
@@ -31,43 +31,16 @@
         ]
       },
       {
-        "title": "Gameplay Modes",
+        "title": "AI & Wildlife",
         "items": [
           {
-            "text": "Fixed the Russian Roulette storage logic so items can be correctly accepted, with updated prefab and localization.",
+            "text": "Added initial rabbit interest behavior (work in progress).",
             "commit_ids": [
-              624745
+              624766
             ]
-          }
-        ]
-      },
-      {
-        "title": "Monument Access",
-        "items": [
+          },
           {
-            "text": "Added monument blockers to underwater labs red key card doors, restricting entry until the appropriate key is used.",
-            "commit_ids": [
-              619737
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items",
-        "items": [
-          {
-            "text": "Introduced a placeholder milk item, enabling future milk-related crafting and consumption mechanics.",
-            "commit_ids": [
-              618698
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Critter AI",
-        "items": [
-          {
-            "text": "Implemented a basic squirrel interest mechanic, allowing squirrels to react to nearby stimuli.",
+            "text": "Implemented an initial squirrel interest mechanic, allowing squirrels to react to player presence.",
             "commit_ids": [
               624744
             ]
@@ -75,38 +48,70 @@
         ]
       },
       {
-        "title": "AI & Wildlife",
+        "title": "Base & Clan Mechanics",
         "items": [
           {
-            "text": "Introduced initial rabbit interest behavior (WIP/in development).",
+            "text": "Added monument blockers to the red key card doors in Underwater Labs, preventing unauthorized entry.",
             "commit_ids": [
-              624766
+              619737
+            ]
+          },
+          {
+            "text": "Fixed duplicate fuse insert clan events when multiple fuses are added in one container session.",
+            "commit_ids": [
+              624814
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Items & DLC",
         "items": [
           {
-            "text": "Resolved a thread race condition when saving Display Box storage, preventing possible item loss or crashes.",
+            "text": "Introduced a placeholder Milk item for livestock processing.",
             "commit_ids": [
-              619919
+              618698
             ]
           },
           {
-            "text": "Fixed a multithreading issue with Paintball color lookup initialization, avoiding save‑time crashes for paintball weapons.",
+            "text": "Fixed Russian Roulette storage acceptance logic and updated prefab/localization.",
             "commit_ids": [
-              619803
+              624745
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Performance & Stability",
+        "items": [
+          {
+            "text": "Fixed a rare null reference error when zooming with a scoped weapon and removed an unnecessary memory allocation on each zoom.",
+            "commit_ids": [
+              624806
             ]
           }
         ]
       }
     ],
-    "summary": "### Vehicles & Combat\n- Fixed missing colliders on the attack helicopter frame that were causing unintended damage to players and structures.\n\n### Radiation & Environmental Hazards\n- Increased radiation output of sprinklers when using radwater: the base output is now doubled, and an additional 1.5× multiplier is applied on top of that.\n\n### Gameplay Modes\n- Fixed the Russian Roulette storage logic so items can be correctly accepted, with updated prefab and localization.\n\n### Monument Access\n- Added monument blockers to underwater labs red key card doors, restricting entry until the appropriate key is used.\n\n### Items\n- Introduced a placeholder milk item, enabling future milk-related crafting and consumption mechanics.\n\n### Critter AI\n- Implemented a basic squirrel interest mechanic, allowing squirrels to react to nearby stimuli.\n\n### AI & Wildlife\n- Introduced initial rabbit interest behavior (WIP/in development).\n\n### Bug Fixes\n- Resolved a thread race condition when saving Display Box storage, preventing possible item loss or crashes.\n- Fixed a multithreading issue with Paintball color lookup initialization, avoiding save‑time crashes for paintball weapons.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Combat & Vehicles\n- Fixed missing colliders on the attack helicopter frame that caused unintended damage.\n\n### Environment & Hazards\n- Increased radiation output of radwater sprinklers: doubled output and an additional 1.5× boost.\n\n### AI & Wildlife\n- Added initial rabbit interest behavior (work in progress).\n- Implemented an initial squirrel interest mechanic, allowing squirrels to react to player presence.\n\n### Base & Clan Mechanics\n- Added monument blockers to the red key card doors in Underwater Labs, preventing unauthorized entry.\n- Fixed duplicate fuse insert clan events when multiple fuses are added in one container session.\n\n### Items & DLC\n- Introduced a placeholder Milk item for livestock processing.\n- Fixed Russian Roulette storage acceptance logic and updated prefab/localization.\n\n### Performance & Stability\n- Fixed a rare null reference error when zooming with a scoped weapon and removed an unnecessary memory allocation on each zoom.",
+    "new_items": [
+      {
+        "text": "Fixed duplicate fuse insert clan events when multiple fuses are added in one container session.",
+        "commit_ids": [
+          624814
+        ],
+        "section": "Base & Clan Mechanics"
+      },
+      {
+        "text": "Fixed a rare null reference error when zooming with a scoped weapon and removed an unnecessary memory allocation on each zoom.",
+        "commit_ids": [
+          624806
+        ],
+        "section": "Performance & Stability"
+      }
+    ],
+    "new_relevant_count": 2,
+    "new_summary": "- Fixed duplicate fuse insert clan events when multiple fuses are added in one container session.\n- Fixed a rare null reference error when zooming with a scoped weapon and removed an unnecessary memory allocation on each zoom."
   },
   "2026-08-31": {
     "commit_count": 47,
