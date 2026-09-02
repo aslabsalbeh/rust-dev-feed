@@ -6,45 +6,53 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 02 Sep 2026 10:17:55 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 12:17:55 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 02</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;40 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;56 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="629883"&gt;Triangle hatch deployment no longer blocked by nearby deployables.&lt;/li&gt;
+&lt;li data-rust-commits="630129"&gt;Projectile age calculations corrected and predicted projectile steps now use the simulation position, fixing inaccurate projectile behavior.&lt;/li&gt;
+&lt;li data-rust-commits="630164"&gt;Paintball gun now correctly applies selected colour in both first‑person and third‑person views and on overall player models.&lt;/li&gt;
+&lt;li data-rust-commits="630155"&gt;Grenades and thrown weapons now use Rigidbody information for client‑side prediction before removal, improving throw accuracy.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Base &amp;amp; Building&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="629883"&gt;Triangle hatch deployment no longer blocked by nearby deployables.&lt;/li&gt;
-&lt;li data-rust-commits="629671"&gt;Barrel blockers retain movement colliders across destruction stages, keeping them functional.&lt;/li&gt;
-&lt;li data-rust-commits="628427"&gt;Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.&lt;/li&gt;
+&lt;li data-rust-commits="630129"&gt;Projectile age calculations corrected and predicted projectile steps now use the simulation position, fixing inaccurate projectile behavior.&lt;/li&gt;
+&lt;li data-rust-commits="630164"&gt;Paintball gun now correctly applies selected colour in both first‑person and third‑person views and on overall player models.&lt;/li&gt;
+&lt;li data-rust-commits="630155"&gt;Grenades and thrown weapons now use Rigidbody information for client‑side prediction before removal, improving throw accuracy.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Equipment&lt;/h3&gt;
+&lt;h3&gt;Structures &amp;amp; Deployables&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="624820"&gt;Shields are no longer compatible with flashlights; using a flashlight will not affect shield behavior.&lt;/li&gt;
+&lt;li data-rust-commits="629883"&gt;Triangle hatch deployment no longer blocked by nearby deployables, improving base building reliability.&lt;/li&gt;
+&lt;li data-rust-commits="628427"&gt;Monument blockers now have consistent collider states between server and client, preventing mismatched blocking behavior.&lt;/li&gt;
+&lt;li data-rust-commits="629671"&gt;Barrel blockers retain prevent‑movement colliders across destruction stages, ensuring they stay in place as intended.&lt;/li&gt;
+&lt;li data-rust-commits="624820"&gt;Shields are no longer compatible with flashlights, preventing unintended illumination effects.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; Farming&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Ecology&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="624822"&gt;Overgrazing mechanic added: livestock can deplete grass, stopping grazing until grass regrows or a trough is used.&lt;/li&gt;
-&lt;li data-rust-commits="624823"&gt;Server crash fixed when livestock animals die, improving stability for farms.&lt;/li&gt;
+&lt;li data-rust-commits="624823"&gt;Livestock animals no longer cause a null‑reference error when they die, preventing crashes.&lt;/li&gt;
+&lt;li data-rust-commits="624822"&gt;Introduced an overgrazing system: livestock can deplete grass in an area, halting grazing until the area recovers or a trough is used; overgrazed animals show a label when inspected.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Server Stability &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Feedback&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="628066"&gt;Fixed &amp;quot;guid is empty&amp;quot; error when first dropping certain items, preventing drop failures.&lt;/li&gt;
-&lt;li data-rust-commits="628182"&gt;ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.&lt;/li&gt;
+&lt;li data-rust-commits="628182,629556"&gt;Toast notifications now correctly parse tokenized phrases and translated toasts, fixing broken on‑screen messages.&lt;/li&gt;
+&lt;li data-rust-commits="624830"&gt;Contact list notes are now saved and displayed correctly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Quality of Life&lt;/h3&gt;
+&lt;h3&gt;Server &amp;amp; Stability&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="624830"&gt;Contact list notes now save and display correctly, fixing previous missing or broken entries.&lt;/li&gt;
-&lt;li data-rust-commits="624829"&gt;Efficiency upgrade model size corrected, preventing it from appearing oversized when placed.&lt;/li&gt;
+&lt;li data-rust-commits="628066"&gt;Server error &amp;quot;guid is empty&amp;quot; when first dropping certain items has been resolved, allowing items to be placed without crash.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="624829"&gt;Fixed the oversized visual appearance of the efficiency upgrade, restoring its correct size.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-02</guid>
-      <pubDate>Wed, 02 Sep 2026 10:17:55 -0400</pubDate>
+      <pubDate>Wed, 02 Sep 2026 12:17:55 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 01</title>

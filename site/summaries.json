@@ -1,116 +1,58 @@
 {
   "2026-09-02": {
-    "commit_count": 40,
-    "relevant_commit_count": 26,
-    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923",
-    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923",
+    "commit_count": 56,
+    "relevant_commit_count": 31,
+    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164",
+    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164",
     "prompt_version": "structured-read-state-v5-player-signal",
-    "chunk_cache": {
-      "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004": [
-        {
-          "title": "Livestock & Animals",
-          "items": [
-            {
-              "text": "Fixed null reference error when a livestock animal dies, preventing crashes",
-              "commit_ids": [
-                624823
-              ]
-            },
-            {
-              "text": "Added overgrazing mechanic: livestock can deplete grass, stopping grazing and showing a label",
-              "commit_ids": [
-                624822
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Deployables & Structures",
-          "items": [
-            {
-              "text": "Fixed triangle hatch deployment being blocked by nearby deployables",
-              "commit_ids": [
-                629883
-              ]
-            },
-            {
-              "text": "Fixed mismatched enabled colliders on server/client for monument blockers and corrected collapse blocker reference",
-              "commit_ids": [
-                628427
-              ]
-            },
-            {
-              "text": "Added persistent prevent‑movement colliders to barrel blockers across destruction stages",
-              "commit_ids": [
-                629671
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Equipment",
-          "items": [
-            {
-              "text": "Disabled shield compatibility with flashlights (shields no longer function while flashlight equipped)",
-              "commit_ids": [
-                624820
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Inventory & Item Handling",
-          "items": [
-            {
-              "text": "Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures",
-              "commit_ids": [
-                628066
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Upgrade Visuals",
-          "items": [
-            {
-              "text": "Corrected efficiency upgrade size bug where it appeared excessively large",
-              "commit_ids": [
-                624829
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Base & Building",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Triangle hatch deployment no longer blocked by nearby deployables.",
+            "text": "Projectile age calculations corrected and predicted projectile steps now use the simulation position, fixing inaccurate projectile behavior.",
             "commit_ids": [
-              629883
+              630129
             ]
           },
           {
-            "text": "Barrel blockers retain movement colliders across destruction stages, keeping them functional.",
+            "text": "Paintball gun now correctly applies selected colour in both first‑person and third‑person views and on overall player models.",
             "commit_ids": [
-              629671
+              630164
             ]
           },
           {
-            "text": "Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.",
+            "text": "Grenades and thrown weapons now use Rigidbody information for client‑side prediction before removal, improving throw accuracy.",
             "commit_ids": [
-              628427
+              630155
             ]
           }
         ]
       },
       {
-        "title": "Combat & Equipment",
+        "title": "Structures & Deployables",
         "items": [
           {
-            "text": "Shields are no longer compatible with flashlights; using a flashlight will not affect shield behavior.",
+            "text": "Triangle hatch deployment no longer blocked by nearby deployables, improving base building reliability.",
+            "commit_ids": [
+              629883
+            ]
+          },
+          {
+            "text": "Monument blockers now have consistent collider states between server and client, preventing mismatched blocking behavior.",
+            "commit_ids": [
+              628427
+            ]
+          },
+          {
+            "text": "Barrel blockers retain prevent‑movement colliders across destruction stages, ensuring they stay in place as intended.",
+            "commit_ids": [
+              629671
+            ]
+          },
+          {
+            "text": "Shields are no longer compatible with flashlights, preventing unintended illumination effects.",
             "commit_ids": [
               624820
             ]
@@ -118,50 +60,56 @@
         ]
       },
       {
-        "title": "Animals & Farming",
+        "title": "Animals & Ecology",
         "items": [
           {
-            "text": "Overgrazing mechanic added: livestock can deplete grass, stopping grazing until grass regrows or a trough is used.",
-            "commit_ids": [
-              624822
-            ]
-          },
-          {
-            "text": "Server crash fixed when livestock animals die, improving stability for farms.",
+            "text": "Livestock animals no longer cause a null‑reference error when they die, preventing crashes.",
             "commit_ids": [
               624823
             ]
+          },
+          {
+            "text": "Introduced an overgrazing system: livestock can deplete grass in an area, halting grazing until the area recovers or a trough is used; overgrazed animals show a label when inspected.",
+            "commit_ids": [
+              624822
+            ]
           }
         ]
       },
       {
-        "title": "Server Stability & UI",
+        "title": "UI & Feedback",
         "items": [
           {
-            "text": "Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.",
+            "text": "Toast notifications now correctly parse tokenized phrases and translated toasts, fixing broken on‑screen messages.",
             "commit_ids": [
-              628066
+              628182,
+              629556
             ]
           },
           {
-            "text": "ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.",
-            "commit_ids": [
-              628182
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Contact list notes now save and display correctly, fixing previous missing or broken entries.",
+            "text": "Contact list notes are now saved and displayed correctly.",
             "commit_ids": [
               624830
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Server & Stability",
+        "items": [
           {
-            "text": "Efficiency upgrade model size corrected, preventing it from appearing oversized when placed.",
+            "text": "Server error \"guid is empty\" when first dropping certain items has been resolved, allowing items to be placed without crash.",
+            "commit_ids": [
+              628066
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Fixed the oversized visual appearance of the efficiency upgrade, restoring its correct size.",
             "commit_ids": [
               624829
             ]
@@ -169,18 +117,32 @@
         ]
       }
     ],
-    "summary": "### Base & Building\n- Triangle hatch deployment no longer blocked by nearby deployables.\n- Barrel blockers retain movement colliders across destruction stages, keeping them functional.\n- Monument blocker colliders now sync correctly between server and client, preventing invisible blockers.\n\n### Combat & Equipment\n- Shields are no longer compatible with flashlights; using a flashlight will not affect shield behavior.\n\n### Animals & Farming\n- Overgrazing mechanic added: livestock can deplete grass, stopping grazing until grass regrows or a trough is used.\n- Server crash fixed when livestock animals die, improving stability for farms.\n\n### Server Stability & UI\n- Fixed \"guid is empty\" error when first dropping certain items, preventing drop failures.\n- ShowToast_Translated now correctly parses tokenized phrases, fixing broken toast messages.\n\n### Quality of Life\n- Contact list notes now save and display correctly, fixing previous missing or broken entries.\n- Efficiency upgrade model size corrected, preventing it from appearing oversized when placed.",
+    "summary": "### Combat & Weapons\n- Projectile age calculations corrected and predicted projectile steps now use the simulation position, fixing inaccurate projectile behavior.\n- Paintball gun now correctly applies selected colour in both first‑person and third‑person views and on overall player models.\n- Grenades and thrown weapons now use Rigidbody information for client‑side prediction before removal, improving throw accuracy.\n\n### Structures & Deployables\n- Triangle hatch deployment no longer blocked by nearby deployables, improving base building reliability.\n- Monument blockers now have consistent collider states between server and client, preventing mismatched blocking behavior.\n- Barrel blockers retain prevent‑movement colliders across destruction stages, ensuring they stay in place as intended.\n- Shields are no longer compatible with flashlights, preventing unintended illumination effects.\n\n### Animals & Ecology\n- Livestock animals no longer cause a null‑reference error when they die, preventing crashes.\n- Introduced an overgrazing system: livestock can deplete grass in an area, halting grazing until the area recovers or a trough is used; overgrazed animals show a label when inspected.\n\n### UI & Feedback\n- Toast notifications now correctly parse tokenized phrases and translated toasts, fixing broken on‑screen messages.\n- Contact list notes are now saved and displayed correctly.\n\n### Server & Stability\n- Server error \"guid is empty\" when first dropping certain items has been resolved, allowing items to be placed without crash.\n\n### Gameplay & Balance\n- Fixed the oversized visual appearance of the efficiency upgrade, restoring its correct size.",
     "new_items": [
       {
-        "text": "Triangle hatch deployment no longer blocked by nearby deployables.",
+        "text": "Projectile age calculations corrected and predicted projectile steps now use the simulation position, fixing inaccurate projectile behavior.",
         "commit_ids": [
-          629883
+          630129
         ],
-        "section": "Base & Building"
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Paintball gun now correctly applies selected colour in both first‑person and third‑person views and on overall player models.",
+        "commit_ids": [
+          630164
+        ],
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Grenades and thrown weapons now use Rigidbody information for client‑side prediction before removal, improving throw accuracy.",
+        "commit_ids": [
+          630155
+        ],
+        "section": "Combat & Weapons"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Triangle hatch deployment no longer blocked by nearby deployables."
+    "new_relevant_count": 3,
+    "new_summary": "- Projectile age calculations corrected and predicted projectile steps now use the simulation position, fixing inaccurate projectile behavior.\n- Paintball gun now correctly applies selected colour in both first‑person and third‑person views and on overall player models.\n- Grenades and thrown weapons now use Rigidbody information for client‑side prediction before removal, improving throw accuracy."
   },
   "2026-09-01": {
     "commit_count": 74,
