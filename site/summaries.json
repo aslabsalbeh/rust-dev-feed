@@ -1,14 +1,14 @@
 {
   "2026-09-01": {
-    "commit_count": 61,
-    "relevant_commit_count": 34,
-    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781",
-    "new_baseline_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781",
+    "commit_count": 67,
+    "relevant_commit_count": 36,
+    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800",
+    "new_baseline_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles",
+        "title": "Vehicles & Combat",
         "items": [
           {
             "text": "Fixed missing colliders on the attack helicopter frame that were causing unintended damage to players and structures.",
@@ -22,36 +22,19 @@
         "title": "Radiation & Environmental Hazards",
         "items": [
           {
-            "text": "Increased radiation output of sprinkler systems when using radwater: doubled the base output and added an additional 1.5× multiplier, making them significantly more lethal.",
+            "text": "Increased radiation output of sprinklers when using radwater: the base output is now doubled, and an additional 1.5× multiplier is applied on top of that.",
             "commit_ids": [
-              621777,
-              619788
+              619788,
+              621777
             ]
           }
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "Gameplay Modes",
         "items": [
           {
-            "text": "Work‑in‑progress changes to rabbit AI: added a first pass at rabbit interest behavior (e.g., how rabbits react to nearby players or stimuli).",
-            "commit_ids": [
-              624766
-            ]
-          },
-          {
-            "text": "Adjusted NPC spawner position in Underwater Labs to avoid monument blocker, fixing NPC spawn issues.",
-            "commit_ids": [
-              619740
-            ]
-          }
-        ]
-      },
-      {
-        "title": "DLC Content",
-        "items": [
-          {
-            "text": "Fixed a bug in the Russian Roulette DLC where the storage container incorrectly rejected valid items (CanAcceptItem logic).",
+            "text": "Fixed the Russian Roulette storage logic so items can be correctly accepted, with updated prefab and localization.",
             "commit_ids": [
               624745
             ]
@@ -59,10 +42,10 @@
         ]
       },
       {
-        "title": "Base & Facility Access",
+        "title": "Monument Access",
         "items": [
           {
-            "text": "Added monument blockers to the red key‑card doors of the Underwater Labs, preventing players from bypassing the intended access restrictions.",
+            "text": "Added monument blockers to underwater labs red key card doors, restricting entry until the appropriate key is used.",
             "commit_ids": [
               619737
             ]
@@ -70,10 +53,21 @@
         ]
       },
       {
-        "title": "Wildlife & Critters",
+        "title": "Items",
         "items": [
           {
-            "text": "Added a first-pass squirrel interest mechanic, giving squirrels a basic reaction to player presence.",
+            "text": "Introduced a placeholder milk item, enabling future milk-related crafting and consumption mechanics.",
+            "commit_ids": [
+              618698
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Critter AI",
+        "items": [
+          {
+            "text": "Implemented a basic squirrel interest mechanic, allowing squirrels to react to nearby stimuli.",
             "commit_ids": [
               624744
             ]
@@ -81,58 +75,38 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "AI & Wildlife",
         "items": [
           {
-            "text": "Fixed a race condition when saving Display Box storage, preventing possible item loss or duplication.",
+            "text": "Introduced initial rabbit interest behavior (WIP/in development).",
+            "commit_ids": [
+              624766
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Resolved a thread race condition when saving Display Box storage, preventing possible item loss or crashes.",
             "commit_ids": [
               619919
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
+          },
           {
-            "text": "Settings menu dropdowns now display dynamic text correctly and use consistent colors.",
+            "text": "Fixed a multithreading issue with Paintball color lookup initialization, avoiding save‑time crashes for paintball weapons.",
             "commit_ids": [
-              619786
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat Visuals",
-        "items": [
-          {
-            "text": "Crossbow and other bows now show the arrowhead during the reload animation, aligning the visual with the actual shot timing.",
-            "commit_ids": [
-              622982
+              619803
             ]
           }
         ]
       }
     ],
-    "summary": "### Vehicles\n- Fixed missing colliders on the attack helicopter frame that were causing unintended damage to players and structures.\n\n### Radiation & Environmental Hazards\n- Increased radiation output of sprinkler systems when using radwater: doubled the base output and added an additional 1.5× multiplier, making them significantly more lethal.\n\n### NPC & AI\n- Work‑in‑progress changes to rabbit AI: added a first pass at rabbit interest behavior (e.g., how rabbits react to nearby players or stimuli).\n- Adjusted NPC spawner position in Underwater Labs to avoid monument blocker, fixing NPC spawn issues.\n\n### DLC Content\n- Fixed a bug in the Russian Roulette DLC where the storage container incorrectly rejected valid items (CanAcceptItem logic).\n\n### Base & Facility Access\n- Added monument blockers to the red key‑card doors of the Underwater Labs, preventing players from bypassing the intended access restrictions.\n\n### Wildlife & Critters\n- Added a first-pass squirrel interest mechanic, giving squirrels a basic reaction to player presence.\n\n### Gameplay & Balance\n- Fixed a race condition when saving Display Box storage, preventing possible item loss or duplication.\n\n### UI & Quality of Life\n- Settings menu dropdowns now display dynamic text correctly and use consistent colors.\n\n### Combat Visuals\n- Crossbow and other bows now show the arrowhead during the reload animation, aligning the visual with the actual shot timing.",
-    "new_items": [
-      {
-        "text": "Work‑in‑progress changes to rabbit AI: added a first pass at rabbit interest behavior (e.g., how rabbits react to nearby players or stimuli).",
-        "commit_ids": [
-          624766
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Fixed a bug in the Russian Roulette DLC where the storage container incorrectly rejected valid items (CanAcceptItem logic).",
-        "commit_ids": [
-          624745
-        ],
-        "section": "DLC Content"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Work‑in‑progress changes to rabbit AI: added a first pass at rabbit interest behavior (e.g., how rabbits react to nearby players or stimuli).\n- Fixed a bug in the Russian Roulette DLC where the storage container incorrectly rejected valid items (CanAcceptItem logic)."
+    "summary": "### Vehicles & Combat\n- Fixed missing colliders on the attack helicopter frame that were causing unintended damage to players and structures.\n\n### Radiation & Environmental Hazards\n- Increased radiation output of sprinklers when using radwater: the base output is now doubled, and an additional 1.5× multiplier is applied on top of that.\n\n### Gameplay Modes\n- Fixed the Russian Roulette storage logic so items can be correctly accepted, with updated prefab and localization.\n\n### Monument Access\n- Added monument blockers to underwater labs red key card doors, restricting entry until the appropriate key is used.\n\n### Items\n- Introduced a placeholder milk item, enabling future milk-related crafting and consumption mechanics.\n\n### Critter AI\n- Implemented a basic squirrel interest mechanic, allowing squirrels to react to nearby stimuli.\n\n### AI & Wildlife\n- Introduced initial rabbit interest behavior (WIP/in development).\n\n### Bug Fixes\n- Resolved a thread race condition when saving Display Box storage, preventing possible item loss or crashes.\n- Fixed a multithreading issue with Paintball color lookup initialization, avoiding save‑time crashes for paintball weapons.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-08-31": {
     "commit_count": 47,

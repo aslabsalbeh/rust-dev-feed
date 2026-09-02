@@ -1,5 +1,53 @@
 [
   {
+    "id": 624800,
+    "branch": "main/glass_ar",
+    "changeset": "162851",
+    "created": "2026-09-01T23:58:14",
+    "message": "split glass ak deploy bolt movement out into separate sounds so it's less spammy if you switch weapons quickly",
+    "author": "Alex R"
+  },
+  {
+    "id": 624799,
+    "branch": "main/modular_car_handling_improvements",
+    "changeset": "162850",
+    "created": "2026-09-01T23:45:26",
+    "message": "Adjusted steeringwheel lerp\nAdjsuted a couple of other steering values to match\nStopped struggling multiplier applying when a car has a handbrake applied",
+    "author": "elhog"
+  },
+  {
+    "id": 624793,
+    "branch": "main/wooden_loot_crate_gib_fix",
+    "changeset": "162846",
+    "created": "2026-09-01T23:28:02",
+    "message": "fixed wooden loot crate not having enough force in the gibs",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 624792,
+    "branch": "main/2026_worldmodels",
+    "changeset": "162845",
+    "created": "2026-09-01T23:15:19",
+    "message": "updated spike trap to fix low resolution texture on the bottom of the world model - world model is a bit bigger in size as a result. \r\nchanged the guide mesh to use LOD2 instead of 3 so the spikes are present in the guide mesh \r\nhttps://files.facepunch.com/pilgrim/2026/September/02_00-13-LazyBlackandtancoonhound.mp4",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 624790,
+    "branch": "main/2026_worldmodels",
+    "changeset": "162844",
+    "created": "2026-09-01T23:00:12",
+    "message": "scaled down digital clock worldmodel by .5 for a more realistic size (looked noticeably bigger than it ought to)",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 624789,
+    "branch": "main/2026_worldmodels",
+    "changeset": "162843",
+    "created": "2026-09-01T22:56:14",
+    "message": "electrical fuse now has a world model - significantly cheaper than burlap sack LOD0",
+    "author": "Pilgrim"
+  },
+  {
     "id": 624781,
     "branch": "main",
     "changeset": "162839",
@@ -957,22 +1005,6 @@
     "changeset": "162598",
     "created": "2026-08-30T08:34:49",
     "message": "Medieval AK worldmodel: baked 6 materials / 3 texture sets down to one 1024 atlas material\r\n6 draws -> 1 per LOD; re-UV'd mesh, rebuilt LOD chain, gems baked opaque\r\n\r\narguably looks better than before for the gems especially as i can't justify 6 materials just for a world model of this scale. \r\nhttps://files.facepunch.com/pilgrim/2026/August/30_09-27-CoralBighornedsheep.mp4",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618302,
-    "branch": "main/prop_optimisations",
-    "changeset": "162597",
-    "created": "2026-08-29T23:34:43",
-    "message": "flamethrower world model optimisation\ncombined the two parts into one mesh per LOD in engine, converted to a MeshLOD\nrenderers 6 -> 1, highlight draws 2 -> 1, culls at 35m, triangles unchanged",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618297,
-    "branch": "main/prop_optimisations",
-    "changeset": "162596",
-    "created": "2026-08-29T22:53:07",
-    "message": "assault rifle world model optimisation\n - combined the 4 part FBXs into one model and converted the LOD group to a MeshLOD\n - renderers 12 -> 1, highlight draws 4 -> 1, triangles unchanged, culls at 35m\r\n - combined the ak47u's 4 part FBXs and the medieval's rifle+mag into single models\n - converted the ak47u, medieval and jungle world models from LOD groups to MeshLODs\n - removed the medieval's 23.6k tri LOD0 - its chain is now 13k/5.3k/2.1k\n - renderers: ak47u 12 -> 1, medieval 8 -> 1, jungle 3 -> 1; highlight draws all down to 1",
     "author": "Pilgrim"
   }
 ]
