@@ -1,5 +1,21 @@
 [
   {
+    "id": 630347,
+    "branch": "main/ai_hotfixes_for_monument_blocker_patch",
+    "changeset": "163070",
+    "created": "2026-09-03T14:03:12",
+    "message": "Fix gen2 AI never updating its position in the brain grid, causing some brain based spatial query to be stale",
+    "user": "Maverick"
+  },
+  {
+    "id": 630346,
+    "branch": "main/Livestock_animals",
+    "changeset": "163069",
+    "created": "2026-09-03T13:55:28",
+    "message": "- Old cows will go to sleep and die peacefully, instead of player the combat death anim when dying of old age\r\n- Cows get slower as they age, they also stay closer to home\r\n- Cows can lie down just to chill, old cows chill more than normal\r\n- When night falls, cows regroup and sleep together, some cows are early risers and some like to wake up late\r\n- Hook sheep and lamb corpses\r\n- Hook the death anims with forward momentum that are played when animals are killed while they are running\r\n- Fix ai.fillHungerlivestock doing the opposite of what it says\r\n- Fix cows never getting hungry or thirsty after feeding or drinking once, or getting full from one single grazing\r\n- Fix cows being unable to find food after grazing once, because they search radius was smaller than the \"overgrazed\" marking\r\n- Make cows roam less they seemed more like a pack of wolf than chilling cows",
+    "user": "Maverick"
+  },
+  {
     "id": 630333,
     "branch": "main/sandbag_barricade_variants",
     "changeset": "163066",
@@ -1686,21 +1702,5 @@
     "created": "2026-08-31T14:25:52",
     "message": "Regenerated MaterialIndex.json - was dated Aug 2021, so Tools/Optimize/Find Material Optimzations had been reporting 5-year-old state. Fresh scan covers 9,055 materials and flags 164 with compression savings (84 unique textures, ~68 MB VRAM potential)  for example m16a2 ao on high quality compression = 1.3mb, normal compression with no visual cost = 0.7mb \n\nFirst pass on the free wins: 15 alpha-less DXT5/BC7 textures -> DXT1, ~13 MB VRAM, no quality cost\n- m2bradley mainbody/armor: removed DXT5 standalone override (5.3 MB)\n- m16a2 AOs x3, flamethrower AO: HQ -> Normal compression (5.3 MB)\n- workbench upgrade AOs x2, apartment door mats AO, crate_2/gib/webbing AOs: HQ -> Normal compression (2.2 MB)",
     "author": "Pilgrim"
-  },
-  {
-    "id": 618606,
-    "branch": "main",
-    "changeset": "162661",
-    "created": "2026-08-31T14:12:46",
-    "message": "Fixed wonky spark material offset. (Satchel charge and others...)",
-    "author": "Petur"
-  },
-  {
-    "id": 618602,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "162658",
-    "created": "2026-08-31T13:57:37",
-    "message": "Fixed circuits dirtied mid tick not being handled in that same tick",
-    "author": "Flavien"
   }
 ]
