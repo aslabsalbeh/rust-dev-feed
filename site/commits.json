@@ -1,5 +1,13 @@
 [
   {
+    "id": 630441,
+    "branch": "main/prop_optimisations",
+    "changeset": "163125",
+    "created": "2026-09-03T21:04:02",
+    "message": "Two world model prefabs, both had no LOD component and drew at any distance:\n\nAdded MeshCull to laser detector and door controller worldmodels, both had no LOD and drew at any distance (60m / 100m)",
+    "user": "Pilgrim"
+  },
+  {
     "id": 630429,
     "branch": "main/vehicle_pooling",
     "changeset": "163120",
@@ -1838,21 +1846,5 @@
     "created": "2026-08-31T22:34:11",
     "message": "Planters: improved placement guide meshes\n\n- new low-poly guide meshes for large, small and triangle planters - all three were using their full LOD0 mesh as the deploy guide that was missing the soil\nnow looks and feels way less jarring and much more satisfying \r\n\r\nhttps://files.facepunch.com/pilgrim/2026/August/31_23-29-IvoryMussaurus.mp4",
     "author": "Pilgrim"
-  },
-  {
-    "id": 618659,
-    "branch": "main/prop_optimisations",
-    "changeset": "162694",
-    "created": "2026-08-31T21:58:46",
-    "message": "LOD pass on computer station + mixing table decor\n\n- computerstation.FBX re-exported with proper LOD meshes; computerstation.static LODGroup -> RendererLOD, deployed + apartmentcomplex variants updated for the new model\n- MixingTable.Decor: glassware/water existed twice - embedded invisible in the table LOD meshes and again as 9 separate LOD0-only renderers on top; re-exported as one clean 3-LOD mesh with the glass material live, 12 renderers -> 1, LODGroup -> MeshLOD",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618654,
-    "branch": "main",
-    "changeset": "162693",
-    "created": "2026-08-31T21:20:51",
-    "message": "fix glass portion of glass ak always rendering on top of rivers (with a caveat that may also need fixing)",
-    "author": "Brian"
   }
 ]
