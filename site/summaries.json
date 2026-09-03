@@ -1,4 +1,17 @@
 {
+  "2026-09-03": {
+    "commit_count": 1,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "new_baseline_signature": "",
+    "prompt_version": "structured-read-state-v5-player-signal",
+    "chunk_cache": {},
+    "sections": [],
+    "summary": "No significant player-facing updates.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-09-02": {
     "commit_count": 95,
     "relevant_commit_count": 57,
@@ -288,198 +301,6 @@
       }
     ],
     "summary": "### Vehicles & Controls\n- Fixed missing colliders on the attack helicopter frame, preventing unintended damage to players.\n- Implemented initial control-set support for cars, boats, helicopters, submarines, horses, and trains, enabling distinct input mappings.\n- Added on-screen toast notifying players that modular cars now have a functional handbrake (max 5 per session).\n\n### Environmental Hazards\n- Increased radiation output of sprinkler systems when using radwater: doubled base output plus a 1.5× multiplier.\n\n### Clan & Event Mechanics\n- Corrected fuse insertion events for clans so multiple fuses inserted during the same container opening no longer trigger duplicate events.\n\n### Gameplay Stability & World Changes\n- Fixed a race condition that could corrupt items in DisplayBoxStorage, ensuring saved items remain consistent.\n- Instantiated PaintballColorLookup early to prevent save-time crashes from multithreaded access.\n- Hardened scope code to stop rare null-reference errors when using a scope.\n- Added monument blockers to red key-card doors in Underwater Labs, altering access routes.\n\n### Content Additions & AI\n- Fixed Russian Roulette storage logic (CanAcceptItem), updated prefab and localization, and rebuilt the manifest.\n- Introduced a placeholder milk item.\n- Added a first-pass squirrel interest mechanic, affecting how squirrels react to player actions.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-08-31": {
-    "commit_count": 46,
-    "relevant_commit_count": 26,
-    "relevant_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671,618677,618684,618687",
-    "new_baseline_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671,618677,618684,618687",
-    "prompt_version": "structured-read-state-v5-player-signal",
-    "chunk_cache": {
-      "618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618667,618671,618677,618684,618687,618691,618692,618693": [
-        {
-          "title": "Building & Structures",
-          "items": [
-            {
-              "text": "Fixed collision issue on large rig monument blocker caused by a scale override, restoring proper player movement around the structure",
-              "commit_ids": [
-                618436
-              ]
-            },
-            {
-              "text": "Added missing vent cages to large and small oil rigs, improving functionality of those monuments",
-              "commit_ids": [
-                618436
-              ]
-            },
-            {
-              "text": "Added beach terrain to water pipe topology, expanding pipe placement options",
-              "commit_ids": [
-                618592
-              ]
-            },
-            {
-              "text": "Fixed pipe access bugs, prevented trees from spawning inside pipes, and smoothed terrain transitions near pipes",
-              "commit_ids": [
-                618585
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Player Mechanics",
-          "items": [
-            {
-              "text": "Restored footstep sounds for players slowed by heavy armor or while wearing diving fins on land",
-              "commit_ids": [
-                618677
-              ]
-            },
-            {
-              "text": "Corrected a typo that prevented sleepers from being killed in safezones after a server restart",
-              "commit_ids": [
-                618581
-              ]
-            },
-            {
-              "text": "Improved deployment of carvable pumpkins, making placement more reliable",
-              "commit_ids": [
-                618612
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animals & Livestock",
-          "items": [
-            {
-              "text": "Animals now prioritize eating from troughs over grazing on grass",
-              "commit_ids": [
-                618691
-              ]
-            },
-            {
-              "text": "Added shearing interaction for livestock, enabling players to shear animals",
-              "commit_ids": [
-                618687
-              ]
-            },
-            {
-              "text": "Enabled fur shader toggle for sheared animals and added debug commands for milking and shearing readiness",
-              "commit_ids": [
-                618693
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Audio",
-          "items": [
-            {
-              "text": "Fixed missing name token for HQM collectable, ensuring proper display in UI",
-              "commit_ids": [
-                618593
-              ]
-            },
-            {
-              "text": "Improved alignment of clan tags on player nameplates when auto-sized",
-              "commit_ids": [
-                618597
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "sections": [
-      {
-        "title": "Monuments & World",
-        "items": [
-          {
-            "text": "Large rig monument blocker collision fixed and missing vent cages added to monuments.",
-            "commit_ids": [
-              618436
-            ]
-          },
-          {
-            "text": "Beach area added to water pipe topology, expanding pipe placement options near coastlines.",
-            "commit_ids": [
-              618592
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Building",
-        "items": [
-          {
-            "text": "Pipe access improved: trees no longer spawn inside pipes and terrain transitions near pipes are smoother.",
-            "commit_ids": [
-              618585
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay Bugs",
-        "items": [
-          {
-            "text": "Sleepers are now correctly killed in safezones after a server restart.",
-            "commit_ids": [
-              618581
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Farming",
-        "items": [
-          {
-            "text": "New shearing interaction lets players shear livestock for resources.",
-            "commit_ids": [
-              618687
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Deployables",
-        "items": [
-          {
-            "text": "Carvable pumpkin deployment improved for more reliable placement.",
-            "commit_ids": [
-              618612
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Footstep sounds now play correctly when heavily armored or wearing diving fins, restoring audio feedback while moving.",
-            "commit_ids": [
-              618677
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "High-Quality Metal collectable now displays its proper name token, fixing missing label issues.",
-            "commit_ids": [
-              618593
-            ]
-          }
-        ]
-      }
-    ],
-    "summary": "### Monuments & World\n- Large rig monument blocker collision fixed and missing vent cages added to monuments.\n- Beach area added to water pipe topology, expanding pipe placement options near coastlines.\n\n### Base Building\n- Pipe access improved: trees no longer spawn inside pipes and terrain transitions near pipes are smoother.\n\n### Gameplay Bugs\n- Sleepers are now correctly killed in safezones after a server restart.\n\n### Animals & Farming\n- New shearing interaction lets players shear livestock for resources.\n\n### Deployables\n- Carvable pumpkin deployment improved for more reliable placement.\n\n### Gameplay & Balance\n- Footstep sounds now play correctly when heavily armored or wearing diving fins, restoring audio feedback while moving.\n\n### UI & Quality of Life\n- High-Quality Metal collectable now displays its proper name token, fixing missing label issues.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
