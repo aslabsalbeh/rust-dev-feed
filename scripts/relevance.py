@@ -174,8 +174,17 @@ def commit_search_text(commit):
     ).lower().replace("_", " ")
 
 
+AMBIGUOUS_SINGLE_WORD_TERMS = {"team", "map", "cow", "dog", "gun"}
+
+
+def contains_term(text, term):
+    if term in AMBIGUOUS_SINGLE_WORD_TERMS:
+        return re.search(rf"\\b{re.escape(term)}\\b", text) is not None
+    return term in text
+
+
 def contains_any(text, terms):
-    return any(term in text for term in terms)
+    return any(contains_term(text, term) for term in terms)
 
 
 def player_relevance_score(commit):
@@ -253,8 +262,8 @@ def player_relevance_score(commit):
 
 def filter_player_relevant_commits(commits, log_filtered=False):
     scored = [(player_relevance_score(commit), commit) for commit in commits]
-    scored.sort(key=lambda item: item[0], reverse=True)
 
+    # Preserve source order so new arrivals do not reshuffle chunk boundaries.
     relevant = [
         commit
         for score, commit in scored
@@ -267,7 +276,11 @@ def filter_player_relevant_commits(commits, log_filtered=False):
     )
 
     if log_filtered:
-        for score, commit in scored:
+        for score, commit in sorted(
+            scored,
+            key=lambda item: item[0],
+            reverse=True,
+        ):
             if score < RELEVANCE_THRESHOLD:
                 message = (
                     commit.get("message", "")
