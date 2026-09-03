@@ -1726,13 +1726,5 @@
     "created": "2026-08-31T05:15:43",
     "message": "Proof of concept of an automated editor utility that inserts the viewmodel hands mesh into the animation inspector preview window if no hands mesh is present\r\nAllows us to still use the animation preview window once the hand mesh has been removed from the rig file\r\nUses some naming semantics to try and resolve what the actual mesh that should be displayed should be, this is probably where we'll feel some pain for this system\r\nIf the animation file ends in _anim it will check for a file ending in _rig, then fall back to looking for a file without the _anim suffix\r\nSo v_bow_anims.fbx will look for v_bow_rig.fbx, failing that it will look for v_bow.fbx\r\nThe preview window will then load that fbx and the hands model if needed, combine them and feed it into the preview window",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 618386,
-    "branch": "main/vm_randomisation",
-    "changeset": "162618",
-    "created": "2026-08-31T03:59:14",
-    "message": "Added new ViewmodelClothingRandomiser component\r\nAllows us to mirror the randomisation applied to a Wearable to it's viewmodel in case that randomisation affects the arms\r\nComponent has a groups array like the Random section of the Wearable, when used the group count needs to match (as we'll just copy over which \"group\" was activated)",
-    "author": "Jarryd Campi"
   }
 ]

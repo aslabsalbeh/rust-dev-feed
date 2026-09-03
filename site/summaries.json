@@ -2,281 +2,106 @@
   "2026-09-02": {
     "commit_count": 95,
     "relevant_commit_count": 57,
-    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237",
-    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237",
+    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237,630257,630259,630262,630263,630264,630265,630266,630267",
+    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237,630257,630259,630262,630263,630264,630265,630266,630267",
     "prompt_version": "structured-read-state-v5-player-signal",
-    "chunk_cache": {
-      "624820,624823,624830,626016,627359,627774,628066,628182,628345,628427,629158,629556,629883,629923,630122,630123,630129,630164,630222,630226,630231,630237,630259,630262,630263": [
-        {
-          "title": "Livestock AI & Behavior",
-          "items": [
-            {
-              "text": "Added cooldown to livestock flee trigger, improved herd regrouping radius, staggered bull flee rules, and other herd‑mate logic; fixes cows not fleeing and prevents instant deceleration after attacks.",
-              "commit_ids": [
-                630237
-              ]
-            },
-            {
-              "text": "Bull can now kick and charge, protecting the herd and keeping it together under threat; also fixes cows decelerating instantly after movement changes.",
-              "commit_ids": [
-                630222
-              ]
-            },
-            {
-              "text": "Fixed super‑fast acceleration on cows and sheep and added tests for bull and cow behavior to ensure proper fleeing logic.",
-              "commit_ids": [
-                630226,
-                630231
-              ]
-            },
-            {
-              "text": "Fixed null‑reference crash when a livestock animal dies.",
-              "commit_ids": [
-                624823
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons & Projectile Prediction",
-          "items": [
-            {
-              "text": "Corrected grenade client prediction age calculations and ensured predicted projectile steps use the simulated position.",
-              "commit_ids": [
-                630129
-              ]
-            },
-            {
-              "text": "Refactored grenade prediction code, added support for flares and molotov effects, and moved bake processing to preparation stage.",
-              "commit_ids": [
-                630259
-              ]
-            },
-            {
-              "text": "Fixed missing arrowheads when equipping a pre‑loaded crossbow.",
-              "commit_ids": [
-                630263
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Building & Structure Interactions",
-          "items": [
-            {
-              "text": "Fixed triangle hatch deployment being blocked by nearby deployables.",
-              "commit_ids": [
-                629883
-              ]
-            },
-            {
-              "text": "Resolved server/client collider mismatches on monument blockers, preventing inconsistent blocking behavior.",
-              "commit_ids": [
-                628427
-              ]
-            },
-            {
-              "text": "Disabled shield compatibility with flashlights to avoid unintended shield‑flashlight interactions.",
-              "commit_ids": [
-                624820
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Server & Item Handling",
-          "items": [
-            {
-              "text": "Fixed \"guid is empty\" server error that occurred when first dropping certain items.",
-              "commit_ids": [
-                628066
-              ]
-            }
-          ]
-        }
-      ],
-      "624822,624829,625902,628447,629377,629417,629557,629671,629935,630004,630155,630167,630177,630189,630190,630192,630194,630199,630205,630234,630257,630264,630265,630266,630267": [
-        {
-          "title": "AI & NPC",
-          "items": [
-            {
-              "text": "Critters now follow realistic sleep cycles: rabbits are crepuscular, squirrels are diurnal, and bullfrogs stay active all day.",
-              "commit_ids": [
-                630177
-              ]
-            },
-            {
-              "text": "Squirrel and rabbit interest mechanics have been removed, changing their behavior around players and objects.",
-              "commit_ids": [
-                630167
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World Interaction",
-          "items": [
-            {
-              "text": "Barrel blockers now retain movement-preventing colliders across destruction stages, stopping players from passing through them.",
-              "commit_ids": [
-                629671
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Upgrades & Crafting",
-          "items": [
-            {
-              "text": "Efficiency upgrade size bug fixed; the upgrade now appears at correct scale.",
-              "commit_ids": [
-                624829
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock & Resource Management",
-          "items": [
-            {
-              "text": "Introduced overgrazing: livestock can deplete grass, preventing further grazing until moved to fresh grass or a trough; affected animals show a label.",
-              "commit_ids": [
-                624822
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicle Controls",
-          "items": [
-            {
-              "text": "Added analogue accelerate and brake support, mapped to triggers; horn and seat swap buttons added; steering disabled while in UI.",
-              "commit_ids": [
-                630194
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Weapons",
-          "items": [
-            {
-              "text": "Grenades and thrown weapons now use Rigidbody info for client-side prediction, improving accuracy before the object is removed.",
-              "commit_ids": [
-                630155
-              ]
-            }
-          ]
-        }
-      ],
-      "628168,628460,630170,630209,630212,630216,630235": [
-        {
-          "title": "Flare Weapon",
-          "items": [
-            {
-              "text": "Flare now ignites and can be thrown in third‑person view with corrected spawn offset; idle behavior fixed.",
-              "commit_ids": [
-                630212,
-                630209
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "Livestock & Herd Management",
         "items": [
           {
-            "text": "Added cooldown to livestock flee trigger, improved herd regrouping distance, introduced bull aggression (kick and charge) and herd cohesion, plus back‑off timers for stray‑from‑mother/herd and mate searches; herd now stays together in danger.",
+            "text": "Added cooldown to livestock flee trigger, improved herd regrouping radius, staggered bull flee rules, and enabled bull kick and charge to protect the herd; fixes cows not fleeing and prevents instant deceleration after attacks.",
             "commit_ids": [
               630237,
               630222
             ]
           },
           {
-            "text": "Fixed cows sometimes not fleeing when threatened and corrected instant cow deceleration bugs.",
+            "text": "Fixed excessive acceleration on cows and sheep and added automated tests for bull and cow fleeing behavior.",
             "commit_ids": [
-              630231,
-              630226
+              630226,
+              630231
             ]
           },
           {
-            "text": "Fixed a null‑reference crash that occurred when a livestock animal died.",
+            "text": "Fixed null‑reference crash when a livestock animal dies.",
             "commit_ids": [
               624823
             ]
           },
           {
-            "text": "Introduced overgrazing: livestock can deplete grass in an area, preventing further grazing until fresh grass is found; affected animals show a label when inspected.",
+            "text": "Introduced overgrazing: livestock can deplete grass, halting grazing until moved to fresh grass or a trough; affected animals display a label.",
             "commit_ids": [
               624822
             ]
           },
           {
-            "text": "Added distinct activity cycles for critters (rabbits are crepuscular, squirrels are diurnal, bullfrogs no longer sleep) and removed squirrel and rabbit interest mechanics, changing how these animals react to player presence.",
+            "text": "Adjusted herd regrouping logic to reduce erratic movement after attacks.",
             "commit_ids": [
-              630177,
-              630167
+              630237
             ]
           }
         ]
       },
       {
-        "title": "Weapons & Projectiles",
+        "title": "Weapons & Projectile Prediction",
         "items": [
           {
-            "text": "Reworked grenade and thrown‑weapon prediction to use Rigidbody information, improving accuracy before objects are removed; also corrected age calculations and ensured predicted projectile steps use the simulation position, fixing grenade trajectory prediction issues.",
+            "text": "Improved client‑side prediction for grenades and thrown weapons by using simulated positions and Rigidbody data, and added support for flares and molotov effects.",
             "commit_ids": [
-              630155,
-              630129
+              630129,
+              630259,
+              630155
             ]
           },
           {
-            "text": "Enabled flares to be ignited and thrown in third‑person view with corrected spawn offset.",
+            "text": "Fixed missing arrowheads when equipping a pre‑loaded crossbow.",
             "commit_ids": [
+              630263
+            ]
+          },
+          {
+            "text": "Flare now ignites, can be thrown in third‑person view with correct spawn offset, and idle behavior is fixed.",
+            "commit_ids": [
+              630212,
               630209
             ]
           }
         ]
       },
       {
-        "title": "Structures & World Interaction",
+        "title": "Building & World Interactions",
         "items": [
           {
-            "text": "Fixed deployment of triangle hatches being blocked by nearby deployables.",
+            "text": "Fixed triangle hatch deployment being blocked by nearby deployables.",
             "commit_ids": [
               629883
             ]
           },
           {
-            "text": "Resolved mismatched enabled colliders between server and client for monument blockers and fixed a collapse blocker reference error.",
+            "text": "Resolved collider mismatches on monument and barrel blockers, ensuring consistent blocking and preventing players from passing through destroyed blockers.",
             "commit_ids": [
-              628427
+              628427,
+              629671
             ]
           },
           {
-            "text": "Shields no longer work with flashlights; the compatibility has been disabled.",
+            "text": "Disabled shield compatibility with flashlights to avoid unintended interactions.",
             "commit_ids": [
               624820
-            ]
-          },
-          {
-            "text": "Added persistent prevent‑movement colliders to barrel blockers, keeping them solid across destruction stages.",
-            "commit_ids": [
-              629671
             ]
           }
         ]
       },
       {
-        "title": "Server & Items",
+        "title": "Server & Item Stability",
         "items": [
           {
-            "text": "Fixed the \"guid is empty\" server error that occurred when first dropping certain items.",
+            "text": "Fixed \"guid is empty\" server error on first item drop and corrected efficiency upgrade size scaling.",
             "commit_ids": [
-              628066
+              628066,
+              624829
             ]
           }
         ]
@@ -285,15 +110,72 @@
         "title": "Vehicle Controls",
         "items": [
           {
-            "text": "Implemented analogue accelerate/brake support for vehicles (mapped to triggers), added horn and seat‑swap bindings, and disabled steering while in UI.",
+            "text": "Added analogue accelerate and brake support mapped to triggers, introduced horn and seat‑swap buttons, and disabled steering while in UI.",
             "commit_ids": [
               630194
             ]
           }
         ]
+      },
+      {
+        "title": "NPC & AI",
+        "items": [
+          {
+            "text": "Critters now follow realistic sleep cycles: rabbits are crepuscular, squirrels are diurnal, and bullfrogs stay active all day.",
+            "commit_ids": [
+              630177
+            ]
+          },
+          {
+            "text": "Removed squirrel and rabbit interest mechanics, altering their behavior around players and objects.",
+            "commit_ids": [
+              630167
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Paintball guns now correctly display their custom colors in both first‑person and third‑person views.",
+            "commit_ids": [
+              630164
+            ]
+          },
+          {
+            "text": "Livestock animals now have proper hurt and death animations, making combat interactions clearer.",
+            "commit_ids": [
+              630189
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Toast notifications now correctly parse and display tokenized phrases, fixing broken messages.",
+            "commit_ids": [
+              628182
+            ]
+          },
+          {
+            "text": "Additional phrase handling fix restores proper display of certain toast messages.",
+            "commit_ids": [
+              629556
+            ]
+          },
+          {
+            "text": "Contact list notes are now saved and shown correctly, fixing missing or incorrect notes.",
+            "commit_ids": [
+              624830
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### Animals & AI\n- Added cooldown to livestock flee trigger, improved herd regrouping distance, introduced bull aggression (kick and charge) and herd cohesion, plus back‑off timers for stray‑from‑mother/herd and mate searches; herd now stays together in danger.\n- Fixed cows sometimes not fleeing when threatened and corrected instant cow deceleration bugs.\n- Fixed a null‑reference crash that occurred when a livestock animal died.\n- Introduced overgrazing: livestock can deplete grass in an area, preventing further grazing until fresh grass is found; affected animals show a label when inspected.\n- Added distinct activity cycles for critters (rabbits are crepuscular, squirrels are diurnal, bullfrogs no longer sleep) and removed squirrel and rabbit interest mechanics, changing how these animals react to player presence.\n\n### Weapons & Projectiles\n- Reworked grenade and thrown‑weapon prediction to use Rigidbody information, improving accuracy before objects are removed; also corrected age calculations and ensured predicted projectile steps use the simulation position, fixing grenade trajectory prediction issues.\n- Enabled flares to be ignited and thrown in third‑person view with corrected spawn offset.\n\n### Structures & World Interaction\n- Fixed deployment of triangle hatches being blocked by nearby deployables.\n- Resolved mismatched enabled colliders between server and client for monument blockers and fixed a collapse blocker reference error.\n- Shields no longer work with flashlights; the compatibility has been disabled.\n- Added persistent prevent‑movement colliders to barrel blockers, keeping them solid across destruction stages.\n\n### Server & Items\n- Fixed the \"guid is empty\" server error that occurred when first dropping certain items.\n\n### Vehicle Controls\n- Implemented analogue accelerate/brake support for vehicles (mapped to triggers), added horn and seat‑swap bindings, and disabled steering while in UI.",
+    "summary": "### Livestock & Herd Management\n- Added cooldown to livestock flee trigger, improved herd regrouping radius, staggered bull flee rules, and enabled bull kick and charge to protect the herd; fixes cows not fleeing and prevents instant deceleration after attacks.\n- Fixed excessive acceleration on cows and sheep and added automated tests for bull and cow fleeing behavior.\n- Fixed null‑reference crash when a livestock animal dies.\n- Introduced overgrazing: livestock can deplete grass, halting grazing until moved to fresh grass or a trough; affected animals display a label.\n- Adjusted herd regrouping logic to reduce erratic movement after attacks.\n\n### Weapons & Projectile Prediction\n- Improved client‑side prediction for grenades and thrown weapons by using simulated positions and Rigidbody data, and added support for flares and molotov effects.\n- Fixed missing arrowheads when equipping a pre‑loaded crossbow.\n- Flare now ignites, can be thrown in third‑person view with correct spawn offset, and idle behavior is fixed.\n\n### Building & World Interactions\n- Fixed triangle hatch deployment being blocked by nearby deployables.\n- Resolved collider mismatches on monument and barrel blockers, ensuring consistent blocking and preventing players from passing through destroyed blockers.\n- Disabled shield compatibility with flashlights to avoid unintended interactions.\n\n### Server & Item Stability\n- Fixed \"guid is empty\" server error on first item drop and corrected efficiency upgrade size scaling.\n\n### Vehicle Controls\n- Added analogue accelerate and brake support mapped to triggers, introduced horn and seat‑swap buttons, and disabled steering while in UI.\n\n### NPC & AI\n- Critters now follow realistic sleep cycles: rabbits are crepuscular, squirrels are diurnal, and bullfrogs stay active all day.\n- Removed squirrel and rabbit interest mechanics, altering their behavior around players and objects.\n\n### Gameplay & Balance\n- Paintball guns now correctly display their custom colors in both first‑person and third‑person views.\n- Livestock animals now have proper hurt and death animations, making combat interactions clearer.\n\n### UI & Quality of Life\n- Toast notifications now correctly parse and display tokenized phrases, fixing broken messages.\n- Additional phrase handling fix restores proper display of certain toast messages.\n- Contact list notes are now saved and shown correctly, fixing missing or incorrect notes.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
