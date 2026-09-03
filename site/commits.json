@@ -1,5 +1,53 @@
 [
   {
+    "id": 630429,
+    "branch": "main/vehicle_pooling",
+    "changeset": "163120",
+    "created": "2026-09-03T19:35:24",
+    "message": "fix train headlight beams pooling, add it to tests",
+    "user": "octo"
+  },
+  {
+    "id": 630427,
+    "branch": "main/Twitchdropsrender",
+    "changeset": "163118",
+    "created": "2026-09-03T19:13:32",
+    "message": "add wooden skins to scene",
+    "user": "Lewis"
+  },
+  {
+    "id": 630426,
+    "branch": "main/powergridenginefx_nrefix",
+    "changeset": "163117",
+    "created": "2026-09-03T19:06:02",
+    "message": "Guard against accessing null particle systems in PowergridEngineFx",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 630423,
+    "branch": "main/character_customisation",
+    "changeset": "163115",
+    "created": "2026-09-03T18:18:46",
+    "message": "Put all faces into the face selection \r\n- populated  according to the bodytype you've selected",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 630422,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "163114",
+    "created": "2026-09-03T18:17:56",
+    "message": "Update: rewrite prefab scanning to work via SerializedObject/Prop\r\nUnity already solves working with structs, so I'll just use their tech\r\nTests: partially wrote out url assignment automation, it assigns a struct field. ran bundle assignation",
+    "user": "Daniel P"
+  },
+  {
+    "id": 630421,
+    "branch": "main/flamethrower_canister_drop_fix",
+    "changeset": "163113",
+    "created": "2026-09-03T18:14:57",
+    "message": "- Set up flamethrower canister drop effect, uses mesh renderer for realistic ground impact",
+    "user": "Alex Webster"
+  },
+  {
     "id": 630413,
     "branch": "main/Twitchdropsrender",
     "changeset": "163111",
@@ -1806,21 +1854,5 @@
     "created": "2026-08-31T21:20:51",
     "message": "fix glass portion of glass ak always rendering on top of rivers (with a caveat that may also need fixing)",
     "author": "Brian"
-  },
-  {
-    "id": 618644,
-    "branch": "main/high_stakes_dlc",
-    "changeset": "162690",
-    "created": "2026-08-31T20:09:23",
-    "message": "russian roulette;\r\n- lods added\r\n- updated prefab\r\n- material updated",
-    "author": "curt"
-  },
-  {
-    "id": 618639,
-    "branch": "main/prop_optimisations",
-    "changeset": "162688",
-    "created": "2026-08-31T19:04:28",
-    "message": "LODGroup/RendererLOD -> MeshLOD conversion pass on vending machines, covered ch47/bradley props and tin can alarm: 129 -> 75 renderers, 23 -> 6 LODGroups, brings them into the LOD grid + occlusion culling \n\n- vendingmachine family x5: RendererLODs collapsed to MeshLODs (55 -> 33 renderers) now can occlusion cull \n- covered bradley/ch47 x6: LODGroups converted, wraps stay RendererLOD where materials demand it (66 -> 39 renderers); ch47_covered, ch47_covered_wrap + bradley_covered_wrap FBXs re-exported so LOD material order matches\n- tincan.alarm: split into frame + cans MeshLODs so the rattle anim survives (8 -> 2 renderers); worldmodel onto MeshLOD too",
-    "author": "Pilgrim"
   }
 ]

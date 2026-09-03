@@ -1,8 +1,8 @@
 {
   "2026-09-03": {
-    "commit_count": 44,
-    "relevant_commit_count": 22,
-    "relevant_signature": "630297,630303,630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379,630395,630398,630408,630409",
+    "commit_count": 50,
+    "relevant_commit_count": 25,
+    "relevant_signature": "630297,630303,630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379,630395,630398,630408,630409,630421,630426,630429",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
@@ -10,52 +10,16 @@
         "title": "Animals & AI",
         "items": [
           {
-            "text": "Old cows now sleep, age slower, die peacefully, lie down more, and regroup at night, reducing roaming behavior.",
+            "text": "Livestock behavior overhaul: cows age, slow down, sleep, regroup at night, hunger/thirst and grazing bugs fixed, plus new sheep/lamb corpse handling and death animations.",
             "commit_ids": [
               630346
             ]
           },
           {
-            "text": "Livestock AI position updates fixed, preventing animals from getting stuck due to stale brain‑grid data.",
+            "text": "Gen2 AI position update bug fixed, improving AI movement and spatial queries.",
             "commit_ids": [
               630363,
               630347
-            ]
-          },
-          {
-            "text": "Cow and sheep hit animations updated for smoother reactions.",
-            "commit_ids": [
-              630330,
-              630314
-            ]
-          },
-          {
-            "text": "Livestock coats added, giving visual variation to animals.",
-            "commit_ids": [
-              630408
-            ]
-          },
-          {
-            "text": "Livestock hunger, thirst, and grazing bugs fixed so cows can become hungry again and find food after feeding.",
-            "commit_ids": [
-              630346
-            ]
-          },
-          {
-            "text": "Livestock death animations now include forward momentum when killed while running.",
-            "commit_ids": [
-              630346
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Grenades",
-        "items": [
-          {
-            "text": "Grenade client prediction now uses a lerp system to stay in sync with the server and fixes immediate‑release bugs, improving throw reliability.",
-            "commit_ids": [
-              630361
             ]
           }
         ]
@@ -64,7 +28,7 @@
         "title": "Building & Deployables",
         "items": [
           {
-            "text": "New half‑height and three‑quarter‑height sandbag barricade variants added with proper collision and nav obstacles.",
+            "text": "New sandbag barricade variants: half-height and three-quarter-height with proper collision and nav obstacles.",
             "commit_ids": [
               630333
             ]
@@ -72,21 +36,39 @@
         ]
       },
       {
-        "title": "UI & Interaction",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Composter and stove menus no longer show incorrect “Turn on/Turn off” options.",
+            "text": "Grenade client prediction improvements: server alignment lerp and immediate release mode bugs fixed for more reliable throws.",
             "commit_ids": [
-              630409
+              630361
+            ]
+          },
+          {
+            "text": "Flare throw offset reverted, adjusting throw trajectory to previous behavior.",
+            "commit_ids": [
+              630323
             ]
           }
         ]
       },
       {
-        "title": "Audio",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Animal fences now play new sounds when animals interact with them.",
+            "text": "Compactor and stove menus no longer show incorrect \"Turn on\"/\"Turn off\" options.",
+            "commit_ids": [
+              630409
+            ]
+          },
+          {
+            "text": "Character creator ghost figure bug fixed, preventing invisible man from appearing.",
+            "commit_ids": [
+              630395
+            ]
+          },
+          {
+            "text": "Animal fences now emit distinct sounds, helping players hear fence interactions.",
             "commit_ids": [
               630377
             ]
@@ -97,15 +79,9 @@
         "title": "Bug Fixes",
         "items": [
           {
-            "text": "Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.",
+            "text": "Prevent crashes caused by missing particle systems in power‑grid visual effects.",
             "commit_ids": [
-              630395
-            ]
-          },
-          {
-            "text": "Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains.",
-            "commit_ids": [
-              630379
+              630426
             ]
           }
         ]
@@ -114,65 +90,26 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Throw offset reverted, restoring original weapon throw behavior for players.",
+            "text": "Livestock now spawn with coats that can be harvested for resources and affect their appearance.",
             "commit_ids": [
-              630323
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Store",
-        "items": [
-          {
-            "text": "Crystal store prefabs added and UI bug fixed so store pages load correctly with all sprites and videos visible.",
-            "commit_ids": [
-              630322
+              630408
             ]
           }
         ]
       }
     ],
-    "summary": "### Animals & AI\n- Old cows now sleep, age slower, die peacefully, lie down more, and regroup at night, reducing roaming behavior.\n- Livestock AI position updates fixed, preventing animals from getting stuck due to stale brain‑grid data.\n- Cow and sheep hit animations updated for smoother reactions.\n- Livestock coats added, giving visual variation to animals.\n- Livestock hunger, thirst, and grazing bugs fixed so cows can become hungry again and find food after feeding.\n- Livestock death animations now include forward momentum when killed while running.\n\n### Grenades\n- Grenade client prediction now uses a lerp system to stay in sync with the server and fixes immediate‑release bugs, improving throw reliability.\n\n### Building & Deployables\n- New half‑height and three‑quarter‑height sandbag barricade variants added with proper collision and nav obstacles.\n\n### UI & Interaction\n- Composter and stove menus no longer show incorrect “Turn on/Turn off” options.\n\n### Audio\n- Animal fences now play new sounds when animals interact with them.\n\n### Bug Fixes\n- Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.\n- Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains.\n\n### Gameplay & Balance\n- Throw offset reverted, restoring original weapon throw behavior for players.\n\n### UI & Store\n- Crystal store prefabs added and UI bug fixed so store pages load correctly with all sprites and videos visible.",
+    "summary": "### Animals & AI\n- Livestock behavior overhaul: cows age, slow down, sleep, regroup at night, hunger/thirst and grazing bugs fixed, plus new sheep/lamb corpse handling and death animations.\n- Gen2 AI position update bug fixed, improving AI movement and spatial queries.\n\n### Building & Deployables\n- New sandbag barricade variants: half-height and three-quarter-height with proper collision and nav obstacles.\n\n### Combat & Weapons\n- Grenade client prediction improvements: server alignment lerp and immediate release mode bugs fixed for more reliable throws.\n- Flare throw offset reverted, adjusting throw trajectory to previous behavior.\n\n### UI & Quality of Life\n- Compactor and stove menus no longer show incorrect \"Turn on\"/\"Turn off\" options.\n- Character creator ghost figure bug fixed, preventing invisible man from appearing.\n- Animal fences now emit distinct sounds, helping players hear fence interactions.\n\n### Bug Fixes\n- Prevent crashes caused by missing particle systems in power‑grid visual effects.\n\n### Gameplay & Balance\n- Livestock now spawn with coats that can be harvested for resources and affect their appearance.",
     "new_items": [
       {
-        "text": "Livestock coats added, giving visual variation to animals.",
+        "text": "Prevent crashes caused by missing particle systems in power‑grid visual effects.",
         "commit_ids": [
-          630408
-        ],
-        "section": "Animals & AI"
-      },
-      {
-        "text": "Composter and stove menus no longer show incorrect “Turn on/Turn off” options.",
-        "commit_ids": [
-          630409
-        ],
-        "section": "UI & Interaction"
-      },
-      {
-        "text": "Animal fences now play new sounds when animals interact with them.",
-        "commit_ids": [
-          630377
-        ],
-        "section": "Audio"
-      },
-      {
-        "text": "Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.",
-        "commit_ids": [
-          630395
-        ],
-        "section": "Bug Fixes"
-      },
-      {
-        "text": "Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains.",
-        "commit_ids": [
-          630379
+          630426
         ],
         "section": "Bug Fixes"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Livestock coats added, giving visual variation to animals.\n- Composter and stove menus no longer show incorrect “Turn on/Turn off” options.\n- Animal fences now play new sounds when animals interact with them.\n- Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.\n- Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains."
+    "new_relevant_count": 1,
+    "new_summary": "- Prevent crashes caused by missing particle systems in power‑grid visual effects."
   },
   "2026-09-02": {
     "commit_count": 95,
@@ -357,149 +294,39 @@
   "2026-09-01": {
     "commit_count": 74,
     "relevant_commit_count": 40,
-    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619775,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800,624805,624806,624814,624817,624819",
+    "relevant_signature": "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619783,619786,619788,619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800,624805,624806,624814,624817,624819",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {
-      "619789,619803,619919,620083,621777,621889,622982,623803,623809,624735,624737,624742,624744,624745,624746,624766,624779,624781,624793,624800,624805,624806,624814,624817,624819": [
-        {
-          "title": "Crafting & Inventory Visuals",
-          "items": [
-            {
-              "text": "Fixed egg vision not appearing and other candy/egg vision inconsistencies when changing skins on the crafting/inventory screens.",
-              "commit_ids": [
-                624819,
-                624817
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Fuse Clan Events",
-          "items": [
-            {
-              "text": "Prevented multiple fuse‑insert clan events from firing when a player inserts several fuses in one container session.",
-              "commit_ids": [
-                624814
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Scope Crash Prevention",
-          "items": [
-            {
-              "text": "Removed a per‑zoom allocation and hardened GetScopeMod to stop rare null‑reference crashes when using a scope.",
-              "commit_ids": [
-                624806
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Handbrake Notification",
-          "items": [
-            {
-              "text": "Added a toast message informing players that modular cars now include a handbrake; the toast can appear up to five times per driver seat mount.",
-              "commit_ids": [
-                624805
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Wildlife Interest (WIP)",
-          "items": [
-            {
-              "text": "First pass implementation of rabbit interest behavior (WIP).",
-              "commit_ids": [
-                624766
-              ]
-            },
-            {
-              "text": "First pass implementation of squirrel interest mechanic (WIP).",
-              "commit_ids": [
-                624744
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Russian Roulette Gameplay",
-          "items": [
-            {
-              "text": "Fixed RussianRouletteStorage CanAcceptItem logic, updated prefab and localization for the Russian roulette feature.",
-              "commit_ids": [
-                624745
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Sprinkler Radiation Buff",
-          "items": [
-            {
-              "text": "Increased sprinkler radiation output by an additional 1.5×.",
-              "commit_ids": [
-                621777
-              ]
-            }
-          ]
-        }
-      ],
-      "618694,618697,618698,619722,619726,619728,619737,619740,619743,619745,619761,619770,619783,619786,619788": [
-        {
-          "title": "Radiation Buffs",
-          "items": [
-            {
-              "text": "Sprinklers using radwater now emit double radiation output.",
-              "commit_ids": [
-                619788
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Vehicle Fixes",
-          "items": [
-            {
-              "text": "Attack helicopter frame colliders restored, preventing unintended damage to players.",
-              "commit_ids": [
-                619743
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Underwater Labs Access",
-          "items": [
-            {
-              "text": "Monument blockers added to red key card doors in Underwater Labs, restricting access to those areas.",
-              "commit_ids": [
-                619737
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles & Controls",
+        "title": "Crafting & Inventory",
         "items": [
           {
-            "text": "Fixed missing colliders on the attack helicopter frame, preventing unintended damage to players.",
+            "text": "Fixed egg and candy vision inconsistencies when changing skins on crafting/inventory screens.",
             "commit_ids": [
-              619743
+              624819,
+              624817
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Events & Gameplay Features",
+        "items": [
+          {
+            "text": "Prevented duplicate fuse‑insert clan events during multi‑fuse container sessions.",
+            "commit_ids": [
+              624814
             ]
           },
           {
-            "text": "Implemented initial control-set support for cars, boats, helicopters, submarines, horses, and trains, enabling distinct input mappings.",
+            "text": "Fixed Russian Roulette storage acceptance logic and updated its prefab and localization.",
             "commit_ids": [
-              619783
+              624745
             ]
           },
           {
-            "text": "Added on-screen toast notifying players that modular cars now have a functional handbrake (max 5 per session).",
+            "text": "Added a toast notification informing players that modular cars now include a handbrake (appears up to five times per driver seat).",
             "commit_ids": [
               624805
             ]
@@ -507,82 +334,59 @@
         ]
       },
       {
-        "title": "Environmental Hazards",
+        "title": "Stability Improvements",
         "items": [
           {
-            "text": "Increased radiation output of sprinkler systems when using radwater: doubled base output plus a 1.5× multiplier.",
-            "commit_ids": [
-              619788,
-              621777
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Clan & Event Mechanics",
-        "items": [
-          {
-            "text": "Corrected fuse insertion events for clans so multiple fuses inserted during the same container opening no longer trigger duplicate events.",
-            "commit_ids": [
-              624814
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay Stability & World Changes",
-        "items": [
-          {
-            "text": "Fixed a race condition that could corrupt items in DisplayBoxStorage, ensuring saved items remain consistent.",
-            "commit_ids": [
-              619919
-            ]
-          },
-          {
-            "text": "Instantiated PaintballColorLookup early to prevent save-time crashes from multithreaded access.",
-            "commit_ids": [
-              619803
-            ]
-          },
-          {
-            "text": "Hardened scope code to stop rare null-reference errors when using a scope.",
+            "text": "Eliminated a per‑zoom allocation and hardened scope handling to stop rare null‑reference crashes when using a scope.",
             "commit_ids": [
               624806
             ]
+          }
+        ]
+      },
+      {
+        "title": "World & Wildlife",
+        "items": [
+          {
+            "text": "Implemented first‑pass interest behaviors for rabbits and squirrels (WIP).",
+            "commit_ids": [
+              624766,
+              624744
+            ]
           },
           {
-            "text": "Added monument blockers to red key-card doors in Underwater Labs, altering access routes.",
+            "text": "Increased sprinkler radiation output: overall 1.5× boost and double output when using radwater.",
+            "commit_ids": [
+              621777,
+              619788
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicle & Combat Adjustments",
+        "items": [
+          {
+            "text": "Restored attack helicopter frame colliders, preventing unintended player damage.",
+            "commit_ids": [
+              619743
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Underwater Labs Access",
+        "items": [
+          {
+            "text": "Added monument blockers to red key‑card doors in Underwater Labs, restricting access to those areas.",
             "commit_ids": [
               619737
             ]
           }
         ]
-      },
-      {
-        "title": "Content Additions & AI",
-        "items": [
-          {
-            "text": "Fixed Russian Roulette storage logic (CanAcceptItem), updated prefab and localization, and rebuilt the manifest.",
-            "commit_ids": [
-              624745
-            ]
-          },
-          {
-            "text": "Introduced a placeholder milk item.",
-            "commit_ids": [
-              618698
-            ]
-          },
-          {
-            "text": "Added a first-pass squirrel interest mechanic, affecting how squirrels react to player actions.",
-            "commit_ids": [
-              624744
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### Vehicles & Controls\n- Fixed missing colliders on the attack helicopter frame, preventing unintended damage to players.\n- Implemented initial control-set support for cars, boats, helicopters, submarines, horses, and trains, enabling distinct input mappings.\n- Added on-screen toast notifying players that modular cars now have a functional handbrake (max 5 per session).\n\n### Environmental Hazards\n- Increased radiation output of sprinkler systems when using radwater: doubled base output plus a 1.5× multiplier.\n\n### Clan & Event Mechanics\n- Corrected fuse insertion events for clans so multiple fuses inserted during the same container opening no longer trigger duplicate events.\n\n### Gameplay Stability & World Changes\n- Fixed a race condition that could corrupt items in DisplayBoxStorage, ensuring saved items remain consistent.\n- Instantiated PaintballColorLookup early to prevent save-time crashes from multithreaded access.\n- Hardened scope code to stop rare null-reference errors when using a scope.\n- Added monument blockers to red key-card doors in Underwater Labs, altering access routes.\n\n### Content Additions & AI\n- Fixed Russian Roulette storage logic (CanAcceptItem), updated prefab and localization, and rebuilt the manifest.\n- Introduced a placeholder milk item.\n- Added a first-pass squirrel interest mechanic, affecting how squirrels react to player actions.",
+    "summary": "### Crafting & Inventory\n- Fixed egg and candy vision inconsistencies when changing skins on crafting/inventory screens.\n\n### Events & Gameplay Features\n- Prevented duplicate fuse‑insert clan events during multi‑fuse container sessions.\n- Fixed Russian Roulette storage acceptance logic and updated its prefab and localization.\n- Added a toast notification informing players that modular cars now include a handbrake (appears up to five times per driver seat).\n\n### Stability Improvements\n- Eliminated a per‑zoom allocation and hardened scope handling to stop rare null‑reference crashes when using a scope.\n\n### World & Wildlife\n- Implemented first‑pass interest behaviors for rabbits and squirrels (WIP).\n- Increased sprinkler radiation output: overall 1.5× boost and double output when using radwater.\n\n### Vehicle & Combat Adjustments\n- Restored attack helicopter frame colliders, preventing unintended player damage.\n\n### Underwater Labs Access\n- Added monument blockers to red key‑card doors in Underwater Labs, restricting access to those areas.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
