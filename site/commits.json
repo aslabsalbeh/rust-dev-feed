@@ -1,5 +1,149 @@
 [
   {
+    "id": 630384,
+    "branch": "main/underground_train_network_update",
+    "changeset": "163096",
+    "created": "2026-09-03T15:50:57",
+    "message": "WIP first pass on randomised small room Variant I",
+    "user": "hannah.watts"
+  },
+  {
+    "id": 630383,
+    "branch": "main/character_customisation",
+    "changeset": "163095",
+    "created": "2026-09-03T15:49:36",
+    "message": "Add environment reflections to the character stage \r\n- Restores sky reflections in eyes",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 630382,
+    "branch": "main/character_customisation",
+    "changeset": "163093",
+    "created": "2026-09-03T15:48:45",
+    "message": "Force max res mips for all streaming textures when rendering character icons \r\n- prevents camera distance from affecting loaded icons",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 630379,
+    "branch": "main/vehicle_pooling",
+    "changeset": "163091",
+    "created": "2026-09-03T15:46:40",
+    "message": "Fix traincaraudio not having a reset state",
+    "user": "octo"
+  },
+  {
+    "id": 630377,
+    "branch": "main/animal_fencing_v2",
+    "changeset": "163090",
+    "created": "2026-09-03T15:33:59",
+    "message": "Added new sounds for the animal fences :fence::cow2::fence:",
+    "user": "diogo.c"
+  },
+  {
+    "id": 630375,
+    "branch": "main/vcc/look_boost",
+    "changeset": "163089",
+    "created": "2026-09-03T15:30:30",
+    "message": "Added boost settings to options UI",
+    "user": "Adam W"
+  },
+  {
+    "id": 630374,
+    "branch": "main/vcc/look_boost",
+    "changeset": "163088",
+    "created": "2026-09-03T15:15:16",
+    "message": "look boost",
+    "user": "Adam W"
+  },
+  {
+    "id": 630369,
+    "branch": "main/glass_ar_motion_blur_fix",
+    "changeset": "163085",
+    "created": "2026-09-03T15:01:56",
+    "message": "Fix motion blur with the Crystal AR by adding a depth-only pass",
+    "user": "Felix"
+  },
+  {
+    "id": 630366,
+    "branch": "main/glass_ar_motion_blur_fix",
+    "changeset": "163084",
+    "created": "2026-09-03T14:59:32",
+    "message": "Add support for depth only passes in ViewModelRenderer\n\nThis also simplifies the pass caching logic",
+    "user": "Felix"
+  },
+  {
+    "id": 630363,
+    "branch": "main/Livestock_animals",
+    "changeset": "163082",
+    "created": "2026-09-03T14:41:16",
+    "message": "Cherry pick 163070: Fix gen2 AI never updating its position in the brain grid, causing some brain based spatial query to be stale",
+    "user": "Maverick"
+  },
+  {
+    "id": 630362,
+    "branch": "main/character_customisation",
+    "changeset": "163081",
+    "created": "2026-09-03T14:39:41",
+    "message": "main -> character_customisation",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 630361,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "163080",
+    "created": "2026-09-03T14:39:04",
+    "message": "- Setup lerp system to realign with the server\r\n- Fix bugs with immediate release mode",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 630359,
+    "branch": "main/ai_hotfixes_for_monument_blocker_patch",
+    "changeset": "163078",
+    "created": "2026-09-03T14:34:27",
+    "message": "Add transparent layer to new navmesh bake, unity navmesh parity, else it ignores fences and npcs go through",
+    "user": "Maverick"
+  },
+  {
+    "id": 630358,
+    "branch": "main/ai_hotfixes_for_monument_blocker_patch",
+    "changeset": "163077",
+    "created": "2026-09-03T14:31:41",
+    "message": "Reduce minRegionSizeMeters for navmesh to not nuke small regions, fixing \"no navmesh on bandit watch towers\", need a better fix in the future",
+    "user": "Maverick"
+  },
+  {
+    "id": 630357,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "163076",
+    "created": "2026-09-03T14:31:05",
+    "message": "Added support for rendering layer masks between renderers and lights",
+    "user": "aidan.m"
+  },
+  {
+    "id": 630356,
+    "branch": "main/rifle_show_lod_animevents_update",
+    "changeset": "163075",
+    "created": "2026-09-03T14:30:25",
+    "message": "Rifle Anim events Update\r\n\r\nConvert existing per-LOD Hide/Show into HideLods/ShowLods (162612), which is used on the crystal ak.\r\n\r\nConverts world model magazine/attachment visibility events from four\r\nseparate Hide/Show calls (one per LOD0-3) to a single HideLods/ShowLods\r\ncall on LOD0, per the new engine support in 162612.\r\n\r\nFixed on all ak rifles, lr300 (and space skin), m16a2, m249, hmlmg, smg & thompson. 17 files updated.",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 630354,
+    "branch": "main/ai_hotfixes_for_monument_blocker_patch",
+    "changeset": "163074",
+    "created": "2026-09-03T14:28:09",
+    "message": "Fix scientists going through unopenable doors (new navmesh, the puzzle doors)",
+    "user": "Maverick"
+  },
+  {
+    "id": 630350,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "163073",
+    "created": "2026-09-03T14:07:41",
+    "message": "- New tuning dials (release types, origin types, offset types)\r\n- Setup flare with immediate mode\r\n- Clearup predicted prefab if its turned off on do prepare of an object",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 630347,
     "branch": "main/ai_hotfixes_for_monument_blocker_patch",
     "changeset": "163070",
@@ -1662,45 +1806,5 @@
     "created": "2026-08-31T16:41:32",
     "message": "Added Jukebox deployment snapping\r\nhttps://files.facepunch.com/raul/2026/August/31_18-30-KeyWildebeast.mp4",
     "author": "Raul"
-  },
-  {
-    "id": 618616,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "162669",
-    "created": "2026-08-31T16:15:17",
-    "message": "9 alpha-less BC7 albedo/em maps -> DXT1, 3 also halved (retro cupboard ems, m16a2_02, loot barrel): saved ~28 MB VRAM, no alpha lost \r\nno visual quality difference",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618613,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "162668",
-    "created": "2026-08-31T15:17:00",
-    "message": "Fixed igniter and tesla coil damage tests failing since the last optim",
-    "author": "Flavien"
-  },
-  {
-    "id": 618612,
-    "branch": "main/carvable_pumpkin_deploy_fix",
-    "changeset": "162667",
-    "created": "2026-08-31T15:14:15",
-    "message": "Improve carvable pumpkin deployment",
-    "author": "cipeaX"
-  },
-  {
-    "id": 618608,
-    "branch": "main/hackweek_iorewrite",
-    "changeset": "162663",
-    "created": "2026-08-31T14:51:40",
-    "message": "Batteries now add drain for the power actually reaching them\r\nUpdated tests",
-    "author": "Flavien"
-  },
-  {
-    "id": 618607,
-    "branch": "main/texture_optimisations_2026",
-    "changeset": "162662",
-    "created": "2026-08-31T14:25:52",
-    "message": "Regenerated MaterialIndex.json - was dated Aug 2021, so Tools/Optimize/Find Material Optimzations had been reporting 5-year-old state. Fresh scan covers 9,055 materials and flags 164 with compression savings (84 unique textures, ~68 MB VRAM potential)  for example m16a2 ao on high quality compression = 1.3mb, normal compression with no visual cost = 0.7mb \n\nFirst pass on the free wins: 15 alpha-less DXT5/BC7 textures -> DXT1, ~13 MB VRAM, no quality cost\n- m2bradley mainbody/armor: removed DXT5 standalone override (5.3 MB)\n- m16a2 AOs x3, flamethrower AO: HQ -> Normal compression (5.3 MB)\n- workbench upgrade AOs x2, apartment door mats AO, crate_2/gib/webbing AOs: HQ -> Normal compression (2.2 MB)",
-    "author": "Pilgrim"
   }
 ]
