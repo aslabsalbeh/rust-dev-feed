@@ -1,16 +1,48 @@
 {
   "2026-09-03": {
-    "commit_count": 38,
-    "relevant_commit_count": 18,
-    "relevant_signature": "630297,630303,630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379",
+    "commit_count": 44,
+    "relevant_commit_count": 22,
+    "relevant_signature": "630297,630303,630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379,630395,630398,630408,630409",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Cows now age: they slow down, sleep peacefully, can lie down, regroup at night, and have corrected hunger, thirst, and grazing behavior.",
+            "text": "Old cows now sleep, age slower, die peacefully, lie down more, and regroup at night, reducing roaming behavior.",
+            "commit_ids": [
+              630346
+            ]
+          },
+          {
+            "text": "Livestock AI position updates fixed, preventing animals from getting stuck due to stale brain‑grid data.",
+            "commit_ids": [
+              630363,
+              630347
+            ]
+          },
+          {
+            "text": "Cow and sheep hit animations updated for smoother reactions.",
+            "commit_ids": [
+              630330,
+              630314
+            ]
+          },
+          {
+            "text": "Livestock coats added, giving visual variation to animals.",
+            "commit_ids": [
+              630408
+            ]
+          },
+          {
+            "text": "Livestock hunger, thirst, and grazing bugs fixed so cows can become hungry again and find food after feeding.",
+            "commit_ids": [
+              630346
+            ]
+          },
+          {
+            "text": "Livestock death animations now include forward momentum when killed while running.",
             "commit_ids": [
               630346
             ]
@@ -18,10 +50,21 @@
         ]
       },
       {
-        "title": "Building & Defenses",
+        "title": "Grenades",
         "items": [
           {
-            "text": "New sandbag barricade variants: half‑height and three‑quarter‑height versions with proper collision and build options.",
+            "text": "Grenade client prediction now uses a lerp system to stay in sync with the server and fixes immediate‑release bugs, improving throw reliability.",
+            "commit_ids": [
+              630361
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & Deployables",
+        "items": [
+          {
+            "text": "New half‑height and three‑quarter‑height sandbag barricade variants added with proper collision and nav obstacles.",
             "commit_ids": [
               630333
             ]
@@ -29,39 +72,38 @@
         ]
       },
       {
-        "title": "Combat & Explosives",
+        "title": "UI & Interaction",
         "items": [
           {
-            "text": "Grenade client prediction fixed: lerp system realigned with server and immediate‑release bugs resolved, improving grenade timing and reliability.",
+            "text": "Composter and stove menus no longer show incorrect “Turn on/Turn off” options.",
             "commit_ids": [
-              630361
+              630409
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Audio",
+        "items": [
+          {
+            "text": "Animal fences now play new sounds when animals interact with them.",
+            "commit_ids": [
+              630377
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.",
+            "commit_ids": [
+              630395
             ]
           },
           {
-            "text": "Flare throw offset removed, restoring intended throw distance and trajectory.",
-            "commit_ids": [
-              630323
-            ]
-          }
-        ]
-      },
-      {
-        "title": "AI & NPCs",
-        "items": [
-          {
-            "text": "Gen2 AI position updates fixed, preventing stale brain‑grid data and improving AI movement and interactions.",
-            "commit_ids": [
-              630363,
-              630347
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio & Vehicles",
-        "items": [
-          {
-            "text": "Train car audio now resets correctly after stopping, eliminating lingering sounds.",
+            "text": "Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains.",
             "commit_ids": [
               630379
             ]
@@ -69,62 +111,68 @@
         ]
       },
       {
-        "title": "Store Content",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Added new Crystal AR store items and fixed UI bugs, ensuring all store sprites and videos load correctly.",
+            "text": "Throw offset reverted, restoring original weapon throw behavior for players.",
+            "commit_ids": [
+              630323
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Store",
+        "items": [
+          {
+            "text": "Crystal store prefabs added and UI bug fixed so store pages load correctly with all sprites and videos visible.",
             "commit_ids": [
               630322
             ]
           }
         ]
-      },
-      {
-        "title": "World Object Fixes",
-        "items": [
-          {
-            "text": "Resolved missing and broken LODs for numerous world objects, preventing objects from disappearing or popping out of view.",
-            "commit_ids": [
-              630312
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### Animals & Farming\n- Cows now age: they slow down, sleep peacefully, can lie down, regroup at night, and have corrected hunger, thirst, and grazing behavior.\n\n### Building & Defenses\n- New sandbag barricade variants: half‑height and three‑quarter‑height versions with proper collision and build options.\n\n### Combat & Explosives\n- Grenade client prediction fixed: lerp system realigned with server and immediate‑release bugs resolved, improving grenade timing and reliability.\n- Flare throw offset removed, restoring intended throw distance and trajectory.\n\n### AI & NPCs\n- Gen2 AI position updates fixed, preventing stale brain‑grid data and improving AI movement and interactions.\n\n### Audio & Vehicles\n- Train car audio now resets correctly after stopping, eliminating lingering sounds.\n\n### Store Content\n- Added new Crystal AR store items and fixed UI bugs, ensuring all store sprites and videos load correctly.\n\n### World Object Fixes\n- Resolved missing and broken LODs for numerous world objects, preventing objects from disappearing or popping out of view.",
+    "summary": "### Animals & AI\n- Old cows now sleep, age slower, die peacefully, lie down more, and regroup at night, reducing roaming behavior.\n- Livestock AI position updates fixed, preventing animals from getting stuck due to stale brain‑grid data.\n- Cow and sheep hit animations updated for smoother reactions.\n- Livestock coats added, giving visual variation to animals.\n- Livestock hunger, thirst, and grazing bugs fixed so cows can become hungry again and find food after feeding.\n- Livestock death animations now include forward momentum when killed while running.\n\n### Grenades\n- Grenade client prediction now uses a lerp system to stay in sync with the server and fixes immediate‑release bugs, improving throw reliability.\n\n### Building & Deployables\n- New half‑height and three‑quarter‑height sandbag barricade variants added with proper collision and nav obstacles.\n\n### UI & Interaction\n- Composter and stove menus no longer show incorrect “Turn on/Turn off” options.\n\n### Audio\n- Animal fences now play new sounds when animals interact with them.\n\n### Bug Fixes\n- Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.\n- Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains.\n\n### Gameplay & Balance\n- Throw offset reverted, restoring original weapon throw behavior for players.\n\n### UI & Store\n- Crystal store prefabs added and UI bug fixed so store pages load correctly with all sprites and videos visible.",
     "new_items": [
       {
-        "text": "Cows now age: they slow down, sleep peacefully, can lie down, regroup at night, and have corrected hunger, thirst, and grazing behavior.",
+        "text": "Livestock coats added, giving visual variation to animals.",
         "commit_ids": [
-          630346
+          630408
         ],
-        "section": "Animals & Farming"
+        "section": "Animals & AI"
       },
       {
-        "text": "Grenade client prediction fixed: lerp system realigned with server and immediate‑release bugs resolved, improving grenade timing and reliability.",
+        "text": "Composter and stove menus no longer show incorrect “Turn on/Turn off” options.",
         "commit_ids": [
-          630361
+          630409
         ],
-        "section": "Combat & Explosives"
+        "section": "UI & Interaction"
       },
       {
-        "text": "Gen2 AI position updates fixed, preventing stale brain‑grid data and improving AI movement and interactions.",
+        "text": "Animal fences now play new sounds when animals interact with them.",
         "commit_ids": [
-          630363,
-          630347
+          630377
         ],
-        "section": "AI & NPCs"
+        "section": "Audio"
       },
       {
-        "text": "Train car audio now resets correctly after stopping, eliminating lingering sounds.",
+        "text": "Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.",
+        "commit_ids": [
+          630395
+        ],
+        "section": "Bug Fixes"
+      },
+      {
+        "text": "Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains.",
         "commit_ids": [
           630379
         ],
-        "section": "Audio & Vehicles"
+        "section": "Bug Fixes"
       }
     ],
     "new_relevant_count": 5,
-    "new_summary": "- Cows now age: they slow down, sleep peacefully, can lie down, regroup at night, and have corrected hunger, thirst, and grazing behavior.\n- Grenade client prediction fixed: lerp system realigned with server and immediate‑release bugs resolved, improving grenade timing and reliability.\n- Gen2 AI position updates fixed, preventing stale brain‑grid data and improving AI movement and interactions.\n- Train car audio now resets correctly after stopping, eliminating lingering sounds."
+    "new_summary": "- Livestock coats added, giving visual variation to animals.\n- Composter and stove menus no longer show incorrect “Turn on/Turn off” options.\n- Animal fences now play new sounds when animals interact with them.\n- Resolved occasional ghost character appearing in the character creator, preventing confusing visual glitches during customization.\n- Fixed train car audio not resetting, ensuring correct engine sounds after stopping and restarting trains."
   },
   "2026-09-02": {
     "commit_count": 95,
