@@ -66,9 +66,22 @@ def parse_structured_summary(
         )
         return None
 
-    raw_sections = data.get(
-        "sections"
-    )
+    # Normally the model returns {"sections": [...]}, as requested.
+    # Some providers can still return the sections array itself even in
+    # JSON mode. Treat that shape as a recoverable equivalent instead of
+    # crashing with: AttributeError: 'list' object has no attribute 'get'.
+    if isinstance(data, dict):
+        raw_sections = data.get(
+            "sections"
+        )
+    elif isinstance(data, list):
+        print(
+            "AI returned a top-level sections list; "
+            "accepting it as structured summary data."
+        )
+        raw_sections = data
+    else:
+        return None
 
     if not isinstance(
         raw_sections,
