@@ -1,5 +1,101 @@
 [
   {
+    "id": 630237,
+    "branch": "main/Livestock_animals",
+    "changeset": "163006",
+    "created": "2026-09-02T21:47:46",
+    "message": "- Add a cooldown to the livestock flee trigger so one hit cannot re-fire it through randomIdle or chargeRun\n- Back off strayed-from-mother and strayed-from-herd for 15 s after a failed walk back\n- Require a reachable trough or barrel before it wins over grass or shore\n- Add RegroupSearchRadius so cows can find a herd further than the stray distance\n- Only send a staggered bull into flee when the hold-ground rule says he would run\n- Sample two rings and take the nearest spot in the grass and water searches\n- Record herd distress only when there is an attacker, and spend it on the first charge\n- Back off the mate search when nobody is found or the female is unreachable\n- Throttle the shore search after a miss, mirroring the grass search\n- Collapse graze and drink into shared consume transition and state classes\n- Share one speed ramp helper across follow, consume, mating and return walks\n- Add IsHerdMate, IsDependent and a centred FindNearestDependent, and use them everywhere\n- Wrap the remaining client-compiled FSM members in #if SERVER",
+    "author": "Maverick"
+  },
+  {
+    "id": 630235,
+    "branch": "main/Weapon_Refresh_Machete",
+    "changeset": "163005",
+    "created": "2026-09-02T21:35:04",
+    "message": "Machete first pass refresh anims",
+    "author": "wes.b"
+  },
+  {
+    "id": 630234,
+    "branch": "main/Livestock_animals/Seaturtle",
+    "changeset": "163004",
+    "created": "2026-09-02T21:25:50",
+    "message": "sea turtle idle and swim animation",
+    "author": "wes.b"
+  },
+  {
+    "id": 630233,
+    "branch": "main/prop_optimisations",
+    "changeset": "163003",
+    "created": "2026-09-02T21:18:49",
+    "message": "Deploy guides for the 21 heaviest guideMesh deployables switched from LOD0 to LOD1 in the Deployable component, guide tris 209,286 -> 89,540. \r\nFurnaces, computer station, lab chair, barrels, kayak, piano, medieval box, jukebox, scarecrow, purifier, repair bench, water catcher, fish trap, table lamp, hazmat plushy, standing mirror.",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 630231,
+    "branch": "main/Livestock_animals",
+    "changeset": "163002",
+    "created": "2026-09-02T21:00:50",
+    "message": "Fix cows not fleeing sometimes, add tests for bull and cows behaviour",
+    "author": "Maverick"
+  },
+  {
+    "id": 630229,
+    "branch": "main/prop_optimisations",
+    "changeset": "163000",
+    "created": "2026-09-02T20:44:20",
+    "message": "Optimised Small_Engine and SteeringWheel_Tier2 deploy guides. \r\nSmall engine guide now uses LOD2, tris 23699 -> 5288\r\nSteering wheel guide combined into one mesh from the LOD1 base and wheel, renderers 2 -> 1, guide draws 2 -> 1, tris 11162 -> 4929",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 630228,
+    "branch": "main/vcc/haptic_feedback_test",
+    "changeset": "162999",
+    "created": "2026-09-02T20:43:31",
+    "message": "Use weapon recoil values to drive haptic rumble duration/strength",
+    "author": "Adam W"
+  },
+  {
+    "id": 630227,
+    "branch": "main/prop_optimisations",
+    "changeset": "162998",
+    "created": "2026-09-02T20:30:51",
+    "message": "spotlight tripod guide combined into one mesh and one renderer.\nRenderers 4 -> 1,\nguide draws 4 -> 2,\nbuilt from the LOD1 parts so 7.6k tris -> 3.8k \r\nlooks exactly the same",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 630226,
+    "branch": "main/Livestock_animals",
+    "changeset": "162997",
+    "created": "2026-09-02T20:29:48",
+    "message": "Fix super fast acceleration on cows and sheep",
+    "author": "Maverick"
+  },
+  {
+    "id": 630225,
+    "branch": "main/glass_ar",
+    "changeset": "162996",
+    "created": "2026-09-02T20:20:19",
+    "message": "Crystal AR glass material tweaks",
+    "author": "Lain"
+  },
+  {
+    "id": 630224,
+    "branch": "main/prop_optimisations",
+    "changeset": "162995",
+    "created": "2026-09-02T20:15:55",
+    "message": "tier 3 workbench guide combined into one mesh and one renderer.\nRenderers 3 -> 1,\nguide draws 3 -> 1,\nbuilt from the LOD1 parts and tidied in blender so 7.1k tris -> 2.9k, on the shared guide_opaque material",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 630222,
+    "branch": "main/Livestock_animals",
+    "changeset": "162994",
+    "created": "2026-09-02T20:12:03",
+    "message": "Bull can kick and charge, protects the herd and moves between you and them. Can play toreador with the bull like with the croc. Herd sticks together when in danger instead of scattering. Fix cows decelerating instantly.",
+    "author": "Maverick"
+  },
+  {
     "id": 630219,
     "branch": "main/prop_optimisations",
     "changeset": "162993",
@@ -1590,21 +1686,5 @@
     "created": "2026-08-31T00:40:29",
     "message": "Add new HideLods and ShowLods animation events, same as Show/Hide but will iterate over lods 0-4 of the object provided\r\neg. Called with w_ar_glass_mag_full_LOD0, this will also show/hide LOD0,1,2,3 if they exist\r\nAll showing/hiding events now uses a lazily loaded cached renderer list so we pay slightly more the first time an animation event is fired but subsequent calls are faster and allocation free (was allocating 40b each animation event)\r\nUpdated glass ak reload to use new events",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 618370,
-    "branch": "main/deepsea_terrain_everywhere",
-    "changeset": "162609",
-    "created": "2026-08-30T23:25:02",
-    "message": "Swap the ocean colour as well",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 618362,
-    "branch": "main/texture_optimisations_2026/character",
-    "changeset": "162608",
-    "created": "2026-08-30T20:31:48",
-    "message": "Animal AO caps: croc/stag/bears/panther/shark/wolf/chicken -> 1024/512, a further 17.5MB VRAM saved",
-    "author": "Pilgrim"
   }
 ]

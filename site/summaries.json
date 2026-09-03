@@ -1,62 +1,133 @@
 {
   "2026-09-02": {
-    "commit_count": 75,
-    "relevant_commit_count": 43,
-    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216",
-    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216",
+    "commit_count": 87,
+    "relevant_commit_count": 49,
+    "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237",
+    "new_baseline_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Projectiles",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Improved client‑side prediction for all projectiles, grenades, and thrown weapons by using simulation positions and Rigidbody data.",
+            "text": "Added cooldown to livestock flee trigger, improved herd regrouping distance, introduced bull aggression (kick and charge) and herd cohesion, plus back‑off timers for stray‑from‑mother/herd and mate searches; herd now stays together in danger.",
             "commit_ids": [
-              630129,
-              630155
+              630237,
+              630222
             ]
           },
           {
-            "text": "Paintball guns now respect colour settings and flares can be ignited and thrown with correct spawn offset, expanding visual weapon options.",
+            "text": "Fixed cows sometimes not fleeing when threatened and corrected instant cow deceleration bugs.",
             "commit_ids": [
-              630164,
+              630231,
+              630226
+            ]
+          },
+          {
+            "text": "Fixed a null‑reference crash that occurred when a livestock animal died.",
+            "commit_ids": [
+              624823
+            ]
+          },
+          {
+            "text": "Introduced overgrazing: livestock can deplete grass in an area, preventing further grazing until fresh grass is found; affected animals show a label when inspected.",
+            "commit_ids": [
+              624822
+            ]
+          },
+          {
+            "text": "Added distinct activity cycles for critters (rabbits are crepuscular, squirrels are diurnal, bullfrogs no longer sleep) and removed squirrel and rabbit interest mechanics, changing how these animals react to player presence.",
+            "commit_ids": [
+              630177,
+              630167
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons & Projectiles",
+        "items": [
+          {
+            "text": "Reworked grenade and thrown‑weapon prediction to use Rigidbody information, improving accuracy before objects are removed; also corrected age calculations and ensured predicted projectile steps use the simulation position, fixing grenade trajectory prediction issues.",
+            "commit_ids": [
+              630155,
+              630129
+            ]
+          },
+          {
+            "text": "Enabled flares to be ignited and thrown in third‑person view with corrected spawn offset.",
+            "commit_ids": [
               630209
             ]
           }
         ]
       },
       {
-        "title": "Animals & AI",
+        "title": "Structures & World Interaction",
         "items": [
           {
-            "text": "Fixed a crash that occurred when livestock animals died.",
+            "text": "Fixed deployment of triangle hatches being blocked by nearby deployables.",
             "commit_ids": [
-              624823
+              629883
             ]
           },
           {
-            "text": "Added realistic sleep cycles: rabbits are crepuscular, squirrels are diurnal, and bullfrogs stay awake.",
+            "text": "Resolved mismatched enabled colliders between server and client for monument blockers and fixed a collapse blocker reference error.",
             "commit_ids": [
-              630177
+              628427
+            ]
+          },
+          {
+            "text": "Shields no longer work with flashlights; the compatibility has been disabled.",
+            "commit_ids": [
+              624820
+            ]
+          },
+          {
+            "text": "Added persistent prevent‑movement colliders to barrel blockers, keeping them solid across destruction stages.",
+            "commit_ids": [
+              629671
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server & Items",
+        "items": [
+          {
+            "text": "Fixed the \"guid is empty\" server error that occurred when first dropping certain items.",
+            "commit_ids": [
+              628066
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Controls",
+        "items": [
+          {
+            "text": "Implemented analogue accelerate/brake support for vehicles (mapped to triggers), added horn and seat‑swap bindings, and disabled steering while in UI.",
+            "commit_ids": [
+              630194
             ]
           }
         ]
       }
     ],
-    "summary": "### Weapons & Projectiles\n- Improved client‑side prediction for all projectiles, grenades, and thrown weapons by using simulation positions and Rigidbody data.\n- Paintball guns now respect colour settings and flares can be ignited and thrown with correct spawn offset, expanding visual weapon options.\n\n### Animals & AI\n- Fixed a crash that occurred when livestock animals died.\n- Added realistic sleep cycles: rabbits are crepuscular, squirrels are diurnal, and bullfrogs stay awake.",
+    "summary": "### Animals & AI\n- Added cooldown to livestock flee trigger, improved herd regrouping distance, introduced bull aggression (kick and charge) and herd cohesion, plus back‑off timers for stray‑from‑mother/herd and mate searches; herd now stays together in danger.\n- Fixed cows sometimes not fleeing when threatened and corrected instant cow deceleration bugs.\n- Fixed a null‑reference crash that occurred when a livestock animal died.\n- Introduced overgrazing: livestock can deplete grass in an area, preventing further grazing until fresh grass is found; affected animals show a label when inspected.\n- Added distinct activity cycles for critters (rabbits are crepuscular, squirrels are diurnal, bullfrogs no longer sleep) and removed squirrel and rabbit interest mechanics, changing how these animals react to player presence.\n\n### Weapons & Projectiles\n- Reworked grenade and thrown‑weapon prediction to use Rigidbody information, improving accuracy before objects are removed; also corrected age calculations and ensured predicted projectile steps use the simulation position, fixing grenade trajectory prediction issues.\n- Enabled flares to be ignited and thrown in third‑person view with corrected spawn offset.\n\n### Structures & World Interaction\n- Fixed deployment of triangle hatches being blocked by nearby deployables.\n- Resolved mismatched enabled colliders between server and client for monument blockers and fixed a collapse blocker reference error.\n- Shields no longer work with flashlights; the compatibility has been disabled.\n- Added persistent prevent‑movement colliders to barrel blockers, keeping them solid across destruction stages.\n\n### Server & Items\n- Fixed the \"guid is empty\" server error that occurred when first dropping certain items.\n\n### Vehicle Controls\n- Implemented analogue accelerate/brake support for vehicles (mapped to triggers), added horn and seat‑swap bindings, and disabled steering while in UI.",
     "new_items": [
       {
-        "text": "Paintball guns now respect colour settings and flares can be ignited and thrown with correct spawn offset, expanding visual weapon options.",
+        "text": "Added cooldown to livestock flee trigger, improved herd regrouping distance, introduced bull aggression (kick and charge) and herd cohesion, plus back‑off timers for stray‑from‑mother/herd and mate searches; herd now stays together in danger.",
         "commit_ids": [
-          630164,
-          630209
+          630237,
+          630222
         ],
-        "section": "Weapons & Projectiles"
+        "section": "Animals & AI"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- Paintball guns now respect colour settings and flares can be ignited and thrown with correct spawn offset, expanding visual weapon options."
+    "new_summary": "- Added cooldown to livestock flee trigger, improved herd regrouping distance, introduced bull aggression (kick and charge) and herd cohesion, plus back‑off timers for stray‑from‑mother/herd and mate searches; herd now stays together in danger."
   },
   "2026-09-01": {
     "commit_count": 74,
