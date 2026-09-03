@@ -1,5 +1,69 @@
 [
   {
+    "id": 630323,
+    "branch": "main/Weapon_Refresh_Flare/subsystem_implementation",
+    "changeset": "163062",
+    "created": "2026-09-03T12:04:45",
+    "message": "undo throw offset",
+    "author": "octo"
+  },
+  {
+    "id": 630322,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "163061",
+    "created": "2026-09-03T12:01:26",
+    "message": "Update: bring over crystalar store prefabs, setup with dynamic refs\r\n- fix a bug with property drawer not being able to handle null/no selection\r\n- run bundle assignation script\r\nTests: navigated through store in editor, saw it there. clicked to it's page, all sprites and vids were there",
+    "author": "Daniel P"
+  },
+  {
+    "id": 630321,
+    "branch": "main/vcc/haptic_feedback_test",
+    "changeset": "163060",
+    "created": "2026-09-03T11:57:20",
+    "message": "Adding my local SW",
+    "author": "Adam W"
+  },
+  {
+    "id": 630314,
+    "branch": "main/Livestock_animals",
+    "changeset": "163055",
+    "created": "2026-09-03T11:19:01",
+    "message": "Cow and sheep animation clip fix's",
+    "author": "wes.b"
+  },
+  {
+    "id": 630312,
+    "branch": "main/scene_lod_chain_fixes",
+    "changeset": "163053",
+    "created": "2026-09-03T11:00:35",
+    "message": "LOD chain fixes from across 57 prefabs\n6 meshes left in the cull slot now cull: snow mound, launch site floodlights, office block, planter soil, debris pillar, xmas coal pile\n2 assets had holes in their lod chain meaning they would pop out of existence, now filled: wall.third.stone showed nothing 25-45m, junkyard bradley had no LOD0\n12 out-of-order chains: cave gravel + 19 ruins copies, excavator railings, sphere tank pipes/core/ropes, launch site stairs, ziggurat pipes, trawler guard rails\n34 last LODs that never drew given their own band: fridge, fuel tank, plant pots + 9 cabin copies, cooling tower rubble, powerline platforms, carpark, crew building, range bridges, oilrig top, gun racks, medieval doors\n3 duplicate states that did nothing removed: hanging tarp, casino signs\r\n\nwill need someone to check over and do a s2p",
+    "author": "Pilgrim"
+  },
+  {
+    "id": 630310,
+    "branch": "main/oilrig_light_fix",
+    "changeset": "163052",
+    "created": "2026-09-03T10:54:23",
+    "message": "Fix a floating light on large oilrig, S2P",
+    "author": "cipeaX"
+  },
+  {
+    "id": 630306,
+    "branch": "main/vcc/haptic_feedback_test",
+    "changeset": "163048",
+    "created": "2026-09-03T10:24:46",
+    "message": "Remove the reflection hack now i've added haptic support to FP SW (locally for now)",
+    "author": "Adam W"
+  },
+  {
+    "id": 630303,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "163047",
+    "created": "2026-09-03T10:06:42",
+    "message": "Updated the GBuffer pass to use the new render graph raster pass API",
+    "author": "aidan.m"
+  },
+  {
     "id": 630299,
     "branch": "main/glass_ar",
     "changeset": "163046",
@@ -1662,45 +1726,5 @@
     "created": "2026-08-31T12:27:40",
     "message": "Paintball Gun - added ammo to LOD3 to reduce popping",
     "author": "alex.m"
-  },
-  {
-    "id": 618578,
-    "branch": "main/prop_optimisations",
-    "changeset": "162639",
-    "created": "2026-08-31T12:12:03",
-    "message": "fixed blowpipe world model material order so it can be converted to meshLOD",
-    "author": "Pilgrim"
-  },
-  {
-    "id": 618576,
-    "branch": "main/high_stakes_dlc",
-    "changeset": "162638",
-    "created": "2026-08-31T11:41:10",
-    "message": "russian roulette;\r\n- textures updated",
-    "author": "curt"
-  },
-  {
-    "id": 618572,
-    "branch": "main/ddraw_demo_fix",
-    "changeset": "162634",
-    "created": "2026-08-31T11:20:17",
-    "message": "Fixed ddraw objects showing up in demos even if ddraw.hideddrawduringdemo is true\r\nBefore: https://files.facepunch.com/raul/2026/August/31_13-18-FirebrickDromedary.mp4\r\nAfter: https://files.facepunch.com/raul/2026/August/31_13-19-GrizzledSteer.mp4",
-    "author": "Raul"
-  },
-  {
-    "id": 618568,
-    "branch": "main/paintball_gun_fixes",
-    "changeset": "162632",
-    "created": "2026-08-31T10:46:49",
-    "message": "Paintball Gun - replaced rigged mesh in worldmodel with static one, updated hopper shader to fix self sorting issues",
-    "author": "alex.m"
-  },
-  {
-    "id": 618567,
-    "branch": "main/storepage_crystalAR",
-    "changeset": "162631",
-    "created": "2026-08-31T10:25:38",
-    "message": "Disabled skin viewer viewmodel inspection for the crystal AR, SSR just cant work in the skin viewer so it looked terrible",
-    "author": "Flavien"
   }
 ]
