@@ -29,8 +29,9 @@ def load_summaries():
 
 
 def markdown_to_html(text):
+    safe_text = escape(str(text))
     return markdown.markdown(
-        text,
+        safe_text,
         extensions=[
             "extra",
             "sane_lists",
@@ -156,10 +157,18 @@ def main():
         LOCAL_TZ
     ).date()
 
-    for day in dates:
-        data = summaries[day]
+    rendered_days = 0
 
-        item_date = datetime.fromisoformat(day).date()
+    for day in dates:
+        data = summaries.get(day)
+        if not isinstance(data, dict):
+            print(f"Skipping malformed summary day {day}: not an object.")
+            continue
+        try:
+            item_date = datetime.fromisoformat(day).date()
+        except (TypeError, ValueError):
+            print(f"Skipping malformed summary day key: {day!r}")
+            continue
         days_ago = (today_date - item_date).days
 
         if days_ago == 0:
@@ -196,7 +205,10 @@ def main():
             )
         else:
             summary_html = markdown_to_html(
-                data["summary"]
+                data.get(
+                    "summary",
+                    "No significant player-facing updates.",
+                )
             )
 
         new_html = ""
@@ -241,7 +253,7 @@ def main():
 
         description_html = f"""
 <div class="rust-dev-summary">
-<p><strong>{data['commit_count']} development commits</strong></p>
+<p><strong>{data.get('commit_count', 0)} development commits</strong></p>
 {new_html}
 {summary_html}
 </div>
@@ -264,6 +276,7 @@ def main():
             day,
             days_ago == 0,
         )
+        rendered_days += 1
 
     tree = ElementTree(rss)
 
@@ -279,7 +292,7 @@ def main():
     )
     print(
         f"Generated RSS feed with "
-        f"{len(dates)} daily items."
+        f"{rendered_days} daily items."
     )
 
 
