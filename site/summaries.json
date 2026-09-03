@@ -293,33 +293,38 @@
     "new_summary": ""
   },
   "2026-08-31": {
-    "commit_count": 47,
-    "relevant_commit_count": 27,
+    "commit_count": 46,
+    "relevant_commit_count": 26,
     "relevant_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671,618677,618684,618687",
     "new_baseline_signature": "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618659,618667,618671,618677,618684,618687",
     "prompt_version": "structured-read-state-v5-player-signal",
     "chunk_cache": {
-      "618387,618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618667,618677,618684,618687,618691,618692,618693": [
+      "618436,618438,618572,618579,618581,618585,618588,618592,618593,618597,618602,618606,618612,618613,618626,618627,618654,618667,618671,618677,618684,618687,618691,618692,618693": [
         {
           "title": "Building & Structures",
           "items": [
             {
-              "text": "Fixed scale override on large rig monument blocker that caused collision issues and added missing vent cages.",
+              "text": "Fixed collision issue on large rig monument blocker caused by a scale override, restoring proper player movement around the structure",
               "commit_ids": [
                 618436
               ]
             },
             {
-              "text": "Pipe access fixes: prevented trees from spawning inside pipes, improved terrain transition near pipes, and added beach to water pipe topology.",
+              "text": "Added missing vent cages to large and small oil rigs, improving functionality of those monuments",
               "commit_ids": [
-                618585,
+                618436
+              ]
+            },
+            {
+              "text": "Added beach terrain to water pipe topology, expanding pipe placement options",
+              "commit_ids": [
                 618592
               ]
             },
             {
-              "text": "Improved deployment of carvable pumpkins.",
+              "text": "Fixed pipe access bugs, prevented trees from spawning inside pipes, and smoothed terrain transitions near pipes",
               "commit_ids": [
-                618612
+                618585
               ]
             }
           ]
@@ -328,15 +333,21 @@
           "title": "Player Mechanics",
           "items": [
             {
-              "text": "Footstep sounds now play correctly when players are heavily armored or wearing diving fins while slowed.",
+              "text": "Restored footstep sounds for players slowed by heavy armor or while wearing diving fins on land",
               "commit_ids": [
                 618677
               ]
             },
             {
-              "text": "Fixed a typo that prevented sleepers from being killed in safezones after a server restart.",
+              "text": "Corrected a typo that prevented sleepers from being killed in safezones after a server restart",
               "commit_ids": [
                 618581
+              ]
+            },
+            {
+              "text": "Improved deployment of carvable pumpkins, making placement more reliable",
+              "commit_ids": [
+                618612
               ]
             }
           ]
@@ -345,15 +356,38 @@
           "title": "Animals & Livestock",
           "items": [
             {
-              "text": "Animals will now eat from troughs, prioritizing them over grazing on grass.",
+              "text": "Animals now prioritize eating from troughs over grazing on grass",
               "commit_ids": [
                 618691
               ]
             },
             {
-              "text": "Added shearing interaction for livestock.",
+              "text": "Added shearing interaction for livestock, enabling players to shear animals",
               "commit_ids": [
                 618687
+              ]
+            },
+            {
+              "text": "Enabled fur shader toggle for sheared animals and added debug commands for milking and shearing readiness",
+              "commit_ids": [
+                618693
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & Audio",
+          "items": [
+            {
+              "text": "Fixed missing name token for HQM collectable, ensuring proper display in UI",
+              "commit_ids": [
+                618593
+              ]
+            },
+            {
+              "text": "Improved alignment of clan tags on player nameplates when auto-sized",
+              "commit_ids": [
+                618597
               ]
             }
           ]
