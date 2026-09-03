@@ -15,9 +15,11 @@ try:
     )
     from scripts.providers import is_bad_summary, request_sections
     from scripts.relevance import (
+        RELEVANCE_THRESHOLD,
         filter_player_relevant_commits,
         player_relevance_score,
     )
+    from scripts.timeutil import parse_utc_timestamp
 except ModuleNotFoundError:
     # Direct script execution: python scripts/summarize.py
     from prompts import (
@@ -28,9 +30,11 @@ except ModuleNotFoundError:
     )
     from providers import is_bad_summary, request_sections
     from relevance import (
+        RELEVANCE_THRESHOLD,
         filter_player_relevant_commits,
         player_relevance_score,
     )
+    from timeutil import parse_utc_timestamp
 
 
 COMMITS_FILE = Path("site/commits.json")
@@ -38,20 +42,28 @@ SUMMARY_FILE = Path("site/summaries.json")
 LOCAL_TZ = ZoneInfo("America/Toronto")
 CHUNK_SIZE = 25
 
-# Prompt content now includes strategic gameplay/balance rules.
-PROMPT_VERSION = "structured-read-state-v5-player-signal"
+# Bump when prompt, relevance, merge, or rescue behavior changes.
+PROMPT_VERSION = "structured-read-state-v6-stable-published"
 
 
 
 def load_json(path, default):
     if not path.exists():
         return default
-
     try:
         with open(path, "r", encoding="utf-8") as file:
             return json.load(file)
-    except Exception:
-        return default
+    except (json.JSONDecodeError, UnicodeDecodeError, OSError) as error:
+        raise RuntimeError(f"Existing JSON state is unreadable: {path}") from error
+
+
+def atomic_write_json(path, data):
+    temp_path = path.with_name(path.name + ".tmp")
+    with open(temp_path, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=2, ensure_ascii=False)
+        file.flush()
+        os.fsync(file.fileno())
+    os.replace(temp_path, path)
 
 
 NEW_WINDOW = timedelta(hours=3)
@@ -59,21 +71,7 @@ NEW_WINDOW = timedelta(hours=3)
 
 def commit_created_utc(commit):
     """Return a commit's created timestamp as an aware UTC datetime."""
-    value = str(commit["created"]).strip()
-
-    # Facepunch currently returns naive ISO timestamps that represent UTC,
-    # but also accept explicit Z/offset timestamps so this remains robust.
-    if value.endswith("Z"):
-        value = value[:-1] + "+00:00"
-
-    created = datetime.fromisoformat(value)
-
-    if created.tzinfo is None:
-        created = created.replace(tzinfo=timezone.utc)
-    else:
-        created = created.astimezone(timezone.utc)
-
-    return created
+    return parse_utc_timestamp(commit["created"])
 
 
 def commit_local_date(commit):
@@ -592,6 +590,67 @@ def rescue_missing_high_impact_commits(
         rescue_sections,
     )
 
+
+def previously_published_missing_commits(commits, old_sections, new_sections):
+    """Return relevant commits that were published before but disappeared."""
+    dropped_ids = (
+        represented_commit_ids_from_sections(old_sections or [])
+        - represented_commit_ids_from_sections(new_sections or [])
+    )
+    return [
+        commit
+        for commit in commits
+        if (
+            str(commit["id"]) in dropped_ids
+            and player_relevance_score(commit) >= RELEVANCE_THRESHOLD
+        )
+    ]
+
+
+def rescue_previously_published_commits(
+    groq_key,
+    openrouter_key,
+    day,
+    commits,
+    old_sections,
+    sections,
+):
+    missing = previously_published_missing_commits(
+        commits, old_sections, sections
+    )
+    if not missing:
+        return sections
+
+    print(
+        "WARNING: Previously published relevant commits disappeared "
+        "during regeneration; attempting stability rescue:"
+    )
+    for commit in missing:
+        message = commit.get("message", "").replace("\n", " ").replace("\r", " ")
+        print(f"  {commit['id']}: {message[:140]}")
+
+    rescue_sections = request_sections(
+        groq_key,
+        openrouter_key,
+        build_rescue_prompt(day, missing),
+        commit_ids(missing),
+        f"{day} published-item stability rescue",
+    )
+    if rescue_sections is None:
+        print("Published-item stability rescue failed; keeping new summary.")
+        return sections
+
+    rescued_ids = represented_commit_ids_from_sections(rescue_sections)
+    if not rescued_ids:
+        return sections
+
+    print(
+        f"Published-item stability rescue restored "
+        f"{len(rescued_ids)} source commit(s)."
+    )
+    return merge_sections_by_title(sections, rescue_sections)
+
+
 def main():
     groq_key = os.environ.get(
         "GROQ_API_KEY"
@@ -837,6 +896,25 @@ def main():
                     sections,
                 )
 
+                if old_has_structured_sections:
+                    sections = rescue_previously_published_commits(
+                        groq_key,
+                        openrouter_key,
+                        day,
+                        relevant_commits,
+                        old_sections,
+                        sections,
+                    )
+
+                represented_count = len(
+                    represented_commit_ids_from_sections(sections)
+                )
+                print(
+                    f"Summary coverage for {day}: "
+                    f"{represented_count}/{len(relevant_commits)} "
+                    "relevant source commit(s) represented."
+                )
+
                 summary_markdown = (
                     sections_to_markdown(
                         sections
@@ -946,11 +1024,6 @@ def main():
                     "rolling 3-hour NEW window."
                 )
 
-        # Retain this field for backwards compatibility with existing
-        # summaries/readers, but NEW no longer depends on a baseline.
-        new_baseline_out = (
-            full_signature_out
-        )
 
         # ----------------------------------------------------
         # SAVE DAY
@@ -969,9 +1042,6 @@ def main():
                 full_signature_out
             ),
 
-            "new_baseline_signature": (
-                new_baseline_out
-            ),
 
             "prompt_version": (
                 PROMPT_VERSION
@@ -1002,17 +1072,10 @@ def main():
             ),
         }
 
-    with open(
+    atomic_write_json(
         SUMMARY_FILE,
-        "w",
-        encoding="utf-8",
-    ) as file:
-        json.dump(
-            summaries,
-            file,
-            indent=2,
-            ensure_ascii=False,
-        )
+        summaries,
+    )
 
     print(
         f"Saved {len(summaries)} "
