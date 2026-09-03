@@ -145,3 +145,23 @@ def test_filter_keeps_signal_and_drops_polish():
     result = filter_player_relevant_commits(commits)
     ids = {item["id"] for item in result}
     assert ids == {1, 3}
+
+
+def test_filter_preserves_input_order_for_cache_stability():
+    commits = [
+        {**commit("Fixed minor player-visible bug"), "id": 10},
+        {**commit("Reduced grenade stack size from 5 to 3"), "id": 11},
+        {**commit("SAM sites now destroy drone-dropped explosives"), "id": 12},
+    ]
+    result = filter_player_relevant_commits(commits)
+    assert [item["id"] for item in result] == [10, 11, 12]
+
+
+def test_steam_does_not_match_team_strategic_term():
+    item = {
+        "id": 99,
+        "branch": "main/store_images",
+        "message": "added square steam images to crystal ar pack, updated store icon",
+        "created": "2026-09-03T12:00:00",
+    }
+    assert player_relevance_score(item) < RELEVANCE_THRESHOLD
