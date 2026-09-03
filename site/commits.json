@@ -1,5 +1,69 @@
 [
   {
+    "id": 630267,
+    "branch": "main/Livestock_animals",
+    "changeset": "163032",
+    "created": "2026-09-03T01:53:19",
+    "message": "Sheep and lamb ragdolls",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 630266,
+    "branch": "main/Livestock_animals",
+    "changeset": "163031",
+    "created": "2026-09-03T01:44:37",
+    "message": "Calf corpses",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 630265,
+    "branch": "main/Livestock_animals",
+    "changeset": "163030",
+    "created": "2026-09-03T01:36:14",
+    "message": "A few more tweaks to the ragdoll copier to save some clicks\r\nBull ragdoll",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 630264,
+    "branch": "main/Livestock_animals",
+    "changeset": "163029",
+    "created": "2026-09-03T01:23:08",
+    "message": "Cow ragdoll joint improvements",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 630263,
+    "branch": "main/arrowhead_load_fix_2",
+    "changeset": "163028",
+    "created": "2026-09-03T01:23:01",
+    "message": "Fix arrowheads being missing when equipping a pre-loaded crossbow",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 630262,
+    "branch": "main/Livestock_animals",
+    "changeset": "163027",
+    "created": "2026-09-03T01:14:27",
+    "message": "Compile fix",
+    "author": "Jarryd Campi"
+  },
+  {
+    "id": 630259,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "163025",
+    "created": "2026-09-03T00:52:17",
+    "message": "- Split logic into a seperate .Prediction file\r\n- Revert RIgidbodyInfo (not needed anymore)\r\n- Move a bunch of bake processing into DoPrepare\r\n- Send client simulated projectile at animator speed by sampling last few animator frames\r\n- Add support for flares/molotov effects - disable the real entities effects",
+    "author": "Ian Henderson"
+  },
+  {
+    "id": 630257,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "163023",
+    "created": "2026-09-03T00:41:04",
+    "message": "fix RRP having been force default enabled",
+    "author": "Brian"
+  },
+  {
     "id": 630237,
     "branch": "main/Livestock_animals",
     "changeset": "163006",
@@ -1669,22 +1733,6 @@
     "changeset": "162618",
     "created": "2026-08-31T03:59:14",
     "message": "Added new ViewmodelClothingRandomiser component\r\nAllows us to mirror the randomisation applied to a Wearable to it's viewmodel in case that randomisation affects the arms\r\nComponent has a groups array like the Random section of the Wearable, when used the group count needs to match (as we'll just copy over which \"group\" was activated)",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 618380,
-    "branch": "main/heavy_helmet_audio",
-    "changeset": "162615",
-    "created": "2026-08-31T01:13:00",
-    "message": "In game player voices are now also muffled by heavy plate helmet\r\nIncreased volume reduction (was 2400, now 1800)",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 618377,
-    "branch": "main/glass_ar",
-    "changeset": "162612",
-    "created": "2026-08-31T00:40:29",
-    "message": "Add new HideLods and ShowLods animation events, same as Show/Hide but will iterate over lods 0-4 of the object provided\r\neg. Called with w_ar_glass_mag_full_LOD0, this will also show/hide LOD0,1,2,3 if they exist\r\nAll showing/hiding events now uses a lazily loaded cached renderer list so we pay slightly more the first time an animation event is fired but subsequent calls are faster and allocation free (was allocating 40b each animation event)\r\nUpdated glass ak reload to use new events",
     "author": "Jarryd Campi"
   }
 ]
