@@ -1,18 +1,47 @@
 {
   "2026-09-04": {
-    "commit_count": 33,
-    "relevant_commit_count": 19,
-    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576",
+    "commit_count": 36,
+    "relevant_commit_count": 21,
+    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Livestock now correctly tracks grazing and drinking, preventing perpetual fullness loss and allowing starving animals to roam for food.",
+            "text": "Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.",
             "commit_ids": [
-              630551,
+              630609
+            ]
+          },
+          {
+            "text": "Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.",
+            "commit_ids": [
+              630609
+            ]
+          },
+          {
+            "text": "Calves move faster to keep up with their mothers despite their small legs.",
+            "commit_ids": [
+              630609
+            ]
+          },
+          {
+            "text": "Newborn calves now spawn lying down and slowly get up while the mother watches.",
+            "commit_ids": [
+              630609
+            ]
+          },
+          {
+            "text": "Starving animals now roam in search of food, and the drink rate has been restored, fixing fullness loss while grazing.",
+            "commit_ids": [
+              630551
+            ]
+          },
+          {
+            "text": "Cows now correctly idle and rest instead of constantly grazing or roaming excessively.",
+            "commit_ids": [
               630528
             ]
           }
@@ -22,74 +51,87 @@
         "title": "Weapons",
         "items": [
           {
-            "text": "Fixed arrow reloading issue where switching arrow types caused arrows to load incorrectly after the arrowhead.",
+            "text": "Arrow reloading now works correctly when switching arrow types, preventing arrows from loading after the arrowhead.",
             "commit_ids": [
               630523
             ]
-          }
-        ]
-      },
-      {
-        "title": "Item Visuals",
-        "items": [
+          },
           {
-            "text": "Paintball gun now correctly updates its colour when equipped.",
+            "text": "Paintball guns now update their colour correctly when equipped.",
             "commit_ids": [
               630531
             ]
-          },
-          {
-            "text": "Bee grenade viewmodel visual drift and clipping have been fixed, restoring proper appearance.",
-            "commit_ids": [
-              630502
-            ]
-          },
-          {
-            "text": "Transparent AR skins (e.g., Crystal) now render motion vectors correctly, improving visual fidelity.",
-            "commit_ids": [
-              630553
-            ]
           }
         ]
       },
       {
-        "title": "Store UI",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "A loading blocker appears if the store isn’t fully warmed up, preventing empty or broken UI.",
+            "text": "Character creator field of view corrected, removing the overly tight perspective.",
+            "commit_ids": [
+              630564
+            ]
+          },
+          {
+            "text": "Store now shows a loading blocker until fully ready, preventing premature access.",
             "commit_ids": [
               630495
             ]
           },
           {
-            "text": "Pressing store items no longer crashes due to a null reference, stabilizing store interactions.",
+            "text": "Pressing items in the store no longer causes errors, fixing a crash/interaction bug.",
             "commit_ids": [
               630493
             ]
           }
         ]
-      }
-    ],
-    "summary": "### Animals & Farming\n- Livestock now correctly tracks grazing and drinking, preventing perpetual fullness loss and allowing starving animals to roam for food.\n\n### Weapons\n- Fixed arrow reloading issue where switching arrow types caused arrows to load incorrectly after the arrowhead.\n\n### Item Visuals\n- Paintball gun now correctly updates its colour when equipped.\n- Bee grenade viewmodel visual drift and clipping have been fixed, restoring proper appearance.\n- Transparent AR skins (e.g., Crystal) now render motion vectors correctly, improving visual fidelity.\n\n### Store UI\n- A loading blocker appears if the store isn’t fully warmed up, preventing empty or broken UI.\n- Pressing store items no longer crashes due to a null reference, stabilizing store interactions.",
-    "new_items": [
-      {
-        "text": "Livestock now correctly tracks grazing and drinking, preventing perpetual fullness loss and allowing starving animals to roam for food.",
-        "commit_ids": [
-          630551,
-          630528
-        ],
-        "section": "Animals & Farming"
       },
       {
-        "text": "Transparent AR skins (e.g., Crystal) now render motion vectors correctly, improving visual fidelity.",
-        "commit_ids": [
-          630553
-        ],
-        "section": "Item Visuals"
+        "title": "Visual Fixes",
+        "items": [
+          {
+            "text": "Bee grenade viewmodel visuals are stable, eliminating drift and clipping issues.",
+            "commit_ids": [
+              630502
+            ]
+          }
+        ]
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Livestock now correctly tracks grazing and drinking, preventing perpetual fullness loss and allowing starving animals to roam for food.\n- Transparent AR skins (e.g., Crystal) now render motion vectors correctly, improving visual fidelity."
+    "summary": "### NPC & AI\n- Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.\n- Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.\n- Calves move faster to keep up with their mothers despite their small legs.\n- Newborn calves now spawn lying down and slowly get up while the mother watches.\n- Starving animals now roam in search of food, and the drink rate has been restored, fixing fullness loss while grazing.\n- Cows now correctly idle and rest instead of constantly grazing or roaming excessively.\n\n### Weapons\n- Arrow reloading now works correctly when switching arrow types, preventing arrows from loading after the arrowhead.\n- Paintball guns now update their colour correctly when equipped.\n\n### UI & Quality of Life\n- Character creator field of view corrected, removing the overly tight perspective.\n- Store now shows a loading blocker until fully ready, preventing premature access.\n- Pressing items in the store no longer causes errors, fixing a crash/interaction bug.\n\n### Visual Fixes\n- Bee grenade viewmodel visuals are stable, eliminating drift and clipping issues.",
+    "new_items": [
+      {
+        "text": "Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.",
+        "commit_ids": [
+          630609
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.",
+        "commit_ids": [
+          630609
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Calves move faster to keep up with their mothers despite their small legs.",
+        "commit_ids": [
+          630609
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Newborn calves now spawn lying down and slowly get up while the mother watches.",
+        "commit_ids": [
+          630609
+        ],
+        "section": "NPC & AI"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.\n- Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.\n- Calves move faster to keep up with their mothers despite their small legs.\n- Newborn calves now spawn lying down and slowly get up while the mother watches."
   },
   "2026-09-03": {
     "commit_count": 55,
