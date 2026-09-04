@@ -1,63 +1,63 @@
 {
   "2026-09-04": {
-    "commit_count": 38,
-    "relevant_commit_count": 21,
-    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609",
+    "commit_count": 42,
+    "relevant_commit_count": 23,
+    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609,630634,630637",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.",
+            "text": "Cows now retain memory of being attacked and won’t instantly become friendly after fleeing.",
             "commit_ids": [
               630609
             ]
           },
           {
-            "text": "Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.",
+            "text": "Cows can kick players who get too close while they are fleeing.",
             "commit_ids": [
               630609
             ]
           },
           {
-            "text": "Calves move faster to keep up with their mothers despite their small legs.",
+            "text": "Calf movement speed increased; newborn animals spawn lying down and stand up gradually.",
             "commit_ids": [
               630609
             ]
           },
           {
-            "text": "Newborn calves now spawn lying down and slowly get up while the mother watches.",
+            "text": "Cows now have proper idle and resting behavior instead of constantly grazing or roaming excessively.",
             "commit_ids": [
-              630609
+              630528
             ]
           },
           {
-            "text": "Starving animals now roam in search of food, and the drink rate has been restored, fixing fullness loss while grazing.",
+            "text": "Grazing fullness no longer decreases while walking, drink rate restored, and starving animals will roam to find food.",
             "commit_ids": [
               630551
             ]
           },
           {
-            "text": "Cows now correctly idle and rest instead of constantly grazing or roaming excessively.",
+            "text": "New cow stomp animation added, giving a visual cue when cows are attacked.",
             "commit_ids": [
-              630528
+              630543
             ]
           }
         ]
       },
       {
-        "title": "Weapons",
+        "title": "Weapons & Combat",
         "items": [
           {
-            "text": "Arrow reloading now works correctly when switching arrow types, preventing arrows from loading after the arrowhead.",
+            "text": "Fixed arrow reloading bug where switching arrow types caused arrows to load after the arrowhead.",
             "commit_ids": [
               630523
             ]
           },
           {
-            "text": "Paintball guns now update their colour correctly when equipped.",
+            "text": "Paintball gun now correctly updates its colour when equipped.",
             "commit_ids": [
               630531
             ]
@@ -65,22 +65,38 @@
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Admin Tools",
         "items": [
           {
-            "text": "Character creator field of view corrected, removing the overly tight perspective.",
+            "text": "Admin kicking command now works correctly.",
             "commit_ids": [
-              630564
+              630634
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Achievements",
+        "items": [
           {
-            "text": "Store now shows a loading blocker until fully ready, preventing premature access.",
+            "text": "New achievement for inserting a heavy fuse into the power plant.",
+            "commit_ids": [
+              630637
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Store UI",
+        "items": [
+          {
+            "text": "Store UI now shows a loading blocker until the store is fully warmed up, preventing empty screens.",
             "commit_ids": [
               630495
             ]
           },
           {
-            "text": "Pressing items in the store no longer causes errors, fixing a crash/interaction bug.",
+            "text": "Fixed crash when pressing a store item (NRE) and added breadcrumbs for debugging.",
             "commit_ids": [
               630493
             ]
@@ -88,10 +104,16 @@
         ]
       },
       {
-        "title": "Visual Fixes",
+        "title": "Visual & UI Fixes",
         "items": [
           {
-            "text": "Bee grenade viewmodel visuals are stable, eliminating drift and clipping issues.",
+            "text": "Character creator now uses a normal field of view, fixing the previously overly tight view.",
+            "commit_ids": [
+              630564
+            ]
+          },
+          {
+            "text": "Bee grenade viewmodel visuals no longer drift or clip, providing stable appearance.",
             "commit_ids": [
               630502
             ]
@@ -99,39 +121,25 @@
         ]
       }
     ],
-    "summary": "### NPC & AI\n- Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.\n- Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.\n- Calves move faster to keep up with their mothers despite their small legs.\n- Newborn calves now spawn lying down and slowly get up while the mother watches.\n- Starving animals now roam in search of food, and the drink rate has been restored, fixing fullness loss while grazing.\n- Cows now correctly idle and rest instead of constantly grazing or roaming excessively.\n\n### Weapons\n- Arrow reloading now works correctly when switching arrow types, preventing arrows from loading after the arrowhead.\n- Paintball guns now update their colour correctly when equipped.\n\n### UI & Quality of Life\n- Character creator field of view corrected, removing the overly tight perspective.\n- Store now shows a loading blocker until fully ready, preventing premature access.\n- Pressing items in the store no longer causes errors, fixing a crash/interaction bug.\n\n### Visual Fixes\n- Bee grenade viewmodel visuals are stable, eliminating drift and clipping issues.",
+    "summary": "### Animals & AI\n- Cows now retain memory of being attacked and won’t instantly become friendly after fleeing.\n- Cows can kick players who get too close while they are fleeing.\n- Calf movement speed increased; newborn animals spawn lying down and stand up gradually.\n- Cows now have proper idle and resting behavior instead of constantly grazing or roaming excessively.\n- Grazing fullness no longer decreases while walking, drink rate restored, and starving animals will roam to find food.\n- New cow stomp animation added, giving a visual cue when cows are attacked.\n\n### Weapons & Combat\n- Fixed arrow reloading bug where switching arrow types caused arrows to load after the arrowhead.\n- Paintball gun now correctly updates its colour when equipped.\n\n### Admin Tools\n- Admin kicking command now works correctly.\n\n### Achievements\n- New achievement for inserting a heavy fuse into the power plant.\n\n### Store UI\n- Store UI now shows a loading blocker until the store is fully warmed up, preventing empty screens.\n- Fixed crash when pressing a store item (NRE) and added breadcrumbs for debugging.\n\n### Visual & UI Fixes\n- Character creator now uses a normal field of view, fixing the previously overly tight view.\n- Bee grenade viewmodel visuals no longer drift or clip, providing stable appearance.",
     "new_items": [
       {
-        "text": "Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.",
+        "text": "Admin kicking command now works correctly.",
         "commit_ids": [
-          630609
+          630634
         ],
-        "section": "NPC & AI"
+        "section": "Admin Tools"
       },
       {
-        "text": "Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.",
+        "text": "New achievement for inserting a heavy fuse into the power plant.",
         "commit_ids": [
-          630609
+          630637
         ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Calves move faster to keep up with their mothers despite their small legs.",
-        "commit_ids": [
-          630609
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Newborn calves now spawn lying down and slowly get up while the mother watches.",
-        "commit_ids": [
-          630609
-        ],
-        "section": "NPC & AI"
+        "section": "Achievements"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Cows now remember being attacked, will not become passive immediately, and can kick players who get too close while fleeing.\n- Bulls now stand their ground and attack when threatened (e.g., shooting nearby) instead of continuing to graze, and they no longer turn their back when defending a cow.\n- Calves move faster to keep up with their mothers despite their small legs.\n- Newborn calves now spawn lying down and slowly get up while the mother watches."
+    "new_relevant_count": 2,
+    "new_summary": "- Admin kicking command now works correctly.\n- New achievement for inserting a heavy fuse into the power plant."
   },
   "2026-09-03": {
     "commit_count": 55,
