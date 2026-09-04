@@ -1,5 +1,29 @@
 [
   {
+    "id": 630450,
+    "branch": "main/prop_optimisations",
+    "changeset": "163129",
+    "created": "2026-09-03T22:56:38",
+    "message": "Bee grenade world model pass\r\njar bees combined 17 -> 1 renderer in the shared WM Jar Bees prefab with LOD Group slots re-pointed on world model, \r\nheld entity and tin can alarm updated \r\n\r\nbody LOD0 6586 -> 4618 tris and LOD1 3412 -> 1705\r\n\r\nviewmodel backface and blur glass removed from the world model, 29 -> 11 transforms with no real visual difference at that size",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 630448,
+    "branch": "main/powergridenginefx_nrefix",
+    "changeset": "163128",
+    "created": "2026-09-03T22:29:27",
+    "message": "More null guards, including against sounds",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 630446,
+    "branch": "main/prop_optimisations",
+    "changeset": "163127",
+    "created": "2026-09-03T22:07:34",
+    "message": "De-rigged the M92 world model - 3 skinned renderers over a 4 bone rig replaced with static meshes from a new w_m92_worldmodel.fbx, LOD0 3532 -> 1766 tris, LOD distances and highlight unchanged",
+    "user": "Pilgrim"
+  },
+  {
     "id": 630441,
     "branch": "main/prop_optimisations",
     "changeset": "163125",
@@ -1814,37 +1838,5 @@
     "created": "2026-09-01T00:29:13",
     "message": "Show a mesh quality slider when previewing a LOD, allows us to quickly see what things look like at different quality settings",
     "author": "Jarryd Campi"
-  },
-  {
-    "id": 618677,
-    "branch": "main/footstep_heavy_armour_fix",
-    "changeset": "162701",
-    "created": "2026-09-01T00:16:39",
-    "message": "Fixed player footsteps not playing when slowed by excessive amount of armour\r\nAffects players wearing full plate set as well as diving fins while walking on land",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 618676,
-    "branch": "main/character_customisation",
-    "changeset": "162700",
-    "created": "2026-09-01T00:09:47",
-    "message": "main -> character_customisation",
-    "author": "Ian Henderson"
-  },
-  {
-    "id": 618671,
-    "branch": "main/lod_preview",
-    "changeset": "162698",
-    "created": "2026-08-31T23:10:01",
-    "message": "Added LOD preview mode to the RendererLOD, MeshLOD and MeshCull inspector\r\nWhen enabled will run the LOD process just for that object in edit mode, so we can test LOD ranges without going into play mode\r\nSupports multi select, also draws a box around the object in the scene view with a label for it's LOD\r\nWorks in prefab editing and in the scene view",
-    "author": "Jarryd Campi"
-  },
-  {
-    "id": 618667,
-    "branch": "main/planter_guide_fix",
-    "changeset": "162696",
-    "created": "2026-08-31T22:34:11",
-    "message": "Planters: improved placement guide meshes\n\n- new low-poly guide meshes for large, small and triangle planters - all three were using their full LOD0 mesh as the deploy guide that was missing the soil\nnow looks and feels way less jarring and much more satisfying \r\n\r\nhttps://files.facepunch.com/pilgrim/2026/August/31_23-29-IvoryMussaurus.mp4",
-    "author": "Pilgrim"
   }
 ]
