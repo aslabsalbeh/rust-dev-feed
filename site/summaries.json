@@ -1,18 +1,22 @@
 {
   "2026-09-04": {
-    "commit_count": 56,
-    "relevant_commit_count": 36,
-    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609,630634,630637,630647,630648,630649,630650,630651,630652,630653,630654,630655,630656,630657,630664,630665",
+    "commit_count": 57,
+    "relevant_commit_count": 37,
+    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609,630634,630637,630647,630648,630649,630650,630651,630652,630653,630654,630655,630656,630657,630664,630665,630669",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Buildings & DLC",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Added a building grade system and upgrade command for the Scrap King building skin DLC, letting players upgrade structures and see localized grade names.",
+            "text": "Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.",
             "commit_ids": [
-              630665
+              630669,
+              630634,
+              630609,
+              630551,
+              630528
             ]
           }
         ]
@@ -21,7 +25,7 @@
         "title": "Achievements",
         "items": [
           {
-            "text": "Introduced a new achievement for inserting a heavy fuse into the power plant and added tracking of the player responsible for item moves, fixing related analytics.",
+            "text": "Added a new achievement for inserting a heavy fuse into the power plant and fixed player attribution for item moves, improving analytics.",
             "commit_ids": [
               630637
             ]
@@ -29,33 +33,21 @@
         ]
       },
       {
-        "title": "Livestock & Animal AI",
+        "title": "Building & Upgrades",
         "items": [
           {
-            "text": "Overhauled livestock AI: cows now remember attacks, can kick, have better flee behavior, calves run faster and spawn lying down, plus new stomp, sheep turns, happy canter animations; also fixed hunger mechanics, grazing fullness, drink rate, and allowed starving animals to roam for food.",
+            "text": "Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players.",
             "commit_ids": [
-              630609,
-              630551
+              630665
             ]
           }
         ]
       },
       {
-        "title": "NPC & AI Interaction",
+        "title": "Weapons & Items",
         "items": [
           {
-            "text": "Fixed AI showstate text line formatting and restored the kicking interaction, allowing players to successfully kick when intended.",
-            "commit_ids": [
-              630634
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Tools",
-        "items": [
-          {
-            "text": "Paintball gun now updates its colour when equipped, and archery reloading bug fixed so switching arrow types no longer misloads arrows, ensuring proper ammo handling.",
+            "text": "Weapon fixes: paintball gun now updates its colour when equipped, and arrow reloading correctly respects the selected arrow type.",
             "commit_ids": [
               630531,
               630523
@@ -64,22 +56,22 @@
         ]
       },
       {
-        "title": "Store UI",
+        "title": "Store & UI",
         "items": [
           {
-            "text": "Improved store UI stability: a loading blocker appears if the store isn’t fully warmed up, and a null reference error on item press has been fixed, preventing crashes when purchasing.",
+            "text": "Store UI crash fixed; pressing a store item no longer triggers a null‑reference error, and a loading blocker appears if the store isn’t fully initialized when opened.",
             "commit_ids": [
-              630495,
-              630493
+              630493,
+              630495
             ]
           }
         ]
       },
       {
-        "title": "Building Placement",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Guide‑mesh handling improved for many structures (boat building station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chanelier, etc.), eliminating placement visual glitches.",
+            "text": "Multiple guide‑mesh fixes (boat building station, wind turbine, cannon, tier‑3 workbench, sail, chandelier, tripod spotlight, small engine, etc.) resolve placement clipping and improve building interactions.",
             "commit_ids": [
               630657,
               630656,
@@ -92,36 +84,15 @@
               630648,
               630647
             ]
-          }
-        ]
-      },
-      {
-        "title": "Character Creator",
-        "items": [
+          },
           {
-            "text": "Fixed an overly tight field‑of‑view in the character creator, giving a clearer view while customizing.",
+            "text": "Character creator now uses the correct field of view, eliminating the overly tight view that hindered customization.",
             "commit_ids": [
               630564
             ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock Behavior",
-        "items": [
+          },
           {
-            "text": "Cows now exhibit normal grazing cycles, including resting and idle animations instead of constantly roaming.",
-            "commit_ids": [
-              630528
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapon Visuals",
-        "items": [
-          {
-            "text": "Bee grenade viewmodel visual drift corrected, preventing clipping and jittery visuals during use.",
+            "text": "Bee grenade viewmodel visual drift and clipping issues are fixed, ensuring the grenade appears stable and correctly positioned.",
             "commit_ids": [
               630502
             ]
@@ -129,34 +100,29 @@
         ]
       }
     ],
-    "summary": "### Buildings & DLC\n- Added a building grade system and upgrade command for the Scrap King building skin DLC, letting players upgrade structures and see localized grade names.\n\n### Achievements\n- Introduced a new achievement for inserting a heavy fuse into the power plant and added tracking of the player responsible for item moves, fixing related analytics.\n\n### Livestock & Animal AI\n- Overhauled livestock AI: cows now remember attacks, can kick, have better flee behavior, calves run faster and spawn lying down, plus new stomp, sheep turns, happy canter animations; also fixed hunger mechanics, grazing fullness, drink rate, and allowed starving animals to roam for food.\n\n### NPC & AI Interaction\n- Fixed AI showstate text line formatting and restored the kicking interaction, allowing players to successfully kick when intended.\n\n### Weapons & Tools\n- Paintball gun now updates its colour when equipped, and archery reloading bug fixed so switching arrow types no longer misloads arrows, ensuring proper ammo handling.\n\n### Store UI\n- Improved store UI stability: a loading blocker appears if the store isn’t fully warmed up, and a null reference error on item press has been fixed, preventing crashes when purchasing.\n\n### Building Placement\n- Guide‑mesh handling improved for many structures (boat building station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chanelier, etc.), eliminating placement visual glitches.\n\n### Character Creator\n- Fixed an overly tight field‑of‑view in the character creator, giving a clearer view while customizing.\n\n### Livestock Behavior\n- Cows now exhibit normal grazing cycles, including resting and idle animations instead of constantly roaming.\n\n### Weapon Visuals\n- Bee grenade viewmodel visual drift corrected, preventing clipping and jittery visuals during use.",
+    "summary": "### Livestock & Animals\n- Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.\n\n### Achievements\n- Added a new achievement for inserting a heavy fuse into the power plant and fixed player attribution for item moves, improving analytics.\n\n### Building & Upgrades\n- Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players.\n\n### Weapons & Items\n- Weapon fixes: paintball gun now updates its colour when equipped, and arrow reloading correctly respects the selected arrow type.\n\n### Store & UI\n- Store UI crash fixed; pressing a store item no longer triggers a null‑reference error, and a loading blocker appears if the store isn’t fully initialized when opened.\n\n### Gameplay & Balance\n- Multiple guide‑mesh fixes (boat building station, wind turbine, cannon, tier‑3 workbench, sail, chandelier, tripod spotlight, small engine, etc.) resolve placement clipping and improve building interactions.\n- Character creator now uses the correct field of view, eliminating the overly tight view that hindered customization.\n- Bee grenade viewmodel visual drift and clipping issues are fixed, ensuring the grenade appears stable and correctly positioned.",
     "new_items": [
       {
-        "text": "Added a building grade system and upgrade command for the Scrap King building skin DLC, letting players upgrade structures and see localized grade names.",
+        "text": "Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.",
+        "commit_ids": [
+          630669,
+          630634,
+          630609,
+          630551,
+          630528
+        ],
+        "section": "Livestock & Animals"
+      },
+      {
+        "text": "Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players.",
         "commit_ids": [
           630665
         ],
-        "section": "Buildings & DLC"
-      },
-      {
-        "text": "Guide‑mesh handling improved for many structures (boat building station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chanelier, etc.), eliminating placement visual glitches.",
-        "commit_ids": [
-          630657,
-          630656,
-          630655,
-          630654,
-          630653,
-          630652,
-          630650,
-          630649,
-          630648,
-          630647
-        ],
-        "section": "Building Placement"
+        "section": "Building & Upgrades"
       }
     ],
-    "new_relevant_count": 11,
-    "new_summary": "- Added a building grade system and upgrade command for the Scrap King building skin DLC, letting players upgrade structures and see localized grade names.\n- Guide‑mesh handling improved for many structures (boat building station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chanelier, etc.), eliminating placement visual glitches."
+    "new_relevant_count": 6,
+    "new_summary": "- Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.\n- Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players."
   },
   "2026-09-03": {
     "commit_count": 55,
