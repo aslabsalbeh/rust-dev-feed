@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sat, 05 Sep 2026 02:18:00 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 04:17:27 -0400</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Sep 04</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -87,51 +87,48 @@
     <item>
       <title>Rust Development Updates — Sep 02</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;92 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;85 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Livestock &amp;amp; Herd Management&lt;/h3&gt;
+&lt;h3&gt;Animal AI &amp;amp; Behavior&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630237,630222"&gt;Added cooldown to livestock flee trigger, improved herd regrouping radius, staggered bull flee rules, and enabled bull kick and charge to protect the herd; fixes cows not fleeing and prevents instant deceleration after attacks.&lt;/li&gt;
-&lt;li data-rust-commits="630226,630231"&gt;Fixed excessive acceleration on cows and sheep and added automated tests for bull and cow fleeing behavior.&lt;/li&gt;
-&lt;li data-rust-commits="624823"&gt;Fixed null‑reference crash when a livestock animal dies.&lt;/li&gt;
-&lt;li data-rust-commits="624822"&gt;Introduced overgrazing: livestock can deplete grass, halting grazing until moved to fresh grass or a trough; affected animals display a label.&lt;/li&gt;
-&lt;li data-rust-commits="630237"&gt;Adjusted herd regrouping logic to reduce erratic movement after attacks.&lt;/li&gt;
+&lt;li data-rust-commits="630237"&gt;Livestock AI overhaul: added flee cooldown, improved herd regrouping, staggered bull behavior, refined stray and mate searches, shared speed‑ramp helper, and other AI tweaks.&lt;/li&gt;
+&lt;li data-rust-commits="630222"&gt;Bulls can now kick and charge, actively protect the herd and block the player; herd stays together under threat and cows no longer decelerate instantly.&lt;/li&gt;
+&lt;li data-rust-commits="630231"&gt;Fixed cows occasionally not fleeing and added behavior tests for bulls and cows.&lt;/li&gt;
+&lt;li data-rust-commits="630226"&gt;Corrected excessive acceleration on cows and sheep.&lt;/li&gt;
+&lt;li data-rust-commits="630177"&gt;Implemented species‑specific sleep cycles for critters (rabbits crepuscular, squirrels diurnal, bullfrogs never sleep).&lt;/li&gt;
+&lt;li data-rust-commits="630167"&gt;Removed squirrel and rabbit interest mechanics, so these animals no longer attract player attention or affect AI behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Projectile Prediction&lt;/h3&gt;
+&lt;h3&gt;Weapons &amp;amp; Projectiles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630129,630259,630155"&gt;Improved client‑side prediction for grenades and thrown weapons by using simulated positions and Rigidbody data, and added support for flares and molotov effects.&lt;/li&gt;
-&lt;li data-rust-commits="630263"&gt;Fixed missing arrowheads when equipping a pre‑loaded crossbow.&lt;/li&gt;
-&lt;li data-rust-commits="630212,630209"&gt;Flare now ignites, can be thrown in third‑person view with correct spawn offset, and idle behavior is fixed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Building &amp;amp; World Interactions&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="629883"&gt;Fixed triangle hatch deployment being blocked by nearby deployables.&lt;/li&gt;
-&lt;li data-rust-commits="628427,629671"&gt;Resolved collider mismatches on monument and barrel blockers, ensuring consistent blocking and preventing players from passing through destroyed blockers.&lt;/li&gt;
-&lt;li data-rust-commits="624820"&gt;Disabled shield compatibility with flashlights to avoid unintended interactions.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Server &amp;amp; Item Stability&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="628066,624829"&gt;Fixed &amp;quot;guid is empty&amp;quot; server error on first item drop and corrected efficiency upgrade size scaling.&lt;/li&gt;
+&lt;li data-rust-commits="630263"&gt;Arrowheads now appear correctly when equipping a pre‑loaded crossbow.&lt;/li&gt;
+&lt;li data-rust-commits="630259,630155,630129"&gt;Grenade and thrown‑weapon prediction revamped: client‑simulated projectiles follow animator speed, use Rigidbody info, fix age calculations and simulation position, adding flare and molotov support for more accurate trajectories.&lt;/li&gt;
+&lt;li data-rust-commits="630209,630212"&gt;Flare mechanics updated – igniting and throwing work in third‑person with proper spawn offset; idle animation simplified.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicle Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630194"&gt;Added analogue accelerate and brake support mapped to triggers, introduced horn and seat‑swap buttons, and disabled steering while in UI.&lt;/li&gt;
+&lt;li data-rust-commits="630194"&gt;Analogue accelerate/brake added for vehicles, mapped to triggers; horn and seat‑swap buttons added; steering disabled while in UI.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Monuments &amp;amp; Deployables&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630177"&gt;Critters now follow realistic sleep cycles: rabbits are crepuscular, squirrels are diurnal, and bullfrogs stay active all day.&lt;/li&gt;
-&lt;li data-rust-commits="630167"&gt;Removed squirrel and rabbit interest mechanics, altering their behavior around players and objects.&lt;/li&gt;
+&lt;li data-rust-commits="629883"&gt;Fixed deployment of triangle hatches that could be blocked by nearby deployables.&lt;/li&gt;
+&lt;li data-rust-commits="629671,628427"&gt;Added persistent prevent‑movement colliders to barrel blockers and corrected collider sync on monument blockers, preventing players from moving through them or encountering mismatched collision states.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World &amp;amp; Props&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="625902"&gt;Fixed excessive rendering of raw/spoiled pork, human meat, and wolf meat beyond 35 m by correctly culling LOD meshes, reducing visual clutter and improving performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Item Management&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="628066"&gt;Resolved a server error (“guid is empty”) that occurred when dropping certain items for the first time, allowing those items to be placed without crashing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630164"&gt;Paintball guns now correctly display the selected colour on both first‑person and third‑person models, and on overalls.&lt;/li&gt;
+&lt;li data-rust-commits="628182"&gt;In‑game toast notifications now correctly parse tokenized phrases, ensuring proper message display.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630164"&gt;Paintball guns now correctly display their custom colors in both first‑person and third‑person views.&lt;/li&gt;
-&lt;li data-rust-commits="630189"&gt;Livestock animals now have proper hurt and death animations, making combat interactions clearer.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="628182"&gt;Toast notifications now correctly parse and display tokenized phrases, fixing broken messages.&lt;/li&gt;
-&lt;li data-rust-commits="629556"&gt;Additional phrase handling fix restores proper display of certain toast messages.&lt;/li&gt;
-&lt;li data-rust-commits="624830"&gt;Contact list notes are now saved and shown correctly, fixing missing or incorrect notes.&lt;/li&gt;
+&lt;li data-rust-commits="630189"&gt;New hurt and death animations play, giving clearer visual feedback when taking damage or being killed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-02</guid>
