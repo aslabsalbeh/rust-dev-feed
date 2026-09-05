@@ -1,22 +1,43 @@
 {
   "2026-09-04": {
-    "commit_count": 57,
-    "relevant_commit_count": 37,
-    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609,630634,630637,630647,630648,630649,630650,630651,630652,630653,630654,630655,630656,630657,630664,630665,630669",
+    "commit_count": 58,
+    "relevant_commit_count": 38,
+    "relevant_signature": "630493,630495,630497,630502,630515,630523,630528,630531,630537,630543,630547,630551,630553,630558,630561,630564,630568,630569,630576,630598,630609,630634,630637,630647,630648,630649,630650,630651,630652,630653,630654,630655,630656,630657,630664,630665,630669,630678",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Animals",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.",
+            "text": "Cows now remember being attacked and can kick when you get too close while fleeing; calves run faster to keep up with their mothers.",
             "commit_ids": [
-              630669,
-              630634,
-              630609,
+              630609
+            ]
+          },
+          {
+            "text": "Livestock AI improvements: grazing fullness decay fixed, drink rate restored, starving animals can roam for food, path resets prevented on unplaced agents, and cows idle/rest behavior corrected.",
+            "commit_ids": [
               630551,
               630528
+            ]
+          },
+          {
+            "text": "Fixed livestock fixtures breaking with the new navmesh and corrected AI state handling for livestock.",
+            "commit_ids": [
+              630669
+            ]
+          },
+          {
+            "text": "Fixed AI kicking action not working.",
+            "commit_ids": [
+              630634
+            ]
+          },
+          {
+            "text": "Crocodiles now correctly enter the onNavmesh state, fixing their movement and spawning behavior.",
+            "commit_ids": [
+              630669
             ]
           }
         ]
@@ -25,7 +46,7 @@
         "title": "Achievements",
         "items": [
           {
-            "text": "Added a new achievement for inserting a heavy fuse into the power plant and fixed player attribution for item moves, improving analytics.",
+            "text": "Added a new achievement for inserting a heavy fuse into the power plant and improved tracking of which player moves items for accurate achievement and analytics.",
             "commit_ids": [
               630637
             ]
@@ -33,10 +54,10 @@
         ]
       },
       {
-        "title": "Building & Upgrades",
+        "title": "Scrap King Building DLC",
         "items": [
           {
-            "text": "Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players.",
+            "text": "Introduced building grade, localization, and an upgrade command for the Scrap King building skin, expanding DLC building functionality.",
             "commit_ids": [
               630665
             ]
@@ -47,22 +68,27 @@
         "title": "Weapons & Items",
         "items": [
           {
-            "text": "Weapon fixes: paintball gun now updates its colour when equipped, and arrow reloading correctly respects the selected arrow type.",
+            "text": "Paintball gun now correctly updates its colour when equipped.",
             "commit_ids": [
-              630531,
+              630531
+            ]
+          },
+          {
+            "text": "Fixed arrow reloading bug where switching to a different arrow type caused arrows to load before the arrowhead.",
+            "commit_ids": [
               630523
             ]
           }
         ]
       },
       {
-        "title": "Store & UI",
+        "title": "Store UI",
         "items": [
           {
-            "text": "Store UI crash fixed; pressing a store item no longer triggers a null‑reference error, and a loading blocker appears if the store isn’t fully initialized when opened.",
+            "text": "Store UI stability fixes: added a loading blocker when the store isn’t fully warmed up and repaired a crash when pressing store items.",
             "commit_ids": [
-              630493,
-              630495
+              630495,
+              630493
             ]
           }
         ]
@@ -71,28 +97,28 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Multiple guide‑mesh fixes (boat building station, wind turbine, cannon, tier‑3 workbench, sail, chandelier, tripod spotlight, small engine, etc.) resolve placement clipping and improve building interactions.",
+            "text": "Guide mesh fixes improve building placement accuracy for many structures (boat station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chandelier, planters).",
             "commit_ids": [
-              630657,
-              630656,
-              630655,
-              630654,
-              630653,
-              630652,
               630650,
-              630649,
+              630652,
+              630653,
+              630654,
+              630655,
+              630647,
               630648,
-              630647
+              630649,
+              630657,
+              630656
             ]
           },
           {
-            "text": "Character creator now uses the correct field of view, eliminating the overly tight view that hindered customization.",
+            "text": "Character creator FOV issue resolved, giving a wider view when customizing your character.",
             "commit_ids": [
               630564
             ]
           },
           {
-            "text": "Bee grenade viewmodel visual drift and clipping issues are fixed, ensuring the grenade appears stable and correctly positioned.",
+            "text": "Bee grenade visual drift and clipping fixed, ensuring the grenade and its bees render correctly.",
             "commit_ids": [
               630502
             ]
@@ -100,29 +126,10 @@
         ]
       }
     ],
-    "summary": "### Livestock & Animals\n- Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.\n\n### Achievements\n- Added a new achievement for inserting a heavy fuse into the power plant and fixed player attribution for item moves, improving analytics.\n\n### Building & Upgrades\n- Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players.\n\n### Weapons & Items\n- Weapon fixes: paintball gun now updates its colour when equipped, and arrow reloading correctly respects the selected arrow type.\n\n### Store & UI\n- Store UI crash fixed; pressing a store item no longer triggers a null‑reference error, and a loading blocker appears if the store isn’t fully initialized when opened.\n\n### Gameplay & Balance\n- Multiple guide‑mesh fixes (boat building station, wind turbine, cannon, tier‑3 workbench, sail, chandelier, tripod spotlight, small engine, etc.) resolve placement clipping and improve building interactions.\n- Character creator now uses the correct field of view, eliminating the overly tight view that hindered customization.\n- Bee grenade viewmodel visual drift and clipping issues are fixed, ensuring the grenade appears stable and correctly positioned.",
-    "new_items": [
-      {
-        "text": "Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.",
-        "commit_ids": [
-          630669,
-          630634,
-          630609,
-          630551,
-          630528
-        ],
-        "section": "Livestock & Animals"
-      },
-      {
-        "text": "Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players.",
-        "commit_ids": [
-          630665
-        ],
-        "section": "Building & Upgrades"
-      }
-    ],
-    "new_relevant_count": 6,
-    "new_summary": "- Livestock and wildlife AI overhauled: fixed state re‑entry bugs, corrected grazing and drinking behavior, prevented path resets, and added realistic actions such as cows remembering attacks and kicking fleeing players, bulls with proper defensive stances, sheep turning correctly, faster‑running calves, and baby animals spawning lying down then standing up.\n- Introduced a new building grade for the Scrap King skin, added localization support, and provided an upgrade command for players."
+    "summary": "### Animals & AI\n- Cows now remember being attacked and can kick when you get too close while fleeing; calves run faster to keep up with their mothers.\n- Livestock AI improvements: grazing fullness decay fixed, drink rate restored, starving animals can roam for food, path resets prevented on unplaced agents, and cows idle/rest behavior corrected.\n- Fixed livestock fixtures breaking with the new navmesh and corrected AI state handling for livestock.\n- Fixed AI kicking action not working.\n- Crocodiles now correctly enter the onNavmesh state, fixing their movement and spawning behavior.\n\n### Achievements\n- Added a new achievement for inserting a heavy fuse into the power plant and improved tracking of which player moves items for accurate achievement and analytics.\n\n### Scrap King Building DLC\n- Introduced building grade, localization, and an upgrade command for the Scrap King building skin, expanding DLC building functionality.\n\n### Weapons & Items\n- Paintball gun now correctly updates its colour when equipped.\n- Fixed arrow reloading bug where switching to a different arrow type caused arrows to load before the arrowhead.\n\n### Store UI\n- Store UI stability fixes: added a loading blocker when the store isn’t fully warmed up and repaired a crash when pressing store items.\n\n### Gameplay & Balance\n- Guide mesh fixes improve building placement accuracy for many structures (boat station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chandelier, planters).\n- Character creator FOV issue resolved, giving a wider view when customizing your character.\n- Bee grenade visual drift and clipping fixed, ensuring the grenade and its bees render correctly.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-03": {
     "commit_count": 55,
@@ -323,8 +330,8 @@
     "new_summary": ""
   },
   "2026-09-02": {
-    "commit_count": 95,
-    "relevant_commit_count": 57,
+    "commit_count": 94,
+    "relevant_commit_count": 56,
     "relevant_signature": "624820,624822,624823,624829,624830,625902,626016,627359,627774,628066,628168,628182,628345,628427,628447,628460,629158,629377,629417,629556,629557,629671,629883,629923,629935,630004,630122,630123,630129,630155,630164,630167,630170,630177,630189,630190,630192,630194,630199,630205,630209,630212,630216,630222,630226,630231,630234,630235,630237,630257,630259,630262,630263,630264,630265,630266,630267",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
