@@ -6,53 +6,61 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 04 Sep 2026 18:17:26 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 20:18:16 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 04</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;42 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;56 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630634"&gt;Admin kicking command now works correctly.&lt;/li&gt;
-&lt;li data-rust-commits="630637"&gt;New achievement for inserting a heavy fuse into the power plant.&lt;/li&gt;
+&lt;li data-rust-commits="630665"&gt;Added a building grade system and upgrade command for the Scrap King building skin DLC, letting players upgrade structures and see localized grade names.&lt;/li&gt;
+&lt;li data-rust-commits="630657,630656,630655,630654,630653,630652,630650,630649,630648,630647"&gt;Guide‑mesh handling improved for many structures (boat building station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chanelier, etc.), eliminating placement visual glitches.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Animals &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Buildings &amp;amp; DLC&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630609"&gt;Cows now retain memory of being attacked and won’t instantly become friendly after fleeing.&lt;/li&gt;
-&lt;li data-rust-commits="630609"&gt;Cows can kick players who get too close while they are fleeing.&lt;/li&gt;
-&lt;li data-rust-commits="630609"&gt;Calf movement speed increased; newborn animals spawn lying down and stand up gradually.&lt;/li&gt;
-&lt;li data-rust-commits="630528"&gt;Cows now have proper idle and resting behavior instead of constantly grazing or roaming excessively.&lt;/li&gt;
-&lt;li data-rust-commits="630551"&gt;Grazing fullness no longer decreases while walking, drink rate restored, and starving animals will roam to find food.&lt;/li&gt;
-&lt;li data-rust-commits="630543"&gt;New cow stomp animation added, giving a visual cue when cows are attacked.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Combat&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="630523"&gt;Fixed arrow reloading bug where switching arrow types caused arrows to load after the arrowhead.&lt;/li&gt;
-&lt;li data-rust-commits="630531"&gt;Paintball gun now correctly updates its colour when equipped.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Admin Tools&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="630634"&gt;Admin kicking command now works correctly.&lt;/li&gt;
+&lt;li data-rust-commits="630665"&gt;Added a building grade system and upgrade command for the Scrap King building skin DLC, letting players upgrade structures and see localized grade names.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Achievements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630637"&gt;New achievement for inserting a heavy fuse into the power plant.&lt;/li&gt;
+&lt;li data-rust-commits="630637"&gt;Introduced a new achievement for inserting a heavy fuse into the power plant and added tracking of the player responsible for item moves, fixing related analytics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Livestock &amp;amp; Animal AI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630609,630551"&gt;Overhauled livestock AI: cows now remember attacks, can kick, have better flee behavior, calves run faster and spawn lying down, plus new stomp, sheep turns, happy canter animations; also fixed hunger mechanics, grazing fullness, drink rate, and allowed starving animals to roam for food.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;NPC &amp;amp; AI Interaction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630634"&gt;Fixed AI showstate text line formatting and restored the kicking interaction, allowing players to successfully kick when intended.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Weapons &amp;amp; Tools&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630531,630523"&gt;Paintball gun now updates its colour when equipped, and archery reloading bug fixed so switching arrow types no longer misloads arrows, ensuring proper ammo handling.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Store UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630495"&gt;Store UI now shows a loading blocker until the store is fully warmed up, preventing empty screens.&lt;/li&gt;
-&lt;li data-rust-commits="630493"&gt;Fixed crash when pressing a store item (NRE) and added breadcrumbs for debugging.&lt;/li&gt;
+&lt;li data-rust-commits="630495,630493"&gt;Improved store UI stability: a loading blocker appears if the store isn’t fully warmed up, and a null reference error on item press has been fixed, preventing crashes when purchasing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Visual &amp;amp; UI Fixes&lt;/h3&gt;
+&lt;h3&gt;Building Placement&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="630564"&gt;Character creator now uses a normal field of view, fixing the previously overly tight view.&lt;/li&gt;
-&lt;li data-rust-commits="630502"&gt;Bee grenade viewmodel visuals no longer drift or clip, providing stable appearance.&lt;/li&gt;
+&lt;li data-rust-commits="630657,630656,630655,630654,630653,630652,630650,630649,630648,630647"&gt;Guide‑mesh handling improved for many structures (boat building station, wind turbine, tripod spotlight, small engine, tier‑3 workbench, cannon, sail, chanelier, etc.), eliminating placement visual glitches.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Character Creator&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630564"&gt;Fixed an overly tight field‑of‑view in the character creator, giving a clearer view while customizing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Livestock Behavior&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630528"&gt;Cows now exhibit normal grazing cycles, including resting and idle animations instead of constantly roaming.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Weapon Visuals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="630502"&gt;Bee grenade viewmodel visual drift corrected, preventing clipping and jittery visuals during use.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-04</guid>
-      <pubDate>Fri, 04 Sep 2026 18:17:26 -0400</pubDate>
+      <pubDate>Fri, 04 Sep 2026 20:18:16 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 03</title>
