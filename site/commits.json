@@ -1,5 +1,29 @@
 [
   {
+    "id": 630733,
+    "branch": "main/Livestock_animals",
+    "changeset": "163278",
+    "created": "2026-09-05T19:39:48",
+    "message": "Add tests for domestication / grudge, fix TC faulty replication because it's a prop",
+    "user": "Maverick"
+  },
+  {
+    "id": 630727,
+    "branch": "main/guide_mesh_optimisations",
+    "changeset": "163277",
+    "created": "2026-09-05T18:51:07",
+    "message": "Shockbyte tool cupboard deploy guide switched from the LOD0 mesh to a custom guide mesh via a guide prefab, guide draws 4 -> 2, tris 37,958 -> 13,646, both normal maps kept.",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 630725,
+    "branch": "main/Livestock_animals",
+    "changeset": "163276",
+    "created": "2026-09-05T18:19:39",
+    "message": "Livestock capture/domestication first pass:\r\n- you gain trust by just hanging around cows, enough trust and you can lead them where you want, even more trust and they come sleep near your TC unprompted\r\n- with enough trust bulls become neutral to you instead of trying to punch you, maxed out trust makes bulls protect you from threats\r\n- not mandatory, you can still coerce a cow into your base by hitting then chasing it in the right direction, or luring a bull that's chasing you, then only build trust once they are captive\r\n- some wild cows are also naive and just follow players for no reason, you can kidnap naive calves and capture their mom for free\r\n- bull army soon possible",
+    "user": "Maverick"
+  },
+  {
     "id": 630723,
     "branch": "main/Livestock_animals",
     "changeset": "163275",
@@ -1070,109 +1094,5 @@
     "created": "2026-09-02T20:20:19",
     "message": "Crystal AR glass material tweaks",
     "user": "Lain"
-  },
-  {
-    "id": 630224,
-    "branch": "main/prop_optimisations",
-    "changeset": "162995",
-    "created": "2026-09-02T20:15:55",
-    "message": "tier 3 workbench guide combined into one mesh and one renderer.\nRenderers 3 -> 1,\nguide draws 3 -> 1,\nbuilt from the LOD1 parts and tidied in blender so 7.1k tris -> 2.9k, on the shared guide_opaque material",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 630222,
-    "branch": "main/Livestock_animals",
-    "changeset": "162994",
-    "created": "2026-09-02T20:12:03",
-    "message": "Bull can kick and charge, protects the herd and moves between you and them. Can play toreador with the bull like with the croc. Herd sticks together when in danger instead of scattering. Fix cows decelerating instantly.",
-    "user": "Maverick"
-  },
-  {
-    "id": 630219,
-    "branch": "main/prop_optimisations",
-    "changeset": "162993",
-    "created": "2026-09-02T20:00:06",
-    "message": "wind turbine guide combined into one mesh and one renderer.\nRenderers 4 -> 1,\nguide draws 20 -> 8,\nrebuilt from the LOD1 parts in blender so 20.9k tris -> 8.2k",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 630218,
-    "branch": "main/sv_clientadmin_exposures",
-    "changeset": "162992",
-    "created": "2026-09-02T19:57:35",
-    "message": "Codegen",
-    "user": "Raul"
-  },
-  {
-    "id": 630216,
-    "branch": "main/prop_optimisations",
-    "changeset": "162991",
-    "created": "2026-09-02T19:31:42",
-    "message": "further optimisation to the boat building station guide mesh \r\n\r\nguide draws 9 -> 2",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 630214,
-    "branch": "main/vcc/haptic_feedback_test",
-    "changeset": "162990",
-    "created": "2026-09-02T19:20:53",
-    "message": "Quick rumble/haptics test using a reflection hack for now",
-    "user": "Adam W"
-  },
-  {
-    "id": 630212,
-    "branch": "main/Weapon_Refresh_Flare/subsystem_implementation",
-    "changeset": "162988",
-    "created": "2026-09-02T19:17:59",
-    "message": "strip all the blending shit, idle just works",
-    "user": "octo"
-  },
-  {
-    "id": 630209,
-    "branch": "main/Weapon_Refresh_Flare/subsystem_implementation",
-    "changeset": "162987",
-    "created": "2026-09-02T19:12:12",
-    "message": "hook up igniting/throwing for flare in 3rd person, offset the spawn position of flares",
-    "user": "octo"
-  },
-  {
-    "id": 630208,
-    "branch": "main/grenade_client_prediction",
-    "changeset": "162986",
-    "created": "2026-09-02T19:06:34",
-    "message": "First attempts at spawning predicted grenades at the hand prop position and lerping to the centre of the screen so grenades don't come out of our mouth",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 630205,
-    "branch": "main/sv_clientadmin_exposures",
-    "changeset": "162984",
-    "created": "2026-09-02T18:59:45",
-    "message": "Exposed more client commands to be called from the server:\r\n- admin.admintime\r\n- admin.adminlight\r\n- admin.adminreflectionmultiplier\r\n- admin.adminambientmultiplier\r\n- admin.underwater_effect\r\n- admin.underwater_cinematic\r\n- admin.underwater_scatter\r\n- admin.woundedfreecam\r\n- admin.disable_clouds\r\n- admin.adminclouds\r\n- admin.adminfog\r\n- admin.adminwind\r\n- admin.adminrain\r\n- admin.overrideOceanEnvironmentLerp\r\n- global.god",
-    "user": "Raul"
-  },
-  {
-    "id": 630202,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "162982",
-    "created": "2026-09-02T18:47:21",
-    "message": "don't do RRP motion blur outside play mode or in non-game view",
-    "author": "Brian"
-  },
-  {
-    "id": 630199,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "162981",
-    "created": "2026-09-02T18:29:50",
-    "message": "fix water caustics and contact shadows not working with deferred+ in RRP",
-    "author": "Brian"
-  },
-  {
-    "id": 630194,
-    "branch": "main/vcc/control_sets/analogue_steering",
-    "changeset": "162977",
-    "created": "2026-09-02T18:27:10",
-    "message": "Added analogue accelerate/brake support.\r\nMapped to triggers for driving control set.\r\nMapped horn and swap seat buttons/binds.\r\nDon't steer when in UI.\r\nUpdated VDFs.",
-    "author": "Adam W"
   }
 ]
