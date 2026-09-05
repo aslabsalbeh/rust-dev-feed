@@ -1,5 +1,13 @@
 [
   {
+    "id": 630723,
+    "branch": "main/Livestock_animals",
+    "changeset": "163275",
+    "created": "2026-09-05T16:32:21",
+    "message": "- Mothers now defend calves if they are hurt, and don't forget too fast what you did\r\n- Better courtship between bull and cows, more legible to a player (ai commands: addignoreplayer, spawn bull, spawn cow, forcebreed)\r\n- Fix client crash when calf dies because of NRE, it seems every ragdoll other than cow was not setup properly, maybe because of the new ragdoll copy tool? => added a CI test to validate ragdoll assets so that it doesn't happen again",
+    "user": "Maverick"
+  },
+  {
     "id": 630716,
     "branch": "main/Livestock_animals",
     "changeset": "163271",
@@ -1166,53 +1174,5 @@
     "created": "2026-09-02T18:27:10",
     "message": "Added analogue accelerate/brake support.\r\nMapped to triggers for driving control set.\r\nMapped horn and swap seat buttons/binds.\r\nDon't steer when in UI.\r\nUpdated VDFs.",
     "author": "Adam W"
-  },
-  {
-    "id": 630192,
-    "branch": "main/sv_clientadmin_exposures",
-    "changeset": "162975",
-    "created": "2026-09-02T18:16:13",
-    "message": "Marked as saved to config:\r\n- espcanvas.MaxNameplates \r\n\r\nExposed EspCanvas client commands to be called from the server: \r\n- espcanvas.NameplateAutosize\r\n- espcanvas.NameplateAutosize_Falloff\r\n- espcanvas.OverrideMaxDisplayDistance\r\n- espcanvas.DisableOcclusionChecks\r\n- espcanvas.ShowHealth\r\n- espcanvas.ColourCodeTeams\r\n- espcanvas.UseRandomTeamColours\r\n- espcanvas.ShowVoip",
-    "author": "Raul"
-  },
-  {
-    "id": 630190,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "162974",
-    "created": "2026-09-02T18:09:35",
-    "message": "fix broken frosted glass",
-    "author": "Brian"
-  },
-  {
-    "id": 630189,
-    "branch": "main/Livestock_animals",
-    "changeset": "162973",
-    "created": "2026-09-02T17:53:23",
-    "message": "Generate and connect animation montages, add hurt and death behaviours + anims",
-    "author": "Maverick"
-  },
-  {
-    "id": 630178,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "162967",
-    "created": "2026-09-02T16:46:32",
-    "message": "clean up animators after removals",
-    "author": "ElliotH"
-  },
-  {
-    "id": 630177,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "162966",
-    "created": "2026-09-02T16:30:07",
-    "message": "add different sleep cycles for critters\r\n- rabbits are crepuscular, squirrels diurnal, and bullfrogs don't sleep (bc apparently thats (kinda) a thing)",
-    "author": "ElliotH"
-  },
-  {
-    "id": 630175,
-    "branch": "main/new_navmesh_fixes/convert_old_animals",
-    "changeset": "162965",
-    "created": "2026-09-02T16:28:01",
-    "message": "Delete duplicates and replace the original animals",
-    "author": "Maverick"
   }
 ]
