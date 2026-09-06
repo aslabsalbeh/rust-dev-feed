@@ -1,5 +1,13 @@
 [
   {
+    "id": 630744,
+    "branch": "main/guide_mesh_optimisations",
+    "changeset": "163281",
+    "created": "2026-09-05T22:16:47",
+    "message": "Deploy guides for 20 deployables moved from Guide Mesh to guide prefabs so they keep their materials on lower LODs and custom meshes; normal maps and cutouts restored on all 20, guide tris and draws unchanged from the LOD1 retargets.\n\nGuide Mesh only inherits materials from a renderer the entity actually draws, which on RendererLOD and MeshLOD assets is LOD0 only, so the LOD1 retargets and the planter guide meshes were rendering flat. Each guide prefab is one child on the same mesh with the materials copied from the entity's own renderer for that LOD.\r\n\r\nneeds manifest update",
+    "user": "Pilgrim"
+  },
+  {
     "id": 630733,
     "branch": "main/Livestock_animals",
     "changeset": "163278",
