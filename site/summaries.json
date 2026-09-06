@@ -173,131 +173,78 @@
     "new_summary": ""
   },
   "2026-09-03": {
-    "commit_count": 54,
-    "relevant_commit_count": 26,
-    "relevant_signature": "630297,630303,630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379,630395,630398,630408,630409,630421,630426,630429",
+    "commit_count": 48,
+    "relevant_commit_count": 24,
+    "relevant_signature": "630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379,630395,630398,630408,630409,630421,630426,630429,630448",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {
-      "630303,630310,630312,630314,630322,630323,630326,630330,630333,630346,630347,630361,630363,630366,630369,630377,630379,630395,630398,630408,630409,630421,630426,630429,630448": [
-        {
-          "title": "AI & NPC",
-          "items": [
-            {
-              "text": "Fixed AI position updates in the brain grid, ensuring AI correctly updates its location for spatial queries.",
-              "commit_ids": [
-                630363,
-                630347
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animals & Livestock",
-          "items": [
-            {
-              "text": "Overhauled livestock behavior: cows age slower, sleep peacefully, lie down, regroup at night, have reduced roaming, and improved hunger/feeding logic.",
-              "commit_ids": [
-                630346
-              ]
-            },
-            {
-              "text": "Added coats to livestock for visual variety and ensured proper networking, saving, and corpse handling.",
-              "commit_ids": [
-                630408
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio & Effects",
-          "items": [
-            {
-              "text": "Added new fence sounds for animal fences, providing audible feedback when animals interact with fences.",
-              "commit_ids": [
-                630377
-              ]
-            },
-            {
-              "text": "Implemented a realistic ground impact effect for flamethrower canister drops.",
-              "commit_ids": [
-                630421
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons & Combat",
-          "items": [
-            {
-              "text": "Improved grenade client prediction with a lerp system to better align client-side grenades with the server and fixed immediate release mode bugs.",
-              "commit_ids": [
-                630361
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Building & Structures",
-          "items": [
-            {
-              "text": "Introduced half‑height and three‑quarter‑height sandbag barricade variants with proper collision, nav obstacles, and construction info.",
-              "commit_ids": [
-                630333
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Menus",
-          "items": [
-            {
-              "text": "Fixed composter UI to no longer show incorrect \"Turn on\"/\"Turn off\" options, aligning it with stove behavior.",
-              "commit_ids": [
-                630409
-              ]
-            },
-            {
-              "text": "Resolved a ghost character appearing in the character creator due to SSS issues.",
-              "commit_ids": [
-                630395
-              ]
-            },
-            {
-              "text": "Updated the store UI to correctly handle null selections and integrated new Crystal store prefabs.",
-              "commit_ids": [
-                630322
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Livestock behavior overhaul: cows age, slow down, sleep, regroup at night, hunger/thirst and grazing bugs fixed, plus new sheep/lamb corpse handling and death animations.",
+            "text": "Cows now age: they slow down, sleep peacefully, die of old age instead of combat death, and exhibit new behaviors like lying down, regrouping at night, and reduced roaming.",
             "commit_ids": [
               630346
             ]
           },
           {
-            "text": "Gen2 AI position update bug fixed, improving AI movement and spatial queries.",
+            "text": "Fixed gen2 AI (including livestock) not updating its position in the brain grid, improving AI movement and spatial queries.",
             "commit_ids": [
               630363,
               630347
+            ]
+          },
+          {
+            "text": "Animal fences now play new sound effects when interacted with.",
+            "commit_ids": [
+              630377
             ]
           }
         ]
       },
       {
-        "title": "Building & Deployables",
+        "title": "Buildings & Base Items",
         "items": [
           {
-            "text": "New sandbag barricade variants: half-height and three-quarter-height with proper collision and nav obstacles.",
+            "text": "Added half‑height and three‑quarter‑height sandbag barricade variants for more building flexibility.",
             "commit_ids": [
               630333
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Menus",
+        "items": [
+          {
+            "text": "Compster and stove no longer show incorrect “Turn on/Turn off” menu options.",
+            "commit_ids": [
+              630409
+            ]
+          },
+          {
+            "text": "Removed occasional ghost character in the character creator caused by SSS.",
+            "commit_ids": [
+              630395
+            ]
+          },
+          {
+            "text": "Store UI now handles null or no selection without errors, preventing crashes when browsing items.",
+            "commit_ids": [
+              630322
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles",
+        "items": [
+          {
+            "text": "Train headlight beams now pool correctly and train car audio resets properly, fixing visual and sound glitches on trains.",
+            "commit_ids": [
+              630429,
+              630379
             ]
           }
         ]
@@ -306,49 +253,55 @@
         "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Grenade client prediction improvements: server alignment lerp and immediate release mode bugs fixed for more reliable throws.",
+            "text": "Grenade client prediction now realigns with the server and fixes immediate release mode bugs, improving grenade accuracy.",
             "commit_ids": [
               630361
             ]
           },
           {
-            "text": "Flare throw offset reverted, adjusting throw trajectory to previous behavior.",
+            "text": "Flamethrower canister drop now shows a realistic ground impact effect.",
             "commit_ids": [
-              630323
+              630421
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "World Visuals",
         "items": [
           {
-            "text": "Compactor and stove menus no longer show incorrect \"Turn on\"/\"Turn off\" options.",
+            "text": "Floating light bug on large oil rigs fixed, removing stray light.",
             "commit_ids": [
-              630409
-            ]
-          },
-          {
-            "text": "Character creator ghost figure bug fixed, preventing invisible man from appearing.",
-            "commit_ids": [
-              630395
-            ]
-          },
-          {
-            "text": "Animal fences now emit distinct sounds, helping players hear fence interactions.",
-            "commit_ids": [
-              630377
+              630310
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Bug Fixes & Stability",
         "items": [
           {
-            "text": "Prevent crashes caused by missing particle systems in power‑grid visual effects.",
+            "text": "Added null checks to prevent crashes when sounds are missing.",
+            "commit_ids": [
+              630448
+            ]
+          },
+          {
+            "text": "Added safeguards against null particle systems in PowergridEngineFx, reducing crash risk.",
             "commit_ids": [
               630426
+            ]
+          },
+          {
+            "text": "Fixed motion blur issues with Crystal AR, improving visual clarity during fast movement.",
+            "commit_ids": [
+              630369
+            ]
+          },
+          {
+            "text": "Corrected LOD chain errors across many prefabs, preventing objects from disappearing or rendering incorrectly at distance.",
+            "commit_ids": [
+              630312
             ]
           }
         ]
@@ -357,15 +310,26 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Livestock now spawn with coats that can be harvested for resources and affect their appearance.",
+            "text": "Livestock now spawn with coats that can be harvested for resources, and their corpses and newborns persist across server restarts.",
             "commit_ids": [
               630408
             ]
           }
         ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Thrown items no longer have an incorrect offset, restoring normal throw trajectories.",
+            "commit_ids": [
+              630323
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### Animals & AI\n- Livestock behavior overhaul: cows age, slow down, sleep, regroup at night, hunger/thirst and grazing bugs fixed, plus new sheep/lamb corpse handling and death animations.\n- Gen2 AI position update bug fixed, improving AI movement and spatial queries.\n\n### Building & Deployables\n- New sandbag barricade variants: half-height and three-quarter-height with proper collision and nav obstacles.\n\n### Combat & Weapons\n- Grenade client prediction improvements: server alignment lerp and immediate release mode bugs fixed for more reliable throws.\n- Flare throw offset reverted, adjusting throw trajectory to previous behavior.\n\n### UI & Quality of Life\n- Compactor and stove menus no longer show incorrect \"Turn on\"/\"Turn off\" options.\n- Character creator ghost figure bug fixed, preventing invisible man from appearing.\n- Animal fences now emit distinct sounds, helping players hear fence interactions.\n\n### Bug Fixes\n- Prevent crashes caused by missing particle systems in power‑grid visual effects.\n\n### Gameplay & Balance\n- Livestock now spawn with coats that can be harvested for resources and affect their appearance.",
+    "summary": "### Livestock & Animals\n- Cows now age: they slow down, sleep peacefully, die of old age instead of combat death, and exhibit new behaviors like lying down, regrouping at night, and reduced roaming.\n- Fixed gen2 AI (including livestock) not updating its position in the brain grid, improving AI movement and spatial queries.\n- Animal fences now play new sound effects when interacted with.\n\n### Buildings & Base Items\n- Added half‑height and three‑quarter‑height sandbag barricade variants for more building flexibility.\n\n### UI & Menus\n- Compster and stove no longer show incorrect “Turn on/Turn off” menu options.\n- Removed occasional ghost character in the character creator caused by SSS.\n- Store UI now handles null or no selection without errors, preventing crashes when browsing items.\n\n### Vehicles\n- Train headlight beams now pool correctly and train car audio resets properly, fixing visual and sound glitches on trains.\n\n### Combat & Weapons\n- Grenade client prediction now realigns with the server and fixes immediate release mode bugs, improving grenade accuracy.\n- Flamethrower canister drop now shows a realistic ground impact effect.\n\n### World Visuals\n- Floating light bug on large oil rigs fixed, removing stray light.\n\n### Bug Fixes & Stability\n- Added null checks to prevent crashes when sounds are missing.\n- Added safeguards against null particle systems in PowergridEngineFx, reducing crash risk.\n- Fixed motion blur issues with Crystal AR, improving visual clarity during fast movement.\n- Corrected LOD chain errors across many prefabs, preventing objects from disappearing or rendering incorrectly at distance.\n\n### Gameplay & Balance\n- Livestock now spawn with coats that can be harvested for resources, and their corpses and newborns persist across server restarts.\n\n### Bug Fixes\n- Thrown items no longer have an incorrect offset, restoring normal throw trajectories.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
