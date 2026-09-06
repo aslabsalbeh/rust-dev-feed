@@ -1,5 +1,45 @@
 [
   {
+    "id": 630795,
+    "branch": "main/fix_threaded_error_client/sentry_fix",
+    "changeset": "163305",
+    "created": "2026-09-06T17:30:39",
+    "message": "Don't kick for errors on background threads",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 630794,
+    "branch": "main/fix_threaded_error_client/sentry_fix",
+    "changeset": "163304",
+    "created": "2026-09-06T17:27:59",
+    "message": "Refactor Output.OnMessage() so it passes a single struct parameter instead of (message, stacktrace,logLevel)\r\n- if I'm gonna to refactor it to add a 4th parameter, may as well make it a single class/struct passed\r\n- allows a bool to be passed for \"if it was sent on a background thread or not\"",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 630791,
+    "branch": "main/fix_threaded_error_client",
+    "changeset": "163302",
+    "created": "2026-09-06T16:57:27",
+    "message": "Update existing console tests to account for new behavior",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 630790,
+    "branch": "main/fix_threaded_error_client",
+    "changeset": "163301",
+    "created": "2026-09-06T16:56:53",
+    "message": "Prevent the downgrade in the editor since it doesn't result in kick",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 630789,
+    "branch": "main/fix_threaded_error_client",
+    "changeset": "163300",
+    "created": "2026-09-06T16:55:50",
+    "message": "Lower error level from exception -> warning on the client on background threads so clients don't get kicked from random exceptions\r\n- keep it on server since it's only used for logging",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 630759,
     "branch": "main/Floating_bandage_fix",
     "changeset": "163288",
@@ -606,53 +646,5 @@
     "created": "2026-09-03T18:17:56",
     "message": "Update: rewrite prefab scanning to work via SerializedObject/Prop\r\nUnity already solves working with structs, so I'll just use their tech\r\nTests: partially wrote out url assignment automation, it assigns a struct field. ran bundle assignation",
     "user": "Daniel P"
-  },
-  {
-    "id": 630421,
-    "branch": "main/flamethrower_canister_drop_fix",
-    "changeset": "163113",
-    "created": "2026-09-03T18:14:57",
-    "message": "- Set up flamethrower canister drop effect, uses mesh renderer for realistic ground impact",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 630413,
-    "branch": "main/Twitchdropsrender",
-    "changeset": "163111",
-    "created": "2026-09-03T17:33:13",
-    "message": "merge",
-    "user": "Lewis"
-  },
-  {
-    "id": 630409,
-    "branch": "main/fix_composter_menu_option",
-    "changeset": "163109",
-    "created": "2026-09-03T17:04:56",
-    "message": "Fix composter showing \"Turn on\" and \"Turn off\" menu option\r\n- make both stove & composter not show the menu options",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 630408,
-    "branch": "main/Livestock_animals",
-    "changeset": "163108",
-    "created": "2026-09-03T16:52:15",
-    "message": "Hook up livestock coats, not yet gene driven, tested networking, saving, corpses, babies",
-    "user": "Maverick"
-  },
-  {
-    "id": 630401,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "163103",
-    "created": "2026-09-03T16:29:03",
-    "message": "Slight cleanup and more safety around the spawned instance ids saveloading",
-    "user": "cipeaX"
-  },
-  {
-    "id": 630398,
-    "branch": "main/chandelier_optimization",
-    "changeset": "163102",
-    "created": "2026-09-03T16:20:34",
-    "message": "Chandelier - removed unused material, fixed unnecessary two sided materials",
-    "user": "alex.m"
   }
 ]
