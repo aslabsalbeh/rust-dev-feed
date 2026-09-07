@@ -1,5 +1,61 @@
 [
   {
+    "id": 630961,
+    "branch": "main/animal_fencing_v2",
+    "changeset": "163358",
+    "created": "2026-09-07T15:43:57",
+    "message": "Animal Fence LODs and gibs",
+    "user": "Lewis T"
+  },
+  {
+    "id": 630958,
+    "branch": "main/Livestock_animals",
+    "changeset": "163357",
+    "created": "2026-09-07T15:27:04",
+    "message": "- Simplify cow needs to be easier to balance and understand as a player: remove mood as a tracked value, mood is just computed on demand by min(fullness, hydration, personal space)\r\n- HP just converges to mood so that happy cow is full hp, sad cow dies automatically, and eating automatically heals => added benefit: cow condition becomes cleanly visible to players through the healthbar\r\n- Sleeping cows needs are frozen instead of ticking down\r\n- Add ultra compact building to benchmark (multiple cows in a 1x1 with through or shelter)\r\n- Fix benchmark not having water source for free range cows, causing free range cows to produce less scrap",
+    "user": "Maverick"
+  },
+  {
+    "id": 630948,
+    "branch": "main/animation_ik_jobs",
+    "changeset": "163356",
+    "created": "2026-09-07T14:28:28",
+    "message": "let subsystems contribute to IK, move shields to it",
+    "user": "octo"
+  },
+  {
+    "id": 630947,
+    "branch": "main/animation_ik_jobs",
+    "changeset": "163355",
+    "created": "2026-09-07T14:26:46",
+    "message": "optim: only add root matrices when we're doing foot IK",
+    "user": "octo"
+  },
+  {
+    "id": 630945,
+    "branch": "main/animation_ik_jobs",
+    "changeset": "163354",
+    "created": "2026-09-07T14:24:18",
+    "message": "run job ik on a single playable graph with two outputs rather than two playable graphs",
+    "user": "octo"
+  },
+  {
+    "id": 630942,
+    "branch": "main/animation_ik_jobs",
+    "changeset": "163353",
+    "created": "2026-09-07T14:13:58",
+    "message": "clean up, move things into a single playerik module rather than 3 different layers, run formatter",
+    "user": "octo"
+  },
+  {
+    "id": 630943,
+    "branch": "main/Livestock_animals/Cow_pattern_testing",
+    "changeset": "163352",
+    "created": "2026-09-07T14:13:53",
+    "message": "added textures, mesh and material for test of cow pattern material.",
+    "user": "Toffer"
+  },
+  {
     "id": 630935,
     "branch": "main/animation_ik_jobs",
     "changeset": "163351",
@@ -430,45 +486,5 @@
     "created": "2026-09-04T16:29:48",
     "message": "nailgun refresh latest vm anims exported",
     "user": "julek"
-  },
-  {
-    "id": 630576,
-    "branch": "main/glass_ar_motion_blur_fix",
-    "changeset": "163204",
-    "created": "2026-09-04T15:20:13",
-    "message": "Cherry-pick: Add dedicated depth texture for motion vectors",
-    "user": "Felix"
-  },
-  {
-    "id": 630575,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "163203",
-    "created": "2026-09-04T15:18:57",
-    "message": "Add dedicated depth texture for motion vectors",
-    "user": "Felix"
-  },
-  {
-    "id": 630569,
-    "branch": "main/fix_stale_lods",
-    "changeset": "163201",
-    "created": "2026-09-04T14:58:35",
-    "message": "fix staying lods staying active when pooling",
-    "user": "octo"
-  },
-  {
-    "id": 630568,
-    "branch": "main/character_customisation",
-    "changeset": "163199",
-    "created": "2026-09-04T14:49:10",
-    "message": "- Fix rendered icons not using the same cubemap",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 630564,
-    "branch": "main/character_customisation",
-    "changeset": "163197",
-    "created": "2026-09-04T14:21:08",
-    "message": "Fixed super tight fov on character creator",
-    "user": "Ian Henderson"
   }
 ]
