@@ -1,22 +1,28 @@
 {
   "2026-09-07": {
-    "commit_count": 22,
-    "relevant_commit_count": 6,
-    "relevant_signature": "630840,630913,630916,630935,630943,630958",
+    "commit_count": 26,
+    "relevant_commit_count": 8,
+    "relevant_signature": "630840,630913,630916,630935,630943,630958,630980,630984",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Animals",
+        "title": "Animals & Livestock",
         "items": [
           {
-            "text": "Cows now die automatically when unhappy and their health bar directly reflects mood, while sleeping cows no longer lose needs.",
+            "text": "Cows now use health to show their wellbeing; mood is calculated on the fly, unhappy cows lose health and can die, and sleeping needs are frozen.",
             "commit_ids": [
               630958
             ]
           },
           {
-            "text": "Calf spawning bug fixed: mothers now give birth without getting stuck behind walls, allowing calves to leave pens; new sheep animals added to the game.",
+            "text": "Mother cows no longer give birth behind walls, allowing newborn calves to exit pens correctly.",
+            "commit_ids": [
+              630840
+            ]
+          },
+          {
+            "text": "Sheep have been added as a new livestock animal.",
             "commit_ids": [
               630840
             ]
@@ -24,10 +30,32 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "World & Monuments",
         "items": [
           {
-            "text": "Fixed a bug that prevented unintended MRU data changes during player saves, improving save reliability.",
+            "text": "Underground train tunnels now feature randomized room layouts, including a new Small Room C, changing navigation and base placement options.",
+            "commit_ids": [
+              630980
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & UI",
+        "items": [
+          {
+            "text": "Placement guides now respect object rotation, preventing misaligned building previews.",
+            "commit_ids": [
+              630984
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Fixed a bug where BasePlayer.Save could unintentionally alter MRU data, preventing possible save corruption.",
             "commit_ids": [
               630913
             ]
@@ -35,18 +63,32 @@
         ]
       }
     ],
-    "summary": "### Livestock & Animals\n- Cows now die automatically when unhappy and their health bar directly reflects mood, while sleeping cows no longer lose needs.\n- Calf spawning bug fixed: mothers now give birth without getting stuck behind walls, allowing calves to leave pens; new sheep animals added to the game.\n\n### Gameplay & Balance\n- Fixed a bug that prevented unintended MRU data changes during player saves, improving save reliability.",
+    "summary": "### Animals & Livestock\n- Cows now use health to show their wellbeing; mood is calculated on the fly, unhappy cows lose health and can die, and sleeping needs are frozen.\n- Mother cows no longer give birth behind walls, allowing newborn calves to exit pens correctly.\n- Sheep have been added as a new livestock animal.\n\n### World & Monuments\n- Underground train tunnels now feature randomized room layouts, including a new Small Room C, changing navigation and base placement options.\n\n### Building & UI\n- Placement guides now respect object rotation, preventing misaligned building previews.\n\n### Bug Fixes\n- Fixed a bug where BasePlayer.Save could unintentionally alter MRU data, preventing possible save corruption.",
     "new_items": [
       {
-        "text": "Cows now die automatically when unhappy and their health bar directly reflects mood, while sleeping cows no longer lose needs.",
+        "text": "Cows now use health to show their wellbeing; mood is calculated on the fly, unhappy cows lose health and can die, and sleeping needs are frozen.",
         "commit_ids": [
           630958
         ],
-        "section": "Livestock & Animals"
+        "section": "Animals & Livestock"
+      },
+      {
+        "text": "Underground train tunnels now feature randomized room layouts, including a new Small Room C, changing navigation and base placement options.",
+        "commit_ids": [
+          630980
+        ],
+        "section": "World & Monuments"
+      },
+      {
+        "text": "Placement guides now respect object rotation, preventing misaligned building previews.",
+        "commit_ids": [
+          630984
+        ],
+        "section": "Building & UI"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Cows now die automatically when unhappy and their health bar directly reflects mood, while sleeping cows no longer lose needs."
+    "new_relevant_count": 3,
+    "new_summary": "- Cows now use health to show their wellbeing; mood is calculated on the fly, unhappy cows lose health and can die, and sleeping needs are frozen.\n- Underground train tunnels now feature randomized room layouts, including a new Small Room C, changing navigation and base placement options.\n- Placement guides now respect object rotation, preventing misaligned building previews."
   },
   "2026-09-06": {
     "commit_count": 7,
