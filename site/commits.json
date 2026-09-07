@@ -1,5 +1,117 @@
 [
   {
+    "id": 630935,
+    "branch": "main/animation_ik_jobs",
+    "changeset": "163351",
+    "created": "2026-09-07T13:44:10",
+    "message": "more merge error fixes, nuke old ParentArmsToCamera - its done in jobs now.",
+    "user": "octo"
+  },
+  {
+    "id": 630933,
+    "branch": "main/vcc/look_boost/refactor",
+    "changeset": "163350",
+    "created": "2026-09-07T13:36:08",
+    "message": "More glyph support and fixes.",
+    "user": "Adam W"
+  },
+  {
+    "id": 630932,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163349",
+    "created": "2026-09-07T13:21:15",
+    "message": "Missing files",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630931,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163348",
+    "created": "2026-09-07T13:20:56",
+    "message": "Part2",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630930,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163347",
+    "created": "2026-09-07T13:20:42",
+    "message": "More LOD texture optimizations and rebaking",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630929,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163346",
+    "created": "2026-09-07T13:19:07",
+    "message": "Part2",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630928,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163345",
+    "created": "2026-09-07T13:18:26",
+    "message": "Industrial structures LOD texture optmization / rebaked a bunch of LOD textures with the LODbaker because the old ones no longer match the updated materials / tweaked LOD distances on some buildings to make the baked LODs kick in sooner",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630926,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163344",
+    "created": "2026-09-07T13:15:49",
+    "message": "More LOD texture optimization",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630925,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163343",
+    "created": "2026-09-07T13:15:17",
+    "message": "More LOD texture optimization and some rebaked textures",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630924,
+    "branch": "main/lod_preview/LOD_texture_optimization",
+    "changeset": "163342",
+    "created": "2026-09-07T13:14:33",
+    "message": "Iceberg LOD textures / rebaked some of the textures to match previous lods better / improved ice sheet materials due to degradation over the years",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 630916,
+    "branch": "main/animation_ik_jobs",
+    "changeset": "163339",
+    "created": "2026-09-07T12:43:04",
+    "message": "fix merge error, update ik changes for shield subsystems",
+    "user": "octo"
+  },
+  {
+    "id": 630914,
+    "branch": "main/vcc/look_boost/refactor",
+    "changeset": "163338",
+    "created": "2026-09-07T12:34:34",
+    "message": "Show correct gamepad glyp for look at",
+    "user": "Adam W"
+  },
+  {
+    "id": 630913,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "163337",
+    "created": "2026-09-07T12:27:11",
+    "message": "Bugfix: avoid MRU modification when accessing it in BasePlayer.Save\r\nOriginally intended implementation, looks like I derped awhile ago.\r\nTests: booted into craggy with Jobs 4",
+    "user": "Daniel P"
+  },
+  {
+    "id": 630911,
+    "branch": "main/vcc/look_boost/refactor",
+    "changeset": "163335",
+    "created": "2026-09-07T12:16:42",
+    "message": "Big ass refactor",
+    "user": "Adam W"
+  },
+  {
     "id": 630840,
     "branch": "main/Livestock_animals",
     "changeset": "163327",
@@ -358,117 +470,5 @@
     "created": "2026-09-04T14:21:08",
     "message": "Fixed super tight fov on character creator",
     "user": "Ian Henderson"
-  },
-  {
-    "id": 630561,
-    "branch": "main/character_customisation",
-    "changeset": "163195",
-    "created": "2026-09-04T14:13:35",
-    "message": "- Bake a reflection probe inside the customisation scene\r\n- Setup new cubemap as environment default",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 630560,
-    "branch": "main/hackweek_sound_player_entity",
-    "changeset": "163194",
-    "created": "2026-09-04T14:11:28",
-    "message": "Added AudioSourceEntity tests, download timeout\r\nImproved client playback time synchronization and URL validation\r\nPolishing pass",
-    "user": "Raul"
-  },
-  {
-    "id": 630558,
-    "branch": "main/jungle_shadowcaster_fix",
-    "changeset": "163193",
-    "created": "2026-09-04T14:03:38",
-    "message": "manually reverted 161177 and tied it to a poolable.cachestatesoninit convar for further testing, stops the jungle fps drop",
-    "user": "Grigler"
-  },
-  {
-    "id": 630553,
-    "branch": "main/glass_ar_motion_blur_fix",
-    "changeset": "163190",
-    "created": "2026-09-04T13:36:22",
-    "message": "Add special transparent motion vector pass to view model\n\nThis new pass is used for transparent-yet-solid objects like the Crystal AR skin. I also moved the view model's motion vector pass to OnBeforeImageEffects (after transparent) where writing to the depth buffer has fewer consequences.",
-    "user": "Felix"
-  },
-  {
-    "id": 630551,
-    "branch": "main/Livestock_animals",
-    "changeset": "163188",
-    "created": "2026-09-04T13:29:36",
-    "message": "- Fix graze share counting the walk so fullness kept falling \r\n- put the old drink rate back\r\n- let starving animals roam for food\r\n- guard ResetPath on unplaced agents",
-    "user": "Maverick"
-  },
-  {
-    "id": 630547,
-    "branch": "main/hackweek_sound_player_entity",
-    "changeset": "163187",
-    "created": "2026-09-04T13:10:36",
-    "message": "Registration fix",
-    "user": "Raul"
-  },
-  {
-    "id": 630545,
-    "branch": "main/hackweek_sound_player_entity",
-    "changeset": "163186",
-    "created": "2026-09-04T13:08:40",
-    "message": "Codegen, manifest",
-    "user": "Raul"
-  },
-  {
-    "id": 630544,
-    "branch": "main/underground_train_network_update",
-    "changeset": "163185",
-    "created": "2026-09-04T13:02:34",
-    "message": "underground small train station update",
-    "user": "erik.b"
-  },
-  {
-    "id": 630543,
-    "branch": "main/Livestock_animals",
-    "changeset": "163184",
-    "created": "2026-09-04T13:01:52",
-    "message": "Cow stomp animation added",
-    "user": "wes.b"
-  },
-  {
-    "id": 630542,
-    "branch": "main/Livestock_animals",
-    "changeset": "163183",
-    "created": "2026-09-04T12:59:24",
-    "message": "- Move CoatIndex after the other autosaved syncvars so older livestock saves read the right bytes\r\n- Skip a parent which has a coat the calf prefab has no material for when inheriting, else a stale number wtill be handed down\r\n- Resend the newborn right after its coat is inherited else it change scolour after appearing\r\n- Forget the painted coat in OnDisable rather than OnEnable, pooling runs that after the next occupant has already painted\r\n- Apply the corpse coat from ClientInit alone and drop the syncvar callback that fired before the ragdoll existed\r\n- Compare coat names per index across stages and ragdolls, not just the count\r\n- Move SaveAndRestart in RustTestFixture and SpawnOnNavmesh in AITestFixture and use them from the livestock fixtures\r\n- Reword the InitCoat and save test comments, the isLoadingSave guard only saves a roll the load overwrites anyway",
-    "user": "Maverick"
-  },
-  {
-    "id": 630540,
-    "branch": "main/character_customisation",
-    "changeset": "163182",
-    "created": "2026-09-04T12:52:15",
-    "message": "Can no longer clip the character preview camera into the walls/props\r\n- spherecast and pull itself out of geometry",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 630537,
-    "branch": "main/Twitchdropsrender",
-    "changeset": "163181",
-    "created": "2026-09-04T12:39:02",
-    "message": "checks if models missing for new skinnables, add tool to auto add missing models - flavien review",
-    "user": "Lewis"
-  },
-  {
-    "id": 630532,
-    "branch": "main/character_customisation",
-    "changeset": "163180",
-    "created": "2026-09-04T12:28:20",
-    "message": "- Much better apartment scene setup \r\n- Better composition\r\n- Slightly modfiied lighting (more work to go)",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 630531,
-    "branch": "main/paintballgun_colourequipfix",
-    "changeset": "163179",
-    "created": "2026-09-04T12:27:24",
-    "message": "Fix paintball gun item data not updating colour upon being equipped",
-    "user": "Martyn Chapman"
   }
 ]
