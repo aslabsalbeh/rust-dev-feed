@@ -1,5 +1,133 @@
 [
   {
+    "id": 631201,
+    "branch": "main/character_customisation",
+    "changeset": "163473",
+    "created": "2026-09-08T14:00:38",
+    "message": "- Add color selection system for hair/skin colour\r\n- Add spotlight above the character\r\n- Dont rerender all icons if you change colour",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 631200,
+    "branch": "main",
+    "changeset": "163472",
+    "created": "2026-09-08T13:58:48",
+    "message": "merging 3p arrows not hiding fix",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 631197,
+    "branch": "main",
+    "changeset": "163470",
+    "created": "2026-09-08T13:54:28",
+    "message": "Unfucking ifdefs",
+    "user": "andre"
+  },
+  {
+    "id": 631196,
+    "branch": "main/Livestock_animals/livestock_nav_optis",
+    "changeset": "163469",
+    "created": "2026-09-08T13:52:29",
+    "message": "More path following optis for -17.5%:\r\n- Cache transform in navmesh agent\r\n- Use reference equal instead of == for independantNavmesh to avoid the unity overload\r\n- Batch apply transforms after ticking all agents with IJobParallelForTransform\r\n- Remove one normalize to the movement math",
+    "user": "Maverick"
+  },
+  {
+    "id": 631195,
+    "branch": "main/powerlevel_loot_rooms",
+    "changeset": "163468",
+    "created": "2026-09-08T13:48:03",
+    "message": "Made ferry terminal loot room functional with power grid",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 631193,
+    "branch": "main/sandbag_barricade_variants",
+    "changeset": "163467",
+    "created": "2026-09-08T13:43:55",
+    "message": "More setup",
+    "user": "Adam W"
+  },
+  {
+    "id": 631190,
+    "branch": "main",
+    "changeset": "163466",
+    "created": "2026-09-08T13:41:25",
+    "message": "Enabled graphics jobs on Mac\nSwitched graphics jobs to Split",
+    "user": "andre"
+  },
+  {
+    "id": 631189,
+    "branch": "▍▉▆▇",
+    "changeset": "▆▄▍▊▄▋",
+    "created": "2026-09-08T13:41:13",
+    "message": "▌ █▆▇▄▆ ▇▅▉▍ █▌▅▌▉▋▌▋▆▋▆▊▄▇▌▉▅█▅▅▅",
+    "user": "lamalove"
+  },
+  {
+    "id": 631188,
+    "branch": "█▆█▋▌▆▊█▊▅▅▋▄▋▄▍▆▇▊▍▆▊",
+    "changeset": "▋█▇▅▌▄",
+    "created": "2026-09-08T13:40:11",
+    "message": "▇ ▅▉▅▉▇▍ ▊█▉▋▄█▇▌▅█ ▅▅▇▅ █▍▍ ▋▍▆▋▌▇▋ ▊▅▆▍▅▅▆██▍▋▆▄ ▍▅▍▉▆▍█",
+    "user": "lamalove"
+  },
+  {
+    "id": 631178,
+    "branch": "main/arrows_not_hiding_fix",
+    "changeset": "163463",
+    "created": "2026-09-08T13:23:33",
+    "message": "Fix for 3p_bow not hiding the arrow mesh on the server",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 631177,
+    "branch": "main/animation_naming_cleanup",
+    "changeset": "163462",
+    "created": "2026-09-08T13:20:21",
+    "message": "Updates to all weapon anim controllers to match convention",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 631175,
+    "branch": "main/Livestock_animals/Cow_pattern_testing",
+    "changeset": "163461",
+    "created": "2026-09-08T13:18:08",
+    "message": "First pass procedural cow pattern shader",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 631165,
+    "branch": "main/powerlevel_loot_rooms",
+    "changeset": "163459",
+    "created": "2026-09-08T13:08:54",
+    "message": "ladders merge",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 631164,
+    "branch": "main/powerlevel_loot_rooms",
+    "changeset": "163458",
+    "created": "2026-09-08T13:08:20",
+    "message": "Ferry terminal power grid loot room",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 631137,
+    "branch": "main/sandbag_barricade_variants",
+    "changeset": "163457",
+    "created": "2026-09-08T12:11:34",
+    "message": "Add items, link em up.",
+    "user": "Adam W"
+  },
+  {
+    "id": 631136,
+    "branch": "main/Livestock_animals",
+    "changeset": "163456",
+    "created": "2026-09-08T12:10:59",
+    "message": "More navmesh and path following optis:\r\n- Disable navmesh carving completely when new navmesh is enabled, we still had its overhead\r\n- Pin arrays before marshalling them, because unity's mono is not smart enough to do it and is copying everything which is excruciatingly slow\r\n- During path following, when calculating remaining distance, cache the rest of the path and only update the current segment we're on, instead of recalculating the length of the whole path\r\n- Add telemetry to new navmesh",
+    "user": "Maverick"
+  },
+  {
     "id": 631125,
     "branch": "main/Livestock_animals",
     "changeset": "163454",
@@ -581,14 +709,6 @@
     "changeset": "163275",
     "created": "2026-09-05T16:32:21",
     "message": "- Mothers now defend calves if they are hurt, and don't forget too fast what you did\r\n- Better courtship between bull and cows, more legible to a player (ai commands: addignoreplayer, spawn bull, spawn cow, forcebreed)\r\n- Fix client crash when calf dies because of NRE, it seems every ragdoll other than cow was not setup properly, maybe because of the new ragdoll copy tool? => added a CI test to validate ragdoll assets so that it doesn't happen again",
-    "user": "Maverick"
-  },
-  {
-    "id": 630716,
-    "branch": "main/Livestock_animals",
-    "changeset": "163271",
-    "created": "2026-09-05T13:36:46",
-    "message": "Fix broken livestock tests that always return red because behaviour changed / were non-deterministic and would fail sometimes",
     "user": "Maverick"
   }
 ]
