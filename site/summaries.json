@@ -1,16 +1,34 @@
 {
   "2026-09-08": {
-    "commit_count": 39,
-    "relevant_commit_count": 18,
-    "relevant_signature": "631054,631071,631072,631087,631088,631093,631097,631103,631111,631114,631116,631121,631125,631164,631165,631178,631195,631200",
+    "commit_count": 55,
+    "relevant_commit_count": 24,
+    "relevant_signature": "631054,631071,631072,631087,631088,631093,631097,631103,631111,631114,631116,631121,631125,631164,631165,631178,631195,631200,631214,631216,631217,631233,631235,631240",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Loot & Monuments",
+        "title": "Base Building",
         "items": [
           {
-            "text": "Ferry terminal now contains a power‑grid‑required loot room, adding new high‑tier loot for players who power it.",
+            "text": "Gates now open opposite direction and have updated bounds, improving placement and functionality.",
+            "commit_ids": [
+              631121,
+              631103
+            ]
+          },
+          {
+            "text": "New sandbag variations are now unlockable via the original/BP button.",
+            "commit_ids": [
+              631217
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monuments & Loot",
+        "items": [
+          {
+            "text": "Ferry terminal now contains a functional, powered loot room.",
             "commit_ids": [
               631195,
               631164
@@ -19,50 +37,21 @@
         ]
       },
       {
-        "title": "Building & Defenses",
-        "items": [
-          {
-            "text": "Gate opening direction has been reversed, and gates now snap‑place more reliably.",
-            "commit_ids": [
-              631121
-            ]
-          },
-          {
-            "text": "Gate collision bounds have been updated, altering how close you can stand to a closed gate.",
-            "commit_ids": [
-              631103
-            ]
-          },
-          {
-            "text": "Debris objects now use wood protection instead of stone, making them easier to destroy with explosives.",
-            "commit_ids": [
-              631088
-            ]
-          }
-        ]
-      },
-      {
         "title": "Items & Crafting",
         "items": [
           {
-            "text": "Honey bandage is now craftable from the primitive and hardcore tech trees, providing a new medical option.",
+            "text": "Honey bandage added to the primitive and hardcore tech trees.",
             "commit_ids": [
               631071
-            ]
-          },
-          {
-            "text": "Placeholder crafting costs for animal fencing items have been adjusted to more sensible values.",
-            "commit_ids": [
-              631093
             ]
           }
         ]
       },
       {
-        "title": "Seasonal Content",
+        "title": "Events",
         "items": [
           {
-            "text": "Holiday wreaths (Halloween and Easter) now deploy correctly, with fixed pickup behavior and deploy‑guide sound.",
+            "text": "Halloween and Easter door wreaths now deploy and can be picked up correctly.",
             "commit_ids": [
               631097
             ]
@@ -70,28 +59,56 @@
         ]
       },
       {
-        "title": "Visual & Bug Fixes",
+        "title": "Stability",
         "items": [
           {
-            "text": "Arrows shot from bows now correctly disappear for all players, removing lingering arrow meshes.",
+            "text": "Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.",
             "commit_ids": [
-              631200,
-              631178
+              631216
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Mechanics",
+        "title": "Visual Bugs",
         "items": [
           {
-            "text": "Fences now have proper collision, preventing players and objects from clipping through them.",
+            "text": "Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes.",
             "commit_ids": [
-              631072
+              631178,
+              631200
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Adjusted placeholder crafting costs to more reasonable values, improving early‑game resource planning.",
+            "commit_ids": [
+              631093
             ]
           },
           {
-            "text": "Gates now correctly detect and respond to player interaction, fixing cases where they would stay stuck or fail to open.",
+            "text": "Wood fences now provide protection comparable to stone walls, improving defensive capability.",
+            "commit_ids": [
+              631088
+            ]
+          },
+          {
+            "text": "Fences and related prefabs now have correct collision, allowing them to block movement and projectiles properly.",
+            "commit_ids": [
+              631072
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Mechanics",
+        "items": [
+          {
+            "text": "Added missing socket and validation checks on gates, restoring proper gate operation.",
             "commit_ids": [
               631054
             ]
@@ -99,27 +116,41 @@
         ]
       }
     ],
-    "summary": "### Loot & Monuments\n- Ferry terminal now contains a power‑grid‑required loot room, adding new high‑tier loot for players who power it.\n\n### Building & Defenses\n- Gate opening direction has been reversed, and gates now snap‑place more reliably.\n- Gate collision bounds have been updated, altering how close you can stand to a closed gate.\n- Debris objects now use wood protection instead of stone, making them easier to destroy with explosives.\n\n### Items & Crafting\n- Honey bandage is now craftable from the primitive and hardcore tech trees, providing a new medical option.\n- Placeholder crafting costs for animal fencing items have been adjusted to more sensible values.\n\n### Seasonal Content\n- Holiday wreaths (Halloween and Easter) now deploy correctly, with fixed pickup behavior and deploy‑guide sound.\n\n### Visual & Bug Fixes\n- Arrows shot from bows now correctly disappear for all players, removing lingering arrow meshes.\n\n### Gameplay & Mechanics\n- Fences now have proper collision, preventing players and objects from clipping through them.\n- Gates now correctly detect and respond to player interaction, fixing cases where they would stay stuck or fail to open.",
+    "summary": "### Base Building\n- Gates now open opposite direction and have updated bounds, improving placement and functionality.\n- New sandbag variations are now unlockable via the original/BP button.\n\n### Monuments & Loot\n- Ferry terminal now contains a functional, powered loot room.\n\n### Items & Crafting\n- Honey bandage added to the primitive and hardcore tech trees.\n\n### Events\n- Halloween and Easter door wreaths now deploy and can be picked up correctly.\n\n### Stability\n- Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.\n\n### Visual Bugs\n- Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes.\n\n### Gameplay & Balance\n- Adjusted placeholder crafting costs to more reasonable values, improving early‑game resource planning.\n- Wood fences now provide protection comparable to stone walls, improving defensive capability.\n- Fences and related prefabs now have correct collision, allowing them to block movement and projectiles properly.\n\n### Structures & Mechanics\n- Added missing socket and validation checks on gates, restoring proper gate operation.",
     "new_items": [
       {
-        "text": "Ferry terminal now contains a power‑grid‑required loot room, adding new high‑tier loot for players who power it.",
+        "text": "New sandbag variations are now unlockable via the original/BP button.",
+        "commit_ids": [
+          631217
+        ],
+        "section": "Base Building"
+      },
+      {
+        "text": "Ferry terminal now contains a functional, powered loot room.",
         "commit_ids": [
           631195,
           631164
         ],
-        "section": "Loot & Monuments"
+        "section": "Monuments & Loot"
       },
       {
-        "text": "Arrows shot from bows now correctly disappear for all players, removing lingering arrow meshes.",
+        "text": "Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.",
         "commit_ids": [
-          631200,
-          631178
+          631216
         ],
-        "section": "Visual & Bug Fixes"
+        "section": "Stability"
+      },
+      {
+        "text": "Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes.",
+        "commit_ids": [
+          631178,
+          631200
+        ],
+        "section": "Visual Bugs"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Ferry terminal now contains a power‑grid‑required loot room, adding new high‑tier loot for players who power it.\n- Arrows shot from bows now correctly disappear for all players, removing lingering arrow meshes."
+    "new_relevant_count": 6,
+    "new_summary": "- New sandbag variations are now unlockable via the original/BP button.\n- Ferry terminal now contains a functional, powered loot room.\n- Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.\n- Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes."
   },
   "2026-09-07": {
     "commit_count": 38,
