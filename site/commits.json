@@ -1,5 +1,85 @@
 [
   {
+    "id": 631272,
+    "branch": "main/smart_alarm_deployment_fix",
+    "changeset": "163512",
+    "created": "2026-09-08T18:06:51",
+    "message": "Improve smart alarm deployment, can now be placed on top of more other deployables\r\nFixed oversized bounds, removed unnecessary deploy volume, assigned physics material\r\nhttps://files.facepunch.com/cipeax/2026/September/08_19-57-OrangeSableantelope.jpg",
+    "user": "cipeaX"
+  },
+  {
+    "id": 631266,
+    "branch": "▋▆▋█▊▌▄▌█▆▌█▍▍▋▅▌▆▌▍▆▆",
+    "changeset": "▊█▊▄▅▅",
+    "created": "2026-09-08T18:01:07",
+    "message": "▄ ▄▅▌▌▉▌▋ ▅▇▆▍▅▍█▌ ▆█▆▉ █▉▅▆▇▄▇ ▅█▆▉ ▆█▆▆▉ ▋█▌ ▋▌█▌▌▄▌█ ▌▌ ▆█▉▍▇▇▉ ▍▍█▋ ▆▋▇ ▍▋▄█▌▊▌▄▌▊ ▉▋▄ ▊▆▅▉▉ ▉▆▅ ▋▍▆▅▌▋▊▌▍▅▉▅▅▍▄▄▇ ▊▅▄ ▅▊▍▇▊ ▇▌ ▊▋▍▅▊█▅▆▌▋▇▄▍▅ ▅▌ █▄▊ ▌▋▅ ▅▅▍█▆▍ ▄▍▍ ▉█▍▄ ▅▄▄▌ ▊▍▋▆ ▇▄▉ ▅▌▄▋█▇▍ █▄▉▊ ▋▅▆▆▅▅▌ ▌▌ ▉▄▅▄▌█▅▍▍ ▍ ▌▋▅ █▆▇▍ ▆▉▉▉▄ ▌▉ █▆ ▌▉█▋ ▊█▉▅▄▅▋▍▍▍ ▅▄▉ ▅▊▌▊▋▄▌ ▆▌▆▆ ▇▉▆▊▊▉ ▉▊▉▅▇▇▆▍ █▅▊▄▇▉▇█ █▋▌▉▊▅▉▉▉▋▆ ▆▌ █▌▄ ▇█▇▉██▋ ▆▊▋ ▆▌▅▆▉▊▌▌ ▅█▋▄▍▇▄▄ ▉▊▅▍▄▍▆▊▊ ▌▅ ▌▄▍ ▍▊▍▍▍ ▋▇▇ ▅▉▇▄▇▇▆▆▉ ▄█▇▌▅▅▊▊▆▉▉▉▊▉▄▋▅▉▅▅▄█▇▊▆█▊ ▉▄▊ ▌▇█▇▅▇▊▅▋ █▆▆▊▅ ▌▌ ▉▄▇ ▆▆▌▅▅█▉▄▋▊▋█▅▉▊▋▅▅ ▆▇▊▅▍▋ ▊▍▋ ▌ ▆▋█▌▊▅ ▌█▄ ▆▆▌▊▆▍ ▉▄▄▅ ▊▍█▊▊▆ ▊▋▄ ▆ ▄█▆▋▋▌▍▆ ▌▌▍▋▆▊ ▍▌▇▋ ▇▆█ ▋▊▌▄▌▌ ▅▋▊▍█▋▆▍▋▄ ▅▌█▍ ▆▅▅ ▅▍▋▋ ▊▌▍▌▇▌",
+    "user": "Jakb"
+  },
+  {
+    "id": 631263,
+    "branch": "main/cookingworkbench_stopping_fix",
+    "changeset": "163505",
+    "created": "2026-09-08T17:33:27",
+    "message": "Possible fix for an issue with cooking workbenches in the snow stopping to cook shortly after inserting refrigerated items and quickly starting the cooking process\r\nTransfer over the Refrigerated flag when splitting items, the spoiling work queue will still update it on the next tick anyway, but its a better initial state and fixes item stacks split off briefly becoming un-refrigerated before being updated, dirtying the inventory and stopping cooking",
+    "user": "cipeaX"
+  },
+  {
+    "id": 631261,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "163504",
+    "created": "2026-09-08T17:14:50",
+    "message": "Update(editor): UpdateImageUrls - add progress bar and generalize field lookups by naming convention\r\nTests: ran script with artificial delays during image upload stage",
+    "user": "Daniel P"
+  },
+  {
+    "id": 631257,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "163502",
+    "created": "2026-09-08T16:47:57",
+    "message": "Update(editor): UpdateImageUrls automation - scans referenced store textures and tries to upload changed, while fixing up urls\r\nTests: most of store UI is now missing images (as there's no backend content)",
+    "user": "Daniel P"
+  },
+  {
+    "id": 631253,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "163500",
+    "created": "2026-09-08T16:25:05",
+    "message": "enabled swimming for frogs, with first pass animator setup\r\nfixed frog interest, now more consistently finds water spots to start croaking",
+    "user": "ElliotH"
+  },
+  {
+    "id": 631252,
+    "branch": "main/biofuel_generator",
+    "changeset": "163499",
+    "created": "2026-09-08T16:23:34",
+    "message": "Biofuel Generator: blockout testing deployment\n\n- deployed prefab: referenced mixing table, simple box colliders, foliage displacement\r\n- guide prefab using same FBX\n- item generator.biofuel with placeholder blueprint and icon\n- needs Update Game Manifest",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 631250,
+    "branch": "main/automated_testing",
+    "changeset": "163496",
+    "created": "2026-09-08T16:19:00",
+    "message": "Fix animation test missing some animation events, fix a couple more cases that cause warnings ingame",
+    "user": "cipeaX"
+  },
+  {
+    "id": 631247,
+    "branch": "main/character_customisation",
+    "changeset": "163495",
+    "created": "2026-09-08T16:17:15",
+    "message": "- Help window\r\n- Increased size of the creator window\r\n- Minor icon size polish",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 631243,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "163492",
+    "created": "2026-09-08T16:09:43",
+    "message": "exported latest nailgun refresh vm anims",
+    "user": "julek"
+  },
+  {
     "id": 631240,
     "branch": "main/Livestock_animals/Cow_pattern_testing",
     "changeset": "163490",
@@ -829,14 +909,6 @@
     "changeset": "163276",
     "created": "2026-09-05T18:19:39",
     "message": "Livestock capture/domestication first pass:\r\n- you gain trust by just hanging around cows, enough trust and you can lead them where you want, even more trust and they come sleep near your TC unprompted\r\n- with enough trust bulls become neutral to you instead of trying to punch you, maxed out trust makes bulls protect you from threats\r\n- not mandatory, you can still coerce a cow into your base by hitting then chasing it in the right direction, or luring a bull that's chasing you, then only build trust once they are captive\r\n- some wild cows are also naive and just follow players for no reason, you can kidnap naive calves and capture their mom for free\r\n- bull army soon possible",
-    "user": "Maverick"
-  },
-  {
-    "id": 630723,
-    "branch": "main/Livestock_animals",
-    "changeset": "163275",
-    "created": "2026-09-05T16:32:21",
-    "message": "- Mothers now defend calves if they are hurt, and don't forget too fast what you did\r\n- Better courtship between bull and cows, more legible to a player (ai commands: addignoreplayer, spawn bull, spawn cow, forcebreed)\r\n- Fix client crash when calf dies because of NRE, it seems every ragdoll other than cow was not setup properly, maybe because of the new ragdoll copy tool? => added a CI test to validate ragdoll assets so that it doesn't happen again",
     "user": "Maverick"
   }
 ]

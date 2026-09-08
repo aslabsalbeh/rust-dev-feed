@@ -1,103 +1,48 @@
 {
   "2026-09-08": {
-    "commit_count": 55,
-    "relevant_commit_count": 24,
-    "relevant_signature": "631054,631071,631072,631087,631088,631093,631097,631103,631111,631114,631116,631121,631125,631164,631165,631178,631195,631200,631214,631216,631217,631233,631235,631240",
+    "commit_count": 65,
+    "relevant_commit_count": 30,
+    "relevant_signature": "631054,631071,631072,631087,631088,631093,631097,631103,631111,631114,631116,631121,631125,631164,631165,631178,631195,631200,631214,631216,631217,631233,631235,631240,631243,631250,631253,631257,631263,631272",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building",
+        "title": "Structures & Deployables",
         "items": [
           {
-            "text": "Gates now open opposite direction and have updated bounds, improving placement and functionality.",
+            "text": "Smart Alarm can now be placed on more deployables; bounds fixed and physics material assigned.",
             "commit_ids": [
-              631121,
-              631103
+              631272
             ]
           },
           {
-            "text": "New sandbag variations are now unlockable via the original/BP button.",
+            "text": "New sandbag variations unlocked; original/BP button behavior fixed.",
             "commit_ids": [
               631217
             ]
-          }
-        ]
-      },
-      {
-        "title": "Monuments & Loot",
-        "items": [
+          },
           {
-            "text": "Ferry terminal now contains a functional, powered loot room.",
-            "commit_ids": [
-              631195,
-              631164
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items & Crafting",
-        "items": [
-          {
-            "text": "Honey bandage added to the primitive and hardcore tech trees.",
-            "commit_ids": [
-              631071
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Events",
-        "items": [
-          {
-            "text": "Halloween and Easter door wreaths now deploy and can be picked up correctly.",
+            "text": "Seasonal decorations (wreaths, string lights) now deploy, pickup, and sound correctly, with proper placement guides.",
             "commit_ids": [
               631097
             ]
-          }
-        ]
-      },
-      {
-        "title": "Stability",
-        "items": [
+          },
           {
-            "text": "Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.",
+            "text": "Gates now open in the correct direction, have updated collision bounds, and proper socket checks for reliable placement.",
             "commit_ids": [
-              631216
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Visual Bugs",
-        "items": [
-          {
-            "text": "Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes.",
-            "commit_ids": [
-              631178,
-              631200
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Adjusted placeholder crafting costs to more reasonable values, improving early‑game resource planning.",
-            "commit_ids": [
-              631093
+              631121,
+              631103,
+              631054
             ]
           },
           {
-            "text": "Wood fences now provide protection comparable to stone walls, improving defensive capability.",
+            "text": "Fence durability improved: debris removal and wood protection now applied instead of stone.",
             "commit_ids": [
               631088
             ]
           },
           {
-            "text": "Fences and related prefabs now have correct collision, allowing them to block movement and projectiles properly.",
+            "text": "Prefab collision and collider setups corrected, fixing interaction bugs with structures and objects.",
             "commit_ids": [
               631072
             ]
@@ -105,52 +50,90 @@
         ]
       },
       {
-        "title": "Structures & Mechanics",
+        "title": "Crafting & Items",
         "items": [
           {
-            "text": "Added missing socket and validation checks on gates, restoring proper gate operation.",
+            "text": "Cooking workbenches in snow no longer pause cooking when refrigerated items are inserted; refrigerated flag correctly transferred on splits.",
             "commit_ids": [
-              631054
+              631263
+            ]
+          },
+          {
+            "text": "Placeholder crafting costs adjusted to more sensible values.",
+            "commit_ids": [
+              631093
+            ]
+          },
+          {
+            "text": "Honey bandage added to primitive and hardcore tech trees, expanding medical crafting options.",
+            "commit_ids": [
+              631071
+            ]
+          }
+        ]
+      },
+      {
+        "title": "NPC & AI",
+        "items": [
+          {
+            "text": "Frogs can now swim and more reliably seek water spots to croak.",
+            "commit_ids": [
+              631253
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Visuals",
+        "items": [
+          {
+            "text": "Third‑person arrows (including bow arrows) now correctly hide their mesh on the server, eliminating visual glitches.",
+            "commit_ids": [
+              631200,
+              631178
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Loot & Power",
+        "items": [
+          {
+            "text": "Ferry terminal loot room now functional and powered via the power grid.",
+            "commit_ids": [
+              631195,
+              631164
             ]
           }
         ]
       }
     ],
-    "summary": "### Base Building\n- Gates now open opposite direction and have updated bounds, improving placement and functionality.\n- New sandbag variations are now unlockable via the original/BP button.\n\n### Monuments & Loot\n- Ferry terminal now contains a functional, powered loot room.\n\n### Items & Crafting\n- Honey bandage added to the primitive and hardcore tech trees.\n\n### Events\n- Halloween and Easter door wreaths now deploy and can be picked up correctly.\n\n### Stability\n- Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.\n\n### Visual Bugs\n- Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes.\n\n### Gameplay & Balance\n- Adjusted placeholder crafting costs to more reasonable values, improving early‑game resource planning.\n- Wood fences now provide protection comparable to stone walls, improving defensive capability.\n- Fences and related prefabs now have correct collision, allowing them to block movement and projectiles properly.\n\n### Structures & Mechanics\n- Added missing socket and validation checks on gates, restoring proper gate operation.",
+    "summary": "### Structures & Deployables\n- Smart Alarm can now be placed on more deployables; bounds fixed and physics material assigned.\n- New sandbag variations unlocked; original/BP button behavior fixed.\n- Seasonal decorations (wreaths, string lights) now deploy, pickup, and sound correctly, with proper placement guides.\n- Gates now open in the correct direction, have updated collision bounds, and proper socket checks for reliable placement.\n- Fence durability improved: debris removal and wood protection now applied instead of stone.\n- Prefab collision and collider setups corrected, fixing interaction bugs with structures and objects.\n\n### Crafting & Items\n- Cooking workbenches in snow no longer pause cooking when refrigerated items are inserted; refrigerated flag correctly transferred on splits.\n- Placeholder crafting costs adjusted to more sensible values.\n- Honey bandage added to primitive and hardcore tech trees, expanding medical crafting options.\n\n### NPC & AI\n- Frogs can now swim and more reliably seek water spots to croak.\n\n### Combat & Visuals\n- Third‑person arrows (including bow arrows) now correctly hide their mesh on the server, eliminating visual glitches.\n\n### Loot & Power\n- Ferry terminal loot room now functional and powered via the power grid.",
     "new_items": [
       {
-        "text": "New sandbag variations are now unlockable via the original/BP button.",
+        "text": "Smart Alarm can now be placed on more deployables; bounds fixed and physics material assigned.",
         "commit_ids": [
-          631217
+          631272
         ],
-        "section": "Base Building"
+        "section": "Structures & Deployables"
       },
       {
-        "text": "Ferry terminal now contains a functional, powered loot room.",
+        "text": "Cooking workbenches in snow no longer pause cooking when refrigerated items are inserted; refrigerated flag correctly transferred on splits.",
         "commit_ids": [
-          631195,
-          631164
+          631263
         ],
-        "section": "Monuments & Loot"
+        "section": "Crafting & Items"
       },
       {
-        "text": "Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.",
+        "text": "Frogs can now swim and more reliably seek water spots to croak.",
         "commit_ids": [
-          631216
+          631253
         ],
-        "section": "Stability"
-      },
-      {
-        "text": "Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes.",
-        "commit_ids": [
-          631178,
-          631200
-        ],
-        "section": "Visual Bugs"
+        "section": "NPC & AI"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- New sandbag variations are now unlockable via the original/BP button.\n- Ferry terminal now contains a functional, powered loot room.\n- Server stall caused by a dtRaycast infinite loop fixed, improving overall server stability.\n- Arrows shot from bows now correctly hide on the server, removing lingering arrow meshes."
+    "new_relevant_count": 3,
+    "new_summary": "- Smart Alarm can now be placed on more deployables; bounds fixed and physics material assigned.\n- Cooking workbenches in snow no longer pause cooking when refrigerated items are inserted; refrigerated flag correctly transferred on splits.\n- Frogs can now swim and more reliably seek water spots to croak."
   },
   "2026-09-07": {
     "commit_count": 38,
