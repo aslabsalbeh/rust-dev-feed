@@ -1,5 +1,21 @@
 [
   {
+    "id": 631292,
+    "branch": "▊▄▅▊▍▊▍▍▉▆▍▌▊▆▊▅▅▄▍▌▇",
+    "changeset": "▋▇▅▇█▌",
+    "created": "2026-09-08T19:02:24",
+    "message": "▊ ▊▆▇▉▆ ▉▋▇▌ ▇▆▍█",
+    "user": "cipeaX"
+  },
+  {
+    "id": 631278,
+    "branch": "main/biofuel_generator",
+    "changeset": "163515",
+    "created": "2026-09-08T18:19:40",
+    "message": "Biofuel Generator: manifest and engine.json for the new entity",
+    "user": "Pilgrim"
+  },
+  {
     "id": 631272,
     "branch": "main/smart_alarm_deployment_fix",
     "changeset": "163512",
@@ -886,29 +902,5 @@
     "created": "2026-09-05T22:16:47",
     "message": "Deploy guides for 20 deployables moved from Guide Mesh to guide prefabs so they keep their materials on lower LODs and custom meshes; normal maps and cutouts restored on all 20, guide tris and draws unchanged from the LOD1 retargets.\n\nGuide Mesh only inherits materials from a renderer the entity actually draws, which on RendererLOD and MeshLOD assets is LOD0 only, so the LOD1 retargets and the planter guide meshes were rendering flat. Each guide prefab is one child on the same mesh with the materials copied from the entity's own renderer for that LOD.\r\n\r\nneeds manifest update",
     "user": "Pilgrim"
-  },
-  {
-    "id": 630733,
-    "branch": "main/Livestock_animals",
-    "changeset": "163278",
-    "created": "2026-09-05T19:39:48",
-    "message": "Add tests for domestication / grudge, fix TC faulty replication because it's a prop",
-    "user": "Maverick"
-  },
-  {
-    "id": 630727,
-    "branch": "main/guide_mesh_optimisations",
-    "changeset": "163277",
-    "created": "2026-09-05T18:51:07",
-    "message": "Shockbyte tool cupboard deploy guide switched from the LOD0 mesh to a custom guide mesh via a guide prefab, guide draws 4 -> 2, tris 37,958 -> 13,646, both normal maps kept.",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 630725,
-    "branch": "main/Livestock_animals",
-    "changeset": "163276",
-    "created": "2026-09-05T18:19:39",
-    "message": "Livestock capture/domestication first pass:\r\n- you gain trust by just hanging around cows, enough trust and you can lead them where you want, even more trust and they come sleep near your TC unprompted\r\n- with enough trust bulls become neutral to you instead of trying to punch you, maxed out trust makes bulls protect you from threats\r\n- not mandatory, you can still coerce a cow into your base by hitting then chasing it in the right direction, or luring a bull that's chasing you, then only build trust once they are captive\r\n- some wild cows are also naive and just follow players for no reason, you can kidnap naive calves and capture their mom for free\r\n- bull army soon possible",
-    "user": "Maverick"
   }
 ]
