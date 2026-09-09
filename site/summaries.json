@@ -1,16 +1,50 @@
 {
   "2026-09-09": {
-    "commit_count": 82,
-    "relevant_commit_count": 55,
+    "commit_count": 91,
+    "relevant_commit_count": 62,
     "relevant_signature": "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425,632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541,632548,632549,632552,632558,632562,632566,632572,632575,632587",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541,632548,632549,632552,632558,632562,632566,632572,632575,632587,632592,632594,632598": [
+      "632512,632513,632525,632532,632535,632541,632548,632549,632552,632558,632562,632566,632572,632575,632587,632592,632594,632598,632606,632613,632614,632615,632621,632623,632628": [
         {
-          "title": "Combat & AI",
+          "title": "Livestock & Economy",
           "items": [
             {
-              "text": "Fixed bullets and arrows passing through oilrig scientists' upper bodies and incorrectly registering headshots when aiming at legs.",
+              "text": "Cow gene traits now affect the selling price of cattle.",
+              "commit_ids": [
+                632623
+              ]
+            },
+            {
+              "text": "Sea turtles introduced as ocean critters with shark‑like movement patterns.",
+              "commit_ids": [
+                632606
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World & Loot",
+          "items": [
+            {
+              "text": "Harbor 2 now includes a new power grid room.",
+              "commit_ids": [
+                632525
+              ]
+            },
+            {
+              "text": "Fixed a crate spawning inside the wall at the entrance of the easy cave, now appears correctly outside.",
+              "commit_ids": [
+                632532
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & NPC",
+          "items": [
+            {
+              "text": "Bullets and arrows no longer pass through oilrig scientists' upper bodies and correctly register headshots instead of leg hits.",
               "commit_ids": [
                 632587
               ]
@@ -18,16 +52,29 @@
           ]
         },
         {
-          "title": "Audio",
+          "title": "Audio & UI",
           "items": [
             {
-              "text": "Resolved duplicate third‑person weapon sounds that played twice.",
+              "text": "Third‑person weapon sounds no longer play twice; correct sounds applied to AK variants and reload/deploy audio fixed.",
               "commit_ids": [
                 632566
               ]
             },
             {
-              "text": "Locomotive bell sound is now heard by all players instead of being client‑side only.",
+              "text": "BBQ radial menu now correctly references the campfire instead of an incorrect item.",
+              "commit_ids": [
+                632575
+              ]
+            }
+          ]
+        }
+      ],
+      "632413,632415,632417,632418,632420,632424,632425,632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506": [
+        {
+          "title": "Audio",
+          "items": [
+            {
+              "text": "Locomotive bell sound is now audible to all players, fixing the previous client‑only issue.",
               "commit_ids": [
                 632498
               ]
@@ -35,100 +82,50 @@
           ]
         },
         {
-          "title": "UI & Quality of Life",
+          "title": "Building & Construction",
           "items": [
             {
-              "text": "BBQ radial menu now correctly references the campfire.",
-              "commit_ids": [
-                632575
-              ]
-            },
-            {
-              "text": "Fixed character customization edit system that previously didn’t work.",
-              "commit_ids": [
-                632562
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Building",
-          "items": [
-            {
-              "text": "Crate near the entrance of the easy cave now spawns correctly outside the cave instead of inside walls.",
-              "commit_ids": [
-                632532
-              ]
-            },
-            {
-              "text": "Construction sockets added and building volume restrictions relaxed for easier deployment of sandbag barricades.",
+              "text": "Construction sockets added and building volume restrictions relaxed, making it easier to place sandbag barricades.",
               "commit_ids": [
                 632495
               ]
-            },
-            {
-              "text": "Harbor 2 now includes a new power‑grid room.",
-              "commit_ids": [
-                632525
-              ]
             }
           ]
         },
         {
-          "title": "Content Additions",
+          "title": "Livestock & Harvesting",
           "items": [
             {
-              "text": "Lamb and sheep prefabs now yield lamb meat when harvested.",
+              "text": "Harvesting livestock now yields raw meat items: cows, bulls, calves give raw cow meat; lambs and sheep give lamb meat.",
               "commit_ids": [
+                632425,
                 632486
               ]
             },
             {
-              "text": "Added option to change the steering‑wheel code lock on player boats.",
+              "text": "Cows no longer heal while roaming; they only heal when their needs are met, preventing walled‑in cows from staying healthy indefinitely.",
+              "commit_ids": [
+                632426
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Boats",
+          "items": [
+            {
+              "text": "Added an option to change the code lock on player boat steering wheels.",
               "commit_ids": [
                 632479
               ]
             }
           ]
-        }
-      ],
-      "632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425,632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474": [
-        {
-          "title": "Livestock & Meat",
-          "items": [
-            {
-              "text": "Introduced Lamb meat items (raw, cooked, spoiled) with new models, textures, materials and updated item names/descriptions.",
-              "commit_ids": [
-                632474
-              ]
-            },
-            {
-              "text": "Introduced Cow meat items (raw, cooked, spoiled) with new models, textures, materials, updated names/descriptions, and modified corpse prefabs to drop raw cow meat.",
-              "commit_ids": [
-                632417,
-                632424,
-                632425
-              ]
-            },
-            {
-              "text": "Fixed cows healing while roaming; they now heal only when their needs are met, preventing exploitation of walled‑in cows.",
-              "commit_ids": [
-                632426
-              ]
-            },
-            {
-              "text": "Fixed stag AI not responding to select/move commands.",
-              "commit_ids": [
-                632398
-              ]
-            }
-          ]
         },
         {
-          "title": "Loot & Locations",
+          "title": "Loot Rooms",
           "items": [
             {
-              "text": "Added new loot rooms in the Airfield and Harbor 1 areas.",
+              "text": "New loot rooms added to the Airfield and Harbor 1 locations.",
               "commit_ids": [
                 632450
               ]
@@ -136,10 +133,10 @@
           ]
         },
         {
-          "title": "NPC & Interaction",
+          "title": "NPC Interactions",
           "items": [
             {
-              "text": "Enabled players to initiate NPC conversations over telephones.",
+              "text": "Players can now initiate NPC phone conversations via in‑game telephones.",
               "commit_ids": [
                 632442
               ]
@@ -147,29 +144,51 @@
           ]
         },
         {
-          "title": "Gameplay Systems",
+          "title": "Armor & Save System",
           "items": [
             {
-              "text": "Fixed a save/load bug that could corrupt player progress.",
+              "text": "Fixed a bug where directional armor data could be lost or corrupted on save/load.",
               "commit_ids": [
                 632432
-              ]
-            },
-            {
-              "text": "Repaired refrigeration status refresh delay when items move between containers, making cooking workbench updates immediate.",
-              "commit_ids": [
-                632391
               ]
             }
           ]
         }
       ],
-      "631348,631349,631351,631362,631364": [
+      "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409": [
         {
-          "title": "Vehicle Editing",
+          "title": "Animals & AI",
           "items": [
             {
-              "text": "Fixed a null reference exception crash in the Vehicle Editing Panel, preventing crashes when editing vehicles.",
+              "text": "Stags now respond correctly to AI select and move commands.",
+              "commit_ids": [
+                632398
+              ]
+            },
+            {
+              "text": "Animal leads work properly after purchase.",
+              "commit_ids": [
+                631348
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Storage & Cooking",
+          "items": [
+            {
+              "text": "Refrigeration status updates instantly when items change containers, eliminating previous delay.",
+              "commit_ids": [
+                632391
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicle Editing UI",
+          "items": [
+            {
+              "text": "Fixed a NullReferenceException crash in the Vehicle Editing Panel.",
               "commit_ids": [
                 631362
               ]
@@ -177,18 +196,12 @@
           ]
         },
         {
-          "title": "Livestock & Ranch",
+          "title": "NPCs & Vendors",
           "items": [
             {
-              "text": "Added a vendor NPC to the ranch, allowing players to buy and sell items directly at the ranch.",
+              "text": "A vendor has been added to the ranch, allowing players to purchase items there.",
               "commit_ids": [
                 631349
-              ]
-            },
-            {
-              "text": "Fixed animal leads breaking after purchase, so leads now correctly attach to newly bought animals.",
-              "commit_ids": [
-                631348
               ]
             }
           ]
@@ -304,17 +317,9 @@
       }
     ],
     "summary": "### Combat & Targeting\n- Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots.\n\n### World & Objects\n- Crate outside the small easy cave now spawns correctly outside instead of inside the wall.\n- Locomotive bell sound is audible to all nearby players, not just the one who triggered it.\n\n### Building & Construction\n- Building volume restrictions have been relaxed, making it easier to place construction sockets.\n\n### Animals & Farming\n- Livestock health and tethering improvements: cows only heal when their needs are met, animal leads no longer break after purchase, and sheep/lamb now yield Lamb Meat when harvested.\n- Stag AI now responds to select and move commands.\n- New cow meat items (raw, cooked, spoiled) added; corpses drop raw cow meat.\n\n### NPCs & Interaction\n- Players can now call NPCs via telephone to start phone conversations.\n- A new vendor NPC is available at the ranch for direct purchases.\n\n### Items, Crafting & New Content\n- Refrigeration status updates instantly when items change containers.\n- Steering wheel code lock on player boats can now be changed.\n- New loot rooms added at Airfield and Harbor 1, expanding loot locations.",
-    "new_items": [
-      {
-        "text": "Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots.",
-        "commit_ids": [
-          632587
-        ],
-        "section": "Combat & Targeting"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-08": {
     "commit_count": 73,
