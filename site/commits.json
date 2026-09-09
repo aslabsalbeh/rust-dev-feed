@@ -1,5 +1,21 @@
 [
   {
+    "id": 631352,
+    "branch": "main/sep_2026_mesh_checks",
+    "changeset": "163549",
+    "created": "2026-09-09T05:33:45",
+    "message": "Added a check to the SceneChecker if a mesh without RendererBatch has > 1000 verts but < 1100 (ie. close)",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 631351,
+    "branch": "main/sep_2026_mesh_checks",
+    "changeset": "163548",
+    "created": "2026-09-09T05:10:44",
+    "message": "RendererLOD and MeshLOD converters will now calculate new camera distances when converting from a LODGroup\r\nLODGroup measures screen height and our LOD components operate on distance so it's not perfectly 1:1 but it's better than the old hardcoded values\r\nAdd an inspector warning to the RendererLOD if there is a gap in the LOD settings (eg. LOD0 and 2 have targets, LOD1 is missing)\r\nAdd an inspector warning to MeshLOD if the same mesh appears multiple times\r\nAdded automated tests to find all meshes used for collision that calculates tangents, imports blendshapes, cameras, lights or materials",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 631349,
     "branch": "main/Livestock_animals",
     "changeset": "163547",
