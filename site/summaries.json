@@ -1,87 +1,90 @@
 {
   "2026-09-08": {
-    "commit_count": 68,
-    "relevant_commit_count": 31,
-    "relevant_signature": "631054,631071,631072,631087,631088,631093,631097,631103,631111,631114,631116,631121,631125,631164,631165,631178,631195,631200,631214,631216,631217,631233,631235,631240,631243,631250,631253,631257,631263,631272,631320",
+    "commit_count": 73,
+    "relevant_commit_count": 36,
+    "relevant_signature": "631054,631071,631072,631087,631088,631093,631097,631103,631111,631114,631116,631121,631125,631164,631165,631178,631195,631200,631214,631216,631217,631233,631235,631240,631243,631250,631253,631257,631263,631272,631320,631333,631335,631336,631339,631341",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building & Defenses",
+        "title": "Animals & NPCs",
         "items": [
           {
-            "text": "Added a sandbag pillbox barricade that can be crafted, repaired, and features a matching icon; also unlocked additional sandbag barricade variations and fixed the original/BP button behavior.",
+            "text": "NPCs can now sell baby animals to players",
+            "commit_ids": [
+              631341
+            ]
+          },
+          {
+            "text": "Livestock can now drink water from troughs with integrated water container",
+            "commit_ids": [
+              631333
+            ]
+          },
+          {
+            "text": "Frogs can swim and more reliably locate water spots for croaking",
+            "commit_ids": [
+              631253
+            ]
+          },
+          {
+            "text": "Fixed livestock pathfinding in short corridors, preventing premature path completion",
+            "commit_ids": [
+              631235
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Defenses",
+        "items": [
+          {
+            "text": "Sandbag pillbox barricade deployable added, with new sandbag variations and its own crafting and repair setup",
             "commit_ids": [
               631320,
               631217
             ]
           },
           {
-            "text": "Improved gates: reversed opening direction, expanded placement volume, updated bounds for more accurate snapping, and restored missing socket checks.",
+            "text": "Smart alarm can now be placed on top of more deployables and has corrected bounds",
             "commit_ids": [
-              631121,
-              631103,
-              631054
+              631272
             ]
           },
           {
-            "text": "Wood structures now receive the protection values previously assigned to stone, increasing their durability.",
+            "text": "Gate improvements: reversed open direction, better volume snapping, updated collision bounds, fixed socket checks, and wood‑based debris protection for durability",
             "commit_ids": [
+              631121,
+              631103,
+              631072,
+              631054,
               631088
             ]
           }
         ]
       },
       {
-        "title": "Smart Devices",
+        "title": "Crafting & Cooking",
         "items": [
           {
-            "text": "Smart alarms can now be placed on a wider range of deployables, fixing oversized bounds and volume issues.",
-            "commit_ids": [
-              631272
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Survival & Crafting",
-        "items": [
-          {
-            "text": "Cooking workbenches in snow no longer pause cooking when refrigerated items are inserted, and the refrigerated flag is preserved on item splits.",
+            "text": "Cooking workbench no longer stops in snow when refrigerated items are inserted, preserving the refrigerated flag on split stacks",
             "commit_ids": [
               631263
             ]
           },
           {
-            "text": "Adjusted placeholder crafting costs to more sensible values.",
+            "text": "Placeholder crafting costs adjusted to more sensible values",
             "commit_ids": [
               631093
             ]
-          },
-          {
-            "text": "Added honey bandage to both primitive and hardcore tech trees, making it craftable earlier.",
-            "commit_ids": [
-              631071
-            ]
           }
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "Power & Loot Rooms",
         "items": [
           {
-            "text": "Frogs can now swim and more reliably seek water spots to start croaking.",
-            "commit_ids": [
-              631253
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Power & Loot",
-        "items": [
-          {
-            "text": "The ferry terminal loot room is now functional and connected to the power grid.",
+            "text": "Ferry terminal loot room now functional with its own power grid",
             "commit_ids": [
               631195,
               631164
@@ -93,7 +96,7 @@
         "title": "Server Stability",
         "items": [
           {
-            "text": "Fixed a server stall caused by an infinite dtRaycast loop and bumped the navigation version.",
+            "text": "Fixed server stall caused by dtRaycast infinite loop and updated navigation version to avoid degenerate polygon saves",
             "commit_ids": [
               631216
             ]
@@ -101,30 +104,36 @@
         ]
       },
       {
-        "title": "Quality of Life",
+        "title": "Medical Items",
         "items": [
           {
-            "text": "Halloween door wreaths can now be picked up correctly; deployment guide and string light sound issues fixed for holiday decorations.",
+            "text": "Honey bandage added to both primitive and hardcore tech trees",
             "commit_ids": [
-              631097
+              631071
             ]
           }
         ]
       }
     ],
-    "summary": "### Base Building & Defenses\n- Added a sandbag pillbox barricade that can be crafted, repaired, and features a matching icon; also unlocked additional sandbag barricade variations and fixed the original/BP button behavior.\n- Improved gates: reversed opening direction, expanded placement volume, updated bounds for more accurate snapping, and restored missing socket checks.\n- Wood structures now receive the protection values previously assigned to stone, increasing their durability.\n\n### Smart Devices\n- Smart alarms can now be placed on a wider range of deployables, fixing oversized bounds and volume issues.\n\n### Survival & Crafting\n- Cooking workbenches in snow no longer pause cooking when refrigerated items are inserted, and the refrigerated flag is preserved on item splits.\n- Adjusted placeholder crafting costs to more sensible values.\n- Added honey bandage to both primitive and hardcore tech trees, making it craftable earlier.\n\n### NPC & AI\n- Frogs can now swim and more reliably seek water spots to start croaking.\n\n### Power & Loot\n- The ferry terminal loot room is now functional and connected to the power grid.\n\n### Server Stability\n- Fixed a server stall caused by an infinite dtRaycast loop and bumped the navigation version.\n\n### Quality of Life\n- Halloween door wreaths can now be picked up correctly; deployment guide and string light sound issues fixed for holiday decorations.",
+    "summary": "### Animals & NPCs\n- NPCs can now sell baby animals to players\n- Livestock can now drink water from troughs with integrated water container\n- Frogs can swim and more reliably locate water spots for croaking\n- Fixed livestock pathfinding in short corridors, preventing premature path completion\n\n### Structures & Defenses\n- Sandbag pillbox barricade deployable added, with new sandbag variations and its own crafting and repair setup\n- Smart alarm can now be placed on top of more deployables and has corrected bounds\n- Gate improvements: reversed open direction, better volume snapping, updated collision bounds, fixed socket checks, and wood‑based debris protection for durability\n\n### Crafting & Cooking\n- Cooking workbench no longer stops in snow when refrigerated items are inserted, preserving the refrigerated flag on split stacks\n- Placeholder crafting costs adjusted to more sensible values\n\n### Power & Loot Rooms\n- Ferry terminal loot room now functional with its own power grid\n\n### Server Stability\n- Fixed server stall caused by dtRaycast infinite loop and updated navigation version to avoid degenerate polygon saves\n\n### Medical Items\n- Honey bandage added to both primitive and hardcore tech trees",
     "new_items": [
       {
-        "text": "Added a sandbag pillbox barricade that can be crafted, repaired, and features a matching icon; also unlocked additional sandbag barricade variations and fixed the original/BP button behavior.",
+        "text": "NPCs can now sell baby animals to players",
         "commit_ids": [
-          631320,
-          631217
+          631341
         ],
-        "section": "Base Building & Defenses"
+        "section": "Animals & NPCs"
+      },
+      {
+        "text": "Livestock can now drink water from troughs with integrated water container",
+        "commit_ids": [
+          631333
+        ],
+        "section": "Animals & NPCs"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- Added a sandbag pillbox barricade that can be crafted, repaired, and features a matching icon; also unlocked additional sandbag barricade variations and fixed the original/BP button behavior."
+    "new_summary": "- NPCs can now sell baby animals to players\n- Livestock can now drink water from troughs with integrated water container"
   },
   "2026-09-07": {
     "commit_count": 38,
