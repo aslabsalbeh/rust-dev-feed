@@ -1,77 +1,44 @@
 {
   "2026-09-09": {
-    "commit_count": 65,
-    "relevant_commit_count": 43,
-    "relevant_signature": "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425,632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541",
+    "commit_count": 77,
+    "relevant_commit_count": 52,
+    "relevant_signature": "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425,632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541,632548,632549,632552,632558,632562,632566,632572,632575,632587",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Loot",
+        "title": "Combat & Targeting",
         "items": [
           {
-            "text": "Fixed crates spawning inside cave walls at the entrance of the small easy cave.",
+            "text": "Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots.",
+            "commit_ids": [
+              632587
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Objects",
+        "items": [
+          {
+            "text": "Crate outside the small easy cave now spawns correctly outside instead of inside the wall.",
             "commit_ids": [
               632532
             ]
           },
           {
-            "text": "Added new loot rooms: Harbor 2 power grid room, Airfield loot room, and Harbor 1 loot room.",
-            "commit_ids": [
-              632525,
-              632450
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Ranch",
-        "items": [
-          {
-            "text": "Lamb and sheep now drop Lamb Meat (raw, cooked, or spoiled) when harvested.",
-            "commit_ids": [
-              632486
-            ]
-          },
-          {
-            "text": "New cow meat items (raw, cooked, spoiled) added; harvesting cows, bulls, and calves now yields raw cow meat, with clarified names and descriptions.",
-            "commit_ids": [
-              632425,
-              632417,
-              632424
-            ]
-          },
-          {
-            "text": "Fixed cows healing while roaming, so they only recover health when needs are met, preventing indefinite health in confined spaces.",
-            "commit_ids": [
-              632426
-            ]
-          },
-          {
-            "text": "Animal leads now work after purchase, restoring the ability to tether livestock.",
-            "commit_ids": [
-              631348
-            ]
-          },
-          {
-            "text": "Ranch vendor added, enabling buying and selling items directly at the ranch.",
-            "commit_ids": [
-              631349
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio & Building",
-        "items": [
-          {
-            "text": "Locomotive bell sound is now broadcast to all players instead of being client‑side only.",
+            "text": "Locomotive bell sound is audible to all nearby players, not just the one who triggered it.",
             "commit_ids": [
               632498
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Building & Construction",
+        "items": [
           {
-            "text": "Relaxed building volume restrictions for sandbag barricade sockets, making deployment easier.",
+            "text": "Building volume restrictions have been relaxed, making it easier to place construction sockets.",
             "commit_ids": [
               632495
             ]
@@ -79,112 +46,92 @@
         ]
       },
       {
-        "title": "NPC & Boats",
+        "title": "Animals & Farming",
         "items": [
           {
-            "text": "Players can now initiate conversations with NPCs over telephones.",
+            "text": "Livestock health and tethering improvements: cows only heal when their needs are met, animal leads no longer break after purchase, and sheep/lamb now yield Lamb Meat when harvested.",
+            "commit_ids": [
+              632426,
+              631348,
+              632486
+            ]
+          },
+          {
+            "text": "Stag AI now responds to select and move commands.",
+            "commit_ids": [
+              632398
+            ]
+          },
+          {
+            "text": "New cow meat items (raw, cooked, spoiled) added; corpses drop raw cow meat.",
+            "commit_ids": [
+              632425,
+              632424,
+              632417
+            ]
+          }
+        ]
+      },
+      {
+        "title": "NPCs & Interaction",
+        "items": [
+          {
+            "text": "Players can now call NPCs via telephone to start phone conversations.",
             "commit_ids": [
               632442
             ]
           },
           {
-            "text": "Added an option to change the steering wheel code lock on player‑owned boats.",
+            "text": "A new vendor NPC is available at the ranch for direct purchases.",
             "commit_ids": [
-              632479
+              631349
             ]
           }
         ]
       },
       {
-        "title": "Cooking & Storage",
+        "title": "Items, Crafting & New Content",
         "items": [
           {
-            "text": "Refrigeration status now updates instantly when an item changes containers, removing the previous delay.",
+            "text": "Refrigeration status updates instantly when items change containers.",
             "commit_ids": [
               632391
             ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
+          },
           {
-            "text": "Lighthouse reverb no longer carries outdoors near the ladder, fixing immersion‑breaking audio bleed.",
+            "text": "Steering wheel code lock on player boats can now be changed.",
             "commit_ids": [
-              632497
+              632479
             ]
           },
           {
-            "text": "Save/load bug resolved, preventing possible loss or corruption of player progress.",
+            "text": "New loot rooms added at Airfield and Harbor 1, expanding loot locations.",
             "commit_ids": [
-              632432
-            ]
-          },
-          {
-            "text": "Stag AI now correctly follows select and move commands, restoring expected animal behavior for hunting and interactions.",
-            "commit_ids": [
-              632398
+              632450
             ]
           }
         ]
       }
     ],
-    "summary": "### World & Loot\n- Fixed crates spawning inside cave walls at the entrance of the small easy cave.\n- Added new loot rooms: Harbor 2 power grid room, Airfield loot room, and Harbor 1 loot room.\n\n### Livestock & Ranch\n- Lamb and sheep now drop Lamb Meat (raw, cooked, or spoiled) when harvested.\n- New cow meat items (raw, cooked, spoiled) added; harvesting cows, bulls, and calves now yields raw cow meat, with clarified names and descriptions.\n- Fixed cows healing while roaming, so they only recover health when needs are met, preventing indefinite health in confined spaces.\n- Animal leads now work after purchase, restoring the ability to tether livestock.\n- Ranch vendor added, enabling buying and selling items directly at the ranch.\n\n### Audio & Building\n- Locomotive bell sound is now broadcast to all players instead of being client‑side only.\n- Relaxed building volume restrictions for sandbag barricade sockets, making deployment easier.\n\n### NPC & Boats\n- Players can now initiate conversations with NPCs over telephones.\n- Added an option to change the steering wheel code lock on player‑owned boats.\n\n### Cooking & Storage\n- Refrigeration status now updates instantly when an item changes containers, removing the previous delay.\n\n### Gameplay & Balance\n- Lighthouse reverb no longer carries outdoors near the ladder, fixing immersion‑breaking audio bleed.\n- Save/load bug resolved, preventing possible loss or corruption of player progress.\n- Stag AI now correctly follows select and move commands, restoring expected animal behavior for hunting and interactions.",
+    "summary": "### Combat & Targeting\n- Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots.\n\n### World & Objects\n- Crate outside the small easy cave now spawns correctly outside instead of inside the wall.\n- Locomotive bell sound is audible to all nearby players, not just the one who triggered it.\n\n### Building & Construction\n- Building volume restrictions have been relaxed, making it easier to place construction sockets.\n\n### Animals & Farming\n- Livestock health and tethering improvements: cows only heal when their needs are met, animal leads no longer break after purchase, and sheep/lamb now yield Lamb Meat when harvested.\n- Stag AI now responds to select and move commands.\n- New cow meat items (raw, cooked, spoiled) added; corpses drop raw cow meat.\n\n### NPCs & Interaction\n- Players can now call NPCs via telephone to start phone conversations.\n- A new vendor NPC is available at the ranch for direct purchases.\n\n### Items, Crafting & New Content\n- Refrigeration status updates instantly when items change containers.\n- Steering wheel code lock on player boats can now be changed.\n- New loot rooms added at Airfield and Harbor 1, expanding loot locations.",
     "new_items": [
       {
-        "text": "Fixed crates spawning inside cave walls at the entrance of the small easy cave.",
+        "text": "Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots.",
+        "commit_ids": [
+          632587
+        ],
+        "section": "Combat & Targeting"
+      },
+      {
+        "text": "Crate outside the small easy cave now spawns correctly outside instead of inside the wall.",
         "commit_ids": [
           632532
         ],
-        "section": "World & Loot"
-      },
-      {
-        "text": "Added new loot rooms: Harbor 2 power grid room, Airfield loot room, and Harbor 1 loot room.",
-        "commit_ids": [
-          632525,
-          632450
-        ],
-        "section": "World & Loot"
-      },
-      {
-        "text": "Lamb and sheep now drop Lamb Meat (raw, cooked, or spoiled) when harvested.",
-        "commit_ids": [
-          632486
-        ],
-        "section": "Livestock & Ranch"
-      },
-      {
-        "text": "Locomotive bell sound is now broadcast to all players instead of being client‑side only.",
-        "commit_ids": [
-          632498
-        ],
-        "section": "Audio & Building"
-      },
-      {
-        "text": "Relaxed building volume restrictions for sandbag barricade sockets, making deployment easier.",
-        "commit_ids": [
-          632495
-        ],
-        "section": "Audio & Building"
-      },
-      {
-        "text": "Added an option to change the steering wheel code lock on player‑owned boats.",
-        "commit_ids": [
-          632479
-        ],
-        "section": "NPC & Boats"
-      },
-      {
-        "text": "Lighthouse reverb no longer carries outdoors near the ladder, fixing immersion‑breaking audio bleed.",
-        "commit_ids": [
-          632497
-        ],
-        "section": "Gameplay & Balance"
+        "section": "World & Objects"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Fixed crates spawning inside cave walls at the entrance of the small easy cave.\n- Added new loot rooms: Harbor 2 power grid room, Airfield loot room, and Harbor 1 loot room.\n- Lamb and sheep now drop Lamb Meat (raw, cooked, or spoiled) when harvested.\n- Locomotive bell sound is now broadcast to all players instead of being client‑side only.\n- Relaxed building volume restrictions for sandbag barricade sockets, making deployment easier.\n- Added an option to change the steering wheel code lock on player‑owned boats.\n- Lighthouse reverb no longer carries outdoors near the ladder, fixing immersion‑breaking audio bleed."
+    "new_relevant_count": 2,
+    "new_summary": "- Bullets and arrows now correctly hit Oil Rig scientists, and leg shots register proper headshots.\n- Crate outside the small easy cave now spawns correctly outside instead of inside the wall."
   },
   "2026-09-08": {
     "commit_count": 73,

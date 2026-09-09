@@ -1,5 +1,101 @@
 [
   {
+    "id": 632587,
+    "branch": "main",
+    "changeset": "163696",
+    "created": "2026-09-09T18:06:06",
+    "message": "Fix bullet and arrows sometimes passing through oilrig scientists upper body, or/and registering headshots when shooting the legs",
+    "user": "Maverick"
+  },
+  {
+    "id": 632580,
+    "branch": "▊▇▌▅",
+    "changeset": "▄▉▆▍▌▌",
+    "created": "2026-09-09T17:34:44",
+    "message": "▉ ▉▉▆▄▌ ▊▍▊▌ ▆▌█▉▅█▊▅▌▇▄▍▅▆▅▆▄▆▇█",
+    "user": "cipeaX"
+  },
+  {
+    "id": 632575,
+    "branch": "main/BBQRadialMenu",
+    "changeset": "163686",
+    "created": "2026-09-09T17:26:03",
+    "message": "Fixed bbq radial menu referring to Campfire",
+    "user": "Nick.H"
+  },
+  {
+    "id": 632572,
+    "branch": "main/Livestock_animals",
+    "changeset": "163683",
+    "created": "2026-09-09T17:23:04",
+    "message": "Increase padding on livestock UI",
+    "user": "Maverick"
+  },
+  {
+    "id": 632566,
+    "branch": "main/3p_weapon_double_sounds_fix",
+    "changeset": "163677",
+    "created": "2026-09-09T17:15:21",
+    "message": "Fix for playing 3p sounds x2 on weapons\r\n- applied glass ak specifc sounds to 3p weapon instead of base ak\r\n- removed reload anim events in lr300 space, added correct space deploy sounds",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 632562,
+    "branch": "main/character_customisation",
+    "changeset": "163674",
+    "created": "2026-09-09T17:01:51",
+    "message": "- Stop carpet feet clipping\r\n- Move title down a bit\r\n- Reduce no color picker spacing\r\n- Stop colour swatch's being squashed\r\n- Stop colour swatches having thick borders\r\n- Fix edit system not working",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 632559,
+    "branch": "main/Livestock_animals",
+    "changeset": "163673",
+    "created": "2026-09-09T16:50:39",
+    "message": "FIrst pass on the gene system, clean up the UI (right now I show everything in the UI, but we have convars to hide genes / recessive genes / age / trust etc which I want to explore)",
+    "user": "Maverick"
+  },
+  {
+    "id": 632558,
+    "branch": "main/Livestock_animals",
+    "changeset": "163672",
+    "created": "2026-09-09T16:44:34",
+    "message": "- Make it so that we can run the livestock balance setup at 32x speed instead of only 2x, required a few logic changes like carryovers, but end results now match normal speed\r\n- Fix time progressing between tests, causing some tests to suddenly run at night",
+    "user": "Maverick"
+  },
+  {
+    "id": 632553,
+    "branch": "main/Livestock_animals/Cow_pattern_testing/fur_shader_improvements",
+    "changeset": "163671",
+    "created": "2026-09-09T16:30:45",
+    "message": "enable mipmapping on tiger textures",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 632552,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "163670",
+    "created": "2026-09-09T16:29:32",
+    "message": "Update: make store page fallback to assets from UI bundle if failed to load textures from backend\r\n- item tile now only initializes once it's shown (as was intended this entire time)\r\n- fixed duplicating OnImageLoaded callbacks\r\n- reactive cover image if httpImage failed\r\nTests: navigated through store - right images are in place, but wrong layout. need to figure out how to unify it all",
+    "user": "Daniel P"
+  },
+  {
+    "id": 632549,
+    "branch": "main/Livestock_animals/Squirrel_test",
+    "changeset": "163668",
+    "created": "2026-09-09T16:18:49",
+    "message": "Squirrel new animation set",
+    "user": "wes.b"
+  },
+  {
+    "id": 632548,
+    "branch": "main/Livestock_animals/Cow_pattern_testing",
+    "changeset": "163667",
+    "created": "2026-09-09T16:15:16",
+    "message": "Added textures for procuderal calf patterns, set up new material.",
+    "user": "Toffer"
+  },
+  {
     "id": 632544,
     "branch": "main/Livestock_animals/Cow_pattern_testing/fur_shader_improvements",
     "changeset": "163665",
@@ -1414,45 +1510,5 @@
     "created": "2026-09-06T21:59:42",
     "message": "Restored BlockLayoutUpdates and AllowLayoutUpdates, was missed from 149666\r\nShould fix the weird layout issues with item pickup notices",
     "user": "Flavien"
-  },
-  {
-    "id": 630795,
-    "branch": "main/fix_threaded_error_client/sentry_fix",
-    "changeset": "163305",
-    "created": "2026-09-06T17:30:39",
-    "message": "Don't kick for errors on background threads",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 630794,
-    "branch": "main/fix_threaded_error_client/sentry_fix",
-    "changeset": "163304",
-    "created": "2026-09-06T17:27:59",
-    "message": "Refactor Output.OnMessage() so it passes a single struct parameter instead of (message, stacktrace,logLevel)\r\n- if I'm gonna to refactor it to add a 4th parameter, may as well make it a single class/struct passed\r\n- allows a bool to be passed for \"if it was sent on a background thread or not\"",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 630791,
-    "branch": "main/fix_threaded_error_client",
-    "changeset": "163302",
-    "created": "2026-09-06T16:57:27",
-    "message": "Update existing console tests to account for new behavior",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 630790,
-    "branch": "main/fix_threaded_error_client",
-    "changeset": "163301",
-    "created": "2026-09-06T16:56:53",
-    "message": "Prevent the downgrade in the editor since it doesn't result in kick",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 630789,
-    "branch": "main/fix_threaded_error_client",
-    "changeset": "163300",
-    "created": "2026-09-06T16:55:50",
-    "message": "Lower error level from exception -> warning on the client on background threads so clients don't get kicked from random exceptions\r\n- keep it on server since it's only used for logging",
-    "user": "Jake_Rich"
   }
 ]
