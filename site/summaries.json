@@ -1,96 +1,31 @@
 {
   "2026-09-10": {
-    "commit_count": 68,
-    "relevant_commit_count": 35,
-    "relevant_signature": "632681,633067,633068,633164,633506,633772,634287,634620,634631,634745,634840,634962,635009,635139,635255,635271,635293,635511,635516,635524,635713,635849,636747,637188,637194,637827,638672,638696,638773,638998,640112,641225,641723,643808,643946",
+    "commit_count": 73,
+    "relevant_commit_count": 38,
+    "relevant_signature": "632681,633067,633068,633164,633506,633772,634287,634620,634631,634745,634840,634962,635009,635139,635255,635271,635293,635511,635516,635524,635713,635849,636747,637188,637194,637827,638672,638696,638773,638998,640112,641225,641723,643808,643946,645198,645584,646120",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "UI & Store",
         "items": [
           {
-            "text": "Critters and sea turtles now deactivate when no player is within range, reducing unnecessary activity and disabling water locomotion for turtles.",
+            "text": "Fixed several Store UI issues: corrected stale bundle assignments, restored missing pack overlay images, ensured cover images load correctly, saved StoreItemOverlay image URLs, and switched SkinTile to use CoverImage, improving item display and preventing broken visuals.",
             "commit_ids": [
-              637194
-            ]
-          },
-          {
-            "text": "Cows now get up properly with the appropriate scramble animation when hurt or dying, instead of sliding away.",
-            "commit_ids": [
-              635511
-            ]
-          },
-          {
-            "text": "Bulls can defend the herd against other animals and also defend their owner's base against other players.",
-            "commit_ids": [
-              635009
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Structures",
-        "items": [
-          {
-            "text": "Bradley flatbed ladder climbing and moving‑train boarding fixed with separate triggers, larger capture volumes, widened ladder colliders, and flatbed added to the manifest entity list.",
-            "commit_ids": [
-              635524
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "Arrows now correctly register collisions with objects and players, fixing pass‑through issues.",
-            "commit_ids": [
-              633506
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Resources",
-        "items": [
-          {
-            "text": "New loot room added to the Military tunnels.",
-            "commit_ids": [
-              634840
-            ]
-          },
-          {
-            "text": "Depleted Wet Log A now spawns debris (gibs) providing visual feedback and extra loot fragments when exhausted.",
-            "commit_ids": [
-              634287
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Integration",
-        "items": [
-          {
-            "text": "Store UI pack overlay images now display correctly for buttons and the main section.",
-            "commit_ids": [
-              636747
-            ]
-          },
-          {
-            "text": "CoverImage is ensured to be active when an image loads, fixing the FactoryDoor rendering issue.",
-            "commit_ids": [
-              635293
-            ]
-          },
-          {
-            "text": "SkinTile now uses CoverImage instead of RawImage, simplifying the UI component hierarchy.",
-            "commit_ids": [
+              640112,
+              636747,
+              635849,
+              635293,
               635139
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Rust+ Integration",
+        "items": [
           {
-            "text": "Custom monument marker names are now correctly sent to Rust+ devices.",
+            "text": "Custom monument marker names are now correctly sent to Rust+, allowing players to see personalized markers on the companion app.",
             "commit_ids": [
               638696
             ]
@@ -98,29 +33,60 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Bee grenade honey effect no longer flickers, improving visibility; glass, honey, and trim material properties have been tuned for consistent behavior.",
+            "text": "Bradley flatbed ladder climbing and moving‑train boarding have been fixed: ladder and parenting triggers are separated, volumes enlarged, and ladder heights preserved, making it easier to climb ladders and board moving trains.",
             "commit_ids": [
-              641723
+              635524
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & AI",
+        "items": [
+          {
+            "text": "Cows no longer slide away when hurt or dying; they now stand up properly and play the appropriate scramble animation.",
+            "commit_ids": [
+              635511
+            ]
+          },
+          {
+            "text": "Bulls can now defend their herd against other animals, defend their owner's base against other players, and also defend against players attacking the herd.",
+            "commit_ids": [
+              635009
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Loot",
+        "items": [
+          {
+            "text": "Added a new loot room in military tunnels, providing additional loot spawns for players.",
+            "commit_ids": [
+              634840
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Projectiles",
+        "items": [
+          {
+            "text": "Fixed arrow collision, ensuring arrows now properly hit targets and objects.",
+            "commit_ids": [
+              633506
             ]
           }
         ]
       }
     ],
-    "summary": "### NPC & AI\n- Critters and sea turtles now deactivate when no player is within range, reducing unnecessary activity and disabling water locomotion for turtles.\n- Cows now get up properly with the appropriate scramble animation when hurt or dying, instead of sliding away.\n- Bulls can defend the herd against other animals and also defend their owner's base against other players.\n\n### Vehicles & Structures\n- Bradley flatbed ladder climbing and moving‑train boarding fixed with separate triggers, larger capture volumes, widened ladder colliders, and flatbed added to the manifest entity list.\n\n### Combat\n- Arrows now correctly register collisions with objects and players, fixing pass‑through issues.\n\n### World & Resources\n- New loot room added to the Military tunnels.\n- Depleted Wet Log A now spawns debris (gibs) providing visual feedback and extra loot fragments when exhausted.\n\n### UI & Integration\n- Store UI pack overlay images now display correctly for buttons and the main section.\n- CoverImage is ensured to be active when an image loads, fixing the FactoryDoor rendering issue.\n- SkinTile now uses CoverImage instead of RawImage, simplifying the UI component hierarchy.\n- Custom monument marker names are now correctly sent to Rust+ devices.\n\n### Gameplay & Balance\n- Bee grenade honey effect no longer flickers, improving visibility; glass, honey, and trim material properties have been tuned for consistent behavior.",
-    "new_items": [
-      {
-        "text": "Bee grenade honey effect no longer flickers, improving visibility; glass, honey, and trim material properties have been tuned for consistent behavior.",
-        "commit_ids": [
-          641723
-        ],
-        "section": "Gameplay & Balance"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Bee grenade honey effect no longer flickers, improving visibility; glass, honey, and trim material properties have been tuned for consistent behavior."
+    "summary": "### UI & Store\n- Fixed several Store UI issues: corrected stale bundle assignments, restored missing pack overlay images, ensured cover images load correctly, saved StoreItemOverlay image URLs, and switched SkinTile to use CoverImage, improving item display and preventing broken visuals.\n\n### Rust+ Integration\n- Custom monument marker names are now correctly sent to Rust+, allowing players to see personalized markers on the companion app.\n\n### Vehicles\n- Bradley flatbed ladder climbing and moving‑train boarding have been fixed: ladder and parenting triggers are separated, volumes enlarged, and ladder heights preserved, making it easier to climb ladders and board moving trains.\n\n### Animals & AI\n- Cows no longer slide away when hurt or dying; they now stand up properly and play the appropriate scramble animation.\n- Bulls can now defend their herd against other animals, defend their owner's base against other players, and also defend against players attacking the herd.\n\n### World & Loot\n- Added a new loot room in military tunnels, providing additional loot spawns for players.\n\n### Combat & Projectiles\n- Fixed arrow collision, ensuring arrows now properly hit targets and objects.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-09": {
     "commit_count": 103,
