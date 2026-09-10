@@ -1,34 +1,34 @@
 {
   "2026-09-09": {
-    "commit_count": 101,
-    "relevant_commit_count": 69,
+    "commit_count": 103,
+    "relevant_commit_count": 70,
     "relevant_signature": "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425,632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541,632548,632549,632552,632558,632562,632566,632572,632575,632587",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "632549,632552,632558,632562,632566,632572,632575,632587,632592,632594,632598,632606,632613,632614,632615,632621,632623,632628,632633,632638,632640,632650,632653,632661,632665": [
+      "632552,632558,632562,632566,632572,632575,632587,632592,632594,632598,632606,632613,632614,632615,632621,632623,632628,632633,632638,632640,632650,632653,632661,632665,632673": [
         {
-          "title": "Livestock & Animals",
+          "title": "Livestock & Animal Gameplay",
           "items": [
             {
-              "text": "Animals now correctly deduct scrap when purchased, fixing a cost bug.",
+              "text": "Purchasing animals now correctly deducts scrap.",
               "commit_ids": [
                 632665
               ]
             },
             {
-              "text": "Cow selling price is now affected by genetic traits.",
+              "text": "Animal genetics now influence cow selling price.",
               "commit_ids": [
                 632623
               ]
             },
             {
-              "text": "Sheep now have trait setup, enabling new behavior and breeding characteristics.",
+              "text": "Added new sheep traits for more varied behavior.",
               "commit_ids": [
                 632615
               ]
             },
             {
-              "text": "Seaturtles added as a new ocean critter with shark‑like movement and proper population handling.",
+              "text": "Introduced sea turtles with ocean‑style locomotion and proper population handling.",
               "commit_ids": [
                 632606
               ]
@@ -36,38 +36,10 @@
           ]
         },
         {
-          "title": "Combat",
+          "title": "World Spawning",
           "items": [
             {
-              "text": "Bullets and arrows no longer pass through Oil Rig scientists' upper bodies and correctly register headshots.",
-              "commit_ids": [
-                632587
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio & UI Overlays",
-          "items": [
-            {
-              "text": "Heavy plate helmet and diving mask UI overlays and audio muffling now work correctly when downed or dead, with proper low‑pass handling.",
-              "commit_ids": [
-                632633
-              ]
-            },
-            {
-              "text": "Third‑person weapon sounds fixed to play only once; glass AK sounds applied correctly and reload animation events adjusted.",
-              "commit_ids": [
-                632566
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Map & World",
-          "items": [
-            {
-              "text": "Crate spawning issue fixed in the cave_small_Easy map.",
+              "text": "Fixed missing crate spawns in the \"cave_small_Easy\" map.",
               "commit_ids": [
                 632650
               ]
@@ -75,50 +47,12 @@
           ]
         },
         {
-          "title": "UI & Store",
+          "title": "Combat & Damage",
           "items": [
             {
-              "text": "Store page now falls back to bundled UI assets if backend textures fail, and item tiles initialize only when shown, fixing duplicate callbacks.",
+              "text": "Bullets and arrows now correctly collide with oilrig scientists' upper bodies and register headshots only when appropriate.",
               "commit_ids": [
-                632552
-              ]
-            }
-          ]
-        }
-      ],
-      "632426,632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541,632548": [
-        {
-          "title": "World & Loot",
-          "items": [
-            {
-              "text": "Fixed crate spawning inside the wall at the entrance of the small easy cave.",
-              "commit_ids": [
-                632532
-              ]
-            },
-            {
-              "text": "Added new loot rooms: Harbor 2 power grid room, and Airfield & Harbor 1 loot rooms.",
-              "commit_ids": [
-                632525,
-                632450
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animals & Farming",
-          "items": [
-            {
-              "text": "Cows now heal only when their needs are met, preventing walled-in cows from auto-healing.",
-              "commit_ids": [
-                632426
-              ]
-            },
-            {
-              "text": "Introduced Lamb meat items (cooked, raw, spoiled) with models, textures, and prefabs; updated harvesting to give Lamb meat.",
-              "commit_ids": [
-                632474,
-                632486
+                632587
               ]
             }
           ]
@@ -127,7 +61,54 @@
           "title": "Audio",
           "items": [
             {
-              "text": "Locomotive bell sound is now broadcast to all players instead of client-side only.",
+              "text": "Resolved double‑play of third‑person weapon sounds.",
+              "commit_ids": [
+                632566
+              ]
+            },
+            {
+              "text": "Helmet and diving mask audio muffling now persists correctly when downed, using its own low‑pass stage.",
+              "commit_ids": [
+                632633
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & HUD",
+          "items": [
+            {
+              "text": "Heavy plate helmet and diving mask screen overlays no longer disappear when the player is downed or dead.",
+              "commit_ids": [
+                632633
+              ]
+            },
+            {
+              "text": "BBQ radial menu now correctly references the BBQ station instead of a campfire.",
+              "commit_ids": [
+                632575
+              ]
+            }
+          ]
+        }
+      ],
+      "632432,632440,632442,632444,632450,632453,632461,632466,632470,632474,632479,632486,632495,632497,632498,632499,632506,632512,632513,632525,632532,632535,632541,632548,632549": [
+        {
+          "title": "World & Environment",
+          "items": [
+            {
+              "text": "Fixed crate spawning inside the cave wall at the entrance of the small easy cave.",
+              "commit_ids": [
+                632532
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Audio",
+          "items": [
+            {
+              "text": "Locomotive bell sound is now broadcast to all players instead of being client‑side only.",
               "commit_ids": [
                 632498
               ]
@@ -135,10 +116,10 @@
           ]
         },
         {
-          "title": "Building & Construction",
+          "title": "Building",
           "items": [
             {
-              "text": "Added construction sockets and relaxed building volume restrictions for easier deployment.",
+              "text": "Added construction sockets and relaxed building‑volume restrictions, making deployment of structures easier.",
               "commit_ids": [
                 632495
               ]
@@ -146,52 +127,84 @@
           ]
         },
         {
-          "title": "NPC & Interaction",
+          "title": "Items & Loot",
           "items": [
             {
-              "text": "Players can now initiate NPC conversations over telephones.",
+              "text": "Lamb and sheep now drop Lamb Meat (cooked, raw, and spoiled). New model, textures, materials, prefabs, item names, descriptions, and icons were added.",
               "commit_ids": [
-                632442
+                632486,
+                632474,
+                632506
+              ]
+            },
+            {
+              "text": "New loot rooms added: Airfield, Harbor 1, and Harbor 2 power‑grid rooms.",
+              "commit_ids": [
+                632450,
+                632525
               ]
             }
           ]
         },
         {
-          "title": "Technical Fixes",
+          "title": "Vehicles",
           "items": [
             {
-              "text": "Fixed a save/load bug that could affect player progress.",
+              "text": "Added an option to change the steering‑wheel code lock on player‑owned boats.",
               "commit_ids": [
-                632432
+                632479
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Enabled initiating NPC conversations over telephones.",
+              "commit_ids": [
+                632442
               ]
             }
           ]
         }
       ],
-      "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425": [
+      "631348,631349,631351,631362,631364,632386,632391,632394,632398,632406,632407,632409,632413,632415,632417,632418,632420,632424,632425,632426": [
         {
-          "title": "Livestock & Harvesting",
+          "title": "Livestock & Animal Mechanics",
           "items": [
             {
-              "text": "Harvesting cow, bull, and calf corpses now yields Raw Cow Meat.",
+              "text": "Cows now heal only when their needs are met instead of while roaming, preventing trapped cows from healing indefinitely.",
               "commit_ids": [
-                632425
+                632426
               ]
             },
             {
-              "text": "Cow meat item names and descriptions have been updated.",
+              "text": "Harvesting cow, bull, and calf corpses now yields Raw Cow Meat, and the item’s name and description have been updated.",
               "commit_ids": [
+                632425,
                 632424
               ]
             },
             {
-              "text": "Animal leads now work correctly after purchase.",
+              "text": "Stags now correctly respond to AI select and move commands.",
               "commit_ids": [
-                631348
+                632398
               ]
             },
             {
-              "text": "A ranch vendor has been added for buying and selling livestock.",
+              "text": "Animal leads purchased from vendors now function correctly.",
+              "commit_ids": [
+                631348
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Ranch Vendor",
+          "items": [
+            {
+              "text": "A new vendor has been added to the ranch, allowing players to buy and sell items directly at the ranch.",
               "commit_ids": [
                 631349
               ]
@@ -202,7 +215,7 @@
           "title": "Refrigeration",
           "items": [
             {
-              "text": "Refrigeration status now refreshes immediately when an item changes container, eliminating the previous delay.",
+              "text": "Refrigeration status now refreshes instantly when an item changes containers, eliminating previous delay.",
               "commit_ids": [
                 632391
               ]
