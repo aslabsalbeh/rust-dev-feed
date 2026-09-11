@@ -1,24 +1,53 @@
 {
   "2026-09-11": {
-    "commit_count": 38,
-    "relevant_commit_count": 23,
-    "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345",
+    "commit_count": 55,
+    "relevant_commit_count": 35,
+    "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Loot",
+        "title": "Livestock & Farming",
         "items": [
           {
-            "text": "Removed wolf skull drops from farm animals.",
+            "text": "Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.",
+            "commit_ids": [
+              665855
+            ]
+          },
+          {
+            "text": "Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.",
+            "commit_ids": [
+              665210
+            ]
+          },
+          {
+            "text": "Farm animals no longer drop wolf skulls when harvested.",
             "commit_ids": [
               655835
             ]
           },
           {
-            "text": "Added a new meat type to livestock drops.",
+            "text": "Added a new meat type to the game (manifest updated).",
             "commit_ids": [
               655334
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Interaction",
+        "items": [
+          {
+            "text": "Fence gate collision component now supports read/write, fixing interaction issues with fence gates.",
+            "commit_ids": [
+              655527
+            ]
+          },
+          {
+            "text": "Fixed ladder climbing bug, restoring proper ladder usage.",
+            "commit_ids": [
+              658533
             ]
           }
         ]
@@ -27,58 +56,40 @@
         "title": "Transportation",
         "items": [
           {
-            "text": "Train tracks now avoid impassable junctions and correct direction errors.",
+            "text": "Improved procedural rail junctions: trains now avoid impassable angles, junctions align correctly, and parallel tunnel entrances are untangled, reducing navigation errors.",
             "commit_ids": [
               658445
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Animation & UX",
+        "items": [
           {
-            "text": "Ladder climbing issues fixed, ladders work reliably.",
+            "text": "Resolved third‑person animation glitch where the throwing animation kept playing after switching items.",
             "commit_ids": [
-              658533
+              663345
             ]
           }
         ]
       },
       {
-        "title": "Base Building & Vehicles",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Boat planner prefab now includes missing arms, fixing boat construction.",
-            "commit_ids": [
-              658959
-            ]
-          },
-          {
-            "text": "Fence gate collision now supports read/write, improving gate interactions.",
-            "commit_ids": [
-              655527
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animal Animations",
-        "items": [
-          {
-            "text": "Cows now have knockdown animation and sheep have stomp animation.",
-            "commit_ids": [
-              663034
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Store UI now keeps item cover images visible while textures load, avoiding empty tiles.",
+            "text": "Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.",
             "commit_ids": [
               663055
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Item Descriptions",
+        "items": [
           {
-            "text": "Added missing descriptions for coloured sky lanterns, removed an outdated research table warning, and fixed a typo in the boltie description.",
+            "text": "Sky lanterns now show their descriptions, the outdated research table warning has been removed, and the boltie description typo corrected.",
             "commit_ids": [
               650404
             ]
@@ -86,32 +97,39 @@
         ]
       }
     ],
-    "summary": "### Animals & Loot\n- Removed wolf skull drops from farm animals.\n- Added a new meat type to livestock drops.\n\n### Transportation\n- Train tracks now avoid impassable junctions and correct direction errors.\n- Ladder climbing issues fixed, ladders work reliably.\n\n### Base Building & Vehicles\n- Boat planner prefab now includes missing arms, fixing boat construction.\n- Fence gate collision now supports read/write, improving gate interactions.\n\n### Animal Animations\n- Cows now have knockdown animation and sheep have stomp animation.\n\n### Quality of Life\n- Store UI now keeps item cover images visible while textures load, avoiding empty tiles.\n- Added missing descriptions for coloured sky lanterns, removed an outdated research table warning, and fixed a typo in the boltie description.",
+    "summary": "### Livestock & Farming\n- Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.\n- Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.\n- Farm animals no longer drop wolf skulls when harvested.\n- Added a new meat type to the game (manifest updated).\n\n### Structures & Interaction\n- Fence gate collision component now supports read/write, fixing interaction issues with fence gates.\n- Fixed ladder climbing bug, restoring proper ladder usage.\n\n### Transportation\n- Improved procedural rail junctions: trains now avoid impassable angles, junctions align correctly, and parallel tunnel entrances are untangled, reducing navigation errors.\n\n### Animation & UX\n- Resolved third‑person animation glitch where the throwing animation kept playing after switching items.\n\n### UI & Quality of Life\n- Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.\n\n### Item Descriptions\n- Sky lanterns now show their descriptions, the outdated research table warning has been removed, and the boltie description typo corrected.",
     "new_items": [
       {
-        "text": "Boat planner prefab now includes missing arms, fixing boat construction.",
+        "text": "Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.",
         "commit_ids": [
-          658959
+          665855
         ],
-        "section": "Base Building & Vehicles"
+        "section": "Livestock & Farming"
       },
       {
-        "text": "Cows now have knockdown animation and sheep have stomp animation.",
+        "text": "Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.",
         "commit_ids": [
-          663034
+          665210
         ],
-        "section": "Animal Animations"
+        "section": "Livestock & Farming"
       },
       {
-        "text": "Store UI now keeps item cover images visible while textures load, avoiding empty tiles.",
+        "text": "Resolved third‑person animation glitch where the throwing animation kept playing after switching items.",
+        "commit_ids": [
+          663345
+        ],
+        "section": "Animation & UX"
+      },
+      {
+        "text": "Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.",
         "commit_ids": [
           663055
         ],
-        "section": "Quality of Life"
+        "section": "UI & Quality of Life"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Boat planner prefab now includes missing arms, fixing boat construction.\n- Cows now have knockdown animation and sheep have stomp animation.\n- Store UI now keeps item cover images visible while textures load, avoiding empty tiles."
+    "new_relevant_count": 4,
+    "new_summary": "- Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.\n- Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.\n- Resolved third‑person animation glitch where the throwing animation kept playing after switching items.\n- Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading."
   },
   "2026-09-10": {
     "commit_count": 82,
