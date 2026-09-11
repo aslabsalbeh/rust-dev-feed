@@ -6,57 +6,59 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 11 Sep 2026 14:17:50 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 16:17:41 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 11</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;65 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;73 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="669191,669035"&gt;Fixed runtime livestock pattern generation to match intended design ranges.&lt;/li&gt;
-&lt;li data-rust-commits="665855"&gt;Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.&lt;/li&gt;
-&lt;li data-rust-commits="667080"&gt;Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.&lt;/li&gt;
-&lt;li data-rust-commits="668139"&gt;Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.&lt;/li&gt;
+&lt;li data-rust-commits="669215"&gt;Added new power grid rooms for Launch Site, Trainyard, and Radtown.&lt;/li&gt;
+&lt;li data-rust-commits="669213,665210"&gt;Livestock trust, gender, and status panel info are hidden by default and can be toggled by admins, with visibility now controlled server‑side.&lt;/li&gt;
+&lt;li data-rust-commits="669191,669035"&gt;Fixed livestock runtime pattern generation to match intended design ranges.&lt;/li&gt;
+&lt;li data-rust-commits="669206"&gt;Fixed turtle swimming movement, ensuring proper behavior in shallow water and preventing swimming into terrain.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Livestock &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Structures&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="669191,669035"&gt;Fixed runtime livestock pattern generation to match intended design ranges.&lt;/li&gt;
-&lt;li data-rust-commits="665855"&gt;Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.&lt;/li&gt;
-&lt;li data-rust-commits="665210"&gt;Server now exclusively controls visibility of the livestock status panel, preventing client‑side overrides.&lt;/li&gt;
-&lt;li data-rust-commits="655334"&gt;Fixed null‑reference error in the &amp;#x27;Trans_ChasedFromBehind&amp;#x27; animation transition, improving animal AI behavior during chase scenarios.&lt;/li&gt;
+&lt;li data-rust-commits="669215"&gt;Added new power grid rooms for Launch Site, Trainyard, and Radtown.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock Loot &amp;amp; Meat&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Animal Systems&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="655334"&gt;Added new meat items to the livestock loot manifest, increasing the variety of meat obtainable from animals.&lt;/li&gt;
-&lt;li data-rust-commits="655835"&gt;Removed wolf skull drops from all farm animals.&lt;/li&gt;
+&lt;li data-rust-commits="669213,665210"&gt;Livestock trust, gender, and status panel info are hidden by default and can be toggled by admins, with visibility now controlled server‑side.&lt;/li&gt;
+&lt;li data-rust-commits="669191,669035"&gt;Fixed livestock runtime pattern generation to match intended design ranges.&lt;/li&gt;
+&lt;li data-rust-commits="665855"&gt;Improved livestock AI: cows no longer chase unreachable targets, herd and trough selection consider multiple options, bulls stop charging unreachable targets, and curious cows eat as expected.&lt;/li&gt;
+&lt;li data-rust-commits="669206"&gt;Fixed turtle swimming movement, ensuring proper behavior in shallow water and preventing swimming into terrain.&lt;/li&gt;
+&lt;li data-rust-commits="664068"&gt;Added inventory interaction sounds for animal fences.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World Interaction&lt;/h3&gt;
+&lt;h3&gt;Base Building&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="655527"&gt;Fence gate colliders are now read/write enabled, fixing interaction issues with gates.&lt;/li&gt;
-&lt;li data-rust-commits="658533"&gt;Fixed a ladder climbing issue that could block player movement.&lt;/li&gt;
+&lt;li data-rust-commits="658533"&gt;Ladders now work correctly, restoring reliable climbing on structures.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Transportation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="658445"&gt;Enhanced rail junction generation to eliminate impassable or misdirected tracks and improve smoothness of procedural rail connections.&lt;/li&gt;
+&lt;li data-rust-commits="658445"&gt;Train tracks now generate smoother, passable junctions; impassable angles and confusing switches have been fixed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat&lt;/h3&gt;
+&lt;h3&gt;Loot &amp;amp; Resources&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="667080"&gt;Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.&lt;/li&gt;
+&lt;li data-rust-commits="655835"&gt;Wolf skulls can no longer be harvested from farm animals, removing that loot source.&lt;/li&gt;
+&lt;li data-rust-commits="655334"&gt;New meat type added to the loot table and a crash that prevented animals from being chased from behind has been fixed, improving AI behavior.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="668139"&gt;Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.&lt;/li&gt;
+&lt;li data-rust-commits="668139"&gt;Inbred cows now display correct textures, fixing the visual mix‑up between healthy and inbred animals.&lt;/li&gt;
+&lt;li data-rust-commits="667080"&gt;Grenade client prediction errors are now silently ignored, reducing disruptive prediction glitches.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Information&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="663055"&gt;Store items now show a BlurHash‑generated placeholder while loading, reducing visual pop‑in and improving loading feedback.&lt;/li&gt;
-&lt;li data-rust-commits="650404"&gt;Fixed missing descriptions for coloured sky lanterns and corrected typo in boltie description, ensuring accurate item information.&lt;/li&gt;
+&lt;li data-rust-commits="663055"&gt;Store items show loading placeholders generated from BlurHash, preventing blank images while textures load.&lt;/li&gt;
+&lt;li data-rust-commits="663055"&gt;Store item tiles retain their cover images during loading, keeping UI appearance consistent.&lt;/li&gt;
+&lt;li data-rust-commits="650404"&gt;Colored sky lanterns and boltie now have correct descriptions, fixing missing or typoed info.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-11</guid>
-      <pubDate>Fri, 11 Sep 2026 14:17:50 -0400</pubDate>
+      <pubDate>Fri, 11 Sep 2026 16:17:41 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 10</title>

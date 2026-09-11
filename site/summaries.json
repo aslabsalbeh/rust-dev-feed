@@ -1,69 +1,64 @@
 {
   "2026-09-11": {
-    "commit_count": 65,
-    "relevant_commit_count": 41,
-    "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855,667080,668090,668139,669035,669188,669191",
+    "commit_count": 73,
+    "relevant_commit_count": 44,
+    "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855,667080,668090,668139,669035,669188,669191,669206,669213,669215",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & AI",
+        "title": "World & Structures",
         "items": [
           {
-            "text": "Fixed runtime livestock pattern generation to match intended design ranges.",
+            "text": "Added new power grid rooms for Launch Site, Trainyard, and Radtown.",
+            "commit_ids": [
+              669215
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Animal Systems",
+        "items": [
+          {
+            "text": "Livestock trust, gender, and status panel info are hidden by default and can be toggled by admins, with visibility now controlled server‑side.",
+            "commit_ids": [
+              669213,
+              665210
+            ]
+          },
+          {
+            "text": "Fixed livestock runtime pattern generation to match intended design ranges.",
             "commit_ids": [
               669191,
               669035
             ]
           },
           {
-            "text": "Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.",
+            "text": "Improved livestock AI: cows no longer chase unreachable targets, herd and trough selection consider multiple options, bulls stop charging unreachable targets, and curious cows eat as expected.",
             "commit_ids": [
               665855
             ]
           },
           {
-            "text": "Server now exclusively controls visibility of the livestock status panel, preventing client‑side overrides.",
+            "text": "Fixed turtle swimming movement, ensuring proper behavior in shallow water and preventing swimming into terrain.",
             "commit_ids": [
-              665210
+              669206
             ]
           },
           {
-            "text": "Fixed null‑reference error in the 'Trans_ChasedFromBehind' animation transition, improving animal AI behavior during chase scenarios.",
+            "text": "Added inventory interaction sounds for animal fences.",
             "commit_ids": [
-              655334
+              664068
             ]
           }
         ]
       },
       {
-        "title": "Livestock Loot & Meat",
+        "title": "Base Building",
         "items": [
           {
-            "text": "Added new meat items to the livestock loot manifest, increasing the variety of meat obtainable from animals.",
-            "commit_ids": [
-              655334
-            ]
-          },
-          {
-            "text": "Removed wolf skull drops from all farm animals.",
-            "commit_ids": [
-              655835
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Interaction",
-        "items": [
-          {
-            "text": "Fence gate colliders are now read/write enabled, fixing interaction issues with gates.",
-            "commit_ids": [
-              655527
-            ]
-          },
-          {
-            "text": "Fixed a ladder climbing issue that could block player movement.",
+            "text": "Ladders now work correctly, restoring reliable climbing on structures.",
             "commit_ids": [
               658533
             ]
@@ -74,7 +69,7 @@
         "title": "Transportation",
         "items": [
           {
-            "text": "Enhanced rail junction generation to eliminate impassable or misdirected tracks and improve smoothness of procedural rail connections.",
+            "text": "Train tracks now generate smoother, passable junctions; impassable angles and confusing switches have been fixed.",
             "commit_ids": [
               658445
             ]
@@ -82,12 +77,18 @@
         ]
       },
       {
-        "title": "Combat",
+        "title": "Loot & Resources",
         "items": [
           {
-            "text": "Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.",
+            "text": "Wolf skulls can no longer be harvested from farm animals, removing that loot source.",
             "commit_ids": [
-              667080
+              655835
+            ]
+          },
+          {
+            "text": "New meat type added to the loot table and a crash that prevented animals from being chased from behind has been fixed, improving AI behavior.",
+            "commit_ids": [
+              655334
             ]
           }
         ]
@@ -96,24 +97,36 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.",
+            "text": "Inbred cows now display correct textures, fixing the visual mix‑up between healthy and inbred animals.",
             "commit_ids": [
               668139
+            ]
+          },
+          {
+            "text": "Grenade client prediction errors are now silently ignored, reducing disruptive prediction glitches.",
+            "commit_ids": [
+              667080
             ]
           }
         ]
       },
       {
-        "title": "UI & Information",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Store items now show a BlurHash‑generated placeholder while loading, reducing visual pop‑in and improving loading feedback.",
+            "text": "Store items show loading placeholders generated from BlurHash, preventing blank images while textures load.",
             "commit_ids": [
               663055
             ]
           },
           {
-            "text": "Fixed missing descriptions for coloured sky lanterns and corrected typo in boltie description, ensuring accurate item information.",
+            "text": "Store item tiles retain their cover images during loading, keeping UI appearance consistent.",
+            "commit_ids": [
+              663055
+            ]
+          },
+          {
+            "text": "Colored sky lanterns and boltie now have correct descriptions, fixing missing or typoed info.",
             "commit_ids": [
               650404
             ]
@@ -121,40 +134,41 @@
         ]
       }
     ],
-    "summary": "### Livestock & AI\n- Fixed runtime livestock pattern generation to match intended design ranges.\n- Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.\n- Server now exclusively controls visibility of the livestock status panel, preventing client‑side overrides.\n- Fixed null‑reference error in the 'Trans_ChasedFromBehind' animation transition, improving animal AI behavior during chase scenarios.\n\n### Livestock Loot & Meat\n- Added new meat items to the livestock loot manifest, increasing the variety of meat obtainable from animals.\n- Removed wolf skull drops from all farm animals.\n\n### World Interaction\n- Fence gate colliders are now read/write enabled, fixing interaction issues with gates.\n- Fixed a ladder climbing issue that could block player movement.\n\n### Transportation\n- Enhanced rail junction generation to eliminate impassable or misdirected tracks and improve smoothness of procedural rail connections.\n\n### Combat\n- Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.\n\n### Gameplay & Balance\n- Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.\n\n### UI & Information\n- Store items now show a BlurHash‑generated placeholder while loading, reducing visual pop‑in and improving loading feedback.\n- Fixed missing descriptions for coloured sky lanterns and corrected typo in boltie description, ensuring accurate item information.",
+    "summary": "### World & Structures\n- Added new power grid rooms for Launch Site, Trainyard, and Radtown.\n\n### Livestock & Animal Systems\n- Livestock trust, gender, and status panel info are hidden by default and can be toggled by admins, with visibility now controlled server‑side.\n- Fixed livestock runtime pattern generation to match intended design ranges.\n- Improved livestock AI: cows no longer chase unreachable targets, herd and trough selection consider multiple options, bulls stop charging unreachable targets, and curious cows eat as expected.\n- Fixed turtle swimming movement, ensuring proper behavior in shallow water and preventing swimming into terrain.\n- Added inventory interaction sounds for animal fences.\n\n### Base Building\n- Ladders now work correctly, restoring reliable climbing on structures.\n\n### Transportation\n- Train tracks now generate smoother, passable junctions; impassable angles and confusing switches have been fixed.\n\n### Loot & Resources\n- Wolf skulls can no longer be harvested from farm animals, removing that loot source.\n- New meat type added to the loot table and a crash that prevented animals from being chased from behind has been fixed, improving AI behavior.\n\n### Gameplay & Balance\n- Inbred cows now display correct textures, fixing the visual mix‑up between healthy and inbred animals.\n- Grenade client prediction errors are now silently ignored, reducing disruptive prediction glitches.\n\n### UI & Quality of Life\n- Store items show loading placeholders generated from BlurHash, preventing blank images while textures load.\n- Store item tiles retain their cover images during loading, keeping UI appearance consistent.\n- Colored sky lanterns and boltie now have correct descriptions, fixing missing or typoed info.",
     "new_items": [
       {
-        "text": "Fixed runtime livestock pattern generation to match intended design ranges.",
+        "text": "Added new power grid rooms for Launch Site, Trainyard, and Radtown.",
+        "commit_ids": [
+          669215
+        ],
+        "section": "World & Structures"
+      },
+      {
+        "text": "Livestock trust, gender, and status panel info are hidden by default and can be toggled by admins, with visibility now controlled server‑side.",
+        "commit_ids": [
+          669213,
+          665210
+        ],
+        "section": "Livestock & Animal Systems"
+      },
+      {
+        "text": "Fixed livestock runtime pattern generation to match intended design ranges.",
         "commit_ids": [
           669191,
           669035
         ],
-        "section": "Livestock & AI"
+        "section": "Livestock & Animal Systems"
       },
       {
-        "text": "Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.",
+        "text": "Fixed turtle swimming movement, ensuring proper behavior in shallow water and preventing swimming into terrain.",
         "commit_ids": [
-          665855
+          669206
         ],
-        "section": "Livestock & AI"
-      },
-      {
-        "text": "Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.",
-        "commit_ids": [
-          667080
-        ],
-        "section": "Combat"
-      },
-      {
-        "text": "Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.",
-        "commit_ids": [
-          668139
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Livestock & Animal Systems"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Fixed runtime livestock pattern generation to match intended design ranges.\n- Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.\n- Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.\n- Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock."
+    "new_relevant_count": 6,
+    "new_summary": "- Added new power grid rooms for Launch Site, Trainyard, and Radtown.\n- Livestock trust, gender, and status panel info are hidden by default and can be toggled by admins, with visibility now controlled server‑side.\n- Fixed livestock runtime pattern generation to match intended design ranges.\n- Fixed turtle swimming movement, ensuring proper behavior in shallow water and preventing swimming into terrain."
   },
   "2026-09-10": {
     "commit_count": 82,
