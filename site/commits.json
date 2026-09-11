@@ -1,5 +1,85 @@
 [
   {
+    "id": 659776,
+    "branch": "main",
+    "changeset": "163953",
+    "created": "2026-09-11T11:53:58",
+    "message": "subtracting 163933",
+    "user": "Raul"
+  },
+  {
+    "id": 658959,
+    "branch": "main/vm_hand_spawn",
+    "changeset": "163950",
+    "created": "2026-09-11T11:25:05",
+    "message": "- fixed missing arms on boatplanner prefab\r\n- deleted redundant files\r\n- renamed f1 grenade and anims to match v_ convention",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 658533,
+    "branch": "main",
+    "changeset": "163946",
+    "created": "2026-09-11T11:09:53",
+    "message": "cherrypicked ladder fix from biofuel branch",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 658482,
+    "branch": "main/render_pipeline_testing/depth_based_light_binning",
+    "changeset": "163944",
+    "created": "2026-09-11T11:07:53",
+    "message": "Initial light depth binning implementation",
+    "user": "aidan.m"
+  },
+  {
+    "id": 658445,
+    "branch": "main/rail_junction_improvements",
+    "changeset": "163943",
+    "created": "2026-09-11T11:06:38",
+    "message": "Improve rail junctions at procedural branchings and connections to monuments\r\n- Fixes branch junctions still rarely being impassable by train due to generating with more than the max of 10° tangent difference allowed by collation\r\n- Improves general smoothness of junctions, also fixing cases where they would start off onto the wrong side of the parent rail, then crossing right after, causing confusion when driving over them because you press LEFT but end up going RIGHT\r\n- Tries to untangle parallel tunnel entrance connections that sometimes like to cross over each other - falls back to doing nothing if it can't improve it\r\nBefore | After:\r\nhttps://files.facepunch.com/cipeax/2026/September/example1.png\r\nhttps://files.facepunch.com/cipeax/2026/September/example2.png\r\nhttps://files.facepunch.com/cipeax/2026/September/example3.png",
+    "user": "cipeaX"
+  },
+  {
+    "id": 658405,
+    "branch": "main/biofuel_generator",
+    "changeset": "163942",
+    "created": "2026-09-11T11:05:25",
+    "message": "fixed ladder worldmodel outline from disappearing after a second. \r\ncause: child object of the prefab was off center. Zeroing transforms fixed it.",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 657945,
+    "branch": "main/liquid_milk_test",
+    "changeset": "163940",
+    "created": "2026-09-11T10:48:39",
+    "message": "Add milk jar with sloshing liquid and improved glass\r\n\r\n- Milk moves with the jar and gradually settles\r\n- Keeps the same amount when tilted or upside down\r\n- Softer liquid surface edge and clearer glass\r\n- Includes a preview prefab for testing and tuning",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 657739,
+    "branch": "main/Livestock_animals/Frog_Branch",
+    "changeset": "163938",
+    "created": "2026-09-11T10:41:30",
+    "message": "Adding new frog rig",
+    "user": "jeddooo"
+  },
+  {
+    "id": 657667,
+    "branch": "main/Livestock_animals",
+    "changeset": "163936",
+    "created": "2026-09-11T10:38:52",
+    "message": "Updated second UV channel on calf,cow and bull",
+    "user": "Toffer"
+  },
+  {
+    "id": 657534,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "163934",
+    "created": "2026-09-11T10:34:15",
+    "message": "use nonjittered matrix for water reflection sampling to fix flickering with DLSS",
+    "user": "Dayaan"
+  },
+  {
     "id": 656782,
     "branch": "main/render_pipeline_testing",
     "changeset": "163931",
@@ -2014,61 +2094,5 @@
     "created": "2026-09-08T13:08:20",
     "message": "Ferry terminal power grid loot room",
     "user": "Damian Lazarski"
-  },
-  {
-    "id": 631137,
-    "branch": "main/sandbag_barricade_variants",
-    "changeset": "163457",
-    "created": "2026-09-08T12:11:34",
-    "message": "Add items, link em up.",
-    "user": "Adam W"
-  },
-  {
-    "id": 631136,
-    "branch": "main/Livestock_animals",
-    "changeset": "163456",
-    "created": "2026-09-08T12:10:59",
-    "message": "More navmesh and path following optis:\r\n- Disable navmesh carving completely when new navmesh is enabled, we still had its overhead\r\n- Pin arrays before marshalling them, because unity's mono is not smart enough to do it and is copying everything which is excruciatingly slow\r\n- During path following, when calculating remaining distance, cache the rest of the path and only update the current segment we're on, instead of recalculating the length of the whole path\r\n- Add telemetry to new navmesh",
-    "user": "Maverick"
-  },
-  {
-    "id": 631125,
-    "branch": "main/Livestock_animals",
-    "changeset": "163454",
-    "created": "2026-09-08T11:19:38",
-    "message": "Cow eat animations to include trough variants",
-    "user": "wes.b"
-  },
-  {
-    "id": 631121,
-    "branch": "main/animal_fencing_v2",
-    "changeset": "163453",
-    "created": "2026-09-08T10:59:07",
-    "message": "Reverse gate open direction. Tweak gate volumes so it can be snap placed more betterer.",
-    "user": "Adam W"
-  },
-  {
-    "id": 631116,
-    "branch": "main/Livestock_animals",
-    "changeset": "163452",
-    "created": "2026-09-08T10:45:55",
-    "message": "Fix compile error in ConsoleSystem",
-    "user": "Maverick"
-  },
-  {
-    "id": 631114,
-    "branch": "main/Livestock_animals",
-    "changeset": "163450",
-    "created": "2026-09-08T10:41:48",
-    "message": "Fix missing #if SERVER directing to gate navbakestats",
-    "user": "Maverick"
-  },
-  {
-    "id": 631111,
-    "branch": "main",
-    "changeset": "163449",
-    "created": "2026-09-08T10:34:32",
-    "message": "Fix compile error with url in \"none\" compile mode",
-    "user": "Maverick"
   }
 ]
