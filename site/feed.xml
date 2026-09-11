@@ -6,51 +6,57 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 11 Sep 2026 12:17:31 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 14:17:50 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 11</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;55 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;65 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="665855"&gt;Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.&lt;/li&gt;
-&lt;li data-rust-commits="665210"&gt;Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.&lt;/li&gt;
-&lt;li data-rust-commits="663345"&gt;Resolved third‑person animation glitch where the throwing animation kept playing after switching items.&lt;/li&gt;
-&lt;li data-rust-commits="663055"&gt;Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.&lt;/li&gt;
+&lt;li data-rust-commits="669191,669035"&gt;Fixed runtime livestock pattern generation to match intended design ranges.&lt;/li&gt;
+&lt;li data-rust-commits="665855"&gt;Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.&lt;/li&gt;
+&lt;li data-rust-commits="667080"&gt;Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.&lt;/li&gt;
+&lt;li data-rust-commits="668139"&gt;Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Livestock &amp;amp; Farming&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="665855"&gt;Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.&lt;/li&gt;
-&lt;li data-rust-commits="665210"&gt;Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.&lt;/li&gt;
-&lt;li data-rust-commits="655835"&gt;Farm animals no longer drop wolf skulls when harvested.&lt;/li&gt;
-&lt;li data-rust-commits="655334"&gt;Added a new meat type to the game (manifest updated).&lt;/li&gt;
+&lt;li data-rust-commits="669191,669035"&gt;Fixed runtime livestock pattern generation to match intended design ranges.&lt;/li&gt;
+&lt;li data-rust-commits="665855"&gt;Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.&lt;/li&gt;
+&lt;li data-rust-commits="665210"&gt;Server now exclusively controls visibility of the livestock status panel, preventing client‑side overrides.&lt;/li&gt;
+&lt;li data-rust-commits="655334"&gt;Fixed null‑reference error in the &amp;#x27;Trans_ChasedFromBehind&amp;#x27; animation transition, improving animal AI behavior during chase scenarios.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Structures &amp;amp; Interaction&lt;/h3&gt;
+&lt;h3&gt;Livestock Loot &amp;amp; Meat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="655527"&gt;Fence gate collision component now supports read/write, fixing interaction issues with fence gates.&lt;/li&gt;
-&lt;li data-rust-commits="658533"&gt;Fixed ladder climbing bug, restoring proper ladder usage.&lt;/li&gt;
+&lt;li data-rust-commits="655334"&gt;Added new meat items to the livestock loot manifest, increasing the variety of meat obtainable from animals.&lt;/li&gt;
+&lt;li data-rust-commits="655835"&gt;Removed wolf skull drops from all farm animals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World Interaction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="655527"&gt;Fence gate colliders are now read/write enabled, fixing interaction issues with gates.&lt;/li&gt;
+&lt;li data-rust-commits="658533"&gt;Fixed a ladder climbing issue that could block player movement.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Transportation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="658445"&gt;Improved procedural rail junctions: trains now avoid impassable angles, junctions align correctly, and parallel tunnel entrances are untangled, reducing navigation errors.&lt;/li&gt;
+&lt;li data-rust-commits="658445"&gt;Enhanced rail junction generation to eliminate impassable or misdirected tracks and improve smoothness of procedural rail connections.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animation &amp;amp; UX&lt;/h3&gt;
+&lt;h3&gt;Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="663345"&gt;Resolved third‑person animation glitch where the throwing animation kept playing after switching items.&lt;/li&gt;
+&lt;li data-rust-commits="667080"&gt;Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="663055"&gt;Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.&lt;/li&gt;
+&lt;li data-rust-commits="668139"&gt;Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Item Descriptions&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Information&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="650404"&gt;Sky lanterns now show their descriptions, the outdated research table warning has been removed, and the boltie description typo corrected.&lt;/li&gt;
+&lt;li data-rust-commits="663055"&gt;Store items now show a BlurHash‑generated placeholder while loading, reducing visual pop‑in and improving loading feedback.&lt;/li&gt;
+&lt;li data-rust-commits="650404"&gt;Fixed missing descriptions for coloured sky lanterns and corrected typo in boltie description, ensuring accurate item information.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-11</guid>
-      <pubDate>Fri, 11 Sep 2026 12:17:31 -0400</pubDate>
+      <pubDate>Fri, 11 Sep 2026 14:17:50 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 10</title>

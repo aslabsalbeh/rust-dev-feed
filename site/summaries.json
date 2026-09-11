@@ -1,34 +1,35 @@
 {
   "2026-09-11": {
-    "commit_count": 55,
-    "relevant_commit_count": 35,
-    "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855",
+    "commit_count": 65,
+    "relevant_commit_count": 41,
+    "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855,667080,668090,668139,669035,669188,669191",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Farming",
+        "title": "Livestock & AI",
         "items": [
           {
-            "text": "Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.",
+            "text": "Fixed runtime livestock pattern generation to match intended design ranges.",
+            "commit_ids": [
+              669191,
+              669035
+            ]
+          },
+          {
+            "text": "Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.",
             "commit_ids": [
               665855
             ]
           },
           {
-            "text": "Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.",
+            "text": "Server now exclusively controls visibility of the livestock status panel, preventing client‑side overrides.",
             "commit_ids": [
               665210
             ]
           },
           {
-            "text": "Farm animals no longer drop wolf skulls when harvested.",
-            "commit_ids": [
-              655835
-            ]
-          },
-          {
-            "text": "Added a new meat type to the game (manifest updated).",
+            "text": "Fixed null‑reference error in the 'Trans_ChasedFromBehind' animation transition, improving animal AI behavior during chase scenarios.",
             "commit_ids": [
               655334
             ]
@@ -36,16 +37,33 @@
         ]
       },
       {
-        "title": "Structures & Interaction",
+        "title": "Livestock Loot & Meat",
         "items": [
           {
-            "text": "Fence gate collision component now supports read/write, fixing interaction issues with fence gates.",
+            "text": "Added new meat items to the livestock loot manifest, increasing the variety of meat obtainable from animals.",
+            "commit_ids": [
+              655334
+            ]
+          },
+          {
+            "text": "Removed wolf skull drops from all farm animals.",
+            "commit_ids": [
+              655835
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Interaction",
+        "items": [
+          {
+            "text": "Fence gate colliders are now read/write enabled, fixing interaction issues with gates.",
             "commit_ids": [
               655527
             ]
           },
           {
-            "text": "Fixed ladder climbing bug, restoring proper ladder usage.",
+            "text": "Fixed a ladder climbing issue that could block player movement.",
             "commit_ids": [
               658533
             ]
@@ -56,7 +74,7 @@
         "title": "Transportation",
         "items": [
           {
-            "text": "Improved procedural rail junctions: trains now avoid impassable angles, junctions align correctly, and parallel tunnel entrances are untangled, reducing navigation errors.",
+            "text": "Enhanced rail junction generation to eliminate impassable or misdirected tracks and improve smoothness of procedural rail connections.",
             "commit_ids": [
               658445
             ]
@@ -64,32 +82,38 @@
         ]
       },
       {
-        "title": "Animation & UX",
+        "title": "Combat",
         "items": [
           {
-            "text": "Resolved third‑person animation glitch where the throwing animation kept playing after switching items.",
+            "text": "Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.",
             "commit_ids": [
-              663345
+              667080
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.",
+            "text": "Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.",
+            "commit_ids": [
+              668139
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Information",
+        "items": [
+          {
+            "text": "Store items now show a BlurHash‑generated placeholder while loading, reducing visual pop‑in and improving loading feedback.",
             "commit_ids": [
               663055
             ]
-          }
-        ]
-      },
-      {
-        "title": "Item Descriptions",
-        "items": [
+          },
           {
-            "text": "Sky lanterns now show their descriptions, the outdated research table warning has been removed, and the boltie description typo corrected.",
+            "text": "Fixed missing descriptions for coloured sky lanterns and corrected typo in boltie description, ensuring accurate item information.",
             "commit_ids": [
               650404
             ]
@@ -97,39 +121,40 @@
         ]
       }
     ],
-    "summary": "### Livestock & Farming\n- Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.\n- Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.\n- Farm animals no longer drop wolf skulls when harvested.\n- Added a new meat type to the game (manifest updated).\n\n### Structures & Interaction\n- Fence gate collision component now supports read/write, fixing interaction issues with fence gates.\n- Fixed ladder climbing bug, restoring proper ladder usage.\n\n### Transportation\n- Improved procedural rail junctions: trains now avoid impassable angles, junctions align correctly, and parallel tunnel entrances are untangled, reducing navigation errors.\n\n### Animation & UX\n- Resolved third‑person animation glitch where the throwing animation kept playing after switching items.\n\n### UI & Quality of Life\n- Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.\n\n### Item Descriptions\n- Sky lanterns now show their descriptions, the outdated research table warning has been removed, and the boltie description typo corrected.",
+    "summary": "### Livestock & AI\n- Fixed runtime livestock pattern generation to match intended design ranges.\n- Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.\n- Server now exclusively controls visibility of the livestock status panel, preventing client‑side overrides.\n- Fixed null‑reference error in the 'Trans_ChasedFromBehind' animation transition, improving animal AI behavior during chase scenarios.\n\n### Livestock Loot & Meat\n- Added new meat items to the livestock loot manifest, increasing the variety of meat obtainable from animals.\n- Removed wolf skull drops from all farm animals.\n\n### World Interaction\n- Fence gate colliders are now read/write enabled, fixing interaction issues with gates.\n- Fixed a ladder climbing issue that could block player movement.\n\n### Transportation\n- Enhanced rail junction generation to eliminate impassable or misdirected tracks and improve smoothness of procedural rail connections.\n\n### Combat\n- Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.\n\n### Gameplay & Balance\n- Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.\n\n### UI & Information\n- Store items now show a BlurHash‑generated placeholder while loading, reducing visual pop‑in and improving loading feedback.\n- Fixed missing descriptions for coloured sky lanterns and corrected typo in boltie description, ensuring accurate item information.",
     "new_items": [
       {
-        "text": "Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.",
+        "text": "Fixed runtime livestock pattern generation to match intended design ranges.",
+        "commit_ids": [
+          669191,
+          669035
+        ],
+        "section": "Livestock & AI"
+      },
+      {
+        "text": "Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.",
         "commit_ids": [
           665855
         ],
-        "section": "Livestock & Farming"
+        "section": "Livestock & AI"
       },
       {
-        "text": "Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.",
+        "text": "Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.",
         "commit_ids": [
-          665210
+          667080
         ],
-        "section": "Livestock & Farming"
+        "section": "Combat"
       },
       {
-        "text": "Resolved third‑person animation glitch where the throwing animation kept playing after switching items.",
+        "text": "Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock.",
         "commit_ids": [
-          663345
+          668139
         ],
-        "section": "Animation & UX"
-      },
-      {
-        "text": "Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading.",
-        "commit_ids": [
-          663055
-        ],
-        "section": "UI & Quality of Life"
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Fixed livestock AI issues: cows now eat, herd and trough searches consider multiple targets, bulls no longer charge unreachable targets, and happy run wanders when the player target is unreachable.\n- Server now controls visibility of the livestock status panel, allowing gene information to be hidden regardless of client settings.\n- Resolved third‑person animation glitch where the throwing animation kept playing after switching items.\n- Store items now display loading placeholders via BlurHash, preventing blank images and improving visual feedback during loading."
+    "new_relevant_count": 5,
+    "new_summary": "- Fixed runtime livestock pattern generation to match intended design ranges.\n- Improved livestock AI: cows now correctly eat, check multiple herd members and troughs; bulls no longer charge unreachable targets; animals handle unreachable player targets gracefully.\n- Grenade client‑prediction errors are now gated and ignored, preventing erratic grenade behavior.\n- Inbred cows now display the correct texture, allowing players to visually distinguish healthy and inbred livestock."
   },
   "2026-09-10": {
     "commit_count": 82,
