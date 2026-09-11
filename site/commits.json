@@ -1,5 +1,77 @@
 [
   {
+    "id": 663390,
+    "branch": "main",
+    "changeset": "163972",
+    "created": "2026-09-11T14:04:36",
+    "message": "add nullcheck for `playable is invalid` error kicking players out",
+    "user": "octo"
+  },
+  {
+    "id": 663345,
+    "branch": "main",
+    "changeset": "163971",
+    "created": "2026-09-11T14:03:04",
+    "message": "Fix throwing 3p anim still playing when switching between items",
+    "user": "octo"
+  },
+  {
+    "id": 663067,
+    "branch": "main/ui_store_slim_ram/blurhash",
+    "changeset": "163970",
+    "created": "2026-09-11T13:53:14",
+    "message": "Update: license file for blurhash\r\nTests: none",
+    "user": "Daniel P"
+  },
+  {
+    "id": 663055,
+    "branch": "main/ui_store_slim_ram/blurhash",
+    "changeset": "163969",
+    "created": "2026-09-11T13:52:53",
+    "message": "Update: HttpImage - add option to generate loading image from BlurHash\r\n- using bf58763 release dll from from https://github.com/MarkusPalcer/blurhash.net\r\n- add debug convar shop.loaddelay to test loading images\r\n- Stop UI_StoreItemTile from deactivating it's cover image\r\n- httpImage no longer hides it's targetted image when loading a texture if it has a loading texture\r\nTests: navigated and clicked through various store views",
+    "user": "Daniel P"
+  },
+  {
+    "id": 663043,
+    "branch": "▍▉█▊▌▌▊▋▇▋▌█▅█▋█▇▉▌▉▇▋",
+    "changeset": "▋▉▉▉▋▊",
+    "created": "2026-09-11T13:52:29",
+    "message": "▅ ▍▌▇▊▇▋ ▋█▅▇▋▆ ▄█▆▄ ▆▉▌▊▊ ▉▇▋▉▄█▊▅▍ ▉▋▌▄▋ ▆█▋ ▌▍▌ ▍▌ ▄▍▋▊▆▅ ▇█▅ ▅▄▉▇█ ▊▅▇▇▅▇▆▌▍▇▍▊",
+    "user": "Maverick"
+  },
+  {
+    "id": 663034,
+    "branch": "main/Livestock_animals",
+    "changeset": "163967",
+    "created": "2026-09-11T13:51:35",
+    "message": "Cow knockdown and sheep stomp animations added",
+    "user": "wes.b"
+  },
+  {
+    "id": 662665,
+    "branch": "▋█▄▇▅▋▍▅▋▌▋▄▋▄▅▊▇▆█▅▇▅",
+    "changeset": "▇▌▇▇▄▊",
+    "created": "2026-09-11T13:38:59",
+    "message": "▊ ▄▊▋▄▄▇ ▅ ▋▋▌▊▇ █▌ ▅▅▌▆█ █▌ ▊▇▊▇▄▅ ▆▊▇▍",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 662664,
+    "branch": "main/Livestock_animals",
+    "changeset": "163965",
+    "created": "2026-09-11T13:38:51",
+    "message": "Updated Calf model to have a male version.",
+    "user": "Toffer"
+  },
+  {
+    "id": 661902,
+    "branch": "main/grenade_client_prediction",
+    "changeset": "163961",
+    "created": "2026-09-11T13:10:15",
+    "message": "- Large code cleanup\r\n- Remove a bunch of unneeded, over engineered crap\r\n- Move HideUntilMobile preprocess into throwghost",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 659776,
     "branch": "main",
     "changeset": "163953",
@@ -1974,125 +2046,5 @@
     "created": "2026-09-08T14:54:48",
     "message": "More work on random room C - plus wire/pipe pass",
     "user": "hannah.watts"
-  },
-  {
-    "id": 631203,
-    "branch": "main/sandbag_barricade_variants",
-    "changeset": "163474",
-    "created": "2026-09-08T14:13:30",
-    "message": "Missed file",
-    "user": "Adam W"
-  },
-  {
-    "id": 631201,
-    "branch": "main/character_customisation",
-    "changeset": "163473",
-    "created": "2026-09-08T14:00:38",
-    "message": "- Add color selection system for hair/skin colour\r\n- Add spotlight above the character\r\n- Dont rerender all icons if you change colour",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 631200,
-    "branch": "main",
-    "changeset": "163472",
-    "created": "2026-09-08T13:58:48",
-    "message": "merging 3p arrows not hiding fix",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 631197,
-    "branch": "main",
-    "changeset": "163470",
-    "created": "2026-09-08T13:54:28",
-    "message": "Unfucking ifdefs",
-    "user": "andre"
-  },
-  {
-    "id": 631196,
-    "branch": "main/Livestock_animals/livestock_nav_optis",
-    "changeset": "163469",
-    "created": "2026-09-08T13:52:29",
-    "message": "More path following optis for -17.5%:\r\n- Cache transform in navmesh agent\r\n- Use reference equal instead of == for independantNavmesh to avoid the unity overload\r\n- Batch apply transforms after ticking all agents with IJobParallelForTransform\r\n- Remove one normalize to the movement math",
-    "user": "Maverick"
-  },
-  {
-    "id": 631195,
-    "branch": "main/powerlevel_loot_rooms",
-    "changeset": "163468",
-    "created": "2026-09-08T13:48:03",
-    "message": "Made ferry terminal loot room functional with power grid",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 631193,
-    "branch": "main/sandbag_barricade_variants",
-    "changeset": "163467",
-    "created": "2026-09-08T13:43:55",
-    "message": "More setup",
-    "user": "Adam W"
-  },
-  {
-    "id": 631190,
-    "branch": "main",
-    "changeset": "163466",
-    "created": "2026-09-08T13:41:25",
-    "message": "Enabled graphics jobs on Mac\nSwitched graphics jobs to Split",
-    "user": "andre"
-  },
-  {
-    "id": 631189,
-    "branch": "▍▉▆▇",
-    "changeset": "▆▄▍▊▄▋",
-    "created": "2026-09-08T13:41:13",
-    "message": "▌ █▆▇▄▆ ▇▅▉▍ █▌▅▌▉▋▌▋▆▋▆▊▄▇▌▉▅█▅▅▅",
-    "user": "lamalove"
-  },
-  {
-    "id": 631188,
-    "branch": "█▆█▋▌▆▊█▊▅▅▋▄▋▄▍▆▇▊▍▆▊",
-    "changeset": "▋█▇▅▌▄",
-    "created": "2026-09-08T13:40:11",
-    "message": "▇ ▅▉▅▉▇▍ ▊█▉▋▄█▇▌▅█ ▅▅▇▅ █▍▍ ▋▍▆▋▌▇▋ ▊▅▆▍▅▅▆██▍▋▆▄ ▍▅▍▉▆▍█",
-    "user": "lamalove"
-  },
-  {
-    "id": 631178,
-    "branch": "main/arrows_not_hiding_fix",
-    "changeset": "163463",
-    "created": "2026-09-08T13:23:33",
-    "message": "Fix for 3p_bow not hiding the arrow mesh on the server",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 631177,
-    "branch": "main/animation_naming_cleanup",
-    "changeset": "163462",
-    "created": "2026-09-08T13:20:21",
-    "message": "Updates to all weapon anim controllers to match convention",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 631175,
-    "branch": "main/Livestock_animals/Cow_pattern_testing",
-    "changeset": "163461",
-    "created": "2026-09-08T13:18:08",
-    "message": "First pass procedural cow pattern shader",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 631165,
-    "branch": "main/powerlevel_loot_rooms",
-    "changeset": "163459",
-    "created": "2026-09-08T13:08:54",
-    "message": "ladders merge",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 631164,
-    "branch": "main/powerlevel_loot_rooms",
-    "changeset": "163458",
-    "created": "2026-09-08T13:08:20",
-    "message": "Ferry terminal power grid loot room",
-    "user": "Damian Lazarski"
   }
 ]
