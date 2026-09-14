@@ -1,5 +1,101 @@
 [
   {
+    "id": 701103,
+    "branch": "main/Livestock_animals/meat_visuals",
+    "changeset": "164156",
+    "created": "2026-09-14T13:50:46",
+    "message": "Fixed apartment complex and floating cities not showing in the S2P batch window",
+    "user": "Flavien"
+  },
+  {
+    "id": 701099,
+    "branch": "main/Livestock_animals/meat_visuals",
+    "changeset": "164155",
+    "created": "2026-09-14T13:50:16",
+    "message": "S2P:\r\n- ferry terminal\r\n- outpost\r\n- large oilrig\r\n- gas station\r\n- radtown\r\n- supermarket\r\n- water_well (all 5)\r\n- apartment complex\r\n- floating city (all 4)",
+    "user": "Flavien"
+  },
+  {
+    "id": 701043,
+    "branch": "main/render_pipeline_testing/depth_based_light_binning",
+    "changeset": "164153",
+    "created": "2026-09-14T13:43:13",
+    "message": "- Changed the LightBinningJob to only process depth bins within the screen tile that a light occupies to reduce the overhead of the job significantly\r\n- Aligned depth bins for each tile within memory so that they are within the same cache lines and produce more cache hits when sampling the depth bin on the shader side",
+    "user": "aidan.m"
+  },
+  {
+    "id": 701002,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164152",
+    "created": "2026-09-14T13:38:52",
+    "message": "integrate new squirrel anims",
+    "user": "ElliotH"
+  },
+  {
+    "id": 700986,
+    "branch": "main/sentry_upload",
+    "changeset": "164151",
+    "created": "2026-09-14T13:37:33",
+    "message": "Re-add the \"max 3 uploads per session\" logic that got removed accidently",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 700914,
+    "branch": "main/vcc",
+    "changeset": "164150",
+    "created": "2026-09-14T13:29:05",
+    "message": "PS 4/5 gamepad layout vdfs.\r\nUpdate input config deploy tool to work with all the layouts not just xbox.",
+    "user": "Adam W"
+  },
+  {
+    "id": 700863,
+    "branch": "main/sentry_upload",
+    "changeset": "164149",
+    "created": "2026-09-14T13:10:27",
+    "message": "Add missing catch {} to a try statement that only had a finally {} block",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 700861,
+    "branch": "main/sentry_upload",
+    "changeset": "164147",
+    "created": "2026-09-14T13:07:41",
+    "message": "Cleanup",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 700858,
+    "branch": "main/Livestock_animals/meat_visuals",
+    "changeset": "164145",
+    "created": "2026-09-14T12:59:37",
+    "message": "Tweaked BBQ beef pos",
+    "user": "Flavien"
+  },
+  {
+    "id": 700859,
+    "branch": "main/Livestock_animals/meat_visuals",
+    "changeset": "164144",
+    "created": "2026-09-14T12:59:30",
+    "message": "Fixed raw beef missing its becomeOnCooked ref",
+    "user": "Flavien"
+  },
+  {
+    "id": 700857,
+    "branch": "main/Livestock_animals/meat_visuals",
+    "changeset": "164143",
+    "created": "2026-09-14T12:47:45",
+    "message": "Editor tool to preview the meat position",
+    "user": "Flavien"
+  },
+  {
+    "id": 700856,
+    "branch": "main/Livestock_animals/meat_visuals",
+    "changeset": "164142",
+    "created": "2026-09-14T12:47:18",
+    "message": "Added new meats to all oven prefabs",
+    "user": "Flavien"
+  },
+  {
     "id": 700223,
     "branch": "main/grenade_client_prediction",
     "changeset": "164141",
@@ -494,85 +590,5 @@
     "created": "2026-09-11T14:18:28",
     "message": "WR config compile fix",
     "user": "Adam W"
-  },
-  {
-    "id": 663709,
-    "branch": "main/Livestock_animals",
-    "changeset": "163976",
-    "created": "2026-09-11T14:16:20",
-    "message": "Put the livestock server code back behind #if SERVER",
-    "user": "Maverick"
-  },
-  {
-    "id": 663390,
-    "branch": "main",
-    "changeset": "163972",
-    "created": "2026-09-11T14:04:36",
-    "message": "add nullcheck for `playable is invalid` error kicking players out",
-    "user": "octo"
-  },
-  {
-    "id": 663345,
-    "branch": "main",
-    "changeset": "163971",
-    "created": "2026-09-11T14:03:04",
-    "message": "Fix throwing 3p anim still playing when switching between items",
-    "user": "octo"
-  },
-  {
-    "id": 663067,
-    "branch": "main/ui_store_slim_ram/blurhash",
-    "changeset": "163970",
-    "created": "2026-09-11T13:53:14",
-    "message": "Update: license file for blurhash\r\nTests: none",
-    "user": "Daniel P"
-  },
-  {
-    "id": 663055,
-    "branch": "main/ui_store_slim_ram/blurhash",
-    "changeset": "163969",
-    "created": "2026-09-11T13:52:53",
-    "message": "Update: HttpImage - add option to generate loading image from BlurHash\r\n- using bf58763 release dll from from https://github.com/MarkusPalcer/blurhash.net\r\n- add debug convar shop.loaddelay to test loading images\r\n- Stop UI_StoreItemTile from deactivating it's cover image\r\n- httpImage no longer hides it's targetted image when loading a texture if it has a loading texture\r\nTests: navigated and clicked through various store views",
-    "user": "Daniel P"
-  },
-  {
-    "id": 663043,
-    "branch": "▍▉█▊▌▌▊▋▇▋▌█▅█▋█▇▉▌▉▇▋",
-    "changeset": "▋▉▉▉▋▊",
-    "created": "2026-09-11T13:52:29",
-    "message": "▅ ▍▌▇▊▇▋ ▋█▅▇▋▆ ▄█▆▄ ▆▉▌▊▊ ▉▇▋▉▄█▊▅▍ ▉▋▌▄▋ ▆█▋ ▌▍▌ ▍▌ ▄▍▋▊▆▅ ▇█▅ ▅▄▉▇█ ▊▅▇▇▅▇▆▌▍▇▍▊",
-    "user": "Maverick"
-  },
-  {
-    "id": 663034,
-    "branch": "main/Livestock_animals",
-    "changeset": "163967",
-    "created": "2026-09-11T13:51:35",
-    "message": "Cow knockdown and sheep stomp animations added",
-    "user": "wes.b"
-  },
-  {
-    "id": 662665,
-    "branch": "▋█▄▇▅▋▍▅▋▌▋▄▋▄▅▊▇▆█▅▇▅",
-    "changeset": "▇▌▇▇▄▊",
-    "created": "2026-09-11T13:38:59",
-    "message": "▊ ▄▊▋▄▄▇ ▅ ▋▋▌▊▇ █▌ ▅▅▌▆█ █▌ ▊▇▊▇▄▅ ▆▊▇▍",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 662664,
-    "branch": "main/Livestock_animals",
-    "changeset": "163965",
-    "created": "2026-09-11T13:38:51",
-    "message": "Updated Calf model to have a male version.",
-    "user": "Toffer"
-  },
-  {
-    "id": 661902,
-    "branch": "main/grenade_client_prediction",
-    "changeset": "163961",
-    "created": "2026-09-11T13:10:15",
-    "message": "- Large code cleanup\r\n- Remove a bunch of unneeded, over engineered crap\r\n- Move HideUntilMobile preprocess into throwghost",
-    "user": "Ian Henderson"
   }
 ]
