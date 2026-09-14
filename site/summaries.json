@@ -1,18 +1,18 @@
 {
   "2026-09-13": {
-    "commit_count": 5,
-    "relevant_commit_count": 4,
-    "relevant_signature": "684030,684302,684744,685522",
+    "commit_count": 10,
+    "relevant_commit_count": 9,
+    "relevant_signature": "684030,684302,684744,685522,687265,687369,688119,688278,688396",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Livestock",
+        "title": "Animals & Resources",
         "items": [
           {
-            "text": "Cows no longer cause game errors due to missing bone data; they now load correctly with only a warning if null bones are present.",
+            "text": "Cows now drop beef instead of generic cow meat.",
             "commit_ids": [
-              684744
+              688119
             ]
           }
         ]
@@ -21,33 +21,40 @@
         "title": "Weapons",
         "items": [
           {
-            "text": "Mini crossbow crash fixed; the weapon now functions reliably.",
+            "text": "Mini crossbow functionality restored after fix.",
             "commit_ids": [
               684302
             ]
           }
         ]
-      }
-    ],
-    "summary": "### Animals & Livestock\n- Cows no longer cause game errors due to missing bone data; they now load correctly with only a warning if null bones are present.\n\n### Weapons\n- Mini crossbow crash fixed; the weapon now functions reliably.",
-    "new_items": [
-      {
-        "text": "Cows no longer cause game errors due to missing bone data; they now load correctly with only a warning if null bones are present.",
-        "commit_ids": [
-          684744
-        ],
-        "section": "Animals & Livestock"
       },
       {
-        "text": "Mini crossbow crash fixed; the weapon now functions reliably.",
-        "commit_ids": [
-          684302
-        ],
-        "section": "Weapons"
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Sheep now correctly produce poop, restoring the fertilizer resource.",
+            "commit_ids": [
+              688396
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Resolved a manifest error caused by null bones in cow skeleton assets; the game now logs a warning instead of crashing.",
+            "commit_ids": [
+              684744
+            ]
+          }
+        ]
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Cows no longer cause game errors due to missing bone data; they now load correctly with only a warning if null bones are present.\n- Mini crossbow crash fixed; the weapon now functions reliably."
+    "summary": "### Animals & Resources\n- Cows now drop beef instead of generic cow meat.\n\n### Weapons\n- Mini crossbow functionality restored after fix.\n\n### Gameplay & Balance\n- Sheep now correctly produce poop, restoring the fertilizer resource.\n\n### Bug Fixes\n- Resolved a manifest error caused by null bones in cow skeleton assets; the game now logs a warning instead of crashing.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-12": {
     "commit_count": 5,
@@ -74,11 +81,119 @@
     "new_summary": ""
   },
   "2026-09-11": {
-    "commit_count": 75,
-    "relevant_commit_count": 44,
+    "commit_count": 74,
+    "relevant_commit_count": 43,
     "relevant_signature": "650400,650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959,662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855,667080,668090,668139,669035,669188,669191,669206,669213,669215",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "662664,663034,663055,663345,663709,663784,664068,664581,664794,665210,665272,665338,665375,665533,665791,665855,667080,668090,668139,669035,669188,669191,669206,669213,669215": [
+        {
+          "title": "Power Grid & Loot Rooms",
+          "items": [
+            {
+              "text": "Added new power grid rooms for Launch Site, Trainyard, and Radtown, expanding loot room variety.",
+              "commit_ids": [
+                669215
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock & Animal AI",
+          "items": [
+            {
+              "text": "Fixed turtle swimming behavior: proper movement, shallow‑water handling, and prevented swimming into terrain.",
+              "commit_ids": [
+                669206
+              ]
+            },
+            {
+              "text": "Corrected livestock spawn pattern ranges to match design specifications.",
+              "commit_ids": [
+                669191,
+                669035
+              ]
+            },
+            {
+              "text": "Improved livestock AI navigation: cows now consider multiple herd members and troughs, bulls stop charging unreachable targets, and happy runs avoid unreachable player targets.",
+              "commit_ids": [
+                665855
+              ]
+            },
+            {
+              "text": "Server now controls visibility of the livestock status panel, so gene information is hidden unless the server explicitly allows it.",
+              "commit_ids": [
+                665210
+              ]
+            },
+            {
+              "text": "Cow trust and gender are hidden by default; admins can toggle visibility.",
+              "commit_ids": [
+                669213
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Grenade Prediction",
+          "items": [
+            {
+              "text": "Prediction errors for grenades are now safely ignored behind a pre‑emptive check, preventing client‑side issues.",
+              "commit_ids": [
+                667080
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animal Fence Audio",
+          "items": [
+            {
+              "text": "Added inventory interaction sounds for animal fences, giving audio feedback when managing fenced animals.",
+              "commit_ids": [
+                664068
+              ]
+            }
+          ]
+        }
+      ],
+      "650404,652966,653313,655334,655527,655596,655835,656195,656760,656761,656769,656782,657534,657667,657739,658445,658533,658959": [
+        {
+          "title": "Ladders",
+          "items": [
+            {
+              "text": "Fixed ladder behavior issue from biofuel branch, ensuring ladders function correctly.",
+              "commit_ids": [
+                658533
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Trains & Rail",
+          "items": [
+            {
+              "text": "Improved rail junction generation to prevent impassable train routes and corrected direction handling, reducing train navigation errors.",
+              "commit_ids": [
+                658445
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animal Loot",
+          "items": [
+            {
+              "text": "Removed wolf skull harvest from farm animals and added a new meat type to livestock loot tables.",
+              "commit_ids": [
+                655835,
+                655334
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "World & Structures",
