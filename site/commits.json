@@ -1,5 +1,117 @@
 [
   {
+    "id": 701193,
+    "branch": "main/ui_store_slim_ram/blurhash",
+    "changeset": "164181",
+    "created": "2026-09-14T15:55:53",
+    "message": "Update(editor): minor cleanup of CalculateBlurHash\r\nAll experiments to async load textures failed, so committing to this version\r\nTests: inspected a couple produced blur hashes",
+    "user": "Daniel P"
+  },
+  {
+    "id": 701183,
+    "branch": "main/vcc",
+    "changeset": "164176",
+    "created": "2026-09-14T15:25:35",
+    "message": "Fix pre-existing binding issue when closing menu mid key-assign. Only shows up as a real issue when using a gamepad.",
+    "user": "Adam W"
+  },
+  {
+    "id": 701181,
+    "branch": "main/Livestock_animals/Frog_Branch",
+    "changeset": "164174",
+    "created": "2026-09-14T15:16:13",
+    "message": "exported wip frog anims",
+    "user": "julek"
+  },
+  {
+    "id": 701180,
+    "branch": "main/terrain_deformation",
+    "changeset": "164173",
+    "created": "2026-09-14T15:11:17",
+    "message": "baseline of terrain deformation, tile-based serialization (only for areas with active changes) some concept of protection and healing over time",
+    "user": "Grigler"
+  },
+  {
+    "id": 701179,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164172",
+    "created": "2026-09-14T15:09:43",
+    "message": "compiler fixes",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701175,
+    "branch": "main/render_pipeline_testing/depth_based_light_binning",
+    "changeset": "164169",
+    "created": "2026-09-14T15:05:03",
+    "message": "Updated the Light binning debug overlay to display the total number of lights processed per screen tile rather than per-bin",
+    "user": "aidan.m"
+  },
+  {
+    "id": 701170,
+    "branch": "main/vcc",
+    "changeset": "164168",
+    "created": "2026-09-14T14:49:52",
+    "message": "Fix some key latching issues when input gets cleared such as F1 console opening.",
+    "user": "Adam W"
+  },
+  {
+    "id": 701168,
+    "branch": "main/salvaged_cleaver_loud",
+    "changeset": "164166",
+    "created": "2026-09-14T14:43:18",
+    "message": "Salvaged cleaver distance fix",
+    "user": "diogo.c"
+  },
+  {
+    "id": 701167,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164165",
+    "created": "2026-09-14T14:42:07",
+    "message": "remove debug cubes",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701164,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164164",
+    "created": "2026-09-14T14:39:32",
+    "message": "manifest",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701163,
+    "branch": "main/render_pipeline_testing/depth_based_light_binning",
+    "changeset": "164163",
+    "created": "2026-09-14T14:36:30",
+    "message": "Changed to per-camera bin data buffers so the light binning job can be completed just before rendering",
+    "user": "aidan.m"
+  },
+  {
+    "id": 701162,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164162",
+    "created": "2026-09-14T14:36:10",
+    "message": "fix hitbox collisions",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701161,
+    "branch": "main/M79_Grenade_Launcher",
+    "changeset": "164161",
+    "created": "2026-09-14T14:32:23",
+    "message": "M79 Grenade Launcher Blockout",
+    "user": "Alfie Birch"
+  },
+  {
+    "id": 701158,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164160",
+    "created": "2026-09-14T14:23:36",
+    "message": "fully integrate squirrel anims, fixed critter locomotion analyzer tool",
+    "user": "ElliotH"
+  },
+  {
     "id": 701103,
     "branch": "main/Livestock_animals/meat_visuals",
     "changeset": "164156",
@@ -446,149 +558,5 @@
     "created": "2026-09-11T16:52:45",
     "message": "Re-add livestock pattern tester script (to add to cow lod 0)",
     "user": "Maverick"
-  },
-  {
-    "id": 667080,
-    "branch": "main/grenade_client_prediction",
-    "changeset": "164013",
-    "created": "2026-09-11T16:17:23",
-    "message": "- Gate all prediction errors behind a preafb\r\n- if prediction fails, just dont bother with it",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 667054,
-    "branch": "main/render_pipeline_testing/depth_based_light_binning",
-    "changeset": "164012",
-    "created": "2026-09-11T16:16:32",
-    "message": "Converted the light bins into bitmasks that contain light indices to reduce the overall memory overhead of light binning",
-    "user": "aidan.m"
-  },
-  {
-    "id": 666588,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "164007",
-    "created": "2026-09-11T15:59:22",
-    "message": "Re-apply improved hair and beard rendering cleanly",
-    "user": "Felix"
-  },
-  {
-    "id": 666177,
-    "branch": "main",
-    "changeset": "164005",
-    "created": "2026-09-11T15:44:57",
-    "message": "Subtract borked changeset",
-    "user": "Felix"
-  },
-  {
-    "id": 665855,
-    "branch": "main/Livestock_animals",
-    "changeset": "164002",
-    "created": "2026-09-11T15:33:36",
-    "message": "Pass on penned cow with unreachable distractors around:\r\n- Fix curious cows being so curious they forget to eat\r\n- Walk to herd now check multiple cows not just nearest one (else it gives up at first unreachable)\r\n- Walk to trough now checks multiple troughs not just nearest one\r\n- Prevent bull from charging unreachable targets\r\n- Happy run wanders if player target is unreachable",
-    "user": "Maverick"
-  },
-  {
-    "id": 665791,
-    "branch": "main/fuse_analytics_fix",
-    "changeset": "164001",
-    "created": "2026-09-11T15:30:44",
-    "message": "Correction to the player element returned for fuses",
-    "user": "Daniel Carrington"
-  },
-  {
-    "id": 665533,
-    "branch": "main/sv_console_terminal_fix",
-    "changeset": "163996",
-    "created": "2026-09-11T15:21:53",
-    "message": "Reverted that line",
-    "user": "Raul"
-  },
-  {
-    "id": 665375,
-    "branch": "main/Livestock_animals",
-    "changeset": "163994",
-    "created": "2026-09-11T15:16:25",
-    "message": "Updated calf prefabs with new mesh and materials. updated bull bias map",
-    "user": "Toffer"
-  },
-  {
-    "id": 665338,
-    "branch": "main/sv_console_terminal_fix",
-    "changeset": "163992",
-    "created": "2026-09-11T15:15:20",
-    "message": "Added more guardrails",
-    "user": "Raul"
-  },
-  {
-    "id": 665272,
-    "branch": "main/Livestock_animals",
-    "changeset": "163991",
-    "created": "2026-09-11T15:12:56",
-    "message": "Update rust native for all platforms",
-    "user": "Maverick"
-  },
-  {
-    "id": 665210,
-    "branch": "main/Livestock_animals",
-    "changeset": "163990",
-    "created": "2026-09-11T15:10:45",
-    "message": "Make server own visibility for the livestock status panel not client, so only server decide if we want to hide genes or not client has no say",
-    "user": "Maverick"
-  },
-  {
-    "id": 664794,
-    "branch": "main/sv_console_terminal_fix",
-    "changeset": "163988",
-    "created": "2026-09-11T14:54:45",
-    "message": "Added more OS-specific guardrails and merged a few #ifs 🤞",
-    "user": "Raul"
-  },
-  {
-    "id": 664715,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "163987",
-    "created": "2026-09-11T14:52:43",
-    "message": "RRP: Massively improved hair and beard rendering when TAA or DLSS are enabled. All other anti-aliasing modes now use simple cutout to appear less noisy.",
-    "user": "Felix"
-  },
-  {
-    "id": 664581,
-    "branch": "main/sv_console_terminal_fix",
-    "changeset": "163986",
-    "created": "2026-09-11T14:47:54",
-    "message": "Subtract 163953",
-    "user": "cipeaX"
-  },
-  {
-    "id": 664478,
-    "branch": "▉▄▌▊",
-    "changeset": "█▌▌▅▍▍",
-    "created": "2026-09-11T14:44:01",
-    "message": "▌▄ ▍▊▉█▋▊ ▄▆▉▄▋▊▌█ ▆▍▇ █▇▊▅▊▇█▌",
-    "user": "Jakb"
-  },
-  {
-    "id": 664068,
-    "branch": "main/animal_fencing_v2",
-    "changeset": "163979",
-    "created": "2026-09-11T14:29:02",
-    "message": "Animal fence inventory sounds.",
-    "user": "Adam W"
-  },
-  {
-    "id": 663820,
-    "branch": "main/ui_store_slim_ram/blurhash",
-    "changeset": "163978",
-    "created": "2026-09-11T14:20:14",
-    "message": "Update: back every dynamic sprite url in store with a blur hash field\r\nGoing to setup data next\r\nTests: compiles",
-    "user": "Daniel P"
-  },
-  {
-    "id": 663784,
-    "branch": "main",
-    "changeset": "163977",
-    "created": "2026-09-11T14:18:28",
-    "message": "WR config compile fix",
-    "user": "Adam W"
   }
 ]
