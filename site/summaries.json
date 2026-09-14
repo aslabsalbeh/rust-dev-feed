@@ -1,76 +1,97 @@
 {
   "2026-09-14": {
-    "commit_count": 51,
-    "relevant_commit_count": 32,
-    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230",
+    "commit_count": 62,
+    "relevant_commit_count": 40,
+    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230,701231,701233,701234,701235,701239,701240,701252,701256",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Building & Structures",
-        "items": [
-          {
-            "text": "Fence colliders are now correctly present on the server, fences can be demolished, door controller sockets added to fence gates, lock positions refined, and demolishable deployables show a blue highlight like upgradable ones; the scrap king console command has been restored and foundation blocks now display description and grade.",
-            "commit_ids": [
-              701217,
-              697966
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "The salvaged cleaver’s attack distance has been corrected.",
-            "commit_ids": [
-              701168
-            ]
-          }
-        ]
-      },
-      {
         "title": "Animals & AI",
         "items": [
           {
-            "text": "Critter hitbox collisions have been fixed for more accurate interactions, and multiple animals can now operate correctly near a vehicle.",
+            "text": "Attacking farm animals now marks you as hostile to the safezone.",
             "commit_ids": [
-              701162,
+              701256
+            ]
+          },
+          {
+            "text": "Squirrels no longer wander into riverside or oceanside water areas.",
+            "commit_ids": [
+              701233
+            ]
+          },
+          {
+            "text": "Critter animal hitboxes (e.g., frogs, squirrels) have been fixed.",
+            "commit_ids": [
+              701162
+            ]
+          },
+          {
+            "text": "Multiple animals near a vehicle now interact correctly.",
+            "commit_ids": [
               693407
             ]
           }
         ]
       },
       {
-        "title": "Cooking & Food",
+        "title": "Fencing & Structures",
         "items": [
           {
-            "text": "Raw beef now correctly references its cooked version, and new meat types have been added to all oven prefabs, expanding cooking options.",
+            "text": "Fence gate opening/closing speed halved for smoother operation; trough colliders fixed and water containers now emit sounds.",
             "commit_ids": [
-              700859,
+              701252
+            ]
+          },
+          {
+            "text": "Fence colliders restored, gates now have controller sockets and refined lock positions; fences can be demolished with a hammer and show a blue highlight when demolishable.",
+            "commit_ids": [
+              701217
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tools & Input",
+        "items": [
+          {
+            "text": "Salvaged cleaver reach distance corrected.",
+            "commit_ids": [
+              701168
+            ]
+          },
+          {
+            "text": "Key‑binding and key‑latching bugs fixed, preventing menu closure issues with gamepads and accidental console opening.",
+            "commit_ids": [
+              701183,
+              701170
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cooking",
+        "items": [
+          {
+            "text": "Raw beef now cooks correctly after adding the missing becomeOnCooked reference.",
+            "commit_ids": [
+              700859
+            ]
+          },
+          {
+            "text": "New meat types added to all oven prefabs, expanding cooking options.",
+            "commit_ids": [
               700856
             ]
           }
         ]
       },
       {
-        "title": "UI & Controls",
+        "title": "AI Mounting",
         "items": [
           {
-            "text": "Gamepad key‑binding issues when closing menus mid‑assign are resolved, key latching problems after input clearing are fixed, and the missing close‑map button in map bindings has been restored.",
-            "commit_ids": [
-              701183,
-              701170,
-              699677
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Mounting",
-        "items": [
-          {
-            "text": "Gen2 AI can now be mounted via the NPCMountable component, adding teleport mount and animation support.",
+            "text": "Generation 2 AI can now be mounted via a new NPCMountable component; entities parent directly to the mount (temporary teleport mount animation).",
             "commit_ids": [
               692985
             ]
@@ -78,45 +99,43 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "UI & Store",
         "items": [
           {
-            "text": "Apartment complexes and floating cities now appear correctly in the S2P batch window.",
+            "text": "Store backgrounds now correctly generate blurhash sprites, fixing missing or incorrect colors on store pages.",
             "commit_ids": [
-              701103
-            ]
-          },
-          {
-            "text": "Added ferry terminals, outposts, large oil rigs, gas stations, radtowns, supermarkets, water wells, apartment complexes, and floating cities to the S2P batch options.",
-            "commit_ids": [
-              701099
+              701216
             ]
           }
         ]
       }
     ],
-    "summary": "### Building & Structures\n- Fence colliders are now correctly present on the server, fences can be demolished, door controller sockets added to fence gates, lock positions refined, and demolishable deployables show a blue highlight like upgradable ones; the scrap king console command has been restored and foundation blocks now display description and grade.\n\n### Combat\n- The salvaged cleaver’s attack distance has been corrected.\n\n### Animals & AI\n- Critter hitbox collisions have been fixed for more accurate interactions, and multiple animals can now operate correctly near a vehicle.\n\n### Cooking & Food\n- Raw beef now correctly references its cooked version, and new meat types have been added to all oven prefabs, expanding cooking options.\n\n### UI & Controls\n- Gamepad key‑binding issues when closing menus mid‑assign are resolved, key latching problems after input clearing are fixed, and the missing close‑map button in map bindings has been restored.\n\n### Mounting\n- Gen2 AI can now be mounted via the NPCMountable component, adding teleport mount and animation support.\n\n### Gameplay & Balance\n- Apartment complexes and floating cities now appear correctly in the S2P batch window.\n- Added ferry terminals, outposts, large oil rigs, gas stations, radtowns, supermarkets, water wells, apartment complexes, and floating cities to the S2P batch options.",
+    "summary": "### Animals & AI\n- Attacking farm animals now marks you as hostile to the safezone.\n- Squirrels no longer wander into riverside or oceanside water areas.\n- Critter animal hitboxes (e.g., frogs, squirrels) have been fixed.\n- Multiple animals near a vehicle now interact correctly.\n\n### Fencing & Structures\n- Fence gate opening/closing speed halved for smoother operation; trough colliders fixed and water containers now emit sounds.\n- Fence colliders restored, gates now have controller sockets and refined lock positions; fences can be demolished with a hammer and show a blue highlight when demolishable.\n\n### Tools & Input\n- Salvaged cleaver reach distance corrected.\n- Key‑binding and key‑latching bugs fixed, preventing menu closure issues with gamepads and accidental console opening.\n\n### Cooking\n- Raw beef now cooks correctly after adding the missing becomeOnCooked reference.\n- New meat types added to all oven prefabs, expanding cooking options.\n\n### AI Mounting\n- Generation 2 AI can now be mounted via a new NPCMountable component; entities parent directly to the mount (temporary teleport mount animation).\n\n### UI & Store\n- Store backgrounds now correctly generate blurhash sprites, fixing missing or incorrect colors on store pages.",
     "new_items": [
       {
-        "text": "Fence colliders are now correctly present on the server, fences can be demolished, door controller sockets added to fence gates, lock positions refined, and demolishable deployables show a blue highlight like upgradable ones; the scrap king console command has been restored and foundation blocks now display description and grade.",
+        "text": "Attacking farm animals now marks you as hostile to the safezone.",
         "commit_ids": [
-          701217,
-          697966
+          701256
         ],
-        "section": "Building & Structures"
+        "section": "Animals & AI"
       },
       {
-        "text": "Gamepad key‑binding issues when closing menus mid‑assign are resolved, key latching problems after input clearing are fixed, and the missing close‑map button in map bindings has been restored.",
+        "text": "Squirrels no longer wander into riverside or oceanside water areas.",
         "commit_ids": [
-          701183,
-          701170,
-          699677
+          701233
         ],
-        "section": "UI & Controls"
+        "section": "Animals & AI"
+      },
+      {
+        "text": "Fence gate opening/closing speed halved for smoother operation; trough colliders fixed and water containers now emit sounds.",
+        "commit_ids": [
+          701252
+        ],
+        "section": "Fencing & Structures"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Fence colliders are now correctly present on the server, fences can be demolished, door controller sockets added to fence gates, lock positions refined, and demolishable deployables show a blue highlight like upgradable ones; the scrap king console command has been restored and foundation blocks now display description and grade.\n- Gamepad key‑binding issues when closing menus mid‑assign are resolved, key latching problems after input clearing are fixed, and the missing close‑map button in map bindings has been restored."
+    "new_relevant_count": 3,
+    "new_summary": "- Attacking farm animals now marks you as hostile to the safezone.\n- Squirrels no longer wander into riverside or oceanside water areas.\n- Fence gate opening/closing speed halved for smoother operation; trough colliders fixed and water containers now emit sounds."
   },
   "2026-09-13": {
     "commit_count": 10,
