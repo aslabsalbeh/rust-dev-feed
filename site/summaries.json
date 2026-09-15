@@ -1,16 +1,35 @@
 {
   "2026-09-14": {
-    "commit_count": 77,
-    "relevant_commit_count": 48,
-    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230,701231,701233,701234,701235,701239,701240,701252,701256,701261,701268,701270,701284,701287,701288,701294,701305",
+    "commit_count": 80,
+    "relevant_commit_count": 49,
+    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230,701231,701233,701234,701235,701239,701240,701252,701256,701261,701268,701270,701284,701287,701288,701294,701305,701309",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "Server & UI",
         "items": [
           {
-            "text": "Beef resource links restored, fixing missing beef items.",
+            "text": "Fixed inaccurate server browser gamemode filter counts and prevented mixing of unrelated gamemodes.",
+            "commit_ids": [
+              701309
+            ]
+          },
+          {
+            "text": "Fixed various input binding issues, including gamepad key‑assign closure, key latching after input clear, and missing map close binding.",
+            "commit_ids": [
+              701183,
+              701170,
+              699677
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals, Resources & Mounting",
+        "items": [
+          {
+            "text": "Restored missing beef resource links for livestock.",
             "commit_ids": [
               701305
             ]
@@ -22,76 +41,43 @@
             ]
           },
           {
-            "text": "Attacking farm animals now marks you as hostile to the safezone.",
+            "text": "Attacking farm animals now marks you as hostile to safezones.",
             "commit_ids": [
               701256
             ]
           },
           {
-            "text": "Fixed issue where multiple animals near a vehicle prevented proper interaction; updated sheep prefab.",
+            "text": "Adjusted critter population settings.",
             "commit_ids": [
-              693407
+              701234
             ]
           },
           {
-            "text": "Added support for mounting generation‑2 AI creatures via a new NPCMountable component.",
+            "text": "Fixed issues with multiple animals near vehicles and added support for mounting Gen2 AI via a new NPCMountable component.",
             "commit_ids": [
+              693407,
               692985
             ]
           }
         ]
       },
       {
-        "title": "Building & Structures",
+        "title": "Structures & Collision",
         "items": [
           {
-            "text": "Fence gate opening/closing speed halved for smoother operation.",
+            "text": "Halved fence gate opening/closing speed for smoother operation.",
             "commit_ids": [
               701252
             ]
           },
           {
-            "text": "Fences can now be demolished with a hammer, show a blue highlight when demolishable, and have server‑side colliders and refined lock positions fixed.",
+            "text": "Fixed fence collider issues, enabled fence demolition, and added blue highlight to demolishable fences.",
             "commit_ids": [
               701217
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Controls",
-        "items": [
-          {
-            "text": "Gamepad key‑binding menu no longer crashes when closed mid‑assignment.",
-            "commit_ids": [
-              701183
-            ]
           },
           {
-            "text": "Fixed key latching issues when input is cleared, preventing unintended F1 console opening.",
-            "commit_ids": [
-              701170
-            ]
-          },
-          {
-            "text": "Fixed map UI binding so the close‑map action works correctly.",
-            "commit_ids": [
-              699677
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Combat",
-        "items": [
-          {
-            "text": "Adjusted salvaged cleaver weapon distance for proper reach.",
-            "commit_ids": [
-              701168
-            ]
-          },
-          {
-            "text": "Fixed hitbox collision detection to improve combat accuracy.",
+            "text": "Fixed hitbox collision detection errors.",
             "commit_ids": [
               701162
             ]
@@ -99,42 +85,45 @@
         ]
       },
       {
-        "title": "Cooking & Food",
+        "title": "Combat, Weapons & Cooking",
         "items": [
           {
-            "text": "Fixed raw beef missing its cooking reference, ensuring it can be cooked properly.",
+            "text": "Adjusted salvaged cleaver distance to correct melee reach.",
             "commit_ids": [
-              700859
+              701168
             ]
           },
           {
-            "text": "Added new meat types to all oven prefabs, expanding cooking options.",
+            "text": "Fixed raw beef missing its cooking reference and added new meat types to all oven prefabs.",
             "commit_ids": [
+              700859,
               700856
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Visuals",
+        "items": [
+          {
+            "text": "Store images now correctly generate and display blurhash placeholders, preventing missing or broken backgrounds in the store UI.",
+            "commit_ids": [
+              701216
+            ]
+          },
+          {
+            "text": "Editor now reads textures as sRGB when possible, improving color accuracy of generated blurhash previews.",
+            "commit_ids": [
+              701201
             ]
           }
         ]
       }
     ],
-    "summary": "### Animals & Farming\n- Beef resource links restored, fixing missing beef items.\n- Lamb and calf corpses no longer yield any resources when killed.\n- Attacking farm animals now marks you as hostile to the safezone.\n- Fixed issue where multiple animals near a vehicle prevented proper interaction; updated sheep prefab.\n- Added support for mounting generation‑2 AI creatures via a new NPCMountable component.\n\n### Building & Structures\n- Fence gate opening/closing speed halved for smoother operation.\n- Fences can now be demolished with a hammer, show a blue highlight when demolishable, and have server‑side colliders and refined lock positions fixed.\n\n### UI & Controls\n- Gamepad key‑binding menu no longer crashes when closed mid‑assignment.\n- Fixed key latching issues when input is cleared, preventing unintended F1 console opening.\n- Fixed map UI binding so the close‑map action works correctly.\n\n### Weapons & Combat\n- Adjusted salvaged cleaver weapon distance for proper reach.\n- Fixed hitbox collision detection to improve combat accuracy.\n\n### Cooking & Food\n- Fixed raw beef missing its cooking reference, ensuring it can be cooked properly.\n- Added new meat types to all oven prefabs, expanding cooking options.",
-    "new_items": [
-      {
-        "text": "Beef resource links restored, fixing missing beef items.",
-        "commit_ids": [
-          701305
-        ],
-        "section": "Animals & Farming"
-      },
-      {
-        "text": "Lamb and calf corpses no longer yield any resources when killed.",
-        "commit_ids": [
-          701294
-        ],
-        "section": "Animals & Farming"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Beef resource links restored, fixing missing beef items.\n- Lamb and calf corpses no longer yield any resources when killed."
+    "summary": "### Server & UI\n- Fixed inaccurate server browser gamemode filter counts and prevented mixing of unrelated gamemodes.\n- Fixed various input binding issues, including gamepad key‑assign closure, key latching after input clear, and missing map close binding.\n\n### Animals, Resources & Mounting\n- Restored missing beef resource links for livestock.\n- Lamb and calf corpses no longer yield any resources when killed.\n- Attacking farm animals now marks you as hostile to safezones.\n- Adjusted critter population settings.\n- Fixed issues with multiple animals near vehicles and added support for mounting Gen2 AI via a new NPCMountable component.\n\n### Structures & Collision\n- Halved fence gate opening/closing speed for smoother operation.\n- Fixed fence collider issues, enabled fence demolition, and added blue highlight to demolishable fences.\n- Fixed hitbox collision detection errors.\n\n### Combat, Weapons & Cooking\n- Adjusted salvaged cleaver distance to correct melee reach.\n- Fixed raw beef missing its cooking reference and added new meat types to all oven prefabs.\n\n### UI & Visuals\n- Store images now correctly generate and display blurhash placeholders, preventing missing or broken backgrounds in the store UI.\n- Editor now reads textures as sRGB when possible, improving color accuracy of generated blurhash previews.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-13": {
     "commit_count": 10,
