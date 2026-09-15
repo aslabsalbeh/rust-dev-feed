@@ -1,154 +1,135 @@
 {
   "2026-09-15": {
-    "commit_count": 81,
-    "relevant_commit_count": 46,
-    "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454,701474,701480,701481,701493,701494,701495,701497,701498,701500,701503,701505,701507,701509,701514,701519",
+    "commit_count": 85,
+    "relevant_commit_count": 50,
+    "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454,701474,701480,701481,701493,701494,701495,701497,701498,701500,701503,701505,701507,701509,701514,701519,701529,701534,701535,701537",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Loot & Resources",
+        "title": "Resources & Harvesting",
         "items": [
           {
-            "text": "New Junkyard loot room added.",
+            "text": "Apples now have only a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree, and natural beehives still drop honeycomb and a swarm on full harvest.",
             "commit_ids": [
+              701537
+            ]
+          },
+          {
+            "text": "Beef spoilage now correctly assigns the spoil item, preventing loss of food value.",
+            "commit_ids": [
+              701387
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Safe Zones & Hostile Alerts",
+        "items": [
+          {
+            "text": "Apartment complexes are marked as safe zones, restoring the hostile‑nearby warning, and the building‑proximity check was fixed, eliminating construction errors near apartments.",
+            "commit_ids": [
+              701534
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base Building & Explosives",
+        "items": [
+          {
+            "text": "Fence placement refined: fences no longer sink into terrain, can be placed on slopes up to 20°, and socket rotation bugs were removed.",
+            "commit_ids": [
+              701448
+            ]
+          },
+          {
+            "text": "Explosive weapons now include prefab setups and crater definitions that respect 3D shapes and blocking objects, improving blast effects and terrain deformation realism.",
+            "commit_ids": [
+              701420,
+              701421
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Loot & Equipment",
+        "items": [
+          {
+            "text": "New high‑tier loot rooms added: Junkyard, NMS launch site, Water Treatment Plant, and Sewer branch, increasing valuable loot spawns.",
+            "commit_ids": [
+              701446,
+              701480,
               701514
             ]
           },
           {
-            "text": "NMS Launch Site, Water Treatment Plant, and Sewer branch loot rooms added.",
+            "text": "Frontier and pilot hazmat suits regained missing BC components, restoring protection after rerigging; hunting trophies now include cow, bull, and sheep variants with reduced prefab size for better performance.",
             "commit_ids": [
-              701480,
-              701446
+              701311,
+              701402
             ]
           }
         ]
       },
       {
-        "title": "Animal & Livestock Behavior",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Critters now stay active at night.",
+            "text": "Overall critter population balanced and turtle spawning frequency fixed.",
             "commit_ids": [
-              701507
-            ]
-          },
-          {
-            "text": "Animal population numbers adjusted, turtle spawning fixed, and rabbit interest disabled to reduce load.",
-            "commit_ids": [
-              701498,
               701497,
-              701505
+              701498
             ]
           },
           {
-            "text": "Sheep become hostile when attacked, their AI behavior restored, and beef spoilage bug fixed.",
+            "text": "Sheep become hostile toward attackers after being marked, and their model/AI was corrected so they walk, attack, and die properly.",
             "commit_ids": [
-              701388,
-              701387,
-              701363
+              701363,
+              701388
             ]
           }
         ]
       },
       {
-        "title": "Building & Fence Placement",
+        "title": "Gameplay & Controls",
         "items": [
           {
-            "text": "Fence deployment improved: prevents sinking, works on slopes, supports angles, and removes unwanted rotation.",
+            "text": "Player bot reporting fixed; server browser filters now work as expected; player count display remains stable when switching game mode tabs.",
             "commit_ids": [
-              701448
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Explosives & Terrain",
-        "items": [
-          {
-            "text": "Explosives now integrate with weapons and generate realistic 3D craters that respect terrain and objects.",
-            "commit_ids": [
-              701421,
-              701420
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Hunting Trophies",
-        "items": [
-          {
-            "text": "Cow, bull, and sheep trophies added to the hunting trophy system.",
-            "commit_ids": [
-              701311
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Fixed reporting of player bots so false reports are no longer generated.",
-            "commit_ids": [
+              701380,
+              701390,
               701424
             ]
           },
           {
-            "text": "Server browser filters now work correctly, allowing accurate server searches.",
-            "commit_ids": [
-              701390
-            ]
-          },
-          {
-            "text": "Player count displayed for each gamemode now remains stable when switching between modes.",
-            "commit_ids": [
-              701380
-            ]
-          },
-          {
-            "text": "Added a gamepad default bind command and corrected bind resets when no mouse/keyboard is present.",
+            "text": "New bind command added for gamepad defaults, fixing reset issues when no mouse/keyboard is bound.",
             "commit_ids": [
               701378
-            ]
-          },
-          {
-            "text": "Market terminal now shows a “No Power” message when unpowered, while still allowing shop browsing.",
-            "commit_ids": [
-              701315
             ]
           }
         ]
       }
     ],
-    "summary": "### Loot & Resources\n- New Junkyard loot room added.\n- NMS Launch Site, Water Treatment Plant, and Sewer branch loot rooms added.\n\n### Animal & Livestock Behavior\n- Critters now stay active at night.\n- Animal population numbers adjusted, turtle spawning fixed, and rabbit interest disabled to reduce load.\n- Sheep become hostile when attacked, their AI behavior restored, and beef spoilage bug fixed.\n\n### Building & Fence Placement\n- Fence deployment improved: prevents sinking, works on slopes, supports angles, and removes unwanted rotation.\n\n### Explosives & Terrain\n- Explosives now integrate with weapons and generate realistic 3D craters that respect terrain and objects.\n\n### Hunting Trophies\n- Cow, bull, and sheep trophies added to the hunting trophy system.\n\n### Gameplay & Balance\n- Fixed reporting of player bots so false reports are no longer generated.\n- Server browser filters now work correctly, allowing accurate server searches.\n- Player count displayed for each gamemode now remains stable when switching between modes.\n- Added a gamepad default bind command and corrected bind resets when no mouse/keyboard is present.\n- Market terminal now shows a “No Power” message when unpowered, while still allowing shop browsing.",
+    "summary": "### Resources & Harvesting\n- Apples now have only a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree, and natural beehives still drop honeycomb and a swarm on full harvest.\n- Beef spoilage now correctly assigns the spoil item, preventing loss of food value.\n\n### Safe Zones & Hostile Alerts\n- Apartment complexes are marked as safe zones, restoring the hostile‑nearby warning, and the building‑proximity check was fixed, eliminating construction errors near apartments.\n\n### Base Building & Explosives\n- Fence placement refined: fences no longer sink into terrain, can be placed on slopes up to 20°, and socket rotation bugs were removed.\n- Explosive weapons now include prefab setups and crater definitions that respect 3D shapes and blocking objects, improving blast effects and terrain deformation realism.\n\n### Loot & Equipment\n- New high‑tier loot rooms added: Junkyard, NMS launch site, Water Treatment Plant, and Sewer branch, increasing valuable loot spawns.\n- Frontier and pilot hazmat suits regained missing BC components, restoring protection after rerigging; hunting trophies now include cow, bull, and sheep variants with reduced prefab size for better performance.\n\n### Animals & AI\n- Overall critter population balanced and turtle spawning frequency fixed.\n- Sheep become hostile toward attackers after being marked, and their model/AI was corrected so they walk, attack, and die properly.\n\n### Gameplay & Controls\n- Player bot reporting fixed; server browser filters now work as expected; player count display remains stable when switching game mode tabs.\n- New bind command added for gamepad defaults, fixing reset issues when no mouse/keyboard is bound.",
     "new_items": [
       {
-        "text": "New Junkyard loot room added.",
+        "text": "Apples now have only a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree, and natural beehives still drop honeycomb and a swarm on full harvest.",
         "commit_ids": [
-          701514
+          701537
         ],
-        "section": "Loot & Resources"
+        "section": "Resources & Harvesting"
       },
       {
-        "text": "Critters now stay active at night.",
+        "text": "Apartment complexes are marked as safe zones, restoring the hostile‑nearby warning, and the building‑proximity check was fixed, eliminating construction errors near apartments.",
         "commit_ids": [
-          701507
+          701534
         ],
-        "section": "Animal & Livestock Behavior"
-      },
-      {
-        "text": "Animal population numbers adjusted, turtle spawning fixed, and rabbit interest disabled to reduce load.",
-        "commit_ids": [
-          701498,
-          701497,
-          701505
-        ],
-        "section": "Animal & Livestock Behavior"
+        "section": "Safe Zones & Hostile Alerts"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- New Junkyard loot room added.\n- Critters now stay active at night.\n- Animal population numbers adjusted, turtle spawning fixed, and rabbit interest disabled to reduce load."
+    "new_relevant_count": 2,
+    "new_summary": "- Apples now have only a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree, and natural beehives still drop honeycomb and a swarm on full harvest.\n- Apartment complexes are marked as safe zones, restoring the hostile‑nearby warning, and the building‑proximity check was fixed, eliminating construction errors near apartments."
   },
   "2026-09-14": {
     "commit_count": 80,
