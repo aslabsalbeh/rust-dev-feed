@@ -1,103 +1,58 @@
 {
   "2026-09-15": {
-    "commit_count": 54,
-    "relevant_commit_count": 31,
-    "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454",
+    "commit_count": 70,
+    "relevant_commit_count": 39,
+    "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454,701474,701480,701481,701493,701494,701495,701497,701498",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Building & Terrain",
+        "title": "Wildlife & Creatures",
         "items": [
           {
-            "text": "Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.",
+            "text": "Adjusted animal population rates.",
             "commit_ids": [
-              701448
+              701498
             ]
           },
           {
-            "text": "Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.",
+            "text": "Fixed turtle spawning issue.",
             "commit_ids": [
-              701420,
-              701421
+              701497
             ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & AI",
-        "items": [
+          },
           {
-            "text": "Sheep AI restored: they correctly mark attackers as hostile, walk, attack, and die as expected in the editor.",
+            "text": "Improved sheep behavior: hostile when attacked, proper walking, attacking, and death.",
             "commit_ids": [
               701388,
               701363
             ]
-          }
-        ]
-      },
-      {
-        "title": "Items & Crafting",
-        "items": [
+          },
           {
-            "text": "Beef spoilage item assignment fixed, preventing missing spoilage behavior.",
+            "text": "Fixed beef spoil item assignment, correcting spoilage bugs.",
             "commit_ids": [
               701387
             ]
-          },
-          {
-            "text": "Frontier and pilot hazmat suits restored missing component, ensuring proper protection.",
-            "commit_ids": [
-              701402
-            ]
           }
         ]
       },
       {
-        "title": "Loot & Exploration",
+        "title": "Loot & Facilities",
         "items": [
           {
-            "text": "New loot rooms added to the Water Treatment Plant and Sewer branches.",
+            "text": "Fixed launch site loot room in NMS.",
+            "commit_ids": [
+              701480
+            ]
+          },
+          {
+            "text": "Added water treatment plant and sewer branch loot rooms.",
             "commit_ids": [
               701446
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Controls",
-        "items": [
-          {
-            "text": "Server browser filters now work correctly.",
-            "commit_ids": [
-              701390
-            ]
           },
           {
-            "text": "Player count display remains stable when switching gamemodes.",
-            "commit_ids": [
-              701380
-            ]
-          },
-          {
-            "text": "Gamepad default bindings reset properly when no keyboard/mouse is bound.",
-            "commit_ids": [
-              701378
-            ]
-          },
-          {
-            "text": "Market terminal shows \"No Power\" when unpowered while still allowing shop browsing.",
-            "commit_ids": [
-              701315
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Hunting & Rewards",
-        "items": [
-          {
-            "text": "Cow, bull, and sheep trophies added; trophy prefabs reduced in size and converted to LOD components.",
+            "text": "Expanded hunting trophies to include cow, bull, and sheep variants with smaller prefabs for performance.",
             "commit_ids": [
               701311
             ]
@@ -105,51 +60,109 @@
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Building & Terrain",
         "items": [
           {
-            "text": "Fixed a crash that could occur when stopping certain montages, preventing unexpected disconnects for players.",
+            "text": "Improved fence deployment: prevents sinking, better slope placement, up to 20° angle, no unwanted rotation.",
             "commit_ids": [
-              701317
+              701448
+            ]
+          },
+          {
+            "text": "Added explosive setup to certain weapons.",
+            "commit_ids": [
+              701421
+            ]
+          },
+          {
+            "text": "Implemented 3D explosive crater definitions that respect blocking objects.",
+            "commit_ids": [
+              701420
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interface & Controls",
+        "items": [
+          {
+            "text": "Fixed player count display glitch when switching game modes in the server browser.",
+            "commit_ids": [
+              701380
+            ]
+          },
+          {
+            "text": "Market terminal now shows \"No Power\" when unpowered, indicating shops are still browseable.",
+            "commit_ids": [
+              701315
+            ]
+          },
+          {
+            "text": "Added bind command to reset gamepad defaults and fixed binding reset issues when no mouse/keyboard present.",
+            "commit_ids": [
+              701378
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server & Reporting",
+        "items": [
+          {
+            "text": "Fixed player bot reporting functionality.",
+            "commit_ids": [
+              701424
+            ]
+          },
+          {
+            "text": "Fixed server browser filter issue.",
+            "commit_ids": [
+              701390
             ]
           }
         ]
       }
     ],
-    "summary": "### Building & Terrain\n- Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.\n- Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.\n\n### Animals & AI\n- Sheep AI restored: they correctly mark attackers as hostile, walk, attack, and die as expected in the editor.\n\n### Items & Crafting\n- Beef spoilage item assignment fixed, preventing missing spoilage behavior.\n- Frontier and pilot hazmat suits restored missing component, ensuring proper protection.\n\n### Loot & Exploration\n- New loot rooms added to the Water Treatment Plant and Sewer branches.\n\n### UI & Controls\n- Server browser filters now work correctly.\n- Player count display remains stable when switching gamemodes.\n- Gamepad default bindings reset properly when no keyboard/mouse is bound.\n- Market terminal shows \"No Power\" when unpowered while still allowing shop browsing.\n\n### Hunting & Rewards\n- Cow, bull, and sheep trophies added; trophy prefabs reduced in size and converted to LOD components.\n\n### Bug Fixes\n- Fixed a crash that could occur when stopping certain montages, preventing unexpected disconnects for players.",
+    "summary": "### Wildlife & Creatures\n- Adjusted animal population rates.\n- Fixed turtle spawning issue.\n- Improved sheep behavior: hostile when attacked, proper walking, attacking, and death.\n- Fixed beef spoil item assignment, correcting spoilage bugs.\n\n### Loot & Facilities\n- Fixed launch site loot room in NMS.\n- Added water treatment plant and sewer branch loot rooms.\n- Expanded hunting trophies to include cow, bull, and sheep variants with smaller prefabs for performance.\n\n### Building & Terrain\n- Improved fence deployment: prevents sinking, better slope placement, up to 20° angle, no unwanted rotation.\n- Added explosive setup to certain weapons.\n- Implemented 3D explosive crater definitions that respect blocking objects.\n\n### Interface & Controls\n- Fixed player count display glitch when switching game modes in the server browser.\n- Market terminal now shows \"No Power\" when unpowered, indicating shops are still browseable.\n- Added bind command to reset gamepad defaults and fixed binding reset issues when no mouse/keyboard present.\n\n### Server & Reporting\n- Fixed player bot reporting functionality.\n- Fixed server browser filter issue.",
     "new_items": [
       {
-        "text": "Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.",
+        "text": "Adjusted animal population rates.",
+        "commit_ids": [
+          701498
+        ],
+        "section": "Wildlife & Creatures"
+      },
+      {
+        "text": "Fixed turtle spawning issue.",
+        "commit_ids": [
+          701497
+        ],
+        "section": "Wildlife & Creatures"
+      },
+      {
+        "text": "Fixed launch site loot room in NMS.",
+        "commit_ids": [
+          701480
+        ],
+        "section": "Loot & Facilities"
+      },
+      {
+        "text": "Added water treatment plant and sewer branch loot rooms.",
+        "commit_ids": [
+          701446
+        ],
+        "section": "Loot & Facilities"
+      },
+      {
+        "text": "Improved fence deployment: prevents sinking, better slope placement, up to 20° angle, no unwanted rotation.",
         "commit_ids": [
           701448
         ],
         "section": "Building & Terrain"
-      },
-      {
-        "text": "Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.",
-        "commit_ids": [
-          701420,
-          701421
-        ],
-        "section": "Building & Terrain"
-      },
-      {
-        "text": "Frontier and pilot hazmat suits restored missing component, ensuring proper protection.",
-        "commit_ids": [
-          701402
-        ],
-        "section": "Items & Crafting"
-      },
-      {
-        "text": "New loot rooms added to the Water Treatment Plant and Sewer branches.",
-        "commit_ids": [
-          701446
-        ],
-        "section": "Loot & Exploration"
       }
     ],
     "new_relevant_count": 5,
-    "new_summary": "- Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.\n- Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.\n- Frontier and pilot hazmat suits restored missing component, ensuring proper protection.\n- New loot rooms added to the Water Treatment Plant and Sewer branches."
+    "new_summary": "- Adjusted animal population rates.\n- Fixed turtle spawning issue.\n- Fixed launch site loot room in NMS.\n- Added water treatment plant and sewer branch loot rooms.\n- Improved fence deployment: prevents sinking, better slope placement, up to 20° angle, no unwanted rotation."
   },
   "2026-09-14": {
     "commit_count": 80,

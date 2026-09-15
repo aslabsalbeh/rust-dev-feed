@@ -1,5 +1,133 @@
 [
   {
+    "id": 701498,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164376",
+    "created": "2026-09-15T17:59:53",
+    "message": "population changes",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701497,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164375",
+    "created": "2026-09-15T17:59:07",
+    "message": "turtle spawning fix",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701496,
+    "branch": "main/fruit_trees",
+    "changeset": "164374",
+    "created": "2026-09-15T17:58:40",
+    "message": "Restored beehives to oak_b,c and e.\r\noak_e has 100% chance to spawn beehive (just for testing)",
+    "user": "Lukester"
+  },
+  {
+    "id": 701495,
+    "branch": "main/fix_recursive_log",
+    "changeset": "164373",
+    "created": "2026-09-15T17:42:32",
+    "message": "Add tests to prove the threaded logging system is still working with the new fix",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 701494,
+    "branch": "main/fix_recursive_log",
+    "changeset": "164372",
+    "created": "2026-09-15T17:41:49",
+    "message": "Add 10k queued log message cap & prevent exceptions thrown while sending messages to RCON from being logged to RCON itself \r\n- unity already protected against main thread log callback calling invoking the callback recursively but we need extra protection for RCON",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 701493,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164371",
+    "created": "2026-09-15T17:35:34",
+    "message": "integrate new frog anims, with randomness factor for different jump types",
+    "user": "ElliotH"
+  },
+  {
+    "id": 701490,
+    "branch": "main/vcc",
+    "changeset": "164368",
+    "created": "2026-09-15T17:30:21",
+    "message": "Update gamepad_configure to call the new ShowBindingPanel from the FP.Steamworks DLL so we can finally call the Steam input gamepad config screen without a hack.",
+    "user": "Adam W"
+  },
+  {
+    "id": 701484,
+    "branch": "main/automated_testing",
+    "changeset": "164362",
+    "created": "2026-09-15T17:21:54",
+    "message": "New automated test checking worldmodels don't have too big of an offset within them, which can cause the worldmodel outline to disappear when the outline visibility origin is too far outside its collider (was recently an issue with the ladder)\r\nFixed 8 problematic worldmodels",
+    "user": "cipeaX"
+  },
+  {
+    "id": 701481,
+    "branch": "main/customvitals_noise_fix",
+    "changeset": "164360",
+    "created": "2026-09-15T17:15:40",
+    "message": "Fixed the custom vital template not having the background.tile sprite assigned, missing its texture - it now matches with the rest of our vitals",
+    "user": "Raul"
+  },
+  {
+    "id": 701480,
+    "branch": "main/powerlevel_loot_rooms",
+    "changeset": "164359",
+    "created": "2026-09-15T17:13:01",
+    "message": "NMS loot room \r\nLaunch site room fix",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 701477,
+    "branch": "main/sv_clientadmin_exposures",
+    "changeset": "164357",
+    "created": "2026-09-15T17:10:48",
+    "message": "Exposed weather.load and weather.reset to be callable on the client from the server\r\nCodegen",
+    "user": "Raul"
+  },
+  {
+    "id": 701476,
+    "branch": "main/fp_steamworks_more_gamepad",
+    "changeset": "164356",
+    "created": "2026-09-15T17:08:02",
+    "message": "Built new FP.Steamworks dlls with vibration/haptic feedback support and the ability to show steam input gamepad binding screen.",
+    "user": "Adam W"
+  },
+  {
+    "id": 701475,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "164355",
+    "created": "2026-09-15T17:06:25",
+    "message": "Merge: from ui_store_slim_ram/blurhash\r\n- New: HttpImage now know how to render blurhash images as loading placeholders\r\nTests: navigated through store",
+    "user": "Daniel P"
+  },
+  {
+    "id": 701474,
+    "branch": "main/ui_store_slim_ram/blurhash",
+    "changeset": "164354",
+    "created": "2026-09-15T17:05:22",
+    "message": "Bugfix: if httpimagedelay expires, use results of first request that completed\r\nTests: navigated store with httpimagedelay 10 and waiting till it expired",
+    "user": "Daniel P"
+  },
+  {
+    "id": 701472,
+    "branch": "main/ui_store_slim_ram/blurhash",
+    "changeset": "164352",
+    "created": "2026-09-15T16:53:06",
+    "message": "Update: generate blur textures of matching aspect ratio to original image\r\nTests: inspected store with httpimagedelay",
+    "user": "Daniel P"
+  },
+  {
+    "id": 701459,
+    "branch": "main/ui_store_slim_ram/blurhash",
+    "changeset": "164344",
+    "created": "2026-09-15T16:17:54",
+    "message": "Update: StoreBundleTool improvements\r\n- deduplicate serialized objects to reduce number of saves\r\n- deduplicate ProxyPaths to reduce number of field-callback invocations\r\n- document loss of data and why it happens\r\nTests: ran the script",
+    "user": "Daniel P"
+  },
+  {
     "id": 701454,
     "branch": "main/Livestock_animals/Frog_Branch",
     "changeset": "164342",
