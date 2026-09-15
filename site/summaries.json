@@ -1,74 +1,71 @@
 {
   "2026-09-14": {
-    "commit_count": 67,
-    "relevant_commit_count": 43,
-    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230,701231,701233,701234,701235,701239,701240,701252,701256,701261,701268,701270",
+    "commit_count": 72,
+    "relevant_commit_count": 47,
+    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230,701231,701233,701234,701235,701239,701240,701252,701256,701261,701268,701270,701284,701287,701288,701294",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "Animals & Farming",
         "items": [
           {
-            "text": "Attacking farm animals now flags you as hostile to the safezone, blocking safezone entry after aggression.",
+            "text": "Lamb and calf corpses no longer yield resources when killed.",
+            "commit_ids": [
+              701294
+            ]
+          },
+          {
+            "text": "Attacking farm animals flags you as hostile to the safezone, affecting safezone entry.",
             "commit_ids": [
               701256
             ]
           },
           {
-            "text": "Critter behavior overhauled: populations adjusted, squirrels stay out of riverside/ocean areas, and hitbox collisions fixed for smoother interaction and combat.",
+            "text": "Livestock critter population settings adjusted, altering spawn numbers.",
             "commit_ids": [
-              701234,
-              701233,
-              701162
+              701234
             ]
           },
           {
-            "text": "Animal interactions around vehicles restored and Generation 2 AI creatures can now be mounted via the new NPCMountable component (currently teleports to mount).",
+            "text": "Animals near vehicles now interact correctly; sheep prefab updated.",
             "commit_ids": [
-              693407,
+              693407
+            ]
+          },
+          {
+            "text": "Mounting support added for Gen2 AI via NPCMountable component (currently teleports on mount).",
+            "commit_ids": [
               692985
             ]
           }
         ]
       },
       {
-        "title": "Structures & Tools",
+        "title": "Fencing & Structures",
         "items": [
           {
-            "text": "Fence gates open and close twice as slowly for smoother operation; fence colliders are fixed, fences can be demolished with a hammer and are highlighted in blue like upgradable items.",
+            "text": "Fence gate opening/closing speed halved, making gates operate more slowly.",
             "commit_ids": [
-              701252,
+              701252
+            ]
+          },
+          {
+            "text": "Fences can now be demolished with a hammer, show a blue highlight when demolishable, and include door controller sockets on gates.",
+            "commit_ids": [
               701217
             ]
           }
         ]
       },
       {
-        "title": "Input & UI",
+        "title": "Combat",
         "items": [
           {
-            "text": "Key binding assignments no longer break when closing the menu mid‑assign, fixing gamepad issues.",
+            "text": "Combat hit detection improvements: cleaver melee range corrected and hitbox collision fixed, improving reach and hit registration.",
             "commit_ids": [
-              701183
-            ]
-          },
-          {
-            "text": "Input latching cleared correctly, preventing unintended actions such as the F1 console opening automatically, and the map UI now includes a functional close button.",
-            "commit_ids": [
-              701170,
-              699677
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Tools",
-        "items": [
-          {
-            "text": "Salvaged cleaver reach corrected to match its intended distance.",
-            "commit_ids": [
-              701168
+              701168,
+              701162
             ]
           }
         ]
@@ -77,35 +74,72 @@
         "title": "Cooking & Food",
         "items": [
           {
-            "text": "Raw beef can now be cooked into cooked beef again, and ovens now support additional meat types for expanded cooking options.",
+            "text": "Cooking system expanded: raw beef now correctly cooks into cooked beef and new meat types added to all oven prefabs.",
             "commit_ids": [
               700859,
               700856
             ]
           }
         ]
-      }
-    ],
-    "summary": "### Animals & AI\n- Attacking farm animals now flags you as hostile to the safezone, blocking safezone entry after aggression.\n- Critter behavior overhauled: populations adjusted, squirrels stay out of riverside/ocean areas, and hitbox collisions fixed for smoother interaction and combat.\n- Animal interactions around vehicles restored and Generation 2 AI creatures can now be mounted via the new NPCMountable component (currently teleports to mount).\n\n### Structures & Tools\n- Fence gates open and close twice as slowly for smoother operation; fence colliders are fixed, fences can be demolished with a hammer and are highlighted in blue like upgradable items.\n\n### Input & UI\n- Key binding assignments no longer break when closing the menu mid‑assign, fixing gamepad issues.\n- Input latching cleared correctly, preventing unintended actions such as the F1 console opening automatically, and the map UI now includes a functional close button.\n\n### Combat & Tools\n- Salvaged cleaver reach corrected to match its intended distance.\n\n### Cooking & Food\n- Raw beef can now be cooked into cooked beef again, and ovens now support additional meat types for expanded cooking options.",
-    "new_items": [
-      {
-        "text": "Attacking farm animals now flags you as hostile to the safezone, blocking safezone entry after aggression.",
-        "commit_ids": [
-          701256
-        ],
-        "section": "Animals & AI"
       },
       {
-        "text": "Fence gates open and close twice as slowly for smoother operation; fence colliders are fixed, fences can be demolished with a hammer and are highlighted in blue like upgradable items.",
-        "commit_ids": [
-          701252,
-          701217
-        ],
-        "section": "Structures & Tools"
+        "title": "UI & Input",
+        "items": [
+          {
+            "text": "UI fixes: key input latching resolved (F1 console no longer opens unintentionally) and map screen now includes a functional close button.",
+            "commit_ids": [
+              701170,
+              699677
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Admin Commands",
+        "items": [
+          {
+            "text": "Scrap King console command restored with description and grade for the foundation block.",
+            "commit_ids": [
+              697966
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Squirrels now avoid entering riverside and oceanside areas, preventing them from wandering into water bodies.",
+            "commit_ids": [
+              701233
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Resolved a gamepad-specific issue where closing the menu during key assignment could corrupt bindings, ensuring key assignments persist correctly.",
+            "commit_ids": [
+              701183
+            ]
+          }
+        ]
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Attacking farm animals now flags you as hostile to the safezone, blocking safezone entry after aggression.\n- Fence gates open and close twice as slowly for smoother operation; fence colliders are fixed, fences can be demolished with a hammer and are highlighted in blue like upgradable items."
+    "summary": "### Animals & Farming\n- Lamb and calf corpses no longer yield resources when killed.\n- Attacking farm animals flags you as hostile to the safezone, affecting safezone entry.\n- Livestock critter population settings adjusted, altering spawn numbers.\n- Animals near vehicles now interact correctly; sheep prefab updated.\n- Mounting support added for Gen2 AI via NPCMountable component (currently teleports on mount).\n\n### Fencing & Structures\n- Fence gate opening/closing speed halved, making gates operate more slowly.\n- Fences can now be demolished with a hammer, show a blue highlight when demolishable, and include door controller sockets on gates.\n\n### Combat\n- Combat hit detection improvements: cleaver melee range corrected and hitbox collision fixed, improving reach and hit registration.\n\n### Cooking & Food\n- Cooking system expanded: raw beef now correctly cooks into cooked beef and new meat types added to all oven prefabs.\n\n### UI & Input\n- UI fixes: key input latching resolved (F1 console no longer opens unintentionally) and map screen now includes a functional close button.\n\n### Admin Commands\n- Scrap King console command restored with description and grade for the foundation block.\n\n### Gameplay & Balance\n- Squirrels now avoid entering riverside and oceanside areas, preventing them from wandering into water bodies.\n\n### Bug Fixes\n- Resolved a gamepad-specific issue where closing the menu during key assignment could corrupt bindings, ensuring key assignments persist correctly.",
+    "new_items": [
+      {
+        "text": "Lamb and calf corpses no longer yield resources when killed.",
+        "commit_ids": [
+          701294
+        ],
+        "section": "Animals & Farming"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- Lamb and calf corpses no longer yield resources when killed."
   },
   "2026-09-13": {
     "commit_count": 10,
