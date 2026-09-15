@@ -1,40 +1,52 @@
 {
   "2026-09-15": {
-    "commit_count": 37,
-    "relevant_commit_count": 20,
-    "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402",
+    "commit_count": 54,
+    "relevant_commit_count": 31,
+    "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "Building & Terrain",
         "items": [
           {
-            "text": "Sheep now correctly mark attackers as hostile.",
+            "text": "Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.",
             "commit_ids": [
-              701388,
-              701363
+              701448
             ]
           },
           {
-            "text": "Beef spoil item is now properly assigned, fixing spoiled beef bugs.",
+            "text": "Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.",
             "commit_ids": [
-              701387
+              701420,
+              701421
             ]
           }
         ]
       },
       {
-        "title": "Items & Equipment",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Hunting trophies now include cow, bull, and sheep variants.",
+            "text": "Sheep AI restored: they correctly mark attackers as hostile, walk, attack, and die as expected in the editor.",
             "commit_ids": [
-              701311
+              701388,
+              701363
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Items & Crafting",
+        "items": [
+          {
+            "text": "Beef spoilage item assignment fixed, preventing missing spoilage behavior.",
+            "commit_ids": [
+              701387
             ]
           },
           {
-            "text": "Hazmat suits restored missing BC component, fixing breath capacity loss after rerigging.",
+            "text": "Frontier and pilot hazmat suits restored missing component, ensuring proper protection.",
             "commit_ids": [
               701402
             ]
@@ -42,22 +54,39 @@
         ]
       },
       {
-        "title": "UI & Server Browser",
+        "title": "Loot & Exploration",
         "items": [
           {
-            "text": "Server browser filter fixed, improving search results.",
+            "text": "New loot rooms added to the Water Treatment Plant and Sewer branches.",
+            "commit_ids": [
+              701446
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Controls",
+        "items": [
+          {
+            "text": "Server browser filters now work correctly.",
             "commit_ids": [
               701390
             ]
           },
           {
-            "text": "Server browser now shows correct player counts when switching game modes.",
+            "text": "Player count display remains stable when switching gamemodes.",
             "commit_ids": [
               701380
             ]
           },
           {
-            "text": "Market terminal now displays \"No Power\" when unpowered, clarifying its status.",
+            "text": "Gamepad default bindings reset properly when no keyboard/mouse is bound.",
+            "commit_ids": [
+              701378
+            ]
+          },
+          {
+            "text": "Market terminal shows \"No Power\" when unpowered while still allowing shop browsing.",
             "commit_ids": [
               701315
             ]
@@ -65,12 +94,12 @@
         ]
       },
       {
-        "title": "Controls",
+        "title": "Hunting & Rewards",
         "items": [
           {
-            "text": "New gamepad default bind command added; bindings now reset correctly when no mouse/keyboard is bound.",
+            "text": "Cow, bull, and sheep trophies added; trophy prefabs reduced in size and converted to LOD components.",
             "commit_ids": [
-              701378
+              701311
             ]
           }
         ]
@@ -79,7 +108,7 @@
         "title": "Bug Fixes",
         "items": [
           {
-            "text": "Resolved a rare null reference error that could cause the game to freeze when stopping certain actions, improving stability for affected players.",
+            "text": "Fixed a crash that could occur when stopping certain montages, preventing unexpected disconnects for players.",
             "commit_ids": [
               701317
             ]
@@ -87,54 +116,40 @@
         ]
       }
     ],
-    "summary": "### Animals & AI\n- Sheep now correctly mark attackers as hostile.\n- Beef spoil item is now properly assigned, fixing spoiled beef bugs.\n\n### Items & Equipment\n- Hunting trophies now include cow, bull, and sheep variants.\n- Hazmat suits restored missing BC component, fixing breath capacity loss after rerigging.\n\n### UI & Server Browser\n- Server browser filter fixed, improving search results.\n- Server browser now shows correct player counts when switching game modes.\n- Market terminal now displays \"No Power\" when unpowered, clarifying its status.\n\n### Controls\n- New gamepad default bind command added; bindings now reset correctly when no mouse/keyboard is bound.\n\n### Bug Fixes\n- Resolved a rare null reference error that could cause the game to freeze when stopping certain actions, improving stability for affected players.",
+    "summary": "### Building & Terrain\n- Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.\n- Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.\n\n### Animals & AI\n- Sheep AI restored: they correctly mark attackers as hostile, walk, attack, and die as expected in the editor.\n\n### Items & Crafting\n- Beef spoilage item assignment fixed, preventing missing spoilage behavior.\n- Frontier and pilot hazmat suits restored missing component, ensuring proper protection.\n\n### Loot & Exploration\n- New loot rooms added to the Water Treatment Plant and Sewer branches.\n\n### UI & Controls\n- Server browser filters now work correctly.\n- Player count display remains stable when switching gamemodes.\n- Gamepad default bindings reset properly when no keyboard/mouse is bound.\n- Market terminal shows \"No Power\" when unpowered while still allowing shop browsing.\n\n### Hunting & Rewards\n- Cow, bull, and sheep trophies added; trophy prefabs reduced in size and converted to LOD components.\n\n### Bug Fixes\n- Fixed a crash that could occur when stopping certain montages, preventing unexpected disconnects for players.",
     "new_items": [
       {
-        "text": "Sheep now correctly mark attackers as hostile.",
+        "text": "Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.",
         "commit_ids": [
-          701388,
-          701363
+          701448
         ],
-        "section": "Animals & AI"
+        "section": "Building & Terrain"
       },
       {
-        "text": "Beef spoil item is now properly assigned, fixing spoiled beef bugs.",
+        "text": "Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.",
         "commit_ids": [
-          701387
+          701420,
+          701421
         ],
-        "section": "Animals & AI"
+        "section": "Building & Terrain"
       },
       {
-        "text": "Hazmat suits restored missing BC component, fixing breath capacity loss after rerigging.",
+        "text": "Frontier and pilot hazmat suits restored missing component, ensuring proper protection.",
         "commit_ids": [
           701402
         ],
-        "section": "Items & Equipment"
+        "section": "Items & Crafting"
       },
       {
-        "text": "Server browser filter fixed, improving search results.",
+        "text": "New loot rooms added to the Water Treatment Plant and Sewer branches.",
         "commit_ids": [
-          701390
+          701446
         ],
-        "section": "UI & Server Browser"
-      },
-      {
-        "text": "Server browser now shows correct player counts when switching game modes.",
-        "commit_ids": [
-          701380
-        ],
-        "section": "UI & Server Browser"
-      },
-      {
-        "text": "New gamepad default bind command added; bindings now reset correctly when no mouse/keyboard is bound.",
-        "commit_ids": [
-          701378
-        ],
-        "section": "Controls"
+        "section": "Loot & Exploration"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Sheep now correctly mark attackers as hostile.\n- Beef spoil item is now properly assigned, fixing spoiled beef bugs.\n- Hazmat suits restored missing BC component, fixing breath capacity loss after rerigging.\n- Server browser filter fixed, improving search results.\n- Server browser now shows correct player counts when switching game modes.\n- New gamepad default bind command added; bindings now reset correctly when no mouse/keyboard is bound."
+    "new_relevant_count": 5,
+    "new_summary": "- Fences no longer sink into terrain and can be placed on slopes up to 20°, fixing placement bugs.\n- Explosive weapons now generate proper crater shapes that respect nearby objects and have updated blast behavior.\n- Frontier and pilot hazmat suits restored missing component, ensuring proper protection.\n- New loot rooms added to the Water Treatment Plant and Sewer branches."
   },
   "2026-09-14": {
     "commit_count": 80,
