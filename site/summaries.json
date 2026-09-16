@@ -1,22 +1,22 @@
 {
   "2026-09-15": {
-    "commit_count": 89,
-    "relevant_commit_count": 54,
+    "commit_count": 96,
+    "relevant_commit_count": 59,
     "relevant_signature": "701311,701315,701317,701333,701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454,701474,701480,701481,701493,701494,701495,701497,701498,701500,701503,701505,701507,701509,701514,701519,701529,701534,701535,701537,701555,701560",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "701448,701454,701474,701480,701481,701493,701494,701495,701497,701498,701500,701503,701505,701507,701509,701514,701519,701529,701534,701535,701537,701555,701560,701562,701568": [
+      "701493,701494,701495,701497,701498,701500,701503,701505,701507,701509,701514,701519,701529,701534,701535,701537,701555,701560,701562,701568,701571,701575,701578,701581,701583": [
         {
           "title": "Food & Drink",
           "items": [
             {
-              "text": "Introduced creamy and milky versions of pure teas, adjusting effectiveness, duration, and health/healing values.",
+              "text": "Added creamy and milky variants for all pure teas. Creamy teas boost effectiveness but shorten duration, while milky teas extend duration. Specific stats for healing teas were adjusted (e.g., creamy healing tea 97 HP/20 s, milky healing tea 112 HP/45 s).",
               "commit_ids": [
                 701568
               ]
             },
             {
-              "text": "Added milk processing with skimmed milk and cream, each having distinct calorie, hydration, and health effects.",
+              "text": "Introduced milk processing: after 4 hours in a refrigerated container you can skim milk, producing skimmed milk (½ calories, 80 % hydration, ½ health) and cream (½ calories, 20 % hydration, +50 % health).",
               "commit_ids": [
                 701562
               ]
@@ -24,10 +24,10 @@
           ]
         },
         {
-          "title": "Trees & Harvest",
+          "title": "Farming & Trees",
           "items": [
             {
-              "text": "Apples now have a 10% chance to survive if the tree is harvested before the apples; fruit no longer falls when hitting a tree; beehives unchanged.",
+              "text": "Apples now have a 10 % chance to survive if the tree is harvested before the fruit is picked; fruit no longer falls when a tree is hit. Natural beehives still always drop honeycomb and swarm on full harvest.",
               "commit_ids": [
                 701537
               ]
@@ -35,69 +35,86 @@
           ]
         },
         {
-          "title": "Safety Zones & Buildings",
+          "title": "Structures & Zones",
           "items": [
             {
-              "text": "Apartment complexes are now marked as safe zones, restoring hostile warnings when nearby; removed block placement restriction preventing construction too close; cleaned up unused drop zone.",
+              "text": "Apartment complexes are now flagged as safe zones, fixing the missing hostile warning when nearby. Building restrictions near complexes were corrected by removing the BlockPlacement tag, restoring the \"too close to apartment complex\" error behavior.",
               "commit_ids": [
                 701534
-              ]
-            },
-            {
-              "text": "Updated fencing deployment: prevented sinking into terrain, improved placement on slopes up to 20°, removed baked rotation, enhancing building placement.",
-              "commit_ids": [
-                701448
               ]
             }
           ]
         },
         {
-          "title": "Animal Behavior",
+          "title": "Content Additions",
           "items": [
             {
-              "text": "Removed sleeping behavior from critters, making them active at night.",
+              "text": "Added a new Junkyard loot room.",
+              "commit_ids": [
+                701514
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Critters",
+          "items": [
+            {
+              "text": "Critters no longer sleep, making them active throughout the night.",
               "commit_ids": [
                 701507
               ]
             },
             {
-              "text": "Adjusted critter population settings.",
+              "text": "Rabbits' interest system disabled, preventing them from reacting to nearby items and freeing up server queue budget.",
               "commit_ids": [
-                701498
+                701505
               ]
             },
             {
-              "text": "Fixed turtle spawning issues.",
+              "text": "Fixed turtle spawning issues, ensuring turtles appear correctly in the world.",
               "commit_ids": [
                 701497
               ]
             }
           ]
-        },
+        }
+      ],
+      "701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446,701448,701454,701474,701480,701481": [
         {
-          "title": "Loot Rooms",
+          "title": "UI & HUD",
           "items": [
             {
-              "text": "Added Junkyard loot room.",
+              "text": "Fixed missing background tile sprite for custom vital template, restoring proper UI display.",
               "commit_ids": [
-                701514
+                701481
               ]
             },
             {
-              "text": "Added NMS loot room and fixed Launch Site room.",
+              "text": "Fixed server browser filter not applying correctly.",
               "commit_ids": [
-                701480
+                701390
+              ]
+            },
+            {
+              "text": "Fixed player count display changing incorrectly when switching gamemodes.",
+              "commit_ids": [
+                701380
               ]
             }
           ]
-        }
-      ],
-      "701335,701342,701347,701354,701363,701374,701375,701378,701380,701382,701384,701387,701388,701390,701393,701402,701420,701421,701423,701424,701427,701441,701443,701444,701446": [
+        },
         {
-          "title": "World Loot",
+          "title": "Loot & Resources",
           "items": [
             {
-              "text": "Added new loot rooms in the Water Treatment Plant and Sewer Branch.",
+              "text": "Fixed loot room issues in NMS launch site.",
+              "commit_ids": [
+                701480
+              ]
+            },
+            {
+              "text": "Added water treatment plant and sewer branch loot rooms.",
               "commit_ids": [
                 701446
               ]
@@ -105,18 +122,12 @@
           ]
         },
         {
-          "title": "Items",
+          "title": "Building & Placement",
           "items": [
             {
-              "text": "Introduced a textured milk jar with volume‑preserving slosh physics and faster liquid updates.",
+              "text": "Improved fence deployment: prevented sinking into terrain, better placement on slopes, removed unwanted socket rotation.",
               "commit_ids": [
-                701423
-              ]
-            },
-            {
-              "text": "Added explosive setup to certain weapons, enabling explosive projectiles.",
-              "commit_ids": [
-                701421
+                701448
               ]
             }
           ]
@@ -125,7 +136,13 @@
           "title": "Explosives & Terrain",
           "items": [
             {
-              "text": "Implemented explosive crater definitions and 3D shape handling respecting blocking objects.",
+              "text": "Added explosive prefab setup for certain weapons.",
+              "commit_ids": [
+                701421
+              ]
+            },
+            {
+              "text": "Implemented explosive crater definitions with 3D shape handling respecting blocking objects.",
               "commit_ids": [
                 701420
               ]
@@ -133,27 +150,74 @@
           ]
         },
         {
-          "title": "Equipment",
+          "title": "Animals & AI",
           "items": [
             {
-              "text": "Restored missing BC component to Frontier and Pilot hazmat suits, fixing protection loss after rerigging.",
+              "text": "Restored sheep behavior to mark attackers as hostile.",
               "commit_ids": [
-                701402
+                701388
               ]
             }
           ]
         },
         {
-          "title": "NPC & AI",
+          "title": "Items & Crafting",
           "items": [
             {
-              "text": "Sheep now correctly mark attackers as hostile.",
+              "text": "Introduced textured milk jar with realistic slosh physics and faster liquid updates.",
               "commit_ids": [
-                701388
+                701423
               ]
             },
             {
-              "text": "Fixed sheep AI GUID and re‑hooked assets; sheep walk, attack, and die as expected.",
+              "text": "Fixed missing component on frontier and pilot hazmat suits, restoring intended protection.",
+              "commit_ids": [
+                701402
+              ]
+            },
+            {
+              "text": "Fixed beef spoil item assignment, ensuring proper spoil behavior.",
+              "commit_ids": [
+                701387
+              ]
+            },
+            {
+              "text": "Added dairy metal churn container item (available for use).",
+              "commit_ids": [
+                701374
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Server & Multiplayer",
+          "items": [
+            {
+              "text": "Fixed player bots reporting issue.",
+              "commit_ids": [
+                701424
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls",
+          "items": [
+            {
+              "text": "Added new bind command for gamepad defaults and fixed bind reset behavior when no mouse/keyboard is bound.",
+              "commit_ids": [
+                701378
+              ]
+            }
+          ]
+        }
+      ],
+      "701311,701315,701317,701333,701335,701342,701347,701354,701363": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Sheep now correctly walk, attack players, and die as expected in-game.",
               "commit_ids": [
                 701363
               ]
@@ -161,34 +225,10 @@
           ]
         },
         {
-          "title": "Food",
+          "title": "UI",
           "items": [
             {
-              "text": "Fixed beef spoilage item assignment, ensuring spoiled beef behaves correctly.",
-              "commit_ids": [
-                701387
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Bug Fixes",
-          "items": [
-            {
-              "text": "Fixed player bot reporting issue.",
-              "commit_ids": [
-                701424
-              ]
-            }
-          ]
-        }
-      ],
-      "701311,701315,701317,701333": [
-        {
-          "title": "Market Terminal UI",
-          "items": [
-            {
-              "text": "Market terminals now display \"No Power\" when unpowered, while still allowing shop browsing.",
+              "text": "Market terminal now displays \"No Power\" when unpowered, while still allowing shop browsing.",
               "commit_ids": [
                 701315
               ]
@@ -196,10 +236,10 @@
           ]
         },
         {
-          "title": "Hunting Trophies",
+          "title": "Hunting & Trophies",
           "items": [
             {
-              "text": "Added cow, bull, and sheep trophies to the hunting trophy display; trophy prefab size reduced for performance.",
+              "text": "Hunting trophies now include cow, bull, and sheep variants, with reduced prefab size for better performance.",
               "commit_ids": [
                 701311
               ]
