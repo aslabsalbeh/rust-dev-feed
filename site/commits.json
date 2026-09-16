@@ -1,5 +1,53 @@
 [
   {
+    "id": 701604,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "164442",
+    "created": "2026-09-16T08:59:38",
+    "message": "Updated frog material",
+    "user": "Toffer"
+  },
+  {
+    "id": 701605,
+    "branch": "main/sandbag_barricade_variants/stacking",
+    "changeset": "164441",
+    "created": "2026-09-16T08:59:37",
+    "message": "Hide the existing mesh and only show the upgrade placement guide when placing upgrades, fixes the overlap and looks better.\r\nOnly hide the visuals, and only clientside, collision etc all remains active.",
+    "user": "Adam W"
+  },
+  {
+    "id": 701600,
+    "branch": "main/sandbag_barricade_variants/stacking",
+    "changeset": "164439",
+    "created": "2026-09-16T08:37:30",
+    "message": "Upgrading damaged sandbags doesn't give a free repair to full. Keeps previous health fraction. Convar'd behind ConVar.Server.upgrade_keeps_health because I'm not sure how we wiill want this to play out. Defaults to true for now.",
+    "user": "Adam W"
+  },
+  {
+    "id": 701599,
+    "branch": "▄▆▊▊",
+    "changeset": "▄▅▌▆▊▍",
+    "created": "2026-09-16T08:37:02",
+    "message": "▌ ▄▄▍▅▇▄▋█ ▊▊▍ ▊▄▉ ▆▇▍▆▌▊▌▋▋█▄ ▅▄▇▉▍█▄▉ ▄▊▄ ▆▉",
+    "user": "cipeaX"
+  },
+  {
+    "id": 701598,
+    "branch": "main/sandbag_barricade_variants/stacking",
+    "changeset": "164437",
+    "created": "2026-09-16T08:31:07",
+    "message": "Upgrading transfers skin to new placement",
+    "user": "Adam W"
+  },
+  {
+    "id": 701596,
+    "branch": "main/sandbag_barricade_variants/stacking",
+    "changeset": "164436",
+    "created": "2026-09-16T08:26:41",
+    "message": "Initial prototype rework:\r\nRemoved all the new sockets from sandbags.\r\nUse the position/rotation of the sandbag being upgraded instead of calculating it via sockets.\r\nRefactor some of the prototype code into functions and only use them in the upgrade paths, so we don't touch regular placement logic anymore.\r\nClient now runs the serverside checks too.\r\nRefactor UpdateUpgradeTier, and don't run it for everything via FillPlacement.\r\nDon't cache incorrect upgrade levels.\r\nRemove stack socket placement logic.\r\nFix being able to use any sandbag level to upgrade a sandbag to next level.\r\nUse/trust serverside checks/position not client provided.\r\nRun all placement checks when upgrading, so upgrades can't clip through stuff.\r\nRemove some now unused new find deployable functions.",
+    "user": "Adam W"
+  },
+  {
     "id": 701594,
     "branch": "main/sandbag_barricade_variants/stacking",
     "changeset": "164435",
