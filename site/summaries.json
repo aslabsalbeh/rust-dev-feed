@@ -1,96 +1,58 @@
 {
   "2026-09-16": {
-    "commit_count": 72,
-    "relevant_commit_count": 37,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814",
+    "commit_count": 80,
+    "relevant_commit_count": 41,
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "Animal & Ranch AI",
         "items": [
           {
-            "text": "Animals now avoid water when roaming or fleeing.",
+            "text": "Critters now startle and flee when players approach, and they no longer startle each other.",
             "commit_ids": [
-              701804,
-              701803
+              701728,
+              701742
             ]
           },
           {
-            "text": "Cows can no longer eat from troughs by telepathy when blocked and now avoid each other and players, preventing clipping.",
+            "text": "Cows now avoid each other and players, with reduced sight ranges and no clipping through one another; overall livestock AI has been simplified.",
             "commit_ids": [
+              701739,
               701755,
               701685
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Ranch Economy",
+        "items": [
           {
-            "text": "Critters no longer startle each other and will flee when players get too close.",
+            "text": "A new auction system lets players sell ranch animals via rotating offers with a limited number of rejections.",
             "commit_ids": [
-              701742,
-              701728
-            ]
-          },
-          {
-            "text": "Simplified animal AI by removing unused states and reducing sight range.",
-            "commit_ids": [
-              701739
-            ]
-          },
-          {
-            "text": "Fixed bear AI to correctly flee instead of briefly chasing when a target is on a foundation.",
-            "commit_ids": [
-              701695
+              701586
             ]
           }
         ]
       },
       {
-        "title": "Resources & Crafting",
+        "title": "Loot & Resources",
         "items": [
           {
-            "text": "Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches.",
+            "text": "Loot tables have been rebalanced in the Trainyard, Water Treatment, and Sewer Branch rooms.",
             "commit_ids": [
               701814
             ]
-          },
-          {
-            "text": "Only the default sandbag is craftable; other sandbag variants are now non‑craftable.",
-            "commit_ids": [
-              701693
-            ]
           }
         ]
       },
       {
-        "title": "Sandbag Barricades",
+        "title": "Explosives & Prediction",
         "items": [
           {
-            "text": "Overhauled sandbag upgrade placement with server‑side checks, removing socket positioning, preventing clipping, and ensuring correct upgrade tiers.",
-            "commit_ids": [
-              701596
-            ]
-          },
-          {
-            "text": "Fixed upgrade cooldown bug and unified damaged cooldown logic with the existing repair cooldown.",
-            "commit_ids": [
-              701643,
-              701635
-            ]
-          },
-          {
-            "text": "Upgrading damaged sandbags now retains the current health fraction (configurable) and added stacking placement checks.",
-            "commit_ids": [
-              701600,
-              701660
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Explosives",
-        "items": [
-          {
-            "text": "Improved C4 client‑side prediction and rotation blending for more reliable detonation behavior.",
+            "text": "C4 client prediction settings have been improved, rotation blending fixed, and hide/show event handling refined.",
             "commit_ids": [
               701735
             ]
@@ -98,43 +60,79 @@
         ]
       },
       {
-        "title": "Monument & Events",
+        "title": "World Events",
         "items": [
           {
-            "text": "Added a new monument trigger for the oil rig switch event.",
+            "text": "A new monument trigger has been added to the Oil Rig switch event.",
             "commit_ids": [
               701712
             ]
           },
           {
-            "text": "Introduced additional air‑drop and satellite selection events.",
+            "text": "New air‑drop events and satellite selection opportunities are now available.",
             "commit_ids": [
               701694
             ]
           }
         ]
-      }
-    ],
-    "summary": "### Animals & AI\n- Animals now avoid water when roaming or fleeing.\n- Cows can no longer eat from troughs by telepathy when blocked and now avoid each other and players, preventing clipping.\n- Critters no longer startle each other and will flee when players get too close.\n- Simplified animal AI by removing unused states and reducing sight range.\n- Fixed bear AI to correctly flee instead of briefly chasing when a target is on a foundation.\n\n### Resources & Crafting\n- Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches.\n- Only the default sandbag is craftable; other sandbag variants are now non‑craftable.\n\n### Sandbag Barricades\n- Overhauled sandbag upgrade placement with server‑side checks, removing socket positioning, preventing clipping, and ensuring correct upgrade tiers.\n- Fixed upgrade cooldown bug and unified damaged cooldown logic with the existing repair cooldown.\n- Upgrading damaged sandbags now retains the current health fraction (configurable) and added stacking placement checks.\n\n### Combat & Explosives\n- Improved C4 client‑side prediction and rotation blending for more reliable detonation behavior.\n\n### Monument & Events\n- Added a new monument trigger for the oil rig switch event.\n- Introduced additional air‑drop and satellite selection events.",
-    "new_items": [
-      {
-        "text": "Animals now avoid water when roaming or fleeing.",
-        "commit_ids": [
-          701804,
-          701803
-        ],
-        "section": "Animals & AI"
       },
       {
-        "text": "Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches.",
+        "title": "Sandbag Mechanics",
+        "items": [
+          {
+            "text": "Only the default sandbag variant is craftable, preventing unintended variants.",
+            "commit_ids": [
+              701693
+            ]
+          },
+          {
+            "text": "Sandbag stacking and upgrade system overhauled: server‑side placement checks, removal of socket placement, clipping prevention during upgrades, and stricter stacking rules.",
+            "commit_ids": [
+              701596,
+              701660
+            ]
+          },
+          {
+            "text": "Upgrade cooldowns now follow repair cooldown logic; damaged sandbags retain their current health fraction when upgraded, configurable via a server variable.",
+            "commit_ids": [
+              701643,
+              701635,
+              701600
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Animals now actively avoid water when roaming or fleeing, making water bodies safer zones and altering hunting routes.",
+            "commit_ids": [
+              701804,
+              701803
+            ]
+          },
+          {
+            "text": "Bears correctly flee when a target is on a foundation, eliminating the brief chase glitch and improving combat predictability.",
+            "commit_ids": [
+              701695
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "### Animal & Ranch AI\n- Critters now startle and flee when players approach, and they no longer startle each other.\n- Cows now avoid each other and players, with reduced sight ranges and no clipping through one another; overall livestock AI has been simplified.\n\n### Ranch Economy\n- A new auction system lets players sell ranch animals via rotating offers with a limited number of rejections.\n\n### Loot & Resources\n- Loot tables have been rebalanced in the Trainyard, Water Treatment, and Sewer Branch rooms.\n\n### Explosives & Prediction\n- C4 client prediction settings have been improved, rotation blending fixed, and hide/show event handling refined.\n\n### World Events\n- A new monument trigger has been added to the Oil Rig switch event.\n- New air‑drop events and satellite selection opportunities are now available.\n\n### Sandbag Mechanics\n- Only the default sandbag variant is craftable, preventing unintended variants.\n- Sandbag stacking and upgrade system overhauled: server‑side placement checks, removal of socket placement, clipping prevention during upgrades, and stricter stacking rules.\n- Upgrade cooldowns now follow repair cooldown logic; damaged sandbags retain their current health fraction when upgraded, configurable via a server variable.\n\n### Gameplay & Balance\n- Animals now actively avoid water when roaming or fleeing, making water bodies safer zones and altering hunting routes.\n- Bears correctly flee when a target is on a foundation, eliminating the brief chase glitch and improving combat predictability.",
+    "new_items": [
+      {
+        "text": "Loot tables have been rebalanced in the Trainyard, Water Treatment, and Sewer Branch rooms.",
         "commit_ids": [
           701814
         ],
-        "section": "Resources & Crafting"
+        "section": "Loot & Resources"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Animals now avoid water when roaming or fleeing.\n- Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches."
+    "new_relevant_count": 1,
+    "new_summary": "- Loot tables have been rebalanced in the Trainyard, Water Treatment, and Sewer Branch rooms."
   },
   "2026-09-15": {
     "commit_count": 96,

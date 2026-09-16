@@ -6,49 +6,53 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 16 Sep 2026 16:18:01 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 18:18:17 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;72 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;80 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701804,701803"&gt;Animals now avoid water when roaming or fleeing.&lt;/li&gt;
-&lt;li data-rust-commits="701814"&gt;Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches.&lt;/li&gt;
+&lt;li data-rust-commits="701814"&gt;Loot tables have been rebalanced in the Trainyard, Water Treatment, and Sewer Branch rooms.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Animals &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Animal &amp;amp; Ranch AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701804,701803"&gt;Animals now avoid water when roaming or fleeing.&lt;/li&gt;
-&lt;li data-rust-commits="701755,701685"&gt;Cows can no longer eat from troughs by telepathy when blocked and now avoid each other and players, preventing clipping.&lt;/li&gt;
-&lt;li data-rust-commits="701742,701728"&gt;Critters no longer startle each other and will flee when players get too close.&lt;/li&gt;
-&lt;li data-rust-commits="701739"&gt;Simplified animal AI by removing unused states and reducing sight range.&lt;/li&gt;
-&lt;li data-rust-commits="701695"&gt;Fixed bear AI to correctly flee instead of briefly chasing when a target is on a foundation.&lt;/li&gt;
+&lt;li data-rust-commits="701728,701742"&gt;Critters now startle and flee when players approach, and they no longer startle each other.&lt;/li&gt;
+&lt;li data-rust-commits="701739,701755,701685"&gt;Cows now avoid each other and players, with reduced sight ranges and no clipping through one another; overall livestock AI has been simplified.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Resources &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Ranch Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701814"&gt;Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches.&lt;/li&gt;
-&lt;li data-rust-commits="701693"&gt;Only the default sandbag is craftable; other sandbag variants are now non‑craftable.&lt;/li&gt;
+&lt;li data-rust-commits="701586"&gt;A new auction system lets players sell ranch animals via rotating offers with a limited number of rejections.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Sandbag Barricades&lt;/h3&gt;
+&lt;h3&gt;Loot &amp;amp; Resources&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701596"&gt;Overhauled sandbag upgrade placement with server‑side checks, removing socket positioning, preventing clipping, and ensuring correct upgrade tiers.&lt;/li&gt;
-&lt;li data-rust-commits="701643,701635"&gt;Fixed upgrade cooldown bug and unified damaged cooldown logic with the existing repair cooldown.&lt;/li&gt;
-&lt;li data-rust-commits="701600,701660"&gt;Upgrading damaged sandbags now retains the current health fraction (configurable) and added stacking placement checks.&lt;/li&gt;
+&lt;li data-rust-commits="701814"&gt;Loot tables have been rebalanced in the Trainyard, Water Treatment, and Sewer Branch rooms.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Explosives&lt;/h3&gt;
+&lt;h3&gt;Explosives &amp;amp; Prediction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701735"&gt;Improved C4 client‑side prediction and rotation blending for more reliable detonation behavior.&lt;/li&gt;
+&lt;li data-rust-commits="701735"&gt;C4 client prediction settings have been improved, rotation blending fixed, and hide/show event handling refined.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Monument &amp;amp; Events&lt;/h3&gt;
+&lt;h3&gt;World Events&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701712"&gt;Added a new monument trigger for the oil rig switch event.&lt;/li&gt;
-&lt;li data-rust-commits="701694"&gt;Introduced additional air‑drop and satellite selection events.&lt;/li&gt;
+&lt;li data-rust-commits="701712"&gt;A new monument trigger has been added to the Oil Rig switch event.&lt;/li&gt;
+&lt;li data-rust-commits="701694"&gt;New air‑drop events and satellite selection opportunities are now available.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Sandbag Mechanics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701693"&gt;Only the default sandbag variant is craftable, preventing unintended variants.&lt;/li&gt;
+&lt;li data-rust-commits="701596,701660"&gt;Sandbag stacking and upgrade system overhauled: server‑side placement checks, removal of socket placement, clipping prevention during upgrades, and stricter stacking rules.&lt;/li&gt;
+&lt;li data-rust-commits="701643,701635,701600"&gt;Upgrade cooldowns now follow repair cooldown logic; damaged sandbags retain their current health fraction when upgraded, configurable via a server variable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701804,701803"&gt;Animals now actively avoid water when roaming or fleeing, making water bodies safer zones and altering hunting routes.&lt;/li&gt;
+&lt;li data-rust-commits="701695"&gt;Bears correctly flee when a target is on a foundation, eliminating the brief chase glitch and improving combat predictability.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-16</guid>
-      <pubDate>Wed, 16 Sep 2026 16:18:01 -0400</pubDate>
+      <pubDate>Wed, 16 Sep 2026 18:18:17 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 15</title>
