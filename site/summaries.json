@@ -1,60 +1,86 @@
 {
   "2026-09-16": {
-    "commit_count": 34,
-    "relevant_commit_count": 16,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699",
+    "commit_count": 47,
+    "relevant_commit_count": 22,
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World Events",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "New air drops and satellite selection events have been added, affecting loot availability.",
+            "text": "Critters now startle and flee when players approach, and they no longer startle each other.",
             "commit_ids": [
-              701694
+              701742,
+              701728
+            ]
+          },
+          {
+            "text": "Animal AI simplified and sight range reduced, making animals less likely to detect distant players.",
+            "commit_ids": [
+              701739
+            ]
+          },
+          {
+            "text": "Bears now correctly flee immediately when a target stands on a foundation, fixing a brief chase bug.",
+            "commit_ids": [
+              701695
+            ]
+          },
+          {
+            "text": "Cows now avoid clipping with other cows and with players, improving collision behavior.",
+            "commit_ids": [
+              701685
             ]
           }
         ]
       },
       {
-        "title": "Building & Deployables",
+        "title": "Base Building & Defenses",
         "items": [
           {
-            "text": "Only the default sandbag is craftable; all other sandbag variants are now disabled.",
-            "commit_ids": [
-              701693
-            ]
-          },
-          {
-            "text": "Upgrading a damaged sandbag now keeps its current health fraction instead of fully repairing it (default enabled via server config).",
+            "text": "Upgrading damaged sandbags now retains the existing health fraction instead of fully repairing (default enabled).",
             "commit_ids": [
               701600
             ]
           },
           {
-            "text": "Fixed a cooldown bug that prevented sandbags from being upgraded immediately after placement.",
+            "text": "Sandbag upgrade cooldown bug fixed, allowing upgrades right after placement.",
             "commit_ids": [
               701643,
               701635
             ]
           },
           {
-            "text": "Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.",
+            "text": "Only the default sandbag is craftable; other sandbag variants are now non‑craftable.",
+            "commit_ids": [
+              701693
+            ]
+          },
+          {
+            "text": "Placement checks for sandbags improved, preventing clipping and ensuring upgrade guides display correctly.",
             "commit_ids": [
               701660,
+              701605,
               701596
             ]
           }
         ]
       },
       {
-        "title": "Animals & NPCs",
+        "title": "Monuments & World Events",
         "items": [
           {
-            "text": "Cows now avoid each other and players collide with cows, reducing clipping and improving movement.",
+            "text": "New oil rig switch event added to the monument system.",
             "commit_ids": [
-              701685
+              701712
+            ]
+          },
+          {
+            "text": "Additional air drops and satellite selection events introduced, increasing event variety.",
+            "commit_ids": [
+              701694
             ]
           }
         ]
@@ -63,9 +89,26 @@
         "title": "Economy & Trading",
         "items": [
           {
-            "text": "Introduced an animal auction system at the ranch: sell animals for random item offers with limited rejections.",
+            "text": "Auction mechanic for selling ranch animals added, offering rotating item packages and a cooldown on rejections.",
             "commit_ids": [
               701586
+            ]
+          },
+          {
+            "text": "Several guns added to the sell table for testing, expanding vendor inventory.",
+            "commit_ids": [
+              701587
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Explosives & Tools",
+        "items": [
+          {
+            "text": "C4 client prediction settings improved, fixing rotation blending and making placement more reliable.",
+            "commit_ids": [
+              701735
             ]
           }
         ]
@@ -74,59 +117,69 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Servers can now toggle player god mode via the new ServerSetGod command, affecting tutorial and admin controls.",
+            "text": "Server can now toggle player god mode via ServerSetGod, enabling the tutorial to disable god mode for players and allowing future server‑controlled invulnerability changes.",
             "commit_ids": [
               701650
             ]
           }
         ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Upgrade placement now hides the existing structure mesh, showing only the placement guide to prevent visual overlap during building.",
-            "commit_ids": [
-              701605
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### World Events\n- New air drops and satellite selection events have been added, affecting loot availability.\n\n### Building & Deployables\n- Only the default sandbag is craftable; all other sandbag variants are now disabled.\n- Upgrading a damaged sandbag now keeps its current health fraction instead of fully repairing it (default enabled via server config).\n- Fixed a cooldown bug that prevented sandbags from being upgraded immediately after placement.\n- Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.\n\n### Animals & NPCs\n- Cows now avoid each other and players collide with cows, reducing clipping and improving movement.\n\n### Economy & Trading\n- Introduced an animal auction system at the ranch: sell animals for random item offers with limited rejections.\n\n### Gameplay & Balance\n- Servers can now toggle player god mode via the new ServerSetGod command, affecting tutorial and admin controls.\n\n### Quality of Life\n- Upgrade placement now hides the existing structure mesh, showing only the placement guide to prevent visual overlap during building.",
+    "summary": "### NPC & AI\n- Critters now startle and flee when players approach, and they no longer startle each other.\n- Animal AI simplified and sight range reduced, making animals less likely to detect distant players.\n- Bears now correctly flee immediately when a target stands on a foundation, fixing a brief chase bug.\n- Cows now avoid clipping with other cows and with players, improving collision behavior.\n\n### Base Building & Defenses\n- Upgrading damaged sandbags now retains the existing health fraction instead of fully repairing (default enabled).\n- Sandbag upgrade cooldown bug fixed, allowing upgrades right after placement.\n- Only the default sandbag is craftable; other sandbag variants are now non‑craftable.\n- Placement checks for sandbags improved, preventing clipping and ensuring upgrade guides display correctly.\n\n### Monuments & World Events\n- New oil rig switch event added to the monument system.\n- Additional air drops and satellite selection events introduced, increasing event variety.\n\n### Economy & Trading\n- Auction mechanic for selling ranch animals added, offering rotating item packages and a cooldown on rejections.\n- Several guns added to the sell table for testing, expanding vendor inventory.\n\n### Explosives & Tools\n- C4 client prediction settings improved, fixing rotation blending and making placement more reliable.\n\n### Gameplay & Balance\n- Server can now toggle player god mode via ServerSetGod, enabling the tutorial to disable god mode for players and allowing future server‑controlled invulnerability changes.",
     "new_items": [
       {
-        "text": "New air drops and satellite selection events have been added, affecting loot availability.",
+        "text": "Critters now startle and flee when players approach, and they no longer startle each other.",
         "commit_ids": [
-          701694
+          701742,
+          701728
         ],
-        "section": "World Events"
+        "section": "NPC & AI"
       },
       {
-        "text": "Only the default sandbag is craftable; all other sandbag variants are now disabled.",
+        "text": "Animal AI simplified and sight range reduced, making animals less likely to detect distant players.",
+        "commit_ids": [
+          701739
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Bears now correctly flee immediately when a target stands on a foundation, fixing a brief chase bug.",
+        "commit_ids": [
+          701695
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Only the default sandbag is craftable; other sandbag variants are now non‑craftable.",
         "commit_ids": [
           701693
         ],
-        "section": "Building & Deployables"
+        "section": "Base Building & Defenses"
       },
       {
-        "text": "Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.",
+        "text": "New oil rig switch event added to the monument system.",
         "commit_ids": [
-          701660,
-          701596
+          701712
         ],
-        "section": "Building & Deployables"
+        "section": "Monuments & World Events"
       },
       {
-        "text": "Cows now avoid each other and players collide with cows, reducing clipping and improving movement.",
+        "text": "Additional air drops and satellite selection events introduced, increasing event variety.",
         "commit_ids": [
-          701685
+          701694
         ],
-        "section": "Animals & NPCs"
+        "section": "Monuments & World Events"
+      },
+      {
+        "text": "C4 client prediction settings improved, fixing rotation blending and making placement more reliable.",
+        "commit_ids": [
+          701735
+        ],
+        "section": "Explosives & Tools"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- New air drops and satellite selection events have been added, affecting loot availability.\n- Only the default sandbag is craftable; all other sandbag variants are now disabled.\n- Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.\n- Cows now avoid each other and players collide with cows, reducing clipping and improving movement."
+    "new_relevant_count": 8,
+    "new_summary": "- Critters now startle and flee when players approach, and they no longer startle each other.\n- Animal AI simplified and sight range reduced, making animals less likely to detect distant players.\n- Bears now correctly flee immediately when a target stands on a foundation, fixing a brief chase bug.\n- Only the default sandbag is craftable; other sandbag variants are now non‑craftable.\n- New oil rig switch event added to the monument system.\n- Additional air drops and satellite selection events introduced, increasing event variety.\n- C4 client prediction settings improved, fixing rotation blending and making placement more reliable."
   },
   "2026-09-15": {
     "commit_count": 96,
