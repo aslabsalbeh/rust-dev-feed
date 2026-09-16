@@ -6,58 +6,58 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 16 Sep 2026 12:18:07 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 14:18:14 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;47 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;67 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701742,701728"&gt;Critters now startle and flee when players approach, and they no longer startle each other.&lt;/li&gt;
-&lt;li data-rust-commits="701739"&gt;Animal AI simplified and sight range reduced, making animals less likely to detect distant players.&lt;/li&gt;
-&lt;li data-rust-commits="701695"&gt;Bears now correctly flee immediately when a target stands on a foundation, fixing a brief chase bug.&lt;/li&gt;
-&lt;li data-rust-commits="701693"&gt;Only the default sandbag is craftable; other sandbag variants are now non‑craftable.&lt;/li&gt;
-&lt;li data-rust-commits="701712"&gt;New oil rig switch event added to the monument system.&lt;/li&gt;
-&lt;li data-rust-commits="701694"&gt;Additional air drops and satellite selection events introduced, increasing event variety.&lt;/li&gt;
-&lt;li data-rust-commits="701735"&gt;C4 client prediction settings improved, fixing rotation blending and making placement more reliable.&lt;/li&gt;
+&lt;li data-rust-commits="701755"&gt;Fixed cows eating from trough via telepathy when blocked by other cows&lt;/li&gt;
+&lt;li data-rust-commits="701742,701728"&gt;Improved critter startle behavior: critters no longer startle each other and now flee when players approach too closely&lt;/li&gt;
+&lt;li data-rust-commits="701739"&gt;Simplified older animal AI by removing unused states and reducing sight range&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701742,701728"&gt;Critters now startle and flee when players approach, and they no longer startle each other.&lt;/li&gt;
-&lt;li data-rust-commits="701739"&gt;Animal AI simplified and sight range reduced, making animals less likely to detect distant players.&lt;/li&gt;
-&lt;li data-rust-commits="701695"&gt;Bears now correctly flee immediately when a target stands on a foundation, fixing a brief chase bug.&lt;/li&gt;
-&lt;li data-rust-commits="701685"&gt;Cows now avoid clipping with other cows and with players, improving collision behavior.&lt;/li&gt;
+&lt;li data-rust-commits="701755"&gt;Fixed cows eating from trough via telepathy when blocked by other cows&lt;/li&gt;
+&lt;li data-rust-commits="701685"&gt;Added cow avoidance to prevent clipping and enabled player‑cow collisions&lt;/li&gt;
+&lt;li data-rust-commits="701742,701728"&gt;Improved critter startle behavior: critters no longer startle each other and now flee when players approach too closely&lt;/li&gt;
+&lt;li data-rust-commits="701739"&gt;Simplified older animal AI by removing unused states and reducing sight range&lt;/li&gt;
+&lt;li data-rust-commits="701695"&gt;Fixed bear flee logic so bears correctly transition to fleeing instead of briefly chasing&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base Building &amp;amp; Defenses&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701600"&gt;Upgrading damaged sandbags now retains the existing health fraction instead of fully repairing (default enabled).&lt;/li&gt;
-&lt;li data-rust-commits="701643,701635"&gt;Sandbag upgrade cooldown bug fixed, allowing upgrades right after placement.&lt;/li&gt;
-&lt;li data-rust-commits="701693"&gt;Only the default sandbag is craftable; other sandbag variants are now non‑craftable.&lt;/li&gt;
-&lt;li data-rust-commits="701660,701605,701596"&gt;Placement checks for sandbags improved, preventing clipping and ensuring upgrade guides display correctly.&lt;/li&gt;
+&lt;li data-rust-commits="701735"&gt;Enhanced C4 client prediction, added hide/show event controls, and fixed rotation blending across prediction distances&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Monuments &amp;amp; World Events&lt;/h3&gt;
+&lt;h3&gt;Building &amp;amp; Defenses&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701712"&gt;New oil rig switch event added to the monument system.&lt;/li&gt;
-&lt;li data-rust-commits="701694"&gt;Additional air drops and satellite selection events introduced, increasing event variety.&lt;/li&gt;
+&lt;li data-rust-commits="701693"&gt;Made non‑default sandbags non‑craftable, leaving only the standard sandbag usable&lt;/li&gt;
+&lt;li data-rust-commits="701660"&gt;Added placement checks and fixes for sandbag stacking to improve building reliability&lt;/li&gt;
+&lt;li data-rust-commits="701643,701635,701600,701596"&gt;Fixed sandbag upgrade cooldown and health handling: upgrades respect proper cooldown, use server‑side checks, retain existing health fraction, and prevent clipping or level‑mismatch&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Server &amp;amp; God Mode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701650"&gt;Added ServerSetGod command to modify a player&amp;#x27;s god status from the server and updated tutorial logic accordingly&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Economy &amp;amp; Trading&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701586"&gt;Auction mechanic for selling ranch animals added, offering rotating item packages and a cooldown on rejections.&lt;/li&gt;
-&lt;li data-rust-commits="701587"&gt;Several guns added to the sell table for testing, expanding vendor inventory.&lt;/li&gt;
+&lt;li data-rust-commits="701586"&gt;Introduced an auction mechanic for selling ranch animals: players receive three random item offers per animal, can reject up to two times for new offers, and after a third reject the vendor is unavailable for 15 minutes&lt;/li&gt;
+&lt;li data-rust-commits="701587"&gt;Expanded the sell table with several guns for testing, increasing items players can sell&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Explosives &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701735"&gt;C4 client prediction settings improved, fixing rotation blending and making placement more reliable.&lt;/li&gt;
+&lt;li data-rust-commits="701605"&gt;When placing upgrades, the existing structure mesh is hidden and only the placement guide is shown, eliminating visual overlap and making placement clearer.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701650"&gt;Server can now toggle player god mode via ServerSetGod, enabling the tutorial to disable god mode for players and allowing future server‑controlled invulnerability changes.&lt;/li&gt;
+&lt;li data-rust-commits="701712"&gt;Introduces a new monument that can be triggered during the oil rig switch event, adding a fresh location for loot and strategic control.&lt;/li&gt;
+&lt;li data-rust-commits="701694"&gt;Adds extra air drop spawns and new satellite selection events, increasing the frequency of high‑value drops and offering more tactical choices.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-16</guid>
-      <pubDate>Wed, 16 Sep 2026 12:18:07 -0400</pubDate>
+      <pubDate>Wed, 16 Sep 2026 14:18:14 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 15</title>
