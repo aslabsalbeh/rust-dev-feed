@@ -1,47 +1,69 @@
 {
   "2026-09-16": {
-    "commit_count": 19,
-    "relevant_commit_count": 11,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665",
+    "commit_count": 34,
+    "relevant_commit_count": 16,
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building & Defenses",
+        "title": "World Events",
         "items": [
           {
-            "text": "Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.",
+            "text": "New air drops and satellite selection events have been added, affecting loot availability.",
             "commit_ids": [
-              701643
-            ]
-          },
-          {
-            "text": "Upgrading a damaged sandbag no longer fully repairs it; the upgrade keeps the existing health fraction (default enabled).",
-            "commit_ids": [
-              701600
-            ]
-          },
-          {
-            "text": "Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.",
-            "commit_ids": [
-              701635
-            ]
-          },
-          {
-            "text": "Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.",
-            "commit_ids": [
-              701596,
-              701660,
-              701605
+              701694
             ]
           }
         ]
       },
       {
-        "title": "Livestock & Economy",
+        "title": "Building & Deployables",
         "items": [
           {
-            "text": "New animal auction system at the ranch offers rotating item deals when selling livestock, with a vendor cooldown after multiple rejections.",
+            "text": "Only the default sandbag is craftable; all other sandbag variants are now disabled.",
+            "commit_ids": [
+              701693
+            ]
+          },
+          {
+            "text": "Upgrading a damaged sandbag now keeps its current health fraction instead of fully repairing it (default enabled via server config).",
+            "commit_ids": [
+              701600
+            ]
+          },
+          {
+            "text": "Fixed a cooldown bug that prevented sandbags from being upgraded immediately after placement.",
+            "commit_ids": [
+              701643,
+              701635
+            ]
+          },
+          {
+            "text": "Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.",
+            "commit_ids": [
+              701660,
+              701596
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & NPCs",
+        "items": [
+          {
+            "text": "Cows now avoid each other and players collide with cows, reducing clipping and improving movement.",
+            "commit_ids": [
+              701685
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Economy & Trading",
+        "items": [
+          {
+            "text": "Introduced an animal auction system at the ranch: sell animals for random item offers with limited rejections.",
             "commit_ids": [
               701586
             ]
@@ -52,49 +74,59 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability.",
+            "text": "Servers can now toggle player god mode via the new ServerSetGod command, affecting tutorial and admin controls.",
             "commit_ids": [
               701650
             ]
           }
         ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Upgrade placement now hides the existing structure mesh, showing only the placement guide to prevent visual overlap during building.",
+            "commit_ids": [
+              701605
+            ]
+          }
+        ]
       }
     ],
-    "summary": "### Base Building & Defenses\n- Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.\n- Upgrading a damaged sandbag no longer fully repairs it; the upgrade keeps the existing health fraction (default enabled).\n- Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.\n- Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.\n\n### Livestock & Economy\n- New animal auction system at the ranch offers rotating item deals when selling livestock, with a vendor cooldown after multiple rejections.\n\n### Gameplay & Balance\n- Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability.",
+    "summary": "### World Events\n- New air drops and satellite selection events have been added, affecting loot availability.\n\n### Building & Deployables\n- Only the default sandbag is craftable; all other sandbag variants are now disabled.\n- Upgrading a damaged sandbag now keeps its current health fraction instead of fully repairing it (default enabled via server config).\n- Fixed a cooldown bug that prevented sandbags from being upgraded immediately after placement.\n- Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.\n\n### Animals & NPCs\n- Cows now avoid each other and players collide with cows, reducing clipping and improving movement.\n\n### Economy & Trading\n- Introduced an animal auction system at the ranch: sell animals for random item offers with limited rejections.\n\n### Gameplay & Balance\n- Servers can now toggle player god mode via the new ServerSetGod command, affecting tutorial and admin controls.\n\n### Quality of Life\n- Upgrade placement now hides the existing structure mesh, showing only the placement guide to prevent visual overlap during building.",
     "new_items": [
       {
-        "text": "Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.",
+        "text": "New air drops and satellite selection events have been added, affecting loot availability.",
         "commit_ids": [
-          701643
+          701694
         ],
-        "section": "Base Building & Defenses"
+        "section": "World Events"
       },
       {
-        "text": "Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.",
+        "text": "Only the default sandbag is craftable; all other sandbag variants are now disabled.",
         "commit_ids": [
-          701635
+          701693
         ],
-        "section": "Base Building & Defenses"
+        "section": "Building & Deployables"
       },
       {
-        "text": "Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.",
+        "text": "Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.",
         "commit_ids": [
-          701596,
           701660,
-          701605
+          701596
         ],
-        "section": "Base Building & Defenses"
+        "section": "Building & Deployables"
       },
       {
-        "text": "Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability.",
+        "text": "Cows now avoid each other and players collide with cows, reducing clipping and improving movement.",
         "commit_ids": [
-          701650
+          701685
         ],
-        "section": "Gameplay & Balance"
+        "section": "Animals & NPCs"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.\n- Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.\n- Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.\n- Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability."
+    "new_relevant_count": 5,
+    "new_summary": "- New air drops and satellite selection events have been added, affecting loot availability.\n- Only the default sandbag is craftable; all other sandbag variants are now disabled.\n- Improved sandbag placement checks to stop clipping and ensure upgrades respect all placement rules.\n- Cows now avoid each other and players collide with cows, reducing clipping and improving movement."
   },
   "2026-09-15": {
     "commit_count": 96,
