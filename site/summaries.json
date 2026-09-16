@@ -1,8 +1,8 @@
 {
   "2026-09-16": {
-    "commit_count": 9,
-    "relevant_commit_count": 6,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605",
+    "commit_count": 19,
+    "relevant_commit_count": 11,
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
@@ -10,24 +10,38 @@
         "title": "Base Building & Defenses",
         "items": [
           {
-            "text": "Upgrading a damaged sandbag now retains its current health instead of fully repairing on upgrade.",
+            "text": "Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.",
+            "commit_ids": [
+              701643
+            ]
+          },
+          {
+            "text": "Upgrading a damaged sandbag no longer fully repairs it; the upgrade keeps the existing health fraction (default enabled).",
             "commit_ids": [
               701600
             ]
           },
           {
-            "text": "Sandbag upgrades now enforce proper level progression, run full placement checks, and prevent clipping or illegal upgrades.",
+            "text": "Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.",
             "commit_ids": [
-              701596
+              701635
+            ]
+          },
+          {
+            "text": "Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.",
+            "commit_ids": [
+              701596,
+              701660,
+              701605
             ]
           }
         ]
       },
       {
-        "title": "Ranch & Animal Trading",
+        "title": "Livestock & Economy",
         "items": [
           {
-            "text": "Added an animal auction mechanic: selling an animal gives three item offers; you can reject twice, after a third reject the vendor is unavailable for 15 minutes.",
+            "text": "New animal auction system at the ranch offers rotating item deals when selling livestock, with a vendor cooldown after multiple rejections.",
             "commit_ids": [
               701586
             ]
@@ -38,40 +52,49 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "When placing upgrades, the existing structure mesh is hidden and only the placement guide is shown, eliminating visual overlap and making placement clearer.",
+            "text": "Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability.",
             "commit_ids": [
-              701605
+              701650
             ]
           }
         ]
       }
     ],
-    "summary": "### Base Building & Defenses\n- Upgrading a damaged sandbag now retains its current health instead of fully repairing on upgrade.\n- Sandbag upgrades now enforce proper level progression, run full placement checks, and prevent clipping or illegal upgrades.\n\n### Ranch & Animal Trading\n- Added an animal auction mechanic: selling an animal gives three item offers; you can reject twice, after a third reject the vendor is unavailable for 15 minutes.\n\n### Gameplay & Balance\n- When placing upgrades, the existing structure mesh is hidden and only the placement guide is shown, eliminating visual overlap and making placement clearer.",
+    "summary": "### Base Building & Defenses\n- Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.\n- Upgrading a damaged sandbag no longer fully repairs it; the upgrade keeps the existing health fraction (default enabled).\n- Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.\n- Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.\n\n### Livestock & Economy\n- New animal auction system at the ranch offers rotating item deals when selling livestock, with a vendor cooldown after multiple rejections.\n\n### Gameplay & Balance\n- Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability.",
     "new_items": [
       {
-        "text": "Upgrading a damaged sandbag now retains its current health instead of fully repairing on upgrade.",
+        "text": "Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.",
         "commit_ids": [
-          701600
+          701643
         ],
         "section": "Base Building & Defenses"
       },
       {
-        "text": "Sandbag upgrades now enforce proper level progression, run full placement checks, and prevent clipping or illegal upgrades.",
+        "text": "Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.",
         "commit_ids": [
-          701596
+          701635
         ],
         "section": "Base Building & Defenses"
       },
       {
-        "text": "When placing upgrades, the existing structure mesh is hidden and only the placement guide is shown, eliminating visual overlap and making placement clearer.",
+        "text": "Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.",
         "commit_ids": [
+          701596,
+          701660,
           701605
+        ],
+        "section": "Base Building & Defenses"
+      },
+      {
+        "text": "Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability.",
+        "commit_ids": [
+          701650
         ],
         "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Upgrading a damaged sandbag now retains its current health instead of fully repairing on upgrade.\n- Sandbag upgrades now enforce proper level progression, run full placement checks, and prevent clipping or illegal upgrades.\n- When placing upgrades, the existing structure mesh is hidden and only the placement guide is shown, eliminating visual overlap and making placement clearer."
+    "new_relevant_count": 6,
+    "new_summary": "- Sandbag upgrades can now be applied immediately after placement, fixing a cooldown bug.\n- Upgrade cooldowns now use the same damaged‑cooldown logic as repairs.\n- Sandbag upgrade placement checks were overhauled: server‑side validation prevents clipping, uses the sandbag’s own position/rotation, and hides visual overlap during upgrades.\n- Servers can now programmatically enable or disable a player’s god mode, allowing tutorial sequences and admin tools to reliably toggle invulnerability."
   },
   "2026-09-15": {
     "commit_count": 96,
