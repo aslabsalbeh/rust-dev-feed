@@ -6,50 +6,45 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 15 Sep 2026 18:17:31 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 20:17:51 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 15</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;85 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;87 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701537"&gt;Apples now have only a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree, and natural beehives still drop honeycomb and a swarm on full harvest.&lt;/li&gt;
-&lt;li data-rust-commits="701534"&gt;Apartment complexes are marked as safe zones, restoring the hostile‑nearby warning, and the building‑proximity check was fixed, eliminating construction errors near apartments.&lt;/li&gt;
+&lt;li data-rust-commits="701537"&gt;Apples now have a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree; natural beehives still always spawn honeycomb and a swarm when a tree is fully harvested.&lt;/li&gt;
+&lt;li data-rust-commits="701534"&gt;Apartment complexes are now safe zones with hostile warnings restored; construction restrictions near apartments now correctly prevent too-close builds.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Resources &amp;amp; Harvesting&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Resources&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701537"&gt;Apples now have only a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree, and natural beehives still drop honeycomb and a swarm on full harvest.&lt;/li&gt;
-&lt;li data-rust-commits="701387"&gt;Beef spoilage now correctly assigns the spoil item, preventing loss of food value.&lt;/li&gt;
+&lt;li data-rust-commits="701537"&gt;Apples now have a 10% chance to survive if the tree is harvested before picking; fruit no longer falls when hitting a tree; natural beehives still always spawn honeycomb and a swarm when a tree is fully harvested.&lt;/li&gt;
+&lt;li data-rust-commits="701514,701480,701446"&gt;New loot rooms added: Junkyard, NMS, Water Treatment Plant, Sewer Branch, and Launch Site fixed.&lt;/li&gt;
+&lt;li data-rust-commits="701315"&gt;Market terminals now show &amp;quot;No Power&amp;quot; when offline but still let players browse shops.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Safe Zones &amp;amp; Hostile Alerts&lt;/h3&gt;
+&lt;h3&gt;Safety &amp;amp; Building&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701534"&gt;Apartment complexes are marked as safe zones, restoring the hostile‑nearby warning, and the building‑proximity check was fixed, eliminating construction errors near apartments.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Base Building &amp;amp; Explosives&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="701448"&gt;Fence placement refined: fences no longer sink into terrain, can be placed on slopes up to 20°, and socket rotation bugs were removed.&lt;/li&gt;
-&lt;li data-rust-commits="701420,701421"&gt;Explosive weapons now include prefab setups and crater definitions that respect 3D shapes and blocking objects, improving blast effects and terrain deformation realism.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Equipment&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="701446,701480,701514"&gt;New high‑tier loot rooms added: Junkyard, NMS launch site, Water Treatment Plant, and Sewer branch, increasing valuable loot spawns.&lt;/li&gt;
-&lt;li data-rust-commits="701311,701402"&gt;Frontier and pilot hazmat suits regained missing BC components, restoring protection after rerigging; hunting trophies now include cow, bull, and sheep variants with reduced prefab size for better performance.&lt;/li&gt;
+&lt;li data-rust-commits="701534"&gt;Apartment complexes are now safe zones with hostile warnings restored; construction restrictions near apartments now correctly prevent too-close builds.&lt;/li&gt;
+&lt;li data-rust-commits="701448"&gt;Fencing placement improved: no sinking, can be placed on slopes up to 20°, rotation fixed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Animals &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701497,701498"&gt;Overall critter population balanced and turtle spawning frequency fixed.&lt;/li&gt;
-&lt;li data-rust-commits="701363,701388"&gt;Sheep become hostile toward attackers after being marked, and their model/AI was corrected so they walk, attack, and die properly.&lt;/li&gt;
+&lt;li data-rust-commits="701507"&gt;Critters stay active through the night, no longer sleeping, reducing idle time.&lt;/li&gt;
+&lt;li data-rust-commits="701505,701498,701497"&gt;Critter AI streamlined: rabbits&amp;#x27; interest disabled, population numbers tweaked, and turtle spawning fixed.&lt;/li&gt;
+&lt;li data-rust-commits="701388,701363"&gt;Sheep behavior restored: correctly mark attackers as hostile and proper walking, attacking, and dying animations.&lt;/li&gt;
+&lt;li data-rust-commits="701311"&gt;Hunting trophies now include cow, bull, and sheep variants for display.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Controls&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701380,701390,701424"&gt;Player bot reporting fixed; server browser filters now work as expected; player count display remains stable when switching game mode tabs.&lt;/li&gt;
-&lt;li data-rust-commits="701378"&gt;New bind command added for gamepad defaults, fixing reset issues when no mouse/keyboard is bound.&lt;/li&gt;
+&lt;li data-rust-commits="701390,701380"&gt;Server browser filter now works correctly and player count display updates properly when switching gamemodes.&lt;/li&gt;
+&lt;li data-rust-commits="701378"&gt;Gamepad bind command added and bind reset fixed for controller-only setups.&lt;/li&gt;
+&lt;li data-rust-commits="701424"&gt;Player bots reporting bug fixed.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-15</guid>
-      <pubDate>Tue, 15 Sep 2026 18:17:31 -0400</pubDate>
+      <pubDate>Tue, 15 Sep 2026 20:17:51 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 14</title>
