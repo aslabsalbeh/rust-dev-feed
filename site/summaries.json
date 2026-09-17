@@ -1,57 +1,81 @@
 {
   "2026-09-17": {
-    "commit_count": 60,
-    "relevant_commit_count": 33,
-    "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062",
+    "commit_count": 85,
+    "relevant_commit_count": 46,
+    "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Buildings",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Fixed triangle foundations so they no longer merge when only touching at a corner.",
+            "text": "Fixed distance calculations to use true 2‑D magnitude, restoring accurate weapon range checks, detection, and building interactions.",
             "commit_ids": [
-              702062
+              702099,
+              702090
             ]
           },
           {
-            "text": "Reduced sandbag barricade crafting cost: stone 100→50, cloth 10→5, build time 30→10 s.",
+            "text": "Turrets under remote control can now damage reactive targets.",
             "commit_ids": [
-              701949
+              701955
             ]
           },
           {
-            "text": "Corrected sandbag pillbox collider settings for proper physics interactions.",
+            "text": "Machetes and swords now run on a dedicated subsystem and an unused override controller was removed, improving weapon handling stability.",
             "commit_ids": [
-              702051
+              702024
             ]
           }
         ]
       },
       {
-        "title": "Power & Vehicles",
+        "title": "Building, Crafting & Economy",
         "items": [
           {
-            "text": "Biofuel generator now mounts the player while stirring, unmounts on release, and shows a no‑power status when stirred without electricity.",
+            "text": "Triangle foundations no longer merge buildings when only touching at a corner, preventing accidental structure connections.",
             "commit_ids": [
-              702050
+              702062
             ]
           },
           {
-            "text": "Vehicle seat swapping added with a consistent button binding across all vehicles.",
+            "text": "Sandbag pillbox collider import settings restored, re‑enabling proper collision and physics for sandbag structures.",
+            "commit_ids": [
+              702051
+            ]
+          },
+          {
+            "text": "Sandbag barricade variants cost 50 stone and 5 cloth (down from 100/10) and build in 10 seconds (down from 30), speeding up fortifications.",
+            "commit_ids": [
+              701949
+            ]
+          },
+          {
+            "text": "Neon signs now offer a colour wheel and a larger 25 mm size option, expanding signage customization.",
+            "commit_ids": [
+              702035
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Controls",
+        "items": [
+          {
+            "text": "All vehicles now include a universal “Swap Seats” action with a consistent button binding.",
             "commit_ids": [
               702037
             ]
           },
           {
-            "text": "Car reload action added; obsolete menu‑gesture action removed.",
+            "text": "Added a car reload action and removed the old menu‑gesture action, streamlining vehicle interaction.",
             "commit_ids": [
               702030
             ]
           },
           {
-            "text": "Toggle duck option now works correctly on non‑modular cars.",
+            "text": "The duck toggle now works correctly on non‑modular cars.",
             "commit_ids": [
               701885
             ]
@@ -59,18 +83,12 @@
         ]
       },
       {
-        "title": "Weapons & Defenses",
+        "title": "Generators & Power",
         "items": [
           {
-            "text": "New weapon subsystem for machetes and swords improves handling and removes unused controller overrides.",
+            "text": "Biofuel generators now mount the player while stirring, automatically unmount on release, and show a “no electricity” status when stirred without power.",
             "commit_ids": [
-              702024
-            ]
-          },
-          {
-            "text": "Remotely controlled turrets can now damage reactive targets.",
-            "commit_ids": [
-              701955
+              702050
             ]
           }
         ]
@@ -79,125 +97,54 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Livestock now fan out when avoiding the trough, improving avoidance behavior.",
+            "text": "Navmesh generation on fences restored and rustNavmeshVolumes re‑enabled, improving AI and livestock pathing.",
+            "commit_ids": [
+              701960
+            ]
+          },
+          {
+            "text": "Livestock now spread out at troughs instead of forming a line, enhancing avoidance behavior.",
             "commit_ids": [
               701908
             ]
           }
         ]
-      },
-      {
-        "title": "Audio",
-        "items": [
-          {
-            "text": "Low‑health heartbeat sound is louder at first and fades after 3 seconds of low health.",
-            "commit_ids": [
-              701943
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Painting",
-        "items": [
-          {
-            "text": "Neon signs now include a colour wheel for custom hues and a new largest size option (25 mm).",
-            "commit_ids": [
-              702035
-            ]
-          },
-          {
-            "text": "Added a configurable option to invert background colours for a more visible brush outline while painting.",
-            "commit_ids": [
-              702035
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Creatures",
-        "items": [
-          {
-            "text": "Sheep charge attack animation fixed, restoring intended combat behavior.",
-            "commit_ids": [
-              701939
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI Feedback",
-        "items": [
-          {
-            "text": "Patrol boat turrets now display correctly on the death screen.",
-            "commit_ids": [
-              701928
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### Buildings\n- Fixed triangle foundations so they no longer merge when only touching at a corner.\n- Reduced sandbag barricade crafting cost: stone 100→50, cloth 10→5, build time 30→10 s.\n- Corrected sandbag pillbox collider settings for proper physics interactions.\n\n### Power & Vehicles\n- Biofuel generator now mounts the player while stirring, unmounts on release, and shows a no‑power status when stirred without electricity.\n- Vehicle seat swapping added with a consistent button binding across all vehicles.\n- Car reload action added; obsolete menu‑gesture action removed.\n- Toggle duck option now works correctly on non‑modular cars.\n\n### Weapons & Defenses\n- New weapon subsystem for machetes and swords improves handling and removes unused controller overrides.\n- Remotely controlled turrets can now damage reactive targets.\n\n### NPC & AI\n- Livestock now fan out when avoiding the trough, improving avoidance behavior.\n\n### Audio\n- Low‑health heartbeat sound is louder at first and fades after 3 seconds of low health.\n\n### Building & Painting\n- Neon signs now include a colour wheel for custom hues and a new largest size option (25 mm).\n- Added a configurable option to invert background colours for a more visible brush outline while painting.\n\n### Combat & Creatures\n- Sheep charge attack animation fixed, restoring intended combat behavior.\n\n### UI Feedback\n- Patrol boat turrets now display correctly on the death screen.",
+    "summary": "### Combat & Weapons\n- Fixed distance calculations to use true 2‑D magnitude, restoring accurate weapon range checks, detection, and building interactions.\n- Turrets under remote control can now damage reactive targets.\n- Machetes and swords now run on a dedicated subsystem and an unused override controller was removed, improving weapon handling stability.\n\n### Building, Crafting & Economy\n- Triangle foundations no longer merge buildings when only touching at a corner, preventing accidental structure connections.\n- Sandbag pillbox collider import settings restored, re‑enabling proper collision and physics for sandbag structures.\n- Sandbag barricade variants cost 50 stone and 5 cloth (down from 100/10) and build in 10 seconds (down from 30), speeding up fortifications.\n- Neon signs now offer a colour wheel and a larger 25 mm size option, expanding signage customization.\n\n### Vehicles & Controls\n- All vehicles now include a universal “Swap Seats” action with a consistent button binding.\n- Added a car reload action and removed the old menu‑gesture action, streamlining vehicle interaction.\n- The duck toggle now works correctly on non‑modular cars.\n\n### Generators & Power\n- Biofuel generators now mount the player while stirring, automatically unmount on release, and show a “no electricity” status when stirred without power.\n\n### NPC & AI\n- Navmesh generation on fences restored and rustNavmeshVolumes re‑enabled, improving AI and livestock pathing.\n- Livestock now spread out at troughs instead of forming a line, enhancing avoidance behavior.",
     "new_items": [
       {
-        "text": "Fixed triangle foundations so they no longer merge when only touching at a corner.",
+        "text": "Fixed distance calculations to use true 2‑D magnitude, restoring accurate weapon range checks, detection, and building interactions.",
+        "commit_ids": [
+          702099,
+          702090
+        ],
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Triangle foundations no longer merge buildings when only touching at a corner, preventing accidental structure connections.",
         "commit_ids": [
           702062
         ],
-        "section": "Buildings"
+        "section": "Building, Crafting & Economy"
       },
       {
-        "text": "Corrected sandbag pillbox collider settings for proper physics interactions.",
+        "text": "Sandbag pillbox collider import settings restored, re‑enabling proper collision and physics for sandbag structures.",
         "commit_ids": [
           702051
         ],
-        "section": "Buildings"
+        "section": "Building, Crafting & Economy"
       },
       {
-        "text": "Biofuel generator now mounts the player while stirring, unmounts on release, and shows a no‑power status when stirred without electricity.",
+        "text": "Biofuel generators now mount the player while stirring, automatically unmount on release, and show a “no electricity” status when stirred without power.",
         "commit_ids": [
           702050
         ],
-        "section": "Power & Vehicles"
-      },
-      {
-        "text": "Vehicle seat swapping added with a consistent button binding across all vehicles.",
-        "commit_ids": [
-          702037
-        ],
-        "section": "Power & Vehicles"
-      },
-      {
-        "text": "Car reload action added; obsolete menu‑gesture action removed.",
-        "commit_ids": [
-          702030
-        ],
-        "section": "Power & Vehicles"
-      },
-      {
-        "text": "New weapon subsystem for machetes and swords improves handling and removes unused controller overrides.",
-        "commit_ids": [
-          702024
-        ],
-        "section": "Weapons & Defenses"
-      },
-      {
-        "text": "Neon signs now include a colour wheel for custom hues and a new largest size option (25 mm).",
-        "commit_ids": [
-          702035
-        ],
-        "section": "Building & Painting"
-      },
-      {
-        "text": "Added a configurable option to invert background colours for a more visible brush outline while painting.",
-        "commit_ids": [
-          702035
-        ],
-        "section": "Building & Painting"
+        "section": "Generators & Power"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Fixed triangle foundations so they no longer merge when only touching at a corner.\n- Corrected sandbag pillbox collider settings for proper physics interactions.\n- Biofuel generator now mounts the player while stirring, unmounts on release, and shows a no‑power status when stirred without electricity.\n- Vehicle seat swapping added with a consistent button binding across all vehicles.\n- Car reload action added; obsolete menu‑gesture action removed.\n- New weapon subsystem for machetes and swords improves handling and removes unused controller overrides.\n- Neon signs now include a colour wheel for custom hues and a new largest size option (25 mm).\n- Added a configurable option to invert background colours for a more visible brush outline while painting."
+    "new_relevant_count": 5,
+    "new_summary": "- Fixed distance calculations to use true 2‑D magnitude, restoring accurate weapon range checks, detection, and building interactions.\n- Triangle foundations no longer merge buildings when only touching at a corner, preventing accidental structure connections.\n- Sandbag pillbox collider import settings restored, re‑enabling proper collision and physics for sandbag structures.\n- Biofuel generators now mount the player while stirring, automatically unmount on release, and show a “no electricity” status when stirred without power."
   },
   "2026-09-16": {
     "commit_count": 90,
