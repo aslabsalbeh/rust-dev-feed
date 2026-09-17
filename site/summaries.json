@@ -1,22 +1,95 @@
 {
   "2026-09-16": {
-    "commit_count": 81,
-    "relevant_commit_count": 42,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842",
+    "commit_count": 86,
+    "relevant_commit_count": 46,
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Controls & Combat",
+        "title": "Map & UI",
         "items": [
           {
-            "text": "Resolved head and forearm jitter when aiming and ensured remote players rotate fully rather than taking the shortest turn.",
+            "text": "New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.",
+            "commit_ids": [
+              701869,
+              701864,
+              701873
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Player Controls",
+        "items": [
+          {
+            "text": "Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.",
             "commit_ids": [
               701842
             ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Critters",
+        "items": [
+          {
+            "text": "Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.",
+            "commit_ids": [
+              701868
+            ]
           },
           {
-            "text": "Improved C4 behavior with better prediction, fixed rotation blending, and refined hide/show event handling for more reliable detonations.",
+            "text": "Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.",
+            "commit_ids": [
+              701803,
+              701804,
+              701728,
+              701742
+            ]
+          },
+          {
+            "text": "Livestock AI simplified by removing idle sensing states and reducing sight range.",
+            "commit_ids": [
+              701739
+            ]
+          },
+          {
+            "text": "Bears immediately flee without a brief chase, correcting their flee behavior.",
+            "commit_ids": [
+              701695
+            ]
+          },
+          {
+            "text": "Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.",
+            "commit_ids": [
+              701685,
+              701755
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Fortifications & Explosives",
+        "items": [
+          {
+            "text": "Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.",
+            "commit_ids": [
+              701693
+            ]
+          },
+          {
+            "text": "Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.",
+            "commit_ids": [
+              701643,
+              701635,
+              701600,
+              701596,
+              701660
+            ]
+          },
+          {
+            "text": "C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.",
             "commit_ids": [
               701735
             ]
@@ -24,78 +97,28 @@
         ]
       },
       {
-        "title": "World & Loot & Events",
+        "title": "Loot & Economy",
         "items": [
           {
-            "text": "Rebalanced loot tables in Trainyard, water treatment, and sewer branch rooms.",
+            "text": "Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.",
             "commit_ids": [
               701814
             ]
           },
           {
-            "text": "Added a new monument to the oil rig switch event and introduced extra air drops and satellite selection events.",
+            "text": "Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.",
             "commit_ids": [
-              701712,
-              701694
-            ]
-          }
-        ]
-      },
-      {
-        "title": "NPCs & Animals",
-        "items": [
-          {
-            "text": "Fixed cows eating from troughs through other cows and added avoidance behavior to reduce clipping and improve movement in tight spaces.",
-            "commit_ids": [
-              701755,
-              701685
-            ]
-          },
-          {
-            "text": "Simplified older animal AI by removing unreachable states and reducing sight range, making them less likely to detect distant players.",
-            "commit_ids": [
-              701739
-            ]
-          },
-          {
-            "text": "Added critter startle behavior: critters now flee when players get too close.",
-            "commit_ids": [
-              701728
-            ]
-          },
-          {
-            "text": "Implemented an auction system for ranch animal sales, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.",
-            "commit_ids": [
+              701587,
               701586
             ]
           }
         ]
       },
       {
-        "title": "Structures & Sandbags",
+        "title": "Server & Admin",
         "items": [
           {
-            "text": "Made only the default sandbag craftable; other variants are now unavailable.",
-            "commit_ids": [
-              701693
-            ]
-          },
-          {
-            "text": "Overhauled sandbag stacking and upgrade system: unified cooldown logic, fixed upgrade cooldown initialization, retained health fraction on upgrades, removed socket‑based placement, added server‑side checks to prevent clipping, and standardized upgrade level handling.",
-            "commit_ids": [
-              701643,
-              701635,
-              701600,
-              701596
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Server & Administration",
-        "items": [
-          {
-            "text": "Added ServerSetGod command to modify a player's god status from the server and updated tutorial logic accordingly.",
+            "text": "ServerSetGod command allows the server to set and broadcast a player’s god mode status.",
             "commit_ids": [
               701650
             ]
@@ -103,18 +126,27 @@
         ]
       }
     ],
-    "summary": "### Controls & Combat\n- Resolved head and forearm jitter when aiming and ensured remote players rotate fully rather than taking the shortest turn.\n- Improved C4 behavior with better prediction, fixed rotation blending, and refined hide/show event handling for more reliable detonations.\n\n### World & Loot & Events\n- Rebalanced loot tables in Trainyard, water treatment, and sewer branch rooms.\n- Added a new monument to the oil rig switch event and introduced extra air drops and satellite selection events.\n\n### NPCs & Animals\n- Fixed cows eating from troughs through other cows and added avoidance behavior to reduce clipping and improve movement in tight spaces.\n- Simplified older animal AI by removing unreachable states and reducing sight range, making them less likely to detect distant players.\n- Added critter startle behavior: critters now flee when players get too close.\n- Implemented an auction system for ranch animal sales, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.\n\n### Structures & Sandbags\n- Made only the default sandbag craftable; other variants are now unavailable.\n- Overhauled sandbag stacking and upgrade system: unified cooldown logic, fixed upgrade cooldown initialization, retained health fraction on upgrades, removed socket‑based placement, added server‑side checks to prevent clipping, and standardized upgrade level handling.\n\n### Server & Administration\n- Added ServerSetGod command to modify a player's god status from the server and updated tutorial logic accordingly.",
+    "summary": "### Map & UI\n- New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.\n\n### Player Controls\n- Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.\n\n### Livestock & Critters\n- Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.\n- Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.\n- Livestock AI simplified by removing idle sensing states and reducing sight range.\n- Bears immediately flee without a brief chase, correcting their flee behavior.\n- Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.\n\n### Fortifications & Explosives\n- Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.\n- Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.\n- C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.\n\n### Loot & Economy\n- Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.\n- Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.\n\n### Server & Admin\n- ServerSetGod command allows the server to set and broadcast a player’s god mode status.",
     "new_items": [
       {
-        "text": "Resolved head and forearm jitter when aiming and ensured remote players rotate fully rather than taking the shortest turn.",
+        "text": "New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.",
         "commit_ids": [
-          701842
+          701869,
+          701864,
+          701873
         ],
-        "section": "Controls & Combat"
+        "section": "Map & UI"
+      },
+      {
+        "text": "Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.",
+        "commit_ids": [
+          701868
+        ],
+        "section": "Livestock & Critters"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Resolved head and forearm jitter when aiming and ensured remote players rotate fully rather than taking the shortest turn."
+    "new_relevant_count": 4,
+    "new_summary": "- New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.\n- Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders."
   },
   "2026-09-15": {
     "commit_count": 96,

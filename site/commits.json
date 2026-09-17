@@ -1,5 +1,45 @@
 [
   {
+    "id": 701873,
+    "branch": "main/country_selection_refresh",
+    "changeset": "164596",
+    "created": "2026-09-17T01:36:28",
+    "message": "- Fix automatic row not beign the same width as the country rows\r\n- Fix numerous bugs with selecting region then turning on automatic again/removing it etc",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 701869,
+    "branch": "main/country_selection_refresh",
+    "changeset": "164592",
+    "created": "2026-09-17T01:20:23",
+    "message": "- New country selection UI \r\n- Split countries into continents\r\n- Add tab based movement/highlighting",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 701868,
+    "branch": "main/Livestock_animals",
+    "changeset": "164591",
+    "created": "2026-09-17T01:19:37",
+    "message": "Fixed some quirks with multiple players interacting with a vendor and animal\r\nOnly show animals in the list that are following the conversing player\r\nKey annoyance state to the animal - not the player. This prevents multiple players taking turns leading an animal and getting twice the rolls",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 701865,
+    "branch": "main/Livestock_animals",
+    "changeset": "164588",
+    "created": "2026-09-17T00:39:33",
+    "message": "Manually copy over the milk world model assets from the /Milk branch (it was intermingled with a bunch of code changes that we don't want for perf reasons)\r\nSet up world model for milk",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 701864,
+    "branch": "main/country_selection_refresh",
+    "changeset": "164587",
+    "created": "2026-09-17T00:34:35",
+    "message": "- Fix auto detect not working properly sometimes\r\n- Replace selected country with auto detected if they mis-match and you have auto mode on\r\n- Add a few missing country centres",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 701842,
     "branch": "main/PlayerTurning_Animations",
     "changeset": "164571",
@@ -2093,46 +2133,6 @@
     "changeset": "164110",
     "created": "2026-09-14T02:58:58",
     "message": "Fixed lod groups on calf corpses",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 685522,
-    "branch": "main/Livestock_animals",
-    "changeset": "164109",
-    "created": "2026-09-14T01:56:27",
-    "message": "Added a test to catch any skeleton assets with null bones, all pass",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 684744,
-    "branch": "main/Livestock_animals",
-    "changeset": "164108",
-    "created": "2026-09-14T01:29:15",
-    "message": "Removed the null bones from the cow skeleton asset\r\nGame manifest will no longer error out if a null bone is in the list, just prints a warning",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 684302,
-    "branch": "main/vm_hand_spawn",
-    "changeset": "164106",
-    "created": "2026-09-14T01:13:20",
-    "message": "Fixed mini crossbow nre",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 684030,
-    "branch": "main/vm_hand_spawn",
-    "changeset": "164104",
-    "created": "2026-09-14T01:03:45",
-    "message": "Fixed name parsing to account for v_portableboombox._anims",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 683886,
-    "branch": "main/vm_hand_spawn",
-    "changeset": "164103",
-    "created": "2026-09-14T00:58:46",
-    "message": "Don't try and load hand mesh inspector if model has no animations enabled\r\nSuppress error message when rebind doesn't work",
     "user": "Jarryd Campi"
   }
 ]

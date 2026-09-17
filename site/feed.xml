@@ -6,46 +6,52 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 16 Sep 2026 20:18:22 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 22:17:33 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;81 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;86 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701842"&gt;Resolved head and forearm jitter when aiming and ensured remote players rotate fully rather than taking the shortest turn.&lt;/li&gt;
+&lt;li data-rust-commits="701869,701864,701873"&gt;New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.&lt;/li&gt;
+&lt;li data-rust-commits="701868"&gt;Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Controls &amp;amp; Combat&lt;/h3&gt;
+&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701842"&gt;Resolved head and forearm jitter when aiming and ensured remote players rotate fully rather than taking the shortest turn.&lt;/li&gt;
-&lt;li data-rust-commits="701735"&gt;Improved C4 behavior with better prediction, fixed rotation blending, and refined hide/show event handling for more reliable detonations.&lt;/li&gt;
+&lt;li data-rust-commits="701869,701864,701873"&gt;New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Loot &amp;amp; Events&lt;/h3&gt;
+&lt;h3&gt;Player Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701814"&gt;Rebalanced loot tables in Trainyard, water treatment, and sewer branch rooms.&lt;/li&gt;
-&lt;li data-rust-commits="701712,701694"&gt;Added a new monument to the oil rig switch event and introduced extra air drops and satellite selection events.&lt;/li&gt;
+&lt;li data-rust-commits="701842"&gt;Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPCs &amp;amp; Animals&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Critters&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701755,701685"&gt;Fixed cows eating from troughs through other cows and added avoidance behavior to reduce clipping and improve movement in tight spaces.&lt;/li&gt;
-&lt;li data-rust-commits="701739"&gt;Simplified older animal AI by removing unreachable states and reducing sight range, making them less likely to detect distant players.&lt;/li&gt;
-&lt;li data-rust-commits="701728"&gt;Added critter startle behavior: critters now flee when players get too close.&lt;/li&gt;
-&lt;li data-rust-commits="701586"&gt;Implemented an auction system for ranch animal sales, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.&lt;/li&gt;
+&lt;li data-rust-commits="701868"&gt;Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.&lt;/li&gt;
+&lt;li data-rust-commits="701803,701804,701728,701742"&gt;Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.&lt;/li&gt;
+&lt;li data-rust-commits="701739"&gt;Livestock AI simplified by removing idle sensing states and reducing sight range.&lt;/li&gt;
+&lt;li data-rust-commits="701695"&gt;Bears immediately flee without a brief chase, correcting their flee behavior.&lt;/li&gt;
+&lt;li data-rust-commits="701685,701755"&gt;Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Structures &amp;amp; Sandbags&lt;/h3&gt;
+&lt;h3&gt;Fortifications &amp;amp; Explosives&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701693"&gt;Made only the default sandbag craftable; other variants are now unavailable.&lt;/li&gt;
-&lt;li data-rust-commits="701643,701635,701600,701596"&gt;Overhauled sandbag stacking and upgrade system: unified cooldown logic, fixed upgrade cooldown initialization, retained health fraction on upgrades, removed socket‑based placement, added server‑side checks to prevent clipping, and standardized upgrade level handling.&lt;/li&gt;
+&lt;li data-rust-commits="701693"&gt;Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.&lt;/li&gt;
+&lt;li data-rust-commits="701643,701635,701600,701596,701660"&gt;Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.&lt;/li&gt;
+&lt;li data-rust-commits="701735"&gt;C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Server &amp;amp; Administration&lt;/h3&gt;
+&lt;h3&gt;Loot &amp;amp; Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701650"&gt;Added ServerSetGod command to modify a player&amp;#x27;s god status from the server and updated tutorial logic accordingly.&lt;/li&gt;
+&lt;li data-rust-commits="701814"&gt;Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.&lt;/li&gt;
+&lt;li data-rust-commits="701587,701586"&gt;Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Server &amp;amp; Admin&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701650"&gt;ServerSetGod command allows the server to set and broadcast a player’s god mode status.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-16</guid>
-      <pubDate>Wed, 16 Sep 2026 20:18:22 -0400</pubDate>
+      <pubDate>Wed, 16 Sep 2026 22:17:33 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 15</title>
