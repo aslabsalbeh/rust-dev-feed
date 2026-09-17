@@ -6,51 +6,52 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 17 Sep 2026 14:17:28 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 16:17:43 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;85 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;91 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702099,702090"&gt;Fixed distance calculations to use true 2‑D magnitude, restoring accurate weapon range checks, detection, and building interactions.&lt;/li&gt;
-&lt;li data-rust-commits="702062"&gt;Triangle foundations no longer merge buildings when only touching at a corner, preventing accidental structure connections.&lt;/li&gt;
-&lt;li data-rust-commits="702051"&gt;Sandbag pillbox collider import settings restored, re‑enabling proper collision and physics for sandbag structures.&lt;/li&gt;
-&lt;li data-rust-commits="702050"&gt;Biofuel generators now mount the player while stirring, automatically unmount on release, and show a “no electricity” status when stirred without power.&lt;/li&gt;
+&lt;li data-rust-commits="702138,701955"&gt;Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.&lt;/li&gt;
+&lt;li data-rust-commits="702136"&gt;New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Targeting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702099,702090"&gt;Fixed distance calculations to use true 2‑D magnitude, restoring accurate weapon range checks, detection, and building interactions.&lt;/li&gt;
-&lt;li data-rust-commits="701955"&gt;Turrets under remote control can now damage reactive targets.&lt;/li&gt;
-&lt;li data-rust-commits="702024"&gt;Machetes and swords now run on a dedicated subsystem and an unused override controller was removed, improving weapon handling stability.&lt;/li&gt;
+&lt;li data-rust-commits="702138,701955"&gt;Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.&lt;/li&gt;
+&lt;li data-rust-commits="702099,702090"&gt;Distance calculations now correctly use true 2D distance, fixing range checks across the game.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Building, Crafting &amp;amp; Economy&lt;/h3&gt;
+&lt;h3&gt;Building &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702062"&gt;Triangle foundations no longer merge buildings when only touching at a corner, preventing accidental structure connections.&lt;/li&gt;
-&lt;li data-rust-commits="702051"&gt;Sandbag pillbox collider import settings restored, re‑enabling proper collision and physics for sandbag structures.&lt;/li&gt;
-&lt;li data-rust-commits="701949"&gt;Sandbag barricade variants cost 50 stone and 5 cloth (down from 100/10) and build in 10 seconds (down from 30), speeding up fortifications.&lt;/li&gt;
-&lt;li data-rust-commits="702035"&gt;Neon signs now offer a colour wheel and a larger 25 mm size option, expanding signage customization.&lt;/li&gt;
+&lt;li data-rust-commits="702062"&gt;Triangle foundations no longer merge when only touching at a corner, preventing accidental base merging.&lt;/li&gt;
+&lt;li data-rust-commits="701949"&gt;Sandbag crafting costs halved and build time reduced to 10 s, speeding fortifications.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Controls&lt;/h3&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702037"&gt;All vehicles now include a universal “Swap Seats” action with a consistent button binding.&lt;/li&gt;
-&lt;li data-rust-commits="702030"&gt;Added a car reload action and removed the old menu‑gesture action, streamlining vehicle interaction.&lt;/li&gt;
-&lt;li data-rust-commits="701885"&gt;The duck toggle now works correctly on non‑modular cars.&lt;/li&gt;
+&lt;li data-rust-commits="702037"&gt;Added a universal “Swap Seats” action to all vehicle controls.&lt;/li&gt;
+&lt;li data-rust-commits="702030"&gt;Introduced a car reload action and removed the menu‑gesture action for cleaner vehicle interaction.&lt;/li&gt;
+&lt;li data-rust-commits="701885"&gt;Toggle‑duck (crouch) now works correctly on non‑modular car vehicles.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Generators &amp;amp; Power&lt;/h3&gt;
+&lt;h3&gt;AI &amp;amp; NPC&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702050"&gt;Biofuel generators now mount the player while stirring, automatically unmount on release, and show a “no electricity” status when stirred without power.&lt;/li&gt;
+&lt;li data-rust-commits="701908"&gt;Livestock now spread out at troughs instead of forming a line, improving feeding behavior.&lt;/li&gt;
+&lt;li data-rust-commits="701960"&gt;AI navigation now respects fences, preventing paths that clip through structures.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Achievements &amp;amp; Customization&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701960"&gt;Navmesh generation on fences restored and rustNavmeshVolumes re‑enabled, improving AI and livestock pathing.&lt;/li&gt;
-&lt;li data-rust-commits="701908"&gt;Livestock now spread out at troughs instead of forming a line, enhancing avoidance behavior.&lt;/li&gt;
+&lt;li data-rust-commits="702136"&gt;New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.&lt;/li&gt;
+&lt;li data-rust-commits="702035,702083"&gt;Painting UI expanded with neutral lighting, a colour wheel for neon signs, larger sign size up to 25 mm, and optional brush outline toggle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Generators &amp;amp; Weapons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="702050"&gt;Biofuel generator stirring now mounts the player in place, unmounts on release, and shows a “no electricity” status when stirred without power.&lt;/li&gt;
+&lt;li data-rust-commits="702024"&gt;Machete and sword now use a dedicated subsystem, improving melee handling.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-17</guid>
-      <pubDate>Thu, 17 Sep 2026 14:17:28 -0400</pubDate>
+      <pubDate>Thu, 17 Sep 2026 16:17:43 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 16</title>
