@@ -1,26 +1,37 @@
 {
   "2026-09-17": {
-    "commit_count": 91,
-    "relevant_commit_count": 49,
-    "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138",
+    "commit_count": 96,
+    "relevant_commit_count": 53,
+    "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Targeting",
+        "title": "Multiplayer & UI",
         "items": [
           {
-            "text": "Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.",
+            "text": "Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.",
+            "commit_ids": [
+              702155,
+              702146
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Remote‑controlled turrets can now damage reactive targets, including when using bows.",
             "commit_ids": [
               702138,
               701955
             ]
           },
           {
-            "text": "Distance calculations now correctly use true 2D distance, fixing range checks across the game.",
+            "text": "Added machete and sword systems, removing unused HoldType override.",
             "commit_ids": [
-              702099,
-              702090
+              702024
             ]
           }
         ]
@@ -29,13 +40,25 @@
         "title": "Building & Crafting",
         "items": [
           {
-            "text": "Triangle foundations no longer merge when only touching at a corner, preventing accidental base merging.",
+            "text": "Fixed triangle foundations that incorrectly connected buildings when only touching at a corner.",
             "commit_ids": [
               702062
             ]
           },
           {
-            "text": "Sandbag crafting costs halved and build time reduced to 10 s, speeding fortifications.",
+            "text": "Adjusted sandbag pillbox collider import settings for proper physics interactions.",
+            "commit_ids": [
+              702051
+            ]
+          },
+          {
+            "text": "Neon signs now feature a colour wheel and a larger 25 mm size option; brush outline visibility can be toggled via a new console variable.",
+            "commit_ids": [
+              702035
+            ]
+          },
+          {
+            "text": "Sandbag barricade variants now cost half the stone and cloth and craft 20 seconds faster.",
             "commit_ids": [
               701949
             ]
@@ -43,101 +66,91 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Vehicles & Generators",
         "items": [
           {
-            "text": "Added a universal “Swap Seats” action to all vehicle controls.",
+            "text": "Added a consistent “Swap Seats” button binding to all vehicle action sets.",
             "commit_ids": [
               702037
             ]
           },
           {
-            "text": "Introduced a car reload action and removed the menu‑gesture action for cleaner vehicle interaction.",
+            "text": "Introduced a car reload action and removed the menu gesture action.",
             "commit_ids": [
               702030
             ]
           },
           {
-            "text": "Toggle‑duck (crouch) now works correctly on non‑modular car vehicles.",
+            "text": "Stirring the biofuel generator now mounts the player at their current position, unmounts on release, and shows a “no electricity” status when stirred without power.",
             "commit_ids": [
-              701885
+              702050
             ]
           }
         ]
       },
       {
-        "title": "AI & NPC",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Livestock now spread out at troughs instead of forming a line, improving feeding behavior.",
-            "commit_ids": [
-              701908
-            ]
-          },
-          {
-            "text": "AI navigation now respects fences, preventing paths that clip through structures.",
+            "text": "Navmesh generation no longer builds on top of fences and NavmeshVolumes work with the new navmesh, improving AI navigation.",
             "commit_ids": [
               701960
             ]
+          },
+          {
+            "text": "Livestock now spread out when avoiding obstacles instead of queuing, resulting in more natural movement.",
+            "commit_ids": [
+              701908
+            ]
           }
         ]
       },
       {
-        "title": "Achievements & Customization",
+        "title": "Achievements & Audio",
         "items": [
           {
-            "text": "New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.",
+            "text": "Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.",
             "commit_ids": [
               702136
             ]
           },
           {
-            "text": "Painting UI expanded with neutral lighting, a colour wheel for neon signs, larger sign size up to 25 mm, and optional brush outline toggle.",
+            "text": "Low‑health heartbeat sound is stronger and fades after three seconds of continued low health.",
             "commit_ids": [
-              702035,
-              702083
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Generators & Weapons",
-        "items": [
-          {
-            "text": "Biofuel generator stirring now mounts the player in place, unmounts on release, and shows a “no electricity” status when stirred without power.",
-            "commit_ids": [
-              702050
-            ]
-          },
-          {
-            "text": "Machete and sword now use a dedicated subsystem, improving melee handling.",
-            "commit_ids": [
-              702024
+              701943
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Targeting\n- Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.\n- Distance calculations now correctly use true 2D distance, fixing range checks across the game.\n\n### Building & Crafting\n- Triangle foundations no longer merge when only touching at a corner, preventing accidental base merging.\n- Sandbag crafting costs halved and build time reduced to 10 s, speeding fortifications.\n\n### Vehicles\n- Added a universal “Swap Seats” action to all vehicle controls.\n- Introduced a car reload action and removed the menu‑gesture action for cleaner vehicle interaction.\n- Toggle‑duck (crouch) now works correctly on non‑modular car vehicles.\n\n### AI & NPC\n- Livestock now spread out at troughs instead of forming a line, improving feeding behavior.\n- AI navigation now respects fences, preventing paths that clip through structures.\n\n### Achievements & Customization\n- New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.\n- Painting UI expanded with neutral lighting, a colour wheel for neon signs, larger sign size up to 25 mm, and optional brush outline toggle.\n\n### Generators & Weapons\n- Biofuel generator stirring now mounts the player in place, unmounts on release, and shows a “no electricity” status when stirred without power.\n- Machete and sword now use a dedicated subsystem, improving melee handling.",
+    "summary": "### Multiplayer & UI\n- Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.\n\n### Combat & Weapons\n- Remote‑controlled turrets can now damage reactive targets, including when using bows.\n- Added machete and sword systems, removing unused HoldType override.\n\n### Building & Crafting\n- Fixed triangle foundations that incorrectly connected buildings when only touching at a corner.\n- Adjusted sandbag pillbox collider import settings for proper physics interactions.\n- Neon signs now feature a colour wheel and a larger 25 mm size option; brush outline visibility can be toggled via a new console variable.\n- Sandbag barricade variants now cost half the stone and cloth and craft 20 seconds faster.\n\n### Vehicles & Generators\n- Added a consistent “Swap Seats” button binding to all vehicle action sets.\n- Introduced a car reload action and removed the menu gesture action.\n- Stirring the biofuel generator now mounts the player at their current position, unmounts on release, and shows a “no electricity” status when stirred without power.\n\n### NPC & AI\n- Navmesh generation no longer builds on top of fences and NavmeshVolumes work with the new navmesh, improving AI navigation.\n- Livestock now spread out when avoiding obstacles instead of queuing, resulting in more natural movement.\n\n### Achievements & Audio\n- Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.\n- Low‑health heartbeat sound is stronger and fades after three seconds of continued low health.",
     "new_items": [
       {
-        "text": "Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.",
+        "text": "Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.",
+        "commit_ids": [
+          702155,
+          702146
+        ],
+        "section": "Multiplayer & UI"
+      },
+      {
+        "text": "Remote‑controlled turrets can now damage reactive targets, including when using bows.",
         "commit_ids": [
           702138,
           701955
         ],
-        "section": "Combat & Targeting"
+        "section": "Combat & Weapons"
       },
       {
-        "text": "New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.",
+        "text": "Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.",
         "commit_ids": [
           702136
         ],
-        "section": "Achievements & Customization"
+        "section": "Achievements & Audio"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.\n- New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event."
+    "new_relevant_count": 5,
+    "new_summary": "- Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.\n- Remote‑controlled turrets can now damage reactive targets, including when using bows.\n- Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event."
   },
   "2026-09-16": {
     "commit_count": 90,

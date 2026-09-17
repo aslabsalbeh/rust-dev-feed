@@ -6,52 +6,54 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 17 Sep 2026 16:17:43 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 18:17:30 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;91 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;96 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702138,701955"&gt;Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.&lt;/li&gt;
-&lt;li data-rust-commits="702136"&gt;New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.&lt;/li&gt;
+&lt;li data-rust-commits="702155,702146"&gt;Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.&lt;/li&gt;
+&lt;li data-rust-commits="702138,701955"&gt;Remote‑controlled turrets can now damage reactive targets, including when using bows.&lt;/li&gt;
+&lt;li data-rust-commits="702136"&gt;Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Combat &amp;amp; Targeting&lt;/h3&gt;
+&lt;h3&gt;Multiplayer &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702138,701955"&gt;Turrets now damage reactive targets (bows), fixing a server‑side interaction issue.&lt;/li&gt;
-&lt;li data-rust-commits="702099,702090"&gt;Distance calculations now correctly use true 2D distance, fixing range checks across the game.&lt;/li&gt;
+&lt;li data-rust-commits="702155,702146"&gt;Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="702138,701955"&gt;Remote‑controlled turrets can now damage reactive targets, including when using bows.&lt;/li&gt;
+&lt;li data-rust-commits="702024"&gt;Added machete and sword systems, removing unused HoldType override.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Building &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702062"&gt;Triangle foundations no longer merge when only touching at a corner, preventing accidental base merging.&lt;/li&gt;
-&lt;li data-rust-commits="701949"&gt;Sandbag crafting costs halved and build time reduced to 10 s, speeding fortifications.&lt;/li&gt;
+&lt;li data-rust-commits="702062"&gt;Fixed triangle foundations that incorrectly connected buildings when only touching at a corner.&lt;/li&gt;
+&lt;li data-rust-commits="702051"&gt;Adjusted sandbag pillbox collider import settings for proper physics interactions.&lt;/li&gt;
+&lt;li data-rust-commits="702035"&gt;Neon signs now feature a colour wheel and a larger 25 mm size option; brush outline visibility can be toggled via a new console variable.&lt;/li&gt;
+&lt;li data-rust-commits="701949"&gt;Sandbag barricade variants now cost half the stone and cloth and craft 20 seconds faster.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Generators&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702037"&gt;Added a universal “Swap Seats” action to all vehicle controls.&lt;/li&gt;
-&lt;li data-rust-commits="702030"&gt;Introduced a car reload action and removed the menu‑gesture action for cleaner vehicle interaction.&lt;/li&gt;
-&lt;li data-rust-commits="701885"&gt;Toggle‑duck (crouch) now works correctly on non‑modular car vehicles.&lt;/li&gt;
+&lt;li data-rust-commits="702037"&gt;Added a consistent “Swap Seats” button binding to all vehicle action sets.&lt;/li&gt;
+&lt;li data-rust-commits="702030"&gt;Introduced a car reload action and removed the menu gesture action.&lt;/li&gt;
+&lt;li data-rust-commits="702050"&gt;Stirring the biofuel generator now mounts the player at their current position, unmounts on release, and shows a “no electricity” status when stirred without power.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; NPC&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701908"&gt;Livestock now spread out at troughs instead of forming a line, improving feeding behavior.&lt;/li&gt;
-&lt;li data-rust-commits="701960"&gt;AI navigation now respects fences, preventing paths that clip through structures.&lt;/li&gt;
+&lt;li data-rust-commits="701960"&gt;Navmesh generation no longer builds on top of fences and NavmeshVolumes work with the new navmesh, improving AI navigation.&lt;/li&gt;
+&lt;li data-rust-commits="701908"&gt;Livestock now spread out when avoiding obstacles instead of queuing, resulting in more natural movement.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Achievements &amp;amp; Customization&lt;/h3&gt;
+&lt;h3&gt;Achievements &amp;amp; Audio&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702136"&gt;New achievements added: placing a note in another player’s mailbox, purchasing from the travelling vendor, and starting a satellite crash event.&lt;/li&gt;
-&lt;li data-rust-commits="702035,702083"&gt;Painting UI expanded with neutral lighting, a colour wheel for neon signs, larger sign size up to 25 mm, and optional brush outline toggle.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Generators &amp;amp; Weapons&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="702050"&gt;Biofuel generator stirring now mounts the player in place, unmounts on release, and shows a “no electricity” status when stirred without power.&lt;/li&gt;
-&lt;li data-rust-commits="702024"&gt;Machete and sword now use a dedicated subsystem, improving melee handling.&lt;/li&gt;
+&lt;li data-rust-commits="702136"&gt;Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.&lt;/li&gt;
+&lt;li data-rust-commits="701943"&gt;Low‑health heartbeat sound is stronger and fades after three seconds of continued low health.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-17</guid>
-      <pubDate>Thu, 17 Sep 2026 16:17:43 -0400</pubDate>
+      <pubDate>Thu, 17 Sep 2026 18:17:30 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 16</title>

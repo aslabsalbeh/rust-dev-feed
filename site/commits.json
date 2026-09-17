@@ -1,5 +1,45 @@
 [
   {
+    "id": 702159,
+    "branch": "main/3p_melee_animsystem_updates",
+    "changeset": "164769",
+    "created": "2026-09-17T21:18:05",
+    "message": "Added subsystems to knives and one handed melee weapons",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 702155,
+    "branch": "main/quick_join_fix",
+    "changeset": "164766",
+    "created": "2026-09-17T20:55:59",
+    "message": "Prevented throttled qsteam lookups from dumping alll the previous quick join results when they return. This was causing quick join to populate then empty out at random times",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 702154,
+    "branch": "main/base_occlusion",
+    "changeset": "164765",
+    "created": "2026-09-17T20:44:33",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 702153,
+    "branch": "main/base_occlusion",
+    "changeset": "164764",
+    "created": "2026-09-17T20:44:07",
+    "message": "Make sure that disabling room occlusion after enabling it cleans everything up\r\n- we want all face definitions to be destroyed after disabling so we can re-initalize everything properly\r\n- if initialization fails, only try once instead of getting stuck trying every frame",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 702146,
+    "branch": "main/quick_join_fix",
+    "changeset": "164757",
+    "created": "2026-09-17T20:25:29",
+    "message": "Fix the quick join menu not showing any entries",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 702142,
     "branch": "main/skinnable_ladder_hatch",
     "changeset": "164754",
@@ -2318,37 +2358,5 @@
     "created": "2026-09-14T22:43:57",
     "message": "~Fixed failing SpawnEntity_EntitySpawned tests leaking spawned entities and failing unrelated tests",
     "user": "Flavien"
-  },
-  {
-    "id": 701279,
-    "branch": "▋█▇▍▉▆▍▍▋▄▍▋▆",
-    "changeset": "▄▉█▉██",
-    "created": "2026-09-14T21:46:39",
-    "message": "▊ ▅▇▊▊▋ ▊▅▍▊▍▅▊▉▉█ ▌▉▉▍▅▇▊▍ ▄ ▆▄▋▍▌▋▅▇█▆ ▌▄▅▋▇ ▉▋▉▌ █▄█▊▊▌▉ ██▌▄ ▇██▉█▊▍ ▆▄▌▌ ▋▅▆▋█▊▋▆█▇ ▋▌▉▍▌█▄ ▄▆ ▇▋██ ▍ ▇▉▊▇ ▊▊█▉▍▊▇ ▆▇▍█▌▊▅█▊▉▊▌▉▉▆ ▌▅▋▉▅▆ ▊▇ █▌▄█▉ ▋▍▆ ▍▍▉▉▄▄▊▇▊▉▄▋ █▊▋ ▄▋▇▋ ▇▋▇▉▅ ▉▄▉▉▌▅ ▉▊▋▇▋ ▍▄▍▅",
-    "user": "matt.i"
-  },
-  {
-    "id": 701270,
-    "branch": "main/fix_editor_logthread_nre",
-    "changeset": "164225",
-    "created": "2026-09-14T20:53:57",
-    "message": "Add try catch to the OutputHandler so if an exception SOMEHOW happens it can't kill the process (since it runs in the finalizer thread)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 701268,
-    "branch": "main/fix_editor_logthread_nre",
-    "changeset": "164224",
-    "created": "2026-09-14T20:42:06",
-    "message": "Fix log thread throwing ObjectDisposedException in editor\r\n- also fix the Task exceptions not being flattened fully",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 701267,
-    "branch": "▋▉▄▄▊▆█▄▌▋▊▇█▆▄▊▄█▋▍▉▌",
-    "changeset": "▌▋▄▊█▅",
-    "created": "2026-09-14T20:39:58",
-    "message": "▇ ▊▍▄▆▆ ▆▅ █▆▄▋▇ ▇▅▍▌▄ ▆▇▉▇▊▋▌▉ ▋▇▊▅▇ ▍▉▅▄ ▆▄▄▊▉▇ █▋█▄▉▇█ ▉▆▅▄▊█ ▊▍▍▆▅▋▉▍▉ ▆▌ ▅▅▅▆ ▌▌▋█▋▍ ▅▊▅ ▊▇▆▆▋▇ ▄▆▆▅▉▅ ▇▌▌▍▍ ▇▌█▉▍ ▇▅ ▅▊▇ ▇▊▍█▉▇▌ ▉▌ █ ▆▅▅▆ ▊▌▄▊▅▉▄ ▍█▋▊▆ ▅▊ ▋▄▄ ▄▅▍▊▊▇▊▄▋█ ▇▄█▋▅▊▆▍▅▆▉▄▄▇█ ▆▆ ▌▆▅ ▅▌▌█▅▄▅ ▉▄ ▉ █▊▇▄ ▊▍▄ ▍█▊▍▊▉",
-    "user": "max.p"
   }
 ]
