@@ -1,10 +1,164 @@
 {
-  "2026-09-16": {
-    "commit_count": 86,
-    "relevant_commit_count": 46,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873",
+  "2026-09-17": {
+    "commit_count": 1,
+    "relevant_commit_count": 1,
+    "relevant_signature": "701883",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Animals",
+        "items": [
+          {
+            "text": "Sheep corpses no longer block movement or cause collision issues.",
+            "commit_ids": [
+              701883
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "### Animals\n- Sheep corpses no longer block movement or cause collision issues.",
+    "new_items": [
+      {
+        "text": "Sheep corpses no longer block movement or cause collision issues.",
+        "commit_ids": [
+          701883
+        ],
+        "section": "Animals"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- Sheep corpses no longer block movement or cause collision issues."
+  },
+  "2026-09-16": {
+    "commit_count": 90,
+    "relevant_commit_count": 50,
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873",
+    "prompt_version": "structured-read-state-v6-stable-published",
+    "chunk_cache": {
+      "701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873,701875,701876,701879,701882": [
+        {
+          "title": "Livestock & Animal Mechanics",
+          "items": [
+            {
+              "text": "Fixed gender not being assigned correctly when buying animals.",
+              "commit_ids": [
+                701882
+              ]
+            },
+            {
+              "text": "Sheep now drop wool when sheared.",
+              "commit_ids": [
+                701876
+              ]
+            },
+            {
+              "text": "Added a new wool item and introduced wool selling to the stables vendor using the existing auction system. Wool stacks to 100, rewards are based on total wool (up to 1000) with a three‑strike reward selection; rejecting all three rewards locks the vendor for 15 minutes. Fixed a bug that prevented deducting multiple stacks from ItemContainer.",
+              "commit_ids": [
+                701875
+              ]
+            },
+            {
+              "text": "Corrected multiplayer vendor interaction: only animals following the speaking player are shown, and the annoyance state is now attached to the animal instead of the player, preventing multiple players from taking extra turns with the same animal.",
+              "commit_ids": [
+                701868
+              ]
+            },
+            {
+              "text": "Auction results now wait until the dialogue text has finished displaying, preventing premature UI pop‑ups.",
+              "commit_ids": [
+                701879
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Powerlevel Loot Tweaks",
+          "items": [
+            {
+              "text": "Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches (power‑level rooms).",
+              "commit_ids": [
+                701814
+              ]
+            }
+          ]
+        }
+      ],
+      "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763": [
+        {
+          "title": "Livestock & Animal AI",
+          "items": [
+            {
+              "text": "Various AI fixes and behavior tweaks for livestock and critters: cows now avoid clipping and can eat from troughs even when blocked, bear flee logic corrected, critters now startle and run away when players approach and no longer startle each other, overall animal sight ranges reduced and old animal states simplified.",
+              "commit_ids": [
+                701755,
+                701742,
+                701739,
+                701728,
+                701685,
+                701695
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Explosives",
+          "items": [
+            {
+              "text": "Improved C4 client prediction settings, fixed rotation blending across the full allocated distance, and adjusted hide/show event handling for more reliable C4 behavior.",
+              "commit_ids": [
+                701735
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Monuments & World Events",
+          "items": [
+            {
+              "text": "Added a new oil rig switch event to the monument system and introduced additional air‑drop and satellite selection events.",
+              "commit_ids": [
+                701712,
+                701694
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structures & Crafting",
+          "items": [
+            {
+              "text": "Sandbag stacking and upgrade system overhauled: only the default sandbag is craftable, upgrade cooldowns fixed, health retention during upgrades configurable, placement checks tightened to prevent clipping, and upgrade visuals improved.",
+              "commit_ids": [
+                701693,
+                701643,
+                701635,
+                701600,
+                701596
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Economy & Trading",
+          "items": [
+            {
+              "text": "Added several guns to the sell table for testing purposes.",
+              "commit_ids": [
+                701587
+              ]
+            },
+            {
+              "text": "Introduced an auction mechanic for selling ranch animals, offering players three item bundles per sale with limited rejections before the vendor becomes unavailable.",
+              "commit_ids": [
+                701586
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Map & UI",
@@ -127,26 +281,9 @@
       }
     ],
     "summary": "### Map & UI\n- New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.\n\n### Player Controls\n- Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.\n\n### Livestock & Critters\n- Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.\n- Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.\n- Livestock AI simplified by removing idle sensing states and reducing sight range.\n- Bears immediately flee without a brief chase, correcting their flee behavior.\n- Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.\n\n### Fortifications & Explosives\n- Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.\n- Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.\n- C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.\n\n### Loot & Economy\n- Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.\n- Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.\n\n### Server & Admin\n- ServerSetGod command allows the server to set and broadcast a player’s god mode status.",
-    "new_items": [
-      {
-        "text": "New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.",
-        "commit_ids": [
-          701869,
-          701864,
-          701873
-        ],
-        "section": "Map & UI"
-      },
-      {
-        "text": "Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.",
-        "commit_ids": [
-          701868
-        ],
-        "section": "Livestock & Critters"
-      }
-    ],
-    "new_relevant_count": 4,
-    "new_summary": "- New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.\n- Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-15": {
     "commit_count": 96,
@@ -293,132 +430,6 @@
       }
     ],
     "summary": "### Food & Drink\n- Creamy and milky tea variants adjust healing effectiveness and duration (e.g., creamy healing tea 97 HP/20 s, milky healing tea 112 HP/45 s).\n- Milk can be processed after 4 hours in a refrigerated container to produce skimmed milk (½ calories, 80 % hydration, ½ health) and cream (½ calories, 20 % hydration, +50 % health).\n\n### World & Structures\n- Apples now have a 10 % chance to survive if the tree is harvested before fruit is picked, and fruit no longer falls when a tree is hit.\n- Apartment complexes are flagged as safe zones and placement restrictions near them now correctly warn when too close.\n\n### Animals & AI\n- Critters remain active throughout the night, and rabbits no longer react to nearby items, reducing server load.\n- Turtle spawning issues have been resolved, ensuring turtles appear in the world as intended.\n- Sheep now correctly mark attackers as hostile, walk, attack players, and die as expected.\n\n### UI & Controls\n- UI improvements: background tile sprite restored, server browser filter works correctly, player count display remains stable when switching gamemodes, and market terminals show a \"No Power\" message when unpowered.\n- Alt + Mouse wheel now provides fine‑grained zoom control.\n- Store UI now falls back to the first completed image request if the HTTP image delay expires, reducing missing images.\n- Added a new bind command for gamepad defaults and fixed reset behavior when no keyboard/mouse is bound.\n\n### Gameplay & Balance\n- Added explosive setup to certain weapons, enabling explosive damage.\n- Fixed beef spoil item assignment, ensuring proper food spoilage.\n\n### Building & Placement\n- Fences no longer sink into terrain, can be placed on slopes and angled up to 20°, improving building precision.\n- Ladder hatches are now skinnable and feature open/close functionality for workshop use.\n\n### Equipment & Protection\n- Hazmat suits now include the missing component, restoring intended protection levels.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-09-14": {
-    "commit_count": 80,
-    "relevant_commit_count": 49,
-    "relevant_signature": "692985,693327,693407,694738,697966,699147,699677,700856,700858,700859,700863,701002,701099,701103,701158,701162,701163,701164,701167,701168,701170,701179,701181,701183,701201,701204,701205,701208,701216,701217,701218,701230,701231,701233,701234,701235,701239,701240,701252,701256,701261,701268,701270,701284,701287,701288,701294,701305,701309",
-    "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Server & UI",
-        "items": [
-          {
-            "text": "Fixed inaccurate server browser gamemode filter counts and prevented mixing of unrelated gamemodes.",
-            "commit_ids": [
-              701309
-            ]
-          },
-          {
-            "text": "Fixed various input binding issues, including gamepad key‑assign closure, key latching after input clear, and missing map close binding.",
-            "commit_ids": [
-              701183,
-              701170,
-              699677
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals, Resources & Mounting",
-        "items": [
-          {
-            "text": "Restored missing beef resource links for livestock.",
-            "commit_ids": [
-              701305
-            ]
-          },
-          {
-            "text": "Lamb and calf corpses no longer yield any resources when killed.",
-            "commit_ids": [
-              701294
-            ]
-          },
-          {
-            "text": "Attacking farm animals now marks you as hostile to safezones.",
-            "commit_ids": [
-              701256
-            ]
-          },
-          {
-            "text": "Adjusted critter population settings.",
-            "commit_ids": [
-              701234
-            ]
-          },
-          {
-            "text": "Fixed issues with multiple animals near vehicles and added support for mounting Gen2 AI via a new NPCMountable component.",
-            "commit_ids": [
-              693407,
-              692985
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Structures & Collision",
-        "items": [
-          {
-            "text": "Halved fence gate opening/closing speed for smoother operation.",
-            "commit_ids": [
-              701252
-            ]
-          },
-          {
-            "text": "Fixed fence collider issues, enabled fence demolition, and added blue highlight to demolishable fences.",
-            "commit_ids": [
-              701217
-            ]
-          },
-          {
-            "text": "Fixed hitbox collision detection errors.",
-            "commit_ids": [
-              701162
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat, Weapons & Cooking",
-        "items": [
-          {
-            "text": "Adjusted salvaged cleaver distance to correct melee reach.",
-            "commit_ids": [
-              701168
-            ]
-          },
-          {
-            "text": "Fixed raw beef missing its cooking reference and added new meat types to all oven prefabs.",
-            "commit_ids": [
-              700859,
-              700856
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Visuals",
-        "items": [
-          {
-            "text": "Store images now correctly generate and display blurhash placeholders, preventing missing or broken backgrounds in the store UI.",
-            "commit_ids": [
-              701216
-            ]
-          },
-          {
-            "text": "Editor now reads textures as sRGB when possible, improving color accuracy of generated blurhash previews.",
-            "commit_ids": [
-              701201
-            ]
-          }
-        ]
-      }
-    ],
-    "summary": "### Server & UI\n- Fixed inaccurate server browser gamemode filter counts and prevented mixing of unrelated gamemodes.\n- Fixed various input binding issues, including gamepad key‑assign closure, key latching after input clear, and missing map close binding.\n\n### Animals, Resources & Mounting\n- Restored missing beef resource links for livestock.\n- Lamb and calf corpses no longer yield any resources when killed.\n- Attacking farm animals now marks you as hostile to safezones.\n- Adjusted critter population settings.\n- Fixed issues with multiple animals near vehicles and added support for mounting Gen2 AI via a new NPCMountable component.\n\n### Structures & Collision\n- Halved fence gate opening/closing speed for smoother operation.\n- Fixed fence collider issues, enabled fence demolition, and added blue highlight to demolishable fences.\n- Fixed hitbox collision detection errors.\n\n### Combat, Weapons & Cooking\n- Adjusted salvaged cleaver distance to correct melee reach.\n- Fixed raw beef missing its cooking reference and added new meat types to all oven prefabs.\n\n### UI & Visuals\n- Store images now correctly generate and display blurhash placeholders, preventing missing or broken backgrounds in the store UI.\n- Editor now reads textures as sRGB when possible, improving color accuracy of generated blurhash previews.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
