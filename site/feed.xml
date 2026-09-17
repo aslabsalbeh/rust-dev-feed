@@ -6,60 +6,77 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 17 Sep 2026 00:17:27 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 02:17:40 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;1 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701883"&gt;Sheep corpses no longer block movement or cause collision issues.&lt;/li&gt;
+&lt;li data-rust-commits="701888"&gt;New clothing options added to the livestock vendor at S2P Stables.&lt;/li&gt;
+&lt;li data-rust-commits="701885"&gt;Toggle‑duck now functions correctly on non‑modular car vehicles.&lt;/li&gt;
+&lt;li data-rust-commits="701883"&gt;Sheep corpse colliders fixed, preventing players from getting stuck on dead sheep.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Animals&lt;/h3&gt;
+&lt;h3&gt;Items &amp;amp; Clothing&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701883"&gt;Sheep corpses no longer block movement or cause collision issues.&lt;/li&gt;
+&lt;li data-rust-commits="701888"&gt;New clothing options added to the livestock vendor at S2P Stables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701885"&gt;Toggle‑duck now functions correctly on non‑modular car vehicles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Animals &amp;amp; Farming&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701883"&gt;Sheep corpse colliders fixed, preventing players from getting stuck on dead sheep.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-17</guid>
-      <pubDate>Thu, 17 Sep 2026 00:17:27 -0400</pubDate>
+      <pubDate>Thu, 17 Sep 2026 02:17:40 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;90 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701869,701864,701873"&gt;New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.&lt;/li&gt;
+&lt;li data-rust-commits="701882"&gt;Fixed gender assignment when purchasing animals.&lt;/li&gt;
+&lt;li data-rust-commits="701876,701875"&gt;Sheep now drop wool when sheared; introduced a wool item that stacks to 100 and can be sold to the stables vendor via the auction system, with tiered rewards based on total wool (up to 1000) and a three‑strike rejection limit that locks the vendor for 15 minutes.&lt;/li&gt;
+&lt;li data-rust-commits="701586,701868,701879"&gt;Implemented an animal‑trading auction: players receive three item bundles per sale, can reject bundles a limited number of times before the vendor becomes unavailable; vendor UI now only shows animals following the speaking player, annoyance is tied to the animal, and auction results wait for dialogue to finish.&lt;/li&gt;
+&lt;li data-rust-commits="701755,701742,701739,701728,701685,701695"&gt;AI improvements for livestock and critters: cows avoid clipping and can eat from blocked troughs, bear flee logic corrected, critters startle and flee when players approach (no longer startle each other), sight ranges reduced, and legacy animal states simplified.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player Controls&lt;/h3&gt;
+&lt;h3&gt;Powerlevel Loot Tweaks&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701842"&gt;Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.&lt;/li&gt;
+&lt;li data-rust-commits="701814"&gt;Adjusted loot tables for the Trainyard, Water Treatment, and Sewer power‑level rooms.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Critters&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Explosives&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701868"&gt;Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.&lt;/li&gt;
-&lt;li data-rust-commits="701803,701804,701728,701742"&gt;Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.&lt;/li&gt;
-&lt;li data-rust-commits="701739"&gt;Livestock AI simplified by removing idle sensing states and reducing sight range.&lt;/li&gt;
-&lt;li data-rust-commits="701695"&gt;Bears immediately flee without a brief chase, correcting their flee behavior.&lt;/li&gt;
-&lt;li data-rust-commits="701685,701755"&gt;Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.&lt;/li&gt;
+&lt;li data-rust-commits="701735"&gt;Improved C4 client prediction, fixed rotation blending over its full range, and refined hide/show event handling for more reliable C4 behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Fortifications &amp;amp; Explosives&lt;/h3&gt;
+&lt;h3&gt;World Events &amp;amp; Monuments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701693"&gt;Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.&lt;/li&gt;
-&lt;li data-rust-commits="701643,701635,701600,701596,701660"&gt;Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.&lt;/li&gt;
-&lt;li data-rust-commits="701735"&gt;C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.&lt;/li&gt;
+&lt;li data-rust-commits="701712,701694"&gt;Added a new oil‑rig switch event to the monument system and introduced extra air‑drop and satellite selection events.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Economy&lt;/h3&gt;
+&lt;h3&gt;Structures &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701814"&gt;Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.&lt;/li&gt;
-&lt;li data-rust-commits="701587,701586"&gt;Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.&lt;/li&gt;
+&lt;li data-rust-commits="701693,701643,701635,701600,701596"&gt;Overhauled sandbag stacking and upgrades: only the default sandbag is craftable, upgrade cooldowns fixed, health retention during upgrades configurable, placement checks tightened to prevent clipping, and upgrade visuals improved.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Server &amp;amp; Admin&lt;/h3&gt;
+&lt;h3&gt;Economy &amp;amp; Trading&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701650"&gt;ServerSetGod command allows the server to set and broadcast a player’s god mode status.&lt;/li&gt;
+&lt;li data-rust-commits="701587"&gt;Expanded the sell table with several guns for testing purposes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="701873,701864"&gt;Fixed country selection UI bugs: automatic rows now match country rows and auto‑detect works reliably, preventing mismatched selections.&lt;/li&gt;
+&lt;li data-rust-commits="701842"&gt;Remote players now rotate fully instead of snapping to the shortest turn, improving combat visual consistency.&lt;/li&gt;
+&lt;li data-rust-commits="701650"&gt;Server can now toggle god mode via ServerSetGod, fixing tutorial god‑mode disabling and allowing server‑side control.&lt;/li&gt;
+&lt;li data-rust-commits="701660"&gt;Added extra placement checks for sandbag and barricade stacking, preventing invalid builds and ensuring proper placement.&lt;/li&gt;
+&lt;li data-rust-commits="701605"&gt;Upgrade placement now hides the existing mesh and shows only the placement guide, reducing visual clutter during building upgrades.&lt;/li&gt;
+&lt;li data-rust-commits="701869"&gt;Introduces a revamped country selection interface with continent grouping and tab‑based navigation.&lt;/li&gt;
+&lt;li data-rust-commits="701804"&gt;Livestock now more reliably avoid water, reducing accidental drowning and improving herd movement.&lt;/li&gt;
+&lt;li data-rust-commits="701803"&gt;Animals gain water‑avoidance preferences in roaming and fleeing behaviors, making them less likely to enter water hazards.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-16</guid>

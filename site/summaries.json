@@ -1,16 +1,38 @@
 {
   "2026-09-17": {
-    "commit_count": 1,
-    "relevant_commit_count": 1,
-    "relevant_signature": "701883",
+    "commit_count": 5,
+    "relevant_commit_count": 4,
+    "relevant_signature": "701883,701885,701888,701889",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals",
+        "title": "Items & Clothing",
         "items": [
           {
-            "text": "Sheep corpses no longer block movement or cause collision issues.",
+            "text": "New clothing options added to the livestock vendor at S2P Stables.",
+            "commit_ids": [
+              701888
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles",
+        "items": [
+          {
+            "text": "Toggle‑duck now functions correctly on non‑modular car vehicles.",
+            "commit_ids": [
+              701885
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & Farming",
+        "items": [
+          {
+            "text": "Sheep corpse colliders fixed, preventing players from getting stuck on dead sheep.",
             "commit_ids": [
               701883
             ]
@@ -18,232 +40,93 @@
         ]
       }
     ],
-    "summary": "### Animals\n- Sheep corpses no longer block movement or cause collision issues.",
+    "summary": "### Items & Clothing\n- New clothing options added to the livestock vendor at S2P Stables.\n\n### Vehicles\n- Toggle‑duck now functions correctly on non‑modular car vehicles.\n\n### Animals & Farming\n- Sheep corpse colliders fixed, preventing players from getting stuck on dead sheep.",
     "new_items": [
       {
-        "text": "Sheep corpses no longer block movement or cause collision issues.",
+        "text": "New clothing options added to the livestock vendor at S2P Stables.",
+        "commit_ids": [
+          701888
+        ],
+        "section": "Items & Clothing"
+      },
+      {
+        "text": "Toggle‑duck now functions correctly on non‑modular car vehicles.",
+        "commit_ids": [
+          701885
+        ],
+        "section": "Vehicles"
+      },
+      {
+        "text": "Sheep corpse colliders fixed, preventing players from getting stuck on dead sheep.",
         "commit_ids": [
           701883
         ],
-        "section": "Animals"
+        "section": "Animals & Farming"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Sheep corpses no longer block movement or cause collision issues."
+    "new_relevant_count": 3,
+    "new_summary": "- New clothing options added to the livestock vendor at S2P Stables.\n- Toggle‑duck now functions correctly on non‑modular car vehicles.\n- Sheep corpse colliders fixed, preventing players from getting stuck on dead sheep."
   },
   "2026-09-16": {
     "commit_count": 90,
     "relevant_commit_count": 50,
-    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873",
+    "relevant_signature": "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873,701875,701876,701879,701882",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {
-      "701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873,701875,701876,701879,701882": [
-        {
-          "title": "Livestock & Animal Mechanics",
-          "items": [
-            {
-              "text": "Fixed gender not being assigned correctly when buying animals.",
-              "commit_ids": [
-                701882
-              ]
-            },
-            {
-              "text": "Sheep now drop wool when sheared.",
-              "commit_ids": [
-                701876
-              ]
-            },
-            {
-              "text": "Added a new wool item and introduced wool selling to the stables vendor using the existing auction system. Wool stacks to 100, rewards are based on total wool (up to 1000) with a three‑strike reward selection; rejecting all three rewards locks the vendor for 15 minutes. Fixed a bug that prevented deducting multiple stacks from ItemContainer.",
-              "commit_ids": [
-                701875
-              ]
-            },
-            {
-              "text": "Corrected multiplayer vendor interaction: only animals following the speaking player are shown, and the annoyance state is now attached to the animal instead of the player, preventing multiple players from taking extra turns with the same animal.",
-              "commit_ids": [
-                701868
-              ]
-            },
-            {
-              "text": "Auction results now wait until the dialogue text has finished displaying, preventing premature UI pop‑ups.",
-              "commit_ids": [
-                701879
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Powerlevel Loot Tweaks",
-          "items": [
-            {
-              "text": "Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches (power‑level rooms).",
-              "commit_ids": [
-                701814
-              ]
-            }
-          ]
-        }
-      ],
-      "701586,701587,701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763": [
-        {
-          "title": "Livestock & Animal AI",
-          "items": [
-            {
-              "text": "Various AI fixes and behavior tweaks for livestock and critters: cows now avoid clipping and can eat from troughs even when blocked, bear flee logic corrected, critters now startle and run away when players approach and no longer startle each other, overall animal sight ranges reduced and old animal states simplified.",
-              "commit_ids": [
-                701755,
-                701742,
-                701739,
-                701728,
-                701685,
-                701695
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Explosives",
-          "items": [
-            {
-              "text": "Improved C4 client prediction settings, fixed rotation blending across the full allocated distance, and adjusted hide/show event handling for more reliable C4 behavior.",
-              "commit_ids": [
-                701735
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Monuments & World Events",
-          "items": [
-            {
-              "text": "Added a new oil rig switch event to the monument system and introduced additional air‑drop and satellite selection events.",
-              "commit_ids": [
-                701712,
-                701694
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Structures & Crafting",
-          "items": [
-            {
-              "text": "Sandbag stacking and upgrade system overhauled: only the default sandbag is craftable, upgrade cooldowns fixed, health retention during upgrades configurable, placement checks tightened to prevent clipping, and upgrade visuals improved.",
-              "commit_ids": [
-                701693,
-                701643,
-                701635,
-                701600,
-                701596
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Economy & Trading",
-          "items": [
-            {
-              "text": "Added several guns to the sell table for testing purposes.",
-              "commit_ids": [
-                701587
-              ]
-            },
-            {
-              "text": "Introduced an auction mechanic for selling ranch animals, offering players three item bundles per sale with limited rejections before the vendor becomes unavailable.",
-              "commit_ids": [
-                701586
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Map & UI",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.",
+            "text": "Fixed gender assignment when purchasing animals.",
             "commit_ids": [
-              701869,
-              701864,
-              701873
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Player Controls",
-        "items": [
-          {
-            "text": "Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.",
-            "commit_ids": [
-              701842
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Critters",
-        "items": [
-          {
-            "text": "Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.",
-            "commit_ids": [
-              701868
+              701882
             ]
           },
           {
-            "text": "Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.",
+            "text": "Sheep now drop wool when sheared; introduced a wool item that stacks to 100 and can be sold to the stables vendor via the auction system, with tiered rewards based on total wool (up to 1000) and a three‑strike rejection limit that locks the vendor for 15 minutes.",
             "commit_ids": [
-              701803,
-              701804,
+              701876,
+              701875
+            ]
+          },
+          {
+            "text": "Implemented an animal‑trading auction: players receive three item bundles per sale, can reject bundles a limited number of times before the vendor becomes unavailable; vendor UI now only shows animals following the speaking player, annoyance is tied to the animal, and auction results wait for dialogue to finish.",
+            "commit_ids": [
+              701586,
+              701868,
+              701879
+            ]
+          },
+          {
+            "text": "AI improvements for livestock and critters: cows avoid clipping and can eat from blocked troughs, bear flee logic corrected, critters startle and flee when players approach (no longer startle each other), sight ranges reduced, and legacy animal states simplified.",
+            "commit_ids": [
+              701755,
+              701742,
+              701739,
               701728,
-              701742
-            ]
-          },
-          {
-            "text": "Livestock AI simplified by removing idle sensing states and reducing sight range.",
-            "commit_ids": [
-              701739
-            ]
-          },
-          {
-            "text": "Bears immediately flee without a brief chase, correcting their flee behavior.",
-            "commit_ids": [
+              701685,
               701695
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Powerlevel Loot Tweaks",
+        "items": [
           {
-            "text": "Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.",
+            "text": "Adjusted loot tables for the Trainyard, Water Treatment, and Sewer power‑level rooms.",
             "commit_ids": [
-              701685,
-              701755
+              701814
             ]
           }
         ]
       },
       {
-        "title": "Fortifications & Explosives",
+        "title": "Combat & Explosives",
         "items": [
           {
-            "text": "Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.",
-            "commit_ids": [
-              701693
-            ]
-          },
-          {
-            "text": "Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.",
-            "commit_ids": [
-              701643,
-              701635,
-              701600,
-              701596,
-              701660
-            ]
-          },
-          {
-            "text": "C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.",
+            "text": "Improved C4 client prediction, fixed rotation blending over its full range, and refined hide/show event handling for more reliable C4 behavior.",
             "commit_ids": [
               701735
             ]
@@ -251,36 +134,99 @@
         ]
       },
       {
-        "title": "Loot & Economy",
+        "title": "World Events & Monuments",
         "items": [
           {
-            "text": "Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.",
+            "text": "Added a new oil‑rig switch event to the monument system and introduced extra air‑drop and satellite selection events.",
             "commit_ids": [
-              701814
-            ]
-          },
-          {
-            "text": "Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.",
-            "commit_ids": [
-              701587,
-              701586
+              701712,
+              701694
             ]
           }
         ]
       },
       {
-        "title": "Server & Admin",
+        "title": "Structures & Crafting",
         "items": [
           {
-            "text": "ServerSetGod command allows the server to set and broadcast a player’s god mode status.",
+            "text": "Overhauled sandbag stacking and upgrades: only the default sandbag is craftable, upgrade cooldowns fixed, health retention during upgrades configurable, placement checks tightened to prevent clipping, and upgrade visuals improved.",
+            "commit_ids": [
+              701693,
+              701643,
+              701635,
+              701600,
+              701596
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Economy & Trading",
+        "items": [
+          {
+            "text": "Expanded the sell table with several guns for testing purposes.",
+            "commit_ids": [
+              701587
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Fixed country selection UI bugs: automatic rows now match country rows and auto‑detect works reliably, preventing mismatched selections.",
+            "commit_ids": [
+              701873,
+              701864
+            ]
+          },
+          {
+            "text": "Remote players now rotate fully instead of snapping to the shortest turn, improving combat visual consistency.",
+            "commit_ids": [
+              701842
+            ]
+          },
+          {
+            "text": "Server can now toggle god mode via ServerSetGod, fixing tutorial god‑mode disabling and allowing server‑side control.",
             "commit_ids": [
               701650
+            ]
+          },
+          {
+            "text": "Added extra placement checks for sandbag and barricade stacking, preventing invalid builds and ensuring proper placement.",
+            "commit_ids": [
+              701660
+            ]
+          },
+          {
+            "text": "Upgrade placement now hides the existing mesh and shows only the placement guide, reducing visual clutter during building upgrades.",
+            "commit_ids": [
+              701605
+            ]
+          },
+          {
+            "text": "Introduces a revamped country selection interface with continent grouping and tab‑based navigation.",
+            "commit_ids": [
+              701869
+            ]
+          },
+          {
+            "text": "Livestock now more reliably avoid water, reducing accidental drowning and improving herd movement.",
+            "commit_ids": [
+              701804
+            ]
+          },
+          {
+            "text": "Animals gain water‑avoidance preferences in roaming and fleeing behaviors, making them less likely to enter water hazards.",
+            "commit_ids": [
+              701803
             ]
           }
         ]
       }
     ],
-    "summary": "### Map & UI\n- New country selection UI with continent tabs, fixed row width, region selection bugs, and auto‑detect now replaces mismatched selections and adds missing country centers.\n\n### Player Controls\n- Eliminated head and forearm jitter while aiming and turning, and remote players now rotate fully instead of taking the shortest turn.\n\n### Livestock & Critters\n- Multiplayer animal interaction fixed: only the animal following the speaking player appears in the list, preventing duplicate rolls and multiple leaders.\n- Critters now avoid water when roaming or fleeing, and will startle and run away when players get too close, without startling each other.\n- Livestock AI simplified by removing idle sensing states and reducing sight range.\n- Bears immediately flee without a brief chase, correcting their flee behavior.\n- Cows now avoid clipping with each other and players, and cannot eat from a trough through other cows.\n\n### Fortifications & Explosives\n- Non‑default sandbag variants are no longer craftable; only the default sandbag can be crafted.\n- Sandbag upgrade system overhauled: server‑side placement checks, fixed cooldowns, upgrades retain current health fraction, clipping prevented, and additional reliability checks added.\n- C4 prediction improved with better client settings, hide/show controls, and correct rotation blending over its full distance.\n\n### Loot & Economy\n- Loot tables adjusted for Trainyard, water‑treatment, and sewer‑branch rooms.\n- Experimental guns added to the sell table and an animal auction mechanic introduced, offering three random items with up to two rejections before the vendor becomes unavailable for 15 minutes.\n\n### Server & Admin\n- ServerSetGod command allows the server to set and broadcast a player’s god mode status.",
+    "summary": "### Livestock & Animals\n- Fixed gender assignment when purchasing animals.\n- Sheep now drop wool when sheared; introduced a wool item that stacks to 100 and can be sold to the stables vendor via the auction system, with tiered rewards based on total wool (up to 1000) and a three‑strike rejection limit that locks the vendor for 15 minutes.\n- Implemented an animal‑trading auction: players receive three item bundles per sale, can reject bundles a limited number of times before the vendor becomes unavailable; vendor UI now only shows animals following the speaking player, annoyance is tied to the animal, and auction results wait for dialogue to finish.\n- AI improvements for livestock and critters: cows avoid clipping and can eat from blocked troughs, bear flee logic corrected, critters startle and flee when players approach (no longer startle each other), sight ranges reduced, and legacy animal states simplified.\n\n### Powerlevel Loot Tweaks\n- Adjusted loot tables for the Trainyard, Water Treatment, and Sewer power‑level rooms.\n\n### Combat & Explosives\n- Improved C4 client prediction, fixed rotation blending over its full range, and refined hide/show event handling for more reliable C4 behavior.\n\n### World Events & Monuments\n- Added a new oil‑rig switch event to the monument system and introduced extra air‑drop and satellite selection events.\n\n### Structures & Crafting\n- Overhauled sandbag stacking and upgrades: only the default sandbag is craftable, upgrade cooldowns fixed, health retention during upgrades configurable, placement checks tightened to prevent clipping, and upgrade visuals improved.\n\n### Economy & Trading\n- Expanded the sell table with several guns for testing purposes.\n\n### Gameplay & Balance\n- Fixed country selection UI bugs: automatic rows now match country rows and auto‑detect works reliably, preventing mismatched selections.\n- Remote players now rotate fully instead of snapping to the shortest turn, improving combat visual consistency.\n- Server can now toggle god mode via ServerSetGod, fixing tutorial god‑mode disabling and allowing server‑side control.\n- Added extra placement checks for sandbag and barricade stacking, preventing invalid builds and ensuring proper placement.\n- Upgrade placement now hides the existing mesh and shows only the placement guide, reducing visual clutter during building upgrades.\n- Introduces a revamped country selection interface with continent grouping and tab‑based navigation.\n- Livestock now more reliably avoid water, reducing accidental drowning and improving herd movement.\n- Animals gain water‑avoidance preferences in roaming and fleeing behaviors, making them less likely to enter water hazards.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
