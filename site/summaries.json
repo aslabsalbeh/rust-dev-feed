@@ -1,10 +1,215 @@
 {
   "2026-09-17": {
-    "commit_count": 96,
-    "relevant_commit_count": 53,
+    "commit_count": 102,
+    "relevant_commit_count": 57,
     "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159,702178,702188,702192,702193": [
+        {
+          "title": "Crafting & Recipes",
+          "items": [
+            {
+              "text": "Added new brioche bread recipe, giving a 25% buff to bread stats and requiring 2 eggs and 4 cream.",
+              "commit_ids": [
+                702192
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Server Browsing",
+          "items": [
+            {
+              "text": "Fixed quick join menu not showing entries and prevented throttled Steam lookups from clearing results, improving server list stability.",
+              "commit_ids": [
+                702146,
+                702155
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Turrets",
+          "items": [
+            {
+              "text": "Remote‑controlled turrets can now hit reactive targets with bows.",
+              "commit_ids": [
+                702138
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Achievements",
+          "items": [
+            {
+              "text": "New achievements added for leaving a note in another player's mailbox, purchasing from the travelling vendor, and starting a satellite crash event.",
+              "commit_ids": [
+                702136
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building",
+          "items": [
+            {
+              "text": "Fixed triangle foundations incorrectly connecting buildings when only touching at a corner.",
+              "commit_ids": [
+                702062
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Distance Calculations",
+          "items": [
+            {
+              "text": "Corrected Distance2D methods to use true 2D distance and stopped using Y component, fixing range checks and related gameplay calculations.",
+              "commit_ids": [
+                702090,
+                702099
+              ]
+            }
+          ]
+        }
+      ],
+      "701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058": [
+        {
+          "title": "Vehicle Controls",
+          "items": [
+            {
+              "text": "Added a universal \"Swap Seats\" action to all vehicles with a consistent button binding.",
+              "commit_ids": [
+                702037
+              ]
+            },
+            {
+              "text": "Introduced a car reload action and removed the old menu‑gesture action for vehicles.",
+              "commit_ids": [
+                702030
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Melee Weapons",
+          "items": [
+            {
+              "text": "Implemented a new subsystem for machetes and swords, including viewmodel deploy events.",
+              "commit_ids": [
+                702024,
+                701914
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Generators & Power",
+          "items": [
+            {
+              "text": "When stirring a biofuel generator you now mount it at your current position; releasing E unmounts, and a \"no electricity\" status is shown if the generator has no power.",
+              "commit_ids": [
+                702050
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building & Crafting",
+          "items": [
+            {
+              "text": "Reduced sandbag barricade recipe and build time: stone 100 → 50, cloth 10 → 5, build time 30 s → 10 s.",
+              "commit_ids": [
+                701949
+              ]
+            },
+            {
+              "text": "Painting tool upgrades: colour wheel for neon signs, new 25 mm size option, brush outline toggle (invert‑background mode).",
+              "commit_ids": [
+                702035
+              ]
+            },
+            {
+              "text": "Fixed import settings on the sandbags pillbox collider and enabled its rigidbody, improving collision behavior.",
+              "commit_ids": [
+                702051
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Turrets & Defense",
+          "items": [
+            {
+              "text": "Remotely controlled turrets can now damage reactive targets (previously only client‑projectile targets).",
+              "commit_ids": [
+                701955
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & NPC",
+          "items": [
+            {
+              "text": "Navmesh fixes: prevented navmesh generation over fences and restored rustNavmeshVolumes functionality on the new navmesh system.",
+              "commit_ids": [
+                701960
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Health Feedback",
+          "items": [
+            {
+              "text": "Low‑health heartbeat rumble is now stronger and fades after three seconds of continued low health.",
+              "commit_ids": [
+                701943
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sheep Combat",
+          "items": [
+            {
+              "text": "Fixed the animation for the sheep charge attack, ensuring the attack registers correctly.",
+              "commit_ids": [
+                701939
+              ]
+            }
+          ]
+        }
+      ],
+      "701883,701885,701888,701889,701890,701904,701908": [
+        {
+          "title": "Livestock AI & Physics",
+          "items": [
+            {
+              "text": "Livestock now avoid forming lines at troughs by fanning out, and sheep corpses have corrected colliders to prevent clipping issues.",
+              "commit_ids": [
+                701908,
+                701883
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicle Controls",
+          "items": [
+            {
+              "text": "Fixed the toggle‑duck option on non‑modular car vehicles so it works as intended.",
+              "commit_ids": [
+                701885
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Multiplayer & UI",
@@ -124,33 +329,9 @@
       }
     ],
     "summary": "### Multiplayer & UI\n- Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.\n\n### Combat & Weapons\n- Remote‑controlled turrets can now damage reactive targets, including when using bows.\n- Added machete and sword systems, removing unused HoldType override.\n\n### Building & Crafting\n- Fixed triangle foundations that incorrectly connected buildings when only touching at a corner.\n- Adjusted sandbag pillbox collider import settings for proper physics interactions.\n- Neon signs now feature a colour wheel and a larger 25 mm size option; brush outline visibility can be toggled via a new console variable.\n- Sandbag barricade variants now cost half the stone and cloth and craft 20 seconds faster.\n\n### Vehicles & Generators\n- Added a consistent “Swap Seats” button binding to all vehicle action sets.\n- Introduced a car reload action and removed the menu gesture action.\n- Stirring the biofuel generator now mounts the player at their current position, unmounts on release, and shows a “no electricity” status when stirred without power.\n\n### NPC & AI\n- Navmesh generation no longer builds on top of fences and NavmeshVolumes work with the new navmesh, improving AI navigation.\n- Livestock now spread out when avoiding obstacles instead of queuing, resulting in more natural movement.\n\n### Achievements & Audio\n- Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.\n- Low‑health heartbeat sound is stronger and fades after three seconds of continued low health.",
-    "new_items": [
-      {
-        "text": "Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.",
-        "commit_ids": [
-          702155,
-          702146
-        ],
-        "section": "Multiplayer & UI"
-      },
-      {
-        "text": "Remote‑controlled turrets can now damage reactive targets, including when using bows.",
-        "commit_ids": [
-          702138,
-          701955
-        ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event.",
-        "commit_ids": [
-          702136
-        ],
-        "section": "Achievements & Audio"
-      }
-    ],
-    "new_relevant_count": 5,
-    "new_summary": "- Fixed quick join menu issues where throttled Steam lookups caused results to disappear and entries were not shown at all.\n- Remote‑controlled turrets can now damage reactive targets, including when using bows.\n- Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and starting a satellite crash event."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-16": {
     "commit_count": 90,
