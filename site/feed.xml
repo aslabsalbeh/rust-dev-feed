@@ -6,61 +6,50 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 18 Sep 2026 14:17:27 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 16:17:30 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 18</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;79 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702381"&gt;Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.&lt;/li&gt;
-&lt;li data-rust-commits="702378"&gt;Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.&lt;/li&gt;
-&lt;li data-rust-commits="702362,702350,702337"&gt;Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.&lt;/li&gt;
-&lt;li data-rust-commits="702363"&gt;Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.&lt;/li&gt;
-&lt;li data-rust-commits="702343"&gt;Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.&lt;/li&gt;
-&lt;li data-rust-commits="702384"&gt;Localization updates are now applied, fixing missing or incorrect text in the UI.&lt;/li&gt;
+&lt;li data-rust-commits="702405"&gt;Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.&lt;/li&gt;
+&lt;li data-rust-commits="702381"&gt;Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.&lt;/li&gt;
+&lt;li data-rust-commits="702378"&gt;Item positions are saved and restored when creating or deploying loadouts, preserving layout.&lt;/li&gt;
+&lt;li data-rust-commits="702399"&gt;Ladder hatch functionality has been fixed, improving their reliability and use.&lt;/li&gt;
+&lt;li data-rust-commits="702396,702362,702350,702337,702314"&gt;Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Base &amp;amp; Authorization&lt;/h3&gt;
+&lt;h3&gt;Loot &amp;amp; Base Building&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702381"&gt;Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.&lt;/li&gt;
+&lt;li data-rust-commits="702405"&gt;Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.&lt;/li&gt;
+&lt;li data-rust-commits="702381"&gt;Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Inventory &amp;amp; Loadouts&lt;/h3&gt;
+&lt;h3&gt;Loadouts &amp;amp; Items&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702378"&gt;Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.&lt;/li&gt;
+&lt;li data-rust-commits="702378"&gt;Item positions are saved and restored when creating or deploying loadouts, preserving layout.&lt;/li&gt;
+&lt;li data-rust-commits="702399"&gt;Ladder hatch functionality has been fixed, improving their reliability and use.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Resources&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Shearing&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702362,702350,702337"&gt;Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.&lt;/li&gt;
-&lt;li data-rust-commits="702320"&gt;Wild cows no longer breed, age, or produce resources, and pregnancies are blocked when condition falls below 60%, reducing unintended resource generation.&lt;/li&gt;
+&lt;li data-rust-commits="702396,702362,702350,702337,702314"&gt;Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.&lt;/li&gt;
+&lt;li data-rust-commits="702320"&gt;Wild cows can no longer breed, age, or produce resources, and they can only become pregnant if their condition is at least 60%.&lt;/li&gt;
+&lt;li data-rust-commits="702363"&gt;New bull and cow trophy models have been added to the large hunting trophy prefab.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Hunting &amp;amp; Trophies&lt;/h3&gt;
+&lt;h3&gt;Creatures &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702363"&gt;Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.&lt;/li&gt;
+&lt;li data-rust-commits="702343,702305"&gt;Crab swarms have been introduced with group pathing and size‑influenced random speeds, enhancing hostile critter encounters.&lt;/li&gt;
+&lt;li data-rust-commits="702326"&gt;Fleeing and startle mechanics for critters have been improved, making them react more realistically to threats.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;New Threats &amp;amp; Gameplay Systems&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; World&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702305"&gt;Introduced crab swarms as a new hostile NPC group.&lt;/li&gt;
-&lt;li data-rust-commits="702290"&gt;Added dedicated subsystems for compass, detonator, and master key, removing their old holdtype controllers.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Bug Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="702272"&gt;Fixed NaN water height issue that could cause terrain or player positioning glitches.&lt;/li&gt;
-&lt;li data-rust-commits="702250"&gt;Resolved error when selecting a player in the Animator window, preventing in‑game crashes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="702343"&gt;Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.&lt;/li&gt;
-&lt;li data-rust-commits="702306"&gt;Boat vendor dialogue on floating cities now correctly indicates the direction to find your purchased boat.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Localization&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="702384"&gt;Localization updates are now applied, fixing missing or incorrect text in the UI.&lt;/li&gt;
+&lt;li data-rust-commits="702306"&gt;Boat vendor dialogue on floating cities now correctly indicates the direction to find the purchased boat.&lt;/li&gt;
+&lt;li data-rust-commits="702272"&gt;NaN water height issue resolved, preventing water surface glitches that could affect navigation and building.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-18</guid>
-      <pubDate>Fri, 18 Sep 2026 14:17:27 -0400</pubDate>
+      <pubDate>Fri, 18 Sep 2026 16:17:30 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 17</title>

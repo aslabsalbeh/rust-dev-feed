@@ -1,16 +1,22 @@
 {
   "2026-09-18": {
-    "commit_count": 63,
-    "relevant_commit_count": 40,
-    "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384",
+    "commit_count": 79,
+    "relevant_commit_count": 50,
+    "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base & Authorization",
+        "title": "Loot & Base Building",
         "items": [
           {
-            "text": "Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.",
+            "text": "Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.",
+            "commit_ids": [
+              702405
+            ]
+          },
+          {
+            "text": "Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.",
             "commit_ids": [
               702381
             ]
@@ -18,40 +24,43 @@
         ]
       },
       {
-        "title": "Inventory & Loadouts",
+        "title": "Loadouts & Items",
         "items": [
           {
-            "text": "Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.",
+            "text": "Item positions are saved and restored when creating or deploying loadouts, preserving layout.",
             "commit_ids": [
               702378
             ]
+          },
+          {
+            "text": "Ladder hatch functionality has been fixed, improving their reliability and use.",
+            "commit_ids": [
+              702399
+            ]
           }
         ]
       },
       {
-        "title": "Livestock & Resources",
+        "title": "Animals & Shearing",
         "items": [
           {
-            "text": "Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.",
+            "text": "Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.",
             "commit_ids": [
+              702396,
               702362,
               702350,
-              702337
+              702337,
+              702314
             ]
           },
           {
-            "text": "Wild cows no longer breed, age, or produce resources, and pregnancies are blocked when condition falls below 60%, reducing unintended resource generation.",
+            "text": "Wild cows can no longer breed, age, or produce resources, and they can only become pregnant if their condition is at least 60%.",
             "commit_ids": [
               702320
             ]
-          }
-        ]
-      },
-      {
-        "title": "Hunting & Trophies",
-        "items": [
+          },
           {
-            "text": "Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.",
+            "text": "New bull and cow trophy models have been added to the large hunting trophy prefab.",
             "commit_ids": [
               702363
             ]
@@ -59,117 +68,85 @@
         ]
       },
       {
-        "title": "New Threats & Gameplay Systems",
+        "title": "Creatures & AI",
         "items": [
           {
-            "text": "Introduced crab swarms as a new hostile NPC group.",
+            "text": "Crab swarms have been introduced with group pathing and size‑influenced random speeds, enhancing hostile critter encounters.",
             "commit_ids": [
+              702343,
               702305
             ]
           },
           {
-            "text": "Added dedicated subsystems for compass, detonator, and master key, removing their old holdtype controllers.",
+            "text": "Fleeing and startle mechanics for critters have been improved, making them react more realistically to threats.",
             "commit_ids": [
-              702290
+              702326
             ]
           }
         ]
       },
       {
-        "title": "Stability & Bug Fixes",
+        "title": "UI & World",
         "items": [
           {
-            "text": "Fixed NaN water height issue that could cause terrain or player positioning glitches.",
-            "commit_ids": [
-              702272
-            ]
-          },
-          {
-            "text": "Resolved error when selecting a player in the Animator window, preventing in‑game crashes.",
-            "commit_ids": [
-              702250
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.",
-            "commit_ids": [
-              702343
-            ]
-          },
-          {
-            "text": "Boat vendor dialogue on floating cities now correctly indicates the direction to find your purchased boat.",
+            "text": "Boat vendor dialogue on floating cities now correctly indicates the direction to find the purchased boat.",
             "commit_ids": [
               702306
             ]
-          }
-        ]
-      },
-      {
-        "title": "Localization",
-        "items": [
+          },
           {
-            "text": "Localization updates are now applied, fixing missing or incorrect text in the UI.",
+            "text": "NaN water height issue resolved, preventing water surface glitches that could affect navigation and building.",
             "commit_ids": [
-              702384
+              702272
             ]
           }
         ]
       }
     ],
-    "summary": "### Base & Authorization\n- Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.\n\n### Inventory & Loadouts\n- Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.\n\n### Livestock & Resources\n- Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.\n- Wild cows no longer breed, age, or produce resources, and pregnancies are blocked when condition falls below 60%, reducing unintended resource generation.\n\n### Hunting & Trophies\n- Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.\n\n### New Threats & Gameplay Systems\n- Introduced crab swarms as a new hostile NPC group.\n- Added dedicated subsystems for compass, detonator, and master key, removing their old holdtype controllers.\n\n### Stability & Bug Fixes\n- Fixed NaN water height issue that could cause terrain or player positioning glitches.\n- Resolved error when selecting a player in the Animator window, preventing in‑game crashes.\n\n### Gameplay & Balance\n- Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.\n- Boat vendor dialogue on floating cities now correctly indicates the direction to find your purchased boat.\n\n### Localization\n- Localization updates are now applied, fixing missing or incorrect text in the UI.",
+    "summary": "### Loot & Base Building\n- Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.\n- Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.\n\n### Loadouts & Items\n- Item positions are saved and restored when creating or deploying loadouts, preserving layout.\n- Ladder hatch functionality has been fixed, improving their reliability and use.\n\n### Animals & Shearing\n- Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.\n- Wild cows can no longer breed, age, or produce resources, and they can only become pregnant if their condition is at least 60%.\n- New bull and cow trophy models have been added to the large hunting trophy prefab.\n\n### Creatures & AI\n- Crab swarms have been introduced with group pathing and size‑influenced random speeds, enhancing hostile critter encounters.\n- Fleeing and startle mechanics for critters have been improved, making them react more realistically to threats.\n\n### UI & World\n- Boat vendor dialogue on floating cities now correctly indicates the direction to find the purchased boat.\n- NaN water height issue resolved, preventing water surface glitches that could affect navigation and building.",
     "new_items": [
       {
-        "text": "Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.",
+        "text": "Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.",
+        "commit_ids": [
+          702405
+        ],
+        "section": "Loot & Base Building"
+      },
+      {
+        "text": "Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.",
         "commit_ids": [
           702381
         ],
-        "section": "Base & Authorization"
+        "section": "Loot & Base Building"
       },
       {
-        "text": "Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.",
+        "text": "Item positions are saved and restored when creating or deploying loadouts, preserving layout.",
         "commit_ids": [
           702378
         ],
-        "section": "Inventory & Loadouts"
+        "section": "Loadouts & Items"
       },
       {
-        "text": "Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.",
+        "text": "Ladder hatch functionality has been fixed, improving their reliability and use.",
         "commit_ids": [
+          702399
+        ],
+        "section": "Loadouts & Items"
+      },
+      {
+        "text": "Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.",
+        "commit_ids": [
+          702396,
           702362,
           702350,
-          702337
+          702337,
+          702314
         ],
-        "section": "Livestock & Resources"
-      },
-      {
-        "text": "Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.",
-        "commit_ids": [
-          702363
-        ],
-        "section": "Hunting & Trophies"
-      },
-      {
-        "text": "Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.",
-        "commit_ids": [
-          702343
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Localization updates are now applied, fixing missing or incorrect text in the UI.",
-        "commit_ids": [
-          702384
-        ],
-        "section": "Localization"
+        "section": "Animals & Shearing"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.\n- Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.\n- Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.\n- Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.\n- Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.\n- Localization updates are now applied, fixing missing or incorrect text in the UI."
+    "new_relevant_count": 9,
+    "new_summary": "- Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.\n- Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.\n- Item positions are saved and restored when creating or deploying loadouts, preserving layout.\n- Ladder hatch functionality has been fixed, improving their reliability and use.\n- Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose."
   },
   "2026-09-17": {
     "commit_count": 110,
