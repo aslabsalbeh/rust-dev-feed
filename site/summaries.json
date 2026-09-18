@@ -1,10 +1,90 @@
 {
   "2026-09-18": {
-    "commit_count": 32,
-    "relevant_commit_count": 19,
+    "commit_count": 47,
+    "relevant_commit_count": 32,
     "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352": [
+        {
+          "title": "Livestock & Shearing",
+          "items": [
+            {
+              "text": "Shearing system overhaul: shearing now uses harvesting tools, shaved state persists on corpses, and a new shearing material was added as a gameplay proof of concept.",
+              "commit_ids": [
+                702350,
+                702337,
+                702314
+              ]
+            },
+            {
+              "text": "Wild cows can no longer breed, age, or produce resources, and pregnancies are blocked when condition is below 60%.",
+              "commit_ids": [
+                702320
+              ]
+            },
+            {
+              "text": "Renamed cooked, raw, and spoiled lamb meat to \"Mutton\" for consistency.",
+              "commit_ids": [
+                702322
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crab Swarm AI",
+          "items": [
+            {
+              "text": "Crab swarms now move as cohesive groups with random size‑influenced speeds, and their fleeing/startle mechanics have been improved.",
+              "commit_ids": [
+                702305,
+                702343,
+                702326
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Communication & Utility Items",
+          "items": [
+            {
+              "text": "Added dedicated subsystems for megaphone and mobile phone, removing now‑unnecessary override controllers.",
+              "commit_ids": [
+                702347
+              ]
+            },
+            {
+              "text": "Implemented unique subsystems for compass, detonator, and master key, also cleaning up their hold‑type controllers.",
+              "commit_ids": [
+                702290
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dialogue & UI Fixes",
+          "items": [
+            {
+              "text": "Fixed boat vendor dialogue on floating cities that previously gave the wrong direction for purchased boats.",
+              "commit_ids": [
+                702306
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Environment Fixes",
+          "items": [
+            {
+              "text": "Resolved a NaN water‑height bug that could cause visual and physics glitches in water bodies.",
+              "commit_ids": [
+                702272
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Vendors & UI",
@@ -71,20 +151,6 @@
     "summary": "### Vendors & UI\n- Boat vendor now provides the correct direction to the purchased boat on floating cities.\n\n### Animals & Wildlife\n- First pass implementation of crab swarms added; expect groups of crabs to appear.\n- Critter shaders now support an idle toggle, reducing unnecessary movement of critters.\n\n### Farming & Resources\n- Sheep shearing material and gameplay proof of concept added (currently in development).\n\n### Gameplay & Balance\n- Fixed water height calculations to prevent NaN values, ensuring stable water physics and preventing unexpected player movement or sinking.\n\n### UI & Quality of Life\n- Store UI now opens automatically when it becomes visible, eliminating the previous forced‑open hack and preventing related UI glitches.",
     "new_items": [
       {
-        "text": "Boat vendor now provides the correct direction to the purchased boat on floating cities.",
-        "commit_ids": [
-          702306
-        ],
-        "section": "Vendors & UI"
-      },
-      {
-        "text": "First pass implementation of crab swarms added; expect groups of crabs to appear.",
-        "commit_ids": [
-          702305
-        ],
-        "section": "Animals & Wildlife"
-      },
-      {
         "text": "Critter shaders now support an idle toggle, reducing unnecessary movement of critters.",
         "commit_ids": [
           702316
@@ -99,8 +165,8 @@
         "section": "Farming & Resources"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Boat vendor now provides the correct direction to the purchased boat on floating cities.\n- First pass implementation of crab swarms added; expect groups of crabs to appear.\n- Critter shaders now support an idle toggle, reducing unnecessary movement of critters.\n- Sheep shearing material and gameplay proof of concept added (currently in development)."
+    "new_relevant_count": 2,
+    "new_summary": "- Critter shaders now support an idle toggle, reducing unnecessary movement of critters.\n- Sheep shearing material and gameplay proof of concept added (currently in development)."
   },
   "2026-09-17": {
     "commit_count": 110,

@@ -1,5 +1,125 @@
 [
   {
+    "id": 702352,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "164870",
+    "created": "2026-09-18T15:49:42",
+    "message": "fix missing underwater color grading in RRP",
+    "user": "Brian"
+  },
+  {
+    "id": 702350,
+    "branch": "main/Livestock_animals/livestock_sheep_shearing",
+    "changeset": "164868",
+    "created": "2026-09-18T15:40:30",
+    "message": "Instead of arbitrary IsShearTool flag, just make items that are good at harvesting corpses usable for shearing, less state to keep track of and more intuitive",
+    "user": "Maverick"
+  },
+  {
+    "id": 702348,
+    "branch": "main/Livestock_animals",
+    "changeset": "164867",
+    "created": "2026-09-18T15:34:19",
+    "message": "Show livestock popup to the right same as plant popup, better as it doesn't hide the livestock",
+    "user": "Maverick"
+  },
+  {
+    "id": 702347,
+    "branch": "main/3p_melee_animsystem_updates",
+    "changeset": "164866",
+    "created": "2026-09-18T15:34:14",
+    "message": "- Set up subsystems for megaphone and mobile phone\r\n- Deleted their override controllers ( not needed now)",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 702343,
+    "branch": "main/Livestock_animals/critter_animals/crab_swarms",
+    "changeset": "164865",
+    "created": "2026-09-18T15:31:01",
+    "message": "fix pathing, crabs now move as a swarm, with random (size-influenced) speeds for each individual",
+    "user": "ElliotH"
+  },
+  {
+    "id": 702341,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "164864",
+    "created": "2026-09-18T15:28:08",
+    "message": "Reduced the size of the AdditionalLightData buffer elements from 160 to 128 bytes to be more cache friendly",
+    "user": "aidan.m"
+  },
+  {
+    "id": 702340,
+    "branch": "main/muzzle_flash_optimisations",
+    "changeset": "164863",
+    "created": "2026-09-18T15:27:00",
+    "message": "Don't run lights or particle system IK effects ion muzzle flashes if they've faded out\r\nLights and particle system IK were still running on the background for complete muzzle flashes that weren't yet recycled\r\n\r\nWith 20 bots firing AK shots simultaneously:\r\n- Saves ~0.5 ms on particle systems\r\n- Saves ~0.3ms on lights\r\n- More savings with reduced shadow jobs and update handler not having to go over each of the stale lights\r\n\r\nAround ~1ms in savings",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 702337,
+    "branch": "main/Livestock_animals/livestock_sheep_shearing",
+    "changeset": "164862",
+    "created": "2026-09-18T15:21:39",
+    "message": "Fix sheep corse not carrying over the shaved state, also fix the corpse not copying the pose and flopping in the air",
+    "user": "Maverick"
+  },
+  {
+    "id": 702333,
+    "branch": "main/Livestock_animals",
+    "changeset": "164861",
+    "created": "2026-09-18T15:11:23",
+    "message": "Hide horns on female sheep",
+    "user": "Maverick"
+  },
+  {
+    "id": 702328,
+    "branch": "main/procgen_visualiser",
+    "changeset": "164859",
+    "created": "2026-09-18T14:41:26",
+    "message": "First pass on the Procgen Replay visualisation tool to trace all steps of generating a procedural map and then visualising each placement from candidate positions. Intended for bug finding and development testing.\r\n\r\nPlay/pause/restart/seek to each procgen step to see how the final map was created. Starts at heightmap generation and follows (today's) 91 stages until the map is complete.\r\n\r\nAdded editor-only hooks in SpawnFilter, Prefab, World, WorldSetup and LODUtil. Any editor effect requires first arming in the `Tools > Procedural > Procgen Replay` window, use the ProcgenReplay scene to (optionally generate and) replay map seeds.",
+    "user": "Jakb"
+  },
+  {
+    "id": 702326,
+    "branch": "main/Livestock_animals/critter_animals/crab_swarms",
+    "changeset": "164858",
+    "created": "2026-09-18T14:24:51",
+    "message": "better fleeing/startle mechanics",
+    "user": "ElliotH"
+  },
+  {
+    "id": 702323,
+    "branch": "main/Livestock_animals",
+    "changeset": "164857",
+    "created": "2026-09-18T14:19:17",
+    "message": "Updated Mutton Meat Icon",
+    "user": "Alfie Birch"
+  },
+  {
+    "id": 702322,
+    "branch": "main/Livestock_animals",
+    "changeset": "164856",
+    "created": "2026-09-18T14:16:01",
+    "message": "Update Cooked, Raw and Spoiled Lamb Meat Name to Mutton instead of Lamb",
+    "user": "Alfie Birch"
+  },
+  {
+    "id": 702320,
+    "branch": "main/Livestock_animals",
+    "changeset": "164854",
+    "created": "2026-09-18T14:10:46",
+    "message": "Prevent wild cows from breeding / aging / producing resources + prevent pregnancy below 60% condition",
+    "user": "Maverick"
+  },
+  {
+    "id": 702319,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "164853",
+    "created": "2026-09-18T14:06:28",
+    "message": "Update: ran Update Urls again\r\nLooks like couple blurhashes got missed\r\nTests: navigated to dlc page with httpimageloaddelay",
+    "user": "Daniel P"
+  },
+  {
     "id": 702316,
     "branch": "main/Livestock_animals/critter_animals/crab_swarms",
     "changeset": "164852",
@@ -2190,141 +2310,5 @@
     "created": "2026-09-15T16:17:54",
     "message": "Update: StoreBundleTool improvements\r\n- deduplicate serialized objects to reduce number of saves\r\n- deduplicate ProxyPaths to reduce number of field-callback invocations\r\n- document loss of data and why it happens\r\nTests: ran the script",
     "user": "Daniel P"
-  },
-  {
-    "id": 701454,
-    "branch": "main/Livestock_animals/Frog_Branch",
-    "changeset": "164342",
-    "created": "2026-09-15T16:02:17",
-    "message": "exported updated frog anims",
-    "user": "julek"
-  },
-  {
-    "id": 701453,
-    "branch": "main/grenade_client_prediction",
-    "changeset": "164341",
-    "created": "2026-09-15T15:58:18",
-    "message": "main -> grenade_client_prediction",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 701451,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "164339",
-    "created": "2026-09-15T15:56:29",
-    "message": "work around weird skinviewer viewmodel errors",
-    "user": "Brian"
-  },
-  {
-    "id": 701448,
-    "branch": "main/Livestock_animals",
-    "changeset": "164338",
-    "created": "2026-09-15T15:52:52",
-    "message": "Another fencing deployment pass\r\nFix them being sunk into terrain quite a bit by default, prevent sinking them further in while connecting to another fence\r\nSlightly improve placement on sloped terrain, allowed them to be placed at an angle (within 20°)\r\nGot rid of a baked in rotation in all of the sockets",
-    "user": "cipeaX"
-  },
-  {
-    "id": 701446,
-    "branch": "main/powerlevel_loot_rooms",
-    "changeset": "164337",
-    "created": "2026-09-15T15:44:56",
-    "message": "Water treatment plant and sewer branch loot rooms",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 701444,
-    "branch": "main/vcc",
-    "changeset": "164335",
-    "created": "2026-09-15T15:42:49",
-    "message": "Define fixes",
-    "user": "Adam W"
-  },
-  {
-    "id": 701443,
-    "branch": "main/Livestock_animals",
-    "changeset": "164334",
-    "created": "2026-09-15T15:33:04",
-    "message": "updated lamb model with new lods. added and updated new lamb fur textures. added lamb fur lod material.",
-    "user": "Toffer"
-  },
-  {
-    "id": 701441,
-    "branch": "main/Livestock_animals/Frog_Branch",
-    "changeset": "164332",
-    "created": "2026-09-15T15:22:07",
-    "message": "exported updated frog anims",
-    "user": "julek"
-  },
-  {
-    "id": 701439,
-    "branch": "main/vcc",
-    "changeset": "164331",
-    "created": "2026-09-15T15:17:37",
-    "message": "Rework comparers.",
-    "user": "Adam W"
-  },
-  {
-    "id": 701434,
-    "branch": "▋▊▆▆",
-    "changeset": "▅▍▉▅▉▊",
-    "created": "2026-09-15T15:09:12",
-    "message": "▊▊ ▋▊▊▅▅ ▍▄▌▅ ▅▅▆▄▆▄▊ ▋▍ ▋▇▌▅▆▍▇ ▋▋▊▄▍▋ ▇█ ▉▇▌ ▆▇▉▌▆▇▅ ▉▅▄▌ ▇▉▇▄█▄▆ ▋▉ █▊▌▇▆▇▌ ▅█▌ ▌▉▌▅▇██▍ ▄▉▍▊ ▌▆▍█▅▊▌▆▆▅▋▋▇ ▉█▆ ▉▌▉▍▅▇ ▆▇ █▇▍▊ ▄▅▅ ▆▊▋▌▊▇▋▆▅▆ ▅▉▊▋▄ ▌▋▍▆▇▆ ▍▍██▄ ▊▍",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 701433,
-    "branch": "main/underground_train_network_update",
-    "changeset": "164328",
-    "created": "2026-09-15T15:08:48",
-    "message": "Bit more polish on randomised room L wires + pipes",
-    "user": "hannah.watts"
-  },
-  {
-    "id": 701427,
-    "branch": "main/Livestock_animals",
-    "changeset": "164325",
-    "created": "2026-09-15T14:52:06",
-    "message": "updated milk icon",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 701424,
-    "branch": "main",
-    "changeset": "164323",
-    "created": "2026-09-15T14:41:14",
-    "message": "report_player_bots_fix -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 701423,
-    "branch": "main/Livestock_animals/milk",
-    "changeset": "164321",
-    "created": "2026-09-15T14:40:41",
-    "message": "Add textured milk jar with volume-preserving slosh, faster liquid updates and pooled surface meshes - will need a programmer to look over \r\nadded milk icon\r\nhttps://files.facepunch.com/pilgrim/2026/September/15_15-39-VioletSapsucker.mp4",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 701421,
-    "branch": "main/terrain_deformation",
-    "changeset": "164320",
-    "created": "2026-09-15T14:37:07",
-    "message": "pefab explosive setup on some weapons",
-    "user": "Grigler"
-  },
-  {
-    "id": 701420,
-    "branch": "main/terrain_deformation",
-    "changeset": "164319",
-    "created": "2026-09-15T14:36:58",
-    "message": "explosive crater definition support, reworked shapes to apply in 3D space with respect to blocking objects",
-    "user": "Grigler"
-  },
-  {
-    "id": 701419,
-    "branch": "main/vcc",
-    "changeset": "164318",
-    "created": "2026-09-15T14:32:11",
-    "message": "Glyph/bind resolution cleanup",
-    "user": "Adam W"
   }
 ]
