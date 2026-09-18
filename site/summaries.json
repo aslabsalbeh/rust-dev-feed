@@ -1,126 +1,93 @@
 {
   "2026-09-18": {
-    "commit_count": 47,
-    "relevant_commit_count": 32,
-    "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316",
+    "commit_count": 63,
+    "relevant_commit_count": 40,
+    "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {
-      "702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352": [
-        {
-          "title": "Livestock & Shearing",
-          "items": [
-            {
-              "text": "Shearing system overhaul: shearing now uses harvesting tools, shaved state persists on corpses, and a new shearing material was added as a gameplay proof of concept.",
-              "commit_ids": [
-                702350,
-                702337,
-                702314
-              ]
-            },
-            {
-              "text": "Wild cows can no longer breed, age, or produce resources, and pregnancies are blocked when condition is below 60%.",
-              "commit_ids": [
-                702320
-              ]
-            },
-            {
-              "text": "Renamed cooked, raw, and spoiled lamb meat to \"Mutton\" for consistency.",
-              "commit_ids": [
-                702322
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Crab Swarm AI",
-          "items": [
-            {
-              "text": "Crab swarms now move as cohesive groups with random size‑influenced speeds, and their fleeing/startle mechanics have been improved.",
-              "commit_ids": [
-                702305,
-                702343,
-                702326
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Communication & Utility Items",
-          "items": [
-            {
-              "text": "Added dedicated subsystems for megaphone and mobile phone, removing now‑unnecessary override controllers.",
-              "commit_ids": [
-                702347
-              ]
-            },
-            {
-              "text": "Implemented unique subsystems for compass, detonator, and master key, also cleaning up their hold‑type controllers.",
-              "commit_ids": [
-                702290
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Dialogue & UI Fixes",
-          "items": [
-            {
-              "text": "Fixed boat vendor dialogue on floating cities that previously gave the wrong direction for purchased boats.",
-              "commit_ids": [
-                702306
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Environment Fixes",
-          "items": [
-            {
-              "text": "Resolved a NaN water‑height bug that could cause visual and physics glitches in water bodies.",
-              "commit_ids": [
-                702272
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Vendors & UI",
+        "title": "Base & Authorization",
         "items": [
           {
-            "text": "Boat vendor now provides the correct direction to the purchased boat on floating cities.",
+            "text": "Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.",
             "commit_ids": [
-              702306
+              702381
             ]
           }
         ]
       },
       {
-        "title": "Animals & Wildlife",
+        "title": "Inventory & Loadouts",
         "items": [
           {
-            "text": "First pass implementation of crab swarms added; expect groups of crabs to appear.",
+            "text": "Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.",
+            "commit_ids": [
+              702378
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Resources",
+        "items": [
+          {
+            "text": "Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.",
+            "commit_ids": [
+              702362,
+              702350,
+              702337
+            ]
+          },
+          {
+            "text": "Wild cows no longer breed, age, or produce resources, and pregnancies are blocked when condition falls below 60%, reducing unintended resource generation.",
+            "commit_ids": [
+              702320
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Hunting & Trophies",
+        "items": [
+          {
+            "text": "Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.",
+            "commit_ids": [
+              702363
+            ]
+          }
+        ]
+      },
+      {
+        "title": "New Threats & Gameplay Systems",
+        "items": [
+          {
+            "text": "Introduced crab swarms as a new hostile NPC group.",
             "commit_ids": [
               702305
             ]
           },
           {
-            "text": "Critter shaders now support an idle toggle, reducing unnecessary movement of critters.",
+            "text": "Added dedicated subsystems for compass, detonator, and master key, removing their old holdtype controllers.",
             "commit_ids": [
-              702316
+              702290
             ]
           }
         ]
       },
       {
-        "title": "Farming & Resources",
+        "title": "Stability & Bug Fixes",
         "items": [
           {
-            "text": "Sheep shearing material and gameplay proof of concept added (currently in development).",
+            "text": "Fixed NaN water height issue that could cause terrain or player positioning glitches.",
             "commit_ids": [
-              702314
+              702272
+            ]
+          },
+          {
+            "text": "Resolved error when selecting a player in the Animator window, preventing in‑game crashes.",
+            "commit_ids": [
+              702250
             ]
           }
         ]
@@ -129,44 +96,80 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed water height calculations to prevent NaN values, ensuring stable water physics and preventing unexpected player movement or sinking.",
+            "text": "Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.",
             "commit_ids": [
-              702272
+              702343
+            ]
+          },
+          {
+            "text": "Boat vendor dialogue on floating cities now correctly indicates the direction to find your purchased boat.",
+            "commit_ids": [
+              702306
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Localization",
         "items": [
           {
-            "text": "Store UI now opens automatically when it becomes visible, eliminating the previous forced‑open hack and preventing related UI glitches.",
+            "text": "Localization updates are now applied, fixing missing or incorrect text in the UI.",
             "commit_ids": [
-              702268
+              702384
             ]
           }
         ]
       }
     ],
-    "summary": "### Vendors & UI\n- Boat vendor now provides the correct direction to the purchased boat on floating cities.\n\n### Animals & Wildlife\n- First pass implementation of crab swarms added; expect groups of crabs to appear.\n- Critter shaders now support an idle toggle, reducing unnecessary movement of critters.\n\n### Farming & Resources\n- Sheep shearing material and gameplay proof of concept added (currently in development).\n\n### Gameplay & Balance\n- Fixed water height calculations to prevent NaN values, ensuring stable water physics and preventing unexpected player movement or sinking.\n\n### UI & Quality of Life\n- Store UI now opens automatically when it becomes visible, eliminating the previous forced‑open hack and preventing related UI glitches.",
+    "summary": "### Base & Authorization\n- Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.\n\n### Inventory & Loadouts\n- Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.\n\n### Livestock & Resources\n- Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.\n- Wild cows no longer breed, age, or produce resources, and pregnancies are blocked when condition falls below 60%, reducing unintended resource generation.\n\n### Hunting & Trophies\n- Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.\n\n### New Threats & Gameplay Systems\n- Introduced crab swarms as a new hostile NPC group.\n- Added dedicated subsystems for compass, detonator, and master key, removing their old holdtype controllers.\n\n### Stability & Bug Fixes\n- Fixed NaN water height issue that could cause terrain or player positioning glitches.\n- Resolved error when selecting a player in the Animator window, preventing in‑game crashes.\n\n### Gameplay & Balance\n- Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.\n- Boat vendor dialogue on floating cities now correctly indicates the direction to find your purchased boat.\n\n### Localization\n- Localization updates are now applied, fixing missing or incorrect text in the UI.",
     "new_items": [
       {
-        "text": "Critter shaders now support an idle toggle, reducing unnecessary movement of critters.",
+        "text": "Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.",
         "commit_ids": [
-          702316
+          702381
         ],
-        "section": "Animals & Wildlife"
+        "section": "Base & Authorization"
       },
       {
-        "text": "Sheep shearing material and gameplay proof of concept added (currently in development).",
+        "text": "Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.",
         "commit_ids": [
-          702314
+          702378
         ],
-        "section": "Farming & Resources"
+        "section": "Inventory & Loadouts"
+      },
+      {
+        "text": "Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.",
+        "commit_ids": [
+          702362,
+          702350,
+          702337
+        ],
+        "section": "Livestock & Resources"
+      },
+      {
+        "text": "Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.",
+        "commit_ids": [
+          702363
+        ],
+        "section": "Hunting & Trophies"
+      },
+      {
+        "text": "Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.",
+        "commit_ids": [
+          702343
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Localization updates are now applied, fixing missing or incorrect text in the UI.",
+        "commit_ids": [
+          702384
+        ],
+        "section": "Localization"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Critter shaders now support an idle toggle, reducing unnecessary movement of critters.\n- Sheep shearing material and gameplay proof of concept added (currently in development)."
+    "new_relevant_count": 8,
+    "new_summary": "- Temporarily disabled tool cupboard occlusion checks, preventing hidden tool cupboards from granting base authorization until auth networking is moved out of the tool cupboard.\n- Loadout system now saves and restores item positions when creating or deploying loadouts, preserving player inventory layout.\n- Shearing improvements: wild sheep can be sheared but will flee when approached, shearing tools now use generic harvesting properties, and sheep corpses retain shaved state and correct pose, preventing floating or unshaved corpses.\n- Added new bull and cow trophy models to the large hunting trophy prefab, expanding the trophy collection.\n- Crab swarms now move together with individual random speeds based on size, improving their behavior during raids.\n- Localization updates are now applied, fixing missing or incorrect text in the UI."
   },
   "2026-09-17": {
     "commit_count": 110,
