@@ -1,22 +1,22 @@
 {
   "2026-09-17": {
-    "commit_count": 108,
-    "relevant_commit_count": 62,
+    "commit_count": 110,
+    "relevant_commit_count": 63,
     "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159,702178,702188,702192,702193,702195,702199,702200,702201,702204": [
+      "702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159,702178,702188,702192,702193,702195,702199,702200,702201,702204,702208": [
         {
-          "title": "Crafting & Recipes",
+          "title": "Crafting & Food Buffs",
           "items": [
             {
-              "text": "Added rich versions of all pies requiring cream, granting various buffs (e.g., longer duration, increased yield, healing, etc.)",
+              "text": "Added \"Rich\" versions of all pies, requiring cream and granting various buffs (e.g., extra duration, increased yield, healing, max HP, etc.).",
               "commit_ids": [
                 702200
               ]
             },
             {
-              "text": "Added new brioche bread recipe (requires 2 eggs and 4 cream) granting a 25% buff to bread stats",
+              "text": "Introduced a new Brioche Bread recipe that provides a 25% boost to bread stats and requires eggs and cream.",
               "commit_ids": [
                 702192
               ]
@@ -27,9 +27,16 @@
           "title": "Combat & Targeting",
           "items": [
             {
-              "text": "Remote‑controlled turrets can now hit reactive targets when using bows",
+              "text": "Fixed remotely controlled turrets so they can now hit reactive targets when using bows.",
               "commit_ids": [
                 702138
+              ]
+            },
+            {
+              "text": "Corrected Distance2D calculations: BaseEntity methods now return true 2‑D distance and Vector3Ex.Distance2D no longer includes the Y component, fixing range‑related bugs.",
+              "commit_ids": [
+                702099,
+                702090
               ]
             }
           ]
@@ -38,7 +45,7 @@
           "title": "Achievements",
           "items": [
             {
-              "text": "Added new achievements: leaving a note in another player's mailbox, purchasing from the travelling vendor, and starting a satellite crash event",
+              "text": "Added new achievements for mailing a note to another player, purchasing from the travelling vendor, and triggering a satellite crash event.",
               "commit_ids": [
                 702136
               ]
@@ -46,30 +53,23 @@
           ]
         },
         {
-          "title": "Bug Fixes",
+          "title": "World / Environment",
           "items": [
             {
-              "text": "Fixed NaN water level generation, preventing erratic water behavior",
+              "text": "Fixed occasional generation of NaN values for water level, preventing water‑height glitches.",
               "commit_ids": [
                 702199
-              ]
-            },
-            {
-              "text": "Corrected Distance2D calculations: removed Y component from Vector3Ex.Distance2D and fixed BaseEntity Distance2D returning 3D distance, improving range checks and related mechanics",
-              "commit_ids": [
-                702099,
-                702090
               ]
             }
           ]
         }
       ],
-      "701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087": [
+      "701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088": [
         {
-          "title": "Building",
+          "title": "Building & Structures",
           "items": [
             {
-              "text": "Fixed triangle foundations incorrectly connecting buildings when only touching at a corner.",
+              "text": "Fixed triangle foundations from incorrectly connecting buildings when only touching at a corner.",
               "commit_ids": [
                 702062
               ]
@@ -77,10 +77,21 @@
           ]
         },
         {
-          "title": "Power & Generators",
+          "title": "Decoration & Signs",
           "items": [
             {
-              "text": "When stirring the biofuel generator you now become mounted at your current position; releasing E stops mounting, and a 'no electricity' status is shown if stirred without power.",
+              "text": "Added colour wheel for neon signs, increased maximum neon sign size to 25 mm, and introduced a toggle to make the brush outline more visible.",
+              "commit_ids": [
+                702035
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Power Systems",
+          "items": [
+            {
+              "text": "Stirring a biofuel generator now mounts the player at their current position; releasing E stops mounting, and a 'no electricity' status is shown if the generator is stirred but has no power.",
               "commit_ids": [
                 702050
               ]
@@ -88,21 +99,57 @@
           ]
         },
         {
-          "title": "Turrets",
+          "title": "Vehicles",
           "items": [
             {
-              "text": "Remotely controlled turrets can now damage reactive targets, fixing a previous limitation where they only reacted to client projectiles.",
+              "text": "Implemented seat‑swap action across all vehicle control sets and added a car reload action with consistent button bindings.",
               "commit_ids": [
-                701955
+                702037,
+                702030
               ]
             }
           ]
         },
         {
-          "title": "Crafting",
+          "title": "Weapons",
           "items": [
             {
-              "text": "Reduced sandbag barricade variant crafting costs and time: stone 100→50, cloth 10→5, build time 30→10 seconds.",
+              "text": "Introduced a new subsystem for machetes and swords, removing the now‑unnecessary HoldType.Machete.overrideController.",
+              "commit_ids": [
+                702024
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & Navigation",
+          "items": [
+            {
+              "text": "Fixed navmesh generation issues that caused navmeshes to be built on top of fences and corrected rustNavmeshVolumes on the new navmesh, improving NPC pathing.",
+              "commit_ids": [
+                701960
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Turrets & Combat",
+          "items": [
+            {
+              "text": "Remotely controlled turrets can now damage reactive targets, fixing a limitation where they only reacted to client projectiles.",
+              "commit_ids": [
+                701955
+              ]
+            }
+          ]
+        }
+      ],
+      "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949": [
+        {
+          "title": "Crafting & Build Times",
+          "items": [
+            {
+              "text": "Reduced stone and cloth costs for a key recipe and cut its crafting time from 30 to 10 seconds.",
               "commit_ids": [
                 701949
               ]
@@ -110,42 +157,12 @@
           ]
         },
         {
-          "title": "Navigation",
+          "title": "Health Feedback",
           "items": [
             {
-              "text": "Fixed navmesh generation issues where it sometimes built on top of fences and corrected rustNavmeshVolumes on new navmeshes.",
-              "commit_ids": [
-                701960
-              ]
-            }
-          ]
-        }
-      ],
-      "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943": [
-        {
-          "title": "Health System",
-          "items": [
-            {
-              "text": "Low‑health heartbeat sound now stronger initially and fades after 3 seconds of health loss, giving clearer audio cue of critical health.",
+              "text": "Low‑health heartbeat sound now ramps up with strength and fades after 3 seconds of health loss, making danger more noticeable.",
               "commit_ids": [
                 701943
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock AI & Interaction",
-          "items": [
-            {
-              "text": "Livestock avoidance behavior improved: animals now spread out instead of forming a line when approaching a trough, reducing clumping.",
-              "commit_ids": [
-                701908
-              ]
-            },
-            {
-              "text": "Sheep corpse colliders corrected, preventing players and other entities from getting stuck on dead sheep.",
-              "commit_ids": [
-                701883
               ]
             }
           ]
@@ -157,6 +174,18 @@
               "text": "Toggle‑duck option now works correctly on non‑modular car vehicles.",
               "commit_ids": [
                 701885
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock AI & Interaction",
+          "items": [
+            {
+              "text": "Livestock now avoid crowding the trough by fanning out, and sheep corpse colliders have been fixed for proper physics interactions.",
+              "commit_ids": [
+                701908,
+                701883
               ]
             }
           ]
