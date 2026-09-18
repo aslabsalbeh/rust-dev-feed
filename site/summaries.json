@@ -1,10 +1,154 @@
 {
   "2026-09-18": {
-    "commit_count": 79,
-    "relevant_commit_count": 50,
+    "commit_count": 86,
+    "relevant_commit_count": 53,
     "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427": [
+        {
+          "title": "Livestock Shearing & Wool",
+          "items": [
+            {
+              "text": "Comprehensive fixes to sheep shearing: fleece persists after server restarts, shearing no longer counts as a combat hit, knives now wound instead of shearing, wool payout matches authored amount, timers that expired during save fire on load preventing stuck animals, wool counts as a harvest and overflows into backpack, fur baking runs only on fleece models and updates with version changes, debug shave scan compiles out unused fur materials, and manifest regenerated restoring livestock prefabs.",
+              "commit_ids": [
+                702396
+              ]
+            },
+            {
+              "text": "Wild sheep now flee when a player attempts to shear them, preventing accidental shearing of untamed animals.",
+              "commit_ids": [
+                702362
+              ]
+            },
+            {
+              "text": "Shearing tool logic simplified: any item capable of harvesting corpses can be used for shearing, removing the need for a separate IsShearTool flag.",
+              "commit_ids": [
+                702350
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Trophies",
+          "items": [
+            {
+              "text": "Added Bull and Cow trophy models to the large hunting trophy prefab, expanding the trophy collection for hunters.",
+              "commit_ids": [
+                702363
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Fridge Looting",
+          "items": [
+            {
+              "text": "Respawnable fridges now assign a new first looter after items respawn, resetting loot ownership for each cycle.",
+              "commit_ids": [
+                702405
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Authorization & Tool Cupboard Changes",
+          "items": [
+            {
+              "text": "Temporarily disabled tool cupboard (TC) influence on room occlusion to avoid authentication issues; will be re-enabled after networking adjustments.",
+              "commit_ids": [
+                702381
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Loadout Persistence",
+          "items": [
+            {
+              "text": "Item positions are now saved and restored when creating or deploying loadouts, preserving player layout choices.",
+              "commit_ids": [
+                702378
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structure Interactions",
+          "items": [
+            {
+              "text": "Fixed ladder hatch functionality, improving reliability of ladder access and operation.",
+              "commit_ids": [
+                702399
+              ]
+            }
+          ]
+        }
+      ],
+      "702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343": [
+        {
+          "title": "Critters & Animals",
+          "items": [
+            {
+              "text": "Crab swarms now behave as true swarms: individuals move at random, size‑influenced speeds, have improved fleeing/startle reactions, can idle via shader toggle, and the basic swarm system has been added.",
+              "commit_ids": [
+                702343,
+                702326,
+                702316,
+                702305
+              ]
+            },
+            {
+              "text": "Sheep corpses now keep the shaved appearance and retain the correct pose instead of flopping in the air.",
+              "commit_ids": [
+                702337
+              ]
+            },
+            {
+              "text": "Wild cows can no longer breed, age, or generate resources, and they will not become pregnant unless their condition is at least 60 %.",
+              "commit_ids": [
+                702320
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC Dialogue",
+          "items": [
+            {
+              "text": "Boat vendor dialogue on floating cities now gives the correct direction to the purchased boat.",
+              "commit_ids": [
+                702306
+              ]
+            }
+          ]
+        }
+      ],
+      "702213,702234,702243": [
+        {
+          "title": "Combat & Weapons",
+          "items": [
+            {
+              "text": "Implemented a dedicated third‑person animation subsystem for the hammer, allowing distinct combat behavior and targeting interactions.",
+              "commit_ids": [
+                702234
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Stability & Bugs",
+          "items": [
+            {
+              "text": "Fixed a null‑reference crash in the CoverageQuery system when queries were registered or unregistered multiple times within the same frame, improving server stability.",
+              "commit_ids": [
+                702213
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Loot & Base Building",
@@ -111,42 +255,10 @@
           702405
         ],
         "section": "Loot & Base Building"
-      },
-      {
-        "text": "Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.",
-        "commit_ids": [
-          702381
-        ],
-        "section": "Loot & Base Building"
-      },
-      {
-        "text": "Item positions are saved and restored when creating or deploying loadouts, preserving layout.",
-        "commit_ids": [
-          702378
-        ],
-        "section": "Loadouts & Items"
-      },
-      {
-        "text": "Ladder hatch functionality has been fixed, improving their reliability and use.",
-        "commit_ids": [
-          702399
-        ],
-        "section": "Loadouts & Items"
-      },
-      {
-        "text": "Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.",
-        "commit_ids": [
-          702396,
-          702362,
-          702350,
-          702337,
-          702314
-        ],
-        "section": "Animals & Shearing"
       }
     ],
-    "new_relevant_count": 9,
-    "new_summary": "- Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.\n- Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.\n- Item positions are saved and restored when creating or deploying loadouts, preserving layout.\n- Ladder hatch functionality has been fixed, improving their reliability and use.\n- Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose."
+    "new_relevant_count": 1,
+    "new_summary": "- Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs."
   },
   "2026-09-17": {
     "commit_count": 110,
