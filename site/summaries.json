@@ -1,4 +1,62 @@
 {
+  "2026-09-19": {
+    "commit_count": 7,
+    "relevant_commit_count": 5,
+    "relevant_signature": "702452,702453,702454,702458,702466",
+    "prompt_version": "structured-read-state-v6-stable-published",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Animals & AI",
+        "items": [
+          {
+            "text": "Livestock avoidance speed increased, reducing the time they take to dodge obstacles.",
+            "commit_ids": [
+              702454
+            ]
+          },
+          {
+            "text": "Bulls no longer attempt headbutts on unreachable players, preventing wasted attacks.",
+            "commit_ids": [
+              702453
+            ]
+          },
+          {
+            "text": "Animals no longer get stuck circling obstacles when fleeing or charging, fixing endless looping behavior.",
+            "commit_ids": [
+              702452
+            ]
+          }
+        ]
+      }
+    ],
+    "summary": "### Animals & AI\n- Livestock avoidance speed increased, reducing the time they take to dodge obstacles.\n- Bulls no longer attempt headbutts on unreachable players, preventing wasted attacks.\n- Animals no longer get stuck circling obstacles when fleeing or charging, fixing endless looping behavior.",
+    "new_items": [
+      {
+        "text": "Livestock avoidance speed increased, reducing the time they take to dodge obstacles.",
+        "commit_ids": [
+          702454
+        ],
+        "section": "Animals & AI"
+      },
+      {
+        "text": "Bulls no longer attempt headbutts on unreachable players, preventing wasted attacks.",
+        "commit_ids": [
+          702453
+        ],
+        "section": "Animals & AI"
+      },
+      {
+        "text": "Animals no longer get stuck circling obstacles when fleeing or charging, fixing endless looping behavior.",
+        "commit_ids": [
+          702452
+        ],
+        "section": "Animals & AI"
+      }
+    ],
+    "new_relevant_count": 3,
+    "new_summary": "- Livestock avoidance speed increased, reducing the time they take to dodge obstacles.\n- Bulls no longer attempt headbutts on unreachable players, preventing wasted attacks.\n- Animals no longer get stuck circling obstacles when fleeing or charging, fixing endless looping behavior."
+  },
   "2026-09-18": {
     "commit_count": 93,
     "relevant_commit_count": 57,
@@ -444,133 +502,6 @@
       }
     ],
     "summary": "### Combat & Targeting\n- Remotely controlled turrets can now damage reactive targets, fixing a limitation where they only reacted to client projectiles.\n- Distance2D calculations now correctly use true 2‑D distance, fixing range‑related bugs.\n- Low‑health heartbeat sound now ramps up with intensity and fades after 3 seconds of health loss, making danger more noticeable.\n\n### Crafting & Food Buffs\n- Rich versions of all pies now require cream and grant extra duration, higher yield, healing, max HP and other buffs.\n- Brioche Bread recipe adds a 25 % boost to bread stats and requires eggs and cream.\n- Key recipe costs reduced (stone and cloth) and crafting time cut from 30 s to 10 s.\n\n### World & Environment\n- Water‑level generation no longer produces NaN values, eliminating water‑height glitches.\n- Triangle foundations no longer incorrectly connect buildings that only touch at a corner.\n\n### Vehicles & Controls\n- Seat‑swap action added across all vehicle controls and a consistent car reload button binding introduced.\n- Stirring a biofuel generator mounts the player at their position; releasing E stops mounting, and a ‘no electricity’ status appears if the generator lacks power.\n\n### Livestock & AI\n- Livestock spread out when feeding to avoid crowding the trough, and sheep corpse colliders now behave correctly.\n- Navmesh generation issues fixed, preventing meshes on fences and improving NPC pathing.\n\n### Achievements\n- New achievements added for mailing a note to another player, buying from the travelling vendor, and triggering a satellite crash event.\n\n### Multiplayer & Matchmaking\n- Quick join menu now reliably shows server entries without disappearing.\n- Quick join menu now displays entries (previously empty).\n\n### Building & Creative\n- Painting UI now includes a colour wheel for neon signs, larger size option (up to 25mm), and optional brush outline toggle for better visibility.\n\n### Combat & Animations\n- Sheep charge attack animation fixed, ensuring proper attack behavior.\n\n### Vehicle Controls\n- Toggle duck feature works correctly on non-modular car vehicles.\n\n### UI Stability\n- Flexbox UI layout error resolved, preventing out-of-range crashes in UI panels.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-09-16": {
-    "commit_count": 80,
-    "relevant_commit_count": 44,
-    "relevant_signature": "701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873,701875,701876,701879,701882",
-    "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Livestock & Animals",
-        "items": [
-          {
-            "text": "Fixed gender assignment when buying animals so purchased livestock retain intended gender.",
-            "commit_ids": [
-              701882
-            ]
-          },
-          {
-            "text": "Sheep now yield wool when sheared, adding a new resource.",
-            "commit_ids": [
-              701876
-            ]
-          },
-          {
-            "text": "Multi‑player vendor interactions now correctly list only animals following the speaking player, with annoyance state tied to each animal, preventing duplicate turn rolls.",
-            "commit_ids": [
-              701868
-            ]
-          },
-          {
-            "text": "Cows can eat from troughs even when blocked, and now avoid each other and players to reduce clipping.",
-            "commit_ids": [
-              701755,
-              701685
-            ]
-          },
-          {
-            "text": "Critters startle and flee when approached, no longer cause chain startles; older animal AI simplified with reduced sight range and no idle awareness.",
-            "commit_ids": [
-              701742,
-              701728,
-              701739
-            ]
-          },
-          {
-            "text": "Bears correctly flee when a target is on a foundation.",
-            "commit_ids": [
-              701695
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Wool & Trading",
-        "items": [
-          {
-            "text": "Added stackable wool (max 100) and enabled selling it to the stables vendor via the auction system with a three‑strike reward rotation; also fixed inventory deduction for multiple stacks.",
-            "commit_ids": [
-              701875
-            ]
-          },
-          {
-            "text": "Auction results now wait until dialogue text finishes before showing UI pop‑ups.",
-            "commit_ids": [
-              701879
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Loot & Events",
-        "items": [
-          {
-            "text": "Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches to balance power‑level loot rooms.",
-            "commit_ids": [
-              701814
-            ]
-          },
-          {
-            "text": "Oil rig switch now counts as a monument for analytics, and new air drop and satellite selection events have been added.",
-            "commit_ids": [
-              701712,
-              701694
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Explosives",
-        "items": [
-          {
-            "text": "Improved C4 client prediction and fixed rotation blending across full distance for more reliable placement.",
-            "commit_ids": [
-              701735
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Sandbag & God Mode",
-        "items": [
-          {
-            "text": "Only the default sandbag is craftable; other variants are now non‑craftable.",
-            "commit_ids": [
-              701693
-            ]
-          },
-          {
-            "text": "Fixed sandbag upgrade cooldown, allowing immediate upgrades after placement.",
-            "commit_ids": [
-              701643,
-              701635
-            ]
-          },
-          {
-            "text": "Server can now set a player's god mode via ServerSetGod, used in tutorials and scripts.",
-            "commit_ids": [
-              701650
-            ]
-          }
-        ]
-      }
-    ],
-    "summary": "### Livestock & Animals\n- Fixed gender assignment when buying animals so purchased livestock retain intended gender.\n- Sheep now yield wool when sheared, adding a new resource.\n- Multi‑player vendor interactions now correctly list only animals following the speaking player, with annoyance state tied to each animal, preventing duplicate turn rolls.\n- Cows can eat from troughs even when blocked, and now avoid each other and players to reduce clipping.\n- Critters startle and flee when approached, no longer cause chain startles; older animal AI simplified with reduced sight range and no idle awareness.\n- Bears correctly flee when a target is on a foundation.\n\n### Wool & Trading\n- Added stackable wool (max 100) and enabled selling it to the stables vendor via the auction system with a three‑strike reward rotation; also fixed inventory deduction for multiple stacks.\n- Auction results now wait until dialogue text finishes before showing UI pop‑ups.\n\n### World Loot & Events\n- Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches to balance power‑level loot rooms.\n- Oil rig switch now counts as a monument for analytics, and new air drop and satellite selection events have been added.\n\n### Explosives\n- Improved C4 client prediction and fixed rotation blending across full distance for more reliable placement.\n\n### Sandbag & God Mode\n- Only the default sandbag is craftable; other variants are now non‑craftable.\n- Fixed sandbag upgrade cooldown, allowing immediate upgrades after placement.\n- Server can now set a player's god mode via ServerSetGod, used in tutorials and scripts.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

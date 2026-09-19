@@ -1,5 +1,61 @@
 [
   {
+    "id": 702466,
+    "branch": "main/Livestock_animals",
+    "changeset": "164952",
+    "created": "2026-09-19T12:02:50",
+    "message": "Make autotest_run refuse when another process already holds the game server port",
+    "user": "Maverick"
+  },
+  {
+    "id": 702459,
+    "branch": "█▍▌▄▇▍█▇▋▇█▉▋▇▉▆▌▅▍",
+    "changeset": "▋▊▇▍▆▇",
+    "created": "2026-09-19T11:09:16",
+    "message": "▄ ▇▅█ █▍ ▇▅▌▌ ▆▇▌█▉▇▌▅▉ ▌▍▌▄▅▊▆▉▌▌▅",
+    "user": "cipeaX"
+  },
+  {
+    "id": 702458,
+    "branch": "main",
+    "changeset": "164948",
+    "created": "2026-09-19T11:07:36",
+    "message": "Fixed editor tests writing two result files",
+    "user": "Flavien"
+  },
+  {
+    "id": 702457,
+    "branch": "main/Livestock_animals",
+    "changeset": "164947",
+    "created": "2026-09-19T11:06:41",
+    "message": "Make navigation tests able to catch spinning agents",
+    "user": "Maverick"
+  },
+  {
+    "id": 702454,
+    "branch": "main/Livestock_animals/livestock_nav_avoidance",
+    "changeset": "164946",
+    "created": "2026-09-19T10:51:38",
+    "message": "Make avoidance twice as fast, still too slow",
+    "user": "Maverick"
+  },
+  {
+    "id": 702453,
+    "branch": "main/Livestock_animals",
+    "changeset": "164945",
+    "created": "2026-09-19T10:46:18",
+    "message": "Fix bull trying to headbutt unreachable players",
+    "user": "Maverick"
+  },
+  {
+    "id": 702452,
+    "branch": "main/Livestock_animals",
+    "changeset": "164944",
+    "created": "2026-09-19T10:43:00",
+    "message": "Fix animals circling around an obstacle forever when fleeing, or around the player when charging",
+    "user": "Maverick"
+  },
+  {
     "id": 702439,
     "branch": "▌▆▇▌▅▆▍▊▅▋▉▄▉▅▉▍█▅▄▄▅▌",
     "changeset": "▇▋▉█▊▊",
@@ -2190,77 +2246,5 @@
     "created": "2026-09-16T12:30:17",
     "message": "Added a bin sphere collision check against spot light cones to further reduce the number of lights per bin",
     "user": "aidan.m"
-  },
-  {
-    "id": 701665,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "164460",
-    "created": "2026-09-16T11:39:00",
-    "message": "Update: StoreBundleTool - fill in image upload logic\r\n- changed url format\r\n- ran \"Update Urls\"\r\nTests: ran full Update Urls - manifest grabbing works, but uploading gets stuck",
-    "user": "Daniel P"
-  },
-  {
-    "id": 701660,
-    "branch": "main/sandbag_barricade_variants/stacking",
-    "changeset": "164459",
-    "created": "2026-09-16T11:32:39",
-    "message": "Further placement checks/fixes.",
-    "user": "Adam W"
-  },
-  {
-    "id": 701658,
-    "branch": "main/new_nav_default_isolated",
-    "changeset": "164458",
-    "created": "2026-09-16T11:23:20",
-    "message": "Isolated reapply of \"Set new navmesh enabled by default, now needs -useOldNavmesh to disable\" for release",
-    "user": "cipeaX"
-  },
-  {
-    "id": 701650,
-    "branch": "main/sv_god_sync_fix",
-    "changeset": "164456",
-    "created": "2026-09-16T11:01:24",
-    "message": "Added ServerSetGod which modifies the client's god info status and networks it to the player - now that global.god can be called from the server\r\nUpdated two instances of the server disabling god mode of a player to use this (eg. in the tutorial)",
-    "user": "Raul"
-  },
-  {
-    "id": 701643,
-    "branch": "main/sandbag_barricade_variants/stacking",
-    "changeset": "164455",
-    "created": "2026-09-16T10:50:39",
-    "message": "Fix clientLastAttackedTime not  being initially set to -infinity which blocked sandbags from being upgraded instantly after placement due to incorrect cooldown.\r\nChecks correctly run server-side.",
-    "user": "Adam W"
-  },
-  {
-    "id": 701642,
-    "branch": "▋▋▇▉",
-    "changeset": "▄▉▊▉▌█",
-    "created": "2026-09-16T10:47:11",
-    "message": "▆ ▊▄▄▉▍ ▇▆▌▉ ▇▉▅█▊▅█▉▇▉▇▇▄▋▊▋▅▊▅▅",
-    "user": "Ryan"
-  },
-  {
-    "id": 701641,
-    "branch": "█▊▉▊▉▍▇▄▌▌▌▆▋▅▋▍▆█▊▅▆█",
-    "changeset": "▊▍█▄▅▊",
-    "created": "2026-09-16T10:46:22",
-    "message": "▋ ▇█▌▅▄▌ ▋▊▅▊▋█ ▌▍█ ▄▍▇▅▆▅ ▌█▉▄▆▄▍▇█ █▍▉ ▊█ ▌▌▋ ▌█▇▋ ▋▆▌▉▆▄▊▊▊",
-    "user": "Ryan"
-  },
-  {
-    "id": 701638,
-    "branch": "main/render_pipeline_testing/depth_based_light_binning",
-    "changeset": "164451",
-    "created": "2026-09-16T10:36:04",
-    "message": "Added sphere to bin AABB collision checks to reduce the number of lights per-bin further",
-    "user": "aidan.m"
-  },
-  {
-    "id": 701635,
-    "branch": "main/sandbag_barricade_variants/stacking",
-    "changeset": "164450",
-    "created": "2026-09-16T10:28:58",
-    "message": "Same damaged cooldown logic for upgrading as repairing",
-    "user": "Adam W"
   }
 ]
