@@ -449,43 +449,69 @@
     "new_summary": ""
   },
   "2026-09-16": {
-    "commit_count": 87,
-    "relevant_commit_count": 48,
-    "relevant_signature": "701596,701600,701604,701605,701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873,701875,701876,701879,701882",
+    "commit_count": 80,
+    "relevant_commit_count": 44,
+    "relevant_signature": "701635,701643,701650,701660,701665,701685,701693,701694,701695,701699,701712,701722,701728,701735,701739,701742,701755,701762,701763,701766,701767,701770,701776,701782,701790,701796,701800,701803,701804,701811,701814,701816,701820,701822,701823,701842,701864,701868,701869,701873,701875,701876,701879,701882",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Animal Mechanics",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Purchased animals keep their assigned gender and sheep can now be sheared to collect wool.",
+            "text": "Fixed gender assignment when buying animals so purchased livestock retain intended gender.",
             "commit_ids": [
-              701882,
+              701882
+            ]
+          },
+          {
+            "text": "Sheep now yield wool when sheared, adding a new resource.",
+            "commit_ids": [
               701876
             ]
           },
           {
-            "text": "Animal interactions are more reliable: vendors show only the interacting player's animals, cows can feed from troughs even when blocked and avoid clipping with each other and players, critters no longer startle each other and react properly to nearby players, older animals have simplified AI, and bears immediately flee when the target stands on a foundation.",
+            "text": "Multi‑player vendor interactions now correctly list only animals following the speaking player, with annoyance state tied to each animal, preventing duplicate turn rolls.",
             "commit_ids": [
-              701868,
+              701868
+            ]
+          },
+          {
+            "text": "Cows can eat from troughs even when blocked, and now avoid each other and players to reduce clipping.",
+            "commit_ids": [
               701755,
-              701685,
+              701685
+            ]
+          },
+          {
+            "text": "Critters startle and flee when approached, no longer cause chain startles; older animal AI simplified with reduced sight range and no idle awareness.",
+            "commit_ids": [
               701742,
               701728,
-              701739,
+              701739
+            ]
+          },
+          {
+            "text": "Bears correctly flee when a target is on a foundation.",
+            "commit_ids": [
               701695
             ]
           }
         ]
       },
       {
-        "title": "Wool Economy",
+        "title": "Wool & Trading",
         "items": [
           {
-            "text": "A new wool item can be sold to the stables vendor via the auction system (stack size 100, rewards scale with amount, 15‑minute cooldown after rejecting all offers) and a bug fixing multiple‑stack deductions.",
+            "text": "Added stackable wool (max 100) and enabled selling it to the stables vendor via the auction system with a three‑strike reward rotation; also fixed inventory deduction for multiple stacks.",
             "commit_ids": [
               701875
+            ]
+          },
+          {
+            "text": "Auction results now wait until dialogue text finishes before showing UI pop‑ups.",
+            "commit_ids": [
+              701879
             ]
           }
         ]
@@ -494,13 +520,13 @@
         "title": "World Loot & Events",
         "items": [
           {
-            "text": "Loot tables for Trainyard, Water Treatment, and Sewer branches have been rebalanced.",
+            "text": "Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches to balance power‑level loot rooms.",
             "commit_ids": [
               701814
             ]
           },
           {
-            "text": "Added a monument trigger for the oil‑rig switch event and introduced new air‑drop and satellite selection events.",
+            "text": "Oil rig switch now counts as a monument for analytics, and new air drop and satellite selection events have been added.",
             "commit_ids": [
               701712,
               701694
@@ -509,10 +535,10 @@
         ]
       },
       {
-        "title": "C4 Mechanics",
+        "title": "Explosives",
         "items": [
           {
-            "text": "C4 now has improved client‑side prediction, hide/show event controls, and corrected rotation blending throughout its travel distance.",
+            "text": "Improved C4 client prediction and fixed rotation blending across full distance for more reliable placement.",
             "commit_ids": [
               701735
             ]
@@ -520,27 +546,31 @@
         ]
       },
       {
-        "title": "Sandbag Defense & Upgrades",
+        "title": "Sandbag & God Mode",
         "items": [
           {
-            "text": "Only the default sandbag is craftable; other variants are now unavailable.",
+            "text": "Only the default sandbag is craftable; other variants are now non‑craftable.",
             "commit_ids": [
               701693
             ]
           },
           {
-            "text": "Sandbag stacking and upgrades were overhauled: upgrades can be applied immediately, retain the sandbag’s current health fraction, share a unified cooldown with repairs, include server‑side validation, and prevent clipping.",
+            "text": "Fixed sandbag upgrade cooldown, allowing immediate upgrades after placement.",
             "commit_ids": [
-              701600,
-              701596,
-              701635,
-              701643
+              701643,
+              701635
+            ]
+          },
+          {
+            "text": "Server can now set a player's god mode via ServerSetGod, used in tutorials and scripts.",
+            "commit_ids": [
+              701650
             ]
           }
         ]
       }
     ],
-    "summary": "### Livestock & Animal Mechanics\n- Purchased animals keep their assigned gender and sheep can now be sheared to collect wool.\n- Animal interactions are more reliable: vendors show only the interacting player's animals, cows can feed from troughs even when blocked and avoid clipping with each other and players, critters no longer startle each other and react properly to nearby players, older animals have simplified AI, and bears immediately flee when the target stands on a foundation.\n\n### Wool Economy\n- A new wool item can be sold to the stables vendor via the auction system (stack size 100, rewards scale with amount, 15‑minute cooldown after rejecting all offers) and a bug fixing multiple‑stack deductions.\n\n### World Loot & Events\n- Loot tables for Trainyard, Water Treatment, and Sewer branches have been rebalanced.\n- Added a monument trigger for the oil‑rig switch event and introduced new air‑drop and satellite selection events.\n\n### C4 Mechanics\n- C4 now has improved client‑side prediction, hide/show event controls, and corrected rotation blending throughout its travel distance.\n\n### Sandbag Defense & Upgrades\n- Only the default sandbag is craftable; other variants are now unavailable.\n- Sandbag stacking and upgrades were overhauled: upgrades can be applied immediately, retain the sandbag’s current health fraction, share a unified cooldown with repairs, include server‑side validation, and prevent clipping.",
+    "summary": "### Livestock & Animals\n- Fixed gender assignment when buying animals so purchased livestock retain intended gender.\n- Sheep now yield wool when sheared, adding a new resource.\n- Multi‑player vendor interactions now correctly list only animals following the speaking player, with annoyance state tied to each animal, preventing duplicate turn rolls.\n- Cows can eat from troughs even when blocked, and now avoid each other and players to reduce clipping.\n- Critters startle and flee when approached, no longer cause chain startles; older animal AI simplified with reduced sight range and no idle awareness.\n- Bears correctly flee when a target is on a foundation.\n\n### Wool & Trading\n- Added stackable wool (max 100) and enabled selling it to the stables vendor via the auction system with a three‑strike reward rotation; also fixed inventory deduction for multiple stacks.\n- Auction results now wait until dialogue text finishes before showing UI pop‑ups.\n\n### World Loot & Events\n- Adjusted loot tables for Trainyard, Water Treatment, and Sewer branches to balance power‑level loot rooms.\n- Oil rig switch now counts as a monument for analytics, and new air drop and satellite selection events have been added.\n\n### Explosives\n- Improved C4 client prediction and fixed rotation blending across full distance for more reliable placement.\n\n### Sandbag & God Mode\n- Only the default sandbag is craftable; other variants are now non‑craftable.\n- Fixed sandbag upgrade cooldown, allowing immediate upgrades after placement.\n- Server can now set a player's god mode via ServerSetGod, used in tutorials and scripts.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
