@@ -1,102 +1,69 @@
 {
   "2026-09-18": {
-    "commit_count": 89,
-    "relevant_commit_count": 56,
+    "commit_count": 93,
+    "relevant_commit_count": 57,
     "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427,702430,702432,702435": [
+      "702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427,702430,702432,702435,702436": [
         {
-          "title": "Livestock & Animals",
+          "title": "Livestock & Animal Behavior",
           "items": [
             {
-              "text": "Fixed pregnant cow behavior ping‑ponging between curious follow and random play animation.",
+              "text": "Fixed pregnant cows getting stuck between curious follow and random play states.",
               "commit_ids": [
                 702435
               ]
             },
             {
-              "text": "Improved skateboard cow stability to prevent falling off.",
+              "text": "Improved skateboard cow stability to prevent frequent falls.",
               "commit_ids": [
                 702432
               ]
             },
             {
-              "text": "Sheep shearing overhauls: fleece persists after server restarts, shearing no longer registers as a combat hit, knives now wound instead of shearing, wool payout matches authored amount, timers that expired during save fire on load, wool counts as a harvest item and overflows into backpack, and related tests updated.",
+              "text": "Corrected swapped appearances between inbred and non‑inbred cows.",
+              "commit_ids": [
+                702430
+              ]
+            },
+            {
+              "text": "Enhanced animal avoidance logic; animals now avoid obstacles more reliably (performance to be optimized).",
+              "commit_ids": [
+                702427
+              ]
+            },
+            {
+              "text": "Comprehensive sheep shearing overhaul: fleece persists after server restarts, shearing no longer counts as combat, knives wound instead of shearing, correct wool payout, timers recover after saves, wool counts as harvest and goes to backpack, fur baking runs only on fleece models, updated tests and manifest restored.",
               "commit_ids": [
                 702396
               ]
             },
             {
-              "text": "Wild sheep now flee when a player attempts to shave them, preventing accidental shearing.",
+              "text": "Wild sheep now flee when a player attempts to shave them.",
               "commit_ids": [
                 702362
               ]
             },
             {
-              "text": "Redesigned livestock popup UI to match the plant popup UI for consistency.",
+              "text": "Added new bull and cow trophy models to hunting trophy collection.",
               "commit_ids": [
-                702394
+                702363
               ]
             }
           ]
         },
         {
-          "title": "Base & Authorization",
+          "title": "Loot & Inventory Mechanics",
           "items": [
             {
-              "text": "Respawnable fridges now assign a new \"first\" looter after items respawn, fixing loot tracking.",
+              "text": "Respawnable fridges now assign a new \"first looter\" after items respawn.",
               "commit_ids": [
                 702405
               ]
             },
             {
-              "text": "Temporarily disabled tool cupboard (TC) influence on room occlusion to avoid auth inconsistencies; will be re‑enabled after networking changes.",
-              "commit_ids": [
-                702381
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Tools",
-          "items": [
-            {
-              "text": "Added mask support for grenades, improving visibility handling during explosions.",
-              "commit_ids": [
-                702397
-              ]
-            },
-            {
-              "text": "Implemented medical tool setup and global mask support in the third‑person melee animation system.",
-              "commit_ids": [
-                702402
-              ]
-            },
-            {
-              "text": "Created unique subsystems for water pistol and keycard and removed unnecessary holdtypes.",
-              "commit_ids": [
-                702386
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Viewer",
-          "items": [
-            {
-              "text": "Fixed disappearing hands in the skin viewer by instantiating them outside the viewmodel prefab and swapping their layer to UI.",
-              "commit_ids": [
-                702415
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Loadouts",
-          "items": [
-            {
-              "text": "Loadout system now saves and restores item positions when creating or deploying loadouts.",
+              "text": "Loadout items now retain their positions when creating or deploying loadouts.",
               "commit_ids": [
                 702378
               ]
@@ -104,41 +71,43 @@
           ]
         },
         {
-          "title": "Hunting Trophies",
+          "title": "Combat & Tool Enhancements",
           "items": [
             {
-              "text": "Added Bull and Cow trophy models and integrated them into the large hunting trophy prefab.",
+              "text": "Grenades now support mask interactions, affecting visibility and targeting.",
               "commit_ids": [
-                702363
+                702397
+              ]
+            },
+            {
+              "text": "Introduced unique subsystems for water pistols and keycards, removing unnecessary holdtypes.",
+              "commit_ids": [
+                702386
               ]
             }
           ]
         }
       ],
-      "702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350": [
+      "702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352": [
         {
-          "title": "Livestock & Shearing",
+          "title": "Livestock Shearing & Resources",
           "items": [
             {
-              "text": "Shearing now works with any item that can harvest corpses, removing the need for a separate IsShearTool flag.",
+              "text": "Shearing now uses any item capable of harvesting corpses, simplifying the mechanic and fixing bugs where shaved sheep corpses lost their state or flopped in the air; includes a new shearing material and gameplay proof of concept.",
               "commit_ids": [
-                702350
-              ]
-            },
-            {
-              "text": "Sheep corpses now retain the shaved state and keep the correct pose after shearing.",
-              "commit_ids": [
-                702337
-              ]
-            },
-            {
-              "text": "Added a shearing material and gameplay proof‑of‑concept for sheep shearing.",
-              "commit_ids": [
+                702350,
+                702337,
                 702314
               ]
             },
             {
-              "text": "Wild cows can no longer breed, age, or produce resources, and pregnancy is blocked when condition falls below 60%.",
+              "text": "Meat items formerly called \"Lamb\" are renamed to \"Mutton\" for raw, cooked, and spoiled versions, aligning names with in‑game terminology.",
+              "commit_ids": [
+                702322
+              ]
+            },
+            {
+              "text": "Wild cows no longer breed, age, or produce resources, and pregnancies are blocked unless the cow's condition is at least 60%, preventing unintended resource generation.",
               "commit_ids": [
                 702320
               ]
@@ -146,53 +115,44 @@
           ]
         },
         {
-          "title": "Critter AI – Crab Swarms",
+          "title": "Crab Swarm Behavior",
           "items": [
             {
-              "text": "Implemented crab swarms that move together as a group with size‑influenced random speeds.",
+              "text": "Crab swarms now move as cohesive groups with random size‑influenced speeds, improved fleeing and startle reactions, and idle movement integration, fixing pathing and making swarm behavior more realistic.",
               "commit_ids": [
                 702343,
-                702305
-              ]
-            },
-            {
-              "text": "Improved fleeing and startle mechanics for crab swarms.",
-              "commit_ids": [
-                702326
-              ]
-            },
-            {
-              "text": "Integrated moveToggle so shader‑driven critters can idle when not moving.",
-              "commit_ids": [
+                702326,
+                702305,
                 702316
               ]
             }
           ]
         },
         {
-          "title": "Communication & Utility Devices",
+          "title": "Item Subsystems & Tools",
           "items": [
             {
-              "text": "Added subsystems for megaphone and mobile phone and removed their now‑unneeded override controllers.",
+              "text": "Added dedicated subsystems for megaphone, mobile phone, compass, detonator, and master key, removing unnecessary override controllers and enabling proper functionality of these player tools.",
               "commit_ids": [
-                702347
-              ]
-            },
-            {
-              "text": "Created unique subsystems for compass, detonator, and master key, deleting their holdtype controllers.",
-              "commit_ids": [
+                702347,
                 702290
               ]
             }
           ]
         },
         {
-          "title": "UI & Dialogue",
+          "title": "UI & Dialogue Fixes",
           "items": [
             {
-              "text": "Fixed boat vendor dialogue on floating cities to show the correct direction for the purchased boat.",
+              "text": "Boat vendor dialogue on floating cities now correctly indicates the direction to the purchased boat, fixing misleading instructions.",
               "commit_ids": [
                 702306
+              ]
+            },
+            {
+              "text": "Livestock interaction popup is repositioned to the right side, matching plant popups and preventing the livestock model from being hidden during interaction.",
+              "commit_ids": [
+                702348
               ]
             }
           ]
