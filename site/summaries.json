@@ -1,6 +1,6 @@
 {
   "2026-09-19": {
-    "commit_count": 13,
+    "commit_count": 14,
     "relevant_commit_count": 8,
     "relevant_signature": "702452,702453,702454,702458,702466,702470,702472,702476",
     "prompt_version": "structured-read-state-v6-stable-published",
@@ -54,283 +54,137 @@
       }
     ],
     "summary": "### NPC & AI\n- Livestock headbutt damage increased, making them more dangerous in close combat.\n- Bulls can now attack players in safe zones, and leading bulls no longer fight each other.\n- Livestock avoidance speed doubled, improving their navigation around obstacles.\n- Fixed bulls attempting headbutts on unreachable players.\n- Animals no longer get stuck circling obstacles when fleeing or charging.\n\n### UI & Quality of Life\n- Store UI no longer shows 'Store content failed to load' when your inventory is empty.",
-    "new_items": [
-      {
-        "text": "Livestock headbutt damage increased, making them more dangerous in close combat.",
-        "commit_ids": [
-          702470
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Bulls can now attack players in safe zones, and leading bulls no longer fight each other.",
-        "commit_ids": [
-          702470
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Store UI no longer shows 'Store content failed to load' when your inventory is empty.",
-        "commit_ids": [
-          702472
-        ],
-        "section": "UI & Quality of Life"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Livestock headbutt damage increased, making them more dangerous in close combat.\n- Bulls can now attack players in safe zones, and leading bulls no longer fight each other.\n- Store UI no longer shows 'Store content failed to load' when your inventory is empty."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-18": {
     "commit_count": 93,
     "relevant_commit_count": 57,
-    "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410",
+    "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427,702430,702432,702435,702436",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {
-      "702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427,702430,702432,702435,702436": [
-        {
-          "title": "Livestock & Animal Behavior",
-          "items": [
-            {
-              "text": "Fixed pregnant cows getting stuck between curious follow and random play states.",
-              "commit_ids": [
-                702435
-              ]
-            },
-            {
-              "text": "Improved skateboard cow stability to prevent frequent falls.",
-              "commit_ids": [
-                702432
-              ]
-            },
-            {
-              "text": "Corrected swapped appearances between inbred and non‑inbred cows.",
-              "commit_ids": [
-                702430
-              ]
-            },
-            {
-              "text": "Enhanced animal avoidance logic; animals now avoid obstacles more reliably (performance to be optimized).",
-              "commit_ids": [
-                702427
-              ]
-            },
-            {
-              "text": "Comprehensive sheep shearing overhaul: fleece persists after server restarts, shearing no longer counts as combat, knives wound instead of shearing, correct wool payout, timers recover after saves, wool counts as harvest and goes to backpack, fur baking runs only on fleece models, updated tests and manifest restored.",
-              "commit_ids": [
-                702396
-              ]
-            },
-            {
-              "text": "Wild sheep now flee when a player attempts to shave them.",
-              "commit_ids": [
-                702362
-              ]
-            },
-            {
-              "text": "Added new bull and cow trophy models to hunting trophy collection.",
-              "commit_ids": [
-                702363
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Loot & Inventory Mechanics",
-          "items": [
-            {
-              "text": "Respawnable fridges now assign a new \"first looter\" after items respawn.",
-              "commit_ids": [
-                702405
-              ]
-            },
-            {
-              "text": "Loadout items now retain their positions when creating or deploying loadouts.",
-              "commit_ids": [
-                702378
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Tool Enhancements",
-          "items": [
-            {
-              "text": "Grenades now support mask interactions, affecting visibility and targeting.",
-              "commit_ids": [
-                702397
-              ]
-            },
-            {
-              "text": "Introduced unique subsystems for water pistols and keycards, removing unnecessary holdtypes.",
-              "commit_ids": [
-                702386
-              ]
-            }
-          ]
-        }
-      ],
-      "702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352": [
-        {
-          "title": "Livestock Shearing & Resources",
-          "items": [
-            {
-              "text": "Shearing now uses any item capable of harvesting corpses, simplifying the mechanic and fixing bugs where shaved sheep corpses lost their state or flopped in the air; includes a new shearing material and gameplay proof of concept.",
-              "commit_ids": [
-                702350,
-                702337,
-                702314
-              ]
-            },
-            {
-              "text": "Meat items formerly called \"Lamb\" are renamed to \"Mutton\" for raw, cooked, and spoiled versions, aligning names with in‑game terminology.",
-              "commit_ids": [
-                702322
-              ]
-            },
-            {
-              "text": "Wild cows no longer breed, age, or produce resources, and pregnancies are blocked unless the cow's condition is at least 60%, preventing unintended resource generation.",
-              "commit_ids": [
-                702320
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Crab Swarm Behavior",
-          "items": [
-            {
-              "text": "Crab swarms now move as cohesive groups with random size‑influenced speeds, improved fleeing and startle reactions, and idle movement integration, fixing pathing and making swarm behavior more realistic.",
-              "commit_ids": [
-                702343,
-                702326,
-                702305,
-                702316
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Item Subsystems & Tools",
-          "items": [
-            {
-              "text": "Added dedicated subsystems for megaphone, mobile phone, compass, detonator, and master key, removing unnecessary override controllers and enabling proper functionality of these player tools.",
-              "commit_ids": [
-                702347,
-                702290
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Dialogue Fixes",
-          "items": [
-            {
-              "text": "Boat vendor dialogue on floating cities now correctly indicates the direction to the purchased boat, fixing misleading instructions.",
-              "commit_ids": [
-                702306
-              ]
-            },
-            {
-              "text": "Livestock interaction popup is repositioned to the right side, matching plant popups and preventing the livestock model from being hidden during interaction.",
-              "commit_ids": [
-                702348
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Loot & Base Building",
+        "title": "Livestock & Wildlife",
         "items": [
           {
-            "text": "Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.",
+            "text": "Fixed pregnant cows getting stuck between follow and play states.",
             "commit_ids": [
-              702405
+              702435
             ]
           },
           {
-            "text": "Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.",
+            "text": "Animals now avoid obstacles more reliably.",
             "commit_ids": [
-              702381
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Loadouts & Items",
-        "items": [
-          {
-            "text": "Item positions are saved and restored when creating or deploying loadouts, preserving layout.",
-            "commit_ids": [
-              702378
+              702427
             ]
           },
           {
-            "text": "Ladder hatch functionality has been fixed, improving their reliability and use.",
+            "text": "Wild sheep now flee when a player attempts to shave them.",
             "commit_ids": [
-              702399
+              702362
             ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Shearing",
-        "items": [
+          },
           {
-            "text": "Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.",
+            "text": "Added new bull and cow trophy models.",
+            "commit_ids": [
+              702363
+            ]
+          },
+          {
+            "text": "Overhauled sheep shearing: fleece persists after server restarts, shearing no longer counts as combat, knives wound instead of shearing, correct wool payout, timers recover after saves, wool goes to backpack, fur baking limited to fleece models, and shearing works with any harvesting item (including new material), fixing lost‑state bugs.",
             "commit_ids": [
               702396,
-              702362,
               702350,
               702337,
               702314
             ]
           },
           {
-            "text": "Wild cows can no longer breed, age, or produce resources, and they can only become pregnant if their condition is at least 60%.",
+            "text": "Renamed raw, cooked, and spoiled \"Lamb\" meat to \"Mutton\".",
+            "commit_ids": [
+              702322
+            ]
+          },
+          {
+            "text": "Wild cows no longer breed, age, or produce resources; pregnancies only possible when condition is at least 60%.",
             "commit_ids": [
               702320
             ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & Loot",
+        "items": [
+          {
+            "text": "Respawnable fridges now assign a new first looter after items respawn.",
+            "commit_ids": [
+              702405
+            ]
           },
           {
-            "text": "New bull and cow trophy models have been added to the large hunting trophy prefab.",
+            "text": "Loadout items retain their positions when creating or deploying loadouts.",
             "commit_ids": [
-              702363
+              702378
             ]
           }
         ]
       },
       {
-        "title": "Creatures & AI",
+        "title": "Combat & Tools",
         "items": [
           {
-            "text": "Crab swarms have been introduced with group pathing and size‑influenced random speeds, enhancing hostile critter encounters.",
+            "text": "Grenades now support mask interactions, influencing visibility and targeting.",
             "commit_ids": [
-              702343,
-              702305
+              702397
             ]
           },
           {
-            "text": "Fleeing and startle mechanics for critters have been improved, making them react more realistically to threats.",
+            "text": "Added dedicated subsystems for many player tools (megaphone, mobile phone, compass, detonator, master key, water pistols, keycards), removing unnecessary holdtypes and overrides.",
             "commit_ids": [
-              702326
+              702386,
+              702347,
+              702290
             ]
           }
         ]
       },
       {
-        "title": "UI & World",
+        "title": "UI & Dialogue",
         "items": [
           {
-            "text": "Boat vendor dialogue on floating cities now correctly indicates the direction to find the purchased boat.",
+            "text": "Boat vendor dialogue now correctly indicates the direction to the purchased boat.",
             "commit_ids": [
               702306
             ]
           },
           {
-            "text": "NaN water height issue resolved, preventing water surface glitches that could affect navigation and building.",
+            "text": "Livestock interaction popup repositioned to the right side, matching plant popups and keeping the model visible.",
+            "commit_ids": [
+              702348
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Skateboard cow durability increased, reducing breakage during use.",
+            "commit_ids": [
+              702432
+            ]
+          },
+          {
+            "text": "Crab swarms now move together with varied speeds based on size, improving their behavior.",
+            "commit_ids": [
+              702343
+            ]
+          },
+          {
+            "text": "Water height calculations corrected, fixing NaN issues that could cause abnormal water levels.",
             "commit_ids": [
               702272
             ]
@@ -338,7 +192,7 @@
         ]
       }
     ],
-    "summary": "### Loot & Base Building\n- Respawnable fridges now assign a new first looter after items respawn, fixing loot ownership bugs.\n- Tool Cupboards are no longer hidden by room occlusion, allowing players to see and verify TC status.\n\n### Loadouts & Items\n- Item positions are saved and restored when creating or deploying loadouts, preserving layout.\n- Ladder hatch functionality has been fixed, improving their reliability and use.\n\n### Animals & Shearing\n- Sheep shearing has been overhauled: fleece persists after server restarts, shearing no longer counts as a shot, knives wound instead of shearing, wool payout matches the authored amount, timers resume correctly on load, wool is harvested to the backpack, fur baking runs only on fleece models, wild sheep can be attempted to shave (they run away), and the shaved state carries over to corpses with correct pose.\n- Wild cows can no longer breed, age, or produce resources, and they can only become pregnant if their condition is at least 60%.\n- New bull and cow trophy models have been added to the large hunting trophy prefab.\n\n### Creatures & AI\n- Crab swarms have been introduced with group pathing and size‑influenced random speeds, enhancing hostile critter encounters.\n- Fleeing and startle mechanics for critters have been improved, making them react more realistically to threats.\n\n### UI & World\n- Boat vendor dialogue on floating cities now correctly indicates the direction to find the purchased boat.\n- NaN water height issue resolved, preventing water surface glitches that could affect navigation and building.",
+    "summary": "### Livestock & Wildlife\n- Fixed pregnant cows getting stuck between follow and play states.\n- Animals now avoid obstacles more reliably.\n- Wild sheep now flee when a player attempts to shave them.\n- Added new bull and cow trophy models.\n- Overhauled sheep shearing: fleece persists after server restarts, shearing no longer counts as combat, knives wound instead of shearing, correct wool payout, timers recover after saves, wool goes to backpack, fur baking limited to fleece models, and shearing works with any harvesting item (including new material), fixing lost‑state bugs.\n- Renamed raw, cooked, and spoiled \"Lamb\" meat to \"Mutton\".\n- Wild cows no longer breed, age, or produce resources; pregnancies only possible when condition is at least 60%.\n\n### Inventory & Loot\n- Respawnable fridges now assign a new first looter after items respawn.\n- Loadout items retain their positions when creating or deploying loadouts.\n\n### Combat & Tools\n- Grenades now support mask interactions, influencing visibility and targeting.\n- Added dedicated subsystems for many player tools (megaphone, mobile phone, compass, detonator, master key, water pistols, keycards), removing unnecessary holdtypes and overrides.\n\n### UI & Dialogue\n- Boat vendor dialogue now correctly indicates the direction to the purchased boat.\n- Livestock interaction popup repositioned to the right side, matching plant popups and keeping the model visible.\n\n### Gameplay & Balance\n- Skateboard cow durability increased, reducing breakage during use.\n- Crab swarms now move together with varied speeds based on size, improving their behavior.\n- Water height calculations corrected, fixing NaN issues that could cause abnormal water levels.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
