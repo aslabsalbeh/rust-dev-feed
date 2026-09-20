@@ -1,5 +1,21 @@
 [
   {
+    "id": 702506,
+    "branch": "▍█▋▊▆▋▄▅▇▄▊▇█▍▍▌▄▋",
+    "changeset": "▇▋▆▋▍▇",
+    "created": "2026-09-20T16:58:30",
+    "message": "▊▅▄█▊▄█▋ ▋▅▍▄▅",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 702505,
+    "branch": "main/biofuel_generator",
+    "changeset": "164984",
+    "created": "2026-09-20T16:52:13",
+    "message": "texture tweaks to the biofuel generator",
+    "user": "Pilgrim"
+  },
+  {
     "id": 702499,
     "branch": "main/Livestock_animals",
     "changeset": "164979",
@@ -1102,149 +1118,5 @@
     "created": "2026-09-17T18:55:54",
     "message": "▆ █▊▊▋▅▌ ▅█▆▇▄ ▄▇▊▅█▇ ▊▆█▉▌ ▍▊▌█▆▉▌▊▌ █▌▅▋ ▉▉▋▊▇ ▋▊▇▅▆▊ ▍▄▉▊▍▇▊ ▌▊▊▊▄▌▋▉",
     "user": "curt"
-  },
-  {
-    "id": 702119,
-    "branch": "main/halloween2026DLC",
-    "changeset": "164736",
-    "created": "2026-09-17T18:02:39",
-    "message": "alien costume description",
-    "user": "matt.i"
-  },
-  {
-    "id": 702118,
-    "branch": "main/base_occlusion",
-    "changeset": "164735",
-    "created": "2026-09-17T18:00:19",
-    "message": "Add base occlusion to runtime profiling so we can monitor how much main thread time it spends on room occlusion per frame",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 702115,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "164734",
-    "created": "2026-09-17T17:46:02",
-    "message": "Optim: have HttpImage unload their images when store tabs are hidden\r\nNeed to go through all the screens and verify they get unloaded correctly\r\nTests: inspected general tab's grid contents while being ingame and toggling menu",
-    "user": "Daniel P"
-  },
-  {
-    "id": 702114,
-    "branch": "main/terrain_deformation",
-    "changeset": "164733",
-    "created": "2026-09-17T17:32:49",
-    "message": "big gross protection overlay debug renderfeature in RRP, signifantly nicer than running around with ddraw",
-    "user": "Grigler"
-  },
-  {
-    "id": 702113,
-    "branch": "main/base_occlusion",
-    "changeset": "164732",
-    "created": "2026-09-17T17:30:49",
-    "message": "Improve the warning if the spatial network grid IDs will overlap the reserved room ids\r\n- change the encoding from hardcoded values to constants (confirmed behavior is identical)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 702111,
-    "branch": "main/terrain_deformation",
-    "changeset": "164731",
-    "created": "2026-09-17T17:28:12",
-    "message": "protection setup on rocks and foundations",
-    "user": "Grigler"
-  },
-  {
-    "id": 702110,
-    "branch": "main/terrain_deformation",
-    "changeset": "164730",
-    "created": "2026-09-17T17:27:40",
-    "message": "deformation protection\r\n- pre-baked static protection from topology and spawned rocks\r\n- entity-provided protection from foundations",
-    "user": "Grigler"
-  },
-  {
-    "id": 702102,
-    "branch": "main/base_occlusion",
-    "changeset": "164726",
-    "created": "2026-09-17T16:54:33",
-    "message": "Make room network group IDs static similar to the other reserved values instead of instance field\r\n- first 1024 IDs are for global groups\r\n- last 6.5M IDs reserved for base occlusion",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 702100,
-    "branch": "main/Weapon_Refresh_Machete",
-    "changeset": "164724",
-    "created": "2026-09-17T16:53:17",
-    "message": "holster update",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 702099,
-    "branch": "main/distance2d_fix",
-    "changeset": "164723",
-    "created": "2026-09-17T16:51:59",
-    "message": "Skip the Y component subtract in Vector3Ex.Distance2D",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 702098,
-    "branch": "main",
-    "changeset": "164722",
-    "created": "2026-09-17T16:50:31",
-    "message": "flexbox_outofrange_nre -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 702097,
-    "branch": "main/skinnable_ladder_hatch",
-    "changeset": "164721",
-    "created": "2026-09-17T16:50:12",
-    "message": "armoured ladder hatch gibs",
-    "user": "Tom.d"
-  },
-  {
-    "id": 702096,
-    "branch": "main/flexbox_outofrange_nre",
-    "changeset": "164720",
-    "created": "2026-09-17T16:48:28",
-    "message": "Fix Flexbox Out of Range error",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 702090,
-    "branch": "main/distance2d_fix",
-    "changeset": "164716",
-    "created": "2026-09-17T16:41:24",
-    "message": "- Fix Distance2D methods in BaseEntity returning 3D rather than 2D distance. Replace usages of these with the 3D distance to not change previous behaviour, all look like they work well enough despite having used 3D distance all along\r\n- Change Distance2D in Vector3Ex to return Magnitude2D of both vectors rather than the 3D distance calculation with discarded Y components. Remove the \"replace this\" comment",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 702088,
-    "branch": "main/base_occlusion",
-    "changeset": "164715",
-    "created": "2026-09-17T16:38:19",
-    "message": "Cleaned up entity face registeration so only BaseEntity calls RoomOcclusionManager.OnFacesRefreshed(entity)\r\n- used to subscribe to both DecayEntity and BuildingBlock so it could work on doors & building blocks\r\n- get rid of needing to register all faces explicitly in SaveRestore & copy paste",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 702087,
-    "branch": "main/sandbag_barricade_variants",
-    "changeset": "164714",
-    "created": "2026-09-17T16:29:32",
-    "message": "wip test fixes",
-    "user": "Adam W"
-  },
-  {
-    "id": 702084,
-    "branch": "main/base_occlusion",
-    "changeset": "164712",
-    "created": "2026-09-17T16:22:31",
-    "message": "Update doors to only call into base occlusion when their open/closed state is changed (via flags) instead of needing to remember 3x different places it called into base occlusion",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 702083,
-    "branch": "main/painting_fixes",
-    "changeset": "164711",
-    "created": "2026-09-17T16:18:25",
-    "message": "Add a neutral light option in the painting ui, accessible behind a convar `paint.neutralLighting`\r\n- only works with rrp enabled\r\n- overrides all light settings to a neutral studio light so current scene lighting conditions do not affect the preview object",
-    "user": "ElliotH"
   }
 ]
