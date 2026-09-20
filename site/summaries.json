@@ -198,230 +198,49 @@
     "new_summary": ""
   },
   "2026-09-17": {
-    "commit_count": 109,
-    "relevant_commit_count": 62,
-    "relevant_signature": "701883,701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159,702178,702188,702192,702193,702195,702199,702200,702201,702204,702208",
+    "commit_count": 104,
+    "relevant_commit_count": 58,
+    "relevant_signature": "701904,701908,701914,701918,701928,701939,701943,701949,701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088,702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159,702178,702188,702192,702193,702195,702199,702200,702201,702204,702208",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {
-      "702090,702096,702098,702099,702100,702102,702113,702114,702135,702136,702138,702146,702153,702155,702159,702178,702188,702192,702193,702195,702199,702200,702201,702204,702208": [
-        {
-          "title": "Crafting & Food Buffs",
-          "items": [
-            {
-              "text": "Added \"Rich\" versions of all pies, requiring cream and granting various buffs (e.g., extra duration, increased yield, gene chance, healing).",
-              "commit_ids": [
-                702200
-              ]
-            },
-            {
-              "text": "Added new Brioche Bread recipe (requires 2 eggs and 4 cream) with a 25% buff to bread stats.",
-              "commit_ids": [
-                702192
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Turret Interactions",
-          "items": [
-            {
-              "text": "Fixed remotely controlled turrets so they can hit reactive targets when using bows.",
-              "commit_ids": [
-                702138
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Achievements",
-          "items": [
-            {
-              "text": "Added new achievements for leaving a note in another player's mailbox, purchasing from the travelling vendor, and starting a satellite crash event.",
-              "commit_ids": [
-                702136
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Environment Fixes",
-          "items": [
-            {
-              "text": "Fixed occasional NaN values generated for water level, preventing abnormal water behavior.",
-              "commit_ids": [
-                702199
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Distance Calculation Fixes",
-          "items": [
-            {
-              "text": "Corrected Distance2D methods: now properly ignore the Y component and return true 2D distance, fixing range checks and related gameplay logic.",
-              "commit_ids": [
-                702099,
-                702090
-              ]
-            }
-          ]
-        }
-      ],
-      "701953,701955,701960,701970,701972,701990,701991,701997,702005,702019,702024,702030,702035,702037,702039,702040,702050,702051,702058,702062,702078,702081,702083,702087,702088": [
-        {
-          "title": "Building",
-          "items": [
-            {
-              "text": "Fixed triangle foundations from incorrectly connecting buildings when only touching at a corner.",
-              "commit_ids": [
-                702062
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Generators",
-          "items": [
-            {
-              "text": "Stirring the biofuel generator now mounts you at your current position; releasing E stops mounting, and a 'no electricity' status appears if stirred without power.",
-              "commit_ids": [
-                702050
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicles & Controls",
-          "items": [
-            {
-              "text": "Added a consistent 'Swap Seats' button binding to all vehicle action sets.",
-              "commit_ids": [
-                702037
-              ]
-            },
-            {
-              "text": "Implemented a car reload action and removed the menu gesture action.",
-              "commit_ids": [
-                702030
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Turrets",
-          "items": [
-            {
-              "text": "Remotely controlled turrets can now damage reactive targets, fixing a previous limitation to client projectiles only.",
-              "commit_ids": [
-                701955
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Painting & Neon Signs",
-          "items": [
-            {
-              "text": "Painting updates: added a colour wheel and a larger (25 mm) size option for neon signs, improved brush outline visibility with a toggleable convar.",
-              "commit_ids": [
-                702035
-              ]
-            }
-          ]
-        }
-      ],
-      "701885,701888,701889,701890,701904,701908,701914,701918,701928,701939,701943,701949": [
-        {
-          "title": "Crafting & Resource Costs",
-          "items": [
-            {
-              "text": "Reduced stone requirement from 100 to 50 and cloth from 10 to 5 for the sandbag barricade recipe, and cut build time from 30 to 10 seconds.",
-              "commit_ids": [
-                701949
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Health Feedback",
-          "items": [
-            {
-              "text": "Low‑health heartbeat sound now ramps up in strength and fades after 3 seconds of continuous health loss.",
-              "commit_ids": [
-                701943
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock AI",
-          "items": [
-            {
-              "text": "Livestock now spread out when avoiding obstacles instead of forming a line, improving avoidance behavior near troughs.",
-              "commit_ids": [
-                701908
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicle Controls",
-          "items": [
-            {
-              "text": "Toggle‑duck option now works correctly on non‑modular car vehicles.",
-              "commit_ids": [
-                701885
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Targeting",
+        "title": "Crafting & Food",
         "items": [
           {
-            "text": "Remotely controlled turrets can now damage reactive targets, fixing a limitation where they only reacted to client projectiles.",
+            "text": "Rich versions of all pies now require cream and grant buffs such as longer duration, higher yield, increased gene chance, and extra healing.",
+            "commit_ids": [
+              702200
+            ]
+          },
+          {
+            "text": "New Brioche Bread recipe (2 eggs, 4 cream) provides a 25 % boost to bread stats.",
+            "commit_ids": [
+              702192
+            ]
+          },
+          {
+            "text": "Stone and cloth costs for several recipes have been reduced and crafting time cut from 30 s to 10 s.",
+            "commit_ids": [
+              701949
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Turrets",
+        "items": [
+          {
+            "text": "Remotely controlled turrets can now damage reactive targets, including when using bows.",
             "commit_ids": [
               702138,
               701955
             ]
           },
           {
-            "text": "Distance2D calculations now correctly use true 2‑D distance, fixing range‑related bugs.",
-            "commit_ids": [
-              702099,
-              702090
-            ]
-          },
-          {
-            "text": "Low‑health heartbeat sound now ramps up with intensity and fades after 3 seconds of health loss, making danger more noticeable.",
+            "text": "Low‑health heartbeat sound is louder and fades after three seconds of health loss.",
             "commit_ids": [
               701943
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & Food Buffs",
-        "items": [
-          {
-            "text": "Rich versions of all pies now require cream and grant extra duration, higher yield, healing, max HP and other buffs.",
-            "commit_ids": [
-              702200
-            ]
-          },
-          {
-            "text": "Brioche Bread recipe adds a 25 % boost to bread stats and requires eggs and cream.",
-            "commit_ids": [
-              702192
-            ]
-          },
-          {
-            "text": "Key recipe costs reduced (stone and cloth) and crafting time cut from 30 s to 10 s.",
-            "commit_ids": [
-              701949
             ]
           }
         ]
@@ -430,13 +249,20 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Water‑level generation no longer produces NaN values, eliminating water‑height glitches.",
+            "text": "Distance2D calculations now correctly ignore the Y axis, fixing range checks and related gameplay logic.",
+            "commit_ids": [
+              702099,
+              702090
+            ]
+          },
+          {
+            "text": "Fixed occasional NaN water level values, preventing abnormal water behavior.",
             "commit_ids": [
               702199
             ]
           },
           {
-            "text": "Triangle foundations no longer incorrectly connect buildings that only touch at a corner.",
+            "text": "Triangle foundations no longer connect buildings that only touch at a corner.",
             "commit_ids": [
               702062
             ]
@@ -447,34 +273,21 @@
         "title": "Vehicles & Controls",
         "items": [
           {
-            "text": "Seat‑swap action added across all vehicle controls and a consistent car reload button binding introduced.",
+            "text": "A unified 'Swap Seats' button binding has been added to all vehicle action sets.",
             "commit_ids": [
-              702037,
+              702037
+            ]
+          },
+          {
+            "text": "Cars now support a reload action and the menu gesture action has been removed.",
+            "commit_ids": [
               702030
             ]
           },
           {
-            "text": "Stirring a biofuel generator mounts the player at their position; releasing E stops mounting, and a ‘no electricity’ status appears if the generator lacks power.",
+            "text": "Stirring the biofuel generator mounts you in place; releasing stops mounting, and a 'no electricity' status appears if stirred without power.",
             "commit_ids": [
               702050
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & AI",
-        "items": [
-          {
-            "text": "Livestock spread out when feeding to avoid crowding the trough, and sheep corpse colliders now behave correctly.",
-            "commit_ids": [
-              701908,
-              701883
-            ]
-          },
-          {
-            "text": "Navmesh generation issues fixed, preventing meshes on fences and improving NPC pathing.",
-            "commit_ids": [
-              701960
             ]
           }
         ]
@@ -483,7 +296,7 @@
         "title": "Achievements",
         "items": [
           {
-            "text": "New achievements added for mailing a note to another player, buying from the travelling vendor, and triggering a satellite crash event.",
+            "text": "New achievements added for leaving a note in another player's mailbox, purchasing from the travelling vendor, and initiating a satellite crash event.",
             "commit_ids": [
               702136
             ]
@@ -491,68 +304,71 @@
         ]
       },
       {
-        "title": "Multiplayer & Matchmaking",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Quick join menu now reliably shows server entries without disappearing.",
+            "text": "Livestock now spread out when avoiding the trough instead of forming a line, improving their avoidance behavior.",
             "commit_ids": [
+              701908
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Quick join menu now consistently displays server listings and retains results without randomly clearing them.",
+            "commit_ids": [
+              702146,
               702155
             ]
           },
           {
-            "text": "Quick join menu now displays entries (previously empty).",
+            "text": "Workbench recipes correctly reset after server reloads, preventing stale or duplicated recipes.",
             "commit_ids": [
-              702146
+              702195
             ]
           }
         ]
       },
       {
-        "title": "Building & Creative",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Painting UI now includes a colour wheel for neon signs, larger size option (up to 25mm), and optional brush outline toggle for better visibility.",
+            "text": "Neon signs now offer a larger 25mm size option and a colour wheel for custom colours.",
             "commit_ids": [
               702035
             ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Animations",
-        "items": [
+          },
           {
-            "text": "Sheep charge attack animation fixed, ensuring proper attack behavior.",
+            "text": "Sheep charge attack animation fixed, restoring proper attack behavior.",
             "commit_ids": [
               701939
             ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicle Controls",
-        "items": [
+          },
           {
-            "text": "Toggle duck feature works correctly on non-modular car vehicles.",
+            "text": "PT boat turrets now appear correctly on the death screen.",
             "commit_ids": [
-              701885
+              701928
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI Stability",
-        "items": [
+          },
           {
-            "text": "Flexbox UI layout error resolved, preventing out-of-range crashes in UI panels.",
+            "text": "Fixed UI layout issue that could cause interface elements to disappear or misalign.",
             "commit_ids": [
               702096
+            ]
+          },
+          {
+            "text": "Corrected AI pathfinding so NPCs no longer walk through fences and navigation volumes now work with the new navmesh.",
+            "commit_ids": [
+              701960
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Targeting\n- Remotely controlled turrets can now damage reactive targets, fixing a limitation where they only reacted to client projectiles.\n- Distance2D calculations now correctly use true 2‑D distance, fixing range‑related bugs.\n- Low‑health heartbeat sound now ramps up with intensity and fades after 3 seconds of health loss, making danger more noticeable.\n\n### Crafting & Food Buffs\n- Rich versions of all pies now require cream and grant extra duration, higher yield, healing, max HP and other buffs.\n- Brioche Bread recipe adds a 25 % boost to bread stats and requires eggs and cream.\n- Key recipe costs reduced (stone and cloth) and crafting time cut from 30 s to 10 s.\n\n### World & Environment\n- Water‑level generation no longer produces NaN values, eliminating water‑height glitches.\n- Triangle foundations no longer incorrectly connect buildings that only touch at a corner.\n\n### Vehicles & Controls\n- Seat‑swap action added across all vehicle controls and a consistent car reload button binding introduced.\n- Stirring a biofuel generator mounts the player at their position; releasing E stops mounting, and a ‘no electricity’ status appears if the generator lacks power.\n\n### Livestock & AI\n- Livestock spread out when feeding to avoid crowding the trough, and sheep corpse colliders now behave correctly.\n- Navmesh generation issues fixed, preventing meshes on fences and improving NPC pathing.\n\n### Achievements\n- New achievements added for mailing a note to another player, buying from the travelling vendor, and triggering a satellite crash event.\n\n### Multiplayer & Matchmaking\n- Quick join menu now reliably shows server entries without disappearing.\n- Quick join menu now displays entries (previously empty).\n\n### Building & Creative\n- Painting UI now includes a colour wheel for neon signs, larger size option (up to 25mm), and optional brush outline toggle for better visibility.\n\n### Combat & Animations\n- Sheep charge attack animation fixed, ensuring proper attack behavior.\n\n### Vehicle Controls\n- Toggle duck feature works correctly on non-modular car vehicles.\n\n### UI Stability\n- Flexbox UI layout error resolved, preventing out-of-range crashes in UI panels.",
+    "summary": "### Crafting & Food\n- Rich versions of all pies now require cream and grant buffs such as longer duration, higher yield, increased gene chance, and extra healing.\n- New Brioche Bread recipe (2 eggs, 4 cream) provides a 25 % boost to bread stats.\n- Stone and cloth costs for several recipes have been reduced and crafting time cut from 30 s to 10 s.\n\n### Combat & Turrets\n- Remotely controlled turrets can now damage reactive targets, including when using bows.\n- Low‑health heartbeat sound is louder and fades after three seconds of health loss.\n\n### World & Environment\n- Distance2D calculations now correctly ignore the Y axis, fixing range checks and related gameplay logic.\n- Fixed occasional NaN water level values, preventing abnormal water behavior.\n- Triangle foundations no longer connect buildings that only touch at a corner.\n\n### Vehicles & Controls\n- A unified 'Swap Seats' button binding has been added to all vehicle action sets.\n- Cars now support a reload action and the menu gesture action has been removed.\n- Stirring the biofuel generator mounts you in place; releasing stops mounting, and a 'no electricity' status appears if stirred without power.\n\n### Achievements\n- New achievements added for leaving a note in another player's mailbox, purchasing from the travelling vendor, and initiating a satellite crash event.\n\n### NPC & AI\n- Livestock now spread out when avoiding the trough instead of forming a line, improving their avoidance behavior.\n\n### Quality of Life\n- Quick join menu now consistently displays server listings and retains results without randomly clearing them.\n- Workbench recipes correctly reset after server reloads, preventing stale or duplicated recipes.\n\n### Gameplay & Balance\n- Neon signs now offer a larger 25mm size option and a colour wheel for custom colours.\n- Sheep charge attack animation fixed, restoring proper attack behavior.\n- PT boat turrets now appear correctly on the death screen.\n- Fixed UI layout issue that could cause interface elements to disappear or misalign.\n- Corrected AI pathfinding so NPCs no longer walk through fences and navigation volumes now work with the new navmesh.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

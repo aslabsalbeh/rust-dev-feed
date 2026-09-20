@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sun, 20 Sep 2026 00:17:23 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 02:17:25 -0400</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Sep 19</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -71,59 +71,51 @@
     <item>
       <title>Rust Development Updates — Sep 17</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;109 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;104 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Combat &amp;amp; Targeting&lt;/h3&gt;
+&lt;h3&gt;Crafting &amp;amp; Food&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702138,701955"&gt;Remotely controlled turrets can now damage reactive targets, fixing a limitation where they only reacted to client projectiles.&lt;/li&gt;
-&lt;li data-rust-commits="702099,702090"&gt;Distance2D calculations now correctly use true 2‑D distance, fixing range‑related bugs.&lt;/li&gt;
-&lt;li data-rust-commits="701943"&gt;Low‑health heartbeat sound now ramps up with intensity and fades after 3 seconds of health loss, making danger more noticeable.&lt;/li&gt;
+&lt;li data-rust-commits="702200"&gt;Rich versions of all pies now require cream and grant buffs such as longer duration, higher yield, increased gene chance, and extra healing.&lt;/li&gt;
+&lt;li data-rust-commits="702192"&gt;New Brioche Bread recipe (2 eggs, 4 cream) provides a 25 % boost to bread stats.&lt;/li&gt;
+&lt;li data-rust-commits="701949"&gt;Stone and cloth costs for several recipes have been reduced and crafting time cut from 30 s to 10 s.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Crafting &amp;amp; Food Buffs&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Turrets&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702200"&gt;Rich versions of all pies now require cream and grant extra duration, higher yield, healing, max HP and other buffs.&lt;/li&gt;
-&lt;li data-rust-commits="702192"&gt;Brioche Bread recipe adds a 25 % boost to bread stats and requires eggs and cream.&lt;/li&gt;
-&lt;li data-rust-commits="701949"&gt;Key recipe costs reduced (stone and cloth) and crafting time cut from 30 s to 10 s.&lt;/li&gt;
+&lt;li data-rust-commits="702138,701955"&gt;Remotely controlled turrets can now damage reactive targets, including when using bows.&lt;/li&gt;
+&lt;li data-rust-commits="701943"&gt;Low‑health heartbeat sound is louder and fades after three seconds of health loss.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702199"&gt;Water‑level generation no longer produces NaN values, eliminating water‑height glitches.&lt;/li&gt;
-&lt;li data-rust-commits="702062"&gt;Triangle foundations no longer incorrectly connect buildings that only touch at a corner.&lt;/li&gt;
+&lt;li data-rust-commits="702099,702090"&gt;Distance2D calculations now correctly ignore the Y axis, fixing range checks and related gameplay logic.&lt;/li&gt;
+&lt;li data-rust-commits="702199"&gt;Fixed occasional NaN water level values, preventing abnormal water behavior.&lt;/li&gt;
+&lt;li data-rust-commits="702062"&gt;Triangle foundations no longer connect buildings that only touch at a corner.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicles &amp;amp; Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702037,702030"&gt;Seat‑swap action added across all vehicle controls and a consistent car reload button binding introduced.&lt;/li&gt;
-&lt;li data-rust-commits="702050"&gt;Stirring a biofuel generator mounts the player at their position; releasing E stops mounting, and a ‘no electricity’ status appears if the generator lacks power.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="701908,701883"&gt;Livestock spread out when feeding to avoid crowding the trough, and sheep corpse colliders now behave correctly.&lt;/li&gt;
-&lt;li data-rust-commits="701960"&gt;Navmesh generation issues fixed, preventing meshes on fences and improving NPC pathing.&lt;/li&gt;
+&lt;li data-rust-commits="702037"&gt;A unified &amp;#x27;Swap Seats&amp;#x27; button binding has been added to all vehicle action sets.&lt;/li&gt;
+&lt;li data-rust-commits="702030"&gt;Cars now support a reload action and the menu gesture action has been removed.&lt;/li&gt;
+&lt;li data-rust-commits="702050"&gt;Stirring the biofuel generator mounts you in place; releasing stops mounting, and a &amp;#x27;no electricity&amp;#x27; status appears if stirred without power.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Achievements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702136"&gt;New achievements added for mailing a note to another player, buying from the travelling vendor, and triggering a satellite crash event.&lt;/li&gt;
+&lt;li data-rust-commits="702136"&gt;New achievements added for leaving a note in another player&amp;#x27;s mailbox, purchasing from the travelling vendor, and initiating a satellite crash event.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Multiplayer &amp;amp; Matchmaking&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702155"&gt;Quick join menu now reliably shows server entries without disappearing.&lt;/li&gt;
-&lt;li data-rust-commits="702146"&gt;Quick join menu now displays entries (previously empty).&lt;/li&gt;
+&lt;li data-rust-commits="701908"&gt;Livestock now spread out when avoiding the trough instead of forming a line, improving their avoidance behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Building &amp;amp; Creative&lt;/h3&gt;
+&lt;h3&gt;Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="702035"&gt;Painting UI now includes a colour wheel for neon signs, larger size option (up to 25mm), and optional brush outline toggle for better visibility.&lt;/li&gt;
+&lt;li data-rust-commits="702146,702155"&gt;Quick join menu now consistently displays server listings and retains results without randomly clearing them.&lt;/li&gt;
+&lt;li data-rust-commits="702195"&gt;Workbench recipes correctly reset after server reloads, preventing stale or duplicated recipes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Animations&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="701939"&gt;Sheep charge attack animation fixed, ensuring proper attack behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicle Controls&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="701885"&gt;Toggle duck feature works correctly on non-modular car vehicles.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI Stability&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="702096"&gt;Flexbox UI layout error resolved, preventing out-of-range crashes in UI panels.&lt;/li&gt;
+&lt;li data-rust-commits="702035"&gt;Neon signs now offer a larger 25mm size option and a colour wheel for custom colours.&lt;/li&gt;
+&lt;li data-rust-commits="701939"&gt;Sheep charge attack animation fixed, restoring proper attack behavior.&lt;/li&gt;
+&lt;li data-rust-commits="701928"&gt;PT boat turrets now appear correctly on the death screen.&lt;/li&gt;
+&lt;li data-rust-commits="702096"&gt;Fixed UI layout issue that could cause interface elements to disappear or misalign.&lt;/li&gt;
+&lt;li data-rust-commits="701960"&gt;Corrected AI pathfinding so NPCs no longer walk through fences and navigation volumes now work with the new navmesh.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-17</guid>
