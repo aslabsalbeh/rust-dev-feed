@@ -1,13 +1,13 @@
 {
   "2026-09-21": {
-    "commit_count": 86,
-    "relevant_commit_count": 48,
-    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773,702774,702775,702782,702785",
+    "commit_count": 89,
+    "relevant_commit_count": 50,
+    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773,702774,702775,702782,702785,702789,702793",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons",
+        "title": "Combat & Weapons",
         "items": [
           {
             "text": "Fixed fractional reloads for the mini crossbow, restoring proper reload behavior.",
@@ -18,104 +18,96 @@
         ]
       },
       {
-        "title": "Vehicles & Transport",
+        "title": "Items, Crafting & Inventory",
         "items": [
           {
-            "text": "Introduced a new ridable horse prefab, adding horses as drivable mounts.",
-            "commit_ids": [
-              702713
-            ]
-          },
-          {
-            "text": "Fixed boat power‑down mechanic when lowering sails and quickly jumping off, stopping the boat from drifting away on its own.",
-            "commit_ids": [
-              702630
-            ]
-          },
-          {
-            "text": "Added a 15‑minute delay to the oil pump mechanic; rig timer now runs 20 minutes plus a configurable start‑delay.",
-            "commit_ids": [
-              702625
-            ]
-          },
-          {
-            "text": "Repaired broken helipad stage setup, restoring proper helipad functionality.",
-            "commit_ids": [
-              702620
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Building & Deployables",
-        "items": [
-          {
-            "text": "External gate upgrades now correctly preserve door controller settings, fixing broken functionality after upgrades.",
-            "commit_ids": [
-              702693
-            ]
-          },
-          {
-            "text": "Fixed deployables being hidden when exterior doors close, preventing clipping through doors.",
-            "commit_ids": [
-              702685
-            ]
-          },
-          {
-            "text": "Added configurable tolerance for deployables on deformed terrain and ensured foundations always place against the original terrain height, preventing placement over deep carves.",
-            "commit_ids": [
-              702585
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Hunting & Animals",
-        "items": [
-          {
-            "text": "Added a sheep trophy head to the hunting trophy prefab and corrected a ragdoll bug where male calf models appeared on female ragdolls.",
+            "text": "Added a sheep trophy head to the hunting trophy prefab, giving players a new trophy item from sheep hunts.",
             "commit_ids": [
               702723
             ]
           },
           {
-            "text": "Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife.",
+            "text": "Placed fusebox items in all monuments that contain fuseboxes, making them available for players to interact with or loot.",
             "commit_ids": [
-              702769
+              702701
+            ]
+          },
+          {
+            "text": "Adjusted item placement logic to use MoveToContainer and set default position to -1 for legacy loadout files, fixing loadout position bugs.",
+            "commit_ids": [
+              702577
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Vehicles & Boats",
         "items": [
           {
-            "text": "Implemented new UI for the biofuel generator with a progress bar for stirring and other minor mount/dismount tweaks.",
+            "text": "Introduced a ridable horse prefab, providing a new mount option for players.",
             "commit_ids": [
-              702614
+              702713
             ]
           },
           {
-            "text": "Fixed computer station identifier input box text being hidden at certain resolutions.",
+            "text": "Resolved issue where lowering sails and quickly jumping off could prevent the boat power‑down, causing the boat to drift away.",
             "commit_ids": [
-              702598
+              702630
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Deployables",
+        "items": [
+          {
+            "text": "Fixed external gate door controllers to persist correctly after upgrades, preventing loss of functionality.",
+            "commit_ids": [
+              702693
+            ]
+          },
+          {
+            "text": "Deployables no longer become hidden when an exterior door closes, fixing clipping issues.",
+            "commit_ids": [
+              702685
+            ]
+          },
+          {
+            "text": "Introduced configurable tolerance for deployables on deformed terrain and ensured foundations align with original terrain height, preventing placement errors over deep carves.",
+            "commit_ids": [
+              702585
+            ]
+          },
+          {
+            "text": "Implemented new UI for the biofuel generator with a progress bar and minor mount/dismount adjustments.",
+            "commit_ids": [
+              702614
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Facilities",
+        "items": [
+          {
+            "text": "Added a 15‑minute delay to the oil pump start, extending the rig timer to 20 minutes plus the configured start delay.",
+            "commit_ids": [
+              702625
+            ]
+          },
+          {
+            "text": "Fixed broken helipad stage setup, restoring proper helipad functionality.",
+            "commit_ids": [
+              702620
             ]
           }
         ]
       }
     ],
-    "summary": "### Weapons\n- Fixed fractional reloads for the mini crossbow, restoring proper reload behavior.\n\n### Vehicles & Transport\n- Introduced a new ridable horse prefab, adding horses as drivable mounts.\n- Fixed boat power‑down mechanic when lowering sails and quickly jumping off, stopping the boat from drifting away on its own.\n- Added a 15‑minute delay to the oil pump mechanic; rig timer now runs 20 minutes plus a configurable start‑delay.\n- Repaired broken helipad stage setup, restoring proper helipad functionality.\n\n### World Building & Deployables\n- External gate upgrades now correctly preserve door controller settings, fixing broken functionality after upgrades.\n- Fixed deployables being hidden when exterior doors close, preventing clipping through doors.\n- Added configurable tolerance for deployables on deformed terrain and ensured foundations always place against the original terrain height, preventing placement over deep carves.\n\n### Hunting & Animals\n- Added a sheep trophy head to the hunting trophy prefab and corrected a ragdoll bug where male calf models appeared on female ragdolls.\n- Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife.\n\n### UI & Quality of Life\n- Implemented new UI for the biofuel generator with a progress bar for stirring and other minor mount/dismount tweaks.\n- Fixed computer station identifier input box text being hidden at certain resolutions.",
-    "new_items": [
-      {
-        "text": "Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife.",
-        "commit_ids": [
-          702769
-        ],
-        "section": "Hunting & Animals"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife."
+    "summary": "### Combat & Weapons\n- Fixed fractional reloads for the mini crossbow, restoring proper reload behavior.\n\n### Items, Crafting & Inventory\n- Added a sheep trophy head to the hunting trophy prefab, giving players a new trophy item from sheep hunts.\n- Placed fusebox items in all monuments that contain fuseboxes, making them available for players to interact with or loot.\n- Adjusted item placement logic to use MoveToContainer and set default position to -1 for legacy loadout files, fixing loadout position bugs.\n\n### Vehicles & Boats\n- Introduced a ridable horse prefab, providing a new mount option for players.\n- Resolved issue where lowering sails and quickly jumping off could prevent the boat power‑down, causing the boat to drift away.\n\n### Structures & Deployables\n- Fixed external gate door controllers to persist correctly after upgrades, preventing loss of functionality.\n- Deployables no longer become hidden when an exterior door closes, fixing clipping issues.\n- Introduced configurable tolerance for deployables on deformed terrain and ensured foundations align with original terrain height, preventing placement errors over deep carves.\n- Implemented new UI for the biofuel generator with a progress bar and minor mount/dismount adjustments.\n\n### Facilities\n- Added a 15‑minute delay to the oil pump start, extending the rig timer to 20 minutes plus the configured start delay.\n- Fixed broken helipad stage setup, restoring proper helipad functionality.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-20": {
     "commit_count": 17,
