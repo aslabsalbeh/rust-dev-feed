@@ -1,16 +1,38 @@
 {
   "2026-09-20": {
-    "commit_count": 12,
-    "relevant_commit_count": 5,
-    "relevant_signature": "702497,702520,702525,702526,702529",
+    "commit_count": 17,
+    "relevant_commit_count": 8,
+    "relevant_signature": "702497,702520,702525,702526,702529,702543,702546,702551",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Items & Equipment",
+        "title": "Base Building",
         "items": [
           {
-            "text": "Condition checks disabled for diving masks, crate & barrel costumes, prisoner hoods, sunglasses, geiger counters, metal detectors, RF pagers, and mobile phones, preventing them from losing condition during gameplay.",
+            "text": "Building is now blocked within a radius of sandbag pillboxes, preventing structures from being placed directly on or too close to them.",
+            "commit_ids": [
+              702551
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Animals",
+        "items": [
+          {
+            "text": "Sheep automatically unlead when mounted and re‑lead after dismount, with updated mount/dismount animations.",
+            "commit_ids": [
+              702529
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Item Durability",
+        "items": [
+          {
+            "text": "Condition (durability) has been disabled for diving masks, crate & barrel costumes, prisoner hoods, sunglasses, geiger counters, metal detectors, RF pagers, and mobile phones, so these items no longer degrade.",
             "commit_ids": [
               702520
             ]
@@ -18,7 +40,7 @@
         ]
       }
     ],
-    "summary": "### Items & Equipment\n- Condition checks disabled for diving masks, crate & barrel costumes, prisoner hoods, sunglasses, geiger counters, metal detectors, RF pagers, and mobile phones, preventing them from losing condition during gameplay.",
+    "summary": "### Base Building\n- Building is now blocked within a radius of sandbag pillboxes, preventing structures from being placed directly on or too close to them.\n\n### Livestock & Animals\n- Sheep automatically unlead when mounted and re‑lead after dismount, with updated mount/dismount animations.\n\n### Item Durability\n- Condition (durability) has been disabled for diving masks, crate & barrel costumes, prisoner hoods, sunglasses, geiger counters, metal detectors, RF pagers, and mobile phones, so these items no longer degrade.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -83,11 +105,202 @@
     "new_summary": ""
   },
   "2026-09-18": {
-    "commit_count": 93,
-    "relevant_commit_count": 57,
+    "commit_count": 92,
+    "relevant_commit_count": 56,
     "relevant_signature": "702213,702234,702243,702246,702248,702250,702251,702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352,702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427,702430,702432,702435,702436",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "702362,702363,702368,702370,702378,702379,702381,702384,702386,702394,702395,702396,702397,702399,702402,702405,702406,702410,702415,702425,702427,702430,702432,702435,702436": [
+        {
+          "title": "Livestock & Animals",
+          "items": [
+            {
+              "text": "Various livestock AI and visual fixes: pregnant cows no longer ping‑pong between behaviors, skateboard cows are more stable, inbred vs non‑inbred cow appearances corrected, and livestock avoidance behavior improved.",
+              "commit_ids": [
+                702435,
+                702432,
+                702430,
+                702427
+              ]
+            },
+            {
+              "text": "Comprehensive sheep shearing overhaul: fleece persists after server restarts, shearing no longer registers as a shot, knives now wound instead of shearing, wool payout matches author settings, timers recover after saves, wool counts as harvest and goes to backpack, fur baking runs correctly, and wild sheep now flee when you attempt to shave them.",
+              "commit_ids": [
+                702396,
+                702362
+              ]
+            },
+            {
+              "text": "Added new bull and cow trophy models to the large hunting trophy prefab.",
+              "commit_ids": [
+                702363
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Weapons",
+          "items": [
+            {
+              "text": "Medical tool now set up with global mask support, and grenades receive mask support for proper visibility handling.",
+              "commit_ids": [
+                702402,
+                702397
+              ]
+            },
+            {
+              "text": "Introduced unique subsystems for water pistols and keycards, removing unnecessary holdtypes.",
+              "commit_ids": [
+                702386
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Base & Authorization",
+          "items": [
+            {
+              "text": "Respawnable fridges now assign a new \"first looter\" when items respawn, affecting loot tracking.",
+              "commit_ids": [
+                702405
+              ]
+            },
+            {
+              "text": "Temporarily disabled tool cupboard (TC) room occlusion checks to avoid auth issues; will be re‑enabled after networking changes.",
+              "commit_ids": [
+                702381
+              ]
+            },
+            {
+              "text": "Fixed ladder hatch functionality, improving ladder access.",
+              "commit_ids": [
+                702399
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Loadouts",
+          "items": [
+            {
+              "text": "Loadout system now saves and restores item positions when creating or deploying loadouts.",
+              "commit_ids": [
+                702378
+              ]
+            }
+          ]
+        }
+      ],
+      "702257,702268,702272,702282,702284,702290,702297,702305,702306,702314,702315,702316,702320,702322,702323,702326,702328,702333,702337,702341,702343,702347,702348,702350,702352": [
+        {
+          "title": "Livestock Shearing",
+          "items": [
+            {
+              "text": "Shearing now uses any item that can harvest corpses instead of a separate IsShearTool flag, simplifying the mechanic.",
+              "commit_ids": [
+                702350
+              ]
+            },
+            {
+              "text": "Sheep corpses now retain the shaved state and correctly copy the pose, fixing floating‑flop visual bugs.",
+              "commit_ids": [
+                702337
+              ]
+            },
+            {
+              "text": "Added shearing material and a gameplay proof‑of‑concept for sheep shearing.",
+              "commit_ids": [
+                702314
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Wild Cow Mechanics",
+          "items": [
+            {
+              "text": "Wild cows can no longer breed, age, or produce resources, and they cannot become pregnant unless their condition is at least 60%.",
+              "commit_ids": [
+                702320
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crab Swarm Behavior",
+          "items": [
+            {
+              "text": "Introduced crab swarms with basic behavior.",
+              "commit_ids": [
+                702305
+              ]
+            },
+            {
+              "text": "Fixed crab pathing so swarms move together, each crab getting a random speed based on swarm size.",
+              "commit_ids": [
+                702343
+              ]
+            },
+            {
+              "text": "Improved fleeing and startle mechanics for crab swarms.",
+              "commit_ids": [
+                702326
+              ]
+            },
+            {
+              "text": "Integrated moveToggle so shader‑driven crabs can idle when not moving.",
+              "commit_ids": [
+                702316
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Communication Devices",
+          "items": [
+            {
+              "text": "Added subsystem support for megaphones and mobile phones, removing now‑unnecessary override controllers.",
+              "commit_ids": [
+                702347
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Utility Subsystems",
+          "items": [
+            {
+              "text": "Implemented unique subsystems for compass, detonator, and master key items, cleaning up their hold‑type controllers.",
+              "commit_ids": [
+                702290
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item Naming",
+          "items": [
+            {
+              "text": "Renamed cooked, raw, and spoiled lamb meat to \"Mutton\" for consistency.",
+              "commit_ids": [
+                702322
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Boat Vendor Dialogue",
+          "items": [
+            {
+              "text": "Fixed boat vendor dialogue on floating cities to give the correct direction for finding the purchased boat.",
+              "commit_ids": [
+                702306
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Livestock & Wildlife",
