@@ -1,22 +1,28 @@
 {
   "2026-09-21": {
-    "commit_count": 35,
-    "relevant_commit_count": 21,
-    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636",
+    "commit_count": 57,
+    "relevant_commit_count": 32,
+    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles",
+        "title": "Transportation",
         "items": [
           {
-            "text": "Boat power‑down now works reliably when lowering sails and jumping off, preventing unintended drifting.",
+            "text": "Added a ridable horse prefab, allowing players to mount and ride horses.",
+            "commit_ids": [
+              702713
+            ]
+          },
+          {
+            "text": "Fixed the boat power‑down mechanic so lowering sails and quickly jumping off no longer leaves the boat drifting.",
             "commit_ids": [
               702630
             ]
           },
           {
-            "text": "Helipad stages have been fixed, restoring proper functionality of the airwolf landing pad.",
+            "text": "Repaired broken helipad stages, restoring proper functionality of the repairable helipad pad.",
             "commit_ids": [
               702620
             ]
@@ -24,22 +30,22 @@
         ]
       },
       {
-        "title": "Monuments & World",
+        "title": "World Objects & Rendering",
         "items": [
           {
-            "text": "Oil rig pumps now have a 15‑minute start delay, extending the total pump cycle to 20 minutes plus any configured delay.",
+            "text": "Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.",
             "commit_ids": [
-              702625
+              702701
             ]
           },
           {
-            "text": "Building on terrain deformation now respects a configurable tolerance, reducing placement errors on uneven ground.",
+            "text": "Improved terrain deformation handling for building: deployables now respect a configurable tolerance and foundations are placed against the original terrain height, preventing placement issues on deformed terrain.",
             "commit_ids": [
               702585
             ]
           },
           {
-            "text": "Large‑scale map structures now render correctly after an HLOD fix, preventing missing buildings in the North Sea map.",
+            "text": "Fixed a hierarchical LOD issue where distant structures could disappear, ensuring buildings and other structures are visible at long range.",
             "commit_ids": [
               702556
             ]
@@ -47,10 +53,44 @@
         ]
       },
       {
-        "title": "Animals",
+        "title": "Base Building & Upgrades",
         "items": [
           {
-            "text": "Squirrels have had their movement speed adjusted, affecting how quickly they traverse the map.",
+            "text": "Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.",
+            "commit_ids": [
+              702693
+            ]
+          },
+          {
+            "text": "Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs.",
+            "commit_ids": [
+              702685
+            ]
+          },
+          {
+            "text": "Added a 15‑minute delay to the oil rig pump mechanic (total cycle 20 min + 15 min delay), changing oil production timing.",
+            "commit_ids": [
+              702625
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Loadout & Inventory",
+        "items": [
+          {
+            "text": "Loadout items now retain correct default position when loading older JSON files; the system now uses MoveToContainer to place items, fixing mis‑positioned gear.",
+            "commit_ids": [
+              702577
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & AI",
+        "items": [
+          {
+            "text": "Squirrel movement speed adjusted, changing how quickly squirrels traverse the map.",
             "commit_ids": [
               702567
             ]
@@ -58,79 +98,67 @@
         ]
       },
       {
-        "title": "Base & UI",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Computer station identifier input now displays text correctly at all resolutions.",
-            "commit_ids": [
-              702598
-            ]
-          },
-          {
-            "text": "Biofuel generator UI now includes a progress bar, making fuel production timing clearer.",
-            "commit_ids": [
-              702614
-            ]
-          },
-          {
-            "text": "Store UI now caches throttled image requests correctly, preventing missing icons when quickly switching tabs.",
+            "text": "Fixed a crash when rapidly opening the in‑game store; URLs now correctly use cache, preventing errors on quick tab switches.",
             "commit_ids": [
               702606
             ]
+          },
+          {
+            "text": "Resolved UI issue where the computer station identifier input box text could disappear at certain screen resolutions.",
+            "commit_ids": [
+              702598
+            ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Combat & Animation",
         "items": [
           {
-            "text": "Sprint is now correctly disabled during attacks across the network, preventing unintended sprinting while firing.",
+            "text": "Sprint animation now correctly stops when a networked attack occurs, ensuring consistent sprint behavior across players.",
             "commit_ids": [
               702579
             ]
-          },
-          {
-            "text": "Fixed a bug that prevented adding devices to computer stations, restoring full functionality for base building.",
-            "commit_ids": [
-              702599
-            ]
           }
         ]
       }
     ],
-    "summary": "### Vehicles\n- Boat power‑down now works reliably when lowering sails and jumping off, preventing unintended drifting.\n- Helipad stages have been fixed, restoring proper functionality of the airwolf landing pad.\n\n### Monuments & World\n- Oil rig pumps now have a 15‑minute start delay, extending the total pump cycle to 20 minutes plus any configured delay.\n- Building on terrain deformation now respects a configurable tolerance, reducing placement errors on uneven ground.\n- Large‑scale map structures now render correctly after an HLOD fix, preventing missing buildings in the North Sea map.\n\n### Animals\n- Squirrels have had their movement speed adjusted, affecting how quickly they traverse the map.\n\n### Base & UI\n- Computer station identifier input now displays text correctly at all resolutions.\n- Biofuel generator UI now includes a progress bar, making fuel production timing clearer.\n- Store UI now caches throttled image requests correctly, preventing missing icons when quickly switching tabs.\n\n### Gameplay & Balance\n- Sprint is now correctly disabled during attacks across the network, preventing unintended sprinting while firing.\n- Fixed a bug that prevented adding devices to computer stations, restoring full functionality for base building.",
+    "summary": "### Transportation\n- Added a ridable horse prefab, allowing players to mount and ride horses.\n- Fixed the boat power‑down mechanic so lowering sails and quickly jumping off no longer leaves the boat drifting.\n- Repaired broken helipad stages, restoring proper functionality of the repairable helipad pad.\n\n### World Objects & Rendering\n- Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.\n- Improved terrain deformation handling for building: deployables now respect a configurable tolerance and foundations are placed against the original terrain height, preventing placement issues on deformed terrain.\n- Fixed a hierarchical LOD issue where distant structures could disappear, ensuring buildings and other structures are visible at long range.\n\n### Base Building & Upgrades\n- Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.\n- Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs.\n- Added a 15‑minute delay to the oil rig pump mechanic (total cycle 20 min + 15 min delay), changing oil production timing.\n\n### Loadout & Inventory\n- Loadout items now retain correct default position when loading older JSON files; the system now uses MoveToContainer to place items, fixing mis‑positioned gear.\n\n### Animals & AI\n- Squirrel movement speed adjusted, changing how quickly squirrels traverse the map.\n\n### UI & Quality of Life\n- Fixed a crash when rapidly opening the in‑game store; URLs now correctly use cache, preventing errors on quick tab switches.\n- Resolved UI issue where the computer station identifier input box text could disappear at certain screen resolutions.\n\n### Combat & Animation\n- Sprint animation now correctly stops when a networked attack occurs, ensuring consistent sprint behavior across players.",
     "new_items": [
       {
-        "text": "Boat power‑down now works reliably when lowering sails and jumping off, preventing unintended drifting.",
+        "text": "Added a ridable horse prefab, allowing players to mount and ride horses.",
         "commit_ids": [
-          702630
+          702713
         ],
-        "section": "Vehicles"
+        "section": "Transportation"
       },
       {
-        "text": "Helipad stages have been fixed, restoring proper functionality of the airwolf landing pad.",
+        "text": "Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.",
         "commit_ids": [
-          702620
+          702701
         ],
-        "section": "Vehicles"
+        "section": "World Objects & Rendering"
       },
       {
-        "text": "Oil rig pumps now have a 15‑minute start delay, extending the total pump cycle to 20 minutes plus any configured delay.",
+        "text": "Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.",
         "commit_ids": [
-          702625
+          702693
         ],
-        "section": "Monuments & World"
+        "section": "Base Building & Upgrades"
       },
       {
-        "text": "Biofuel generator UI now includes a progress bar, making fuel production timing clearer.",
+        "text": "Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs.",
         "commit_ids": [
-          702614
+          702685
         ],
-        "section": "Base & UI"
+        "section": "Base Building & Upgrades"
       }
     ],
     "new_relevant_count": 4,
-    "new_summary": "- Boat power‑down now works reliably when lowering sails and jumping off, preventing unintended drifting.\n- Helipad stages have been fixed, restoring proper functionality of the airwolf landing pad.\n- Oil rig pumps now have a 15‑minute start delay, extending the total pump cycle to 20 minutes plus any configured delay.\n- Biofuel generator UI now includes a progress bar, making fuel production timing clearer."
+    "new_summary": "- Added a ridable horse prefab, allowing players to mount and ride horses.\n- Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.\n- Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.\n- Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs."
   },
   "2026-09-20": {
     "commit_count": 17,
