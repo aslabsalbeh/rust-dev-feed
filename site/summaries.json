@@ -1,16 +1,16 @@
 {
   "2026-09-21": {
-    "commit_count": 13,
-    "relevant_commit_count": 9,
-    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585",
+    "commit_count": 26,
+    "relevant_commit_count": 16,
+    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Building & Terrain",
+        "title": "World & Building",
         "items": [
           {
-            "text": "Foundations now snap to the original terrain height and cannot be placed over deep carves, improving building placement on deformed ground.",
+            "text": "Foundations now refuse placement over deep terrain carves and deployable structures have a tolerance setting for terrain deformation, reducing placement errors on uneven ground.",
             "commit_ids": [
               702585
             ]
@@ -21,7 +21,7 @@
         "title": "Animals",
         "items": [
           {
-            "text": "Squirrels' movement speed has been adjusted, affecting how quickly they can be chased or harvested.",
+            "text": "Squirrels have increased movement speed, making them harder to catch and affecting squirrel farm efficiency.",
             "commit_ids": [
               702567
             ]
@@ -29,10 +29,43 @@
         ]
       },
       {
-        "title": "World & Rendering",
+        "title": "UI & Devices",
         "items": [
           {
-            "text": "Structures on the North Sea map now render correctly instead of being hidden behind rocks, fixing a visibility bug.",
+            "text": "Computer station identifier input now displays text correctly at all resolutions, fixing hidden text issues.",
+            "commit_ids": [
+              702598
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Resolved a crash when quickly opening the store's General tab by ensuring throttled URL requests are served from cache.",
+            "commit_ids": [
+              702606
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Sprint is now correctly disabled during attacks based on networked signals, preventing unintended sprinting while under fire.",
+            "commit_ids": [
+              702579
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Visuals",
+        "items": [
+          {
+            "text": "Above‑ground structures now appear correctly in distant HLOD rendering, fixing the issue where only rocks were visible.",
             "commit_ids": [
               702556
             ]
@@ -40,25 +73,32 @@
         ]
       }
     ],
-    "summary": "### Building & Terrain\n- Foundations now snap to the original terrain height and cannot be placed over deep carves, improving building placement on deformed ground.\n\n### Animals\n- Squirrels' movement speed has been adjusted, affecting how quickly they can be chased or harvested.\n\n### World & Rendering\n- Structures on the North Sea map now render correctly instead of being hidden behind rocks, fixing a visibility bug.",
+    "summary": "### World & Building\n- Foundations now refuse placement over deep terrain carves and deployable structures have a tolerance setting for terrain deformation, reducing placement errors on uneven ground.\n\n### Animals\n- Squirrels have increased movement speed, making them harder to catch and affecting squirrel farm efficiency.\n\n### UI & Devices\n- Computer station identifier input now displays text correctly at all resolutions, fixing hidden text issues.\n\n### Bug Fixes\n- Resolved a crash when quickly opening the store's General tab by ensuring throttled URL requests are served from cache.\n\n### Gameplay & Balance\n- Sprint is now correctly disabled during attacks based on networked signals, preventing unintended sprinting while under fire.\n\n### World & Visuals\n- Above‑ground structures now appear correctly in distant HLOD rendering, fixing the issue where only rocks were visible.",
     "new_items": [
       {
-        "text": "Foundations now snap to the original terrain height and cannot be placed over deep carves, improving building placement on deformed ground.",
+        "text": "Foundations now refuse placement over deep terrain carves and deployable structures have a tolerance setting for terrain deformation, reducing placement errors on uneven ground.",
         "commit_ids": [
           702585
         ],
-        "section": "Building & Terrain"
+        "section": "World & Building"
       },
       {
-        "text": "Squirrels' movement speed has been adjusted, affecting how quickly they can be chased or harvested.",
+        "text": "Computer station identifier input now displays text correctly at all resolutions, fixing hidden text issues.",
         "commit_ids": [
-          702567
+          702598
         ],
-        "section": "Animals"
+        "section": "UI & Devices"
+      },
+      {
+        "text": "Resolved a crash when quickly opening the store's General tab by ensuring throttled URL requests are served from cache.",
+        "commit_ids": [
+          702606
+        ],
+        "section": "Bug Fixes"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Foundations now snap to the original terrain height and cannot be placed over deep carves, improving building placement on deformed ground.\n- Squirrels' movement speed has been adjusted, affecting how quickly they can be chased or harvested."
+    "new_relevant_count": 3,
+    "new_summary": "- Foundations now refuse placement over deep terrain carves and deployable structures have a tolerance setting for terrain deformation, reducing placement errors on uneven ground.\n- Computer station identifier input now displays text correctly at all resolutions, fixing hidden text issues.\n- Resolved a crash when quickly opening the store's General tab by ensuring throttled URL requests are served from cache."
   },
   "2026-09-20": {
     "commit_count": 17,
