@@ -1,29 +1,18 @@
 {
   "2026-09-21": {
-    "commit_count": 78,
-    "relevant_commit_count": 43,
-    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770",
+    "commit_count": 86,
+    "relevant_commit_count": 48,
+    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773,702774,702775,702782,702785",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Weapons",
         "items": [
           {
-            "text": "Fixed mini crossbow fractional reloads not working properly.",
+            "text": "Fixed fractional reloads for the mini crossbow, restoring proper reload behavior.",
             "commit_ids": [
               702751
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Wildlife & Hunting",
-        "items": [
-          {
-            "text": "Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.",
-            "commit_ids": [
-              702723
             ]
           }
         ]
@@ -32,42 +21,48 @@
         "title": "Vehicles & Transport",
         "items": [
           {
-            "text": "Boat power-down now works correctly when lowering sails and jumping off quickly.",
+            "text": "Introduced a new ridable horse prefab, adding horses as drivable mounts.",
+            "commit_ids": [
+              702713
+            ]
+          },
+          {
+            "text": "Fixed boat power‑down mechanic when lowering sails and quickly jumping off, stopping the boat from drifting away on its own.",
             "commit_ids": [
               702630
             ]
           },
           {
-            "text": "Introduced a ridable horse prefab for players.",
+            "text": "Added a 15‑minute delay to the oil pump mechanic; rig timer now runs 20 minutes plus a configurable start‑delay.",
             "commit_ids": [
-              702713
+              702625
+            ]
+          },
+          {
+            "text": "Repaired broken helipad stage setup, restoring proper helipad functionality.",
+            "commit_ids": [
+              702620
             ]
           }
         ]
       },
       {
-        "title": "Base Building & Structures",
+        "title": "World Building & Deployables",
         "items": [
           {
-            "text": "Deployables no longer clip through doors or disappear when exterior doors close, and entity destroy messages are correctly timed during base repartitioning.",
-            "commit_ids": [
-              702685
-            ]
-          },
-          {
-            "text": "Door controllers on external gates now retain settings after upgrades.",
+            "text": "External gate upgrades now correctly preserve door controller settings, fixing broken functionality after upgrades.",
             "commit_ids": [
               702693
             ]
           },
           {
-            "text": "Fixed broken helipad stage setup, restoring proper helipad functionality.",
+            "text": "Fixed deployables being hidden when exterior doors close, preventing clipping through doors.",
             "commit_ids": [
-              702620
+              702685
             ]
           },
           {
-            "text": "Improved terrain deformation handling for building: deployables now respect configurable tolerance, and foundations place against original terrain height, preventing placement over deep carves.",
+            "text": "Added configurable tolerance for deployables on deformed terrain and ensured foundations always place against the original terrain height, preventing placement over deep carves.",
             "commit_ids": [
               702585
             ]
@@ -75,54 +70,52 @@
         ]
       },
       {
-        "title": "World & Monuments",
+        "title": "Hunting & Animals",
         "items": [
           {
-            "text": "Fuseboxes are now present in all monuments that contain them.",
+            "text": "Added a sheep trophy head to the hunting trophy prefab and corrected a ragdoll bug where male calf models appeared on female ragdolls.",
             "commit_ids": [
-              702701
+              702723
+            ]
+          },
+          {
+            "text": "Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife.",
+            "commit_ids": [
+              702769
             ]
           }
         ]
       },
       {
-        "title": "Oil Rig Mechanics",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Oil pump now has a 15‑minute start delay, extending total cycle to 20 minutes plus configured delay.",
+            "text": "Implemented new UI for the biofuel generator with a progress bar for stirring and other minor mount/dismount tweaks.",
             "commit_ids": [
-              702625
+              702614
+            ]
+          },
+          {
+            "text": "Fixed computer station identifier input box text being hidden at certain resolutions.",
+            "commit_ids": [
+              702598
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Weapons\n- Fixed mini crossbow fractional reloads not working properly.\n\n### Wildlife & Hunting\n- Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.\n\n### Vehicles & Transport\n- Boat power-down now works correctly when lowering sails and jumping off quickly.\n- Introduced a ridable horse prefab for players.\n\n### Base Building & Structures\n- Deployables no longer clip through doors or disappear when exterior doors close, and entity destroy messages are correctly timed during base repartitioning.\n- Door controllers on external gates now retain settings after upgrades.\n- Fixed broken helipad stage setup, restoring proper helipad functionality.\n- Improved terrain deformation handling for building: deployables now respect configurable tolerance, and foundations place against original terrain height, preventing placement over deep carves.\n\n### World & Monuments\n- Fuseboxes are now present in all monuments that contain them.\n\n### Oil Rig Mechanics\n- Oil pump now has a 15‑minute start delay, extending total cycle to 20 minutes plus configured delay.",
+    "summary": "### Weapons\n- Fixed fractional reloads for the mini crossbow, restoring proper reload behavior.\n\n### Vehicles & Transport\n- Introduced a new ridable horse prefab, adding horses as drivable mounts.\n- Fixed boat power‑down mechanic when lowering sails and quickly jumping off, stopping the boat from drifting away on its own.\n- Added a 15‑minute delay to the oil pump mechanic; rig timer now runs 20 minutes plus a configurable start‑delay.\n- Repaired broken helipad stage setup, restoring proper helipad functionality.\n\n### World Building & Deployables\n- External gate upgrades now correctly preserve door controller settings, fixing broken functionality after upgrades.\n- Fixed deployables being hidden when exterior doors close, preventing clipping through doors.\n- Added configurable tolerance for deployables on deformed terrain and ensured foundations always place against the original terrain height, preventing placement over deep carves.\n\n### Hunting & Animals\n- Added a sheep trophy head to the hunting trophy prefab and corrected a ragdoll bug where male calf models appeared on female ragdolls.\n- Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife.\n\n### UI & Quality of Life\n- Implemented new UI for the biofuel generator with a progress bar for stirring and other minor mount/dismount tweaks.\n- Fixed computer station identifier input box text being hidden at certain resolutions.",
     "new_items": [
       {
-        "text": "Fixed mini crossbow fractional reloads not working properly.",
+        "text": "Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife.",
         "commit_ids": [
-          702751
+          702769
         ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.",
-        "commit_ids": [
-          702723
-        ],
-        "section": "Wildlife & Hunting"
-      },
-      {
-        "text": "Introduced a ridable horse prefab for players.",
-        "commit_ids": [
-          702713
-        ],
-        "section": "Vehicles & Transport"
+        "section": "Hunting & Animals"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed mini crossbow fractional reloads not working properly.\n- Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.\n- Introduced a ridable horse prefab for players."
+    "new_relevant_count": 1,
+    "new_summary": "- Adjusted collider sizes for critter animals, affecting hit detection and interaction with small wildlife."
   },
   "2026-09-20": {
     "commit_count": 17,
