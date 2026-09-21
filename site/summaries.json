@@ -1,164 +1,128 @@
 {
   "2026-09-21": {
-    "commit_count": 57,
-    "relevant_commit_count": 32,
-    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734",
+    "commit_count": 78,
+    "relevant_commit_count": 43,
+    "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Transportation",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Added a ridable horse prefab, allowing players to mount and ride horses.",
+            "text": "Fixed mini crossbow fractional reloads not working properly.",
             "commit_ids": [
-              702713
+              702751
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Wildlife & Hunting",
+        "items": [
           {
-            "text": "Fixed the boat power‑down mechanic so lowering sails and quickly jumping off no longer leaves the boat drifting.",
+            "text": "Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.",
+            "commit_ids": [
+              702723
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Transport",
+        "items": [
+          {
+            "text": "Boat power-down now works correctly when lowering sails and jumping off quickly.",
             "commit_ids": [
               702630
             ]
           },
           {
-            "text": "Repaired broken helipad stages, restoring proper functionality of the repairable helipad pad.",
+            "text": "Introduced a ridable horse prefab for players.",
             "commit_ids": [
-              702620
+              702713
             ]
           }
         ]
       },
       {
-        "title": "World Objects & Rendering",
+        "title": "Base Building & Structures",
         "items": [
           {
-            "text": "Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.",
-            "commit_ids": [
-              702701
-            ]
-          },
-          {
-            "text": "Improved terrain deformation handling for building: deployables now respect a configurable tolerance and foundations are placed against the original terrain height, preventing placement issues on deformed terrain.",
-            "commit_ids": [
-              702585
-            ]
-          },
-          {
-            "text": "Fixed a hierarchical LOD issue where distant structures could disappear, ensuring buildings and other structures are visible at long range.",
-            "commit_ids": [
-              702556
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Building & Upgrades",
-        "items": [
-          {
-            "text": "Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.",
-            "commit_ids": [
-              702693
-            ]
-          },
-          {
-            "text": "Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs.",
+            "text": "Deployables no longer clip through doors or disappear when exterior doors close, and entity destroy messages are correctly timed during base repartitioning.",
             "commit_ids": [
               702685
             ]
           },
           {
-            "text": "Added a 15‑minute delay to the oil rig pump mechanic (total cycle 20 min + 15 min delay), changing oil production timing.",
+            "text": "Door controllers on external gates now retain settings after upgrades.",
+            "commit_ids": [
+              702693
+            ]
+          },
+          {
+            "text": "Fixed broken helipad stage setup, restoring proper helipad functionality.",
+            "commit_ids": [
+              702620
+            ]
+          },
+          {
+            "text": "Improved terrain deformation handling for building: deployables now respect configurable tolerance, and foundations place against original terrain height, preventing placement over deep carves.",
+            "commit_ids": [
+              702585
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Monuments",
+        "items": [
+          {
+            "text": "Fuseboxes are now present in all monuments that contain them.",
+            "commit_ids": [
+              702701
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Oil Rig Mechanics",
+        "items": [
+          {
+            "text": "Oil pump now has a 15‑minute start delay, extending total cycle to 20 minutes plus configured delay.",
             "commit_ids": [
               702625
             ]
           }
         ]
-      },
-      {
-        "title": "Loadout & Inventory",
-        "items": [
-          {
-            "text": "Loadout items now retain correct default position when loading older JSON files; the system now uses MoveToContainer to place items, fixing mis‑positioned gear.",
-            "commit_ids": [
-              702577
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & AI",
-        "items": [
-          {
-            "text": "Squirrel movement speed adjusted, changing how quickly squirrels traverse the map.",
-            "commit_ids": [
-              702567
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Fixed a crash when rapidly opening the in‑game store; URLs now correctly use cache, preventing errors on quick tab switches.",
-            "commit_ids": [
-              702606
-            ]
-          },
-          {
-            "text": "Resolved UI issue where the computer station identifier input box text could disappear at certain screen resolutions.",
-            "commit_ids": [
-              702598
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Animation",
-        "items": [
-          {
-            "text": "Sprint animation now correctly stops when a networked attack occurs, ensuring consistent sprint behavior across players.",
-            "commit_ids": [
-              702579
-            ]
-          }
-        ]
       }
     ],
-    "summary": "### Transportation\n- Added a ridable horse prefab, allowing players to mount and ride horses.\n- Fixed the boat power‑down mechanic so lowering sails and quickly jumping off no longer leaves the boat drifting.\n- Repaired broken helipad stages, restoring proper functionality of the repairable helipad pad.\n\n### World Objects & Rendering\n- Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.\n- Improved terrain deformation handling for building: deployables now respect a configurable tolerance and foundations are placed against the original terrain height, preventing placement issues on deformed terrain.\n- Fixed a hierarchical LOD issue where distant structures could disappear, ensuring buildings and other structures are visible at long range.\n\n### Base Building & Upgrades\n- Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.\n- Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs.\n- Added a 15‑minute delay to the oil rig pump mechanic (total cycle 20 min + 15 min delay), changing oil production timing.\n\n### Loadout & Inventory\n- Loadout items now retain correct default position when loading older JSON files; the system now uses MoveToContainer to place items, fixing mis‑positioned gear.\n\n### Animals & AI\n- Squirrel movement speed adjusted, changing how quickly squirrels traverse the map.\n\n### UI & Quality of Life\n- Fixed a crash when rapidly opening the in‑game store; URLs now correctly use cache, preventing errors on quick tab switches.\n- Resolved UI issue where the computer station identifier input box text could disappear at certain screen resolutions.\n\n### Combat & Animation\n- Sprint animation now correctly stops when a networked attack occurs, ensuring consistent sprint behavior across players.",
+    "summary": "### Combat & Weapons\n- Fixed mini crossbow fractional reloads not working properly.\n\n### Wildlife & Hunting\n- Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.\n\n### Vehicles & Transport\n- Boat power-down now works correctly when lowering sails and jumping off quickly.\n- Introduced a ridable horse prefab for players.\n\n### Base Building & Structures\n- Deployables no longer clip through doors or disappear when exterior doors close, and entity destroy messages are correctly timed during base repartitioning.\n- Door controllers on external gates now retain settings after upgrades.\n- Fixed broken helipad stage setup, restoring proper helipad functionality.\n- Improved terrain deformation handling for building: deployables now respect configurable tolerance, and foundations place against original terrain height, preventing placement over deep carves.\n\n### World & Monuments\n- Fuseboxes are now present in all monuments that contain them.\n\n### Oil Rig Mechanics\n- Oil pump now has a 15‑minute start delay, extending total cycle to 20 minutes plus configured delay.",
     "new_items": [
       {
-        "text": "Added a ridable horse prefab, allowing players to mount and ride horses.",
+        "text": "Fixed mini crossbow fractional reloads not working properly.",
+        "commit_ids": [
+          702751
+        ],
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.",
+        "commit_ids": [
+          702723
+        ],
+        "section": "Wildlife & Hunting"
+      },
+      {
+        "text": "Introduced a ridable horse prefab for players.",
         "commit_ids": [
           702713
         ],
-        "section": "Transportation"
-      },
-      {
-        "text": "Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.",
-        "commit_ids": [
-          702701
-        ],
-        "section": "World Objects & Rendering"
-      },
-      {
-        "text": "Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.",
-        "commit_ids": [
-          702693
-        ],
-        "section": "Base Building & Upgrades"
-      },
-      {
-        "text": "Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs.",
-        "commit_ids": [
-          702685
-        ],
-        "section": "Base Building & Upgrades"
+        "section": "Vehicles & Transport"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Added a ridable horse prefab, allowing players to mount and ride horses.\n- Added fuseboxes to every monument that contains them, enabling players to interact with fuseboxes across the map.\n- Fixed upgraded external gate doors losing their controller settings, preserving door controller behavior after upgrades.\n- Deployables no longer become hidden when an exterior door closes, fixing clipping‑through‑door visual bugs."
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed mini crossbow fractional reloads not working properly.\n- Added sheep trophy head to hunting trophy prefab and fixed male calf appearing on female ragdoll.\n- Introduced a ridable horse prefab for players."
   },
   "2026-09-20": {
     "commit_count": 17,
