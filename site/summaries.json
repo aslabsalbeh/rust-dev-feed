@@ -1,58 +1,51 @@
 {
   "2026-09-22": {
-    "commit_count": 79,
-    "relevant_commit_count": 43,
-    "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698",
+    "commit_count": 90,
+    "relevant_commit_count": 48,
+    "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Structures",
+        "title": "World & Creatures",
         "items": [
           {
-            "text": "Adjusted repair requirements for the helipad, changing materials and amounts needed.",
+            "text": "Added hostile jellyfish swarms, new marine critters.",
             "commit_ids": [
-              703534
+              703748
             ]
           },
           {
-            "text": "Added new ferry terminal, radtown, and oil rig monuments (S2P).",
+            "text": "White sheep now represent the \"good\" gene variant; gene odds reverted.",
             "commit_ids": [
-              703243
+              703110
             ]
           },
           {
-            "text": "Single door controllers now retain correct rotation after reskin, fixing doors that rotated 90° incorrectly.",
-            "commit_ids": [
-              702866
-            ]
-          },
-          {
-            "text": "Oil rigs will no longer trigger radiation if the locked crate remains untouched after a server restart.",
-            "commit_ids": [
-              702972
-            ]
-          },
-          {
-            "text": "Chicken eggs now drop flush with terrain and with physics disabled, preventing them from falling through ground or being killed out‑of‑bounds.",
+            "text": "Chicken eggs now drop flush with terrain and stop physics when terrain is detected, preventing fall‑through.",
             "commit_ids": [
               702859
+            ]
+          },
+          {
+            "text": "Oil rigs no longer emit radiation if their locked crate hasn't been hacked, even after server restarts.",
+            "commit_ids": [
+              702972
             ]
           }
         ]
       },
       {
-        "title": "Economy & Crafting",
+        "title": "Power, Loot & Economy",
         "items": [
           {
-            "text": "Fixed tech tree issues and updated crafting costs for the biofuel generator.",
+            "text": "Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.",
             "commit_ids": [
-              703690,
-              703587
+              703723
             ]
           },
           {
-            "text": "Fixed LastBoughtItems to correctly include bundle content, fixing purchase notifications and checkout results.",
+            "text": "Fixed bundle purchase handling so LastBoughtItems includes bundle contents, restoring proper purchase notifications.",
             "commit_ids": [
               703336
             ]
@@ -60,55 +53,70 @@
         ]
       },
       {
-        "title": "Combat & Defense",
+        "title": "Tech & Crafting",
         "items": [
           {
-            "text": "Buffed waterwheel melee protection by 4–5×, making it much stronger against attacks.",
+            "text": "Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.",
+            "commit_ids": [
+              703690,
+              703587
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Map",
+        "items": [
+          {
+            "text": "Added player‑constructible ferry terminal, radtown, and oil rig structures.",
+            "commit_ids": [
+              703243
+            ]
+          },
+          {
+            "text": "Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier.",
+            "commit_ids": [
+              703952,
+              703534
+            ]
+          },
+          {
+            "text": "Corrected collider layer for through‑colliders, fixing Groundwatch detection bug.",
+            "commit_ids": [
+              703292
+            ]
+          },
+          {
+            "text": "Fixed door controller rotation on single doors, preventing 90° misalignment.",
+            "commit_ids": [
+              702866
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Protection",
+        "items": [
+          {
+            "text": "Increased waterwheel melee protection by ~4‑5x.",
             "commit_ids": [
               703204
             ]
           },
           {
-            "text": "Fire arrows no longer stick to other players' third‑person bows.",
-            "commit_ids": [
-              703041
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio & Communication",
-        "items": [
-          {
-            "text": "Added audio muffling when wearing the prisoner hood, reducing voice clarity but still allowing voice chat.",
+            "text": "Prisoner hood now muffles audio, but voice chat remains mostly clear.",
             "commit_ids": [
               703146
             ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Animals",
-        "items": [
-          {
-            "text": "White sheep are now the \"good\" gene variant, reverting previous odds changes.",
-            "commit_ids": [
-              703110
-            ]
           },
           {
-            "text": "Cows no longer incorrectly benefit from crocodile protection.",
+            "text": "Cows no longer incorrectly use crocodile protection.",
             "commit_ids": [
               702856
             ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Projectiles",
-        "items": [
+          },
           {
-            "text": "Pool cue quality no longer breaks when swapping cues in first‑person view.",
+            "text": "Fixed pool cue quality breaking when swapping cues in first‑person view.",
             "commit_ids": [
               703106
             ]
@@ -116,26 +124,41 @@
         ]
       }
     ],
-    "summary": "### World & Structures\n- Adjusted repair requirements for the helipad, changing materials and amounts needed.\n- Added new ferry terminal, radtown, and oil rig monuments (S2P).\n- Single door controllers now retain correct rotation after reskin, fixing doors that rotated 90° incorrectly.\n- Oil rigs will no longer trigger radiation if the locked crate remains untouched after a server restart.\n- Chicken eggs now drop flush with terrain and with physics disabled, preventing them from falling through ground or being killed out‑of‑bounds.\n\n### Economy & Crafting\n- Fixed tech tree issues and updated crafting costs for the biofuel generator.\n- Fixed LastBoughtItems to correctly include bundle content, fixing purchase notifications and checkout results.\n\n### Combat & Defense\n- Buffed waterwheel melee protection by 4–5×, making it much stronger against attacks.\n- Fire arrows no longer stick to other players' third‑person bows.\n\n### Audio & Communication\n- Added audio muffling when wearing the prisoner hood, reducing voice clarity but still allowing voice chat.\n\n### Livestock & Animals\n- White sheep are now the \"good\" gene variant, reverting previous odds changes.\n- Cows no longer incorrectly benefit from crocodile protection.\n\n### Weapons & Projectiles\n- Pool cue quality no longer breaks when swapping cues in first‑person view.",
+    "summary": "### World & Creatures\n- Added hostile jellyfish swarms, new marine critters.\n- White sheep now represent the \"good\" gene variant; gene odds reverted.\n- Chicken eggs now drop flush with terrain and stop physics when terrain is detected, preventing fall‑through.\n- Oil rigs no longer emit radiation if their locked crate hasn't been hacked, even after server restarts.\n\n### Power, Loot & Economy\n- Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.\n- Fixed bundle purchase handling so LastBoughtItems includes bundle contents, restoring proper purchase notifications.\n\n### Tech & Crafting\n- Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.\n\n### Structures & Map\n- Added player‑constructible ferry terminal, radtown, and oil rig structures.\n- Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier.\n- Corrected collider layer for through‑colliders, fixing Groundwatch detection bug.\n- Fixed door controller rotation on single doors, preventing 90° misalignment.\n\n### Combat & Protection\n- Increased waterwheel melee protection by ~4‑5x.\n- Prisoner hood now muffles audio, but voice chat remains mostly clear.\n- Cows no longer incorrectly use crocodile protection.\n- Fixed pool cue quality breaking when swapping cues in first‑person view.",
     "new_items": [
       {
-        "text": "Adjusted repair requirements for the helipad, changing materials and amounts needed.",
+        "text": "Added hostile jellyfish swarms, new marine critters.",
         "commit_ids": [
-          703534
+          703748
         ],
-        "section": "World & Structures"
+        "section": "World & Creatures"
       },
       {
-        "text": "Fixed tech tree issues and updated crafting costs for the biofuel generator.",
+        "text": "Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.",
+        "commit_ids": [
+          703723
+        ],
+        "section": "Power, Loot & Economy"
+      },
+      {
+        "text": "Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.",
         "commit_ids": [
           703690,
           703587
         ],
-        "section": "Economy & Crafting"
+        "section": "Tech & Crafting"
+      },
+      {
+        "text": "Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier.",
+        "commit_ids": [
+          703952,
+          703534
+        ],
+        "section": "Structures & Map"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Adjusted repair requirements for the helipad, changing materials and amounts needed.\n- Fixed tech tree issues and updated crafting costs for the biofuel generator."
+    "new_relevant_count": 6,
+    "new_summary": "- Added hostile jellyfish swarms, new marine critters.\n- Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.\n- Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.\n- Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier."
   },
   "2026-09-21": {
     "commit_count": 118,
