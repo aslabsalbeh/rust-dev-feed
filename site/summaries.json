@@ -1,35 +1,64 @@
 {
   "2026-09-22": {
-    "commit_count": 35,
-    "relevant_commit_count": 25,
-    "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292",
+    "commit_count": 56,
+    "relevant_commit_count": 33,
+    "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Monuments & World",
+        "title": "World & Monuments",
         "items": [
           {
             "text": "Added new ferry terminal, radtown, and oil rig monuments.",
             "commit_ids": [
               703243
             ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Interactions",
+        "items": [
+          {
+            "text": "Helipad structures are now repairable, allowing players to fix damaged helipads.",
+            "commit_ids": [
+              703397
+            ]
           },
           {
-            "text": "Fixed oil rig radiation bug where radiation could start despite locked crate being untouched.",
+            "text": "Door controllers no longer rotate incorrectly on single doors, preventing misaligned behavior.",
             "commit_ids": [
-              702972
+              702866
+            ]
+          },
+          {
+            "text": "Collider layer corrected for through‑collider objects, restoring proper Groundwatch functionality.",
+            "commit_ids": [
+              703292
+            ]
+          },
+          {
+            "text": "Chicken eggs now drop flush with terrain and without physics, preventing them from falling through ground or disappearing.",
+            "commit_ids": [
+              702859
             ]
           }
         ]
       },
       {
-        "title": "Combat & Defenses",
+        "title": "Combat & Weapon Fixes",
         "items": [
           {
-            "text": "Increased waterwheel melee protection by 4‑5×.",
+            "text": "Pool cue quality no longer degrades when swapping cues in first‑person view.",
             "commit_ids": [
-              703204
+              703106
+            ]
+          },
+          {
+            "text": "Fire arrows no longer stick to other players' bows in third‑person, fixing visual glitches.",
+            "commit_ids": [
+              703041
             ]
           }
         ]
@@ -38,7 +67,7 @@
         "title": "Audio & Communication",
         "items": [
           {
-            "text": "Prisoner hood now muffles voice chat, but still allows clear communication.",
+            "text": "Voice chat is muffled when wearing the prisoner hood (less than a heavy helmet).",
             "commit_ids": [
               703146
             ]
@@ -46,22 +75,39 @@
         ]
       },
       {
-        "title": "Animals & Farming",
+        "title": "Economy & Store",
         "items": [
           {
-            "text": "White sheep are now the \"good\" gene variant; odds for good/bad genes adjusted.",
+            "text": "Bundle purchases now correctly add items to inventory and display proper notifications.",
+            "commit_ids": [
+              703336
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Balance & Gameplay Tweaks",
+        "items": [
+          {
+            "text": "Waterwheel melee protection increased 4‑5×, making it significantly tougher against melee attacks.",
+            "commit_ids": [
+              703204
+            ]
+          },
+          {
+            "text": "Sheep genetics adjusted: white sheep are now the beneficial gene variant; previous odds changes reverted.",
             "commit_ids": [
               703110
             ]
           },
           {
-            "text": "Eggs now drop flush with terrain and no physics when terrain is found, preventing them from falling through.",
+            "text": "Oil rig radiation trigger now respects crate hack state after server restarts, preventing unintended radiation exposure.",
             "commit_ids": [
-              702859
+              702972
             ]
           },
           {
-            "text": "Cows no longer inherit crocodile protection, fixing unintended damage resistance.",
+            "text": "Cows no longer receive crocodile protection, fixing unintended protection behavior.",
             "commit_ids": [
               702856
             ]
@@ -69,101 +115,83 @@
         ]
       },
       {
-        "title": "Base Building",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Fixed door controller rotation on single doors caused by reskin child entity misalignment.",
+            "text": "Overlay images now display at full resolution instead of downsampled mipmaps when multiple components share the same URL.",
             "commit_ids": [
-              702866
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Groundwatch tool now functions correctly after collider layer fix.",
-            "commit_ids": [
-              703292
+              703469
             ]
           },
           {
-            "text": "Pool cue quality remains consistent when switching cues in first‑person view.",
+            "text": "UI sprites no longer disappear during overlay interactions because stale texture cache is only cleared when unused.",
             "commit_ids": [
-              703106
+              703322
             ]
           },
           {
-            "text": "Fire arrows no longer stick to other players' bows, fixing a combat visual glitch.",
+            "text": "Vending machine purchase UI font sizes are now consistent, fixing previous size mismatches.",
             "commit_ids": [
-              703041
+              702898
             ]
           }
         ]
       }
     ],
-    "summary": "### Monuments & World\n- Added new ferry terminal, radtown, and oil rig monuments.\n- Fixed oil rig radiation bug where radiation could start despite locked crate being untouched.\n\n### Combat & Defenses\n- Increased waterwheel melee protection by 4‑5×.\n\n### Audio & Communication\n- Prisoner hood now muffles voice chat, but still allows clear communication.\n\n### Animals & Farming\n- White sheep are now the \"good\" gene variant; odds for good/bad genes adjusted.\n- Eggs now drop flush with terrain and no physics when terrain is found, preventing them from falling through.\n- Cows no longer inherit crocodile protection, fixing unintended damage resistance.\n\n### Base Building\n- Fixed door controller rotation on single doors caused by reskin child entity misalignment.\n\n### Gameplay & Balance\n- Groundwatch tool now functions correctly after collider layer fix.\n- Pool cue quality remains consistent when switching cues in first‑person view.\n- Fire arrows no longer stick to other players' bows, fixing a combat visual glitch.",
+    "summary": "### World & Monuments\n- Added new ferry terminal, radtown, and oil rig monuments.\n\n### Structures & Interactions\n- Helipad structures are now repairable, allowing players to fix damaged helipads.\n- Door controllers no longer rotate incorrectly on single doors, preventing misaligned behavior.\n- Collider layer corrected for through‑collider objects, restoring proper Groundwatch functionality.\n- Chicken eggs now drop flush with terrain and without physics, preventing them from falling through ground or disappearing.\n\n### Combat & Weapon Fixes\n- Pool cue quality no longer degrades when swapping cues in first‑person view.\n- Fire arrows no longer stick to other players' bows in third‑person, fixing visual glitches.\n\n### Audio & Communication\n- Voice chat is muffled when wearing the prisoner hood (less than a heavy helmet).\n\n### Economy & Store\n- Bundle purchases now correctly add items to inventory and display proper notifications.\n\n### Balance & Gameplay Tweaks\n- Waterwheel melee protection increased 4‑5×, making it significantly tougher against melee attacks.\n- Sheep genetics adjusted: white sheep are now the beneficial gene variant; previous odds changes reverted.\n- Oil rig radiation trigger now respects crate hack state after server restarts, preventing unintended radiation exposure.\n- Cows no longer receive crocodile protection, fixing unintended protection behavior.\n\n### User Interface\n- Overlay images now display at full resolution instead of downsampled mipmaps when multiple components share the same URL.\n- UI sprites no longer disappear during overlay interactions because stale texture cache is only cleared when unused.\n- Vending machine purchase UI font sizes are now consistent, fixing previous size mismatches.",
     "new_items": [
       {
         "text": "Added new ferry terminal, radtown, and oil rig monuments.",
         "commit_ids": [
           703243
         ],
-        "section": "Monuments & World"
+        "section": "World & Monuments"
       },
       {
-        "text": "Fixed oil rig radiation bug where radiation could start despite locked crate being untouched.",
+        "text": "Helipad structures are now repairable, allowing players to fix damaged helipads.",
         "commit_ids": [
-          702972
+          703397
         ],
-        "section": "Monuments & World"
+        "section": "Structures & Interactions"
       },
       {
-        "text": "Increased waterwheel melee protection by 4‑5×.",
-        "commit_ids": [
-          703204
-        ],
-        "section": "Combat & Defenses"
-      },
-      {
-        "text": "Prisoner hood now muffles voice chat, but still allows clear communication.",
-        "commit_ids": [
-          703146
-        ],
-        "section": "Audio & Communication"
-      },
-      {
-        "text": "White sheep are now the \"good\" gene variant; odds for good/bad genes adjusted.",
-        "commit_ids": [
-          703110
-        ],
-        "section": "Animals & Farming"
-      },
-      {
-        "text": "Groundwatch tool now functions correctly after collider layer fix.",
+        "text": "Collider layer corrected for through‑collider objects, restoring proper Groundwatch functionality.",
         "commit_ids": [
           703292
         ],
-        "section": "Gameplay & Balance"
+        "section": "Structures & Interactions"
       },
       {
-        "text": "Pool cue quality remains consistent when switching cues in first‑person view.",
+        "text": "Bundle purchases now correctly add items to inventory and display proper notifications.",
         "commit_ids": [
-          703106
+          703336
         ],
-        "section": "Gameplay & Balance"
+        "section": "Economy & Store"
       },
       {
-        "text": "Fire arrows no longer stick to other players' bows, fixing a combat visual glitch.",
+        "text": "Waterwheel melee protection increased 4‑5×, making it significantly tougher against melee attacks.",
         "commit_ids": [
-          703041
+          703204
         ],
-        "section": "Gameplay & Balance"
+        "section": "Balance & Gameplay Tweaks"
+      },
+      {
+        "text": "Overlay images now display at full resolution instead of downsampled mipmaps when multiple components share the same URL.",
+        "commit_ids": [
+          703469
+        ],
+        "section": "User Interface"
+      },
+      {
+        "text": "UI sprites no longer disappear during overlay interactions because stale texture cache is only cleared when unused.",
+        "commit_ids": [
+          703322
+        ],
+        "section": "User Interface"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Added new ferry terminal, radtown, and oil rig monuments.\n- Fixed oil rig radiation bug where radiation could start despite locked crate being untouched.\n- Increased waterwheel melee protection by 4‑5×.\n- Prisoner hood now muffles voice chat, but still allows clear communication.\n- White sheep are now the \"good\" gene variant; odds for good/bad genes adjusted.\n- Groundwatch tool now functions correctly after collider layer fix.\n- Pool cue quality remains consistent when switching cues in first‑person view.\n- Fire arrows no longer stick to other players' bows, fixing a combat visual glitch."
+    "new_relevant_count": 7,
+    "new_summary": "- Added new ferry terminal, radtown, and oil rig monuments.\n- Helipad structures are now repairable, allowing players to fix damaged helipads.\n- Collider layer corrected for through‑collider objects, restoring proper Groundwatch functionality.\n- Bundle purchases now correctly add items to inventory and display proper notifications.\n- Waterwheel melee protection increased 4‑5×, making it significantly tougher against melee attacks.\n- Overlay images now display at full resolution instead of downsampled mipmaps when multiple components share the same URL.\n- UI sprites no longer disappear during overlay interactions because stale texture cache is only cleared when unused."
   },
   "2026-09-21": {
     "commit_count": 118,
