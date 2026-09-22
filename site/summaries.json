@@ -1,39 +1,45 @@
 {
   "2026-09-21": {
-    "commit_count": 110,
-    "relevant_commit_count": 63,
+    "commit_count": 118,
+    "relevant_commit_count": 69,
     "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773,702774,702775,702782,702785,702789,702793",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "702763,702764,702766,702769,702770,702773,702774,702775,702782,702785,702789,702793,702798,702806,702808,702810,702813,702815,702818,702820,702827,702828,702833,702834,702835": [
+      "702774,702775,702782,702785,702789,702793,702798,702806,702808,702810,702813,702815,702818,702820,702827,702828,702833,702834,702835,702836,702838,702841,702843,702846,702847": [
         {
-          "title": "Livestock & Animals",
+          "title": "Livestock Harvest & Dung Mechanics",
           "items": [
             {
-              "text": "Fixed sheep not dropping dung.",
+              "text": "Sheep now drop the wool they were wearing at the moment of death.",
               "commit_ids": [
-                702835
+                702838
               ]
             },
             {
-              "text": "Adjusted gene rarity: bad genes are now more common, making good‑gene animals (e.g., black sheep) rarer.",
+              "text": "Lambs no longer drop dung, matching calf behavior.",
               "commit_ids": [
-                702810
+                702836
+              ]
+            },
+            {
+              "text": "Sheep dung drop bug fixed.",
+              "commit_ids": [
+                702835
               ]
             }
           ]
         },
         {
-          "title": "Food Buffs",
+          "title": "Food Items & Player Recovery",
           "items": [
             {
-              "text": "Added new mutton pie (regular and rich). Regular pie halves the time needed for livestock to bond with the player; rich pie reduces bonding time by an additional 30 seconds and also prevents bulls from charging.",
+              "text": "Added regular and rich mutton pies: halve the time for livestock to reach Bonded status (can be led) and prevent bulls from charging; the rich version reduces bonding time by an additional 30 seconds.",
               "commit_ids": [
                 702833
               ]
             },
             {
-              "text": "Added new beef pie (regular and rich). Increases maximum consumable food by 75 % (up to 875 cal, 1000 cal for rich). When hunger is full after eating, provides a 75 % (regular) or 100 % (rich) chance to recover when downed, after medkit effects.",
+              "text": "Added regular and rich beef pies: increase the maximum food duration by +75% (875 calories) and boost downed‑player recovery chance to 75% (regular) or 100% (rich) after the hunger bar is full.",
               "commit_ids": [
                 702827
               ]
@@ -41,10 +47,22 @@
           ]
         },
         {
-          "title": "Mounting & Transport",
+          "title": "Mounting & Transport Adjustments",
           "items": [
             {
-              "text": "Mount prompt no longer appears when no animal is being led. Mounting slots now enforce animal size (large vs. small); cows no longer fit in the small flatbed and must use the large flatbed.",
+              "text": "Mount prompt no longer appears when no animal is being led.",
+              "commit_ids": [
+                702820
+              ]
+            },
+            {
+              "text": "Mounting slots now specify supported animal size (large or small).",
+              "commit_ids": [
+                702820
+              ]
+            },
+            {
+              "text": "Cows can no longer be placed in the small flatbed; they require the large flatbed.",
               "commit_ids": [
                 702820
               ]
@@ -52,23 +70,45 @@
           ]
         },
         {
-          "title": "Store Stability",
+          "title": "Store UI Stability",
           "items": [
             {
-              "text": "Fixed an additional crash scenario where the store could break when the player has no items.",
+              "text": "Fixed an additional edge case where the store could break when the player has no items.",
               "commit_ids": [
                 702813
               ]
             }
           ]
-        }
-      ],
-      "702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761": [
+        },
         {
-          "title": "Weapons & Combat",
+          "title": "Genetics Balance",
           "items": [
             {
-              "text": "Fixed fractional reloads for the mini crossbow, ensuring reload timing works correctly.",
+              "text": "Bad genes are now more common, making generic‑looking sheep and cows prevalent; good genes (e.g., black sheep) have become rarer.",
+              "commit_ids": [
+                702810
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crafting Menu UI Fix",
+          "items": [
+            {
+              "text": "Reduced category button width by two pixels to stop overflow in the crafting menu.",
+              "commit_ids": [
+                702846
+              ]
+            }
+          ]
+        }
+      ],
+      "702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773": [
+        {
+          "title": "Weapons",
+          "items": [
+            {
+              "text": "Fixed fractional reloads for the mini crossbow, ensuring proper reload behavior.",
               "commit_ids": [
                 702751
               ]
@@ -76,7 +116,7 @@
           ]
         },
         {
-          "title": "Mounts & Vehicles",
+          "title": "Vehicles",
           "items": [
             {
               "text": "Added a ridable horse prefab, allowing players to mount horses.",
@@ -85,43 +125,9 @@
               ]
             },
             {
-              "text": "Fixed boat power‑down mechanic when lowering sails and jumping off quickly, preventing uncontrolled boat movement.",
+              "text": "Fixed boat power‑down mechanic when lowering sails and jumping off quickly, preventing uncontrolled drifting.",
               "commit_ids": [
                 702630
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Monument & Base Gameplay",
-          "items": [
-            {
-              "text": "Added fuseboxes to all monuments that contain them, restoring expected electrical interactions.",
-              "commit_ids": [
-                702701
-              ]
-            },
-            {
-              "text": "Fixed door controllers on external gates to be preserved correctly after upgrades.",
-              "commit_ids": [
-                702693
-              ]
-            },
-            {
-              "text": "Resolved issue where deployables hidden behind doors became invisible when exterior doors closed.",
-              "commit_ids": [
-                702685
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Oil Rig Mechanics",
-          "items": [
-            {
-              "text": "Introduced a 15‑minute delay to the oil pump operation on oil rigs, extending the pump cycle time.",
-              "commit_ids": [
-                702625
               ]
             }
           ]
@@ -130,66 +136,73 @@
           "title": "Animals & Hunting",
           "items": [
             {
-              "text": "Added a sheep trophy head to the hunting trophy prefab and corrected male calf appearing on female ragdoll models.",
+              "text": "Adjusted collider sizes for livestock and critter animals, improving hit detection and interaction.",
+              "commit_ids": [
+                702769
+              ]
+            },
+            {
+              "text": "Added sheep trophy head to hunting trophies and corrected ragdoll display for male calves in female bodies.",
               "commit_ids": [
                 702723
               ]
             }
           ]
+        },
+        {
+          "title": "Base Building & Deployables",
+          "items": [
+            {
+              "text": "Fixed door controllers on external gates to persist correctly when upgraded via SimpleUpgrade.",
+              "commit_ids": [
+                702693
+              ]
+            },
+            {
+              "text": "Resolved deployables clipping through doors and disappearing when exterior doors close.",
+              "commit_ids": [
+                702685
+              ]
+            },
+            {
+              "text": "Added fuseboxes to all monuments that contain them, restoring functionality for players.",
+              "commit_ids": [
+                702701
+              ]
+            }
+          ]
         }
       ],
-      "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606": [
+      "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625": [
         {
-          "title": "Store UI",
+          "title": "Oil Rig Mechanics",
           "items": [
             {
-              "text": "Fixed a crash when quickly navigating the store's General tab by ensuring throttled URL requests are served from cache.",
+              "text": "Added a 15‑minute start delay to oil pump operation; total cycle now 20 min + 15 min delay.",
               "commit_ids": [
-                702606
+                702625
               ]
             }
           ]
         },
         {
-          "title": "Computer Station UI",
+          "title": "Helipad Repair",
           "items": [
             {
-              "text": "Resolved text being hidden in the identifier input box on different resolutions.",
+              "text": "Implemented broken helipad stages for the Airwolf repairable pad, affecting helipad functionality.",
               "commit_ids": [
-                702598
+                702620
               ]
             }
           ]
         },
         {
-          "title": "Building & Terrain Deformation",
+          "title": "Terrain Deformation & Building",
           "items": [
             {
-              "text": "Added configurable tolerance for deployable deformation errors and ensured foundations are placed against the original terrain height, preventing placement over deep carves.",
+              "text": "Introduced configurable tolerance for deployable placement on deformed terrain and ensured foundations align to original terrain height, preventing placement over deep carves.",
               "commit_ids": [
                 702585
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Loadout Compatibility",
-          "items": [
-            {
-              "text": "Switched to MoveToContainer for item placement and set default position to -1 for legacy loadout JSON files, improving loadout import stability.",
-              "commit_ids": [
-                702577
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Wildlife Behavior",
-          "items": [
-            {
-              "text": "Adjusted squirrel movement speed and updated their animations.",
-              "commit_ids": [
-                702567
               ]
             }
           ]
