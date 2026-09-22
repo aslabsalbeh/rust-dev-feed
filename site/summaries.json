@@ -1,76 +1,76 @@
 {
   "2026-09-21": {
-    "commit_count": 100,
-    "relevant_commit_count": 58,
+    "commit_count": 110,
+    "relevant_commit_count": 63,
     "relevant_signature": "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773,702774,702775,702782,702785,702789,702793",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "702738,702742,702745,702751,702761,702763,702764,702766,702769,702770,702773,702774,702775,702782,702785,702789,702793,702798,702806,702808,702810,702813,702815,702818,702820": [
+      "702763,702764,702766,702769,702770,702773,702774,702775,702782,702785,702789,702793,702798,702806,702808,702810,702813,702815,702818,702820,702827,702828,702833,702834,702835": [
         {
           "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Mount prompts no longer appear when you aren't leading an animal, and mounting slots now enforce large vs small animal types; cows require the large flatbed.",
+              "text": "Fixed sheep not dropping dung.",
               "commit_ids": [
-                702820
+                702835
               ]
             },
             {
-              "text": "Bad livestock genes are now more common, making generic‑looking sheep and cows prevalent while rare good genes (e.g., black sheep) are harder to find.",
+              "text": "Adjusted gene rarity: bad genes are now more common, making good‑gene animals (e.g., black sheep) rarer.",
               "commit_ids": [
                 702810
-              ]
-            },
-            {
-              "text": "Animal colliders have been adjusted, affecting how critters interact with the world (e.g., collision size changes).",
-              "commit_ids": [
-                702769
               ]
             }
           ]
         },
         {
-          "title": "Store & Inventory",
+          "title": "Food Buffs",
           "items": [
             {
-              "text": "Store UI no longer crashes or becomes unusable when you have an empty inventory.",
+              "text": "Added new mutton pie (regular and rich). Regular pie halves the time needed for livestock to bond with the player; rich pie reduces bonding time by an additional 30 seconds and also prevents bulls from charging.",
+              "commit_ids": [
+                702833
+              ]
+            },
+            {
+              "text": "Added new beef pie (regular and rich). Increases maximum consumable food by 75 % (up to 875 cal, 1000 cal for rich). When hunger is full after eating, provides a 75 % (regular) or 100 % (rich) chance to recover when downed, after medkit effects.",
+              "commit_ids": [
+                702827
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Mounting & Transport",
+          "items": [
+            {
+              "text": "Mount prompt no longer appears when no animal is being led. Mounting slots now enforce animal size (large vs. small); cows no longer fit in the small flatbed and must use the large flatbed.",
+              "commit_ids": [
+                702820
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Store Stability",
+          "items": [
+            {
+              "text": "Fixed an additional crash scenario where the store could break when the player has no items.",
               "commit_ids": [
                 702813
               ]
             }
           ]
-        },
-        {
-          "title": "Weapons",
-          "items": [
-            {
-              "text": "Mini crossbow now correctly handles fractional reloads, fixing reload timing issues.",
-              "commit_ids": [
-                702751
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Generators",
-          "items": [
-            {
-              "text": "Biofuel generator rig's liquid joint is now centered, preventing misaligned placement and related issues.",
-              "commit_ids": [
-                702789
-              ]
-            }
-          ]
         }
       ],
-      "702585,702598,702599,702600,702606,702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737": [
+      "702612,702613,702614,702620,702621,702625,702630,702636,702685,702688,702693,702699,702701,702713,702722,702723,702729,702733,702734,702737,702738,702742,702745,702751,702761": [
         {
-          "title": "Animals & Hunting",
+          "title": "Weapons & Combat",
           "items": [
             {
-              "text": "Added sheep trophy head to the hunting trophy prefab and fixed a visual bug where female ragdolls displayed a male calf.",
+              "text": "Fixed fractional reloads for the mini crossbow, ensuring reload timing works correctly.",
               "commit_ids": [
-                702723
+                702751
               ]
             }
           ]
@@ -79,13 +79,13 @@
           "title": "Mounts & Vehicles",
           "items": [
             {
-              "text": "Introduced a ridable horse prefab for players to mount.",
+              "text": "Added a ridable horse prefab, allowing players to mount horses.",
               "commit_ids": [
                 702713
               ]
             },
             {
-              "text": "Fixed a bug where the boat power‑down mechanic could fail when lowering sails and quickly jumping off, preventing boats from drifting away unintentionally.",
+              "text": "Fixed boat power‑down mechanic when lowering sails and jumping off quickly, preventing uncontrolled boat movement.",
               "commit_ids": [
                 702630
               ]
@@ -93,35 +93,7 @@
           ]
         },
         {
-          "title": "Oil Rig Mechanics",
-          "items": [
-            {
-              "text": "Added a 15‑minute delay to the oil pump mechanic; the total rig timer now runs for 20 minutes plus the configured delay.",
-              "commit_ids": [
-                702625
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Doors & Deployables",
-          "items": [
-            {
-              "text": "Fixed door controllers on external gates not being preserved correctly after a SimpleUpgrade, ensuring upgraded gates retain their functionality.",
-              "commit_ids": [
-                702693
-              ]
-            },
-            {
-              "text": "Resolved an issue where deployables clipped through doors and became hidden when an exterior door closed.",
-              "commit_ids": [
-                702685
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Monuments & World Interaction",
+          "title": "Monument & Base Gameplay",
           "items": [
             {
               "text": "Added fuseboxes to all monuments that contain them, restoring expected electrical interactions.",
@@ -130,7 +102,70 @@
               ]
             },
             {
-              "text": "Improved terrain deformation handling for building: deployables now have configurable tolerance for height errors, and foundations are placed against the original terrain height, preventing placement over deep carves.",
+              "text": "Fixed door controllers on external gates to be preserved correctly after upgrades.",
+              "commit_ids": [
+                702693
+              ]
+            },
+            {
+              "text": "Resolved issue where deployables hidden behind doors became invisible when exterior doors closed.",
+              "commit_ids": [
+                702685
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Oil Rig Mechanics",
+          "items": [
+            {
+              "text": "Introduced a 15‑minute delay to the oil pump operation on oil rigs, extending the pump cycle time.",
+              "commit_ids": [
+                702625
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Hunting",
+          "items": [
+            {
+              "text": "Added a sheep trophy head to the hunting trophy prefab and corrected male calf appearing on female ragdoll models.",
+              "commit_ids": [
+                702723
+              ]
+            }
+          ]
+        }
+      ],
+      "702552,702554,702556,702565,702567,702573,702577,702579,702585,702598,702599,702600,702606": [
+        {
+          "title": "Store UI",
+          "items": [
+            {
+              "text": "Fixed a crash when quickly navigating the store's General tab by ensuring throttled URL requests are served from cache.",
+              "commit_ids": [
+                702606
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Computer Station UI",
+          "items": [
+            {
+              "text": "Resolved text being hidden in the identifier input box on different resolutions.",
+              "commit_ids": [
+                702598
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building & Terrain Deformation",
+          "items": [
+            {
+              "text": "Added configurable tolerance for deployable deformation errors and ensured foundations are placed against the original terrain height, preventing placement over deep carves.",
               "commit_ids": [
                 702585
               ]
@@ -138,42 +173,23 @@
           ]
         },
         {
-          "title": "UI Fixes",
+          "title": "Loadout Compatibility",
           "items": [
             {
-              "text": "Fixed a UI bug where the computer station identifier input box text could be hidden at certain screen resolutions.",
+              "text": "Switched to MoveToContainer for item placement and set default position to -1 for legacy loadout JSON files, improving loadout import stability.",
               "commit_ids": [
-                702598
-              ]
-            },
-            {
-              "text": "Corrected UI store image rendering so cover images use sprites instead of textures, eliminating atlas drawing issues.",
-              "commit_ids": [
-                702613
-              ]
-            }
-          ]
-        }
-      ],
-      "702552,702554,702556,702565,702567,702573,702577,702579": [
-        {
-          "title": "NPC & AI",
-          "items": [
-            {
-              "text": "Adjusted squirrel movement speed, affecting how quickly squirrels move and can be hunted.",
-              "commit_ids": [
-                702567
+                702577
               ]
             }
           ]
         },
         {
-          "title": "World & Environment",
+          "title": "Wildlife Behavior",
           "items": [
             {
-              "text": "Fixed HLOD rendering so structures now appear correctly at distance, preventing missing buildings in the world view.",
+              "text": "Adjusted squirrel movement speed and updated their animations.",
               "commit_ids": [
-                702556
+                702567
               ]
             }
           ]
