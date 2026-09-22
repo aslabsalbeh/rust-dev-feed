@@ -1,93 +1,31 @@
 {
   "2026-09-22": {
-    "commit_count": 90,
-    "relevant_commit_count": 48,
-    "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952",
+    "commit_count": 99,
+    "relevant_commit_count": 54,
+    "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Creatures",
+        "title": "Base Building & Repairs",
         "items": [
           {
-            "text": "Added hostile jellyfish swarms, new marine critters.",
+            "text": "Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection.",
             "commit_ids": [
-              703748
+              704195,
+              704078
             ]
           },
           {
-            "text": "White sheep now represent the \"good\" gene variant; gene odds reverted.",
+            "text": "Helipad repair requirements adjusted and prefab updated; VehiclePadRepaired condition fixed.",
             "commit_ids": [
-              703110
+              703534,
+              703397,
+              703952
             ]
           },
           {
-            "text": "Chicken eggs now drop flush with terrain and stop physics when terrain is detected, preventing fall‑through.",
-            "commit_ids": [
-              702859
-            ]
-          },
-          {
-            "text": "Oil rigs no longer emit radiation if their locked crate hasn't been hacked, even after server restarts.",
-            "commit_ids": [
-              702972
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Power, Loot & Economy",
-        "items": [
-          {
-            "text": "Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.",
-            "commit_ids": [
-              703723
-            ]
-          },
-          {
-            "text": "Fixed bundle purchase handling so LastBoughtItems includes bundle contents, restoring proper purchase notifications.",
-            "commit_ids": [
-              703336
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Tech & Crafting",
-        "items": [
-          {
-            "text": "Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.",
-            "commit_ids": [
-              703690,
-              703587
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Structures & Map",
-        "items": [
-          {
-            "text": "Added player‑constructible ferry terminal, radtown, and oil rig structures.",
-            "commit_ids": [
-              703243
-            ]
-          },
-          {
-            "text": "Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier.",
-            "commit_ids": [
-              703952,
-              703534
-            ]
-          },
-          {
-            "text": "Corrected collider layer for through‑colliders, fixing Groundwatch detection bug.",
-            "commit_ids": [
-              703292
-            ]
-          },
-          {
-            "text": "Fixed door controller rotation on single doors, preventing 90° misalignment.",
+            "text": "Single doors now rotate correctly, eliminating misalignment.",
             "commit_ids": [
               702866
             ]
@@ -95,70 +33,118 @@
         ]
       },
       {
-        "title": "Combat & Protection",
+        "title": "Economy & Store Updates",
         "items": [
           {
-            "text": "Increased waterwheel melee protection by ~4‑5x.",
+            "text": "Store functionality improved: Crystal AK takeover data fixed and bundle purchases now correctly deliver items.",
+            "commit_ids": [
+              704045,
+              703336
+            ]
+          },
+          {
+            "text": "Biofuel generator tech tree, description, and crafting costs updated, fixing progression and resource balance.",
+            "commit_ids": [
+              703587,
+              703690
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Creatures",
+        "items": [
+          {
+            "text": "New ferry terminal, radtown, and oil rig monuments added, expanding exploration points.",
+            "commit_ids": [
+              703243
+            ]
+          },
+          {
+            "text": "Jellyfish swarms introduced, adding new aquatic creature behavior.",
+            "commit_ids": [
+              703748
+            ]
+          },
+          {
+            "text": "Oil rig radiation no longer triggers when locked crate untouched, preventing unintended hazard.",
+            "commit_ids": [
+              702972
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Power Tweaks",
+        "items": [
+          {
+            "text": "Waterwheel melee protection increased 4‑5×, strengthening defense against close combat.",
             "commit_ids": [
               703204
             ]
           },
           {
-            "text": "Prisoner hood now muffles audio, but voice chat remains mostly clear.",
+            "text": "Power phase requirements and loot spawn types adjusted, and harbor_1 map topology issue fixed.",
             "commit_ids": [
-              703146
+              703723
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Genetics",
+        "items": [
           {
-            "text": "Cows no longer incorrectly use crocodile protection.",
+            "text": "White sheep now carry the beneficial gene variant; cows no longer receive crocodile protection.",
             "commit_ids": [
+              703110,
               702856
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Audio",
+        "items": [
           {
-            "text": "Fixed pool cue quality breaking when swapping cues in first‑person view.",
+            "text": "Prisoner hood muffles voice chat slightly, reducing audible range compared to heavy helmets.",
             "commit_ids": [
-              703106
+              703146
             ]
           }
         ]
       }
     ],
-    "summary": "### World & Creatures\n- Added hostile jellyfish swarms, new marine critters.\n- White sheep now represent the \"good\" gene variant; gene odds reverted.\n- Chicken eggs now drop flush with terrain and stop physics when terrain is detected, preventing fall‑through.\n- Oil rigs no longer emit radiation if their locked crate hasn't been hacked, even after server restarts.\n\n### Power, Loot & Economy\n- Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.\n- Fixed bundle purchase handling so LastBoughtItems includes bundle contents, restoring proper purchase notifications.\n\n### Tech & Crafting\n- Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.\n\n### Structures & Map\n- Added player‑constructible ferry terminal, radtown, and oil rig structures.\n- Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier.\n- Corrected collider layer for through‑colliders, fixing Groundwatch detection bug.\n- Fixed door controller rotation on single doors, preventing 90° misalignment.\n\n### Combat & Protection\n- Increased waterwheel melee protection by ~4‑5x.\n- Prisoner hood now muffles audio, but voice chat remains mostly clear.\n- Cows no longer incorrectly use crocodile protection.\n- Fixed pool cue quality breaking when swapping cues in first‑person view.",
+    "summary": "### Base Building & Repairs\n- Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection.\n- Helipad repair requirements adjusted and prefab updated; VehiclePadRepaired condition fixed.\n- Single doors now rotate correctly, eliminating misalignment.\n\n### Economy & Store Updates\n- Store functionality improved: Crystal AK takeover data fixed and bundle purchases now correctly deliver items.\n- Biofuel generator tech tree, description, and crafting costs updated, fixing progression and resource balance.\n\n### World & Creatures\n- New ferry terminal, radtown, and oil rig monuments added, expanding exploration points.\n- Jellyfish swarms introduced, adding new aquatic creature behavior.\n- Oil rig radiation no longer triggers when locked crate untouched, preventing unintended hazard.\n\n### Combat & Power Tweaks\n- Waterwheel melee protection increased 4‑5×, strengthening defense against close combat.\n- Power phase requirements and loot spawn types adjusted, and harbor_1 map topology issue fixed.\n\n### Livestock & Genetics\n- White sheep now carry the beneficial gene variant; cows no longer receive crocodile protection.\n\n### Audio\n- Prisoner hood muffles voice chat slightly, reducing audible range compared to heavy helmets.",
     "new_items": [
       {
-        "text": "Added hostile jellyfish swarms, new marine critters.",
+        "text": "Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection.",
         "commit_ids": [
-          703748
+          704195,
+          704078
         ],
-        "section": "World & Creatures"
+        "section": "Base Building & Repairs"
       },
       {
-        "text": "Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.",
+        "text": "Helipad repair requirements adjusted and prefab updated; VehiclePadRepaired condition fixed.",
         "commit_ids": [
-          703723
+          703534,
+          703397,
+          703952
         ],
-        "section": "Power, Loot & Economy"
+        "section": "Base Building & Repairs"
       },
       {
-        "text": "Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.",
+        "text": "Store functionality improved: Crystal AK takeover data fixed and bundle purchases now correctly deliver items.",
         "commit_ids": [
-          703690,
-          703587
+          704045,
+          703336
         ],
-        "section": "Tech & Crafting"
-      },
-      {
-        "text": "Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier.",
-        "commit_ids": [
-          703952,
-          703534
-        ],
-        "section": "Structures & Map"
+        "section": "Economy & Store Updates"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Added hostile jellyfish swarms, new marine critters.\n- Adjusted power phase requirements and tweaked loot spawn types, changing loot distribution in power rooms.\n- Fixed tech tree entries and updated crafting costs for the biofuel generator, affecting its unlock and resource requirements.\n- Lowered helipad repair requirements and changed VehiclePadRepaired condition type, making repairs easier."
+    "new_relevant_count": 7,
+    "new_summary": "- Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection.\n- Helipad repair requirements adjusted and prefab updated; VehiclePadRepaired condition fixed.\n- Store functionality improved: Crystal AK takeover data fixed and bundle purchases now correctly deliver items."
   },
   "2026-09-21": {
     "commit_count": 118,

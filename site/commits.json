@@ -1,5 +1,77 @@
 [
   {
+    "id": 704262,
+    "branch": "main/biofuel_generator",
+    "changeset": "165341",
+    "created": "2026-09-22T20:05:29",
+    "message": "Add blinking 'processing' and 'blocked' text on the info display",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 704195,
+    "branch": "main/base_occlusion",
+    "changeset": "165340",
+    "created": "2026-09-22T19:36:39",
+    "message": "Ok fine allow buildings to define multiple exteriors\r\n- even though theoretically there can only be a single exterior per base it gets funky in it's current implementation when not all building blocks are handled by base occlusion so you can have separate sections of a base that aren't connected with faces but are both outsides (example: connecting external TC with ramps)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 704110,
+    "branch": "main/base_occlusion",
+    "changeset": "165337",
+    "created": "2026-09-22T18:59:45",
+    "message": "Exclude high walls from room occlusion (since they are always considered outside structures)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 704091,
+    "branch": "▆▌▇▊▌▋▄▊▉▍▌▅▍▅▊▇▉▆",
+    "changeset": "▍▇▍█▄▄",
+    "created": "2026-09-22T18:52:34",
+    "message": "▊▆▍▌▆▅▉ ▍▋▊▊█▋▉▌ ▉▍▍▊▋▋",
+    "user": "nacho.delhierro"
+  },
+  {
+    "id": 704078,
+    "branch": "main/base_occlusion",
+    "changeset": "165335",
+    "created": "2026-09-22T18:46:53",
+    "message": "Fix bases being able to define multiple outsides of the base\r\n- collapse to a single outside when interior rooms incorrectly are flagged as interior",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 704045,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "165334",
+    "created": "2026-09-22T18:32:18",
+    "message": "Bugfix: fix invalid takeover data for crystal ak\r\nAccidentally copied pack even though it hasn't one when manually resolving\r\nTests: navigated to page, crystal ak displays as intended",
+    "user": "Daniel P"
+  },
+  {
+    "id": 704031,
+    "branch": "main/procgen_visualiser/generation_optimisations",
+    "changeset": "165333",
+    "created": "2026-09-22T18:27:00",
+    "message": "Added a per-stage benchmark measurement harness before moving onto experimental optimisations. To be used to measure future improvements and map changes.\r\n\r\n- ProcgenStats: time per-stage, number of prefabs placed, placement hash, counters (filter calls, radius scans, texel reads, anchor scans, monument attempts).\r\n- ProcgenBenchmark: editor tooling to generate maps for queued seeds and writes a CSV row per-stage. One map per play session, exiting play mode after each generation.\r\n- Powershell scripts to drive the editor benchmarks and compare CSV outputs by hash and stage time",
+    "user": "Jakb"
+  },
+  {
+    "id": 704011,
+    "branch": "main/ui_store_slim_ram",
+    "changeset": "165332",
+    "created": "2026-09-22T18:18:34",
+    "message": "Bugfix: store.refresh now restarts the tab\r\nFixes tab having only default-initialized tiles\r\nTests: ran refresh while on general tab",
+    "user": "Daniel P"
+  },
+  {
+    "id": 703993,
+    "branch": "main/Livestock_animals",
+    "changeset": "165330",
+    "created": "2026-09-22T18:11:23",
+    "message": "Post merge fixes",
+    "user": "cipeaX"
+  },
+  {
     "id": 703952,
     "branch": "main/Livestock_animals",
     "changeset": "165329",
@@ -1814,13 +1886,5 @@
     "created": "2026-09-19T21:19:43",
     "message": "Add visual rope when leading livestock, same as horses, and fix leading interaction failing intermittently",
     "user": "Maverick"
-  },
-  {
-    "id": 702480,
-    "branch": "█▅▆▌▍█▅██▄▍█▍▄▊▉▅█▄▉▉▆",
-    "changeset": "▋▍▍▉▉▊",
-    "created": "2026-09-19T19:21:31",
-    "message": "▄▉▌▍▍▆▋▋█▉ ▋▋▆▇▆█▋▅▄▄ ▋▍▊▉▋▋ ▊▌▊▄▅█▇▊▊▌▌▊▇▆▉█▋▋▊▋▄█▄▉▄▋▆▉▉▄▌▇▅▅▊▌▄▇▇▆█▊▋▇▊▄▋▌█▇▆▍▌▄▋▅▌▄▍▇▆▋▄▉▍▉█▆▉▊▇▇▇▇▇▇▊▊▍▄▄",
-    "user": "Rin"
   }
 ]
