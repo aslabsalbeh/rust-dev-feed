@@ -1,97 +1,56 @@
 {
   "2026-09-22": {
-    "commit_count": 116,
-    "relevant_commit_count": 64,
+    "commit_count": 118,
+    "relevant_commit_count": 66,
     "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195,704285,704294,704497,704502,704504,704507,704508,704509,704511,704514": [
+      "703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195,704285,704294,704497,704502,704504,704507,704508,704509,704511,704514,704517,704518": [
         {
-          "title": "Livestock & Animal Mechanics",
+          "title": "Livestock & Resources",
           "items": [
             {
-              "text": "Doubled baseline dung production speed for cows and sheep (now every 20 m instead of 40 m) and fixed a horse dung bug; horse dung per calorie reduced to 0.2 (was 0.1), resulting in ~48 dung/day for a well‑fed horse (down from 240) and ~72 dung/day for other well‑fed livestock.",
+              "text": "Doubled baseline dung production speed for cows and sheep (now every 20 m) and fixed a horse dung bug that was inflating production ten‑fold; horse dung per calorie adjusted to 0.2.",
               "commit_ids": [
                 704514
               ]
             },
             {
-              "text": "Animals are now automatically dismounted when the vehicle they are on rolls or becomes submerged.",
-              "commit_ids": [
-                704508
-              ]
-            },
-            {
-              "text": "Updated livestock sales charts and added a random reward pool for selling livestock (possible rewards include Turret, HQM, LGF, Semi rifle, Scrap, Saddles, Rope, Blue cards, Tarps, CCTV, Targeting computer, frags) and refreshed the wool chart.",
-              "commit_ids": [
-                704507
-              ]
-            },
-            {
-              "text": "Adjusted harvest yields: cows now give 30 cloth, 100 leather, 100 bones, 20 beef, 40 fat; sheep now give 10 cloth, 20 leather, 50 bones, 12 mutton, 20 fat plus any wool they had at death.",
+              "text": "Updated harvest yields: cows now give 30 cloth, 100 leather, 100 bones, 20 beef, 40 fat; sheep now give 10 cloth, 20 leather, 50 bones, 12 mutton, 20 fat plus any wool they have.",
               "commit_ids": [
                 704504
               ]
+            },
+            {
+              "text": "Reworked livestock sales charts and added a random reward pool (including turrets, HQM, rifles, scrap, saddles, rope, blue cards, tarps, CCTV, targeting computers, and frags); wool chart updated accordingly.",
+              "commit_ids": [
+                704507
+              ]
             }
           ]
         },
         {
-          "title": "Deep Sea & Navigation",
+          "title": "Animal & Vehicle Interaction",
           "items": [
             {
-              "text": "Fixed a bug where players could be left behind when a boat transitions to or from the deep sea while standing too close to a wall; added null checks to allow spawning an empty deep sea in the editor.",
+              "text": "Animals automatically dismount when the vehicle they are riding rolls over or becomes submerged.",
+              "commit_ids": [
+                704508
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Navigation",
+          "items": [
+            {
+              "text": "Fixed a bug where players could be left behind during boat transfers to/from the deep sea when standing too close to a wall.",
               "commit_ids": [
                 704511
               ]
-            }
-          ]
-        },
-        {
-          "title": "Base & Building Occlusion",
-          "items": [
-            {
-              "text": "Corrected base occlusion logic so buildings can no longer define multiple exteriors; separate sections of a base are now treated as a single outside, preventing unintended outside exposure.",
-              "commit_ids": [
-                704195,
-                704078
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Biofuel Generator",
-          "items": [
-            {
-              "text": "Fixed deployment orientation of the biofuel generator (was reversed).",
-              "commit_ids": [
-                704285
-              ]
             },
             {
-              "text": "Applied tech‑tree fixes and updated description and crafting costs for the biofuel generator.",
-              "commit_ids": [
-                703690,
-                703587
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Store UI",
-          "items": [
-            {
-              "text": "Fixed invalid takeover data for the Crystal AK in the store, ensuring it displays correctly.",
-              "commit_ids": [
-                704045
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Critters & Swarms",
-          "items": [
-            {
-              "text": "Implemented first pass of jellyfish swarms.",
+              "text": "Introduced first‑pass implementation of jellyfish swarms as a new critter group.",
               "commit_ids": [
                 703748
               ]
@@ -99,23 +58,51 @@
           ]
         },
         {
-          "title": "Power & Loot Rooms",
+          "title": "Power & Tech",
           "items": [
             {
-              "text": "Tweaked power phase requirements, adjusted loot spawn types, and fixed a map topology issue in harbor_1.",
+              "text": "Adjusted power phase requirements and tweaked loot spawn types; also corrected bad map topology in harbor_1.",
               "commit_ids": [
                 703723
+              ]
+            },
+            {
+              "text": "Applied tech‑tree fixes for the biofuel generator.",
+              "commit_ids": [
+                703690
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Construction & Deployment",
+          "items": [
+            {
+              "text": "Fixed deployment orientation for the biofuel generator so it now places correctly.",
+              "commit_ids": [
+                704285
               ]
             }
           ]
         }
       ],
-      "703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561": [
+      "703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587": [
         {
-          "title": "Building & Repair",
+          "title": "Biofuel Generator",
           "items": [
             {
-              "text": "Helipad repair now requires adjusted resources, changing the amount needed to fix the pad.",
+              "text": "Added description, crafting costs, and tech tree entries for the biofuel generator.",
+              "commit_ids": [
+                703587
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Helipad Repair",
+          "items": [
+            {
+              "text": "Adjusted repair requirements for the helipad (airwolf repairable pad).",
               "commit_ids": [
                 703534
               ]
@@ -123,10 +110,10 @@
           ]
         },
         {
-          "title": "Store & Purchases",
+          "title": "Store & Bundles",
           "items": [
             {
-              "text": "Fixed a bug where buying bundle items didn't add the bundled content, correcting purchase notifications and checkout results.",
+              "text": "Fixed bundle purchase bug where LastBoughtItems didn't include bundle content, correcting purchase notifications and checkout results.",
               "commit_ids": [
                 703336
               ]
@@ -134,10 +121,38 @@
           ]
         },
         {
-          "title": "Defensive Structures",
+          "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Waterwheel melee protection increased roughly 4‑5×, making it much more effective against melee attacks.",
+              "text": "Fixed collider layer issue that broke groundwatch functionality.",
+              "commit_ids": [
+                703292
+              ]
+            },
+            {
+              "text": "Rebalanced sheep genetics: white sheep are now the beneficial gene variant.",
+              "commit_ids": [
+                703110
+              ]
+            }
+          ]
+        },
+        {
+          "title": "New Structures",
+          "items": [
+            {
+              "text": "Added new ferry terminal, radtown, and oil rig structures.",
+              "commit_ids": [
+                703243
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Waterwheel",
+          "items": [
+            {
+              "text": "Increased melee protection of the waterwheel by 4–5 times.",
               "commit_ids": [
                 703204
               ]
@@ -148,64 +163,20 @@
           "title": "Audio",
           "items": [
             {
-              "text": "Wearing the prisoner hood now muffles the player's voice slightly, while still allowing clear voice chat.",
+              "text": "Added muffling effect when wearing the prisoner hood, while keeping voice chat mostly clear.",
               "commit_ids": [
                 703146
               ]
             }
           ]
-        },
-        {
-          "title": "Animal Genetics",
-          "items": [
-            {
-              "text": "Sheep gene odds reverted: white sheep are now the \"good\" variant, restoring original genetics balance.",
-              "commit_ids": [
-                703110
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons & Tools",
-          "items": [
-            {
-              "text": "Pool cue quality no longer breaks when switching cues in first‑person view.",
-              "commit_ids": [
-                703106
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Map & Monuments",
-          "items": [
-            {
-              "text": "Added new ferry terminal, Radtown, and oil rig locations to the map.",
-              "commit_ids": [
-                703243
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Groundwatch",
-          "items": [
-            {
-              "text": "Fixed collider layer issue that broke the Groundwatch system.",
-              "commit_ids": [
-                703292
-              ]
-            }
-          ]
         }
       ],
-      "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041": [
+      "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106": [
         {
-          "title": "Combat & Weapons",
+          "title": "Combat & Projectiles",
           "items": [
             {
-              "text": "Fixed fire arrows getting stuck on other players' third‑person bows.",
+              "text": "Fixed fire arrows sticking to the third‑person bow for other players.",
               "commit_ids": [
                 703041
               ]
@@ -213,10 +184,21 @@
           ]
         },
         {
-          "title": "Radiation & Environmental Hazards",
+          "title": "Pool Minigame",
           "items": [
             {
-              "text": "Fixed oil rigs starting radiation even when the locked crate hasn't been hacked, preventing unintended radiation after server restarts.",
+              "text": "Fixed pool cue quality breaking in first‑person view when swapping between cues.",
+              "commit_ids": [
+                703106
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Environmental Hazards",
+          "items": [
+            {
+              "text": "Prevented oil rigs from starting radiation while the locked crate remained untouched and ensured the crate’s hacked state persists after server restarts.",
               "commit_ids": [
                 702972
               ]
@@ -227,7 +209,7 @@
           "title": "Structures & Doors",
           "items": [
             {
-              "text": "Corrected door controller rotation on single doors, stopping them from rotating 90° after reskin changes.",
+              "text": "Corrected door controller rotation on single doors caused by reskin child entity mis‑rotation.",
               "commit_ids": [
                 702866
               ]
@@ -235,16 +217,16 @@
           ]
         },
         {
-          "title": "Farming & Resources",
+          "title": "Animals & Farming",
           "items": [
             {
-              "text": "Chicken eggs now drop flush with terrain and with physics disabled, preventing them from falling through ground or being killed out‑of‑bounds.",
+              "text": "Made chicken eggs drop flush with terrain and disabled physics when terrain is found, fixing eggs falling through ground or being killed out‑of‑bounds.",
               "commit_ids": [
                 702859
               ]
             },
             {
-              "text": "Fixed cows incorrectly receiving crocodile protection, ensuring they behave normally.",
+              "text": "Fixed cows incorrectly receiving crocodile protection.",
               "commit_ids": [
                 702856
               ]
