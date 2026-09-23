@@ -1,75 +1,58 @@
 {
   "2026-09-22": {
-    "commit_count": 111,
-    "relevant_commit_count": 61,
+    "commit_count": 116,
+    "relevant_commit_count": 64,
     "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195,704285,704294,704497,704502,704504,704507,704508": [
+      "703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195,704285,704294,704497,704502,704504,704507,704508,704509,704511,704514": [
         {
-          "title": "Livestock Animals",
+          "title": "Livestock & Animal Mechanics",
           "items": [
             {
-              "text": "Animals now automatically dismount from vehicles when the vehicle rolls over or becomes submerged.",
+              "text": "Doubled baseline dung production speed for cows and sheep (now every 20 m instead of 40 m) and fixed a horse dung bug; horse dung per calorie reduced to 0.2 (was 0.1), resulting in ~48 dung/day for a well‑fed horse (down from 240) and ~72 dung/day for other well‑fed livestock.",
+              "commit_ids": [
+                704514
+              ]
+            },
+            {
+              "text": "Animals are now automatically dismounted when the vehicle they are on rolls or becomes submerged.",
               "commit_ids": [
                 704508
               ]
             },
             {
-              "text": "Updated livestock sales charts and added a random reward pool (including Turret, HQM, LGF, Semi rifle, Scrap, Saddles, Rope, Blue cards, Tarps, CCTV, Targeting computer, frags).",
+              "text": "Updated livestock sales charts and added a random reward pool for selling livestock (possible rewards include Turret, HQM, LGF, Semi rifle, Scrap, Saddles, Rope, Blue cards, Tarps, CCTV, Targeting computer, frags) and refreshed the wool chart.",
               "commit_ids": [
                 704507
               ]
             },
             {
-              "text": "Revised harvest yields: Cows now give 30 cloth, 100 leather, 100 bones, 20 beef, 40 fat; Sheep now give 10 cloth, 20 leather, 50 bones, 12 mutton, 20 fat plus any wool they had at death.",
+              "text": "Adjusted harvest yields: cows now give 30 cloth, 100 leather, 100 bones, 20 beef, 40 fat; sheep now give 10 cloth, 20 leather, 50 bones, 12 mutton, 20 fat plus any wool they had at death.",
               "commit_ids": [
                 704504
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Deep Sea & Navigation",
+          "items": [
             {
-              "text": "Introduced jellyfish swarms as a new critter behavior.",
+              "text": "Fixed a bug where players could be left behind when a boat transitions to or from the deep sea while standing too close to a wall; added null checks to allow spawning an empty deep sea in the editor.",
               "commit_ids": [
-                703748
+                704511
               ]
             }
           ]
         },
         {
-          "title": "Loadout UI",
+          "title": "Base & Building Occlusion",
           "items": [
             {
-              "text": "Fixed item positioning in Loadout UI icon slots, ensuring items appear in their correct slots.",
+              "text": "Corrected base occlusion logic so buildings can no longer define multiple exteriors; separate sections of a base are now treated as a single outside, preventing unintended outside exposure.",
               "commit_ids": [
-                704294
-              ]
-            },
-            {
-              "text": "Fixed invalid takeover data for the Crystal AK in the store, allowing it to display correctly.",
-              "commit_ids": [
-                704045
-              ]
-            },
-            {
-              "text": "Store refresh now properly restarts the current tab, fixing missing tile initialization.",
-              "commit_ids": [
-                704011
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Base Occlusion",
-          "items": [
-            {
-              "text": "Buildings can now correctly define a single exterior; previous bugs allowed multiple exterior sections.",
-              "commit_ids": [
-                704195
-              ]
-            },
-            {
-              "text": "Fixed bases incorrectly flagging interior rooms as exterior, consolidating to a single outside area.",
-              "commit_ids": [
+                704195,
                 704078
               ]
             }
@@ -79,30 +62,47 @@
           "title": "Biofuel Generator",
           "items": [
             {
-              "text": "Corrected deployment orientation for the biofuel generator (was reversed).",
+              "text": "Fixed deployment orientation of the biofuel generator (was reversed).",
               "commit_ids": [
                 704285
               ]
             },
             {
-              "text": "Fixed tech tree entries for the biofuel generator.",
+              "text": "Applied tech‑tree fixes and updated description and crafting costs for the biofuel generator.",
               "commit_ids": [
-                703690
-              ]
-            },
-            {
-              "text": "Updated description, crafting costs, and tech tree placement for the biofuel generator.",
-              "commit_ids": [
+                703690,
                 703587
               ]
             }
           ]
         },
         {
-          "title": "Powerlevel Loot Rooms",
+          "title": "Store UI",
           "items": [
             {
-              "text": "Adjusted power phase requirements and loot spawn types; also fixed map topology issue in harbor_1.",
+              "text": "Fixed invalid takeover data for the Crystal AK in the store, ensuring it displays correctly.",
+              "commit_ids": [
+                704045
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Critters & Swarms",
+          "items": [
+            {
+              "text": "Implemented first pass of jellyfish swarms.",
+              "commit_ids": [
+                703748
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Power & Loot Rooms",
+          "items": [
+            {
+              "text": "Tweaked power phase requirements, adjusted loot spawn types, and fixed a map topology issue in harbor_1.",
               "commit_ids": [
                 703723
               ]
@@ -110,24 +110,23 @@
           ]
         }
       ],
-      "702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538": [
+      "703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561": [
         {
-          "title": "Helipad & Repairable Structures",
+          "title": "Building & Repair",
           "items": [
             {
-              "text": "Adjusted helipad repair requirements and cleaned up repairable prefab for more reliable repairs.",
+              "text": "Helipad repair now requires adjusted resources, changing the amount needed to fix the pad.",
               "commit_ids": [
-                703534,
-                703397
+                703534
               ]
             }
           ]
         },
         {
-          "title": "Store & Economy",
+          "title": "Store & Purchases",
           "items": [
             {
-              "text": "Fixed LastBoughtItems to correctly include bundle content, restoring proper purchase notifications and checkout results.",
+              "text": "Fixed a bug where buying bundle items didn't add the bundled content, correcting purchase notifications and checkout results.",
               "commit_ids": [
                 703336
               ]
@@ -135,52 +134,12 @@
           ]
         },
         {
-          "title": "World & Environment",
+          "title": "Defensive Structures",
           "items": [
             {
-              "text": "Corrected collider layer causing groundwatch failures.",
-              "commit_ids": [
-                703292
-              ]
-            },
-            {
-              "text": "Fixed oil rig radiation edge case where radiation could start despite the locked crate remaining untouched.",
-              "commit_ids": [
-                702972
-              ]
-            },
-            {
-              "text": "Added new ferry terminal, radtown, and oil rig locations.",
-              "commit_ids": [
-                703243
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Structures Buffs",
-          "items": [
-            {
-              "text": "Increased waterwheel melee protection values by 4‑5× for stronger defense.",
+              "text": "Waterwheel melee protection increased roughly 4‑5×, making it much more effective against melee attacks.",
               "commit_ids": [
                 703204
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Weapons",
-          "items": [
-            {
-              "text": "Resolved pool cue quality issues when swapping cues in first‑person view.",
-              "commit_ids": [
-                703106
-              ]
-            },
-            {
-              "text": "Fixed fire arrows sticking to third‑person bows for other players.",
-              "commit_ids": [
-                703041
               ]
             }
           ]
@@ -189,7 +148,7 @@
           "title": "Audio",
           "items": [
             {
-              "text": "Added subtle audio muffling when wearing the prisoner hood, preserving voice chat clarity.",
+              "text": "Wearing the prisoner hood now muffles the player's voice slightly, while still allowing clear voice chat.",
               "commit_ids": [
                 703146
               ]
@@ -197,23 +156,78 @@
           ]
         },
         {
-          "title": "Animals & Genetics",
+          "title": "Animal Genetics",
           "items": [
             {
-              "text": "Reverted gene odds changes; white sheep now represent the beneficial gene.",
+              "text": "Sheep gene odds reverted: white sheep are now the \"good\" variant, restoring original genetics balance.",
               "commit_ids": [
                 703110
               ]
             }
           ]
-        }
-      ],
-      "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953": [
+        },
         {
-          "title": "Doors & Controllers",
+          "title": "Weapons & Tools",
           "items": [
             {
-              "text": "Fixed door controllers rotating incorrectly on single doors due to wrong child entity rotation.",
+              "text": "Pool cue quality no longer breaks when switching cues in first‑person view.",
+              "commit_ids": [
+                703106
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Monuments",
+          "items": [
+            {
+              "text": "Added new ferry terminal, Radtown, and oil rig locations to the map.",
+              "commit_ids": [
+                703243
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Groundwatch",
+          "items": [
+            {
+              "text": "Fixed collider layer issue that broke the Groundwatch system.",
+              "commit_ids": [
+                703292
+              ]
+            }
+          ]
+        }
+      ],
+      "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041": [
+        {
+          "title": "Combat & Weapons",
+          "items": [
+            {
+              "text": "Fixed fire arrows getting stuck on other players' third‑person bows.",
+              "commit_ids": [
+                703041
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Radiation & Environmental Hazards",
+          "items": [
+            {
+              "text": "Fixed oil rigs starting radiation even when the locked crate hasn't been hacked, preventing unintended radiation after server restarts.",
+              "commit_ids": [
+                702972
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structures & Doors",
+          "items": [
+            {
+              "text": "Corrected door controller rotation on single doors, stopping them from rotating 90° after reskin changes.",
               "commit_ids": [
                 702866
               ]
@@ -221,18 +235,18 @@
           ]
         },
         {
-          "title": "Animal & Farming",
+          "title": "Farming & Resources",
           "items": [
             {
-              "text": "Fixed cows incorrectly receiving crocodile protection, preventing unintended protection behavior.",
+              "text": "Chicken eggs now drop flush with terrain and with physics disabled, preventing them from falling through ground or being killed out‑of‑bounds.",
               "commit_ids": [
-                702856
+                702859
               ]
             },
             {
-              "text": "Chicken eggs now spawn flush with terrain and with physics disabled, eliminating cases where eggs fall through ground or die out of bounds.",
+              "text": "Fixed cows incorrectly receiving crocodile protection, ensuring they behave normally.",
               "commit_ids": [
-                702859
+                702856
               ]
             }
           ]
