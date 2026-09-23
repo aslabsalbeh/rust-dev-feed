@@ -1,5 +1,141 @@
 [
   {
+    "id": 704635,
+    "branch": "main/Livestock_animals",
+    "changeset": "165441",
+    "created": "2026-09-23T14:04:56",
+    "message": "cherry picking from shears - updated wool materials",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 704631,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "165438",
+    "created": "2026-09-23T13:52:49",
+    "message": "Fixed the cap on the power inside the GammaToLinearSpaceExact method",
+    "user": "aidan.m"
+  },
+  {
+    "id": 704628,
+    "branch": "main/Livestock_animals/critter_animals/jellyfish_swarms",
+    "changeset": "165436",
+    "created": "2026-09-23T13:49:04",
+    "message": "reduce time for deactivate recheck when deactivated",
+    "user": "ElliotH"
+  },
+  {
+    "id": 704627,
+    "branch": "main/Livestock_animals/critter_animals/jellyfish_swarms",
+    "changeset": "165435",
+    "created": "2026-09-23T13:47:27",
+    "message": "run DoPrepare on SpawnHandlersm to add all critter population files,\r\nminor code cleanup",
+    "user": "ElliotH"
+  },
+  {
+    "id": 704626,
+    "branch": "main/Livestock_animals",
+    "changeset": "165434",
+    "created": "2026-09-23T13:45:28",
+    "message": "Fix wool worldmodel outline not working, the transform was getting deleted due to the renderer being collapsed\r\nAdded a test checking for this issue\r\nAdded a \"select all\" button to the test runner window",
+    "user": "cipeaX"
+  },
+  {
+    "id": 704621,
+    "branch": "main/Livestock_animals/critter_animals/jellyfish_swarms",
+    "changeset": "165432",
+    "created": "2026-09-23T13:33:58",
+    "message": "add tilt when moving, movement/swim speed influences other animation parameters",
+    "user": "ElliotH"
+  },
+  {
+    "id": 704620,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "165431",
+    "created": "2026-09-23T13:30:24",
+    "message": "updated wool world model material to be more like raw wool fleece",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 704617,
+    "branch": "main/biofuel_generator",
+    "changeset": "165429",
+    "created": "2026-09-23T13:21:14",
+    "message": "- Remove broken test stir\r\n- Swap to idle",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 704616,
+    "branch": "main/PlayerTurning_Animations",
+    "changeset": "165427",
+    "created": "2026-09-23T13:17:08",
+    "message": "add crouching clip set,",
+    "user": "octo"
+  },
+  {
+    "id": 704611,
+    "branch": "main/PlayerTurning_Animations",
+    "changeset": "165424",
+    "created": "2026-09-23T13:02:02",
+    "message": "Disable turn in place by default, also disable new spine/head turning when the convar is off.",
+    "user": "octo"
+  },
+  {
+    "id": 704609,
+    "branch": "main/procgen_visualiser/generation_optimisations",
+    "changeset": "165423",
+    "created": "2026-09-23T12:52:40",
+    "message": "Replace powershell nonsense with Unity editor window, similar to ProcgenReplay. \r\n\r\nUpdated procgen benchmark to create durable version controlled results (we could probably further automate and grafana this at a later date).\r\n\r\nRan a baseline test over 2 repeats of 5 size 3250 seeds (10 runs total), median 205.9s generation time (per-stage breakdown in the CSV).",
+    "user": "Jakb"
+  },
+  {
+    "id": 704607,
+    "branch": "main/Livestock_animals",
+    "changeset": "165422",
+    "created": "2026-09-23T12:51:04",
+    "message": "Fix animals pathing through doors at monuments / being able to steer through any door by accident",
+    "user": "Maverick"
+  },
+  {
+    "id": 704606,
+    "branch": "main/biofuel_generator",
+    "changeset": "165421",
+    "created": "2026-09-23T12:43:12",
+    "message": "Some more fly work",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 704601,
+    "branch": "main/store_mediaupddate",
+    "changeset": "165418",
+    "created": "2026-09-23T12:22:37",
+    "message": "Fixed DynamicResourceRefDrawer throwing when referencing deleted assets",
+    "user": "Flavien"
+  },
+  {
+    "id": 704599,
+    "branch": "main/store_mediaupddate",
+    "changeset": "165417",
+    "created": "2026-09-23T12:21:21",
+    "message": "Fixed store carrousel preview button",
+    "user": "Flavien"
+  },
+  {
+    "id": 704600,
+    "branch": "main/Livestock_animals/critter_animals/critter_animals_sounds",
+    "changeset": "165416",
+    "created": "2026-09-23T12:21:12",
+    "message": "Added sounds to the lil :turtle: anims",
+    "user": "diogo.c"
+  },
+  {
+    "id": 704598,
+    "branch": "main/store_mediaupddate",
+    "changeset": "165415",
+    "created": "2026-09-23T12:20:36",
+    "message": "Update factory door store media",
+    "user": "Flavien"
+  },
+  {
     "id": 704596,
     "branch": "main/biofuel_generator",
     "changeset": "165414",
@@ -2205,30 +2341,6 @@
     "changeset": "164984",
     "created": "2026-09-20T16:52:13",
     "message": "texture tweaks to the biofuel generator",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 702499,
-    "branch": "main/Livestock_animals",
-    "changeset": "164979",
-    "created": "2026-09-20T13:23:46",
-    "message": "Make livestock more deterministic at high timescales, to be able to run long running tests faster",
-    "user": "Maverick"
-  },
-  {
-    "id": 702497,
-    "branch": "main/Livestock_animals/livestock_nav_avoidance",
-    "changeset": "164978",
-    "created": "2026-09-20T12:40:21",
-    "message": "Another 20% perf gain",
-    "user": "Maverick"
-  },
-  {
-    "id": 702496,
-    "branch": "main/biofuel_generator",
-    "changeset": "164977",
-    "created": "2026-09-20T12:33:41",
-    "message": "updated textures",
     "user": "Pilgrim"
   }
 ]
