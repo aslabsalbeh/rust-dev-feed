@@ -1,79 +1,34 @@
 {
   "2026-09-23": {
-    "commit_count": 72,
-    "relevant_commit_count": 33,
-    "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673",
+    "commit_count": 95,
+    "relevant_commit_count": 47,
+    "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building & Infrastructure",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Widened armored triangle frame to prevent clipping with various building tier frames.",
+            "text": "Machete melee range reduced from medium to low, decreasing its effective reach.",
             "commit_ids": [
-              704662
+              704715
             ]
           },
           {
-            "text": "Fixed collision meshes for armored triangle ladder hatch not updating position on server.",
+            "text": "Thrown C4 and satchels no longer inherit the thrower's rotation, fixing odd placement when thrown.",
             "commit_ids": [
-              704642
+              704687
             ]
           },
           {
-            "text": "Fixed flag collision on biofuel generator affecting building placement.",
+            "text": "Shield footstep sounds now match player view direction when looking down.",
             "commit_ids": [
-              704641
+              704593
             ]
           },
           {
-            "text": "Helipad repair now requires 30,000 wood, 10,000 metal fragments, and 100 rope, increasing the resource cost to fix damaged helipads.",
-            "commit_ids": [
-              704525
-            ]
-          },
-          {
-            "text": "Added AIRWOLF CCTV cameras, providing new surveillance options for players.",
-            "commit_ids": [
-              704525
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Power & Generators",
-        "items": [
-          {
-            "text": "Fixed dismount not removing the stir bar from biofuel generator.",
-            "commit_ids": [
-              704647
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Behavior",
-        "items": [
-          {
-            "text": "Corrected animal naming: new litters no longer inherit the parent name for all babies.",
-            "commit_ids": [
-              704640
-            ]
-          },
-          {
-            "text": "Prevented animals from pathing through doors at monuments and steering through any door unintentionally.",
-            "commit_ids": [
-              704607
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "Adjusted grenade drop viewmodel timing to match throw release, ensuring grenades spawn correctly.",
+            "text": "Grenade viewmodel drop timing synchronized with throw release, restoring original spawn timing and animation.",
             "commit_ids": [
               704590
             ]
@@ -81,21 +36,70 @@
         ]
       },
       {
-        "title": "World & Loot",
+        "title": "Structures & Building",
         "items": [
           {
-            "text": "Reapplied the NMS loot room, restoring its loot spawns after previous file conflicts.",
+            "text": "Composters no longer break (brick) when splashed by water.",
             "commit_ids": [
-              704559
+              704683
+            ]
+          },
+          {
+            "text": "Armored triangle ladder hatch collision meshes and frame clipping issues fixed, improving placement reliability.",
+            "commit_ids": [
+              704642,
+              704662
+            ]
+          },
+          {
+            "text": "Biofuel generator interaction improved: flag collision fixed and stir bar removed on dismount.",
+            "commit_ids": [
+              704641,
+              704647
+            ]
+          },
+          {
+            "text": "Helipad repair requirements increased to 30,000 wood, 10,000 metal fragments, and 100 rope; Airwolf CCTV feature added.",
+            "commit_ids": [
+              704525
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Animals & Livestock",
         "items": [
           {
-            "text": "Store carousel preview button now works, allowing players to view items correctly in the store UI.",
+            "text": "Animal hitboxes and death animation loops corrected, improving combat feedback.",
+            "commit_ids": [
+              704700
+            ]
+          },
+          {
+            "text": "Livestock naming bug fixed: new litters no longer inherit the parent's name for all babies.",
+            "commit_ids": [
+              704640
+            ]
+          },
+          {
+            "text": "Animals and critters can no longer path through doors at monuments, preventing unintended door traversal.",
+            "commit_ids": [
+              704607
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & UI",
+        "items": [
+          {
+            "text": "Shields and diving tanks now appear correctly in the backpack slot of the loadout UI.",
+            "commit_ids": [
+              704693
+            ]
+          },
+          {
+            "text": "Store carousel preview button restored, allowing players to browse store items properly.",
             "commit_ids": [
               704599
             ]
@@ -103,68 +107,57 @@
         ]
       },
       {
-        "title": "Combat & Audio",
+        "title": "World Content",
         "items": [
           {
-            "text": "Shield footstep sounds now correctly reflect the player's view direction, fixing the issue where sounds were off when looking down.",
+            "text": "NMS loot room restored after file conflicts, making its loot available again.",
             "commit_ids": [
-              704593
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animal Customisation",
-        "items": [
-          {
-            "text": "Cattle coat pattern now uses an on/off Inbred toggle, separate edge softness sliders, and updated preview tools, giving players clearer control over animal appearance and breeding visuals.",
-            "commit_ids": [
-              704589
+              704559
             ]
           }
         ]
       }
     ],
-    "summary": "### Base Building & Infrastructure\n- Widened armored triangle frame to prevent clipping with various building tier frames.\n- Fixed collision meshes for armored triangle ladder hatch not updating position on server.\n- Fixed flag collision on biofuel generator affecting building placement.\n- Helipad repair now requires 30,000 wood, 10,000 metal fragments, and 100 rope, increasing the resource cost to fix damaged helipads.\n- Added AIRWOLF CCTV cameras, providing new surveillance options for players.\n\n### Power & Generators\n- Fixed dismount not removing the stir bar from biofuel generator.\n\n### Animals & Behavior\n- Corrected animal naming: new litters no longer inherit the parent name for all babies.\n- Prevented animals from pathing through doors at monuments and steering through any door unintentionally.\n\n### Combat\n- Adjusted grenade drop viewmodel timing to match throw release, ensuring grenades spawn correctly.\n\n### World & Loot\n- Reapplied the NMS loot room, restoring its loot spawns after previous file conflicts.\n\n### UI & Quality of Life\n- Store carousel preview button now works, allowing players to view items correctly in the store UI.\n\n### Combat & Audio\n- Shield footstep sounds now correctly reflect the player's view direction, fixing the issue where sounds were off when looking down.\n\n### Animal Customisation\n- Cattle coat pattern now uses an on/off Inbred toggle, separate edge softness sliders, and updated preview tools, giving players clearer control over animal appearance and breeding visuals.",
+    "summary": "### Combat & Weapons\n- Machete melee range reduced from medium to low, decreasing its effective reach.\n- Thrown C4 and satchels no longer inherit the thrower's rotation, fixing odd placement when thrown.\n- Shield footstep sounds now match player view direction when looking down.\n- Grenade viewmodel drop timing synchronized with throw release, restoring original spawn timing and animation.\n\n### Structures & Building\n- Composters no longer break (brick) when splashed by water.\n- Armored triangle ladder hatch collision meshes and frame clipping issues fixed, improving placement reliability.\n- Biofuel generator interaction improved: flag collision fixed and stir bar removed on dismount.\n- Helipad repair requirements increased to 30,000 wood, 10,000 metal fragments, and 100 rope; Airwolf CCTV feature added.\n\n### Animals & Livestock\n- Animal hitboxes and death animation loops corrected, improving combat feedback.\n- Livestock naming bug fixed: new litters no longer inherit the parent's name for all babies.\n- Animals and critters can no longer path through doors at monuments, preventing unintended door traversal.\n\n### Inventory & UI\n- Shields and diving tanks now appear correctly in the backpack slot of the loadout UI.\n- Store carousel preview button restored, allowing players to browse store items properly.\n\n### World Content\n- NMS loot room restored after file conflicts, making its loot available again.",
     "new_items": [
       {
-        "text": "Widened armored triangle frame to prevent clipping with various building tier frames.",
+        "text": "Machete melee range reduced from medium to low, decreasing its effective reach.",
         "commit_ids": [
-          704662
+          704715
         ],
-        "section": "Base Building & Infrastructure"
+        "section": "Combat & Weapons"
       },
       {
-        "text": "Fixed collision meshes for armored triangle ladder hatch not updating position on server.",
+        "text": "Thrown C4 and satchels no longer inherit the thrower's rotation, fixing odd placement when thrown.",
         "commit_ids": [
-          704642
+          704687
         ],
-        "section": "Base Building & Infrastructure"
+        "section": "Combat & Weapons"
       },
       {
-        "text": "Fixed flag collision on biofuel generator affecting building placement.",
+        "text": "Composters no longer break (brick) when splashed by water.",
         "commit_ids": [
-          704641
+          704683
         ],
-        "section": "Base Building & Infrastructure"
+        "section": "Structures & Building"
       },
       {
-        "text": "Fixed dismount not removing the stir bar from biofuel generator.",
+        "text": "Animal hitboxes and death animation loops corrected, improving combat feedback.",
         "commit_ids": [
-          704647
+          704700
         ],
-        "section": "Power & Generators"
+        "section": "Animals & Livestock"
       },
       {
-        "text": "Corrected animal naming: new litters no longer inherit the parent name for all babies.",
+        "text": "Shields and diving tanks now appear correctly in the backpack slot of the loadout UI.",
         "commit_ids": [
-          704640
+          704693
         ],
-        "section": "Animals & Behavior"
+        "section": "Inventory & UI"
       }
     ],
     "new_relevant_count": 5,
-    "new_summary": "- Widened armored triangle frame to prevent clipping with various building tier frames.\n- Fixed collision meshes for armored triangle ladder hatch not updating position on server.\n- Fixed flag collision on biofuel generator affecting building placement.\n- Fixed dismount not removing the stir bar from biofuel generator.\n- Corrected animal naming: new litters no longer inherit the parent name for all babies."
+    "new_summary": "- Machete melee range reduced from medium to low, decreasing its effective reach.\n- Thrown C4 and satchels no longer inherit the thrower's rotation, fixing odd placement when thrown.\n- Composters no longer break (brick) when splashed by water.\n- Animal hitboxes and death animation loops corrected, improving combat feedback.\n- Shields and diving tanks now appear correctly in the backpack slot of the loadout UI."
   },
   "2026-09-22": {
     "commit_count": 118,
