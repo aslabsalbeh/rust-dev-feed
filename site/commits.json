@@ -1,5 +1,93 @@
 [
   {
+    "id": 704765,
+    "branch": "main/fix_steam_init_error",
+    "changeset": "165534",
+    "created": "2026-09-23T22:03:38",
+    "message": "Fix steam not logging the reason steam failed to start in the editor\r\n- sometimes steam is closed, other times it's outdated and needs to be restarted",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 704763,
+    "branch": "main/powerplant_fuse_pop_scaling",
+    "changeset": "165533",
+    "created": "2026-09-23T21:52:59",
+    "message": "Add settings for scaling powerplant heavy fuse decay rate based on current server pop.\r\nConvars for low pop cutoff, high pop cutoff, scale at which fuses should decay when at or below low pop.",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 704762,
+    "branch": "main/store_mediaupddate",
+    "changeset": "165531",
+    "created": "2026-09-23T21:50:12",
+    "message": "Made DynamicResourceRef property drawer collapsable (helps readability in crowded inspectors)",
+    "user": "Flavien"
+  },
+  {
+    "id": 704760,
+    "branch": "main/throwable_prediction_fixes",
+    "changeset": "165530",
+    "created": "2026-09-23T21:39:08",
+    "message": "- Reconcille thrown projectiles similarly to movement reconcilliation. Apply server corrected position and then replay and smooth in between client movements\r\n- Send over velocity info so the reoncilled state also applies server velocity + tumble etc\r\n\r\nResults in client sims that are way more accurate",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 704759,
+    "branch": "main/LegacyShelterCollision",
+    "changeset": "165529",
+    "created": "2026-09-23T21:35:56",
+    "message": "Improved collision around the door of the legacy shelter so its easier to get in and out of",
+    "user": "Nick.H"
+  },
+  {
+    "id": 704758,
+    "branch": "main",
+    "changeset": "165528",
+    "created": "2026-09-23T21:33:20",
+    "message": "merged from prototype_wood_pile_spawner",
+    "user": "Raul"
+  },
+  {
+    "id": 704757,
+    "branch": "main/store_mediaupddate",
+    "changeset": "165527",
+    "created": "2026-09-23T21:32:24",
+    "message": "HttpImage crossfade transition",
+    "user": "Flavien"
+  },
+  {
+    "id": 704753,
+    "branch": "main/throwable_prediction_fixes",
+    "changeset": "165526",
+    "created": "2026-09-23T21:10:00",
+    "message": "- Ensure client ghost will properly detect its sticking positio\r\n- Nuke the client ghost if we get a server stick message and server setup",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 704751,
+    "branch": "▆▇█▇▇▌▋▆▄▇█▅▅▍▆▉▋▍▌▌▇▅",
+    "changeset": "▄▋▍▊▋▅",
+    "created": "2026-09-23T20:55:23",
+    "message": "█▌▆▊▆▍ ▇▄█▍▌▋█▌▌▋▇▅▉▇█▅█▌▇▇▅▄▍▄ ▉▊▉▉▊▆▄▇▆ ▋▍▇▄▋ ▍▊▊▄▌▋▍▇▋▆",
+    "user": "Raul"
+  },
+  {
+    "id": 704747,
+    "branch": "main/Livestock_animals",
+    "changeset": "165523",
+    "created": "2026-09-23T20:46:58",
+    "message": "Fixed wool having meat sounds for drop and inventory move",
+    "user": "Nick.H"
+  },
+  {
+    "id": 704743,
+    "branch": "main/Livestock_animals/critter_animals",
+    "changeset": "165522",
+    "created": "2026-09-23T20:21:30",
+    "message": "fix frog swimming anims",
+    "user": "ElliotH"
+  },
+  {
     "id": 704740,
     "branch": "main/optimize_json_garbage",
     "changeset": "165520",
@@ -2774,29 +2862,5 @@
     "created": "2026-09-20T23:32:42",
     "message": "- Ported over child controllers for a bunch of primarily one handed items\r\n- Setup projectile animation sub system for weapons\r\n- Grab animation reload length during bundling",
     "user": "Ian Henderson"
-  },
-  {
-    "id": 702520,
-    "branch": "main/unnecessary_item_condition",
-    "changeset": "164988",
-    "created": "2026-09-20T21:48:52",
-    "message": "Disable condition on a bunch of items that don't need it and can never lose it during gameplay\r\n(Diving mask, crate & barrel costumes, prisoner hood, sunglasses, geiger counter, metal detector, rf pager, mobile phone)",
-    "user": "cipeaX"
-  },
-  {
-    "id": 702519,
-    "branch": "█▉▋▄",
-    "changeset": "▉▆▉▅▆▄",
-    "created": "2026-09-20T21:21:30",
-    "message": "█ ▍▅▆▉▇ ▆▆▇▍ █▅▄▊▉▌▄▇▅▅▌▉▆▅▉▌▅▄█",
-    "user": "cipeaX"
-  },
-  {
-    "id": 702518,
-    "branch": "▌▌▄▋▋▋█▌█▆▋▄▌▄▄▉▅▅▍▄█▅",
-    "changeset": "▋▊▊▄▄▄",
-    "created": "2026-09-20T21:21:03",
-    "message": "▍ ▊█▄ ▄█▌▋▅▉▋█▇▅▌▆▊▊▅▋▋ ▆▄▌█▅▆ █▅▊ ▅█▊▉▍█▇▉▌▌▋ ▍█▄▊▆▍▄ ▋▉ ▉▍▌▇ ▅▊ ▊▊ ▉▌▆▇▊█▇ ▆▋▌▆▇▌▅ ▋▆ ▍▋▌▄▅ ▆▆ ▆▊▉▅▆▊▇ █▆▌▋▍ ▍▊▇▇ ▍▊█ █▅▋█ ▋▇▅▉▇ ▇▋▉ █▇▊ ▍▊▄▇▄▊ ██▍█▅▅▋▊▊ █▌▇▋ ▌▄ █▆ ▌▋▅ ▄▍ ▄█▆ ▆▊▇▋▊▆ ▊▉▋▍ ▋▌▍▉ ▆▇▍ ▊▌▍ ▆▋█▉█▇ ▅▉▌▊ █▇█▅▍██▍▍▅ ▅▋ ▍▍▇▊▇ ▇▉▌ ▄▆▅▉▄█▆▋▆▆▄ ▅ ▋▅█▇ ▇▌▊",
-    "user": "cipeaX"
   }
 ]

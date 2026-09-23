@@ -1,27 +1,34 @@
 {
   "2026-09-23": {
-    "commit_count": 103,
-    "relevant_commit_count": 54,
+    "commit_count": 114,
+    "relevant_commit_count": 61,
     "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738,704740": [
+      "704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738,704740,704743,704747,704753,704760,704762,704763,704765": [
         {
-          "title": "World & Looting",
+          "title": "Base Building / Power",
           "items": [
             {
-              "text": "Adjusted crate placement in Radtown to stop players looting through a window gap and replaced one‑sided window sign with a two‑sided version.",
+              "text": "Powerplant heavy fuse decay rate now scales with server population using configurable low/high population cutoffs.",
               "commit_ids": [
-                704728
+                704763
               ]
             }
           ]
         },
         {
-          "title": "Combat & Weapons",
+          "title": "Combat & Projectiles",
           "items": [
             {
-              "text": "Reduced the machete’s networked hit range from medium to low, decreasing its effective reach in combat.",
+              "text": "Throwable prediction overhauled: server‑corrected positions and velocities are applied, improving projectile accuracy and proper sticking behavior.",
+              "commit_ids": [
+                704760,
+                704753
+              ]
+            },
+            {
+              "text": "Machete network range reduced from medium to low, limiting its effective reach in multiplayer.",
               "commit_ids": [
                 704715
               ]
@@ -29,10 +36,57 @@
           ]
         },
         {
-          "title": "Explosives & Throwables",
+          "title": "World & Looting",
           "items": [
             {
-              "text": "Throwables such as C4 and satchels now retain their original rotation when thrown, preventing the odd aligned placement players reported.",
+              "text": "Crate moved away from window gap in Radtown to stop players from looting through the opening; window sign updated to two‑sided version.",
+              "commit_ids": [
+                704728
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals",
+          "items": [
+            {
+              "text": "Fixed critter hitboxes and death animation loops, correcting combat interactions with animals.",
+              "commit_ids": [
+                704700
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory UI",
+          "items": [
+            {
+              "text": "Shields and diving tanks now correctly appear in the backpack slot of the loadout UI.",
+              "commit_ids": [
+                704693
+              ]
+            }
+          ]
+        }
+      ],
+      "704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689": [
+        {
+          "title": "UI & Store",
+          "items": [
+            {
+              "text": "Fixed carousel navigation bugs: pack page carousel buttons now work correctly and store carousel preview button no longer throws errors.",
+              "commit_ids": [
+                704689,
+                704599
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Throwables",
+          "items": [
+            {
+              "text": "C4 and satchels now retain their original rotation when thrown, fixing the odd orientation players observed.",
               "commit_ids": [
                 704687
               ]
@@ -43,89 +97,77 @@
           "title": "Building & Structures",
           "items": [
             {
-              "text": "Fixed a bug where composters could become unusable (‘bricked’) when water splashed onto them.",
+              "text": "Composters no longer become permanently broken when hit by water splashes.",
               "commit_ids": [
                 704683
               ]
-            }
-          ]
-        },
-        {
-          "title": "Inventory & UI",
-          "items": [
+            },
             {
-              "text": "Fixed loadout UI so shields and diving tanks now appear correctly in the backpack slot.",
+              "text": "Armored triangle ladder hatch collision meshes now correctly update their position on the server, preventing mismatched collisions.",
               "commit_ids": [
-                704693
+                704642
+              ]
+            },
+            {
+              "text": "Widened the armored triangle frame slightly to stop it from clipping into other building tier frames.",
+              "commit_ids": [
+                704662
               ]
             }
           ]
         },
         {
-          "title": "Item Usage & Animations",
+          "title": "Biofuel Generator",
           "items": [
             {
-              "text": "Fixed held‑item animation persistence so using the last item in a stack no longer leaves the player stuck in the previous animation.",
+              "text": "Dismounting the biofuel generator now properly removes the stir bar, preventing it from lingering in the world.",
               "commit_ids": [
-                704717
+                704647
               ]
-            }
-          ]
-        },
-        {
-          "title": "Animals",
-          "items": [
+            },
             {
-              "text": "Corrected hitbox sizes and death‑animation loops for fish entities, fixing hit detection and preventing endless death animations.",
+              "text": "Fixed flag collision on the biofuel generator, eliminating unexpected blocking behavior.",
               "commit_ids": [
-                704700
-              ]
-            }
-          ]
-        }
-      ],
-      "704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662": [
-        {
-          "title": "Building & Structure Collision",
-          "items": [
-            {
-              "text": "Widened armored triangle frame to prevent clipping and fixed server‑side collision updates for armored triangle ladder hatch and biofuel generator flag collisions.",
-              "commit_ids": [
-                704662,
-                704642,
                 704641
               ]
             }
           ]
         },
         {
-          "title": "Vehicle & Equipment",
+          "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Fixed dismount action to correctly remove the stir bar from the player.",
+              "text": "New litters now correctly name only the firstborn after the parent, fixing the duplicate‑name bug.",
               "commit_ids": [
-                704647
+                704640
               ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock & Animal Behavior",
-          "items": [
+            },
             {
-              "text": "Corrected newborn animal naming so only the firstborn inherits the parent name, and fixed animals pathing through doors at monuments.",
+              "text": "Animals can no longer path through doors at monuments or steer through any door by accident.",
               "commit_ids": [
-                704640,
                 704607
               ]
             }
           ]
         },
         {
-          "title": "Grenade Mechanics",
+          "title": "Combat & Audio",
           "items": [
             {
-              "text": "Synchronized grenade drop animation timing with throw release to ensure grenades spawn at the intended moment.",
+              "text": "Shield footstep sounds now play correctly when looking down, fixing the mismatched audio cue.",
+              "commit_ids": [
+                704593
+              ]
+            }
+          ]
+        }
+      ],
+      "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590": [
+        {
+          "title": "Combat & Weapons",
+          "items": [
+            {
+              "text": "Grenade drop timing fixed so grenades spawn at the same moment as the throw release, restoring expected behavior.",
               "commit_ids": [
                 704590
               ]
@@ -133,34 +175,10 @@
           ]
         },
         {
-          "title": "Loot Room",
+          "title": "Base Building & Structures",
           "items": [
             {
-              "text": "Reapplied the NMS loot room after resolving file conflicts, restoring its contents.",
-              "commit_ids": [
-                704559
-              ]
-            }
-          ]
-        }
-      ],
-      "704524,704525,704532,704545": [
-        {
-          "title": "Economy & Stores",
-          "items": [
-            {
-              "text": "Store inventory now pulls assets from the backend and loads/unloads dynamically, affecting available items in store pages.",
-              "commit_ids": [
-                704545
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Structures & Repair",
-          "items": [
-            {
-              "text": "Helipad repair now requires 30,000 wood, 10,000 metal fragments, and 100 rope.",
+              "text": "Helipad repair now costs 30,000 wood, 10,000 metal fragments, and 100 rope, increasing the resource requirement for restoring the airwolf pad.",
               "commit_ids": [
                 704525
               ]
@@ -283,17 +301,9 @@
       }
     ],
     "summary": "### Combat & Weapons\n- Machete melee range reduced from medium to low, decreasing its effective reach.\n- Thrown C4 and satchels no longer inherit the thrower's rotation, fixing odd placement when thrown.\n- Shield footstep sounds now match player view direction when looking down.\n- Grenade viewmodel drop timing synchronized with throw release, restoring original spawn timing and animation.\n\n### Structures & Building\n- Composters no longer break (brick) when splashed by water.\n- Armored triangle ladder hatch collision meshes and frame clipping issues fixed, improving placement reliability.\n- Biofuel generator interaction improved: flag collision fixed and stir bar removed on dismount.\n- Helipad repair requirements increased to 30,000 wood, 10,000 metal fragments, and 100 rope; Airwolf CCTV feature added.\n\n### Animals & Livestock\n- Animal hitboxes and death animation loops corrected, improving combat feedback.\n- Livestock naming bug fixed: new litters no longer inherit the parent's name for all babies.\n- Animals and critters can no longer path through doors at monuments, preventing unintended door traversal.\n\n### Inventory & UI\n- Shields and diving tanks now appear correctly in the backpack slot of the loadout UI.\n- Store carousel preview button restored, allowing players to browse store items properly.\n\n### World Content\n- NMS loot room restored after file conflicts, making its loot available again.",
-    "new_items": [
-      {
-        "text": "Machete melee range reduced from medium to low, decreasing its effective reach.",
-        "commit_ids": [
-          704715
-        ],
-        "section": "Combat & Weapons"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Machete melee range reduced from medium to low, decreasing its effective reach."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-22": {
     "commit_count": 118,
