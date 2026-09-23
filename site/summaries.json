@@ -1,43 +1,75 @@
 {
   "2026-09-22": {
-    "commit_count": 105,
-    "relevant_commit_count": 56,
+    "commit_count": 111,
+    "relevant_commit_count": 61,
     "relevant_signature": "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "703469,703507,703531,703534,703538,703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195,704285,704294": [
+      "703539,703547,703561,703576,703587,703690,703698,703723,703745,703748,703933,703952,703993,704011,704031,704045,704078,704195,704285,704294,704497,704502,704504,704507,704508": [
+        {
+          "title": "Livestock Animals",
+          "items": [
+            {
+              "text": "Animals now automatically dismount from vehicles when the vehicle rolls over or becomes submerged.",
+              "commit_ids": [
+                704508
+              ]
+            },
+            {
+              "text": "Updated livestock sales charts and added a random reward pool (including Turret, HQM, LGF, Semi rifle, Scrap, Saddles, Rope, Blue cards, Tarps, CCTV, Targeting computer, frags).",
+              "commit_ids": [
+                704507
+              ]
+            },
+            {
+              "text": "Revised harvest yields: Cows now give 30 cloth, 100 leather, 100 bones, 20 beef, 40 fat; Sheep now give 10 cloth, 20 leather, 50 bones, 12 mutton, 20 fat plus any wool they had at death.",
+              "commit_ids": [
+                704504
+              ]
+            },
+            {
+              "text": "Introduced jellyfish swarms as a new critter behavior.",
+              "commit_ids": [
+                703748
+              ]
+            }
+          ]
+        },
         {
           "title": "Loadout UI",
           "items": [
             {
-              "text": "Fixed item positioning in Loadout UI icon slots.",
+              "text": "Fixed item positioning in Loadout UI icon slots, ensuring items appear in their correct slots.",
               "commit_ids": [
                 704294
               ]
-            }
-          ]
-        },
-        {
-          "title": "Store UI",
-          "items": [
+            },
             {
-              "text": "Multiple store UI fixes: corrected invalid takeover data for the Crystal AK, refreshed tabs now restart correctly, HttpImage now handles multiple requests for the same URL and supports different configured images per URL.",
+              "text": "Fixed invalid takeover data for the Crystal AK in the store, allowing it to display correctly.",
               "commit_ids": [
-                704045,
-                704011,
-                703933,
-                703469
+                704045
+              ]
+            },
+            {
+              "text": "Store refresh now properly restarts the current tab, fixing missing tile initialization.",
+              "commit_ids": [
+                704011
               ]
             }
           ]
         },
         {
-          "title": "Base & Building Occlusion",
+          "title": "Base Occlusion",
           "items": [
             {
-              "text": "Resolved base occlusion issues allowing buildings to define multiple exteriors and ensuring a single outside is detected when interior rooms were incorrectly flagged.",
+              "text": "Buildings can now correctly define a single exterior; previous bugs allowed multiple exterior sections.",
               "commit_ids": [
-                704195,
+                704195
+              ]
+            },
+            {
+              "text": "Fixed bases incorrectly flagging interior rooms as exterior, consolidating to a single outside area.",
+              "commit_ids": [
                 704078
               ]
             }
@@ -47,73 +79,55 @@
           "title": "Biofuel Generator",
           "items": [
             {
-              "text": "Gameplay and UI fixes for the Biofuel Generator: corrected deployment orientation, updated tech‑tree entries and crafting costs, added description text, showed electricity‑required warnings in red, and added a pop‑animation in the loot panel when the generator is reset.",
+              "text": "Corrected deployment orientation for the biofuel generator (was reversed).",
               "commit_ids": [
-                704285,
-                703690,
-                703587,
-                703561
+                704285
+              ]
+            },
+            {
+              "text": "Fixed tech tree entries for the biofuel generator.",
+              "commit_ids": [
+                703690
+              ]
+            },
+            {
+              "text": "Updated description, crafting costs, and tech tree placement for the biofuel generator.",
+              "commit_ids": [
+                703587
               ]
             }
           ]
         },
         {
-          "title": "Livestock & Critters",
+          "title": "Powerlevel Loot Rooms",
           "items": [
             {
-              "text": "Introduced first‑pass jellyfish swarms as a new critter type.",
-              "commit_ids": [
-                703748
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Power & Loot Rooms",
-          "items": [
-            {
-              "text": "Adjusted power‑phase requirements, tweaked loot spawn types, and fixed map topology issues in harbor_1.",
+              "text": "Adjusted power phase requirements and loot spawn types; also fixed map topology issue in harbor_1.",
               "commit_ids": [
                 703723
               ]
             }
           ]
-        },
-        {
-          "title": "Airwolf Repairable Pad",
-          "items": [
-            {
-              "text": "Adjusted helipad repair requirements.",
-              "commit_ids": [
-                703534
-              ]
-            }
-          ]
         }
       ],
-      "702859,702866,702898,702907,702953,702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397": [
+      "702972,703040,703041,703062,703106,703107,703110,703146,703152,703204,703217,703243,703279,703292,703322,703336,703352,703386,703392,703397,703469,703507,703531,703534,703538": [
         {
-          "title": "Buildings & Structures",
+          "title": "Helipad & Repairable Structures",
           "items": [
             {
-              "text": "Helipad prefab now repairable, allowing players to fix damaged helipads.",
+              "text": "Adjusted helipad repair requirements and cleaned up repairable prefab for more reliable repairs.",
               "commit_ids": [
+                703534,
                 703397
-              ]
-            },
-            {
-              "text": "Waterwheel melee protection increased 4‑5×, making it much stronger against attacks.",
-              "commit_ids": [
-                703204
               ]
             }
           ]
         },
         {
-          "title": "Store & UI",
+          "title": "Store & Economy",
           "items": [
             {
-              "text": "Fixed LastBoughtItems to correctly include bundle content and display proper purchase notifications.",
+              "text": "Fixed LastBoughtItems to correctly include bundle content, restoring proper purchase notifications and checkout results.",
               "commit_ids": [
                 703336
               ]
@@ -121,18 +135,35 @@
           ]
         },
         {
-          "title": "Monuments & World Events",
+          "title": "World & Environment",
           "items": [
             {
-              "text": "Added new ferry terminal, radtown, and oil rig monuments to the map.",
+              "text": "Corrected collider layer causing groundwatch failures.",
               "commit_ids": [
-                703243
+                703292
               ]
             },
             {
-              "text": "Fixed oil rig radiation bug where rigs could start radiation despite locked crates remaining untouched.",
+              "text": "Fixed oil rig radiation edge case where radiation could start despite the locked crate remaining untouched.",
               "commit_ids": [
                 702972
+              ]
+            },
+            {
+              "text": "Added new ferry terminal, radtown, and oil rig locations.",
+              "commit_ids": [
+                703243
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structures Buffs",
+          "items": [
+            {
+              "text": "Increased waterwheel melee protection values by 4‑5× for stronger defense.",
+              "commit_ids": [
+                703204
               ]
             }
           ]
@@ -141,13 +172,13 @@
           "title": "Combat & Weapons",
           "items": [
             {
-              "text": "Pool cue quality no longer breaks in first‑person view when swapping cues.",
+              "text": "Resolved pool cue quality issues when swapping cues in first‑person view.",
               "commit_ids": [
                 703106
               ]
             },
             {
-              "text": "Fire arrows no longer stick to other players' 3‑person bows.",
+              "text": "Fixed fire arrows sticking to third‑person bows for other players.",
               "commit_ids": [
                 703041
               ]
@@ -158,7 +189,7 @@
           "title": "Audio",
           "items": [
             {
-              "text": "Prisoner hood now muffles voice chat slightly, less than a heavy helmet, preserving communication while adding realism.",
+              "text": "Added subtle audio muffling when wearing the prisoner hood, preserving voice chat clarity.",
               "commit_ids": [
                 703146
               ]
@@ -166,42 +197,42 @@
           ]
         },
         {
-          "title": "Animal Genetics",
+          "title": "Animals & Genetics",
           "items": [
             {
-              "text": "White sheep are now the \"good\" gene variant; odds for good/bad genes reverted accordingly.",
+              "text": "Reverted gene odds changes; white sheep now represent the beneficial gene.",
               "commit_ids": [
                 703110
               ]
             }
           ]
-        },
+        }
+      ],
+      "702850,702851,702853,702855,702856,702857,702859,702866,702898,702907,702953": [
         {
-          "title": "Misc Gameplay Fixes",
+          "title": "Doors & Controllers",
           "items": [
             {
-              "text": "Door controllers on single doors now retain correct rotation after reskinning.",
+              "text": "Fixed door controllers rotating incorrectly on single doors due to wrong child entity rotation.",
               "commit_ids": [
                 702866
               ]
-            },
-            {
-              "text": "Chicken eggs drop flush with terrain and with physics disabled, preventing them from falling through ground.",
-              "commit_ids": [
-                702859
-              ]
             }
           ]
-        }
-      ],
-      "702850,702851,702853,702855,702856,702857": [
+        },
         {
-          "title": "Livestock & Animals",
+          "title": "Animal & Farming",
           "items": [
             {
-              "text": "Fixed cows incorrectly benefiting from crocodile protection, restoring intended animal behavior.",
+              "text": "Fixed cows incorrectly receiving crocodile protection, preventing unintended protection behavior.",
               "commit_ids": [
                 702856
+              ]
+            },
+            {
+              "text": "Chicken eggs now spawn flush with terrain and with physics disabled, eliminating cases where eggs fall through ground or die out of bounds.",
+              "commit_ids": [
+                702859
               ]
             }
           ]
@@ -319,18 +350,9 @@
       }
     ],
     "summary": "### Base Building & Repairs\n- Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection.\n- Helipad repair requirements adjusted and prefab updated; VehiclePadRepaired condition fixed.\n- Single doors now rotate correctly, eliminating misalignment.\n\n### Economy & Store Updates\n- Store functionality improved: Crystal AK takeover data fixed and bundle purchases now correctly deliver items.\n- Biofuel generator tech tree, description, and crafting costs updated, fixing progression and resource balance.\n\n### World & Creatures\n- New ferry terminal, radtown, and oil rig monuments added, expanding exploration points.\n- Jellyfish swarms introduced, adding new aquatic creature behavior.\n- Oil rig radiation no longer triggers when locked crate untouched, preventing unintended hazard.\n\n### Combat & Power Tweaks\n- Waterwheel melee protection increased 4‑5×, strengthening defense against close combat.\n- Power phase requirements and loot spawn types adjusted, and harbor_1 map topology issue fixed.\n\n### Livestock & Genetics\n- White sheep now carry the beneficial gene variant; cows no longer receive crocodile protection.\n\n### Audio\n- Prisoner hood muffles voice chat slightly, reducing audible range compared to heavy helmets.",
-    "new_items": [
-      {
-        "text": "Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection.",
-        "commit_ids": [
-          704195,
-          704078
-        ],
-        "section": "Base Building & Repairs"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Buildings now correctly handle multiple exteriors and interior rooms, fixing outside/inside detection."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-21": {
     "commit_count": 118,
