@@ -1,37 +1,107 @@
 {
   "2026-09-23": {
-    "commit_count": 132,
-    "relevant_commit_count": 69,
+    "commit_count": 141,
+    "relevant_commit_count": 78,
     "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "704715,704717,704719,704722,704725,704728,704730,704733,704738,704740,704743,704747,704753,704760,704762,704763,704765,704771,704779,704789,704790,704791,704792,704795,704799": [
+      "704740,704743,704747,704753,704760,704762,704763,704765,704771,704779,704789,704790,704791,704792,704795,704799,704800,704801,704802,704803,704805,704807,704809,704810,704814": [
         {
-          "title": "Livestock & Food",
+          "title": "Combat & Explosives",
           "items": [
             {
-              "text": "Adult cows and sheep now live 48 hours instead of 24 hours; milk products give double calories and triple hydration; beef pies last 120 minutes (up from 30); mutton pie renamed to shepherd’s pie and now requires a potato; the inventory label “Chicken Food” changed to “Livestock food”.",
+              "text": "Fixed landmine RRP post‑effect lingering bug, preventing the visual effect from persisting longer than intended.",
               "commit_ids": [
-                704799,
-                704795,
-                704792,
-                704791,
+                704814
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicles & Structures",
+          "items": [
+            {
+              "text": "Car lifts will no longer grab a car if any animals are mounted on it, preventing accidental vehicle removal.",
+              "commit_ids": [
+                704805
+              ]
+            },
+            {
+              "text": "Spiral staircases now correctly decay over time and contribute to TC upkeep, restoring expected decay behavior.",
+              "commit_ids": [
+                704779
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls & Input",
+          "items": [
+            {
+              "text": "Resolved duplicate key names on Greek/Cyrillic keyboard layouts that caused errors after a writecfg and made the Q key bindable again.",
+              "commit_ids": [
+                704803
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock & Ranching",
+          "items": [
+            {
+              "text": "Wool can now be recycled into cloth (5 cloth per wool), adding a new resource conversion path.",
+              "commit_ids": [
+                704802
+              ]
+            },
+            {
+              "text": "Ranch sales no longer include high‑quality metal (300‑800); they now sell high‑quality metal ore (30‑50) and the SAR threshold was increased to 0.5.",
+              "commit_ids": [
+                704801
+              ]
+            },
+            {
+              "text": "Livestock feeding now accounts for the calories of the food; high‑calorie items like bread are ~6× more effective, while low‑calorie items like worms are less effective. Spoiled produce can no longer be eaten because it has no calories.",
+              "commit_ids": [
+                704800
+              ]
+            },
+            {
+              "text": "Adult cows and sheep now live 48 hours instead of 24 hours, doubling their lifespan.",
+              "commit_ids": [
+                704799
+              ]
+            },
+            {
+              "text": "All milk products now provide double calories and triple hydration when consumed.",
+              "commit_ids": [
                 704790
               ]
             }
           ]
         },
         {
-          "title": "Structure & Upkeep",
+          "title": "Food & Consumables",
           "items": [
             {
-              "text": "Spiral staircases now decay properly and contribute to TC upkeep.",
+              "text": "Beef pie and rich beef pie shelf life increased to 120 minutes (was 30 min).",
               "commit_ids": [
-                704779
+                704792
               ]
             },
             {
-              "text": "When upgrading an apartment, all items (including mail) are now correctly transferred to the new room; any items that still can’t fit are sent to the lobby player as a safety net.",
+              "text": "Mutton pie renamed to Shepherd's Pie and now requires a potato in its recipe.",
+              "commit_ids": [
+                704791
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Room Upgrades",
+          "items": [
+            {
+              "text": "Fixed a bug where items (including mail) could be lost when upgrading a room; items now correctly transfer to the new room or, as a failsafe, to the player in the lobby.",
               "commit_ids": [
                 704771
               ]
@@ -39,107 +109,25 @@
           ]
         },
         {
-          "title": "Map Tweaks",
+          "title": "Server Settings",
           "items": [
             {
-              "text": "The crate in Radtown was moved slightly away from the window to stop players from looting it through the gap, and the one‑sided window sign was replaced with a two‑sided version.",
+              "text": "Added configurable scaling for power‑plant heavy fuse decay rates based on current server population, with low‑pop and high‑pop cutoffs.",
+              "commit_ids": [
+                704763
+              ]
+            }
+          ]
+        }
+      ],
+      "704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738": [
+        {
+          "title": "World & Structures",
+          "items": [
+            {
+              "text": "Moved the crate away from the window in RadTown to stop players looting through the window gap and replaced the one‑sided sign with a two‑sided version.",
               "commit_ids": [
                 704728
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat Adjustments",
-          "items": [
-            {
-              "text": "Machete network range reduced from medium to low, shortening its effective reach.",
-              "commit_ids": [
-                704715
-              ]
-            }
-          ]
-        }
-      ],
-      "704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714": [
-        {
-          "title": "Inventory & UI",
-          "items": [
-            {
-              "text": "Shields and diving tanks now correctly appear in the backpack slot of the loadout UI.",
-              "commit_ids": [
-                704693
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Explosives & Throwables",
-          "items": [
-            {
-              "text": "C4 and satchels no longer inherit the player’s rotation when thrown, fixing erratic trajectories.",
-              "commit_ids": [
-                704687
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Building & Structures",
-          "items": [
-            {
-              "text": "Composters no longer break when splashed by water.",
-              "commit_ids": [
-                704683
-              ]
-            },
-            {
-              "text": "Armored triangle ladder hatch frame widened and server collision meshes now update correctly, preventing clipping with other building tiers.",
-              "commit_ids": [
-                704662,
-                704642
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Generators",
-          "items": [
-            {
-              "text": "Biofuel generator fixes: dismount now removes the stir bar and flag collision issues resolved.",
-              "commit_ids": [
-                704647,
-                704641
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animals & Livestock",
-          "items": [
-            {
-              "text": "Fish hitboxes and death animation loops corrected for more accurate combat.",
-              "commit_ids": [
-                704700
-              ]
-            },
-            {
-              "text": "Newborn animal naming bug fixed – only the firstborn carries the parent’s name with a suffix.",
-              "commit_ids": [
-                704640
-              ]
-            }
-          ]
-        }
-      ],
-      "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621": [
-        {
-          "title": "NPC & AI",
-          "items": [
-            {
-              "text": "Fixed livestock animals pathing through doors at monuments, preventing them from steering through any door unintentionally.",
-              "commit_ids": [
-                704607
               ]
             }
           ]
@@ -148,7 +136,93 @@
           "title": "Combat",
           "items": [
             {
-              "text": "Synchronized grenade drop animation timing with throw release, ensuring grenades spawn at the correct moment, and fixed missing drop animation on player model.",
+              "text": "Reduced the machete's networked range from medium to low, decreasing its effective reach.",
+              "commit_ids": [
+                704715
+              ]
+            },
+            {
+              "text": "Adjusted fish hitboxes and corrected death animation loops, fixing hit detection and animation issues for fish.",
+              "commit_ids": [
+                704700
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory",
+          "items": [
+            {
+              "text": "Fixed shields and diving tanks not appearing in the backpack slot of the loadout UI.",
+              "commit_ids": [
+                704693
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Base Building / Environment",
+          "items": [
+            {
+              "text": "Fixed composters becoming bricked when splashed by water, restoring their functionality.",
+              "commit_ids": [
+                704683
+              ]
+            }
+          ]
+        }
+      ],
+      "704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661": [
+        {
+          "title": "Generators & Power",
+          "items": [
+            {
+              "text": "Fixed dismount action not removing the stir bar from biofuel generators, preventing lingering objects.",
+              "commit_ids": [
+                704647
+              ]
+            },
+            {
+              "text": "Fixed flag collision on biofuel generators, ensuring proper interaction with players and other objects.",
+              "commit_ids": [
+                704641
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Environment & Structures",
+          "items": [
+            {
+              "text": "Corrected server-side collision mesh updates for armored triangle ladder hatches, fixing misaligned collisions.",
+              "commit_ids": [
+                704642
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Livestock",
+          "items": [
+            {
+              "text": "Fixed newborn livestock naming bug so only the firstborn inherits the parent’s name with a suffix; also resolved related livestock test failures.",
+              "commit_ids": [
+                704640
+              ]
+            },
+            {
+              "text": "Prevented livestock from pathing through doors at monuments, stopping unintended door traversal.",
+              "commit_ids": [
+                704607
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Weapons",
+          "items": [
+            {
+              "text": "Synchronized grenade drop animation timing with throw release, ensuring grenades spawn at the intended moment.",
               "commit_ids": [
                 704590
               ]
@@ -156,23 +230,12 @@
           ]
         },
         {
-          "title": "World / Loot",
+          "title": "World Content",
           "items": [
             {
-              "text": "Restored the NMS loot room after file conflicts, making its loot available again.",
+              "text": "Re-added the NMS loot room after file conflicts, restoring its contents for players.",
               "commit_ids": [
                 704559
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Base Building",
-          "items": [
-            {
-              "text": "Adjusted helipad repair requirements: now needs 30,000 wood, 10,000 metal fragments, and 100 rope.",
-              "commit_ids": [
-                704525
               ]
             }
           ]
