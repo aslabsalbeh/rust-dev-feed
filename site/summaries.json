@@ -1,45 +1,48 @@
 {
   "2026-09-23": {
-    "commit_count": 114,
-    "relevant_commit_count": 61,
+    "commit_count": 132,
+    "relevant_commit_count": 69,
     "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738,704740,704743,704747,704753,704760,704762,704763,704765": [
+      "704715,704717,704719,704722,704725,704728,704730,704733,704738,704740,704743,704747,704753,704760,704762,704763,704765,704771,704779,704789,704790,704791,704792,704795,704799": [
         {
-          "title": "Base Building / Power",
+          "title": "Livestock & Food",
           "items": [
             {
-              "text": "Powerplant heavy fuse decay rate now scales with server population using configurable low/high population cutoffs.",
+              "text": "Adult cows and sheep now live 48 hours instead of 24 hours; milk products give double calories and triple hydration; beef pies last 120 minutes (up from 30); mutton pie renamed to shepherd’s pie and now requires a potato; the inventory label “Chicken Food” changed to “Livestock food”.",
               "commit_ids": [
-                704763
+                704799,
+                704795,
+                704792,
+                704791,
+                704790
               ]
             }
           ]
         },
         {
-          "title": "Combat & Projectiles",
+          "title": "Structure & Upkeep",
           "items": [
             {
-              "text": "Throwable prediction overhauled: server‑corrected positions and velocities are applied, improving projectile accuracy and proper sticking behavior.",
+              "text": "Spiral staircases now decay properly and contribute to TC upkeep.",
               "commit_ids": [
-                704760,
-                704753
+                704779
               ]
             },
             {
-              "text": "Machete network range reduced from medium to low, limiting its effective reach in multiplayer.",
+              "text": "When upgrading an apartment, all items (including mail) are now correctly transferred to the new room; any items that still can’t fit are sent to the lobby player as a safety net.",
               "commit_ids": [
-                704715
+                704771
               ]
             }
           ]
         },
         {
-          "title": "World & Looting",
+          "title": "Map Tweaks",
           "items": [
             {
-              "text": "Crate moved away from window gap in Radtown to stop players from looting through the opening; window sign updated to two‑sided version.",
+              "text": "The crate in Radtown was moved slightly away from the window to stop players from looting it through the gap, and the one‑sided window sign was replaced with a two‑sided version.",
               "commit_ids": [
                 704728
               ]
@@ -47,18 +50,20 @@
           ]
         },
         {
-          "title": "Animals",
+          "title": "Combat Adjustments",
           "items": [
             {
-              "text": "Fixed critter hitboxes and death animation loops, correcting combat interactions with animals.",
+              "text": "Machete network range reduced from medium to low, shortening its effective reach.",
               "commit_ids": [
-                704700
+                704715
               ]
             }
           ]
-        },
+        }
+      ],
+      "704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714": [
         {
-          "title": "Inventory UI",
+          "title": "Inventory & UI",
           "items": [
             {
               "text": "Shields and diving tanks now correctly appear in the backpack slot of the loadout UI.",
@@ -67,26 +72,12 @@
               ]
             }
           ]
-        }
-      ],
-      "704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689": [
-        {
-          "title": "UI & Store",
-          "items": [
-            {
-              "text": "Fixed carousel navigation bugs: pack page carousel buttons now work correctly and store carousel preview button no longer throws errors.",
-              "commit_ids": [
-                704689,
-                704599
-              ]
-            }
-          ]
         },
         {
-          "title": "Throwables",
+          "title": "Explosives & Throwables",
           "items": [
             {
-              "text": "C4 and satchels now retain their original rotation when thrown, fixing the odd orientation players observed.",
+              "text": "C4 and satchels no longer inherit the player’s rotation when thrown, fixing erratic trajectories.",
               "commit_ids": [
                 704687
               ]
@@ -97,53 +88,56 @@
           "title": "Building & Structures",
           "items": [
             {
-              "text": "Composters no longer become permanently broken when hit by water splashes.",
+              "text": "Composters no longer break when splashed by water.",
               "commit_ids": [
                 704683
               ]
             },
             {
-              "text": "Armored triangle ladder hatch collision meshes now correctly update their position on the server, preventing mismatched collisions.",
+              "text": "Armored triangle ladder hatch frame widened and server collision meshes now update correctly, preventing clipping with other building tiers.",
               "commit_ids": [
+                704662,
                 704642
-              ]
-            },
-            {
-              "text": "Widened the armored triangle frame slightly to stop it from clipping into other building tier frames.",
-              "commit_ids": [
-                704662
               ]
             }
           ]
         },
         {
-          "title": "Biofuel Generator",
+          "title": "Generators",
           "items": [
             {
-              "text": "Dismounting the biofuel generator now properly removes the stir bar, preventing it from lingering in the world.",
+              "text": "Biofuel generator fixes: dismount now removes the stir bar and flag collision issues resolved.",
               "commit_ids": [
-                704647
-              ]
-            },
-            {
-              "text": "Fixed flag collision on the biofuel generator, eliminating unexpected blocking behavior.",
-              "commit_ids": [
+                704647,
                 704641
               ]
             }
           ]
         },
         {
-          "title": "Livestock & Animals",
+          "title": "Animals & Livestock",
           "items": [
             {
-              "text": "New litters now correctly name only the firstborn after the parent, fixing the duplicate‑name bug.",
+              "text": "Fish hitboxes and death animation loops corrected for more accurate combat.",
               "commit_ids": [
-                704640
+                704700
               ]
             },
             {
-              "text": "Animals can no longer path through doors at monuments or steer through any door by accident.",
+              "text": "Newborn animal naming bug fixed – only the firstborn carries the parent’s name with a suffix.",
+              "commit_ids": [
+                704640
+              ]
+            }
+          ]
+        }
+      ],
+      "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Fixed livestock animals pathing through doors at monuments, preventing them from steering through any door unintentionally.",
               "commit_ids": [
                 704607
               ]
@@ -151,23 +145,10 @@
           ]
         },
         {
-          "title": "Combat & Audio",
+          "title": "Combat",
           "items": [
             {
-              "text": "Shield footstep sounds now play correctly when looking down, fixing the mismatched audio cue.",
-              "commit_ids": [
-                704593
-              ]
-            }
-          ]
-        }
-      ],
-      "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590": [
-        {
-          "title": "Combat & Weapons",
-          "items": [
-            {
-              "text": "Grenade drop timing fixed so grenades spawn at the same moment as the throw release, restoring expected behavior.",
+              "text": "Synchronized grenade drop animation timing with throw release, ensuring grenades spawn at the correct moment, and fixed missing drop animation on player model.",
               "commit_ids": [
                 704590
               ]
@@ -175,10 +156,21 @@
           ]
         },
         {
-          "title": "Base Building & Structures",
+          "title": "World / Loot",
           "items": [
             {
-              "text": "Helipad repair now costs 30,000 wood, 10,000 metal fragments, and 100 rope, increasing the resource requirement for restoring the airwolf pad.",
+              "text": "Restored the NMS loot room after file conflicts, making its loot available again.",
+              "commit_ids": [
+                704559
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Base Building",
+          "items": [
+            {
+              "text": "Adjusted helipad repair requirements: now needs 30,000 wood, 10,000 metal fragments, and 100 rope.",
               "commit_ids": [
                 704525
               ]
