@@ -1,47 +1,93 @@
 {
   "2026-09-24": {
-    "commit_count": 21,
-    "relevant_commit_count": 12,
-    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895",
+    "commit_count": 63,
+    "relevant_commit_count": 33,
+    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Inventory & Controls",
         "items": [
           {
-            "text": "Molotov grenades now break on impact, showing proper explosion effects and spawning fireballs.",
+            "text": "Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.",
             "commit_ids": [
-              704889,
+              705019
+            ]
+          },
+          {
+            "text": "Aiming accuracy restored when using turn‑in‑place, fixing mis‑aligned shots while rotating.",
+            "commit_ids": [
+              704886
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability & Performance",
+        "items": [
+          {
+            "text": "Fixed string serialization in Jobs 4 that sent incorrect data and could inflate memory usage.",
+            "commit_ids": [
+              704985
+            ]
+          },
+          {
+            "text": "Made NetWrite.String thread‑safe by using a ThreadStatic buffer, preventing crashes during multithreaded saves.",
+            "commit_ids": [
+              704984
+            ]
+          },
+          {
+            "text": "Fixed SyncVar buffer leaks when using parallel saves.",
+            "commit_ids": [
+              704979
+            ]
+          },
+          {
+            "text": "Removed the adminUI flag from the livestock convar, eliminating a huge string buffer that caused staging‑environment OOM crashes.",
+            "commit_ids": [
+              704977
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animal & Critter Behavior",
+        "items": [
+          {
+            "text": "Adjusted critter collision layers so players are no longer pushed or moved by crabs and other critters.",
+            "commit_ids": [
+              704942
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Throwables & Explosives",
+        "items": [
+          {
+            "text": "Fixed beancan throw prediction, making its trajectory behave correctly.",
+            "commit_ids": [
               704893
             ]
           },
           {
-            "text": "Thrown beancan projectiles now follow the correct trajectory.",
+            "text": "Molotov grenades now break on impact, showing break effects, spawning fireballs and gibs.",
             "commit_ids": [
-              704893
+              704893,
+              704889
             ]
           }
         ]
       },
       {
-        "title": "Economy",
+        "title": "Economy & Trading",
         "items": [
           {
-            "text": "Vendor auction rounding for high-quality metal ore has been fixed, ensuring accurate pricing.",
+            "text": "Vendor auction rounding for High-Quality Metal ore fixed, ensuring accurate pricing and payouts.",
             "commit_ids": [
               704887
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Player Mechanics",
-        "items": [
-          {
-            "text": "Aiming while turning in place is now accurate, fixing previous aim offset.",
-            "commit_ids": [
-              704886
             ]
           }
         ]
@@ -50,61 +96,57 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Improved throwable trajectory prediction, making grenades and other thrown items land more accurately.",
+            "text": "Workshop skins now display correctly on both server and client.",
+            "commit_ids": [
+              705017
+            ]
+          },
+          {
+            "text": "Missing textures and gib additions restored, fixing visual glitches.",
+            "commit_ids": [
+              705001
+            ]
+          },
+          {
+            "text": "Throwable prediction accuracy improved, fixing aiming issues for grenades.",
             "commit_ids": [
               704894
             ]
           },
           {
-            "text": "Resolved spine posture bug that caused characters to appear hunched when aiming down sights, improving visual alignment and aiming feel.",
+            "text": "Aiming posture corrected: no hunched spine when aiming down sights.",
             "commit_ids": [
               704843
+            ]
+          },
+          {
+            "text": "Viewmodel rendering fixed, preventing persistent lower viewmodels from appearing incorrectly.",
+            "commit_ids": [
+              704995
             ]
           }
         ]
       }
     ],
-    "summary": "### Combat & Weapons\n- Molotov grenades now break on impact, showing proper explosion effects and spawning fireballs.\n- Thrown beancan projectiles now follow the correct trajectory.\n\n### Economy\n- Vendor auction rounding for high-quality metal ore has been fixed, ensuring accurate pricing.\n\n### Player Mechanics\n- Aiming while turning in place is now accurate, fixing previous aim offset.\n\n### Gameplay & Balance\n- Improved throwable trajectory prediction, making grenades and other thrown items land more accurately.\n- Resolved spine posture bug that caused characters to appear hunched when aiming down sights, improving visual alignment and aiming feel.",
+    "summary": "### Inventory & Controls\n- Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.\n- Aiming accuracy restored when using turn‑in‑place, fixing mis‑aligned shots while rotating.\n\n### Stability & Performance\n- Fixed string serialization in Jobs 4 that sent incorrect data and could inflate memory usage.\n- Made NetWrite.String thread‑safe by using a ThreadStatic buffer, preventing crashes during multithreaded saves.\n- Fixed SyncVar buffer leaks when using parallel saves.\n- Removed the adminUI flag from the livestock convar, eliminating a huge string buffer that caused staging‑environment OOM crashes.\n\n### Animal & Critter Behavior\n- Adjusted critter collision layers so players are no longer pushed or moved by crabs and other critters.\n\n### Throwables & Explosives\n- Fixed beancan throw prediction, making its trajectory behave correctly.\n- Molotov grenades now break on impact, showing break effects, spawning fireballs and gibs.\n\n### Economy & Trading\n- Vendor auction rounding for High-Quality Metal ore fixed, ensuring accurate pricing and payouts.\n\n### Gameplay & Balance\n- Workshop skins now display correctly on both server and client.\n- Missing textures and gib additions restored, fixing visual glitches.\n- Throwable prediction accuracy improved, fixing aiming issues for grenades.\n- Aiming posture corrected: no hunched spine when aiming down sights.\n- Viewmodel rendering fixed, preventing persistent lower viewmodels from appearing incorrectly.",
     "new_items": [
       {
-        "text": "Molotov grenades now break on impact, showing proper explosion effects and spawning fireballs.",
+        "text": "Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.",
         "commit_ids": [
-          704889,
-          704893
+          705019
         ],
-        "section": "Combat & Weapons"
+        "section": "Inventory & Controls"
       },
       {
-        "text": "Thrown beancan projectiles now follow the correct trajectory.",
+        "text": "Workshop skins now display correctly on both server and client.",
         "commit_ids": [
-          704893
-        ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Vendor auction rounding for high-quality metal ore has been fixed, ensuring accurate pricing.",
-        "commit_ids": [
-          704887
-        ],
-        "section": "Economy"
-      },
-      {
-        "text": "Aiming while turning in place is now accurate, fixing previous aim offset.",
-        "commit_ids": [
-          704886
-        ],
-        "section": "Player Mechanics"
-      },
-      {
-        "text": "Improved throwable trajectory prediction, making grenades and other thrown items land more accurately.",
-        "commit_ids": [
-          704894
+          705017
         ],
         "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Molotov grenades now break on impact, showing proper explosion effects and spawning fireballs.\n- Thrown beancan projectiles now follow the correct trajectory.\n- Vendor auction rounding for high-quality metal ore has been fixed, ensuring accurate pricing.\n- Aiming while turning in place is now accurate, fixing previous aim offset.\n- Improved throwable trajectory prediction, making grenades and other thrown items land more accurately."
+    "new_relevant_count": 2,
+    "new_summary": "- Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.\n- Workshop skins now display correctly on both server and client."
   },
   "2026-09-23": {
     "commit_count": 144,
