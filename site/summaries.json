@@ -1,46 +1,29 @@
 {
   "2026-09-23": {
-    "commit_count": 141,
-    "relevant_commit_count": 78,
+    "commit_count": 144,
+    "relevant_commit_count": 81,
     "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "704740,704743,704747,704753,704760,704762,704763,704765,704771,704779,704789,704790,704791,704792,704795,704799,704800,704801,704802,704803,704805,704807,704809,704810,704814": [
+      "704753,704760,704762,704763,704765,704771,704779,704789,704790,704791,704792,704795,704799,704800,704801,704802,704803,704805,704807,704809,704810,704814,704824,704827,704829": [
         {
-          "title": "Combat & Explosives",
+          "title": "Swimming Mechanics",
           "items": [
             {
-              "text": "Fixed landmine RRP post‑effect lingering bug, preventing the visual effect from persisting longer than intended.",
+              "text": "Adjusted swimming depth thresholds (start at 1.17 m, stop below 0.9 m) to prevent animation dithering and slightly delay walking out of shallow water",
               "commit_ids": [
-                704814
+                704829
               ]
             }
           ]
         },
         {
-          "title": "Vehicles & Structures",
+          "title": "Vehicle Interactions",
           "items": [
             {
-              "text": "Car lifts will no longer grab a car if any animals are mounted on it, preventing accidental vehicle removal.",
+              "text": "Car lifts now refuse to grab a car if any animals are mounted on it",
               "commit_ids": [
                 704805
-              ]
-            },
-            {
-              "text": "Spiral staircases now correctly decay over time and contribute to TC upkeep, restoring expected decay behavior.",
-              "commit_ids": [
-                704779
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Controls & Input",
-          "items": [
-            {
-              "text": "Resolved duplicate key names on Greek/Cyrillic keyboard layouts that caused errors after a writecfg and made the Q key bindable again.",
-              "commit_ids": [
-                704803
               ]
             }
           ]
@@ -49,33 +32,12 @@
           "title": "Livestock & Ranching",
           "items": [
             {
-              "text": "Wool can now be recycled into cloth (5 cloth per wool), adding a new resource conversion path.",
+              "text": "Wool can be recycled into 5 cloth pieces; adult cows/sheep lifespan doubled to 48 h; livestock feeding now uses food calories (high‑calorie foods 6× more effective, low‑calorie less); ranch sales now give high‑quality metal ore (30‑50) instead of HQM; added calorie‑based feeding logic also prevents eating spoiled produce",
               "commit_ids": [
-                704802
-              ]
-            },
-            {
-              "text": "Ranch sales no longer include high‑quality metal (300‑800); they now sell high‑quality metal ore (30‑50) and the SAR threshold was increased to 0.5.",
-              "commit_ids": [
+                704802,
+                704799,
+                704800,
                 704801
-              ]
-            },
-            {
-              "text": "Livestock feeding now accounts for the calories of the food; high‑calorie items like bread are ~6× more effective, while low‑calorie items like worms are less effective. Spoiled produce can no longer be eaten because it has no calories.",
-              "commit_ids": [
-                704800
-              ]
-            },
-            {
-              "text": "Adult cows and sheep now live 48 hours instead of 24 hours, doubling their lifespan.",
-              "commit_ids": [
-                704799
-              ]
-            },
-            {
-              "text": "All milk products now provide double calories and triple hydration when consumed.",
-              "commit_ids": [
-                704790
               ]
             }
           ]
@@ -84,24 +46,32 @@
           "title": "Food & Consumables",
           "items": [
             {
-              "text": "Beef pie and rich beef pie shelf life increased to 120 minutes (was 30 min).",
+              "text": "Milk products now provide double calories and triple hydration; beef and rich beef pies last 120 min (up from 30 min); mutton pie renamed to shepherd's pie and now requires a potato",
               "commit_ids": [
-                704792
-              ]
-            },
-            {
-              "text": "Mutton pie renamed to Shepherd's Pie and now requires a potato in its recipe.",
-              "commit_ids": [
+                704790,
+                704792,
                 704791
               ]
             }
           ]
         },
         {
-          "title": "Inventory & Room Upgrades",
+          "title": "Upkeep & Decay",
           "items": [
             {
-              "text": "Fixed a bug where items (including mail) could be lost when upgrading a room; items now correctly transfer to the new room or, as a failsafe, to the player in the lobby.",
+              "text": "Spiral staircases now decay and count toward TC upkeep; added server‑population‑scaled settings for power‑plant heavy fuse decay rate",
+              "commit_ids": [
+                704779,
+                704763
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Room Transfer",
+          "items": [
+            {
+              "text": "Fixed items occasionally not transferring when upgrading rooms, ensuring mail and all items move correctly; added failsafe to place unfit items on the lobby player",
               "commit_ids": [
                 704771
               ]
@@ -109,23 +79,46 @@
           ]
         },
         {
-          "title": "Server Settings",
+          "title": "Throwable Projectile Prediction",
           "items": [
             {
-              "text": "Added configurable scaling for power‑plant heavy fuse decay rates based on current server population, with low‑pop and high‑pop cutoffs.",
+              "text": "Improved client‑side prediction for thrown projectiles by reconciling position and velocity with server data and handling stick events reliably",
               "commit_ids": [
-                704763
+                704760,
+                704753
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map Additions",
+          "items": [
+            {
+              "text": "Added ferry terminal and radtown locations",
+              "commit_ids": [
+                704824
               ]
             }
           ]
         }
       ],
-      "704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738": [
+      "704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738,704740,704743,704747": [
         {
-          "title": "World & Structures",
+          "title": "Item Audio & Interaction",
           "items": [
             {
-              "text": "Moved the crate away from the window in RadTown to stop players looting through the window gap and replaced the one‑sided sign with a two‑sided version.",
+              "text": "Wool now makes the correct wool sound when dropped or moved in inventory, fixing the erroneous meat sound.",
+              "commit_ids": [
+                704747
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Exploit Fixes",
+          "items": [
+            {
+              "text": "Crate in Radtown moved away from the window and window sign replaced with a two‑sided variant to stop players looting through the window gap.",
               "commit_ids": [
                 704728
               ]
@@ -133,16 +126,21 @@
           ]
         },
         {
-          "title": "Combat",
+          "title": "Weapon Balance",
           "items": [
             {
-              "text": "Reduced the machete's networked range from medium to low, decreasing its effective reach.",
+              "text": "Machete network range reduced from medium to low, decreasing its effective reach in multiplayer.",
               "commit_ids": [
                 704715
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Entity Hitboxes & Animations",
+          "items": [
             {
-              "text": "Adjusted fish hitboxes and corrected death animation loops, fixing hit detection and animation issues for fish.",
+              "text": "Fish hitboxes corrected and death animation loops fixed, improving combat accuracy with critter animals.",
               "commit_ids": [
                 704700
               ]
@@ -150,10 +148,10 @@
           ]
         },
         {
-          "title": "Inventory",
+          "title": "Inventory UI",
           "items": [
             {
-              "text": "Fixed shields and diving tanks not appearing in the backpack slot of the loadout UI.",
+              "text": "Shields and diving tanks now appear correctly in the backpack slot of the loadout UI.",
               "commit_ids": [
                 704693
               ]
@@ -161,10 +159,10 @@
           ]
         },
         {
-          "title": "Base Building / Environment",
+          "title": "Structure & Crafting",
           "items": [
             {
-              "text": "Fixed composters becoming bricked when splashed by water, restoring their functionality.",
+              "text": "Composters no longer become bricked when splashed by water, restoring their functionality.",
               "commit_ids": [
                 704683
               ]
@@ -172,18 +170,18 @@
           ]
         }
       ],
-      "704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661": [
+      "704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664": [
         {
-          "title": "Generators & Power",
+          "title": "Collision & Building",
           "items": [
             {
-              "text": "Fixed dismount action not removing the stir bar from biofuel generators, preventing lingering objects.",
+              "text": "Fixed armored triangle ladder hatch collision meshes not updating on server, preventing misaligned ladders.",
               "commit_ids": [
-                704647
+                704642
               ]
             },
             {
-              "text": "Fixed flag collision on biofuel generators, ensuring proper interaction with players and other objects.",
+              "text": "Fixed biofuel generator flag collision, allowing proper placement without clipping.",
               "commit_ids": [
                 704641
               ]
@@ -191,27 +189,10 @@
           ]
         },
         {
-          "title": "Environment & Structures",
+          "title": "Animal AI",
           "items": [
             {
-              "text": "Corrected server-side collision mesh updates for armored triangle ladder hatches, fixing misaligned collisions.",
-              "commit_ids": [
-                704642
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animals & Livestock",
-          "items": [
-            {
-              "text": "Fixed newborn livestock naming bug so only the firstborn inherits the parent’s name with a suffix; also resolved related livestock test failures.",
-              "commit_ids": [
-                704640
-              ]
-            },
-            {
-              "text": "Prevented livestock from pathing through doors at monuments, stopping unintended door traversal.",
+              "text": "Prevented livestock and other animals from pathing through monument doors or steering through any door unintentionally.",
               "commit_ids": [
                 704607
               ]
@@ -226,16 +207,22 @@
               "commit_ids": [
                 704590
               ]
+            },
+            {
+              "text": "Corrected shield footstep sounds when looking down, fixing audio cue inconsistency.",
+              "commit_ids": [
+                704593
+              ]
             }
           ]
         },
         {
-          "title": "World Content",
+          "title": "Vehicle & Tools",
           "items": [
             {
-              "text": "Re-added the NMS loot room after file conflicts, restoring its contents for players.",
+              "text": "Fixed dismount action to properly remove the stir bar, preventing leftover objects after exiting.",
               "commit_ids": [
-                704559
+                704647
               ]
             }
           ]
