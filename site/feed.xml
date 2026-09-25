@@ -6,54 +6,51 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 24 Sep 2026 18:17:30 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 20:17:28 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 24</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;66 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705019"&gt;Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.&lt;/li&gt;
-&lt;li data-rust-commits="705017"&gt;Workshop skins now display correctly on both server and client.&lt;/li&gt;
+&lt;li data-rust-commits="705019"&gt;Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Inventory &amp;amp; Controls&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705019"&gt;Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.&lt;/li&gt;
-&lt;li data-rust-commits="704886"&gt;Aiming accuracy restored when using turn‑in‑place, fixing mis‑aligned shots while rotating.&lt;/li&gt;
+&lt;li data-rust-commits="705019"&gt;Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Performance&lt;/h3&gt;
+&lt;h3&gt;Critter &amp;amp; Animal Behavior&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="704985"&gt;Fixed string serialization in Jobs 4 that sent incorrect data and could inflate memory usage.&lt;/li&gt;
-&lt;li data-rust-commits="704984"&gt;Made NetWrite.String thread‑safe by using a ThreadStatic buffer, preventing crashes during multithreaded saves.&lt;/li&gt;
-&lt;li data-rust-commits="704979"&gt;Fixed SyncVar buffer leaks when using parallel saves.&lt;/li&gt;
-&lt;li data-rust-commits="704977"&gt;Removed the adminUI flag from the livestock convar, eliminating a huge string buffer that caused staging‑environment OOM crashes.&lt;/li&gt;
+&lt;li data-rust-commits="704942"&gt;Crabs now use proper LOD and physics settings.&lt;/li&gt;
+&lt;li data-rust-commits="704942"&gt;Crabs are excluded from player collision layers, so they no longer push or move players.&lt;/li&gt;
+&lt;li data-rust-commits="704963"&gt;Frog hopping animation now stops early when the final hop isn’t needed, reducing unnecessary movement.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animal &amp;amp; Critter Behavior&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Throwables&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="704942"&gt;Adjusted critter collision layers so players are no longer pushed or moved by crabs and other critters.&lt;/li&gt;
+&lt;li data-rust-commits="704894"&gt;Throwable prediction has been fixed, improving the accuracy of grenades and other thrown items.&lt;/li&gt;
+&lt;li data-rust-commits="704893,704889"&gt;Fixed beancan throw visual prediction and corrected molotov hit effects and breaking behavior, ensuring proper gibs and fireball spawn.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Throwables &amp;amp; Explosives&lt;/h3&gt;
+&lt;h3&gt;Aiming &amp;amp; Player Turning&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="704893"&gt;Fixed beancan throw prediction, making its trajectory behave correctly.&lt;/li&gt;
-&lt;li data-rust-commits="704893,704889"&gt;Molotov grenades now break on impact, showing break effects, spawning fireballs and gibs.&lt;/li&gt;
+&lt;li data-rust-commits="704886"&gt;Fixed aiming inaccuracy when using turn-in-place, improving shot precision while rotating.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Economy &amp;amp; Trading&lt;/h3&gt;
+&lt;h3&gt;Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="704887"&gt;Vendor auction rounding for High-Quality Metal ore fixed, ensuring accurate pricing and payouts.&lt;/li&gt;
+&lt;li data-rust-commits="704887"&gt;Corrected rounding errors on vendor auction HQM ore listings, fixing price calculations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Server Stability&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705017"&gt;Workshop skins now display correctly on both server and client.&lt;/li&gt;
-&lt;li data-rust-commits="705001"&gt;Missing textures and gib additions restored, fixing visual glitches.&lt;/li&gt;
-&lt;li data-rust-commits="704894"&gt;Throwable prediction accuracy improved, fixing aiming issues for grenades.&lt;/li&gt;
-&lt;li data-rust-commits="704843"&gt;Aiming posture corrected: no hunched spine when aiming down sights.&lt;/li&gt;
-&lt;li data-rust-commits="704995"&gt;Viewmodel rendering fixed, preventing persistent lower viewmodels from appearing incorrectly.&lt;/li&gt;
+&lt;li data-rust-commits="704977"&gt;Removed the livestock admin UI from the server config, preventing massive string buffers that caused out‑of‑memory crashes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Animation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="704843"&gt;Fixed spine alignment when aiming down sights, eliminating the hunched‑over posture and improving aiming feel.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-24</guid>
-      <pubDate>Thu, 24 Sep 2026 18:17:30 -0400</pubDate>
+      <pubDate>Thu, 24 Sep 2026 20:17:28 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 23</title>

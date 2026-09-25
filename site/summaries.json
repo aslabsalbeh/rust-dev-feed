@@ -1,79 +1,56 @@
 {
   "2026-09-24": {
-    "commit_count": 63,
-    "relevant_commit_count": 33,
-    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019",
+    "commit_count": 66,
+    "relevant_commit_count": 35,
+    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Inventory & Controls",
+        "title": "Inventory & UI",
         "items": [
           {
-            "text": "Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.",
+            "text": "Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.",
             "commit_ids": [
               705019
             ]
-          },
-          {
-            "text": "Aiming accuracy restored when using turn‑in‑place, fixing mis‑aligned shots while rotating.",
-            "commit_ids": [
-              704886
-            ]
           }
         ]
       },
       {
-        "title": "Stability & Performance",
+        "title": "Critter & Animal Behavior",
         "items": [
           {
-            "text": "Fixed string serialization in Jobs 4 that sent incorrect data and could inflate memory usage.",
-            "commit_ids": [
-              704985
-            ]
-          },
-          {
-            "text": "Made NetWrite.String thread‑safe by using a ThreadStatic buffer, preventing crashes during multithreaded saves.",
-            "commit_ids": [
-              704984
-            ]
-          },
-          {
-            "text": "Fixed SyncVar buffer leaks when using parallel saves.",
-            "commit_ids": [
-              704979
-            ]
-          },
-          {
-            "text": "Removed the adminUI flag from the livestock convar, eliminating a huge string buffer that caused staging‑environment OOM crashes.",
-            "commit_ids": [
-              704977
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animal & Critter Behavior",
-        "items": [
-          {
-            "text": "Adjusted critter collision layers so players are no longer pushed or moved by crabs and other critters.",
+            "text": "Crabs now use proper LOD and physics settings.",
             "commit_ids": [
               704942
             ]
+          },
+          {
+            "text": "Crabs are excluded from player collision layers, so they no longer push or move players.",
+            "commit_ids": [
+              704942
+            ]
+          },
+          {
+            "text": "Frog hopping animation now stops early when the final hop isn’t needed, reducing unnecessary movement.",
+            "commit_ids": [
+              704963
+            ]
           }
         ]
       },
       {
-        "title": "Throwables & Explosives",
+        "title": "Combat & Throwables",
         "items": [
           {
-            "text": "Fixed beancan throw prediction, making its trajectory behave correctly.",
+            "text": "Throwable prediction has been fixed, improving the accuracy of grenades and other thrown items.",
             "commit_ids": [
-              704893
+              704894
             ]
           },
           {
-            "text": "Molotov grenades now break on impact, showing break effects, spawning fireballs and gibs.",
+            "text": "Fixed beancan throw visual prediction and corrected molotov hit effects and breaking behavior, ensuring proper gibs and fireball spawn.",
             "commit_ids": [
               704893,
               704889
@@ -82,10 +59,21 @@
         ]
       },
       {
-        "title": "Economy & Trading",
+        "title": "Aiming & Player Turning",
         "items": [
           {
-            "text": "Vendor auction rounding for High-Quality Metal ore fixed, ensuring accurate pricing and payouts.",
+            "text": "Fixed aiming inaccuracy when using turn-in-place, improving shot precision while rotating.",
+            "commit_ids": [
+              704886
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Economy",
+        "items": [
+          {
+            "text": "Corrected rounding errors on vendor auction HQM ore listings, fixing price calculations.",
             "commit_ids": [
               704887
             ]
@@ -93,60 +81,40 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Server Stability",
         "items": [
           {
-            "text": "Workshop skins now display correctly on both server and client.",
+            "text": "Removed the livestock admin UI from the server config, preventing massive string buffers that caused out‑of‑memory crashes.",
             "commit_ids": [
-              705017
+              704977
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Animation",
+        "items": [
           {
-            "text": "Missing textures and gib additions restored, fixing visual glitches.",
-            "commit_ids": [
-              705001
-            ]
-          },
-          {
-            "text": "Throwable prediction accuracy improved, fixing aiming issues for grenades.",
-            "commit_ids": [
-              704894
-            ]
-          },
-          {
-            "text": "Aiming posture corrected: no hunched spine when aiming down sights.",
+            "text": "Fixed spine alignment when aiming down sights, eliminating the hunched‑over posture and improving aiming feel.",
             "commit_ids": [
               704843
-            ]
-          },
-          {
-            "text": "Viewmodel rendering fixed, preventing persistent lower viewmodels from appearing incorrectly.",
-            "commit_ids": [
-              704995
             ]
           }
         ]
       }
     ],
-    "summary": "### Inventory & Controls\n- Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.\n- Aiming accuracy restored when using turn‑in‑place, fixing mis‑aligned shots while rotating.\n\n### Stability & Performance\n- Fixed string serialization in Jobs 4 that sent incorrect data and could inflate memory usage.\n- Made NetWrite.String thread‑safe by using a ThreadStatic buffer, preventing crashes during multithreaded saves.\n- Fixed SyncVar buffer leaks when using parallel saves.\n- Removed the adminUI flag from the livestock convar, eliminating a huge string buffer that caused staging‑environment OOM crashes.\n\n### Animal & Critter Behavior\n- Adjusted critter collision layers so players are no longer pushed or moved by crabs and other critters.\n\n### Throwables & Explosives\n- Fixed beancan throw prediction, making its trajectory behave correctly.\n- Molotov grenades now break on impact, showing break effects, spawning fireballs and gibs.\n\n### Economy & Trading\n- Vendor auction rounding for High-Quality Metal ore fixed, ensuring accurate pricing and payouts.\n\n### Gameplay & Balance\n- Workshop skins now display correctly on both server and client.\n- Missing textures and gib additions restored, fixing visual glitches.\n- Throwable prediction accuracy improved, fixing aiming issues for grenades.\n- Aiming posture corrected: no hunched spine when aiming down sights.\n- Viewmodel rendering fixed, preventing persistent lower viewmodels from appearing incorrectly.",
+    "summary": "### Inventory & UI\n- Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.\n\n### Critter & Animal Behavior\n- Crabs now use proper LOD and physics settings.\n- Crabs are excluded from player collision layers, so they no longer push or move players.\n- Frog hopping animation now stops early when the final hop isn’t needed, reducing unnecessary movement.\n\n### Combat & Throwables\n- Throwable prediction has been fixed, improving the accuracy of grenades and other thrown items.\n- Fixed beancan throw visual prediction and corrected molotov hit effects and breaking behavior, ensuring proper gibs and fireball spawn.\n\n### Aiming & Player Turning\n- Fixed aiming inaccuracy when using turn-in-place, improving shot precision while rotating.\n\n### Economy\n- Corrected rounding errors on vendor auction HQM ore listings, fixing price calculations.\n\n### Server Stability\n- Removed the livestock admin UI from the server config, preventing massive string buffers that caused out‑of‑memory crashes.\n\n### Gameplay & Animation\n- Fixed spine alignment when aiming down sights, eliminating the hunched‑over posture and improving aiming feel.",
     "new_items": [
       {
-        "text": "Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.",
+        "text": "Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.",
         "commit_ids": [
           705019
         ],
-        "section": "Inventory & Controls"
-      },
-      {
-        "text": "Workshop skins now display correctly on both server and client.",
-        "commit_ids": [
-          705017
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Inventory & UI"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Added a setting to automatically close the entire inventory menu when you move away from a loot container, instead of switching to quick‑craft.\n- Workshop skins now display correctly on both server and client."
+    "new_relevant_count": 1,
+    "new_summary": "- Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft."
   },
   "2026-09-23": {
     "commit_count": 144,
