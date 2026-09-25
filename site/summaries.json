@@ -1,10 +1,193 @@
 {
   "2026-09-25": {
-    "commit_count": 104,
-    "relevant_commit_count": 60,
+    "commit_count": 112,
+    "relevant_commit_count": 66,
     "relevant_signature": "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113,705121,705122,705137,705139,705140,705142,705162,705175,705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227,705232,705237,705238,705243,705244,705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283",
     "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "705222,705224,705227,705232,705237,705238,705243,705244,705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283,705286,705287,705293,705300,705301,705302": [
+        {
+          "title": "Mounts & Vehicles",
+          "items": [
+            {
+              "text": "Fixed a bug where RidableHorse objects were constantly reserializing due to an ExecuteAlways component, preventing stable horse behavior.",
+              "commit_ids": [
+                705301
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Livestock",
+          "items": [
+            {
+              "text": "Multiple livestock fixes: prevented animals from going underwater, resolved bulls getting stuck in charge mode or headbutting unreachable targets, stopped curious cows from starving, reduced bull damage, made livestock leads behave like horse leads (slow player and break around 7 m), and fixed cows snapping back to idle after grazing.",
+              "commit_ids": [
+                705287
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Controls",
+          "items": [
+            {
+              "text": "Fixed crouching state incorrectly triggering when the turn‑in‑place animation was active.",
+              "commit_ids": [
+                705286
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Repaired a corrupted Scientist2 prefab, restored a missing intro speech action string, and ensured the wool inquiry dialogue option with the livestock vendor is always available regardless of player inventory.",
+              "commit_ids": [
+                705300,
+                705266,
+                705264
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Loot & Resources",
+          "items": [
+            {
+              "text": "Fixed power‑grid loot not respawning after collection.",
+              "commit_ids": [
+                705237
+              ]
+            }
+          ]
+        }
+      ],
+      "705121,705122,705137,705139,705140,705142,705162,705175,705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218": [
+        {
+          "title": "Player Movement",
+          "items": [
+            {
+              "text": "Fixed player rotation tilt when exiting mounts, ensuring proper orientation.",
+              "commit_ids": [
+                705207
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons",
+          "items": [
+            {
+              "text": "Minigun now correctly updates ammo count when reloading inside a box and hides the reload option when ammo is full.",
+              "commit_ids": [
+                705137
+              ]
+            },
+            {
+              "text": "Grenade deployment now starts from the correct position when throwing the last grenade in a stack in first‑person view.",
+              "commit_ids": [
+                705121
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & AI",
+          "items": [
+            {
+              "text": "Crabs, stags, boars, and bulls are now treated as allies to other critters; they no longer attack each other.",
+              "commit_ids": [
+                705188
+              ]
+            },
+            {
+              "text": "Animal fences and biofuel generators are now available in the Primitive gamemode, and scrap costs for fences and gates have been reduced across all gamemodes.",
+              "commit_ids": [
+                705175
+              ]
+            },
+            {
+              "text": "Livestock health changes now adjust in 5% increments based on mood, reducing network load and smoothing HP updates.",
+              "commit_ids": [
+                705140
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & Quality of Life",
+          "items": [
+            {
+              "text": "Workshop tab UI now correctly displays all images, fixing missing image bugs.",
+              "commit_ids": [
+                705208
+              ]
+            },
+            {
+              "text": "Bull item name and description have been corrected in the prefab.",
+              "commit_ids": [
+                705122
+              ]
+            }
+          ]
+        }
+      ],
+      "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113": [
+        {
+          "title": "Construction & Buildings",
+          "items": [
+            {
+              "text": "Animal Fence and Gate are now available in Tier 1 tech trees, allowing early construction of animal containment.",
+              "commit_ids": [
+                705049
+              ]
+            },
+            {
+              "text": "Animal Fence moved to the Construction category in the build menu for easier access.",
+              "commit_ids": [
+                705113
+              ]
+            },
+            {
+              "text": "Stricter angle placement rules for structures to prevent mis‑aligned builds.",
+              "commit_ids": [
+                705084
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item & Resource Bugs",
+          "items": [
+            {
+              "text": "Recycling milky and creamy teas has been disabled, fixing an illogical recycling exploit.",
+              "commit_ids": [
+                705113
+              ]
+            },
+            {
+              "text": "Spoiled produce is now compatible with processing recipes, fixing a bug where it could not be used.",
+              "commit_ids": [
+                705084
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Power & Generators",
+          "items": [
+            {
+              "text": "Biofuel generator added to Hardcore and Primitive game modes, expanding early‑game power options.",
+              "commit_ids": [
+                705049
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Combat & Weapons",
@@ -77,17 +260,9 @@
       }
     ],
     "summary": "### Combat & Weapons\n- Minigun ammo count now updates correctly when reloading inside a box, and the reload option no longer appears when ammo is full.\n- Grenades now spawn at the correct position when deploying the last grenade in a stack in first‑person view.\n\n### NPC & AI\n- Critters such as crabs, stags, boars, and bulls are now treated as allies and no longer attack each other or players.\n- Livestock vendors always offer the wool‑inquiry dialogue option, even when you have no wool in inventory.\n\n### Loot & Resources\n- Powergrid loot now respawns correctly after being taken.\n- Spoiled produce is correctly recognized as incompatible with certain recipes, preventing unexpected crafting failures.\n- Recycling milky and creamy teas is disabled to prevent nonsensical resource gains.\n\n### Structures & Crafting\n- Animal fences and gates are now available in the Tier 1 tech tree and in the Primitive gamemode, with reduced scrap costs, and Biofuel Generators have been added to Hardcore and Primitive modes.",
-    "new_items": [
-      {
-        "text": "Livestock vendors always offer the wool‑inquiry dialogue option, even when you have no wool in inventory.",
-        "commit_ids": [
-          705264
-        ],
-        "section": "NPC & AI"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Livestock vendors always offer the wool‑inquiry dialogue option, even when you have no wool in inventory."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-24": {
     "commit_count": 73,
