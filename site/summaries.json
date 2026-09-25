@@ -1,16 +1,16 @@
 {
   "2026-09-24": {
-    "commit_count": 66,
-    "relevant_commit_count": 35,
-    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023",
+    "commit_count": 68,
+    "relevant_commit_count": 36,
+    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023,705028",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Inventory & UI",
+        "title": "Inventory",
         "items": [
           {
-            "text": "Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.",
+            "text": "Added a setting to automatically close the entire inventory when you move away from a loot container, preventing accidental quick‑craft switching.",
             "commit_ids": [
               705019
             ]
@@ -18,39 +18,21 @@
         ]
       },
       {
-        "title": "Critter & Animal Behavior",
+        "title": "Critters & AI",
         "items": [
           {
-            "text": "Crabs now use proper LOD and physics settings.",
+            "text": "Fixed crab physics: crabs now use proper LOD and have dedicated physics materials, and they no longer push or move players because they’re excluded from player collision layers.",
             "commit_ids": [
               704942
-            ]
-          },
-          {
-            "text": "Crabs are excluded from player collision layers, so they no longer push or move players.",
-            "commit_ids": [
-              704942
-            ]
-          },
-          {
-            "text": "Frog hopping animation now stops early when the final hop isn’t needed, reducing unnecessary movement.",
-            "commit_ids": [
-              704963
             ]
           }
         ]
       },
       {
-        "title": "Combat & Throwables",
+        "title": "Throwable Weapons",
         "items": [
           {
-            "text": "Throwable prediction has been fixed, improving the accuracy of grenades and other thrown items.",
-            "commit_ids": [
-              704894
-            ]
-          },
-          {
-            "text": "Fixed beancan throw visual prediction and corrected molotov hit effects and breaking behavior, ensuring proper gibs and fireball spawn.",
+            "text": "Fixed beancan throws appearing wonky and ensured molotov grenades show gibs on hit and break correctly with proper visual effects and fireball spawning.",
             "commit_ids": [
               704893,
               704889
@@ -59,21 +41,10 @@
         ]
       },
       {
-        "title": "Aiming & Player Turning",
-        "items": [
-          {
-            "text": "Fixed aiming inaccuracy when using turn-in-place, improving shot precision while rotating.",
-            "commit_ids": [
-              704886
-            ]
-          }
-        ]
-      },
-      {
         "title": "Economy",
         "items": [
           {
-            "text": "Corrected rounding errors on vendor auction HQM ore listings, fixing price calculations.",
+            "text": "Corrected rounding errors for high-quality metal ore in vendor auctions, ensuring accurate pricing.",
             "commit_ids": [
               704887
             ]
@@ -81,21 +52,38 @@
         ]
       },
       {
-        "title": "Server Stability",
+        "title": "Aiming & Targeting",
         "items": [
           {
-            "text": "Removed the livestock admin UI from the server config, preventing massive string buffers that caused out‑of‑memory crashes.",
+            "text": "Improved aiming accuracy when using turn‑in‑place, fixing misaligned aim.",
             "commit_ids": [
-              704977
+              704886
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Animation",
+        "title": "Combat & Defense",
         "items": [
           {
-            "text": "Fixed spine alignment when aiming down sights, eliminating the hunched‑over posture and improving aiming feel.",
+            "text": "Improved throwable trajectory prediction, making grenades and other thrown items aim more accurately.",
+            "commit_ids": [
+              704894
+            ]
+          },
+          {
+            "text": "Fixed viewmodel rendering issue where weapons could appear stuck or incorrectly positioned after certain actions.",
+            "commit_ids": [
+              704995
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Corrected spine posture when aiming down, eliminating the hunched-over visual issue.",
             "commit_ids": [
               704843
             ]
@@ -103,18 +91,10 @@
         ]
       }
     ],
-    "summary": "### Inventory & UI\n- Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.\n\n### Critter & Animal Behavior\n- Crabs now use proper LOD and physics settings.\n- Crabs are excluded from player collision layers, so they no longer push or move players.\n- Frog hopping animation now stops early when the final hop isn’t needed, reducing unnecessary movement.\n\n### Combat & Throwables\n- Throwable prediction has been fixed, improving the accuracy of grenades and other thrown items.\n- Fixed beancan throw visual prediction and corrected molotov hit effects and breaking behavior, ensuring proper gibs and fireball spawn.\n\n### Aiming & Player Turning\n- Fixed aiming inaccuracy when using turn-in-place, improving shot precision while rotating.\n\n### Economy\n- Corrected rounding errors on vendor auction HQM ore listings, fixing price calculations.\n\n### Server Stability\n- Removed the livestock admin UI from the server config, preventing massive string buffers that caused out‑of‑memory crashes.\n\n### Gameplay & Animation\n- Fixed spine alignment when aiming down sights, eliminating the hunched‑over posture and improving aiming feel.",
-    "new_items": [
-      {
-        "text": "Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft.",
-        "commit_ids": [
-          705019
-        ],
-        "section": "Inventory & UI"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Inventory now automatically closes the full loot container UI when you walk away, instead of switching to quick craft."
+    "summary": "### Inventory\n- Added a setting to automatically close the entire inventory when you move away from a loot container, preventing accidental quick‑craft switching.\n\n### Critters & AI\n- Fixed crab physics: crabs now use proper LOD and have dedicated physics materials, and they no longer push or move players because they’re excluded from player collision layers.\n\n### Throwable Weapons\n- Fixed beancan throws appearing wonky and ensured molotov grenades show gibs on hit and break correctly with proper visual effects and fireball spawning.\n\n### Economy\n- Corrected rounding errors for high-quality metal ore in vendor auctions, ensuring accurate pricing.\n\n### Aiming & Targeting\n- Improved aiming accuracy when using turn‑in‑place, fixing misaligned aim.\n\n### Combat & Defense\n- Improved throwable trajectory prediction, making grenades and other thrown items aim more accurately.\n- Fixed viewmodel rendering issue where weapons could appear stuck or incorrectly positioned after certain actions.\n\n### Bug Fixes\n- Corrected spine posture when aiming down, eliminating the hunched-over visual issue.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-23": {
     "commit_count": 144,
