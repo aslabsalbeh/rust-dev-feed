@@ -1,5 +1,85 @@
 [
   {
+    "id": 705077,
+    "branch": "main/Crossbow_Arrow_Fix",
+    "changeset": "165775",
+    "created": "2026-09-25T09:59:26",
+    "message": "Fixing crossbow arrow head rotation",
+    "user": "jeddooo"
+  },
+  {
+    "id": 705076,
+    "branch": "main/render_pipeline_testing/deferred_lighting_optimizations",
+    "changeset": "165774",
+    "created": "2026-09-25T09:58:11",
+    "message": "Fixed the Forward+ shadow and attenuation for directional lights",
+    "user": "aidan.m"
+  },
+  {
+    "id": 705075,
+    "branch": "main/render_pipeline_testing/deferred_lighting_optimizations",
+    "changeset": "165773",
+    "created": "2026-09-25T09:54:56",
+    "message": "Fixed the light attenuation for the Forward+ path",
+    "user": "aidan.m"
+  },
+  {
+    "id": 705072,
+    "branch": "main/texture_optimisations_2026",
+    "changeset": "165771",
+    "created": "2026-09-25T09:40:02",
+    "message": "More LOD texture optimizations \r\nRebaked some textures and adjusted LOD distances",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 705071,
+    "branch": "main/render_pipeline_testing/deferred_lighting_optimizations",
+    "changeset": "165770",
+    "created": "2026-09-25T09:38:04",
+    "message": "Removed the GetAdditonalLight method, as that causes register pressure by returning a struct of light data that isn't needed right away in the shader",
+    "user": "aidan.m"
+  },
+  {
+    "id": 705070,
+    "branch": "main/biofuel_generator",
+    "changeset": "165769",
+    "created": "2026-09-25T09:29:49",
+    "message": "- anim updates\r\n- updated left Ik position",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 705067,
+    "branch": "main",
+    "changeset": "165766",
+    "created": "2026-09-25T09:21:47",
+    "message": "Merge: from mt_snapshot_saving\r\n- Bugfix for accessing null buffer on non-main thread\r\nTests: booted to Craggy",
+    "user": "Daniel P"
+  },
+  {
+    "id": 705066,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "165765",
+    "created": "2026-09-25T09:21:01",
+    "message": "Bugfix: ensure thread-static buffer is initialized on all threads\r\nTests: booted into craggy",
+    "user": "Daniel P"
+  },
+  {
+    "id": 705062,
+    "branch": "main/render_pipeline_testing/deferred_lighting_optimizations",
+    "changeset": "165762",
+    "created": "2026-09-25T09:02:01",
+    "message": "Changed from Array of Structs to Struct of Arrays for the additional light data in the Deferred+ lighting shader to reduce register pressure",
+    "user": "aidan.m"
+  },
+  {
+    "id": 705058,
+    "branch": "main/Livestock_animals/Lamb_fleece_Fix",
+    "changeset": "165760",
+    "created": "2026-09-25T08:32:48",
+    "message": "fixed lamb fleece not appearing at LOD0-1. \r\nadded new  LambWool asset. updated sheeptrait tester to allow fleece LOD testing.  updated lamb prefab to use the lambwool.asset.",
+    "user": "Toffer"
+  },
+  {
     "id": 705052,
     "branch": "main/Livestock_animals/Sheep_eye_upgrade",
     "changeset": "165757",
@@ -2566,77 +2646,5 @@
     "created": "2026-09-22T10:26:34",
     "message": "Optim: make StoreItemTile lazy load fallback sprite\r\nTests: navigated to general tab with failload 0 and 1",
     "user": "Daniel P"
-  },
-  {
-    "id": 703040,
-    "branch": "main",
-    "changeset": "165234",
-    "created": "2026-09-22T10:17:46",
-    "message": "fire_arrow_3p_fix -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 703041,
-    "branch": "main/fire_arrow_3p_fix",
-    "changeset": "165233",
-    "created": "2026-09-22T10:17:28",
-    "message": "Fix fire arrow sticking onto the 3p bow for other players",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 703023,
-    "branch": "main/steam_bundle",
-    "changeset": "165232",
-    "created": "2026-09-22T10:11:38",
-    "message": "Warning popup if you're trying to buy something you already own",
-    "user": "Flavien"
-  },
-  {
-    "id": 703003,
-    "branch": "main/steam_bundle",
-    "changeset": "165231",
-    "created": "2026-09-22T10:02:54",
-    "message": "Warning text if you have dupe items in your cart + popup on checkout",
-    "user": "Flavien"
-  },
-  {
-    "id": 702998,
-    "branch": "main/character_customisation",
-    "changeset": "165230",
-    "created": "2026-09-22T10:01:12",
-    "message": "Codegen",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 702972,
-    "branch": "main/improved_event_saveloading",
-    "changeset": "165227",
-    "created": "2026-09-22T09:51:10",
-    "message": "Fix an edge case where oil rigs would start radiation even though the locked crate was still untouched\r\nCheck saved locked crate has been hacked when restarting radiation during force reset after server restart",
-    "user": "cipeaX"
-  },
-  {
-    "id": 702953,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "165225",
-    "created": "2026-09-22T09:42:53",
-    "message": "Fixed a NaN value in the MeshGuideRender shader caused by a power with a negative exponent",
-    "user": "aidan.m"
-  },
-  {
-    "id": 702907,
-    "branch": "main/Livestock_animals",
-    "changeset": "165223",
-    "created": "2026-09-22T09:23:29",
-    "message": "Hunting trophy sheep model updated",
-    "user": "Toffer"
-  },
-  {
-    "id": 702898,
-    "branch": "main/vending_fontsize_fix",
-    "changeset": "165221",
-    "created": "2026-09-22T09:20:13",
-    "message": "Fix a fontsize inconsistency in the vending machine purchase UI",
-    "user": "cipeaX"
   }
 ]
