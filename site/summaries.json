@@ -1,27 +1,39 @@
 {
   "2026-09-24": {
-    "commit_count": 68,
-    "relevant_commit_count": 36,
-    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023,705028",
+    "commit_count": 73,
+    "relevant_commit_count": 38,
+    "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023,705028,705037,705039",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Inventory",
+        "title": "Audio & Aiming",
         "items": [
           {
-            "text": "Added a setting to automatically close the entire inventory when you move away from a loot container, preventing accidental quick‑craft switching.",
+            "text": "Fixed a bug where scheduled sounds could keep playing past their start time, preventing endless audio buildup.",
             "commit_ids": [
-              705019
+              705037
+            ]
+          },
+          {
+            "text": "Aiming accuracy is restored when using turn‑in‑place, fixing misaligned aim.",
+            "commit_ids": [
+              704886
             ]
           }
         ]
       },
       {
-        "title": "Critters & AI",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Fixed crab physics: crabs now use proper LOD and have dedicated physics materials, and they no longer push or move players because they’re excluded from player collision layers.",
+            "text": "Footstep splash effects now respect lowered water levels, preventing splashes from appearing at the original surface height.",
+            "commit_ids": [
+              705028
+            ]
+          },
+          {
+            "text": "Critters (e.g., crabs) no longer push or move players because they are excluded from player collision layers, and LOD issues for crabs are fixed.",
             "commit_ids": [
               704942
             ]
@@ -29,10 +41,21 @@
         ]
       },
       {
-        "title": "Throwable Weapons",
+        "title": "Inventory & Looting",
         "items": [
           {
-            "text": "Fixed beancan throws appearing wonky and ensured molotov grenades show gibs on hit and break correctly with proper visual effects and fireball spawning.",
+            "text": "Added an option to automatically close the entire inventory when you move away from a loot container, instead of switching to quick‑craft mode.",
+            "commit_ids": [
+              705019
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Beancan throws now have correct trajectory visual, and molotovs display gib effects on hit and now correctly break with client‑side prediction, spawning fireballs after breaking.",
             "commit_ids": [
               704893,
               704889
@@ -41,10 +64,10 @@
         ]
       },
       {
-        "title": "Economy",
+        "title": "Economy & Vendors",
         "items": [
           {
-            "text": "Corrected rounding errors for high-quality metal ore in vendor auctions, ensuring accurate pricing.",
+            "text": "Vendor auction rounding for HQM ore is corrected, fixing inaccurate price calculations.",
             "commit_ids": [
               704887
             ]
@@ -52,46 +75,18 @@
         ]
       },
       {
-        "title": "Aiming & Targeting",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Improved aiming accuracy when using turn‑in‑place, fixing misaligned aim.",
-            "commit_ids": [
-              704886
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Defense",
-        "items": [
-          {
-            "text": "Improved throwable trajectory prediction, making grenades and other thrown items aim more accurately.",
+            "text": "Thrown weapons (e.g., grenades, molotovs) now predict trajectories more accurately, reducing mis‑throws.",
             "commit_ids": [
               704894
-            ]
-          },
-          {
-            "text": "Fixed viewmodel rendering issue where weapons could appear stuck or incorrectly positioned after certain actions.",
-            "commit_ids": [
-              704995
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bug Fixes",
-        "items": [
-          {
-            "text": "Corrected spine posture when aiming down, eliminating the hunched-over visual issue.",
-            "commit_ids": [
-              704843
             ]
           }
         ]
       }
     ],
-    "summary": "### Inventory\n- Added a setting to automatically close the entire inventory when you move away from a loot container, preventing accidental quick‑craft switching.\n\n### Critters & AI\n- Fixed crab physics: crabs now use proper LOD and have dedicated physics materials, and they no longer push or move players because they’re excluded from player collision layers.\n\n### Throwable Weapons\n- Fixed beancan throws appearing wonky and ensured molotov grenades show gibs on hit and break correctly with proper visual effects and fireball spawning.\n\n### Economy\n- Corrected rounding errors for high-quality metal ore in vendor auctions, ensuring accurate pricing.\n\n### Aiming & Targeting\n- Improved aiming accuracy when using turn‑in‑place, fixing misaligned aim.\n\n### Combat & Defense\n- Improved throwable trajectory prediction, making grenades and other thrown items aim more accurately.\n- Fixed viewmodel rendering issue where weapons could appear stuck or incorrectly positioned after certain actions.\n\n### Bug Fixes\n- Corrected spine posture when aiming down, eliminating the hunched-over visual issue.",
+    "summary": "### Audio & Aiming\n- Fixed a bug where scheduled sounds could keep playing past their start time, preventing endless audio buildup.\n- Aiming accuracy is restored when using turn‑in‑place, fixing misaligned aim.\n\n### World & Environment\n- Footstep splash effects now respect lowered water levels, preventing splashes from appearing at the original surface height.\n- Critters (e.g., crabs) no longer push or move players because they are excluded from player collision layers, and LOD issues for crabs are fixed.\n\n### Inventory & Looting\n- Added an option to automatically close the entire inventory when you move away from a loot container, instead of switching to quick‑craft mode.\n\n### Combat & Weapons\n- Beancan throws now have correct trajectory visual, and molotovs display gib effects on hit and now correctly break with client‑side prediction, spawning fireballs after breaking.\n\n### Economy & Vendors\n- Vendor auction rounding for HQM ore is corrected, fixing inaccurate price calculations.\n\n### Gameplay & Balance\n- Thrown weapons (e.g., grenades, molotovs) now predict trajectories more accurately, reducing mis‑throws.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
