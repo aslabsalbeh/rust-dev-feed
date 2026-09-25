@@ -1,5 +1,85 @@
 [
   {
+    "id": 705283,
+    "branch": "main",
+    "changeset": "165921",
+    "created": "2026-09-25T19:35:27",
+    "message": "Fix benchmarks not bypassing fps.limitInBackground\r\nFix never removing anything added to TriggerBase._allTriggerBase\r\nFix Rust.Registry.Entity._dict leak when switching scenes (disconnecting from server etc)\r\nAdd BaseEntityChild to player_collision.prefab so its transform is removed from the registry when destroyed",
+    "user": "lamalove"
+  },
+  {
+    "id": 705281,
+    "branch": "main/optimize_blueprint_button",
+    "changeset": "165919",
+    "created": "2026-09-25T19:11:01",
+    "message": "Compile fix",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705280,
+    "branch": "main/optimize_blueprint_button",
+    "changeset": "165918",
+    "created": "2026-09-25T18:55:52",
+    "message": "Cherrypick CS 160658\r\n- tick blueprint buttons only when crafting menu is open instead of all the time (even when closed)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705277,
+    "branch": "main/automated_testing",
+    "changeset": "165916",
+    "created": "2026-09-25T18:52:41",
+    "message": "Restored rich pie names + descriptions",
+    "user": "Lukester"
+  },
+  {
+    "id": 705273,
+    "branch": "▆▋▋▋▊█▌▅▊▆█▅▍█▅█▆▅█▊▌▌",
+    "changeset": "█▄▊▅▋▇",
+    "created": "2026-09-25T18:23:13",
+    "message": "▅▄▅▄▍▄ ▅▍▄█ █▆▇█",
+    "user": "Flavien"
+  },
+  {
+    "id": 705271,
+    "branch": "main/Livestock_animals",
+    "changeset": "165913",
+    "created": "2026-09-25T18:19:09",
+    "message": "Added RustNavmeshModifierVolume to the following vehicles:\n- Both snowmobiles\n- Sled\n- Rowboat\n- Minicopter\n- Attack helicopter\n- Scrap heli\n- Catapult\n- Battering ram\n- Siege tower\r\n- Sedan\r\n\r\n(prevents navmesh from generating on top of them)",
+    "user": "Flavien"
+  },
+  {
+    "id": 705269,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "165912",
+    "created": "2026-09-25T18:16:20",
+    "message": "Implement color grading curves in RRP, fixes deep sea color grading difference between BRP and RRP",
+    "user": "Brian"
+  },
+  {
+    "id": 705268,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "165911",
+    "created": "2026-09-25T18:15:03",
+    "message": "compile fix",
+    "user": "Brian"
+  },
+  {
+    "id": 705266,
+    "branch": "main/livestock_wool_conversation_fix",
+    "changeset": "165909",
+    "created": "2026-09-25T18:09:56",
+    "message": "Fix a missing actionstring on one of the intro speech nodes",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 705264,
+    "branch": "main/livestock_wool_conversation_fix",
+    "changeset": "165908",
+    "created": "2026-09-25T18:07:19",
+    "message": "Show a dialogue option enquiring about wool with the livestock vendor NPC regardless of wool in player inventory\r\nVarious other small fixes to conversation tree",
+    "user": "Martyn Chapman"
+  },
+  {
     "id": 705259,
     "branch": "main/Livestock_animals/critter_animals",
     "changeset": "165905",
@@ -2630,77 +2710,5 @@
     "created": "2026-09-22T20:21:01",
     "message": "Apply the item position on the Loadout UI icon slots if applicable\r\nhttps://files.facepunch.com/raul/2026/September/22_22-19-FixedHellbender.png\r\nhttps://files.facepunch.com/raul/2026/September/22_22-20-PertinentWeevil.png",
     "user": "Raul"
-  },
-  {
-    "id": 704285,
-    "branch": "main/biofuel_generator",
-    "changeset": "165342",
-    "created": "2026-09-22T20:16:59",
-    "message": "Fix the deployment being the wrong way around",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 704262,
-    "branch": "main/biofuel_generator",
-    "changeset": "165341",
-    "created": "2026-09-22T20:05:29",
-    "message": "Add blinking 'processing' and 'blocked' text on the info display",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 704195,
-    "branch": "main/base_occlusion",
-    "changeset": "165340",
-    "created": "2026-09-22T19:36:39",
-    "message": "Ok fine allow buildings to define multiple exteriors\r\n- even though theoretically there can only be a single exterior per base it gets funky in it's current implementation when not all building blocks are handled by base occlusion so you can have separate sections of a base that aren't connected with faces but are both outsides (example: connecting external TC with ramps)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 704110,
-    "branch": "main/base_occlusion",
-    "changeset": "165337",
-    "created": "2026-09-22T18:59:45",
-    "message": "Exclude high walls from room occlusion (since they are always considered outside structures)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 704091,
-    "branch": "▆▌▇▊▌▋▄▊▉▍▌▅▍▅▊▇▉▆",
-    "changeset": "▍▇▍█▄▄",
-    "created": "2026-09-22T18:52:34",
-    "message": "▊▆▍▌▆▅▉ ▍▋▊▊█▋▉▌ ▉▍▍▊▋▋",
-    "user": "nacho.delhierro"
-  },
-  {
-    "id": 704078,
-    "branch": "main/base_occlusion",
-    "changeset": "165335",
-    "created": "2026-09-22T18:46:53",
-    "message": "Fix bases being able to define multiple outsides of the base\r\n- collapse to a single outside when interior rooms incorrectly are flagged as interior",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 704045,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "165334",
-    "created": "2026-09-22T18:32:18",
-    "message": "Bugfix: fix invalid takeover data for crystal ak\r\nAccidentally copied pack even though it hasn't one when manually resolving\r\nTests: navigated to page, crystal ak displays as intended",
-    "user": "Daniel P"
-  },
-  {
-    "id": 704031,
-    "branch": "main/procgen_visualiser/generation_optimisations",
-    "changeset": "165333",
-    "created": "2026-09-22T18:27:00",
-    "message": "Added a per-stage benchmark measurement harness before moving onto experimental optimisations. To be used to measure future improvements and map changes.\r\n\r\n- ProcgenStats: time per-stage, number of prefabs placed, placement hash, counters (filter calls, radius scans, texel reads, anchor scans, monument attempts).\r\n- ProcgenBenchmark: editor tooling to generate maps for queued seeds and writes a CSV row per-stage. One map per play session, exiting play mode after each generation.\r\n- Powershell scripts to drive the editor benchmarks and compare CSV outputs by hash and stage time",
-    "user": "Jakb"
-  },
-  {
-    "id": 704011,
-    "branch": "main/ui_store_slim_ram",
-    "changeset": "165332",
-    "created": "2026-09-22T18:18:34",
-    "message": "Bugfix: store.refresh now restarts the tab\r\nFixes tab having only default-initialized tiles\r\nTests: ran refresh while on general tab",
-    "user": "Daniel P"
   }
 ]
