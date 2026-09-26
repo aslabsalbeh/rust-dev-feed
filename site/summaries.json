@@ -2,11 +2,12 @@
   "2026-09-26": {
     "commit_count": 9,
     "relevant_commit_count": 2,
-    "relevant_signature": "",
-    "prompt_version": "structured-read-state-v6-stable-published",
+    "relevant_signature": "705325,705326",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [],
-    "summary": "AI summary temporarily unavailable. The development commit archive was updated successfully.",
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -15,8 +16,125 @@
     "commit_count": 124,
     "relevant_commit_count": 74,
     "relevant_signature": "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113,705121,705122,705137,705139,705140,705142,705162,705175,705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227,705232,705237,705238,705243,705244,705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283,705286,705287,705293,705300,705301,705302,705310,705312,705313,705315,705317,705318,705319,705320",
-    "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {
+      "705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283,705286,705287,705293,705300,705301,705302,705310,705312,705313,705315,705317,705318,705319,705320": [
+        {
+          "title": "Food & Buffs",
+          "items": [
+            {
+              "text": "Rich beef pie now provides +25% hunger, hydration and other benefits, with values rounded to whole numbers.",
+              "commit_ids": [
+                705320
+              ]
+            },
+            {
+              "text": "Buff tooltip now correctly shows durations longer than 60 minutes.",
+              "commit_ids": [
+                705319
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & Detection",
+          "items": [
+            {
+              "text": "Tin can alarm can now detect Generation 2 AI units and critters.",
+              "commit_ids": [
+                705310
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animal Behavior & Balance",
+          "items": [
+            {
+              "text": "Livestock (including old animals) no longer drown underwater.",
+              "commit_ids": [
+                705287
+              ]
+            },
+            {
+              "text": "Bull damage reduced and bull lead ropes now behave like horse leads, slowing the player and breaking around 7 m.",
+              "commit_ids": [
+                705287
+              ]
+            },
+            {
+              "text": "Fixed several bull AI issues: bull no longer gets stuck in charge mode, won't attempt unreachable headbutts, and leads now break appropriately.",
+              "commit_ids": [
+                705287
+              ]
+            },
+            {
+              "text": "Curious cows will no longer starve themselves, and cows now correctly transition out of grazing animations.",
+              "commit_ids": [
+                705287
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dialogue",
+          "items": [
+            {
+              "text": "Wool inquiry dialogue option with livestock vendor is always available, regardless of wool in inventory.",
+              "commit_ids": [
+                705264
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls",
+          "items": [
+            {
+              "text": "Crouching no longer triggers unintentionally when the turn‑in‑place animation is active.",
+              "commit_ids": [
+                705286
+              ]
+            }
+          ]
+        }
+      ],
+      "705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227,705232,705237,705238,705243,705244": [
+        {
+          "title": "Loot & Resources",
+          "items": [
+            {
+              "text": "Fixed powergrid loot not respawning, ensuring loot can be collected again after depletion.",
+              "commit_ids": [
+                705237
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Mechanics",
+          "items": [
+            {
+              "text": "Corrected player rotation when exiting mounts to prevent tilted orientation.",
+              "commit_ids": [
+                705207
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Added ally status to certain critters (crabs, stags, boars, bulls) so they no longer attack each other, reducing unintended combat with wildlife.",
+              "commit_ids": [
+                705188
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Buffs & UI",
@@ -183,6 +301,7 @@
         ]
       }
     ],
+    "status": "ok",
     "summary": "### Buffs & UI\n- Rich beef pie now provides +25% hunger and hydration, rounded to whole numbers.\n- Buff tooltips now correctly display durations longer than 60 minutes.\n\n### AI, Animals & NPCs\n- Tin can alarm can now detect Generation 2 AIs and critters.\n- Livestock AI fixes: animals no longer go underwater, bulls no longer get stuck or attempt unreachable headbutts, curious cows won’t starve, bull damage reduced, livestock leads now slow the player and break around 7 m, and cows correctly transition after grazing.\n- Added ally status to crabs, stags, boars, and bulls so they no longer attack each other.\n- Wool vendor always offers a dialogue option to ask about wool, regardless of inventory.\n\n### Combat & Weapons\n- Melee weapons stay welded to the hand while running.\n- Minigun ammo count now updates when reloading inside a box and the reload option is hidden when ammo is full.\n- Crossbow arrows now have correct head rotation, ensuring proper flight orientation.\n\n### Resources & Crafting\n- Powergrid loot now respawns after being collected.\n- Milky and creamy teas are no longer recyclable, and spoiled produce now behaves correctly in recipes and processing.\n- Grenades spawn in the correct position when deploying the last grenade in a stack in first‑person view, and explosion overlays now have a minimum intensity threshold to prevent lingering visual effects.\n\n### Structures & Tech\n- Animal Fence and Biofuel Generator are restored in Primitive mode, scrap cost of fences and gates reduced, and both structures added to Tier‑1 tech trees; Biofuel Generator also added to Hardcore and Primitive tech trees.\n- Player rotation is corrected when dismounting, preventing a tilted orientation.\n\n### Livestock & Animals\n- Calves purchased at the ranch now display the correct gender‑specific names.\n- Lamb fleece now appears correctly at all LOD levels, ensuring wool can be harvested visually.\n- Bull item name and description have been corrected in its prefab.\n\n### Vehicles\n- Modular car builds now save reliably without thread‑related errors.\n\n### Combat\n- Melee combat animations have been fixed, improving hit detection and visual feedback.\n- Missing animation files for the M92 pistol have been restored, fixing animation issues.",
     "new_items": [],
     "new_relevant_count": 0,
@@ -192,7 +311,7 @@
     "commit_count": 73,
     "relevant_commit_count": 38,
     "relevant_signature": "704836,704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023,705028,705037,705039",
-    "prompt_version": "structured-read-state-v6-stable-published",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
@@ -275,6 +394,7 @@
         ]
       }
     ],
+    "status": "ok",
     "summary": "### Audio & Aiming\n- Fixed a bug where scheduled sounds could keep playing past their start time, preventing endless audio buildup.\n- Aiming accuracy is restored when using turn‑in‑place, fixing misaligned aim.\n\n### World & Environment\n- Footstep splash effects now respect lowered water levels, preventing splashes from appearing at the original surface height.\n- Critters (e.g., crabs) no longer push or move players because they are excluded from player collision layers, and LOD issues for crabs are fixed.\n\n### Inventory & Looting\n- Added an option to automatically close the entire inventory when you move away from a loot container, instead of switching to quick‑craft mode.\n\n### Combat & Weapons\n- Beancan throws now have correct trajectory visual, and molotovs display gib effects on hit and now correctly break with client‑side prediction, spawning fireballs after breaking.\n\n### Economy & Vendors\n- Vendor auction rounding for HQM ore is corrected, fixing inaccurate price calculations.\n\n### Gameplay & Balance\n- Thrown weapons (e.g., grenades, molotovs) now predict trajectories more accurately, reducing mis‑throws.",
     "new_items": [],
     "new_relevant_count": 0,
