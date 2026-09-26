@@ -1,4 +1,16 @@
 {
+  "2026-09-26": {
+    "commit_count": 1,
+    "relevant_commit_count": 1,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v6-stable-published",
+    "chunk_cache": {},
+    "sections": [],
+    "summary": "AI summary temporarily unavailable. The development commit archive was updated successfully.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-09-25": {
     "commit_count": 124,
     "relevant_commit_count": 74,
@@ -264,170 +276,6 @@
       }
     ],
     "summary": "### Audio & Aiming\n- Fixed a bug where scheduled sounds could keep playing past their start time, preventing endless audio buildup.\n- Aiming accuracy is restored when using turn‑in‑place, fixing misaligned aim.\n\n### World & Environment\n- Footstep splash effects now respect lowered water levels, preventing splashes from appearing at the original surface height.\n- Critters (e.g., crabs) no longer push or move players because they are excluded from player collision layers, and LOD issues for crabs are fixed.\n\n### Inventory & Looting\n- Added an option to automatically close the entire inventory when you move away from a loot container, instead of switching to quick‑craft mode.\n\n### Combat & Weapons\n- Beancan throws now have correct trajectory visual, and molotovs display gib effects on hit and now correctly break with client‑side prediction, spawning fireballs after breaking.\n\n### Economy & Vendors\n- Vendor auction rounding for HQM ore is corrected, fixing inaccurate price calculations.\n\n### Gameplay & Balance\n- Thrown weapons (e.g., grenades, molotovs) now predict trajectories more accurately, reducing mis‑throws.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-09-23": {
-    "commit_count": 144,
-    "relevant_commit_count": 81,
-    "relevant_signature": "704524,704525,704532,704545,704559,704564,704581,704583,704585,704589,704590,704593,704599,704600,704601,704607,704609,704617,704621,704628,704631,704635,704637,704640,704641,704642,704647,704661,704662,704663,704664,704665,704673,704683,704687,704689,704690,704693,704700,704703,704707,704708,704712,704714,704715,704717,704719,704722,704725,704728,704730,704733,704738,704740,704743,704747,704753,704760,704762,704763,704765,704771,704779,704789,704790,704791,704792,704795,704799,704800,704801,704802,704803,704805,704807,704809,704810,704814,704824,704827,704829",
-    "prompt_version": "structured-read-state-v6-stable-published",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Movement & Swimming",
-        "items": [
-          {
-            "text": "Adjusted swimming depth thresholds to start at 1.17 m and stop below 0.9 m, reducing animation dithering and slightly delaying exit from shallow water.",
-            "commit_ids": [
-              704829
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Tools",
-        "items": [
-          {
-            "text": "Car lifts now refuse to grab a car if any animals are mounted on it.",
-            "commit_ids": [
-              704805
-            ]
-          },
-          {
-            "text": "Fixed dismount action to properly remove the stir bar, preventing leftover objects after exiting.",
-            "commit_ids": [
-              704647
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock, Ranching & Food",
-        "items": [
-          {
-            "text": "Wool can be recycled into 5 cloth pieces; adult cows/sheep lifespan doubled to 48 h; livestock feeding now uses food calories (high‑calorie foods 6× more effective, low‑calorie less) and prevents eating spoiled produce; ranch sales now give 30‑50 high‑quality metal ore instead of HQM.",
-            "commit_ids": [
-              704802,
-              704799,
-              704800,
-              704801
-            ]
-          },
-          {
-            "text": "Milk products now provide double calories and triple hydration; beef and rich beef pies last 120 min (up from 30 min); mutton pie renamed to shepherd's pie and now requires a potato.",
-            "commit_ids": [
-              704790,
-              704792,
-              704791
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Upkeep & Building",
-        "items": [
-          {
-            "text": "Spiral staircases now decay and count toward TC upkeep; added server‑population‑scaled settings for power‑plant heavy fuse decay rate.",
-            "commit_ids": [
-              704779,
-              704763
-            ]
-          },
-          {
-            "text": "Helipad repair now requires 30,000 wood, 10,000 metal fragments, and 100 rope, and added AIRWOLF CCTV (S2P).",
-            "commit_ids": [
-              704525
-            ]
-          },
-          {
-            "text": "Fixed armored triangle ladder hatch collision meshes, biofuel generator flag collision, and prevented composters from becoming bricked when splashed by water, restoring proper placement and functionality.",
-            "commit_ids": [
-              704642,
-              704641,
-              704683
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Improved client‑side prediction for thrown projectiles, reconciling position and velocity with server data and handling stick events reliably.",
-            "commit_ids": [
-              704760,
-              704753
-            ]
-          },
-          {
-            "text": "Machete network range reduced from medium to low, decreasing its effective reach in multiplayer.",
-            "commit_ids": [
-              704715
-            ]
-          },
-          {
-            "text": "Grenade drop animation now synchronized with throw release, ensuring grenades spawn at the intended moment.",
-            "commit_ids": [
-              704590
-            ]
-          },
-          {
-            "text": "Fish hitboxes corrected and death animation loops fixed, improving combat accuracy with critter animals.",
-            "commit_ids": [
-              704700
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World, Map & Exploits",
-        "items": [
-          {
-            "text": "Added ferry terminal and radtown locations.",
-            "commit_ids": [
-              704824
-            ]
-          },
-          {
-            "text": "Crate in Radtown moved and window sign replaced with a two‑sided variant to stop looting through the window gap.",
-            "commit_ids": [
-              704728
-            ]
-          },
-          {
-            "text": "Reapplied the NMS loot room after file conflicts, restoring its availability.",
-            "commit_ids": [
-              704559
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & UI",
-        "items": [
-          {
-            "text": "Shields and diving tanks now appear correctly in the backpack slot of the loadout screen.",
-            "commit_ids": [
-              704693
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Animals can no longer slip through doors at monuments, preventing unintended entry and protecting bases.",
-            "commit_ids": [
-              704607
-            ]
-          }
-        ]
-      }
-    ],
-    "summary": "### Movement & Swimming\n- Adjusted swimming depth thresholds to start at 1.17 m and stop below 0.9 m, reducing animation dithering and slightly delaying exit from shallow water.\n\n### Vehicles & Tools\n- Car lifts now refuse to grab a car if any animals are mounted on it.\n- Fixed dismount action to properly remove the stir bar, preventing leftover objects after exiting.\n\n### Livestock, Ranching & Food\n- Wool can be recycled into 5 cloth pieces; adult cows/sheep lifespan doubled to 48 h; livestock feeding now uses food calories (high‑calorie foods 6× more effective, low‑calorie less) and prevents eating spoiled produce; ranch sales now give 30‑50 high‑quality metal ore instead of HQM.\n- Milk products now provide double calories and triple hydration; beef and rich beef pies last 120 min (up from 30 min); mutton pie renamed to shepherd's pie and now requires a potato.\n\n### Base Upkeep & Building\n- Spiral staircases now decay and count toward TC upkeep; added server‑population‑scaled settings for power‑plant heavy fuse decay rate.\n- Helipad repair now requires 30,000 wood, 10,000 metal fragments, and 100 rope, and added AIRWOLF CCTV (S2P).\n- Fixed armored triangle ladder hatch collision meshes, biofuel generator flag collision, and prevented composters from becoming bricked when splashed by water, restoring proper placement and functionality.\n\n### Combat & Weapons\n- Improved client‑side prediction for thrown projectiles, reconciling position and velocity with server data and handling stick events reliably.\n- Machete network range reduced from medium to low, decreasing its effective reach in multiplayer.\n- Grenade drop animation now synchronized with throw release, ensuring grenades spawn at the intended moment.\n- Fish hitboxes corrected and death animation loops fixed, improving combat accuracy with critter animals.\n\n### World, Map & Exploits\n- Added ferry terminal and radtown locations.\n- Crate in Radtown moved and window sign replaced with a two‑sided variant to stop looting through the window gap.\n- Reapplied the NMS loot room after file conflicts, restoring its availability.\n\n### Inventory & UI\n- Shields and diving tanks now appear correctly in the backpack slot of the loadout screen.\n\n### Gameplay & Balance\n- Animals can no longer slip through doors at monuments, preventing unintended entry and protecting bases.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
