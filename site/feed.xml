@@ -6,38 +6,62 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 25 Sep 2026 22:17:31 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 00:18:07 -0400</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Sep 25</title>
+      <title>Yesterday's Rust Updates — Sep 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;124 development commits&lt;/strong&gt;&lt;/p&gt;
 
+&lt;h3&gt;Buffs &amp;amp; UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705320"&gt;Rich beef pie now provides +25% hunger and hydration, rounded to whole numbers.&lt;/li&gt;
+&lt;li data-rust-commits="705319"&gt;Buff tooltips now correctly display durations longer than 60 minutes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;AI, Animals &amp;amp; NPCs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705310"&gt;Tin can alarm can now detect Generation 2 AIs and critters.&lt;/li&gt;
+&lt;li data-rust-commits="705287"&gt;Livestock AI fixes: animals no longer go underwater, bulls no longer get stuck or attempt unreachable headbutts, curious cows won’t starve, bull damage reduced, livestock leads now slow the player and break around 7 m, and cows correctly transition after grazing.&lt;/li&gt;
+&lt;li data-rust-commits="705188"&gt;Added ally status to crabs, stags, boars, and bulls so they no longer attack each other.&lt;/li&gt;
+&lt;li data-rust-commits="705264"&gt;Wool vendor always offers a dialogue option to ask about wool, regardless of inventory.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705137"&gt;Minigun ammo count now updates correctly when reloading inside a box, and the reload option no longer appears when ammo is full.&lt;/li&gt;
-&lt;li data-rust-commits="705121"&gt;Grenades now spawn at the correct position when deploying the last grenade in a stack in first‑person view.&lt;/li&gt;
+&lt;li data-rust-commits="705254"&gt;Melee weapons stay welded to the hand while running.&lt;/li&gt;
+&lt;li data-rust-commits="705137"&gt;Minigun ammo count now updates when reloading inside a box and the reload option is hidden when ammo is full.&lt;/li&gt;
+&lt;li data-rust-commits="705077"&gt;Crossbow arrows now have correct head rotation, ensuring proper flight orientation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Resources &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705188"&gt;Critters such as crabs, stags, boars, and bulls are now treated as allies and no longer attack each other or players.&lt;/li&gt;
-&lt;li data-rust-commits="705264"&gt;Livestock vendors always offer the wool‑inquiry dialogue option, even when you have no wool in inventory.&lt;/li&gt;
+&lt;li data-rust-commits="705237,705238"&gt;Powergrid loot now respawns after being collected.&lt;/li&gt;
+&lt;li data-rust-commits="705113,705084"&gt;Milky and creamy teas are no longer recyclable, and spoiled produce now behaves correctly in recipes and processing.&lt;/li&gt;
+&lt;li data-rust-commits="705121,705050"&gt;Grenades spawn in the correct position when deploying the last grenade in a stack in first‑person view, and explosion overlays now have a minimum intensity threshold to prevent lingering visual effects.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Resources&lt;/h3&gt;
+&lt;h3&gt;Structures &amp;amp; Tech&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705237"&gt;Powergrid loot now respawns correctly after being taken.&lt;/li&gt;
-&lt;li data-rust-commits="705084"&gt;Spoiled produce is correctly recognized as incompatible with certain recipes, preventing unexpected crafting failures.&lt;/li&gt;
-&lt;li data-rust-commits="705113"&gt;Recycling milky and creamy teas is disabled to prevent nonsensical resource gains.&lt;/li&gt;
+&lt;li data-rust-commits="705175,705049"&gt;Animal Fence and Biofuel Generator are restored in Primitive mode, scrap cost of fences and gates reduced, and both structures added to Tier‑1 tech trees; Biofuel Generator also added to Hardcore and Primitive tech trees.&lt;/li&gt;
+&lt;li data-rust-commits="705207"&gt;Player rotation is corrected when dismounting, preventing a tilted orientation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Structures &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705175,705049"&gt;Animal fences and gates are now available in the Tier 1 tech tree and in the Primitive gamemode, with reduced scrap costs, and Biofuel Generators have been added to Hardcore and Primitive modes.&lt;/li&gt;
+&lt;li data-rust-commits="705317"&gt;Calves purchased at the ranch now display the correct gender‑specific names.&lt;/li&gt;
+&lt;li data-rust-commits="705058"&gt;Lamb fleece now appears correctly at all LOD levels, ensuring wool can be harvested visually.&lt;/li&gt;
+&lt;li data-rust-commits="705122"&gt;Bull item name and description have been corrected in its prefab.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705315"&gt;Modular car builds now save reliably without thread‑related errors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705256"&gt;Melee combat animations have been fixed, improving hit detection and visual feedback.&lt;/li&gt;
+&lt;li data-rust-commits="705200"&gt;Missing animation files for the M92 pistol have been restored, fixing animation issues.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-25</guid>
-      <pubDate>Fri, 25 Sep 2026 22:17:31 -0400</pubDate>
+      <pubDate>Fri, 25 Sep 2026 12:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Sep 24</title>
+      <title>Rust Updates — 2 Days Ago — Sep 24</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;73 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -72,7 +96,7 @@
       <pubDate>Thu, 24 Sep 2026 12:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Rust Updates — 2 Days Ago — Sep 23</title>
+      <title>Rust Development Updates — Sep 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;144 development commits&lt;/strong&gt;&lt;/p&gt;
 
