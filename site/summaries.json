@@ -1,16 +1,38 @@
 {
   "2026-09-25": {
-    "commit_count": 118,
-    "relevant_commit_count": 69,
+    "commit_count": 124,
+    "relevant_commit_count": 74,
     "relevant_signature": "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113,705121,705122,705137,705139,705140,705142,705162,705175,705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227,705232,705237,705238,705243,705244,705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283",
     "prompt_version": "structured-read-state-v6-stable-published",
     "chunk_cache": {
-      "705232,705237,705238,705243,705244,705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283,705286,705287,705293,705300,705301,705302,705310,705312,705313": [
+      "705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283,705286,705287,705293,705300,705301,705302,705310,705312,705313,705315,705317,705318,705319,705320": [
         {
-          "title": "Base Building & Alarms",
+          "title": "Food & Buffs",
           "items": [
             {
-              "text": "Tin can alarm can now detect Generation‑2 AI units and critters, expanding its usefulness for base security.",
+              "text": "Rich beef pie now provides +25% hunger and hydration, with values rounded to whole numbers.",
+              "commit_ids": [
+                705320
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & Tooltips",
+          "items": [
+            {
+              "text": "Buff tooltips now correctly display durations longer than 60 minutes.",
+              "commit_ids": [
+                705319
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & Sensors",
+          "items": [
+            {
+              "text": "Tin can alarm can now detect Generation 2 AIs and critters.",
               "commit_ids": [
                 705310
               ]
@@ -18,21 +40,10 @@
           ]
         },
         {
-          "title": "NPC & AI",
+          "title": "Animals & Livestock",
           "items": [
             {
-              "text": "Fixed a corrupted Scientist‑2 prefab, restoring the missing scientist NPCs in the world.",
-              "commit_ids": [
-                705300
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock & Animals",
-          "items": [
-            {
-              "text": "Multiple livestock fixes: animals no longer drown when underwater, bulls no longer get stuck in charge mode or attempt unreachable headbutts, bull damage reduced, leads now behave like horse leads (slow player and break around 7 m), and cows stay in their graze exit animation instead of snapping back to idle.",
+              "text": "Various livestock AI fixes: animals no longer go underwater, bulls no longer get stuck in charge mode or attempt unreachable headbutts, curious cows won't starve, bull damage reduced, livestock leads now slow the player and break around 7 m, and cows correctly transition after grazing.",
               "commit_ids": [
                 705287
               ]
@@ -40,23 +51,12 @@
           ]
         },
         {
-          "title": "Trading & Dialogue",
+          "title": "NPC Interaction",
           "items": [
             {
-              "text": "Wool vendor now always offers the \"Ask about wool\" dialogue option, regardless of whether you already have wool in your inventory.",
+              "text": "Wool vendor now always offers a dialogue option to ask about wool, regardless of wool in your inventory.",
               "commit_ids": [
                 705264
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Loot & Resource Respawn",
-          "items": [
-            {
-              "text": "Powergrid loot now correctly respawns after being taken, fixing a long‑standing resource scarcity issue.",
-              "commit_ids": [
-                705237
               ]
             }
           ]
@@ -65,32 +65,32 @@
           "title": "Combat",
           "items": [
             {
-              "text": "Melee weapons stay welded to the hand while running, preventing them from sliding out during movement.",
+              "text": "Melee weapons no longer slide out of the hand while running, keeping them welded to the hand.",
               "commit_ids": [
-                705254,
-                705256
+                705254
               ]
             }
           ]
         }
       ],
-      "705139,705140,705142,705162,705175,705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227": [
+      "705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227,705232,705237,705238,705243,705244": [
         {
-          "title": "UI",
+          "title": "Loot & Resources",
           "items": [
             {
-              "text": "Fixed missing images in the workshop tab.",
+              "text": "Fixed powergrid loot not respawning after being collected.",
               "commit_ids": [
-                705208
+                705237,
+                705238
               ]
             }
           ]
         },
         {
-          "title": "Player & Mounts",
+          "title": "Mounts",
           "items": [
             {
-              "text": "Fixed tilted player rotation when exiting mounts.",
+              "text": "Corrected player rotation when dismounting, preventing tilted orientation.",
               "commit_ids": [
                 705207
               ]
@@ -101,55 +101,43 @@
           "title": "Animals & AI",
           "items": [
             {
-              "text": "Added \"ally\" status for certain critters: crabs are no longer attacked, and stags, boars, and bulls no longer attack critters.",
+              "text": "Added ally status to certain critters (crabs, stags, boars, bulls) so they no longer attack each other.",
               "commit_ids": [
                 705188
               ]
             }
           ]
-        },
+        }
+      ],
+      "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113,705121,705122,705137,705139,705140,705142,705162,705175": [
         {
-          "title": "Livestock & Tools",
+          "title": "Structures & Tech Tree",
           "items": [
             {
-              "text": "Restored missing animal fence and biofuel generator in the primitive gamemode and reduced scrap cost of fences and gates across all gamemodes.",
+              "text": "Fixed missing Animal Fence and Biofuel Generator in the Primitive gamemode and reduced the scrap cost of fences and gates across all gamemodes.",
               "commit_ids": [
                 705175
               ]
+            },
+            {
+              "text": "Added Animal Fence and Gate to Tier‑1 tech trees and added Biofuel Generator to Hardcore and Primitive tech trees.",
+              "commit_ids": [
+                705049
+              ]
             }
           ]
         },
         {
-          "title": "Audio",
+          "title": "Weapons",
           "items": [
             {
-              "text": "Added crab sounds and tweaked critter animal audio.",
-              "commit_ids": [
-                705218,
-                705193
-              ]
-            }
-          ]
-        }
-      ],
-      "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113,705121,705122,705137": [
-        {
-          "title": "Weapons & Combat",
-          "items": [
-            {
-              "text": "Fixed minigun ammo count not updating when reloading inside a box and removed reload option when ammo is full.",
+              "text": "Fixed Minigun ammo count not updating when reloading inside a box and hid the reload option when ammo is already full.",
               "commit_ids": [
                 705137
               ]
             },
             {
-              "text": "Corrected grenade deployment position when throwing the last grenade in a stack in first-person view.",
-              "commit_ids": [
-                705121
-              ]
-            },
-            {
-              "text": "Fixed crossbow arrow head rotation to align correctly with flight direction.",
+              "text": "Corrected crossbow arrow head rotation so arrows fly in the proper orientation.",
               "commit_ids": [
                 705077
               ]
@@ -157,33 +145,33 @@
           ]
         },
         {
-          "title": "Animal & Farming",
+          "title": "Explosives & Grenades",
           "items": [
             {
-              "text": "Prevented recycling of milky and creamy teas, which previously could be recycled despite having no sensible use.",
+              "text": "Fixed grenades spawning in the wrong position when deploying the last grenade in a stack in first‑person view.",
               "commit_ids": [
-                705113
+                705121
+              ]
+            },
+            {
+              "text": "Added a MinimumIntensity threshold to explosion overlays to prevent lingering visual effects after an explosion.",
+              "commit_ids": [
+                705050
               ]
             }
           ]
         },
         {
-          "title": "Building & Tech",
+          "title": "Items & Crafting",
           "items": [
             {
-              "text": "Added Animal Fence and Gate to Tier 1 technology trees, making them available earlier.",
+              "text": "Prevented milky and creamy teas from being recyclable, fixing an illogical crafting interaction.",
               "commit_ids": [
-                705049
+                705113
               ]
             },
             {
-              "text": "Added Biofuel Generator to Hardcore and Primitive game modes, expanding early power options.",
-              "commit_ids": [
-                705049
-              ]
-            },
-            {
-              "text": "Fixed spoiled produce compatibility issue, ensuring spoiled items behave correctly.",
+              "text": "Fixed spoiled produce compatibility so spoiled items behave correctly in recipes and processing.",
               "commit_ids": [
                 705084
               ]
