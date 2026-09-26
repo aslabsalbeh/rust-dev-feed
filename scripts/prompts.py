@@ -135,8 +135,14 @@ If several commits describe the same underlying change, combine them into one bu
 and include all relevant Commit IDs.
 Never invent a Commit ID. Only use IDs supplied above.
 
-Return ONLY valid JSON, with no Markdown or code fence, using exactly:
+If no source changes pass the player-value test, return exactly:
+{{"status": "no_significant_updates", "sections": []}}
+This is a successful assessment, not an error. Never use empty sections for a
+failed or uncertain response. Otherwise return status "ok" with nonempty sections.
+
+Otherwise return ONLY valid JSON, with no Markdown or code fence, using exactly:
 {{
+  "status": "ok",
   "sections": [
     {{
       "title": "NPC & AI",
@@ -196,8 +202,14 @@ Preserve concrete bug symptoms for bugs that pass that player-value test.
 Every bullet MUST include exact source Commit IDs. Never invent IDs and only use IDs above.
 Combine closely related commits.
 
-Return ONLY valid JSON:
+If no source changes pass the player-value test, return exactly:
+{{"status": "no_significant_updates", "sections": []}}
+This is a successful assessment, not an error. Never use empty sections for a
+failed or uncertain response. Otherwise return status "ok" with nonempty sections.
+
+Otherwise return ONLY valid JSON:
 {{
+  "status": "ok",
   "sections": [
     {{
       "title": "NPC & AI",
@@ -236,8 +248,14 @@ Aim for 2 to 6 sections and roughly 8 to 15 worthwhile bullets total; fewer is f
 Do not mention developer names or commit IDs inside bullet text.
 Do not include a title or date.
 
-Return ONLY valid JSON:
+If no source changes pass the player-value test, return exactly:
+{{"status": "no_significant_updates", "sections": []}}
+This is a successful assessment, not an error. Never use empty sections for a
+failed or uncertain response. Otherwise return status "ok" with nonempty sections.
+
+Otherwise return ONLY valid JSON:
 {{
+  "status": "ok",
   "sections": [
     {{
       "title": "NPC & AI",
@@ -282,8 +300,14 @@ IMPORTANT:
 - Do not mention commit IDs or branch names inside bullet text.
 - Keep the result concise.
 
-Return ONLY valid JSON:
+If no source changes pass the player-value test, return exactly:
+{{"status": "no_significant_updates", "sections": []}}
+This is a successful assessment, not an error. Never use empty sections for a
+failed or uncertain response. Otherwise return status "ok" with nonempty sections.
+
+Otherwise return ONLY valid JSON:
 {{
+  "status": "ok",
   "sections": [
     {{
       "title": "Gameplay & Balance",

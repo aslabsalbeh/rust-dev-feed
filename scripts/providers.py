@@ -1,4 +1,7 @@
 import json
+import os
+import re
+from collections import Counter
 
 import requests
 
@@ -47,158 +50,124 @@ def strip_code_fence(text):
     return text
 
 
-def parse_structured_summary(
-    text,
-    allowed_commit_ids,
-):
-    text = strip_code_fence(
-        text
-    )
+def safe_excerpt(value, api_key="", limit=750):
+    """Single-line, bounded diagnostics; never include known credentials."""
+    text = str(value)
+    for secret in (api_key, os.getenv("GROQ_API_KEY"), os.getenv("OPENROUTER_API_KEY")):
+        if secret:
+            text = text.replace(secret, "[REDACTED]")
+    text = re.sub(r"(?i)bearer\s+[^\s\"',}]+", "Bearer [REDACTED]", text)
+    text = re.sub(r"\b(?:sk-|gsk_)[A-Za-z0-9_-]+", "[REDACTED]", text)
+    # Escape control characters, including terminal escapes and newlines.
+    text = json.dumps(text, ensure_ascii=True)[1:-1]
+    return text[:limit] + ("..." if len(text) > limit else "")
+
+
+RATE_LIMIT_HEADERS = (
+    "retry-after", "ratelimit-limit", "ratelimit-remaining", "ratelimit-reset",
+    "x-ratelimit-limit", "x-ratelimit-remaining", "x-ratelimit-reset",
+    "x-ratelimit-limit-requests", "x-ratelimit-remaining-requests",
+    "x-ratelimit-reset-requests", "x-ratelimit-limit-tokens",
+    "x-ratelimit-remaining-tokens", "x-ratelimit-reset-tokens",
+)
+
+
+def parse_structured_summary(text, allowed_commit_ids):
+    """Return sections, [] for explicit intentional emptiness, or None on failure.
+
+    Emit one bounded diagnostic with a reason and aggregate removal counts.
+    Legacy nonempty objects/lists remain supported; implicit emptiness is invalid.
+    """
+    counts = Counter()
+
+    def finish(result, reason):
+        detail = ", ".join(f"{key}={value}" for key, value in sorted(counts.items()))
+        print(f"Structured validation: {reason}" + (f" ({detail})" if detail else ""))
+        return result
 
     try:
-        data = json.loads(
-            text
-        )
-    except Exception as error:
-        print(
-            f"Could not parse AI JSON: "
-            f"{error}"
-        )
-        return None
+        data = json.loads(strip_code_fence(text))
+    except (ValueError, TypeError):
+        return finish(None, "json_parse_failure")
 
-    # Normally the model returns {"sections": [...]}, as requested.
-    # Some providers can still return the sections array itself even in
-    # JSON mode. Treat that shape as a recoverable equivalent instead of
-    # crashing with: AttributeError: 'list' object has no attribute 'get'.
+    status = None
     if isinstance(data, dict):
-        raw_sections = data.get(
-            "sections"
-        )
+        if "status" in data:
+            status = data["status"]
+            if status not in ("ok", "no_significant_updates"):
+                return finish(None, "invalid_status")
+        if "sections" not in data:
+            return finish(None, "missing_sections")
+        raw_sections = data["sections"]
     elif isinstance(data, list):
-        print(
-            "AI returned a top-level sections list; "
-            "accepting it as structured summary data."
-        )
         raw_sections = data
     else:
-        return None
-
-    if not isinstance(
-        raw_sections,
-        list,
-    ):
-        return None
+        return finish(None, "wrong_top_level_type")
+    if not isinstance(raw_sections, list):
+        return finish(None, "sections_not_list")
+    if status == "no_significant_updates":
+        if raw_sections:
+            return finish(None, "no_significant_updates_with_nonempty_sections")
+        if set(data) != {"status", "sections"}:
+            return finish(None, "unexpected_empty_outcome_fields")
+        return finish([], "no_significant_updates")
+    if not raw_sections:
+        return finish(None, "empty_sections_without_explicit_outcome")
 
     sections = []
-
-    for raw_section in raw_sections:
-        if not isinstance(
-            raw_section,
-            dict,
-        ):
+    valid_section_count = 0
+    for section in raw_sections:
+        if (not isinstance(section, dict)
+                or not isinstance(section.get("title"), str)
+                or not section["title"].strip()
+                or not isinstance(section.get("items"), list)):
+            counts["invalid_sections"] += 1
             continue
-
-        title = str(
-            raw_section.get(
-                "title",
-                "",
-            )
-        ).strip()
-
-        raw_items = raw_section.get(
-            "items",
-            [],
-        )
-
-        if (
-            not title
-            or not isinstance(
-                raw_items,
-                list,
-            )
-        ):
-            continue
-
+        valid_section_count += 1
         items = []
-
-        for raw_item in raw_items:
-            if not isinstance(
-                raw_item,
-                dict,
-            ):
+        for item in section["items"]:
+            if (not isinstance(item, dict)
+                    or not isinstance(item.get("text"), str)
+                    or not item["text"].strip()):
+                counts["invalid_items"] += 1
                 continue
-
-            item_text = str(
-                raw_item.get(
-                    "text",
-                    "",
-                )
-            ).strip()
-
-            raw_ids = raw_item.get(
-                "commit_ids",
-                [],
-            )
-
-            if (
-                not item_text
-                or not isinstance(
-                    raw_ids,
-                    list,
-                )
-            ):
+            raw_ids = item.get("commit_ids")
+            if raw_ids is None or raw_ids == []:
+                counts["items_missing_commit_ids"] += 1
                 continue
-
-            valid_ids = []
-
-            for raw_id in raw_ids:
-                try:
-                    commit_id = str(
-                        int(raw_id)
-                    )
-                except Exception:
+            if not isinstance(raw_ids, list):
+                counts["items_invalid_commit_ids"] += 1
+                continue
+            ids = []
+            invalid = False
+            unknown = False
+            for value in raw_ids:
+                # Never truncate floats or accept bool as an integer ID.
+                if type(value) is int and value >= 0:
+                    commit_id = str(value)
+                elif isinstance(value, str) and re.fullmatch(r"[0-9]+", value):
+                    commit_id = value.lstrip("0") or "0"
+                else:
+                    invalid = True
                     continue
-
-                if (
-                    commit_id
-                    in allowed_commit_ids
-                    and commit_id
-                    not in valid_ids
-                ):
-                    valid_ids.append(
-                        commit_id
-                    )
-
-            if not valid_ids:
-                print(
-                    "Dropped AI bullet with no "
-                    "valid source commit IDs: "
-                    f"{item_text[:80]}"
-                )
+                if commit_id not in allowed_commit_ids:
+                    unknown = True
+                elif int(commit_id) not in ids:
+                    ids.append(int(commit_id))
+            if invalid or unknown:
+                counts["items_invalid_commit_ids"] += int(invalid)
+                counts["items_unknown_commit_ids"] += int(unknown)
                 continue
-
-            items.append(
-                {
-                    "text": item_text,
-                    "commit_ids": [
-                        int(value)
-                        for value in valid_ids
-                    ],
-                }
-            )
-
+            items.append({"text": item["text"].strip(), "commit_ids": ids})
         if items:
-            sections.append(
-                {
-                    "title": title,
-                    "items": items,
-                }
-            )
-
+            sections.append({"title": section["title"].strip(), "items": items})
+    if not valid_section_count:
+        return finish(None, "all_sections_invalid")
     if not sections:
-        return None
-
-    return sections
+        return finish(None, "all_items_removed")
+    if any(counts.values()):
+        return finish(None, "partially_invalid_summary")
+    return finish(sections, "valid_structured_summary")
 
 
 def call_chat_api(
@@ -247,21 +216,25 @@ def call_chat_api(
     except requests.RequestException as error:
         print(
             f"{provider_name} network error: "
-            f"{error}"
+            f"{safe_excerpt(error, api_key)}"
         )
         return None
 
     if response.status_code == 429:
-        print(
-            f"{provider_name} rate-limited."
+        headers = {key.lower(): value for key, value in response.headers.items()}
+        details = " ".join(
+            f"{key}={safe_excerpt(headers[key], api_key, 100)}"
+            for key in RATE_LIMIT_HEADERS if key in headers
         )
+        print(f"{provider_name} HTTP 429 rate-limited: {details} "
+              f"body={safe_excerpt(response.text, api_key)}")
         return None
 
     if not response.ok:
         print(
             f"{provider_name} error "
             f"{response.status_code}: "
-            f"{response.text[:300]}"
+            f"{safe_excerpt(response.text, api_key)}"
         )
         return None
 
@@ -284,7 +257,7 @@ def call_chat_api(
     if is_bad_summary(text):
         print(
             f"{provider_name} returned "
-            "rejected AI output."
+            f"rejected AI output: {safe_excerpt(text, api_key)}"
         )
         return None
 
@@ -296,7 +269,7 @@ def call_chat_api(
     if sections is None:
         print(
             f"{provider_name} returned "
-            "invalid structured summary JSON."
+            f"invalid structured summary JSON: {safe_excerpt(text, api_key)}"
         )
         return None
 

@@ -43,7 +43,7 @@ LOCAL_TZ = ZoneInfo("America/Toronto")
 CHUNK_SIZE = 25
 
 # Bump when prompt, relevance, merge, or rescue behavior changes.
-PROMPT_VERSION = "structured-read-state-v6-stable-published"
+PROMPT_VERSION = "structured-read-state-v7-explicit-empty"
 
 
 
@@ -64,6 +64,11 @@ def atomic_write_json(path, data):
         file.flush()
         os.fsync(file.fileno())
     os.replace(temp_path, path)
+
+
+NO_SIGNIFICANT_UPDATES = (
+    "No notable player-facing changes were identified in the latest development commits."
+)
 
 
 NEW_WINDOW = timedelta(hours=3)
@@ -273,10 +278,7 @@ def call_ai(
             chunk_key
         )
 
-        if (
-            isinstance(cached_sections, list)
-            and cached_sections
-        ):
+        if isinstance(cached_sections, list):
             print(
                 f"Reusing cached chunk "
                 f"{index}/{len(chunks)} "
@@ -343,6 +345,9 @@ def call_ai(
         for key, value in chunk_cache.items()
         if key in active_chunk_keys
     }
+
+    if not chunk_sections:
+        return [], {}
 
     print(
         f"Merging {len(chunks)} "
@@ -792,9 +797,14 @@ def main():
             != old_full_signature
         )
 
+        old_explicit_empty = (
+            old_entry and old_entry.get("status") == "no_significant_updates"
+            and old_sections == [] and old_summary_text == NO_SIGNIFICANT_UPDATES
+        )
+
         needs_refresh = (
             not old_is_good
-            or not old_has_structured_sections
+            or not (old_has_structured_sections or old_explicit_empty)
             or not prompt_matches
             or relevant_changed
         )
@@ -832,10 +842,7 @@ def main():
         elif not relevant_commits:
             sections = []
 
-            summary_markdown = (
-                "No significant player-facing "
-                "updates."
-            )
+            summary_markdown = NO_SIGNIFICANT_UPDATES
 
             full_signature_out = (
                 current_signature
@@ -888,23 +895,24 @@ def main():
                     generated_sections
                 )
 
-                sections = rescue_missing_high_impact_commits(
-                    groq_key,
-                    openrouter_key,
-                    day,
-                    relevant_commits,
-                    sections,
-                )
-
-                if old_has_structured_sections:
-                    sections = rescue_previously_published_commits(
+                if sections:
+                    sections = rescue_missing_high_impact_commits(
                         groq_key,
                         openrouter_key,
                         day,
                         relevant_commits,
-                        old_sections,
                         sections,
                     )
+
+                    if old_has_structured_sections:
+                        sections = rescue_previously_published_commits(
+                            groq_key,
+                            openrouter_key,
+                            day,
+                            relevant_commits,
+                            old_sections,
+                            sections,
+                        )
 
                 represented_count = len(
                     represented_commit_ids_from_sections(sections)
@@ -916,9 +924,8 @@ def main():
                 )
 
                 summary_markdown = (
-                    sections_to_markdown(
-                        sections
-                    )
+                    sections_to_markdown(sections) if sections
+                    else NO_SIGNIFICANT_UPDATES
                 )
 
                 full_signature_out = (
@@ -1055,6 +1062,11 @@ def main():
 
             # Structured form used for Mark as Read.
             "sections": sections,
+            "status": (
+                "no_significant_updates"
+                if not sections and summary_markdown == NO_SIGNIFICANT_UPDATES
+                else "ok" if sections else "unavailable"
+            ),
 
             # Existing Markdown form used by the current RSS.
             "summary": summary_markdown,
