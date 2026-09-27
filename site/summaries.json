@@ -191,48 +191,30 @@
     "new_summary": ""
   },
   "2026-09-24": {
-    "commit_count": 72,
-    "relevant_commit_count": 37,
-    "relevant_signature": "704843,704859,704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023,705028,705037,705039",
+    "commit_count": 64,
+    "relevant_commit_count": 35,
+    "relevant_signature": "704872,704873,704886,704887,704889,704891,704893,704894,704895,704942,704945,704951,704963,704977,704979,704980,704984,704985,704991,704993,704994,704995,705001,705006,705008,705009,705013,705015,705017,705019,705022,705023,705028,705037,705039",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Audio & Environment",
+        "title": "Audio",
         "items": [
           {
-            "text": "Fixed SoundManager queuing issue preventing endless or delayed audio playback.",
+            "text": "Fixed SoundManager from endlessly accumulating scheduled sounds past their start time, preventing potential perpetual sound playback.",
             "commit_ids": [
               705037
-            ]
-          },
-          {
-            "text": "Added frog croak sounds to frog animations, giving amphibians audible presence.",
-            "commit_ids": [
-              705006
-            ]
-          },
-          {
-            "text": "Footstep splash effects now respect lowered water levels, preventing misplaced splashes.",
-            "commit_ids": [
-              705028
             ]
           }
         ]
       },
       {
-        "title": "Inventory & UI",
+        "title": "Inventory & Looting",
         "items": [
           {
-            "text": "New option to automatically close the entire inventory when moving away from a loot container.",
+            "text": "Added a setting to automatically close the entire inventory menu when moving away from a loot container, instead of switching to quick craft.",
             "commit_ids": [
               705019
-            ]
-          },
-          {
-            "text": "Fixed workshop skins not applying to icons on both server and client, ensuring custom skins display correctly.",
-            "commit_ids": [
-              705017
             ]
           }
         ]
@@ -241,7 +223,7 @@
         "title": "Critter Interaction",
         "items": [
           {
-            "text": "Critters (e.g., crabs) no longer push or move players, as they are excluded from player collision layers.",
+            "text": "Critters no longer push or move players; collision layers updated and physics materials added.",
             "commit_ids": [
               704942
             ]
@@ -249,12 +231,23 @@
         ]
       },
       {
-        "title": "Combat",
+        "title": "Combat Feedback",
         "items": [
           {
-            "text": "Molotovs now break on client prediction, showing break effects and spawning fireballs correctly instead of disappearing.",
+            "text": "Molotov grenades now correctly predict breaking on client, showing break effects and spawning fireballs at the proper location.",
             "commit_ids": [
               704889
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Aiming Accuracy",
+        "items": [
+          {
+            "text": "Aiming while using turn‑in‑place is now accurate, fixing previous misalignment.",
+            "commit_ids": [
+              704886
             ]
           }
         ]
@@ -263,27 +256,16 @@
         "title": "Economy",
         "items": [
           {
-            "text": "Fixed rounding errors for high‑quality metal ore in vendor auctions, ensuring correct pricing.",
+            "text": "Vendor auction rounding for HQM ore fixed, ensuring correct pricing.",
             "commit_ids": [
               704887
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Controls",
-        "items": [
-          {
-            "text": "Aiming accuracy fixed when using turn‑in‑place, improving weapon aim consistency.",
-            "commit_ids": [
-              704886
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Audio & Environment\n- Fixed SoundManager queuing issue preventing endless or delayed audio playback.\n- Added frog croak sounds to frog animations, giving amphibians audible presence.\n- Footstep splash effects now respect lowered water levels, preventing misplaced splashes.\n\n### Inventory & UI\n- New option to automatically close the entire inventory when moving away from a loot container.\n- Fixed workshop skins not applying to icons on both server and client, ensuring custom skins display correctly.\n\n### Critter Interaction\n- Critters (e.g., crabs) no longer push or move players, as they are excluded from player collision layers.\n\n### Combat\n- Molotovs now break on client prediction, showing break effects and spawning fireballs correctly instead of disappearing.\n\n### Economy\n- Fixed rounding errors for high‑quality metal ore in vendor auctions, ensuring correct pricing.\n\n### Controls\n- Aiming accuracy fixed when using turn‑in‑place, improving weapon aim consistency.",
+    "summary": "### Audio\n- Fixed SoundManager from endlessly accumulating scheduled sounds past their start time, preventing potential perpetual sound playback.\n\n### Inventory & Looting\n- Added a setting to automatically close the entire inventory menu when moving away from a loot container, instead of switching to quick craft.\n\n### Critter Interaction\n- Critters no longer push or move players; collision layers updated and physics materials added.\n\n### Combat Feedback\n- Molotov grenades now correctly predict breaking on client, showing break effects and spawning fireballs at the proper location.\n\n### Aiming Accuracy\n- Aiming while using turn‑in‑place is now accurate, fixing previous misalignment.\n\n### Economy\n- Vendor auction rounding for HQM ore fixed, ensuring correct pricing.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
