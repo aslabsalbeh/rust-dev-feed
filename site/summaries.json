@@ -1,10 +1,162 @@
 {
   "2026-09-28": {
-    "commit_count": 65,
-    "relevant_commit_count": 50,
+    "commit_count": 71,
+    "relevant_commit_count": 54,
     "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Critters now transition from startled to flee when hurt, improving reactive behavior.",
+              "commit_ids": [
+                705666
+              ]
+            },
+            {
+              "text": "Crabs receive step height and obstacle‑avoidance fixes; leg‑speed glitches resolved. Jellyfish water checks optimized and swarm scripts added to the budgeted queue.",
+              "commit_ids": [
+                705612
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock",
+          "items": [
+            {
+              "text": "Livestock now match player speed when being led, preventing lead breaks.",
+              "commit_ids": [
+                705598
+              ]
+            },
+            {
+              "text": "Floating livestock bug fixed and idle performance improved.",
+              "commit_ids": [
+                705597
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Loot Exploit Fixes",
+          "items": [
+            {
+              "text": "Radtown loot crate moved further from the window to reduce cheating.",
+              "commit_ids": [
+                705655
+              ]
+            },
+            {
+              "text": "Trainyard powergrid loot crate repositioned and windows/railings blocked to prevent exploits.",
+              "commit_ids": [
+                705652
+              ]
+            },
+            {
+              "text": "Harbor 1 and Harbor 2 loot rooms had gaps and windows boarded up, stopping players from shooting through walls.",
+              "commit_ids": [
+                705643,
+                705641
+              ]
+            },
+            {
+              "text": "Added open fence gates to ranch and large barn for better vendor access.",
+              "commit_ids": [
+                705572
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Stability",
+          "items": [
+            {
+              "text": "Fixed crash caused by destroyed elevator floor during save.",
+              "commit_ids": [
+                705656
+              ]
+            },
+            {
+              "text": "Resolved mortar desynchronization when reconnecting or entering network range.",
+              "commit_ids": [
+                705648
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Base Building / Item Transfer",
+          "items": [
+            {
+              "text": "Fixed bug that prevented transferring water sources (sinks) between rooms.",
+              "commit_ids": [
+                705617
+              ]
+            }
+          ]
+        }
+      ],
+      "705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569": [
+        {
+          "title": "Animals & Critters",
+          "items": [
+            {
+              "text": "Frogs are now 20% larger, have a shorter initial jump, and their health reduced from 200 to 60. Rabbit health reduced from 200 to 100.",
+              "commit_ids": [
+                705550,
+                705569,
+                705548
+              ]
+            },
+            {
+              "text": "Bull AI now correctly maintains its look rotation when its target is lost during observation.",
+              "commit_ids": [
+                705527
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vendor & Economy",
+          "items": [
+            {
+              "text": "Removed duplicate Custom SMG entry from the livestock vendor; the SMG slot now offers a Thompson instead.",
+              "commit_ids": [
+                705463
+              ]
+            }
+          ]
+        }
+      ],
+      "705442,705443,705445,705458": [
+        {
+          "title": "Livestock Vendor & Sales",
+          "items": [
+            {
+              "text": "Filtered vendor inventory by game mode to prevent guns from appearing in Primitive mode, and corrected turret offers to appear only on high‑end sales. Added new high‑end sale options (basic BP fragments, Thompson, custom SMG, Python, HC revolver) and updated the wool sales chart so wool now accounts for ~75% of livestock sales without guns.",
+              "commit_ids": [
+                705445,
+                705443
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Animal System",
+          "items": [
+            {
+              "text": "Fixed incorrect pooling logic for LivestockAnimal objects, improving animal spawning/behavior consistency.",
+              "commit_ids": [
+                705458
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Combat",
@@ -127,24 +279,10 @@
           705641
         ],
         "section": "Map & Loot Rooms"
-      },
-      {
-        "text": "Fixed bug that let water sources be transferred between rooms (sinks).",
-        "commit_ids": [
-          705617
-        ],
-        "section": "Base Building"
-      },
-      {
-        "text": "Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.",
-        "commit_ids": [
-          705612
-        ],
-        "section": "Animals & Wildlife"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.\n- Fixed bug that let water sources be transferred between rooms (sinks).\n- Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance."
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms."
   },
   "2026-09-27": {
     "commit_count": 18,
