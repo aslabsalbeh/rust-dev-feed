@@ -1,154 +1,132 @@
 {
   "2026-09-28": {
-    "commit_count": 43,
-    "relevant_commit_count": 32,
-    "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598",
+    "commit_count": 53,
+    "relevant_commit_count": 40,
+    "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Critters",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Livestock now match player speed when being led, preventing lead breaks.",
+            "text": "Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.",
+            "commit_ids": [
+              705612
+            ]
+          },
+          {
+            "text": "Frog and other critter behavior tuned – jump glitches and dead‑animation stalls fixed, frog size increased by 20%, and health lowered (frogs 60, rabbits 100) for better balance.",
+            "commit_ids": [
+              705569,
+              705550,
+              705548
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Animals",
+        "items": [
+          {
+            "text": "Livestock keep pace with you when led, eliminating lead breaks and long waiting times.",
             "commit_ids": [
               705598
             ]
           },
           {
-            "text": "Floating animals no longer hover due to bug fix.",
+            "text": "Floating animal glitches resolved and bulls now correctly stop looking at lost targets.",
             "commit_ids": [
-              705597
-            ]
-          },
-          {
-            "text": "Frogs now have a longer first jump and corrected death animation.",
-            "commit_ids": [
-              705569
-            ]
-          },
-          {
-            "text": "Frog size increased by 20%, making them larger in the world.",
-            "commit_ids": [
-              705550
-            ]
-          },
-          {
-            "text": "Critter health nerfed: frogs now 60 HP, rabbits 100 HP.",
-            "commit_ids": [
-              705548
-            ]
-          },
-          {
-            "text": "Bull AI rotation now remains stable when the target is lost.",
-            "commit_ids": [
+              705597,
               705527
             ]
-          }
-        ]
-      },
-      {
-        "title": "Map Access",
-        "items": [
+          },
           {
-            "text": "Open fence gates added to the ranch and large barn, simplifying vendor access.",
+            "text": "Livestock vendor inventory refined: respects game mode (no guns in Primitive), duplicate Custom SMG removed and replaced with a Thompson submachine gun.",
             "commit_ids": [
-              705572
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Generator Audio",
-        "items": [
-          {
-            "text": "Biofuel generator is silent while idle, reducing background noise.",
-            "commit_ids": [
-              705502
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock Vendor & Economy",
-        "items": [
-          {
-            "text": "Vendor inventory rebalanced: duplicate Custom SMG removed (replaced with Thompson), guns no longer appear in Primitive mode, low‑quality turret offering corrected, high‑end items (bp frags, Thompson, Custom SMG, Python, HC revolver) added, and wool sales now account for ~75 % of livestock revenue.",
-            "commit_ids": [
-              705463,
               705445,
+              705463
+            ]
+          },
+          {
+            "text": "Livestock sales revamped – low‑quality turrets removed, high‑end sales now include basic BP fragments, Thompson, Custom SMG, Python, and HC Revolver; wool now contributes roughly 75 % of livestock revenue.",
+            "commit_ids": [
               705443
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Base Building & Power",
         "items": [
           {
-            "text": "Biofuel generators now operate correctly with the stirrer positioned properly, preventing generation failures.",
+            "text": "Water sources (sinks) can now be moved between rooms without issue.",
             "commit_ids": [
-              705554
+              705617
+            ]
+          },
+          {
+            "text": "Biofuel generators run quietly and function correctly: idle noise eliminated and stirrer positioned for reliable operation.",
+            "commit_ids": [
+              705554,
+              705502
+            ]
+          },
+          {
+            "text": "Ladder rotations corrected to align properly with structures.",
+            "commit_ids": [
+              705521
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Map Changes",
+        "items": [
+          {
+            "text": "Open fence gates added to the ranch and large barn, providing easier access to the vendor area.",
+            "commit_ids": [
+              705572
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Livestock & Critters\n- Livestock now match player speed when being led, preventing lead breaks.\n- Floating animals no longer hover due to bug fix.\n- Frogs now have a longer first jump and corrected death animation.\n- Frog size increased by 20%, making them larger in the world.\n- Critter health nerfed: frogs now 60 HP, rabbits 100 HP.\n- Bull AI rotation now remains stable when the target is lost.\n\n### Map Access\n- Open fence gates added to the ranch and large barn, simplifying vendor access.\n\n### Generator Audio\n- Biofuel generator is silent while idle, reducing background noise.\n\n### Livestock Vendor & Economy\n- Vendor inventory rebalanced: duplicate Custom SMG removed (replaced with Thompson), guns no longer appear in Primitive mode, low‑quality turret offering corrected, high‑end items (bp frags, Thompson, Custom SMG, Python, HC revolver) added, and wool sales now account for ~75 % of livestock revenue.\n\n### Gameplay & Balance\n- Biofuel generators now operate correctly with the stirrer positioned properly, preventing generation failures.",
+    "summary": "### NPC & AI\n- Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.\n- Frog and other critter behavior tuned – jump glitches and dead‑animation stalls fixed, frog size increased by 20%, and health lowered (frogs 60, rabbits 100) for better balance.\n\n### Livestock & Animals\n- Livestock keep pace with you when led, eliminating lead breaks and long waiting times.\n- Floating animal glitches resolved and bulls now correctly stop looking at lost targets.\n- Livestock vendor inventory refined: respects game mode (no guns in Primitive), duplicate Custom SMG removed and replaced with a Thompson submachine gun.\n- Livestock sales revamped – low‑quality turrets removed, high‑end sales now include basic BP fragments, Thompson, Custom SMG, Python, and HC Revolver; wool now contributes roughly 75 % of livestock revenue.\n\n### Base Building & Power\n- Water sources (sinks) can now be moved between rooms without issue.\n- Biofuel generators run quietly and function correctly: idle noise eliminated and stirrer positioned for reliable operation.\n- Ladder rotations corrected to align properly with structures.\n\n### Map Changes\n- Open fence gates added to the ranch and large barn, providing easier access to the vendor area.",
     "new_items": [
       {
-        "text": "Livestock now match player speed when being led, preventing lead breaks.",
+        "text": "Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.",
+        "commit_ids": [
+          705612
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Livestock keep pace with you when led, eliminating lead breaks and long waiting times.",
         "commit_ids": [
           705598
         ],
-        "section": "Livestock & Critters"
+        "section": "Livestock & Animals"
       },
       {
-        "text": "Floating animals no longer hover due to bug fix.",
+        "text": "Floating animal glitches resolved and bulls now correctly stop looking at lost targets.",
         "commit_ids": [
-          705597
+          705597,
+          705527
         ],
-        "section": "Livestock & Critters"
+        "section": "Livestock & Animals"
       },
       {
-        "text": "Frogs now have a longer first jump and corrected death animation.",
+        "text": "Water sources (sinks) can now be moved between rooms without issue.",
         "commit_ids": [
-          705569
+          705617
         ],
-        "section": "Livestock & Critters"
-      },
-      {
-        "text": "Frog size increased by 20%, making them larger in the world.",
-        "commit_ids": [
-          705550
-        ],
-        "section": "Livestock & Critters"
-      },
-      {
-        "text": "Critter health nerfed: frogs now 60 HP, rabbits 100 HP.",
-        "commit_ids": [
-          705548
-        ],
-        "section": "Livestock & Critters"
-      },
-      {
-        "text": "Open fence gates added to the ranch and large barn, simplifying vendor access.",
-        "commit_ids": [
-          705572
-        ],
-        "section": "Map Access"
-      },
-      {
-        "text": "Biofuel generators now operate correctly with the stirrer positioned properly, preventing generation failures.",
-        "commit_ids": [
-          705554
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Base Building & Power"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Livestock now match player speed when being led, preventing lead breaks.\n- Floating animals no longer hover due to bug fix.\n- Frogs now have a longer first jump and corrected death animation.\n- Frog size increased by 20%, making them larger in the world.\n- Critter health nerfed: frogs now 60 HP, rabbits 100 HP.\n- Open fence gates added to the ranch and large barn, simplifying vendor access.\n- Biofuel generators now operate correctly with the stirrer positioned properly, preventing generation failures."
+    "new_relevant_count": 5,
+    "new_summary": "- Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.\n- Livestock keep pace with you when led, eliminating lead breaks and long waiting times.\n- Floating animal glitches resolved and bulls now correctly stop looking at lost targets.\n- Water sources (sinks) can now be moved between rooms without issue."
   },
   "2026-09-27": {
     "commit_count": 18,
