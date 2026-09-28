@@ -1,5 +1,101 @@
 [
   {
+    "id": 705649,
+    "branch": "main/fix_crash_uploader_release",
+    "changeset": "166092",
+    "created": "2026-09-28T20:04:23",
+    "message": "Fix crashes from previous updates being uploaded despite not having the sentry tags written\r\n- don't upload old crashes (if we made it past bootstrap but didn't write a crash marker)\r\n- still upload crashes that never made it to bootstrap (since this is before crash marker could be written)\r\n- tag crashes that didn't make it to bootstrap as \"bootstrap crashes\" so we can see what crashes happened really early\r\n- if we find a bunch of crashes happening before bootstrap we will find a way to include the actual changeset (since we don't read changeset until we get to bootstrap)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705648,
+    "branch": "main/mortar_desync_fix",
+    "changeset": "166091",
+    "created": "2026-09-28T19:50:54",
+    "message": "fix mortar desync when reconnecting/entering network range",
+    "user": "octo"
+  },
+  {
+    "id": 705644,
+    "branch": "main/powergrid_loot_fixes_2",
+    "changeset": "166089",
+    "created": "2026-09-28T19:25:46",
+    "message": "Harbor 1 reenabled HLOD",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 705643,
+    "branch": "main/powergrid_loot_fixes_2",
+    "changeset": "166088",
+    "created": "2026-09-28T19:22:50",
+    "message": "Boarded up gaps that you could shoot through into the loot room in Harbor 1",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 705641,
+    "branch": "main/powergrid_loot_fixes_2",
+    "changeset": "166087",
+    "created": "2026-09-28T19:10:35",
+    "message": "Boarded up all windows that allowed for looking into and shooting into the loot room in Harbor 2",
+    "user": "Damian Lazarski"
+  },
+  {
+    "id": 705637,
+    "branch": "main",
+    "changeset": "166085",
+    "created": "2026-09-28T18:40:01",
+    "message": "sheep sound volume tweaks",
+    "user": "Alex R"
+  },
+  {
+    "id": 705635,
+    "branch": "main",
+    "changeset": "166084",
+    "created": "2026-09-28T18:30:14",
+    "message": "switch biofuel generator sound classes so its active loops are occluded",
+    "user": "Alex R"
+  },
+  {
+    "id": 705633,
+    "branch": "main",
+    "changeset": "166083",
+    "created": "2026-09-28T18:20:34",
+    "message": "Merge: from poolanalyzer_validatepooledlist\r\n- 4 bugfixes for invalid object recycling\r\nTests: booted unity editor, no errors. booted to craggy",
+    "user": "Daniel P"
+  },
+  {
+    "id": 705634,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "166082",
+    "created": "2026-09-28T18:20:20",
+    "message": "remake model renaming",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 705628,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "166079",
+    "created": "2026-09-28T18:12:33",
+    "message": "updates to 3p setup following merge from main\r\n\r\nRemoved the SprintController from the entity - with the hold type gone its guard never passes,\r\nsprint pose stayed at 1 on the right arm and hid everything the anim\r\nsubsystem was doing. Added an Aiming bool plus IdleAim/AttackAim on the 3p_nailgun_aim clips\r\nthat were sitting unused in the FBX, one handed to match the rest of the weapon, and pointed\r\nthe subsystem's AimingParameter at it.",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 705627,
+    "branch": "main/premium",
+    "changeset": "166078",
+    "created": "2026-09-28T18:10:55",
+    "message": "Trading card baseline",
+    "user": "Flavien"
+  },
+  {
+    "id": 705626,
+    "branch": "main/poolanalyzer_validatepooledlist",
+    "changeset": "166077",
+    "created": "2026-09-28T18:09:41",
+    "message": "Update: PoolAnalyzer now stop from assigning PooledList to List fields in ProtoBufs\r\n- fixed errors found in our code\r\n- release bin from 9bf2cc09\r\nThis causes recycling back to wrong pool(List) once protobuf is done with the object\r\nTests: unit tests + editor compiles",
+    "user": "Daniel P"
+  },
+  {
     "id": 705621,
     "branch": "main/Livestock_animals",
     "changeset": "166074",
@@ -781,70 +877,6 @@
     "changeset": "165924",
     "created": "2026-09-25T20:53:04",
     "message": "S2P harbor_1, prefab was corrupted",
-    "user": "Flavien"
-  },
-  {
-    "id": 705287,
-    "branch": "main/Livestock_animals",
-    "changeset": "165923",
-    "created": "2026-09-25T20:14:49",
-    "message": "- Fix livestock and old animals going underwater\r\n- Fix bull stuck forever in charge mode when you move to its side\r\n- Fix bull trying to headbutt even if target is unreachable\r\n- Fix curious cow being so curious it lets itself starve\r\n- Reduce bull damage\r\n- Livestock leads now behave more like horse leads, slows down the player and break around 7m\r\n- Fix cow sometimes snapping back to idle after a graze instead of playing the exit anim",
-    "user": "Maverick"
-  },
-  {
-    "id": 705286,
-    "branch": "main/PlayerTurning_Animations",
-    "changeset": "165922",
-    "created": "2026-09-25T20:11:31",
-    "message": "fix crouching state triggering when turninplace is active",
-    "user": "octo"
-  },
-  {
-    "id": 705283,
-    "branch": "main",
-    "changeset": "165921",
-    "created": "2026-09-25T19:35:27",
-    "message": "Fix benchmarks not bypassing fps.limitInBackground\r\nFix never removing anything added to TriggerBase._allTriggerBase\r\nFix Rust.Registry.Entity._dict leak when switching scenes (disconnecting from server etc)\r\nAdd BaseEntityChild to player_collision.prefab so its transform is removed from the registry when destroyed",
-    "user": "lamalove"
-  },
-  {
-    "id": 705281,
-    "branch": "main/optimize_blueprint_button",
-    "changeset": "165919",
-    "created": "2026-09-25T19:11:01",
-    "message": "Compile fix",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705280,
-    "branch": "main/optimize_blueprint_button",
-    "changeset": "165918",
-    "created": "2026-09-25T18:55:52",
-    "message": "Cherrypick CS 160658\r\n- tick blueprint buttons only when crafting menu is open instead of all the time (even when closed)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705277,
-    "branch": "main/automated_testing",
-    "changeset": "165916",
-    "created": "2026-09-25T18:52:41",
-    "message": "Restored rich pie names + descriptions",
-    "user": "Lukester"
-  },
-  {
-    "id": 705273,
-    "branch": "▆▋▋▋▊█▌▅▊▆█▅▍█▅█▆▅█▊▌▌",
-    "changeset": "█▄▊▅▋▇",
-    "created": "2026-09-25T18:23:13",
-    "message": "▅▄▅▄▍▄ ▅▍▄█ █▆▇█",
-    "user": "Flavien"
-  },
-  {
-    "id": 705271,
-    "branch": "main/Livestock_animals",
-    "changeset": "165913",
-    "created": "2026-09-25T18:19:09",
-    "message": "Added RustNavmeshModifierVolume to the following vehicles:\n- Both snowmobiles\n- Sled\n- Rowboat\n- Minicopter\n- Attack helicopter\n- Scrap heli\n- Catapult\n- Battering ram\n- Siege tower\r\n- Sedan\r\n\r\n(prevents navmesh from generating on top of them)",
     "user": "Flavien"
   }
 ]

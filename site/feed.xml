@@ -6,45 +6,52 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 28 Sep 2026 14:17:33 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 16:17:32 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 28</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;53 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;65 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705612"&gt;Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.&lt;/li&gt;
-&lt;li data-rust-commits="705598"&gt;Livestock keep pace with you when led, eliminating lead breaks and long waiting times.&lt;/li&gt;
-&lt;li data-rust-commits="705597,705527"&gt;Floating animal glitches resolved and bulls now correctly stop looking at lost targets.&lt;/li&gt;
-&lt;li data-rust-commits="705617"&gt;Water sources (sinks) can now be moved between rooms without issue.&lt;/li&gt;
+&lt;li data-rust-commits="705648"&gt;Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.&lt;/li&gt;
+&lt;li data-rust-commits="705643,705641"&gt;Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.&lt;/li&gt;
+&lt;li data-rust-commits="705617"&gt;Fixed bug that let water sources be transferred between rooms (sinks).&lt;/li&gt;
+&lt;li data-rust-commits="705612"&gt;Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705612"&gt;Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.&lt;/li&gt;
-&lt;li data-rust-commits="705569,705550,705548"&gt;Frog and other critter behavior tuned – jump glitches and dead‑animation stalls fixed, frog size increased by 20%, and health lowered (frogs 60, rabbits 100) for better balance.&lt;/li&gt;
+&lt;li data-rust-commits="705648"&gt;Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.&lt;/li&gt;
+&lt;li data-rust-commits="705464"&gt;Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Animals&lt;/h3&gt;
+&lt;h3&gt;Map &amp;amp; Loot Rooms&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705598"&gt;Livestock keep pace with you when led, eliminating lead breaks and long waiting times.&lt;/li&gt;
-&lt;li data-rust-commits="705597,705527"&gt;Floating animal glitches resolved and bulls now correctly stop looking at lost targets.&lt;/li&gt;
-&lt;li data-rust-commits="705445,705463"&gt;Livestock vendor inventory refined: respects game mode (no guns in Primitive), duplicate Custom SMG removed and replaced with a Thompson submachine gun.&lt;/li&gt;
-&lt;li data-rust-commits="705443"&gt;Livestock sales revamped – low‑quality turrets removed, high‑end sales now include basic BP fragments, Thompson, Custom SMG, Python, and HC Revolver; wool now contributes roughly 75 % of livestock revenue.&lt;/li&gt;
+&lt;li data-rust-commits="705643,705641"&gt;Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base Building &amp;amp; Power&lt;/h3&gt;
+&lt;h3&gt;Base Building&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705617"&gt;Water sources (sinks) can now be moved between rooms without issue.&lt;/li&gt;
-&lt;li data-rust-commits="705554,705502"&gt;Biofuel generators run quietly and function correctly: idle noise eliminated and stirrer positioned for reliable operation.&lt;/li&gt;
-&lt;li data-rust-commits="705521"&gt;Ladder rotations corrected to align properly with structures.&lt;/li&gt;
+&lt;li data-rust-commits="705617"&gt;Fixed bug that let water sources be transferred between rooms (sinks).&lt;/li&gt;
+&lt;li data-rust-commits="705572"&gt;Added open fence gates to the ranch and large barn for easier access to the vendor.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Map Changes&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Wildlife&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705572"&gt;Open fence gates added to the ranch and large barn, providing easier access to the vendor area.&lt;/li&gt;
+&lt;li data-rust-commits="705598"&gt;Livestock now matches player speed when being led, reducing lead breaks.&lt;/li&gt;
+&lt;li data-rust-commits="705550,705548,705569"&gt;Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.&lt;/li&gt;
+&lt;li data-rust-commits="705612"&gt;Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.&lt;/li&gt;
+&lt;li data-rust-commits="705527,705442,705597"&gt;Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Economy &amp;amp; Vendors&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705463,705445,705443"&gt;Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audio&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705502"&gt;Biofuel generator is now completely silent while idle, removing its background hum.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-28</guid>
-      <pubDate>Mon, 28 Sep 2026 14:17:33 -0400</pubDate>
+      <pubDate>Mon, 28 Sep 2026 16:17:32 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 27</title>

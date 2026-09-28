@@ -1,132 +1,150 @@
 {
   "2026-09-28": {
-    "commit_count": 53,
-    "relevant_commit_count": 40,
-    "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621",
+    "commit_count": 65,
+    "relevant_commit_count": 50,
+    "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "Combat",
         "items": [
           {
-            "text": "Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.",
+            "text": "Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.",
             "commit_ids": [
-              705612
+              705648
             ]
           },
           {
-            "text": "Frog and other critter behavior tuned – jump glitches and dead‑animation stalls fixed, frog size increased by 20%, and health lowered (frogs 60, rabbits 100) for better balance.",
+            "text": "Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.",
             "commit_ids": [
-              705569,
-              705550,
-              705548
+              705464
             ]
           }
         ]
       },
       {
-        "title": "Livestock & Animals",
+        "title": "Map & Loot Rooms",
         "items": [
           {
-            "text": "Livestock keep pace with you when led, eliminating lead breaks and long waiting times.",
+            "text": "Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.",
+            "commit_ids": [
+              705643,
+              705641
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base Building",
+        "items": [
+          {
+            "text": "Fixed bug that let water sources be transferred between rooms (sinks).",
+            "commit_ids": [
+              705617
+            ]
+          },
+          {
+            "text": "Added open fence gates to the ranch and large barn for easier access to the vendor.",
+            "commit_ids": [
+              705572
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & Wildlife",
+        "items": [
+          {
+            "text": "Livestock now matches player speed when being led, reducing lead breaks.",
             "commit_ids": [
               705598
             ]
           },
           {
-            "text": "Floating animal glitches resolved and bulls now correctly stop looking at lost targets.",
+            "text": "Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.",
             "commit_ids": [
-              705597,
-              705527
+              705550,
+              705548,
+              705569
             ]
           },
           {
-            "text": "Livestock vendor inventory refined: respects game mode (no guns in Primitive), duplicate Custom SMG removed and replaced with a Thompson submachine gun.",
+            "text": "Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.",
             "commit_ids": [
+              705612
+            ]
+          },
+          {
+            "text": "Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.",
+            "commit_ids": [
+              705527,
+              705442,
+              705597
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Economy & Vendors",
+        "items": [
+          {
+            "text": "Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.",
+            "commit_ids": [
+              705463,
               705445,
-              705463
-            ]
-          },
-          {
-            "text": "Livestock sales revamped – low‑quality turrets removed, high‑end sales now include basic BP fragments, Thompson, Custom SMG, Python, and HC Revolver; wool now contributes roughly 75 % of livestock revenue.",
-            "commit_ids": [
               705443
             ]
           }
         ]
       },
       {
-        "title": "Base Building & Power",
+        "title": "Audio",
         "items": [
           {
-            "text": "Water sources (sinks) can now be moved between rooms without issue.",
+            "text": "Biofuel generator is now completely silent while idle, removing its background hum.",
             "commit_ids": [
-              705617
-            ]
-          },
-          {
-            "text": "Biofuel generators run quietly and function correctly: idle noise eliminated and stirrer positioned for reliable operation.",
-            "commit_ids": [
-              705554,
               705502
-            ]
-          },
-          {
-            "text": "Ladder rotations corrected to align properly with structures.",
-            "commit_ids": [
-              705521
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map Changes",
-        "items": [
-          {
-            "text": "Open fence gates added to the ranch and large barn, providing easier access to the vendor area.",
-            "commit_ids": [
-              705572
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### NPC & AI\n- Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.\n- Frog and other critter behavior tuned – jump glitches and dead‑animation stalls fixed, frog size increased by 20%, and health lowered (frogs 60, rabbits 100) for better balance.\n\n### Livestock & Animals\n- Livestock keep pace with you when led, eliminating lead breaks and long waiting times.\n- Floating animal glitches resolved and bulls now correctly stop looking at lost targets.\n- Livestock vendor inventory refined: respects game mode (no guns in Primitive), duplicate Custom SMG removed and replaced with a Thompson submachine gun.\n- Livestock sales revamped – low‑quality turrets removed, high‑end sales now include basic BP fragments, Thompson, Custom SMG, Python, and HC Revolver; wool now contributes roughly 75 % of livestock revenue.\n\n### Base Building & Power\n- Water sources (sinks) can now be moved between rooms without issue.\n- Biofuel generators run quietly and function correctly: idle noise eliminated and stirrer positioned for reliable operation.\n- Ladder rotations corrected to align properly with structures.\n\n### Map Changes\n- Open fence gates added to the ranch and large barn, providing easier access to the vendor area.",
+    "summary": "### Combat\n- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.\n\n### Map & Loot Rooms\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.\n\n### Base Building\n- Fixed bug that let water sources be transferred between rooms (sinks).\n- Added open fence gates to the ranch and large barn for easier access to the vendor.\n\n### Animals & Wildlife\n- Livestock now matches player speed when being led, reducing lead breaks.\n- Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.\n- Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.\n- Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.\n\n### Economy & Vendors\n- Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.\n\n### Audio\n- Biofuel generator is now completely silent while idle, removing its background hum.",
     "new_items": [
       {
-        "text": "Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.",
+        "text": "Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.",
         "commit_ids": [
-          705612
+          705648
         ],
-        "section": "NPC & AI"
+        "section": "Combat"
       },
       {
-        "text": "Livestock keep pace with you when led, eliminating lead breaks and long waiting times.",
+        "text": "Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.",
         "commit_ids": [
-          705598
+          705643,
+          705641
         ],
-        "section": "Livestock & Animals"
+        "section": "Map & Loot Rooms"
       },
       {
-        "text": "Floating animal glitches resolved and bulls now correctly stop looking at lost targets.",
-        "commit_ids": [
-          705597,
-          705527
-        ],
-        "section": "Livestock & Animals"
-      },
-      {
-        "text": "Water sources (sinks) can now be moved between rooms without issue.",
+        "text": "Fixed bug that let water sources be transferred between rooms (sinks).",
         "commit_ids": [
           705617
         ],
-        "section": "Base Building & Power"
+        "section": "Base Building"
+      },
+      {
+        "text": "Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.",
+        "commit_ids": [
+          705612
+        ],
+        "section": "Animals & Wildlife"
       }
     ],
     "new_relevant_count": 5,
-    "new_summary": "- Crabs and jellyfish now navigate more reliably: added step height to stop cliff glitches, obstacle‑avoidance raycasts, fixed leg‑speed issues, and switched jellyfish water checks to a batched system.\n- Livestock keep pace with you when led, eliminating lead breaks and long waiting times.\n- Floating animal glitches resolved and bulls now correctly stop looking at lost targets.\n- Water sources (sinks) can now be moved between rooms without issue."
+    "new_summary": "- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.\n- Fixed bug that let water sources be transferred between rooms (sinks).\n- Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance."
   },
   "2026-09-27": {
     "commit_count": 18,
