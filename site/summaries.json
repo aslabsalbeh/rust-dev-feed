@@ -1,35 +1,48 @@
 {
   "2026-09-27": {
-    "commit_count": 13,
-    "relevant_commit_count": 8,
-    "relevant_signature": "705392,705394,705397,705399,705408,705412,705420,705422",
+    "commit_count": 17,
+    "relevant_commit_count": 11,
+    "relevant_signature": "705392,705394,705397,705399,705408,705412,705420,705422,705436,705438,705440",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Livestock become docile in safe zones, preventing griefing and ensuring NPC livestock buyers handle dead or fleeing animals correctly.",
+            "text": "Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.",
             "commit_ids": [
-              705422
+              705440
             ]
           },
           {
-            "text": "Cows can no longer graze on ice or sand, fixing odd grazing behavior.",
+            "text": "Cows will no longer graze on ice or sand, preventing wasted resources.",
             "commit_ids": [
               705420
+            ]
+          },
+          {
+            "text": "Animal fence gates now have 100 HP instead of 500, making them easier to break.",
+            "commit_ids": [
+              705392
+            ]
+          },
+          {
+            "text": "Livestock are now docile in safe zones, and NPC livestock buyers react properly if livestock die or flee during a trade.",
+            "commit_ids": [
+              705422
             ]
           }
         ]
       },
       {
-        "title": "Base Defense",
+        "title": "Livestock Vendor",
         "items": [
           {
-            "text": "Animal fence gate health reduced from 500 to 100, making them easier to break.",
+            "text": "Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout.",
             "commit_ids": [
-              705392
+              705436,
+              705438
             ]
           }
         ]
@@ -38,7 +51,7 @@
         "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Country selection tag now respects streamer mode, hiding the player's country when the setting is enabled.",
+            "text": "Country tag now respects streamer mode, hiding the player's country when the setting is enabled.",
             "commit_ids": [
               705408
             ]
@@ -47,10 +60,26 @@
       }
     ],
     "status": "ok",
-    "summary": "### Animals & Farming\n- Livestock become docile in safe zones, preventing griefing and ensuring NPC livestock buyers handle dead or fleeing animals correctly.\n- Cows can no longer graze on ice or sand, fixing odd grazing behavior.\n\n### Base Defense\n- Animal fence gate health reduced from 500 to 100, making them easier to break.\n\n### UI & Quality of Life\n- Country selection tag now respects streamer mode, hiding the player's country when the setting is enabled.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Animals & AI\n- Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.\n- Cows will no longer graze on ice or sand, preventing wasted resources.\n- Animal fence gates now have 100 HP instead of 500, making them easier to break.\n- Livestock are now docile in safe zones, and NPC livestock buyers react properly if livestock die or flee during a trade.\n\n### Livestock Vendor\n- Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout.\n\n### UI & Quality of Life\n- Country tag now respects streamer mode, hiding the player's country when the setting is enabled.",
+    "new_items": [
+      {
+        "text": "Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.",
+        "commit_ids": [
+          705440
+        ],
+        "section": "Animals & AI"
+      },
+      {
+        "text": "Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout.",
+        "commit_ids": [
+          705436,
+          705438
+        ],
+        "section": "Livestock Vendor"
+      }
+    ],
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.\n- Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout."
   },
   "2026-09-26": {
     "commit_count": 9,
