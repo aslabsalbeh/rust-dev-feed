@@ -1,48 +1,61 @@
 {
+  "2026-09-28": {
+    "commit_count": 1,
+    "relevant_commit_count": 1,
+    "relevant_signature": "705442",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-09-27": {
-    "commit_count": 17,
-    "relevant_commit_count": 11,
-    "relevant_signature": "705392,705394,705397,705399,705408,705412,705420,705422,705436,705438,705440",
+    "commit_count": 18,
+    "relevant_commit_count": 12,
+    "relevant_signature": "705392,705394,705397,705399,705408,705412,705420,705422,705436,705438,705440,705441",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.",
+            "text": "Livestock vendor auction now pauses if the wool stack size changes mid‑offer; keep your inventory matching the original size or the sale will time out.",
+            "commit_ids": [
+              705436,
+              705438
+            ]
+          },
+          {
+            "text": "Livestock are now docile in safe zones, and the NPC livestock buyer correctly handles cases where livestock die or flee during conversation.",
+            "commit_ids": [
+              705422
+            ]
+          },
+          {
+            "text": "Animals no longer seek out food; food‑sensing disabled for animals that don’t need it, fixing odd food‑related behavior.",
             "commit_ids": [
               705440
             ]
           },
           {
-            "text": "Cows will no longer graze on ice or sand, preventing wasted resources.",
+            "text": "Cows can no longer graze on ice or sand, preventing them from wasting resources on unsuitable terrain.",
             "commit_ids": [
               705420
-            ]
-          },
-          {
-            "text": "Animal fence gates now have 100 HP instead of 500, making them easier to break.",
-            "commit_ids": [
-              705392
-            ]
-          },
-          {
-            "text": "Livestock are now docile in safe zones, and NPC livestock buyers react properly if livestock die or flee during a trade.",
-            "commit_ids": [
-              705422
             ]
           }
         ]
       },
       {
-        "title": "Livestock Vendor",
+        "title": "Structures",
         "items": [
           {
-            "text": "Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout.",
+            "text": "Animal fence gate durability reduced from 500 HP to 100 HP, making them easier to break.",
             "commit_ids": [
-              705436,
-              705438
+              705392
             ]
           }
         ]
@@ -60,26 +73,10 @@
       }
     ],
     "status": "ok",
-    "summary": "### Animals & AI\n- Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.\n- Cows will no longer graze on ice or sand, preventing wasted resources.\n- Animal fence gates now have 100 HP instead of 500, making them easier to break.\n- Livestock are now docile in safe zones, and NPC livestock buyers react properly if livestock die or flee during a trade.\n\n### Livestock Vendor\n- Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout.\n\n### UI & Quality of Life\n- Country tag now respects streamer mode, hiding the player's country when the setting is enabled.",
-    "new_items": [
-      {
-        "text": "Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.",
-        "commit_ids": [
-          705440
-        ],
-        "section": "Animals & AI"
-      },
-      {
-        "text": "Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout.",
-        "commit_ids": [
-          705436,
-          705438
-        ],
-        "section": "Livestock Vendor"
-      }
-    ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed odd animal behavior around food and disabled food sensing for animals that don't need it.\n- Vendor auctions now pause if your wool stack size changes mid‑offer, and the negotiation timer no longer resets when the stack changes, so keep the exact stack size to avoid timeout."
+    "summary": "### Livestock & Animals\n- Livestock vendor auction now pauses if the wool stack size changes mid‑offer; keep your inventory matching the original size or the sale will time out.\n- Livestock are now docile in safe zones, and the NPC livestock buyer correctly handles cases where livestock die or flee during conversation.\n- Animals no longer seek out food; food‑sensing disabled for animals that don’t need it, fixing odd food‑related behavior.\n- Cows can no longer graze on ice or sand, preventing them from wasting resources on unsuitable terrain.\n\n### Structures\n- Animal fence gate durability reduced from 500 HP to 100 HP, making them easier to break.\n\n### UI & Quality of Life\n- Country tag now respects streamer mode, hiding the player's country when the setting is enabled.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-26": {
     "commit_count": 9,
@@ -90,184 +87,6 @@
     "sections": [],
     "status": "no_significant_updates",
     "summary": "No notable player-facing changes were identified in the latest development commits.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-09-25": {
-    "commit_count": 124,
-    "relevant_commit_count": 74,
-    "relevant_signature": "705049,705050,705052,705058,705066,705067,705075,705076,705077,705084,705087,705091,705094,705096,705099,705113,705121,705122,705137,705139,705140,705142,705162,705175,705182,705186,705187,705188,705189,705192,705193,705199,705200,705201,705203,705205,705207,705208,705210,705213,705218,705222,705224,705227,705232,705237,705238,705243,705244,705250,705254,705256,705259,705264,705266,705268,705269,705280,705281,705283,705286,705287,705293,705300,705301,705302,705310,705312,705313,705315,705317,705318,705319,705320",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Buffs & UI",
-        "items": [
-          {
-            "text": "Rich beef pie now provides +25% hunger and hydration, rounded to whole numbers.",
-            "commit_ids": [
-              705320
-            ]
-          },
-          {
-            "text": "Buff tooltips now correctly display durations longer than 60 minutes.",
-            "commit_ids": [
-              705319
-            ]
-          }
-        ]
-      },
-      {
-        "title": "AI, Animals & NPCs",
-        "items": [
-          {
-            "text": "Tin can alarm can now detect Generation 2 AIs and critters.",
-            "commit_ids": [
-              705310
-            ]
-          },
-          {
-            "text": "Livestock AI fixes: animals no longer go underwater, bulls no longer get stuck or attempt unreachable headbutts, curious cows won’t starve, bull damage reduced, livestock leads now slow the player and break around 7 m, and cows correctly transition after grazing.",
-            "commit_ids": [
-              705287
-            ]
-          },
-          {
-            "text": "Added ally status to crabs, stags, boars, and bulls so they no longer attack each other.",
-            "commit_ids": [
-              705188
-            ]
-          },
-          {
-            "text": "Wool vendor always offers a dialogue option to ask about wool, regardless of inventory.",
-            "commit_ids": [
-              705264
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Melee weapons stay welded to the hand while running.",
-            "commit_ids": [
-              705254
-            ]
-          },
-          {
-            "text": "Minigun ammo count now updates when reloading inside a box and the reload option is hidden when ammo is full.",
-            "commit_ids": [
-              705137
-            ]
-          },
-          {
-            "text": "Crossbow arrows now have correct head rotation, ensuring proper flight orientation.",
-            "commit_ids": [
-              705077
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Resources & Crafting",
-        "items": [
-          {
-            "text": "Powergrid loot now respawns after being collected.",
-            "commit_ids": [
-              705237,
-              705238
-            ]
-          },
-          {
-            "text": "Milky and creamy teas are no longer recyclable, and spoiled produce now behaves correctly in recipes and processing.",
-            "commit_ids": [
-              705113,
-              705084
-            ]
-          },
-          {
-            "text": "Grenades spawn in the correct position when deploying the last grenade in a stack in first‑person view, and explosion overlays now have a minimum intensity threshold to prevent lingering visual effects.",
-            "commit_ids": [
-              705121,
-              705050
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Structures & Tech",
-        "items": [
-          {
-            "text": "Animal Fence and Biofuel Generator are restored in Primitive mode, scrap cost of fences and gates reduced, and both structures added to Tier‑1 tech trees; Biofuel Generator also added to Hardcore and Primitive tech trees.",
-            "commit_ids": [
-              705175,
-              705049
-            ]
-          },
-          {
-            "text": "Player rotation is corrected when dismounting, preventing a tilted orientation.",
-            "commit_ids": [
-              705207
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Animals",
-        "items": [
-          {
-            "text": "Calves purchased at the ranch now display the correct gender‑specific names.",
-            "commit_ids": [
-              705317
-            ]
-          },
-          {
-            "text": "Lamb fleece now appears correctly at all LOD levels, ensuring wool can be harvested visually.",
-            "commit_ids": [
-              705058
-            ]
-          },
-          {
-            "text": "Bull item name and description have been corrected in its prefab.",
-            "commit_ids": [
-              705122
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Modular car builds now save reliably without thread‑related errors.",
-            "commit_ids": [
-              705315
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "Melee combat animations have been fixed, improving hit detection and visual feedback.",
-            "commit_ids": [
-              705256
-            ]
-          },
-          {
-            "text": "Missing animation files for the M92 pistol have been restored, fixing animation issues.",
-            "commit_ids": [
-              705200
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Buffs & UI\n- Rich beef pie now provides +25% hunger and hydration, rounded to whole numbers.\n- Buff tooltips now correctly display durations longer than 60 minutes.\n\n### AI, Animals & NPCs\n- Tin can alarm can now detect Generation 2 AIs and critters.\n- Livestock AI fixes: animals no longer go underwater, bulls no longer get stuck or attempt unreachable headbutts, curious cows won’t starve, bull damage reduced, livestock leads now slow the player and break around 7 m, and cows correctly transition after grazing.\n- Added ally status to crabs, stags, boars, and bulls so they no longer attack each other.\n- Wool vendor always offers a dialogue option to ask about wool, regardless of inventory.\n\n### Combat & Weapons\n- Melee weapons stay welded to the hand while running.\n- Minigun ammo count now updates when reloading inside a box and the reload option is hidden when ammo is full.\n- Crossbow arrows now have correct head rotation, ensuring proper flight orientation.\n\n### Resources & Crafting\n- Powergrid loot now respawns after being collected.\n- Milky and creamy teas are no longer recyclable, and spoiled produce now behaves correctly in recipes and processing.\n- Grenades spawn in the correct position when deploying the last grenade in a stack in first‑person view, and explosion overlays now have a minimum intensity threshold to prevent lingering visual effects.\n\n### Structures & Tech\n- Animal Fence and Biofuel Generator are restored in Primitive mode, scrap cost of fences and gates reduced, and both structures added to Tier‑1 tech trees; Biofuel Generator also added to Hardcore and Primitive tech trees.\n- Player rotation is corrected when dismounting, preventing a tilted orientation.\n\n### Livestock & Animals\n- Calves purchased at the ranch now display the correct gender‑specific names.\n- Lamb fleece now appears correctly at all LOD levels, ensuring wool can be harvested visually.\n- Bull item name and description have been corrected in its prefab.\n\n### Vehicles\n- Modular car builds now save reliably without thread‑related errors.\n\n### Combat\n- Melee combat animations have been fixed, improving hit detection and visual feedback.\n- Missing animation files for the M92 pistol have been restored, fixing animation issues.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
