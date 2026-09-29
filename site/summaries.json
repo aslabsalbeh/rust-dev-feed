@@ -1,34 +1,59 @@
 {
   "2026-09-29": {
-    "commit_count": 44,
-    "relevant_commit_count": 29,
-    "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850",
+    "commit_count": 63,
+    "relevant_commit_count": 42,
+    "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Wildlife",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Jungle predators (crocodiles, tigers, panthers, wolves) now spawn correctly.",
+            "text": "Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.",
+            "commit_ids": [
+              705912
+            ]
+          },
+          {
+            "text": "Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.",
+            "commit_ids": [
+              705865
+            ]
+          },
+          {
+            "text": "Fixed jungle animal spawning by adjusting the proximity check, allowing crocs, tigers, panthers and wolves to spawn correctly.",
             "commit_ids": [
               705811
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Farming",
+        "items": [
           {
-            "text": "Lamb wool can now be harvested.",
-            "commit_ids": [
-              705827
-            ]
-          },
-          {
-            "text": "Sheep gene information is displayed in the UI.",
+            "text": "Sheep now display their genetic information, giving players visibility into breeding traits.",
             "commit_ids": [
               705813
             ]
           },
           {
-            "text": "Milk skimming now has its own option, proper stack handling, and a skimming sound effect.",
+            "text": "Livestock balance adjustments: wild cow and sheep populations are doubled per km², daily food consumption (GrazeDayShare) reduced from 0.4 to 0.3, and cows/sheep gain double fullness when eating from a trough.",
+            "commit_ids": [
+              705734,
+              705733,
+              705731
+            ]
+          },
+          {
+            "text": "Wool sales now correctly reference the source animal, ensuring proper wool sale behavior.",
+            "commit_ids": [
+              705730
+            ]
+          },
+          {
+            "text": "Milk skimming UI and effects updated: new milk effect added, skim option moved above drink, item notices corrected, and related icon import settings fixed.",
             "commit_ids": [
               705770
             ]
@@ -38,30 +63,6 @@
             "commit_ids": [
               705774
             ]
-          },
-          {
-            "text": "Wild cow and sheep populations have been doubled.",
-            "commit_ids": [
-              705734
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Farming",
-        "items": [
-          {
-            "text": "Cows and sheep spend less time grazing and fill up twice as fast when eating from a trough, so they eat quicker and need less feed.",
-            "commit_ids": [
-              705733,
-              705731
-            ]
-          },
-          {
-            "text": "Wool sales now correctly reference the animal you sold, fixing the previous mix‑up.",
-            "commit_ids": [
-              705730
-            ]
           }
         ]
       },
@@ -69,7 +70,7 @@
         "title": "Crafting & UI",
         "items": [
           {
-            "text": "The inventory button now opens a dedicated crafting screen for faster crafting access.",
+            "text": "Holding the inventory button now opens the dedicated crafting screen directly, streamlining crafting access.",
             "commit_ids": [
               705815
             ]
@@ -77,21 +78,34 @@
         ]
       },
       {
-        "title": "UI Fixes",
+        "title": "Stability & Networking",
         "items": [
           {
-            "text": "Country selection popup now correctly displays its options on first open, preventing selection confusion.",
+            "text": "Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.",
             "commit_ids": [
-              705761
+              705910,
+              705908
             ]
           }
         ]
       },
       {
-        "title": "Visual Fixes",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Terrain rendering holes are fixed, ensuring the ground appears solid and eliminating visual gaps.",
+            "text": "Lambs now correctly drop wool, restoring the expected resource for crafting and trading.",
+            "commit_ids": [
+              705827
+            ]
+          },
+          {
+            "text": "Country selection menu now displays its options on first opening, preventing selection issues.",
+            "commit_ids": [
+              705761
+            ]
+          },
+          {
+            "text": "Terrain holes render correctly, eliminating visual glitches that could obscure terrain.",
             "commit_ids": [
               705750
             ]
@@ -100,39 +114,33 @@
       }
     ],
     "status": "ok",
-    "summary": "### Livestock & Wildlife\n- Jungle predators (crocodiles, tigers, panthers, wolves) now spawn correctly.\n- Lamb wool can now be harvested.\n- Sheep gene information is displayed in the UI.\n- Milk skimming now has its own option, proper stack handling, and a skimming sound effect.\n- Creamy Pure Cooling Tea no longer raises your maximum temperature.\n- Wild cow and sheep populations have been doubled.\n\n### Livestock & Farming\n- Cows and sheep spend less time grazing and fill up twice as fast when eating from a trough, so they eat quicker and need less feed.\n- Wool sales now correctly reference the animal you sold, fixing the previous mix‑up.\n\n### Crafting & UI\n- The inventory button now opens a dedicated crafting screen for faster crafting access.\n\n### UI Fixes\n- Country selection popup now correctly displays its options on first open, preventing selection confusion.\n\n### Visual Fixes\n- Terrain rendering holes are fixed, ensuring the ground appears solid and eliminating visual gaps.",
+    "summary": "### World & Environment\n- Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.\n- Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.\n- Fixed jungle animal spawning by adjusting the proximity check, allowing crocs, tigers, panthers and wolves to spawn correctly.\n\n### Livestock & Farming\n- Sheep now display their genetic information, giving players visibility into breeding traits.\n- Livestock balance adjustments: wild cow and sheep populations are doubled per km², daily food consumption (GrazeDayShare) reduced from 0.4 to 0.3, and cows/sheep gain double fullness when eating from a trough.\n- Wool sales now correctly reference the source animal, ensuring proper wool sale behavior.\n- Milk skimming UI and effects updated: new milk effect added, skim option moved above drink, item notices corrected, and related icon import settings fixed.\n- Creamy Pure Cooling Tea no longer raises your maximum temperature.\n\n### Crafting & UI\n- Holding the inventory button now opens the dedicated crafting screen directly, streamlining crafting access.\n\n### Stability & Networking\n- Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.\n\n### Bug Fixes\n- Lambs now correctly drop wool, restoring the expected resource for crafting and trading.\n- Country selection menu now displays its options on first opening, preventing selection issues.\n- Terrain holes render correctly, eliminating visual glitches that could obscure terrain.",
     "new_items": [
       {
-        "text": "Jungle predators (crocodiles, tigers, panthers, wolves) now spawn correctly.",
+        "text": "Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.",
         "commit_ids": [
-          705811
+          705912
         ],
-        "section": "Livestock & Wildlife"
+        "section": "World & Environment"
       },
       {
-        "text": "Lamb wool can now be harvested.",
+        "text": "Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.",
         "commit_ids": [
-          705827
+          705865
         ],
-        "section": "Livestock & Wildlife"
+        "section": "World & Environment"
       },
       {
-        "text": "Sheep gene information is displayed in the UI.",
+        "text": "Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.",
         "commit_ids": [
-          705813
+          705910,
+          705908
         ],
-        "section": "Livestock & Wildlife"
-      },
-      {
-        "text": "The inventory button now opens a dedicated crafting screen for faster crafting access.",
-        "commit_ids": [
-          705815
-        ],
-        "section": "Crafting & UI"
+        "section": "Stability & Networking"
       }
     ],
     "new_relevant_count": 4,
-    "new_summary": "- Jungle predators (crocodiles, tigers, panthers, wolves) now spawn correctly.\n- Lamb wool can now be harvested.\n- Sheep gene information is displayed in the UI.\n- The inventory button now opens a dedicated crafting screen for faster crafting access."
+    "new_summary": "- Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.\n- Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.\n- Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability."
   },
   "2026-09-28": {
     "commit_count": 94,

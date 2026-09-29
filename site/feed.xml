@@ -6,49 +6,50 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 29 Sep 2026 10:17:33 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 12:17:47 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Sep 29</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;44 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705811"&gt;Jungle predators (crocodiles, tigers, panthers, wolves) now spawn correctly.&lt;/li&gt;
-&lt;li data-rust-commits="705827"&gt;Lamb wool can now be harvested.&lt;/li&gt;
-&lt;li data-rust-commits="705813"&gt;Sheep gene information is displayed in the UI.&lt;/li&gt;
-&lt;li data-rust-commits="705815"&gt;The inventory button now opens a dedicated crafting screen for faster crafting access.&lt;/li&gt;
+&lt;li data-rust-commits="705912"&gt;Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.&lt;/li&gt;
+&lt;li data-rust-commits="705865"&gt;Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.&lt;/li&gt;
+&lt;li data-rust-commits="705910,705908"&gt;Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Livestock &amp;amp; Wildlife&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705811"&gt;Jungle predators (crocodiles, tigers, panthers, wolves) now spawn correctly.&lt;/li&gt;
-&lt;li data-rust-commits="705827"&gt;Lamb wool can now be harvested.&lt;/li&gt;
-&lt;li data-rust-commits="705813"&gt;Sheep gene information is displayed in the UI.&lt;/li&gt;
-&lt;li data-rust-commits="705770"&gt;Milk skimming now has its own option, proper stack handling, and a skimming sound effect.&lt;/li&gt;
-&lt;li data-rust-commits="705774"&gt;Creamy Pure Cooling Tea no longer raises your maximum temperature.&lt;/li&gt;
-&lt;li data-rust-commits="705734"&gt;Wild cow and sheep populations have been doubled.&lt;/li&gt;
+&lt;li data-rust-commits="705912"&gt;Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.&lt;/li&gt;
+&lt;li data-rust-commits="705865"&gt;Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.&lt;/li&gt;
+&lt;li data-rust-commits="705811"&gt;Fixed jungle animal spawning by adjusting the proximity check, allowing crocs, tigers, panthers and wolves to spawn correctly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Livestock &amp;amp; Farming&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705733,705731"&gt;Cows and sheep spend less time grazing and fill up twice as fast when eating from a trough, so they eat quicker and need less feed.&lt;/li&gt;
-&lt;li data-rust-commits="705730"&gt;Wool sales now correctly reference the animal you sold, fixing the previous mix‑up.&lt;/li&gt;
+&lt;li data-rust-commits="705813"&gt;Sheep now display their genetic information, giving players visibility into breeding traits.&lt;/li&gt;
+&lt;li data-rust-commits="705734,705733,705731"&gt;Livestock balance adjustments: wild cow and sheep populations are doubled per km², daily food consumption (GrazeDayShare) reduced from 0.4 to 0.3, and cows/sheep gain double fullness when eating from a trough.&lt;/li&gt;
+&lt;li data-rust-commits="705730"&gt;Wool sales now correctly reference the source animal, ensuring proper wool sale behavior.&lt;/li&gt;
+&lt;li data-rust-commits="705770"&gt;Milk skimming UI and effects updated: new milk effect added, skim option moved above drink, item notices corrected, and related icon import settings fixed.&lt;/li&gt;
+&lt;li data-rust-commits="705774"&gt;Creamy Pure Cooling Tea no longer raises your maximum temperature.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Crafting &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705815"&gt;The inventory button now opens a dedicated crafting screen for faster crafting access.&lt;/li&gt;
+&lt;li data-rust-commits="705815"&gt;Holding the inventory button now opens the dedicated crafting screen directly, streamlining crafting access.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI Fixes&lt;/h3&gt;
+&lt;h3&gt;Stability &amp;amp; Networking&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705761"&gt;Country selection popup now correctly displays its options on first open, preventing selection confusion.&lt;/li&gt;
+&lt;li data-rust-commits="705910,705908"&gt;Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Visual Fixes&lt;/h3&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705750"&gt;Terrain rendering holes are fixed, ensuring the ground appears solid and eliminating visual gaps.&lt;/li&gt;
+&lt;li data-rust-commits="705827"&gt;Lambs now correctly drop wool, restoring the expected resource for crafting and trading.&lt;/li&gt;
+&lt;li data-rust-commits="705761"&gt;Country selection menu now displays its options on first opening, preventing selection issues.&lt;/li&gt;
+&lt;li data-rust-commits="705750"&gt;Terrain holes render correctly, eliminating visual glitches that could obscure terrain.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-29</guid>
-      <pubDate>Tue, 29 Sep 2026 10:17:33 -0400</pubDate>
+      <pubDate>Tue, 29 Sep 2026 12:17:47 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 28</title>
