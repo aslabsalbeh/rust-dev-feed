@@ -1,292 +1,73 @@
 {
+  "2026-09-29": {
+    "commit_count": 6,
+    "relevant_commit_count": 5,
+    "relevant_signature": "705729,705730,705731,705733,705734",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Animals & Farming",
+        "items": [
+          {
+            "text": "Wild cow and sheep populations doubled, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness, making livestock easier to raise.",
+            "commit_ids": [
+              705734,
+              705733,
+              705731
+            ]
+          },
+          {
+            "text": "Fixed an issue where selling wool could reference the wrong animal, ensuring wool sales work correctly.",
+            "commit_ids": [
+              705730
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "ok",
+    "summary": "### Animals & Farming\n- Wild cow and sheep populations doubled, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness, making livestock easier to raise.\n- Fixed an issue where selling wool could reference the wrong animal, ensuring wool sales work correctly.",
+    "new_items": [
+      {
+        "text": "Wild cow and sheep populations doubled, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness, making livestock easier to raise.",
+        "commit_ids": [
+          705734,
+          705733,
+          705731
+        ],
+        "section": "Animals & Farming"
+      },
+      {
+        "text": "Fixed an issue where selling wool could reference the wrong animal, ensuring wool sales work correctly.",
+        "commit_ids": [
+          705730
+        ],
+        "section": "Animals & Farming"
+      }
+    ],
+    "new_relevant_count": 4,
+    "new_summary": "- Wild cow and sheep populations doubled, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness, making livestock easier to raise.\n- Fixed an issue where selling wool could reference the wrong animal, ensuring wool sales work correctly."
+  },
   "2026-09-28": {
     "commit_count": 94,
     "relevant_commit_count": 66,
-    "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649",
+    "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666,705680,705681,705684,705690,705693,705694,705697,705706,705712,705714,705717,705721",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666,705680,705681,705684,705690,705693,705694,705697,705706,705712,705714,705717,705721": [
-        {
-          "title": "Economy & Vendor",
-          "items": [
-            {
-              "text": "Items bought from livestock vendors now correctly belong to the purchasing player.",
-              "commit_ids": [
-                705714
-              ]
-            },
-            {
-              "text": "Livestock selling now uses a server‑side RPC instead of client‑side triggers, fixing desync issues.",
-              "commit_ids": [
-                705706
-              ]
-            },
-            {
-              "text": "Fixed incorrect UI text shown when a player drops wool during a conversation.",
-              "commit_ids": [
-                705712
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Teammate Interaction",
-          "items": [
-            {
-              "text": "Teammates can no longer use the break‑in option on a teammate's own apartment room.",
-              "commit_ids": [
-                705684
-              ]
-            },
-            {
-              "text": "Fixed a bug where teammates were unable to exit rooms after a server restart.",
-              "commit_ids": [
-                705681
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animal AI",
-          "items": [
-            {
-              "text": "Critters now transition from a startled state to fleeing when they take damage while startled.",
-              "commit_ids": [
-                705666
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Map & Loot Anti‑Cheat",
-          "items": [
-            {
-              "text": "Radtown loot crate moved farther from the window to prevent cheating.",
-              "commit_ids": [
-                705655
-              ]
-            },
-            {
-              "text": "Trainyard powergrid loot crate repositioned and windows/railings blocked to stop exploitative shooting.",
-              "commit_ids": [
-                705652
-              ]
-            },
-            {
-              "text": "Gaps that allowed shooting into Harbor 1 loot room have been boarded up.",
-              "commit_ids": [
-                705643
-              ]
-            },
-            {
-              "text": "All windows that let players look into or shoot into Harbor 2 loot room have been sealed.",
-              "commit_ids": [
-                705641
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Stability & Networking",
-          "items": [
-            {
-              "text": "Fixed a null‑reference crash caused by destroyed elevator floors during save operations.",
-              "commit_ids": [
-                705656
-              ]
-            },
-            {
-              "text": "Resolved mortar desynchronization when players reconnect or enter network range.",
-              "commit_ids": [
-                705648
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons",
-          "items": [
-            {
-              "text": "Nailgun third‑person model updated: removed SprintController, added aiming bool and new aim clips for smoother handling.",
-              "commit_ids": [
-                705628
-              ]
-            }
-          ]
-        }
-      ],
-      "705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626": [
-        {
-          "title": "Livestock & Wildlife",
-          "items": [
-            {
-              "text": "Livestock now match player speed when being led, preventing lead breaks and long waits",
-              "commit_ids": [
-                705598
-              ]
-            },
-            {
-              "text": "Floating animals bug fixed and idle performance improved",
-              "commit_ids": [
-                705597
-              ]
-            },
-            {
-              "text": "Critter health reduced (frogs to 60 HP, rabbits to 100 HP) for better balance",
-              "commit_ids": [
-                705548
-              ]
-            },
-            {
-              "text": "Frog size increased by 20%",
-              "commit_ids": [
-                705550
-              ]
-            },
-            {
-              "text": "Frog first jump length fixed and dead‑animation pool bug resolved",
-              "commit_ids": [
-                705569
-              ]
-            },
-            {
-              "text": "Crabs and jellyfish receive step‑height fix, obstacle‑avoidance raycasts, corrected leg speeds and optimized water checks",
-              "commit_ids": [
-                705612
-              ]
-            },
-            {
-              "text": "Bull AI look‑rotation vector issue fixed when target is lost",
-              "commit_ids": [
-                705527
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Map & Access",
-          "items": [
-            {
-              "text": "Open fence gates added to the ranch and large barn, improving access to the vendor area",
-              "commit_ids": [
-                705572
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Base Building & Items",
-          "items": [
-            {
-              "text": "Water source (sink) transfer between rooms is now correctly blocked, preventing unintended item moves",
-              "commit_ids": [
-                705617
-              ]
-            }
-          ]
-        }
-      ],
-      "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512": [
-        {
-          "title": "Livestock Vendor & Sales",
-          "items": [
-            {
-              "text": "Fixed duplicate Custom SMG entry and replaced it with a Thompson; filtered vendor items by game mode to prevent guns in Primitive; corrected turret offering to appear only on high‑quality sales; added new high‑end sale options (basic BP fragments, Thompson, Custom SMG, Python, HC Revolver); updated wool sales to constitute ~75% of livestock sales with no guns.",
-              "commit_ids": [
-                705463,
-                705445,
-                705443
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat",
+        "title": "Economy & Vendor",
         "items": [
           {
-            "text": "Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.",
+            "text": "Livestock purchases now correctly credit the buying player and use a server‑side RPC, fixing desync and ensuring proper ownership.",
             "commit_ids": [
-              705648
+              705714,
+              705706
             ]
           },
           {
-            "text": "Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.",
-            "commit_ids": [
-              705464
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map & Loot Rooms",
-        "items": [
-          {
-            "text": "Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.",
-            "commit_ids": [
-              705643,
-              705641
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Building",
-        "items": [
-          {
-            "text": "Fixed bug that let water sources be transferred between rooms (sinks).",
-            "commit_ids": [
-              705617
-            ]
-          },
-          {
-            "text": "Added open fence gates to the ranch and large barn for easier access to the vendor.",
-            "commit_ids": [
-              705572
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Wildlife",
-        "items": [
-          {
-            "text": "Livestock now matches player speed when being led, reducing lead breaks.",
-            "commit_ids": [
-              705598
-            ]
-          },
-          {
-            "text": "Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.",
-            "commit_ids": [
-              705550,
-              705548,
-              705569
-            ]
-          },
-          {
-            "text": "Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.",
-            "commit_ids": [
-              705612
-            ]
-          },
-          {
-            "text": "Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.",
-            "commit_ids": [
-              705527,
-              705442,
-              705597
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Economy & Vendors",
-        "items": [
-          {
-            "text": "Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.",
+            "text": "Vendor inventory cleaned up: duplicate Custom SMG removed and replaced with a Thompson; items filtered by game mode (no guns in Primitive); turret offers only on high‑quality sales; new high‑end sale options added (BP fragments, Thompson, Custom SMG, Python, HC Revolver); wool now makes up ~75% of livestock sales, removing guns from livestock sales.",
             "commit_ids": [
               705463,
               705445,
@@ -296,10 +77,123 @@
         ]
       },
       {
+        "title": "Teammate Interaction",
+        "items": [
+          {
+            "text": "Break‑in option disabled on a teammate’s own apartment room, preventing accidental intrusions.",
+            "commit_ids": [
+              705684
+            ]
+          },
+          {
+            "text": "Fixed issue where teammates could not exit rooms after a server restart.",
+            "commit_ids": [
+              705681
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animal & Wildlife",
+        "items": [
+          {
+            "text": "Livestock now match player speed when led, eliminating lead breaks and long waits.",
+            "commit_ids": [
+              705598
+            ]
+          },
+          {
+            "text": "Critter health reduced (frogs 60 HP, rabbits 100 HP) and frog size increased 20% for better balance and visibility.",
+            "commit_ids": [
+              705548,
+              705550
+            ]
+          },
+          {
+            "text": "Critters now flee when damaged while startled, and bull AI rotation fixed when target is lost, improving animal combat behavior.",
+            "commit_ids": [
+              705666,
+              705527
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Map & Loot Anti‑Cheat",
+        "items": [
+          {
+            "text": "Loot room exploits patched across maps: Radtown crate repositioned, Trainyard crate and surrounding railings sealed, Harbor 1 gaps boarded up, and all Harbor 2 windows sealed to stop cheating via shooting into loot rooms.",
+            "commit_ids": [
+              705655,
+              705652,
+              705643,
+              705641
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability & Networking",
+        "items": [
+          {
+            "text": "Null‑reference crash on destroyed elevator floors during saves fixed, improving overall stability.",
+            "commit_ids": [
+              705656
+            ]
+          },
+          {
+            "text": "Mortar desynchronization resolved for reconnecting players and those entering network range, ensuring consistent combat.",
+            "commit_ids": [
+              705648
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Map & Access",
+        "items": [
+          {
+            "text": "Open fence gates added to the ranch and large barn, providing easier access to the vendor area.",
+            "commit_ids": [
+              705572
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Water sources can now be transferred between rooms via sinks without errors.",
+            "commit_ids": [
+              705617
+            ]
+          },
+          {
+            "text": "Crabs now respect step height, avoid walls, and have corrected leg speeds; jellyfish water checks are optimized, improving swarm behavior.",
+            "commit_ids": [
+              705612
+            ]
+          },
+          {
+            "text": "Floating animal glitches are resolved, and idle animal performance is smoother.",
+            "commit_ids": [
+              705597
+            ]
+          },
+          {
+            "text": "Frogs no longer perform an excessively long first jump and will not get stuck in dead animations.",
+            "commit_ids": [
+              705569
+            ]
+          }
+        ]
+      },
+      {
         "title": "Audio",
         "items": [
           {
-            "text": "Biofuel generator is now completely silent while idle, removing its background hum.",
+            "text": "Biofuel generators are silent while idle, eliminating background noise.",
             "commit_ids": [
               705502
             ]
@@ -308,7 +202,7 @@
       }
     ],
     "status": "ok",
-    "summary": "### Combat\n- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.\n\n### Map & Loot Rooms\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.\n\n### Base Building\n- Fixed bug that let water sources be transferred between rooms (sinks).\n- Added open fence gates to the ranch and large barn for easier access to the vendor.\n\n### Animals & Wildlife\n- Livestock now matches player speed when being led, reducing lead breaks.\n- Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.\n- Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.\n- Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.\n\n### Economy & Vendors\n- Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.\n\n### Audio\n- Biofuel generator is now completely silent while idle, removing its background hum.",
+    "summary": "### Economy & Vendor\n- Livestock purchases now correctly credit the buying player and use a server‑side RPC, fixing desync and ensuring proper ownership.\n- Vendor inventory cleaned up: duplicate Custom SMG removed and replaced with a Thompson; items filtered by game mode (no guns in Primitive); turret offers only on high‑quality sales; new high‑end sale options added (BP fragments, Thompson, Custom SMG, Python, HC Revolver); wool now makes up ~75% of livestock sales, removing guns from livestock sales.\n\n### Teammate Interaction\n- Break‑in option disabled on a teammate’s own apartment room, preventing accidental intrusions.\n- Fixed issue where teammates could not exit rooms after a server restart.\n\n### Animal & Wildlife\n- Livestock now match player speed when led, eliminating lead breaks and long waits.\n- Critter health reduced (frogs 60 HP, rabbits 100 HP) and frog size increased 20% for better balance and visibility.\n- Critters now flee when damaged while startled, and bull AI rotation fixed when target is lost, improving animal combat behavior.\n\n### Map & Loot Anti‑Cheat\n- Loot room exploits patched across maps: Radtown crate repositioned, Trainyard crate and surrounding railings sealed, Harbor 1 gaps boarded up, and all Harbor 2 windows sealed to stop cheating via shooting into loot rooms.\n\n### Stability & Networking\n- Null‑reference crash on destroyed elevator floors during saves fixed, improving overall stability.\n- Mortar desynchronization resolved for reconnecting players and those entering network range, ensuring consistent combat.\n\n### Map & Access\n- Open fence gates added to the ranch and large barn, providing easier access to the vendor area.\n\n### Gameplay & Balance\n- Water sources can now be transferred between rooms via sinks without errors.\n- Crabs now respect step height, avoid walls, and have corrected leg speeds; jellyfish water checks are optimized, improving swarm behavior.\n- Floating animal glitches are resolved, and idle animal performance is smoother.\n- Frogs no longer perform an excessively long first jump and will not get stuck in dead animations.\n\n### Audio\n- Biofuel generators are silent while idle, eliminating background noise.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -375,19 +269,6 @@
     ],
     "status": "ok",
     "summary": "### Livestock & Animals\n- Livestock vendor auction now pauses if the wool stack size changes mid‑offer; keep your inventory matching the original size or the sale will time out.\n- Livestock are now docile in safe zones, and the NPC livestock buyer correctly handles cases where livestock die or flee during conversation.\n- Animals no longer seek out food; food‑sensing disabled for animals that don’t need it, fixing odd food‑related behavior.\n- Cows can no longer graze on ice or sand, preventing them from wasting resources on unsuitable terrain.\n\n### Structures\n- Animal fence gate durability reduced from 500 HP to 100 HP, making them easier to break.\n\n### UI & Quality of Life\n- Country tag now respects streamer mode, hiding the player's country when the setting is enabled.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-09-26": {
-    "commit_count": 9,
-    "relevant_commit_count": 2,
-    "relevant_signature": "705325,705326",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [],
-    "status": "no_significant_updates",
-    "summary": "No notable player-facing changes were identified in the latest development commits.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

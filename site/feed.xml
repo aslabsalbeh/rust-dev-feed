@@ -6,40 +6,71 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 29 Sep 2026 00:18:12 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 02:18:20 -0400</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Sep 29</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;6 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705734,705733,705731"&gt;Wild cow and sheep populations doubled, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness, making livestock easier to raise.&lt;/li&gt;
+&lt;li data-rust-commits="705730"&gt;Fixed an issue where selling wool could reference the wrong animal, ensuring wool sales work correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3&gt;Animals &amp;amp; Farming&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705734,705733,705731"&gt;Wild cow and sheep populations doubled, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness, making livestock easier to raise.&lt;/li&gt;
+&lt;li data-rust-commits="705730"&gt;Fixed an issue where selling wool could reference the wrong animal, ensuring wool sales work correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-09-29</guid>
+      <pubDate>Tue, 29 Sep 2026 02:18:20 -0400</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 28</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;94 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Combat&lt;/h3&gt;
+&lt;h3&gt;Economy &amp;amp; Vendor&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705648"&gt;Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.&lt;/li&gt;
-&lt;li data-rust-commits="705464"&gt;Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.&lt;/li&gt;
+&lt;li data-rust-commits="705714,705706"&gt;Livestock purchases now correctly credit the buying player and use a server‑side RPC, fixing desync and ensuring proper ownership.&lt;/li&gt;
+&lt;li data-rust-commits="705463,705445,705443"&gt;Vendor inventory cleaned up: duplicate Custom SMG removed and replaced with a Thompson; items filtered by game mode (no guns in Primitive); turret offers only on high‑quality sales; new high‑end sale options added (BP fragments, Thompson, Custom SMG, Python, HC Revolver); wool now makes up ~75% of livestock sales, removing guns from livestock sales.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; Loot Rooms&lt;/h3&gt;
+&lt;h3&gt;Teammate Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705643,705641"&gt;Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.&lt;/li&gt;
+&lt;li data-rust-commits="705684"&gt;Break‑in option disabled on a teammate’s own apartment room, preventing accidental intrusions.&lt;/li&gt;
+&lt;li data-rust-commits="705681"&gt;Fixed issue where teammates could not exit rooms after a server restart.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base Building&lt;/h3&gt;
+&lt;h3&gt;Animal &amp;amp; Wildlife&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705617"&gt;Fixed bug that let water sources be transferred between rooms (sinks).&lt;/li&gt;
-&lt;li data-rust-commits="705572"&gt;Added open fence gates to the ranch and large barn for easier access to the vendor.&lt;/li&gt;
+&lt;li data-rust-commits="705598"&gt;Livestock now match player speed when led, eliminating lead breaks and long waits.&lt;/li&gt;
+&lt;li data-rust-commits="705548,705550"&gt;Critter health reduced (frogs 60 HP, rabbits 100 HP) and frog size increased 20% for better balance and visibility.&lt;/li&gt;
+&lt;li data-rust-commits="705666,705527"&gt;Critters now flee when damaged while startled, and bull AI rotation fixed when target is lost, improving animal combat behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; Wildlife&lt;/h3&gt;
+&lt;h3&gt;Map &amp;amp; Loot Anti‑Cheat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705598"&gt;Livestock now matches player speed when being led, reducing lead breaks.&lt;/li&gt;
-&lt;li data-rust-commits="705550,705548,705569"&gt;Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.&lt;/li&gt;
-&lt;li data-rust-commits="705612"&gt;Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.&lt;/li&gt;
-&lt;li data-rust-commits="705527,705442,705597"&gt;Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.&lt;/li&gt;
+&lt;li data-rust-commits="705655,705652,705643,705641"&gt;Loot room exploits patched across maps: Radtown crate repositioned, Trainyard crate and surrounding railings sealed, Harbor 1 gaps boarded up, and all Harbor 2 windows sealed to stop cheating via shooting into loot rooms.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Economy &amp;amp; Vendors&lt;/h3&gt;
+&lt;h3&gt;Stability &amp;amp; Networking&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705463,705445,705443"&gt;Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.&lt;/li&gt;
+&lt;li data-rust-commits="705656"&gt;Null‑reference crash on destroyed elevator floors during saves fixed, improving overall stability.&lt;/li&gt;
+&lt;li data-rust-commits="705648"&gt;Mortar desynchronization resolved for reconnecting players and those entering network range, ensuring consistent combat.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Map &amp;amp; Access&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705572"&gt;Open fence gates added to the ranch and large barn, providing easier access to the vendor area.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="705617"&gt;Water sources can now be transferred between rooms via sinks without errors.&lt;/li&gt;
+&lt;li data-rust-commits="705612"&gt;Crabs now respect step height, avoid walls, and have corrected leg speeds; jellyfish water checks are optimized, improving swarm behavior.&lt;/li&gt;
+&lt;li data-rust-commits="705597"&gt;Floating animal glitches are resolved, and idle animal performance is smoother.&lt;/li&gt;
+&lt;li data-rust-commits="705569"&gt;Frogs no longer perform an excessively long first jump and will not get stuck in dead animations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Audio&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="705502"&gt;Biofuel generator is now completely silent while idle, removing its background hum.&lt;/li&gt;
+&lt;li data-rust-commits="705502"&gt;Biofuel generators are silent while idle, eliminating background noise.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-28</guid>
@@ -68,16 +99,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-27</guid>
       <pubDate>Sun, 27 Sep 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Sep 26</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;9 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-09-26</guid>
-      <pubDate>Sat, 26 Sep 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
