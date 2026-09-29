@@ -1,45 +1,40 @@
 {
   "2026-09-29": {
-    "commit_count": 63,
-    "relevant_commit_count": 42,
-    "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914",
+    "commit_count": 75,
+    "relevant_commit_count": 49,
+    "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920,705923,705926,705932,705934,705941",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Environment",
+        "title": "Animals & Livestock",
         "items": [
           {
-            "text": "Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.",
+            "text": "Frogs now animate correctly on spawn/despawn and jellyfish populate as intended.",
+            "commit_ids": [
+              705932
+            ]
+          },
+          {
+            "text": "Livestock block player movement, preventing walking through them.",
             "commit_ids": [
               705912
             ]
           },
           {
-            "text": "Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.",
-            "commit_ids": [
-              705865
-            ]
-          },
-          {
-            "text": "Fixed jungle animal spawning by adjusting the proximity check, allowing crocs, tigers, panthers and wolves to spawn correctly.",
-            "commit_ids": [
-              705811
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Farming",
-        "items": [
-          {
-            "text": "Sheep now display their genetic information, giving players visibility into breeding traits.",
+            "text": "Sheep UI now displays genetic information.",
             "commit_ids": [
               705813
             ]
           },
           {
-            "text": "Livestock balance adjustments: wild cow and sheep populations are doubled per km², daily food consumption (GrazeDayShare) reduced from 0.4 to 0.3, and cows/sheep gain double fullness when eating from a trough.",
+            "text": "Jungle animals now spawn correctly after fixing a distance check.",
+            "commit_ids": [
+              705811
+            ]
+          },
+          {
+            "text": "Wild cows and sheep populations have doubled, they consume less daily food, and gain double fullness when feeding from troughs.",
             "commit_ids": [
               705734,
               705733,
@@ -47,41 +42,52 @@
             ]
           },
           {
-            "text": "Wool sales now correctly reference the source animal, ensuring proper wool sale behavior.",
+            "text": "Selling wool no longer triggers a reference error.",
             "commit_ids": [
               705730
             ]
-          },
-          {
-            "text": "Milk skimming UI and effects updated: new milk effect added, skim option moved above drink, item notices corrected, and related icon import settings fixed.",
-            "commit_ids": [
-              705770
-            ]
-          },
-          {
-            "text": "Creamy Pure Cooling Tea no longer raises your maximum temperature.",
-            "commit_ids": [
-              705774
-            ]
           }
         ]
       },
       {
-        "title": "Crafting & UI",
+        "title": "Items & Crafting",
         "items": [
           {
-            "text": "Holding the inventory button now opens the dedicated crafting screen directly, streamlining crafting access.",
+            "text": "Leads are now more durable and no longer break easily.",
+            "commit_ids": [
+              705915
+            ]
+          },
+          {
+            "text": "Added a dedicated crafting screen action; holding the inventory button opens the crafting screen directly.",
             "commit_ids": [
               705815
             ]
+          },
+          {
+            "text": "Milk skimming UI fixed: proper item notices, skim option, milk effect, and correct icons for new items.",
+            "commit_ids": [
+              705770
+            ]
           }
         ]
       },
       {
-        "title": "Stability & Networking",
+        "title": "World & Map Changes",
         "items": [
           {
-            "text": "Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.",
+            "text": "Harbor 2 windows boarded up, closing an unintended view into the loot room.",
+            "commit_ids": [
+              705865
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Connectivity & Stability",
+        "items": [
+          {
+            "text": "Crashes caused by out-of-order network snapshots when players connect have been resolved.",
             "commit_ids": [
               705910,
               705908
@@ -90,57 +96,52 @@
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Consumables",
         "items": [
           {
-            "text": "Lambs now correctly drop wool, restoring the expected resource for crafting and trading.",
+            "text": "Creamy Pure Cooling Tea no longer raises your maximum temperature incorrectly.",
             "commit_ids": [
-              705827
-            ]
-          },
-          {
-            "text": "Country selection menu now displays its options on first opening, preventing selection issues.",
-            "commit_ids": [
-              705761
-            ]
-          },
-          {
-            "text": "Terrain holes render correctly, eliminating visual glitches that could obscure terrain.",
-            "commit_ids": [
-              705750
+              705774
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Environment\n- Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.\n- Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.\n- Fixed jungle animal spawning by adjusting the proximity check, allowing crocs, tigers, panthers and wolves to spawn correctly.\n\n### Livestock & Farming\n- Sheep now display their genetic information, giving players visibility into breeding traits.\n- Livestock balance adjustments: wild cow and sheep populations are doubled per km², daily food consumption (GrazeDayShare) reduced from 0.4 to 0.3, and cows/sheep gain double fullness when eating from a trough.\n- Wool sales now correctly reference the source animal, ensuring proper wool sale behavior.\n- Milk skimming UI and effects updated: new milk effect added, skim option moved above drink, item notices corrected, and related icon import settings fixed.\n- Creamy Pure Cooling Tea no longer raises your maximum temperature.\n\n### Crafting & UI\n- Holding the inventory button now opens the dedicated crafting screen directly, streamlining crafting access.\n\n### Stability & Networking\n- Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.\n\n### Bug Fixes\n- Lambs now correctly drop wool, restoring the expected resource for crafting and trading.\n- Country selection menu now displays its options on first opening, preventing selection issues.\n- Terrain holes render correctly, eliminating visual glitches that could obscure terrain.",
+    "summary": "### Animals & Livestock\n- Frogs now animate correctly on spawn/despawn and jellyfish populate as intended.\n- Livestock block player movement, preventing walking through them.\n- Sheep UI now displays genetic information.\n- Jungle animals now spawn correctly after fixing a distance check.\n- Wild cows and sheep populations have doubled, they consume less daily food, and gain double fullness when feeding from troughs.\n- Selling wool no longer triggers a reference error.\n\n### Items & Crafting\n- Leads are now more durable and no longer break easily.\n- Added a dedicated crafting screen action; holding the inventory button opens the crafting screen directly.\n- Milk skimming UI fixed: proper item notices, skim option, milk effect, and correct icons for new items.\n\n### World & Map Changes\n- Harbor 2 windows boarded up, closing an unintended view into the loot room.\n\n### Connectivity & Stability\n- Crashes caused by out-of-order network snapshots when players connect have been resolved.\n\n### Consumables\n- Creamy Pure Cooling Tea no longer raises your maximum temperature incorrectly.",
     "new_items": [
       {
-        "text": "Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.",
+        "text": "Frogs now animate correctly on spawn/despawn and jellyfish populate as intended.",
+        "commit_ids": [
+          705932
+        ],
+        "section": "Animals & Livestock"
+      },
+      {
+        "text": "Livestock block player movement, preventing walking through them.",
         "commit_ids": [
           705912
         ],
-        "section": "World & Environment"
+        "section": "Animals & Livestock"
       },
       {
-        "text": "Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.",
+        "text": "Leads are now more durable and no longer break easily.",
         "commit_ids": [
-          705865
+          705915
         ],
-        "section": "World & Environment"
+        "section": "Items & Crafting"
       },
       {
-        "text": "Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability.",
+        "text": "Crashes caused by out-of-order network snapshots when players connect have been resolved.",
         "commit_ids": [
           705910,
           705908
         ],
-        "section": "Stability & Networking"
+        "section": "Connectivity & Stability"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Added client‑side colliders that block player movement when colliding with livestock animals, preventing players from walking through sheep and lambs.\n- Boarded up additional windows in Harbor 2 that previously allowed players to see into the loot room, reducing unintended loot visibility.\n- Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, improving connection stability."
+    "new_relevant_count": 5,
+    "new_summary": "- Frogs now animate correctly on spawn/despawn and jellyfish populate as intended.\n- Livestock block player movement, preventing walking through them.\n- Leads are now more durable and no longer break easily.\n- Crashes caused by out-of-order network snapshots when players connect have been resolved."
   },
   "2026-09-28": {
     "commit_count": 94,
