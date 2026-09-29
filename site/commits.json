@@ -1,5 +1,125 @@
 [
   {
+    "id": 705705,
+    "branch": "main/biofuel_generator_optims",
+    "changeset": "166122",
+    "created": "2026-09-29T00:04:49",
+    "message": "- Run client animations in invoke repeating\r\n- Only run stirring animations when actually stirring\r\n- Run server updates in invoke randomised rather than invoke repeating",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 705702,
+    "branch": "main/sentry_background_thread_errors",
+    "changeset": "166120",
+    "created": "2026-09-28T23:34:42",
+    "message": "Add additional rate limiting to background errors\r\n- I expect these can be spammy, so limit to 2 errors per minute\r\n- controlled by manifest so it can be increased if we want",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705701,
+    "branch": "main",
+    "changeset": "166119",
+    "created": "2026-09-28T23:32:15",
+    "message": "much more accurate collision meshes for sandbag barricades \r\nhttps://files.facepunch.com/pilgrim/2026/September/29_00-31-PassionatePrayingmantis.mp4",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 705697,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166116",
+    "created": "2026-09-28T23:19:40",
+    "message": "compile fix",
+    "user": "Brian"
+  },
+  {
+    "id": 705696,
+    "branch": "main/sentry_background_thread_errors",
+    "changeset": "166115",
+    "created": "2026-09-28T23:13:58",
+    "message": "Tests",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705695,
+    "branch": "main/biofuel_generator",
+    "changeset": "166114",
+    "created": "2026-09-28T23:11:22",
+    "message": "Emission fresnel tweak.",
+    "user": "Petur"
+  },
+  {
+    "id": 705694,
+    "branch": "main/biofuel_generator",
+    "changeset": "166113",
+    "created": "2026-09-28T23:09:25",
+    "message": "Lighting & FX polish.\r\nHooked up logic to the non-emissive texture entities.\r\nFixed all the display sprites being uncompressed.\r\nThe display is an 80s'esque liquid crystal display like the texture implies.\r\nAsset not relying on emissive textures only anymore (bad for the arm etc)",
+    "user": "Petur"
+  },
+  {
+    "id": 705693,
+    "branch": "main/sentry_background_thread_errors",
+    "changeset": "166112",
+    "created": "2026-09-28T23:05:41",
+    "message": "Ensure background thread errors get sent to sentry\r\n- we fixed them being silently dropped last month, this month we collect them",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705690,
+    "branch": "main/netgraph_fix",
+    "changeset": "166111",
+    "created": "2026-09-28T23:02:54",
+    "message": "Fixed netgraph being scaled and shifted offscreen\r\nhttps://files.facepunch.com/raul/2026/September/29_01-00-FavorableSheldrake.jpg",
+    "user": "Raul"
+  },
+  {
+    "id": 705687,
+    "branch": "▍▆▄▌▅▄▍▇▆▅▇▌▍▊█▌▌▇█▉▄▄",
+    "changeset": "▉▍▊█▉▇",
+    "created": "2026-09-28T23:01:04",
+    "message": "█ ▉▉█▌▌ ▊ ▊▆▅█ ▉▍▌▄▇▋█▌▋▌ ▋▊▌▄█▌▍█▌▅▆▍▄ █▌▇▆ ▉▆▉▇▊▊█ ▍▅▊▇█▊▅▍ ▍▊ ▋▌▊██▍ ▋▅ ▇▄▆▉▍ ▇▅▍▉▌▊ ▆█▅▍▇▅▇ ▆▊▄▅▍ ▆▄▇▋▍▋▌ ▅▆▌▆▆▊ ▆█▆▆▅█ ▅▆▆▋▆▉▌▆▆ ▅▋▄▄ ▅▄▍▉▉▊▆ ▆▋▊ █▇▅▍ ▇▅▋▅ ▍▉▉▄▊▍▇▅▅ ▄▉▉▄█▋▅▄▉▆▌▊ ▊▌▆█▊ ▌ ▇▄▊▉▄▉ ▄▌▉▉ ▅█▍ ▅██▅▊▅ ▊▄▊▄▌▋▌ ▌█▆▊ ▆ ▊▄▅▍▄▉▉█▍▄▊▅▊▍ ▅▇▊▅▅ ▋▉▆ ▍▋▊▍▋▋▆▋▉ ▉▍▆█▇ ▋ ▅▇▌▊▆▆▉█ ██▍▊▉▅ ▆▅▍▊ █▄█ ▆▄▋▋▅▅▉ ▄▆▇▉▋▉█▌▆ ▄▇▄█▇▆▉▌▅▋▊▆ █▄▊▍▇▇",
+    "user": "max.p"
+  },
+  {
+    "id": 705684,
+    "branch": "main/fix_apartment_teammate_door",
+    "changeset": "166107",
+    "created": "2026-09-28T22:37:17",
+    "message": "Prevent teammates from using the break-in option to break into their teammate's room",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705681,
+    "branch": "main/fix_apartment_teammate_door",
+    "changeset": "166106",
+    "created": "2026-09-28T22:36:16",
+    "message": "Fix teammates not being able to let themselves out of doors when inside them\r\n- caused by apartment rooms losing their reference to the front door after the restart\r\n- while the owner could still go in and out, the \"anyone can let themselves out\" wouldn't work\r\n- would only happen if the server restarted after you purchased a room",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705680,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166105",
+    "created": "2026-09-28T22:34:56",
+    "message": "fix stutter in underwater color grading transition",
+    "user": "Brian"
+  },
+  {
+    "id": 705679,
+    "branch": "main",
+    "changeset": "166104",
+    "created": "2026-09-28T22:34:31",
+    "message": "update to pillbox collision\r\nmore detailed collsiion for sandbag barricade - but it still defaults to convex",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 705678,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166103",
+    "created": "2026-09-28T22:34:13",
+    "message": "keep rendering water in underwater labs since the moonpool is there",
+    "user": "Brian"
+  },
+  {
     "id": 705666,
     "branch": "main/Livestock_animals/critter_animals",
     "changeset": "166101",
@@ -830,45 +950,5 @@
     "created": "2026-09-26T01:01:19",
     "message": "Fix error when saving modular cars on a thread",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 705313,
-    "branch": "main/Livestock_animals",
-    "changeset": "165941",
-    "created": "2026-09-25T23:44:52",
-    "message": "cow sounds",
-    "user": "Alex R"
-  },
-  {
-    "id": 705312,
-    "branch": "main",
-    "changeset": "165940",
-    "created": "2026-09-25T22:56:14",
-    "message": "~Fixed 100 1000 Stack buttons in the items F1 menu looking magenta with rrp enabled",
-    "user": "Flavien"
-  },
-  {
-    "id": 705310,
-    "branch": "main/Livestock_animals",
-    "changeset": "165939",
-    "created": "2026-09-25T22:47:54",
-    "message": "Tin can alarm can now detect gen2 AIs and critters",
-    "user": "Flavien"
-  },
-  {
-    "id": 705311,
-    "branch": "main/biofuel_generator/bfgen_fxlighting",
-    "changeset": "165938",
-    "created": "2026-09-25T22:47:50",
-    "message": "FX, lighting.",
-    "user": "Petur"
-  },
-  {
-    "id": 705308,
-    "branch": "▄▌▆▉█▋▇▋▇▆▍▇▆▍▋▍▆▇▉▉▇▅",
-    "changeset": "▆▍▌▇▌█",
-    "created": "2026-09-25T22:25:57",
-    "message": "█ ▇▉▉▋ ▊▌█▇▇▆▊▇▊▋ ▊██▊▄█▋ ▉█▍▊▄▅▋▊ ▆▇ ▉█▅██▍▊▄▉▄ ▋▋▊▅▅▋▇ ▇▊▇ ▉▋▋ ▊▋▅▊▄▊▋▊▋▅ ▌▄ ▌▉▇▅▉▋▊█▇ ▄▌ ▌▋█▇▌ █▍▌▌▌▋█ ▊▇▆▊▇ ▌█ ▄ ▉▌▅▇▅▍ ▅▅ ▉ ▌▆▇▊▍▆ ▍▉▇▍▆▋▇▍ ▆▅▅ ▊▌▆ ▅▆▉ ▍▍▆▍▊▅▅ ▌▇▌▆▍▉▇▋▋▄ ▇▄▄▍▅ ▇ ▆▌▌▅▄▇ ▆▌▇▊▋ █▋▊▇▇ ▇▆▄▍▌▄▍▊▌▇▌ ▌▌▅▅▊ ▋▊ ▍▅▋▄▄ ▉▄▍ ▍▇▌▌ ▄▅▋ ▄▊▌▍▆█▆▌ ▆▇▊ █▇▄▆█ ▅▊▄▊ ▅▊ ▇▅▉▌▌ ▅▊▌▍ ▇▋▅▌█ ▇▊▉▅ ▋▆█▊ ▇▄▊▍▊▌ ▋▆▍ █▉█ ▆▊█▇▊▄▆ ▇█▇▊ ▆▆▋▄█ ▄▍▌▍▅▊ ▋█▆ ▌█ ▋▅▊▇▇▊▇▆▊ ▆▆█▊▄▅ ▆▄██▋▌▋▆▅▄ ▉▉▇▉▍▍▅ ▋▉ █▆▋ ▍▇▉▌▉█ ▅▌█ ▅▍▄█▊▍▌▅▊ ▍▌ █▇▋▄▄▊▋▆▅▋▄▉▌▉▄▄ ▌▌▆▇▅ ▇▊ ▇▊▆▅▆▄▆▉▍▉▇ ▆▊▉▉▌ ▍ ▋▌▋▊▄▇▅▍▉▌ ▍▇▇▊▋▅ ▊▇▇ ▋██▆ ▌▅ ▅▄▉▆█▉▆▄ ▇▊▇▉ ▍▇▆▅▆▊ ▅▇▆▊▍▊▅▍▆▅▄ █▆▉ ▍▉▍▇▉▊▅▇▊ ▆▍ ▍▇▉▋▄▅▊ ▆▌▅▉ ▌█▅ ▍▄█▆▅▄ ▌█▋▊█ ▇▍ ▉▉█ ▋▊▄▊▍▆ ▉▆▅▄█ ▆▇██▊█▆▊ ▉▊ ▅▉▆ ▄▉▉▍▇▊▆ ▄▊▇ ▇▍▌▌▅▊▉ ▆▄▄▊▊▄ ▇▆ ▋▌▊ ▍▍▋▊▄▋ ▉█▋▊▌█▌▇▉ ▄▄▉▋▊▅ ▄▄█▄ █▊█ █▆▊▉▌▉ ▅▋▉▋▌ ▄▆▊▍ ▌▇▉▆▆ ▅▍ ▇▋▄▅▉ ▌▌ ▇▊▊ ▅▅▄█▍▇▊ ▆▆ ▌▉▇ ▊▊█ █▅▆▄█▆▇ ▇█ ▌▍▉ ▊▄▆▌▆▄ ▆▍▄▊█▍▄▍ ▍▄▇█▍▄▇ ▋▅▋▊▆▅█▌▌ ▉▉▄▌▄▆▍ ▍▆▆█▋█▋▋▆▄ ▉▆▇▄ ▄▍ ▌▅▍▍ ▉▅▍ ▍▌▄ ▆▅▌ ▌▅▍▋▄▇▅▋▊▊▇▇▄ ▇▆▊▅▉▌▉ ▊▅▋▄▇ █▌▇▇▊▊▅ ▉▌ ▇▌▊▉▇▊▌ ▆▆▉▊▉█▋ ▋▆▊▉▇▊ ▅▋█ ▌▇▉█▌▇▍▍ ▅▋▅▄ ▇▄▊▅▅▋█▌▆█ ▌▍▄▊▅▍ ▅▋ ▍▋▊▇▋▅▋▅",
-    "user": "max.p"
   }
 ]

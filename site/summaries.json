@@ -1,86 +1,72 @@
 {
   "2026-09-28": {
-    "commit_count": 71,
-    "relevant_commit_count": 54,
+    "commit_count": 86,
+    "relevant_commit_count": 61,
     "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666": [
+      "705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666,705680,705681,705684,705690,705693,705694,705697": [
         {
-          "title": "NPC & AI",
+          "title": "UI",
           "items": [
             {
-              "text": "Critters now transition from startled to flee when hurt, improving reactive behavior.",
+              "text": "Fixed netgraph being offscreen due to scaling and shifting.",
+              "commit_ids": [
+                705690
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Apartment & Base Mechanics",
+          "items": [
+            {
+              "text": "Prevent teammates from using the break‑in option to enter a teammate's room.",
+              "commit_ids": [
+                705684
+              ]
+            },
+            {
+              "text": "Fixed teammates being unable to exit rooms after a server restart, restoring the ability for anyone to let themselves out.",
+              "commit_ids": [
+                705681
+              ]
+            },
+            {
+              "text": "Fixed a bug that allowed water sources (sinks) to be transferred between rooms, preventing unintended resource movement.",
+              "commit_ids": [
+                705617
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & Animals",
+          "items": [
+            {
+              "text": "Added a transition from startle to flee state for critters when they get hurt while startled, improving animal behavior.",
               "commit_ids": [
                 705666
               ]
-            },
-            {
-              "text": "Crabs receive step height and obstacle‑avoidance fixes; leg‑speed glitches resolved. Jellyfish water checks optimized and swarm scripts added to the budgeted queue.",
-              "commit_ids": [
-                705612
-              ]
             }
           ]
         },
         {
-          "title": "Livestock",
+          "title": "Structures & Vehicles",
           "items": [
             {
-              "text": "Livestock now match player speed when being led, preventing lead breaks.",
-              "commit_ids": [
-                705598
-              ]
-            },
-            {
-              "text": "Floating livestock bug fixed and idle performance improved.",
-              "commit_ids": [
-                705597
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Map & Loot Exploit Fixes",
-          "items": [
-            {
-              "text": "Radtown loot crate moved further from the window to reduce cheating.",
-              "commit_ids": [
-                705655
-              ]
-            },
-            {
-              "text": "Trainyard powergrid loot crate repositioned and windows/railings blocked to prevent exploits.",
-              "commit_ids": [
-                705652
-              ]
-            },
-            {
-              "text": "Harbor 1 and Harbor 2 loot rooms had gaps and windows boarded up, stopping players from shooting through walls.",
-              "commit_ids": [
-                705643,
-                705641
-              ]
-            },
-            {
-              "text": "Added open fence gates to ranch and large barn for better vendor access.",
-              "commit_ids": [
-                705572
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Stability",
-          "items": [
-            {
-              "text": "Fixed crash caused by destroyed elevator floor during save.",
+              "text": "Fixed a null reference error caused by destroyed elevator floors during save, preventing crashes.",
               "commit_ids": [
                 705656
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Combat",
+          "items": [
             {
-              "text": "Resolved mortar desynchronization when reconnecting or entering network range.",
+              "text": "Fixed mortar desynchronization when reconnecting or entering network range, ensuring consistent mortar behavior.",
               "commit_ids": [
                 705648
               ]
@@ -88,31 +74,65 @@
           ]
         },
         {
-          "title": "Base Building / Item Transfer",
+          "title": "Map & Loot",
           "items": [
             {
-              "text": "Fixed bug that prevented transferring water sources (sinks) between rooms.",
+              "text": "Moved the Radtown loot crate farther from the window to reduce cheating opportunities.",
               "commit_ids": [
-                705617
+                705655
+              ]
+            },
+            {
+              "text": "Relocated the loot crate in the Trainyard powergrid loot room and added plywood and collider blockers to windows and railings.",
+              "commit_ids": [
+                705652
+              ]
+            },
+            {
+              "text": "Boarded up gaps in Harbor 1 that allowed shooting into the loot room.",
+              "commit_ids": [
+                705643
+              ]
+            },
+            {
+              "text": "Sealed all windows in Harbor 2 that let players look into and shoot the loot room.",
+              "commit_ids": [
+                705641
               ]
             }
           ]
         }
       ],
-      "705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569": [
+      "705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612": [
         {
-          "title": "Animals & Critters",
+          "title": "Critter & Animal Behavior",
           "items": [
             {
-              "text": "Frogs are now 20% larger, have a shorter initial jump, and their health reduced from 200 to 60. Rabbit health reduced from 200 to 100.",
+              "text": "Crabs now respect step height and avoid clipping into cliffs or walls; leg speed glitch fixed; jellyfish water checks optimized.",
               "commit_ids": [
-                705550,
-                705569,
+                705612
+              ]
+            },
+            {
+              "text": "Frogs' first jump distance corrected and dead‑animation lock resolved.",
+              "commit_ids": [
+                705569
+              ]
+            },
+            {
+              "text": "Frog size increased by 20% (x1.2).",
+              "commit_ids": [
+                705550
+              ]
+            },
+            {
+              "text": "Critter health nerfed: frogs to 60 HP, rabbits to 100 HP (turtles unchanged).",
+              "commit_ids": [
                 705548
               ]
             },
             {
-              "text": "Bull AI now correctly maintains its look rotation when its target is lost during observation.",
+              "text": "Bull AI rotation bug fixed when target is lost during observation.",
               "commit_ids": [
                 705527
               ]
@@ -120,37 +140,88 @@
           ]
         },
         {
-          "title": "Vendor & Economy",
+          "title": "Livestock Mechanics",
           "items": [
             {
-              "text": "Removed duplicate Custom SMG entry from the livestock vendor; the SMG slot now offers a Thompson instead.",
+              "text": "Livestock now moves at the same speed as the player when being led, preventing lead breaks and long waits.",
               "commit_ids": [
-                705463
+                705598
               ]
-            }
-          ]
-        }
-      ],
-      "705442,705443,705445,705458": [
-        {
-          "title": "Livestock Vendor & Sales",
-          "items": [
+            },
             {
-              "text": "Filtered vendor inventory by game mode to prevent guns from appearing in Primitive mode, and corrected turret offers to appear only on high‑end sales. Added new high‑end sale options (basic BP fragments, Thompson, custom SMG, Python, HC revolver) and updated the wool sales chart so wool now accounts for ~75% of livestock sales without guns.",
+              "text": "Floating livestock bug fixed, improving idle behavior.",
               "commit_ids": [
-                705445,
-                705443
+                705597
               ]
             }
           ]
         },
         {
-          "title": "Livestock Animal System",
+          "title": "Map & Structure Access",
           "items": [
             {
-              "text": "Fixed incorrect pooling logic for LivestockAnimal objects, improving animal spawning/behavior consistency.",
+              "text": "Added open fence gates to the ranch and large barn, improving access to the vendor area.",
               "commit_ids": [
-                705458
+                705572
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Audio",
+          "items": [
+            {
+              "text": "Biofuel generator is now silent while idle.",
+              "commit_ids": [
+                705502
+              ]
+            }
+          ]
+        }
+      ],
+      "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487": [
+        {
+          "title": "Visual Effects",
+          "items": [
+            {
+              "text": "Cold overlay no longer lingers after exiting cold zones.",
+              "commit_ids": [
+                705471
+              ]
+            },
+            {
+              "text": "Mortar camera animation now plays correctly in builds.",
+              "commit_ids": [
+                705467
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapon Mechanics",
+          "items": [
+            {
+              "text": "Crossbow arrows now have correct head rotation when fired without a bow, fixing trajectory issues.",
+              "commit_ids": [
+                705464
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Vendor & Sales",
+          "items": [
+            {
+              "text": "Livestock vendor inventories are now filtered by game mode; guns are no longer sold in Primitive mode.",
+              "commit_ids": [
+                705445
+              ]
+            },
+            {
+              "text": "Vendor sales updated: low‑quality turrets removed, high‑end sales now include BP fragments and firearms (Thompson, Custom SMG, Python, HC Revolver); wool sales now account for ~75% of livestock revenue.",
+              "commit_ids": [
+                705443,
+                705463
               ]
             }
           ]
@@ -264,25 +335,9 @@
     ],
     "status": "ok",
     "summary": "### Combat\n- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Corrected crossbow arrow head rotation for bowless crossbows, ensuring arrows fly in the intended direction.\n\n### Map & Loot Rooms\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.\n\n### Base Building\n- Fixed bug that let water sources be transferred between rooms (sinks).\n- Added open fence gates to the ranch and large barn for easier access to the vendor.\n\n### Animals & Wildlife\n- Livestock now matches player speed when being led, reducing lead breaks.\n- Frogs are now 20% larger, have reduced health to 60, and feature a corrected first jump, making them easier to encounter.\n- Crabs received step‑height, obstacle‑avoidance, and leg‑speed improvements; jellyfish swarms added and water checks batched for better performance.\n- Bull AI rotation fixed when losing target, per‑frame animation allocation reduced, and floating animal idle performance improved.\n\n### Economy & Vendors\n- Livestock vendor inventory updated: duplicate Custom SMG replaced with Thompson, items filtered by game mode, low‑quality turrets removed, high‑end sales now include BP fragments and weapons, and wool now makes up ~75% of sales.\n\n### Audio\n- Biofuel generator is now completely silent while idle, removing its background hum.",
-    "new_items": [
-      {
-        "text": "Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.",
-        "commit_ids": [
-          705648
-        ],
-        "section": "Combat"
-      },
-      {
-        "text": "Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms.",
-        "commit_ids": [
-          705643,
-          705641
-        ],
-        "section": "Map & Loot Rooms"
-      }
-    ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed mortar desync when reconnecting or entering network range, preventing weapon synchronization issues.\n- Closed gaps and windows that allowed shooting into the Harbor 1 and Harbor 2 loot rooms."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-27": {
     "commit_count": 18,
