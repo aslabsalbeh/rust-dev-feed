@@ -1,39 +1,45 @@
 {
   "2026-09-28": {
-    "commit_count": 93,
-    "relevant_commit_count": 65,
+    "commit_count": 94,
+    "relevant_commit_count": 66,
     "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "705626,705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666,705680,705681,705684,705690,705693,705694,705697,705706,705712,705714,705717": [
+      "705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666,705680,705681,705684,705690,705693,705694,705697,705706,705712,705714,705717,705721": [
         {
-          "title": "Economy & Vendors",
+          "title": "Economy & Vendor",
           "items": [
             {
-              "text": "Items purchased from livestock vendors now correctly retain ownership, fixing duplication/exploitation issues.",
+              "text": "Items bought from livestock vendors now correctly belong to the purchasing player.",
               "commit_ids": [
                 705714
               ]
             },
             {
-              "text": "Livestock selling now uses a server‑side RPC instead of client triggers, improving reliability of sales and preventing desync exploits.",
+              "text": "Livestock selling now uses a server‑side RPC instead of client‑side triggers, fixing desync issues.",
               "commit_ids": [
                 705706
+              ]
+            },
+            {
+              "text": "Fixed incorrect UI text shown when a player drops wool during a conversation.",
+              "commit_ids": [
+                705712
               ]
             }
           ]
         },
         {
-          "title": "Base & Doors",
+          "title": "Teammate Interaction",
           "items": [
             {
-              "text": "Teammates can no longer use the break‑in option to force entry into a teammate’s apartment room.",
+              "text": "Teammates can no longer use the break‑in option on a teammate's own apartment room.",
               "commit_ids": [
                 705684
               ]
             },
             {
-              "text": "Fixed a bug where teammates were unable to exit rooms after a server restart, restoring normal door exit behavior.",
+              "text": "Fixed a bug where teammates were unable to exit rooms after a server restart.",
               "commit_ids": [
                 705681
               ]
@@ -41,10 +47,10 @@
           ]
         },
         {
-          "title": "AI & Animals",
+          "title": "Animal AI",
           "items": [
             {
-              "text": "Critters now transition from the startled state to fleeing when they take damage while startled, making animal reactions more realistic.",
+              "text": "Critters now transition from a startled state to fleeing when they take damage while startled.",
               "commit_ids": [
                 705666
               ]
@@ -52,39 +58,28 @@
           ]
         },
         {
-          "title": "Stability & Crashes",
+          "title": "Map & Loot Anti‑Cheat",
           "items": [
             {
-              "text": "Fixed a null‑reference crash caused by destroyed elevator floors during save operations.",
-              "commit_ids": [
-                705656
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Loot",
-          "items": [
-            {
-              "text": "Moved the Radtown loot crate farther from the window to stop players from cheating by peeking/shooting from outside.",
+              "text": "Radtown loot crate moved farther from the window to prevent cheating.",
               "commit_ids": [
                 705655
               ]
             },
             {
-              "text": "Repositioned the trainyard power‑grid loot crate and added plywood/collider blockers to close windows and railings, preventing loot‑room exploits.",
+              "text": "Trainyard powergrid loot crate repositioned and windows/railings blocked to stop exploitative shooting.",
               "commit_ids": [
                 705652
               ]
             },
             {
-              "text": "Sealed gaps in Harbor 1 that allowed shooting into the loot room, closing a major exploit.",
+              "text": "Gaps that allowed shooting into Harbor 1 loot room have been boarded up.",
               "commit_ids": [
                 705643
               ]
             },
             {
-              "text": "Boarded up all windows in Harbor 2 that let players look into or shoot the loot room, further securing loot areas.",
+              "text": "All windows that let players look into or shoot into Harbor 2 loot room have been sealed.",
               "commit_ids": [
                 705641
               ]
@@ -92,46 +87,76 @@
           ]
         },
         {
-          "title": "Weapons & Combat",
+          "title": "Stability & Networking",
           "items": [
             {
-              "text": "Fixed mortar weapon desynchronization when players reconnect or enter network range, ensuring consistent mortar behavior.",
+              "text": "Fixed a null‑reference crash caused by destroyed elevator floors during save operations.",
+              "commit_ids": [
+                705656
+              ]
+            },
+            {
+              "text": "Resolved mortar desynchronization when players reconnect or enter network range.",
               "commit_ids": [
                 705648
               ]
             }
           ]
-        }
-      ],
-      "705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621": [
+        },
         {
-          "title": "Apartment Transfer Items",
+          "title": "Weapons",
           "items": [
             {
-              "text": "Fixed bug that prevented transferring water sources (sinks) between rooms.",
+              "text": "Nailgun third‑person model updated: removed SprintController, added aiming bool and new aim clips for smoother handling.",
               "commit_ids": [
-                705617
+                705628
               ]
             }
           ]
-        },
+        }
+      ],
+      "705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626": [
         {
-          "title": "Livestock Mechanics",
+          "title": "Livestock & Wildlife",
           "items": [
             {
-              "text": "Livestock now match player speed when being led, preventing lead breaks.",
+              "text": "Livestock now match player speed when being led, preventing lead breaks and long waits",
               "commit_ids": [
                 705598
               ]
             },
             {
-              "text": "Fixed floating livestock animals and improved idle performance.",
+              "text": "Floating animals bug fixed and idle performance improved",
               "commit_ids": [
                 705597
               ]
             },
             {
-              "text": "Fixed bull AI rotation issue when target lost during observation.",
+              "text": "Critter health reduced (frogs to 60 HP, rabbits to 100 HP) for better balance",
+              "commit_ids": [
+                705548
+              ]
+            },
+            {
+              "text": "Frog size increased by 20%",
+              "commit_ids": [
+                705550
+              ]
+            },
+            {
+              "text": "Frog first jump length fixed and dead‑animation pool bug resolved",
+              "commit_ids": [
+                705569
+              ]
+            },
+            {
+              "text": "Crabs and jellyfish receive step‑height fix, obstacle‑avoidance raycasts, corrected leg speeds and optimized water checks",
+              "commit_ids": [
+                705612
+              ]
+            },
+            {
+              "text": "Bull AI look‑rotation vector issue fixed when target is lost",
               "commit_ids": [
                 705527
               ]
@@ -139,10 +164,10 @@
           ]
         },
         {
-          "title": "Map Access",
+          "title": "Map & Access",
           "items": [
             {
-              "text": "Added open fence gates to ranch and large barn, improving access to the vendor.",
+              "text": "Open fence gates added to the ranch and large barn, improving access to the vendor area",
               "commit_ids": [
                 705572
               ]
@@ -150,68 +175,23 @@
           ]
         },
         {
-          "title": "Critter AI & Physics",
+          "title": "Base Building & Items",
           "items": [
             {
-              "text": "Added step height to crabs to stop cliff glitches and introduced batched raycast for obstacle avoidance, fixing wall glitches and leg speed issues.",
+              "text": "Water source (sink) transfer between rooms is now correctly blocked, preventing unintended item moves",
               "commit_ids": [
-                705612
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Critter Balance & Bugs",
-          "items": [
-            {
-              "text": "Reduced health of frogs to 60 and rabbits to 100 (from 200), making them easier to kill.",
-              "commit_ids": [
-                705548
-              ]
-            },
-            {
-              "text": "Increased frog size by 20% for better visibility.",
-              "commit_ids": [
-                705550
-              ]
-            },
-            {
-              "text": "Fixed frog long first jump and resolved pooled frog stuck in dead animation.",
-              "commit_ids": [
-                705569
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Ladder Mechanics",
-          "items": [
-            {
-              "text": "Fixed ladder rotation issues, improving climbing alignment.",
-              "commit_ids": [
-                705521
+                705617
               ]
             }
           ]
         }
       ],
-      "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506": [
-        {
-          "title": "Generators & Power",
-          "items": [
-            {
-              "text": "Biofuel generators are now silent when idle, removing their background noise.",
-              "commit_ids": [
-                705502
-              ]
-            }
-          ]
-        },
+      "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512": [
         {
           "title": "Livestock Vendor & Sales",
           "items": [
             {
-              "text": "Livestock vendor inventory and sales overhauled: duplicate Custom SMG entry removed (replaced with Thompson), items are now filtered by game mode so guns no longer appear in Primitive, low‑quality turret offering removed, high‑end sales now include 2‑4 basic BP fragments, Thompson, Custom SMG, Python, and HC Revolver, and wool sales now account for about 75% of total livestock revenue.",
+              "text": "Fixed duplicate Custom SMG entry and replaced it with a Thompson; filtered vendor items by game mode to prevent guns in Primitive; corrected turret offering to appear only on high‑quality sales; added new high‑end sale options (basic BP fragments, Thompson, Custom SMG, Python, HC Revolver); updated wool sales to constitute ~75% of livestock sales with no guns.",
               "commit_ids": [
                 705463,
                 705445,

@@ -1,5 +1,13 @@
 [
   {
+    "id": 705721,
+    "branch": "main/Livestock_animals",
+    "changeset": "166134",
+    "created": "2026-09-29T02:09:45",
+    "message": "NPCAnimController perf improvements\r\nThrottle the animator param calculations if the animal has been culled, max once every 0.25\r\nCheck the livestock have changed flags before setting the animator params\r\nDisable the F Look component when an animal is culled or if the animal is > 30m away\r\nDon't do the snap to ground raycast if we are culled\r\nIn a scene with 40 cows, this reduces FLook and NPCAnimController total of 0.6ms to 0.1ms when occluded, 0.3ms when at a distance",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 705717,
     "branch": "main/Livestock_animals",
     "changeset": "166131",
