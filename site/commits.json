@@ -1,5 +1,125 @@
 [
   {
+    "id": 706235,
+    "branch": "main/underground_train_network_update",
+    "changeset": "166408",
+    "created": "2026-09-30T18:01:10",
+    "message": "Added static prop versions of blue computer terminals. Added collision for Small Random Room J",
+    "user": "hannah.watts"
+  },
+  {
+    "id": 706233,
+    "branch": "main/procgen_optim",
+    "changeset": "166407",
+    "created": "2026-09-30T17:39:51",
+    "message": "improved monument placement - 13s faster\r\n- split tier check out to early exit as a first check and water check to run at the end\r\n- let distance checks exit early on the first monument it finds that's too close, reject behaviour is the same",
+    "user": "Grigler"
+  },
+  {
+    "id": 706229,
+    "branch": "main/MilkyHealthteafix",
+    "changeset": "166404",
+    "created": "2026-09-30T17:28:50",
+    "message": "Milky Healing Tea 112 > 100 healing, currently cant have more than 100 pending health anyway",
+    "user": "Nick.H"
+  },
+  {
+    "id": 706228,
+    "branch": "main/procgen_optim",
+    "changeset": "166403",
+    "created": "2026-09-30T17:28:11",
+    "message": "replaced topology query job with direct call into burst compiled code via blittable UnsafeList<T>, the tiny job runbyref overhead adds up with the amount of queries we make\r\n- shaves another 22s off, which is ridiculous",
+    "user": "Grigler"
+  },
+  {
+    "id": 706226,
+    "branch": "main/laserbeam_jobs_2",
+    "changeset": "166402",
+    "created": "2026-09-30T17:27:20",
+    "message": "optimize the flash beams too, they share the same shader as lasers.",
+    "user": "octo"
+  },
+  {
+    "id": 706227,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166401",
+    "created": "2026-09-30T17:27:19",
+    "message": "fix volumetric fog shadows not working in RRP",
+    "user": "Brian"
+  },
+  {
+    "id": 706225,
+    "branch": "main/automated_testing",
+    "changeset": "166400",
+    "created": "2026-09-30T17:25:00",
+    "message": "Excluded some benchmark tests from CI",
+    "user": "Flavien"
+  },
+  {
+    "id": 706220,
+    "branch": "main/netmsg_loadmap",
+    "changeset": "166397",
+    "created": "2026-09-30T16:58:40",
+    "message": "Bugfix: avoid local client player being destroyed during scene switch\r\nalso trying scene loading to happen if already in the same scene, but breaks a bunch of stuff\r\nTests: reloadmap, no longer seeing one of breadcrumb errors, can see legs and move",
+    "user": "Daniel P"
+  },
+  {
+    "id": 706218,
+    "branch": "▉▉▊▆▌▋▌▅▉▅█▊▊▍▉▅█▋▉▅▊▆",
+    "changeset": "▇▇▄▌▍█",
+    "created": "2026-09-30T16:41:46",
+    "message": "▌▇▊▋▉▍▊▍▍▍ ▊▄▍▅▋▍▄▊▆▇▇▄ ▇▇▄ ▍█▍▅▉▅▄█▇ ▌▌▆▅▉▋▆▍█ ▋█▉▋▍▆▊▇█▌▅ ▍▌▍▆ ▊▊ █▊▌█▋",
+    "user": "Flavien"
+  },
+  {
+    "id": 706215,
+    "branch": "▍▇▌▇",
+    "changeset": "▌▄▌▅▇▅",
+    "created": "2026-09-30T16:29:50",
+    "message": "▇█▉▅▆▆▆█ ▉▌█▋▌▉ ▊▄▋▌▅▆",
+    "user": "Helk"
+  },
+  {
+    "id": 706214,
+    "branch": "main/storepage_plaguedoctor",
+    "changeset": "166393",
+    "created": "2026-09-30T16:29:20",
+    "message": "Added an editor test to check the store doesnt use mp4 videos because looks like I can't check a video extension myself",
+    "user": "Flavien"
+  },
+  {
+    "id": 706213,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166392",
+    "created": "2026-09-30T16:23:18",
+    "message": "Fixed the contact images being too dark on RRP",
+    "user": "aidan.m"
+  },
+  {
+    "id": 706212,
+    "branch": "main/halloween2026DLC",
+    "changeset": "166391",
+    "created": "2026-09-30T16:18:50",
+    "message": "Halloween Wallpapers - texture updates",
+    "user": "alex.m"
+  },
+  {
+    "id": 706211,
+    "branch": "main/storepage_plaguedoctor",
+    "changeset": "166390",
+    "created": "2026-09-30T16:17:50",
+    "message": "Updated instrument dlc video (was mp4)\r\nRemoved some old mp4 refs in prefabs",
+    "user": "Flavien"
+  },
+  {
+    "id": 706208,
+    "branch": "main/vehiclespawner_auto_fetch",
+    "changeset": "166389",
+    "created": "2026-09-30T16:06:45",
+    "message": "Remove serialized field for VehicleSpawner on VehicleVendor, vendor now finds this automatically when spawned",
+    "user": "Martyn Chapman"
+  },
+  {
     "id": 706204,
     "branch": "main/Livestock_animals/livestock_hotfixes",
     "changeset": "166385",
@@ -2174,13 +2294,5 @@
     "created": "2026-09-27T20:30:21",
     "message": "Prevent cows grazing on ice / sand",
     "user": "Maverick"
-  },
-  {
-    "id": 705412,
-    "branch": "main/pickupnotices_flex",
-    "changeset": "165973",
-    "created": "2026-09-27T16:35:55",
-    "message": "Fixed item pickup and drop notices layout isssues, converted to flex",
-    "user": "Flavien"
   }
 ]
