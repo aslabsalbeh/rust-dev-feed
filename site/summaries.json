@@ -1,68 +1,52 @@
 {
   "2026-09-29": {
-    "commit_count": 100,
-    "relevant_commit_count": 67,
+    "commit_count": 102,
+    "relevant_commit_count": 69,
     "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920,705923,705926,705932,705934,705941",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "705915,705920,705923,705926,705932,705934,705941,705972,705974,705975,705976,705978,705980,705985,705987,705993,705995,705996,705997,705998,705999,706000,706003,706004,706005": [
+      "705923,705926,705932,705934,705941,705972,705974,705975,705976,705978,705980,705985,705987,705993,705995,705996,705997,705998,705999,706000,706003,706004,706005,706008,706010": [
         {
-          "title": "Livestock & Animal Mechanics",
+          "title": "Item Stack Changes",
           "items": [
             {
-              "text": "Cows now display genetics on their info panel.",
+              "text": "Sandbag barricades now stack up to 20 in inventory and appear in loot stacks of 4, increasing availability.",
+              "commit_ids": [
+                706010
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Mechanics",
+          "items": [
+            {
+              "text": "Cow panels now display genetics information.",
               "commit_ids": [
                 706005
               ]
             },
             {
-              "text": "Lead option is hidden for animals that are not tamed.",
+              "text": "Animals must be tamed before you can lead or milk them; untamed animals no longer show lead or milk options.",
               "commit_ids": [
+                706003,
                 706004
               ]
             },
             {
-              "text": "Added a tame flag; milk option only appears for tamed livestock.",
-              "commit_ids": [
-                706003
-              ]
-            },
-            {
-              "text": "Overcrowding thresholds increased (crowded 4→5, severe 6→9) and packing radius reduced from 3 m to 2.5 m, easing livestock crowding penalties.",
+              "text": "Overcrowding thresholds increased (crowded from 4 to 5, severe from 6 to 9) and packing radius reduced to 2.5 m, easing animal clustering issues.",
               "commit_ids": [
                 705998
               ]
             },
             {
-              "text": "Players can no longer stand on livestock – a client‑side trigger gently pushes them off.",
+              "text": "New client‑side trigger pushes players off livestock, preventing standing on them.",
               "commit_ids": [
                 705996
               ]
             },
             {
-              "text": "Sheep now show their genetic information; lead items are less prone to breaking easily.",
-              "commit_ids": [
-                705915
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons & Ammo",
-          "items": [
-            {
-              "text": "Ammo amounts for weapons have been doubled, increasing overall firepower.",
-              "commit_ids": [
-                706000
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vendor & Economy",
-          "items": [
-            {
-              "text": "Livestock vendor sale logic overhauled: uses normalized value as currency, randomizes offers, applies a -0.2 penalty for wild or purchased animals (full value for bred), adds new item pools (pistol/rifle ammo, top‑tier doors, rare red keycard).",
+              "text": "Livestock vendor sales reworked: uses normalized value as currency, randomizes offers, adds penalties for wild/purchased animals, includes new items like pistol ammo and a rare red keycard.",
               "commit_ids": [
                 705993
               ]
@@ -70,21 +54,27 @@
           ]
         },
         {
-          "title": "Missions",
+          "title": "Weapon Ammo",
           "items": [
             {
-              "text": "Optional mission objectives can now be omitted, allowing missions (e.g., Underwater Labs) to be completed even if certain objectives are impossible.",
+              "text": "Ammo amounts for weapons have been doubled, providing more firepower per reload.",
               "commit_ids": [
-                705974
+                706000
               ]
             }
           ]
         },
         {
-          "title": "Critter Bugs",
+          "title": "Mission & World Bugs",
           "items": [
             {
-              "text": "Fixed several critter issues: frog animator errors on spawn/despawn, turtle log spam on unpause, and jellyfish populations now spawn correctly.",
+              "text": "Optional mission objectives can now be omitted, allowing the Underwater Labs mission to be completed even if a lab lacks a boombox.",
+              "commit_ids": [
+                705974
+              ]
+            },
+            {
+              "text": "Jellyfish populations now spawn correctly, fixing a bug where they were absent.",
               "commit_ids": [
                 705932
               ]
@@ -92,10 +82,16 @@
           ]
         }
       ],
-      "705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914": [
+      "705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920": [
         {
-          "title": "Movement & Collision",
+          "title": "Livestock Mechanics",
           "items": [
+            {
+              "text": "Leads no longer break easily, reducing accidental rope failures. Sheep now display their genetic information in the UI.",
+              "commit_ids": [
+                705915
+              ]
+            },
             {
               "text": "Livestock animals now have client‑side colliders that block player movement, preventing players from walking through them.",
               "commit_ids": [
@@ -103,59 +99,46 @@
               ]
             },
             {
-              "text": "Fixed a null‑reference crash that could occur when player snapshots arrived out of order during connection, stabilizing player movement on join.",
+              "text": "Sheep display their gene information in the UI; other animals do not.",
               "commit_ids": [
-                705910,
+                705813
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Connection & Movement Stability",
+          "items": [
+            {
+              "text": "Fixed a null‑reference crash that could occur when player snapshots arrive out of order during connection, improving stability.",
+              "commit_ids": [
+                705910
+              ]
+            },
+            {
+              "text": "Fixed a null‑reference crash when initializing a parented player, preventing connection issues.",
+              "commit_ids": [
                 705908
               ]
             }
           ]
         },
         {
-          "title": "Map & Environment",
+          "title": "Map Changes",
           "items": [
             {
-              "text": "Additional windows in Harbor 2 have been boarded up, removing line‑of‑sight into the loot room.",
+              "text": "Additional windows in Harbor 2 were boarded up, closing unintended sightlines into the loot room.",
               "commit_ids": [
                 705865
               ]
-            },
-            {
-              "text": "Vehicle spawner repairable pads now automatically locate a nearby pad when spawned, removing the need for a serialized reference.",
-              "commit_ids": [
-                705890
-              ]
             }
           ]
         },
         {
-          "title": "Livestock",
+          "title": "User Interface & Crafting",
           "items": [
             {
-              "text": "Lambs now correctly drop wool, fixing the missing wool bug.",
-              "commit_ids": [
-                705827
-              ]
-            },
-            {
-              "text": "Sheep now display their genetic information in the UI, though appearance changes are pending.",
-              "commit_ids": [
-                705813
-              ]
-            },
-            {
-              "text": "Jungle animals (crocs, tigers, panthers, wolves) now spawn correctly after fixing a proximity check that prevented their spawning.",
-              "commit_ids": [
-                705811
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Crafting & UI",
-          "items": [
-            {
-              "text": "Pressing the inventory button now directly opens the dedicated crafting screen, adding a shortcut for crafting.",
+              "text": "Pressing the inventory button now directly opens the dedicated crafting screen, streamlining crafting access.",
               "commit_ids": [
                 705815
               ]
@@ -163,44 +146,60 @@
           ]
         }
       ],
-      "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805": [
+      "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811": [
         {
-          "title": "Livestock & Animal Mechanics",
+          "title": "Wildlife Spawning",
           "items": [
             {
-              "text": "Wild cow and sheep populations have been increased from 1 to 2 per square km, grazing time reduced (GrazeDayShare 0.4→0.3) and trough feeding now provides double fullness.",
+              "text": "Fixed jungle animals (crocs, tiger panther, wolves) failing to spawn due to an overly broad proximity check.",
               "commit_ids": [
-                705734,
-                705733,
+                705811
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock & Wildlife Balance",
+          "items": [
+            {
+              "text": "Doubled wild cow and sheep population density (1 → 2 per km²).",
+              "commit_ids": [
+                705734
+              ]
+            },
+            {
+              "text": "Reduced grazing time share for cows and sheep from 0.4 to 0.3, lowering their daily food requirement.",
+              "commit_ids": [
+                705733
+              ]
+            },
+            {
+              "text": "Cows and sheep now gain double fullness when eating from a trough.",
+              "commit_ids": [
                 705731
               ]
             },
             {
-              "text": "Selling wool now correctly references the appropriate animal, fixing previous errors.",
+              "text": "Fixed incorrect animal reference when selling wool, ensuring proper transaction handling.",
               "commit_ids": [
                 705730
               ]
-            }
-          ]
-        },
-        {
-          "title": "Temperature & Consumables",
-          "items": [
+            },
             {
-              "text": "Creamy Pure Cooling Tea no longer incorrectly raises your maximum temperature.",
+              "text": "Fixed milk‑skimming UI: correct item notices, proper stacking, added skim option above drink to avoid misclicks, and played a skim effect.",
               "commit_ids": [
-                705774
+                705770
               ]
             }
           ]
         },
         {
-          "title": "Milk Skimming & Item Handling",
+          "title": "Item & Consumable Bugs",
           "items": [
             {
-              "text": "Fixed incorrect item notices and stacking behavior when skimming milk, and ensured the skim option appears above the drink action to prevent misclicks.",
+              "text": "Fixed Creamy Pure Cooling Tea incorrectly raising max temperature.",
               "commit_ids": [
-                705770
+                705774
               ]
             }
           ]
