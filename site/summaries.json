@@ -1,16 +1,16 @@
 {
   "2026-09-29": {
-    "commit_count": 84,
-    "relevant_commit_count": 53,
+    "commit_count": 90,
+    "relevant_commit_count": 57,
     "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920,705923,705926,705932,705934,705941",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920,705923,705926,705932,705934,705941,705972,705974,705975,705976": [
+      "705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920,705923,705926,705932,705934,705941,705972,705974,705975,705976,705978,705980,705985,705987": [
         {
-          "title": "Missions",
+          "title": "Missions & Objectives",
           "items": [
             {
-              "text": "Optional objectives can now be omitted, allowing missions to continue even if an objective is impossible.",
+              "text": "Optional mission objectives can now be omitted, allowing missions like Underwater Labs to be completed even if certain objectives (e.g., a missing boombox) are impossible.",
               "commit_ids": [
                 705974
               ]
@@ -18,76 +18,80 @@
           ]
         },
         {
-          "title": "Animal & Livestock",
+          "title": "Tools & Items",
           "items": [
             {
-              "text": "Fixed several critter bugs: frog animation errors, turtle log spam, and jellyfish not spawning.",
-              "commit_ids": [
-                705932
-              ]
-            },
-            {
-              "text": "Lead ropes are now less prone to breaking and sheep gene information is displayed.",
+              "text": "Leads no longer break easily, improving durability when used for tethering.",
               "commit_ids": [
                 705915
-              ]
-            },
-            {
-              "text": "Livestock animals now have player‑only collision blockers, preventing unintended player movement through them.",
-              "commit_ids": [
-                705912
               ]
             }
           ]
         },
         {
-          "title": "Map Changes",
+          "title": "Animals & Wildlife",
           "items": [
             {
-              "text": "Additional windows in Harbor 2 have been boarded up to prevent seeing into the loot room.",
+              "text": "Livestock animals now have player-only collision blockers, preventing players from walking through them.",
               "commit_ids": [
-                705865
+                705912
+              ]
+            },
+            {
+              "text": "Jellyfish now spawn correctly in their populations, fixing a missing wildlife issue.",
+              "commit_ids": [
+                705932
               ]
             }
           ]
         }
       ],
-      "705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846": [
+      "705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890": [
         {
-          "title": "Livestock & Animal Gameplay",
+          "title": "Vehicles & Structures",
           "items": [
             {
-              "text": "Lambs now correctly drop wool when sheared.",
+              "text": "Vehicle spawner repairable pads now automatically locate a nearby pad when spawned, fixing missing pad issues.",
+              "commit_ids": [
+                705890
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Loot Visibility",
+          "items": [
+            {
+              "text": "Additional windows in Harbor 2 have been boarded up, preventing players from seeing into the loot room from outside.",
+              "commit_ids": [
+                705865
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock & Farming",
+          "items": [
+            {
+              "text": "Lamb wool collection bug fixed.",
               "commit_ids": [
                 705827
               ]
             },
             {
-              "text": "Sheep now display their genetic information in the UI.",
+              "text": "Sheep now display their genetic information (genes) in the UI.",
               "commit_ids": [
                 705813
               ]
             },
             {
-              "text": "Wild cow and sheep populations have been increased from 1 to 2 per km².",
-              "commit_ids": [
-                705734
-              ]
-            },
-            {
-              "text": "Cows and sheep now spend less of the day grazing (GrazeDayShare reduced from 0.4 to 0.3), reducing their food consumption.",
-              "commit_ids": [
-                705733
-              ]
-            },
-            {
-              "text": "Milk skimming now shows correct item notices, plays a skimming sound effect, and adds a dedicated skim option above the drink action.",
+              "text": "Milk skimming UI corrected: proper item notices, skim option appears above drink, milk icons fixed, and a skimming sound effect added.",
               "commit_ids": [
                 705770
               ]
             },
             {
-              "text": "Creamy Pure Cooling Tea no longer raises your maximum temperature.",
+              "text": "Creamy Pure Cooling Tea no longer raises the player's maximum temperature.",
               "commit_ids": [
                 705774
               ]
@@ -95,10 +99,10 @@
           ]
         },
         {
-          "title": "Jungle Animal Spawning",
+          "title": "Jungle Animals",
           "items": [
             {
-              "text": "Jungle animals (crocodiles, tigers, panthers, wolves) now spawn correctly; the previous 300 m proximity check that prevented spawning has been fixed.",
+              "text": "Jungle animals (crocodiles, tigers, panthers, wolves) now spawn correctly after fixing an overly‑restrictive distance check.",
               "commit_ids": [
                 705811
               ]
@@ -106,10 +110,10 @@
           ]
         },
         {
-          "title": "Crafting UI Improvements",
+          "title": "Crafting & Inventory UI",
           "items": [
             {
-              "text": "Pressing the inventory button now opens the crafting screen directly, and a dedicated crafting screen action has been added for quicker access.",
+              "text": "Added a dedicated crafting screen action and made the inventory button open the crafting screen directly, streamlining crafting access.",
               "commit_ids": [
                 705815
               ]
@@ -117,19 +121,17 @@
           ]
         }
       ],
-      "705729,705730,705731": [
+      "705729,705730,705731,705733,705734,705750,705758": [
         {
           "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Cows and sheep now gain double fullness when eating from a trough.",
+              "text": "Updated sheep skinning, doubled wild cow and sheep populations per km², reduced grazing share (0.4→0.3) so they eat less, gave cows and sheep double fullness when feeding from troughs, and fixed the animal reference when selling wool.",
               "commit_ids": [
-                705731
-              ]
-            },
-            {
-              "text": "Fixed an issue with animal references when selling wool, ensuring correct transactions.",
-              "commit_ids": [
+                705758,
+                705734,
+                705733,
+                705731,
                 705730
               ]
             }
