@@ -1,188 +1,62 @@
 {
   "2026-09-30": {
-    "commit_count": 84,
-    "relevant_commit_count": 44,
-    "relevant_signature": "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202",
+    "commit_count": 93,
+    "relevant_commit_count": 48,
+    "relevant_signature": "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233": [
-        {
-          "title": "Livestock & Animal Mechanics",
-          "items": [
-            {
-              "text": "Rebalanced livestock food consumption, halving the amount required.",
-              "commit_ids": [
-                706202
-              ]
-            },
-            {
-              "text": "Prevented wild livestock from dying from hunger or unmet needs, capping health loss at 50%.",
-              "commit_ids": [
-                706173,
-                706171
-              ]
-            },
-            {
-              "text": "Added halters to all livestock and fixed rope mechanics (adult animals now have two ropes, rope ends off‑camera).",
-              "commit_ids": [
-                706161,
-                706195,
-                706155
-              ]
-            },
-            {
-              "text": "Livestock vendor now informs you of the required wool amount when you lack enough to sell.",
-              "commit_ids": [
-                706192
-              ]
-            },
-            {
-              "text": "Fixed calf purchase dialogue that incorrectly showed a successful purchase despite insufficient scrap.",
-              "commit_ids": [
-                706197
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Map Loading & Player Stability",
-          "items": [
-            {
-              "text": "Fixed a bug where the local client player could be destroyed during a scene switch, improving reload‑map stability.",
-              "commit_ids": [
-                706220
-              ]
-            },
-            {
-              "text": "Corrected an invalid loading state on map reload, restoring camera control after reload.",
-              "commit_ids": [
-                706181
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Underwater Labs Mission",
-          "items": [
-            {
-              "text": "Boombox activation now counts toward each team member's objective progress when they are in the same underwater lab.",
-              "commit_ids": [
-                706175
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Healing Items",
-          "items": [
-            {
-              "text": "Milky Healing Tea now heals 112 health (previously capped at 100).",
-              "commit_ids": [
-                706229
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Creature Visibility",
-          "items": [
-            {
-              "text": "Fixed pooling bugs that caused crabs and jellyfish to appear invisible.",
-              "commit_ids": [
-                706198
-              ]
-            }
-          ]
-        }
-      ],
-      "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153": [
-        {
-          "title": "Vehicles",
-          "items": [
-            {
-              "text": "Motorcycles and bicycles now dismount from the side instead of the top, fixing the previous behavior where the closest mount point (always the top) was chosen.",
-              "commit_ids": [
-                706153
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock & Animals",
-          "items": [
-            {
-              "text": "Wild livestock can no longer be passively tamed, preventing uncontrolled breeding sprees.",
-              "commit_ids": [
-                706152
-              ]
-            },
-            {
-              "text": "Livestock taming now decays if the bond isn't full, sleepers can't tame passively, and calves receive a small familiarity bonus without being maxed out, reducing accidental taming and breeding.",
-              "commit_ids": [
-                706150
-              ]
-            },
-            {
-              "text": "Animals that were not eating from troughs now correctly consume feed.",
-              "commit_ids": [
-                706128
-              ]
-            },
-            {
-              "text": "Cows will no longer die of hunger in properly set‑up farms, fixing a starvation bug.",
-              "commit_ids": [
-                706124
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Puzzles",
-          "items": [
-            {
-              "text": "Duplicate crates can no longer appear in oil rig puzzle rooms after a server crash or unclean shutdown; the puzzle generator's network cache is invalidated on reset.",
-              "commit_ids": [
-                706141
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Animal Mechanics",
+        "title": "Map & Reload",
         "items": [
           {
-            "text": "Food consumption halved for all livestock, reducing upkeep.",
+            "text": "Fixed net ID desync after map reload, preventing item throw errors.",
             "commit_ids": [
-              706202
+              706260
             ]
           },
           {
-            "text": "Animals now correctly eat from troughs and cows no longer starve in well‑setup farms; wild livestock health will not drop below 50% even when hungry.",
+            "text": "Fixed player disappearance during scene switches and restored camera control after reload.",
             "commit_ids": [
+              706220,
+              706181
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Health & Healing",
+        "items": [
+          {
+            "text": "Increased Milky Healing Tea healing amount beyond 100, allowing higher health recovery.",
+            "commit_ids": [
+              706229
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Animals",
+        "items": [
+          {
+            "text": "Rebalanced livestock food consumption, reducing required food, and fixed feeding logic so animals correctly eat from troughs, preventing starvation and cow deaths in farms.",
+            "commit_ids": [
+              706202,
               706128,
-              706124,
+              706124
+            ]
+          },
+          {
+            "text": "Prevented wild livestock from dying due to hunger, capping health loss at 50%, stopped passive taming and uncontrolled breeding; taming now decays if bond incomplete, and calves start with a familiarity bonus without maxing out.",
+            "commit_ids": [
               706173,
-              706171
+              706171,
+              706152,
+              706150
             ]
           },
           {
-            "text": "Taming system overhaul: bond decay when incomplete, sleepers cannot tame passively, calves gain a familiarity bonus without maxing, and passive taming/uncontrolled breeding of wild livestock fixed.",
-            "commit_ids": [
-              706150,
-              706152
-            ]
-          },
-          {
-            "text": "Halters added to every livestock animal, allowing you to lead them.",
-            "commit_ids": [
-              706161
-            ]
-          },
-          {
-            "text": "Vendor feedback improvements: calf purchase dialogue now correctly checks scrap, and livestock vendor tells you required wool amount when you lack enough to sell.",
+            "text": "Fixed calf purchase dialogue showing success despite insufficient scrap, and added vendor dialogue informing required wool amount when lacking enough to sell.",
             "commit_ids": [
               706197,
               706192
@@ -191,10 +65,10 @@
         ]
       },
       {
-        "title": "Underwater Labs Mission",
+        "title": "Missions & Objectives",
         "items": [
           {
-            "text": "Boombox activation now counts toward the team objective when teammates are in the same underwater lab.",
+            "text": "Boombox activation now counts toward team objective progress when teammates are in the same underwater lab.",
             "commit_ids": [
               706175
             ]
@@ -202,10 +76,16 @@
         ]
       },
       {
-        "title": "Vehicle Mechanics",
+        "title": "Creatures & Vehicles",
         "items": [
           {
-            "text": "Motorcycles and bicycles now dismount to the side instead of on top, fixing mount point ordering.",
+            "text": "Fixed pooling bugs that made crabs and jellyfish invisible.",
+            "commit_ids": [
+              706198
+            ]
+          },
+          {
+            "text": "Motorcycles and bicycles now dismount to the side, preventing stuck dismounts.",
             "commit_ids": [
               706153
             ]
@@ -213,39 +93,16 @@
         ]
       },
       {
-        "title": "World & Environment Bugs",
+        "title": "World & Store UI",
         "items": [
           {
-            "text": "Fixed pooling bugs that made crabs and jellyfish invisible, restoring their presence in the world.",
-            "commit_ids": [
-              706198
-            ]
-          },
-          {
-            "text": "Resolved a rare crate duplication glitch in oil‑rig puzzle rooms after server crashes.",
+            "text": "Fixed rare crate duplication in oil rig puzzle rooms after server crashes, preserving puzzle integrity.",
             "commit_ids": [
               706141
             ]
-          }
-        ]
-      },
-      {
-        "title": "Audio Improvements",
-        "items": [
+          },
           {
-            "text": "Sheep baas and cow moo sounds now respect occlusion, providing more realistic audio.",
-            "commit_ids": [
-              706126,
-              706122
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Store UI",
-        "items": [
-          {
-            "text": "Fixed black background on store pages when RRP is enabled and removed duplicate items from the featured tab.",
+            "text": "Store UI improvements: removed black background on pages when RRP enabled and eliminated duplicate items in the Featured tab.",
             "commit_ids": [
               706086,
               706066
@@ -255,33 +112,25 @@
       }
     ],
     "status": "ok",
-    "summary": "### Livestock & Animal Mechanics\n- Food consumption halved for all livestock, reducing upkeep.\n- Animals now correctly eat from troughs and cows no longer starve in well‑setup farms; wild livestock health will not drop below 50% even when hungry.\n- Taming system overhaul: bond decay when incomplete, sleepers cannot tame passively, calves gain a familiarity bonus without maxing, and passive taming/uncontrolled breeding of wild livestock fixed.\n- Halters added to every livestock animal, allowing you to lead them.\n- Vendor feedback improvements: calf purchase dialogue now correctly checks scrap, and livestock vendor tells you required wool amount when you lack enough to sell.\n\n### Underwater Labs Mission\n- Boombox activation now counts toward the team objective when teammates are in the same underwater lab.\n\n### Vehicle Mechanics\n- Motorcycles and bicycles now dismount to the side instead of on top, fixing mount point ordering.\n\n### World & Environment Bugs\n- Fixed pooling bugs that made crabs and jellyfish invisible, restoring their presence in the world.\n- Resolved a rare crate duplication glitch in oil‑rig puzzle rooms after server crashes.\n\n### Audio Improvements\n- Sheep baas and cow moo sounds now respect occlusion, providing more realistic audio.\n\n### Store UI\n- Fixed black background on store pages when RRP is enabled and removed duplicate items from the featured tab.",
+    "summary": "### Map & Reload\n- Fixed net ID desync after map reload, preventing item throw errors.\n- Fixed player disappearance during scene switches and restored camera control after reload.\n\n### Health & Healing\n- Increased Milky Healing Tea healing amount beyond 100, allowing higher health recovery.\n\n### Livestock & Animals\n- Rebalanced livestock food consumption, reducing required food, and fixed feeding logic so animals correctly eat from troughs, preventing starvation and cow deaths in farms.\n- Prevented wild livestock from dying due to hunger, capping health loss at 50%, stopped passive taming and uncontrolled breeding; taming now decays if bond incomplete, and calves start with a familiarity bonus without maxing out.\n- Fixed calf purchase dialogue showing success despite insufficient scrap, and added vendor dialogue informing required wool amount when lacking enough to sell.\n\n### Missions & Objectives\n- Boombox activation now counts toward team objective progress when teammates are in the same underwater lab.\n\n### Creatures & Vehicles\n- Fixed pooling bugs that made crabs and jellyfish invisible.\n- Motorcycles and bicycles now dismount to the side, preventing stuck dismounts.\n\n### World & Store UI\n- Fixed rare crate duplication in oil rig puzzle rooms after server crashes, preserving puzzle integrity.\n- Store UI improvements: removed black background on pages when RRP enabled and eliminated duplicate items in the Featured tab.",
     "new_items": [
       {
-        "text": "Food consumption halved for all livestock, reducing upkeep.",
+        "text": "Fixed net ID desync after map reload, preventing item throw errors.",
         "commit_ids": [
-          706202
+          706260
         ],
-        "section": "Livestock & Animal Mechanics"
+        "section": "Map & Reload"
       },
       {
-        "text": "Vendor feedback improvements: calf purchase dialogue now correctly checks scrap, and livestock vendor tells you required wool amount when you lack enough to sell.",
+        "text": "Increased Milky Healing Tea healing amount beyond 100, allowing higher health recovery.",
         "commit_ids": [
-          706197,
-          706192
+          706229
         ],
-        "section": "Livestock & Animal Mechanics"
-      },
-      {
-        "text": "Fixed pooling bugs that made crabs and jellyfish invisible, restoring their presence in the world.",
-        "commit_ids": [
-          706198
-        ],
-        "section": "World & Environment Bugs"
+        "section": "Health & Healing"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Food consumption halved for all livestock, reducing upkeep.\n- Vendor feedback improvements: calf purchase dialogue now correctly checks scrap, and livestock vendor tells you required wool amount when you lack enough to sell.\n- Fixed pooling bugs that made crabs and jellyfish invisible, restoring their presence in the world."
+    "new_relevant_count": 2,
+    "new_summary": "- Fixed net ID desync after map reload, preventing item throw errors.\n- Increased Milky Healing Tea healing amount beyond 100, allowing higher health recovery."
   },
   "2026-09-29": {
     "commit_count": 102,
