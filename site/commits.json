@@ -1,5 +1,85 @@
 [
   {
+    "id": 706005,
+    "branch": "main/Livestock_animals",
+    "changeset": "166284",
+    "created": "2026-09-30T01:57:40",
+    "message": "Show genetics on cow panel as well",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 706004,
+    "branch": "main/Livestock_animals",
+    "changeset": "166283",
+    "created": "2026-09-30T01:54:02",
+    "message": "Don't show the lead option if an animal isn't tamed",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 706003,
+    "branch": "main/Livestock_animals",
+    "changeset": "166282",
+    "created": "2026-09-30T01:43:05",
+    "message": "Add a tame flag to livestock\r\nDon't show milk option if animal is not tamed",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 706000,
+    "branch": "main/Livestock_animals/vendor_changes",
+    "changeset": "166279",
+    "created": "2026-09-30T01:09:44",
+    "message": "Doubled ammo amounts\r\nAdded ladder hatch, rifle bodies and smg bodies",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 705999,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "166278",
+    "created": "2026-09-30T00:45:38",
+    "message": "Viewmodel - nails in the mag deplete per shot + follower rises\r\nMagazineStateViewmodel - Added optional RoundVisuals, Follower, FollowerRestPosition and FollowerStepPerRound\r\nShowBullet on anim event now shows a full mag during reload",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 705998,
+    "branch": "main/Livestock_animals",
+    "changeset": "166277",
+    "created": "2026-09-30T00:42:56",
+    "message": "Adjusted overcrowded thresholds - crowded (4 -> 5) and severe packing (6 -> 9)\r\nReduced packing radius from 3m -> 2.5m",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 705997,
+    "branch": "main/fix_browser_invalid_operation",
+    "changeset": "166276",
+    "created": "2026-09-30T00:32:20",
+    "message": "Fix InvalidOperationException() when multiple browser refreshes happen at the same time and the list is cleared while another query is filling it",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705996,
+    "branch": "main/Livestock_animals/livestock_hotfixes/playercolliders/trigger_pushback",
+    "changeset": "166275",
+    "created": "2026-09-30T00:31:28",
+    "message": "Added TriggerPlayerPushback on livestock animals so you cannot stand on them\r\nIts a new client side only trigger that gently slides the player off",
+    "user": "Flavien"
+  },
+  {
+    "id": 705995,
+    "branch": "main/qol_spawn_vendors",
+    "changeset": "166274",
+    "created": "2026-09-30T00:17:43",
+    "message": "Expand the `spawnvendor` command to cover every single vendor in the game\r\n- can spawn vending machines and vendors from all monuments\r\n- can choose the respective stock from each type of vendor",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 705993,
+    "branch": "main/Livestock_animals/vendor_changes",
+    "changeset": "166273",
+    "created": "2026-09-30T00:08:51",
+    "message": "Rework vendor sale logic\r\nNow takes the normalised value we used to use and uses that as a currency to spend\r\nNow randomly moves through the list of items, does a dice roll and attempts to spend the currency to unlock that offer\r\nSo if we have 0.5 worth of wool and a listing of 400 frags passes and that listing is worth 0.5, we now take a random amount (say 0.25 = 200 frags)\r\nWe then have 0.25 left to spend on another listing\r\nFalls back to a flat scrap listing to fill out the offer\r\nReworked item lists - added pistol ammo, rifle ammo, top tier doors\r\nAdded rare red keycard to livestock sale list\r\nAdded a penalty (-0.2) to animals that were found in the wild or purchased when calculating sale offers, animals that were born via breeding will be full value",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 705987,
     "branch": "main/render_pipeline_testing/blur_artifacts",
     "changeset": "166270",
