@@ -1,5 +1,301 @@
 [
   {
+    "id": 706161,
+    "branch": "main/livestock_leading_improvements",
+    "changeset": "166361",
+    "created": "2026-09-30T14:03:06",
+    "message": "Added halter to all livestock animals",
+    "user": "Flavien"
+  },
+  {
+    "id": 706159,
+    "branch": "main/livestock_leading_improvements",
+    "changeset": "166359",
+    "created": "2026-09-30T14:01:45",
+    "message": "FakePhysicsRope alloc optim",
+    "user": "Flavien"
+  },
+  {
+    "id": 706158,
+    "branch": "main/render_pipeline_testing/blur_artifacts",
+    "changeset": "166357",
+    "created": "2026-09-30T14:01:23",
+    "message": "Use unity_MatrixVP over UNITY_MATRIX_VP for consistency",
+    "user": "Felix"
+  },
+  {
+    "id": 706155,
+    "branch": "main/livestock_leading_improvements",
+    "changeset": "166356",
+    "created": "2026-09-30T14:00:33",
+    "message": "Added livestock halter models",
+    "user": "Flavien"
+  },
+  {
+    "id": 706154,
+    "branch": "main/character_customisation",
+    "changeset": "166355",
+    "created": "2026-09-30T13:54:24",
+    "message": "Customiser animation updates",
+    "user": "wes.b"
+  },
+  {
+    "id": 706153,
+    "branch": "main/fix_motorcycle_dismount_order",
+    "changeset": "166354",
+    "created": "2026-09-30T13:53:19",
+    "message": "Fix all motorcycles & bicycles dismounting on top instead of the side\r\n- the mount points were sorted to closest which always picked the top dismount\r\n- switched to ordered so it will try the points on the side first",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 706152,
+    "branch": "main",
+    "changeset": "166353",
+    "created": "2026-09-30T13:49:19",
+    "message": "Fix wild livestock being passively tamed and then breeding out of control",
+    "user": "Maverick"
+  },
+  {
+    "id": 706150,
+    "branch": "main/Livestock_animals/livestock_hotfixes",
+    "changeset": "166352",
+    "created": "2026-09-30T13:44:51",
+    "message": "Decay livestock taming if not full bond, don't allow sleepers to tame passively, give calves a start bonus to familiarity but don't max it out.\r\nThis is to avoid wild cows being accidentally tamed by passer bys and starting to breed and fill the server.",
+    "user": "Maverick"
+  },
+  {
+    "id": 706141,
+    "branch": "main/crash_duped_crates_fix",
+    "changeset": "166351",
+    "created": "2026-09-30T13:11:47",
+    "message": "Fix another rare case of duplicated crates being possible in oil rig puzzle rooms, which could happen if the server crashed / wasn't shut down cleanly\r\nInvalidate the network cache of the puzzle's generator after spawning crates during a reset",
+    "user": "cipeaX"
+  },
+  {
+    "id": 706140,
+    "branch": "main/netmsg_loadmap",
+    "changeset": "166350",
+    "created": "2026-09-30T13:05:17",
+    "message": "Update: initial prototype alongside Approved hack\r\nTests: tried both, it's megaborked in C+S",
+    "user": "Daniel P"
+  },
+  {
+    "id": 706138,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166349",
+    "created": "2026-09-30T12:58:33",
+    "message": "Fixed the post processing on the player preview camera",
+    "user": "aidan.m"
+  },
+  {
+    "id": 706132,
+    "branch": "main/procgen_optim",
+    "changeset": "166346",
+    "created": "2026-09-30T12:38:11",
+    "message": "removed repeated check of 0 orientation on cliff placement where we'd check it on both sign flips across X and Z - cuts an additional 19.1s with matching results",
+    "user": "Grigler"
+  },
+  {
+    "id": 706131,
+    "branch": "main/moocclusion",
+    "changeset": "166345",
+    "created": "2026-09-30T12:36:52",
+    "message": "Reduced the mooing chances a tad",
+    "user": "Flavien"
+  },
+  {
+    "id": 706130,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166344",
+    "created": "2026-09-30T12:34:38",
+    "message": "Bull texture optimisations",
+    "user": "Toffer"
+  },
+  {
+    "id": 706128,
+    "branch": "main",
+    "changeset": "166343",
+    "created": "2026-09-30T12:28:50",
+    "message": "Potential fix for animals not eating from troughs",
+    "user": "Maverick"
+  },
+  {
+    "id": 706127,
+    "branch": "main/procgen_optim",
+    "changeset": "166342",
+    "created": "2026-09-30T12:25:41",
+    "message": "hierarchal topology map - saved ~19.5s locally on a 4k procgen, identical results",
+    "user": "Grigler"
+  },
+  {
+    "id": 706126,
+    "branch": "main/moo_occlusion",
+    "changeset": "166341",
+    "created": "2026-09-30T12:25:30",
+    "message": "Sheep baas are occluded too for consistency",
+    "user": "Flavien"
+  },
+  {
+    "id": 706125,
+    "branch": "main/moo_occlusion",
+    "changeset": "166340",
+    "created": "2026-09-30T12:19:24",
+    "message": "Lowered their occluded volume cause they won't shut up",
+    "user": "Flavien"
+  },
+  {
+    "id": 706124,
+    "branch": "main/Livestock_animals/livestock_hotfixes",
+    "changeset": "166339",
+    "created": "2026-09-30T12:15:52",
+    "message": "Potential fix for cows dying of hunger in a well setup farm",
+    "user": "Maverick"
+  },
+  {
+    "id": 706122,
+    "branch": "main/moo_occlusion",
+    "changeset": "166337",
+    "created": "2026-09-30T12:10:01",
+    "message": "Cow moo sounds are now occluded",
+    "user": "Flavien"
+  },
+  {
+    "id": 706106,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166336",
+    "created": "2026-09-30T12:04:51",
+    "message": "Calf texture optimisations",
+    "user": "Toffer"
+  },
+  {
+    "id": 706097,
+    "branch": "main/rrp_skinviewer_fix",
+    "changeset": "166335",
+    "created": "2026-09-30T11:54:12",
+    "message": "Store bg blur mat tweaks",
+    "user": "Flavien"
+  },
+  {
+    "id": 706093,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166334",
+    "created": "2026-09-30T11:53:29",
+    "message": "Cow textures optimisation",
+    "user": "Toffer"
+  },
+  {
+    "id": 706092,
+    "branch": "▌▇▌▆",
+    "changeset": "▍▅█▍▇█",
+    "created": "2026-09-30T11:48:07",
+    "message": "▄▇▉▍▊▌ ▅▋▇█ ▌▊▇▉▉▆▄▉▌▉▊▅▄▇▋▍▄▍▇▄▊▍▌▅",
+    "user": "Flavien"
+  },
+  {
+    "id": 706091,
+    "branch": "▇▄█▊▊▋▅▄▄▍▋█▌▇▉▋█▉█▇██",
+    "changeset": "▊▊▍▅▌▄",
+    "created": "2026-09-30T11:44:37",
+    "message": "▉▄▌▊▆▍ ▋▆▆▅▄▍▊▄▌ ▊▊▍▌▅▉ ▌▍▄▊▆▆ ▆▄▆▆ ▊█▅▉▇▄▉▋▊▋ ▊▋ ▇█ ▋▉ ▄▋▌ ▊▆▉▆▉▊▅▌▄▍ ▊█▆▍▌ ██▉▉█▉▄ ▅▆ █▌ ▅▉ ▉▍▋▆█▆▊▄▄▅ ▉▌▅▅▉ ▌▍▆ █▋▉▄ ▆▄█▇▆▉▄▇▋ ▊▉ ▊▇▅▆ █▍▍▇▌▇ ▇▍▊▆█▉▇▇▆█",
+    "user": "Flavien"
+  },
+  {
+    "id": 706086,
+    "branch": "main/rrp_skinviewer_fix",
+    "changeset": "166329",
+    "created": "2026-09-30T11:32:42",
+    "message": "Fixed black background in all store pages with RRP enabled\r\nAlso changed how we handle the background assets so they dont pull the entire atlas when using http store",
+    "user": "Flavien"
+  },
+  {
+    "id": 706083,
+    "branch": "main/Viewmodel_ROM",
+    "changeset": "166328",
+    "created": "2026-09-30T11:08:03",
+    "message": "Unarmed ROM animation test",
+    "user": "wes.b"
+  },
+  {
+    "id": 706081,
+    "branch": "main/Livestock_animals",
+    "changeset": "166327",
+    "created": "2026-09-30T11:00:18",
+    "message": "Fix static fence gate layer",
+    "user": "cipeaX"
+  },
+  {
+    "id": 706080,
+    "branch": "main/underground_train_network_update",
+    "changeset": "166326",
+    "created": "2026-09-30T10:59:16",
+    "message": "Final bit of polishy bits on random room J pipes / wires",
+    "user": "hannah.watts"
+  },
+  {
+    "id": 706077,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166323",
+    "created": "2026-09-30T10:57:16",
+    "message": "Crab texture size optimisations",
+    "user": "Toffer"
+  },
+  {
+    "id": 706074,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166321",
+    "created": "2026-09-30T10:47:46",
+    "message": "Added legacy shadow keywords sets for point and spot lights for shaders that don't explicitly set the depth bias in their shadow caster pass",
+    "user": "aidan.m"
+  },
+  {
+    "id": 706073,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166320",
+    "created": "2026-09-30T10:41:03",
+    "message": "Frog texture optimisations",
+    "user": "Toffer"
+  },
+  {
+    "id": 706070,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166319",
+    "created": "2026-09-30T10:31:06",
+    "message": "Jellyfish texture optimisations",
+    "user": "Toffer"
+  },
+  {
+    "id": 706067,
+    "branch": "main/storepage_plaguedoctor",
+    "changeset": "166317",
+    "created": "2026-09-30T10:17:39",
+    "message": "Plague doctor store video",
+    "user": "Flavien"
+  },
+  {
+    "id": 706066,
+    "branch": "main/storepage_plaguedoctor",
+    "changeset": "166316",
+    "created": "2026-09-30T10:15:36",
+    "message": "Fixed featured tab showing the same item twice: grids stopped recording spawned items after the loading changes",
+    "user": "Flavien"
+  },
+  {
+    "id": 706065,
+    "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
+    "changeset": "166315",
+    "created": "2026-09-30T10:13:30",
+    "message": "Squirrel texture optimisations",
+    "user": "Toffer"
+  },
+  {
+    "id": 706064,
+    "branch": "main/storepage_plaguedoctor",
+    "changeset": "166314",
+    "created": "2026-09-30T10:08:32",
+    "message": "Added a convar killswitch for the general store loading images from http",
+    "user": "Flavien"
+  },
+  {
     "id": 706060,
     "branch": "main/Livestock_animals/Livestock_Texture_Optimisations",
     "changeset": "166311",
@@ -1742,61 +2038,5 @@
     "created": "2026-09-27T15:15:01",
     "message": "▊ █▊▄ ▄▉▌▊▆▋▍ ▉▇▊▍▉ ▌▄ ▆▅▆ ▇▌▄▇▇ ▉▊▆▍▊ ▊▅▍▊▉▍▇▅▉▆▋▊ ▊▆▋▌▆▊ ▄▌▊▆▆▄▆▊▊ ▋▊▍▆▇▆▅▆█",
     "user": "Ian Henderson"
-  },
-  {
-    "id": 705399,
-    "branch": "main/Livestock_animals",
-    "changeset": "165969",
-    "created": "2026-09-27T13:30:09",
-    "message": "Localized livestock UI",
-    "user": "Flavien"
-  },
-  {
-    "id": 705397,
-    "branch": "main/Livestock_animals",
-    "changeset": "165967",
-    "created": "2026-09-27T13:01:14",
-    "message": "Streamline NPC team system, merges the competing systems into one",
-    "user": "Maverick"
-  },
-  {
-    "id": 705394,
-    "branch": "main/Livestock_animals",
-    "changeset": "165966",
-    "created": "2026-09-27T12:33:23",
-    "message": "Regenerate wool icon for new textures",
-    "user": "Rin"
-  },
-  {
-    "id": 705392,
-    "branch": "main/Livestock_animals",
-    "changeset": "165965",
-    "created": "2026-09-27T12:14:46",
-    "message": "Animal fence gate HP 500 > 100",
-    "user": "Rin"
-  },
-  {
-    "id": 705390,
-    "branch": "main",
-    "changeset": "165964",
-    "created": "2026-09-27T11:50:54",
-    "message": "Sandbag Barricade HP\r\nStage 1 - 200 > 150\r\nStage 2 - 300 > 200\r\nStage 3 - 400 > 250\r\nStage 4 - 500 > 300",
-    "user": "Rin"
-  },
-  {
-    "id": 705389,
-    "branch": "main",
-    "changeset": "165963",
-    "created": "2026-09-27T10:59:25",
-    "message": "~Phrase update",
-    "user": "Flavien"
-  },
-  {
-    "id": 705386,
-    "branch": "main/biofuel_generator",
-    "changeset": "165960",
-    "created": "2026-09-27T10:18:18",
-    "message": "Power consumption 2 > 5",
-    "user": "Rin"
   }
 ]
