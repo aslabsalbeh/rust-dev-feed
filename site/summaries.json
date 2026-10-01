@@ -1,35 +1,18 @@
 {
   "2026-09-30": {
-    "commit_count": 118,
-    "relevant_commit_count": 62,
+    "commit_count": 121,
+    "relevant_commit_count": 65,
     "relevant_signature": "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324": [
+      "706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324,706328,706329,706330": [
         {
-          "title": "Loot & Healing",
+          "title": "Livestock & Animal AI",
           "items": [
             {
-              "text": "Fixed loot multiplier for unloadable traincars and doubled items found in lootable train cars.",
+              "text": "Increased bread and brioche dung boost durations (now 6/10 minutes) and made animals prioritize troughs with boost‑giving food.",
               "commit_ids": [
-                706324
-              ]
-            },
-            {
-              "text": "Increased Milky Healing Tea healing to 112 (pending health cap remains 100).",
-              "commit_ids": [
-                706229
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World Interactions",
-          "items": [
-            {
-              "text": "Added a countdown timer to the dome pump when the oil rig countdown is active.",
-              "commit_ids": [
-                706319
+                706330
               ]
             },
             {
@@ -41,10 +24,43 @@
           ]
         },
         {
+          "title": "Vendor & Economy",
+          "items": [
+            {
+              "text": "Wool vendor stack limits adjusted: minimum stack size reduced to 25, maximum increased to 400, and delivering 400 wool now grants the top‑tier rewards.",
+              "commit_ids": [
+                706328
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Loot & Rewards",
+          "items": [
+            {
+              "text": "Trainyard loot cars now correctly apply the softcore loot multiplier and the amount of items found is doubled, improving loot yields from train cars.",
+              "commit_ids": [
+                706324
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Infrastructure & Timers",
+          "items": [
+            {
+              "text": "Added a visible countdown timer to the dome pump when the oil rig countdown is active, letting players track pump availability.",
+              "commit_ids": [
+                706319
+              ]
+            }
+          ]
+        },
+        {
           "title": "Map & Navigation",
           "items": [
             {
-              "text": "Implemented a map cursor with fixed center crosshairs and enabled adding/removing map markers at the cursor.",
+              "text": "Implemented a map cursor with fixed center crosshairs and the ability to add or remove map markers at the cursor position.",
               "commit_ids": [
                 706311
               ]
@@ -55,48 +71,75 @@
           "title": "Team & Persistence",
           "items": [
             {
-              "text": "Fixed loss of player teams, invites, and contacts after a server crash and added opt‑out for save cache on entities.",
+              "text": "Fixed loss of player teams, invites, and contacts after server crashes and added opt‑out for entities from the save cache to protect relationship data.",
               "commit_ids": [
                 706270
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Healing Items",
+          "items": [
             {
-              "text": "Prevented the local client player from being destroyed during scene switches, eliminating unexpected disappearances.",
+              "text": "Milky Healing Tea now heals up to 112 health (previously capped at 100), though pending health caps still apply.",
               "commit_ids": [
-                706220
+                706229
               ]
             }
           ]
         }
       ],
-      "706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202": [
+      "706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220": [
         {
-          "title": "Livestock Feeding & Survival",
+          "title": "Map & Loading Bugs",
           "items": [
             {
-              "text": "Rebalanced livestock food requirements (halved amount).",
+              "text": "Fixed a bug where the local client player could be destroyed during a scene switch, preventing crashes and allowing normal gameplay after map reload.",
+              "commit_ids": [
+                706220
+              ]
+            },
+            {
+              "text": "Corrected the invalid isLoading state after reloading a map, restoring camera control.",
+              "commit_ids": [
+                706181
+              ]
+            },
+            {
+              "text": "Resolved RustNavigation null reference errors on reload and prevented the camera from detaching, improving stability when reloading levels.",
+              "commit_ids": [
+                706162
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Gameplay & Balancing",
+          "items": [
+            {
+              "text": "Reduced the amount of food required by livestock, making it easier to keep animals fed.",
               "commit_ids": [
                 706202
               ]
             },
             {
-              "text": "Fixed animals not eating from troughs (potential fix).",
-              "commit_ids": [
-                706128
-              ]
-            },
-            {
-              "text": "Prevented wild livestock from dying due to hunger or unmet needs (capped HP at 50%).",
+              "text": "Prevented wild livestock from dying due to hunger or other unmet needs, capping health loss at 50%.",
               "commit_ids": [
                 706173,
                 706171
               ]
             },
             {
-              "text": "Adjusted livestock taming decay and blocked passive taming to stop unintended breeding.",
+              "text": "Stopped wild livestock from being passively tamed and breeding uncontrollably.",
               "commit_ids": [
-                706150,
                 706152
+              ]
+            },
+            {
+              "text": "Implemented taming decay for livestock without full bond, blocked passive taming for sleepers, and gave calves a modest familiarity bonus.",
+              "commit_ids": [
+                706150
               ]
             }
           ]
@@ -105,15 +148,37 @@
           "title": "Livestock Vendor & Purchase UI",
           "items": [
             {
-              "text": "Vendor now tells you how much wool you need when you lack enough to sell.",
+              "text": "Fixed calf purchase dialogue that incorrectly showed success when the player lacked enough scrap.",
               "commit_ids": [
-                706192
+                706197
               ]
             },
             {
-              "text": "Fixed calf purchase dialogue that incorrectly showed success with insufficient scrap.",
+              "text": "Added a warning in the livestock vendor UI indicating how much wool is needed when the player tries to sell insufficient wool.",
               "commit_ids": [
-                706197
+                706192
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Aquatic Creature Visibility",
+          "items": [
+            {
+              "text": "Fixed pooling bugs that caused crabs and jellyfish to frequently appear invisible.",
+              "commit_ids": [
+                706198
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicle Dismount Fix",
+          "items": [
+            {
+              "text": "Adjusted motorcycle and bicycle dismount logic to use side points instead of the top, preventing players from being placed on top of the vehicle when exiting.",
+              "commit_ids": [
+                706153
               ]
             }
           ]
@@ -122,7 +187,7 @@
           "title": "Underwater Labs Mission",
           "items": [
             {
-              "text": "Boombox activation now counts toward team objective when teammates share the same underwater lab.",
+              "text": "Ensured that activating a boombox in the Underwater Labs mission counts toward each team member’s objective progress when they are in the same lab.",
               "commit_ids": [
                 706175
               ]
@@ -130,32 +195,10 @@
           ]
         },
         {
-          "title": "Marine Creatures Visibility",
+          "title": "World Puzzles – Crate Duplication",
           "items": [
             {
-              "text": "Fixed pooling bugs that made crabs and jellyfish frequently invisible.",
-              "commit_ids": [
-                706198
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicle Dismount Behavior",
-          "items": [
-            {
-              "text": "Motorcycles and bicycles now dismount on the side instead of the top.",
-              "commit_ids": [
-                706153
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Oil Rig Puzzle Stability",
-          "items": [
-            {
-              "text": "Resolved rare crate duplication in oil rig puzzle rooms after server crashes.",
+              "text": "Fixed a rare case where crates could duplicate in oil rig puzzle rooms after a server crash, by invalidating the puzzle generator’s network cache on reset.",
               "commit_ids": [
                 706141
               ]
@@ -163,12 +206,18 @@
           ]
         }
       ],
-      "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126": [
+      "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138": [
         {
-          "title": "Livestock",
+          "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Fixed cows dying of hunger in farms with wells.",
+              "text": "Fixed issue where animals could not eat from troughs, preventing hunger deaths.",
+              "commit_ids": [
+                706128
+              ]
+            },
+            {
+              "text": "Addressed cows dying of hunger in properly set up farms.",
               "commit_ids": [
                 706124
               ]
@@ -178,12 +227,6 @@
         {
           "title": "Store UI",
           "items": [
-            {
-              "text": "Fixed black background issue on store pages when RRP is enabled.",
-              "commit_ids": [
-                706086
-              ]
-            },
             {
               "text": "Resolved duplicate item display in the featured tab of the store.",
               "commit_ids": [
@@ -489,8 +532,8 @@
     "new_summary": ""
   },
   "2026-09-28": {
-    "commit_count": 94,
-    "relevant_commit_count": 66,
+    "commit_count": 93,
+    "relevant_commit_count": 65,
     "relevant_signature": "705442,705443,705445,705458,705463,705464,705467,705468,705469,705471,705487,705501,705502,705504,705506,705512,705514,705516,705517,705520,705521,705527,705528,705530,705548,705550,705551,705554,705569,705572,705597,705598,705602,705603,705610,705612,705615,705617,705618,705621,705626,705628,705633,705634,705637,705641,705643,705644,705648,705649,705652,705655,705656,705666,705680,705681,705684,705690,705693,705694,705697,705706,705712,705714,705717,705721",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
