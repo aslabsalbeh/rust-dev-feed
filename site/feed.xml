@@ -6,40 +6,60 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 01 Oct 2026 00:17:40 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 02:17:27 -0400</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Oct 01</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;4 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-10-01</guid>
+      <pubDate>Thu, 01 Oct 2026 02:17:27 -0400</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Sep 30</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;121 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Map &amp;amp; Reload&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Animal Systems&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706260"&gt;Fixed net ID desync after map reload, preventing item throw errors.&lt;/li&gt;
-&lt;li data-rust-commits="706220,706181"&gt;Fixed player disappearance during scene switches and restored camera control after reload.&lt;/li&gt;
+&lt;li data-rust-commits="706330"&gt;Boost foods (bread and brioche dung) now last 6 or 10 minutes and animals prioritize troughs that contain these foods.&lt;/li&gt;
+&lt;li data-rust-commits="706202,706173,706171"&gt;Livestock now require less food; wild animals no longer die from hunger and health loss is capped at 50%.&lt;/li&gt;
+&lt;li data-rust-commits="706152,706150"&gt;Passive taming and uncontrolled breeding of wild livestock have been disabled; taming decays without a full bond, sleepers cannot be passively tamed, and calves receive a modest familiarity bonus.&lt;/li&gt;
+&lt;li data-rust-commits="706314,706128,706124"&gt;Purchased animals always spawn in front of the vendor, and animals can now eat from troughs, preventing hunger deaths.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Health &amp;amp; Healing&lt;/h3&gt;
+&lt;h3&gt;Economy &amp;amp; Rewards&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706229"&gt;Increased Milky Healing Tea healing amount beyond 100, allowing higher health recovery.&lt;/li&gt;
+&lt;li data-rust-commits="706328"&gt;Wool vendor stack limits changed to a minimum of 25 and a maximum of 400, with delivering 400 wool granting top‑tier rewards.&lt;/li&gt;
+&lt;li data-rust-commits="706324"&gt;Trainyard loot cars now correctly apply the softcore loot multiplier and double the amount of items found, increasing loot yields.&lt;/li&gt;
+&lt;li data-rust-commits="706229"&gt;Milky Healing Tea now restores up to 112 health (previously capped at 100).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Animals&lt;/h3&gt;
+&lt;h3&gt;Map, Navigation &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706202,706128,706124"&gt;Rebalanced livestock food consumption, reducing required food, and fixed feeding logic so animals correctly eat from troughs, preventing starvation and cow deaths in farms.&lt;/li&gt;
-&lt;li data-rust-commits="706173,706171,706152,706150"&gt;Prevented wild livestock from dying due to hunger, capping health loss at 50%, stopped passive taming and uncontrolled breeding; taming now decays if bond incomplete, and calves start with a familiarity bonus without maxing out.&lt;/li&gt;
-&lt;li data-rust-commits="706197,706192"&gt;Fixed calf purchase dialogue showing success despite insufficient scrap, and added vendor dialogue informing required wool amount when lacking enough to sell.&lt;/li&gt;
+&lt;li data-rust-commits="706311"&gt;A new map cursor with fixed center crosshairs lets players add or remove map markers at the cursor position.&lt;/li&gt;
+&lt;li data-rust-commits="706319"&gt;A visible countdown timer appears on the dome pump while the oil rig countdown is active, showing pump availability.&lt;/li&gt;
+&lt;li data-rust-commits="706197,706192"&gt;Livestock vendor UI now correctly validates scrap when purchasing calves and warns players when they try to sell more wool than they have.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Missions &amp;amp; Objectives&lt;/h3&gt;
+&lt;h3&gt;Stability &amp;amp; Persistence&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706175"&gt;Boombox activation now counts toward team objective progress when teammates are in the same underwater lab.&lt;/li&gt;
+&lt;li data-rust-commits="706270"&gt;Player teams, invites, and contacts are preserved after server crashes, and entities can opt out of the save cache to protect relationship data.&lt;/li&gt;
+&lt;li data-rust-commits="706220,706181,706162"&gt;Fixed several crash‑inducing bugs: player destruction during scene switches, invalid loading state after map reload, and navigation null‑reference errors, restoring camera control and preventing crashes.&lt;/li&gt;
+&lt;li data-rust-commits="706198,706153"&gt;Crabs and jellyfish invisibility pooling bugs have been fixed, and vehicle dismount now uses side points to avoid placing players on top of motorcycles or bicycles.&lt;/li&gt;
+&lt;li data-rust-commits="706141"&gt;Crate duplication in oil rig puzzle rooms after a server crash is prevented by clearing the puzzle generator’s network cache on reset.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Creatures &amp;amp; Vehicles&lt;/h3&gt;
+&lt;h3&gt;Base &amp;amp; Structures&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706198"&gt;Fixed pooling bugs that made crabs and jellyfish invisible.&lt;/li&gt;
-&lt;li data-rust-commits="706153"&gt;Motorcycles and bicycles now dismount to the side, preventing stuck dismounts.&lt;/li&gt;
+&lt;li data-rust-commits="706329"&gt;Terrain holes now correctly clear depth during passes, preventing lingering terrain artifacts that could affect building foundations.&lt;/li&gt;
+&lt;li data-rust-commits="706269"&gt;Medieval doors are now counted as closed for base occlusion, improving base security calculations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Store UI&lt;/h3&gt;
+&lt;h3&gt;Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706141"&gt;Fixed rare crate duplication in oil rig puzzle rooms after server crashes, preserving puzzle integrity.&lt;/li&gt;
-&lt;li data-rust-commits="706086,706066"&gt;Store UI improvements: removed black background on pages when RRP enabled and eliminated duplicate items in the Featured tab.&lt;/li&gt;
+&lt;li data-rust-commits="706195"&gt;Adult livestock now use two ropes like horses, fixing rope behavior and keeping rope ends off‑camera.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Missions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="706175"&gt;Activating a boombox in the underwater labs mission now counts toward each team member&amp;#x27;s objective progress when they are in the same lab.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-30</guid>
@@ -97,55 +117,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-09-29</guid>
       <pubDate>Tue, 29 Sep 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Sep 28</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;93 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Economy &amp;amp; Vendor&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705714,705706"&gt;Livestock purchases now correctly credit the buying player and use a server‑side RPC, fixing desync and ensuring proper ownership.&lt;/li&gt;
-&lt;li data-rust-commits="705463,705445,705443"&gt;Vendor inventory cleaned up: duplicate Custom SMG removed and replaced with a Thompson; items filtered by game mode (no guns in Primitive); turret offers only on high‑quality sales; new high‑end sale options added (BP fragments, Thompson, Custom SMG, Python, HC Revolver); wool now makes up ~75% of livestock sales, removing guns from livestock sales.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Teammate Interaction&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705684"&gt;Break‑in option disabled on a teammate’s own apartment room, preventing accidental intrusions.&lt;/li&gt;
-&lt;li data-rust-commits="705681"&gt;Fixed issue where teammates could not exit rooms after a server restart.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Animal &amp;amp; Wildlife&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705598"&gt;Livestock now match player speed when led, eliminating lead breaks and long waits.&lt;/li&gt;
-&lt;li data-rust-commits="705548,705550"&gt;Critter health reduced (frogs 60 HP, rabbits 100 HP) and frog size increased 20% for better balance and visibility.&lt;/li&gt;
-&lt;li data-rust-commits="705666,705527"&gt;Critters now flee when damaged while startled, and bull AI rotation fixed when target is lost, improving animal combat behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; Loot Anti‑Cheat&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705655,705652,705643,705641"&gt;Loot room exploits patched across maps: Radtown crate repositioned, Trainyard crate and surrounding railings sealed, Harbor 1 gaps boarded up, and all Harbor 2 windows sealed to stop cheating via shooting into loot rooms.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Networking&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705656"&gt;Null‑reference crash on destroyed elevator floors during saves fixed, improving overall stability.&lt;/li&gt;
-&lt;li data-rust-commits="705648"&gt;Mortar desynchronization resolved for reconnecting players and those entering network range, ensuring consistent combat.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; Access&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705572"&gt;Open fence gates added to the ranch and large barn, providing easier access to the vendor area.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705617"&gt;Water sources can now be transferred between rooms via sinks without errors.&lt;/li&gt;
-&lt;li data-rust-commits="705612"&gt;Crabs now respect step height, avoid walls, and have corrected leg speeds; jellyfish water checks are optimized, improving swarm behavior.&lt;/li&gt;
-&lt;li data-rust-commits="705597"&gt;Floating animal glitches are resolved, and idle animal performance is smoother.&lt;/li&gt;
-&lt;li data-rust-commits="705569"&gt;Frogs no longer perform an excessively long first jump and will not get stuck in dead animations.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Audio&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="705502"&gt;Biofuel generators are silent while idle, eliminating background noise.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-09-28</guid>
-      <pubDate>Mon, 28 Sep 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
