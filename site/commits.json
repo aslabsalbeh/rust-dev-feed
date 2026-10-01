@@ -1,5 +1,109 @@
 [
   {
+    "id": 706443,
+    "branch": "main/Livestock_animals/livestock_hotfixes",
+    "changeset": "166504",
+    "created": "2026-10-01T13:58:51",
+    "message": "Potential fix for cows sliding (suspected pregnant flag)",
+    "user": "Maverick"
+  },
+  {
+    "id": 706440,
+    "branch": "main/+forward_warning_fix",
+    "changeset": "166503",
+    "created": "2026-10-01T13:41:48",
+    "message": "Possibly fix \"LoadPrefab - should start with assets/ - +forward\" warning",
+    "user": "cipeaX"
+  },
+  {
+    "id": 706433,
+    "branch": "main/grenade_drop_animations",
+    "changeset": "166502",
+    "created": "2026-10-01T13:20:12",
+    "message": "beegrenade anim updates to work with new drop action",
+    "user": "julek"
+  },
+  {
+    "id": 706432,
+    "branch": "main/procgen_optim",
+    "changeset": "166501",
+    "created": "2026-10-01T13:18:28",
+    "message": "use expanded decor component bounds to early out terrain filters cheaply in decor placement - saves 12s in coastal rocks, barely saves elsewhere\r\n- can only do this because we have a cheaper hierarchal query for topology of an area now",
+    "user": "Grigler"
+  },
+  {
+    "id": 706429,
+    "branch": "main/vcc/pre_merge_review",
+    "changeset": "166499",
+    "created": "2026-10-01T13:13:46",
+    "message": "Test update",
+    "user": "Adam W"
+  },
+  {
+    "id": 706426,
+    "branch": "main/netmsg_loadmap",
+    "changeset": "166498",
+    "created": "2026-10-01T13:03:13",
+    "message": "Update: allos changing scenes via reloadmap\r\n- remove old hacky reapproveplayer, no longer need for testing\r\nTests: was able to reload from Playground to CraggyIsland in C+S editor and interact with the world",
+    "user": "Daniel P"
+  },
+  {
+    "id": 706425,
+    "branch": "main/automated_testing/optims",
+    "changeset": "166497",
+    "created": "2026-10-01T13:02:57",
+    "message": "Reduced test results size, no longer indented and skip empty fields",
+    "user": "Flavien"
+  },
+  {
+    "id": 706424,
+    "branch": "main/vcc/pre_merge_review",
+    "changeset": "166496",
+    "created": "2026-10-01T13:01:53",
+    "message": "Bunch of bind lookup fixes/rework",
+    "user": "Adam W"
+  },
+  {
+    "id": 706423,
+    "branch": "main/Livestock_animals/livestock_hotfixes",
+    "changeset": "166495",
+    "created": "2026-10-01T12:56:36",
+    "message": "Prevent livestock in safe zones from being damaged",
+    "user": "Maverick"
+  },
+  {
+    "id": 706419,
+    "branch": "main/procgen_optim",
+    "changeset": "166492",
+    "created": "2026-10-01T12:42:49",
+    "message": "Process cliff uniform placement validity in parallel - takes another 29s off, still matching results before optims\r\n- pivot filters are tested in large batches of all candidates and re-tested if dirtied\r\n- per-candidate orientation checks are done in parallel for passing candidates",
+    "user": "Grigler"
+  },
+  {
+    "id": 706417,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166491",
+    "created": "2026-10-01T12:36:28",
+    "message": "Fixed a null ref coming from the WaterRendererFeature",
+    "user": "aidan.m"
+  },
+  {
+    "id": 706412,
+    "branch": "main",
+    "changeset": "166490",
+    "created": "2026-10-01T12:15:05",
+    "message": "Tweaks to the crabs audio loop",
+    "user": "diogo.c"
+  },
+  {
+    "id": 706410,
+    "branch": "main/vcc/pre_merge_review",
+    "changeset": "166488",
+    "created": "2026-10-01T12:11:44",
+    "message": "Revert some minor vehicle impact rumble code changes",
+    "user": "Adam W"
+  },
+  {
     "id": 706406,
     "branch": "main/fix_replicated_bag_range",
     "changeset": "166487",
@@ -2430,93 +2534,5 @@
     "created": "2026-09-28T14:18:18",
     "message": "stirrer position fix",
     "user": "Alex Webster"
-  },
-  {
-    "id": 705551,
-    "branch": "main/Livestock_animals",
-    "changeset": "166044",
-    "created": "2026-09-28T14:11:11",
-    "message": "Fix one more case of incorrect pool usage",
-    "user": "cipeaX"
-  },
-  {
-    "id": 705550,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "166043",
-    "created": "2026-09-28T14:06:46",
-    "message": "frog size x1.2",
-    "user": "ElliotH"
-  },
-  {
-    "id": 705548,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "166042",
-    "created": "2026-09-28T14:01:41",
-    "message": "reduce critter health 200 -> 60(frogs) - 100(rabbits)\r\nturtles unchanged, they have a shell",
-    "user": "ElliotH"
-  },
-  {
-    "id": 705543,
-    "branch": "main/Livestock_animals/critter_animals",
-    "changeset": "166041",
-    "created": "2026-09-28T13:44:24",
-    "message": "disabled stream mipmaps on crab, jellyfish and all fish textures that use the swim shader",
-    "user": "matt.i"
-  },
-  {
-    "id": 705539,
-    "branch": "█▆▋█▋▇▆▅▍▆▍▌█▊▋▇▌▌██▇▋",
-    "changeset": "▄▋█▌▇▋",
-    "created": "2026-09-28T13:30:38",
-    "message": "▅▄▄▌▄▉▇▇▍ ▉█▍▅ ▌█▌▉▋ ▌█▅ █▊▅▉ ▆▊▆  ▉▊█▆",
-    "user": "jeddooo"
-  },
-  {
-    "id": 705538,
-    "branch": "main/skinviewer_ladderhatches",
-    "changeset": "166038",
-    "created": "2026-09-28T13:24:46",
-    "message": "Added all ladder hatches to the skin viewer",
-    "user": "Flavien"
-  },
-  {
-    "id": 705530,
-    "branch": "main",
-    "changeset": "166034",
-    "created": "2026-09-28T12:49:05",
-    "message": "Merge: from poolanalyzer_ifempty_support\r\n- Bugfix for analysis NREs in editor\r\n- Allows to write \"if(isEmpty) free\" patterns\r\nTests: removed workaround, editor code compiles",
-    "user": "Daniel P"
-  },
-  {
-    "id": 705528,
-    "branch": "main/poolanalyzer_ifempty_support",
-    "changeset": "166033",
-    "created": "2026-09-28T12:47:06",
-    "message": "Update(editor): Rust.CodeAnalyzer - support \"if(obj.IsEmpty or obj.Count == 0) Free\" patterns\r\n- bugfix variable scope search throwing NREs for out param declarations\r\n- release binary from 57e96efa\r\nTests: removed my workaround and it no longer trips up analyzer. editor boots",
-    "user": "Daniel P"
-  },
-  {
-    "id": 705527,
-    "branch": "main/Livestock_animals/livestock_hotfixes",
-    "changeset": "166032",
-    "created": "2026-09-28T12:39:11",
-    "message": "Fix look rotation viewing vector zero when bull loses its target mid observe",
-    "user": "Maverick"
-  },
-  {
-    "id": 705521,
-    "branch": "main/Twitchdropsrender",
-    "changeset": "166031",
-    "created": "2026-09-28T12:29:33",
-    "message": "Fix rotations on ladders",
-    "user": "Lewis"
-  },
-  {
-    "id": 705520,
-    "branch": "main/Twitchdropsrender",
-    "changeset": "166030",
-    "created": "2026-09-28T12:27:07",
-    "message": "Fix ladder hatches so they pull skins properly",
-    "user": "Lewis"
   }
 ]
