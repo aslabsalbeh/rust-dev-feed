@@ -1,5 +1,37 @@
 [
   {
+    "id": 706324,
+    "branch": "main/softcore_trainyard_fixes",
+    "changeset": "166449",
+    "created": "2026-10-01T01:51:55",
+    "message": "Trainyard scene is now playable in editor\r\nFixed unloadable traincars not applying the softcore loot multiplier\r\nAlso doubles the items found in the lootable train car (bonus - we could now apply this loot scaling to any loot container in the game?)\r\nAdded a static ScaleGatherAmount method to BaseGameMode to reduce a bunch of copy pasted clamping logic everywhere",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 706321,
+    "branch": "main/automated_testing",
+    "changeset": "166447",
+    "created": "2026-10-01T01:16:42",
+    "message": "Fixed Bull_ThreatOffToOneSide_TurnsToFaceBeforeStomping failing because of overgrazing leaking in between tests and changes in 166339",
+    "user": "Flavien"
+  },
+  {
+    "id": 706319,
+    "branch": "main/pump_countdown_timer",
+    "changeset": "166446",
+    "created": "2026-10-01T00:56:02",
+    "message": "Added a countdown timer to the pump at dome if the oil rig countdown is active",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 706316,
+    "branch": "main/automated_testing",
+    "changeset": "166445",
+    "created": "2026-10-01T00:07:24",
+    "message": "Remove market place power tests",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 706314,
     "branch": "main/livestock_vendor_spawn_fix",
     "changeset": "166444",
@@ -2485,38 +2517,6 @@
     "changeset": "165984",
     "created": "2026-09-28T03:39:04",
     "message": "Brioche icon",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 705440,
-    "branch": "main/Livestock_animals",
-    "changeset": "165983",
-    "created": "2026-09-28T01:21:52",
-    "message": "FIx weird animal behaviours around food, and disable food sensing for all animals and critters that don't need it",
-    "user": "Maverick"
-  },
-  {
-    "id": 705438,
-    "branch": "main/Livestock_animals",
-    "changeset": "165981",
-    "created": "2026-09-28T01:19:14",
-    "message": "Timing fix, don't re-up the negotiation timer if the stack has changed",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 705436,
-    "branch": "main/Livestock_animals",
-    "changeset": "165979",
-    "created": "2026-09-28T00:59:57",
-    "message": "Livestock vendor will now pause the auction process if the wool stack size changes mid offer, you need to make your inventory match the original size for the sale to continue (otherwise it will time out)\r\nHooked up the icon on the conversation vendor page",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 705435,
-    "branch": "main",
-    "changeset": "165978",
-    "created": "2026-09-28T00:22:13",
-    "message": "Reapply modified armoured hatch bounds (affects square and triangle versions)",
     "user": "Jarryd Campi"
   }
 ]

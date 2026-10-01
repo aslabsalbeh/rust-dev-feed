@@ -1,30 +1,41 @@
 {
   "2026-09-30": {
-    "commit_count": 114,
-    "relevant_commit_count": 59,
+    "commit_count": 118,
+    "relevant_commit_count": 62,
     "relevant_signature": "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314": [
+      "706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324": [
         {
-          "title": "Livestock & Animals",
+          "title": "Loot & Healing",
           "items": [
             {
-              "text": "Purchased animals now always spawn in front of the vendor instead of behind the player",
+              "text": "Fixed loot multiplier for unloadable traincars and doubled items found in lootable train cars.",
+              "commit_ids": [
+                706324
+              ]
+            },
+            {
+              "text": "Increased Milky Healing Tea healing to 112 (pending health cap remains 100).",
+              "commit_ids": [
+                706229
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Interactions",
+          "items": [
+            {
+              "text": "Added a countdown timer to the dome pump when the oil rig countdown is active.",
+              "commit_ids": [
+                706319
+              ]
+            },
+            {
+              "text": "Purchased animals now always spawn in front of the vendor instead of behind the player.",
               "commit_ids": [
                 706314
-              ]
-            },
-            {
-              "text": "Rebalanced livestock food consumption, reducing the amount required",
-              "commit_ids": [
-                706202
-              ]
-            },
-            {
-              "text": "Fixed calf purchase dialogue that incorrectly showed success when the player lacked sufficient scrap",
-              "commit_ids": [
-                706197
               ]
             }
           ]
@@ -33,7 +44,7 @@
           "title": "Map & Navigation",
           "items": [
             {
-              "text": "Added a map cursor with fixed center crosshairs and the ability to add or remove map markers at the crosshairs",
+              "text": "Implemented a map cursor with fixed center crosshairs and enabled adding/removing map markers at the cursor.",
               "commit_ids": [
                 706311
               ]
@@ -41,81 +52,77 @@
           ]
         },
         {
-          "title": "Team & Group Mechanics",
+          "title": "Team & Persistence",
           "items": [
             {
-              "text": "Resolved an issue where player teams, invites, and contacts could be lost after a server crash or improper shutdown; added opt‑out for entities from using the save cache (enabled for RelationshipManager)",
+              "text": "Fixed loss of player teams, invites, and contacts after a server crash and added opt‑out for save cache on entities.",
               "commit_ids": [
                 706270
               ]
-            }
-          ]
-        },
-        {
-          "title": "Item Balance",
-          "items": [
+            },
             {
-              "text": "Milky Healing Tea now heals up to 112 health (capped at 100 pending health), fixing the previous limit",
+              "text": "Prevented the local client player from being destroyed during scene switches, eliminating unexpected disappearances.",
               "commit_ids": [
-                706229
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Creature Visibility",
-          "items": [
-            {
-              "text": "Fixed pooling bugs that caused crabs and jellyfish to frequently appear invisible",
-              "commit_ids": [
-                706198
+                706220
               ]
             }
           ]
         }
       ],
-      "706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196": [
+      "706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202": [
         {
-          "title": "Livestock & Animal Mechanics",
+          "title": "Livestock Feeding & Survival",
           "items": [
             {
-              "text": "Wild livestock can no longer die from hunger or other unmet needs, and their health will not drop below 50%.",
+              "text": "Rebalanced livestock food requirements (halved amount).",
+              "commit_ids": [
+                706202
+              ]
+            },
+            {
+              "text": "Fixed animals not eating from troughs (potential fix).",
+              "commit_ids": [
+                706128
+              ]
+            },
+            {
+              "text": "Prevented wild livestock from dying due to hunger or unmet needs (capped HP at 50%).",
               "commit_ids": [
                 706173,
                 706171
               ]
             },
             {
-              "text": "Wild livestock will no longer be passively tamed or breed uncontrollably.",
+              "text": "Adjusted livestock taming decay and blocked passive taming to stop unintended breeding.",
               "commit_ids": [
+                706150,
                 706152
-              ]
-            },
-            {
-              "text": "Livestock taming now decays if the bond isn’t full, sleepers can’t tame passively, and calves receive a small familiarity bonus without maxing out.",
-              "commit_ids": [
-                706150
-              ]
-            },
-            {
-              "text": "All livestock now have halter models attached, enabling proper leading interactions.",
-              "commit_ids": [
-                706161
-              ]
-            },
-            {
-              "text": "Livestock vendor now tells you the exact amount of wool needed when you lack enough to sell.",
-              "commit_ids": [
-                706192
               ]
             }
           ]
         },
         {
-          "title": "Missions",
+          "title": "Livestock Vendor & Purchase UI",
           "items": [
             {
-              "text": "In the Underwater Labs mission, activating a boombox now counts toward each team member’s objective if they are in the same lab.",
+              "text": "Vendor now tells you how much wool you need when you lack enough to sell.",
+              "commit_ids": [
+                706192
+              ]
+            },
+            {
+              "text": "Fixed calf purchase dialogue that incorrectly showed success with insufficient scrap.",
+              "commit_ids": [
+                706197
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Underwater Labs Mission",
+          "items": [
+            {
+              "text": "Boombox activation now counts toward team objective when teammates share the same underwater lab.",
               "commit_ids": [
                 706175
               ]
@@ -123,10 +130,21 @@
           ]
         },
         {
-          "title": "Vehicles",
+          "title": "Marine Creatures Visibility",
           "items": [
             {
-              "text": "Motorcycles and bicycles now dismount onto the side of the vehicle instead of the top, fixing awkward dismount positions.",
+              "text": "Fixed pooling bugs that made crabs and jellyfish frequently invisible.",
+              "commit_ids": [
+                706198
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicle Dismount Behavior",
+          "items": [
+            {
+              "text": "Motorcycles and bicycles now dismount on the side instead of the top.",
               "commit_ids": [
                 706153
               ]
@@ -134,46 +152,40 @@
           ]
         },
         {
-          "title": "World Puzzles",
+          "title": "Oil Rig Puzzle Stability",
           "items": [
             {
-              "text": "Fixed a rare case where crates could duplicate in oil rig puzzle rooms after a server crash, preventing unintended extra loot.",
+              "text": "Resolved rare crate duplication in oil rig puzzle rooms after server crashes.",
               "commit_ids": [
                 706141
               ]
             }
           ]
-        },
+        }
+      ],
+      "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126": [
         {
-          "title": "Animal Feeding",
+          "title": "Livestock",
           "items": [
             {
-              "text": "Animals now correctly eat from troughs, preventing them from starving.",
-              "commit_ids": [
-                706128
-              ]
-            },
-            {
-              "text": "Cows no longer die of hunger in well‑setup farms.",
+              "text": "Fixed cows dying of hunger in farms with wells.",
               "commit_ids": [
                 706124
               ]
             }
           ]
-        }
-      ],
-      "706020,706028,706054,706055,706059,706066,706081,706086,706097": [
+        },
         {
           "title": "Store UI",
           "items": [
             {
-              "text": "Fixed black background appearing on all store pages when RRP is enabled.",
+              "text": "Fixed black background issue on store pages when RRP is enabled.",
               "commit_ids": [
                 706086
               ]
             },
             {
-              "text": "Resolved duplicate item display in the featured tab of the store, preventing the same item from showing twice.",
+              "text": "Resolved duplicate item display in the featured tab of the store.",
               "commit_ids": [
                 706066
               ]
