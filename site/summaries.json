@@ -1,39 +1,28 @@
 {
   "2026-09-30": {
-    "commit_count": 108,
-    "relevant_commit_count": 56,
+    "commit_count": 114,
+    "relevant_commit_count": 59,
     "relevant_signature": "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295": [
-        {
-          "title": "Team & Social",
-          "items": [
-            {
-              "text": "Fixed loss of player teams, invites, and contacts after server crashes or improper shutdowns.",
-              "commit_ids": [
-                706270
-              ]
-            }
-          ]
-        },
+      "706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314": [
         {
           "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Rebalanced livestock food consumption, reducing the amount required.",
+              "text": "Purchased animals now always spawn in front of the vendor instead of behind the player",
+              "commit_ids": [
+                706314
+              ]
+            },
+            {
+              "text": "Rebalanced livestock food consumption, reducing the amount required",
               "commit_ids": [
                 706202
               ]
             },
             {
-              "text": "Vendor now informs you of the required wool amount when you lack enough to sell.",
-              "commit_ids": [
-                706192
-              ]
-            },
-            {
-              "text": "Corrected calf purchase dialogue to prevent false success messages when you lack sufficient scrap.",
+              "text": "Fixed calf purchase dialogue that incorrectly showed success when the player lacked sufficient scrap",
               "commit_ids": [
                 706197
               ]
@@ -41,10 +30,32 @@
           ]
         },
         {
-          "title": "Item Healing",
+          "title": "Map & Navigation",
           "items": [
             {
-              "text": "Milky Healing Tea now heals 112 health (over 100), fixing previous cap limitation.",
+              "text": "Added a map cursor with fixed center crosshairs and the ability to add or remove map markers at the crosshairs",
+              "commit_ids": [
+                706311
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Team & Group Mechanics",
+          "items": [
+            {
+              "text": "Resolved an issue where player teams, invites, and contacts could be lost after a server crash or improper shutdown; added opt‑out for entities from using the save cache (enabled for RelationshipManager)",
+              "commit_ids": [
+                706270
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Item Balance",
+          "items": [
+            {
+              "text": "Milky Healing Tea now heals up to 112 health (capped at 100 pending health), fixing the previous limit",
               "commit_ids": [
                 706229
               ]
@@ -52,68 +63,59 @@
           ]
         },
         {
-          "title": "World Entities Visibility",
+          "title": "Creature Visibility",
           "items": [
             {
-              "text": "Fixed invisible crabs and jellyfish caused by pooling bugs.",
+              "text": "Fixed pooling bugs that caused crabs and jellyfish to frequently appear invisible",
               "commit_ids": [
                 706198
               ]
             }
           ]
-        },
-        {
-          "title": "Stability",
-          "items": [
-            {
-              "text": "Prevented the local client player from being destroyed during scene switches, reducing crashes/reload issues.",
-              "commit_ids": [
-                706220
-              ]
-            }
-          ]
         }
       ],
-      "706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190": [
+      "706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196": [
         {
           "title": "Livestock & Animal Mechanics",
           "items": [
             {
-              "text": "Added halters and models for all livestock, allowing players to lead calves, bulls, etc.",
-              "commit_ids": [
-                706190,
-                706155,
-                706161
-              ]
-            },
-            {
-              "text": "Prevented wild livestock from dying due to hunger or unmet needs, keeping them alive at minimum health.",
+              "text": "Wild livestock can no longer die from hunger or other unmet needs, and their health will not drop below 50%.",
               "commit_ids": [
                 706173,
                 706171
               ]
             },
             {
-              "text": "Fixed feeding mechanics: animals now eat from troughs and cows no longer starve in well farms.",
+              "text": "Wild livestock will no longer be passively tamed or breed uncontrollably.",
               "commit_ids": [
-                706128,
-                706124
+                706152
               ]
             },
             {
-              "text": "Adjusted livestock taming system: removed passive taming, added taming decay for incomplete bonds, and gave calves a small familiarity boost to curb uncontrolled breeding.",
+              "text": "Livestock taming now decays if the bond isn’t full, sleepers can’t tame passively, and calves receive a small familiarity bonus without maxing out.",
               "commit_ids": [
-                706152,
                 706150
+              ]
+            },
+            {
+              "text": "All livestock now have halter models attached, enabling proper leading interactions.",
+              "commit_ids": [
+                706161
+              ]
+            },
+            {
+              "text": "Livestock vendor now tells you the exact amount of wool needed when you lack enough to sell.",
+              "commit_ids": [
+                706192
               ]
             }
           ]
         },
         {
-          "title": "Mission & Objective Changes",
+          "title": "Missions",
           "items": [
             {
-              "text": "Team boombox activation now counts toward the underwater labs mission objective when teammates are in the same lab.",
+              "text": "In the Underwater Labs mission, activating a boombox now counts toward each team member’s objective if they are in the same lab.",
               "commit_ids": [
                 706175
               ]
@@ -121,10 +123,10 @@
           ]
         },
         {
-          "title": "Vehicle Mechanics",
+          "title": "Vehicles",
           "items": [
             {
-              "text": "Corrected motorcycle and bicycle dismount behavior to use side dismount points instead of top, improving player control.",
+              "text": "Motorcycles and bicycles now dismount onto the side of the vehicle instead of the top, fixing awkward dismount positions.",
               "commit_ids": [
                 706153
               ]
@@ -132,23 +134,46 @@
           ]
         },
         {
-          "title": "World Exploits & Duplication",
+          "title": "World Puzzles",
           "items": [
             {
-              "text": "Fixed a rare duplication bug with crates in oil rig puzzle rooms after server crashes, preventing exploitative crate spawning.",
+              "text": "Fixed a rare case where crates could duplicate in oil rig puzzle rooms after a server crash, preventing unintended extra loot.",
               "commit_ids": [
                 706141
               ]
             }
           ]
+        },
+        {
+          "title": "Animal Feeding",
+          "items": [
+            {
+              "text": "Animals now correctly eat from troughs, preventing them from starving.",
+              "commit_ids": [
+                706128
+              ]
+            },
+            {
+              "text": "Cows no longer die of hunger in well‑setup farms.",
+              "commit_ids": [
+                706124
+              ]
+            }
+          ]
         }
       ],
-      "706020,706028,706054,706055,706059,706066": [
+      "706020,706028,706054,706055,706059,706066,706081,706086,706097": [
         {
           "title": "Store UI",
           "items": [
             {
-              "text": "Fixed featured tab showing duplicate items after loading changes.",
+              "text": "Fixed black background appearing on all store pages when RRP is enabled.",
+              "commit_ids": [
+                706086
+              ]
+            },
+            {
+              "text": "Resolved duplicate item display in the featured tab of the store, preventing the same item from showing twice.",
               "commit_ids": [
                 706066
               ]
@@ -265,17 +290,9 @@
     ],
     "status": "ok",
     "summary": "### Map & Reload\n- Fixed net ID desync after map reload, preventing item throw errors.\n- Fixed player disappearance during scene switches and restored camera control after reload.\n\n### Health & Healing\n- Increased Milky Healing Tea healing amount beyond 100, allowing higher health recovery.\n\n### Livestock & Animals\n- Rebalanced livestock food consumption, reducing required food, and fixed feeding logic so animals correctly eat from troughs, preventing starvation and cow deaths in farms.\n- Prevented wild livestock from dying due to hunger, capping health loss at 50%, stopped passive taming and uncontrolled breeding; taming now decays if bond incomplete, and calves start with a familiarity bonus without maxing out.\n- Fixed calf purchase dialogue showing success despite insufficient scrap, and added vendor dialogue informing required wool amount when lacking enough to sell.\n\n### Missions & Objectives\n- Boombox activation now counts toward team objective progress when teammates are in the same underwater lab.\n\n### Creatures & Vehicles\n- Fixed pooling bugs that made crabs and jellyfish invisible.\n- Motorcycles and bicycles now dismount to the side, preventing stuck dismounts.\n\n### World & Store UI\n- Fixed rare crate duplication in oil rig puzzle rooms after server crashes, preserving puzzle integrity.\n- Store UI improvements: removed black background on pages when RRP enabled and eliminated duplicate items in the Featured tab.",
-    "new_items": [
-      {
-        "text": "Fixed net ID desync after map reload, preventing item throw errors.",
-        "commit_ids": [
-          706260
-        ],
-        "section": "Map & Reload"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Fixed net ID desync after map reload, preventing item throw errors."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-09-29": {
     "commit_count": 102,
