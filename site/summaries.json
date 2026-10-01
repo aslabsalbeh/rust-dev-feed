@@ -1,51 +1,46 @@
 {
   "2026-10-01": {
-    "commit_count": 60,
-    "relevant_commit_count": 33,
-    "relevant_signature": "706331,706334,706348,706356,706377,706379,706381,706397,706399,706406,706410,706417,706423,706424,706440,706443,706450,706453,706455,706478,706482,706485,706489,706494,706497,706500,706502,706503,706504,706506,706511,706514,706515",
+    "commit_count": 70,
+    "relevant_commit_count": 38,
+    "relevant_signature": "706331,706334,706348,706356,706377,706379,706381,706397,706399,706406,706410,706417,706423,706424,706440,706443,706450,706453,706455,706478,706482,706485,706489,706494,706497,706500,706502,706503,706504,706506,706511,706514,706515,706520,706522,706533,706546,706549",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Fixed broken rifle orientation while sprinting and added a sprint speed modifier to AK variants.",
+            "text": "Reduced clipping when leading multiple livestock and at troughs.",
             "commit_ids": [
-              706515
+              706522
             ]
           },
           {
-            "text": "Adjusted the minicrossbow three‑person reload to use a partial‑reload animation, improving reload flow.",
+            "text": "Livestock no longer attack players while they are in vehicles.",
             "commit_ids": [
-              706494
+              706520
             ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
+          },
           {
-            "text": "Resolved collisions between lambs and calves and the travelling vendor.",
+            "text": "Lamb and calf collisions with travelling vendors have been fixed.",
             "commit_ids": [
               706503
             ]
           },
           {
-            "text": "Fixed multiple bull and ram AI problems, including head‑butting, charging, stomp animation, and procedural look‑at.",
+            "text": "Bulls and rams AI improved: unwanted head‑butting, charging glitches, wrong animations removed and proper procedural look‑at enabled.",
             "commit_ids": [
               706485
             ]
           },
           {
-            "text": "Addressed cows sliding issue, likely related to an incorrect pregnant flag.",
+            "text": "Potential fix applied for cows sliding due to a pregnant‑flag issue.",
             "commit_ids": [
               706443
             ]
           },
           {
-            "text": "Prevented livestock in safe zones from taking damage.",
+            "text": "Livestock are now protected from damage while inside safe zones.",
             "commit_ids": [
               706423
             ]
@@ -53,27 +48,56 @@
         ]
       },
       {
-        "title": "Gameplay Mechanics",
+        "title": "Weapons",
         "items": [
           {
-            "text": "Sleeping bag range is now replicated across server and client, ensuring consistent range enforcement and correct guide display.",
+            "text": "Rifle orientation corrected during sprinting and sprint speed modifiers added to medium, jungle, and diver AK variants.",
             "commit_ids": [
-              706406
+              706515
+            ]
+          },
+          {
+            "text": "Minicrossbow now plays partial reload correctly in third‑person view.",
+            "commit_ids": [
+              706494
             ]
           }
         ]
       },
       {
-        "title": "UI / UX",
+        "title": "Base & Security",
         "items": [
           {
-            "text": "Quick‑join menu now refreshes correctly after changes.",
+            "text": "NullReference crash in code lock loading resolved, restoring proper code lock functionality.",
+            "commit_ids": [
+              706506
+            ]
+          },
+          {
+            "text": "Biofuel generator placement no longer snaps backwards.",
+            "commit_ids": [
+              706482
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Menus",
+        "items": [
+          {
+            "text": "Quick Join menu now updates correctly after changes.",
             "commit_ids": [
               706478
             ]
           },
           {
-            "text": "Pie menu now updates name and description labels properly when options are empty, removing stale placeholder text.",
+            "text": "Sleeping bag range guide displays accurately when range settings change.",
+            "commit_ids": [
+              706406
+            ]
+          },
+          {
+            "text": "Pie menu option names and descriptions update correctly, eliminating placeholder text.",
             "commit_ids": [
               706334
             ]
@@ -81,10 +105,10 @@
         ]
       },
       {
-        "title": "New Content",
+        "title": "Gameplay Content",
         "items": [
           {
-            "text": "Added electronic chessboard and checkers to the High Stakes DLC, including split game model, piece setup, and deployable prefab adjustments.",
+            "text": "Electronic Chessboard DLC added, featuring a split game model with chess and checkers pieces and a tweaked deployable prefab.",
             "commit_ids": [
               706450
             ]
@@ -95,7 +119,7 @@
         "title": "Environment & Resources",
         "items": [
           {
-            "text": "Fixed jungle groundwater level bug that left placed plants without water.",
+            "text": "Jungle groundwater level fixed, allowing terrain‑placed plants to receive water properly.",
             "commit_ids": [
               706397
             ]
@@ -103,97 +127,89 @@
         ]
       },
       {
-        "title": "Quality of Life",
+        "title": "Controls & Input",
         "items": [
           {
-            "text": "Gamepad cursor now behaves correctly, fixing UI navigation for controller users.",
+            "text": "Fixed gamepad cursor state, ensuring proper cursor behavior for controller users.",
             "commit_ids": [
               706511
             ]
           },
           {
-            "text": "Resolved a potential null reference crash when loading codelocks, improving stability.",
-            "commit_ids": [
-              706506
-            ]
-          },
-          {
-            "text": "Corrected biofuel generator placement so it no longer snaps backwards, ensuring accurate building orientation.",
-            "commit_ids": [
-              706482
-            ]
-          },
-          {
-            "text": "Fixed keybind lookup issues, restoring custom control bindings functionality.",
+            "text": "Resolved several input bind lookup issues, improving keybinding reliability.",
             "commit_ids": [
               706424
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Stability",
+        "items": [
+          {
+            "text": "Patched a null reference error in the main menu background video, preventing potential crashes or freezes when accessing the menu.",
+            "commit_ids": [
+              706533
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Weapons\n- Fixed broken rifle orientation while sprinting and added a sprint speed modifier to AK variants.\n- Adjusted the minicrossbow three‑person reload to use a partial‑reload animation, improving reload flow.\n\n### NPC & AI\n- Resolved collisions between lambs and calves and the travelling vendor.\n- Fixed multiple bull and ram AI problems, including head‑butting, charging, stomp animation, and procedural look‑at.\n- Addressed cows sliding issue, likely related to an incorrect pregnant flag.\n- Prevented livestock in safe zones from taking damage.\n\n### Gameplay Mechanics\n- Sleeping bag range is now replicated across server and client, ensuring consistent range enforcement and correct guide display.\n\n### UI / UX\n- Quick‑join menu now refreshes correctly after changes.\n- Pie menu now updates name and description labels properly when options are empty, removing stale placeholder text.\n\n### New Content\n- Added electronic chessboard and checkers to the High Stakes DLC, including split game model, piece setup, and deployable prefab adjustments.\n\n### Environment & Resources\n- Fixed jungle groundwater level bug that left placed plants without water.\n\n### Quality of Life\n- Gamepad cursor now behaves correctly, fixing UI navigation for controller users.\n- Resolved a potential null reference crash when loading codelocks, improving stability.\n- Corrected biofuel generator placement so it no longer snaps backwards, ensuring accurate building orientation.\n- Fixed keybind lookup issues, restoring custom control bindings functionality.",
+    "summary": "### Livestock & Animals\n- Reduced clipping when leading multiple livestock and at troughs.\n- Livestock no longer attack players while they are in vehicles.\n- Lamb and calf collisions with travelling vendors have been fixed.\n- Bulls and rams AI improved: unwanted head‑butting, charging glitches, wrong animations removed and proper procedural look‑at enabled.\n- Potential fix applied for cows sliding due to a pregnant‑flag issue.\n- Livestock are now protected from damage while inside safe zones.\n\n### Weapons\n- Rifle orientation corrected during sprinting and sprint speed modifiers added to medium, jungle, and diver AK variants.\n- Minicrossbow now plays partial reload correctly in third‑person view.\n\n### Base & Security\n- NullReference crash in code lock loading resolved, restoring proper code lock functionality.\n- Biofuel generator placement no longer snaps backwards.\n\n### UI & Menus\n- Quick Join menu now updates correctly after changes.\n- Sleeping bag range guide displays accurately when range settings change.\n- Pie menu option names and descriptions update correctly, eliminating placeholder text.\n\n### Gameplay Content\n- Electronic Chessboard DLC added, featuring a split game model with chess and checkers pieces and a tweaked deployable prefab.\n\n### Environment & Resources\n- Jungle groundwater level fixed, allowing terrain‑placed plants to receive water properly.\n\n### Controls & Input\n- Fixed gamepad cursor state, ensuring proper cursor behavior for controller users.\n- Resolved several input bind lookup issues, improving keybinding reliability.\n\n### UI & Stability\n- Patched a null reference error in the main menu background video, preventing potential crashes or freezes when accessing the menu.",
     "new_items": [
       {
-        "text": "Fixed broken rifle orientation while sprinting and added a sprint speed modifier to AK variants.",
+        "text": "Reduced clipping when leading multiple livestock and at troughs.",
+        "commit_ids": [
+          706522
+        ],
+        "section": "Livestock & Animals"
+      },
+      {
+        "text": "Livestock no longer attack players while they are in vehicles.",
+        "commit_ids": [
+          706520
+        ],
+        "section": "Livestock & Animals"
+      },
+      {
+        "text": "Lamb and calf collisions with travelling vendors have been fixed.",
+        "commit_ids": [
+          706503
+        ],
+        "section": "Livestock & Animals"
+      },
+      {
+        "text": "Rifle orientation corrected during sprinting and sprint speed modifiers added to medium, jungle, and diver AK variants.",
         "commit_ids": [
           706515
         ],
         "section": "Weapons"
       },
       {
-        "text": "Adjusted the minicrossbow three‑person reload to use a partial‑reload animation, improving reload flow.",
-        "commit_ids": [
-          706494
-        ],
-        "section": "Weapons"
-      },
-      {
-        "text": "Resolved collisions between lambs and calves and the travelling vendor.",
-        "commit_ids": [
-          706503
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Fixed multiple bull and ram AI problems, including head‑butting, charging, stomp animation, and procedural look‑at.",
-        "commit_ids": [
-          706485
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Quick‑join menu now refreshes correctly after changes.",
-        "commit_ids": [
-          706478
-        ],
-        "section": "UI / UX"
-      },
-      {
-        "text": "Gamepad cursor now behaves correctly, fixing UI navigation for controller users.",
-        "commit_ids": [
-          706511
-        ],
-        "section": "Quality of Life"
-      },
-      {
-        "text": "Resolved a potential null reference crash when loading codelocks, improving stability.",
+        "text": "NullReference crash in code lock loading resolved, restoring proper code lock functionality.",
         "commit_ids": [
           706506
         ],
-        "section": "Quality of Life"
+        "section": "Base & Security"
       },
       {
-        "text": "Corrected biofuel generator placement so it no longer snaps backwards, ensuring accurate building orientation.",
+        "text": "Fixed gamepad cursor state, ensuring proper cursor behavior for controller users.",
         "commit_ids": [
-          706482
+          706511
         ],
-        "section": "Quality of Life"
+        "section": "Controls & Input"
+      },
+      {
+        "text": "Patched a null reference error in the main menu background video, preventing potential crashes or freezes when accessing the menu.",
+        "commit_ids": [
+          706533
+        ],
+        "section": "UI & Stability"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Fixed broken rifle orientation while sprinting and added a sprint speed modifier to AK variants.\n- Adjusted the minicrossbow three‑person reload to use a partial‑reload animation, improving reload flow.\n- Resolved collisions between lambs and calves and the travelling vendor.\n- Fixed multiple bull and ram AI problems, including head‑butting, charging, stomp animation, and procedural look‑at.\n- Quick‑join menu now refreshes correctly after changes.\n- Gamepad cursor now behaves correctly, fixing UI navigation for controller users.\n- Resolved a potential null reference crash when loading codelocks, improving stability.\n- Corrected biofuel generator placement so it no longer snaps backwards, ensuring accurate building orientation."
+    "new_relevant_count": 7,
+    "new_summary": "- Reduced clipping when leading multiple livestock and at troughs.\n- Livestock no longer attack players while they are in vehicles.\n- Lamb and calf collisions with travelling vendors have been fixed.\n- Rifle orientation corrected during sprinting and sprint speed modifiers added to medium, jungle, and diver AK variants.\n- NullReference crash in code lock loading resolved, restoring proper code lock functionality.\n- Fixed gamepad cursor state, ensuring proper cursor behavior for controller users.\n- Patched a null reference error in the main menu background video, preventing potential crashes or freezes when accessing the menu."
   },
   "2026-09-30": {
     "commit_count": 121,
