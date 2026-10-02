@@ -298,11 +298,172 @@
     "new_summary": ""
   },
   "2026-09-29": {
-    "commit_count": 102,
-    "relevant_commit_count": 69,
+    "commit_count": 96,
+    "relevant_commit_count": 64,
     "relevant_signature": "705729,705730,705731,705733,705734,705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811,705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920,705923,705926,705932,705934,705941,705972,705974,705975,705976,705978,705980,705985,705987,705993,705995,705996,705997,705998,705999,706000,706003,706004,706005,706008,706010",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "705923,705926,705932,705934,705941,705972,705974,705975,705976,705978,705980,705985,705987,705993,705995,705996,705997,705998,705999,706000,706003,706004,706005,706008,706010": [
+        {
+          "title": "Inventory & Loot",
+          "items": [
+            {
+              "text": "Increased sandbag barricade stack size (now up to 20) and set loot stacks to 4, allowing players to carry more sandbags at once.",
+              "commit_ids": [
+                706010
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock & Animal Interaction",
+          "items": [
+            {
+              "text": "Added a tame flag to livestock: animals must be tamed before you can milk them, and the lead option is hidden for untamed animals. Genetics are now shown on the cow panel.",
+              "commit_ids": [
+                706003,
+                706004,
+                706005
+              ]
+            },
+            {
+              "text": "Adjusted animal overcrowding thresholds (crowded now 5, severe packing 9) and reduced packing radius to 2.5 m, easing crowd‑related penalties.",
+              "commit_ids": [
+                705998
+              ]
+            },
+            {
+              "text": "Implemented a client‑side trigger that gently pushes players off livestock they stand on, preventing players from standing on animals.",
+              "commit_ids": [
+                705996
+              ]
+            },
+            {
+              "text": "Fixed several critter bugs: frog animator errors, turtle log spam, and restored jellyfish population spawning.",
+              "commit_ids": [
+                705932
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons & Ammo",
+          "items": [
+            {
+              "text": "Doubled ammo amounts for rifles and SMGs, giving players more ammunition per pickup.",
+              "commit_ids": [
+                706000
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vendor & Economy",
+          "items": [
+            {
+              "text": "Reworked livestock vendor sale logic: uses normalized currency value, randomizes offers, applies a penalty to wild‑found animals, and adds new items (ammo, top‑tier doors, rare red keycard).",
+              "commit_ids": [
+                705993
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Missions & Gameplay",
+          "items": [
+            {
+              "text": "Allowed optional mission objectives to be omitted, enabling the Underwater Labs mission to be completed even if a lab lacks a boombox.",
+              "commit_ids": [
+                705974
+              ]
+            }
+          ]
+        }
+      ],
+      "705813,705814,705815,705816,705821,705823,705827,705831,705846,705850,705865,705868,705890,705895,705898,705905,705908,705909,705910,705911,705912,705913,705914,705915,705920": [
+        {
+          "title": "Gameplay Mechanics & Bugs",
+          "items": [
+            {
+              "text": "Leads no longer break easily, improving tether durability.",
+              "commit_ids": [
+                705915
+              ]
+            },
+            {
+              "text": "Added player-only colliders to all livestock, preventing players from walking through them.",
+              "commit_ids": [
+                705912
+              ]
+            },
+            {
+              "text": "Fixed crashes caused by out-of-order snapshots when players connect, preventing NRE errors.",
+              "commit_ids": [
+                705908,
+                705910
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map Changes",
+          "items": [
+            {
+              "text": "Additional windows in Harbor 2 have been boarded up, reducing visibility into the loot room.",
+              "commit_ids": [
+                705865
+              ]
+            }
+          ]
+        },
+        {
+          "title": "User Interface & Crafting",
+          "items": [
+            {
+              "text": "New dedicated crafting screen action added; holding the inventory button now opens the crafting screen directly.",
+              "commit_ids": [
+                705815
+              ]
+            }
+          ]
+        }
+      ],
+      "705750,705758,705759,705761,705765,705770,705771,705774,705782,705792,705798,705805,705807,705811": [
+        {
+          "title": "Wildlife & Spawning",
+          "items": [
+            {
+              "text": "Fixed jungle animals (crocs, tiger panther, wolves) failing to spawn due to an overly broad 300m proximity check, allowing them to appear normally again.",
+              "commit_ids": [
+                705811
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Consumables & Temperature",
+          "items": [
+            {
+              "text": "Creamy Pure Cooling Tea no longer incorrectly raises your maximum temperature when consumed.",
+              "commit_ids": [
+                705774
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Milking & Item Handling",
+          "items": [
+            {
+              "text": "Fixed incorrect item notices and stacking when skimming milk, added a skimming sound effect, moved the skim option above drink to prevent misclicks, repaired order menu functionality, and corrected milk icon import settings.",
+              "commit_ids": [
+                705770
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Livestock & Wildlife",
