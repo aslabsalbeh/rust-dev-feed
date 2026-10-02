@@ -1,8 +1,8 @@
 {
   "2026-10-02": {
-    "commit_count": 55,
-    "relevant_commit_count": 21,
-    "relevant_signature": "706615,706616,706665,706669,707686,707689,707705,707711,707717,707721,707724,707726,707739,707743,707746,707747,707752,707774,707781,707790,707799",
+    "commit_count": 57,
+    "relevant_commit_count": 22,
+    "relevant_signature": "706615,706616,706665,706669,707686,707689,707705,707711,707717,707721,707724,707726,707739,707743,707746,707747,707752,707774,707781,707790,707799,707814",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -10,15 +10,21 @@
         "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Livestock breeding rebalanced: bond time now 15 min, reproduction blocked until full bond, max 300 per species, new \"livestock.cullexcess\" command, optional \"livestock.breedOnlyAtHome\" setting.",
+            "text": "Livestock breeding overhauled: bond time now 15 min, reproduction delayed, calves age immediately on birth, population capped at 300, new \"livestock.cullexcess\" command, and optional \"livestock.breedOnlyAtHome\" setting.",
             "commit_ids": [
               707717
             ]
           },
           {
-            "text": "Fixed cows losing their needs and aging data when bonded, ensuring proper behavior after bonding.",
+            "text": "Cows no longer lose their needs or age incorrectly when bonded.",
             "commit_ids": [
               707747
+            ]
+          },
+          {
+            "text": "Blue particle glitch fixed when shearing sheep.",
+            "commit_ids": [
+              707752
             ]
           }
         ]
@@ -27,7 +33,7 @@
         "title": "Deployables",
         "items": [
           {
-            "text": "Halloween string lights can now be deployed.",
+            "text": "Halloween string lights are now deployable.",
             "commit_ids": [
               707726
             ]
@@ -38,7 +44,7 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Water no longer disappears in underground or underwater labs after revert, restoring proper water visuals.",
+            "text": "Water correctly appears in underground and underwater labs, fixing previous disappearance.",
             "commit_ids": [
               707705
             ]
@@ -46,10 +52,21 @@
         ]
       },
       {
-        "title": "Server & Stability",
+        "title": "Visual Fixes",
         "items": [
           {
-            "text": "Resolved crashes on modded servers during startup and ensured they are correctly identified as modded, improving connection stability for players.",
+            "text": "Cloud visuals (vclouds) no longer disappear in cargo hold areas.",
+            "commit_ids": [
+              707799
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server Stability",
+        "items": [
+          {
+            "text": "Fixed crashes that stopped modded servers from fully starting and ensured they are properly identified as modded, improving reliability for players.",
             "commit_ids": [
               707724
             ]
@@ -58,7 +75,7 @@
       }
     ],
     "status": "ok",
-    "summary": "### Livestock & Animals\n- Livestock breeding rebalanced: bond time now 15 min, reproduction blocked until full bond, max 300 per species, new \"livestock.cullexcess\" command, optional \"livestock.breedOnlyAtHome\" setting.\n- Fixed cows losing their needs and aging data when bonded, ensuring proper behavior after bonding.\n\n### Deployables\n- Halloween string lights can now be deployed.\n\n### World & Environment\n- Water no longer disappears in underground or underwater labs after revert, restoring proper water visuals.\n\n### Server & Stability\n- Resolved crashes on modded servers during startup and ensured they are correctly identified as modded, improving connection stability for players.",
+    "summary": "### Livestock & Animals\n- Livestock breeding overhauled: bond time now 15 min, reproduction delayed, calves age immediately on birth, population capped at 300, new \"livestock.cullexcess\" command, and optional \"livestock.breedOnlyAtHome\" setting.\n- Cows no longer lose their needs or age incorrectly when bonded.\n- Blue particle glitch fixed when shearing sheep.\n\n### Deployables\n- Halloween string lights are now deployable.\n\n### World & Environment\n- Water correctly appears in underground and underwater labs, fixing previous disappearance.\n\n### Visual Fixes\n- Cloud visuals (vclouds) no longer disappear in cargo hold areas.\n\n### Server Stability\n- Fixed crashes that stopped modded servers from fully starting and ensured they are properly identified as modded, improving reliability for players.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
