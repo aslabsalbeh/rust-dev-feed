@@ -1,5 +1,21 @@
 [
   {
+    "id": 706592,
+    "branch": "main/automated_testing/client",
+    "changeset": "166573",
+    "created": "2026-10-01T23:35:02",
+    "message": "Client can communicate with the test server\r\nFolded some classes, cleanup",
+    "user": "Flavien"
+  },
+  {
+    "id": 706584,
+    "branch": "main/vcc/pre_merge_review",
+    "changeset": "166571",
+    "created": "2026-10-01T22:36:40",
+    "message": "Don't continuously fail input if steam input is somehow fucked at srtartup",
+    "user": "Adam W"
+  },
+  {
     "id": 706572,
     "branch": "▋▇▍▊",
     "changeset": "▌▇▌▅█▅",
@@ -2438,149 +2454,5 @@
     "created": "2026-09-29T00:19:16",
     "message": "biofuel_generator_optims -> main",
     "user": "Ian Henderson"
-  },
-  {
-    "id": 705708,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166125",
-    "created": "2026-09-29T00:17:03",
-    "message": "Add ability to turn off background errors by setting -1 in the manifest (incase it completely breaks)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705707,
-    "branch": "main/biofuel_generator_optims",
-    "changeset": "166124",
-    "created": "2026-09-29T00:12:51",
-    "message": "- Add an animator LOD",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 705706,
-    "branch": "main/Livestock_animals",
-    "changeset": "166123",
-    "created": "2026-09-29T00:10:43",
-    "message": "Send the livestock to sell via an RPC rather than relying on client side triggers to match up with server side triggers",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 705705,
-    "branch": "main/biofuel_generator_optims",
-    "changeset": "166122",
-    "created": "2026-09-29T00:04:49",
-    "message": "- Run client animations in invoke repeating\r\n- Only run stirring animations when actually stirring\r\n- Run server updates in invoke randomised rather than invoke repeating",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 705702,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166120",
-    "created": "2026-09-28T23:34:42",
-    "message": "Add additional rate limiting to background errors\r\n- I expect these can be spammy, so limit to 2 errors per minute\r\n- controlled by manifest so it can be increased if we want",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705701,
-    "branch": "main",
-    "changeset": "166119",
-    "created": "2026-09-28T23:32:15",
-    "message": "much more accurate collision meshes for sandbag barricades \r\nhttps://files.facepunch.com/pilgrim/2026/September/29_00-31-PassionatePrayingmantis.mp4",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 705697,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166116",
-    "created": "2026-09-28T23:19:40",
-    "message": "compile fix",
-    "user": "Brian"
-  },
-  {
-    "id": 705696,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166115",
-    "created": "2026-09-28T23:13:58",
-    "message": "Tests",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705695,
-    "branch": "main/biofuel_generator",
-    "changeset": "166114",
-    "created": "2026-09-28T23:11:22",
-    "message": "Emission fresnel tweak.",
-    "user": "Petur"
-  },
-  {
-    "id": 705694,
-    "branch": "main/biofuel_generator",
-    "changeset": "166113",
-    "created": "2026-09-28T23:09:25",
-    "message": "Lighting & FX polish.\r\nHooked up logic to the non-emissive texture entities.\r\nFixed all the display sprites being uncompressed.\r\nThe display is an 80s'esque liquid crystal display like the texture implies.\r\nAsset not relying on emissive textures only anymore (bad for the arm etc)",
-    "user": "Petur"
-  },
-  {
-    "id": 705693,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166112",
-    "created": "2026-09-28T23:05:41",
-    "message": "Ensure background thread errors get sent to sentry\r\n- we fixed them being silently dropped last month, this month we collect them",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705690,
-    "branch": "main/netgraph_fix",
-    "changeset": "166111",
-    "created": "2026-09-28T23:02:54",
-    "message": "Fixed netgraph being scaled and shifted offscreen\r\nhttps://files.facepunch.com/raul/2026/September/29_01-00-FavorableSheldrake.jpg",
-    "user": "Raul"
-  },
-  {
-    "id": 705687,
-    "branch": "▍▆▄▌▅▄▍▇▆▅▇▌▍▊█▌▌▇█▉▄▄",
-    "changeset": "▉▍▊█▉▇",
-    "created": "2026-09-28T23:01:04",
-    "message": "█ ▉▉█▌▌ ▊ ▊▆▅█ ▉▍▌▄▇▋█▌▋▌ ▋▊▌▄█▌▍█▌▅▆▍▄ █▌▇▆ ▉▆▉▇▊▊█ ▍▅▊▇█▊▅▍ ▍▊ ▋▌▊██▍ ▋▅ ▇▄▆▉▍ ▇▅▍▉▌▊ ▆█▅▍▇▅▇ ▆▊▄▅▍ ▆▄▇▋▍▋▌ ▅▆▌▆▆▊ ▆█▆▆▅█ ▅▆▆▋▆▉▌▆▆ ▅▋▄▄ ▅▄▍▉▉▊▆ ▆▋▊ █▇▅▍ ▇▅▋▅ ▍▉▉▄▊▍▇▅▅ ▄▉▉▄█▋▅▄▉▆▌▊ ▊▌▆█▊ ▌ ▇▄▊▉▄▉ ▄▌▉▉ ▅█▍ ▅██▅▊▅ ▊▄▊▄▌▋▌ ▌█▆▊ ▆ ▊▄▅▍▄▉▉█▍▄▊▅▊▍ ▅▇▊▅▅ ▋▉▆ ▍▋▊▍▋▋▆▋▉ ▉▍▆█▇ ▋ ▅▇▌▊▆▆▉█ ██▍▊▉▅ ▆▅▍▊ █▄█ ▆▄▋▋▅▅▉ ▄▆▇▉▋▉█▌▆ ▄▇▄█▇▆▉▌▅▋▊▆ █▄▊▍▇▇",
-    "user": "max.p"
-  },
-  {
-    "id": 705684,
-    "branch": "main/fix_apartment_teammate_door",
-    "changeset": "166107",
-    "created": "2026-09-28T22:37:17",
-    "message": "Prevent teammates from using the break-in option to break into their teammate's room",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705681,
-    "branch": "main/fix_apartment_teammate_door",
-    "changeset": "166106",
-    "created": "2026-09-28T22:36:16",
-    "message": "Fix teammates not being able to let themselves out of doors when inside them\r\n- caused by apartment rooms losing their reference to the front door after the restart\r\n- while the owner could still go in and out, the \"anyone can let themselves out\" wouldn't work\r\n- would only happen if the server restarted after you purchased a room",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705680,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166105",
-    "created": "2026-09-28T22:34:56",
-    "message": "fix stutter in underwater color grading transition",
-    "user": "Brian"
-  },
-  {
-    "id": 705679,
-    "branch": "main",
-    "changeset": "166104",
-    "created": "2026-09-28T22:34:31",
-    "message": "update to pillbox collision\r\nmore detailed collsiion for sandbag barricade - but it still defaults to convex",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 705678,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166103",
-    "created": "2026-09-28T22:34:13",
-    "message": "keep rendering water in underwater labs since the moonpool is there",
-    "user": "Brian"
   }
 ]
