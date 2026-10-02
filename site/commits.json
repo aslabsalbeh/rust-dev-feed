@@ -1,5 +1,93 @@
 [
   {
+    "id": 707728,
+    "branch": "▌▌█▋▅▍▆▌▅▆█▆▄▊▄▇▆▆▆▆▄▋",
+    "changeset": "▅▌▍▆▉▌",
+    "created": "2026-10-02T13:47:36",
+    "message": "▋ ▇▅▄▇▉▅▉ ▋▋▅▍▍ ▊▊▍▋ ▌▅▄▄█▉▌ ▄▅ ▊▉▆▊ ▊▌▊▅▅▆▄▅▅▄██▇▊▉▇ ▉▊▋▅▌▄▆▋▇ ▆▌ ▆▄▅ ▌▉▇▅▅ ▆▆▌▉▇▍ ▉▋▄▊ ▉▅▍▇▋ ▊▄ ▌▄▌▉▉▍",
+    "user": "ElliotH"
+  },
+  {
+    "id": 707726,
+    "branch": "main/halloween2026DLC",
+    "changeset": "166636",
+    "created": "2026-10-02T13:45:05",
+    "message": "fixed halloween string lights not being deployable",
+    "user": "matt.i"
+  },
+  {
+    "id": 707725,
+    "branch": "main/halloween2026DLC",
+    "changeset": "166635",
+    "created": "2026-10-02T13:43:30",
+    "message": "Halloween Wallpapers - Final textures, icons",
+    "user": "alex.m"
+  },
+  {
+    "id": 707724,
+    "branch": "main/fix_sentry_modded_tag",
+    "changeset": "166634",
+    "created": "2026-10-02T13:42:54",
+    "message": "Fix modded servers crashing before fully starting not being tagged as modded",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 707721,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "166633",
+    "created": "2026-10-02T13:37:39",
+    "message": "- added nailgun mag mesh\r\n-  added mag drop effect\r\n- added events-only clip on a new w_nailgun Animator, no rig needed\r\n- set up hide/show mag",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 707718,
+    "branch": "main",
+    "changeset": "166630",
+    "created": "2026-10-02T13:26:09",
+    "message": "~cherrypicking 165250",
+    "user": "Nick.H"
+  },
+  {
+    "id": 707717,
+    "branch": "main",
+    "changeset": "166629",
+    "created": "2026-10-02T13:24:34",
+    "message": "Merged to main > Fix livestock breeding out of control in the wild:\r\n- Full bond is now 15min not 5min, reproduction can't happen before (can still lead from 5min like before)\r\n- Curious cows don't bond twice as fast anymore\r\n- If a calf is born in the wild somehow, it will age as soon as it's born, and won't be able to reproduce (eg won't be born bonded like the mom)\r\n- Server cap on livestock population of 300 \"livestock.maxPerSpecies\"\r\n- Command to kill off excess livestock, prioritizing not tame > far from TCs > bad genes / old to avoid hurting farms, \"livestock.cullexcess\"\r\n- Add \"livestock.breedOnlyAtHome\" convar, 0 by default, 1 means livestock can only breed near their top bonded player TC",
+    "user": "Maverick"
+  },
+  {
+    "id": 707716,
+    "branch": "main/procgen_optim",
+    "changeset": "166627",
+    "created": "2026-10-02T13:22:35",
+    "message": "short test to force the extremes of DecorComponents to ensure the bounds is correct with future changes\r\n- if this broke silently rocks would just fail to spawn or spawn where they shouldn't",
+    "user": "Grigler"
+  },
+  {
+    "id": 707713,
+    "branch": "main",
+    "changeset": "166625",
+    "created": "2026-10-02T13:11:07",
+    "message": "~cherrypicking 166617, 166623",
+    "user": "Rin"
+  },
+  {
+    "id": 707711,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166624",
+    "created": "2026-10-02T13:06:34",
+    "message": "Fix view model being blurred with the background after disconnect/reconnect",
+    "user": "Felix"
+  },
+  {
+    "id": 707705,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "166623",
+    "created": "2026-10-02T12:28:30",
+    "message": "Reverted change that fully disabled water when in underground or underwater labs environment volume, as this was casuing the water to disappear in areas where it shouldn't have",
+    "user": "aidan.m"
+  },
+  {
     "id": 707697,
     "branch": "main/halloween2026DLC",
     "changeset": "166622",
@@ -2254,117 +2342,5 @@
     "created": "2026-09-29T14:23:29",
     "message": "added and edited ultra wide screen component to nailgun viewmodel prefab. removed old gun mesh",
     "user": "julek"
-  },
-  {
-    "id": 705865,
-    "branch": "main",
-    "changeset": "166211",
-    "created": "2026-09-29T14:17:03",
-    "message": "Harbor 2 - boarded up more windows that allowed to see into the loot room",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 705861,
-    "branch": "main/analytics_signs",
-    "changeset": "166210",
-    "created": "2026-09-29T14:05:49",
-    "message": "Add analytics for signs being painted",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705853,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166208",
-    "created": "2026-09-29T13:40:48",
-    "message": "Tag background thread errors as \"background thread\" so we can filter them in sentry",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705850,
-    "branch": "main",
-    "changeset": "166206",
-    "created": "2026-09-29T13:36:22",
-    "message": "fix for cinematic idle prop rotation + sprint idle arm fix",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 705848,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166204",
-    "created": "2026-09-29T13:31:40",
-    "message": "Comments",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705846,
-    "branch": "main/rrp_explosion_overlay_fix",
-    "changeset": "166203",
-    "created": "2026-09-29T13:26:59",
-    "message": "Remove downsampling from explosion overlay",
-    "user": "Dayaan"
-  },
-  {
-    "id": 705834,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166198",
-    "created": "2026-09-29T13:02:02",
-    "message": "Client timeout 20m, server timeout 5m",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705833,
-    "branch": "main/sentry_background_thread_errors",
-    "changeset": "166197",
-    "created": "2026-09-29T13:00:23",
-    "message": "Give background thread errors a larger time window so we can guard more against spam",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 705831,
-    "branch": "main",
-    "changeset": "166196",
-    "created": "2026-09-29T12:59:50",
-    "message": "cherry pick DefaultVolumeProfile change, fix for deep sea color grading in RRP",
-    "user": "Brian"
-  },
-  {
-    "id": 705829,
-    "branch": "main/vcc",
-    "changeset": "166195",
-    "created": "2026-09-29T12:54:51",
-    "message": "Cleanup",
-    "user": "Adam W"
-  },
-  {
-    "id": 705827,
-    "branch": "main/Livestock_animals/livestock_hotfixes",
-    "changeset": "166193",
-    "created": "2026-09-29T12:41:02",
-    "message": "Fix lamb wool",
-    "user": "Maverick"
-  },
-  {
-    "id": 705824,
-    "branch": "main/underground_train_network_update",
-    "changeset": "166192",
-    "created": "2026-09-29T12:36:44",
-    "message": "Tunnel materials",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 705823,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166191",
-    "created": "2026-09-29T12:35:50",
-    "message": "fix missing HSVRemap from DefaultVolumeProfile",
-    "user": "Brian"
-  },
-  {
-    "id": 705821,
-    "branch": "main/vcc",
-    "changeset": "166190",
-    "created": "2026-09-29T12:27:53",
-    "message": "Bunch more fixes",
-    "user": "Adam W"
   }
 ]
