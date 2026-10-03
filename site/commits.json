@@ -1,5 +1,21 @@
 [
   {
+    "id": 707820,
+    "branch": "main/scrap_king_buildingskin_dlc",
+    "changeset": "166687",
+    "created": "2026-10-02T22:52:29",
+    "message": "scrap king - updated texture atlases, meshes",
+    "user": "Lain"
+  },
+  {
+    "id": 707819,
+    "branch": "main/automated_testing/client",
+    "changeset": "166686",
+    "created": "2026-10-02T22:50:14",
+    "message": "Gun tests",
+    "user": "Flavien"
+  },
+  {
     "id": 707815,
     "branch": "main/underground_train_network_update",
     "changeset": "166684",
@@ -2222,61 +2238,5 @@
     "created": "2026-09-30T00:17:43",
     "message": "Expand the `spawnvendor` command to cover every single vendor in the game\r\n- can spawn vending machines and vendors from all monuments\r\n- can choose the respective stock from each type of vendor",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 705993,
-    "branch": "main/Livestock_animals/vendor_changes",
-    "changeset": "166273",
-    "created": "2026-09-30T00:08:51",
-    "message": "Rework vendor sale logic\r\nNow takes the normalised value we used to use and uses that as a currency to spend\r\nNow randomly moves through the list of items, does a dice roll and attempts to spend the currency to unlock that offer\r\nSo if we have 0.5 worth of wool and a listing of 400 frags passes and that listing is worth 0.5, we now take a random amount (say 0.25 = 200 frags)\r\nWe then have 0.25 left to spend on another listing\r\nFalls back to a flat scrap listing to fill out the offer\r\nReworked item lists - added pistol ammo, rifle ammo, top tier doors\r\nAdded rare red keycard to livestock sale list\r\nAdded a penalty (-0.2) to animals that were found in the wild or purchased when calculating sale offers, animals that were born via breeding will be full value",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 705987,
-    "branch": "main/render_pipeline_testing/blur_artifacts",
-    "changeset": "166270",
-    "created": "2026-09-29T23:14:11",
-    "message": "Use RustGlobals.hlsl and RustObjectToClipPos() in nearly all shaders.\nUpgrade nearly all shaders to target 4.5",
-    "user": "Felix"
-  },
-  {
-    "id": 705986,
-    "branch": "main/ghostshiptodlighting",
-    "changeset": "166269",
-    "created": "2026-09-29T23:11:11",
-    "message": "Ghostship exterior rear spotlight lighting is off during daytime.",
-    "user": "Petur"
-  },
-  {
-    "id": 705985,
-    "branch": "main/render_pipeline_testing/blur_artifacts",
-    "changeset": "166268",
-    "created": "2026-09-29T23:07:46",
-    "message": "Fix Crystal AR view model being cut off",
-    "user": "Felix"
-  },
-  {
-    "id": 705984,
-    "branch": "main/render_pipeline_testing/blur_artifacts",
-    "changeset": "166267",
-    "created": "2026-09-29T23:06:29",
-    "message": "Use plain `mul` and `add` with `precise` keyword for consistent MVP transforms",
-    "user": "Felix"
-  },
-  {
-    "id": 705980,
-    "branch": "main",
-    "changeset": "166266",
-    "created": "2026-09-29T22:34:18",
-    "message": "fixed milk icons looking aliased - defringed the white matte",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 705978,
-    "branch": "main/terrain_config_load",
-    "changeset": "166264",
-    "created": "2026-09-29T22:33:26",
-    "message": "Experimenting with a way to unload/reload terrain configs at runtime so we don't need to have main land + deep sea in all quality levels loaded at the same time\r\nWould save 150mb of memory if we can pull it off",
-    "user": "Jarryd Campi"
   }
 ]
