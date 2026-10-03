@@ -207,11 +207,252 @@
     "new_summary": ""
   },
   "2026-09-30": {
-    "commit_count": 121,
-    "relevant_commit_count": 65,
+    "commit_count": 120,
+    "relevant_commit_count": 64,
     "relevant_signature": "706020,706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138,706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324,706328,706329,706330",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324,706328,706329,706330": [
+        {
+          "title": "Animal Behavior & Boosts",
+          "items": [
+            {
+              "text": "Bread and brioche dung boost durations increased to 6 and 10 minutes respectively, making them more effective.",
+              "commit_ids": [
+                706330
+              ]
+            },
+            {
+              "text": "Animals now prioritize eating from a trough that provides a boost when food is present.",
+              "commit_ids": [
+                706330
+              ]
+            },
+            {
+              "text": "Purchased animals now spawn in front of the vendor instead of behind the player.",
+              "commit_ids": [
+                706314
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vendor Stack Sizes & Rewards",
+          "items": [
+            {
+              "text": "Minimum wool stack size for vendor reduced to 25 and maximum increased to 400; delivering 400 wool now grants top‑tier rewards.",
+              "commit_ids": [
+                706328
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Trainyard Loot Scaling",
+          "items": [
+            {
+              "text": "Lootable train cars now correctly apply the softcore loot multiplier and yield double the items, enhancing loot returns.",
+              "commit_ids": [
+                706324
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Pump UI Enhancements",
+          "items": [
+            {
+              "text": "Map cursor now shows a fixed center crosshair and allows adding/removing markers at that point.",
+              "commit_ids": [
+                706311
+              ]
+            },
+            {
+              "text": "Pump at the dome displays a countdown timer when the oil rig countdown is active.",
+              "commit_ids": [
+                706319
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Team & Invite Persistence",
+          "items": [
+            {
+              "text": "Player teams, invites, and contacts are now saved correctly after server crashes; entities can opt out of the save cache.",
+              "commit_ids": [
+                706270
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Healing Item Balance",
+          "items": [
+            {
+              "text": "Milky Healing Tea now heals up to 112 health (capped at 100 pending health), increasing its effectiveness.",
+              "commit_ids": [
+                706229
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Construction Bug Fixes",
+          "items": [
+            {
+              "text": "Hole depth is now correctly cleared during hole passes, fixing terrain inconsistencies.",
+              "commit_ids": [
+                706329
+              ]
+            }
+          ]
+        }
+      ],
+      "706141,706150,706152,706153,706155,706159,706161,706162,706168,706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220": [
+        {
+          "title": "Map & Loading Bugs",
+          "items": [
+            {
+              "text": "Fix local client player being destroyed during scene switches and allow reloadmap without errors.",
+              "commit_ids": [
+                706220
+              ]
+            },
+            {
+              "text": "Correct invalid isLoading state after map reload, restoring camera control.",
+              "commit_ids": [
+                706181
+              ]
+            },
+            {
+              "text": "Prevent RustNavigation null reference errors on reload and preserve server scene, fixing camera detachment.",
+              "commit_ids": [
+                706162
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Gameplay & Balance",
+          "items": [
+            {
+              "text": "Reduce food required for livestock, easing feeding.",
+              "commit_ids": [
+                706202
+              ]
+            },
+            {
+              "text": "Add halters to all livestock and improve rope mechanics, giving adult animals proper leading ropes.",
+              "commit_ids": [
+                706161,
+                706195
+              ]
+            },
+            {
+              "text": "Vendor now informs you of required wool amount when you lack enough to sell.",
+              "commit_ids": [
+                706192
+              ]
+            },
+            {
+              "text": "Prevent wild livestock from dying due to hunger or unmet needs, capping health at 50%.",
+              "commit_ids": [
+                706173,
+                706171
+              ]
+            },
+            {
+              "text": "Stop wild livestock from passive taming and uncontrolled breeding.",
+              "commit_ids": [
+                706152
+              ]
+            },
+            {
+              "text": "Introduce taming decay for livestock without full bond, block sleepers from passive taming, and give calves a modest familiarity bonus.",
+              "commit_ids": [
+                706150
+              ]
+            },
+            {
+              "text": "Fix calf purchase dialogue to correctly require sufficient scrap.",
+              "commit_ids": [
+                706197
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Underwater Labs Mission Fix",
+          "items": [
+            {
+              "text": "Boombox activation now counts toward team objective progress for all members present in the same underwater lab.",
+              "commit_ids": [
+                706175
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Mount/Dismount Improvements",
+          "items": [
+            {
+              "text": "Motorcycles and bicycles now dismount to the side instead of the top, fixing mount point ordering.",
+              "commit_ids": [
+                706153
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crate Duplication Fix",
+          "items": [
+            {
+              "text": "Resolve rare duplication of crates in oil rig puzzle rooms after server crashes by invalidating puzzle generator cache.",
+              "commit_ids": [
+                706141
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Creature Visibility Fix",
+          "items": [
+            {
+              "text": "Fix pooling bugs that caused crabs and jellyfish to appear invisible, restoring their visibility.",
+              "commit_ids": [
+                706198
+              ]
+            }
+          ]
+        }
+      ],
+      "706028,706054,706055,706059,706066,706081,706086,706097,706122,706124,706126,706127,706128,706138": [
+        {
+          "title": "Livestock & Animals",
+          "items": [
+            {
+              "text": "Fixed animals not eating from troughs and prevented cows from dying of hunger in properly set up farms.",
+              "commit_ids": [
+                706128,
+                706124
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Store UI",
+          "items": [
+            {
+              "text": "Fixed featured tab showing duplicate items in the store UI.",
+              "commit_ids": [
+                706066
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Livestock & Animal Systems",
