@@ -207,166 +207,116 @@
     "new_summary": ""
   },
   "2026-09-30": {
-    "commit_count": 69,
-    "relevant_commit_count": 41,
-    "relevant_signature": "706169,706171,706173,706175,706181,706184,706190,706192,706195,706196,706197,706198,706202,706208,706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324,706328,706329,706330",
+    "commit_count": 51,
+    "relevant_commit_count": 27,
+    "relevant_signature": "706213,706220,706227,706228,706229,706233,706238,706241,706258,706260,706267,706269,706270,706288,706289,706290,706293,706295,706302,706311,706314,706319,706321,706324,706328,706329,706330",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Wildlife",
+        "title": "Animals & AI",
         "items": [
           {
-            "text": "Boost foods now last 6 or 10 minutes and animals will prioritize troughs containing them.",
+            "text": "Dung boost duration for bread increased to 6 minutes and for brioche to 10 minutes; animals now prioritize troughs with boost food.",
             "commit_ids": [
               706330
             ]
           },
           {
-            "text": "Purchased animals spawn in front of the vendor rather than behind you.",
+            "text": "Purchased animals now spawn in front of the vendor instead of behind the player.",
             "commit_ids": [
               706314
             ]
-          },
-          {
-            "text": "Livestock now need less food to stay alive.",
-            "commit_ids": [
-              706202
-            ]
-          },
-          {
-            "text": "Wild livestock can no longer die from hunger; their health will not drop below 50%.",
-            "commit_ids": [
-              706173,
-              706171
-            ]
-          },
-          {
-            "text": "Livestock vendor now tells you how much wool you need when you don’t have enough.",
-            "commit_ids": [
-              706192
-            ]
-          },
-          {
-            "text": "Calf purchase dialogue correctly checks your scrap before confirming a purchase.",
-            "commit_ids": [
-              706197
-            ]
-          },
-          {
-            "text": "Crabs and jellyfish no longer disappear due to pooling bugs.",
-            "commit_ids": [
-              706198
-            ]
           }
         ]
       },
       {
-        "title": "Economy & Vendors",
+        "title": "World & Terrain",
         "items": [
           {
-            "text": "Wool vendor stack limits are now 25‑400; delivering a full stack of 400 wool grants the top reward tier.",
+            "text": "Fixed hole depth not being cleared correctly during hole passes.",
             "commit_ids": [
-              706328
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map & Navigation",
-        "items": [
-          {
-            "text": "New map cursor with fixed center crosshairs lets you add or remove markers directly at the cursor.",
-            "commit_ids": [
-              706311
-            ]
-          },
-          {
-            "text": "Map loading is now stable: scene switches no longer destroy the player, and reloads correctly reset the loading state so the camera works after `reloadmap`.",
-            "commit_ids": [
-              706220,
-              706181
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Multiplayer & Persistence",
-        "items": [
-          {
-            "text": "Player teams, invites, and contacts are retained after server crashes, and you can now opt out of entity save‑cache usage.",
-            "commit_ids": [
-              706270
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay Tweaks",
-        "items": [
-          {
-            "text": "Milky Healing Tea now heals 112 health instead of being capped at 100.",
-            "commit_ids": [
-              706229
-            ]
-          },
-          {
-            "text": "Train car loot now respects the softcore multiplier and contains double the usual amount.",
-            "commit_ids": [
-              706324
-            ]
-          },
-          {
-            "text": "Boombox activation counts toward each teammate’s underwater lab objective when they’re in the same lab.",
-            "commit_ids": [
-              706175
-            ]
-          },
-          {
-            "text": "A countdown timer now appears on the dome pump while the oil rig countdown is active, and hole‑depth values are correctly cleared during hole passes.",
-            "commit_ids": [
-              706319,
               706329
             ]
           }
         ]
       },
       {
-        "title": "Base Mechanics",
+        "title": "Economy & Rewards",
         "items": [
           {
-            "text": "Doors now count as closed for base occlusion, restoring interior privacy and defense visibility.",
+            "text": "Wool vendor stack limits adjusted: minimum 25, maximum 400, and delivering 400 wool grants top rewards.",
+            "commit_ids": [
+              706328
+            ]
+          },
+          {
+            "text": "Trainyard loot containers now apply the softcore loot multiplier and double item amounts, boosting loot yields.",
+            "commit_ids": [
+              706324
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Infrastructure & UI",
+        "items": [
+          {
+            "text": "A countdown timer now appears on the dome pump when the oil rig countdown is active.",
+            "commit_ids": [
+              706319
+            ]
+          },
+          {
+            "text": "Map now features a centered crosshair cursor with the ability to add or remove markers at the crosshair position.",
+            "commit_ids": [
+              706311
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Social & Stability",
+        "items": [
+          {
+            "text": "Player teams, invites, and contacts are preserved after server crashes; an opt‑out option for entity save‑cache has been added.",
+            "commit_ids": [
+              706270
+            ]
+          },
+          {
+            "text": "Fixed a bug that could destroy the local player during a scene switch, preventing missing legs and movement issues after reloading maps.",
+            "commit_ids": [
+              706220
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Healing & Items",
+        "items": [
+          {
+            "text": "Milky Healing Tea now restores up to 112 health (though the overall health cap remains at 100).",
+            "commit_ids": [
+              706229
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Medieval doors now correctly register as closed for base occlusion, restoring proper base visibility and security.",
             "commit_ids": [
               706269
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animal Handling",
-        "items": [
-          {
-            "text": "Adult livestock now receive two leads like horses, with rope ends hidden off‑camera, improving animal leading and visual clarity.",
-            "commit_ids": [
-              706195
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Scaling",
-        "items": [
-          {
-            "text": "Entity scaling updates instantly for affected objects without needing to leave network range, fixing delayed size changes.",
-            "commit_ids": [
-              706169
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Animals & Wildlife\n- Boost foods now last 6 or 10 minutes and animals will prioritize troughs containing them.\n- Purchased animals spawn in front of the vendor rather than behind you.\n- Livestock now need less food to stay alive.\n- Wild livestock can no longer die from hunger; their health will not drop below 50%.\n- Livestock vendor now tells you how much wool you need when you don’t have enough.\n- Calf purchase dialogue correctly checks your scrap before confirming a purchase.\n- Crabs and jellyfish no longer disappear due to pooling bugs.\n\n### Economy & Vendors\n- Wool vendor stack limits are now 25‑400; delivering a full stack of 400 wool grants the top reward tier.\n\n### Map & Navigation\n- New map cursor with fixed center crosshairs lets you add or remove markers directly at the cursor.\n- Map loading is now stable: scene switches no longer destroy the player, and reloads correctly reset the loading state so the camera works after `reloadmap`.\n\n### Multiplayer & Persistence\n- Player teams, invites, and contacts are retained after server crashes, and you can now opt out of entity save‑cache usage.\n\n### Gameplay Tweaks\n- Milky Healing Tea now heals 112 health instead of being capped at 100.\n- Train car loot now respects the softcore multiplier and contains double the usual amount.\n- Boombox activation counts toward each teammate’s underwater lab objective when they’re in the same lab.\n- A countdown timer now appears on the dome pump while the oil rig countdown is active, and hole‑depth values are correctly cleared during hole passes.\n\n### Base Mechanics\n- Doors now count as closed for base occlusion, restoring interior privacy and defense visibility.\n\n### Animal Handling\n- Adult livestock now receive two leads like horses, with rope ends hidden off‑camera, improving animal leading and visual clarity.\n\n### Building & Scaling\n- Entity scaling updates instantly for affected objects without needing to leave network range, fixing delayed size changes.",
+    "summary": "### Animals & AI\n- Dung boost duration for bread increased to 6 minutes and for brioche to 10 minutes; animals now prioritize troughs with boost food.\n- Purchased animals now spawn in front of the vendor instead of behind the player.\n\n### World & Terrain\n- Fixed hole depth not being cleared correctly during hole passes.\n\n### Economy & Rewards\n- Wool vendor stack limits adjusted: minimum 25, maximum 400, and delivering 400 wool grants top rewards.\n- Trainyard loot containers now apply the softcore loot multiplier and double item amounts, boosting loot yields.\n\n### Infrastructure & UI\n- A countdown timer now appears on the dome pump when the oil rig countdown is active.\n- Map now features a centered crosshair cursor with the ability to add or remove markers at the crosshair position.\n\n### Social & Stability\n- Player teams, invites, and contacts are preserved after server crashes; an opt‑out option for entity save‑cache has been added.\n- Fixed a bug that could destroy the local player during a scene switch, preventing missing legs and movement issues after reloading maps.\n\n### Healing & Items\n- Milky Healing Tea now restores up to 112 health (though the overall health cap remains at 100).\n\n### Gameplay & Balance\n- Medieval doors now correctly register as closed for base occlusion, restoring proper base visibility and security.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
