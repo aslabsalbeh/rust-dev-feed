@@ -1,5 +1,13 @@
 [
   {
+    "id": 707828,
+    "branch": "main/fix_client_sail_wind",
+    "changeset": "166688",
+    "created": "2026-10-03T03:18:53",
+    "message": "Make sail wind behavior fully server sided\n- used to evaluate on both client & server so it could mismatch\n- client now just waits for server to send the flag\n- convar \"sailblockedupdateinterval\" to control the 5s polling the sail does to see if it's blocked (same interval as before)",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 707820,
     "branch": "main/scrap_king_buildingskin_dlc",
     "changeset": "166687",
@@ -2150,21 +2158,5 @@
     "created": "2026-09-30T05:11:16",
     "message": "Foliage and namespace fix",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 706010,
-    "branch": "main",
-    "changeset": "166287",
-    "created": "2026-09-30T02:55:21",
-    "message": "Sandbag barrcaide stack 10 > 20\r\nSandbag barrcaides found in loot will be a stack of 4",
-    "user": "Rin"
-  },
-  {
-    "id": 706008,
-    "branch": "main/fix_browser_invalid_operation",
-    "changeset": "166286",
-    "created": "2026-09-30T02:45:15",
-    "message": "Remove start of cached query storing all addresses in a hashset and comparing them to the list of banned servers\r\n- the code became redundant at some point",
-    "user": "Jake_Rich"
   }
 ]

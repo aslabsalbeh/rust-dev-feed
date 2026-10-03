@@ -1,30 +1,35 @@
 {
   "2026-10-02": {
-    "commit_count": 59,
-    "relevant_commit_count": 22,
-    "relevant_signature": "706615,706616,706665,706669,707686,707689,707705,707711,707717,707721,707724,707726,707739,707743,707746,707747,707752,707774,707781,707790,707799,707814",
+    "commit_count": 60,
+    "relevant_commit_count": 23,
+    "relevant_signature": "706615,706616,706665,706669,707686,707689,707705,707711,707717,707721,707724,707726,707739,707743,707746,707747,707752,707774,707781,707790,707799,707814,707828",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "Sailing",
+        "items": [
+          {
+            "text": "Sail wind behavior is now fully server‑side, eliminating client/server mismatches and ensuring consistent wind effects on sailboats.",
+            "commit_ids": [
+              707828
+            ]
+          }
+        ]
+      },
+      {
         "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Livestock breeding overhauled: bond time now 15 min, reproduction delayed, calves age immediately on birth, population capped at 300, new \"livestock.cullexcess\" command, and optional \"livestock.breedOnlyAtHome\" setting.",
+            "text": "Livestock breeding rebalanced: bond time increased to 15 min, reproduction blocked until full bond, population capped at 300 per species, new \"livestock.cullexcess\" command to cull excess, and \"livestock.breedOnlyAtHome\" convar to restrict breeding near a player’s TC.",
             "commit_ids": [
               707717
             ]
           },
           {
-            "text": "Cows no longer lose their needs or age incorrectly when bonded.",
+            "text": "Cows no longer unfreeze their needs or age incorrectly when bonded, fixing livestock stat inconsistencies.",
             "commit_ids": [
               707747
-            ]
-          },
-          {
-            "text": "Blue particle glitch fixed when shearing sheep.",
-            "commit_ids": [
-              707752
             ]
           }
         ]
@@ -33,9 +38,20 @@
         "title": "Deployables",
         "items": [
           {
-            "text": "Halloween string lights are now deployable.",
+            "text": "Halloween string lights are now deployable again.",
             "commit_ids": [
               707726
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server & Stability",
+        "items": [
+          {
+            "text": "Modded servers are now correctly tagged and will no longer crash before fully starting.",
+            "commit_ids": [
+              707724
             ]
           }
         ]
@@ -44,38 +60,16 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Water correctly appears in underground and underwater labs, fixing previous disappearance.",
+            "text": "Water now correctly appears in underground and underwater lab areas, restoring expected water physics and visual cues.",
             "commit_ids": [
               707705
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Visual Fixes",
-        "items": [
-          {
-            "text": "Cloud visuals (vclouds) no longer disappear in cargo hold areas.",
-            "commit_ids": [
-              707799
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Server Stability",
-        "items": [
-          {
-            "text": "Fixed crashes that stopped modded servers from fully starting and ensured they are properly identified as modded, improving reliability for players.",
-            "commit_ids": [
-              707724
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Livestock & Animals\n- Livestock breeding overhauled: bond time now 15 min, reproduction delayed, calves age immediately on birth, population capped at 300, new \"livestock.cullexcess\" command, and optional \"livestock.breedOnlyAtHome\" setting.\n- Cows no longer lose their needs or age incorrectly when bonded.\n- Blue particle glitch fixed when shearing sheep.\n\n### Deployables\n- Halloween string lights are now deployable.\n\n### World & Environment\n- Water correctly appears in underground and underwater labs, fixing previous disappearance.\n\n### Visual Fixes\n- Cloud visuals (vclouds) no longer disappear in cargo hold areas.\n\n### Server Stability\n- Fixed crashes that stopped modded servers from fully starting and ensured they are properly identified as modded, improving reliability for players.",
+    "summary": "### Sailing\n- Sail wind behavior is now fully server‑side, eliminating client/server mismatches and ensuring consistent wind effects on sailboats.\n\n### Livestock & Animals\n- Livestock breeding rebalanced: bond time increased to 15 min, reproduction blocked until full bond, population capped at 300 per species, new \"livestock.cullexcess\" command to cull excess, and \"livestock.breedOnlyAtHome\" convar to restrict breeding near a player’s TC.\n- Cows no longer unfreeze their needs or age incorrectly when bonded, fixing livestock stat inconsistencies.\n\n### Deployables\n- Halloween string lights are now deployable again.\n\n### Server & Stability\n- Modded servers are now correctly tagged and will no longer crash before fully starting.\n\n### World & Environment\n- Water now correctly appears in underground and underwater lab areas, restoring expected water physics and visual cues.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
