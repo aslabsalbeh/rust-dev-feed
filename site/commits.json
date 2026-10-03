@@ -1,5 +1,21 @@
 [
   {
+    "id": 707843,
+    "branch": "main/Livestock_animals",
+    "changeset": "166690",
+    "created": "2026-10-03T19:58:34",
+    "message": "Make cows actually line up with troughs to eat + play the correct animation\r\nMake a system so that we can align any animal with props without turn in place (maybe handy for cars mounting/unmounting?)",
+    "user": "Maverick"
+  },
+  {
+    "id": 707842,
+    "branch": "main/Livestock_animals",
+    "changeset": "166689",
+    "created": "2026-10-03T19:48:45",
+    "message": "Optimize path following further following Daniel's leads:\r\n- support full batching, serial path no longer needed even if some NPCs can swim or open doors, move requests are queued for next batch\r\n- better use of unity's TransformAccessArray to avoid native overhead (don't set to null, do not re-build every batch instead persistent w stable identities)\r\n- iterate forward instead of backward (ListHashSet is slower backward, + has RemoveUnordered so iterating backward to delete is not really needed)\r\n- skip IsUnityNull checks that's no longer needed",
+    "user": "Maverick"
+  },
+  {
     "id": 707828,
     "branch": "main/fix_client_sail_wind",
     "changeset": "166688",
@@ -1406,61 +1422,5 @@
     "created": "2026-09-30T20:19:34",
     "message": "Fix medieval doors not counting as closed for base occlusion (they were prefab variants not straight skins)",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 706267,
-    "branch": "main/vcc",
-    "changeset": "166421",
-    "created": "2026-09-30T20:10:36",
-    "message": "Some fixes/tweaks I found when playtesting earlier today, now I kinda have internet back.",
-    "user": "Adam W"
-  },
-  {
-    "id": 706260,
-    "branch": "main/netmsg_loadmap",
-    "changeset": "166419",
-    "created": "2026-09-30T19:29:48",
-    "message": "Bugfix(editor): fix net id desync after reloadmap\r\nTests: threw a rock after reloadmap - no desync errors",
-    "user": "Daniel P"
-  },
-  {
-    "id": 706258,
-    "branch": "main/painting_fixes",
-    "changeset": "166418",
-    "created": "2026-09-30T19:13:39",
-    "message": "remove toggle option for neutral light, it's stuck on in rrp for now",
-    "user": "ElliotH"
-  },
-  {
-    "id": 706252,
-    "branch": "main/automated_testing",
-    "changeset": "166416",
-    "created": "2026-09-30T18:51:35",
-    "message": "Big test description pass",
-    "user": "Flavien"
-  },
-  {
-    "id": 706249,
-    "branch": "main/automated_testing",
-    "changeset": "166415",
-    "created": "2026-09-30T18:34:24",
-    "message": "Removed all the useless TestTimeout attributes, tests already have a 30s default timeout",
-    "user": "Flavien"
-  },
-  {
-    "id": 706243,
-    "branch": "main/procgen_optim",
-    "changeset": "166414",
-    "created": "2026-09-30T18:20:36",
-    "message": "made costal cliffs take 2s instead of 34s by adding caching to the recursive search (maxed around 400KB memory at max)\r\n- falls back to recursive if the cache misses",
-    "user": "Grigler"
-  },
-  {
-    "id": 706241,
-    "branch": "main/netmsg_loadmap",
-    "changeset": "166413",
-    "created": "2026-09-30T18:19:24",
-    "message": "Bugfix: don't preserve RustNavigation across reload as it'll be created by GameSetup\r\nTests: reloadmap didn't generate errors",
-    "user": "Daniel P"
   }
 ]
