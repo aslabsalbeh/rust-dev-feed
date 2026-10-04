@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sun, 04 Oct 2026 00:17:30 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 02:18:04 -0400</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Oct 03</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -50,41 +50,32 @@
     <item>
       <title>Rust Development Updates — Oct 01</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;89 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;85 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Input &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Controls &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706584"&gt;Fixed continuous input failures caused by mis‑detected Steam input at startup.&lt;/li&gt;
-&lt;li data-rust-commits="706511"&gt;Fixed gamepad cursor state handling.&lt;/li&gt;
-&lt;li data-rust-commits="706406"&gt;Sleeping bag placement range guide now updates correctly when its configuration values change.&lt;/li&gt;
-&lt;li data-rust-commits="706334"&gt;Pie menu now correctly updates option names and descriptions, removing stale placeholder text.&lt;/li&gt;
+&lt;li data-rust-commits="706584,706511"&gt;Input reliability improvements: Steam input startup issue fixed and gamepad cursor handling corrected.&lt;/li&gt;
+&lt;li data-rust-commits="706478,706406"&gt;Quick‑join menu now reflects changes instantly, and sleeping bag placement range indicator updates for all players when the range setting changes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Animals&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706522,706520,706503,706485,706443,706423"&gt;Improved livestock behavior: reduced clipping when leading multiple animals or at troughs, prevented attacks on players inside vehicles, fixed collisions with travelling vendors, resolved various bull and ram issues (head‑butting, charging glitches, animation errors), and stopped cows from sliding unexpectedly. Livestock also can no longer be damaged inside safe zones.&lt;/li&gt;
-&lt;li data-rust-commits="706397"&gt;Jungle plants now receive proper groundwater, fixing the previous lack of water for terrain‑placed flora.&lt;/li&gt;
+&lt;li data-rust-commits="706566,706482,706506"&gt;Water jug re‑added to Items, making it recyclable and storable in fridges/minifridges; biofuel generator placement no longer snaps backwards; crash when loading code‑locks resolved.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706515"&gt;Fixed rifle orientation while sprinting and added sprint speed modifiers to specific rifles (med, jungle, diver AKs).&lt;/li&gt;
-&lt;li data-rust-commits="706494"&gt;Minicrossbow now plays only the necessary reload animation during partial reloads in 3‑person mode.&lt;/li&gt;
+&lt;li data-rust-commits="706520,706423,706485,706522,706443"&gt;Livestock no longer attack players in vehicles and are safe from damage inside safe zones; AI overhauled: bulls stop unreachable headbutts, rams aim and animate headbutts correctly with procedural look‑at, clipping reduced when leading groups and at troughs, and a fix reduces unexpected cow sliding.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Structures &amp;amp; Interaction&lt;/h3&gt;
+&lt;h3&gt;Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706506"&gt;Fixed a potential crash caused by a NullReferenceException in lock loading logic.&lt;/li&gt;
-&lt;li data-rust-commits="706482"&gt;Corrected biofuel generator placement so it no longer snaps backwards when placed.&lt;/li&gt;
+&lt;li data-rust-commits="706515,706494"&gt;Rifles now maintain correct orientation while sprinting and receive a sprint speed boost for specific models (med, jungle, diver AKs); minicrossbow reload animation now plays partial reload in third‑person as intended.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;DLC Content&lt;/h3&gt;
+&lt;h3&gt;New Content &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706450"&gt;Added the electronic chessboard DLC, including split game model, chess and checkers pieces, and updated deployable prefab.&lt;/li&gt;
+&lt;li data-rust-commits="706450,706397"&gt;Electronic chessboard added as a deployable interactive item; jungle plants now receive proper groundwater, restoring normal water levels for terrain‑placed flora.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="706566"&gt;Water jugs are now classified as Items, restoring the ability to recycle them and allowing storage in fridges and minifridges.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Quality of Life&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="706478"&gt;The quick join menu now correctly refreshes, ensuring players see up‑to‑date server listings.&lt;/li&gt;
+&lt;li data-rust-commits="706503"&gt;Lambs and calves no longer block travelling vendors, keeping vendor stalls clear for players.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-01</guid>
