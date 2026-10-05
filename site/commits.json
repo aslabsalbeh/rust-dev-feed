@@ -1,5 +1,53 @@
 [
   {
+    "id": 707940,
+    "branch": "main/map_optims",
+    "changeset": "166730",
+    "created": "2026-10-05T13:55:12",
+    "message": "~When opening the map, only rebuild the mission provider states when they changed, saves ~100ms when opening the map on my machine",
+    "user": "Flavien"
+  },
+  {
+    "id": 707939,
+    "branch": "main/Livestock_animals",
+    "changeset": "166729",
+    "created": "2026-10-05T13:33:53",
+    "message": "Fix broken test",
+    "user": "Maverick"
+  },
+  {
+    "id": 707935,
+    "branch": "main/lookatboat_optim",
+    "changeset": "166726",
+    "created": "2026-10-05T12:51:32",
+    "message": "Cache LookAtBoatBuildingBlock action so it doesnt allocate every frame",
+    "user": "Flavien"
+  },
+  {
+    "id": 707934,
+    "branch": "main",
+    "changeset": "166725",
+    "created": "2026-10-05T12:40:27",
+    "message": "~Added a log in the console when you're trying to connect to a server with Disable Game UI enabled",
+    "user": "Flavien"
+  },
+  {
+    "id": 707933,
+    "branch": "main/Livestock_animals",
+    "changeset": "166724",
+    "created": "2026-10-05T12:36:29",
+    "message": "Rework livestock personal space\r\n- free range cows stop reproducing even if fully bonded when herd reach a cap\r\n- indoor / pen cows, navmesh flood fill to get their exact area in m2, and derive the need directly off that, so that all cows shows the same thing and it's stable / reacts directly to players doing building changes (it's also cheaper that what we are doing now, as we don't need to re-query just check the cache)\r\n- this gives fast feedback and stays stable over time, so players get a better idea of if something they are doing is working or not",
+    "user": "Maverick"
+  },
+  {
+    "id": 707932,
+    "branch": "main",
+    "changeset": "166723",
+    "created": "2026-10-05T12:36:02",
+    "message": "~InvokeHandler use cached method name for profiler samples, stops ~1KB/frame of string allocs in debug builds",
+    "user": "Flavien"
+  },
+  {
     "id": 707920,
     "branch": "main/food_crafting_fix",
     "changeset": "166716",
@@ -438,101 +486,5 @@
     "created": "2026-10-02T14:18:18",
     "message": "LocalPlayerTestFixture gets some nice helper methods\r\nOre tests cleaned up",
     "user": "Flavien"
-  },
-  {
-    "id": 707734,
-    "branch": "main/tests_merge",
-    "changeset": "166639",
-    "created": "2026-10-02T14:09:33",
-    "message": "Test list, cleanup",
-    "user": "Flavien"
-  },
-  {
-    "id": 707728,
-    "branch": "▌▌█▋▅▍▆▌▅▆█▆▄▊▄▇▆▆▆▆▄▋",
-    "changeset": "▅▌▍▆▉▌",
-    "created": "2026-10-02T13:47:36",
-    "message": "▋ ▇▅▄▇▉▅▉ ▋▋▅▍▍ ▊▊▍▋ ▌▅▄▄█▉▌ ▄▅ ▊▉▆▊ ▊▌▊▅▅▆▄▅▅▄██▇▊▉▇ ▉▊▋▅▌▄▆▋▇ ▆▌ ▆▄▅ ▌▉▇▅▅ ▆▆▌▉▇▍ ▉▋▄▊ ▉▅▍▇▋ ▊▄ ▌▄▌▉▉▍",
-    "user": "ElliotH"
-  },
-  {
-    "id": 707726,
-    "branch": "main/halloween2026DLC",
-    "changeset": "166636",
-    "created": "2026-10-02T13:45:05",
-    "message": "fixed halloween string lights not being deployable",
-    "user": "matt.i"
-  },
-  {
-    "id": 707725,
-    "branch": "main/halloween2026DLC",
-    "changeset": "166635",
-    "created": "2026-10-02T13:43:30",
-    "message": "Halloween Wallpapers - Final textures, icons",
-    "user": "alex.m"
-  },
-  {
-    "id": 707724,
-    "branch": "main/fix_sentry_modded_tag",
-    "changeset": "166634",
-    "created": "2026-10-02T13:42:54",
-    "message": "Fix modded servers crashing before fully starting not being tagged as modded",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707721,
-    "branch": "main/weapon_refresh_nailgun",
-    "changeset": "166633",
-    "created": "2026-10-02T13:37:39",
-    "message": "- added nailgun mag mesh\r\n-  added mag drop effect\r\n- added events-only clip on a new w_nailgun Animator, no rig needed\r\n- set up hide/show mag",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 707718,
-    "branch": "main",
-    "changeset": "166630",
-    "created": "2026-10-02T13:26:09",
-    "message": "~cherrypicking 165250",
-    "user": "Nick.H"
-  },
-  {
-    "id": 707717,
-    "branch": "main",
-    "changeset": "166629",
-    "created": "2026-10-02T13:24:34",
-    "message": "Merged to main > Fix livestock breeding out of control in the wild:\r\n- Full bond is now 15min not 5min, reproduction can't happen before (can still lead from 5min like before)\r\n- Curious cows don't bond twice as fast anymore\r\n- If a calf is born in the wild somehow, it will age as soon as it's born, and won't be able to reproduce (eg won't be born bonded like the mom)\r\n- Server cap on livestock population of 300 \"livestock.maxPerSpecies\"\r\n- Command to kill off excess livestock, prioritizing not tame > far from TCs > bad genes / old to avoid hurting farms, \"livestock.cullexcess\"\r\n- Add \"livestock.breedOnlyAtHome\" convar, 0 by default, 1 means livestock can only breed near their top bonded player TC",
-    "user": "Maverick"
-  },
-  {
-    "id": 707716,
-    "branch": "main/procgen_optim",
-    "changeset": "166627",
-    "created": "2026-10-02T13:22:35",
-    "message": "short test to force the extremes of DecorComponents to ensure the bounds is correct with future changes\r\n- if this broke silently rocks would just fail to spawn or spawn where they shouldn't",
-    "user": "Grigler"
-  },
-  {
-    "id": 707713,
-    "branch": "main",
-    "changeset": "166625",
-    "created": "2026-10-02T13:11:07",
-    "message": "~cherrypicking 166617, 166623",
-    "user": "Rin"
-  },
-  {
-    "id": 707711,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166624",
-    "created": "2026-10-02T13:06:34",
-    "message": "Fix view model being blurred with the background after disconnect/reconnect",
-    "user": "Felix"
-  },
-  {
-    "id": 707705,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166623",
-    "created": "2026-10-02T12:28:30",
-    "message": "Reverted change that fully disabled water when in underground or underwater labs environment volume, as this was casuing the water to disappear in areas where it shouldn't have",
-    "user": "aidan.m"
   }
 ]
