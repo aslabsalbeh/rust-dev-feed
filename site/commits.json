@@ -1,5 +1,181 @@
 [
   {
+    "id": 708053,
+    "branch": "main/itemcrafttask_pooling",
+    "changeset": "166799",
+    "created": "2026-10-05T21:55:57",
+    "message": "Make ItemCraftTask properly pooled so its not allocating on every craft",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708052,
+    "branch": "main",
+    "changeset": "166798",
+    "created": "2026-10-05T21:47:34",
+    "message": "Fix broken livestock sleep test",
+    "user": "Maverick"
+  },
+  {
+    "id": 708050,
+    "branch": "main/lightlod_optims",
+    "changeset": "166796",
+    "created": "2026-10-05T21:35:19",
+    "message": "Cache DistanceFlareLOD fading action",
+    "user": "Flavien"
+  },
+  {
+    "id": 708049,
+    "branch": "main/lightlod_optims",
+    "changeset": "166795",
+    "created": "2026-10-05T21:30:35",
+    "message": "Fixed shadowlights convar handler stacking up across editor play sessions",
+    "user": "Flavien"
+  },
+  {
+    "id": 708044,
+    "branch": "main/lightlod_optims",
+    "changeset": "166794",
+    "created": "2026-10-05T21:25:15",
+    "message": "Cache AmbientLightLOD fading action",
+    "user": "Flavien"
+  },
+  {
+    "id": 708045,
+    "branch": "main/lightlod_optims",
+    "changeset": "166793",
+    "created": "2026-10-05T21:24:56",
+    "message": "Fixed LightLOD.Awake and OnDestroy allocating\r\nThe shadow caching convar callback was subscribed per light, every light spawn and destroy copied the whole handler list (had 1500 lights, 10KB every time)",
+    "user": "Flavien"
+  },
+  {
+    "id": 708042,
+    "branch": "main",
+    "changeset": "166791",
+    "created": "2026-10-05T21:11:08",
+    "message": "~merge fro ent_scale_fix",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708041,
+    "branch": "▇█▄▉",
+    "changeset": "▍▍▉▆▉▅",
+    "created": "2026-10-05T21:09:51",
+    "message": "▆▆ ▍▍▊▄█ ▉█▅▋ ▇▅▉▋█▇▍▊▆▊▆█▆▋█▋▉▊▊▅▆▉▄█▌▇█▋▌▋",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708034,
+    "branch": "main/softcore_tc_limit",
+    "changeset": "166786",
+    "created": "2026-10-05T20:45:35",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708033,
+    "branch": "main/softcore_tc_limit",
+    "changeset": "166784",
+    "created": "2026-10-05T20:44:56",
+    "message": "Implement maximum amount of TCs placed IN SOFTCORE ONLY\n- maximum 3 for now\n- follows how the \"maximum sleeping bag\" system works with the amount shown on the icon & toast when you reach the limit",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708031,
+    "branch": "main",
+    "changeset": "166783",
+    "created": "2026-10-05T20:31:48",
+    "message": "biofuel_idle_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 708030,
+    "branch": "main/biofuel_idle_fix",
+    "changeset": "166782",
+    "created": "2026-10-05T20:31:15",
+    "message": "Only consume electricity when actively generating fuel",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 708028,
+    "branch": "▍▌▍▍",
+    "changeset": "▆█▉▋▍▋",
+    "created": "2026-10-05T20:23:53",
+    "message": "██ ▌▅▋▊▉ ▄▌▇▅▅▆ ▋▊ ▇▌▌▆▆▌ ▄▆▊█▅▊█▄ ▆▇▌ ▇▊▌▆▉▊ ██▋ ▋▄▉▋▉▉▇▄▌▊▆▆ ▌█▇▅ ▅▊▊▄ ▅▍▊▄▆▌ ▉▌▇▋▆▇▌█ ▅▄▋▍ ▍▉▆ █▆▉▅ ▉█▆▉ ▅▇▍▌▇▊▌▇▉█▊▄█ ▊▄█▌█▇ ▆▆█▅ ▊▅▌▊▋ ▄▍▋ ▇▆▇▆▇▆▉█▌ ▆▋ ▅█▆▉▋▋▅▅▆ ▄▅▍▆ ▋▆▇ ▋▉ ▍▄▆▊ ▋▇▋▄█ ▊▅▇▍ █▍▉ ▆▊ █▉▄▌ ▉▍▊▊▆▆▅█▅",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708026,
+    "branch": "main/Livestock_animals/livestock_hotfixes",
+    "changeset": "166780",
+    "created": "2026-10-05T20:07:21",
+    "message": "Fix livestock age regressing when calf grows up into adult, and age being more and more incorrect over time because of the random variance",
+    "user": "Maverick"
+  },
+  {
+    "id": 708013,
+    "branch": "main/restore_multiline_console",
+    "changeset": "166771",
+    "created": "2026-10-05T19:43:10",
+    "message": "Bring back multiline input support to the console",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 708005,
+    "branch": "main/drinkingpoint_optims",
+    "changeset": "166769",
+    "created": "2026-10-05T18:57:08",
+    "message": "Fixed UpdateWaterDrinkingPoint running when not needed:\r\n- now runs in the entity looking at tick every 0.1s\r\n- skipped when mounted, or when move speed is above drinkMovementSpeed\r\n\r\nIts a trace so it wasnt scaling well in big bases",
+    "user": "Flavien"
+  },
+  {
+    "id": 708001,
+    "branch": "main/map_optims",
+    "changeset": "166767",
+    "created": "2026-10-05T18:40:49",
+    "message": "Cache vending machines and skip rebuilding all their markers when opening the map\r\nSaves around 80ms on a server with 170 vending machines",
+    "user": "Flavien"
+  },
+  {
+    "id": 707999,
+    "branch": "main/fix_apartment_teammate_door",
+    "changeset": "166765",
+    "created": "2026-10-05T18:33:49",
+    "message": "Update test list",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 707998,
+    "branch": "▊▉▆▆█▉▌▋▆▆▉▌▌▌▋▄▆▍▆▍█▍",
+    "changeset": "▊▅▇█▊█",
+    "created": "2026-10-05T18:30:57",
+    "message": "▌▊▌▋▆█ ▅▍▅▇ ▄▋▊▅",
+    "user": "Raul"
+  },
+  {
+    "id": 707997,
+    "branch": "main/qol_loadout_inventory_preview",
+    "changeset": "166763",
+    "created": "2026-10-05T18:25:34",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 707992,
+    "branch": "▄▋▍▌▌▌▇▌▉▍▅▇▍▊▊▋",
+    "changeset": "█▍▍▌▄▌",
+    "created": "2026-10-05T18:15:45",
+    "message": "▊▌▊██▆█▍ █▅▊▄█▄█ ▌▋▉▆▆▄ ▆▅▅▍ ▍ ▊▅▅▆▄▇▌ ▋▇▋▋▄▇ ▍▄▋██▋ ▌▇▋▉▄ █▄▅▉▅█▊▉█▉▉ ▆▌▅▄▆▆▊ ▋▋▅▊▆▆▅ ▇▌▋▇▅▊▌ ▊▄▋▄▆▇▉▍ ▄▅▊ ▋█▋▍▆█▉▊▊",
+    "user": "mauro.a"
+  },
+  {
+    "id": 707989,
+    "branch": "main",
+    "changeset": "166758",
+    "created": "2026-10-05T18:10:40",
+    "message": "~ merge from fix_jungle_plant_water -> main",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 707986,
     "branch": "main",
     "changeset": "166756",
@@ -374,45 +550,5 @@
     "created": "2026-10-02T22:50:14",
     "message": "Gun tests",
     "user": "Flavien"
-  },
-  {
-    "id": 707815,
-    "branch": "main/underground_train_network_update",
-    "changeset": "166684",
-    "created": "2026-10-02T21:52:56",
-    "message": "Breakroom progress",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 707814,
-    "branch": "main/automated_testing/client",
-    "changeset": "166683",
-    "created": "2026-10-02T21:40:14",
-    "message": "Run is cancelled when the client is disconnected\r\nClient can use fixture convars\r\nMore client base combat entity tests",
-    "user": "Flavien"
-  },
-  {
-    "id": 707805,
-    "branch": "▇▌▉▉▉▄▆▍▄▇▄▇▊▇▄▉▉▅▍▋▄█",
-    "changeset": "█▊█▇▍▉",
-    "created": "2026-10-02T19:29:47",
-    "message": "▍ ▍▍▉▄▋ ▊ ▅▆▅▌▄▍▋▉▄▅▊▆▌ ▆▇▉▋ ▊▊▌▆█▊▄ ▅▊▅▄▊▌▊▇▌▉▌█▇▅▅ ▊▌▆▇▋▋▆ █▋ ▉▇▅▌▇▍▇ ▊▊▅▋█▌▋ ▍▆█▇█▇█▍▆▊ █▍▄▄▅▌▆▌▆ ▇█▆▊▋ ▍▌▅▅ ▋▆█▋▌▅▇▅▆█ ▌▄▇▊▅▉██ ▍▇▉▋▌▌ ▅█▇ ▋▉▋█▉▅ ▆▆▄▅▋▅ ▌▋▍▉▌ ▄▅▄▌▄▄▇ █▍▌▉▍▇▊▉",
-    "user": "max.p"
-  },
-  {
-    "id": 707801,
-    "branch": "▇▄█▅",
-    "changeset": "▇▄▄▍▊▉",
-    "created": "2026-10-02T18:40:11",
-    "message": "▌▌ ▅▊▆▇▌ ▅▋▊▌▍▅ ▊▋ ▉█▅▅▇ ▋█▍▇▆▅█▌▇█ ▉▄▄▄▊█ █▍▊▉█▋ ▅▌▄▊▇ ▋▌ ▌▆▍▇ ▊▍ █▍▋█▅▌▄ ▋▇▅▌▌▅▄ ▇▄▉ ▉▉▌▄▆ ▄▇▊ ▋▊▍▉▅▊▋█▄▅ ▉▋█ █▊▇▍▋▋▆ ▋▅▋▉▋▋█▋▋▍ ▅▌█▌▇ ▆▄ ▆▆ █▄█ ▅▍▋▇▄▄▍█▄ ▉▆▅▌▊ ▌█ ▋▇ ▅▍▊ ▅▍▊ ▆▊ ▄█▇▊█▆ ▅▆▄▌▋█▋▇▌ ▆▌▊▉ ▇▍▋▇▊█▍ ▇▄▋▄▍▄▄",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707799,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166678",
-    "created": "2026-10-02T18:26:33",
-    "message": "fix vclouds still disappearing in cargo hold in brp",
-    "user": "Brian"
   }
 ]
