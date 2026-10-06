@@ -1,16 +1,82 @@
 {
   "2026-10-06": {
-    "commit_count": 29,
-    "relevant_commit_count": 20,
-    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225",
+    "commit_count": 50,
+    "relevant_commit_count": 30,
+    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Monuments",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Monument markers in the Deep Sea layer no longer disappear due to a bug.",
+            "text": "Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.",
+            "commit_ids": [
+              708250,
+              708227
+            ]
+          },
+          {
+            "text": "Adjusted boar flee behavior: lowered health threshold from 75% to 30%.",
+            "commit_ids": [
+              708229
+            ]
+          },
+          {
+            "text": "Fixed cow pathing to prevent clipping and improved feeding at troughs and grass.",
+            "commit_ids": [
+              708190,
+              708187
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Character Customization",
+        "items": [
+          {
+            "text": "Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.",
+            "commit_ids": [
+              708247,
+              708223
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Controls & UI",
+        "items": [
+          {
+            "text": "Moved crafting action to D‑pad down across all control schemes.",
+            "commit_ids": [
+              708235
+            ]
+          },
+          {
+            "text": "Fixed key suppression timing bug, improving input responsiveness.",
+            "commit_ids": [
+              708230
+            ]
+          },
+          {
+            "text": "Run toggle now persists correctly between movement sprints.",
+            "commit_ids": [
+              708193
+            ]
+          },
+          {
+            "text": "Fixed menu drift caused by deadzone handling.",
+            "commit_ids": [
+              708225
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Map & Markers",
+        "items": [
+          {
+            "text": "Restored deep‑sea monument markers and fixed shop marker cache corruption on disconnect/reconnect.",
             "commit_ids": [
               708215
             ]
@@ -18,143 +84,85 @@
         ]
       },
       {
-        "title": "Combat & Explosives",
+        "title": "Weapons & Tools",
         "items": [
           {
-            "text": "Helicopter flares now save correctly and won’t stop working after multiple uses.",
-            "commit_ids": [
-              708152,
-              708156
-            ]
-          },
-          {
-            "text": "Bee grenades no longer appear white when throw prediction is enabled.",
+            "text": "Bee grenade no longer appears white when throw prediction is enabled.",
             "commit_ids": [
               708201
             ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Farming",
-        "items": [
-          {
-            "text": "Cows no longer select destinations that cause them to clip into each other.",
-            "commit_ids": [
-              708190
-            ]
           },
           {
-            "text": "Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.",
+            "text": "Helicopter flares now work correctly after saving/loading, ensuring functional flare deployment.",
             "commit_ids": [
-              708187
+              708156,
+              708152
             ]
           }
         ]
       },
       {
-        "title": "UI & Stability",
+        "title": "Stability",
         "items": [
           {
-            "text": "Fixed menu drift that could misalign UI elements after opening menus.",
-            "commit_ids": [
-              708225
-            ]
-          },
-          {
-            "text": "Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.",
-            "commit_ids": [
-              708223
-            ]
-          },
-          {
-            "text": "Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.",
+            "text": "Fixed NaN vertex lighting issue that could cause crashes.",
             "commit_ids": [
               708170
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Performance",
-        "items": [
-          {
-            "text": "Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.",
-            "commit_ids": [
-              708168
-            ]
-          },
-          {
-            "text": "Team UI no longer refilters player names on each update, eliminating periodic stutter for squads.",
-            "commit_ids": [
-              708164
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Monuments\n- Monument markers in the Deep Sea layer no longer disappear due to a bug.\n\n### Combat & Explosives\n- Helicopter flares now save correctly and won’t stop working after multiple uses.\n- Bee grenades no longer appear white when throw prediction is enabled.\n\n### Animals & Farming\n- Cows no longer select destinations that cause them to clip into each other.\n- Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.\n\n### UI & Stability\n- Fixed menu drift that could misalign UI elements after opening menus.\n- Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.\n- Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.\n\n### Performance\n- Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.\n- Team UI no longer refilters player names on each update, eliminating periodic stutter for squads.",
+    "summary": "### NPC & AI\n- Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.\n- Adjusted boar flee behavior: lowered health threshold from 75% to 30%.\n- Fixed cow pathing to prevent clipping and improved feeding at troughs and grass.\n\n### Character Customization\n- Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.\n\n### Controls & UI\n- Moved crafting action to D‑pad down across all control schemes.\n- Fixed key suppression timing bug, improving input responsiveness.\n- Run toggle now persists correctly between movement sprints.\n- Fixed menu drift caused by deadzone handling.\n\n### Map & Markers\n- Restored deep‑sea monument markers and fixed shop marker cache corruption on disconnect/reconnect.\n\n### Weapons & Tools\n- Bee grenade no longer appears white when throw prediction is enabled.\n- Helicopter flares now work correctly after saving/loading, ensuring functional flare deployment.\n\n### Stability\n- Fixed NaN vertex lighting issue that could cause crashes.",
     "new_items": [
       {
-        "text": "Monument markers in the Deep Sea layer no longer disappear due to a bug.",
+        "text": "Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.",
         "commit_ids": [
-          708215
+          708250,
+          708227
         ],
-        "section": "World & Monuments"
+        "section": "NPC & AI"
       },
       {
-        "text": "Bee grenades no longer appear white when throw prediction is enabled.",
+        "text": "Adjusted boar flee behavior: lowered health threshold from 75% to 30%.",
         "commit_ids": [
-          708201
+          708229
         ],
-        "section": "Combat & Explosives"
+        "section": "NPC & AI"
       },
       {
-        "text": "Cows no longer select destinations that cause them to clip into each other.",
+        "text": "Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.",
         "commit_ids": [
-          708190
+          708247,
+          708223
         ],
-        "section": "Animals & Farming"
+        "section": "Character Customization"
       },
       {
-        "text": "Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.",
+        "text": "Moved crafting action to D‑pad down across all control schemes.",
         "commit_ids": [
-          708187
+          708235
         ],
-        "section": "Animals & Farming"
+        "section": "Controls & UI"
       },
       {
-        "text": "Fixed menu drift that could misalign UI elements after opening menus.",
+        "text": "Fixed key suppression timing bug, improving input responsiveness.",
+        "commit_ids": [
+          708230
+        ],
+        "section": "Controls & UI"
+      },
+      {
+        "text": "Fixed menu drift caused by deadzone handling.",
         "commit_ids": [
           708225
         ],
-        "section": "UI & Stability"
-      },
-      {
-        "text": "Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.",
-        "commit_ids": [
-          708223
-        ],
-        "section": "UI & Stability"
-      },
-      {
-        "text": "Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.",
-        "commit_ids": [
-          708170
-        ],
-        "section": "UI & Stability"
-      },
-      {
-        "text": "Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.",
-        "commit_ids": [
-          708168
-        ],
-        "section": "Performance"
+        "section": "Controls & UI"
       }
     ],
     "new_relevant_count": 8,
-    "new_summary": "- Monument markers in the Deep Sea layer no longer disappear due to a bug.\n- Bee grenades no longer appear white when throw prediction is enabled.\n- Cows no longer select destinations that cause them to clip into each other.\n- Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.\n- Fixed menu drift that could misalign UI elements after opening menus.\n- Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.\n- Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.\n- Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag."
+    "new_summary": "- Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.\n- Adjusted boar flee behavior: lowered health threshold from 75% to 30%.\n- Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.\n- Moved crafting action to D‑pad down across all control schemes.\n- Fixed key suppression timing bug, improving input responsiveness.\n- Fixed menu drift caused by deadzone handling."
   },
   "2026-10-05": {
     "commit_count": 84,

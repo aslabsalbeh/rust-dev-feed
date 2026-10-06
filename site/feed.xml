@@ -6,52 +6,55 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 06 Oct 2026 08:17:26 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 10:18:33 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;29 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;50 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708215"&gt;Monument markers in the Deep Sea layer no longer disappear due to a bug.&lt;/li&gt;
-&lt;li data-rust-commits="708201"&gt;Bee grenades no longer appear white when throw prediction is enabled.&lt;/li&gt;
-&lt;li data-rust-commits="708190"&gt;Cows no longer select destinations that cause them to clip into each other.&lt;/li&gt;
-&lt;li data-rust-commits="708187"&gt;Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.&lt;/li&gt;
-&lt;li data-rust-commits="708225"&gt;Fixed menu drift that could misalign UI elements after opening menus.&lt;/li&gt;
-&lt;li data-rust-commits="708223"&gt;Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.&lt;/li&gt;
-&lt;li data-rust-commits="708170"&gt;Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.&lt;/li&gt;
-&lt;li data-rust-commits="708168"&gt;Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.&lt;/li&gt;
+&lt;li data-rust-commits="708250,708227"&gt;Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.&lt;/li&gt;
+&lt;li data-rust-commits="708229"&gt;Adjusted boar flee behavior: lowered health threshold from 75% to 30%.&lt;/li&gt;
+&lt;li data-rust-commits="708247,708223"&gt;Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.&lt;/li&gt;
+&lt;li data-rust-commits="708235"&gt;Moved crafting action to D‑pad down across all control schemes.&lt;/li&gt;
+&lt;li data-rust-commits="708230"&gt;Fixed key suppression timing bug, improving input responsiveness.&lt;/li&gt;
+&lt;li data-rust-commits="708225"&gt;Fixed menu drift caused by deadzone handling.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;World &amp;amp; Monuments&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708215"&gt;Monument markers in the Deep Sea layer no longer disappear due to a bug.&lt;/li&gt;
+&lt;li data-rust-commits="708250,708227"&gt;Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.&lt;/li&gt;
+&lt;li data-rust-commits="708229"&gt;Adjusted boar flee behavior: lowered health threshold from 75% to 30%.&lt;/li&gt;
+&lt;li data-rust-commits="708190,708187"&gt;Fixed cow pathing to prevent clipping and improved feeding at troughs and grass.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Explosives&lt;/h3&gt;
+&lt;h3&gt;Character Customization&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708152,708156"&gt;Helicopter flares now save correctly and won’t stop working after multiple uses.&lt;/li&gt;
-&lt;li data-rust-commits="708201"&gt;Bee grenades no longer appear white when throw prediction is enabled.&lt;/li&gt;
+&lt;li data-rust-commits="708247,708223"&gt;Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; Farming&lt;/h3&gt;
+&lt;h3&gt;Controls &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708190"&gt;Cows no longer select destinations that cause them to clip into each other.&lt;/li&gt;
-&lt;li data-rust-commits="708187"&gt;Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.&lt;/li&gt;
+&lt;li data-rust-commits="708235"&gt;Moved crafting action to D‑pad down across all control schemes.&lt;/li&gt;
+&lt;li data-rust-commits="708230"&gt;Fixed key suppression timing bug, improving input responsiveness.&lt;/li&gt;
+&lt;li data-rust-commits="708193"&gt;Run toggle now persists correctly between movement sprints.&lt;/li&gt;
+&lt;li data-rust-commits="708225"&gt;Fixed menu drift caused by deadzone handling.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Stability&lt;/h3&gt;
+&lt;h3&gt;Map &amp;amp; Markers&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708225"&gt;Fixed menu drift that could misalign UI elements after opening menus.&lt;/li&gt;
-&lt;li data-rust-commits="708223"&gt;Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.&lt;/li&gt;
-&lt;li data-rust-commits="708170"&gt;Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.&lt;/li&gt;
+&lt;li data-rust-commits="708215"&gt;Restored deep‑sea monument markers and fixed shop marker cache corruption on disconnect/reconnect.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Performance&lt;/h3&gt;
+&lt;h3&gt;Weapons &amp;amp; Tools&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708168"&gt;Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.&lt;/li&gt;
-&lt;li data-rust-commits="708164"&gt;Team UI no longer refilters player names on each update, eliminating periodic stutter for squads.&lt;/li&gt;
+&lt;li data-rust-commits="708201"&gt;Bee grenade no longer appears white when throw prediction is enabled.&lt;/li&gt;
+&lt;li data-rust-commits="708156,708152"&gt;Helicopter flares now work correctly after saving/loading, ensuring functional flare deployment.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="708170"&gt;Fixed NaN vertex lighting issue that could cause crashes.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-06</guid>
-      <pubDate>Tue, 06 Oct 2026 08:17:26 -0400</pubDate>
+      <pubDate>Tue, 06 Oct 2026 10:18:33 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 05</title>
