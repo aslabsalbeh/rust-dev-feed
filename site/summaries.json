@@ -1,16 +1,16 @@
 {
   "2026-10-05": {
-    "commit_count": 51,
-    "relevant_commit_count": 30,
-    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053",
+    "commit_count": 64,
+    "relevant_commit_count": 37,
+    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053,708054,708065,708068,708078,708079,708084,708091",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building",
+        "title": "Base & Infrastructure",
         "items": [
           {
-            "text": "Softcore servers now limit the number of placed Tool Cupboards to three; you’ll receive an icon and toast notification when the limit is reached.",
+            "text": "Softcore servers now limit players to three Tool Cupboards, with an on‑screen icon and toast notification when the limit is reached.",
             "commit_ids": [
               708033
             ]
@@ -18,34 +18,33 @@
         ]
       },
       {
-        "title": "Power & Utilities",
+        "title": "Power & Fuel",
         "items": [
           {
-            "text": "Biofuel generators only consume electricity while actively producing fuel, eliminating idle power drain.",
+            "text": "Biofuel generators only draw electricity while actively producing fuel, eliminating idle power drain.",
             "commit_ids": [
-              708030,
-              708031
+              708030
             ]
           }
         ]
       },
       {
-        "title": "Livestock & Economy",
+        "title": "Livestock & Trading",
         "items": [
           {
-            "text": "Livestock no longer lose age progress when calves mature, fixing incorrect age regression.",
+            "text": "Livestock age now progresses correctly, fixing a regression that could make animals appear younger after maturing.",
             "commit_ids": [
               708026
             ]
           },
           {
-            "text": "Leash break distance increased from 7 m to 15 m, and livestock now display familiarity and gender by default.",
+            "text": "Lead rope now breaks at 15 m (up from 7 m), and animals display familiarity and gender by default.",
             "commit_ids": [
               707953
             ]
           },
           {
-            "text": "Selling bought or found animals to the livestock vendor now incurs a higher penalty, increased from 0.2 to 0.85.",
+            "text": "Selling previously bought or found animals to the livestock vendor now incurs an 85 % penalty, up from 20 %.",
             "commit_ids": [
               707918
             ]
@@ -53,10 +52,32 @@
         ]
       },
       {
-        "title": "Quality of Life",
+        "title": "Combat & Projectiles",
         "items": [
           {
-            "text": "Introduced a revamped character creator layout and added an underwear customization category, expanding player appearance options.",
+            "text": "Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering.",
+            "commit_ids": [
+              708078
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server & Authentication",
+        "items": [
+          {
+            "text": "The server now ignores redundant authentication messages after a player is already authenticated, avoiding unnecessary re‑auth rejections.",
+            "commit_ids": [
+              707966
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Added an underwear clothing category and refreshed the character creator layout, giving players more customization options.",
             "commit_ids": [
               707973
             ]
@@ -65,33 +86,18 @@
       }
     ],
     "status": "ok",
-    "summary": "### Base Building\n- Softcore servers now limit the number of placed Tool Cupboards to three; you’ll receive an icon and toast notification when the limit is reached.\n\n### Power & Utilities\n- Biofuel generators only consume electricity while actively producing fuel, eliminating idle power drain.\n\n### Livestock & Economy\n- Livestock no longer lose age progress when calves mature, fixing incorrect age regression.\n- Leash break distance increased from 7 m to 15 m, and livestock now display familiarity and gender by default.\n- Selling bought or found animals to the livestock vendor now incurs a higher penalty, increased from 0.2 to 0.85.\n\n### Quality of Life\n- Introduced a revamped character creator layout and added an underwear customization category, expanding player appearance options.",
+    "summary": "### Base & Infrastructure\n- Softcore servers now limit players to three Tool Cupboards, with an on‑screen icon and toast notification when the limit is reached.\n\n### Power & Fuel\n- Biofuel generators only draw electricity while actively producing fuel, eliminating idle power drain.\n\n### Livestock & Trading\n- Livestock age now progresses correctly, fixing a regression that could make animals appear younger after maturing.\n- Lead rope now breaks at 15 m (up from 7 m), and animals display familiarity and gender by default.\n- Selling previously bought or found animals to the livestock vendor now incurs an 85 % penalty, up from 20 %.\n\n### Combat & Projectiles\n- Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering.\n\n### Server & Authentication\n- The server now ignores redundant authentication messages after a player is already authenticated, avoiding unnecessary re‑auth rejections.\n\n### Gameplay & Balance\n- Added an underwear clothing category and refreshed the character creator layout, giving players more customization options.",
     "new_items": [
       {
-        "text": "Softcore servers now limit the number of placed Tool Cupboards to three; you’ll receive an icon and toast notification when the limit is reached.",
+        "text": "Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering.",
         "commit_ids": [
-          708033
+          708078
         ],
-        "section": "Base Building"
-      },
-      {
-        "text": "Biofuel generators only consume electricity while actively producing fuel, eliminating idle power drain.",
-        "commit_ids": [
-          708030,
-          708031
-        ],
-        "section": "Power & Utilities"
-      },
-      {
-        "text": "Livestock no longer lose age progress when calves mature, fixing incorrect age regression.",
-        "commit_ids": [
-          708026
-        ],
-        "section": "Livestock & Economy"
+        "section": "Combat & Projectiles"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Softcore servers now limit the number of placed Tool Cupboards to three; you’ll receive an icon and toast notification when the limit is reached.\n- Biofuel generators only consume electricity while actively producing fuel, eliminating idle power drain.\n- Livestock no longer lose age progress when calves mature, fixing incorrect age regression."
+    "new_relevant_count": 1,
+    "new_summary": "- Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering."
   },
   "2026-10-04": {
     "commit_count": 13,

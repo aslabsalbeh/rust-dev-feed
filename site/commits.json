@@ -1,5 +1,109 @@
 [
   {
+    "id": 708093,
+    "branch": "main/boateffects_optims",
+    "changeset": "166820",
+    "created": "2026-10-05T23:53:10",
+    "message": "Optimized MotorRowboat.Update, it has a slow water height check for its effects, around 0.10ms\r\n- culled by distance\r\n- skipped when stationnary for >3s",
+    "user": "Flavien"
+  },
+  {
+    "id": 708091,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166819",
+    "created": "2026-10-05T23:52:00",
+    "message": "Fix the server not clearing unused World Serialization maps\n- saves about 175MB on 4500 map",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708086,
+    "branch": "███▅",
+    "changeset": "▍▋▅▊▅▅",
+    "created": "2026-10-05T23:36:30",
+    "message": "▋█▇▉▍▇▉ ▅▄▋▌ █▅▍▆▉▆▌▌▊▉▇▄▍▅",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708084,
+    "branch": "main/dome_pump_mt_save_fix",
+    "changeset": "166813",
+    "created": "2026-10-05T23:31:03",
+    "message": "Fixed dome pump multi threaded saving issue",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708079,
+    "branch": "main/animalanimation_optims",
+    "changeset": "166811",
+    "created": "2026-10-05T22:59:31",
+    "message": "Fixed AnimalAnimation allocating 80 bytes for each footstep",
+    "user": "Flavien"
+  },
+  {
+    "id": 708078,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "166810",
+    "created": "2026-10-05T22:59:05",
+    "message": "Avoid alloc when cleaning up expired projectiles, fix projectiles leaking when baseplayer is destroyed",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708071,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "166809",
+    "created": "2026-10-05T22:32:07",
+    "message": "Remove planner linq when looking for sockets",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708068,
+    "branch": "main/character_customisation",
+    "changeset": "166807",
+    "created": "2026-10-05T22:28:13",
+    "message": "- Add RRP support\r\n- Fix various texture/icon errors\r\n- Minor Cleanup",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 708067,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "166806",
+    "created": "2026-10-05T22:27:48",
+    "message": "Avoid allocs when ticking hurt triggers",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708065,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "166805",
+    "created": "2026-10-05T22:25:27",
+    "message": "Fix linq every frame in cooking visuals",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708060,
+    "branch": "main/optimize_spawn_distribution",
+    "changeset": "166803",
+    "created": "2026-10-05T22:19:31",
+    "message": "Reduce memory usage of the server's SpawnDistributions by 750MB (780MB -> 40MB) and make it 3x faster to sample (2.1 us -> 0.7 us)\n- store in tiles of 16x16 values\n- 85% of the tiles are all zeros (fun fact)\n- tiles that are all the same value store as negative tile index so it can avoid looking up the tile (mainly all zeros)\n- deduplicate the remaining tiles (saves a little more)\n- palette packing on top for tiles that have mixed values (2 - 4 bits / value)\n- reduces server startup time from 4s -> 2.5s",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708059,
+    "branch": "▄▇█▉",
+    "changeset": "▅▊▊▇▇▌",
+    "created": "2026-10-05T22:13:54",
+    "message": "▊▉▉▋▋▋█ ▉ ▋▌▍ ▇▉▌▇▊▌ ▄▅ ▆▍▋▉ ▉▉▄▆▊▊▅ ▌▄ ▋█▋ ▊▆▋▋▄▉▇▋ ▄▄▌▅▌▄▍▆▆▌▅▊▍▍▍▆ ▋ ▉▌▍▉▍▍▉▄ ▅ ▋█▅▇▄▊▊▍ ██▋▍█▊ ▋▍▉▅▊▌▋▊▆▉▄▉▋█▆▄▅▆▄▊▇█▅▍▋█▍▄▉▉▉▋▄▅▆▉█▋▍▆█▄▆▉▆▉▍▅▋▇▇█▌▋▆▆▌▊█▅▌▋▄▊",
+    "user": "Flavien"
+  },
+  {
+    "id": 708054,
+    "branch": "main/texturestreaming_texturepropertiescache_fix",
+    "changeset": "166800",
+    "created": "2026-10-05T22:06:54",
+    "message": "Fixed TextureStreaming never filling its shader texture property cache, every belt swap was allocating all shader property names (18KB down to 1KB per swap)",
+    "user": "Flavien"
+  },
+  {
     "id": 708053,
     "branch": "main/itemcrafttask_pooling",
     "changeset": "166799",
@@ -534,21 +638,5 @@
     "created": "2026-10-03T03:18:53",
     "message": "Make sail wind behavior fully server sided\n- used to evaluate on both client & server so it could mismatch\n- client now just waits for server to send the flag\n- convar \"sailblockedupdateinterval\" to control the 5s polling the sail does to see if it's blocked (same interval as before)",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 707820,
-    "branch": "main/scrap_king_buildingskin_dlc",
-    "changeset": "166687",
-    "created": "2026-10-02T22:52:29",
-    "message": "scrap king - updated texture atlases, meshes",
-    "user": "Lain"
-  },
-  {
-    "id": 707819,
-    "branch": "main/automated_testing/client",
-    "changeset": "166686",
-    "created": "2026-10-02T22:50:14",
-    "message": "Gun tests",
-    "user": "Flavien"
   }
 ]
