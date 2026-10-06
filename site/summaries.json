@@ -1,27 +1,39 @@
 {
   "2026-10-05": {
-    "commit_count": 64,
-    "relevant_commit_count": 37,
-    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053,708054,708065,708068,708078,708079,708084,708091",
+    "commit_count": 72,
+    "relevant_commit_count": 42,
+    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053,708054,708065,708068,708078,708079,708084,708091,708096,708097,708099,708100,708103",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base & Infrastructure",
+        "title": "UI & Localization",
         "items": [
           {
-            "text": "Softcore servers now limit players to three Tool Cupboards, with an on‑screen icon and toast notification when the limit is reached.",
+            "text": "Item drop and pickup notifications now work correctly for right‑to‑left languages.",
             "commit_ids": [
-              708033
+              708100
+            ]
+          },
+          {
+            "text": "Crafting notices display correctly in RTL languages.",
+            "commit_ids": [
+              708097
             ]
           }
         ]
       },
       {
-        "title": "Power & Fuel",
+        "title": "Gameplay Limits & Power",
         "items": [
           {
-            "text": "Biofuel generators only draw electricity while actively producing fuel, eliminating idle power drain.",
+            "text": "Softcore servers now cap placed Tool Cupboards to three, with an on‑screen warning when the limit is reached.",
+            "commit_ids": [
+              708033
+            ]
+          },
+          {
+            "text": "Generators only draw electricity while actively producing biofuel, eliminating idle power drain.",
             "commit_ids": [
               708030
             ]
@@ -29,22 +41,22 @@
         ]
       },
       {
-        "title": "Livestock & Trading",
+        "title": "Livestock",
         "items": [
           {
-            "text": "Livestock age now progresses correctly, fixing a regression that could make animals appear younger after maturing.",
+            "text": "Livestock age progression bug fixed: animals no longer lose age or regress when growing from calf to adult.",
             "commit_ids": [
               708026
             ]
           },
           {
-            "text": "Lead rope now breaks at 15 m (up from 7 m), and animals display familiarity and gender by default.",
+            "text": "Leash distance increased to 15 m and animals now display familiarity and gender by default.",
             "commit_ids": [
               707953
             ]
           },
           {
-            "text": "Selling previously bought or found animals to the livestock vendor now incurs an 85 % penalty, up from 20 %.",
+            "text": "Sale penalty for selling bought or found animals to the livestock vendor raised from 20 % to 85 %.",
             "commit_ids": [
               707918
             ]
@@ -52,32 +64,27 @@
         ]
       },
       {
-        "title": "Combat & Projectiles",
+        "title": "Transportation",
         "items": [
           {
-            "text": "Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering.",
+            "text": "Fixed motorcycle dismount order, ensuring players dismount in the correct sequence.",
             "commit_ids": [
-              708078
+              707986
+            ]
+          },
+          {
+            "text": "Fixed client‑side sail wind behavior, improving sailing control and consistency.",
+            "commit_ids": [
+              707984
             ]
           }
         ]
       },
       {
-        "title": "Server & Authentication",
+        "title": "Character Customization",
         "items": [
           {
-            "text": "The server now ignores redundant authentication messages after a player is already authenticated, avoiding unnecessary re‑auth rejections.",
-            "commit_ids": [
-              707966
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Added an underwear clothing category and refreshed the character creator layout, giving players more customization options.",
+            "text": "Added an underwear category to the character creator, expanding customization options.",
             "commit_ids": [
               707973
             ]
@@ -86,18 +93,25 @@
       }
     ],
     "status": "ok",
-    "summary": "### Base & Infrastructure\n- Softcore servers now limit players to three Tool Cupboards, with an on‑screen icon and toast notification when the limit is reached.\n\n### Power & Fuel\n- Biofuel generators only draw electricity while actively producing fuel, eliminating idle power drain.\n\n### Livestock & Trading\n- Livestock age now progresses correctly, fixing a regression that could make animals appear younger after maturing.\n- Lead rope now breaks at 15 m (up from 7 m), and animals display familiarity and gender by default.\n- Selling previously bought or found animals to the livestock vendor now incurs an 85 % penalty, up from 20 %.\n\n### Combat & Projectiles\n- Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering.\n\n### Server & Authentication\n- The server now ignores redundant authentication messages after a player is already authenticated, avoiding unnecessary re‑auth rejections.\n\n### Gameplay & Balance\n- Added an underwear clothing category and refreshed the character creator layout, giving players more customization options.",
+    "summary": "### UI & Localization\n- Item drop and pickup notifications now work correctly for right‑to‑left languages.\n- Crafting notices display correctly in RTL languages.\n\n### Gameplay Limits & Power\n- Softcore servers now cap placed Tool Cupboards to three, with an on‑screen warning when the limit is reached.\n- Generators only draw electricity while actively producing biofuel, eliminating idle power drain.\n\n### Livestock\n- Livestock age progression bug fixed: animals no longer lose age or regress when growing from calf to adult.\n- Leash distance increased to 15 m and animals now display familiarity and gender by default.\n- Sale penalty for selling bought or found animals to the livestock vendor raised from 20 % to 85 %.\n\n### Transportation\n- Fixed motorcycle dismount order, ensuring players dismount in the correct sequence.\n- Fixed client‑side sail wind behavior, improving sailing control and consistency.\n\n### Character Customization\n- Added an underwear category to the character creator, expanding customization options.",
     "new_items": [
       {
-        "text": "Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering.",
+        "text": "Item drop and pickup notifications now work correctly for right‑to‑left languages.",
         "commit_ids": [
-          708078
+          708100
         ],
-        "section": "Combat & Projectiles"
+        "section": "UI & Localization"
+      },
+      {
+        "text": "Crafting notices display correctly in RTL languages.",
+        "commit_ids": [
+          708097
+        ],
+        "section": "UI & Localization"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Projectiles no longer persist after a player’s base is destroyed, preventing stray ammunition from lingering."
+    "new_relevant_count": 2,
+    "new_summary": "- Item drop and pickup notifications now work correctly for right‑to‑left languages.\n- Crafting notices display correctly in RTL languages."
   },
   "2026-10-04": {
     "commit_count": 13,
