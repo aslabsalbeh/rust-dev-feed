@@ -1,10 +1,147 @@
 {
   "2026-10-06": {
-    "commit_count": 50,
-    "relevant_commit_count": 30,
+    "commit_count": 69,
+    "relevant_commit_count": 41,
     "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388,708395": [
+        {
+          "title": "Movement & Interaction",
+          "items": [
+            {
+              "text": "Fixed rope ladder climbing issues: split triggers and corrected ladder transition so animation matches the ladder you’re on.",
+              "commit_ids": [
+                708388
+              ]
+            },
+            {
+              "text": "Resolved loading bugs: level size now sent during map reload to prevent client confusion, and loading process now pauses client ticks and delays game entry until fully connected.",
+              "commit_ids": [
+                708350,
+                708305
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls",
+          "items": [
+            {
+              "text": "Adjusted key suppression timing to prevent input glitches.",
+              "commit_ids": [
+                708230
+              ]
+            },
+            {
+              "text": "Moved crafting action to D‑pad down across all control schemes.",
+              "commit_ids": [
+                708235
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & NPC",
+          "items": [
+            {
+              "text": "Corrected livestock agent velocity calculations for more accurate movement.",
+              "commit_ids": [
+                708250
+              ]
+            },
+            {
+              "text": "Reduced boar flee health threshold from 75% to 30% of max health.",
+              "commit_ids": [
+                708229
+              ]
+            },
+            {
+              "text": "Added deterministic RNG per NPC for testing and fixed several AI timing issues: warp speed spikes, melee/voice sense age checks, and time‑step usage for predators and grenades.",
+              "commit_ids": [
+                708227
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Character Customisation & UI",
+          "items": [
+            {
+              "text": "Fixed several character creator bugs: teleport back to start on menu open, unwanted underwear prompt, lighting issues after disconnect, and UI panels now fade in with save button feedback.",
+              "commit_ids": [
+                708247,
+                708223
+              ]
+            }
+          ]
+        }
+      ],
+      "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220": [
+        {
+          "title": "Map & Markers",
+          "items": [
+            {
+              "text": "Fixed deep sea layer from erasing all monument markers and prevented shop marker cache from filling with junk on disconnect/reconnect.",
+              "commit_ids": [
+                708215
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Grenades & Visuals",
+          "items": [
+            {
+              "text": "Bee grenade no longer appears white when throw prediction is enabled.",
+              "commit_ids": [
+                708201
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Movement Controls",
+          "items": [
+            {
+              "text": "Run toggle now persists between movement sprints, improving control consistency.",
+              "commit_ids": [
+                708193
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock",
+          "items": [
+            {
+              "text": "Prevented cows from selecting destinations that cause them to clip into each other.",
+              "commit_ids": [
+                708190
+              ]
+            },
+            {
+              "text": "Partial fix for cows not eating properly at troughs or grass in pens.",
+              "commit_ids": [
+                708187
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Helicopter Flares",
+          "items": [
+            {
+              "text": "Fixed a saving bug that caused helicopter flares to stop firing after a snapshot, restoring flare functionality.",
+              "commit_ids": [
+                708156,
+                708152
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "NPC & AI",
@@ -125,44 +262,16 @@
         "section": "NPC & AI"
       },
       {
-        "text": "Adjusted boar flee behavior: lowered health threshold from 75% to 30%.",
-        "commit_ids": [
-          708229
-        ],
-        "section": "NPC & AI"
-      },
-      {
         "text": "Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.",
         "commit_ids": [
           708247,
           708223
         ],
         "section": "Character Customization"
-      },
-      {
-        "text": "Moved crafting action to D‑pad down across all control schemes.",
-        "commit_ids": [
-          708235
-        ],
-        "section": "Controls & UI"
-      },
-      {
-        "text": "Fixed key suppression timing bug, improving input responsiveness.",
-        "commit_ids": [
-          708230
-        ],
-        "section": "Controls & UI"
-      },
-      {
-        "text": "Fixed menu drift caused by deadzone handling.",
-        "commit_ids": [
-          708225
-        ],
-        "section": "Controls & UI"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.\n- Adjusted boar flee behavior: lowered health threshold from 75% to 30%.\n- Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.\n- Moved crafting action to D‑pad down across all control schemes.\n- Fixed key suppression timing bug, improving input responsiveness.\n- Fixed menu drift caused by deadzone handling."
+    "new_relevant_count": 4,
+    "new_summary": "- Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.\n- Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect."
   },
   "2026-10-05": {
     "commit_count": 84,

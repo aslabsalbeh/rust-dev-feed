@@ -1,5 +1,157 @@
 [
   {
+    "id": 708395,
+    "branch": "main/render_pipeline_testing/wind_motion_vectors",
+    "changeset": "166969",
+    "created": "2026-10-06T16:02:24",
+    "message": "Fixed wind motion vectors for AnimalFur shader",
+    "user": "Felix"
+  },
+  {
+    "id": 708393,
+    "branch": "main/entityspawning_optims",
+    "changeset": "166967",
+    "created": "2026-10-06T15:47:09",
+    "message": "Removed the pref to skip unity event listener baking in editor, wasn't necessary\r\n(renamed the branch to entityspawning_optims)",
+    "user": "Flavien"
+  },
+  {
+    "id": 708392,
+    "branch": "main/console_autocomplete_improvements",
+    "changeset": "166966",
+    "created": "2026-10-06T15:46:03",
+    "message": "Added entity/item autocompletion to more commands",
+    "user": "Flavien"
+  },
+  {
+    "id": 708388,
+    "branch": "main/ferry_ladder_fix",
+    "changeset": "166963",
+    "created": "2026-10-06T15:38:07",
+    "message": "Fix ferry terminal rope ladder being annoying to climb up - triggers with multiple colliders do not work correctly. Split into two triggers, S2P\r\nFix player movement not updating the current ladder when transitioning from one ladder trigger to another, fixes still playing rungs / rope animation even though you are now on a different ladder",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708383,
+    "branch": "main/ez_pie_food_config",
+    "changeset": "166961",
+    "created": "2026-10-06T15:29:10",
+    "message": "Compile fix",
+    "user": "Adam W"
+  },
+  {
+    "id": 708385,
+    "branch": "main/console_autocomplete_improvements",
+    "changeset": "166959",
+    "created": "2026-10-06T15:28:46",
+    "message": "spawngrid and teleportany autocomplete entity names",
+    "user": "Flavien"
+  },
+  {
+    "id": 708381,
+    "branch": "main/render_pipeline_testing/wind_motion_vectors",
+    "changeset": "166958",
+    "created": "2026-10-06T15:26:31",
+    "message": "Fix wind motion vectors on ferns, pine trees, bushes, etc.",
+    "user": "Felix"
+  },
+  {
+    "id": 708364,
+    "branch": "main/Livestock_animals",
+    "changeset": "166957",
+    "created": "2026-10-06T15:11:44",
+    "message": "Fix \"death while running\" anim never playing because speed was measured after stopping",
+    "user": "Maverick"
+  },
+  {
+    "id": 708355,
+    "branch": "main/tattoos/tattoos_revived",
+    "changeset": "166955",
+    "created": "2026-10-06T15:05:49",
+    "message": "First pass at working tattoos again\r\n- Had to change UVRender shaders \"ObjectId\" to \"PaintObjectId\" to avoid Unity conflict to fix face tattoos\r\n- Face tattoos use UV1 instead of UV0, for after the player update\r\n- set resolutions to 512x512 for face and 2048x1024 for body tattoos",
+    "user": "ElliotH"
+  },
+  {
+    "id": 708354,
+    "branch": "main/ez_pie_food_config",
+    "changeset": "166954",
+    "created": "2026-10-06T15:05:40",
+    "message": "Fixes",
+    "user": "Adam W"
+  },
+  {
+    "id": 708353,
+    "branch": "main",
+    "changeset": "166953",
+    "created": "2026-10-06T15:05:12",
+    "message": "~Fix TerrainTexturing.OnEnable NRE when opening scenes in editor",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708350,
+    "branch": "main/netmsg_loadmap",
+    "changeset": "166951",
+    "created": "2026-10-06T15:02:08",
+    "message": "Bugfix: also include level size in reload req, otherwise client gets confused about world loading\r\nTests: client was able to load from Craggy into procgen map while server is still on craggy",
+    "user": "Daniel P"
+  },
+  {
+    "id": 708345,
+    "branch": "main/grenade_drop_animations",
+    "changeset": "166950",
+    "created": "2026-10-06T14:59:42",
+    "message": "merge firecracker update to grenade drop animations",
+    "user": "julek"
+  },
+  {
+    "id": 708331,
+    "branch": "main/firecracker_update",
+    "changeset": "166948",
+    "created": "2026-10-06T14:54:04",
+    "message": "setup firecracker vm camera anims",
+    "user": "julek"
+  },
+  {
+    "id": 708328,
+    "branch": "main/findprefab_optims",
+    "changeset": "166947",
+    "created": "2026-10-06T14:53:30",
+    "message": "Optimized entities with flag toggles spawning: EntityFlag_Toggle now bakes its listeners at prefab preprocessing and calls them directly instead of invoking its UnityEvent\r\nThe first UnityEvent invoke on every new instance looked its listeners up by reflection.\r\n\r\nRough profiling from the editor, loading in a mix of 248 entities (io, locks, doors and some random deployables)\r\n\r\nEntityFlag.DoUpdate\r\n26ms -> 2ms total\n~100us -> ~9us per entity\r\n~940 KB -> ~231 KB total",
+    "user": "Flavien"
+  },
+  {
+    "id": 708307,
+    "branch": "main/character_customisation",
+    "changeset": "166942",
+    "created": "2026-10-06T14:41:02",
+    "message": "- Vingette\r\n- Minor adjustments/cleanup",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 708305,
+    "branch": "main/netmsg_loadmap",
+    "changeset": "166941",
+    "created": "2026-10-06T14:38:40",
+    "message": "Update: more progress on loading to a different level\r\n- refactored some of testing code\r\n- client doesn't send tick while loading\r\n- server delays client entering game till they're marked as connected\r\nTests: tried to load from craggy to procgen, but got stuck on recieving data. also triggerd a bunch of asserts in the process",
+    "user": "Daniel P"
+  },
+  {
+    "id": 708304,
+    "branch": "█▇▉▆",
+    "changeset": "▉▇▊▆▆▅",
+    "created": "2026-10-06T14:38:10",
+    "message": "▊ ▇▋▄▇▌▆▉▄▅█▊ ▍▇▌▊▌ ▍▋▄▉▌▍▅ ▉▊▌",
+    "user": "Grigler"
+  },
+  {
+    "id": 708285,
+    "branch": "main/sv_console_terminal_fix",
+    "changeset": "166938",
+    "created": "2026-10-06T14:25:07",
+    "message": "Format ConsoleInput numbers with invariant culture so a culture's multi-character negative sign can't overflow the stack buffer",
+    "user": "Raul"
+  },
+  {
     "id": 708260,
     "branch": "main/Livestock_animals",
     "changeset": "166937",
