@@ -1,5 +1,61 @@
 [
   {
+    "id": 708454,
+    "branch": "main",
+    "changeset": "167001",
+    "created": "2026-10-06T19:58:05",
+    "message": "~ Replace the protobuf code generator exe in the repo\r\nThe external bat/sh files will use the included csproj to build and run the same protobuf code the editor uses\r\nYou'll need .NET SDK 8 or newer installed for it to run",
+    "user": "lamalove"
+  },
+  {
+    "id": 708450,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "166999",
+    "created": "2026-10-06T19:29:05",
+    "message": "Use SetText",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708447,
+    "branch": "main/vm_alloc_fix",
+    "changeset": "166997",
+    "created": "2026-10-06T19:23:47",
+    "message": "fix allocations in viewmodel renderer feature",
+    "user": "Brian"
+  },
+  {
+    "id": 708445,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "166996",
+    "created": "2026-10-06T19:05:12",
+    "message": "Fix wounded UI formatting every frame",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708441,
+    "branch": "main/underwaterlabs_mission_fixes",
+    "changeset": "166994",
+    "created": "2026-10-06T18:59:30",
+    "message": "Don't raise boombox mission event for team members if they are not on the same mission",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 708440,
+    "branch": "main/render_pipeline_testing/wind_motion_vectors",
+    "changeset": "166993",
+    "created": "2026-10-06T18:53:40",
+    "message": "Disable instancing on horse hair",
+    "user": "Felix"
+  },
+  {
+    "id": 708432,
+    "branch": "main/console_autocomplete_improvements",
+    "changeset": "166989",
+    "created": "2026-10-06T18:13:04",
+    "message": "Fixed entity and item auto completion always showing SERVER realm",
+    "user": "Flavien"
+  },
+  {
     "id": 708428,
     "branch": "main/entityspawning_optims",
     "changeset": "166987",
@@ -1446,21 +1502,5 @@
     "created": "2026-10-04T08:35:23",
     "message": "Tweak scrap heli dismount points so it doesnt always dismount you on the front",
     "user": "cipeaX"
-  },
-  {
-    "id": 707843,
-    "branch": "main/Livestock_animals",
-    "changeset": "166690",
-    "created": "2026-10-03T19:58:34",
-    "message": "Make cows actually line up with troughs to eat + play the correct animation\r\nMake a system so that we can align any animal with props without turn in place (maybe handy for cars mounting/unmounting?)",
-    "user": "Maverick"
-  },
-  {
-    "id": 707842,
-    "branch": "main/Livestock_animals",
-    "changeset": "166689",
-    "created": "2026-10-03T19:48:45",
-    "message": "Optimize path following further following Daniel's leads:\r\n- support full batching, serial path no longer needed even if some NPCs can swim or open doors, move requests are queued for next batch\r\n- better use of unity's TransformAccessArray to avoid native overhead (don't set to null, do not re-build every batch instead persistent w stable identities)\r\n- iterate forward instead of backward (ListHashSet is slower backward, + has RemoveUnordered so iterating backward to delete is not really needed)\r\n- skip IsUnityNull checks that's no longer needed",
-    "user": "Maverick"
   }
 ]

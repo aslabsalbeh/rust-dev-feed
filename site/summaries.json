@@ -1,35 +1,30 @@
 {
   "2026-10-06": {
-    "commit_count": 84,
-    "relevant_commit_count": 50,
+    "commit_count": 91,
+    "relevant_commit_count": 54,
     "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "708245,708246,708247,708250,708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388,708395,708399,708400,708401,708403,708406,708410,708412,708416,708422": [
+      "708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388,708395,708399,708400,708401,708403,708406,708410,708412,708416,708422,708432,708441,708445,708447": [
         {
-          "title": "Missions & Events",
+          "title": "Mission Events",
           "items": [
             {
-              "text": "BoomBox no longer raises a mission event unless the player has an active mission.",
+              "text": "Boombox mission events no longer trigger for teammates not on the same mission, and only fire when the instigating player has an active mission.",
               "commit_ids": [
+                708441,
                 708422
               ]
             }
           ]
         },
         {
-          "title": "Networking & Loading",
+          "title": "Networking & Crashes",
           "items": [
             {
-              "text": "Fixed client crashes caused by late-arriving snapshots and reset active scene name to improve level loading.",
+              "text": "Fixed a crash caused by late‑arriving network snapshots, improving client stability during map loads.",
               "commit_ids": [
                 708416
-              ]
-            },
-            {
-              "text": "Reload requests now include level size, preventing client confusion when switching maps.",
-              "commit_ids": [
-                708350
               ]
             }
           ]
@@ -38,24 +33,19 @@
           "title": "Cosmetics – Tattoos",
           "items": [
             {
-              "text": "Tattoos now correctly save between client and server.",
+              "text": "Tattoos now correctly save between client and server and the system has been re‑implemented with proper shaders and resolutions, restoring player‑customizable tattoos.",
               "commit_ids": [
-                708412
-              ]
-            },
-            {
-              "text": "Reimplemented tattoo system with proper shaders, face tattoo support, and higher-resolution textures (512x512 face, 2048x1024 body).",
-              "commit_ids": [
+                708412,
                 708355
               ]
             }
           ]
         },
         {
-          "title": "New Item – Wool Armor",
+          "title": "New Gear – Wool Armor Insert",
           "items": [
             {
-              "text": "Added Wool Armor Insert (Tier 1) – crafts from 20 wool and provides 3 cold, 2 melee, and 1 projectile protection.",
+              "text": "Introduced Wool Armor Insert with a crafting cost of 20 wool and protection values (cold 3, melee 2, projectile 1) placed in Tier 1 tech tree.",
               "commit_ids": [
                 708399
               ]
@@ -63,10 +53,10 @@
           ]
         },
         {
-          "title": "Environment Interaction",
+          "title": "World Interaction – Ladder Mechanics",
           "items": [
             {
-              "text": "Fixed ferry terminal rope ladder climbing triggers and animation updates, eliminating stuck or incorrect ladder behavior.",
+              "text": "Fixed ferry terminal rope ladder triggers so climbing works smoothly and ladder animations update correctly when switching ladders.",
               "commit_ids": [
                 708388
               ]
@@ -74,59 +64,106 @@
           ]
         },
         {
-          "title": "Livestock AI",
+          "title": "Map Loading",
           "items": [
             {
-              "text": "Corrected livestock agent velocity calculations for more accurate movement.",
+              "text": "Added level size to reload requests, preventing client confusion and crashes when transitioning between maps (e.g., Craggy to procedural).",
               "commit_ids": [
-                708250
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Character Customization",
-          "items": [
-            {
-              "text": "Resolved several character‑customisation bugs: fading issue, stray underwear prompt, reduced skin‑tone options per color, and teleport back to start when opening the menu.",
-              "commit_ids": [
-                708247
+                708350
               ]
             }
           ]
         }
       ],
-      "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235": [
+      "708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250": [
         {
-          "title": "Controls",
+          "title": "NPC & AI",
           "items": [
             {
-              "text": "Crafting action moved to D‑Pad down in all action sets",
+              "text": "Fixed inaccurate agent velocity calculations.",
               "commit_ids": [
-                708235
+                708250
               ]
             },
             {
-              "text": "Run toggle now persists between movement sprints",
+              "text": "Added deterministic mode for NPCs and fixed several AI issues (warp speed spikes, stale melee/voice lookups, time‑scale handling for tigers, crocodiles and grenades).",
               "commit_ids": [
-                708193
+                708227
+              ]
+            },
+            {
+              "text": "Prevented cows from selecting destinations that would cause them to clip into each other.",
+              "commit_ids": [
+                708190
               ]
             }
           ]
         },
         {
-          "title": "User Interface",
+          "title": "Animal Behavior",
           "items": [
             {
-              "text": "Fixed menu drift caused by deadzones",
+              "text": "Reduced boar flee health threshold from 75 % to 30 % of max health.",
               "commit_ids": [
-                708225
+                708229
               ]
             },
             {
-              "text": "Various character customization UI fixes: lighting restored after reconnect, customization screen hidden when already in‑game, map and slot chooser hidden in session modal, UI panels now fade in, save button flashes and icon rotates",
+              "text": "Partial fix for cows not eating properly at troughs or grass in pens.",
+              "commit_ids": [
+                708187
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Character Customisation & UI",
+          "items": [
+            {
+              "text": "Fixed several character‑customisation UI bugs: fading issues, stray underwear prompt text, reduced skin‑tone options per color, and teleport‑back bug when first opening the menu.",
+              "commit_ids": [
+                708247
+              ]
+            },
+            {
+              "text": "Fixed character creator lighting after disconnect/reconnect, hid the customisation screen and map/slot chooser when already in‑game, added UI panel fade‑ins, and introduced save‑button flash with icon rotation.",
               "commit_ids": [
                 708223
+              ]
+            },
+            {
+              "text": "Fixed menu drift caused by deadzone handling.",
+              "commit_ids": [
+                708225
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls & Input",
+          "items": [
+            {
+              "text": "Moved crafting action to D‑Pad down in all action sets.",
+              "commit_ids": [
+                708235
+              ]
+            },
+            {
+              "text": "Fixed key‑suppression timing bug.",
+              "commit_ids": [
+                708230
+              ]
+            },
+            {
+              "text": "Improved left‑stick deadzone handling and added Steam input config tool restart for config reload.",
+              "commit_ids": [
+                708220
+              ]
+            },
+            {
+              "text": "Run toggle now persists correctly between movement sprints.",
+              "commit_ids": [
+                708193
               ]
             }
           ]
@@ -135,7 +172,7 @@
           "title": "Map & Markers",
           "items": [
             {
-              "text": "Monument markers no longer disappear in the deep‑sea layer and shop marker cache no longer fills with junk on disconnect/reconnect",
+              "text": "Fixed deep‑sea layer wiping all monument markers and prevented shop marker cache corruption on disconnect/reconnect.",
               "commit_ids": [
                 708215
               ]
@@ -143,10 +180,10 @@
           ]
         },
         {
-          "title": "Item Visuals",
+          "title": "Weapons & Grenades",
           "items": [
             {
-              "text": "Bee grenade no longer appears white when throw prediction is enabled",
+              "text": "Fixed bee grenade appearing white when throw prediction is enabled.",
               "commit_ids": [
                 708201
               ]
@@ -154,36 +191,12 @@
           ]
         },
         {
-          "title": "NPC & AI",
+          "title": "Stability & Crashes",
           "items": [
             {
-              "text": "Animals now flee when health drops below 30% (reduced from 75%)",
+              "text": "Fixed NaN in vertex lighting that could cause crashes.",
               "commit_ids": [
-                708229
-              ]
-            },
-            {
-              "text": "Cows no longer select destinations that cause them to clip into each other",
-              "commit_ids": [
-                708190
-              ]
-            },
-            {
-              "text": "Partial fix for cows not eating properly at troughs or grass in pens",
-              "commit_ids": [
-                708187
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicles",
-          "items": [
-            {
-              "text": "Helicopter flare saving crash fixed, allowing flares to be used repeatedly without breaking the helicopter",
-              "commit_ids": [
-                708152,
-                708156
+                708170
               ]
             }
           ]
