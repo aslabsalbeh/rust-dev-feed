@@ -1,22 +1,46 @@
 {
+  "2026-10-06": {
+    "commit_count": 1,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-05": {
-    "commit_count": 72,
-    "relevant_commit_count": 42,
-    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053,708054,708065,708068,708078,708079,708084,708091,708096,708097,708099,708100,708103",
+    "commit_count": 84,
+    "relevant_commit_count": 48,
+    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053,708054,708065,708068,708078,708079,708084,708091,708096,708097,708099,708100,708103,708112,708114,708117,708118,708119,708120",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "World & Locations",
+        "items": [
+          {
+            "text": "Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.",
+            "commit_ids": [
+              708117
+            ]
+          }
+        ]
+      },
+      {
         "title": "UI & Localization",
         "items": [
           {
-            "text": "Item drop and pickup notifications now work correctly for right‑to‑left languages.",
+            "text": "Item drop and pickup notices now display correctly for right‑to‑left languages.",
             "commit_ids": [
               708100
             ]
           },
           {
-            "text": "Crafting notices display correctly in RTL languages.",
+            "text": "Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.",
             "commit_ids": [
               708097
             ]
@@ -24,16 +48,32 @@
         ]
       },
       {
-        "title": "Gameplay Limits & Power",
+        "title": "Gameplay & Mechanics",
         "items": [
           {
-            "text": "Softcore servers now cap placed Tool Cupboards to three, with an on‑screen warning when the limit is reached.",
+            "text": "Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.",
             "commit_ids": [
               708033
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Combat & Projectiles",
+        "items": [
           {
-            "text": "Generators only draw electricity while actively producing biofuel, eliminating idle power drain.",
+            "text": "Fixed a bug where projectiles could leak and persist after the owning player was destroyed.",
+            "commit_ids": [
+              708078
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Power & Generators",
+        "items": [
+          {
+            "text": "Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.",
             "commit_ids": [
               708030
             ]
@@ -44,19 +84,19 @@
         "title": "Livestock",
         "items": [
           {
-            "text": "Livestock age progression bug fixed: animals no longer lose age or regress when growing from calf to adult.",
+            "text": "Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.",
             "commit_ids": [
               708026
             ]
           },
           {
-            "text": "Leash distance increased to 15 m and animals now display familiarity and gender by default.",
+            "text": "Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.",
             "commit_ids": [
               707953
             ]
           },
           {
-            "text": "Sale penalty for selling bought or found animals to the livestock vendor raised from 20 % to 85 %.",
+            "text": "Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.",
             "commit_ids": [
               707918
             ]
@@ -64,16 +104,16 @@
         ]
       },
       {
-        "title": "Transportation",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed motorcycle dismount order, ensuring players dismount in the correct sequence.",
+            "text": "Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.",
             "commit_ids": [
               707986
             ]
           },
           {
-            "text": "Fixed client‑side sail wind behavior, improving sailing control and consistency.",
+            "text": "Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.",
             "commit_ids": [
               707984
             ]
@@ -81,10 +121,22 @@
         ]
       },
       {
-        "title": "Character Customization",
+        "title": "Character Customisation",
         "items": [
           {
-            "text": "Added an underwear category to the character creator, expanding customization options.",
+            "text": "Introduced a revamped character creator layout for easier navigation of customization options.",
+            "commit_ids": [
+              707973
+            ]
+          },
+          {
+            "text": "Added an underwear customization category, expanding player outfit choices.",
+            "commit_ids": [
+              707973
+            ]
+          },
+          {
+            "text": "Removed the eyebrows category, streamlining available facial features.",
             "commit_ids": [
               707973
             ]
@@ -93,25 +145,10 @@
       }
     ],
     "status": "ok",
-    "summary": "### UI & Localization\n- Item drop and pickup notifications now work correctly for right‑to‑left languages.\n- Crafting notices display correctly in RTL languages.\n\n### Gameplay Limits & Power\n- Softcore servers now cap placed Tool Cupboards to three, with an on‑screen warning when the limit is reached.\n- Generators only draw electricity while actively producing biofuel, eliminating idle power drain.\n\n### Livestock\n- Livestock age progression bug fixed: animals no longer lose age or regress when growing from calf to adult.\n- Leash distance increased to 15 m and animals now display familiarity and gender by default.\n- Sale penalty for selling bought or found animals to the livestock vendor raised from 20 % to 85 %.\n\n### Transportation\n- Fixed motorcycle dismount order, ensuring players dismount in the correct sequence.\n- Fixed client‑side sail wind behavior, improving sailing control and consistency.\n\n### Character Customization\n- Added an underwear category to the character creator, expanding customization options.",
-    "new_items": [
-      {
-        "text": "Item drop and pickup notifications now work correctly for right‑to‑left languages.",
-        "commit_ids": [
-          708100
-        ],
-        "section": "UI & Localization"
-      },
-      {
-        "text": "Crafting notices display correctly in RTL languages.",
-        "commit_ids": [
-          708097
-        ],
-        "section": "UI & Localization"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Item drop and pickup notifications now work correctly for right‑to‑left languages.\n- Crafting notices display correctly in RTL languages."
+    "summary": "### World & Locations\n- Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.\n\n### UI & Localization\n- Item drop and pickup notices now display correctly for right‑to‑left languages.\n- Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.\n\n### Gameplay & Mechanics\n- Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.\n\n### Combat & Projectiles\n- Fixed a bug where projectiles could leak and persist after the owning player was destroyed.\n\n### Power & Generators\n- Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.\n\n### Livestock\n- Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.\n- Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.\n- Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.\n\n### Gameplay & Balance\n- Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.\n- Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.\n\n### Character Customisation\n- Introduced a revamped character creator layout for easier navigation of customization options.\n- Added an underwear customization category, expanding player outfit choices.\n- Removed the eyebrows category, streamlining available facial features.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-04": {
     "commit_count": 13,
@@ -167,19 +204,6 @@
     ],
     "status": "ok",
     "summary": "### Softcore Mode\n- Fixed death screen on first softcore join; players now spawn directly at the beach.\n\n### Research & Crafting\n- Research tables can now be used to research Animal Fence and Gate.\n\n### Farming & Food\n- Milk can be stacked when the skim timer is under 1 minute, and skimming works even if food spoiling is disabled.\n\n### Vehicles\n- Scrap helicopter dismount points adjusted to avoid always ejecting players from the front.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-03": {
-    "commit_count": 2,
-    "relevant_commit_count": 2,
-    "relevant_signature": "707842,707843",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [],
-    "status": "no_significant_updates",
-    "summary": "No notable player-facing changes were identified in the latest development commits.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

@@ -6,49 +6,66 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 05 Oct 2026 22:18:06 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 00:18:18 -0400</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Oct 05</title>
+      <title>Today's Rust Updates — Oct 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;72 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-10-06</guid>
+      <pubDate>Tue, 06 Oct 2026 00:18:18 -0400</pubDate>
+    </item>
+    <item>
+      <title>Yesterday's Rust Updates — Oct 05</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;84 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;World &amp;amp; Locations&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708100"&gt;Item drop and pickup notifications now work correctly for right‑to‑left languages.&lt;/li&gt;
-&lt;li data-rust-commits="708097"&gt;Crafting notices display correctly in RTL languages.&lt;/li&gt;
+&lt;li data-rust-commits="708117"&gt;Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 &lt;h3&gt;UI &amp;amp; Localization&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708100"&gt;Item drop and pickup notifications now work correctly for right‑to‑left languages.&lt;/li&gt;
-&lt;li data-rust-commits="708097"&gt;Crafting notices display correctly in RTL languages.&lt;/li&gt;
+&lt;li data-rust-commits="708100"&gt;Item drop and pickup notices now display correctly for right‑to‑left languages.&lt;/li&gt;
+&lt;li data-rust-commits="708097"&gt;Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay Limits &amp;amp; Power&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Mechanics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708033"&gt;Softcore servers now cap placed Tool Cupboards to three, with an on‑screen warning when the limit is reached.&lt;/li&gt;
-&lt;li data-rust-commits="708030"&gt;Generators only draw electricity while actively producing biofuel, eliminating idle power drain.&lt;/li&gt;
+&lt;li data-rust-commits="708033"&gt;Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Projectiles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="708078"&gt;Fixed a bug where projectiles could leak and persist after the owning player was destroyed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Power &amp;amp; Generators&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="708030"&gt;Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708026"&gt;Livestock age progression bug fixed: animals no longer lose age or regress when growing from calf to adult.&lt;/li&gt;
-&lt;li data-rust-commits="707953"&gt;Leash distance increased to 15 m and animals now display familiarity and gender by default.&lt;/li&gt;
-&lt;li data-rust-commits="707918"&gt;Sale penalty for selling bought or found animals to the livestock vendor raised from 20 % to 85 %.&lt;/li&gt;
+&lt;li data-rust-commits="708026"&gt;Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.&lt;/li&gt;
+&lt;li data-rust-commits="707953"&gt;Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.&lt;/li&gt;
+&lt;li data-rust-commits="707918"&gt;Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Transportation&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="707986"&gt;Fixed motorcycle dismount order, ensuring players dismount in the correct sequence.&lt;/li&gt;
-&lt;li data-rust-commits="707984"&gt;Fixed client‑side sail wind behavior, improving sailing control and consistency.&lt;/li&gt;
+&lt;li data-rust-commits="707986"&gt;Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.&lt;/li&gt;
+&lt;li data-rust-commits="707984"&gt;Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Character Customization&lt;/h3&gt;
+&lt;h3&gt;Character Customisation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="707973"&gt;Added an underwear category to the character creator, expanding customization options.&lt;/li&gt;
+&lt;li data-rust-commits="707973"&gt;Introduced a revamped character creator layout for easier navigation of customization options.&lt;/li&gt;
+&lt;li data-rust-commits="707973"&gt;Added an underwear customization category, expanding player outfit choices.&lt;/li&gt;
+&lt;li data-rust-commits="707973"&gt;Removed the eyebrows category, streamlining available facial features.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-05</guid>
-      <pubDate>Mon, 05 Oct 2026 22:18:06 -0400</pubDate>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Oct 04</title>
+      <title>Rust Updates — 2 Days Ago — Oct 04</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;13 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -71,16 +88,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-04</guid>
       <pubDate>Sun, 04 Oct 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Updates — 2 Days Ago — Oct 03</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;2 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-10-03</guid>
-      <pubDate>Sat, 03 Oct 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>

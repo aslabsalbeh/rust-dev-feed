@@ -1,5 +1,109 @@
 [
   {
+    "id": 708131,
+    "branch": "▉▅▇▍",
+    "changeset": "▋▆▌▋▌▌",
+    "created": "2026-10-06T04:03:44",
+    "message": "▆▊▌▅▆▊▋ ▋▊▇▄ ▉▄▇▋▊▅▋▄▄▉▇▊▊▉▇▅▆",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708126,
+    "branch": "main/underground_train_network_update",
+    "changeset": "166852",
+    "created": "2026-10-06T03:39:36",
+    "message": "Disable duplicate main camera in test scene",
+    "user": "Dayaan"
+  },
+  {
+    "id": 708122,
+    "branch": "main/meshlod_updates_oct_26",
+    "changeset": "166848",
+    "created": "2026-10-06T03:28:55",
+    "message": "S2P apartment complex again",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708120,
+    "branch": "main/meshlod_updates_oct_26",
+    "changeset": "166846",
+    "created": "2026-10-06T03:25:50",
+    "message": "Also fixed up 31 clutter and collectable prefabs",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708119,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166845",
+    "created": "2026-10-06T03:23:31",
+    "message": "Update the rest of the code to work with the new NativeArrays for mapdata",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708118,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166844",
+    "created": "2026-10-06T03:22:18",
+    "message": "Add support to TerrainMap to return a NativeArray",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708117,
+    "branch": "main/meshlod_updates_oct_26",
+    "changeset": "166843",
+    "created": "2026-10-06T03:17:44",
+    "message": "Fixed a few more\r\nS2P apartments, bandit and fishing villages",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708116,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166842",
+    "created": "2026-10-06T03:13:36",
+    "message": "Switch WorldSerialization to use NativeArray\n- make sure it frees the MapData explicitly as normally the GC is collecting the managed arrays",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708115,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166841",
+    "created": "2026-10-06T03:11:56",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708114,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166840",
+    "created": "2026-10-06T03:08:32",
+    "message": "Switch the MapData protobuf from managed -> NativeArray<byte>",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708113,
+    "branch": "main/optimize_world_server_clear",
+    "changeset": "166839",
+    "created": "2026-10-06T03:07:57",
+    "message": "Add support for NativeArray<byte> in protobuf codegen\n- instead of byte[]",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 708112,
+    "branch": "main/meshlod_updates_oct_26",
+    "changeset": "166838",
+    "created": "2026-10-06T02:54:51",
+    "message": "MeshLOD converter now copies across motion vector settings\r\nConverted all of the RendererLODs/LODGroups to MeshLODs on 61 prefabs\r\nNotably a lot of seasonal stuff was affected",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 708110,
+    "branch": "main/character_customisation",
+    "changeset": "166836",
+    "created": "2026-10-06T02:13:48",
+    "message": "- More RRP support\r\n- Really lightened the scene",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 708106,
     "branch": "▆▅▅▋",
     "changeset": "▆▍▇▍▅▍",
@@ -694,13 +798,5 @@
     "created": "2026-10-03T19:48:45",
     "message": "Optimize path following further following Daniel's leads:\r\n- support full batching, serial path no longer needed even if some NPCs can swim or open doors, move requests are queued for next batch\r\n- better use of unity's TransformAccessArray to avoid native overhead (don't set to null, do not re-build every batch instead persistent w stable identities)\r\n- iterate forward instead of backward (ListHashSet is slower backward, + has RemoveUnordered so iterating backward to delete is not really needed)\r\n- skip IsUnityNull checks that's no longer needed",
     "user": "Maverick"
-  },
-  {
-    "id": 707828,
-    "branch": "main/fix_client_sail_wind",
-    "changeset": "166688",
-    "created": "2026-10-03T03:18:53",
-    "message": "Make sail wind behavior fully server sided\n- used to evaluate on both client & server so it could mismatch\n- client now just waits for server to send the flag\n- convar \"sailblockedupdateinterval\" to control the 5s polling the sail does to see if it's blocked (same interval as before)",
-    "user": "Jake_Rich"
   }
 ]
