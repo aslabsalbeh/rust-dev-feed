@@ -1,22 +1,51 @@
 {
   "2026-10-06": {
-    "commit_count": 14,
-    "relevant_commit_count": 9,
-    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190",
+    "commit_count": 29,
+    "relevant_commit_count": 20,
+    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "World & Monuments",
+        "items": [
+          {
+            "text": "Monument markers in the Deep Sea layer no longer disappear due to a bug.",
+            "commit_ids": [
+              708215
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Explosives",
+        "items": [
+          {
+            "text": "Helicopter flares now save correctly and won’t stop working after multiple uses.",
+            "commit_ids": [
+              708152,
+              708156
+            ]
+          },
+          {
+            "text": "Bee grenades no longer appear white when throw prediction is enabled.",
+            "commit_ids": [
+              708201
+            ]
+          }
+        ]
+      },
+      {
         "title": "Animals & Farming",
         "items": [
           {
-            "text": "Cows no longer choose overlapping destinations, reducing clipping issues.",
+            "text": "Cows no longer select destinations that cause them to clip into each other.",
             "commit_ids": [
               708190
             ]
           },
           {
-            "text": "Partial fix for cows not eating at troughs or grass, improving livestock feeding.",
+            "text": "Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.",
             "commit_ids": [
               708187
             ]
@@ -24,10 +53,22 @@
         ]
       },
       {
-        "title": "Stability",
+        "title": "UI & Stability",
         "items": [
           {
-            "text": "Fixed a NaN lighting bug that could cause crashes.",
+            "text": "Fixed menu drift that could misalign UI elements after opening menus.",
+            "commit_ids": [
+              708225
+            ]
+          },
+          {
+            "text": "Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.",
+            "commit_ids": [
+              708223
+            ]
+          },
+          {
+            "text": "Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.",
             "commit_ids": [
               708170
             ]
@@ -35,28 +76,16 @@
         ]
       },
       {
-        "title": "Helicopter & Vehicles",
+        "title": "Performance",
         "items": [
           {
-            "text": "Resolved saving issues with helicopter flares, preventing crashes and ensuring flares work after saving.",
-            "commit_ids": [
-              708152,
-              708156
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Performance & UI",
-        "items": [
-          {
-            "text": "QuickCraft now caches DLC ownership checks, removing a ~2 ms delay after looting items.",
+            "text": "Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.",
             "commit_ids": [
               708168
             ]
           },
           {
-            "text": "Team UI no longer clears the player‑name cache on each update, eliminating a ~1.5 ms lag every few seconds with teammates.",
+            "text": "Team UI no longer refilters player names on each update, eliminating periodic stutter for squads.",
             "commit_ids": [
               708164
             ]
@@ -65,54 +94,67 @@
       }
     ],
     "status": "ok",
-    "summary": "### Animals & Farming\n- Cows no longer choose overlapping destinations, reducing clipping issues.\n- Partial fix for cows not eating at troughs or grass, improving livestock feeding.\n\n### Stability\n- Fixed a NaN lighting bug that could cause crashes.\n\n### Helicopter & Vehicles\n- Resolved saving issues with helicopter flares, preventing crashes and ensuring flares work after saving.\n\n### Performance & UI\n- QuickCraft now caches DLC ownership checks, removing a ~2 ms delay after looting items.\n- Team UI no longer clears the player‑name cache on each update, eliminating a ~1.5 ms lag every few seconds with teammates.",
+    "summary": "### World & Monuments\n- Monument markers in the Deep Sea layer no longer disappear due to a bug.\n\n### Combat & Explosives\n- Helicopter flares now save correctly and won’t stop working after multiple uses.\n- Bee grenades no longer appear white when throw prediction is enabled.\n\n### Animals & Farming\n- Cows no longer select destinations that cause them to clip into each other.\n- Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.\n\n### UI & Stability\n- Fixed menu drift that could misalign UI elements after opening menus.\n- Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.\n- Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.\n\n### Performance\n- Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.\n- Team UI no longer refilters player names on each update, eliminating periodic stutter for squads.",
     "new_items": [
       {
-        "text": "Cows no longer choose overlapping destinations, reducing clipping issues.",
+        "text": "Monument markers in the Deep Sea layer no longer disappear due to a bug.",
+        "commit_ids": [
+          708215
+        ],
+        "section": "World & Monuments"
+      },
+      {
+        "text": "Bee grenades no longer appear white when throw prediction is enabled.",
+        "commit_ids": [
+          708201
+        ],
+        "section": "Combat & Explosives"
+      },
+      {
+        "text": "Cows no longer select destinations that cause them to clip into each other.",
         "commit_ids": [
           708190
         ],
         "section": "Animals & Farming"
       },
       {
-        "text": "Partial fix for cows not eating at troughs or grass, improving livestock feeding.",
+        "text": "Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.",
         "commit_ids": [
           708187
         ],
         "section": "Animals & Farming"
       },
       {
-        "text": "Fixed a NaN lighting bug that could cause crashes.",
+        "text": "Fixed menu drift that could misalign UI elements after opening menus.",
+        "commit_ids": [
+          708225
+        ],
+        "section": "UI & Stability"
+      },
+      {
+        "text": "Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.",
+        "commit_ids": [
+          708223
+        ],
+        "section": "UI & Stability"
+      },
+      {
+        "text": "Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.",
         "commit_ids": [
           708170
         ],
-        "section": "Stability"
+        "section": "UI & Stability"
       },
       {
-        "text": "Resolved saving issues with helicopter flares, preventing crashes and ensuring flares work after saving.",
-        "commit_ids": [
-          708152,
-          708156
-        ],
-        "section": "Helicopter & Vehicles"
-      },
-      {
-        "text": "QuickCraft now caches DLC ownership checks, removing a ~2 ms delay after looting items.",
+        "text": "Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag.",
         "commit_ids": [
           708168
         ],
-        "section": "Performance & UI"
-      },
-      {
-        "text": "Team UI no longer clears the player‑name cache on each update, eliminating a ~1.5 ms lag every few seconds with teammates.",
-        "commit_ids": [
-          708164
-        ],
-        "section": "Performance & UI"
+        "section": "Performance"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Cows no longer choose overlapping destinations, reducing clipping issues.\n- Partial fix for cows not eating at troughs or grass, improving livestock feeding.\n- Fixed a NaN lighting bug that could cause crashes.\n- Resolved saving issues with helicopter flares, preventing crashes and ensuring flares work after saving.\n- QuickCraft now caches DLC ownership checks, removing a ~2 ms delay after looting items.\n- Team UI no longer clears the player‑name cache on each update, eliminating a ~1.5 ms lag every few seconds with teammates."
+    "new_relevant_count": 8,
+    "new_summary": "- Monument markers in the Deep Sea layer no longer disappear due to a bug.\n- Bee grenades no longer appear white when throw prediction is enabled.\n- Cows no longer select destinations that cause them to clip into each other.\n- Partial fix applied to cows eating at troughs or grass in pens, reducing feeding issues.\n- Fixed menu drift that could misalign UI elements after opening menus.\n- Resolved character creator lighting issues, prevented the customization screen and map from appearing while already in-game, added UI panel fade‑ins, and introduced a flashing save button with rotating icon.\n- Fixed a NaN vertex lighting bug that caused crashes in certain lighting conditions.\n- Looting items now incurs negligible delay as DLC ownership checks are cached, reducing UI lag."
   },
   "2026-10-05": {
     "commit_count": 84,
