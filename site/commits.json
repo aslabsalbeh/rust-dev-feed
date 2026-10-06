@@ -1,5 +1,93 @@
 [
   {
+    "id": 708190,
+    "branch": "main/Livestock_animals",
+    "changeset": "166882",
+    "created": "2026-10-06T10:06:15",
+    "message": "Prevent cows from picking destinations where they will clip with each other",
+    "user": "Maverick"
+  },
+  {
+    "id": 708187,
+    "branch": "main/Livestock_animals/livestock_hotfixes",
+    "changeset": "166880",
+    "created": "2026-10-06T10:03:04",
+    "message": "Partial fix for cows not eating properly at trough or grass in a pen, full fix is a bit riskier and for next patch potentially",
+    "user": "Maverick"
+  },
+  {
+    "id": 708184,
+    "branch": "main/findprefab_optims",
+    "changeset": "166879",
+    "created": "2026-10-06T09:59:33",
+    "message": "Optimized prefab lookups by path, we now cache exact spelling hits. Makes each FindPrefab ~7x faster on repeat calls\r\n(was around 6us per call in builds, up to 0.5ms in frames that spawn a lot when entering network range of a base)\r\n\r\nWe could make prefab paths case sensitive instead, but I'm not gonna change the million callers and that could break plugins",
+    "user": "Flavien"
+  },
+  {
+    "id": 708170,
+    "branch": "main/rrp_ore_marker_fix",
+    "changeset": "166877",
+    "created": "2026-10-06T09:30:14",
+    "message": "Fix NaN in vertex lighting causing crash",
+    "user": "Dayaan"
+  },
+  {
+    "id": 708168,
+    "branch": "main/quickcraft_optims",
+    "changeset": "166875",
+    "created": "2026-10-06T09:21:58",
+    "message": "Fixed QuickCraft.FindItems spending ~2ms checking if you own a dlc after looting an item, SteamDownloadableContent now caches the answer for each DLC",
+    "user": "Flavien"
+  },
+  {
+    "id": 708164,
+    "branch": "main/teamui_optims",
+    "changeset": "166872",
+    "created": "2026-10-06T09:09:15",
+    "message": "Fixed the player name cache being cleared on every team update, causing the team UI to refilter every name through Steam (~1.5ms every 4s with 7 teammates)",
+    "user": "Flavien"
+  },
+  {
+    "id": 708156,
+    "branch": "main",
+    "changeset": "166871",
+    "created": "2026-10-06T09:04:27",
+    "message": "Merge: from mt_snapshot_saving\r\n- Bugfix for Helicopter Flare saving corrupting InvokeHandler in Jobs 4\r\nTests: spawned mini copter, fired off a stack of flares, couldn't fire anymore",
+    "user": "Daniel P"
+  },
+  {
+    "id": 708152,
+    "branch": "main/mt_snapshot_saving",
+    "changeset": "166869",
+    "created": "2026-10-06T09:01:41",
+    "message": "Bugfix: fix not MT safe saving of helicopter flares\r\nHelicopter flares are cached on use/inv change\r\nTests: got into a minicopter on craggy, fired a stack of flares, couldn't fire anymore",
+    "user": "Daniel P"
+  },
+  {
+    "id": 708150,
+    "branch": "main/flail",
+    "changeset": "166868",
+    "created": "2026-10-06T08:54:07",
+    "message": "flail blockout",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 708145,
+    "branch": "▇▉▇█▊▊▉▇▄██▉█▌▄▉▍▇▅▍▇",
+    "changeset": "█▉▊▇▊▋",
+    "created": "2026-10-06T08:33:33",
+    "message": "▊ ▋▊▅▉▍▄▋",
+    "user": "cipeaX"
+  },
+  {
+    "id": 708143,
+    "branch": "▅▆▄▄▄▌▆█▆█▇▍▉▊▇▌▆▍▋▇▋",
+    "changeset": "▉▌▇▅▍▊",
+    "created": "2026-10-06T08:25:30",
+    "message": "▉ ▅▆▊▊▅ ▅▋▄▋ ▌▍▆▉▅▅▅▅▇▋▅▇▋ ▌▋▄█▋▌▌▌ ▅▉ ▉▄▆▋▍▅▋▄▋▋▉▇▌▊",
+    "user": "cipeaX"
+  },
+  {
     "id": 708135,
     "branch": "main/render_pipeline_testing",
     "changeset": "166861",
