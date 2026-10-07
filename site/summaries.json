@@ -1,16 +1,50 @@
 {
   "2026-10-06": {
-    "commit_count": 101,
-    "relevant_commit_count": 60,
+    "commit_count": 108,
+    "relevant_commit_count": 65,
     "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "708355,708364,708381,708383,708388,708395,708399,708400,708401,708403,708406,708410,708412,708416,708422,708432,708441,708445,708447,708463,708466,708471,708472,708475,708489": [
+      "708395,708399,708400,708401,708403,708406,708410,708412,708416,708422,708432,708441,708445,708447,708463,708466,708471,708472,708475,708489,708492,708498,708504,708505,708510": [
         {
-          "title": "Map Icons",
+          "title": "Audio & Sound",
           "items": [
             {
-              "text": "Added map icons for Tool Cupboards (TCs) with a toggle button; icons are larger than sleeping bags and cluster with sleeping bags when the TC limit convar is enabled.",
+              "text": "Fixed BBQ and flame turrets playing wrong sounds when deployed",
+              "commit_ids": [
+                708505
+              ]
+            },
+            {
+              "text": "Fixed furnaces (and other entities) playing extinguish sounds on spawn",
+              "commit_ids": [
+                708492
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Crafting & Items",
+          "items": [
+            {
+              "text": "Added bulk mixing table recipes for all new milky and creamy teas (same cost and time as normal crafting)",
+              "commit_ids": [
+                708504
+              ]
+            },
+            {
+              "text": "Introduced Wool Armor Insert (20 wool to craft) providing cold, melee, and projectile protection (Tier 1)",
+              "commit_ids": [
+                708399
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & UI",
+          "items": [
+            {
+              "text": "Tool Cupboard (TC) icons now appear on the map, toggleable via a new button and clustered with sleeping bags",
               "commit_ids": [
                 708489
               ]
@@ -18,10 +52,10 @@
           ]
         },
         {
-          "title": "Mission Events",
+          "title": "Missions",
           "items": [
             {
-              "text": "Fixed Boombox mission events to only trigger for players on the same active mission as the instigator.",
+              "text": "Boombox no longer triggers mission events for players not on the same mission or without an active mission",
               "commit_ids": [
                 708441,
                 708422
@@ -30,33 +64,23 @@
           ]
         },
         {
-          "title": "Tattoos",
+          "title": "Player Customization",
           "items": [
             {
-              "text": "Resolved tattoos not persisting between client and server and restored full tattoo functionality with proper shader IDs and resolutions.",
+              "text": "Tattoos now persist correctly between client and server",
               "commit_ids": [
-                708412,
-                708355
+                708412
               ]
             }
           ]
-        },
+        }
+      ],
+      "708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388": [
         {
-          "title": "New Item – Wool Armor Insert",
+          "title": "Climbing & Ladder Mechanics",
           "items": [
             {
-              "text": "Introduced Wool Armor Insert with a crafting cost of 20 wool, providing Tier 1 protection (3 cold, 2 melee, 1 projectile).",
-              "commit_ids": [
-                708399
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World Interaction – Ferry Ladder",
-          "items": [
-            {
-              "text": "Fixed ferry terminal rope ladder climbing issues by separating triggers and ensuring proper ladder transition animations.",
+              "text": "Fixed ferry terminal rope ladder climbing: split triggers and ensured player movement updates current ladder, fixing stuck animation.",
               "commit_ids": [
                 708388
               ]
@@ -64,37 +88,18 @@
           ]
         },
         {
-          "title": "Animal Behavior – Flying Horse",
+          "title": "Map Loading",
           "items": [
             {
-              "text": "Corrected unintended flying behavior of horses.",
-              "commit_ids": [
-                708463
-              ]
-            }
-          ]
-        }
-      ],
-      "708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260,708285,708305,708350,708353,708354": [
-        {
-          "title": "Map Loading & Connectivity",
-          "items": [
-            {
-              "text": "Fixed map reload requests to include level size, preventing client confusion when loading between different maps.",
+              "text": "Fixed level size omission in reload requests, preventing client confusion during world loading.",
               "commit_ids": [
                 708350
               ]
             },
             {
-              "text": "Improved loading flow: client no longer sends ticks while loading and server delays game entry until fully connected, reducing load hangs.",
+              "text": "Improved loading to different levels: client no longer sends ticks while loading, server delays entry until connected, reducing load hangs.",
               "commit_ids": [
                 708305
-              ]
-            },
-            {
-              "text": "Restored monument and shop markers after deep sea layer changes and fixed marker cache corruption on disconnect/reconnect.",
-              "commit_ids": [
-                708215
               ]
             }
           ]
@@ -103,38 +108,49 @@
           "title": "NPC & AI",
           "items": [
             {
-              "text": "Corrected agent velocity calculations for more accurate movement.",
+              "text": "Fixed livestock agent velocity inaccuracies.",
               "commit_ids": [
                 708250
               ]
             },
             {
-              "text": "Added deterministic RNG per NPC for testing and fixed several AI issues: speed spikes from warps, melee/voice sensor age checks, and time scaling bugs for predators and grenades.",
+              "text": "Reduced boar flee health threshold from 75% to 30%, making boars less likely to flee early.",
               "commit_ids": [
-                708227
+                708229
               ]
             },
             {
-              "text": "Reduced boar flee health threshold from 75% to 30%, making them less likely to flee early.",
+              "text": "Added deterministic RNG per NPC for testing, fixed warp speed spikes, corrected melee/voice lookup ages, and fixed deltaTime usage for tiger/croc/grenade AI, improving AI consistency.",
               "commit_ids": [
-                708229
+                708227
               ]
             }
           ]
         },
         {
-          "title": "Gameplay Controls",
+          "title": "Character Customization & UI",
           "items": [
             {
-              "text": "Moved crafting action to D‑pad down across all control schemes.",
+              "text": "Fixed several character creator issues: fading glitch, unwanted underwear prompt, reduced skin tone options per color, and teleport bug when opening menu.",
               "commit_ids": [
-                708235
+                708247
               ]
             },
             {
-              "text": "Run toggle now persists when sprinting, fixing inconsistent running behavior.",
+              "text": "Fixed character creator lighting after leaving/connecting, hid customization screen when in-game, hid map/slot UI in session modal, added UI panel fade-in, and added save button flash and icon rotation.",
               "commit_ids": [
-                708193
+                708223
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls & Input",
+          "items": [
+            {
+              "text": "Moved crafting action to D‑pad down across all action sets.",
+              "commit_ids": [
+                708235
               ]
             },
             {
@@ -142,59 +158,76 @@
               "commit_ids": [
                 708230
               ]
+            },
+            {
+              "text": "Fixed deadzone menu drift and updated Steam input config tool to restart Steam client for config reload, improving controller behavior.",
+              "commit_ids": [
+                708225,
+                708220
+              ]
+            }
+          ]
+        }
+      ],
+      "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215": [
+        {
+          "title": "Map & Markers",
+          "items": [
+            {
+              "text": "Fixed deep sea layer nuking all monument markers and shop markers cache being filled with junk on disconnect/reconnect.",
+              "commit_ids": [
+                708215
+              ]
             }
           ]
         },
         {
-          "title": "Visual & UI Bugs",
+          "title": "Weapons & Grenades",
           "items": [
             {
               "text": "Fixed bee grenade appearing white when throw prediction is enabled.",
               "commit_ids": [
                 708201
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Movement",
+          "items": [
             {
-              "text": "Resolved character creator issues: underwear prompt no longer shows incorrectly, and opening the menu no longer teleports the character back to the start.",
+              "text": "Run toggle now persists between movement sprints.",
               "commit_ids": [
-                708247
+                708193
               ]
             }
           ]
-        }
-      ],
-      "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192": [
+        },
         {
-          "title": "Livestock & Animals",
+          "title": "Livestock",
           "items": [
             {
-              "text": "Fixed cows clipping destinations and partially resolved cows not eating at troughs or grass in pens",
+              "text": "Prevent cows from selecting destinations that cause them to clip into each other.",
               "commit_ids": [
-                708190,
+                708190
+              ]
+            },
+            {
+              "text": "Partial fix for cows not eating properly at troughs or grass in pens.",
+              "commit_ids": [
                 708187
               ]
             }
           ]
         },
         {
-          "title": "Stability",
+          "title": "Helicopter & Flares",
           "items": [
             {
-              "text": "Fixed a NaN vertex lighting issue that could cause crashes",
+              "text": "Fixed helicopter flare saving issues that could prevent flares from firing after use or after a save.",
               "commit_ids": [
-                708170
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Helicopter Equipment",
-          "items": [
-            {
-              "text": "Fixed saving of helicopter flares that could corrupt handlers and prevent flares from firing after use",
-              "commit_ids": [
-                708156,
-                708152
+                708152,
+                708156
               ]
             }
           ]
