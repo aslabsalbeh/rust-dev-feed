@@ -1,55 +1,33 @@
 {
   "2026-10-07": {
-    "commit_count": 48,
-    "relevant_commit_count": 23,
-    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891",
+    "commit_count": 71,
+    "relevant_commit_count": 34,
+    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Combat",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Grenades now travel farther due to increased throw velocity.",
+            "text": "Fixed incorrect shot settings that were causing weapons to fire with wrong parameters.",
             "commit_ids": [
-              709720
+              709960
             ]
           }
         ]
       },
       {
-        "title": "Stability & Loading",
+        "title": "Audio",
         "items": [
           {
-            "text": "Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another.",
+            "text": "Restored the wounded first‑person sound and reduced its volume by 50% to address it being overly loud.",
             "commit_ids": [
-              709849
+              709941
             ]
           },
           {
-            "text": "Fixed a crash caused by ore flare effects, improving reliability in mining areas.",
-            "commit_ids": [
-              709539
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Controls & Input",
-        "items": [
-          {
-            "text": "Added missing gamepad configuration files, restoring full controller support.",
-            "commit_ids": [
-              709680
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio & Immersion",
-        "items": [
-          {
-            "text": "Removed unintended bridge and crane startup sounds, eliminating the annoying noise on load.",
+            "text": "Fixed harbor bridge and crane sounds playing on initial load.",
             "commit_ids": [
               709574
             ]
@@ -57,30 +35,107 @@
         ]
       },
       {
-        "title": "UI & Visual Clarity",
+        "title": "Mounts & Vehicles",
         "items": [
           {
-            "text": "Corrected a screen blur issue on the remote computer interface, making information readable again.",
+            "text": "Fixed horse hip movement regression that prevented horses from sleeping and corrected dismounted horses keeping abnormal head/hip positions.",
+            "commit_ids": [
+              709901
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Explosives",
+        "items": [
+          {
+            "text": "Increased grenade throw velocity, making grenades travel farther.",
+            "commit_ids": [
+              709720
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability",
+        "items": [
+          {
+            "text": "Fixed crash related to ore flare (Flare fix test 2).",
+            "commit_ids": [
+              709539
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI",
+        "items": [
+          {
+            "text": "Fixed screen blur issue on RC computer interface.",
             "commit_ids": [
               709532
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability & Compatibility",
+        "items": [
+          {
+            "text": "Fixed a rare crash when using the admin injure command, preventing server errors on player death.",
+            "commit_ids": [
+              709910
+            ]
+          },
+          {
+            "text": "Resolved crashes during map transitions by skipping unnecessary deinitialization when unloading scenes.",
+            "commit_ids": [
+              709849
+            ]
+          },
+          {
+            "text": "Added missing gamepad configuration files, restoring full gamepad support.",
+            "commit_ids": [
+              709680
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Weapons & Combat\n- Grenades now travel farther due to increased throw velocity.\n\n### Stability & Loading\n- Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another.\n- Fixed a crash caused by ore flare effects, improving reliability in mining areas.\n\n### Controls & Input\n- Added missing gamepad configuration files, restoring full controller support.\n\n### Audio & Immersion\n- Removed unintended bridge and crane startup sounds, eliminating the annoying noise on load.\n\n### UI & Visual Clarity\n- Corrected a screen blur issue on the remote computer interface, making information readable again.",
+    "summary": "### Combat & Weapons\n- Fixed incorrect shot settings that were causing weapons to fire with wrong parameters.\n\n### Audio\n- Restored the wounded first‑person sound and reduced its volume by 50% to address it being overly loud.\n- Fixed harbor bridge and crane sounds playing on initial load.\n\n### Mounts & Vehicles\n- Fixed horse hip movement regression that prevented horses from sleeping and corrected dismounted horses keeping abnormal head/hip positions.\n\n### Explosives\n- Increased grenade throw velocity, making grenades travel farther.\n\n### Stability\n- Fixed crash related to ore flare (Flare fix test 2).\n\n### UI\n- Fixed screen blur issue on RC computer interface.\n\n### Stability & Compatibility\n- Fixed a rare crash when using the admin injure command, preventing server errors on player death.\n- Resolved crashes during map transitions by skipping unnecessary deinitialization when unloading scenes.\n- Added missing gamepad configuration files, restoring full gamepad support.",
     "new_items": [
       {
-        "text": "Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another.",
+        "text": "Fixed incorrect shot settings that were causing weapons to fire with wrong parameters.",
         "commit_ids": [
-          709849
+          709960
         ],
-        "section": "Stability & Loading"
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Restored the wounded first‑person sound and reduced its volume by 50% to address it being overly loud.",
+        "commit_ids": [
+          709941
+        ],
+        "section": "Audio"
+      },
+      {
+        "text": "Fixed horse hip movement regression that prevented horses from sleeping and corrected dismounted horses keeping abnormal head/hip positions.",
+        "commit_ids": [
+          709901
+        ],
+        "section": "Mounts & Vehicles"
+      },
+      {
+        "text": "Fixed a rare crash when using the admin injure command, preventing server errors on player death.",
+        "commit_ids": [
+          709910
+        ],
+        "section": "Stability & Compatibility"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another."
+    "new_relevant_count": 4,
+    "new_summary": "- Fixed incorrect shot settings that were causing weapons to fire with wrong parameters.\n- Restored the wounded first‑person sound and reduced its volume by 50% to address it being overly loud.\n- Fixed horse hip movement regression that prevented horses from sleeping and corrected dismounted horses keeping abnormal head/hip positions.\n- Fixed a rare crash when using the admin injure command, preventing server errors on player death."
   },
   "2026-10-06": {
     "commit_count": 115,
