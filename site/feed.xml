@@ -6,53 +6,55 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 07 Oct 2026 16:18:23 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 18:17:30 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;95 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;101 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710026"&gt;Viewmodel skins are functional again after allocation fix.&lt;/li&gt;
+&lt;li data-rust-commits="710049"&gt;Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;First-Person Viewmodel &amp;amp; Audio&lt;/h3&gt;
+&lt;h3&gt;Map &amp;amp; Tool Cupboards&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710026"&gt;Viewmodel skins are functional again after allocation fix.&lt;/li&gt;
-&lt;li data-rust-commits="709993"&gt;Gun jitter when turning animations play has been fixed.&lt;/li&gt;
-&lt;li data-rust-commits="709948"&gt;Spectators now see weapon drop animations correctly.&lt;/li&gt;
-&lt;li data-rust-commits="709941"&gt;Wounded first‑person sound now plays at reduced volume.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat Mechanics&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="709960"&gt;Corrected shot settings that were previously inaccurate.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Mounts (Horses)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="709901"&gt;Horse hip movement bug fixed; horses can now sleep again and dismounted horses no longer keep head turned or hip braced.&lt;/li&gt;
-&lt;li data-rust-commits="709888"&gt;Horse animation pooling bugs resolved, improving animation consistency.&lt;/li&gt;
+&lt;li data-rust-commits="710049"&gt;Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709720"&gt;Increased grenade throw velocity, making grenades travel farther when thrown.&lt;/li&gt;
+&lt;li data-rust-commits="709993"&gt;Resolved gun jitter that occurred during turning animations, improving shooting stability.&lt;/li&gt;
+&lt;li data-rust-commits="709960"&gt;Corrected shot settings that were causing inconsistent weapon behavior.&lt;/li&gt;
+&lt;li data-rust-commits="709720"&gt;Increased grenade throw velocity, allowing grenades to travel farther.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Crashes&lt;/h3&gt;
+&lt;h3&gt;Generators&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709539"&gt;Fixed a crash triggered by ore flare effects (rrp_ore_flare).&lt;/li&gt;
+&lt;li data-rust-commits="709970"&gt;Fixed a pooling bug in biofuel generators that could cause them to malfunction.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Bug Fixes&lt;/h3&gt;
+&lt;h3&gt;Horses&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709974"&gt;Fixed error when copying and pasting invulnerable entities, preventing paste failures.&lt;/li&gt;
-&lt;li data-rust-commits="709970"&gt;Resolved biofuel generator pooling issue, ensuring generators operate reliably without unexpected downtime.&lt;/li&gt;
-&lt;li data-rust-commits="709910"&gt;Patched a rare crash that could occur when an admin used the injure command on a player, improving server stability.&lt;/li&gt;
-&lt;li data-rust-commits="709849"&gt;Fixed loading instability by skipping unnecessary deinitialization when transitioning between scenes, reducing load errors.&lt;/li&gt;
-&lt;li data-rust-commits="709574"&gt;Stopped harbor bridge and crane structures from playing a sound on initial map load, eliminating unwanted audio.&lt;/li&gt;
-&lt;li data-rust-commits="709532"&gt;Corrected screen blur caused by remote control computers, restoring clear visuals when using RC computers.&lt;/li&gt;
+&lt;li data-rust-commits="709901"&gt;Fixed a server hip‑movement bug that prevented horses from sleeping and caused dismounted horses to retain an odd pose.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audio&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709941"&gt;Repaired a long‑standing issue where the wounded first‑person sound never played and reduced its volume by 50% to address loudness.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709539"&gt;Fixed a crash related to ore flares.&lt;/li&gt;
+&lt;li data-rust-commits="709849"&gt;Map transitions no longer trigger deinitialization asserts, preventing crashes when loading a new scene directly from another map.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Building&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709974"&gt;Copy‑paste now works for invulnerable entities, eliminating errors when pasting them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Visuals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709532"&gt;Remote computer screens no longer appear blurred, restoring clear view when using RC computers.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-07</guid>
-      <pubDate>Wed, 07 Oct 2026 16:18:23 -0400</pubDate>
+      <pubDate>Wed, 07 Oct 2026 18:17:30 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 06</title>

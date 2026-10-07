@@ -1,64 +1,18 @@
 {
   "2026-10-07": {
-    "commit_count": 95,
-    "relevant_commit_count": 42,
-    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026",
+    "commit_count": 101,
+    "relevant_commit_count": 44,
+    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "First-Person Viewmodel & Audio",
+        "title": "Map & Tool Cupboards",
         "items": [
           {
-            "text": "Viewmodel skins are functional again after allocation fix.",
+            "text": "Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.",
             "commit_ids": [
-              710026
-            ]
-          },
-          {
-            "text": "Gun jitter when turning animations play has been fixed.",
-            "commit_ids": [
-              709993
-            ]
-          },
-          {
-            "text": "Spectators now see weapon drop animations correctly.",
-            "commit_ids": [
-              709948
-            ]
-          },
-          {
-            "text": "Wounded first‑person sound now plays at reduced volume.",
-            "commit_ids": [
-              709941
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat Mechanics",
-        "items": [
-          {
-            "text": "Corrected shot settings that were previously inaccurate.",
-            "commit_ids": [
-              709960
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Mounts (Horses)",
-        "items": [
-          {
-            "text": "Horse hip movement bug fixed; horses can now sleep again and dismounted horses no longer keep head turned or hip braced.",
-            "commit_ids": [
-              709901
-            ]
-          },
-          {
-            "text": "Horse animation pooling bugs resolved, improving animation consistency.",
-            "commit_ids": [
-              709888
+              710049
             ]
           }
         ]
@@ -67,7 +21,19 @@
         "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Increased grenade throw velocity, making grenades travel farther when thrown.",
+            "text": "Resolved gun jitter that occurred during turning animations, improving shooting stability.",
+            "commit_ids": [
+              709993
+            ]
+          },
+          {
+            "text": "Corrected shot settings that were causing inconsistent weapon behavior.",
+            "commit_ids": [
+              709960
+            ]
+          },
+          {
+            "text": "Increased grenade throw velocity, allowing grenades to travel farther.",
             "commit_ids": [
               709720
             ]
@@ -75,51 +41,71 @@
         ]
       },
       {
-        "title": "Stability & Crashes",
+        "title": "Generators",
         "items": [
           {
-            "text": "Fixed a crash triggered by ore flare effects (rrp_ore_flare).",
+            "text": "Fixed a pooling bug in biofuel generators that could cause them to malfunction.",
             "commit_ids": [
-              709539
+              709970
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Horses",
         "items": [
           {
-            "text": "Fixed error when copying and pasting invulnerable entities, preventing paste failures.",
+            "text": "Fixed a server hip‑movement bug that prevented horses from sleeping and caused dismounted horses to retain an odd pose.",
             "commit_ids": [
-              709974
+              709901
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Audio",
+        "items": [
+          {
+            "text": "Repaired a long‑standing issue where the wounded first‑person sound never played and reduced its volume by 50% to address loudness.",
+            "commit_ids": [
+              709941
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability",
+        "items": [
+          {
+            "text": "Fixed a crash related to ore flares.",
+            "commit_ids": [
+              709539
             ]
           },
           {
-            "text": "Resolved biofuel generator pooling issue, ensuring generators operate reliably without unexpected downtime.",
-            "commit_ids": [
-              709970
-            ]
-          },
-          {
-            "text": "Patched a rare crash that could occur when an admin used the injure command on a player, improving server stability.",
-            "commit_ids": [
-              709910
-            ]
-          },
-          {
-            "text": "Fixed loading instability by skipping unnecessary deinitialization when transitioning between scenes, reducing load errors.",
+            "text": "Map transitions no longer trigger deinitialization asserts, preventing crashes when loading a new scene directly from another map.",
             "commit_ids": [
               709849
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Building",
+        "items": [
           {
-            "text": "Stopped harbor bridge and crane structures from playing a sound on initial map load, eliminating unwanted audio.",
+            "text": "Copy‑paste now works for invulnerable entities, eliminating errors when pasting them.",
             "commit_ids": [
-              709574
+              709974
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Visuals",
+        "items": [
           {
-            "text": "Corrected screen blur caused by remote control computers, restoring clear visuals when using RC computers.",
+            "text": "Remote computer screens no longer appear blurred, restoring clear view when using RC computers.",
             "commit_ids": [
               709532
             ]
@@ -128,18 +114,18 @@
       }
     ],
     "status": "ok",
-    "summary": "### First-Person Viewmodel & Audio\n- Viewmodel skins are functional again after allocation fix.\n- Gun jitter when turning animations play has been fixed.\n- Spectators now see weapon drop animations correctly.\n- Wounded first‑person sound now plays at reduced volume.\n\n### Combat Mechanics\n- Corrected shot settings that were previously inaccurate.\n\n### Mounts (Horses)\n- Horse hip movement bug fixed; horses can now sleep again and dismounted horses no longer keep head turned or hip braced.\n- Horse animation pooling bugs resolved, improving animation consistency.\n\n### Combat & Weapons\n- Increased grenade throw velocity, making grenades travel farther when thrown.\n\n### Stability & Crashes\n- Fixed a crash triggered by ore flare effects (rrp_ore_flare).\n\n### Bug Fixes\n- Fixed error when copying and pasting invulnerable entities, preventing paste failures.\n- Resolved biofuel generator pooling issue, ensuring generators operate reliably without unexpected downtime.\n- Patched a rare crash that could occur when an admin used the injure command on a player, improving server stability.\n- Fixed loading instability by skipping unnecessary deinitialization when transitioning between scenes, reducing load errors.\n- Stopped harbor bridge and crane structures from playing a sound on initial map load, eliminating unwanted audio.\n- Corrected screen blur caused by remote control computers, restoring clear visuals when using RC computers.",
+    "summary": "### Map & Tool Cupboards\n- Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.\n\n### Combat & Weapons\n- Resolved gun jitter that occurred during turning animations, improving shooting stability.\n- Corrected shot settings that were causing inconsistent weapon behavior.\n- Increased grenade throw velocity, allowing grenades to travel farther.\n\n### Generators\n- Fixed a pooling bug in biofuel generators that could cause them to malfunction.\n\n### Horses\n- Fixed a server hip‑movement bug that prevented horses from sleeping and caused dismounted horses to retain an odd pose.\n\n### Audio\n- Repaired a long‑standing issue where the wounded first‑person sound never played and reduced its volume by 50% to address loudness.\n\n### Stability\n- Fixed a crash related to ore flares.\n- Map transitions no longer trigger deinitialization asserts, preventing crashes when loading a new scene directly from another map.\n\n### Gameplay & Building\n- Copy‑paste now works for invulnerable entities, eliminating errors when pasting them.\n\n### Visuals\n- Remote computer screens no longer appear blurred, restoring clear view when using RC computers.",
     "new_items": [
       {
-        "text": "Viewmodel skins are functional again after allocation fix.",
+        "text": "Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.",
         "commit_ids": [
-          710026
+          710049
         ],
-        "section": "First-Person Viewmodel & Audio"
+        "section": "Map & Tool Cupboards"
       }
     ],
     "new_relevant_count": 1,
-    "new_summary": "- Viewmodel skins are functional again after allocation fix."
+    "new_summary": "- Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime."
   },
   "2026-10-06": {
     "commit_count": 115,
