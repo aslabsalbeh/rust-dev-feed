@@ -1,16 +1,16 @@
 {
   "2026-10-07": {
-    "commit_count": 32,
-    "relevant_commit_count": 15,
-    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855",
+    "commit_count": 48,
+    "relevant_commit_count": 23,
+    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Weapons & Combat",
         "items": [
           {
-            "text": "Grenade throw velocity increased, making grenades travel farther.",
+            "text": "Grenades now travel farther due to increased throw velocity.",
             "commit_ids": [
               709720
             ]
@@ -18,10 +18,16 @@
         ]
       },
       {
-        "title": "Stability & Crashes",
+        "title": "Stability & Loading",
         "items": [
           {
-            "text": "Fixed a crash triggered by ore flares.",
+            "text": "Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another.",
+            "commit_ids": [
+              709849
+            ]
+          },
+          {
+            "text": "Fixed a crash caused by ore flare effects, improving reliability in mining areas.",
             "commit_ids": [
               709539
             ]
@@ -29,21 +35,10 @@
         ]
       },
       {
-        "title": "Stability",
+        "title": "Controls & Input",
         "items": [
           {
-            "text": "Prevented crashes/asserts when transitioning between maps by skipping scene deinitialization during unloads.",
-            "commit_ids": [
-              709849
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Controls",
-        "items": [
-          {
-            "text": "Added missing gamepad configuration files, enabling proper gamepad support.",
+            "text": "Added missing gamepad configuration files, restoring full controller support.",
             "commit_ids": [
               709680
             ]
@@ -51,10 +46,10 @@
         ]
       },
       {
-        "title": "Audio",
+        "title": "Audio & Immersion",
         "items": [
           {
-            "text": "Fixed unwanted harbor bridge and crane sounds that played on initial load.",
+            "text": "Removed unintended bridge and crane startup sounds, eliminating the annoying noise on load.",
             "commit_ids": [
               709574
             ]
@@ -62,10 +57,10 @@
         ]
       },
       {
-        "title": "UI/Visual",
+        "title": "UI & Visual Clarity",
         "items": [
           {
-            "text": "Resolved screen blur issue on RC computer displays.",
+            "text": "Corrected a screen blur issue on the remote computer interface, making information readable again.",
             "commit_ids": [
               709532
             ]
@@ -74,32 +69,18 @@
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Grenade throw velocity increased, making grenades travel farther.\n\n### Stability & Crashes\n- Fixed a crash triggered by ore flares.\n\n### Stability\n- Prevented crashes/asserts when transitioning between maps by skipping scene deinitialization during unloads.\n\n### Controls\n- Added missing gamepad configuration files, enabling proper gamepad support.\n\n### Audio\n- Fixed unwanted harbor bridge and crane sounds that played on initial load.\n\n### UI/Visual\n- Resolved screen blur issue on RC computer displays.",
+    "summary": "### Weapons & Combat\n- Grenades now travel farther due to increased throw velocity.\n\n### Stability & Loading\n- Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another.\n- Fixed a crash caused by ore flare effects, improving reliability in mining areas.\n\n### Controls & Input\n- Added missing gamepad configuration files, restoring full controller support.\n\n### Audio & Immersion\n- Removed unintended bridge and crane startup sounds, eliminating the annoying noise on load.\n\n### UI & Visual Clarity\n- Corrected a screen blur issue on the remote computer interface, making information readable again.",
     "new_items": [
       {
-        "text": "Grenade throw velocity increased, making grenades travel farther.",
-        "commit_ids": [
-          709720
-        ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Prevented crashes/asserts when transitioning between maps by skipping scene deinitialization during unloads.",
+        "text": "Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another.",
         "commit_ids": [
           709849
         ],
-        "section": "Stability"
-      },
-      {
-        "text": "Added missing gamepad configuration files, enabling proper gamepad support.",
-        "commit_ids": [
-          709680
-        ],
-        "section": "Controls"
+        "section": "Stability & Loading"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Grenade throw velocity increased, making grenades travel farther.\n- Prevented crashes/asserts when transitioning between maps by skipping scene deinitialization during unloads.\n- Added missing gamepad configuration files, enabling proper gamepad support."
+    "new_relevant_count": 1,
+    "new_summary": "- Loading between scenes no longer triggers deinitialization errors, preventing crashes when moving from one map to another."
   },
   "2026-10-06": {
     "commit_count": 115,
