@@ -1,230 +1,56 @@
 {
+  "2026-10-07": {
+    "commit_count": 3,
+    "relevant_commit_count": 1,
+    "relevant_signature": "709532",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-06": {
     "commit_count": 115,
     "relevant_commit_count": 71,
-    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260",
+    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388,708395,708399,708400,708401,708403,708406,708410,708412,708416,708422,708432,708441,708445,708447,708463,708466,708471,708472,708475,708489,708492,708498,708504,708505,708510,708511,708512,708515,708517,708518,708521",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "708410,708412,708416,708422,708432,708441,708445,708447,708463,708466,708471,708472,708475,708489,708492,708498,708504,708505,708510,708511,708512,708515,708517,708518,708521": [
-        {
-          "title": "Map & UI",
-          "items": [
-            {
-              "text": "Fixed map fade never settling after closing, eliminating a lingering visual glitch.",
-              "commit_ids": [
-                708511
-              ]
-            },
-            {
-              "text": "Added map icons for Tool Cupboards (TCs) with toggleable visibility and clustering similar to sleeping bags.",
-              "commit_ids": [
-                708489
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio & Sound",
-          "items": [
-            {
-              "text": "Corrected BBQ and flame turret sounds when deployed.",
-              "commit_ids": [
-                708505
-              ]
-            },
-            {
-              "text": "Suppressed one‑shot spawn sounds (e.g., furnaces, campfires, mixing tables) that were audible due to base occlusion.",
-              "commit_ids": [
-                708492
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Crafting & Content",
-          "items": [
-            {
-              "text": "Added mixing‑table recipes for all new milky and creamy teas, enabling bulk crafting with existing costs and times.",
-              "commit_ids": [
-                708504
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Mission Events",
-          "items": [
-            {
-              "text": "Boombox now only raises a mission event for players who share the same active mission.",
-              "commit_ids": [
-                708441,
-                708422
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Stability & Persistence",
-          "items": [
-            {
-              "text": "Fixed client crashes caused by late‑arriving network snapshots.",
-              "commit_ids": [
-                708416
-              ]
-            },
-            {
-              "text": "Resolved issue where tattoos were not saved correctly between client and server.",
-              "commit_ids": [
-                708412
-              ]
-            }
-          ]
-        }
-      ],
-      "708229,708230,708233,708235,708245,708246,708247,708250,708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388,708395,708399,708400,708401,708403,708406": [
-        {
-          "title": "Combat & AI",
-          "items": [
-            {
-              "text": "Collision now uses proper capsule shapes and interpolated colliders for sub‑steps, fixing hit detection issues after large frame spikes and ensuring simulation space behaves correctly.",
-              "commit_ids": [
-                708403
-              ]
-            },
-            {
-              "text": "Livestock animal movement speed calculations corrected, improving agent velocity accuracy.",
-              "commit_ids": [
-                708250
-              ]
-            },
-            {
-              "text": "Boars now flee when health drops below 30 % instead of 75 %, making them less likely to run away early.",
-              "commit_ids": [
-                708229
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Items & Crafting",
-          "items": [
-            {
-              "text": "New Wool Armor can be crafted (20 wool) providing Tier 1 protection: 3 cold, 2 melee, 1 projectile.",
-              "commit_ids": [
-                708399
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Movement & Interaction",
-          "items": [
-            {
-              "text": "Ferry terminal rope ladder climbing fixed: separate triggers prevent climb glitches and ladder switching now updates correctly, eliminating stuck rung animations.",
-              "commit_ids": [
-                708388
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Customization",
-          "items": [
-            {
-              "text": "Player tattoos re‑enabled with proper UV handling; face tattoos use UV1 and resolutions set to 512×512 (face) and 2048×1024 (body).",
-              "commit_ids": [
-                708355
-              ]
-            },
-            {
-              "text": "Character customization UI bugs fixed: fading issue resolved, stray underwear prompt removed, skin tone options reduced, and menu teleport glitch eliminated.",
-              "commit_ids": [
-                708247
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Controls",
-          "items": [
-            {
-              "text": "Crafting action moved to D‑pad down on all controller layouts.",
-              "commit_ids": [
-                708235
-              ]
-            }
-          ]
-        }
-      ],
-      "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227": [
-        {
-          "title": "Map Markers",
-          "items": [
-            {
-              "text": "Fixed deep sea layer removing monument markers and prevented shop marker cache corruption on disconnect/reconnect.",
-              "commit_ids": [
-                708215
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock Behavior",
-          "items": [
-            {
-              "text": "Prevented cows from clipping into each other when choosing destinations and partially fixed cows not eating properly at troughs or grass in pens.",
-              "commit_ids": [
-                708190,
-                708187
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Grenade Visuals",
-          "items": [
-            {
-              "text": "Fixed bee grenade appearing white when throw prediction was enabled.",
-              "commit_ids": [
-                708201
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Helicopter Flare Functionality",
-          "items": [
-            {
-              "text": "Fixed a crash and saving issue that caused helicopter flares to stop working after multiple uses, ensuring flares fire correctly.",
-              "commit_ids": [
-                708152,
-                708156
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "World & Navigation",
         "items": [
           {
-            "text": "Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.",
+            "text": "Map icons for Tool Cupboards added and deep‑sea marker issues fixed, improving map clarity and preventing marker loss.",
             "commit_ids": [
-              708250,
-              708227
+              708489,
+              708215
             ]
           },
           {
-            "text": "Adjusted boar flee behavior: lowered health threshold from 75% to 30%.",
+            "text": "Ferry terminal rope ladder climbing fixed, eliminating climb glitches and stuck rung animations.",
             "commit_ids": [
+              708388
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & AI",
+        "items": [
+          {
+            "text": "Hit detection improved and boars now flee only below 30 % health, making combat more reliable and boar encounters less premature.",
+            "commit_ids": [
+              708403,
               708229
             ]
           },
           {
-            "text": "Fixed cow pathing to prevent clipping and improved feeding at troughs and grass.",
+            "text": "Livestock movement and feeding behavior refined, preventing cows from clipping and improving eating at troughs and grass.",
             "commit_ids": [
+              708250,
               708190,
               708187
             ]
@@ -232,89 +58,103 @@
         ]
       },
       {
-        "title": "Character Customization",
+        "title": "Crafting & Items",
         "items": [
           {
-            "text": "Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.",
+            "text": "New tea mixing‑table recipes and Wool Armor introduced, expanding crafting options and providing Tier 1 protection.",
             "commit_ids": [
-              708247,
-              708223
+              708504,
+              708399
             ]
-          }
-        ]
-      },
-      {
-        "title": "Controls & UI",
-        "items": [
+          },
           {
-            "text": "Moved crafting action to D‑pad down across all control schemes.",
+            "text": "Crafting action moved to D‑pad down on all controller layouts for easier access.",
             "commit_ids": [
               708235
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Audio & Sound",
+        "items": [
           {
-            "text": "Fixed key suppression timing bug, improving input responsiveness.",
+            "text": "BBQ and flame turret sounds corrected and one‑shot spawn noises (furnaces, campfires, mixing tables) silenced for a cleaner audio experience.",
             "commit_ids": [
-              708230
-            ]
-          },
-          {
-            "text": "Run toggle now persists correctly between movement sprints.",
-            "commit_ids": [
-              708193
-            ]
-          },
-          {
-            "text": "Fixed menu drift caused by deadzone handling.",
-            "commit_ids": [
-              708225
+              708505,
+              708492
             ]
           }
         ]
       },
       {
-        "title": "Map & Markers",
+        "title": "Player Impact",
         "items": [
           {
-            "text": "Restored deep‑sea monument markers and fixed shop marker cache corruption on disconnect/reconnect.",
+            "text": "Fixed horses being able to fly, preventing unintended movement exploits.",
             "commit_ids": [
-              708215
+              708463
             ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Tools",
-        "items": [
+          },
           {
-            "text": "Bee grenade no longer appears white when throw prediction is enabled.",
+            "text": "Boombox mission events now only trigger for teammates on the same mission, avoiding irrelevant alerts.",
+            "commit_ids": [
+              708441
+            ]
+          },
+          {
+            "text": "Resolved client crashes caused by late-arriving network snapshots, improving stability during map transitions.",
+            "commit_ids": [
+              708416
+            ]
+          },
+          {
+            "text": "Tattoos now correctly persist between client and server, ensuring player cosmetics are saved.",
+            "commit_ids": [
+              708412
+            ]
+          },
+          {
+            "text": "Reloading maps now correctly includes level size data, preventing loading confusion when switching between maps.",
+            "commit_ids": [
+              708350
+            ]
+          },
+          {
+            "text": "Fixed several character customization bugs: UI fading issue, unwanted underwear prompt, and teleporting back to start when opening the menu.",
+            "commit_ids": [
+              708247
+            ]
+          },
+          {
+            "text": "Bee grenade prediction no longer shows a white grenade model, fixing visual glitch during throw prediction.",
             "commit_ids": [
               708201
             ]
           },
           {
-            "text": "Helicopter flares now work correctly after saving/loading, ensuring functional flare deployment.",
-            "commit_ids": [
-              708156,
-              708152
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Stability",
-        "items": [
-          {
-            "text": "Fixed NaN vertex lighting issue that could cause crashes.",
+            "text": "Fixed a NaN vertex lighting issue that could crash the game.",
             "commit_ids": [
               708170
+            ]
+          },
+          {
+            "text": "Helicopter flares now save correctly without corrupting job handlers, restoring flare functionality after saving.",
+            "commit_ids": [
+              708156
+            ]
+          },
+          {
+            "text": "Made helicopter flare saving thread‑safe, preventing crashes when multiple flares are saved simultaneously.",
+            "commit_ids": [
+              708152
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### NPC & AI\n- Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.\n- Adjusted boar flee behavior: lowered health threshold from 75% to 30%.\n- Fixed cow pathing to prevent clipping and improved feeding at troughs and grass.\n\n### Character Customization\n- Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.\n\n### Controls & UI\n- Moved crafting action to D‑pad down across all control schemes.\n- Fixed key suppression timing bug, improving input responsiveness.\n- Run toggle now persists correctly between movement sprints.\n- Fixed menu drift caused by deadzone handling.\n\n### Map & Markers\n- Restored deep‑sea monument markers and fixed shop marker cache corruption on disconnect/reconnect.\n\n### Weapons & Tools\n- Bee grenade no longer appears white when throw prediction is enabled.\n- Helicopter flares now work correctly after saving/loading, ensuring functional flare deployment.\n\n### Stability\n- Fixed NaN vertex lighting issue that could cause crashes.",
+    "summary": "### World & Navigation\n- Map icons for Tool Cupboards added and deep‑sea marker issues fixed, improving map clarity and preventing marker loss.\n- Ferry terminal rope ladder climbing fixed, eliminating climb glitches and stuck rung animations.\n\n### Combat & AI\n- Hit detection improved and boars now flee only below 30 % health, making combat more reliable and boar encounters less premature.\n- Livestock movement and feeding behavior refined, preventing cows from clipping and improving eating at troughs and grass.\n\n### Crafting & Items\n- New tea mixing‑table recipes and Wool Armor introduced, expanding crafting options and providing Tier 1 protection.\n- Crafting action moved to D‑pad down on all controller layouts for easier access.\n\n### Audio & Sound\n- BBQ and flame turret sounds corrected and one‑shot spawn noises (furnaces, campfires, mixing tables) silenced for a cleaner audio experience.\n\n### Player Impact\n- Fixed horses being able to fly, preventing unintended movement exploits.\n- Boombox mission events now only trigger for teammates on the same mission, avoiding irrelevant alerts.\n- Resolved client crashes caused by late-arriving network snapshots, improving stability during map transitions.\n- Tattoos now correctly persist between client and server, ensuring player cosmetics are saved.\n- Reloading maps now correctly includes level size data, preventing loading confusion when switching between maps.\n- Fixed several character customization bugs: UI fading issue, unwanted underwear prompt, and teleporting back to start when opening the menu.\n- Bee grenade prediction no longer shows a white grenade model, fixing visual glitch during throw prediction.\n- Fixed a NaN vertex lighting issue that could crash the game.\n- Helicopter flares now save correctly without corrupting job handlers, restoring flare functionality after saving.\n- Made helicopter flare saving thread‑safe, preventing crashes when multiple flares are saved simultaneously.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -453,64 +293,6 @@
     ],
     "status": "ok",
     "summary": "### World & Locations\n- Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.\n\n### UI & Localization\n- Item drop and pickup notices now display correctly for right‑to‑left languages.\n- Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.\n\n### Gameplay & Mechanics\n- Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.\n\n### Combat & Projectiles\n- Fixed a bug where projectiles could leak and persist after the owning player was destroyed.\n\n### Power & Generators\n- Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.\n\n### Livestock\n- Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.\n- Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.\n- Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.\n\n### Gameplay & Balance\n- Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.\n- Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.\n\n### Character Customisation\n- Introduced a revamped character creator layout for easier navigation of customization options.\n- Added an underwear customization category, expanding player outfit choices.\n- Removed the eyebrows category, streamlining available facial features.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-04": {
-    "commit_count": 13,
-    "relevant_commit_count": 5,
-    "relevant_signature": "707852,707885,707887,707890,707891",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Softcore Mode",
-        "items": [
-          {
-            "text": "Fixed death screen on first softcore join; players now spawn directly at the beach.",
-            "commit_ids": [
-              707890
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Research & Crafting",
-        "items": [
-          {
-            "text": "Research tables can now be used to research Animal Fence and Gate.",
-            "commit_ids": [
-              707887
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Farming & Food",
-        "items": [
-          {
-            "text": "Milk can be stacked when the skim timer is under 1 minute, and skimming works even if food spoiling is disabled.",
-            "commit_ids": [
-              707885
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Scrap helicopter dismount points adjusted to avoid always ejecting players from the front.",
-            "commit_ids": [
-              707852
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Softcore Mode\n- Fixed death screen on first softcore join; players now spawn directly at the beach.\n\n### Research & Crafting\n- Research tables can now be used to research Animal Fence and Gate.\n\n### Farming & Food\n- Milk can be stacked when the skim timer is under 1 minute, and skimming works even if food spoiling is disabled.\n\n### Vehicles\n- Scrap helicopter dismount points adjusted to avoid always ejecting players from the front.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

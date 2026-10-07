@@ -6,41 +6,53 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 07 Oct 2026 00:17:57 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 02:17:36 -0400</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Oct 07</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-10-07</guid>
+      <pubDate>Wed, 07 Oct 2026 02:17:36 -0400</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;115 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Navigation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708250,708227"&gt;Fixed inconsistent NPC agent velocity and speed spikes, improving movement reliability.&lt;/li&gt;
-&lt;li data-rust-commits="708229"&gt;Adjusted boar flee behavior: lowered health threshold from 75% to 30%.&lt;/li&gt;
-&lt;li data-rust-commits="708190,708187"&gt;Fixed cow pathing to prevent clipping and improved feeding at troughs and grass.&lt;/li&gt;
+&lt;li data-rust-commits="708489,708215"&gt;Map icons for Tool Cupboards added and deep‑sea marker issues fixed, improving map clarity and preventing marker loss.&lt;/li&gt;
+&lt;li data-rust-commits="708388"&gt;Ferry terminal rope ladder climbing fixed, eliminating climb glitches and stuck rung animations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Character Customization&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708247,708223"&gt;Resolved several character creator issues: fading, stray prompts, limited skin tones, teleport glitch when opening the menu, and lighting after reconnect.&lt;/li&gt;
+&lt;li data-rust-commits="708403,708229"&gt;Hit detection improved and boars now flee only below 30 % health, making combat more reliable and boar encounters less premature.&lt;/li&gt;
+&lt;li data-rust-commits="708250,708190,708187"&gt;Livestock movement and feeding behavior refined, preventing cows from clipping and improving eating at troughs and grass.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Controls &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Crafting &amp;amp; Items&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708235"&gt;Moved crafting action to D‑pad down across all control schemes.&lt;/li&gt;
-&lt;li data-rust-commits="708230"&gt;Fixed key suppression timing bug, improving input responsiveness.&lt;/li&gt;
-&lt;li data-rust-commits="708193"&gt;Run toggle now persists correctly between movement sprints.&lt;/li&gt;
-&lt;li data-rust-commits="708225"&gt;Fixed menu drift caused by deadzone handling.&lt;/li&gt;
+&lt;li data-rust-commits="708504,708399"&gt;New tea mixing‑table recipes and Wool Armor introduced, expanding crafting options and providing Tier 1 protection.&lt;/li&gt;
+&lt;li data-rust-commits="708235"&gt;Crafting action moved to D‑pad down on all controller layouts for easier access.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; Markers&lt;/h3&gt;
+&lt;h3&gt;Audio &amp;amp; Sound&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708215"&gt;Restored deep‑sea monument markers and fixed shop marker cache corruption on disconnect/reconnect.&lt;/li&gt;
+&lt;li data-rust-commits="708505,708492"&gt;BBQ and flame turret sounds corrected and one‑shot spawn noises (furnaces, campfires, mixing tables) silenced for a cleaner audio experience.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;Player Impact&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="708201"&gt;Bee grenade no longer appears white when throw prediction is enabled.&lt;/li&gt;
-&lt;li data-rust-commits="708156,708152"&gt;Helicopter flares now work correctly after saving/loading, ensuring functional flare deployment.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Stability&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708170"&gt;Fixed NaN vertex lighting issue that could cause crashes.&lt;/li&gt;
+&lt;li data-rust-commits="708463"&gt;Fixed horses being able to fly, preventing unintended movement exploits.&lt;/li&gt;
+&lt;li data-rust-commits="708441"&gt;Boombox mission events now only trigger for teammates on the same mission, avoiding irrelevant alerts.&lt;/li&gt;
+&lt;li data-rust-commits="708416"&gt;Resolved client crashes caused by late-arriving network snapshots, improving stability during map transitions.&lt;/li&gt;
+&lt;li data-rust-commits="708412"&gt;Tattoos now correctly persist between client and server, ensuring player cosmetics are saved.&lt;/li&gt;
+&lt;li data-rust-commits="708350"&gt;Reloading maps now correctly includes level size data, preventing loading confusion when switching between maps.&lt;/li&gt;
+&lt;li data-rust-commits="708247"&gt;Fixed several character customization bugs: UI fading issue, unwanted underwear prompt, and teleporting back to start when opening the menu.&lt;/li&gt;
+&lt;li data-rust-commits="708201"&gt;Bee grenade prediction no longer shows a white grenade model, fixing visual glitch during throw prediction.&lt;/li&gt;
+&lt;li data-rust-commits="708170"&gt;Fixed a NaN vertex lighting issue that could crash the game.&lt;/li&gt;
+&lt;li data-rust-commits="708156"&gt;Helicopter flares now save correctly without corrupting job handlers, restoring flare functionality after saving.&lt;/li&gt;
+&lt;li data-rust-commits="708152"&gt;Made helicopter flare saving thread‑safe, preventing crashes when multiple flares are saved simultaneously.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-06</guid>
@@ -92,31 +104,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-05</guid>
       <pubDate>Mon, 05 Oct 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Oct 04</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;13 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Softcore Mode&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="707890"&gt;Fixed death screen on first softcore join; players now spawn directly at the beach.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Research &amp;amp; Crafting&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="707887"&gt;Research tables can now be used to research Animal Fence and Gate.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Farming &amp;amp; Food&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="707885"&gt;Milk can be stacked when the skim timer is under 1 minute, and skimming works even if food spoiling is disabled.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="707852"&gt;Scrap helicopter dismount points adjusted to avoid always ejecting players from the front.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-10-04</guid>
-      <pubDate>Sun, 04 Oct 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
