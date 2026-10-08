@@ -1,5 +1,109 @@
 [
   {
+    "id": 710327,
+    "branch": "▄▋▅█",
+    "changeset": "▌▇▊▍▍▇",
+    "created": "2026-10-08T17:45:35",
+    "message": "▉▍ ▌▌▋▋▊ █▆▅▌ ▄▊▌▌▄▆▆▉▇▇▅▌▌▌▋▆▍",
+    "user": "cipeaX"
+  },
+  {
+    "id": 710321,
+    "branch": "main",
+    "changeset": "167331",
+    "created": "2026-10-08T17:23:22",
+    "message": "merge from triangle_block_isvisible_fix\r\n- stops splash damage being applied to triangle floors and frames through walls in some cases",
+    "user": "Grigler"
+  },
+  {
+    "id": 710319,
+    "branch": "main/Livestock_animals",
+    "changeset": "167330",
+    "created": "2026-10-08T17:13:32",
+    "message": "Fix new navmesh stalls on main thread:\r\n- build ghost ships async\r\n- allow splitting work with more granularity to stay under the budget, else a megabase navmesh tile can go way over, we need to split individual colliders of a tile\r\n- cache ToBaseEntity, as it's expensive",
+    "user": "Maverick"
+  },
+  {
+    "id": 710318,
+    "branch": "▋▍▆▄▉▇▍▄▆▊█▅▍▊▇▄▊▍▊▇▄█",
+    "changeset": "▉█▇▄▇▄",
+    "created": "2026-10-08T17:10:36",
+    "message": "▌ ▇▉▍▊▍▊▍▅ ▌▆▍█ ▅▉ ██▊ ▆▍▅▍▆▊▍▍ █▇▊█▋▄▅▅▉▉█ ▆▊▋▋ ▍▆▋▅ ▅▊▆▋▉▋▇▉▇ ▍▍▄ ▌▍▊█▆▆▊▄▅▌▇ ▊▄ ▄▆▄▉▅▅▋▉ ▉▋▇▆▊▅▋██▌ ▅▉█ ▊▆ ▍▆█▊▉▊ ▍▇▆ ▉▊██▇▄▆▋▆█ ▆▆▇▅ ▊▅▌▊",
+    "user": "Grigler"
+  },
+  {
+    "id": 710317,
+    "branch": "main/Livestock_animals",
+    "changeset": "167328",
+    "created": "2026-10-08T17:08:24",
+    "message": "Make cows more intuitive and clear:\r\n- simplify cow ownership, you buy a cow it's yours, it eats at your trough it's yours now, no bond needed (only for leading), nobody can steal a lead from the owner, cows with no owner can't breed\r\n- UI shows owner\r\n- cows don't die from old age anymore, crowding is the only death, starved animals lie at 1 hp and get up when food is available again\r\n- cows can buffer up to 3 charges of milk to reduce micromanagement\r\n- UI shows milk cooldown / charges\r\n- overgrazing mechanic removed, replaced with simple grass need (it just checks if each cow has at least one foundation worth of grass in the pen)\r\n- cows can eat any food a horse can\r\n- if all fails, cows will teleport food from the trough to their belly (should be rare, just to prevent cows blocking other cows from eating despite the queue system)\r\n- UI shows pregnancy status, father, remaining time, cooldown after birth\r\n- UI shows how long the food / water in the trough will last given the number of cows using it (both on the trough UI, and on the cow UI)\r\n- cow names are not picked based on the server players language, but on the cow owner language, wild cows have no names and get one with their first owner (you won't have herds of foreign cows with names you may not be able to read, unless you steal them)\r\n- separate frame budgets for scientists, animals and livestock: too many livestock can't slow down scientists and animals anymore, only slow down livestock on the server\r\n- (in another previous changelist) personal space is same for all cows in herd, it doesn't fluctuate unless barn changes\r\n- (in another previous changelist) free range cows stop breeding when herd size reaches 9 (no crazy outbreak after leaving 2 cows outside)",
+    "user": "Maverick"
+  },
+  {
+    "id": 710315,
+    "branch": "main/pt_boat_turret_rewrite",
+    "changeset": "167327",
+    "created": "2026-10-08T17:04:42",
+    "message": "- Fix PT turret ammo refilling on restart (caused by rewrite)\r\n- Fix toast being removed\r\n- Fix being able to show reload animation for other types of ammo\r\n- Fix reload animation playing after dismounting mid reload",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710312,
+    "branch": "main/Livestock_animals",
+    "changeset": "167326",
+    "created": "2026-10-08T16:59:27",
+    "message": "Fix cows clipping through walls, causing their head to stick out of buildings",
+    "user": "Maverick"
+  },
+  {
+    "id": 710310,
+    "branch": "main/indirect_instancing",
+    "changeset": "167324",
+    "created": "2026-10-08T16:31:28",
+    "message": "Add ObjectDispatcher wrapper",
+    "user": "Felix"
+  },
+  {
+    "id": 710308,
+    "branch": "main/underground_train_network_update",
+    "changeset": "167323",
+    "created": "2026-10-08T16:23:53",
+    "message": "Small Random Room B - Generic - WIP",
+    "user": "hannah.watts"
+  },
+  {
+    "id": 710307,
+    "branch": "main/render_pipeline_testing/native_render_passes",
+    "changeset": "167322",
+    "created": "2026-10-08T16:19:37",
+    "message": "Updated RRP to use the new RenderGraph API",
+    "user": "aidan.m"
+  },
+  {
+    "id": 710306,
+    "branch": "main",
+    "changeset": "167321",
+    "created": "2026-10-08T16:17:58",
+    "message": "vending_ui_fixes -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710305,
+    "branch": "main/vending_ui_fixes",
+    "changeset": "167320",
+    "created": "2026-10-08T16:17:43",
+    "message": "Fix 'add sell order' exceeding stack size",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710304,
+    "branch": "main/vending_ui_fixes",
+    "changeset": "167319",
+    "created": "2026-10-08T16:17:12",
+    "message": "Fix always showing 1x when hovering over things in the vending ui",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 710298,
     "branch": "main/high_stakes_dlc",
     "changeset": "167316",
@@ -2717,110 +2821,6 @@
     "changeset": "166763",
     "created": "2026-10-05T18:25:34",
     "message": "Codegen",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707992,
-    "branch": "▄▋▍▌▌▌▇▌▉▍▅▇▍▊▊▋",
-    "changeset": "█▍▍▌▄▌",
-    "created": "2026-10-05T18:15:45",
-    "message": "▊▌▊██▆█▍ █▅▊▄█▄█ ▌▋▉▆▆▄ ▆▅▅▍ ▍ ▊▅▅▆▄▇▌ ▋▇▋▋▄▇ ▍▄▋██▋ ▌▇▋▉▄ █▄▅▉▅█▊▉█▉▉ ▆▌▅▄▆▆▊ ▋▋▅▊▆▆▅ ▇▌▋▇▅▊▌ ▊▄▋▄▆▇▉▍ ▄▅▊ ▋█▋▍▆█▉▊▊",
-    "user": "mauro.a"
-  },
-  {
-    "id": 707989,
-    "branch": "main",
-    "changeset": "166758",
-    "created": "2026-10-05T18:10:40",
-    "message": "~ merge from fix_jungle_plant_water -> main",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707986,
-    "branch": "main",
-    "changeset": "166756",
-    "created": "2026-10-05T18:06:43",
-    "message": "~ merge from fix_motorcycle_dismount_order -> main",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707984,
-    "branch": "main",
-    "changeset": "166755",
-    "created": "2026-10-05T18:04:55",
-    "message": "~ merge from fix_client_sail_wind -> main",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707982,
-    "branch": "█▍▊▇",
-    "changeset": "█▄▍▊▉▋",
-    "created": "2026-10-05T18:00:20",
-    "message": "█▍ ▊▇▍█▍ ▍▅█▆ ▆▊▌█▉▉▇▄█▋▌█▊▍▉▄▍▇▅▇▋▌▉ ▌▆ █▆▊▇",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707980,
-    "branch": "main/netgraph_fix",
-    "changeset": "166752",
-    "created": "2026-10-05T17:29:28",
-    "message": "Reapplied the fix after the post-merge conflicts",
-    "user": "Raul"
-  },
-  {
-    "id": 707972,
-    "branch": "main/character_customisation",
-    "changeset": "166748",
-    "created": "2026-10-05T17:08:56",
-    "message": "Missed files",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 707973,
-    "branch": "main/character_customisation",
-    "changeset": "166747",
-    "created": "2026-10-05T17:08:49",
-    "message": "- New Character Creator Layout\r\n- Stop the icon preview characters looking dead (they had no eyes in their sockets)\r\n- Fix numerous build errors\r\n- Remove eyebrows category\r\n- Add underwear category",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 707969,
-    "branch": "main/netmsg_loadmap",
-    "changeset": "166744",
-    "created": "2026-10-05T16:53:27",
-    "message": "Clean: remove stale todo\r\nDon't think I need to fiddle with asset scenes in this case\r\nTests: none, trivial change",
-    "user": "Daniel P"
-  },
-  {
-    "id": 707968,
-    "branch": "main/map_optims",
-    "changeset": "166743",
-    "created": "2026-10-05T16:51:21",
-    "message": "Cache LandmarkInfos so we only rebuild them when necessary",
-    "user": "Flavien"
-  },
-  {
-    "id": 707966,
-    "branch": "main/netmsg_loadmap",
-    "changeset": "166742",
-    "created": "2026-10-05T16:47:10",
-    "message": "Update: ignore auth messages if already authed\r\nTests: using a temp servervar triggered reauth while on Craggy - got rejected",
-    "user": "Daniel P"
-  },
-  {
-    "id": 707965,
-    "branch": "█▉▇▇▄▄▇▆▌▌▊▋▊▉▉▆▅▍▄▆▅▇",
-    "changeset": "▉█▋▋▍█",
-    "created": "2026-10-05T16:45:27",
-    "message": "▉ ▍▌▊ ▇▊▇█▄▅▋ ▍▍▍▉▍▇▌▉▌ ▉▊▊▊▇▉█ █▊█▅▆▍▅▌ ▉▇▊▋ ▊▇▆ ▍█▉ ▄▅ ▇▌ ▉▇▌▉▄ ▋▍▇ ▅▇▋▅▍▋▉ ▄█▍▌▅▄ ▊▊ ▅▌█ ▆▊▅▅▆█▄▉▅▅▆▋▍▇▍▆▆▇▍█",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 707964,
-    "branch": "main/qol_loadout_inventory_preview",
-    "changeset": "166740",
-    "created": "2026-10-05T16:43:15",
-    "message": "Fix after merge",
     "user": "Jake_Rich"
   }
 ]

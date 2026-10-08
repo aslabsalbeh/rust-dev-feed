@@ -1,23 +1,30 @@
 {
   "2026-10-08": {
-    "commit_count": 50,
-    "relevant_commit_count": 30,
-    "relevant_signature": "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247,710253,710266,710270,710271",
+    "commit_count": 63,
+    "relevant_commit_count": 37,
+    "relevant_signature": "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247,710253,710266,710270,710271,710304,710305,710306,710312,710315,710317,710321",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat",
+        "title": "Combat & Damage",
         "items": [
           {
-            "text": "Boomerang now damages BaseNPC2 as intended.",
+            "text": "Splash damage no longer goes through triangle floors, frames, or foundations, so walls now block area attacks as expected.",
             "commit_ids": [
-              710270,
-              710271
+              710321,
+              710236,
+              710231
             ]
           },
           {
-            "text": "Rockets no longer explode mid‑air when near dead bodies.",
+            "text": "Boomerangs now correctly damage BaseNPC2 enemies.",
+            "commit_ids": [
+              710270
+            ]
+          },
+          {
+            "text": "Server‑spawned projectiles like rockets ignore ragdoll layers, preventing explosions from triggering near dead bodies.",
             "commit_ids": [
               710247
             ]
@@ -25,12 +32,87 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "PT boat turrets can be reloaded again.",
+            "text": "Cows now have immediate ownership on purchase, display the owner in UI, no longer die of old age, can store up to three milk charges with a cooldown indicator, ignore overgrazing, accept any horse food, show pregnancy and breeding timers, and herd size caps at nine; clipping through walls has also been fixed.",
             "commit_ids": [
+              710317,
+              710312
+            ]
+          },
+          {
+            "text": "Unbred livestock (wild or vendor‑bought) have a capped potential; only their first generation can be sold, configurable via livestock.potentialUnbredCap.",
+            "commit_ids": [
+              710102
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Turrets (PT Boat)",
+        "items": [
+          {
+            "text": "PT boat turrets now correctly refill ammo after server restarts and can be reloaded with all ammo types, with reload animations working even after dismounting.",
+            "commit_ids": [
+              710315,
               710229
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vending & Trading",
+        "items": [
+          {
+            "text": "Creating a sell order now respects the item’s stack size limits.",
+            "commit_ids": [
+              710305
+            ]
+          },
+          {
+            "text": "Hovering over items in the vending UI shows the correct stack multiplier instead of always \"1x\".",
+            "commit_ids": [
+              710304
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Interaction",
+        "items": [
+          {
+            "text": "Storage boxes no longer get blocked by walls due to corrected bounds.",
+            "commit_ids": [
+              710223
+            ]
+          },
+          {
+            "text": "Animated building blocks are ignored for headroom calculations, eliminating unwanted auto‑crouch near closing doors.",
+            "commit_ids": [
+              710213
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Boomerang damage now calculates correctly, restoring expected weapon performance.",
+            "commit_ids": [
+              710271
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Interaction",
+        "items": [
+          {
+            "text": "Vending machine UI issues resolved, improving buying and selling interactions.",
+            "commit_ids": [
+              710306
             ]
           }
         ]
@@ -39,75 +121,66 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Storage boxes no longer block placement against walls.",
+            "text": "Broken boiler room prefab links repaired, restoring proper structure and functionality in underground areas.",
             "commit_ids": [
-              710223
-            ]
-          },
-          {
-            "text": "Underground train network wiring and lighting fixed, restoring boiler‑room prefab links and correct light colors.",
-            "commit_ids": [
-              710158,
-              710156
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Player Movement",
-        "items": [
-          {
-            "text": "Animated building blocks no longer affect headroom calculations, preventing unwanted auto‑crouch near closing doors.",
-            "commit_ids": [
-              710213
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Breeding",
-        "items": [
-          {
-            "text": "Breeding potential capped for unbred animals; only later generations can be sold (configurable).",
-            "commit_ids": [
-              710102
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Triangle frames and foundations are now correctly visible when placed.",
-            "commit_ids": [
-              710236
+              710158
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat\n- Boomerang now damages BaseNPC2 as intended.\n- Rockets no longer explode mid‑air when near dead bodies.\n\n### Vehicles\n- PT boat turrets can be reloaded again.\n\n### World & Environment\n- Storage boxes no longer block placement against walls.\n- Underground train network wiring and lighting fixed, restoring boiler‑room prefab links and correct light colors.\n\n### Player Movement\n- Animated building blocks no longer affect headroom calculations, preventing unwanted auto‑crouch near closing doors.\n\n### Livestock & Breeding\n- Breeding potential capped for unbred animals; only later generations can be sold (configurable).\n\n### Gameplay & Balance\n- Triangle frames and foundations are now correctly visible when placed.",
+    "summary": "### Combat & Damage\n- Splash damage no longer goes through triangle floors, frames, or foundations, so walls now block area attacks as expected.\n- Boomerangs now correctly damage BaseNPC2 enemies.\n- Server‑spawned projectiles like rockets ignore ragdoll layers, preventing explosions from triggering near dead bodies.\n\n### Livestock & Animals\n- Cows now have immediate ownership on purchase, display the owner in UI, no longer die of old age, can store up to three milk charges with a cooldown indicator, ignore overgrazing, accept any horse food, show pregnancy and breeding timers, and herd size caps at nine; clipping through walls has also been fixed.\n- Unbred livestock (wild or vendor‑bought) have a capped potential; only their first generation can be sold, configurable via livestock.potentialUnbredCap.\n\n### Vehicle Turrets (PT Boat)\n- PT boat turrets now correctly refill ammo after server restarts and can be reloaded with all ammo types, with reload animations working even after dismounting.\n\n### Vending & Trading\n- Creating a sell order now respects the item’s stack size limits.\n- Hovering over items in the vending UI shows the correct stack multiplier instead of always \"1x\".\n\n### World Interaction\n- Storage boxes no longer get blocked by walls due to corrected bounds.\n- Animated building blocks are ignored for headroom calculations, eliminating unwanted auto‑crouch near closing doors.\n\n### Combat & Weapons\n- Boomerang damage now calculates correctly, restoring expected weapon performance.\n\n### UI & Interaction\n- Vending machine UI issues resolved, improving buying and selling interactions.\n\n### World & Environment\n- Broken boiler room prefab links repaired, restoring proper structure and functionality in underground areas.",
     "new_items": [
       {
-        "text": "Boomerang now damages BaseNPC2 as intended.",
+        "text": "Splash damage no longer goes through triangle floors, frames, or foundations, so walls now block area attacks as expected.",
         "commit_ids": [
-          710270,
-          710271
+          710321,
+          710236,
+          710231
         ],
-        "section": "Combat"
+        "section": "Combat & Damage"
       },
       {
-        "text": "Rockets no longer explode mid‑air when near dead bodies.",
+        "text": "Cows now have immediate ownership on purchase, display the owner in UI, no longer die of old age, can store up to three milk charges with a cooldown indicator, ignore overgrazing, accept any horse food, show pregnancy and breeding timers, and herd size caps at nine; clipping through walls has also been fixed.",
         "commit_ids": [
-          710247
+          710317,
+          710312
         ],
-        "section": "Combat"
+        "section": "Livestock & Animals"
+      },
+      {
+        "text": "PT boat turrets now correctly refill ammo after server restarts and can be reloaded with all ammo types, with reload animations working even after dismounting.",
+        "commit_ids": [
+          710315,
+          710229
+        ],
+        "section": "Vehicle Turrets (PT Boat)"
+      },
+      {
+        "text": "Creating a sell order now respects the item’s stack size limits.",
+        "commit_ids": [
+          710305
+        ],
+        "section": "Vending & Trading"
+      },
+      {
+        "text": "Hovering over items in the vending UI shows the correct stack multiplier instead of always \"1x\".",
+        "commit_ids": [
+          710304
+        ],
+        "section": "Vending & Trading"
+      },
+      {
+        "text": "Vending machine UI issues resolved, improving buying and selling interactions.",
+        "commit_ids": [
+          710306
+        ],
+        "section": "UI & Interaction"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Boomerang now damages BaseNPC2 as intended.\n- Rockets no longer explode mid‑air when near dead bodies."
+    "new_relevant_count": 10,
+    "new_summary": "- Splash damage no longer goes through triangle floors, frames, or foundations, so walls now block area attacks as expected.\n- Cows now have immediate ownership on purchase, display the owner in UI, no longer die of old age, can store up to three milk charges with a cooldown indicator, ignore overgrazing, accept any horse food, show pregnancy and breeding timers, and herd size caps at nine; clipping through walls has also been fixed.\n- PT boat turrets now correctly refill ammo after server restarts and can be reloaded with all ammo types, with reload animations working even after dismounting.\n- Creating a sell order now respects the item’s stack size limits.\n- Hovering over items in the vending UI shows the correct stack multiplier instead of always \"1x\".\n- Vending machine UI issues resolved, improving buying and selling interactions."
   },
   "2026-10-07": {
     "commit_count": 122,
