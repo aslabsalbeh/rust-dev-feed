@@ -1,16 +1,23 @@
 {
   "2026-10-08": {
-    "commit_count": 41,
-    "relevant_commit_count": 26,
-    "relevant_signature": "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247",
+    "commit_count": 50,
+    "relevant_commit_count": 30,
+    "relevant_signature": "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247,710253,710266,710270,710271",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Projectiles",
+        "title": "Combat",
         "items": [
           {
-            "text": "Server projectiles no longer collide with ragdoll layer, preventing rockets from exploding mid‑air when fired near dead bodies.",
+            "text": "Boomerang now damages BaseNPC2 as intended.",
+            "commit_ids": [
+              710270,
+              710271
+            ]
+          },
+          {
+            "text": "Rockets no longer explode mid‑air when near dead bodies.",
             "commit_ids": [
               710247
             ]
@@ -18,10 +25,10 @@
         ]
       },
       {
-        "title": "Vehicles & Turrets",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "PT boat turrets can now be reloaded after the rewrite.",
+            "text": "PT boat turrets can be reloaded again.",
             "commit_ids": [
               710229
             ]
@@ -29,21 +36,28 @@
         ]
       },
       {
-        "title": "Storage & Building",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Storage box bounds fixed, preventing placement blockage when a box is against a wall.",
+            "text": "Storage boxes no longer block placement against walls.",
             "commit_ids": [
               710223
+            ]
+          },
+          {
+            "text": "Underground train network wiring and lighting fixed, restoring boiler‑room prefab links and correct light colors.",
+            "commit_ids": [
+              710158,
+              710156
             ]
           }
         ]
       },
       {
-        "title": "Movement & Collision",
+        "title": "Player Movement",
         "items": [
           {
-            "text": "Player headroom calculation now ignores animated building blocks, stopping unwanted auto‑crouch when near closing doors.",
+            "text": "Animated building blocks no longer affect headroom calculations, preventing unwanted auto‑crouch near closing doors.",
             "commit_ids": [
               710213
             ]
@@ -54,7 +68,7 @@
         "title": "Livestock & Breeding",
         "items": [
           {
-            "text": "Unbred animals now have a capped breeding potential (configurable via livestock.potentialUnbredCap), limiting profit from wild‑bought livestock.",
+            "text": "Breeding potential capped for unbred animals; only later generations can be sold (configurable).",
             "commit_ids": [
               710102
             ]
@@ -62,64 +76,38 @@
         ]
       },
       {
-        "title": "World & Structures",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Triangle frames and foundations are now properly enabled, fixing visibility and placement issues for builders.",
+            "text": "Triangle frames and foundations are now correctly visible when placed.",
             "commit_ids": [
               710236
-            ]
-          },
-          {
-            "text": "Underground train network prefab links repaired, restoring access to the boiler room and related structures.",
-            "commit_ids": [
-              710158
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Projectiles\n- Server projectiles no longer collide with ragdoll layer, preventing rockets from exploding mid‑air when fired near dead bodies.\n\n### Vehicles & Turrets\n- PT boat turrets can now be reloaded after the rewrite.\n\n### Storage & Building\n- Storage box bounds fixed, preventing placement blockage when a box is against a wall.\n\n### Movement & Collision\n- Player headroom calculation now ignores animated building blocks, stopping unwanted auto‑crouch when near closing doors.\n\n### Livestock & Breeding\n- Unbred animals now have a capped breeding potential (configurable via livestock.potentialUnbredCap), limiting profit from wild‑bought livestock.\n\n### World & Structures\n- Triangle frames and foundations are now properly enabled, fixing visibility and placement issues for builders.\n- Underground train network prefab links repaired, restoring access to the boiler room and related structures.",
+    "summary": "### Combat\n- Boomerang now damages BaseNPC2 as intended.\n- Rockets no longer explode mid‑air when near dead bodies.\n\n### Vehicles\n- PT boat turrets can be reloaded again.\n\n### World & Environment\n- Storage boxes no longer block placement against walls.\n- Underground train network wiring and lighting fixed, restoring boiler‑room prefab links and correct light colors.\n\n### Player Movement\n- Animated building blocks no longer affect headroom calculations, preventing unwanted auto‑crouch near closing doors.\n\n### Livestock & Breeding\n- Breeding potential capped for unbred animals; only later generations can be sold (configurable).\n\n### Gameplay & Balance\n- Triangle frames and foundations are now correctly visible when placed.",
     "new_items": [
       {
-        "text": "Server projectiles no longer collide with ragdoll layer, preventing rockets from exploding mid‑air when fired near dead bodies.",
+        "text": "Boomerang now damages BaseNPC2 as intended.",
+        "commit_ids": [
+          710270,
+          710271
+        ],
+        "section": "Combat"
+      },
+      {
+        "text": "Rockets no longer explode mid‑air when near dead bodies.",
         "commit_ids": [
           710247
         ],
-        "section": "Combat & Projectiles"
-      },
-      {
-        "text": "PT boat turrets can now be reloaded after the rewrite.",
-        "commit_ids": [
-          710229
-        ],
-        "section": "Vehicles & Turrets"
-      },
-      {
-        "text": "Storage box bounds fixed, preventing placement blockage when a box is against a wall.",
-        "commit_ids": [
-          710223
-        ],
-        "section": "Storage & Building"
-      },
-      {
-        "text": "Player headroom calculation now ignores animated building blocks, stopping unwanted auto‑crouch when near closing doors.",
-        "commit_ids": [
-          710213
-        ],
-        "section": "Movement & Collision"
-      },
-      {
-        "text": "Triangle frames and foundations are now properly enabled, fixing visibility and placement issues for builders.",
-        "commit_ids": [
-          710236
-        ],
-        "section": "World & Structures"
+        "section": "Combat"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Server projectiles no longer collide with ragdoll layer, preventing rockets from exploding mid‑air when fired near dead bodies.\n- PT boat turrets can now be reloaded after the rewrite.\n- Storage box bounds fixed, preventing placement blockage when a box is against a wall.\n- Player headroom calculation now ignores animated building blocks, stopping unwanted auto‑crouch when near closing doors.\n- Triangle frames and foundations are now properly enabled, fixing visibility and placement issues for builders."
+    "new_relevant_count": 3,
+    "new_summary": "- Boomerang now damages BaseNPC2 as intended.\n- Rockets no longer explode mid‑air when near dead bodies."
   },
   "2026-10-07": {
     "commit_count": 122,
