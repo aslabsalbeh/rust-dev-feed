@@ -1,5 +1,125 @@
 [
   {
+    "id": 710248,
+    "branch": "▋▉▋▄▆▇▌▌▋█▆▄▍▆▄▆▅▍▊▄▇▄",
+    "changeset": "▉█▉▊▍▄",
+    "created": "2026-10-08T13:34:06",
+    "message": "▆ ▌▉▍▄▋▆▋ ▉▄▊▇▇",
+    "user": "Felix"
+  },
+  {
+    "id": 710247,
+    "branch": "main/rocket_ragdoll_fix",
+    "changeset": "167300",
+    "created": "2026-10-08T13:33:54",
+    "message": "Stop most server projectiles from colliding with the Ragdoll layer.\r\nFixes shooting a rocket near a dead body and it exploding mid air because the collider on the server was in a position the client couldn't see",
+    "user": "cipeaX"
+  },
+  {
+    "id": 710245,
+    "branch": "main/pt_boat_turret_rewrite/turret_viewmodels",
+    "changeset": "167298",
+    "created": "2026-10-08T13:22:17",
+    "message": "pt_boat_turret_rewrite -> turret_viewmodels",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710244,
+    "branch": "main/indirect_instancing",
+    "changeset": "167297",
+    "created": "2026-10-08T13:18:44",
+    "message": "Revert CodeGen",
+    "user": "Felix"
+  },
+  {
+    "id": 710243,
+    "branch": "main/indirect_instancing",
+    "changeset": "167296",
+    "created": "2026-10-08T13:18:10",
+    "message": "CodeGen",
+    "user": "Felix"
+  },
+  {
+    "id": 710241,
+    "branch": "main/terrain_config_load",
+    "changeset": "167294",
+    "created": "2026-10-08T12:52:11",
+    "message": "Compile fix",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 710239,
+    "branch": "main",
+    "changeset": "167293",
+    "created": "2026-10-08T12:45:24",
+    "message": "pt_boat_turret_rewrite -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710238,
+    "branch": "main/animalfootsteps_optims",
+    "changeset": "167292",
+    "created": "2026-10-08T12:42:32",
+    "message": "Fixed animal footstep sounds not playing until its first idle animation finished",
+    "user": "Flavien"
+  },
+  {
+    "id": 710236,
+    "branch": "main/triangle_block_isvisible_fix",
+    "changeset": "167291",
+    "created": "2026-10-08T12:30:51",
+    "message": "enable for triangle frames and foundations as well",
+    "user": "Grigler"
+  },
+  {
+    "id": 710237,
+    "branch": "main",
+    "changeset": "167290",
+    "created": "2026-10-08T12:30:43",
+    "message": "merge setflags_fix",
+    "user": "octo"
+  },
+  {
+    "id": 710234,
+    "branch": "▍▉█▍▉▉▆▅▊▉█▆▋▆▊▇",
+    "changeset": "▍▄█▄▋▆",
+    "created": "2026-10-08T12:26:53",
+    "message": "▍▊▌▍▋█▄▋ ▋▌▇█▋█ ▌▄▅▉ ▍ ▇▍▇▄▇▊▍ ▆▇█▌▋▍█▍ ▅▌▌▄ ▆▄▆▊▅▅ ▌▆▄",
+    "user": "mauro.a"
+  },
+  {
+    "id": 710230,
+    "branch": "▊▆▌▌",
+    "changeset": "▌▋▋▉▆▉",
+    "created": "2026-10-08T12:18:33",
+    "message": "▌▉▄▅▍▍▆▋ ▆▇█▆▍ ▇▄▉█ ▅▌▌█ ▇█▍▆▇▌▌▇",
+    "user": "Flavien"
+  },
+  {
+    "id": 710231,
+    "branch": "main/triangle_block_isvisible_fix",
+    "changeset": "167286",
+    "created": "2026-10-08T12:18:30",
+    "message": "simplified 3-triangle closest point test to a single triangle for XZ and then clamping Y to the prismatic extents, more accurate and cheaper",
+    "user": "Grigler"
+  },
+  {
+    "id": 710229,
+    "branch": "main/pt_boat_turret_rewrite",
+    "changeset": "167285",
+    "created": "2026-10-08T12:17:11",
+    "message": "Fixed PT boat turrets not being able to be reloaded after rewrite",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710228,
+    "branch": "main/setflags_fix",
+    "changeset": "167284",
+    "created": "2026-10-08T12:08:10",
+    "message": "10 year old bug: Call OnFlagsChanged if SetFlagLocal gets called from CLIENT only ifdefs, it already gets called in editor with CLIENT && SERVER which is causing bugs to only show up when the server code is missing.",
+    "user": "octo"
+  },
+  {
     "id": 710225,
     "branch": "main/terrain_config_load",
     "changeset": "167282",
@@ -2670,53 +2790,5 @@
     "created": "2026-10-05T15:29:25",
     "message": "Split sensitivity per axis",
     "user": "Adam W"
-  },
-  {
-    "id": 707940,
-    "branch": "main/map_optims",
-    "changeset": "166730",
-    "created": "2026-10-05T13:55:12",
-    "message": "~When opening the map, only rebuild the mission provider states when they changed, saves ~100ms when opening the map on my machine",
-    "user": "Flavien"
-  },
-  {
-    "id": 707939,
-    "branch": "main/Livestock_animals",
-    "changeset": "166729",
-    "created": "2026-10-05T13:33:53",
-    "message": "Fix broken test",
-    "user": "Maverick"
-  },
-  {
-    "id": 707935,
-    "branch": "main/lookatboat_optim",
-    "changeset": "166726",
-    "created": "2026-10-05T12:51:32",
-    "message": "Cache LookAtBoatBuildingBlock action so it doesnt allocate every frame",
-    "user": "Flavien"
-  },
-  {
-    "id": 707934,
-    "branch": "main",
-    "changeset": "166725",
-    "created": "2026-10-05T12:40:27",
-    "message": "~Added a log in the console when you're trying to connect to a server with Disable Game UI enabled",
-    "user": "Flavien"
-  },
-  {
-    "id": 707933,
-    "branch": "main/Livestock_animals",
-    "changeset": "166724",
-    "created": "2026-10-05T12:36:29",
-    "message": "Rework livestock personal space\r\n- free range cows stop reproducing even if fully bonded when herd reach a cap\r\n- indoor / pen cows, navmesh flood fill to get their exact area in m2, and derive the need directly off that, so that all cows shows the same thing and it's stable / reacts directly to players doing building changes (it's also cheaper that what we are doing now, as we don't need to re-query just check the cache)\r\n- this gives fast feedback and stays stable over time, so players get a better idea of if something they are doing is working or not",
-    "user": "Maverick"
-  },
-  {
-    "id": 707932,
-    "branch": "main",
-    "changeset": "166723",
-    "created": "2026-10-05T12:36:02",
-    "message": "~InvokeHandler use cached method name for profiler samples, stops ~1KB/frame of string allocs in debug builds",
-    "user": "Flavien"
   }
 ]
