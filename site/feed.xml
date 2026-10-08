@@ -6,62 +6,55 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 08 Oct 2026 14:18:16 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 16:17:30 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 08</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;76 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710321,710236,710231"&gt;Splash damage no longer goes through triangle floors, frames, or foundations, so walls now block area attacks as expected.&lt;/li&gt;
-&lt;li data-rust-commits="710317,710312"&gt;Cows now have immediate ownership on purchase, display the owner in UI, no longer die of old age, can store up to three milk charges with a cooldown indicator, ignore overgrazing, accept any horse food, show pregnancy and breeding timers, and herd size caps at nine; clipping through walls has also been fixed.&lt;/li&gt;
-&lt;li data-rust-commits="710315,710229"&gt;PT boat turrets now correctly refill ammo after server restarts and can be reloaded with all ammo types, with reload animations working even after dismounting.&lt;/li&gt;
-&lt;li data-rust-commits="710305"&gt;Creating a sell order now respects the item’s stack size limits.&lt;/li&gt;
-&lt;li data-rust-commits="710304"&gt;Hovering over items in the vending UI shows the correct stack multiplier instead of always &amp;quot;1x&amp;quot;.&lt;/li&gt;
-&lt;li data-rust-commits="710306"&gt;Vending machine UI issues resolved, improving buying and selling interactions.&lt;/li&gt;
+&lt;li data-rust-commits="710356"&gt;Fixed map UI bug where the TC label could incorrectly show a delete button after a network update, and corrected sleeping bag button shuffling.&lt;/li&gt;
+&lt;li data-rust-commits="710341"&gt;Reapplied livestock petting and fixed rotation not using the agent.&lt;/li&gt;
+&lt;li data-rust-commits="710321"&gt;Stopped splash damage from passing through walls onto triangle floors and frames.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="710356"&gt;Fixed map UI bug where the TC label could incorrectly show a delete button after a network update, and corrected sleeping bag button shuffling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Livestock &amp;amp; Breeding&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="710317"&gt;Overhauled cow system: permanent ownership, UI shows owner, cows no longer die of old age (only crowding), added milk buffering with up to 3 charges and UI cooldown, removed overgrazing mechanic, cows can eat any horse food, added teleport‑food fallback, UI now displays pregnancy details, trough UI shows projected food/water duration, cow names reflect owner language, and herd size limits prevent performance impact.&lt;/li&gt;
+&lt;li data-rust-commits="710312"&gt;Fixed cows clipping through walls where heads would stick out of buildings.&lt;/li&gt;
+&lt;li data-rust-commits="710341"&gt;Reapplied livestock petting and fixed rotation not using the agent.&lt;/li&gt;
+&lt;li data-rust-commits="710102"&gt;Added a cap to animal potential for unbred animals; only offspring can be sold (configurable via livestock.potentialUnbredCap).&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Damage&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710321,710236,710231"&gt;Splash damage no longer goes through triangle floors, frames, or foundations, so walls now block area attacks as expected.&lt;/li&gt;
-&lt;li data-rust-commits="710270"&gt;Boomerangs now correctly damage BaseNPC2 enemies.&lt;/li&gt;
-&lt;li data-rust-commits="710247"&gt;Server‑spawned projectiles like rockets ignore ragdoll layers, preventing explosions from triggering near dead bodies.&lt;/li&gt;
+&lt;li data-rust-commits="710321"&gt;Stopped splash damage from passing through walls onto triangle floors and frames.&lt;/li&gt;
+&lt;li data-rust-commits="710236"&gt;Extended triangle‑block visibility fix to cover frames and foundations.&lt;/li&gt;
+&lt;li data-rust-commits="710270"&gt;Fixed boomerangs not dealing damage to BaseNPC2.&lt;/li&gt;
+&lt;li data-rust-commits="710247"&gt;Prevented server projectiles from colliding with the ragdoll layer, stopping rockets from exploding near dead bodies.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Animals&lt;/h3&gt;
+&lt;h3&gt;Turrets &amp;amp; Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710317,710312"&gt;Cows now have immediate ownership on purchase, display the owner in UI, no longer die of old age, can store up to three milk charges with a cooldown indicator, ignore overgrazing, accept any horse food, show pregnancy and breeding timers, and herd size caps at nine; clipping through walls has also been fixed.&lt;/li&gt;
-&lt;li data-rust-commits="710102"&gt;Unbred livestock (wild or vendor‑bought) have a capped potential; only their first generation can be sold, configurable via livestock.potentialUnbredCap.&lt;/li&gt;
+&lt;li data-rust-commits="710315"&gt;Fixed PT turret ammo not refilling on restart, restored reload animations for all ammo types, and stopped animation after mid‑reload dismount.&lt;/li&gt;
+&lt;li data-rust-commits="710229"&gt;Fixed PT boat turret reload issue after recent rewrite.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicle Turrets (PT Boat)&lt;/h3&gt;
+&lt;h3&gt;Vending &amp;amp; Storage&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710315,710229"&gt;PT boat turrets now correctly refill ammo after server restarts and can be reloaded with all ammo types, with reload animations working even after dismounting.&lt;/li&gt;
+&lt;li data-rust-commits="710305"&gt;Fixed vending UI bug where adding a sell order could exceed stack size.&lt;/li&gt;
+&lt;li data-rust-commits="710304"&gt;Fixed vending UI always showing a 1× multiplier when hovering over items.&lt;/li&gt;
+&lt;li data-rust-commits="710223"&gt;Corrected storage box collision bounds that blocked movement against walls.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vending &amp;amp; Trading&lt;/h3&gt;
+&lt;h3&gt;Player Movement&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710305"&gt;Creating a sell order now respects the item’s stack size limits.&lt;/li&gt;
-&lt;li data-rust-commits="710304"&gt;Hovering over items in the vending UI shows the correct stack multiplier instead of always &amp;quot;1x&amp;quot;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World Interaction&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="710223"&gt;Storage boxes no longer get blocked by walls due to corrected bounds.&lt;/li&gt;
-&lt;li data-rust-commits="710213"&gt;Animated building blocks are ignored for headroom calculations, eliminating unwanted auto‑crouch near closing doors.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="710271"&gt;Boomerang damage now calculates correctly, restoring expected weapon performance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Interaction&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="710306"&gt;Vending machine UI issues resolved, improving buying and selling interactions.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="710158"&gt;Broken boiler room prefab links repaired, restoring proper structure and functionality in underground areas.&lt;/li&gt;
+&lt;li data-rust-commits="710213"&gt;Headroom calculation now ignores animated building blocks, preventing unwanted auto‑crouch near closing doors.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-08</guid>
-      <pubDate>Thu, 08 Oct 2026 14:18:16 -0400</pubDate>
+      <pubDate>Thu, 08 Oct 2026 16:17:30 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 07</title>
