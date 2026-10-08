@@ -1,22 +1,29 @@
 {
   "2026-10-07": {
-    "commit_count": 117,
-    "relevant_commit_count": 55,
+    "commit_count": 122,
+    "relevant_commit_count": 60,
     "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080,710083,710084,710086,710088,710089,710090,710091": [
+      "709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080,710083,710084,710086,710088,710089,710090,710091,710092,710094,710095,710097,710098": [
         {
-          "title": "Audio & SFX",
+          "title": "Livestock & Animal Mechanics",
           "items": [
             {
-              "text": "Fixed footstep sounds incorrectly spawning at the origin (0,0,0), eliminating phantom noises.",
+              "text": "Introduced a new 'potential' stat for animals that tracks average happiness over time, only modifiable while the animal is a child; potential influences vendor sale prices and animals with zero potential cannot be sold. Potential now gradually rises or falls based on current happiness (10 min to go 0→100 at full happiness, 15 min to drop from 100→0 at zero happiness).",
               "commit_ids": [
-                710091
+                710097,
+                710098
               ]
             },
             {
-              "text": "Added a purchase sound effect when selling wool or animals, giving audible feedback for sales.",
+              "text": "Animals now dismount to the nearest valid point to the requesting player and perform a physics check to avoid dismounting through structures; players receive toast notifications when mounting or dismounting fails due to obstacles.",
+              "commit_ids": [
+                710071
+              ]
+            },
+            {
+              "text": "Added a purchase sound effect that plays when selling wool or animals, giving audible feedback for successful transactions.",
               "commit_ids": [
                 710080
               ]
@@ -24,10 +31,17 @@
           ]
         },
         {
-          "title": "Weapons & Combat",
+          "title": "Turret & Weapon Improvements",
           "items": [
             {
-              "text": "Fixed mortar desynchronization, ensuring mortar projectiles now behave consistently across clients.",
+              "text": "PT Boat turret viewmodels received full support, including reload functionality, corrected rear turret aiming down sights, and smoother rendering to eliminate stutter.",
+              "commit_ids": [
+                710088,
+                710083
+              ]
+            },
+            {
+              "text": "Fixed mortar desynchronization issues, ensuring mortar fire behaves consistently for all players.",
               "commit_ids": [
                 710079
               ]
@@ -35,21 +49,28 @@
           ]
         },
         {
-          "title": "Animals & Mounting",
+          "title": "Audio Feedback",
           "items": [
             {
-              "text": "Animals now dismount to the nearest valid point to the requesting player and perform a physics check to avoid dismounting through structures; added on‑screen toasts when mounting or dismounting fails.",
+              "text": "Resolved footstep sound bugs where missed raycasts caused sounds to originate from the origin point (0,0,0), eliminating phantom footstep noises.",
               "commit_ids": [
-                710071
+                710091,
+                710092
               ]
             }
           ]
         },
         {
-          "title": "Map & UI",
+          "title": "UI & Map Fixes",
           "items": [
             {
-              "text": "Fixed tool cupboards remaining visible on the map when the max‑TC limit is disabled at runtime.",
+              "text": "Corrected UICompass performance by stopping per-frame material property copying, saving ~0.05 ms each frame.",
+              "commit_ids": [
+                710076
+              ]
+            },
+            {
+              "text": "Fixed tool cupboards incorrectly appearing on the map when the maximum tool cupboard limit is disabled at runtime.",
               "commit_ids": [
                 710049
               ]
@@ -57,23 +78,45 @@
           ]
         },
         {
-          "title": "Generators",
+          "title": "Animation & Visual Polish",
           "items": [
             {
-              "text": "Fixed a pooling bug in biofuel generators that could cause them to malfunction or not produce power correctly.",
+              "text": "Fixed gun jitter that occurred when turning animations were playing, resulting in smoother aiming visuals.",
               "commit_ids": [
-                709970
+                709993
               ]
             }
           ]
         }
       ],
-      "709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950": [
+      "709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970": [
+        {
+          "title": "Generators",
+          "items": [
+            {
+              "text": "Fixed a biofuel generator pooling bug that could cause generators to malfunction or not produce fuel correctly.",
+              "commit_ids": [
+                709970
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons",
+          "items": [
+            {
+              "text": "Corrected incorrect shot settings, improving weapon firing behavior.",
+              "commit_ids": [
+                709960
+              ]
+            }
+          ]
+        },
         {
           "title": "Audio",
           "items": [
             {
-              "text": "Fixed the wounded first‑person sound that never played in builds and reduced its volume by 50% because it was overly loud.",
+              "text": "Restored the wounded first‑person sound in builds and reduced its volume by 50% to address it being overly loud.",
               "commit_ids": [
                 709941
               ]
@@ -81,47 +124,37 @@
           ]
         },
         {
-          "title": "Horse Mechanics",
+          "title": "Mounts & Horses",
           "items": [
             {
-              "text": "Fixed a server hip‑movement bug that stopped horses from sleeping and corrected dismounted horses keeping their head turned and hips braced.",
+              "text": "Fixed several horse animation and behavior issues: horses now sleep correctly, dismounted horses no longer keep their head turned, and pooling bugs affecting horse animations were resolved.",
               "commit_ids": [
-                709901
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Grenade Gameplay",
-          "items": [
-            {
-              "text": "Increased grenade throw velocity, giving grenades longer range.",
-              "commit_ids": [
-                709720
+                709901,
+                709888
               ]
             }
           ]
         }
       ],
-      "709532,709539,709574,709639,709680": [
+      "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763": [
         {
-          "title": "Audio",
+          "title": "Explosives",
           "items": [
             {
-              "text": "Harbor bridge and crane sounds no longer play on initial load, eliminating the unwanted startup noise.",
+              "text": "Grenade throw velocity increased, making grenades travel farther when thrown.",
               "commit_ids": [
-                709574
+                709720
               ]
             }
           ]
         },
         {
-          "title": "Controls",
+          "title": "Audio",
           "items": [
             {
-              "text": "Added missing gamepad type configuration files, improving controller support and preventing potential input issues.",
+              "text": "Harbor bridge and crane sounds no longer play on initial map load, fixing an annoying audio bug.",
               "commit_ids": [
-                709680
+                709574
               ]
             }
           ]
@@ -130,7 +163,7 @@
           "title": "Stability",
           "items": [
             {
-              "text": "Fixed a crash related to ore flare interactions, improving overall game stability during resource processing.",
+              "text": "Fixed a crash related to ore flares, improving game stability when using ore flare devices.",
               "commit_ids": [
                 709539
               ]
@@ -141,7 +174,7 @@
           "title": "UI",
           "items": [
             {
-              "text": "Resolved screen blurring when using the remote computer (RCComputer), ensuring clear visuals during remote operations.",
+              "text": "Resolved screen blurring issue when using the RC computer, ensuring clear UI display.",
               "commit_ids": [
                 709532
               ]
@@ -262,31 +295,9 @@
     ],
     "status": "ok",
     "summary": "### Animals & Mounts\n- Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.\n- Horse behavior fixes: corrected server hip movement that prevented horses from sleeping and fixed dismounted horses retaining head turn and hip brace.\n\n### Weapons & Combat\n- Fixed mortar desynchronization bug.\n- Corrected incorrect shot settings affecting weapon fire behavior.\n- Grenade throw velocity increased, making grenades travel farther.\n\n### Structures & Power\n- Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.\n- Fixed biofuel generator pooling bug.\n\n### Audio\n- Added purchase sound effect when selling wool or animals.\n- Fixed wounded first‑person sound that never played in builds and reduced its volume by 50%.\n- Fixed unwanted bridge and crane sounds that played on initial load.\n\n### Stability & Crashes\n- Fixed crash related to ore flare (RRp ore flare crash fix).\n- Fixed screen blurring issue on RC computer UI.\n\n### Gameplay & Balance\n- Copy‑paste now works for invulnerable entities, allowing players to duplicate structures like tool cupboards without errors.",
-    "new_items": [
-      {
-        "text": "Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.",
-        "commit_ids": [
-          710071
-        ],
-        "section": "Animals & Mounts"
-      },
-      {
-        "text": "Fixed mortar desynchronization bug.",
-        "commit_ids": [
-          710079
-        ],
-        "section": "Weapons & Combat"
-      },
-      {
-        "text": "Added purchase sound effect when selling wool or animals.",
-        "commit_ids": [
-          710080
-        ],
-        "section": "Audio"
-      }
-    ],
-    "new_relevant_count": 3,
-    "new_summary": "- Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.\n- Fixed mortar desynchronization bug.\n- Added purchase sound effect when selling wool or animals."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-06": {
     "commit_count": 115,
