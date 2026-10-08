@@ -6,42 +6,68 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 08 Oct 2026 00:17:28 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 02:17:26 -0400</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Oct 08</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;2 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="710102,710100"&gt;Unbred animals now have a capped potential; only their next generation can be sold. The cap is configurable via livestock.potentialUnbredCap.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3&gt;Animals &amp;amp; Farming&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="710102,710100"&gt;Unbred animals now have a capped potential; only their next generation can be sold. The cap is configurable via livestock.potentialUnbredCap.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-10-08</guid>
+      <pubDate>Thu, 08 Oct 2026 02:17:26 -0400</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;122 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Animals &amp;amp; Mounts&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710071"&gt;Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.&lt;/li&gt;
-&lt;li data-rust-commits="709901"&gt;Horse behavior fixes: corrected server hip movement that prevented horses from sleeping and fixed dismounted horses retaining head turn and hip brace.&lt;/li&gt;
+&lt;li data-rust-commits="710097,710098"&gt;A new &amp;#x27;potential&amp;#x27; stat tracks an animal’s average happiness, influences vendor sale prices and prevents selling animals with zero potential; the value rises or falls over time based on current happiness.&lt;/li&gt;
+&lt;li data-rust-commits="710071"&gt;Animals now dismount to the nearest valid spot with a physics check to avoid clipping through structures, and players receive toast notifications when mounting or dismounting fails due to obstacles.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Weapons &amp;amp; Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710079"&gt;Fixed mortar desynchronization bug.&lt;/li&gt;
-&lt;li data-rust-commits="709960"&gt;Corrected incorrect shot settings affecting weapon fire behavior.&lt;/li&gt;
-&lt;li data-rust-commits="709720"&gt;Grenade throw velocity increased, making grenades travel farther.&lt;/li&gt;
+&lt;li data-rust-commits="710088,710083"&gt;PT Boat turrets now support full viewmodels, reload functionality, corrected rear turret aiming, and smoother rendering to eliminate stutter.&lt;/li&gt;
+&lt;li data-rust-commits="710079"&gt;Mortar fire is now synchronized for all players, ensuring consistent behavior.&lt;/li&gt;
+&lt;li data-rust-commits="709960"&gt;Weapon shot settings have been corrected, improving firing reliability.&lt;/li&gt;
+&lt;li data-rust-commits="709720"&gt;Grenade throw velocity has been increased, allowing grenades to travel farther.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Structures &amp;amp; Power&lt;/h3&gt;
+&lt;h3&gt;Power &amp;amp; Generators&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709970"&gt;A biofuel generator pooling bug was fixed, restoring reliable fuel production.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mounts &amp;amp; Horses&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709901,709888"&gt;Horse animations and behavior were fixed: horses now sleep correctly, dismounted horses no longer keep their heads turned, and animation pooling issues are resolved.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stability &amp;amp; Crash Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="709539"&gt;A crash triggered by ore flare devices has been resolved, improving overall game stability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li data-rust-commits="710049"&gt;Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.&lt;/li&gt;
-&lt;li data-rust-commits="709970"&gt;Fixed biofuel generator pooling bug.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Audio&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="710080"&gt;Added purchase sound effect when selling wool or animals.&lt;/li&gt;
-&lt;li data-rust-commits="709941"&gt;Fixed wounded first‑person sound that never played in builds and reduced its volume by 50%.&lt;/li&gt;
-&lt;li data-rust-commits="709574"&gt;Fixed unwanted bridge and crane sounds that played on initial load.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Crashes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="709539"&gt;Fixed crash related to ore flare (RRp ore flare crash fix).&lt;/li&gt;
-&lt;li data-rust-commits="709532"&gt;Fixed screen blurring issue on RC computer UI.&lt;/li&gt;
+&lt;li data-rust-commits="710026"&gt;Viewmodel skins are restored and work correctly again.&lt;/li&gt;
+&lt;li data-rust-commits="709941"&gt;The wounded first‑person sound now plays in builds (volume reduced by 50%).&lt;/li&gt;
+&lt;li data-rust-commits="709993"&gt;Gun jitter is eliminated when turning animations are playing.&lt;/li&gt;
+&lt;li data-rust-commits="709574"&gt;Harbor bridge and crane sounds no longer play on initial load.&lt;/li&gt;
+&lt;li data-rust-commits="709532"&gt;RC computer screen blur issue fixed.&lt;/li&gt;
+&lt;li data-rust-commits="709948"&gt;Spectator viewmodel drop animations now play correctly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709974"&gt;Copy‑paste now works for invulnerable entities, allowing players to duplicate structures like tool cupboards without errors.&lt;/li&gt;
+&lt;li data-rust-commits="710080"&gt;Added a sound effect when selling wool or animals, providing audible confirmation of the transaction.&lt;/li&gt;
+&lt;li data-rust-commits="709974"&gt;Fixed a crash that occurred when copying and pasting invulnerable entities, allowing seamless duplication.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-07</guid>
@@ -87,53 +113,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-06</guid>
       <pubDate>Tue, 06 Oct 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Oct 05</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;84 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;World &amp;amp; Locations&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708117"&gt;Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Localization&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708100"&gt;Item drop and pickup notices now display correctly for right‑to‑left languages.&lt;/li&gt;
-&lt;li data-rust-commits="708097"&gt;Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Mechanics&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708033"&gt;Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Projectiles&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708078"&gt;Fixed a bug where projectiles could leak and persist after the owning player was destroyed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Power &amp;amp; Generators&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708030"&gt;Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Livestock&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="708026"&gt;Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.&lt;/li&gt;
-&lt;li data-rust-commits="707953"&gt;Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.&lt;/li&gt;
-&lt;li data-rust-commits="707918"&gt;Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="707986"&gt;Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.&lt;/li&gt;
-&lt;li data-rust-commits="707984"&gt;Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Character Customisation&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="707973"&gt;Introduced a revamped character creator layout for easier navigation of customization options.&lt;/li&gt;
-&lt;li data-rust-commits="707973"&gt;Added an underwear customization category, expanding player outfit choices.&lt;/li&gt;
-&lt;li data-rust-commits="707973"&gt;Removed the eyebrows category, streamlining available facial features.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-10-05</guid>
-      <pubDate>Mon, 05 Oct 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>

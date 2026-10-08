@@ -1,202 +1,60 @@
 {
+  "2026-10-08": {
+    "commit_count": 2,
+    "relevant_commit_count": 2,
+    "relevant_signature": "710100,710102",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Animals & Farming",
+        "items": [
+          {
+            "text": "Unbred animals now have a capped potential; only their next generation can be sold. The cap is configurable via livestock.potentialUnbredCap.",
+            "commit_ids": [
+              710102,
+              710100
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "ok",
+    "summary": "### Animals & Farming\n- Unbred animals now have a capped potential; only their next generation can be sold. The cap is configurable via livestock.potentialUnbredCap.",
+    "new_items": [
+      {
+        "text": "Unbred animals now have a capped potential; only their next generation can be sold. The cap is configurable via livestock.potentialUnbredCap.",
+        "commit_ids": [
+          710102,
+          710100
+        ],
+        "section": "Animals & Farming"
+      }
+    ],
+    "new_relevant_count": 2,
+    "new_summary": "- Unbred animals now have a capped potential; only their next generation can be sold. The cap is configurable via livestock.potentialUnbredCap."
+  },
   "2026-10-07": {
     "commit_count": 122,
     "relevant_commit_count": 60,
-    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080",
+    "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080,710083,710084,710086,710088,710089,710090,710091,710092,710094,710095,710097,710098",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080,710083,710084,710086,710088,710089,710090,710091,710092,710094,710095,710097,710098": [
-        {
-          "title": "Livestock & Animal Mechanics",
-          "items": [
-            {
-              "text": "Introduced a new 'potential' stat for animals that tracks average happiness over time, only modifiable while the animal is a child; potential influences vendor sale prices and animals with zero potential cannot be sold. Potential now gradually rises or falls based on current happiness (10 min to go 0→100 at full happiness, 15 min to drop from 100→0 at zero happiness).",
-              "commit_ids": [
-                710097,
-                710098
-              ]
-            },
-            {
-              "text": "Animals now dismount to the nearest valid point to the requesting player and perform a physics check to avoid dismounting through structures; players receive toast notifications when mounting or dismounting fails due to obstacles.",
-              "commit_ids": [
-                710071
-              ]
-            },
-            {
-              "text": "Added a purchase sound effect that plays when selling wool or animals, giving audible feedback for successful transactions.",
-              "commit_ids": [
-                710080
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Turret & Weapon Improvements",
-          "items": [
-            {
-              "text": "PT Boat turret viewmodels received full support, including reload functionality, corrected rear turret aiming down sights, and smoother rendering to eliminate stutter.",
-              "commit_ids": [
-                710088,
-                710083
-              ]
-            },
-            {
-              "text": "Fixed mortar desynchronization issues, ensuring mortar fire behaves consistently for all players.",
-              "commit_ids": [
-                710079
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio Feedback",
-          "items": [
-            {
-              "text": "Resolved footstep sound bugs where missed raycasts caused sounds to originate from the origin point (0,0,0), eliminating phantom footstep noises.",
-              "commit_ids": [
-                710091,
-                710092
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Map Fixes",
-          "items": [
-            {
-              "text": "Corrected UICompass performance by stopping per-frame material property copying, saving ~0.05 ms each frame.",
-              "commit_ids": [
-                710076
-              ]
-            },
-            {
-              "text": "Fixed tool cupboards incorrectly appearing on the map when the maximum tool cupboard limit is disabled at runtime.",
-              "commit_ids": [
-                710049
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Animation & Visual Polish",
-          "items": [
-            {
-              "text": "Fixed gun jitter that occurred when turning animations were playing, resulting in smoother aiming visuals.",
-              "commit_ids": [
-                709993
-              ]
-            }
-          ]
-        }
-      ],
-      "709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970": [
-        {
-          "title": "Generators",
-          "items": [
-            {
-              "text": "Fixed a biofuel generator pooling bug that could cause generators to malfunction or not produce fuel correctly.",
-              "commit_ids": [
-                709970
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons",
-          "items": [
-            {
-              "text": "Corrected incorrect shot settings, improving weapon firing behavior.",
-              "commit_ids": [
-                709960
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio",
-          "items": [
-            {
-              "text": "Restored the wounded first‑person sound in builds and reduced its volume by 50% to address it being overly loud.",
-              "commit_ids": [
-                709941
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Mounts & Horses",
-          "items": [
-            {
-              "text": "Fixed several horse animation and behavior issues: horses now sleep correctly, dismounted horses no longer keep their head turned, and pooling bugs affecting horse animations were resolved.",
-              "commit_ids": [
-                709901,
-                709888
-              ]
-            }
-          ]
-        }
-      ],
-      "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763": [
-        {
-          "title": "Explosives",
-          "items": [
-            {
-              "text": "Grenade throw velocity increased, making grenades travel farther when thrown.",
-              "commit_ids": [
-                709720
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio",
-          "items": [
-            {
-              "text": "Harbor bridge and crane sounds no longer play on initial map load, fixing an annoying audio bug.",
-              "commit_ids": [
-                709574
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Stability",
-          "items": [
-            {
-              "text": "Fixed a crash related to ore flares, improving game stability when using ore flare devices.",
-              "commit_ids": [
-                709539
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI",
-          "items": [
-            {
-              "text": "Resolved screen blurring issue when using the RC computer, ensuring clear UI display.",
-              "commit_ids": [
-                709532
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Mounts",
+        "title": "Animals & Livestock",
         "items": [
           {
-            "text": "Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.",
+            "text": "A new 'potential' stat tracks an animal’s average happiness, influences vendor sale prices and prevents selling animals with zero potential; the value rises or falls over time based on current happiness.",
             "commit_ids": [
-              710071
+              710097,
+              710098
             ]
           },
           {
-            "text": "Horse behavior fixes: corrected server hip movement that prevented horses from sleeping and fixed dismounted horses retaining head turn and hip brace.",
+            "text": "Animals now dismount to the nearest valid spot with a physics check to avoid clipping through structures, and players receive toast notifications when mounting or dismounting fails due to obstacles.",
             "commit_ids": [
-              709901
+              710071
             ]
           }
         ]
@@ -205,19 +63,26 @@
         "title": "Weapons & Combat",
         "items": [
           {
-            "text": "Fixed mortar desynchronization bug.",
+            "text": "PT Boat turrets now support full viewmodels, reload functionality, corrected rear turret aiming, and smoother rendering to eliminate stutter.",
+            "commit_ids": [
+              710088,
+              710083
+            ]
+          },
+          {
+            "text": "Mortar fire is now synchronized for all players, ensuring consistent behavior.",
             "commit_ids": [
               710079
             ]
           },
           {
-            "text": "Corrected incorrect shot settings affecting weapon fire behavior.",
+            "text": "Weapon shot settings have been corrected, improving firing reliability.",
             "commit_ids": [
               709960
             ]
           },
           {
-            "text": "Grenade throw velocity increased, making grenades travel farther.",
+            "text": "Grenade throw velocity has been increased, allowing grenades to travel farther.",
             "commit_ids": [
               709720
             ]
@@ -225,7 +90,41 @@
         ]
       },
       {
-        "title": "Structures & Power",
+        "title": "Power & Generators",
+        "items": [
+          {
+            "text": "A biofuel generator pooling bug was fixed, restoring reliable fuel production.",
+            "commit_ids": [
+              709970
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Mounts & Horses",
+        "items": [
+          {
+            "text": "Horse animations and behavior were fixed: horses now sleep correctly, dismounted horses no longer keep their heads turned, and animation pooling issues are resolved.",
+            "commit_ids": [
+              709901,
+              709888
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability & Crash Fixes",
+        "items": [
+          {
+            "text": "A crash triggered by ore flare devices has been resolved, improving overall game stability.",
+            "commit_ids": [
+              709539
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
         "items": [
           {
             "text": "Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.",
@@ -234,49 +133,39 @@
             ]
           },
           {
-            "text": "Fixed biofuel generator pooling bug.",
+            "text": "Viewmodel skins are restored and work correctly again.",
             "commit_ids": [
-              709970
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio",
-        "items": [
-          {
-            "text": "Added purchase sound effect when selling wool or animals.",
-            "commit_ids": [
-              710080
+              710026
             ]
           },
           {
-            "text": "Fixed wounded first‑person sound that never played in builds and reduced its volume by 50%.",
+            "text": "The wounded first‑person sound now plays in builds (volume reduced by 50%).",
             "commit_ids": [
               709941
             ]
           },
           {
-            "text": "Fixed unwanted bridge and crane sounds that played on initial load.",
+            "text": "Gun jitter is eliminated when turning animations are playing.",
             "commit_ids": [
-              709574
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Stability & Crashes",
-        "items": [
-          {
-            "text": "Fixed crash related to ore flare (RRp ore flare crash fix).",
-            "commit_ids": [
-              709539
+              709993
             ]
           },
           {
-            "text": "Fixed screen blurring issue on RC computer UI.",
+            "text": "Harbor bridge and crane sounds no longer play on initial load.",
+            "commit_ids": [
+              709574
+            ]
+          },
+          {
+            "text": "RC computer screen blur issue fixed.",
             "commit_ids": [
               709532
+            ]
+          },
+          {
+            "text": "Spectator viewmodel drop animations now play correctly.",
+            "commit_ids": [
+              709948
             ]
           }
         ]
@@ -285,7 +174,13 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Copy‑paste now works for invulnerable entities, allowing players to duplicate structures like tool cupboards without errors.",
+            "text": "Added a sound effect when selling wool or animals, providing audible confirmation of the transaction.",
+            "commit_ids": [
+              710080
+            ]
+          },
+          {
+            "text": "Fixed a crash that occurred when copying and pasting invulnerable entities, allowing seamless duplication.",
             "commit_ids": [
               709974
             ]
@@ -294,7 +189,7 @@
       }
     ],
     "status": "ok",
-    "summary": "### Animals & Mounts\n- Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.\n- Horse behavior fixes: corrected server hip movement that prevented horses from sleeping and fixed dismounted horses retaining head turn and hip brace.\n\n### Weapons & Combat\n- Fixed mortar desynchronization bug.\n- Corrected incorrect shot settings affecting weapon fire behavior.\n- Grenade throw velocity increased, making grenades travel farther.\n\n### Structures & Power\n- Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.\n- Fixed biofuel generator pooling bug.\n\n### Audio\n- Added purchase sound effect when selling wool or animals.\n- Fixed wounded first‑person sound that never played in builds and reduced its volume by 50%.\n- Fixed unwanted bridge and crane sounds that played on initial load.\n\n### Stability & Crashes\n- Fixed crash related to ore flare (RRp ore flare crash fix).\n- Fixed screen blurring issue on RC computer UI.\n\n### Gameplay & Balance\n- Copy‑paste now works for invulnerable entities, allowing players to duplicate structures like tool cupboards without errors.",
+    "summary": "### Animals & Livestock\n- A new 'potential' stat tracks an animal’s average happiness, influences vendor sale prices and prevents selling animals with zero potential; the value rises or falls over time based on current happiness.\n- Animals now dismount to the nearest valid spot with a physics check to avoid clipping through structures, and players receive toast notifications when mounting or dismounting fails due to obstacles.\n\n### Weapons & Combat\n- PT Boat turrets now support full viewmodels, reload functionality, corrected rear turret aiming, and smoother rendering to eliminate stutter.\n- Mortar fire is now synchronized for all players, ensuring consistent behavior.\n- Weapon shot settings have been corrected, improving firing reliability.\n- Grenade throw velocity has been increased, allowing grenades to travel farther.\n\n### Power & Generators\n- A biofuel generator pooling bug was fixed, restoring reliable fuel production.\n\n### Mounts & Horses\n- Horse animations and behavior were fixed: horses now sleep correctly, dismounted horses no longer keep their heads turned, and animation pooling issues are resolved.\n\n### Stability & Crash Fixes\n- A crash triggered by ore flare devices has been resolved, improving overall game stability.\n\n### Bug Fixes\n- Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.\n- Viewmodel skins are restored and work correctly again.\n- The wounded first‑person sound now plays in builds (volume reduced by 50%).\n- Gun jitter is eliminated when turning animations are playing.\n- Harbor bridge and crane sounds no longer play on initial load.\n- RC computer screen blur issue fixed.\n- Spectator viewmodel drop animations now play correctly.\n\n### Gameplay & Balance\n- Added a sound effect when selling wool or animals, providing audible confirmation of the transaction.\n- Fixed a crash that occurred when copying and pasting invulnerable entities, allowing seamless duplication.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -442,144 +337,6 @@
     ],
     "status": "ok",
     "summary": "### World & Navigation\n- Map icons for Tool Cupboards added and deep‑sea marker issues fixed, improving map clarity and preventing marker loss.\n- Ferry terminal rope ladder climbing fixed, eliminating climb glitches and stuck rung animations.\n\n### Combat & AI\n- Hit detection improved and boars now flee only below 30 % health, making combat more reliable and boar encounters less premature.\n- Livestock movement and feeding behavior refined, preventing cows from clipping and improving eating at troughs and grass.\n\n### Crafting & Items\n- New tea mixing‑table recipes and Wool Armor introduced, expanding crafting options and providing Tier 1 protection.\n- Crafting action moved to D‑pad down on all controller layouts for easier access.\n\n### Audio & Sound\n- BBQ and flame turret sounds corrected and one‑shot spawn noises (furnaces, campfires, mixing tables) silenced for a cleaner audio experience.\n\n### Player Impact\n- Fixed horses being able to fly, preventing unintended movement exploits.\n- Boombox mission events now only trigger for teammates on the same mission, avoiding irrelevant alerts.\n- Resolved client crashes caused by late-arriving network snapshots, improving stability during map transitions.\n- Tattoos now correctly persist between client and server, ensuring player cosmetics are saved.\n- Reloading maps now correctly includes level size data, preventing loading confusion when switching between maps.\n- Fixed several character customization bugs: UI fading issue, unwanted underwear prompt, and teleporting back to start when opening the menu.\n- Bee grenade prediction no longer shows a white grenade model, fixing visual glitch during throw prediction.\n- Fixed a NaN vertex lighting issue that could crash the game.\n- Helicopter flares now save correctly without corrupting job handlers, restoring flare functionality after saving.\n- Made helicopter flare saving thread‑safe, preventing crashes when multiple flares are saved simultaneously.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-05": {
-    "commit_count": 84,
-    "relevant_commit_count": 48,
-    "relevant_signature": "707893,707898,707918,707920,707932,707935,707939,707940,707951,707953,707964,707966,707968,707973,707980,707984,707986,707989,707999,708001,708005,708026,708030,708031,708033,708042,708045,708049,708052,708053,708054,708065,708068,708078,708079,708084,708091,708096,708097,708099,708100,708103,708112,708114,708117,708118,708119,708120",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "World & Locations",
-        "items": [
-          {
-            "text": "Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.",
-            "commit_ids": [
-              708117
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Localization",
-        "items": [
-          {
-            "text": "Item drop and pickup notices now display correctly for right‑to‑left languages.",
-            "commit_ids": [
-              708100
-            ]
-          },
-          {
-            "text": "Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.",
-            "commit_ids": [
-              708097
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Mechanics",
-        "items": [
-          {
-            "text": "Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.",
-            "commit_ids": [
-              708033
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Projectiles",
-        "items": [
-          {
-            "text": "Fixed a bug where projectiles could leak and persist after the owning player was destroyed.",
-            "commit_ids": [
-              708078
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Power & Generators",
-        "items": [
-          {
-            "text": "Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.",
-            "commit_ids": [
-              708030
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock",
-        "items": [
-          {
-            "text": "Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.",
-            "commit_ids": [
-              708026
-            ]
-          },
-          {
-            "text": "Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.",
-            "commit_ids": [
-              707953
-            ]
-          },
-          {
-            "text": "Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.",
-            "commit_ids": [
-              707918
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.",
-            "commit_ids": [
-              707986
-            ]
-          },
-          {
-            "text": "Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.",
-            "commit_ids": [
-              707984
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Character Customisation",
-        "items": [
-          {
-            "text": "Introduced a revamped character creator layout for easier navigation of customization options.",
-            "commit_ids": [
-              707973
-            ]
-          },
-          {
-            "text": "Added an underwear customization category, expanding player outfit choices.",
-            "commit_ids": [
-              707973
-            ]
-          },
-          {
-            "text": "Removed the eyebrows category, streamlining available facial features.",
-            "commit_ids": [
-              707973
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### World & Locations\n- Fixed broken S2P apartments, bandit bases, and fishing villages so they now spawn correctly.\n\n### UI & Localization\n- Item drop and pickup notices now display correctly for right‑to‑left languages.\n- Crafting notices are now rendered with RustText, fixing RTL language display and eliminating per‑frame allocation spikes.\n\n### Gameplay & Mechanics\n- Softcore servers now enforce a maximum of three Tool Cupboards per base, with UI icons and toast notifications when the limit is reached.\n\n### Combat & Projectiles\n- Fixed a bug where projectiles could leak and persist after the owning player was destroyed.\n\n### Power & Generators\n- Biofuel generators now only consume electricity while actively generating fuel, reducing idle power drain.\n\n### Livestock\n- Fixed livestock age regression and variance errors, ensuring calves correctly age into adults and maintain accurate ages.\n- Increased the lead rope break distance from 7 m to 15 m and now display livestock familiarity and gender by default.\n- Raised the sale penalty for selling bought or found animals to the livestock vendor from 0.2 to 0.85, making it harder to profit from such sales.\n\n### Gameplay & Balance\n- Fixed motorcycle dismount order issue, ensuring players dismount safely and predictably.\n- Corrected client-side sailing wind calculations, improving sail handling and navigation accuracy.\n\n### Character Customisation\n- Introduced a revamped character creator layout for easier navigation of customization options.\n- Added an underwear customization category, expanding player outfit choices.\n- Removed the eyebrows category, streamlining available facial features.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
