@@ -6,55 +6,54 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 07 Oct 2026 18:17:30 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 20:17:27 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;101 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;109 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710049"&gt;Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.&lt;/li&gt;
+&lt;li data-rust-commits="710071"&gt;Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.&lt;/li&gt;
+&lt;li data-rust-commits="710079"&gt;Fixed mortar desynchronization bug.&lt;/li&gt;
+&lt;li data-rust-commits="710049"&gt;Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.&lt;/li&gt;
+&lt;li data-rust-commits="710080"&gt;Added purchase sound effect when selling wool or animals.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Map &amp;amp; Tool Cupboards&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Mounts&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710049"&gt;Fixed tool cupboard icons that incorrectly remained on the map when the max‑TC limit was disabled at runtime.&lt;/li&gt;
+&lt;li data-rust-commits="710071"&gt;Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.&lt;/li&gt;
+&lt;li data-rust-commits="709901"&gt;Horse behavior fixes: corrected server hip movement that prevented horses from sleeping and fixed dismounted horses retaining head turn and hip brace.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;Weapons &amp;amp; Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709993"&gt;Resolved gun jitter that occurred during turning animations, improving shooting stability.&lt;/li&gt;
-&lt;li data-rust-commits="709960"&gt;Corrected shot settings that were causing inconsistent weapon behavior.&lt;/li&gt;
-&lt;li data-rust-commits="709720"&gt;Increased grenade throw velocity, allowing grenades to travel farther.&lt;/li&gt;
+&lt;li data-rust-commits="710079"&gt;Fixed mortar desynchronization bug.&lt;/li&gt;
+&lt;li data-rust-commits="709960"&gt;Corrected incorrect shot settings affecting weapon fire behavior.&lt;/li&gt;
+&lt;li data-rust-commits="709720"&gt;Grenade throw velocity increased, making grenades travel farther.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Generators&lt;/h3&gt;
+&lt;h3&gt;Structures &amp;amp; Power&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709970"&gt;Fixed a pooling bug in biofuel generators that could cause them to malfunction.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Horses&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="709901"&gt;Fixed a server hip‑movement bug that prevented horses from sleeping and caused dismounted horses to retain an odd pose.&lt;/li&gt;
+&lt;li data-rust-commits="710049"&gt;Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.&lt;/li&gt;
+&lt;li data-rust-commits="709970"&gt;Fixed biofuel generator pooling bug.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Audio&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709941"&gt;Repaired a long‑standing issue where the wounded first‑person sound never played and reduced its volume by 50% to address loudness.&lt;/li&gt;
+&lt;li data-rust-commits="710080"&gt;Added purchase sound effect when selling wool or animals.&lt;/li&gt;
+&lt;li data-rust-commits="709941"&gt;Fixed wounded first‑person sound that never played in builds and reduced its volume by 50%.&lt;/li&gt;
+&lt;li data-rust-commits="709574"&gt;Fixed unwanted bridge and crane sounds that played on initial load.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Stability&lt;/h3&gt;
+&lt;h3&gt;Stability &amp;amp; Crashes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709539"&gt;Fixed a crash related to ore flares.&lt;/li&gt;
-&lt;li data-rust-commits="709849"&gt;Map transitions no longer trigger deinitialization asserts, preventing crashes when loading a new scene directly from another map.&lt;/li&gt;
+&lt;li data-rust-commits="709539"&gt;Fixed crash related to ore flare (RRp ore flare crash fix).&lt;/li&gt;
+&lt;li data-rust-commits="709532"&gt;Fixed screen blurring issue on RC computer UI.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Building&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="709974"&gt;Copy‑paste now works for invulnerable entities, eliminating errors when pasting them.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Visuals&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="709532"&gt;Remote computer screens no longer appear blurred, restoring clear view when using RC computers.&lt;/li&gt;
+&lt;li data-rust-commits="709974"&gt;Copy‑paste now works for invulnerable entities, allowing players to duplicate structures like tool cupboards without errors.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-07</guid>
-      <pubDate>Wed, 07 Oct 2026 18:17:30 -0400</pubDate>
+      <pubDate>Wed, 07 Oct 2026 20:17:27 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 06</title>
