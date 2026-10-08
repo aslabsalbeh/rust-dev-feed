@@ -1,10 +1,155 @@
 {
   "2026-10-07": {
-    "commit_count": 109,
-    "relevant_commit_count": 48,
+    "commit_count": 117,
+    "relevant_commit_count": 55,
     "relevant_signature": "709532,709539,709574,709639,709680,709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950,709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "709952,709953,709960,709965,709970,709971,709974,709993,709997,710002,710016,710026,710035,710049,710071,710076,710079,710080,710083,710084,710086,710088,710089,710090,710091": [
+        {
+          "title": "Audio & SFX",
+          "items": [
+            {
+              "text": "Fixed footstep sounds incorrectly spawning at the origin (0,0,0), eliminating phantom noises.",
+              "commit_ids": [
+                710091
+              ]
+            },
+            {
+              "text": "Added a purchase sound effect when selling wool or animals, giving audible feedback for sales.",
+              "commit_ids": [
+                710080
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons & Combat",
+          "items": [
+            {
+              "text": "Fixed mortar desynchronization, ensuring mortar projectiles now behave consistently across clients.",
+              "commit_ids": [
+                710079
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals & Mounting",
+          "items": [
+            {
+              "text": "Animals now dismount to the nearest valid point to the requesting player and perform a physics check to avoid dismounting through structures; added on‑screen toasts when mounting or dismounting fails.",
+              "commit_ids": [
+                710071
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & UI",
+          "items": [
+            {
+              "text": "Fixed tool cupboards remaining visible on the map when the max‑TC limit is disabled at runtime.",
+              "commit_ids": [
+                710049
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Generators",
+          "items": [
+            {
+              "text": "Fixed a pooling bug in biofuel generators that could cause them to malfunction or not produce power correctly.",
+              "commit_ids": [
+                709970
+              ]
+            }
+          ]
+        }
+      ],
+      "709720,709722,709729,709748,709763,709795,709820,709849,709852,709855,709858,709863,709867,709868,709870,709888,709890,709891,709901,709906,709907,709910,709941,709948,709950": [
+        {
+          "title": "Audio",
+          "items": [
+            {
+              "text": "Fixed the wounded first‑person sound that never played in builds and reduced its volume by 50% because it was overly loud.",
+              "commit_ids": [
+                709941
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Horse Mechanics",
+          "items": [
+            {
+              "text": "Fixed a server hip‑movement bug that stopped horses from sleeping and corrected dismounted horses keeping their head turned and hips braced.",
+              "commit_ids": [
+                709901
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Grenade Gameplay",
+          "items": [
+            {
+              "text": "Increased grenade throw velocity, giving grenades longer range.",
+              "commit_ids": [
+                709720
+              ]
+            }
+          ]
+        }
+      ],
+      "709532,709539,709574,709639,709680": [
+        {
+          "title": "Audio",
+          "items": [
+            {
+              "text": "Harbor bridge and crane sounds no longer play on initial load, eliminating the unwanted startup noise.",
+              "commit_ids": [
+                709574
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Controls",
+          "items": [
+            {
+              "text": "Added missing gamepad type configuration files, improving controller support and preventing potential input issues.",
+              "commit_ids": [
+                709680
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Stability",
+          "items": [
+            {
+              "text": "Fixed a crash related to ore flare interactions, improving overall game stability during resource processing.",
+              "commit_ids": [
+                709539
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI",
+          "items": [
+            {
+              "text": "Resolved screen blurring when using the remote computer (RCComputer), ensuring clear visuals during remote operations.",
+              "commit_ids": [
+                709532
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Animals & Mounts",
@@ -133,13 +278,6 @@
         "section": "Weapons & Combat"
       },
       {
-        "text": "Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.",
-        "commit_ids": [
-          710049
-        ],
-        "section": "Structures & Power"
-      },
-      {
         "text": "Added purchase sound effect when selling wool or animals.",
         "commit_ids": [
           710080
@@ -147,8 +285,8 @@
         "section": "Audio"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.\n- Fixed mortar desynchronization bug.\n- Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.\n- Added purchase sound effect when selling wool or animals."
+    "new_relevant_count": 3,
+    "new_summary": "- Improved animal mounting: dismounts now go to the closest point, physics checks prevent dismounting through car modules, and toasts inform players when mounting/dismounting fails.\n- Fixed mortar desynchronization bug.\n- Added purchase sound effect when selling wool or animals."
   },
   "2026-10-06": {
     "commit_count": 115,
