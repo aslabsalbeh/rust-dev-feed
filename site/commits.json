@@ -1,5 +1,21 @@
 [
   {
+    "id": 712014,
+    "branch": "main/npc_phone_conversations",
+    "changeset": "167510",
+    "created": "2026-10-09T22:02:48",
+    "message": "Merge fixes",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 711974,
+    "branch": "▅▅▆▅▊▋▇▅▌▆▍▄▄▊▄▆▉▄",
+    "changeset": "▅▉▇▄▋▄",
+    "created": "2026-10-09T21:02:36",
+    "message": "▍ ▆▄▇▇▄ ▊▊▄█▆▌ ▍▊▋▊▉▇▄▅▅ ▅▅▆▆▅▆ █▄",
+    "user": "nick.m"
+  },
+  {
     "id": 711906,
     "branch": "main",
     "changeset": "167508",
@@ -2510,93 +2526,5 @@
     "created": "2026-10-06T23:02:37",
     "message": "▍▋▍▄▄▊▆▌",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 708492,
-    "branch": "main/entityflagtoggle_skipsounds",
-    "changeset": "167022",
-    "created": "2026-10-06T22:07:04",
-    "message": "EntityFlag_Toggle events now skips one shot sounds the first time it runs, when entity spawns\r\n\r\n- fixes furnaces playing their extinguish sound when spawned (many other entities had the same issue: campfire, mixing table..)\r\n- it didn't cause any perf issues before: the sound manager drops one shot sounds beyond their audible range, and entities spawned at network range, far beyond it\r\n- now that we have base occlusion, you could hear them spawning which was an issue for both gameplay and performance",
-    "user": "Flavien"
-  },
-  {
-    "id": 708490,
-    "branch": "main/softcore_tc_limit/map_icons",
-    "changeset": "167020",
-    "created": "2026-10-06T21:51:38",
-    "message": "Codegen",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 708489,
-    "branch": "main/softcore_tc_limit/map_icons",
-    "changeset": "167019",
-    "created": "2026-10-06T21:51:12",
-    "message": "Show TCs on the map\n- only enabled when the TC limit convar is enabled\n- combines TCs with sleeping bags into clusters just like bags\n- can toggle TC visibility on the map with a new button just like toggling bags\n- TC map icons are slightly larger than sleeping bag icons",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 708485,
-    "branch": "main/entityspawning_optims",
-    "changeset": "167018",
-    "created": "2026-10-06T21:25:47",
-    "message": "Pooled industrial conveyors switch their hum off when retired",
-    "user": "Flavien"
-  },
-  {
-    "id": 708483,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "167016",
-    "created": "2026-10-06T21:21:18",
-    "message": "Localize the \"s\" and \"m\"",
-    "user": "cipeaX"
-  },
-  {
-    "id": 708475,
-    "branch": "main",
-    "changeset": "167012",
-    "created": "2026-10-06T20:52:56",
-    "message": "Fix some pool leaks (global entity data, copy paste ui)",
-    "user": "cipeaX"
-  },
-  {
-    "id": 708472,
-    "branch": "main/genericpopup_rrp_fix",
-    "changeset": "167009",
-    "created": "2026-10-06T20:50:33",
-    "message": "Forgot a file",
-    "user": "Flavien"
-  },
-  {
-    "id": 708471,
-    "branch": "main/arabic_ellipsis_fix",
-    "changeset": "167008",
-    "created": "2026-10-06T20:50:07",
-    "message": "Fixed oversized and misplaced ellipsis \"...\" on Arabic text, was causing \"Line breaking recursion max threshold hit\"",
-    "user": "Flavien"
-  },
-  {
-    "id": 708467,
-    "branch": "▄▍▅▅▊▉█▊▉▌▍▍▋▉█▄▊▆█▄█▍",
-    "changeset": "▄▌▉▉▆▅",
-    "created": "2026-10-06T20:41:37",
-    "message": "▌ ▆▊▌▍▇ ▆▆ ▅▆▉▌ ▄▅▍█▇▄▅▅▆▌█ ▄▉█▄█ ▇▋██ ▌▊▅▇▅ ▌▊▋▋▋▅ ▆▅▅▍ ▆▍▌▊▅▇ ▆▇▄▋▊ ▇ █▆▌▍█▌ ▄▄▇▍▊ ▆▉▇███▊▆▌ ▇▉▌▉█▅▇▅▉▇▅▉▉█▅█▍▋▋█▅▄▊ ▆▆▉ ▄▋▌▌▌▇ ▉▋▍ ▍█▆█▆▉ ▍█▍▌▄▋▅▆▄▉▊▌▌▋ ▆▍▉▆▍▄▉▆▋▉▋▄ ▋▉▆▍▊ ▇█ ▍▆▊▊█▆ ▌▍ ▉▌▇▅▉▋ ▄▊▄▌▍▉ ▆▍ ▊▋▇▄▄ ▍▉▍ ▄▌▇▇▍▉▊ ▆▅▄▅▄▄▇██▆▇▋▍▆ ▄▋▋▆▍▉▍ ▇▇▅▌█ ▉▋▉ ▋▅▋▉▍▋▋▌ █▅▌ ▆▇▍▌▋▆▊▋ ▄▄▉▅▍ ▍▋▍▌▍ ▆▊▉▉ ▍▊▄▉▅ ▍█ ▇▌▇▄ ▅▆▊▇▉█▉▋ ▋▋█▆▄▌▉▆ ▋▍▍▅▉▇ ▊▇▇ ▋▆▄▋▆▊ ▆▆▄▋ ▊▄▊ ▆█▋▌▋ ▌██▄▊ ▊▊▊▇ ▌▅▉▌▉ ▆▄▋▆ ▉▄█▅▅▍▍",
-    "user": "max.p"
-  },
-  {
-    "id": 708466,
-    "branch": "main/genericpopup_rrp_fix",
-    "changeset": "167005",
-    "created": "2026-10-06T20:34:43",
-    "message": "Fixed generic popup sorting issue with rrp enabled",
-    "user": "Flavien"
-  },
-  {
-    "id": 708463,
-    "branch": "main/flyinghorse_fix",
-    "changeset": "167002",
-    "created": "2026-10-06T20:18:41",
-    "message": "Fixed flying horse bullshit",
-    "user": "Flavien"
   }
 ]
