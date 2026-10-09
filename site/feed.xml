@@ -6,51 +6,56 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 08 Oct 2026 22:18:19 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 00:18:55 -0400</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Oct 08</title>
+      <title>Yesterday's Rust Updates — Oct 08</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;109 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Livestock &amp;amp; Animal Systems&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710356"&gt;Fixed map UI bug where the TC label could incorrectly show a delete button after a network update, and corrected sleeping bag button shuffling.&lt;/li&gt;
+&lt;li data-rust-commits="710494,710362,710102"&gt;Enforced a strict 9‑cow herd cap that applies to all ages, unborn calves, and includes a configurable cap on potential for unbred animals, preventing oversized herds.&lt;/li&gt;
+&lt;li data-rust-commits="710465"&gt;Recessive livestock genes now affect market prices and trigger NPC comments, with UI hints highlighting hidden traits.&lt;/li&gt;
+&lt;li data-rust-commits="710485,710317"&gt;Comprehensive cow overhaul: clearer ownership display, trust UI, defensive behavior for females, removal of old‑age death, crowding‑only death, milk charge and cooldown UI, pregnancy and feeding UI, language‑based naming, and dedicated performance budgeting.&lt;/li&gt;
+&lt;li data-rust-commits="710361"&gt;Old animals such as bears, stags, boars, and chickens no longer sleep, now flee when shot, and bears no longer sprint at high speed.&lt;/li&gt;
+&lt;li data-rust-commits="710360,710341"&gt;Fixed livestock breeding and feeding reach issues and restored petting functionality with correct rotation handling.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Breeding&lt;/h3&gt;
+&lt;h3&gt;Tool Cupboard &amp;amp; Map UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710317"&gt;Overhauled cow system: permanent ownership, UI shows owner, cows no longer die of old age (only crowding), added milk buffering with up to 3 charges and UI cooldown, removed overgrazing mechanic, cows can eat any horse food, added teleport‑food fallback, UI now displays pregnancy details, trough UI shows projected food/water duration, cow names reflect owner language, and herd size limits prevent performance impact.&lt;/li&gt;
-&lt;li data-rust-commits="710312"&gt;Fixed cows clipping through walls where heads would stick out of buildings.&lt;/li&gt;
-&lt;li data-rust-commits="710341"&gt;Reapplied livestock petting and fixed rotation not using the agent.&lt;/li&gt;
-&lt;li data-rust-commits="710102"&gt;Added a cap to animal potential for unbred animals; only offspring can be sold (configurable via livestock.potentialUnbredCap).&lt;/li&gt;
+&lt;li data-rust-commits="710448,710444,710356"&gt;Fixed several Tool Cupboard issues: items no longer auto‑grant on the tutorial island, map markers now appear only on appropriate maps, and the TC label no longer shows a stray delete button after updates.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Damage&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710321"&gt;Stopped splash damage from passing through walls onto triangle floors and frames.&lt;/li&gt;
-&lt;li data-rust-commits="710236"&gt;Extended triangle‑block visibility fix to cover frames and foundations.&lt;/li&gt;
-&lt;li data-rust-commits="710270"&gt;Fixed boomerangs not dealing damage to BaseNPC2.&lt;/li&gt;
-&lt;li data-rust-commits="710247"&gt;Prevented server projectiles from colliding with the ragdoll layer, stopping rockets from exploding near dead bodies.&lt;/li&gt;
+&lt;li data-rust-commits="710321,710247"&gt;Splash damage now respects walls and line of sight, and projectiles no longer collide with ragdoll bodies, preventing rockets from detonating near dead NPCs.&lt;/li&gt;
+&lt;li data-rust-commits="710270"&gt;Boomerang now correctly damages BaseNPC2 enemies.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Turrets &amp;amp; Vehicles&lt;/h3&gt;
+&lt;h3&gt;Turrets &amp;amp; Weaponry&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710315"&gt;Fixed PT turret ammo not refilling on restart, restored reload animations for all ammo types, and stopped animation after mid‑reload dismount.&lt;/li&gt;
-&lt;li data-rust-commits="710229"&gt;Fixed PT boat turret reload issue after recent rewrite.&lt;/li&gt;
+&lt;li data-rust-commits="710315,710229"&gt;PT turrets (including boat turrets) now retain ammo after restarts, support reload animations for all ammo types, can be reloaded mid‑session, and related UI toasts are fixed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vending &amp;amp; Storage&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Building Improvements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710305"&gt;Fixed vending UI bug where adding a sell order could exceed stack size.&lt;/li&gt;
-&lt;li data-rust-commits="710304"&gt;Fixed vending UI always showing a 1× multiplier when hovering over items.&lt;/li&gt;
-&lt;li data-rust-commits="710223"&gt;Corrected storage box collision bounds that blocked movement against walls.&lt;/li&gt;
+&lt;li data-rust-commits="710305,710304"&gt;Vending UI now correctly limits sell order stack size and shows accurate stack multipliers when hovering items.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player Movement&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="710213"&gt;Headroom calculation now ignores animated building blocks, preventing unwanted auto‑crouch near closing doors.&lt;/li&gt;
+&lt;li data-rust-commits="710271"&gt;Boomerangs now deal the intended damage after a damage calculation fix.&lt;/li&gt;
+&lt;li data-rust-commits="710223"&gt;Storage boxes no longer block placement against walls, fixing placement issues.&lt;/li&gt;
+&lt;li data-rust-commits="710306"&gt;Vending machine UI interactions are more reliable, resolving purchase glitches.&lt;/li&gt;
+&lt;li data-rust-commits="710312"&gt;Cows no longer clip through walls, preventing heads from protruding out of buildings.&lt;/li&gt;
+&lt;li data-rust-commits="710236"&gt;Triangle frames and foundations are now correctly visible when placed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="710213"&gt;Players no longer auto‑crouch when near closing doors or animated blocks, improving movement.&lt;/li&gt;
+&lt;li data-rust-commits="710195"&gt;Console command autocomplete now suggests the correct realm, reducing mistyped commands.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-08</guid>
-      <pubDate>Thu, 08 Oct 2026 22:18:19 -0400</pubDate>
+      <pubDate>Thu, 08 Oct 2026 12:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Oct 07</title>
+      <title>Rust Updates — 2 Days Ago — Oct 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;122 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -98,9 +103,9 @@
       <pubDate>Wed, 07 Oct 2026 12:00:00 -0400</pubDate>
     </item>
     <item>
-      <title>Rust Updates — 2 Days Ago — Oct 06</title>
+      <title>Rust Development Updates — Oct 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;115 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;114 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;World &amp;amp; Navigation&lt;/h3&gt;
 &lt;ul&gt;
