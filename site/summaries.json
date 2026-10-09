@@ -1,4 +1,17 @@
 {
+  "2026-10-09": {
+    "commit_count": 1,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-08": {
     "commit_count": 109,
     "relevant_commit_count": 73,
@@ -315,153 +328,6 @@
     ],
     "status": "ok",
     "summary": "### Animals & Livestock\n- A new 'potential' stat tracks an animal’s average happiness, influences vendor sale prices and prevents selling animals with zero potential; the value rises or falls over time based on current happiness.\n- Animals now dismount to the nearest valid spot with a physics check to avoid clipping through structures, and players receive toast notifications when mounting or dismounting fails due to obstacles.\n\n### Weapons & Combat\n- PT Boat turrets now support full viewmodels, reload functionality, corrected rear turret aiming, and smoother rendering to eliminate stutter.\n- Mortar fire is now synchronized for all players, ensuring consistent behavior.\n- Weapon shot settings have been corrected, improving firing reliability.\n- Grenade throw velocity has been increased, allowing grenades to travel farther.\n\n### Power & Generators\n- A biofuel generator pooling bug was fixed, restoring reliable fuel production.\n\n### Mounts & Horses\n- Horse animations and behavior were fixed: horses now sleep correctly, dismounted horses no longer keep their heads turned, and animation pooling issues are resolved.\n\n### Stability & Crash Fixes\n- A crash triggered by ore flare devices has been resolved, improving overall game stability.\n\n### Bug Fixes\n- Tool cupboards no longer appear on the map when the max tool cupboard limit is disabled at runtime.\n- Viewmodel skins are restored and work correctly again.\n- The wounded first‑person sound now plays in builds (volume reduced by 50%).\n- Gun jitter is eliminated when turning animations are playing.\n- Harbor bridge and crane sounds no longer play on initial load.\n- RC computer screen blur issue fixed.\n- Spectator viewmodel drop animations now play correctly.\n\n### Gameplay & Balance\n- Added a sound effect when selling wool or animals, providing audible confirmation of the transaction.\n- Fixed a crash that occurred when copying and pasting invulnerable entities, allowing seamless duplication.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-06": {
-    "commit_count": 114,
-    "relevant_commit_count": 71,
-    "relevant_signature": "708135,708152,708156,708164,708168,708170,708184,708187,708190,708192,708193,708201,708202,708214,708215,708220,708221,708223,708224,708225,708227,708229,708230,708233,708235,708245,708246,708247,708250,708260,708285,708305,708350,708353,708354,708355,708364,708381,708383,708388,708395,708399,708400,708401,708403,708406,708410,708412,708416,708422,708432,708441,708445,708447,708463,708466,708471,708472,708475,708489,708492,708498,708504,708505,708510,708511,708512,708515,708517,708518,708521",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "World & Navigation",
-        "items": [
-          {
-            "text": "Map icons for Tool Cupboards added and deep‑sea marker issues fixed, improving map clarity and preventing marker loss.",
-            "commit_ids": [
-              708489,
-              708215
-            ]
-          },
-          {
-            "text": "Ferry terminal rope ladder climbing fixed, eliminating climb glitches and stuck rung animations.",
-            "commit_ids": [
-              708388
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & AI",
-        "items": [
-          {
-            "text": "Hit detection improved and boars now flee only below 30 % health, making combat more reliable and boar encounters less premature.",
-            "commit_ids": [
-              708403,
-              708229
-            ]
-          },
-          {
-            "text": "Livestock movement and feeding behavior refined, preventing cows from clipping and improving eating at troughs and grass.",
-            "commit_ids": [
-              708250,
-              708190,
-              708187
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & Items",
-        "items": [
-          {
-            "text": "New tea mixing‑table recipes and Wool Armor introduced, expanding crafting options and providing Tier 1 protection.",
-            "commit_ids": [
-              708504,
-              708399
-            ]
-          },
-          {
-            "text": "Crafting action moved to D‑pad down on all controller layouts for easier access.",
-            "commit_ids": [
-              708235
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio & Sound",
-        "items": [
-          {
-            "text": "BBQ and flame turret sounds corrected and one‑shot spawn noises (furnaces, campfires, mixing tables) silenced for a cleaner audio experience.",
-            "commit_ids": [
-              708505,
-              708492
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Player Impact",
-        "items": [
-          {
-            "text": "Fixed horses being able to fly, preventing unintended movement exploits.",
-            "commit_ids": [
-              708463
-            ]
-          },
-          {
-            "text": "Boombox mission events now only trigger for teammates on the same mission, avoiding irrelevant alerts.",
-            "commit_ids": [
-              708441
-            ]
-          },
-          {
-            "text": "Resolved client crashes caused by late-arriving network snapshots, improving stability during map transitions.",
-            "commit_ids": [
-              708416
-            ]
-          },
-          {
-            "text": "Tattoos now correctly persist between client and server, ensuring player cosmetics are saved.",
-            "commit_ids": [
-              708412
-            ]
-          },
-          {
-            "text": "Reloading maps now correctly includes level size data, preventing loading confusion when switching between maps.",
-            "commit_ids": [
-              708350
-            ]
-          },
-          {
-            "text": "Fixed several character customization bugs: UI fading issue, unwanted underwear prompt, and teleporting back to start when opening the menu.",
-            "commit_ids": [
-              708247
-            ]
-          },
-          {
-            "text": "Bee grenade prediction no longer shows a white grenade model, fixing visual glitch during throw prediction.",
-            "commit_ids": [
-              708201
-            ]
-          },
-          {
-            "text": "Fixed a NaN vertex lighting issue that could crash the game.",
-            "commit_ids": [
-              708170
-            ]
-          },
-          {
-            "text": "Helicopter flares now save correctly without corrupting job handlers, restoring flare functionality after saving.",
-            "commit_ids": [
-              708156
-            ]
-          },
-          {
-            "text": "Made helicopter flare saving thread‑safe, preventing crashes when multiple flares are saved simultaneously.",
-            "commit_ids": [
-              708152
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### World & Navigation\n- Map icons for Tool Cupboards added and deep‑sea marker issues fixed, improving map clarity and preventing marker loss.\n- Ferry terminal rope ladder climbing fixed, eliminating climb glitches and stuck rung animations.\n\n### Combat & AI\n- Hit detection improved and boars now flee only below 30 % health, making combat more reliable and boar encounters less premature.\n- Livestock movement and feeding behavior refined, preventing cows from clipping and improving eating at troughs and grass.\n\n### Crafting & Items\n- New tea mixing‑table recipes and Wool Armor introduced, expanding crafting options and providing Tier 1 protection.\n- Crafting action moved to D‑pad down on all controller layouts for easier access.\n\n### Audio & Sound\n- BBQ and flame turret sounds corrected and one‑shot spawn noises (furnaces, campfires, mixing tables) silenced for a cleaner audio experience.\n\n### Player Impact\n- Fixed horses being able to fly, preventing unintended movement exploits.\n- Boombox mission events now only trigger for teammates on the same mission, avoiding irrelevant alerts.\n- Resolved client crashes caused by late-arriving network snapshots, improving stability during map transitions.\n- Tattoos now correctly persist between client and server, ensuring player cosmetics are saved.\n- Reloading maps now correctly includes level size data, preventing loading confusion when switching between maps.\n- Fixed several character customization bugs: UI fading issue, unwanted underwear prompt, and teleporting back to start when opening the menu.\n- Bee grenade prediction no longer shows a white grenade model, fixing visual glitch during throw prediction.\n- Fixed a NaN vertex lighting issue that could crash the game.\n- Helicopter flares now save correctly without corrupting job handlers, restoring flare functionality after saving.\n- Made helicopter flare saving thread‑safe, preventing crashes when multiple flares are saved simultaneously.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
