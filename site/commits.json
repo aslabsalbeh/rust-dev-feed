@@ -1,5 +1,85 @@
 [
   {
+    "id": 710652,
+    "branch": "main/Weapon_Refresh_Flare",
+    "changeset": "167393",
+    "created": "2026-10-09T01:35:43",
+    "message": "Little editor helper script for doing FX on thrown/moving items.",
+    "user": "Petur"
+  },
+  {
+    "id": 710647,
+    "branch": "main/Weapon_Refresh_Flare",
+    "changeset": "167392",
+    "created": "2026-10-09T01:32:12",
+    "message": "Finalized flare WM FX and lighting.",
+    "user": "Petur"
+  },
+  {
+    "id": 710633,
+    "branch": "main/softcore_tc_limit/map_icons",
+    "changeset": "167390",
+    "created": "2026-10-09T01:26:14",
+    "message": "Update test list",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 710631,
+    "branch": "main/softcore_tc_limit/map_icons",
+    "changeset": "167389",
+    "created": "2026-10-09T01:26:03",
+    "message": "Fix test attribute",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 710624,
+    "branch": "main/occlusionculling_leak_fix",
+    "changeset": "167387",
+    "created": "2026-10-09T01:18:30",
+    "message": "Stop LOD components registering with occlusion culling while its off\r\nOcclusion culling never runs under RRP, but moving LODs still pushed their bounds every frame into a list that never got cleared\r\n\r\nWas ~0.5ms a frame on dynamic occludee for nothing too on average",
+    "user": "Flavien"
+  },
+  {
+    "id": 710610,
+    "branch": "main/pt_boat_turret_rewrite/turret_viewmodels",
+    "changeset": "167386",
+    "created": "2026-10-09T01:08:11",
+    "message": "Fix pt boat rear turret viewmodel",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710598,
+    "branch": "main",
+    "changeset": "167385",
+    "created": "2026-10-09T00:55:28",
+    "message": "cannon_test_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710596,
+    "branch": "main/cannon_test_fix",
+    "changeset": "167384",
+    "created": "2026-10-09T00:55:04",
+    "message": "Fix mountable tests not working with BaseMountedWeapon rewrite",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710559,
+    "branch": "main/pt_boat_turret_rewrite/turret_viewmodels",
+    "changeset": "167382",
+    "created": "2026-10-09T00:34:13",
+    "message": "Terrible WIP",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 710515,
+    "branch": "main/Livestock_animals",
+    "changeset": "167381",
+    "created": "2026-10-09T00:09:12",
+    "message": "Move the shared AI test prefab paths from AITestFixture into a new AITestUtils so client tests use them instead of keeping their own copies",
+    "user": "Maverick"
+  },
+  {
     "id": 710512,
     "branch": "main/rain_optims",
     "changeset": "167380",
@@ -2773,78 +2853,6 @@
     "changeset": "166838",
     "created": "2026-10-06T02:54:51",
     "message": "MeshLOD converter now copies across motion vector settings\r\nConverted all of the RendererLODs/LODGroups to MeshLODs on 61 prefabs\r\nNotably a lot of seasonal stuff was affected",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 708110,
-    "branch": "main/character_customisation",
-    "changeset": "166836",
-    "created": "2026-10-06T02:13:48",
-    "message": "- More RRP support\r\n- Really lightened the scene",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 708106,
-    "branch": "▆▅▅▋",
-    "changeset": "▆▍▇▍▅▍",
-    "created": "2026-10-06T01:55:58",
-    "message": "▆ ▇▇▋▍▌▉▅▉▅ ▉▄▌ ▇ ▆▄▊▆▇ █▆▆ █▍▅▆▊ ▌▊ ▄▅█▊▊ ▅▊▅▋▌▋▊█▊ ▇▌▆▅▉▊▅▋█▍▋ ▄▍▌█▊ ▊ ▅▋▉█▍▅ ▇▆▆▉▌▌▇▊▌▋▊▄▄▍▅▄▅█▇▋█▍▊▅▌▋▅▅▉▌ ▌▅█▊▌ ▍▇▄▆▌▄ ▇▍▆▇ ▋▇▋▉▄ ▉ ▄▅▆▋█▉▄ ▋▅ ▋▆▅▍▍█▊ █▄ ▆▋▄▆█▋▄▄█ ▋▄▇█▊ █▆▌▍ ▅▌█▇▆",
-    "user": "lamalove"
-  },
-  {
-    "id": 708105,
-    "branch": "main/smart_entity_deauth",
-    "changeset": "166831",
-    "created": "2026-10-06T01:30:29",
-    "message": "Add support for clearing Rust+ auth to smart entities from in game",
-    "user": "lamalove"
-  },
-  {
-    "id": 708103,
-    "branch": "main/animalanimation_optims",
-    "changeset": "166829",
-    "created": "2026-10-06T01:21:46",
-    "message": "Fixed AnimalAnimation out of range errors",
-    "user": "Flavien"
-  },
-  {
-    "id": 708100,
-    "branch": "main/notices_rtl_fix",
-    "changeset": "166827",
-    "created": "2026-10-06T00:48:13",
-    "message": "Fixed item dropped and item pickup notices not working with RTL languages",
-    "user": "Flavien"
-  },
-  {
-    "id": 708099,
-    "branch": "main/animal_anim_compression",
-    "changeset": "166826",
-    "created": "2026-10-06T00:38:43",
-    "message": "Enabled animation compression on squirrel, sheep, frog, cow, sea turtle anims",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 708098,
-    "branch": "main/character_customisation",
-    "changeset": "166825",
-    "created": "2026-10-06T00:23:43",
-    "message": "- Dont send back the character proto on character lock, it's pointless\r\n- Better splitting and safety nets with 'requested appearence' vs 'accepted appearence'",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 708097,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "166824",
-    "created": "2026-10-06T00:21:33",
-    "message": "Fixed CraftingNotice allocating every frame when crafting an item\r\nAlso converted them to RustText so they can display RTL languages",
-    "user": "Flavien"
-  },
-  {
-    "id": 708096,
-    "branch": "main",
-    "changeset": "166823",
-    "created": "2026-10-06T00:18:35",
-    "message": "~Fixed conversation panel reappearing if we exit play mode mid conversation with domain reload disabled",
     "user": "Jarryd Campi"
   }
 ]

@@ -1,113 +1,82 @@
 {
   "2026-10-08": {
-    "commit_count": 99,
-    "relevant_commit_count": 64,
+    "commit_count": 109,
+    "relevant_commit_count": 73,
     "relevant_signature": "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247,710253,710266,710270,710271,710304,710305,710306,710312,710315,710317,710321,710334,710338,710341,710343,710344,710345,710346,710347,710356",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "710341,710343,710344,710345,710346,710347,710356,710360,710361,710362,710363,710433,710444,710448,710449,710464,710465,710467,710477,710485,710486,710494,710504,710510,710512": [
+      "710362,710363,710433,710444,710448,710449,710464,710465,710467,710477,710485,710486,710494,710504,710510,710512,710515,710559,710596,710598,710610,710624,710631,710647,710652": [
         {
-          "title": "Livestock & Animal AI",
+          "title": "Livestock & Animal Mechanics",
           "items": [
             {
-              "text": "Reworked herd size measurement to enforce the 9‑animal herd cap more robustly, preventing caps from being bypassed by stretched herds.",
+              "text": "Improved herd size enforcement: robust 9‑cow cap that prevents stretched herds from bypassing the limit.",
               "commit_ids": [
                 710494
               ]
             },
             {
-              "text": "Fixed several livestock UI and behavior issues: client pooling now correctly resets stats, owner UI shows \"no owner, feed at a trough to claim\" when unowned, trust UI now displays \"will defend you\" (trust thresholds renamed), and female cows will defend anyone who attacks their owner.",
+              "text": "Multiple livestock UI and behavior fixes: corrected stat pooling, added owner claim UI, updated trust UI wording and thresholds, and made female cows defend their owners.",
               "commit_ids": [
                 710485
               ]
             },
             {
-              "text": "Recessive genes now affect the buy price from NPC traders, NPCs comment on hidden bad genes, inbred cows, and \"god\" cows, and the genes UI now hints at recessive traits.",
+              "text": "Livestock genetics now affect market price and NPC dialogue: recessive genes influence buy price, NPCs comment on hidden traits, and UI hints at recessive genes.",
               "commit_ids": [
                 710465
               ]
             },
             {
-              "text": "Removed the distinction between adult and calf needs; unborn calves are now considered when checking breeding caps, improving herd‑size logic.",
+              "text": "Unified livestock needs across ages and included unborn calves in breeding checks, ensuring herd caps are respected.",
               "commit_ids": [
                 710362
-              ]
-            },
-            {
-              "text": "Prevented old animals (bears, stags, boars, chickens) from sleeping (which made them appear dead), fixed them not fleeing when shot from a distance, and corrected bears roaming at excessively high speeds.",
-              "commit_ids": [
-                710361
-              ]
-            },
-            {
-              "text": "Fixed livestock sometimes not breeding or eating due to mates or troughs being unreachable, ensuring proper feeding and reproduction behavior.",
-              "commit_ids": [
-                710360
-              ]
-            },
-            {
-              "text": "Reapplied livestock petting on the new branch and fixed rotation not using the agent, restoring player‑controlled petting interactions.",
-              "commit_ids": [
-                710341
               ]
             }
           ]
         },
         {
-          "title": "Tool Cupboard & Map UI",
+          "title": "Tool Cupboard (TC) & Map Icons",
           "items": [
             {
-              "text": "Fixed tool cupboards (TCs) being incorrectly sent to players on the tutorial island.",
+              "text": "Fixed tool cupboard (TC) items being incorrectly sent to players on the tutorial island.",
               "commit_ids": [
                 710448
               ]
             },
             {
-              "text": "Corrected other map views (MLRS, vending, etc.) from erroneously displaying TCs.",
+              "text": "Corrected map icons so TC markers no longer appear on unrelated map views (e.g., MLRS, vending).",
               "commit_ids": [
                 710444
-              ]
-            },
-            {
-              "text": "Resolved a bug where the TC label on the map could acquire a delete button after a network update while the map was open.",
-              "commit_ids": [
-                710356
               ]
             }
           ]
         }
       ],
-      "710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247,710253,710266,710270,710271,710304,710305,710306,710312,710315,710317,710321,710334,710338": [
+      "710241,710245,710247,710253,710266,710270,710271,710304,710305,710306,710312,710315,710317,710321,710334,710338,710341,710343,710344,710345,710346,710347,710356,710360,710361": [
         {
-          "title": "Combat & Damage",
+          "title": "Animals & Livestock",
           "items": [
             {
-              "text": "Boomerang now deals damage to BaseNPC2 as intended.",
+              "text": "Prevent old animals (bears, stag, boars, chicken) from sleeping, fix them not running away when shot, and stop bears roaming at high speed.",
               "commit_ids": [
-                710270
+                710361
               ]
             },
             {
-              "text": "Splash damage no longer passes through triangle floors, frames, or foundations, fixing damage through walls.",
+              "text": "Fix livestock breeding/eating issues where mates or troughs were unreachable.",
               "commit_ids": [
-                710321,
-                710236,
-                710231
+                710360
               ]
             },
             {
-              "text": "Rockets no longer collide with ragdoll colliders, preventing mid‑air explosions near dead bodies.",
+              "text": "Reapply livestock petting on new branch and fix rotation not using the agent.",
               "commit_ids": [
-                710247
+                710341
               ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock",
-          "items": [
+            },
             {
-              "text": "Cows ownership simplified (buy = own), UI now shows owner, cows no longer die of old age, crowding only death, milk buffers up to 3 charges with cooldown UI, overgrazing removed (simple grass need), can eat any horse food, teleport food to belly if blocked, UI shows pregnancy, father, timers, trough food/water duration, names based on owner language, separate frame budgets for livestock, herd size limit of 9 stops breeding, and other UI/behavior improvements.",
+              "text": "Comprehensive cow overhaul: simplified ownership, UI owner display, removal of old‑age death, crowding‑only death, milk charge system, UI milk cooldown, removed overgrazing, food handling changes, pregnancy UI, trough‑duration UI, language‑based naming, separate frame budgets for livestock, and herd size limits.",
               "commit_ids": [
                 710317
               ]
@@ -115,30 +84,87 @@
           ]
         },
         {
-          "title": "PT Boat Turret",
+          "title": "Combat & Damage",
           "items": [
             {
-              "text": "Turret ammo now refills correctly after server restarts and can be reloaded after the rewrite; reload animations work for all ammo types and stop playing after dismount; toast notifications restored.",
+              "text": "Stop splash damage being applied through triangle floors and frames when walls block line of sight.",
               "commit_ids": [
-                710315,
-                710229
+                710321
+              ]
+            },
+            {
+              "text": "Fix boomerang not dealing damage to BaseNPC2.",
+              "commit_ids": [
+                710270
+              ]
+            },
+            {
+              "text": "Prevent most server projectiles from colliding with the ragdoll layer, fixing rockets exploding near dead bodies.",
+              "commit_ids": [
+                710247
               ]
             }
           ]
         },
         {
-          "title": "Vending UI",
+          "title": "Turret & Weaponry",
           "items": [
             {
-              "text": "Adding a sell order now respects stack size limits.",
+              "text": "Fix PT turret ammo refilling on restart, restore toast removal, enable reload animation for all ammo types, and stop reload animation after dismounting mid‑reload.",
+              "commit_ids": [
+                710315
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & TC UI",
+          "items": [
+            {
+              "text": "Fix TC label on map gaining a delete button after a network update while the map is open.",
+              "commit_ids": [
+                710356
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vending & Trading UI",
+          "items": [
+            {
+              "text": "Fix 'add sell order' exceeding stack size in vending UI.",
               "commit_ids": [
                 710305
               ]
             },
             {
-              "text": "Hovering over items in the vending UI shows the correct stack multiplier instead of always \"1x\".",
+              "text": "Fix vending UI always showing 1x when hovering over items.",
               "commit_ids": [
                 710304
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building Colliders",
+          "items": [
+            {
+              "text": "Updated colliders for the Scrap King DLC buildings.",
+              "commit_ids": [
+                710266
+              ]
+            }
+          ]
+        }
+      ],
+      "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239": [
+        {
+          "title": "Vehicles & Turrets",
+          "items": [
+            {
+              "text": "PT boat turrets can now be reloaded after the recent rewrite.",
+              "commit_ids": [
+                710229
               ]
             }
           ]
@@ -147,33 +173,20 @@
           "title": "Building & Placement",
           "items": [
             {
-              "text": "Storage box bounds bug fixed, preventing boxes from unintentionally blocking walls.",
+              "text": "Storage box bounds fixed, preventing the box from unintentionally blocking walls.",
               "commit_ids": [
                 710223
               ]
             }
           ]
-        }
-      ],
-      "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221": [
-        {
-          "title": "Movement & Collision",
-          "items": [
-            {
-              "text": "Players no longer get auto‑crouched when overlapping with actively animated building‑block entities such as closing doors.",
-              "commit_ids": [
-                710213
-              ]
-            }
-          ]
         },
         {
-          "title": "World Lighting",
+          "title": "Player Movement",
           "items": [
             {
-              "text": "Fixed lighting wiring so lights C and D now reference the correct light colour instead of all showing red.",
+              "text": "Headroom calculation now ignores actively animated building blocks, stopping unwanted auto‑crouch when near closing doors.",
               "commit_ids": [
-                710156
+                710213
               ]
             }
           ]
@@ -182,7 +195,7 @@
           "title": "Livestock Mechanics",
           "items": [
             {
-              "text": "Introduced a cap on livestock potential for unbred animals (wild or vendor‑bought); only offspring can be sold. Configurable via livestock.potentialUnbredCap.",
+              "text": "Introduced a cap on potential for animals without a mother (unbred), configurable via `livestock.potentialUnbredCap`.",
               "commit_ids": [
                 710102
               ]
