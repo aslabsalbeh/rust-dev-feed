@@ -1,27 +1,33 @@
 {
   "2026-10-09": {
-    "commit_count": 56,
-    "relevant_commit_count": 27,
-    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826",
+    "commit_count": 64,
+    "relevant_commit_count": 30,
+    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826,711827,711837,711860",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Vehicle Interactions",
+        "title": "Livestock & Animals",
         "items": [
           {
-            "text": "Fixed a bug where players could drive vehicles through the graveyard fence.",
+            "text": "Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.",
             "commit_ids": [
-              711791
+              711860
             ]
           }
         ]
       },
       {
-        "title": "Loot & Collectables",
+        "title": "World Interaction",
         "items": [
           {
-            "text": "Fixed floating loot crates in Halloween tunnels, restoring proper crate placement and accessibility.",
+            "text": "Vehicles can no longer drive through the graveyard fence, fixing a collision exploit.",
+            "commit_ids": [
+              711791
+            ]
+          },
+          {
+            "text": "Loot crates in Halloween tunnels no longer float, ensuring proper loot placement.",
             "commit_ids": [
               711743
             ]
@@ -32,7 +38,7 @@
         "title": "Events & Content",
         "items": [
           {
-            "text": "Enabled the Halloween 2026 event: added scarecrow population, Halloween dungeons, spooky versions of collectables, and made the Frankenstein table craftable by default.",
+            "text": "Halloween 2026 event activated: scarecrow population, Halloween dungeons, spooky collectables, and Frankenstein table added as a default craftable.",
             "commit_ids": [
               711404
             ]
@@ -40,12 +46,23 @@
         ]
       },
       {
-        "title": "Puzzle Mechanics",
+        "title": "Puzzles",
         "items": [
           {
-            "text": "Fixed puzzle reset logic so that players above ground are correctly ignored, ensuring puzzles reset as intended.",
+            "text": "Fixed puzzle reset ignoring above‑ground players, ensuring puzzles reset correctly after recent refactors.",
             "commit_ids": [
               711252
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Visibility",
+        "items": [
+          {
+            "text": "Players now correctly see acquaintances when server occlusion is disabled, fixing prior visibility issues.",
+            "commit_ids": [
+              711696
             ]
           }
         ]
@@ -54,52 +71,34 @@
         "title": "Performance",
         "items": [
           {
-            "text": "Reduced frame lag in large bases by fixing excessive building‑privilege checks, restoring normal performance.",
+            "text": "Reduced frequent vitals privilege checks that caused noticeable frame lag in large bases, restoring normal performance.",
             "commit_ids": [
               711449
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bug Fixes",
-        "items": [
-          {
-            "text": "Acquaintance updates now correctly appear when server occlusion is disabled, fixing visibility logic for player interactions.",
-            "commit_ids": [
-              711696
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Vehicle Interactions\n- Fixed a bug where players could drive vehicles through the graveyard fence.\n\n### Loot & Collectables\n- Fixed floating loot crates in Halloween tunnels, restoring proper crate placement and accessibility.\n\n### Events & Content\n- Enabled the Halloween 2026 event: added scarecrow population, Halloween dungeons, spooky versions of collectables, and made the Frankenstein table craftable by default.\n\n### Puzzle Mechanics\n- Fixed puzzle reset logic so that players above ground are correctly ignored, ensuring puzzles reset as intended.\n\n### Performance\n- Reduced frame lag in large bases by fixing excessive building‑privilege checks, restoring normal performance.\n\n### Bug Fixes\n- Acquaintance updates now correctly appear when server occlusion is disabled, fixing visibility logic for player interactions.",
+    "summary": "### Livestock & Animals\n- Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.\n\n### World Interaction\n- Vehicles can no longer drive through the graveyard fence, fixing a collision exploit.\n- Loot crates in Halloween tunnels no longer float, ensuring proper loot placement.\n\n### Events & Content\n- Halloween 2026 event activated: scarecrow population, Halloween dungeons, spooky collectables, and Frankenstein table added as a default craftable.\n\n### Puzzles\n- Fixed puzzle reset ignoring above‑ground players, ensuring puzzles reset correctly after recent refactors.\n\n### Gameplay & Visibility\n- Players now correctly see acquaintances when server occlusion is disabled, fixing prior visibility issues.\n\n### Performance\n- Reduced frequent vitals privilege checks that caused noticeable frame lag in large bases, restoring normal performance.",
     "new_items": [
       {
-        "text": "Fixed a bug where players could drive vehicles through the graveyard fence.",
+        "text": "Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.",
+        "commit_ids": [
+          711860
+        ],
+        "section": "Livestock & Animals"
+      },
+      {
+        "text": "Vehicles can no longer drive through the graveyard fence, fixing a collision exploit.",
         "commit_ids": [
           711791
         ],
-        "section": "World & Vehicle Interactions"
-      },
-      {
-        "text": "Fixed floating loot crates in Halloween tunnels, restoring proper crate placement and accessibility.",
-        "commit_ids": [
-          711743
-        ],
-        "section": "Loot & Collectables"
-      },
-      {
-        "text": "Acquaintance updates now correctly appear when server occlusion is disabled, fixing visibility logic for player interactions.",
-        "commit_ids": [
-          711696
-        ],
-        "section": "Bug Fixes"
+        "section": "World Interaction"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed a bug where players could drive vehicles through the graveyard fence.\n- Fixed floating loot crates in Halloween tunnels, restoring proper crate placement and accessibility.\n- Acquaintance updates now correctly appear when server occlusion is disabled, fixing visibility logic for player interactions."
+    "new_relevant_count": 2,
+    "new_summary": "- Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.\n- Vehicles can no longer drive through the graveyard fence, fixing a collision exploit."
   },
   "2026-10-08": {
     "commit_count": 109,
