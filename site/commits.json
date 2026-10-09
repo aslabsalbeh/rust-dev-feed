@@ -1,5 +1,93 @@
 [
   {
+    "id": 710512,
+    "branch": "main/rain_optims",
+    "changeset": "167380",
+    "created": "2026-10-09T00:04:22",
+    "message": "Optimized rain particles\n- rain patches now use a closest hit sphere cast instead of GamePhysics.Trace, it collected every colliders down a 1km column to keep only the top one\n- a patch only casts again when it moves\n- coming back from an alt tab doesnt fire 64 casts in the same frame\n- fixed rain falling under some roofs\r\n\r\nEditor profiling raining at missile silo, average per frame:\r\n0.42ms -> 0.06ms standing, 0.11ms running, 0.14ms at 20m/s\r\n\r\nApplies to snow too",
+    "user": "Flavien"
+  },
+  {
+    "id": 710511,
+    "branch": "▊▍▊▇",
+    "changeset": "█▊▋▆▍▅",
+    "created": "2026-10-08T23:54:29",
+    "message": "▊▍█▅▋▉ ▅▋▄▍█▊▅▉",
+    "user": "Helk"
+  },
+  {
+    "id": 710510,
+    "branch": "main/Livestock_animals",
+    "changeset": "167378",
+    "created": "2026-10-08T23:54:13",
+    "message": "Fix test that sometimes randomly fails in editor because server and client share one TOD_Sky",
+    "user": "Maverick"
+  },
+  {
+    "id": 710504,
+    "branch": "main/Weapon_Refresh_Flare",
+    "changeset": "167377",
+    "created": "2026-10-08T23:35:23",
+    "message": "Fixed the niche FX 6 point shader to use the new pipeline's forward+ light buffer.\r\nFixes some smoke lighting issues.",
+    "user": "Petur"
+  },
+  {
+    "id": 710494,
+    "branch": "main/Livestock_animals",
+    "changeset": "167376",
+    "created": "2026-10-08T23:27:00",
+    "message": "Rework how outdoor herd sized are measured to make the 9 max herd cap more robust, instead of each cow checking only their neighboors, each neighboor checks their neighboors recursively\r\nStretched herds no longer then allow the cap to be bypassed\r\nPerf is same, because then the other cows don't need to run their own queries, so the same total amount of queries are run\r\nWild cows are skipped as they can't reproduce so don't need to know about their herd size",
+    "user": "Maverick"
+  },
+  {
+    "id": 710486,
+    "branch": "main/Livestock_animals",
+    "changeset": "167375",
+    "created": "2026-10-08T23:11:14",
+    "message": "Fix lamb not using the same eye/mouth mask as adults, and having their eye/mouth tinted brown/black",
+    "user": "Maverick"
+  },
+  {
+    "id": 710485,
+    "branch": "main/Livestock_animals",
+    "changeset": "167374",
+    "created": "2026-10-08T23:07:06",
+    "message": "- Fix client pooling not resetting livestock stats properly, showing incorrect or fluctuating stat before first network update\r\n- When a cow has no owner, the owner UI is replaced with \"no owner, feed at a trough to claim\"\r\n- Fix trust UI showing \"can breed\" even though trust doesn't factor in breeding anymore, instead show \"will defend you\"\r\n- Rename the trust thresholds, shy>curious>can be led>will defend you for females and babies, hostile>wary>can be led>will defend you for males\r\n- Female cows will also attack anyone that attacks their owner, as if they were their calf (and only owner is defended, not others)",
+    "user": "Maverick"
+  },
+  {
+    "id": 710477,
+    "branch": "main/Weapon_Refresh_Flare",
+    "changeset": "167373",
+    "created": "2026-10-08T22:54:22",
+    "message": "Tweaks to IgnoreRotation and RoadFlare to support better lighting on updated flare.",
+    "user": "Petur"
+  },
+  {
+    "id": 710467,
+    "branch": "main/Livestock_animals",
+    "changeset": "167372",
+    "created": "2026-10-08T22:29:15",
+    "message": "Update rust native libraries for all platforms",
+    "user": "Maverick"
+  },
+  {
+    "id": 710465,
+    "branch": "main/Livestock_animals",
+    "changeset": "167371",
+    "created": "2026-10-08T22:25:27",
+    "message": "- Make recessive genes factor in the buy price you get with the NPC\r\n- Make the buyer NPC comment on hidden bad genes / inbred cows / true god cows with good recessives\r\n- Hint at recessive genes in the genes UI",
+    "user": "Maverick"
+  },
+  {
+    "id": 710464,
+    "branch": "main",
+    "changeset": "167370",
+    "created": "2026-10-08T22:20:54",
+    "message": "Fixed misconfigured raiding tests failing after the triangle splash bug fix",
+    "user": "Flavien"
+  },
+  {
     "id": 710458,
     "branch": "▌▍▋▆▄▄▌▊▌▉▌█▍█▋▄▊▌▆▋▉",
     "changeset": "▊▌▌▋▊▆",
@@ -2758,93 +2846,5 @@
     "created": "2026-10-06T00:18:35",
     "message": "~Fixed conversation panel reappearing if we exit play mode mid conversation with domain reload disabled",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 708093,
-    "branch": "main/boateffects_optims",
-    "changeset": "166820",
-    "created": "2026-10-05T23:53:10",
-    "message": "Optimized MotorRowboat.Update, it has a slow water height check for its effects, around 0.10ms\r\n- culled by distance\r\n- skipped when stationnary for >3s",
-    "user": "Flavien"
-  },
-  {
-    "id": 708091,
-    "branch": "main/optimize_world_server_clear",
-    "changeset": "166819",
-    "created": "2026-10-05T23:52:00",
-    "message": "Fix the server not clearing unused World Serialization maps\n- saves about 175MB on 4500 map",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 708086,
-    "branch": "███▅",
-    "changeset": "▍▋▅▊▅▅",
-    "created": "2026-10-05T23:36:30",
-    "message": "▋█▇▉▍▇▉ ▅▄▋▌ █▅▍▆▉▆▌▌▊▉▇▄▍▅",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 708084,
-    "branch": "main/dome_pump_mt_save_fix",
-    "changeset": "166813",
-    "created": "2026-10-05T23:31:03",
-    "message": "Fixed dome pump multi threaded saving issue",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 708079,
-    "branch": "main/animalanimation_optims",
-    "changeset": "166811",
-    "created": "2026-10-05T22:59:31",
-    "message": "Fixed AnimalAnimation allocating 80 bytes for each footstep",
-    "user": "Flavien"
-  },
-  {
-    "id": 708078,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "166810",
-    "created": "2026-10-05T22:59:05",
-    "message": "Avoid alloc when cleaning up expired projectiles, fix projectiles leaking when baseplayer is destroyed",
-    "user": "cipeaX"
-  },
-  {
-    "id": 708071,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "166809",
-    "created": "2026-10-05T22:32:07",
-    "message": "Remove planner linq when looking for sockets",
-    "user": "cipeaX"
-  },
-  {
-    "id": 708068,
-    "branch": "main/character_customisation",
-    "changeset": "166807",
-    "created": "2026-10-05T22:28:13",
-    "message": "- Add RRP support\r\n- Fix various texture/icon errors\r\n- Minor Cleanup",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 708067,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "166806",
-    "created": "2026-10-05T22:27:48",
-    "message": "Avoid allocs when ticking hurt triggers",
-    "user": "cipeaX"
-  },
-  {
-    "id": 708065,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "166805",
-    "created": "2026-10-05T22:25:27",
-    "message": "Fix linq every frame in cooking visuals",
-    "user": "cipeaX"
-  },
-  {
-    "id": 708060,
-    "branch": "main/optimize_spawn_distribution",
-    "changeset": "166803",
-    "created": "2026-10-05T22:19:31",
-    "message": "Reduce memory usage of the server's SpawnDistributions by 750MB (780MB -> 40MB) and make it 3x faster to sample (2.1 us -> 0.7 us)\n- store in tiles of 16x16 values\n- 85% of the tiles are all zeros (fun fact)\n- tiles that are all the same value store as negative tile index so it can avoid looking up the tile (mainly all zeros)\n- deduplicate the remaining tiles (saves a little more)\n- palette packing on top for tiles that have mixed values (2 - 4 bits / value)\n- reduces server startup time from 4s -> 2.5s",
-    "user": "Jake_Rich"
   }
 ]
