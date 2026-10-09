@@ -1,16 +1,27 @@
 {
   "2026-10-09": {
-    "commit_count": 64,
-    "relevant_commit_count": 30,
-    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826,711827,711837,711860",
+    "commit_count": 70,
+    "relevant_commit_count": 33,
+    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826,711827,711837,711860,711878,711886,711899",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock & Animals",
+        "title": "Communication",
         "items": [
           {
-            "text": "Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.",
+            "text": "Enabled phone conversations across the map without needing the NPC entity to be spawned clientside.",
+            "commit_ids": [
+              711899
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock",
+        "items": [
+          {
+            "text": "Limited livestock herd size to 5 and increased herd detection distance to 40 m.",
             "commit_ids": [
               711860
             ]
@@ -18,16 +29,27 @@
         ]
       },
       {
-        "title": "World Interaction",
+        "title": "World & Vehicles",
         "items": [
           {
-            "text": "Vehicles can no longer drive through the graveyard fence, fixing a collision exploit.",
+            "text": "Fixed a bug that allowed vehicles to drive through the graveyard fence.",
             "commit_ids": [
               711791
             ]
+          }
+        ]
+      },
+      {
+        "title": "Halloween Event",
+        "items": [
+          {
+            "text": "Enabled Halloween event with scarecrow population, Halloween dungeons, spooky collectables, and made Frankenstein table a default craftable.",
+            "commit_ids": [
+              711404
+            ]
           },
           {
-            "text": "Loot crates in Halloween tunnels no longer float, ensuring proper loot placement.",
+            "text": "Fixed loot crates floating in Halloween tunnels, ensuring proper placement.",
             "commit_ids": [
               711743
             ]
@@ -35,21 +57,10 @@
         ]
       },
       {
-        "title": "Events & Content",
+        "title": "Gameplay Bugs",
         "items": [
           {
-            "text": "Halloween 2026 event activated: scarecrow population, Halloween dungeons, spooky collectables, and Frankenstein table added as a default craftable.",
-            "commit_ids": [
-              711404
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Puzzles",
-        "items": [
-          {
-            "text": "Fixed puzzle reset ignoring above‑ground players, ensuring puzzles reset correctly after recent refactors.",
+            "text": "Fixed puzzle reset ignoring above‑ground players, ensuring puzzles reset correctly for all players.",
             "commit_ids": [
               711252
             ]
@@ -57,10 +68,10 @@
         ]
       },
       {
-        "title": "Gameplay & Visibility",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Players now correctly see acquaintances when server occlusion is disabled, fixing prior visibility issues.",
+            "text": "Visibility updates now function correctly when server occlusion is disabled, fixing missing player and structure visibility.",
             "commit_ids": [
               711696
             ]
@@ -71,7 +82,7 @@
         "title": "Performance",
         "items": [
           {
-            "text": "Reduced frequent vitals privilege checks that caused noticeable frame lag in large bases, restoring normal performance.",
+            "text": "Building vitals checks optimized, removing costly per‑frame privilege lookups and eliminating frame‑rate drops in large bases.",
             "commit_ids": [
               711449
             ]
@@ -80,25 +91,25 @@
       }
     ],
     "status": "ok",
-    "summary": "### Livestock & Animals\n- Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.\n\n### World Interaction\n- Vehicles can no longer drive through the graveyard fence, fixing a collision exploit.\n- Loot crates in Halloween tunnels no longer float, ensuring proper loot placement.\n\n### Events & Content\n- Halloween 2026 event activated: scarecrow population, Halloween dungeons, spooky collectables, and Frankenstein table added as a default craftable.\n\n### Puzzles\n- Fixed puzzle reset ignoring above‑ground players, ensuring puzzles reset correctly after recent refactors.\n\n### Gameplay & Visibility\n- Players now correctly see acquaintances when server occlusion is disabled, fixing prior visibility issues.\n\n### Performance\n- Reduced frequent vitals privilege checks that caused noticeable frame lag in large bases, restoring normal performance.",
+    "summary": "### Communication\n- Enabled phone conversations across the map without needing the NPC entity to be spawned clientside.\n\n### Livestock\n- Limited livestock herd size to 5 and increased herd detection distance to 40 m.\n\n### World & Vehicles\n- Fixed a bug that allowed vehicles to drive through the graveyard fence.\n\n### Halloween Event\n- Enabled Halloween event with scarecrow population, Halloween dungeons, spooky collectables, and made Frankenstein table a default craftable.\n- Fixed loot crates floating in Halloween tunnels, ensuring proper placement.\n\n### Gameplay Bugs\n- Fixed puzzle reset ignoring above‑ground players, ensuring puzzles reset correctly for all players.\n\n### Gameplay & Balance\n- Visibility updates now function correctly when server occlusion is disabled, fixing missing player and structure visibility.\n\n### Performance\n- Building vitals checks optimized, removing costly per‑frame privilege lookups and eliminating frame‑rate drops in large bases.",
     "new_items": [
       {
-        "text": "Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.",
+        "text": "Enabled phone conversations across the map without needing the NPC entity to be spawned clientside.",
+        "commit_ids": [
+          711899
+        ],
+        "section": "Communication"
+      },
+      {
+        "text": "Limited livestock herd size to 5 and increased herd detection distance to 40 m.",
         "commit_ids": [
           711860
         ],
-        "section": "Livestock & Animals"
-      },
-      {
-        "text": "Vehicles can no longer drive through the graveyard fence, fixing a collision exploit.",
-        "commit_ids": [
-          711791
-        ],
-        "section": "World Interaction"
+        "section": "Livestock"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- Herd size limited to 5 and detection distance increased to 40 m, improving livestock pen behavior.\n- Vehicles can no longer drive through the graveyard fence, fixing a collision exploit."
+    "new_summary": "- Enabled phone conversations across the map without needing the NPC entity to be spawned clientside.\n- Limited livestock herd size to 5 and increased herd detection distance to 40 m."
   },
   "2026-10-08": {
     "commit_count": 109,
