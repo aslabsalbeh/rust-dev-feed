@@ -1,5 +1,93 @@
 [
   {
+    "id": 711514,
+    "branch": "main/buildingpriv_vitals_optims",
+    "changeset": "167430",
+    "created": "2026-10-09T11:28:00",
+    "message": "Renamed the invoke UpdateLighting -> UpdateRgbLighting, was confusing when looking at the profiler",
+    "user": "Flavien"
+  },
+  {
+    "id": 711510,
+    "branch": "main/buildingpriv_vitals_optims",
+    "changeset": "167429",
+    "created": "2026-10-09T11:25:06",
+    "message": "RgbEffects no longer looks up building privilege when no SteelSeries or Razer device is connected\nIts now also using the ignorePosition cache lookup, so it no longer fires 10 times a second while moving",
+    "user": "Flavien"
+  },
+  {
+    "id": 711498,
+    "branch": "main/character_customisation",
+    "changeset": "167427",
+    "created": "2026-10-09T11:19:50",
+    "message": "Fix crazy DOF",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 711484,
+    "branch": "main/techtree_voice",
+    "changeset": "167426",
+    "created": "2026-10-09T11:11:24",
+    "message": "Investigating tech tree voice comms related issues",
+    "user": "Adam W"
+  },
+  {
+    "id": 711479,
+    "branch": "main/vcc/config_active",
+    "changeset": "167425",
+    "created": "2026-10-09T11:08:47",
+    "message": "Show the correct action set in Steam configurator, based on current activity/active set.",
+    "user": "Adam W"
+  },
+  {
+    "id": 711449,
+    "branch": "main/buildingpriv_vitals_optims",
+    "changeset": "167423",
+    "created": "2026-10-09T10:52:17",
+    "message": "Fixed vitals calling GetBuildingPrivilege ~24 times a second when walking around in a base\r\nAdded an ignorePosition param for Privilege.IsCacheValid, now used by the client vitals\r\n\r\nWas taking up the 6.5ms a frame in a big base, now back to one call per second",
+    "user": "Flavien"
+  },
+  {
+    "id": 711445,
+    "branch": "main/render_pipeline_testing/native_render_passes",
+    "changeset": "167422",
+    "created": "2026-10-09T10:47:25",
+    "message": "Fixed an issue with command buffers being registered multiple times after the last warning fix",
+    "user": "aidan.m"
+  },
+  {
+    "id": 711442,
+    "branch": "main/pt_boat_turret_rewrite/turret_viewmodels",
+    "changeset": "167421",
+    "created": "2026-10-09T10:46:26",
+    "message": "WIP",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 711408,
+    "branch": "▇▉█▋▄▊▋▊▇▅▅▉█▅▋▇▄▇▊▉▌▌",
+    "changeset": "▄▋▄▉▇▆",
+    "created": "2026-10-09T10:24:03",
+    "message": "▆ ▅█▉▋█ ▄▋▄▋▆▍▌ ▆▉ ▅▊█ ▋▍▍",
+    "user": "cipeaX"
+  },
+  {
+    "id": 711404,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "167418",
+    "created": "2026-10-09T10:22:24",
+    "message": "Network ++\r\nEnabled Halloween event\r\nEnabled scarecrow population\r\nEnabled halloween dungeons\r\nUpdate collectables to spooky versions\r\nFrankenstein table default craftable",
+    "user": "Rin"
+  },
+  {
+    "id": 711401,
+    "branch": "main/render_pipeline_testing/occlusion_culling",
+    "changeset": "167417",
+    "created": "2026-10-09T10:20:09",
+    "message": "Restore Occlusion Culling via Unity AsyncGPUReadback path for non-DX11 APIs",
+    "user": "Felix"
+  },
+  {
     "id": 711376,
     "branch": "main/vcc",
     "changeset": "167416",
@@ -2638,109 +2726,5 @@
     "created": "2026-10-06T12:25:40",
     "message": "Add a deterministic mode to NPCs for tests:\r\n- one rng generator per npc, use it everywhere there is a random draw\r\n- infinite budget and fixed time step during AI test\r\n- fix warp causing an agent speed spike\r\n- fix melee / voice sens lookups not checking their age\r\n- fix tiger / croc / grenade using deltaTime instead of fsm time, or not respecting timescale",
     "user": "Maverick"
-  },
-  {
-    "id": 708225,
-    "branch": "main/vcc/deadzones",
-    "changeset": "166909",
-    "created": "2026-10-06T12:04:43",
-    "message": "Fix for resulting menu drift",
-    "user": "Adam W"
-  },
-  {
-    "id": 708224,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "166908",
-    "created": "2026-10-06T12:00:33",
-    "message": "Fix background not rendering through glass in skin viewer with RRP enabled",
-    "user": "Felix"
-  },
-  {
-    "id": 708223,
-    "branch": "main/character_customisation",
-    "changeset": "166907",
-    "created": "2026-10-06T11:45:47",
-    "message": "- Fix character creator lighting not working when you leave/connect\r\n- Hide the character customisation screen when already in game\r\n- Hide the map and the 'choose your character slot' in the session modal once in game\r\n- Make UI panels fade in\r\n- Add save button flash and icon rotation",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 708221,
-    "branch": "main/wool_dialogue_fix",
-    "changeset": "166905",
-    "created": "2026-10-06T11:26:31",
-    "message": "Post merge fixes",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 708220,
-    "branch": "main/vcc/deadzones",
-    "changeset": "166904",
-    "created": "2026-10-06T11:25:27",
-    "message": "Left stick too.\r\nUpdated steam input config tool to kill and restart Steam client too (needed for config reload)",
-    "user": "Adam W"
-  },
-  {
-    "id": 708215,
-    "branch": "main/map_optims",
-    "changeset": "166901",
-    "created": "2026-10-06T11:15:46",
-    "message": "Fixed deep sea layer nuking all the monument markers\r\nFixed shop markers cache being filled with junk when disconnecting/reconnecting",
-    "user": "Flavien"
-  },
-  {
-    "id": 708214,
-    "branch": "main/sv_console_terminal_fix",
-    "changeset": "166900",
-    "created": "2026-10-06T11:15:24",
-    "message": "Fixed mild allocation in ConsoleInput.AppendMoveTo",
-    "user": "Raul"
-  },
-  {
-    "id": 708211,
-    "branch": "main/vcc/deadzones",
-    "changeset": "166897",
-    "created": "2026-10-06T11:07:51",
-    "message": "Wip/testing",
-    "user": "Adam W"
-  },
-  {
-    "id": 708202,
-    "branch": "main/white_beegrenade_fix",
-    "changeset": "166890",
-    "created": "2026-10-06T10:33:40",
-    "message": "Delete the disabled mesh renderer component on VM Jar Bees. Can't find any usages of it",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 708201,
-    "branch": "main/white_beegrenade_fix",
-    "changeset": "166889",
-    "created": "2026-10-06T10:32:22",
-    "message": "PredictedThrowGhost no longer enables renderer components which are saved as disabled on the prefab of the poolable grenade\r\nFixes bee grenade appearing as white with throw prediction enabled",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 708199,
-    "branch": "▍▆▆▆",
-    "changeset": "▇▉▅▇▆▉",
-    "created": "2026-10-06T10:30:25",
-    "message": "▌ ▉▇▊ ▍▅▆▌▄ █▅▊▋ ▋▇ ▅▋▌▌█ ▉▄▅ █▆▄▊█▇ ▍█▍▄ ▍▉▋▅▅ ▋▉▄▆ ▌▍▌ ▅▋▄▋ █▉ ▇▉▊▊▋█▍▇ ▌█▋ ▉▄▍▆▉▌▅ ▊▍▉▅ ▇█▇▆▆▉▅ ▇▉▊▌█▅▇█ ▇▌▆ ▆▋▍ ▄▆▋▋▍ ▊▉▍▌▄▉",
-    "user": "octo"
-  },
-  {
-    "id": 708197,
-    "branch": "main/vcc",
-    "changeset": "166887",
-    "created": "2026-10-06T10:20:09",
-    "message": "Sprint toggle works when stationary",
-    "user": "Adam W"
-  },
-  {
-    "id": 708195,
-    "branch": "main/exp_emotions",
-    "changeset": "166886",
-    "created": "2026-10-06T10:17:53",
-    "message": "Add experimental tracks for emotions in demoui2",
-    "user": "octo"
   }
 ]
