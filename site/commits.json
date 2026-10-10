@@ -1,5 +1,45 @@
 [
   {
+    "id": 712362,
+    "branch": "main/fruit_trees",
+    "changeset": "167533",
+    "created": "2026-10-10T18:45:01",
+    "message": "Added a way for apples to spawn in the exact location their loot container is on the trees.\r\nBefore:\r\nhttps://files.facepunch.com/lukester/2026/October/10_18-53-GlassGallowaycow.mp4\r\nNow:\r\nhttps://files.facepunch.com/lukester/2026/October/10_18-48-TimelyBaboon.mp4",
+    "user": "Lukester"
+  },
+  {
+    "id": 712328,
+    "branch": "main/cache_entity_links",
+    "changeset": "167532",
+    "created": "2026-10-10T18:25:23",
+    "message": "Tests",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 712326,
+    "branch": "main/cache_entity_links",
+    "changeset": "167531",
+    "created": "2026-10-10T18:24:17",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 712324,
+    "branch": "main/cache_entity_links",
+    "changeset": "167530",
+    "created": "2026-10-10T18:23:56",
+    "message": "Add global const for \"entity_links\" version so we can invalidate all entity links when needed",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 712321,
+    "branch": "main/cache_entity_links",
+    "changeset": "167529",
+    "created": "2026-10-10T18:22:17",
+    "message": "Cache entity links across server restarts\n- if a prefab's sockets change since it was saved it will relink sockets\n- works for copy paste (so we can see how things were linked on a remote server)",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 712278,
     "branch": "main",
     "changeset": "167528",
@@ -1758,69 +1798,5 @@
     "created": "2026-10-07T21:17:07",
     "message": "Better gun tests",
     "user": "Flavien"
-  },
-  {
-    "id": 710036,
-    "branch": "▊▋▌▅█▇▋▄▋▉██▍▅█▄▌▆▅▆█▋",
-    "changeset": "▉▅▄▅▉▌",
-    "created": "2026-10-07T20:13:54",
-    "message": "▉ ▉█▋▇█▆█ ▆▌█▌▊ █▆ ▇▍▌▊▋▊▋▊ ▅▆▊▄▊▋▇▊▋▋ ▄▄▇▌▄▇▉ ▆▊▌▋█ ▌▋▌▅▆▍▆ ▊▍█▋▍ ▆█▋█ ▊▋▍ ▅▋ ▄▉█▌█▌ █▄█▄▌▌▋█▌ ▆████▅▌ ▉▆▇▊▊▊▅▊▍▍",
-    "user": "nick.m"
-  },
-  {
-    "id": 710035,
-    "branch": "main/pt_boat_turret_rewrite",
-    "changeset": "167188",
-    "created": "2026-10-07T20:11:14",
-    "message": "- Rewrite PT Boat to be in the form of BallistaGun rather than the custom overcomplicated stuff I originally did (shrinks 2000~ line file down to around 300~)\r\n- Split BallistaGun off into BaseMountedUseable and BaseMountedWeapon\r\n- Cannon is now a BaseMountedWeapon rather than BallistaGun\r\n- Mortar is still a cannon\r\n- Rename MountedWeapon to PTBoatTurret\r\n- Remove shitty weapon set system",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 710030,
-    "branch": "▍▇▅▊",
-    "changeset": "▍█▅▆▉▊",
-    "created": "2026-10-07T19:15:36",
-    "message": "▇ ▌▆█▊▆ ▊█▉▊ ▄▅▉▇▄▊█▅█▇▌▆▊▄▊▋▌▍▄▉█▅▇▌▍▄▌",
-    "user": "Ryan"
-  },
-  {
-    "id": 710029,
-    "branch": "▄▅█▍▍▋▆▋█▊▍▇█▋▋▍▆▊▅▆▄▉",
-    "changeset": "▅▌▇▆▇█",
-    "created": "2026-10-07T19:15:19",
-    "message": "▌ ▉▉▆ ▅▇▅▍█▆▇▇▌▋▇▍ ▍██▄▋▄█ ▋▉ ▅▍▇▋▋▄▍▍▌ ▉▄ ▄▇▅▊▌▊ ▌▍▋▊ ▇▊▉▇▅▅ ▉▉ ▄▌ ▄▋▊▄▇▌▅ ▊▅ ▇▇ ▍ ▆▆▍▊▇▌▅",
-    "user": "Ryan"
-  },
-  {
-    "id": 710026,
-    "branch": "main/vm_alloc_fix",
-    "changeset": "167184",
-    "created": "2026-10-07T19:07:17",
-    "message": "fix viewmodel skins no longer working with the allocation fix. skins work again and allocations still fixed",
-    "user": "Brian"
-  },
-  {
-    "id": 710024,
-    "branch": "main/automated_testing/client",
-    "changeset": "167183",
-    "created": "2026-10-07T19:05:05",
-    "message": "Container tests, opens every container in the game\r\nDeleted furnace_static, its unused and cant be opened",
-    "user": "Flavien"
-  },
-  {
-    "id": 710022,
-    "branch": "▉▍▊▉",
-    "changeset": "▋▌▆▄▉▍",
-    "created": "2026-10-07T18:45:09",
-    "message": "▅ █▊▋▄▆ ▄█▉▊ ▅▌▄▅█▊▄▅▆▆▌▇▆▆▍▊▍▍▌▅▉▄▅▊▅▋▆",
-    "user": "Ryan"
-  },
-  {
-    "id": 710021,
-    "branch": "▋▄█▅▇▉▊▇▅▊▅▌▅▅▉█▅▆▌▉▅▅",
-    "changeset": "▍▍▆▍▋▊",
-    "created": "2026-10-07T18:44:49",
-    "message": "▊ ▅▍▉▉▇▉▍ █▆█ ▅▇▊▋▍▊ ▉▆▍ ▊▄▄▍ ▌▍▅▇▉▇ ▅▌ ▋ ▊▋▊ █▌▋▄▋█▆▄▉ ▊▊▉▋▆ ▆▉▋▌ █▊ ▄▍▋▉ ▆▆ ▇▅▅▊▇ ▊▌▄▉▋▋▅▅▆",
-    "user": "Ryan"
   }
 ]
