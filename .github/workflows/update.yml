@@ -63,4 +63,14 @@ jobs:
           path: site
 
       - name: Deploy GitHub Pages
+        id: deploy_pages
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+
+      - name: Wait before Pages retry
+        if: steps.deploy_pages.outcome == 'failure'
+        run: sleep 30
+
+      - name: Retry GitHub Pages deployment
+        if: steps.deploy_pages.outcome == 'failure'
         uses: actions/deploy-pages@v4
