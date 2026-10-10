@@ -1,53 +1,75 @@
 {
   "2026-10-09": {
-    "commit_count": 72,
-    "relevant_commit_count": 34,
-    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826,711827,711837,711860,711878,711886,711899,712014",
+    "commit_count": 79,
+    "relevant_commit_count": 38,
+    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826,711827,711837,711860,711878,711886,711899,712014,712038,712055,712057,712072",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Gameplay",
+        "title": "Communication",
         "items": [
           {
-            "text": "Phone conversations can now occur across the map without spawning the NPC clientside.",
+            "text": "Phone calls now work across the map without requiring the NPC entity client‑side, and a previously missing conversation has been added to the manifest.",
             "commit_ids": [
+              712072,
               711899
-            ]
-          },
-          {
-            "text": "Herd size limited to 5 and detection distance increased to 40 m.",
-            "commit_ids": [
-              711860
-            ]
-          },
-          {
-            "text": "Vehicles can no longer be driven through the graveyard fence.",
-            "commit_ids": [
-              711791
-            ]
-          },
-          {
-            "text": "Puzzle reset logic fixed so ignoreAboveGroundPlayers works correctly.",
-            "commit_ids": [
-              711252
             ]
           }
         ]
       },
       {
-        "title": "Events & Content",
+        "title": "Livestock Management",
         "items": [
           {
-            "text": "Halloween 2026 event is live with scarecrow population, new dungeons, spooky collectables, and the Frankenstein table is now craftable by default.",
+            "text": "Herd size is capped at 5, simplifying herd control for players.",
+            "commit_ids": [
+              711860
+            ]
+          },
+          {
+            "text": "Detection distance for livestock increased to 40 m, improving AI awareness and interaction.",
+            "commit_ids": [
+              711860
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Interaction",
+        "items": [
+          {
+            "text": "Vehicles can no longer be driven through the graveyard fence, preventing unintended shortcuts.",
+            "commit_ids": [
+              711791
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Halloween 2026 Event",
+        "items": [
+          {
+            "text": "New Halloween event adds scarecrow population, themed dungeons, spooky collectibles, and a Frankenstein crafting table as a default recipe.",
             "commit_ids": [
               711404
             ]
           },
           {
-            "text": "Loot crates in Halloween tunnels no longer float, ensuring proper placement.",
+            "text": "Loot crates in Halloween tunnels are now properly grounded, fixing floating crate issues.",
             "commit_ids": [
               711743
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay Fixes",
+        "items": [
+          {
+            "text": "Puzzle reset logic corrected so ignoreAboveGroundPlayers works correctly, preventing puzzles from getting stuck.",
+            "commit_ids": [
+              711252
             ]
           }
         ]
@@ -56,30 +78,28 @@
         "title": "Performance & Stability",
         "items": [
           {
-            "text": "Building privilege checks reduced to once per second, eliminating a 6.5 ms per‑frame lag spike in large bases.",
+            "text": "Building‑privilege checks reduced from ~24 to ~1 per second, eliminating a 6.5 ms per‑frame spike in large bases.",
             "commit_ids": [
               711449
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Visibility updates now work correctly when server occlusion is disabled, fixing player sight issues.",
-            "commit_ids": [
-              711696
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Gameplay\n- Phone conversations can now occur across the map without spawning the NPC clientside.\n- Herd size limited to 5 and detection distance increased to 40 m.\n- Vehicles can no longer be driven through the graveyard fence.\n- Puzzle reset logic fixed so ignoreAboveGroundPlayers works correctly.\n\n### Events & Content\n- Halloween 2026 event is live with scarecrow population, new dungeons, spooky collectables, and the Frankenstein table is now craftable by default.\n- Loot crates in Halloween tunnels no longer float, ensuring proper placement.\n\n### Performance & Stability\n- Building privilege checks reduced to once per second, eliminating a 6.5 ms per‑frame lag spike in large bases.\n\n### Gameplay & Balance\n- Visibility updates now work correctly when server occlusion is disabled, fixing player sight issues.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Communication\n- Phone calls now work across the map without requiring the NPC entity client‑side, and a previously missing conversation has been added to the manifest.\n\n### Livestock Management\n- Herd size is capped at 5, simplifying herd control for players.\n- Detection distance for livestock increased to 40 m, improving AI awareness and interaction.\n\n### World Interaction\n- Vehicles can no longer be driven through the graveyard fence, preventing unintended shortcuts.\n\n### Halloween 2026 Event\n- New Halloween event adds scarecrow population, themed dungeons, spooky collectibles, and a Frankenstein crafting table as a default recipe.\n- Loot crates in Halloween tunnels are now properly grounded, fixing floating crate issues.\n\n### Gameplay Fixes\n- Puzzle reset logic corrected so ignoreAboveGroundPlayers works correctly, preventing puzzles from getting stuck.\n\n### Performance & Stability\n- Building‑privilege checks reduced from ~24 to ~1 per second, eliminating a 6.5 ms per‑frame spike in large bases.",
+    "new_items": [
+      {
+        "text": "Phone calls now work across the map without requiring the NPC entity client‑side, and a previously missing conversation has been added to the manifest.",
+        "commit_ids": [
+          712072,
+          711899
+        ],
+        "section": "Communication"
+      }
+    ],
+    "new_relevant_count": 2,
+    "new_summary": "- Phone calls now work across the map without requiring the NPC entity client‑side, and a previously missing conversation has been added to the manifest."
   },
   "2026-10-08": {
     "commit_count": 109,
