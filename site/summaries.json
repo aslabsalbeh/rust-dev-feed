@@ -1,49 +1,53 @@
 {
   "2026-10-11": {
-    "commit_count": 6,
-    "relevant_commit_count": 4,
-    "relevant_signature": "712732,712936,713013,713015",
+    "commit_count": 8,
+    "relevant_commit_count": 6,
+    "relevant_signature": "712732,712936,713013,713015,713027,713035",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building",
+        "title": "Animals & Farming",
         "items": [
           {
-            "text": "Building privilege checks are now faster, cutting calculation time from ~4.6 ms to ~0.5 ms in large bases, reducing lag when standing inside structures.",
+            "text": "Livestock now correctly use troughs even when grass is present, and they eat less food the more grass is in the pen (grass alone provides less nutrition).",
             "commit_ids": [
-              712936,
-              713015
+              712732
             ]
           }
         ]
       },
       {
-        "title": "Livestock",
+        "title": "Performance",
         "items": [
           {
-            "text": "Livestock will now use troughs even when grass is present and consume less food the more grass is in the pen, making feeding more efficient.",
+            "text": "Building actions near many blocks now skip unnecessary bounds checks, cutting lag when standing in the core or middle of a base.",
             "commit_ids": [
-              712732
+              713015
+            ]
+          },
+          {
+            "text": "A new global building‑privilege cache removes costly visibility checks, speeding up building in large bases (e.g., 575 blocks from ~4.6 ms to ~0.5 ms).",
+            "commit_ids": [
+              712936
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Base Building\n- Building privilege checks are now faster, cutting calculation time from ~4.6 ms to ~0.5 ms in large bases, reducing lag when standing inside structures.\n\n### Livestock\n- Livestock will now use troughs even when grass is present and consume less food the more grass is in the pen, making feeding more efficient.",
+    "summary": "### Animals & Farming\n- Livestock now correctly use troughs even when grass is present, and they eat less food the more grass is in the pen (grass alone provides less nutrition).\n\n### Performance\n- Building actions near many blocks now skip unnecessary bounds checks, cutting lag when standing in the core or middle of a base.\n- A new global building‑privilege cache removes costly visibility checks, speeding up building in large bases (e.g., 575 blocks from ~4.6 ms to ~0.5 ms).",
     "new_items": [
       {
-        "text": "Building privilege checks are now faster, cutting calculation time from ~4.6 ms to ~0.5 ms in large bases, reducing lag when standing inside structures.",
+        "text": "Building actions near many blocks now skip unnecessary bounds checks, cutting lag when standing in the core or middle of a base.",
         "commit_ids": [
-          712936,
           713015
         ],
-        "section": "Base Building"
+        "section": "Performance"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Building privilege checks are now faster, cutting calculation time from ~4.6 ms to ~0.5 ms in large bases, reducing lag when standing inside structures."
+    "new_relevant_count": 1,
+    "new_summary": "- Building actions near many blocks now skip unnecessary bounds checks, cutting lag when standing in the core or middle of a base."
   },
   "2026-10-10": {
     "commit_count": 13,
