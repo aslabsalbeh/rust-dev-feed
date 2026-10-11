@@ -1,16 +1,33 @@
 {
   "2026-10-11": {
-    "commit_count": 12,
-    "relevant_commit_count": 8,
-    "relevant_signature": "712732,712936,713013,713015,713027,713035,713059,713069",
+    "commit_count": 15,
+    "relevant_commit_count": 10,
+    "relevant_signature": "712732,712936,713013,713015,713027,713035,713059,713069,713165,713168",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base & Building",
+        "title": "Animals & Farming",
         "items": [
           {
-            "text": "Building privilege checks have been optimized, cutting lookup times dramatically (e.g., from ~4.6 ms to ~0.5 ms in large bases), reducing lag when accessing building permissions.",
+            "text": "Livestock now use troughs even when grass is present, and they consume less food when more grass is in the pen (grass provides less nutrition).",
+            "commit_ids": [
+              712732
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Fixed a regression that broke proper side‑by‑side placement of livestock, restoring expected animal arrangement.",
+            "commit_ids": [
+              713027
+            ]
+          },
+          {
+            "text": "Building privilege checks are now dramatically faster, cutting query times in large bases from several milliseconds to sub‑millisecond levels, reducing lag when placing or interacting with structures.",
             "commit_ids": [
               713069,
               713059,
@@ -19,35 +36,24 @@
             ]
           }
         ]
-      },
-      {
-        "title": "Livestock",
-        "items": [
-          {
-            "text": "Livestock now correctly use troughs even when grass is present, and they consume less food the more grass is in the pen, while grass alone provides less nutrition.",
-            "commit_ids": [
-              712732
-            ]
-          }
-        ]
       }
     ],
     "status": "ok",
-    "summary": "### Base & Building\n- Building privilege checks have been optimized, cutting lookup times dramatically (e.g., from ~4.6 ms to ~0.5 ms in large bases), reducing lag when accessing building permissions.\n\n### Livestock\n- Livestock now correctly use troughs even when grass is present, and they consume less food the more grass is in the pen, while grass alone provides less nutrition.",
+    "summary": "### Animals & Farming\n- Livestock now use troughs even when grass is present, and they consume less food when more grass is in the pen (grass provides less nutrition).\n\n### Gameplay & Balance\n- Fixed a regression that broke proper side‑by‑side placement of livestock, restoring expected animal arrangement.\n- Building privilege checks are now dramatically faster, cutting query times in large bases from several milliseconds to sub‑millisecond levels, reducing lag when placing or interacting with structures.",
     "new_items": [
       {
-        "text": "Building privilege checks have been optimized, cutting lookup times dramatically (e.g., from ~4.6 ms to ~0.5 ms in large bases), reducing lag when accessing building permissions.",
+        "text": "Building privilege checks are now dramatically faster, cutting query times in large bases from several milliseconds to sub‑millisecond levels, reducing lag when placing or interacting with structures.",
         "commit_ids": [
           713069,
           713059,
           713015,
           712936
         ],
-        "section": "Base & Building"
+        "section": "Gameplay & Balance"
       }
     ],
     "new_relevant_count": 4,
-    "new_summary": "- Building privilege checks have been optimized, cutting lookup times dramatically (e.g., from ~4.6 ms to ~0.5 ms in large bases), reducing lag when accessing building permissions."
+    "new_summary": "- Building privilege checks are now dramatically faster, cutting query times in large bases from several milliseconds to sub‑millisecond levels, reducing lag when placing or interacting with structures."
   },
   "2026-10-10": {
     "commit_count": 13,
