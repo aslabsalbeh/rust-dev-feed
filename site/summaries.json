@@ -129,11 +129,178 @@
     "new_summary": ""
   },
   "2026-10-08": {
-    "commit_count": 109,
-    "relevant_commit_count": 73,
+    "commit_count": 106,
+    "relevant_commit_count": 71,
     "relevant_signature": "710100,710102,710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239,710241,710245,710247,710253,710266,710270,710271,710304,710305,710306,710312,710315,710317,710321,710334,710338,710341,710343,710344,710345,710346,710347,710356,710360,710361,710362,710363,710433,710444,710448,710449,710464,710465,710467,710477,710485,710486,710494,710504,710510,710512,710515,710559,710596,710598,710610,710624,710631,710647,710652",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "710362,710363,710433,710444,710448,710449,710464,710465,710467,710477,710485,710486,710494,710504,710510,710512,710515,710559,710596,710598,710610,710624,710631,710647,710652": [
+        {
+          "title": "Livestock & Animals",
+          "items": [
+            {
+              "text": "Improved herd size enforcement: the 9‑animal herd cap is now robustly applied even for stretched herds, with no performance impact.",
+              "commit_ids": [
+                710494
+              ]
+            },
+            {
+              "text": "Livestock breeding logic updated: adults and calves share needs, unborn calves are considered when deciding to breed, ensuring herd caps are respected on open ground and in pens.",
+              "commit_ids": [
+                710362
+              ]
+            },
+            {
+              "text": "Livestock UI and behavior fixes: corrected stat pooling display, added owner UI prompt when a cow has no owner, updated trust UI to show new trust thresholds and defensive behavior, and made female cows defend their owner against attackers.",
+              "commit_ids": [
+                710485
+              ]
+            },
+            {
+              "text": "Recessive gene system now affects NPC buying prices, NPCs comment on hidden bad genes or exceptional recessives, and the gene UI hints at recessive traits.",
+              "commit_ids": [
+                710465
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Tool Cupboard & Map UI",
+          "items": [
+            {
+              "text": "Fixed tool cupboard (TC) items being incorrectly sent to players on the tutorial island.",
+              "commit_ids": [
+                710448
+              ]
+            },
+            {
+              "text": "Corrected map view displays (MLRS, vending, etc.) so they no longer show TCs erroneously.",
+              "commit_ids": [
+                710444
+              ]
+            }
+          ]
+        }
+      ],
+      "710241,710245,710247,710253,710266,710270,710271,710304,710305,710306,710312,710315,710317,710321,710334,710338,710341,710343,710344,710345,710346,710347,710356,710360,710361": [
+        {
+          "title": "Animals & Livestock",
+          "items": [
+            {
+              "text": "Old animals (bears, stag, boars, chicken) no longer sleep, preventing jump‑scares; they now run away when shot and bears no longer roam at extreme speed.",
+              "commit_ids": [
+                710361
+              ]
+            },
+            {
+              "text": "Fixed livestock breeding/eating bugs where mates or troughs were unreachable, restoring normal breeding and feeding behavior.",
+              "commit_ids": [
+                710360
+              ]
+            },
+            {
+              "text": "Re‑enabled livestock petting and corrected petting rotation issues.",
+              "commit_ids": [
+                710341
+              ]
+            },
+            {
+              "text": "Comprehensive cow system overhaul: ownership is now tied to purchase, UI shows owner, cows no longer die of old age (only crowding), milk can buffer up to 3 charges with cooldown UI, overgrazing removed in favor of simple grass check, cows can eat any horse food, rare teleport‑food mechanic to prevent queue blockage, pregnancy UI added (father, timer, cooldown), trough UI now shows projected food/water duration, cow names follow owner language, separate frame budgets prevent livestock from slowing scientists/animals, herd size caps breeding at 9.",
+              "commit_ids": [
+                710317
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Damage",
+          "items": [
+            {
+              "text": "Splash damage no longer passes through triangle floors or frames, fixing damage through walls.",
+              "commit_ids": [
+                710321
+              ]
+            },
+            {
+              "text": "Boomerang now deals proper damage to BaseNPC2 targets.",
+              "commit_ids": [
+                710270
+              ]
+            },
+            {
+              "text": "Server projectiles no longer collide with the ragdoll layer, preventing rockets from exploding near dead bodies due to invisible colliders.",
+              "commit_ids": [
+                710247
+              ]
+            }
+          ]
+        },
+        {
+          "title": "PT Boat Turret",
+          "items": [
+            {
+              "text": "Turret ammo now refills correctly after server restarts, toast notifications are restored, reload animations work for all ammo types, and reload animation no longer continues after dismounting mid‑reload.",
+              "commit_ids": [
+                710315
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & Map",
+          "items": [
+            {
+              "text": "Fixed map TC label showing a delete button after a network update when the map is open.",
+              "commit_ids": [
+                710356
+              ]
+            },
+            {
+              "text": "Vending UI: prevented 'add sell order' from exceeding stack size and corrected hover display to show correct stack multiplier instead of always 1x.",
+              "commit_ids": [
+                710305,
+                710304
+              ]
+            }
+          ]
+        }
+      ],
+      "710113,710156,710158,710163,710165,710174,710177,710195,710196,710200,710213,710221,710223,710224,710225,710228,710229,710231,710236,710237,710239": [
+        {
+          "title": "Boat Turrets",
+          "items": [
+            {
+              "text": "Fixed PT boat turrets not being able to reload after the turret rewrite.",
+              "commit_ids": [
+                710229
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Storage Boxes",
+          "items": [
+            {
+              "text": "Fixed storage box bounds causing it to block placement against walls.",
+              "commit_ids": [
+                710223
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Player Movement",
+          "items": [
+            {
+              "text": "Headroom calculation now ignores animated building blocks, preventing unwanted auto‑crouch when near closing doors.",
+              "commit_ids": [
+                710213
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Livestock & Animal Systems",
