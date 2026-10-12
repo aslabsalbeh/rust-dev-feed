@@ -1,5 +1,125 @@
 [
   {
+    "id": 714960,
+    "branch": "▊▍▌▉▄▌██▋▊▄▅▍▅▊▋▉█▍█▆▆",
+    "changeset": "▅▇▊▉█▌",
+    "created": "2026-10-12T18:06:26",
+    "message": "▍ ▇▆▋ █ ▉▉▋█▉▅ ▄▊▅▌█ ▋▋▍▇▍▋▌▇▌ ▊█▉▋ ▍▉▋▌█▇▋▊▋▊█ ▇▊ ▅▄▉▅▍▍▆▄▄▉ ▅▄▇▅▉▌▌▋▄ ▍▍ █▄▇ ▆▅▋▅▌▄▅█▍▆ ▊▌▌▋▊▉▇▋▍▍▊ ▋▄▆▅ ▋▍ ▌██ ▋▊▍▅▍▌▅▄▅▄█▋▅▅▉▋▄▅▅ █▉ ▅▉▄▋█▄▉ ▄▄▄ ▆▄█▉▄▌ ▊▌▌ ▇▆▉▍▉▍ ▊▍▋▇▋▌",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 714959,
+    "branch": "main/network_optims",
+    "changeset": "167685",
+    "created": "2026-10-12T18:05:28",
+    "message": "Dont send travelling vendor map marker updates 20 frames a second\r\n\r\nSaves 160 bytes per network tick when the vendor is out",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714958,
+    "branch": "main",
+    "changeset": "167684",
+    "created": "2026-10-12T18:03:36",
+    "message": "~ merge from optimize_enforce_limits -> main",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 714957,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167683",
+    "created": "2026-10-12T18:02:53",
+    "message": "Create the pools LaunchProjectileClientside uses at bootstrap instead of on the first shot, avoids a ~365KB alloc when the first projectile of the session is fired",
+    "user": "Flavien"
+  },
+  {
+    "id": 714956,
+    "branch": "main/network_optims",
+    "changeset": "167682",
+    "created": "2026-10-12T18:01:27",
+    "message": "Remove old mortar prototype code\r\nMeans we can remove an mortarCooldown float with every BasePlayer update\r\n\r\nSaves 6 bytes per player update",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714953,
+    "branch": "main/fix_steam_setkey_crash",
+    "changeset": "167680",
+    "created": "2026-10-12T17:47:42",
+    "message": "Reduce number of unique keys set to prolong time until limit is hit\n- round entities to nearest 1000\n- round FPS to nearest whole number (and clamp to 512)\n- round RAM to nearest 100MB\n- round GC count to 2 significant figures (1-9,10-90,100-900,etc)\n- round uptime to nearest 15m interval instead of every 30s\n- increases time before limit is hit from 7d -> 365d+\n\nPrevent server from crashing if too many keys are set\n- stop setting new keys after 50k unique values have been set (it can still assign to previous values)\n- prevents server from getting enough unique values to cause the crash",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 714936,
+    "branch": "main",
+    "changeset": "167679",
+    "created": "2026-10-12T17:36:43",
+    "message": "Compile fix, missed a file..",
+    "user": "Flavien"
+  },
+  {
+    "id": 714925,
+    "branch": "main/network_optims",
+    "changeset": "167678",
+    "created": "2026-10-12T17:28:15",
+    "message": "Add a test to ensure that networkLookDirection is false for NPCs that dont have a look animator\r\nBetter way to go than toggling in preprocess",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714924,
+    "branch": "main/cubemap_ui_optims2",
+    "changeset": "167676",
+    "created": "2026-10-12T17:27:16",
+    "message": "Fixed 150531 not working in builds (Mega hack to bypass the PlayerUpdateCanvases call when unity renders the realtime cubemap, saving some time wasted on UI for nothing)",
+    "user": "Flavien"
+  },
+  {
+    "id": 714921,
+    "branch": "main/deathscreen_editor_fix",
+    "changeset": "167674",
+    "created": "2026-10-12T17:25:14",
+    "message": "Fix the editor freezing for like 5s when you first die\r\nThis was due to us loading the prefab for pretty much every item that can kill you when you die in editor. This load happens at preprocess in builds\r\nAdd PrefabInformation to some deployed thrown weapons so they still display correctly in the death screen",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 714904,
+    "branch": "main/network_optims",
+    "changeset": "167673",
+    "created": "2026-10-12T17:04:03",
+    "message": "Dont send full network updates every tick for for animals without a look animator.\r\nbears, polar bears, boars, chickens, crabs, frogs, jellyfish, squirrels, rabbits, stags\r\n\r\nWorst offender is bear costing 94 bytes~ per update when roaming.\r\n\r\n\r\n~550 B/s → ~27 B/s per bear per player while roaming",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714895,
+    "branch": "main/bird_flocks",
+    "changeset": "167672",
+    "created": "2026-10-12T16:49:47",
+    "message": "mesh and model tweaks",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 714876,
+    "branch": "main/vcc",
+    "changeset": "167671",
+    "created": "2026-10-12T16:42:04",
+    "message": "Restore update order just to be safe",
+    "user": "Adam W"
+  },
+  {
+    "id": 714845,
+    "branch": "main/scarecrow_errors_fix",
+    "changeset": "167668",
+    "created": "2026-10-12T16:28:00",
+    "message": "Fix error spam from scarecrows\r\nFix bug that made scarecrows, gingerbread npcs, and junkpile scientists float slightly above the ground",
+    "user": "cipeaX"
+  },
+  {
+    "id": 714839,
+    "branch": "main/soundocclusion_optims",
+    "changeset": "167667",
+    "created": "2026-10-12T16:24:22",
+    "message": "Revert ProjectSettings.asset changes",
+    "user": "Flavien"
+  },
+  {
     "id": 714820,
     "branch": "main/bird_flocks",
     "changeset": "167666",
@@ -966,61 +1086,5 @@
     "created": "2026-10-09T18:31:19",
     "message": "Fixed issue with merge coming from the PostOpaqueDepthRendererFeature",
     "user": "aidan.m"
-  },
-  {
-    "id": 711878,
-    "branch": "main/canbelooted_cache",
-    "changeset": "167496",
-    "created": "2026-10-09T18:17:20",
-    "message": "Building privilege debug draw convar",
-    "user": "Flavien"
-  },
-  {
-    "id": 711867,
-    "branch": "▇▉▉▌",
-    "changeset": "▇▇▆█▊▅",
-    "created": "2026-10-09T17:58:04",
-    "message": "▄▌▆▉▄▉ ▊▄ ▌▄█▇▇▄▌ ▌▊▄▅▊▍▍▄▌ ▋▆▆▅█▍▊ ▄▄▍▇ ▊▉▍▍▆▍▇█▍▌ ▇▊█▄▆▊ █▇▍ ▄▅▋█▌▋",
-    "user": "Petur"
-  },
-  {
-    "id": 711860,
-    "branch": "main/Livestock_animals",
-    "changeset": "167494",
-    "created": "2026-10-09T17:52:07",
-    "message": "- Add better debug drawing commands to test cows pens and diagnostic problems with them not eating / reproducing etc, that work on client\r\n- Limit herd size to 5, and increase herd detection distance to 40m",
-    "user": "Maverick"
-  },
-  {
-    "id": 711849,
-    "branch": "main/grid_optimizations",
-    "changeset": "167493",
-    "created": "2026-10-09T17:05:30",
-    "message": "Grid optimizations\r\n* Replace Stopwatch.Elapsed.TotalMilliseconds usages with a wrapper around Stopwatch.GetTimestamp()\r\n* LODGrid and WorldGrid more accurately track which cells to refresh based on camera movement\r\n* RendererGrid now tracks dirty cells instead of polling all for changes",
-    "user": "lamalove"
-  },
-  {
-    "id": 711837,
-    "branch": "main/render_pipeline_testing/occlusion_culling",
-    "changeset": "167491",
-    "created": "2026-10-09T16:44:01",
-    "message": "Consider disoccluded objects visible on non-DX11 to counteract the increased latency from AsyncGPUReadback",
-    "user": "Felix"
-  },
-  {
-    "id": 711836,
-    "branch": "main/high_stakes_dlc",
-    "changeset": "167490",
-    "created": "2026-10-09T16:43:56",
-    "message": "electronic chessboard\r\n- gibs added\r\n- off material state added\r\n- prefab updated",
-    "user": "curt"
-  },
-  {
-    "id": 711834,
-    "branch": "▋▊▄█▉▇▍▇▍▌▇▆▉▆▇▍▋▋▄▋▍▋",
-    "changeset": "▄▌▄▊▄▅",
-    "created": "2026-10-09T16:41:22",
-    "message": "▌▅▅█▅▋▌█▋▌ ▅▉▊▌ ▋▆▋▉▆▍▉▌▉▇█▄ ▌▋▇██ ▇▌ ▅▌▆▆█▆ █▉▅▉▆█▆█▍▌▌▌▊▇ ▆█ ▍▊▌▍▄ ▌▅▅▇▇▋▋▉▍▉▄▇▇▌▇█▆▆▍▆▊▌▌█▉▌▄▉▊▌▉▇█▆▊▇▄▆▌▊█▌▍▇▌▉▇▉▌▄▋█▍▋█▍▇▊▋▉▊▅▍▅▍▊▍▄▅▍▇▍▇▆▋▋▍▉▊▄▉▉▊▉▅▅▇▊",
-    "user": "Rin"
   }
 ]
