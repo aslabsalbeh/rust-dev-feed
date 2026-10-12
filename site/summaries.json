@@ -1,16 +1,38 @@
 {
   "2026-10-12": {
-    "commit_count": 8,
-    "relevant_commit_count": 3,
-    "relevant_signature": "713755,714168,714169",
+    "commit_count": 21,
+    "relevant_commit_count": 7,
+    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles",
+        "title": "Controls",
         "items": [
           {
-            "text": "Fixed regression that prevented players from using boat permissions correctly when the building privilege cache is active.",
+            "text": "Fixed controller duck‑latching issue that could leave the escape menu input active.",
+            "commit_ids": [
+              714373
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base & Crafting",
+        "items": [
+          {
+            "text": "Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.",
+            "commit_ids": [
+              714361
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Boats",
+        "items": [
+          {
+            "text": "Resolved a regression where player boat privileges were lost when the building‑privilege cache was used.",
             "commit_ids": [
               714168
             ]
@@ -18,10 +40,10 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Explosives & Defenses",
         "items": [
           {
-            "text": "Explosives attached to solar panels now display at the correct size, fixing damage scaling and visual consistency.",
+            "text": "Fixed explosives attached to solar panels being incorrectly scaled, ensuring proper damage and visual size.",
             "commit_ids": [
               713755
             ]
@@ -30,18 +52,32 @@
       }
     ],
     "status": "ok",
-    "summary": "### Vehicles\n- Fixed regression that prevented players from using boat permissions correctly when the building privilege cache is active.\n\n### Gameplay & Balance\n- Explosives attached to solar panels now display at the correct size, fixing damage scaling and visual consistency.",
+    "summary": "### Controls\n- Fixed controller duck‑latching issue that could leave the escape menu input active.\n\n### Base & Crafting\n- Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.\n\n### Boats\n- Resolved a regression where player boat privileges were lost when the building‑privilege cache was used.\n\n### Explosives & Defenses\n- Fixed explosives attached to solar panels being incorrectly scaled, ensuring proper damage and visual size.",
     "new_items": [
       {
-        "text": "Fixed regression that prevented players from using boat permissions correctly when the building privilege cache is active.",
+        "text": "Fixed controller duck‑latching issue that could leave the escape menu input active.",
+        "commit_ids": [
+          714373
+        ],
+        "section": "Controls"
+      },
+      {
+        "text": "Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.",
+        "commit_ids": [
+          714361
+        ],
+        "section": "Base & Crafting"
+      },
+      {
+        "text": "Resolved a regression where player boat privileges were lost when the building‑privilege cache was used.",
         "commit_ids": [
           714168
         ],
-        "section": "Vehicles"
+        "section": "Boats"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Fixed regression that prevented players from using boat permissions correctly when the building privilege cache is active."
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed controller duck‑latching issue that could leave the escape menu input active.\n- Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.\n- Resolved a regression where player boat privileges were lost when the building‑privilege cache was used."
   },
   "2026-10-11": {
     "commit_count": 30,
