@@ -1,85 +1,47 @@
 {
   "2026-10-12": {
-    "commit_count": 48,
-    "relevant_commit_count": 23,
-    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669",
+    "commit_count": 63,
+    "relevant_commit_count": 33,
+    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles & Boats",
+        "title": "Audio & Animal Sounds",
         "items": [
           {
-            "text": "PT boats now prioritize visible targets and no longer abandon targets above sea level, improving boat combat reliability.",
+            "text": "Lingering sounds from destroyed monuments no longer persist, and new animal sound cues (sheep foot stomp, cow head shake, moo, baa) have been added.",
             "commit_ids": [
-              714668,
-              714669
-            ]
-          },
-          {
-            "text": "Fixed boat privilege regression, restoring proper player permissions when using the boat privilege cache.",
-            "commit_ids": [
-              714168
+              714800,
+              714752,
+              714641
             ]
           }
         ]
       },
       {
-        "title": "Weapons & Combat",
+        "title": "Animal Interaction",
         "items": [
           {
-            "text": "First‑person laser sights are functional again, restoring accurate aiming.",
+            "text": "Petting gestures now have correct duration, include reaction animations for cows and sheep, and support a new scratch gesture.",
             "commit_ids": [
-              714505
-            ]
-          },
-          {
-            "text": "Explosives attached to solar panels now retain correct size, preventing unintended damage scaling.",
-            "commit_ids": [
-              713755
+              714752,
+              714641
             ]
           }
         ]
       },
       {
-        "title": "Items & DLC",
+        "title": "Controls & Input",
         "items": [
           {
-            "text": "Halloween lights are now craftable with correct stack size and cost, and the alien suit now blocks the torso instead of the legs.",
-            "commit_ids": [
-              714386
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base & Environment",
-        "items": [
-          {
-            "text": "Spiral staircase upkeep now counts correctly, ensuring proper base maintenance costs.",
-            "commit_ids": [
-              714449
-            ]
-          },
-          {
-            "text": "Arctic biome refrigeration now only triggers above a 10% arctic threshold, stopping accidental cooling in marginal arctic zones.",
-            "commit_ids": [
-              714361
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Input & Gamepad",
-        "items": [
-          {
-            "text": "Gamepad stick drift ignored when not the active input device, preventing unintended movement.",
+            "text": "Stray gamepad stick input is ignored when another device is active, eliminating stick drift.",
             "commit_ids": [
               714396
             ]
           },
           {
-            "text": "Gamepad duck‑latch logic isolated, fixing escape‑menu input clearing issues.",
+            "text": "Gamepad duck‑latching issue fixed, ensuring the escape menu clears input correctly.",
             "commit_ids": [
               714373
             ]
@@ -87,10 +49,91 @@
         ]
       },
       {
-        "title": "Loot & Economy",
+        "title": "Combat & Targeting",
         "items": [
           {
-            "text": "Magazine drops now use the same system as the glass AK, standardizing drop rates and locations for all mags.",
+            "text": "First‑person laser weapons are functional again.",
+            "commit_ids": [
+              714505
+            ]
+          },
+          {
+            "text": "Hidden players are now ranked behind visible ones for targeting, but remain selectable when no visible targets exist.",
+            "commit_ids": [
+              714668
+            ]
+          },
+          {
+            "text": "Patrol boat targeting altitude logic corrected to prevent premature target loss above sea level.",
+            "commit_ids": [
+              714669
+            ]
+          },
+          {
+            "text": "Explosives attached to solar panels now have correct damage radius and visual size.",
+            "commit_ids": [
+              713755
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building, Upkeep & Environment",
+        "items": [
+          {
+            "text": "Triangle spiral stairs now include the upkeep component, restoring proper decay and maintenance.",
+            "commit_ids": [
+              714449
+            ]
+          },
+          {
+            "text": "Arctic biome refrigeration threshold raised to 10%, preventing unintended cooling in areas with few arctic specks.",
+            "commit_ids": [
+              714361
+            ]
+          },
+          {
+            "text": "Player boat privileges are retained when using the building‑privilege cache.",
+            "commit_ids": [
+              714168
+            ]
+          }
+        ]
+      },
+      {
+        "title": "DLC & Items",
+        "items": [
+          {
+            "text": "Halloween 2026 DLC items updated: lights are craftable with correct stack size and cost, and the alien suit now protects the legs instead of the torso.",
+            "commit_ids": [
+              714386
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Fixed intermittent main menu rendering issue, ensuring the menu always appears.",
+            "commit_ids": [
+              714735
+            ]
+          },
+          {
+            "text": "Patched PT boat targeting logic, improving accuracy for players using PT boats.",
+            "commit_ids": [
+              714717
+            ]
+          },
+          {
+            "text": "Resolved magazine drop bugs, making ammo drops spawn correctly and consistently.",
+            "commit_ids": [
+              714602
+            ]
+          },
+          {
+            "text": "Unified remaining magazine drop behavior with the glass AK system, standardizing drop rates and locations.",
             "commit_ids": [
               714509
             ]
@@ -99,33 +142,56 @@
       }
     ],
     "status": "ok",
-    "summary": "### Vehicles & Boats\n- PT boats now prioritize visible targets and no longer abandon targets above sea level, improving boat combat reliability.\n- Fixed boat privilege regression, restoring proper player permissions when using the boat privilege cache.\n\n### Weapons & Combat\n- First‑person laser sights are functional again, restoring accurate aiming.\n- Explosives attached to solar panels now retain correct size, preventing unintended damage scaling.\n\n### Items & DLC\n- Halloween lights are now craftable with correct stack size and cost, and the alien suit now blocks the torso instead of the legs.\n\n### Base & Environment\n- Spiral staircase upkeep now counts correctly, ensuring proper base maintenance costs.\n- Arctic biome refrigeration now only triggers above a 10% arctic threshold, stopping accidental cooling in marginal arctic zones.\n\n### Input & Gamepad\n- Gamepad stick drift ignored when not the active input device, preventing unintended movement.\n- Gamepad duck‑latch logic isolated, fixing escape‑menu input clearing issues.\n\n### Loot & Economy\n- Magazine drops now use the same system as the glass AK, standardizing drop rates and locations for all mags.",
+    "summary": "### Audio & Animal Sounds\n- Lingering sounds from destroyed monuments no longer persist, and new animal sound cues (sheep foot stomp, cow head shake, moo, baa) have been added.\n\n### Animal Interaction\n- Petting gestures now have correct duration, include reaction animations for cows and sheep, and support a new scratch gesture.\n\n### Controls & Input\n- Stray gamepad stick input is ignored when another device is active, eliminating stick drift.\n- Gamepad duck‑latching issue fixed, ensuring the escape menu clears input correctly.\n\n### Combat & Targeting\n- First‑person laser weapons are functional again.\n- Hidden players are now ranked behind visible ones for targeting, but remain selectable when no visible targets exist.\n- Patrol boat targeting altitude logic corrected to prevent premature target loss above sea level.\n- Explosives attached to solar panels now have correct damage radius and visual size.\n\n### Building, Upkeep & Environment\n- Triangle spiral stairs now include the upkeep component, restoring proper decay and maintenance.\n- Arctic biome refrigeration threshold raised to 10%, preventing unintended cooling in areas with few arctic specks.\n- Player boat privileges are retained when using the building‑privilege cache.\n\n### DLC & Items\n- Halloween 2026 DLC items updated: lights are craftable with correct stack size and cost, and the alien suit now protects the legs instead of the torso.\n\n### Gameplay & Balance\n- Fixed intermittent main menu rendering issue, ensuring the menu always appears.\n- Patched PT boat targeting logic, improving accuracy for players using PT boats.\n- Resolved magazine drop bugs, making ammo drops spawn correctly and consistently.\n- Unified remaining magazine drop behavior with the glass AK system, standardizing drop rates and locations.",
     "new_items": [
       {
-        "text": "PT boats now prioritize visible targets and no longer abandon targets above sea level, improving boat combat reliability.",
+        "text": "Lingering sounds from destroyed monuments no longer persist, and new animal sound cues (sheep foot stomp, cow head shake, moo, baa) have been added.",
         "commit_ids": [
-          714668,
+          714800,
+          714752,
+          714641
+        ],
+        "section": "Audio & Animal Sounds"
+      },
+      {
+        "text": "Petting gestures now have correct duration, include reaction animations for cows and sheep, and support a new scratch gesture.",
+        "commit_ids": [
+          714752,
+          714641
+        ],
+        "section": "Animal Interaction"
+      },
+      {
+        "text": "Hidden players are now ranked behind visible ones for targeting, but remain selectable when no visible targets exist.",
+        "commit_ids": [
+          714668
+        ],
+        "section": "Combat & Targeting"
+      },
+      {
+        "text": "Patrol boat targeting altitude logic corrected to prevent premature target loss above sea level.",
+        "commit_ids": [
           714669
         ],
-        "section": "Vehicles & Boats"
+        "section": "Combat & Targeting"
       },
       {
-        "text": "First‑person laser sights are functional again, restoring accurate aiming.",
+        "text": "Fixed intermittent main menu rendering issue, ensuring the menu always appears.",
         "commit_ids": [
-          714505
+          714735
         ],
-        "section": "Weapons & Combat"
+        "section": "Gameplay & Balance"
       },
       {
-        "text": "Magazine drops now use the same system as the glass AK, standardizing drop rates and locations for all mags.",
+        "text": "Patched PT boat targeting logic, improving accuracy for players using PT boats.",
         "commit_ids": [
-          714509
+          714717
         ],
-        "section": "Loot & Economy"
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- PT boats now prioritize visible targets and no longer abandon targets above sea level, improving boat combat reliability.\n- First‑person laser sights are functional again, restoring accurate aiming.\n- Magazine drops now use the same system as the glass AK, standardizing drop rates and locations for all mags."
+    "new_relevant_count": 7,
+    "new_summary": "- Lingering sounds from destroyed monuments no longer persist, and new animal sound cues (sheep foot stomp, cow head shake, moo, baa) have been added.\n- Petting gestures now have correct duration, include reaction animations for cows and sheep, and support a new scratch gesture.\n- Hidden players are now ranked behind visible ones for targeting, but remain selectable when no visible targets exist.\n- Patrol boat targeting altitude logic corrected to prevent premature target loss above sea level.\n- Fixed intermittent main menu rendering issue, ensuring the menu always appears.\n- Patched PT boat targeting logic, improving accuracy for players using PT boats."
   },
   "2026-10-11": {
     "commit_count": 30,

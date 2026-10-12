@@ -6,50 +6,62 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 12 Oct 2026 10:17:44 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 12:17:31 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 12</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;48 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714668,714669"&gt;PT boats now prioritize visible targets and no longer abandon targets above sea level, improving boat combat reliability.&lt;/li&gt;
-&lt;li data-rust-commits="714505"&gt;First‑person laser sights are functional again, restoring accurate aiming.&lt;/li&gt;
-&lt;li data-rust-commits="714509"&gt;Magazine drops now use the same system as the glass AK, standardizing drop rates and locations for all mags.&lt;/li&gt;
+&lt;li data-rust-commits="714800,714752,714641"&gt;Lingering sounds from destroyed monuments no longer persist, and new animal sound cues (sheep foot stomp, cow head shake, moo, baa) have been added.&lt;/li&gt;
+&lt;li data-rust-commits="714752,714641"&gt;Petting gestures now have correct duration, include reaction animations for cows and sheep, and support a new scratch gesture.&lt;/li&gt;
+&lt;li data-rust-commits="714668"&gt;Hidden players are now ranked behind visible ones for targeting, but remain selectable when no visible targets exist.&lt;/li&gt;
+&lt;li data-rust-commits="714669"&gt;Patrol boat targeting altitude logic corrected to prevent premature target loss above sea level.&lt;/li&gt;
+&lt;li data-rust-commits="714735"&gt;Fixed intermittent main menu rendering issue, ensuring the menu always appears.&lt;/li&gt;
+&lt;li data-rust-commits="714717"&gt;Patched PT boat targeting logic, improving accuracy for players using PT boats.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Vehicles &amp;amp; Boats&lt;/h3&gt;
+&lt;h3&gt;Audio &amp;amp; Animal Sounds&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714668,714669"&gt;PT boats now prioritize visible targets and no longer abandon targets above sea level, improving boat combat reliability.&lt;/li&gt;
-&lt;li data-rust-commits="714168"&gt;Fixed boat privilege regression, restoring proper player permissions when using the boat privilege cache.&lt;/li&gt;
+&lt;li data-rust-commits="714800,714752,714641"&gt;Lingering sounds from destroyed monuments no longer persist, and new animal sound cues (sheep foot stomp, cow head shake, moo, baa) have been added.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Combat&lt;/h3&gt;
+&lt;h3&gt;Animal Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714505"&gt;First‑person laser sights are functional again, restoring accurate aiming.&lt;/li&gt;
-&lt;li data-rust-commits="713755"&gt;Explosives attached to solar panels now retain correct size, preventing unintended damage scaling.&lt;/li&gt;
+&lt;li data-rust-commits="714752,714641"&gt;Petting gestures now have correct duration, include reaction animations for cows and sheep, and support a new scratch gesture.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Items &amp;amp; DLC&lt;/h3&gt;
+&lt;h3&gt;Controls &amp;amp; Input&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714386"&gt;Halloween lights are now craftable with correct stack size and cost, and the alien suit now blocks the torso instead of the legs.&lt;/li&gt;
+&lt;li data-rust-commits="714396"&gt;Stray gamepad stick input is ignored when another device is active, eliminating stick drift.&lt;/li&gt;
+&lt;li data-rust-commits="714373"&gt;Gamepad duck‑latching issue fixed, ensuring the escape menu clears input correctly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base &amp;amp; Environment&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Targeting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714449"&gt;Spiral staircase upkeep now counts correctly, ensuring proper base maintenance costs.&lt;/li&gt;
-&lt;li data-rust-commits="714361"&gt;Arctic biome refrigeration now only triggers above a 10% arctic threshold, stopping accidental cooling in marginal arctic zones.&lt;/li&gt;
+&lt;li data-rust-commits="714505"&gt;First‑person laser weapons are functional again.&lt;/li&gt;
+&lt;li data-rust-commits="714668"&gt;Hidden players are now ranked behind visible ones for targeting, but remain selectable when no visible targets exist.&lt;/li&gt;
+&lt;li data-rust-commits="714669"&gt;Patrol boat targeting altitude logic corrected to prevent premature target loss above sea level.&lt;/li&gt;
+&lt;li data-rust-commits="713755"&gt;Explosives attached to solar panels now have correct damage radius and visual size.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Input &amp;amp; Gamepad&lt;/h3&gt;
+&lt;h3&gt;Building, Upkeep &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714396"&gt;Gamepad stick drift ignored when not the active input device, preventing unintended movement.&lt;/li&gt;
-&lt;li data-rust-commits="714373"&gt;Gamepad duck‑latch logic isolated, fixing escape‑menu input clearing issues.&lt;/li&gt;
+&lt;li data-rust-commits="714449"&gt;Triangle spiral stairs now include the upkeep component, restoring proper decay and maintenance.&lt;/li&gt;
+&lt;li data-rust-commits="714361"&gt;Arctic biome refrigeration threshold raised to 10%, preventing unintended cooling in areas with few arctic specks.&lt;/li&gt;
+&lt;li data-rust-commits="714168"&gt;Player boat privileges are retained when using the building‑privilege cache.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Economy&lt;/h3&gt;
+&lt;h3&gt;DLC &amp;amp; Items&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714509"&gt;Magazine drops now use the same system as the glass AK, standardizing drop rates and locations for all mags.&lt;/li&gt;
+&lt;li data-rust-commits="714386"&gt;Halloween 2026 DLC items updated: lights are craftable with correct stack size and cost, and the alien suit now protects the legs instead of the torso.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="714735"&gt;Fixed intermittent main menu rendering issue, ensuring the menu always appears.&lt;/li&gt;
+&lt;li data-rust-commits="714717"&gt;Patched PT boat targeting logic, improving accuracy for players using PT boats.&lt;/li&gt;
+&lt;li data-rust-commits="714602"&gt;Resolved magazine drop bugs, making ammo drops spawn correctly and consistently.&lt;/li&gt;
+&lt;li data-rust-commits="714509"&gt;Unified remaining magazine drop behavior with the glass AK system, standardizing drop rates and locations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-12</guid>
-      <pubDate>Mon, 12 Oct 2026 10:17:44 -0400</pubDate>
+      <pubDate>Mon, 12 Oct 2026 12:17:31 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 11</title>
