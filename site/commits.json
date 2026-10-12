@@ -1,5 +1,85 @@
 [
   {
+    "id": 715095,
+    "branch": "main/vcc",
+    "changeset": "167732",
+    "created": "2026-10-12T22:02:03",
+    "message": "Add VDF files for 6 missing gamepad types.\r\nUpdate gamepad manifest.",
+    "user": "Adam W"
+  },
+  {
+    "id": 715092,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167731",
+    "created": "2026-10-12T21:57:07",
+    "message": "Keep sound template AudioSources enabled while pooled, disabling them on every recycle flushed unity's audio DSP, stalling up to ~1ms when a sound got cut mid play\r\n\r\nRecycleSound in editor:\r\n~0.45ms -> ~0.25ms\r\nThe occasional 1ms \"flush dsp connections\" is gone",
+    "user": "Flavien"
+  },
+  {
+    "id": 715091,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167730",
+    "created": "2026-10-12T21:53:43",
+    "message": "Fix SelectedBlueprint.CanCraft running every frame while the crafting menu is closed, small but unnecessary",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715090,
+    "branch": "main/scrap_king_buildingskin_dlc",
+    "changeset": "167729",
+    "created": "2026-10-12T21:53:19",
+    "message": "scrap king building skin steam item setup",
+    "user": "matt.i"
+  },
+  {
+    "id": 715086,
+    "branch": "main/vcc",
+    "changeset": "167728",
+    "created": "2026-10-12T21:48:26",
+    "message": "Add support for major/minor revision bumping.\r\nUpdate all gamepad configs with this data.\r\nUpdate validation to always check/catch chamges.",
+    "user": "Adam W"
+  },
+  {
+    "id": 715085,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167727",
+    "created": "2026-10-12T21:47:12",
+    "message": "Fix all skinned items allocating on every inventory update when getting their icon sprite",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715079,
+    "branch": "main/vcc",
+    "changeset": "167726",
+    "created": "2026-10-12T21:38:05",
+    "message": "Attack/AttackAlt are now Button actions on the triggers' soft pull so players can rebind fire/aim to any button (per Valve guidance).\r\nUpdate all action sets/configs to match,",
+    "user": "Adam W"
+  },
+  {
+    "id": 715068,
+    "branch": "main/vcc",
+    "changeset": "167724",
+    "created": "2026-10-12T21:04:13",
+    "message": "Stop any rumble in Deactivate",
+    "user": "Adam W"
+  },
+  {
+    "id": 715043,
+    "branch": "██▆▍▅▌▄▇▆▋▇▍▊▌▊▆▉▋▉▍▋▆",
+    "changeset": "▌▋█▅▍▉",
+    "created": "2026-10-12T20:19:10",
+    "message": "▆ ▋ ▆█▍▄▋ ▇▋▅▆ ▌▋▇▍▇ ▊▅▅ █▍▅▌ ▇▍▄▌▄▋▌ ▅▊▆▉▇▇█ ▇▌▉▅▋ ▊█▇▆▆▆ ▇▄▊▍▉▍▄ ▅▍▌ █▌▆▊▊▍▄▊▊ ▅▍▊▍▇▇ ▉▇ ▆▉█ ▄▋▌▊ ▊▋▅▆▅▆▉▆█ ▉▍▍▇█ ▄▊▇▊▉ ▄▆▊▄ ▇▉▍▊▋▊█▌▊▄▊▄▍▋▋██ ▉▋▆▇",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715039,
+    "branch": "▋▅█▇▄▋▇▉▋▌▌▌▆▋▍▊▆▉▅█▉▄",
+    "changeset": "█▆▍▋▊▊",
+    "created": "2026-10-12T20:12:31",
+    "message": "▆ ▉█▉▅▉ ▍▇▆▊ ▇▋▍▆ ▅▌▍▊▄▍█ ▅ ▅▍▊██▉▊▉ ▊▊▊█ ▍▅▄▊ ▅▇▄ ▉▇▍▅ ▊ ▌▅▍█ ▅▅ ▉▅▆▄██▍▊ ▅▇▋▊▄",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 715037,
     "branch": "main/render_pipeline_testing",
     "changeset": "167720",
@@ -1238,29 +1318,5 @@
     "created": "2026-10-09T22:21:30",
     "message": "Uzi FX & related files.",
     "user": "Petur"
-  },
-  {
-    "id": 712032,
-    "branch": "▉█▊▄▋▇▊▅▌▋▋▄▉▅▄█▊▆▄▍▇▇",
-    "changeset": "█▌▉▊▌▍",
-    "created": "2026-10-09T22:14:21",
-    "message": "▆ ▆▉▋▉▋ ▊ ▋▆▌▄ ▅▋▌▇▌▍▇▊▉ ▌█ ▍█▍█▅ ▇▄▌▉ ▉█▄▍▌▆▇▅ ▍▉▅▌▊▋▊ ▌▄▅ ▄▌▌▆▉▅ ▌▆▅▌▄▊▆▋ ▇▇█▋▋▌▉▊ ▊▅▋ ▍▋▉▇▊▆▉▄ ▅▍▄▊▇▌▍▅▉ ▅█ ▄▆▇█▉ ▇▇▍▅▆▊ ▇▆▊█ ▉█▆▍█",
-    "user": "max.p"
-  },
-  {
-    "id": 712014,
-    "branch": "main/npc_phone_conversations",
-    "changeset": "167510",
-    "created": "2026-10-09T22:02:48",
-    "message": "Merge fixes",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 711974,
-    "branch": "▅▅▆▅▊▋▇▅▌▆▍▄▄▊▄▆▉▄",
-    "changeset": "▅▉▇▄▋▄",
-    "created": "2026-10-09T21:02:36",
-    "message": "▍ ▆▄▇▇▄ ▊▊▄█▆▌ ▍▊▋▊▉▇▄▅▅ ▅▅▆▆▅▆ █▄",
-    "user": "nick.m"
   }
 ]
