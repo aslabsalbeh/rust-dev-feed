@@ -1,5 +1,45 @@
 [
   {
+    "id": 713518,
+    "branch": "▆▄█▊█▄▄▆▊▅█▍▇▆▄▊▍▉▍▋▇▊",
+    "changeset": "▌▇▄█▇▉",
+    "created": "2026-10-12T00:00:13",
+    "message": "▉▆▆▍ █▇█▆▄▌▋▆▇▍ ▉▍▊ ▊▌▍▇▍▅▊ ▉▅▋▅ █▊▅▍ ▍▇▌ ▆▅▄▊▊▇▄▄▌ ▆▆▇ ▇ ▇██▊▅▇▊▉▅▊▇▆▊ ▇ ▌█▊▌ ▆▄ ▄▆▋▉▄ ▆▉▇▍ ▆▇▆▋ ▇▋ ▄▅▉▋▊▊",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 713469,
+    "branch": "main/buildingprivilege_cache",
+    "changeset": "167558",
+    "created": "2026-10-11T23:28:50",
+    "message": "Cleanup",
+    "user": "Flavien"
+  },
+  {
+    "id": 713463,
+    "branch": "▄▉▉▉▇▊▄▉▌▇▅▌█▄▆▇▌█▌▍▊▌",
+    "changeset": "▊▉▆█▅▋",
+    "created": "2026-10-11T23:25:18",
+    "message": "▌▅▌▅▉▇ ▋▋▆▉ ▆▇▉▇",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 713453,
+    "branch": "main/buildingprivilege_cache",
+    "changeset": "167556",
+    "created": "2026-10-11T23:17:29",
+    "message": "Reordered the check so bases with no TC are cheaper",
+    "user": "Flavien"
+  },
+  {
+    "id": 713396,
+    "branch": "main/buildingprivilege_cache",
+    "changeset": "167555",
+    "created": "2026-10-11T22:41:51",
+    "message": "Convared the vehicle and entity privilege changes under buildingmanager.privilegecache",
+    "user": "Flavien"
+  },
+  {
     "id": 713341,
     "branch": "main/buildingprivilege_cache",
     "changeset": "167554",
@@ -942,101 +982,5 @@
     "created": "2026-10-09T00:34:13",
     "message": "Terrible WIP",
     "user": "Ian Henderson"
-  },
-  {
-    "id": 710515,
-    "branch": "main/Livestock_animals",
-    "changeset": "167381",
-    "created": "2026-10-09T00:09:12",
-    "message": "Move the shared AI test prefab paths from AITestFixture into a new AITestUtils so client tests use them instead of keeping their own copies",
-    "user": "Maverick"
-  },
-  {
-    "id": 710512,
-    "branch": "main/rain_optims",
-    "changeset": "167380",
-    "created": "2026-10-09T00:04:22",
-    "message": "Optimized rain particles\n- rain patches now use a closest hit sphere cast instead of GamePhysics.Trace, it collected every colliders down a 1km column to keep only the top one\n- a patch only casts again when it moves\n- coming back from an alt tab doesnt fire 64 casts in the same frame\n- fixed rain falling under some roofs\r\n\r\nEditor profiling raining at missile silo, average per frame:\r\n0.42ms -> 0.06ms standing, 0.11ms running, 0.14ms at 20m/s\r\n\r\nApplies to snow too",
-    "user": "Flavien"
-  },
-  {
-    "id": 710511,
-    "branch": "▊▍▊▇",
-    "changeset": "█▊▋▆▍▅",
-    "created": "2026-10-08T23:54:29",
-    "message": "▊▍█▅▋▉ ▅▋▄▍█▊▅▉",
-    "user": "Helk"
-  },
-  {
-    "id": 710510,
-    "branch": "main/Livestock_animals",
-    "changeset": "167378",
-    "created": "2026-10-08T23:54:13",
-    "message": "Fix test that sometimes randomly fails in editor because server and client share one TOD_Sky",
-    "user": "Maverick"
-  },
-  {
-    "id": 710504,
-    "branch": "main/Weapon_Refresh_Flare",
-    "changeset": "167377",
-    "created": "2026-10-08T23:35:23",
-    "message": "Fixed the niche FX 6 point shader to use the new pipeline's forward+ light buffer.\r\nFixes some smoke lighting issues.",
-    "user": "Petur"
-  },
-  {
-    "id": 710494,
-    "branch": "main/Livestock_animals",
-    "changeset": "167376",
-    "created": "2026-10-08T23:27:00",
-    "message": "Rework how outdoor herd sized are measured to make the 9 max herd cap more robust, instead of each cow checking only their neighboors, each neighboor checks their neighboors recursively\r\nStretched herds no longer then allow the cap to be bypassed\r\nPerf is same, because then the other cows don't need to run their own queries, so the same total amount of queries are run\r\nWild cows are skipped as they can't reproduce so don't need to know about their herd size",
-    "user": "Maverick"
-  },
-  {
-    "id": 710486,
-    "branch": "main/Livestock_animals",
-    "changeset": "167375",
-    "created": "2026-10-08T23:11:14",
-    "message": "Fix lamb not using the same eye/mouth mask as adults, and having their eye/mouth tinted brown/black",
-    "user": "Maverick"
-  },
-  {
-    "id": 710485,
-    "branch": "main/Livestock_animals",
-    "changeset": "167374",
-    "created": "2026-10-08T23:07:06",
-    "message": "- Fix client pooling not resetting livestock stats properly, showing incorrect or fluctuating stat before first network update\r\n- When a cow has no owner, the owner UI is replaced with \"no owner, feed at a trough to claim\"\r\n- Fix trust UI showing \"can breed\" even though trust doesn't factor in breeding anymore, instead show \"will defend you\"\r\n- Rename the trust thresholds, shy>curious>can be led>will defend you for females and babies, hostile>wary>can be led>will defend you for males\r\n- Female cows will also attack anyone that attacks their owner, as if they were their calf (and only owner is defended, not others)",
-    "user": "Maverick"
-  },
-  {
-    "id": 710477,
-    "branch": "main/Weapon_Refresh_Flare",
-    "changeset": "167373",
-    "created": "2026-10-08T22:54:22",
-    "message": "Tweaks to IgnoreRotation and RoadFlare to support better lighting on updated flare.",
-    "user": "Petur"
-  },
-  {
-    "id": 710467,
-    "branch": "main/Livestock_animals",
-    "changeset": "167372",
-    "created": "2026-10-08T22:29:15",
-    "message": "Update rust native libraries for all platforms",
-    "user": "Maverick"
-  },
-  {
-    "id": 710465,
-    "branch": "main/Livestock_animals",
-    "changeset": "167371",
-    "created": "2026-10-08T22:25:27",
-    "message": "- Make recessive genes factor in the buy price you get with the NPC\r\n- Make the buyer NPC comment on hidden bad genes / inbred cows / true god cows with good recessives\r\n- Hint at recessive genes in the genes UI",
-    "user": "Maverick"
-  },
-  {
-    "id": 710464,
-    "branch": "main",
-    "changeset": "167370",
-    "created": "2026-10-08T22:20:54",
-    "message": "Fixed misconfigured raiding tests failing after the triangle splash bug fix",
-    "user": "Flavien"
   }
 ]
