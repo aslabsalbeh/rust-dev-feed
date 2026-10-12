@@ -6,47 +6,45 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 12 Oct 2026 14:17:46 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 16:17:30 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 12</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;78 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;105 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Audio &amp;amp; Animal Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714641,714752"&gt;Added petting reactions, moo/baa sounds, and scratch gestures for cows and sheep; fixed gesture duration, added foot stomp and head shake sounds, and improved animal facing toward the player.&lt;/li&gt;
-&lt;li data-rust-commits="714800"&gt;Sounds from destroyed monument entities are now cleared, eliminating lingering audio after removal.&lt;/li&gt;
+&lt;li data-rust-commits="714800"&gt;Lingering sounds from destroyed monuments no longer persist after loading.&lt;/li&gt;
+&lt;li data-rust-commits="714752,714641"&gt;Sheep and cows now have richer interactions: new footstep and head‑shake sound cues, plus petting reactions with moo/baa sounds and scratch gestures.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
+&lt;h3&gt;Controls&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="714396,714373"&gt;Gamepad input handling refined: inactive sticks ignored to prevent drift, and duck‑latching logic fixed to stop escape‑menu input clearing issues.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Targeting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714668"&gt;Hidden players now rank behind visible players for targeting, but can still be selected when no visible players are present.&lt;/li&gt;
-&lt;li data-rust-commits="714669"&gt;PT boat targeting logic fixed: boats no longer give up on targets above sea level.&lt;/li&gt;
-&lt;li data-rust-commits="714505"&gt;Lasers now work in first‑person view.&lt;/li&gt;
+&lt;li data-rust-commits="714668"&gt;Hidden players now rank behind visible players in targeting, but can still be selected if no visible targets exist.&lt;/li&gt;
+&lt;li data-rust-commits="714669"&gt;Patrol boats no longer abandon targets above sea level, fixing altitude targeting bug.&lt;/li&gt;
+&lt;li data-rust-commits="714505"&gt;First‑person laser weapons now function correctly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock Interaction&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Boats&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714641,714752"&gt;Added petting reactions, moo/baa sounds, and scratch gestures for cows and sheep; fixed gesture duration, added foot stomp and head shake sounds, and improved animal facing toward the player.&lt;/li&gt;
+&lt;li data-rust-commits="714168"&gt;Player boat privileges restored when using the privilege cache.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Controls &amp;amp; Input&lt;/h3&gt;
+&lt;h3&gt;Crafting &amp;amp; Items&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714396"&gt;Gamepad stick input ignored when not the active device, fixing stick‑drift for mouse/keyboard players.&lt;/li&gt;
-&lt;li data-rust-commits="714373"&gt;Gamepad duck‑latching reworked to affect only gamepad logic, fixing escape menu input clearing bug.&lt;/li&gt;
+&lt;li data-rust-commits="714386"&gt;Halloween DLC items fixed: lights are craftable with correct stack size and cost, and alien suit armor fits correctly.&lt;/li&gt;
+&lt;li data-rust-commits="714509,714433"&gt;Weapon drop behavior improved: mag drop system unified with glass AK implementation and unnecessary cachedPostIK removed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Items, Loot &amp;amp; Economy&lt;/h3&gt;
+&lt;h3&gt;Environment &amp;amp; Structures&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="714386"&gt;Halloween DLC items fixed: lights are now craftable with correct stack size and cost, and the alien suit now blocks legs instead of the torso.&lt;/li&gt;
-&lt;li data-rust-commits="714509,714433"&gt;Magazine drops unified with the glass AK system and handling cleaned up.&lt;/li&gt;
-&lt;li data-rust-commits="714449"&gt;Triangle spiral stairs now include the upkeep component, restoring proper upkeep costs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Environment &amp;amp; World&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="714361"&gt;Arctic biome refrigeration threshold increased to 10% to prevent refrigeration in tiny arctic patches.&lt;/li&gt;
-&lt;li data-rust-commits="714800"&gt;Sounds from destroyed monument entities are now cleared, eliminating lingering audio after removal.&lt;/li&gt;
+&lt;li data-rust-commits="714449"&gt;Triangle spiral stairs now include an upkeep component, ensuring proper decay handling.&lt;/li&gt;
+&lt;li data-rust-commits="714361"&gt;Arctic biome refrigeration now requires at least 10% biome presence, preventing unintended refrigeration in minimal arctic areas.&lt;/li&gt;
+&lt;li data-rust-commits="713755"&gt;Explosives attached to solar panels now scale correctly, preserving size and functionality.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-12</guid>
-      <pubDate>Mon, 12 Oct 2026 14:17:46 -0400</pubDate>
+      <pubDate>Mon, 12 Oct 2026 16:17:30 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 11</title>

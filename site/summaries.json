@@ -1,28 +1,58 @@
 {
   "2026-10-12": {
-    "commit_count": 78,
-    "relevant_commit_count": 42,
-    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959",
+    "commit_count": 105,
+    "relevant_commit_count": 51,
+    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959,714965,714974,714997,715007,715013,715014,715018,715029,715034",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "Audio & Animal Interaction",
+        "items": [
+          {
+            "text": "Lingering sounds from destroyed monuments no longer persist after loading.",
+            "commit_ids": [
+              714800
+            ]
+          },
+          {
+            "text": "Sheep and cows now have richer interactions: new footstep and head‑shake sound cues, plus petting reactions with moo/baa sounds and scratch gestures.",
+            "commit_ids": [
+              714752,
+              714641
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Controls",
+        "items": [
+          {
+            "text": "Gamepad input handling refined: inactive sticks ignored to prevent drift, and duck‑latching logic fixed to stop escape‑menu input clearing issues.",
+            "commit_ids": [
+              714396,
+              714373
+            ]
+          }
+        ]
+      },
+      {
         "title": "Combat & Targeting",
         "items": [
           {
-            "text": "Hidden players now rank behind visible players for targeting, but can still be selected when no visible players are present.",
+            "text": "Hidden players now rank behind visible players in targeting, but can still be selected if no visible targets exist.",
             "commit_ids": [
               714668
             ]
           },
           {
-            "text": "PT boat targeting logic fixed: boats no longer give up on targets above sea level.",
+            "text": "Patrol boats no longer abandon targets above sea level, fixing altitude targeting bug.",
             "commit_ids": [
               714669
             ]
           },
           {
-            "text": "Lasers now work in first‑person view.",
+            "text": "First‑person laser weapons now function correctly.",
             "commit_ids": [
               714505
             ]
@@ -30,97 +60,63 @@
         ]
       },
       {
-        "title": "Livestock Interaction",
+        "title": "Vehicles & Boats",
         "items": [
           {
-            "text": "Added petting reactions, moo/baa sounds, and scratch gestures for cows and sheep; fixed gesture duration, added foot stomp and head shake sounds, and improved animal facing toward the player.",
+            "text": "Player boat privileges restored when using the privilege cache.",
             "commit_ids": [
-              714641,
-              714752
+              714168
             ]
           }
         ]
       },
       {
-        "title": "Controls & Input",
+        "title": "Crafting & Items",
         "items": [
           {
-            "text": "Gamepad stick input ignored when not the active device, fixing stick‑drift for mouse/keyboard players.",
-            "commit_ids": [
-              714396
-            ]
-          },
-          {
-            "text": "Gamepad duck‑latching reworked to affect only gamepad logic, fixing escape menu input clearing bug.",
-            "commit_ids": [
-              714373
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items, Loot & Economy",
-        "items": [
-          {
-            "text": "Halloween DLC items fixed: lights are now craftable with correct stack size and cost, and the alien suit now blocks legs instead of the torso.",
+            "text": "Halloween DLC items fixed: lights are craftable with correct stack size and cost, and alien suit armor fits correctly.",
             "commit_ids": [
               714386
             ]
           },
           {
-            "text": "Magazine drops unified with the glass AK system and handling cleaned up.",
+            "text": "Weapon drop behavior improved: mag drop system unified with glass AK implementation and unnecessary cachedPostIK removed.",
             "commit_ids": [
               714509,
               714433
-            ]
-          },
-          {
-            "text": "Triangle spiral stairs now include the upkeep component, restoring proper upkeep costs.",
-            "commit_ids": [
-              714449
             ]
           }
         ]
       },
       {
-        "title": "Environment & World",
+        "title": "Environment & Structures",
         "items": [
           {
-            "text": "Arctic biome refrigeration threshold increased to 10% to prevent refrigeration in tiny arctic patches.",
+            "text": "Triangle spiral stairs now include an upkeep component, ensuring proper decay handling.",
+            "commit_ids": [
+              714449
+            ]
+          },
+          {
+            "text": "Arctic biome refrigeration now requires at least 10% biome presence, preventing unintended refrigeration in minimal arctic areas.",
             "commit_ids": [
               714361
             ]
           },
           {
-            "text": "Sounds from destroyed monument entities are now cleared, eliminating lingering audio after removal.",
+            "text": "Explosives attached to solar panels now scale correctly, preserving size and functionality.",
             "commit_ids": [
-              714800
+              713755
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Targeting\n- Hidden players now rank behind visible players for targeting, but can still be selected when no visible players are present.\n- PT boat targeting logic fixed: boats no longer give up on targets above sea level.\n- Lasers now work in first‑person view.\n\n### Livestock Interaction\n- Added petting reactions, moo/baa sounds, and scratch gestures for cows and sheep; fixed gesture duration, added foot stomp and head shake sounds, and improved animal facing toward the player.\n\n### Controls & Input\n- Gamepad stick input ignored when not the active device, fixing stick‑drift for mouse/keyboard players.\n- Gamepad duck‑latching reworked to affect only gamepad logic, fixing escape menu input clearing bug.\n\n### Items, Loot & Economy\n- Halloween DLC items fixed: lights are now craftable with correct stack size and cost, and the alien suit now blocks legs instead of the torso.\n- Magazine drops unified with the glass AK system and handling cleaned up.\n- Triangle spiral stairs now include the upkeep component, restoring proper upkeep costs.\n\n### Environment & World\n- Arctic biome refrigeration threshold increased to 10% to prevent refrigeration in tiny arctic patches.\n- Sounds from destroyed monument entities are now cleared, eliminating lingering audio after removal.",
-    "new_items": [
-      {
-        "text": "Added petting reactions, moo/baa sounds, and scratch gestures for cows and sheep; fixed gesture duration, added foot stomp and head shake sounds, and improved animal facing toward the player.",
-        "commit_ids": [
-          714641,
-          714752
-        ],
-        "section": "Livestock Interaction"
-      },
-      {
-        "text": "Sounds from destroyed monument entities are now cleared, eliminating lingering audio after removal.",
-        "commit_ids": [
-          714800
-        ],
-        "section": "Environment & World"
-      }
-    ],
-    "new_relevant_count": 3,
-    "new_summary": "- Added petting reactions, moo/baa sounds, and scratch gestures for cows and sheep; fixed gesture duration, added foot stomp and head shake sounds, and improved animal facing toward the player.\n- Sounds from destroyed monument entities are now cleared, eliminating lingering audio after removal."
+    "summary": "### Audio & Animal Interaction\n- Lingering sounds from destroyed monuments no longer persist after loading.\n- Sheep and cows now have richer interactions: new footstep and head‑shake sound cues, plus petting reactions with moo/baa sounds and scratch gestures.\n\n### Controls\n- Gamepad input handling refined: inactive sticks ignored to prevent drift, and duck‑latching logic fixed to stop escape‑menu input clearing issues.\n\n### Combat & Targeting\n- Hidden players now rank behind visible players in targeting, but can still be selected if no visible targets exist.\n- Patrol boats no longer abandon targets above sea level, fixing altitude targeting bug.\n- First‑person laser weapons now function correctly.\n\n### Vehicles & Boats\n- Player boat privileges restored when using the privilege cache.\n\n### Crafting & Items\n- Halloween DLC items fixed: lights are craftable with correct stack size and cost, and alien suit armor fits correctly.\n- Weapon drop behavior improved: mag drop system unified with glass AK implementation and unnecessary cachedPostIK removed.\n\n### Environment & Structures\n- Triangle spiral stairs now include an upkeep component, ensuring proper decay handling.\n- Arctic biome refrigeration now requires at least 10% biome presence, preventing unintended refrigeration in minimal arctic areas.\n- Explosives attached to solar panels now scale correctly, preserving size and functionality.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-11": {
     "commit_count": 30,

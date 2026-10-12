@@ -1,5 +1,221 @@
 [
   {
+    "id": 715037,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "167720",
+    "created": "2026-10-12T20:05:30",
+    "message": "remove the Rust Render Pipeline text when RRP is enabled, instead show Built-In Render Pipeline when RRP is disabled",
+    "user": "Brian"
+  },
+  {
+    "id": 715036,
+    "branch": "main/vcc",
+    "changeset": "167719",
+    "created": "2026-10-12T20:04:23",
+    "message": "Try/catch the gamepad update loop, disable on any error errors.",
+    "user": "Adam W"
+  },
+  {
+    "id": 715034,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167718",
+    "created": "2026-10-12T19:56:15",
+    "message": "Fixed quick craft spending ~1.6ms rebuilding after almost every shot (inventory update)\r\nOnly rebuilds when the inventory is open now",
+    "user": "Flavien"
+  },
+  {
+    "id": 715029,
+    "branch": "main/Weapon_Refresh_Flare",
+    "changeset": "167717",
+    "created": "2026-10-12T19:51:01",
+    "message": "fix stale frame on subsystems without fade in, fix flare not having a predict release event, remove fade in on flare subsystem to fix weird flipping artifact on flare",
+    "user": "octo"
+  },
+  {
+    "id": 715023,
+    "branch": "main/cache_entity_links",
+    "changeset": "167715",
+    "created": "2026-10-12T19:39:33",
+    "message": "Update comment",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 715018,
+    "branch": "main/automated_testing",
+    "changeset": "167713",
+    "created": "2026-10-12T19:33:25",
+    "message": "Get rid of some debug logs spamming related to halloween dungeon spawning",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715017,
+    "branch": "main/cache_entity_links",
+    "changeset": "167712",
+    "created": "2026-10-12T19:33:24",
+    "message": "Re-add the \"Restoring X/100,000 links\" for cases where the cache links aren't used",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 715014,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "167710",
+    "created": "2026-10-12T19:27:43",
+    "message": "fix RRP drawing ocean after water bodies",
+    "user": "Brian"
+  },
+  {
+    "id": 715013,
+    "branch": "main/automated_testing",
+    "changeset": "167709",
+    "created": "2026-10-12T19:27:17",
+    "message": "Halloween stringlights\r\nImprove deployment, stop clipping, fix groundwatch, reduce network range, remove snapping\r\nAll tests pass",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715006,
+    "branch": "▌▄▆█▉▉▅▉▄▆▌▇▌▆█▍█▍▇▆▆▆",
+    "changeset": "█▍▋▇▊▋",
+    "created": "2026-10-12T19:12:23",
+    "message": "▍ ▌▇▉▆▋ ▅▌▅▉▄▍▆ ▅▄▆▅▆ ▅▅▄▄ ▉█ ▇▆▄▄█ ▄█▍▇▊█▋ ▋▅ █▉▋██▆▋▊▊ ▊▋▅▇▆▊█▊▍▇▍ ▅▍▊▄ ▇▅▄ ▅▊▊▊ ▇█▍ ▋▊ █▊▊▇▊▋ ▊▇▇▇▊▆▆ ▌▄▉█▌ ▍▉▌ ▊▅▇▅▊▍▄▄▇▊▇█ ▄▄▍ ▆▍▇█▇ ▇▊▍ █▋▌▋ ▊▅▍▊ ▄▆▋▋█ ▇▅▍▋▊▇▍▋▇▋▆",
+    "user": "Nick.H"
+  },
+  {
+    "id": 715007,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167707",
+    "created": "2026-10-12T19:12:19",
+    "message": "Pool 3 copies of thrown melee weapon and tool projectiles instead of 100. No point in filling our pool with 3900 copies you'll rarely see more than 3 of at the same time\r\n\r\nSaves around 50MB of memory and gives me some leeway to eat that with gun effects next",
+    "user": "Flavien"
+  },
+  {
+    "id": 714997,
+    "branch": "main/cache_entity_links",
+    "changeset": "167706",
+    "created": "2026-10-12T19:05:26",
+    "message": "Pass `serverStartup` parameter into RestoringLoadedEntityLinks() so we don't call RCON.Update() when pasting with copypaste\r\n- probably harmless but it bugged me",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 714996,
+    "branch": "main/vcc",
+    "changeset": "167705",
+    "created": "2026-10-12T19:04:09",
+    "message": "Increase stick move distance required to activate gamepad",
+    "user": "Adam W"
+  },
+  {
+    "id": 714989,
+    "branch": "main/network_optims",
+    "changeset": "167703",
+    "created": "2026-10-12T18:50:01",
+    "message": "Codegen",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714986,
+    "branch": "main/cache_ocean_path",
+    "changeset": "167702",
+    "created": "2026-10-12T18:49:00",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 714985,
+    "branch": "main/network_optims",
+    "changeset": "167701",
+    "created": "2026-10-12T18:48:42",
+    "message": "Remove three unused floats (skincol, skintex, skinmesh) from all player net messages that havent been used since 2016\r\nDefaults were set to -1 so included in the proto\r\n\r\nSaves 17 bytes per player",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714987,
+    "branch": "main/cache_ocean_path",
+    "changeset": "167700",
+    "created": "2026-10-12T18:48:39",
+    "message": "Optimize server startup time by caching the ocean patrol path on disk (158s -> 138s)\n- same idea as server occlusion grid being saved\n- can increase version number to regenerate next restart\n- convar `regenerate_ocean_path` will cause it to regenerate it next startup too",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 714979,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167698",
+    "created": "2026-10-12T18:40:54",
+    "message": "Prewarm 5 copies of each ricochet effect instead of 1, first magazine dumped after connecting created up to 2 more per prefab at ~0.5ms each",
+    "user": "Flavien"
+  },
+  {
+    "id": 714977,
+    "branch": "main/network_optims",
+    "changeset": "167697",
+    "created": "2026-10-12T18:35:27",
+    "message": "Stop networking IO wire origin data and duplicate slack levels to clients\r\nSaves ~34 B per wired slot + ~5 B per wire point on network load",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714974,
+    "branch": "main/network_optims",
+    "changeset": "167696",
+    "created": "2026-10-12T18:30:33",
+    "message": "Fix flame turret sending two updates per trigger change instead of one\r\n\r\nSaves 60 B~ per nearby player each time the turret turns on or off",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714972,
+    "branch": "main/cache_entity_links",
+    "changeset": "167695",
+    "created": "2026-10-12T18:30:01",
+    "message": "Update test list",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 714971,
+    "branch": "main/network_optims",
+    "changeset": "167694",
+    "created": "2026-10-12T18:27:12",
+    "message": "Stop water purifier sending two unchanged network updates per boil tick\r\n\r\n30 B/s~ per nearby player",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714969,
+    "branch": "main/network_optims",
+    "changeset": "167693",
+    "created": "2026-10-12T18:18:44",
+    "message": "Dont send environment rainGraceStartTicks (only used on the server)\r\nSends every 5 seconds.\r\n\r\n54 → 44 B per update, so saves 10 B~ every per player every 5s",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714968,
+    "branch": "main/network_optims",
+    "changeset": "167692",
+    "created": "2026-10-12T18:16:04",
+    "message": "Door.SetOpen no longer sends a full network update when the door is already in the requested state (door closers re-close shut doors 3 s after every open/close cycle)\r\n\nSaves ~76 B per nearby player per call",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714965,
+    "branch": "main/network_optims",
+    "changeset": "167690",
+    "created": "2026-10-12T18:09:54",
+    "message": "Only send search light network updates when aim/flags change rather than per tick when mounted",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 714964,
+    "branch": "▆▋█▋",
+    "changeset": "██▊▊▇▄",
+    "created": "2026-10-12T18:09:40",
+    "message": "▄ ▉▄▉▆▄ ▇▋▍▄ ▄▅▇▆▊▍█▅▄▌█▋█▋▆▆▍▄▌▅▍▌█▉▋▌▍▉",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 714963,
+    "branch": "▅▅▋█",
+    "changeset": "▌▇▅▋▄▍",
+    "created": "2026-10-12T18:06:55",
+    "message": "█▆▇▇▌▅ ▌▆▌▊ ▇█▋▋▍▇▄▉▄█▇▉▇█▅▉▄█▊▇▊▉▄▉█▌▅▌",
+    "user": "Martyn Chapman"
+  },
+  {
     "id": 714960,
     "branch": "▊▍▌▉▄▌██▋▊▄▅▍▅▊▋▉█▍█▆▆",
     "changeset": "▅▇▊▉█▌",
@@ -1046,45 +1262,5 @@
     "created": "2026-10-09T21:02:36",
     "message": "▍ ▆▄▇▇▄ ▊▊▄█▆▌ ▍▊▋▊▉▇▄▅▅ ▅▅▆▆▅▆ █▄",
     "user": "nick.m"
-  },
-  {
-    "id": 711906,
-    "branch": "main",
-    "changeset": "167508",
-    "created": "2026-10-09T19:45:13",
-    "message": "Changed default render scale upscale mode to Catmull-Rom because it looks best\nChanged render scale upscale mode convar name from upscaleMode to renderScaleSampling",
-    "user": "andre"
-  },
-  {
-    "id": 711900,
-    "branch": "▋▄▉▌▆▌▍▉▇█▉▇▍▄▌▌▅▆▇▉▌▄",
-    "changeset": "▉▉▇▄▊▋",
-    "created": "2026-10-09T18:59:54",
-    "message": "▇▉▇▉▍█ █▉▌▅▋▄▄▅▍ ██▉ ▄█▇▄ ▊ ▇▍▉▊▉ ▉▉▌▋▇ ▋▍▄▍▇▉ ▍▆▉▇▋▅▇ ▍▄▆▉▉ ▇▇▊ ▊▆▌▍ ▊▇▋▌▍▇▇▍▋ ▆▆▌▉▄ ▍▅▆▌ ▊▍▅▊▊ ▊▆▍▄█ █▊▄▊▆▍▋▅▅▇ ▉▄▇ ▆▊▊▋█▄██ ▅█▌▉▍▋ ▄▋▅▉▄ ▆▍▉▄▆▊ ▊▊▇▋▍▌▇ ▊▉▍ ▍▍▌ ▌▍▊▄▆ ▆▆▄▆ ▅▋▇ ▍▋▉▋█▊▉█▄ ▌█▄▊▆▊▉▍▇▌▄▌▇",
-    "user": "mauro.a"
-  },
-  {
-    "id": 711899,
-    "branch": "main/npc_phone_conversations",
-    "changeset": "167505",
-    "created": "2026-10-09T18:59:51",
-    "message": "Remove client conversations having a reference to the NPC entity they are talking to. Allows phone conversations across the map without having to temporarily spawn in the NPC entity clientside",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 711889,
-    "branch": "main/underground_train_network_update",
-    "changeset": "167501",
-    "created": "2026-10-09T18:32:04",
-    "message": "Breakroom progress",
-    "user": "Damian Lazarski"
-  },
-  {
-    "id": 711886,
-    "branch": "main/render_pipeline_testing/native_render_passes",
-    "changeset": "167500",
-    "created": "2026-10-09T18:31:19",
-    "message": "Fixed issue with merge coming from the PostOpaqueDepthRendererFeature",
-    "user": "aidan.m"
   }
 ]
