@@ -1,38 +1,57 @@
 {
   "2026-10-12": {
-    "commit_count": 21,
-    "relevant_commit_count": 7,
-    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373",
+    "commit_count": 39,
+    "relevant_commit_count": 19,
+    "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Controls",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Fixed controller duck‑latching issue that could leave the escape menu input active.",
+            "text": "Added SetVehicleLoad limit and refined vehicle seat haptic feedback.",
             "commit_ids": [
-              714373
+              714554,
+              714534
             ]
           }
         ]
       },
       {
-        "title": "Base & Crafting",
+        "title": "Combat & Tools",
         "items": [
           {
-            "text": "Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.",
+            "text": "First‑person laser sights are functional again, restoring visual aiming cues.",
+            "commit_ids": [
+              714505
+            ]
+          },
+          {
+            "text": "Explosives attached to solar panels now scale correctly, ensuring intended damage.",
+            "commit_ids": [
+              713755
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base & Upkeep",
+        "items": [
+          {
+            "text": "Triangle spiral stairs now correctly contribute to base upkeep calculations.",
+            "commit_ids": [
+              714449
+            ]
+          },
+          {
+            "text": "Refrigeration units require at least 10% arctic biome coverage to function, preventing unintended cooling in tiny arctic patches.",
             "commit_ids": [
               714361
             ]
-          }
-        ]
-      },
-      {
-        "title": "Boats",
-        "items": [
+          },
           {
-            "text": "Resolved a regression where player boat privileges were lost when the building‑privilege cache was used.",
+            "text": "Boat ownership privileges have been fixed, preventing loss of control when using the privilege cache.",
             "commit_ids": [
               714168
             ]
@@ -40,44 +59,97 @@
         ]
       },
       {
-        "title": "Explosives & Defenses",
+        "title": "Items & DLC",
         "items": [
           {
-            "text": "Fixed explosives attached to solar panels being incorrectly scaled, ensuring proper damage and visual size.",
+            "text": "Halloween DLC lights are now craftable with proper stack sizes and costs, and the alien suit’s hitbox now blocks the torso instead of the legs.",
             "commit_ids": [
-              713755
+              714386
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Controls",
+        "items": [
+          {
+            "text": "Gamepad stick drift is eliminated by ignoring input from inactive controllers, and duck‑latching now stays within gamepad logic, fixing menu‑escape issues.",
+            "commit_ids": [
+              714396,
+              714373
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Loot & Inventory",
+        "items": [
+          {
+            "text": "Magazine drops now use the same system as the glass AK, making their spawn behavior consistent with that weapon.",
+            "commit_ids": [
+              714509
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Controls\n- Fixed controller duck‑latching issue that could leave the escape menu input active.\n\n### Base & Crafting\n- Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.\n\n### Boats\n- Resolved a regression where player boat privileges were lost when the building‑privilege cache was used.\n\n### Explosives & Defenses\n- Fixed explosives attached to solar panels being incorrectly scaled, ensuring proper damage and visual size.",
+    "summary": "### Vehicles\n- Added SetVehicleLoad limit and refined vehicle seat haptic feedback.\n\n### Combat & Tools\n- First‑person laser sights are functional again, restoring visual aiming cues.\n- Explosives attached to solar panels now scale correctly, ensuring intended damage.\n\n### Base & Upkeep\n- Triangle spiral stairs now correctly contribute to base upkeep calculations.\n- Refrigeration units require at least 10% arctic biome coverage to function, preventing unintended cooling in tiny arctic patches.\n- Boat ownership privileges have been fixed, preventing loss of control when using the privilege cache.\n\n### Items & DLC\n- Halloween DLC lights are now craftable with proper stack sizes and costs, and the alien suit’s hitbox now blocks the torso instead of the legs.\n\n### Controls\n- Gamepad stick drift is eliminated by ignoring input from inactive controllers, and duck‑latching now stays within gamepad logic, fixing menu‑escape issues.\n\n### Loot & Inventory\n- Magazine drops now use the same system as the glass AK, making their spawn behavior consistent with that weapon.",
     "new_items": [
       {
-        "text": "Fixed controller duck‑latching issue that could leave the escape menu input active.",
+        "text": "Added SetVehicleLoad limit and refined vehicle seat haptic feedback.",
         "commit_ids": [
+          714554,
+          714534
+        ],
+        "section": "Vehicles"
+      },
+      {
+        "text": "First‑person laser sights are functional again, restoring visual aiming cues.",
+        "commit_ids": [
+          714505
+        ],
+        "section": "Combat & Tools"
+      },
+      {
+        "text": "Triangle spiral stairs now correctly contribute to base upkeep calculations.",
+        "commit_ids": [
+          714449
+        ],
+        "section": "Base & Upkeep"
+      },
+      {
+        "text": "Refrigeration units require at least 10% arctic biome coverage to function, preventing unintended cooling in tiny arctic patches.",
+        "commit_ids": [
+          714361
+        ],
+        "section": "Base & Upkeep"
+      },
+      {
+        "text": "Halloween DLC lights are now craftable with proper stack sizes and costs, and the alien suit’s hitbox now blocks the torso instead of the legs.",
+        "commit_ids": [
+          714386
+        ],
+        "section": "Items & DLC"
+      },
+      {
+        "text": "Gamepad stick drift is eliminated by ignoring input from inactive controllers, and duck‑latching now stays within gamepad logic, fixing menu‑escape issues.",
+        "commit_ids": [
+          714396,
           714373
         ],
         "section": "Controls"
       },
       {
-        "text": "Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.",
+        "text": "Magazine drops now use the same system as the glass AK, making their spawn behavior consistent with that weapon.",
         "commit_ids": [
-          714361
+          714509
         ],
-        "section": "Base & Crafting"
-      },
-      {
-        "text": "Resolved a regression where player boat privileges were lost when the building‑privilege cache was used.",
-        "commit_ids": [
-          714168
-        ],
-        "section": "Boats"
+        "section": "Loot & Inventory"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed controller duck‑latching issue that could leave the escape menu input active.\n- Refrigeration now only works when at least 10% of the surrounding area is arctic biome, preventing it from activating in tiny invisible arctic patches.\n- Resolved a regression where player boat privileges were lost when the building‑privilege cache was used."
+    "new_relevant_count": 9,
+    "new_summary": "- Added SetVehicleLoad limit and refined vehicle seat haptic feedback.\n- First‑person laser sights are functional again, restoring visual aiming cues.\n- Triangle spiral stairs now correctly contribute to base upkeep calculations.\n- Refrigeration units require at least 10% arctic biome coverage to function, preventing unintended cooling in tiny arctic patches.\n- Halloween DLC lights are now craftable with proper stack sizes and costs, and the alien suit’s hitbox now blocks the torso instead of the legs.\n- Gamepad stick drift is eliminated by ignoring input from inactive controllers, and duck‑latching now stays within gamepad logic, fixing menu‑escape issues.\n- Magazine drops now use the same system as the glass AK, making their spawn behavior consistent with that weapon."
   },
   "2026-10-11": {
     "commit_count": 30,
