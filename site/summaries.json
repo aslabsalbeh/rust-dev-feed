@@ -1,29 +1,64 @@
 {
+  "2026-10-12": {
+    "commit_count": 1,
+    "relevant_commit_count": 1,
+    "relevant_signature": "713755",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-11": {
-    "commit_count": 26,
-    "relevant_commit_count": 15,
-    "relevant_signature": "712732,712936,713013,713015,713027,713035,713059,713069,713165,713168,713341,713396,713453,713571,713605",
+    "commit_count": 30,
+    "relevant_commit_count": 18,
+    "relevant_signature": "712732,712936,713013,713015,713027,713035,713059,713069,713165,713168,713341,713396,713453,713571,713605,713702,713717,713719",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "Structures",
         "items": [
           {
-            "text": "Livestock now eat less when grass is present and will still use troughs, changing feeding efficiency.",
+            "text": "Chainlink gates now open at normal speed instead of being twice as slow.",
             "commit_ids": [
-              712732
+              713717
             ]
           }
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "Cosmetics",
         "items": [
           {
-            "text": "Terrain configuration loading issue resolved, ensuring maps load correctly in the demo.",
+            "text": "Spraycan reskin now correctly applies the chosen material on low‑quality double doors.",
             "commit_ids": [
-              713571
+              713719
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Mounts",
+        "items": [
+          {
+            "text": "Vehicle mount points can now be sized and overlapped, allowing a large flatbed mount to replace two small mounts; you can still load two sheep but not two cows.",
+            "commit_ids": [
+              713702
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Farming",
+        "items": [
+          {
+            "text": "Livestock will now eat from troughs even when grass is present, and the amount of grass reduces the food value they receive.",
+            "commit_ids": [
+              712732
             ]
           }
         ]
@@ -32,7 +67,13 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Global building privilege cache reduces large‑base building latency from ~4.6 ms to ~0.5 ms, decreasing lag when placing blocks.",
+            "text": "Terrain configs now load correctly in the demo, preventing missing or broken terrain for players.",
+            "commit_ids": [
+              713571
+            ]
+          },
+          {
+            "text": "Building privilege checks are now cached, cutting the check time from ~4.6 ms to ~0.5 ms in large bases, reducing building lag.",
             "commit_ids": [
               712936
             ]
@@ -41,18 +82,10 @@
       }
     ],
     "status": "ok",
-    "summary": "### Animals & Farming\n- Livestock now eat less when grass is present and will still use troughs, changing feeding efficiency.\n\n### World & Environment\n- Terrain configuration loading issue resolved, ensuring maps load correctly in the demo.\n\n### Gameplay & Balance\n- Global building privilege cache reduces large‑base building latency from ~4.6 ms to ~0.5 ms, decreasing lag when placing blocks.",
-    "new_items": [
-      {
-        "text": "Terrain configuration loading issue resolved, ensuring maps load correctly in the demo.",
-        "commit_ids": [
-          713571
-        ],
-        "section": "World & Environment"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Terrain configuration loading issue resolved, ensuring maps load correctly in the demo."
+    "summary": "### Structures\n- Chainlink gates now open at normal speed instead of being twice as slow.\n\n### Cosmetics\n- Spraycan reskin now correctly applies the chosen material on low‑quality double doors.\n\n### Vehicles & Mounts\n- Vehicle mount points can now be sized and overlapped, allowing a large flatbed mount to replace two small mounts; you can still load two sheep but not two cows.\n\n### Livestock & Farming\n- Livestock will now eat from troughs even when grass is present, and the amount of grass reduces the food value they receive.\n\n### Gameplay & Balance\n- Terrain configs now load correctly in the demo, preventing missing or broken terrain for players.\n- Building privilege checks are now cached, cutting the check time from ~4.6 ms to ~0.5 ms in large bases, reducing building lag.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-10": {
     "commit_count": 13,
@@ -86,99 +119,6 @@
     ],
     "status": "ok",
     "summary": "### Resources & Farming\n- Apples now spawn exactly at the location of their loot container on trees, changing where they can be collected.\n\n### Gameplay & Balance\n- Fixed laserbeam job processing to correctly use current materials, preventing resource loss and ensuring builds function as intended.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-09": {
-    "commit_count": 80,
-    "relevant_commit_count": 38,
-    "relevant_signature": "711212,711222,711252,711255,711313,711404,711442,711445,711449,711498,711510,711589,711610,711667,711677,711688,711690,711693,711696,711723,711724,711726,711743,711753,711791,711810,711826,711827,711837,711860,711878,711886,711899,712014,712038,712055,712057,712072",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Communication",
-        "items": [
-          {
-            "text": "Phone calls now work across the map without requiring the NPC entity client‑side, and a previously missing conversation has been added to the manifest.",
-            "commit_ids": [
-              712072,
-              711899
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock Management",
-        "items": [
-          {
-            "text": "Herd size is capped at 5, simplifying herd control for players.",
-            "commit_ids": [
-              711860
-            ]
-          },
-          {
-            "text": "Detection distance for livestock increased to 40 m, improving AI awareness and interaction.",
-            "commit_ids": [
-              711860
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Interaction",
-        "items": [
-          {
-            "text": "Vehicles can no longer be driven through the graveyard fence, preventing unintended shortcuts.",
-            "commit_ids": [
-              711791
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Halloween 2026 Event",
-        "items": [
-          {
-            "text": "New Halloween event adds scarecrow population, themed dungeons, spooky collectibles, and a Frankenstein crafting table as a default recipe.",
-            "commit_ids": [
-              711404
-            ]
-          },
-          {
-            "text": "Loot crates in Halloween tunnels are now properly grounded, fixing floating crate issues.",
-            "commit_ids": [
-              711743
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay Fixes",
-        "items": [
-          {
-            "text": "Puzzle reset logic corrected so ignoreAboveGroundPlayers works correctly, preventing puzzles from getting stuck.",
-            "commit_ids": [
-              711252
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Performance & Stability",
-        "items": [
-          {
-            "text": "Building‑privilege checks reduced from ~24 to ~1 per second, eliminating a 6.5 ms per‑frame spike in large bases.",
-            "commit_ids": [
-              711449
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Communication\n- Phone calls now work across the map without requiring the NPC entity client‑side, and a previously missing conversation has been added to the manifest.\n\n### Livestock Management\n- Herd size is capped at 5, simplifying herd control for players.\n- Detection distance for livestock increased to 40 m, improving AI awareness and interaction.\n\n### World Interaction\n- Vehicles can no longer be driven through the graveyard fence, preventing unintended shortcuts.\n\n### Halloween 2026 Event\n- New Halloween event adds scarecrow population, themed dungeons, spooky collectibles, and a Frankenstein crafting table as a default recipe.\n- Loot crates in Halloween tunnels are now properly grounded, fixing floating crate issues.\n\n### Gameplay Fixes\n- Puzzle reset logic corrected so ignoreAboveGroundPlayers works correctly, preventing puzzles from getting stuck.\n\n### Performance & Stability\n- Building‑privilege checks reduced from ~24 to ~1 per second, eliminating a 6.5 ms per‑frame spike in large bases.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
