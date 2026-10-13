@@ -1,5 +1,101 @@
 [
   {
+    "id": 715607,
+    "branch": "main/halloween_costume_2026",
+    "changeset": "167815",
+    "created": "2026-10-13T11:44:33",
+    "message": "Texture fixes",
+    "user": "nacho.delhierro"
+  },
+  {
+    "id": 715599,
+    "branch": "main/network_optims",
+    "changeset": "167813",
+    "created": "2026-10-13T11:31:43",
+    "message": "Send animal look direction in an RPC rather than with SendNetworkUpdate\r\nAnimals with look animators were running network updates crazy often rather than just sending the look over\r\n\r\nThis was especially bad with cows, wolfs, sheep and bulls\r\nWorst offender is cow at ~144 bytes per look update (network update). \r\n\r\n\r\n~350 B/s per cow per player -> ~60 B/s",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715596,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167811",
+    "created": "2026-10-13T11:27:48",
+    "message": "Set all the gun firing effects warmed up amount accordingly\r\nEstimated +21MB vs main, still around -29MB overall after removing the 3900 useless thrown projectiles",
+    "user": "Flavien"
+  },
+  {
+    "id": 715589,
+    "branch": "main/vcc",
+    "changeset": "167810",
+    "created": "2026-10-13T11:14:07",
+    "message": "Release pad run/crouch toggles when keyboard/mouse is used, so a pad latch can't carry into keyboard play",
+    "user": "Adam W"
+  },
+  {
+    "id": 715586,
+    "branch": "main/UZI 9mm",
+    "changeset": "167809",
+    "created": "2026-10-13T11:04:28",
+    "message": "Various prefab fixes",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 715585,
+    "branch": "main/vcc",
+    "changeset": "167808",
+    "created": "2026-10-13T11:04:03",
+    "message": "Fix editor NRE debug",
+    "user": "Adam W"
+  },
+  {
+    "id": 715569,
+    "branch": "main",
+    "changeset": "167807",
+    "created": "2026-10-13T10:55:54",
+    "message": "mag_drop_fixes -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715568,
+    "branch": "main/mag_drop_fixes",
+    "changeset": "167806",
+    "created": "2026-10-13T10:55:39",
+    "message": "Stop SpaceLR and M15 mags sticking to the bone",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715557,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167805",
+    "created": "2026-10-13T10:30:19",
+    "message": "Gun attack effects can now be recycled before their tail sound finishes, means we only have to warm up half the amount we'd need to",
+    "user": "Flavien"
+  },
+  {
+    "id": 715555,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167803",
+    "created": "2026-10-13T10:19:18",
+    "message": "Cleanup",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715550,
+    "branch": "main/vcc",
+    "changeset": "167802",
+    "created": "2026-10-13T10:17:47",
+    "message": "Skip the gamepad vehicle action set lookup when no Steam Input controller is active",
+    "user": "Adam W"
+  },
+  {
+    "id": 715548,
+    "branch": "main/network_optims",
+    "changeset": "167801",
+    "created": "2026-10-13T10:16:28",
+    "message": "Only send waterwheel network updates when its actually changed (at low speed)\r\n\r\nSaves ~76 B per skipped update per nearby player",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 715536,
     "branch": "main/vcc",
     "changeset": "167799",
