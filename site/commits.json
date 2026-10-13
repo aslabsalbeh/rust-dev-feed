@@ -1,5 +1,101 @@
 [
   {
+    "id": 715751,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167830",
+    "created": "2026-10-13T13:48:12",
+    "message": "Fixed issues from the far shot and shell replay changes",
+    "user": "Flavien"
+  },
+  {
+    "id": 715739,
+    "branch": "main/network_optims",
+    "changeset": "167829",
+    "created": "2026-10-13T13:32:21",
+    "message": "Wallpaper health was included with every building block, even those without wallpaper\r\n\r\nSaves 10 B per building block",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715736,
+    "branch": "main/UZI 9mm",
+    "changeset": "167828",
+    "created": "2026-10-13T13:23:23",
+    "message": "More prefab fixes",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 715734,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167827",
+    "created": "2026-10-13T13:15:03",
+    "message": "Optimize LookAtPlant and LookAtPlanter, only rebuild if data changed",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715729,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167826",
+    "created": "2026-10-13T13:03:25",
+    "message": "Stop muzzle flash light casting any shadows past 60 meters cause it's wasteful\r\nAdded MaxShadowDistance to LightLOD, default 0 so existing lights aren't changed",
+    "user": "Flavien"
+  },
+  {
+    "id": 715716,
+    "branch": "main",
+    "changeset": "167825",
+    "created": "2026-10-13T12:56:07",
+    "message": "Fix head jitter when playing turn in place anims",
+    "user": "octo"
+  },
+  {
+    "id": 715699,
+    "branch": "main/network_optims",
+    "changeset": "167824",
+    "created": "2026-10-13T12:45:19",
+    "message": "Pack the tree billboard lists sent to joining players\r\nEach cell now sends its prefabs once, ids as deltas from the previous tree and positions as raw halves instead of a nested message per tree\r\n\r\n~30 -> ~16 bytes per tree, roughly 1.8 MB -> 0.9 MB per player join on a full map",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715695,
+    "branch": "█▍▄▉",
+    "changeset": "█▊█▋▊▌",
+    "created": "2026-10-13T12:43:17",
+    "message": "▍ ▄▍▉▆▌ ▌██▉ ▊▌▍▉▇▉▋█▌▍▉▄▄▅▌▇█▄▌▍▌▇",
+    "user": "Ryan"
+  },
+  {
+    "id": 715689,
+    "branch": "▅▌▊▋█▌▍▌▊▅▄▌▋▄▋▋▋▊▌▉█▄",
+    "changeset": "▉▆▅▉▌▊",
+    "created": "2026-10-13T12:41:36",
+    "message": "▋ ▆▋▇▉▊▅█ ▊▇▆▆▋█▅▋▆ ▊▊▉ ▋▊▄▄▇▉▆▆ ▅▄ ▊▌▍▋ ▍▇ ▉▉█▇▄▅▆▉ ▌▅▄▇█ ▇▋▄ ▍▉▇ ▅▆▋▄▄▇▌▇▉ ▋█▆▄▉▌▆▊▆▆▉ ▊█▉▅▆▉ ▌▌▋▇ ▉ ▌▇▇ ▋▄▋▉▇▄",
+    "user": "Ryan"
+  },
+  {
+    "id": 715687,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167821",
+    "created": "2026-10-13T12:38:56",
+    "message": "Reviewed the 3P gun effects we spawn for distant shots:\r\n- Muzzle particles don't emit past 60m anymore, you only get the muzzle light and the sound\n- Shells aren't spawned past 15m\n\r\nUnchanged when using scopes and binoculars, the distances are stretched based on zoom scale",
+    "user": "Flavien"
+  },
+  {
+    "id": 715683,
+    "branch": "main/UZI 9mm",
+    "changeset": "167820",
+    "created": "2026-10-13T12:36:05",
+    "message": "Item icon, delete some unused uzi fbx files at the root of the assets folder",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 715664,
+    "branch": "main/snowmobile_wheel_fix",
+    "changeset": "167817",
+    "created": "2026-10-13T12:18:31",
+    "message": "Fixed snowmobile wheels jittering at standstill due to physics noise\r\nBefore: https://files.facepunch.com/raul/2026/October/13_14-12-FrailCobra.mp4\r\nAfter: https://files.facepunch.com/raul/2026/October/13_14-14-RedBlacknorwegianelkhound.mp4",
+    "user": "Raul"
+  },
+  {
     "id": 715607,
     "branch": "main/halloween_costume_2026",
     "changeset": "167815",
