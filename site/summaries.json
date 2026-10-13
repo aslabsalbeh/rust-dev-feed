@@ -1,16 +1,27 @@
 {
   "2026-10-12": {
-    "commit_count": 135,
-    "relevant_commit_count": 67,
+    "commit_count": 139,
+    "relevant_commit_count": 70,
     "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959,714965,714974,714997,715007,715013,715014,715018,715029,715034",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "714965,714974,714997,715007,715013,715014,715018,715029,715034,715085,715090,715091,715095,715101,715122,715127,715128,715137,715143,715157,715176,715181,715185,715187,715195": [
+      "715007,715013,715014,715018,715029,715034,715085,715090,715091,715095,715101,715122,715127,715128,715137,715143,715157,715176,715181,715185,715187,715195,715237,715246,715339": [
         {
-          "title": "Hardcore Upkeep",
+          "title": "Animal & Farming",
           "items": [
             {
-              "text": "Adjusted hardcore upkeep multipliers: now 0.1/0.15/0.25/0.4 for bases up to 15/50/125/infinite blocks, increasing upkeep for bases over 65 blocks but still lower than previous hardcore values.",
+              "text": "Dung boost now applies continuously while an animal eats from the trough, not just at consumption, and booster items are prioritized over other food.",
+              "commit_ids": [
+                715339
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hardcore Mode",
+          "items": [
+            {
+              "text": "Hardcore upkeep rates adjusted: up to 15/50/125 blocks unchanged, but bases over 65 blocks now have higher upkeep (0.1/0.15/0.25/0.4) compared to previous hardcore values.",
               "commit_ids": [
                 715181
               ]
@@ -18,22 +29,27 @@
           ]
         },
         {
-          "title": "Seasonal Dungeon & NPC Fixes",
+          "title": "Seasonal Events & Dungeons",
           "items": [
             {
-              "text": "Prevented seasonal dungeons from spawning inside player buildings and fixed Halloween NPCs appearing inside safezones.",
+              "text": "Seasonal dungeons are prevented from spawning inside player-built private areas, reducing unwanted encounters.",
               "commit_ids": [
-                715143,
+                715143
+              ]
+            },
+            {
+              "text": "Halloween NPCs no longer spawn inside safezones, fixing immersion‑breaking placements.",
+              "commit_ids": [
                 715127
               ]
             }
           ]
         },
         {
-          "title": "Event Item Persistence",
+          "title": "Seasonal Items",
           "items": [
             {
-              "text": "Fixed dead Halloween and Easter candies persisting after server restart.",
+              "text": "Dead Halloween and Easter candy items no longer persist after a server restart, cleaning up leftover event loot.",
               "commit_ids": [
                 715122
               ]
@@ -41,34 +57,46 @@
           ]
         },
         {
-          "title": "Food Spoilage Fix",
+          "title": "Crafting & Food",
           "items": [
             {
-              "text": "Fixed food spoiling in workbench recycle bin upgrade container.",
+              "text": "Food no longer spoils inside the workbench recycle bin upgrade container, preventing unintended waste.",
               "commit_ids": [
                 715101
               ]
             }
           ]
-        }
-      ],
-      "714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959": [
+        },
         {
-          "title": "Server Stability",
+          "title": "Input / Gamepad Support",
           "items": [
             {
-              "text": "Prevent server crashes caused by exceeding Steam key limits by capping unique keys and rounding metrics.",
+              "text": "Added missing gamepad type definitions (6 VDF files) and updated the gamepad manifest, improving controller compatibility.",
               "commit_ids": [
-                714953
+                715095
+              ]
+            }
+          ]
+        }
+      ],
+      "714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959,714965,714974,714997": [
+        {
+          "title": "PT Boat Targeting",
+          "items": [
+            {
+              "text": "Fixed PT boats giving up on targets above sea level and adjusted hidden player ranking to prioritize visible players.",
+              "commit_ids": [
+                714669,
+                714668
               ]
             }
           ]
         },
         {
-          "title": "User Interface",
+          "title": "Main Menu UI",
           "items": [
             {
-              "text": "Fix intermittent main menu rendering issue.",
+              "text": "Fixed intermittent main menu rendering failures.",
               "commit_ids": [
                 714735
               ]
@@ -76,56 +104,10 @@
           ]
         },
         {
-          "title": "Audio & Sound",
+          "title": "Livestock Petting & Interaction",
           "items": [
             {
-              "text": "Correct lingering sounds from destroyed monuments after loading.",
-              "commit_ids": [
-                714800
-              ]
-            },
-            {
-              "text": "Add new sound events for sheep foot stomp, cow head shake, and livestock petting (moo, baa).",
-              "commit_ids": [
-                714752,
-                714641
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Death Screen",
-          "items": [
-            {
-              "text": "Ensure thrown weapons display correctly on the death screen and eliminate editor freeze on first death.",
-              "commit_ids": [
-                714921
-              ]
-            }
-          ]
-        },
-        {
-          "title": "PT Boat Targeting",
-          "items": [
-            {
-              "text": "Hidden players now rank behind visible players for PT boat targeting, but can still be selected if no visible targets.",
-              "commit_ids": [
-                714668
-              ]
-            },
-            {
-              "text": "Fix PT boats prematurely abandoning targets above sea level; they now correctly consider targets up to 12 units below sea level.",
-              "commit_ids": [
-                714669
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock Interaction",
-          "items": [
-            {
-              "text": "Improve livestock petting: fixed gesture duration, added petting reaction animations for cows and sheep, enhanced facing towards player, and added appropriate sound cues.",
+              "text": "Improved livestock petting: fixed gesture duration, added moo/baa sounds, added petting reaction animations for cows and sheep, and added extra sound events for sheep foot stomp and cow head shake.",
               "commit_ids": [
                 714752,
                 714641
@@ -134,26 +116,20 @@
           ]
         }
       ],
-      "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509": [
+      "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602": [
         {
-          "title": "Combat & Weapons",
+          "title": "Weapons & Combat",
           "items": [
             {
-              "text": "Fixed lasers being broken in first-person view.",
+              "text": "Fixed lasers being broken in first‑person view.",
               "commit_ids": [
                 714505
               ]
-            }
-          ]
-        },
-        {
-          "title": "Loot & Drops",
-          "items": [
+            },
             {
-              "text": "Switched remaining magazine drops to use the same system as glass AK, cleaning up mag drop handling.",
+              "text": "Corrected scaling of attached explosives on solar panels.",
               "commit_ids": [
-                714509,
-                714433
+                713755
               ]
             }
           ]
@@ -162,26 +138,9 @@
           "title": "Building & Upkeep",
           "items": [
             {
-              "text": "Added missing upkeep component for triangle spiral stairs, ensuring proper upkeep costs.",
+              "text": "Added missing upkeep component for triangle spiral stairs.",
               "commit_ids": [
                 714449
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Input & Controls",
-          "items": [
-            {
-              "text": "Ignored gamepad stick input when the gamepad is not the active input device, fixing stick drift issues.",
-              "commit_ids": [
-                714396
-              ]
-            },
-            {
-              "text": "Reworked gamepad duck-latching to isolate gamepad logic, fixing escape menu input clearing.",
-              "commit_ids": [
-                714373
               ]
             }
           ]
@@ -190,7 +149,7 @@
           "title": "DLC & Items",
           "items": [
             {
-              "text": "Fixed Halloween DLC items: lights are now craftable with correct stack size and cost, and alien suit now blocks legs instead of torso.",
+              "text": "Fixed Halloween DLC item issues: lights are now craftable with correct stack size and cost, and the alien suit blocks the torso correctly.",
               "commit_ids": [
                 714386
               ]
@@ -198,10 +157,10 @@
           ]
         },
         {
-          "title": "Environment & Upkeep",
+          "title": "Environmental Mechanics",
           "items": [
             {
-              "text": "Increased arctic biome refrigeration threshold to 10% to prevent unintended refrigeration in small arctic patches.",
+              "text": "Increased arctic biome refrigeration threshold to 10% to prevent unintended refrigeration in tiny arctic patches.",
               "commit_ids": [
                 714361
               ]
@@ -212,7 +171,7 @@
           "title": "Boat & Privileges",
           "items": [
             {
-              "text": "Fixed regression where player boat privileges were lost when using the building privilege cache.",
+              "text": "Fixed regression affecting player boat privileges when using the cache.",
               "commit_ids": [
                 714168
               ]
@@ -220,12 +179,18 @@
           ]
         },
         {
-          "title": "Combat & Structures",
+          "title": "Input & Gamepad",
           "items": [
             {
-              "text": "Corrected scaling of attached explosives on solar panels.",
+              "text": "Ignored gamepad stick input when a different input device is active, fixing stick‑drift issues for mouse/keyboard players.",
               "commit_ids": [
-                713755
+                714396
+              ]
+            },
+            {
+              "text": "Reworked gamepad duck‑latching to affect only gamepad logic, fixing escape‑menu input clearing.",
+              "commit_ids": [
+                714373
               ]
             }
           ]
