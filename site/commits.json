@@ -1,5 +1,125 @@
 [
   {
+    "id": 715892,
+    "branch": "main/tattoos",
+    "changeset": "167850",
+    "created": "2026-10-13T16:06:27",
+    "message": "tattoo fixes\r\n- clamp tattoo brush size 1.0-5.0, doesnt use painting convar\r\n- zoom scaling clamp, so you cant get as far out but can also go closer than usual for fine detail\r\n- brushes now scale independent of zoom in tattooing, this does make performance a little worse, but fixes when the paint stamp doesnt cover enough of the uv and becomes spotty. WIP still\r\n- uv buffer now samples some of the uv pixels around the current target to try to smooth out and match seams where the uv resolutions dont match (like where the head meets torso etc..)",
+    "user": "ElliotH"
+  },
+  {
+    "id": 715891,
+    "branch": "main/sendmouseevents_optim",
+    "changeset": "167849",
+    "created": "2026-10-13T16:05:54",
+    "message": "Optimized PreUpdate.SendMouseEvents by clearing the main camera event mask, nothing uses OnMouse events\nSaves up to 0.08ms a frame in builds",
+    "user": "Flavien"
+  },
+  {
+    "id": 715889,
+    "branch": "main",
+    "changeset": "167848",
+    "created": "2026-10-13T16:01:50",
+    "message": "Compile fix",
+    "user": "Flavien"
+  },
+  {
+    "id": 715882,
+    "branch": "▌█▉▌▊▊▉▇▊▇▅▉▍▆▌▊",
+    "changeset": "▇▊▄▊▇▇",
+    "created": "2026-10-13T15:52:05",
+    "message": "▊▍▊▉▋▆▊ ▆▉▉█▌█ ▌▆▆▇ ▇▌▇█▍▊█ ▆▊▅",
+    "user": "jeddooo"
+  },
+  {
+    "id": 715880,
+    "branch": "main/UZI 9mm",
+    "changeset": "167846",
+    "created": "2026-10-13T15:50:42",
+    "message": "Initial setup of different ADS and recoil settings for weapon stock being deployed/collapsed",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 715873,
+    "branch": "main/analytics_biofuel_generator",
+    "changeset": "167844",
+    "created": "2026-10-13T15:42:44",
+    "message": "Add resource consumption/production events for the biofuel generator",
+    "user": "Ryan"
+  },
+  {
+    "id": 715832,
+    "branch": "main/pt_boat_turret_rewrite/turret_viewmodels",
+    "changeset": "167843",
+    "created": "2026-10-13T15:25:43",
+    "message": "pt_boat_rewrite -> turret_viewmodels",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715828,
+    "branch": "main/pt_boat_turret_rewrite",
+    "changeset": "167842",
+    "created": "2026-10-13T15:24:55",
+    "message": "main -> pt_boat_turret_rewrite",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715823,
+    "branch": "main/network_optims",
+    "changeset": "167841",
+    "created": "2026-10-13T15:22:58",
+    "message": "Only send turret targets rather than every single turret movement\r\nWe are effectively predicting the turret movement on the client with the server reconcilling it\r\n\r\n1.83 -> 0.20 aim messages/s per idle turret\r\n~46 -> ~7 B/s per turret per player\r\n\r\nOn a 122 player server: roughly ~105 KB/s less outbound (~9GB a day). 6% reduction of all outbound game data",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715798,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167840",
+    "created": "2026-10-13T14:53:36",
+    "message": "Formatting",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715792,
+    "branch": "main/tattoos",
+    "changeset": "167839",
+    "created": "2026-10-13T14:44:42",
+    "message": "first pass on tattoo layering\r\n- 2 layers, 1 \"base\" layer which is fixed onto the player model, 1 which is edited during a painting session\r\n- tattoo compositor merges the editing layer onto the base layer when exiting the menu or saving\r\n- fade is applied to base layer, and baked into the png when merging downwards\r\n- rads add fade to the base layer visually with a parameter, which is only baked in during a merge\r\n- reworked to accomodate a separate player sending the tattoo edits to the other for saving (bc tattoo chair eventually)\r\n- moved more code to serverside to allow for direct painting communication between 2 clients",
+    "user": "ElliotH"
+  },
+  {
+    "id": 715791,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167838",
+    "created": "2026-10-13T14:44:23",
+    "message": "Refactor and optimize LookAtIOEnt, avoid various allocs when wiring or updating battery info, avoid physics query every frame for turret interference",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715777,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167836",
+    "created": "2026-10-13T14:36:11",
+    "message": "Fixed holding a gun searching the whole inventory every frame for reload ammo types\r\nHolding a gun with a full inventory: 0.06ms -> ~0.01ms",
+    "user": "Flavien"
+  },
+  {
+    "id": 715775,
+    "branch": "main/character_customisation/lighting_pass",
+    "changeset": "167835",
+    "created": "2026-10-13T14:31:31",
+    "message": "Initial pass, helper scene/player model guide prefab for easier balancing",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 715773,
+    "branch": "main/hackable_crate_icon",
+    "changeset": "167833",
+    "created": "2026-10-13T14:24:34",
+    "message": "Updated hackable crate map icon",
+    "user": "Rin"
+  },
+  {
     "id": 715751,
     "branch": "main/gunfiring_optims",
     "changeset": "167830",
@@ -1750,13 +1870,5 @@
     "created": "2026-10-10T18:22:17",
     "message": "Cache entity links across server restarts\n- if a prefab's sockets change since it was saved it will relink sockets\n- works for copy paste (so we can see how things were linked on a remote server)",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 712278,
-    "branch": "main",
-    "changeset": "167528",
-    "created": "2026-10-10T16:16:30",
-    "message": "fix laserbeam jobs using stale materials",
-    "user": "octo"
   }
 ]
