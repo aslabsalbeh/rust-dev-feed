@@ -1,5 +1,93 @@
 [
   {
+    "id": 715151,
+    "branch": "▇▊▌▅▋▅▍▇▍▋▉▊█▉▍▅▌▅▆▊▆█",
+    "changeset": "▌▆▉▋▄▆",
+    "created": "2026-10-12T23:56:37",
+    "message": "▋ █▋█▊█▅▉ ▄▍▌▅ ▍▉ ▉▋▄▅▄▆ ▇▊▄▄▉█▋ ▍▉▋ ▄▅▊ ▆▄▍ ▌▍▇▌ ▄▋ █▊▆ ▇▍▍▍ ▆▆▉▍▍▊▄",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 715149,
+    "branch": "main",
+    "changeset": "167747",
+    "created": "2026-10-12T23:49:17",
+    "message": "Merge from car_spawning_prefill\r\nModular cars spawned in the wild now have half of their engine slots filled with low quality parts\r\nThese parts are locked and cannot be removed until the car is loaded onto a modular car lift - making it easier to get a car up and running",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 715146,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "167745",
+    "created": "2026-10-12T23:39:25",
+    "message": "Exiting the halloween/xmas portals now shows exit as an interaction prompt",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 715143,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "167744",
+    "created": "2026-10-12T23:29:34",
+    "message": "Cherry pick 167632 - prevent seasonal dungeons spawning in building priv\r\nAlso applied a 1s cache to prevent it hammering physics too much",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 715137,
+    "branch": "main/lightgroupattime_optimization",
+    "changeset": "167742",
+    "created": "2026-10-12T23:20:49",
+    "message": "WIP fixes",
+    "user": "lamalove"
+  },
+  {
+    "id": 715128,
+    "branch": "main/hotreload_playmode_brick_fix",
+    "changeset": "167740",
+    "created": "2026-10-12T23:01:30",
+    "message": "Possible fix for hot reload sometimes causing issues when entering playmode and causing server startup to fail, because it held on to the port from a previous playmode session",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715127,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "167739",
+    "created": "2026-10-12T23:00:58",
+    "message": "Fixed halloween NPCs spawning inside safezones",
+    "user": "Nick.H"
+  },
+  {
+    "id": 715125,
+    "branch": "main/misc_alloc_cleanup",
+    "changeset": "167738",
+    "created": "2026-10-12T22:54:40",
+    "message": "Skip ItemIcon refreshing while not visible, now deferred to when the inventory opens\r\nBefore, any hidden icons would refresh on inventory changes, for example updating their amount and hover text every time you shot a gun\r\nAlso avoid some unnecessary OnItemAmountChanged broadcasts and hover text rebuild if data didn't change",
+    "user": "cipeaX"
+  },
+  {
+    "id": 715123,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167737",
+    "created": "2026-10-12T22:51:39",
+    "message": "Stop HideIfAiming deactivating the muzzle flash once its particles finish. Every reused attack effect had to reactivate it\r\n\r\nWas spiking up to ~5-7ms in a build and only 0.2ms in editor somehow, now 0\r\nIt points at ParticleSystemRenderer::UpdateCachedMesh, checking that next",
+    "user": "Flavien"
+  },
+  {
+    "id": 715122,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "167736",
+    "created": "2026-10-12T22:50:59",
+    "message": "Fixed dead halloween and easter candies persisting after server restart",
+    "user": "Nick.H"
+  },
+  {
+    "id": 715101,
+    "branch": "main/skim_changes",
+    "changeset": "167733",
+    "created": "2026-10-12T22:18:09",
+    "message": "Fix food spoliling in workbench recycle bin upgrade container",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 715095,
     "branch": "main/vcc",
     "changeset": "167732",
@@ -1262,61 +1350,5 @@
     "created": "2026-10-10T07:52:13",
     "message": "▊▊▊█▍▆▌███ ▅▍▌▄█▋ ▌▌▍▋▍▋▍█▄ ▋█▌▍ ▋▅█ ▌▅▍█▍▍▇ ▄▇▆▇ ▄▉▋ ▄▇▇▄█▆▉█▋▌▊▅█▅▌▍█▋▆▋▅▊▄▄▋▍█▌█▊█▍▍▇▋▄▉▍▆▍▌▇█▅▋▌█▆▆▇▋▉▋▌▉▇▇▆▆▉▌▊▄▄█▊▆▄█▋█▉▉▇▍▌▆▍▆▌█▆▊▅▍",
     "user": "Rin"
-  },
-  {
-    "id": 712083,
-    "branch": "main/npc_phone_conversations",
-    "changeset": "167518",
-    "created": "2026-10-10T00:08:55",
-    "message": "Add test conversation hidden behind admin convar to demo phone conversations\r\nS2P fishing villages",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 712072,
-    "branch": "main/npc_phone_conversations",
-    "changeset": "167517",
-    "created": "2026-10-09T23:23:29",
-    "message": "Stop sending some conversation state info with every speech node when we don't need to\r\nAdd missing conversation to conversation manifest",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 712057,
-    "branch": "main/scrap_king_buildingskin_dlc",
-    "changeset": "167516",
-    "created": "2026-10-09T23:01:14",
-    "message": "scrap king - texture updates",
-    "user": "Lain"
-  },
-  {
-    "id": 712055,
-    "branch": "main/scrap_king_buildingskin_dlc",
-    "changeset": "167515",
-    "created": "2026-10-09T23:00:26",
-    "message": "scrap king - collider update",
-    "user": "Lain"
-  },
-  {
-    "id": 712042,
-    "branch": "▍▌▌▊▉▌▍▆▅█▇█▆▉▅▌▉▆▍",
-    "changeset": "▉▋▄█▆▆",
-    "created": "2026-10-09T22:42:28",
-    "message": "█ ▅▉▌▄ ▉▄▌█▉ ▇▍▊▄▇▅▅ ▉▍█▆▌▊",
-    "user": "nick.m"
-  },
-  {
-    "id": 712038,
-    "branch": "main/npc_phone_conversations",
-    "changeset": "167513",
-    "created": "2026-10-09T22:36:21",
-    "message": "Don't send string keys to format to client unless the current speech node contains that key",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 712034,
-    "branch": "main/UZI 9mm",
-    "changeset": "167512",
-    "created": "2026-10-09T22:21:30",
-    "message": "Uzi FX & related files.",
-    "user": "Petur"
   }
 ]

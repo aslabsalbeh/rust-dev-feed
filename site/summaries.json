@@ -1,49 +1,68 @@
 {
   "2026-10-12": {
-    "commit_count": 115,
-    "relevant_commit_count": 55,
+    "commit_count": 126,
+    "relevant_commit_count": 61,
     "relevant_signature": "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959,714965,714974,714997,715007,715013,715014,715018,715029,715034",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "714766,714779,714800,714845,714904,714921,714924,714936,714953,714956,714957,714959,714965,714974,714997,715007,715013,715014,715018,715029,715034,715085,715090,715091,715095": [
+      "714924,714936,714953,714956,714957,714959,714965,714974,714997,715007,715013,715014,715018,715029,715034,715085,715090,715091,715095,715101,715122,715127,715128,715137,715143": [
         {
-          "title": "Controller Support",
+          "title": "World Events & Dungeons",
           "items": [
             {
-              "text": "Added support for six previously missing gamepad types.",
+              "text": "Seasonal dungeons will no longer spawn inside player-owned private buildings.",
               "commit_ids": [
-                715095
+                715143
+              ]
+            },
+            {
+              "text": "Halloween NPCs no longer appear inside safezones.",
+              "commit_ids": [
+                715127
               ]
             }
           ]
         },
         {
-          "title": "New Item / Skin",
+          "title": "Event Items",
           "items": [
             {
-              "text": "Introduced the Scrap King building skin as a Steam item.",
+              "text": "Dead Halloween and Easter candy items are cleared on server restart, preventing them from persisting indefinitely.",
               "commit_ids": [
-                715090
+                715122
               ]
             }
           ]
         },
         {
-          "title": "Event Item Improvements",
+          "title": "Crafting & Food",
           "items": [
             {
-              "text": "Fixed deployment clipping and groundwatch issues for Halloween stringlights, and reduced their network range.",
+              "text": "Food no longer spoils inside the workbench recycle bin upgrade container.",
               "commit_ids": [
-                715013
+                715101
               ]
             }
           ]
         },
         {
-          "title": "Death Screen UI",
+          "title": "Server Stability",
           "items": [
             {
-              "text": "Prevented a 5‑second editor freeze on first death and ensured thrown weapons display correctly on the death screen.",
+              "text": "Server crash risk from exceeding Steam key limits is mitigated; the limit now lasts up to a year, and new keys stop after 50k unique values.",
+              "commit_ids": [
+                714953
+              ]
+            }
+          ]
+        }
+      ],
+      "714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752,714766,714779,714800,714845,714904,714921": [
+        {
+          "title": "Death Screen",
+          "items": [
+            {
+              "text": "Thrown weapons now display correctly on the death screen after dying.",
               "commit_ids": [
                 714921
               ]
@@ -51,37 +70,30 @@
           ]
         },
         {
-          "title": "NPC Visual Bugs",
+          "title": "UI",
           "items": [
             {
-              "text": "Fixed floating bugs for scarecrows, gingerbread NPCs, and junkpile scientists.",
+              "text": "Main menu rendering issue fixed; menu now appears reliably.",
               "commit_ids": [
-                714845
+                714735
               ]
             }
           ]
         },
         {
-          "title": "Audio Cleanup",
+          "title": "Audio & Livestock",
           "items": [
             {
-              "text": "Ensured sounds from destroyed monument entities are properly cleared when loading.",
-              "commit_ids": [
-                714800
-              ]
-            }
-          ]
-        }
-      ],
-      "714361,714373,714383,714384,714386,714396,714433,714439,714449,714504,714505,714509,714534,714554,714602,714641,714668,714669,714699,714717,714730,714733,714734,714735,714752": [
-        {
-          "title": "Animal Interaction",
-          "items": [
-            {
-              "text": "Added and fixed petting gestures, reaction animations, and sound events for cows and sheep (including moo and baa sounds) and improved animal facing toward the player.",
+              "text": "Added new sound events for sheep foot stomp, cow head shake, and livestock petting (moo, baa, scratch gestures).",
               "commit_ids": [
                 714752,
                 714641
+              ]
+            },
+            {
+              "text": "Fixed lingering sounds from destroyed monument entities when loading.",
+              "commit_ids": [
+                714800
               ]
             }
           ]
@@ -90,9 +102,14 @@
           "title": "PT Boat Targeting",
           "items": [
             {
-              "text": "Adjusted hidden player ranking so hidden players are considered behind visible ones, and fixed targeting logic so PT boats no longer give up on targets above sea level (previously allowed up to 12 units above).",
+              "text": "Hidden players now rank behind visible players in PT boat targeting, but can still be selected if no visible players are present.",
               "commit_ids": [
-                714668,
+                714668
+              ]
+            },
+            {
+              "text": "Corrected PT boat target loss logic: boats now only give up on targets 12 units below sea level, not above.",
+              "commit_ids": [
                 714669
               ]
             }
@@ -102,7 +119,7 @@
           "title": "Vehicle Feedback",
           "items": [
             {
-              "text": "Added SetVehicleLoad API and retuned vehicle haptic feedback, with more specific seat‑check handling for haptics.",
+              "text": "Added SetVehicleLoad and retuned vehicle haptics; improved seat‑check logic for more accurate haptic feedback.",
               "commit_ids": [
                 714554,
                 714534
@@ -111,10 +128,10 @@
           ]
         },
         {
-          "title": "Weapon UI",
+          "title": "Combat Tools",
           "items": [
             {
-              "text": "Fixed broken laser sights in first‑person view.",
+              "text": "First‑person lasers now function correctly.",
               "commit_ids": [
                 714505
               ]
@@ -125,18 +142,20 @@
           "title": "Building Upkeep",
           "items": [
             {
-              "text": "Restored missing upkeep component for triangle spiral stairs, ensuring they now decay correctly.",
+              "text": "Triangle spiral stairs now include the missing upkeep component, enabling proper decay and maintenance.",
               "commit_ids": [
                 714449
               ]
             }
           ]
-        },
+        }
+      ],
+      "713755,714168,714169,714209,714254,714361,714373,714383,714384,714386,714396": [
         {
-          "title": "Controller Input",
+          "title": "Input & Controls",
           "items": [
             {
-              "text": "Ignored gamepad stick input when the gamepad isn’t the active input device, preventing stick‑drift issues, and reworked gamepad duck‑latching to isolate it from other input logic, fixing escape‑menu input clearing problems.",
+              "text": "Fixed controller stick drift by ignoring pad stick input when not the active device, and corrected gamepad duck‑latching to prevent escape‑menu input issues.",
               "commit_ids": [
                 714396,
                 714373
@@ -145,10 +164,10 @@
           ]
         },
         {
-          "title": "Halloween 2026 DLC Items",
+          "title": "Items & Crafting",
           "items": [
             {
-              "text": "Fixed Halloween lights to be craftable, corrected their stack size and crafting cost, and fixed the alien suit to block the torso instead of the legs.",
+              "text": "Halloween 2026 DLC items corrected: lights are now craftable with proper stack size and cost, and alien suit hitbox fixed to block legs instead of torso.",
               "commit_ids": [
                 714386
               ]
@@ -156,23 +175,21 @@
           ]
         },
         {
-          "title": "Biome Mechanics",
+          "title": "Environmental Mechanics",
           "items": [
             {
-              "text": "Increased the arctic biome refrigeration threshold to 10 % to prevent refrigeration in tiny arctic patches.",
+              "text": "Refrigeration now only triggers in arctic biomes covering at least 10% of the area, preventing unintended cooling in tiny arctic patches.",
               "commit_ids": [
                 714361
               ]
             }
           ]
-        }
-      ],
-      "713755,714168,714169,714209,714254": [
+        },
         {
-          "title": "Boat Privileges",
+          "title": "Vehicle & Boat Privileges",
           "items": [
             {
-              "text": "Fixed regression where player boat privileges were lost when using the building privilege cache.",
+              "text": "Resolved regression where player boat privileges were lost when using the building‑privilege cache.",
               "commit_ids": [
                 714168
               ]
@@ -180,10 +197,10 @@
           ]
         },
         {
-          "title": "Explosives Scaling",
+          "title": "Explosives & Structures",
           "items": [
             {
-              "text": "Corrected the scaling of explosives attached to solar panels, ensuring they appear and function at proper size.",
+              "text": "Fixed scaling bug causing explosives attached to solar panels to be sized incorrectly.",
               "commit_ids": [
                 713755
               ]
