@@ -1,5 +1,77 @@
 [
   {
+    "id": 715195,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167761",
+    "created": "2026-10-13T01:20:08",
+    "message": "Reduced the amount of pooled pilot codelock 200 -> 25\r\nKeylock 1 -> 50",
+    "user": "Flavien"
+  },
+  {
+    "id": 715187,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167760",
+    "created": "2026-10-13T01:16:47",
+    "message": "Reduced the amount of pooled blowpipe dart projectiles 100 -> 4",
+    "user": "Flavien"
+  },
+  {
+    "id": 715185,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167759",
+    "created": "2026-10-13T01:15:16",
+    "message": "Reduced the amount of pooled ballista projectiles 100 -> 3",
+    "user": "Flavien"
+  },
+  {
+    "id": 715181,
+    "branch": "main/hardcore_changes_nov_26",
+    "changeset": "167758",
+    "created": "2026-10-13T00:48:41",
+    "message": "Modified hardcore upkeep values\r\nBrackets are measured by block count, so these values are for upkeep up to 15/50/125/infinite\r\nVanilla: 0.1/0.15/0.2/0.33\r\nOld Hardcore: 0.2/0.3/0.4/0.66\r\nNew hardcore: 0.1/0.15/0.25/0.4\r\nNew values should increase upkeep for bases with > 65 blocks but still at a lower level compared to old hardcore",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 715176,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167755",
+    "created": "2026-10-13T00:41:24",
+    "message": "Reviewed the amount of bullet impacts and decals we prewarm\r\n- Rock, gravel, stones, metal ore and tundra impacts were only warmed with 1 copy, now 25 like the others. \r\n- Glass impact 25 -> 32, it stays alive for 4s+\n- Bullet decals 25 -> 30,  forest was set to 1, cactus lowered to 5",
+    "user": "Flavien"
+  },
+  {
+    "id": 715168,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167752",
+    "created": "2026-10-13T00:22:47",
+    "message": "Prewarm 10 copies of each sound templates, they were all set to 1\r\nsmall-sound gets 50\r\n\r\nTrying to get to a point where I can empty an AK magazine without instantiating any prefab",
+    "user": "Flavien"
+  },
+  {
+    "id": 715167,
+    "branch": "main/tree_hit_forgiveness",
+    "changeset": "167751",
+    "created": "2026-10-13T00:22:29",
+    "message": "Added a level of hit forgiveness if the player is attacking a thin tree and misses\r\nOnly affects trees with a trunk radius of < 0.15m (hit_forgiveness_max_trunk)\r\nIf the player misses, we do an additional sweep of 0.12m to try and hit the tree",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 715158,
+    "branch": "main",
+    "changeset": "167750",
+    "created": "2026-10-13T00:12:26",
+    "message": "~Update manifest, last merge broke play mode",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 715157,
+    "branch": "main/gunfiring_optims",
+    "changeset": "167749",
+    "created": "2026-10-13T00:07:49",
+    "message": "Fixed all the references to the default unity Quad in particles not actually using it\r\nAny of these particle being set active in builds could spike up to 7ms, caused by ParticleSystemRenderer::UpdateCachedMesh walking the Quad whole user list to check whether its already registered\r\n\r\nIt was referenced by thousands of renderers in monument prefabs, this is why the AK muzzle was slow to spawn in 167737",
+    "user": "Flavien"
+  },
+  {
     "id": 715151,
     "branch": "▇▊▌▅▋▅▍▇▍▋▉▊█▉▍▅▌▅▆▊▆█",
     "changeset": "▌▆▉▋▄▆",
