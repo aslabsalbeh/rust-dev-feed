@@ -1,50 +1,46 @@
 {
   "2026-10-14": {
-    "commit_count": 82,
-    "relevant_commit_count": 38,
-    "relevant_signature": "716272,716288,716319,716347,716348,716351,716353,716354,716357,716358,716359,716362,716365,716366,716368,716369,716371,716374,716377,716380,716382,716387,716388,716390,716391,716393,716398,716407,716408,716434,716467,716471,716480,716540,716541,716543,716586,716602",
+    "commit_count": 105,
+    "relevant_commit_count": 50,
+    "relevant_signature": "716272,716288,716319,716347,716348,716351,716353,716354,716357,716358,716359,716362,716365,716366,716368,716369,716371,716374,716377,716380,716382,716387,716388,716390,716391,716393,716398,716407,716408,716434,716467,716471,716480,716540,716541,716543,716586,716602,716674,716676,716678,716679,716683,716701,716717,716719,716721,716726,716728,716735",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Combat",
+        "title": "Performance & Economy",
         "items": [
           {
-            "text": "UZI 9mm magazine capacity and fire rate rebalanced, and spectator deploy state fixed.",
+            "text": "Optimized server upkeep calculations, reducing lag during upkeep recalculations.",
             "commit_ids": [
-              716543
+              716735
             ]
           },
           {
-            "text": "Weapon aiming is now consistent, improving targeting accuracy.",
+            "text": "Stopped deep‑sea tree‑spawn RPCs from being broadcast to all players, cutting unnecessary network traffic.",
             "commit_ids": [
-              716348
+              716728
             ]
           }
         ]
       },
       {
-        "title": "World & Movement",
+        "title": "Dungeons & Events",
         "items": [
           {
-            "text": "Players can no longer become stuck on holiday lighting; physics for skull lamp debris have been corrected.",
+            "text": "Restored missing and incomplete maps in the Halloween and Christmas dungeons, fixing navigation and layout.",
+            "commit_ids": [
+              716726,
+              716719
+            ]
+          },
+          {
+            "text": "Fixed movement glitches where players could become stuck on holiday lights by applying proper physics material.",
             "commit_ids": [
               716467
             ]
-          }
-        ]
-      },
-      {
-        "title": "World & Structures",
-        "items": [
-          {
-            "text": "Monument blockers outside military tunnels now require explosives to breach, matching other red‑card room blockers.",
-            "commit_ids": [
-              716347
-            ]
           },
           {
-            "text": "Invisible or disconnected players no longer block Halloween candy spawns.",
+            "text": "Resolved invisible or disconnected players blocking Halloween candy spawns.",
             "commit_ids": [
               716362,
               716359
@@ -53,39 +49,58 @@
         ]
       },
       {
-        "title": "Marketplace",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Marketplace terminals now correctly display pending‑item notices, giving proper feedback on purchases.",
+            "text": "Adjusted the UZI 9mm’s magazine capacity and fire rate, and fixed related deployment and ADS issues.",
             "commit_ids": [
-              716354
+              716543
+            ]
+          },
+          {
+            "text": "Corrected turret aim inconsistencies and ensured turret viewmodels play the proper animations.",
+            "commit_ids": [
+              716348
+            ]
+          },
+          {
+            "text": "Monument blockers outside military tunnels now require explosives to break, matching other red‑card room blockers.",
+            "commit_ids": [
+              716347
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Audio",
+        "title": "Audio & Sound",
         "items": [
           {
-            "text": "Metal detector now plays swing sounds correctly, restoring audio cue for detection.",
+            "text": "Fixed several sound issues: restored proper train audio, added missing ballista and catapult sounds, and corrected various other sound effects.",
             "commit_ids": [
+              716721,
+              716471,
               716541
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & UI",
+        "items": [
           {
-            "text": "Ballista and catapult weapons now emit their firing sounds in builds, fixing missing audio.",
+            "text": "Repaired the Frankenstein pet’s movement by adding its missing navigation component.",
             "commit_ids": [
-              716471
+              716676
             ]
           },
           {
-            "text": "Tuna can skull lamp now produces pickup and movement sounds, restoring expected audio feedback.",
+            "text": "Fixed a pending‑item notice error when purchasing from marketplace terminals.",
             "commit_ids": [
-              716377
+              716354
             ]
           },
           {
-            "text": "Bootstrap modal is now interactable, fixing UI block that prevented player actions.",
+            "text": "Resolved a non‑interactable bootstrap modal that could prevent players from proceeding.",
             "commit_ids": [
               716353
             ]
@@ -94,10 +109,49 @@
       }
     ],
     "status": "ok",
-    "summary": "### Weapons & Combat\n- UZI 9mm magazine capacity and fire rate rebalanced, and spectator deploy state fixed.\n- Weapon aiming is now consistent, improving targeting accuracy.\n\n### World & Movement\n- Players can no longer become stuck on holiday lighting; physics for skull lamp debris have been corrected.\n\n### World & Structures\n- Monument blockers outside military tunnels now require explosives to breach, matching other red‑card room blockers.\n- Invisible or disconnected players no longer block Halloween candy spawns.\n\n### Marketplace\n- Marketplace terminals now correctly display pending‑item notices, giving proper feedback on purchases.\n\n### Gameplay & Audio\n- Metal detector now plays swing sounds correctly, restoring audio cue for detection.\n- Ballista and catapult weapons now emit their firing sounds in builds, fixing missing audio.\n- Tuna can skull lamp now produces pickup and movement sounds, restoring expected audio feedback.\n- Bootstrap modal is now interactable, fixing UI block that prevented player actions.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Performance & Economy\n- Optimized server upkeep calculations, reducing lag during upkeep recalculations.\n- Stopped deep‑sea tree‑spawn RPCs from being broadcast to all players, cutting unnecessary network traffic.\n\n### Dungeons & Events\n- Restored missing and incomplete maps in the Halloween and Christmas dungeons, fixing navigation and layout.\n- Fixed movement glitches where players could become stuck on holiday lights by applying proper physics material.\n- Resolved invisible or disconnected players blocking Halloween candy spawns.\n\n### Combat & Weapons\n- Adjusted the UZI 9mm’s magazine capacity and fire rate, and fixed related deployment and ADS issues.\n- Corrected turret aim inconsistencies and ensured turret viewmodels play the proper animations.\n- Monument blockers outside military tunnels now require explosives to break, matching other red‑card room blockers.\n\n### Audio & Sound\n- Fixed several sound issues: restored proper train audio, added missing ballista and catapult sounds, and corrected various other sound effects.\n\n### Gameplay & UI\n- Repaired the Frankenstein pet’s movement by adding its missing navigation component.\n- Fixed a pending‑item notice error when purchasing from marketplace terminals.\n- Resolved a non‑interactable bootstrap modal that could prevent players from proceeding.",
+    "new_items": [
+      {
+        "text": "Optimized server upkeep calculations, reducing lag during upkeep recalculations.",
+        "commit_ids": [
+          716735
+        ],
+        "section": "Performance & Economy"
+      },
+      {
+        "text": "Stopped deep‑sea tree‑spawn RPCs from being broadcast to all players, cutting unnecessary network traffic.",
+        "commit_ids": [
+          716728
+        ],
+        "section": "Performance & Economy"
+      },
+      {
+        "text": "Restored missing and incomplete maps in the Halloween and Christmas dungeons, fixing navigation and layout.",
+        "commit_ids": [
+          716726,
+          716719
+        ],
+        "section": "Dungeons & Events"
+      },
+      {
+        "text": "Fixed several sound issues: restored proper train audio, added missing ballista and catapult sounds, and corrected various other sound effects.",
+        "commit_ids": [
+          716721,
+          716471,
+          716541
+        ],
+        "section": "Audio & Sound"
+      },
+      {
+        "text": "Repaired the Frankenstein pet’s movement by adding its missing navigation component.",
+        "commit_ids": [
+          716676
+        ],
+        "section": "Gameplay & UI"
+      }
+    ],
+    "new_relevant_count": 8,
+    "new_summary": "- Optimized server upkeep calculations, reducing lag during upkeep recalculations.\n- Stopped deep‑sea tree‑spawn RPCs from being broadcast to all players, cutting unnecessary network traffic.\n- Restored missing and incomplete maps in the Halloween and Christmas dungeons, fixing navigation and layout.\n- Fixed several sound issues: restored proper train audio, added missing ballista and catapult sounds, and corrected various other sound effects.\n- Repaired the Frankenstein pet’s movement by adding its missing navigation component."
   },
   "2026-10-13": {
     "commit_count": 96,
