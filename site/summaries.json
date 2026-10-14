@@ -1,143 +1,48 @@
 {
+  "2026-10-14": {
+    "commit_count": 3,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-13": {
     "commit_count": 96,
     "relevant_commit_count": 51,
-    "relevant_signature": "715347,715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773,715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059,716078,716083,716106,716107,716119,716120",
+    "relevant_signature": "715347,715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773,715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059,716078,716083,716106,716107,716119,716120,716129,716136",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059,716078,716083,716106,716107,716119,716120,716129,716136": [
-        {
-          "title": "Sprint & Survival",
-          "items": [
-            {
-              "text": "Sprint now consumes double calories and fluids by default (controlled by server.sprintmetabolismscale, default 2, set to 1 for legacy behavior).",
-              "commit_ids": [
-                716136
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Weapons",
-          "items": [
-            {
-              "text": "Shotguns now fully reload all chambers after switching ammo types (e.g., switching from buckshot to slugs reloads the full capacity).",
-              "commit_ids": [
-                716119
-              ]
-            },
-            {
-              "text": "Added distinct ADS and recoil settings for the UZI 9mm when the weapon stock is deployed or collapsed.",
-              "commit_ids": [
-                715880
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Utilities & Building",
-          "items": [
-            {
-              "text": "Fixed distance flares sometimes staying permanently off.",
-              "commit_ids": [
-                716129
-              ]
-            },
-            {
-              "text": "Blocks placed with a building plan no longer register with a net ID of 0 on the server.",
-              "commit_ids": [
-                715960
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Turret UI",
-          "items": [
-            {
-              "text": "Rear turret crosshair no longer gets stuck or displays incorrectly.",
-              "commit_ids": [
-                715999
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Tattoo Customization",
-          "items": [
-            {
-              "text": "Tattoo painting improvements: brush size clamped to 1‑5, zoom scaling adjustments, brush scaling independent of zoom, and UV buffer smoothing for seam handling.",
-              "commit_ids": [
-                715892
-              ]
-            },
-            {
-              "text": "Introduced a two‑layer tattoo system (base layer + editing layer) with merging, fading, and server‑side painting communication.",
-              "commit_ids": [
-                715792
-              ]
-            }
-          ]
-        }
-      ],
-      "715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773": [
-        {
-          "title": "Weapons",
-          "items": [
-            {
-              "text": "Handmade SMG damage increased from 20 to 21.",
-              "commit_ids": [
-                715416
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicles",
-          "items": [
-            {
-              "text": "Car spawning now pre‑fills more engine slots: a 5‑slot engine receives 3 prefilled slots instead of 2.",
-              "commit_ids": [
-                715368
-              ]
-            }
-          ]
-        }
-      ],
-      "715347": [
-        {
-          "title": "Map & UI",
-          "items": [
-            {
-              "text": "Added ability to drag map markers with the middle mouse button, allowing repositioning of markers on the map screen.",
-              "commit_ids": [
-                715347
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons",
+        "title": "Survival & Movement",
         "items": [
           {
-            "text": "Shotguns now fully reload all bullets when switching ammo types.",
+            "text": "Sprint now consumes double calories and fluids by default (server.sprintmetabolismscale = 2).",
+            "commit_ids": [
+              716136
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Shotguns fully reload all chambers when switching ammo types.",
             "commit_ids": [
               716119
             ]
           },
           {
-            "text": "Distinct ADS and recoil settings when the stock is deployed versus collapsed.",
+            "text": "UZI 9mm now has separate ADS and recoil settings depending on stock deployment.",
             "commit_ids": [
               715880
-            ]
-          },
-          {
-            "text": "Fixed visual and functional issues with far‑range shots and shell ejection replay.",
-            "commit_ids": [
-              715751
             ]
           },
           {
@@ -149,21 +54,16 @@
         ]
       },
       {
-        "title": "Turrets",
+        "title": "Building & Utilities",
         "items": [
           {
-            "text": "Rear turret crosshair no longer sticks or appears malformed.",
+            "text": "Distance flares no longer stay permanently off.",
             "commit_ids": [
-              715999
+              716129
             ]
-          }
-        ]
-      },
-      {
-        "title": "Building",
-        "items": [
+          },
           {
-            "text": "Fixed a bug where blocks placed with a building plan could receive a net ID of 0, preventing proper placement.",
+            "text": "Blocks placed with a building plan now receive proper network IDs.",
             "commit_ids": [
               715960
             ]
@@ -171,42 +71,71 @@
         ]
       },
       {
-        "title": "Tattoos",
+        "title": "Vehicles & Map",
         "items": [
           {
-            "text": "Tattoo painting improvements: brush size clamped to 1‑5, zoom scaling adjusted, brushes scale independently of zoom, and UV buffer smoothing reduces seam artifacts.",
+            "text": "Car spawning pre‑fills more engine slots (5‑slot engines start with 3 slots filled).",
             "commit_ids": [
-              715892
+              715368
             ]
           },
           {
-            "text": "Added a two‑layer tattoo system with a fixed base layer and an editable overlay, supporting compositing, fade handling, and server‑side collaborative painting.",
+            "text": "Middle‑mouse button can now drag map markers to reposition them.",
             "commit_ids": [
+              715347
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tattoo Customization",
+        "items": [
+          {
+            "text": "Tattoo system upgraded: brush size limited to 1‑5, zoom‑independent scaling, UV smoothing, and a two‑layer editing workflow with merging and fading, all synced server‑side.",
+            "commit_ids": [
+              715892,
               715792
             ]
           }
         ]
       },
       {
-        "title": "Vehicles & Map UI",
+        "title": "Combat & Mechanics",
         "items": [
           {
-            "text": "5‑slot engines now start with three prefilled slots instead of two.",
+            "text": "Rear turret crosshair no longer sticks, restoring proper aiming",
             "commit_ids": [
-              715368
+              715999
             ]
           },
           {
-            "text": "Map markers can now be dragged with the middle mouse button.",
+            "text": "Fixed far‑shot and shell replay bugs, improving long‑range shooting consistency",
             "commit_ids": [
-              715347
+              715751
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Controls",
+        "items": [
+          {
+            "text": "Tooltip bindings now display correct keys, fixing mismatched prompts",
+            "commit_ids": [
+              715527
+            ]
+          },
+          {
+            "text": "Steam Input glyphs corrected and cached, ensuring accurate controller button icons",
+            "commit_ids": [
+              715460
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Weapons\n- Shotguns now fully reload all bullets when switching ammo types.\n- Distinct ADS and recoil settings when the stock is deployed versus collapsed.\n- Fixed visual and functional issues with far‑range shots and shell ejection replay.\n- Handmade SMG damage increased from 20 to 21.\n\n### Turrets\n- Rear turret crosshair no longer sticks or appears malformed.\n\n### Building\n- Fixed a bug where blocks placed with a building plan could receive a net ID of 0, preventing proper placement.\n\n### Tattoos\n- Tattoo painting improvements: brush size clamped to 1‑5, zoom scaling adjusted, brushes scale independently of zoom, and UV buffer smoothing reduces seam artifacts.\n- Added a two‑layer tattoo system with a fixed base layer and an editable overlay, supporting compositing, fade handling, and server‑side collaborative painting.\n\n### Vehicles & Map UI\n- 5‑slot engines now start with three prefilled slots instead of two.\n- Map markers can now be dragged with the middle mouse button.",
+    "summary": "### Survival & Movement\n- Sprint now consumes double calories and fluids by default (server.sprintmetabolismscale = 2).\n\n### Combat & Weapons\n- Shotguns fully reload all chambers when switching ammo types.\n- UZI 9mm now has separate ADS and recoil settings depending on stock deployment.\n- Handmade SMG damage increased from 20 to 21.\n\n### Building & Utilities\n- Distance flares no longer stay permanently off.\n- Blocks placed with a building plan now receive proper network IDs.\n\n### Vehicles & Map\n- Car spawning pre‑fills more engine slots (5‑slot engines start with 3 slots filled).\n- Middle‑mouse button can now drag map markers to reposition them.\n\n### Tattoo Customization\n- Tattoo system upgraded: brush size limited to 1‑5, zoom‑independent scaling, UV smoothing, and a two‑layer editing workflow with merging and fading, all synced server‑side.\n\n### Combat & Mechanics\n- Rear turret crosshair no longer sticks, restoring proper aiming\n- Fixed far‑shot and shell replay bugs, improving long‑range shooting consistency\n\n### UI & Controls\n- Tooltip bindings now display correct keys, fixing mismatched prompts\n- Steam Input glyphs corrected and cached, ensuring accurate controller button icons",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -375,81 +304,6 @@
     ],
     "status": "ok",
     "summary": "### Animal & Farming\n- Dung boost now applies continuously while an animal eats from the trough, and booster items are prioritized over other food.\n\n### Hardcore & Building Upkeep\n- Hardcore upkeep rates for bases larger than 65 blocks are increased (0.1/0.15/0.25/0.4), while smaller bases remain unchanged.\n- Triangle spiral stairs now include an upkeep component, affecting maintenance costs.\n\n### Seasonal Events & Items\n- Seasonal dungeons and Halloween NPCs no longer spawn inside player-built private areas or safezones, reducing unwanted encounters.\n- Event candy items (Halloween, Easter) are cleared on server restart, and food placed in the workbench recycle bin upgrade no longer spoils, preventing leftover loot waste.\n- Halloween DLC items are fixed: lights are craftable with correct stack size and cost, and the alien suit correctly blocks the torso.\n\n### Combat & Boats\n- Patrol torpedo boats now stay engaged with targets above sea level and hidden player ranking prioritizes visible players; boat privilege regression with cache usage is resolved.\n- First‑person laser weapons work correctly again, and explosives attached to solar panels now scale properly.\n\n### Input & Gamepad\n- Gamepad support expanded with missing type definitions, stick input is ignored when another device is active, and duck‑latching logic is isolated to gamepads, fixing stick‑drift and escape‑menu input issues.\n\n### Combat & Weapon Performance\n- First‑person weapon effects no longer spawn then hide, cutting a small delay and making AK fire feel snappier.\n- AK muzzle flash now appears instantly, fixing a previous lag caused by particle mesh lookups.\n- Inventory rebuild after each shot runs only when the inventory UI is open, reducing shooting‑related frame spikes.\n- Mag drop handling unified with the glass‑AK system, ensuring consistent drop behavior across weapons.\n\n### Stability\n- Server‑side key‑setting limits raised and a hard cap added, preventing crashes from exceeding Steam key quotas.\n\n### UI & Menu\n- Main menu rendering issue fixed, eliminating occasional blank screens when launching the game.\n- Death screen now correctly shows thrown weapons, fixing missing icons after a kill.\n\n### Animal Interaction\n- Sheep and cow interactions receive longer gestures, added foot‑stomp and head‑shake sounds, and better player‑facing behavior.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-11": {
-    "commit_count": 30,
-    "relevant_commit_count": 18,
-    "relevant_signature": "712732,712936,713013,713015,713027,713035,713059,713069,713165,713168,713341,713396,713453,713571,713605,713702,713717,713719",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Structures",
-        "items": [
-          {
-            "text": "Chainlink gates now open at normal speed instead of being twice as slow.",
-            "commit_ids": [
-              713717
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Cosmetics",
-        "items": [
-          {
-            "text": "Spraycan reskin now correctly applies the chosen material on low‑quality double doors.",
-            "commit_ids": [
-              713719
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Mounts",
-        "items": [
-          {
-            "text": "Vehicle mount points can now be sized and overlapped, allowing a large flatbed mount to replace two small mounts; you can still load two sheep but not two cows.",
-            "commit_ids": [
-              713702
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Livestock & Farming",
-        "items": [
-          {
-            "text": "Livestock will now eat from troughs even when grass is present, and the amount of grass reduces the food value they receive.",
-            "commit_ids": [
-              712732
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Terrain configs now load correctly in the demo, preventing missing or broken terrain for players.",
-            "commit_ids": [
-              713571
-            ]
-          },
-          {
-            "text": "Building privilege checks are now cached, cutting the check time from ~4.6 ms to ~0.5 ms in large bases, reducing building lag.",
-            "commit_ids": [
-              712936
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Structures\n- Chainlink gates now open at normal speed instead of being twice as slow.\n\n### Cosmetics\n- Spraycan reskin now correctly applies the chosen material on low‑quality double doors.\n\n### Vehicles & Mounts\n- Vehicle mount points can now be sized and overlapped, allowing a large flatbed mount to replace two small mounts; you can still load two sheep but not two cows.\n\n### Livestock & Farming\n- Livestock will now eat from troughs even when grass is present, and the amount of grass reduces the food value they receive.\n\n### Gameplay & Balance\n- Terrain configs now load correctly in the demo, preventing missing or broken terrain for players.\n- Building privilege checks are now cached, cutting the check time from ~4.6 ms to ~0.5 ms in large bases, reducing building lag.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
