@@ -1,22 +1,16 @@
 {
   "2026-10-13": {
-    "commit_count": 82,
-    "relevant_commit_count": 43,
-    "relevant_signature": "715347,715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773,715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059",
+    "commit_count": 91,
+    "relevant_commit_count": 47,
+    "relevant_signature": "715347,715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773,715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059,716078,716083,716106,716107",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat",
+        "title": "Weapons & Combat",
         "items": [
           {
-            "text": "Fixed stuck/weird crosshairs on the rear turret.",
-            "commit_ids": [
-              715999
-            ]
-          },
-          {
-            "text": "Added distinct ADS and recoil settings for the UZI 9mm when the stock is deployed or collapsed.",
+            "text": "UZI 9mm now has separate aim‑down‑sights and recoil profiles depending on whether the stock is deployed or collapsed.",
             "commit_ids": [
               715880
             ]
@@ -30,16 +24,55 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Tools & Interaction",
         "items": [
           {
-            "text": "Fixed snowmobile wheels jittering at standstill due to physics noise.",
+            "text": "Shears can now perform a basic melee attack, triggering world‑animator effects.",
             "commit_ids": [
-              715664
+              716106
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & Structures",
+        "items": [
+          {
+            "text": "Fixed a server bug where blocks placed with a building plan could receive a net ID of 0.",
+            "commit_ids": [
+              715960
             ]
           },
           {
-            "text": "Engine prefill slots rounded up; a 5-slot engine now starts with 3 prefilled slots instead of 2.",
+            "text": "Rear turret crosshair visual glitch fixed; it no longer sticks or behaves oddly.",
+            "commit_ids": [
+              715999
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Player Customization – Tattoos",
+        "items": [
+          {
+            "text": "Tattoo painting refined: brush size limited to 1‑5, zoom‑independent scaling, and UV smoothing reduces seam artifacts.",
+            "commit_ids": [
+              715892
+            ]
+          },
+          {
+            "text": "Added a two‑layer tattoo system with server‑side merging, fade handling, and collaborative painting between players.",
+            "commit_ids": [
+              715792
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles",
+        "items": [
+          {
+            "text": "Car spawning now rounds up filled slots, giving a 5‑slot engine three pre‑filled slots instead of two.",
             "commit_ids": [
               715368
             ]
@@ -47,70 +80,30 @@
         ]
       },
       {
-        "title": "Building",
+        "title": "UI / Map",
         "items": [
           {
-            "text": "Fixed blocks registering with a 0 net ID when placed with the building plan.",
-            "commit_ids": [
-              715960
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Cosmetics & Customization",
-        "items": [
-          {
-            "text": "Overhauled tattoo system with clamped brush sizes, zoom-independent scaling, smoothing, layered editing, server-side painting, and fade handling.",
-            "commit_ids": [
-              715892,
-              715792
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map & UI",
-        "items": [
-          {
-            "text": "Map markers can now be dragged with the middle mouse button.",
+            "text": "Map markers can now be dragged using the middle mouse button.",
             "commit_ids": [
               715347
-            ]
-          },
-          {
-            "text": "Fixed tooltip bind lookup issue so correct keybinds appear in tooltips.",
-            "commit_ids": [
-              715527
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Resolved far‑range bullet hit detection issues, ensuring long‑distance shots now register correctly.",
-            "commit_ids": [
-              715751
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat\n- Fixed stuck/weird crosshairs on the rear turret.\n- Added distinct ADS and recoil settings for the UZI 9mm when the stock is deployed or collapsed.\n- Handmade SMG damage increased from 20 to 21.\n\n### Vehicles\n- Fixed snowmobile wheels jittering at standstill due to physics noise.\n- Engine prefill slots rounded up; a 5-slot engine now starts with 3 prefilled slots instead of 2.\n\n### Building\n- Fixed blocks registering with a 0 net ID when placed with the building plan.\n\n### Cosmetics & Customization\n- Overhauled tattoo system with clamped brush sizes, zoom-independent scaling, smoothing, layered editing, server-side painting, and fade handling.\n\n### Map & UI\n- Map markers can now be dragged with the middle mouse button.\n- Fixed tooltip bind lookup issue so correct keybinds appear in tooltips.\n\n### Gameplay & Balance\n- Resolved far‑range bullet hit detection issues, ensuring long‑distance shots now register correctly.",
+    "summary": "### Weapons & Combat\n- UZI 9mm now has separate aim‑down‑sights and recoil profiles depending on whether the stock is deployed or collapsed.\n- Handmade SMG damage increased from 20 to 21.\n\n### Tools & Interaction\n- Shears can now perform a basic melee attack, triggering world‑animator effects.\n\n### Building & Structures\n- Fixed a server bug where blocks placed with a building plan could receive a net ID of 0.\n- Rear turret crosshair visual glitch fixed; it no longer sticks or behaves oddly.\n\n### Player Customization – Tattoos\n- Tattoo painting refined: brush size limited to 1‑5, zoom‑independent scaling, and UV smoothing reduces seam artifacts.\n- Added a two‑layer tattoo system with server‑side merging, fade handling, and collaborative painting between players.\n\n### Vehicles\n- Car spawning now rounds up filled slots, giving a 5‑slot engine three pre‑filled slots instead of two.\n\n### UI / Map\n- Map markers can now be dragged using the middle mouse button.",
     "new_items": [
       {
-        "text": "Fixed stuck/weird crosshairs on the rear turret.",
+        "text": "Shears can now perform a basic melee attack, triggering world‑animator effects.",
         "commit_ids": [
-          715999
+          716106
         ],
-        "section": "Combat"
+        "section": "Tools & Interaction"
       }
     ],
     "new_relevant_count": 1,
-    "new_summary": "- Fixed stuck/weird crosshairs on the rear turret."
+    "new_summary": "- Shears can now perform a basic melee attack, triggering world‑animator effects."
   },
   "2026-10-12": {
     "commit_count": 139,

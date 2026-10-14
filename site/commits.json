@@ -1,5 +1,77 @@
 [
   {
+    "id": 716108,
+    "branch": "main/skinsmemory_optims",
+    "changeset": "167894",
+    "created": "2026-10-13T23:53:11",
+    "message": "Workshop skin textures no longer keep a copy in RAM\r\nDownloaded skin textures were left readable, nothing used that copy\r\n\r\n98MB -> 0MB RAM with 22 skins loaded ingame",
+    "user": "Flavien"
+  },
+  {
+    "id": 716107,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "167893",
+    "created": "2026-10-13T23:48:14",
+    "message": "Animator hash",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 716105,
+    "branch": "main/SeedExtraction",
+    "changeset": "167892",
+    "created": "2026-10-13T23:47:02",
+    "message": "reapplied berry extraction, undid another change I accidentally included i",
+    "user": "Nick.H"
+  },
+  {
+    "id": 716106,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "167891",
+    "created": "2026-10-13T23:47:00",
+    "message": "Added support for a base melee to forward signals to a world animator, enabled on shears",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 716103,
+    "branch": "main/SeedExtraction",
+    "changeset": "167889",
+    "created": "2026-10-13T23:36:31",
+    "message": "Added 'Extract' option on berries to get seeds without having to eat the berries. 1 berry gives 1 seed.",
+    "user": "Nick.H"
+  },
+  {
+    "id": 716102,
+    "branch": "▊▄▅▌",
+    "changeset": "▅▍▉▆▊▌",
+    "created": "2026-10-13T23:25:25",
+    "message": "▉███▄▉ ▆▊▋▊ █▊▋▇▆▊▌▋▌▉▊▍▌▇▋▅▇▅▆▊▅▊▄▅▅▆",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 716094,
+    "branch": "▋▉▇▉▄▉▇▌▆▆▍▉▅▉▊▇▌█▋▇█▇",
+    "changeset": "▄▌▋█▄▅",
+    "created": "2026-10-13T23:17:58",
+    "message": "▇▅▌▋█▉▊▊ ▋▋▊ ▇▆▅▊▊█▋▊█▊ ▍█▉▄▄█▆▄ ▆▅ █▌▍▇▌▍▉▌▇▍▊ ▍▇█▋▋▋▄▍ ▋▊▇▅ █▇ ▊▇▋█▄ ▇▊▉ ▉▅▉▆▋▋▊▌▍▆ █▍▄▅▄▆▆▋▆▅█ ▉▅ ▋█▍▅▊▌▇▆ ▉▄█▋ ▇▆█▍▆▆▌ ▊ ▄▊▉ ▇▉▆▉▅▇▅▉▄ ▄▍▋▌▌▉▄ ▄ ▉▄▌▌▊▇▋▄▋▌▍ ▌▊▍▅ ▄ ▍▊▊▇▇▆▍ ▇▉█▋▇█▊ ▅▊▅▌▄▄▋▋▋▅█▉██▆ ▊█▅▌▋ ▍ ▅▍▊▋▇▄█ ▆▆▊▇▉▄▋ ▆▋ ▋▌ ▅▆▆▍█▌ ▋▋ █ ▅▍▍ ▊▉ ▋▋▍ ▋█▅▊▍▇██▉ ▅▍▇▋▍▍▊▆ ▊█▋▅ █▋▍ ▊▉▇▇ ▆▍▋▌ ▇▋ ▉▆▊▆▅ ▍▋ █▍▋ ▌▇▊▆▄▇ █▌ ▇▍▌ ▇▋▆ ▄▇▄▅ ▆▉▇▅▄▄▇ ▊▄▍▉█▍▋ █▍▄▆▌▄▇▌▉▌▉▇ ▍▆▉█▆ ▋▍▊▆▇█▋ ▇▊▌▇▇ █▇▌▄▄▌▋▅▋█▍ ▌█▍ █▉▊▅▅▅▉▋",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 716083,
+    "branch": "main/fonts_optims",
+    "changeset": "167886",
+    "created": "2026-10-13T23:14:52",
+    "message": "Fixed our static font being set as readable\r\nThe atlases are only in VRAM now, saves another ~42MB RAM",
+    "user": "Flavien"
+  },
+  {
+    "id": 716078,
+    "branch": "main/fonts_optims",
+    "changeset": "167885",
+    "created": "2026-10-13T23:02:05",
+    "message": "Fixed fonts duped in memory:\r\n- the interaction toast in bootstrap was using the non bootstrap version\r\n- TMP Settings was referencing Roboto which was pulling the entire chain\r\n\r\nSaves around ~60MB VRAM and ~30MB RAM",
+    "user": "Flavien"
+  },
+  {
     "id": 716066,
     "branch": "main/ugc_censor_option",
     "changeset": "167884",
@@ -2006,13 +2078,5 @@
     "created": "2026-10-11T07:23:35",
     "message": "Fix livestock not using trough when any grass is present, after current overgrazing rework\r\nNow eat less food the more grass there is in the pen, but still eats food, and grass only is less filling",
     "user": "Maverick"
-  },
-  {
-    "id": 712470,
-    "branch": "main/cache_entity_links",
-    "changeset": "167535",
-    "created": "2026-10-11T00:04:19",
-    "message": "Fix test attribute",
-    "user": "Jake_Rich"
   }
 ]
