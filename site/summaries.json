@@ -1,33 +1,38 @@
 {
   "2026-10-15": {
-    "commit_count": 81,
-    "relevant_commit_count": 42,
-    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357",
+    "commit_count": 92,
+    "relevant_commit_count": 46,
+    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "User Interface & Permissions",
+        "title": "World & Structures",
         "items": [
           {
-            "text": "Boat edit‑mode privilege icons now correctly reflect your authorization.",
+            "text": "Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area.",
             "commit_ids": [
-              717357
-            ]
-          },
-          {
-            "text": "Mixing table UI now includes per‑source toggle buttons, letting you enable or disable specific mixing entries and improving search behavior.",
-            "commit_ids": [
-              717099
+              717449
             ]
           }
         ]
       },
       {
-        "title": "Performance & Stability",
+        "title": "Permissions & Access",
         "items": [
           {
-            "text": "A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases.",
+            "text": "Fixed UI bug where boats in edit mode incorrectly displayed edit privileges you didn't have.",
+            "commit_ids": [
+              717357
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Performance",
+        "items": [
+          {
+            "text": "Implemented snapshot send rate budgeting, reducing client stutter when loading large bases.",
             "commit_ids": [
               717355
             ]
@@ -35,10 +40,10 @@
         ]
       },
       {
-        "title": "Combat",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Grenade throws now stay on target and maintain correct timing, fixing side‑swing when standing still and synchronizing release animations.",
+            "text": "Grenade throws now follow aim direction and launch timing is synced with drop/attach animations, fixing sideways swing and mistimed releases.",
             "commit_ids": [
               717273,
               717262
@@ -47,22 +52,38 @@
         ]
       },
       {
-        "title": "Gameplay & World",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Restrained players can no longer operate PT boats, preventing unintended movement.",
+            "text": "Players can no longer operate the PT boat while restrained.",
             "commit_ids": [
               717161
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Crafting & Cooking",
+        "items": [
           {
-            "text": "Movement sound cues now trigger correctly after collider layer fixes.",
+            "text": "Added per‑source toggle buttons in the mixing table UI, allowing players to enable or disable individual mixing entries for cooking workbenches and similar stations.",
+            "commit_ids": [
+              717099
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Movement sounds now trigger correctly, fixing missing or silent footsteps in floating cities, islands, jungle ruins, and ziggurat areas.",
             "commit_ids": [
               717188
             ]
           },
           {
-            "text": "Terrain patches render correctly when instancing is active, eliminating missing terrain.",
+            "text": "Terrain now renders properly when instancing is enabled, preventing invisible ground in affected zones.",
             "commit_ids": [
               717109
             ]
@@ -71,25 +92,18 @@
       }
     ],
     "status": "ok",
-    "summary": "### User Interface & Permissions\n- Boat edit‑mode privilege icons now correctly reflect your authorization.\n- Mixing table UI now includes per‑source toggle buttons, letting you enable or disable specific mixing entries and improving search behavior.\n\n### Performance & Stability\n- A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases.\n\n### Combat\n- Grenade throws now stay on target and maintain correct timing, fixing side‑swing when standing still and synchronizing release animations.\n\n### Gameplay & World\n- Restrained players can no longer operate PT boats, preventing unintended movement.\n- Movement sound cues now trigger correctly after collider layer fixes.\n- Terrain patches render correctly when instancing is active, eliminating missing terrain.",
+    "summary": "### World & Structures\n- Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area.\n\n### Permissions & Access\n- Fixed UI bug where boats in edit mode incorrectly displayed edit privileges you didn't have.\n\n### Performance\n- Implemented snapshot send rate budgeting, reducing client stutter when loading large bases.\n\n### Combat & Weapons\n- Grenade throws now follow aim direction and launch timing is synced with drop/attach animations, fixing sideways swing and mistimed releases.\n\n### Vehicles\n- Players can no longer operate the PT boat while restrained.\n\n### Crafting & Cooking\n- Added per‑source toggle buttons in the mixing table UI, allowing players to enable or disable individual mixing entries for cooking workbenches and similar stations.\n\n### Gameplay & Balance\n- Movement sounds now trigger correctly, fixing missing or silent footsteps in floating cities, islands, jungle ruins, and ziggurat areas.\n- Terrain now renders properly when instancing is enabled, preventing invisible ground in affected zones.",
     "new_items": [
       {
-        "text": "Boat edit‑mode privilege icons now correctly reflect your authorization.",
+        "text": "Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area.",
         "commit_ids": [
-          717357
+          717449
         ],
-        "section": "User Interface & Permissions"
-      },
-      {
-        "text": "A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases.",
-        "commit_ids": [
-          717355
-        ],
-        "section": "Performance & Stability"
+        "section": "World & Structures"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Boat edit‑mode privilege icons now correctly reflect your authorization.\n- A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases."
+    "new_relevant_count": 1,
+    "new_summary": "- Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area."
   },
   "2026-10-14": {
     "commit_count": 137,
