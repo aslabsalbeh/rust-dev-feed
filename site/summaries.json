@@ -1,38 +1,28 @@
 {
   "2026-10-15": {
-    "commit_count": 56,
-    "relevant_commit_count": 32,
-    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263",
+    "commit_count": 69,
+    "relevant_commit_count": 38,
+    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Grenade Mechanics",
         "items": [
           {
-            "text": "Grenade drop and attach animations are now synchronized, ensuring grenades release at the correct time during throws.",
+            "text": "Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.",
             "commit_ids": [
+              717273,
               717262
             ]
           }
         ]
       },
       {
-        "title": "Vehicle Usage",
+        "title": "Audio & Sound",
         "items": [
           {
-            "text": "Players can no longer operate the PT boat while restrained, preventing unintended vehicle control.",
-            "commit_ids": [
-              717161
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio",
-        "items": [
-          {
-            "text": "Fixed missing movement sounds caused by colliders being on the wrong layer or disabled, restoring proper environmental audio cues.",
+            "text": "Fixed movement sound triggers that were on the wrong layer or had triggers disabled, restoring expected audio cues in floating cities, islands, jungle ruins, and ziggurat areas.",
             "commit_ids": [
               717188
             ]
@@ -40,21 +30,21 @@
         ]
       },
       {
-        "title": "Cooking UI",
+        "title": "Vehicle & Boat Controls",
         "items": [
           {
-            "text": "Added per-source toggle buttons to the mixing table, allowing players to enable or disable individual mixing entries on the cooking workbench; search now includes hidden categories.",
+            "text": "Players can no longer operate the PT boat while restrained, preventing unintended boat usage.",
             "commit_ids": [
-              717099
+              717161
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "World & Rendering",
         "items": [
           {
-            "text": "Terrain now correctly renders when instancing is enabled, preventing invisible ground patches.",
+            "text": "Terrain now renders correctly when indirect instancing is enabled, fixing missing terrain visuals.",
             "commit_ids": [
               717109
             ]
@@ -62,30 +52,61 @@
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Crafting & Cooking UI",
         "items": [
           {
-            "text": "Mixing table UI now only reorders the recipe list when availability changes, stopping constant UI shuffling.",
+            "text": "Added per-source toggle buttons in the mixing table UI, allowing players to enable or disable specific cooking entries; search now includes all categories and UI layout improvements.",
+            "commit_ids": [
+              717099
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Mixing table UI now only updates the recipe list when ingredient availability changes, eliminating constant reordering and reducing UI lag.",
             "commit_ids": [
               717162
+            ]
+          },
+          {
+            "text": "Biofuel generator’s stirring sound now plays continuously instead of cutting off, restoring full audio feedback.",
+            "commit_ids": [
+              717233
+            ]
+          },
+          {
+            "text": "Store pages now correctly display their assets, fixing missing or incorrect icons and graphics.",
+            "commit_ids": [
+              717263
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Grenade drop and attach animations are now synchronized, ensuring grenades release at the correct time during throws.\n\n### Vehicle Usage\n- Players can no longer operate the PT boat while restrained, preventing unintended vehicle control.\n\n### Audio\n- Fixed missing movement sounds caused by colliders being on the wrong layer or disabled, restoring proper environmental audio cues.\n\n### Cooking UI\n- Added per-source toggle buttons to the mixing table, allowing players to enable or disable individual mixing entries on the cooking workbench; search now includes hidden categories.\n\n### Gameplay & Balance\n- Terrain now correctly renders when instancing is enabled, preventing invisible ground patches.\n\n### Bug Fixes\n- Mixing table UI now only reorders the recipe list when availability changes, stopping constant UI shuffling.",
+    "summary": "### Grenade Mechanics\n- Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.\n\n### Audio & Sound\n- Fixed movement sound triggers that were on the wrong layer or had triggers disabled, restoring expected audio cues in floating cities, islands, jungle ruins, and ziggurat areas.\n\n### Vehicle & Boat Controls\n- Players can no longer operate the PT boat while restrained, preventing unintended boat usage.\n\n### World & Rendering\n- Terrain now renders correctly when indirect instancing is enabled, fixing missing terrain visuals.\n\n### Crafting & Cooking UI\n- Added per-source toggle buttons in the mixing table UI, allowing players to enable or disable specific cooking entries; search now includes all categories and UI layout improvements.\n\n### Quality of Life\n- Mixing table UI now only updates the recipe list when ingredient availability changes, eliminating constant reordering and reducing UI lag.\n- Biofuel generator’s stirring sound now plays continuously instead of cutting off, restoring full audio feedback.\n- Store pages now correctly display their assets, fixing missing or incorrect icons and graphics.",
     "new_items": [
       {
-        "text": "Grenade drop and attach animations are now synchronized, ensuring grenades release at the correct time during throws.",
+        "text": "Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.",
         "commit_ids": [
+          717273,
           717262
         ],
-        "section": "Combat & Weapons"
+        "section": "Grenade Mechanics"
+      },
+      {
+        "text": "Store pages now correctly display their assets, fixing missing or incorrect icons and graphics.",
+        "commit_ids": [
+          717263
+        ],
+        "section": "Quality of Life"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Grenade drop and attach animations are now synchronized, ensuring grenades release at the correct time during throws."
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.\n- Store pages now correctly display their assets, fixing missing or incorrect icons and graphics."
   },
   "2026-10-14": {
     "commit_count": 137,
