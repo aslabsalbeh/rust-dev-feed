@@ -1,5 +1,109 @@
 [
   {
+    "id": 716814,
+    "branch": "main/QualiTeaOfLife_Nerf",
+    "changeset": "168050",
+    "created": "2026-10-15T00:06:00",
+    "message": "Reduced bonuses provided by Advanced, Pure and Creamy/Milky teas. Creamy tea variant is now what Pure used to be, advanced and Pure reduced below that to compensate.  Average nerf: Advanced ~11%, Pure / Milky ~18%, Creamy ~20%. Healing, Crafting Quality and Rad Removal teas unchanged.",
+    "user": "Nick.H"
+  },
+  {
+    "id": 716792,
+    "branch": "main/pool_review",
+    "changeset": "168049",
+    "created": "2026-10-14T23:44:51",
+    "message": "All arrows 100 -> 25\r\nPaintball projectile 100 -> 5\r\nSpeargun spear 100 -> 5\r\nShotgun slug 100 -> 10",
+    "user": "Flavien"
+  },
+  {
+    "id": 716791,
+    "branch": "main/fix_sail_guide_mismatch",
+    "changeset": "168048",
+    "created": "2026-10-14T23:43:22",
+    "message": "Fix the guide not detecting if the sail would block when lowered but doesn't block when up\n- caused the sail to be blocked only when lowered despite the guide making it look ok",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716790,
+    "branch": "main/pool_review",
+    "changeset": "168047",
+    "created": "2026-10-14T23:39:18",
+    "message": "Pool review:\r\nAdmin cars 2 -> 0\r\nSnowball 100 -> 5\r\nSnowball gun projectile 100 -> 5 \r\nBoat building blocks 100 -> 15",
+    "user": "Flavien"
+  },
+  {
+    "id": 716786,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "168046",
+    "created": "2026-10-14T23:25:52",
+    "message": "Fixed the codelock on frankenstein table appearing underneath the table on the floor",
+    "user": "Nick.H"
+  },
+  {
+    "id": 716785,
+    "branch": "main/optimize_upkeep_multiplier",
+    "changeset": "168045",
+    "created": "2026-10-14T23:20:56",
+    "message": "Tests",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716784,
+    "branch": "▊▍▋█▌▅▅▇▌▋▄▆▊▅▉▄▆▄█▌▆▉",
+    "changeset": "▆▋▉▍▇▉",
+    "created": "2026-10-14T23:20:20",
+    "message": "▌ ▉▅▄ ▍▉▋▋▅▅▍▄▉▅▊▊▉ ▉▆▉ ▆▆▄▉▊ ▌▋▋▊▍▌▆▇▆ ▆▋▉▌▍▅▊ ▇▋█▆█▉▉█▅▍▉▋▊▊▉▉▊ █▅ ▌▄▅▅ ▆▊▋ ▇▌▌▄▊▊▅▍▌▉▊ ▇▆▆▅▇█▄ ▆█▊▉ ▋▆▍█▌▆▊▆▉▅ ▉▊▆ ▊▉▄ ▆▍▊▋ ▋▄▌▆▅▌ ▊▊▋▅▍▆ ▅▋▅▊▅ ▆▋▌▆ ▊▄▉▌▉▄█▋ █▋ ▇▌▌▌▋█▊▆▍▊▍▉▇▅▆▉█▉▍ ▍▍▅▋▉▄▄ ▇█▊▌▅ ▍▆▇▊▇▆▌▇ ▆█▄▌ ▆▆▅▊ ▇▉▄",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716783,
+    "branch": "main/optimize_position_update",
+    "changeset": "168043",
+    "created": "2026-10-14T23:18:38",
+    "message": "Update demos to read the new batched packet format",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716782,
+    "branch": "main/optimize_position_update",
+    "changeset": "168042",
+    "created": "2026-10-14T23:17:09",
+    "message": "Update SendNetworkPositions() to use the new batched path\n- famous last words but batched position updates shouldn't break so we shouldn't need a ConVar to toggle behavior at runtime",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716764,
+    "branch": "main/optimize_position_update",
+    "changeset": "168039",
+    "created": "2026-10-14T22:54:14",
+    "message": "Add batching for position ticks\n- new packet type EntityPositionBatch so old demos keep working\n- batches together entity position updates per player per server frame\n- flushes batches after ServerMgr * Invokes \n- skips sending time field if it's the same as the entity before it",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716763,
+    "branch": "main/deepsea_unloading",
+    "changeset": "168038",
+    "created": "2026-10-14T22:52:00",
+    "message": "Cleanup, fixes",
+    "user": "Flavien"
+  },
+  {
+    "id": 716762,
+    "branch": "main/hemp_colour_swap",
+    "changeset": "168037",
+    "created": "2026-10-14T22:50:53",
+    "message": "Re-enabled the final stage impostor on hemp plants - thye should now be visible from 250m",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 716746,
+    "branch": "main/fix_sail_guide_mismatch",
+    "changeset": "168035",
+    "created": "2026-10-14T22:09:57",
+    "message": "Fix mismatch between server's check for sails and client's check\n- client uses rays, server used spheres\n- the OBB the client used to simulate the new placement wasn't rotated correctly leading to mismatch",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 716740,
     "branch": "▇▉▄▄▄▉▉▅▌▄▍▄▌▋▅▍▌▌▆▋▅▋",
     "changeset": "▍▋▅▇█▋",
@@ -2782,53 +2886,5 @@
     "created": "2026-10-12T00:32:07",
     "message": "Possibly fixed terrain configs not loading in a demo",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 713530,
-    "branch": "▌▇▉▅",
-    "changeset": "▌▊▄▋▅▆",
-    "created": "2026-10-12T00:06:47",
-    "message": "▌▌▊█▌▌ ▌▇▉▆ ▊▊▉▆▍█▊▅▆▊▍▍▅▋▋▌▄▉",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 713518,
-    "branch": "▆▄█▊█▄▄▆▊▅█▍▇▆▄▊▍▉▍▋▇▊",
-    "changeset": "▌▇▄█▇▉",
-    "created": "2026-10-12T00:00:13",
-    "message": "▉▆▆▍ █▇█▆▄▌▋▆▇▍ ▉▍▊ ▊▌▍▇▍▅▊ ▉▅▋▅ █▊▅▍ ▍▇▌ ▆▅▄▊▊▇▄▄▌ ▆▆▇ ▇ ▇██▊▅▇▊▉▅▊▇▆▊ ▇ ▌█▊▌ ▆▄ ▄▆▋▉▄ ▆▉▇▍ ▆▇▆▋ ▇▋ ▄▅▉▋▊▊",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 713469,
-    "branch": "main/buildingprivilege_cache",
-    "changeset": "167558",
-    "created": "2026-10-11T23:28:50",
-    "message": "Cleanup",
-    "user": "Flavien"
-  },
-  {
-    "id": 713463,
-    "branch": "▄▉▉▉▇▊▄▉▌▇▅▌█▄▆▇▌█▌▍▊▌",
-    "changeset": "▊▉▆█▅▋",
-    "created": "2026-10-11T23:25:18",
-    "message": "▌▅▌▅▉▇ ▋▋▆▉ ▆▇▉▇",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 713453,
-    "branch": "main/buildingprivilege_cache",
-    "changeset": "167556",
-    "created": "2026-10-11T23:17:29",
-    "message": "Reordered the check so bases with no TC are cheaper",
-    "user": "Flavien"
-  },
-  {
-    "id": 713396,
-    "branch": "main/buildingprivilege_cache",
-    "changeset": "167555",
-    "created": "2026-10-11T22:41:51",
-    "message": "Convared the vehicle and entity privilege changes under buildingmanager.privilegecache",
-    "user": "Flavien"
   }
 ]
