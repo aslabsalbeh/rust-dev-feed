@@ -1,16 +1,44 @@
 {
   "2026-10-15": {
-    "commit_count": 69,
-    "relevant_commit_count": 38,
-    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327",
+    "commit_count": 81,
+    "relevant_commit_count": 42,
+    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Grenade Mechanics",
+        "title": "User Interface & Permissions",
         "items": [
           {
-            "text": "Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.",
+            "text": "Boat edit‑mode privilege icons now correctly reflect your authorization.",
+            "commit_ids": [
+              717357
+            ]
+          },
+          {
+            "text": "Mixing table UI now includes per‑source toggle buttons, letting you enable or disable specific mixing entries and improving search behavior.",
+            "commit_ids": [
+              717099
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Performance & Stability",
+        "items": [
+          {
+            "text": "A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases.",
+            "commit_ids": [
+              717355
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat",
+        "items": [
+          {
+            "text": "Grenade throws now stay on target and maintain correct timing, fixing side‑swing when standing still and synchronizing release animations.",
             "commit_ids": [
               717273,
               717262
@@ -19,94 +47,49 @@
         ]
       },
       {
-        "title": "Audio & Sound",
+        "title": "Gameplay & World",
         "items": [
           {
-            "text": "Fixed movement sound triggers that were on the wrong layer or had triggers disabled, restoring expected audio cues in floating cities, islands, jungle ruins, and ziggurat areas.",
-            "commit_ids": [
-              717188
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicle & Boat Controls",
-        "items": [
-          {
-            "text": "Players can no longer operate the PT boat while restrained, preventing unintended boat usage.",
+            "text": "Restrained players can no longer operate PT boats, preventing unintended movement.",
             "commit_ids": [
               717161
             ]
-          }
-        ]
-      },
-      {
-        "title": "World & Rendering",
-        "items": [
+          },
           {
-            "text": "Terrain now renders correctly when indirect instancing is enabled, fixing missing terrain visuals.",
+            "text": "Movement sound cues now trigger correctly after collider layer fixes.",
+            "commit_ids": [
+              717188
+            ]
+          },
+          {
+            "text": "Terrain patches render correctly when instancing is active, eliminating missing terrain.",
             "commit_ids": [
               717109
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & Cooking UI",
-        "items": [
-          {
-            "text": "Added per-source toggle buttons in the mixing table UI, allowing players to enable or disable specific cooking entries; search now includes all categories and UI layout improvements.",
-            "commit_ids": [
-              717099
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Mixing table UI now only updates the recipe list when ingredient availability changes, eliminating constant reordering and reducing UI lag.",
-            "commit_ids": [
-              717162
-            ]
-          },
-          {
-            "text": "Biofuel generator’s stirring sound now plays continuously instead of cutting off, restoring full audio feedback.",
-            "commit_ids": [
-              717233
-            ]
-          },
-          {
-            "text": "Store pages now correctly display their assets, fixing missing or incorrect icons and graphics.",
-            "commit_ids": [
-              717263
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Grenade Mechanics\n- Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.\n\n### Audio & Sound\n- Fixed movement sound triggers that were on the wrong layer or had triggers disabled, restoring expected audio cues in floating cities, islands, jungle ruins, and ziggurat areas.\n\n### Vehicle & Boat Controls\n- Players can no longer operate the PT boat while restrained, preventing unintended boat usage.\n\n### World & Rendering\n- Terrain now renders correctly when indirect instancing is enabled, fixing missing terrain visuals.\n\n### Crafting & Cooking UI\n- Added per-source toggle buttons in the mixing table UI, allowing players to enable or disable specific cooking entries; search now includes all categories and UI layout improvements.\n\n### Quality of Life\n- Mixing table UI now only updates the recipe list when ingredient availability changes, eliminating constant reordering and reducing UI lag.\n- Biofuel generator’s stirring sound now plays continuously instead of cutting off, restoring full audio feedback.\n- Store pages now correctly display their assets, fixing missing or incorrect icons and graphics.",
+    "summary": "### User Interface & Permissions\n- Boat edit‑mode privilege icons now correctly reflect your authorization.\n- Mixing table UI now includes per‑source toggle buttons, letting you enable or disable specific mixing entries and improving search behavior.\n\n### Performance & Stability\n- A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases.\n\n### Combat\n- Grenade throws now stay on target and maintain correct timing, fixing side‑swing when standing still and synchronizing release animations.\n\n### Gameplay & World\n- Restrained players can no longer operate PT boats, preventing unintended movement.\n- Movement sound cues now trigger correctly after collider layer fixes.\n- Terrain patches render correctly when instancing is active, eliminating missing terrain.",
     "new_items": [
       {
-        "text": "Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.",
+        "text": "Boat edit‑mode privilege icons now correctly reflect your authorization.",
         "commit_ids": [
-          717273,
-          717262
+          717357
         ],
-        "section": "Grenade Mechanics"
+        "section": "User Interface & Permissions"
       },
       {
-        "text": "Store pages now correctly display their assets, fixing missing or incorrect icons and graphics.",
+        "text": "A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases.",
         "commit_ids": [
-          717263
+          717355
         ],
-        "section": "Quality of Life"
+        "section": "Performance & Stability"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed grenade throwing direction when standing still and ensured grenade release events stay synchronized with throw animations, preventing mis‑aligned throws and mid‑throw entity destruction.\n- Store pages now correctly display their assets, fixing missing or incorrect icons and graphics."
+    "new_relevant_count": 2,
+    "new_summary": "- Boat edit‑mode privilege icons now correctly reflect your authorization.\n- A snapshot‑send budget (default 800 per second per player) reduces client stutters when loading grids with large bases."
   },
   "2026-10-14": {
     "commit_count": 137,
