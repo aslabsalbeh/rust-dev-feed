@@ -1,29 +1,58 @@
 {
   "2026-10-15": {
-    "commit_count": 92,
-    "relevant_commit_count": 46,
-    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464",
+    "commit_count": 98,
+    "relevant_commit_count": 47,
+    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464,717475",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Structures",
+        "title": "World & Exploration",
         "items": [
           {
-            "text": "Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area.",
+            "text": "Lighthouse repair restores its light and unlocks the deep‑sea area.",
             "commit_ids": [
               717449
+            ]
+          },
+          {
+            "text": "Terrain now renders correctly with indirect instancing, eliminating invisible ground patches.",
+            "commit_ids": [
+              717109
             ]
           }
         ]
       },
       {
-        "title": "Permissions & Access",
+        "title": "Vehicles & Controls",
         "items": [
           {
-            "text": "Fixed UI bug where boats in edit mode incorrectly displayed edit privileges you didn't have.",
+            "text": "Boats edit‑mode UI now shows correct privilege info, preventing misleading permissions.",
             "commit_ids": [
               717357
+            ]
+          },
+          {
+            "text": "Restrained players can no longer pilot PT boats, stopping unintended movement.",
+            "commit_ids": [
+              717161
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Grenades",
+        "items": [
+          {
+            "text": "Grenade throws in third‑person no longer swing sideways while standing still; throws go straight forward.",
+            "commit_ids": [
+              717273
+            ]
+          },
+          {
+            "text": "Grenade release timing is now synchronized between drop and attach animations, fixing out‑of‑sync releases.",
+            "commit_ids": [
+              717262
             ]
           }
         ]
@@ -32,32 +61,9 @@
         "title": "Performance",
         "items": [
           {
-            "text": "Implemented snapshot send rate budgeting, reducing client stutter when loading large bases.",
+            "text": "Client stutter when loading large bases is reduced thanks to snapshot‑send budgeting and a configurable rate.",
             "commit_ids": [
               717355
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Grenade throws now follow aim direction and launch timing is synced with drop/attach animations, fixing sideways swing and mistimed releases.",
-            "commit_ids": [
-              717273,
-              717262
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Players can no longer operate the PT boat while restrained.",
-            "commit_ids": [
-              717161
             ]
           }
         ]
@@ -66,7 +72,7 @@
         "title": "Crafting & Cooking",
         "items": [
           {
-            "text": "Added per‑source toggle buttons in the mixing table UI, allowing players to enable or disable individual mixing entries for cooking workbenches and similar stations.",
+            "text": "Mixing table UI adds per‑source toggle buttons, letting you enable or disable individual recipe entries on cooking stations.",
             "commit_ids": [
               717099
             ]
@@ -77,33 +83,19 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Movement sounds now trigger correctly, fixing missing or silent footsteps in floating cities, islands, jungle ruins, and ziggurat areas.",
+            "text": "Movement sounds now trigger correctly in floating cities, islands, jungle ruins, and the Ziggurat.",
             "commit_ids": [
               717188
-            ]
-          },
-          {
-            "text": "Terrain now renders properly when instancing is enabled, preventing invisible ground in affected zones.",
-            "commit_ids": [
-              717109
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Structures\n- Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area.\n\n### Permissions & Access\n- Fixed UI bug where boats in edit mode incorrectly displayed edit privileges you didn't have.\n\n### Performance\n- Implemented snapshot send rate budgeting, reducing client stutter when loading large bases.\n\n### Combat & Weapons\n- Grenade throws now follow aim direction and launch timing is synced with drop/attach animations, fixing sideways swing and mistimed releases.\n\n### Vehicles\n- Players can no longer operate the PT boat while restrained.\n\n### Crafting & Cooking\n- Added per‑source toggle buttons in the mixing table UI, allowing players to enable or disable individual mixing entries for cooking workbenches and similar stations.\n\n### Gameplay & Balance\n- Movement sounds now trigger correctly, fixing missing or silent footsteps in floating cities, islands, jungle ruins, and ziggurat areas.\n- Terrain now renders properly when instancing is enabled, preventing invisible ground in affected zones.",
-    "new_items": [
-      {
-        "text": "Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area.",
-        "commit_ids": [
-          717449
-        ],
-        "section": "World & Structures"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Lighthouse now requires repair; fixing it restores its light and unlocks access to the deep sea area."
+    "summary": "### World & Exploration\n- Lighthouse repair restores its light and unlocks the deep‑sea area.\n- Terrain now renders correctly with indirect instancing, eliminating invisible ground patches.\n\n### Vehicles & Controls\n- Boats edit‑mode UI now shows correct privilege info, preventing misleading permissions.\n- Restrained players can no longer pilot PT boats, stopping unintended movement.\n\n### Combat & Grenades\n- Grenade throws in third‑person no longer swing sideways while standing still; throws go straight forward.\n- Grenade release timing is now synchronized between drop and attach animations, fixing out‑of‑sync releases.\n\n### Performance\n- Client stutter when loading large bases is reduced thanks to snapshot‑send budgeting and a configurable rate.\n\n### Crafting & Cooking\n- Mixing table UI adds per‑source toggle buttons, letting you enable or disable individual recipe entries on cooking stations.\n\n### Gameplay & Balance\n- Movement sounds now trigger correctly in floating cities, islands, jungle ruins, and the Ziggurat.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-14": {
     "commit_count": 137,

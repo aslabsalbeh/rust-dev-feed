@@ -1,5 +1,53 @@
 [
   {
+    "id": 717507,
+    "branch": "main/skinviewer_nailgun",
+    "changeset": "168207",
+    "created": "2026-10-15T21:59:05",
+    "message": "Added nailgun to the skin viewer",
+    "user": "Flavien"
+  },
+  {
+    "id": 717506,
+    "branch": "main/tattoos/art_pass",
+    "changeset": "168206",
+    "created": "2026-10-15T21:49:44",
+    "message": "Tattoo layer tweaks, subdermal+ink layer\r\nSome test assets",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 717493,
+    "branch": "main/optimize_position_update",
+    "changeset": "168205",
+    "created": "2026-10-15T21:16:39",
+    "message": "Only check if quant settings have changed once per frame in flush instead of every single position packet",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 717490,
+    "branch": "main",
+    "changeset": "168204",
+    "created": "2026-10-15T21:14:11",
+    "message": "Added modular contraption kit, textures and materials for testing purposes.",
+    "user": "tom.be"
+  },
+  {
+    "id": 717475,
+    "branch": "main/optimize_position_update",
+    "changeset": "168201",
+    "created": "2026-10-15T20:27:14",
+    "message": "Switch from generic stream -> BufferStream in the EntityPositionBatchReader since both demos and network data share the same class of stream for packets",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 717470,
+    "branch": "main/optimize_position_update",
+    "changeset": "168200",
+    "created": "2026-10-15T20:16:39",
+    "message": "Send positions & rotations quantized\n- reduce the 3x positions floats from 4 -> 1 bytes when they are within 1.27m per tick (1cm quantization)\n- reduce the 3x rotations from 4 -> 1 byte when they are within 25 degrees per tick (0.2 degree quantization)\n- will fine tune the values if it's too high a quant\n- fallback to sending the full value when it changes by more than a delta\n- tell the client what the quantization is so it can be changed during the session and be captured by demos",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 717464,
     "branch": "main/lighthouse_deep_sea",
     "changeset": "168199",
@@ -2790,77 +2838,5 @@
     "created": "2026-10-12T22:18:09",
     "message": "Fix food spoliling in workbench recycle bin upgrade container",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 715095,
-    "branch": "main/vcc",
-    "changeset": "167732",
-    "created": "2026-10-12T22:02:03",
-    "message": "Add VDF files for 6 missing gamepad types.\r\nUpdate gamepad manifest.",
-    "user": "Adam W"
-  },
-  {
-    "id": 715092,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167731",
-    "created": "2026-10-12T21:57:07",
-    "message": "Keep sound template AudioSources enabled while pooled, disabling them on every recycle flushed unity's audio DSP, stalling up to ~1ms when a sound got cut mid play\r\n\r\nRecycleSound in editor:\r\n~0.45ms -> ~0.25ms\r\nThe occasional 1ms \"flush dsp connections\" is gone",
-    "user": "Flavien"
-  },
-  {
-    "id": 715091,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "167730",
-    "created": "2026-10-12T21:53:43",
-    "message": "Fix SelectedBlueprint.CanCraft running every frame while the crafting menu is closed, small but unnecessary",
-    "user": "cipeaX"
-  },
-  {
-    "id": 715090,
-    "branch": "main/scrap_king_buildingskin_dlc",
-    "changeset": "167729",
-    "created": "2026-10-12T21:53:19",
-    "message": "scrap king building skin steam item setup",
-    "user": "matt.i"
-  },
-  {
-    "id": 715086,
-    "branch": "main/vcc",
-    "changeset": "167728",
-    "created": "2026-10-12T21:48:26",
-    "message": "Add support for major/minor revision bumping.\r\nUpdate all gamepad configs with this data.\r\nUpdate validation to always check/catch chamges.",
-    "user": "Adam W"
-  },
-  {
-    "id": 715085,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "167727",
-    "created": "2026-10-12T21:47:12",
-    "message": "Fix all skinned items allocating on every inventory update when getting their icon sprite",
-    "user": "cipeaX"
-  },
-  {
-    "id": 715079,
-    "branch": "main/vcc",
-    "changeset": "167726",
-    "created": "2026-10-12T21:38:05",
-    "message": "Attack/AttackAlt are now Button actions on the triggers' soft pull so players can rebind fire/aim to any button (per Valve guidance).\r\nUpdate all action sets/configs to match,",
-    "user": "Adam W"
-  },
-  {
-    "id": 715068,
-    "branch": "main/vcc",
-    "changeset": "167724",
-    "created": "2026-10-12T21:04:13",
-    "message": "Stop any rumble in Deactivate",
-    "user": "Adam W"
-  },
-  {
-    "id": 715043,
-    "branch": "██▆▍▅▌▄▇▆▋▇▍▊▌▊▆▉▋▉▍▋▆",
-    "changeset": "▌▋█▅▍▉",
-    "created": "2026-10-12T20:19:10",
-    "message": "▆ ▋ ▆█▍▄▋ ▇▋▅▆ ▌▋▇▍▇ ▊▅▅ █▍▅▌ ▇▍▄▌▄▋▌ ▅▊▆▉▇▇█ ▇▌▉▅▋ ▊█▇▆▆▆ ▇▄▊▍▉▍▄ ▅▍▌ █▌▆▊▊▍▄▊▊ ▅▍▊▍▇▇ ▉▇ ▆▉█ ▄▋▌▊ ▊▋▅▆▅▆▉▆█ ▉▍▍▇█ ▄▊▇▊▉ ▄▆▊▄ ▇▉▍▊▋▊█▌▊▄▊▄▍▋▋██ ▉▋▆▇",
-    "user": "Ian Henderson"
   }
 ]
