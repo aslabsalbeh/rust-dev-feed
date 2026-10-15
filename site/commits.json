@@ -1,5 +1,21 @@
 [
   {
+    "id": 716963,
+    "branch": "main/optimize_position_update",
+    "changeset": "168078",
+    "created": "2026-10-15T04:43:20",
+    "message": "Store entity ID for position ticks in a 1000 sized cache\n- reduces entity ID from 8 -> 5 -> 2 bytes (8 now, would be ~5 with VarInt encoding, 2 bytes with index lookup)\n- also compresses the parent's network ID when parented\n- overkill just for network IDs but basically free since we also want to do lossy compression for positions\n- demos store the network ID lookup in the keyframes so it can skip forwards & backwards still\n- make batch position packets ordered now (not a big deal since they are way smaller than old ones and max one per server frame)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 716962,
+    "branch": "main/input_optimisation",
+    "changeset": "168077",
+    "created": "2026-10-15T04:10:00",
+    "message": "Don't poll all 100+ keys if unity tells us that no key is pressed \r\nSaves 0.04ms/frame",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 716942,
     "branch": "█▅▇▆",
     "changeset": "▆▍▉▉▋▆",
@@ -2934,21 +2950,5 @@
     "created": "2026-10-12T07:35:49",
     "message": "Cleaned up building priv cache vs vis tests",
     "user": "Flavien"
-  },
-  {
-    "id": 713940,
-    "branch": "▆▌▋▇▉▌▆▋▄▆▆▌▋▇▌▋▇▅▋▅▄▉",
-    "changeset": "█▍▊▉▅▍",
-    "created": "2026-10-12T05:37:25",
-    "message": "▄▅▆▄▍▅▉▄▆█ ▊▋█▉▌█ ▄▇▇▇█▉ █▄▌▊ ▉▉▄ ▉▍▅▊ ▍▆▉▋▊▍▆ ▇▆▉▉▋▌▍▍▉▆▉▌▌▆▅▉▊▆▅▇▊▍▍▋█▉▄▉▆▇▋▇▇▄▄▅▍▌▆▄▊▉▄▌▄▅▆█▋▋▌▉▉▊▊█▇▋▄▅▌█▊▆█▅█▌▆▄▉▌▍▄▊▄▍▅▋▇▇▊▋▉▉",
-    "user": "Rin"
-  },
-  {
-    "id": 713804,
-    "branch": "main/neon_sfx_occlusion",
-    "changeset": "167580",
-    "created": "2026-10-12T04:25:15",
-    "message": "Neon sign sounds are now occluded\r\nHad to adjust their volume slightly",
-    "user": "Jarryd Campi"
   }
 ]
