@@ -1,18 +1,35 @@
 {
   "2026-10-16": {
-    "commit_count": 38,
-    "relevant_commit_count": 18,
-    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060",
+    "commit_count": 53,
+    "relevant_commit_count": 25,
+    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Animals",
+        "title": "NPC & AI",
         "items": [
           {
             "text": "Fixed animals not attacking players standing next to vehicles.",
             "commit_ids": [
               717905
+            ]
+          },
+          {
+            "text": "Fixed job errors for crabs and jellyfish, restoring their proper behavior.",
+            "commit_ids": [
+              718159
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animal Interaction",
+        "items": [
+          {
+            "text": "Leading interaction remains the default before petting animals, ensuring consistent petting behavior.",
+            "commit_ids": [
+              717928
             ]
           }
         ]
@@ -21,7 +38,7 @@
         "title": "Base & Decay",
         "items": [
           {
-            "text": "Base decay now respects TC upkeep even on very high entity count servers, fixing unintended decay.",
+            "text": "Adjusted decay processing to prevent bases from decaying when the Tool Cupboard has upkeep, even on very high‑entity servers.",
             "commit_ids": [
               717782
             ]
@@ -29,34 +46,12 @@
         ]
       },
       {
-        "title": "Server Settings",
+        "title": "Server & Settings",
         "items": [
           {
-            "text": "Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.",
+            "text": "Client joins no longer reset server configuration variables (e.g., gamemode settings) when using C+S, preserving custom settings.",
             "commit_ids": [
               718034
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Interactions",
-        "items": [
-          {
-            "text": "Leading remains the default interaction before petting livestock, ensuring consistent animal handling.",
-            "commit_ids": [
-              717928
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Graphics & Visibility",
-        "items": [
-          {
-            "text": "Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.",
-            "commit_ids": [
-              718041
             ]
           }
         ]
@@ -65,7 +60,13 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally.",
+            "text": "Fixed invisible renderers that could disappear after toggling BRG, restoring proper visibility of structures and items.",
+            "commit_ids": [
+              718041
+            ]
+          },
+          {
+            "text": "Separated visibility controls for live and old tattoo layers, preventing unintended fading of new tattoo ink during live painting.",
             "commit_ids": [
               717996
             ]
@@ -74,32 +75,18 @@
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Animals\n- Fixed animals not attacking players standing next to vehicles.\n\n### Base & Decay\n- Base decay now respects TC upkeep even on very high entity count servers, fixing unintended decay.\n\n### Server Settings\n- Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.\n\n### Interactions\n- Leading remains the default interaction before petting livestock, ensuring consistent animal handling.\n\n### Graphics & Visibility\n- Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.\n\n### Gameplay & Balance\n- Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally.",
+    "summary": "### NPC & AI\n- Fixed animals not attacking players standing next to vehicles.\n- Fixed job errors for crabs and jellyfish, restoring their proper behavior.\n\n### Animal Interaction\n- Leading interaction remains the default before petting animals, ensuring consistent petting behavior.\n\n### Base & Decay\n- Adjusted decay processing to prevent bases from decaying when the Tool Cupboard has upkeep, even on very high‑entity servers.\n\n### Server & Settings\n- Client joins no longer reset server configuration variables (e.g., gamemode settings) when using C+S, preserving custom settings.\n\n### Gameplay & Balance\n- Fixed invisible renderers that could disappear after toggling BRG, restoring proper visibility of structures and items.\n- Separated visibility controls for live and old tattoo layers, preventing unintended fading of new tattoo ink during live painting.",
     "new_items": [
       {
-        "text": "Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.",
+        "text": "Fixed job errors for crabs and jellyfish, restoring their proper behavior.",
         "commit_ids": [
-          718034
+          718159
         ],
-        "section": "Server Settings"
-      },
-      {
-        "text": "Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.",
-        "commit_ids": [
-          718041
-        ],
-        "section": "Graphics & Visibility"
-      },
-      {
-        "text": "Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally.",
-        "commit_ids": [
-          717996
-        ],
-        "section": "Gameplay & Balance"
+        "section": "NPC & AI"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.\n- Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.\n- Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally."
+    "new_relevant_count": 1,
+    "new_summary": "- Fixed job errors for crabs and jellyfish, restoring their proper behavior."
   },
   "2026-10-15": {
     "commit_count": 118,

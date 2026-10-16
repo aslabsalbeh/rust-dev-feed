@@ -1,5 +1,125 @@
 [
   {
+    "id": 718182,
+    "branch": "main",
+    "changeset": "168299",
+    "created": "2026-10-16T16:05:32",
+    "message": "Fix wounded head IK not pointing up/down anymore, also fix pooling issues with players mid turns",
+    "user": "octo"
+  },
+  {
+    "id": 718175,
+    "branch": "main",
+    "changeset": "168297",
+    "created": "2026-10-16T15:55:13",
+    "message": "~meta files that keep appearing",
+    "user": "cipeaX"
+  },
+  {
+    "id": 718174,
+    "branch": "main/vip_warhead",
+    "changeset": "168296",
+    "created": "2026-10-16T15:52:32",
+    "message": "Warhead Garage Door - Made busy colliders movement a lot more granuar and precise",
+    "user": "mauro.a"
+  },
+  {
+    "id": 718172,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "168295",
+    "created": "2026-10-16T15:43:00",
+    "message": "Shears animation polish pass",
+    "user": "wes.b"
+  },
+  {
+    "id": 718169,
+    "branch": "main/critters_cleanup",
+    "changeset": "168293",
+    "created": "2026-10-16T15:37:50",
+    "message": "add colour variations to crabs\r\n- with a very small chance at seeing a rare blue crab",
+    "user": "ElliotH"
+  },
+  {
+    "id": 718168,
+    "branch": "main/Livestock_animals",
+    "changeset": "168292",
+    "created": "2026-10-16T15:33:11",
+    "message": "Start work to share states on fsms, share dead state, repellant flee state, and debug move state",
+    "user": "Maverick"
+  },
+  {
+    "id": 718162,
+    "branch": "main/critters_cleanup",
+    "changeset": "168291",
+    "created": "2026-10-16T15:21:11",
+    "message": "hide HP bar for dead critters",
+    "user": "ElliotH"
+  },
+  {
+    "id": 718161,
+    "branch": "main/vip_warhead",
+    "changeset": "168290",
+    "created": "2026-10-16T15:16:14",
+    "message": "warhead garage door anim improved",
+    "user": "julek"
+  },
+  {
+    "id": 718160,
+    "branch": "main/tattoos/art_pass",
+    "changeset": "168289",
+    "created": "2026-10-16T15:09:01",
+    "message": "Tattoo fading pass\r\nIrritation converts to blur over fade to reuse existing samples\r\nThis is baked in the tattoo compositor (on the GPU if possible) so old tattoos stay blurred while new tattoos are sharp\r\nFaded tattoos also gain a blue/green tint as if the pigment has faded\r\nAll somewhat experimental and subject to performance benchmarks",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 718159,
+    "branch": "main/critters_cleanup",
+    "changeset": "168288",
+    "created": "2026-10-16T15:06:42",
+    "message": "fix jobs errors for crabs and jellyfish",
+    "user": "ElliotH"
+  },
+  {
+    "id": 718144,
+    "branch": "main/critters_cleanup",
+    "changeset": "168287",
+    "created": "2026-10-16T14:49:48",
+    "message": "fix jellyfish SSS",
+    "user": "ElliotH"
+  },
+  {
+    "id": 718136,
+    "branch": "main/bc_improvements/rbf_solver",
+    "changeset": "168286",
+    "created": "2026-10-16T14:40:38",
+    "message": "3-solver mixed-BC setup on plague hazmat for testing",
+    "user": "Grigler"
+  },
+  {
+    "id": 718135,
+    "branch": "main/bc_improvements/rbf_solver",
+    "changeset": "168285",
+    "created": "2026-10-16T14:40:13",
+    "message": "debug tooling-",
+    "user": "Grigler"
+  },
+  {
+    "id": 718134,
+    "branch": "main/critters_cleanup",
+    "changeset": "168284",
+    "created": "2026-10-16T14:38:39",
+    "message": "fix rabbits animation transition from interested to startled\r\nfix jellyfish prefab name being \"crabs\"",
+    "user": "ElliotH"
+  },
+  {
+    "id": 718114,
+    "branch": "main/critters_cleanup",
+    "changeset": "168283",
+    "created": "2026-10-16T14:23:08",
+    "message": "Cleanup unused frog assets",
+    "user": "ElliotH"
+  },
+  {
     "id": 718107,
     "branch": "main/rust_birthday_2026",
     "changeset": "168282",
@@ -2646,125 +2766,5 @@
     "created": "2026-10-13T16:30:51",
     "message": "fixed jenkinsfile using wrong param name for slack channels",
     "user": "Grigler"
-  },
-  {
-    "id": 715892,
-    "branch": "main/tattoos",
-    "changeset": "167850",
-    "created": "2026-10-13T16:06:27",
-    "message": "tattoo fixes\r\n- clamp tattoo brush size 1.0-5.0, doesnt use painting convar\r\n- zoom scaling clamp, so you cant get as far out but can also go closer than usual for fine detail\r\n- brushes now scale independent of zoom in tattooing, this does make performance a little worse, but fixes when the paint stamp doesnt cover enough of the uv and becomes spotty. WIP still\r\n- uv buffer now samples some of the uv pixels around the current target to try to smooth out and match seams where the uv resolutions dont match (like where the head meets torso etc..)",
-    "user": "ElliotH"
-  },
-  {
-    "id": 715891,
-    "branch": "main/sendmouseevents_optim",
-    "changeset": "167849",
-    "created": "2026-10-13T16:05:54",
-    "message": "Optimized PreUpdate.SendMouseEvents by clearing the main camera event mask, nothing uses OnMouse events\nSaves up to 0.08ms a frame in builds",
-    "user": "Flavien"
-  },
-  {
-    "id": 715889,
-    "branch": "main",
-    "changeset": "167848",
-    "created": "2026-10-13T16:01:50",
-    "message": "Compile fix",
-    "user": "Flavien"
-  },
-  {
-    "id": 715882,
-    "branch": "▌█▉▌▊▊▉▇▊▇▅▉▍▆▌▊",
-    "changeset": "▇▊▄▊▇▇",
-    "created": "2026-10-13T15:52:05",
-    "message": "▊▍▊▉▋▆▊ ▆▉▉█▌█ ▌▆▆▇ ▇▌▇█▍▊█ ▆▊▅",
-    "user": "jeddooo"
-  },
-  {
-    "id": 715880,
-    "branch": "main/UZI 9mm",
-    "changeset": "167846",
-    "created": "2026-10-13T15:50:42",
-    "message": "Initial setup of different ADS and recoil settings for weapon stock being deployed/collapsed",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 715873,
-    "branch": "main/analytics_biofuel_generator",
-    "changeset": "167844",
-    "created": "2026-10-13T15:42:44",
-    "message": "Add resource consumption/production events for the biofuel generator",
-    "user": "Ryan"
-  },
-  {
-    "id": 715832,
-    "branch": "main/pt_boat_turret_rewrite/turret_viewmodels",
-    "changeset": "167843",
-    "created": "2026-10-13T15:25:43",
-    "message": "pt_boat_rewrite -> turret_viewmodels",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 715828,
-    "branch": "main/pt_boat_turret_rewrite",
-    "changeset": "167842",
-    "created": "2026-10-13T15:24:55",
-    "message": "main -> pt_boat_turret_rewrite",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 715823,
-    "branch": "main/network_optims",
-    "changeset": "167841",
-    "created": "2026-10-13T15:22:58",
-    "message": "Only send turret targets rather than every single turret movement\r\nWe are effectively predicting the turret movement on the client with the server reconcilling it\r\n\r\n1.83 -> 0.20 aim messages/s per idle turret\r\n~46 -> ~7 B/s per turret per player\r\n\r\nOn a 122 player server: roughly ~105 KB/s less outbound (~9GB a day). 6% reduction of all outbound game data",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 715798,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "167840",
-    "created": "2026-10-13T14:53:36",
-    "message": "Formatting",
-    "user": "cipeaX"
-  },
-  {
-    "id": 715792,
-    "branch": "main/tattoos",
-    "changeset": "167839",
-    "created": "2026-10-13T14:44:42",
-    "message": "first pass on tattoo layering\r\n- 2 layers, 1 \"base\" layer which is fixed onto the player model, 1 which is edited during a painting session\r\n- tattoo compositor merges the editing layer onto the base layer when exiting the menu or saving\r\n- fade is applied to base layer, and baked into the png when merging downwards\r\n- rads add fade to the base layer visually with a parameter, which is only baked in during a merge\r\n- reworked to accomodate a separate player sending the tattoo edits to the other for saving (bc tattoo chair eventually)\r\n- moved more code to serverside to allow for direct painting communication between 2 clients",
-    "user": "ElliotH"
-  },
-  {
-    "id": 715791,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "167838",
-    "created": "2026-10-13T14:44:23",
-    "message": "Refactor and optimize LookAtIOEnt, avoid various allocs when wiring or updating battery info, avoid physics query every frame for turret interference",
-    "user": "cipeaX"
-  },
-  {
-    "id": 715777,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167836",
-    "created": "2026-10-13T14:36:11",
-    "message": "Fixed holding a gun searching the whole inventory every frame for reload ammo types\r\nHolding a gun with a full inventory: 0.06ms -> ~0.01ms",
-    "user": "Flavien"
-  },
-  {
-    "id": 715775,
-    "branch": "main/character_customisation/lighting_pass",
-    "changeset": "167835",
-    "created": "2026-10-13T14:31:31",
-    "message": "Initial pass, helper scene/player model guide prefab for easier balancing",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 715773,
-    "branch": "main/hackable_crate_icon",
-    "changeset": "167833",
-    "created": "2026-10-13T14:24:34",
-    "message": "Updated hackable crate map icon",
-    "user": "Rin"
   }
 ]
