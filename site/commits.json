@@ -1,5 +1,37 @@
 [
   {
+    "id": 717578,
+    "branch": "main/optimize_position_update",
+    "changeset": "168231",
+    "created": "2026-10-16T01:00:08",
+    "message": "Switch batches from channel 1 -> channel 0 so it's ordered with all the other packets (since we no longer use unordered for position packets)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 717571,
+    "branch": "main",
+    "changeset": "168230",
+    "created": "2026-10-16T00:44:38",
+    "message": "development_server_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 717569,
+    "branch": "main/development_server_fix",
+    "changeset": "168229",
+    "created": "2026-10-16T00:42:02",
+    "message": "Cleanup cache query return",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 717566,
+    "branch": "main/livestock_petting",
+    "changeset": "168228",
+    "created": "2026-10-16T00:17:06",
+    "message": "Hooked up new mount forward animations (sheep still has issues)",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 717555,
     "branch": "main",
     "changeset": "168225",
@@ -2790,69 +2822,5 @@
     "created": "2026-10-13T02:21:37",
     "message": "Fixed EffectParentToWeaponBone 128B alloc per effect spawn",
     "user": "Flavien"
-  },
-  {
-    "id": 715237,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167763",
-    "created": "2026-10-13T02:17:10",
-    "message": "When in first person, don't spawn effects with HideIfOwnerFirstPerson instead of spawning and hiding them right away\r\nAlso fixed the 128B alloc in HideIfOwnerFirstPerson.OnEnable\r\n\r\nSaves 0.1ms when firing the AK",
-    "user": "Flavien"
-  },
-  {
-    "id": 715195,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167761",
-    "created": "2026-10-13T01:20:08",
-    "message": "Reduced the amount of pooled pilot codelock 200 -> 25\r\nKeylock 1 -> 50",
-    "user": "Flavien"
-  },
-  {
-    "id": 715187,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167760",
-    "created": "2026-10-13T01:16:47",
-    "message": "Reduced the amount of pooled blowpipe dart projectiles 100 -> 4",
-    "user": "Flavien"
-  },
-  {
-    "id": 715185,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167759",
-    "created": "2026-10-13T01:15:16",
-    "message": "Reduced the amount of pooled ballista projectiles 100 -> 3",
-    "user": "Flavien"
-  },
-  {
-    "id": 715181,
-    "branch": "main/hardcore_changes_nov_26",
-    "changeset": "167758",
-    "created": "2026-10-13T00:48:41",
-    "message": "Modified hardcore upkeep values\r\nBrackets are measured by block count, so these values are for upkeep up to 15/50/125/infinite\r\nVanilla: 0.1/0.15/0.2/0.33\r\nOld Hardcore: 0.2/0.3/0.4/0.66\r\nNew hardcore: 0.1/0.15/0.25/0.4\r\nNew values should increase upkeep for bases with > 65 blocks but still at a lower level compared to old hardcore",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 715176,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167755",
-    "created": "2026-10-13T00:41:24",
-    "message": "Reviewed the amount of bullet impacts and decals we prewarm\r\n- Rock, gravel, stones, metal ore and tundra impacts were only warmed with 1 copy, now 25 like the others. \r\n- Glass impact 25 -> 32, it stays alive for 4s+\n- Bullet decals 25 -> 30,  forest was set to 1, cactus lowered to 5",
-    "user": "Flavien"
-  },
-  {
-    "id": 715168,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167752",
-    "created": "2026-10-13T00:22:47",
-    "message": "Prewarm 10 copies of each sound templates, they were all set to 1\r\nsmall-sound gets 50\r\n\r\nTrying to get to a point where I can empty an AK magazine without instantiating any prefab",
-    "user": "Flavien"
-  },
-  {
-    "id": 715167,
-    "branch": "main/tree_hit_forgiveness",
-    "changeset": "167751",
-    "created": "2026-10-13T00:22:29",
-    "message": "Added a level of hit forgiveness if the player is attacking a thin tree and misses\r\nOnly affects trees with a trunk radius of < 0.15m (hit_forgiveness_max_trunk)\r\nIf the player misses, we do an additional sweep of 0.12m to try and hit the tree",
-    "user": "Jarryd Campi"
   }
 ]
