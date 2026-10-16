@@ -1,5 +1,29 @@
 [
   {
+    "id": 717815,
+    "branch": "main/terrain_textures_review",
+    "changeset": "168236",
+    "created": "2026-10-16T07:29:39",
+    "message": "Remove HeightSlope slope only used by map rendering saves ~11MB, more in deepsea\r\nUse normals instead of slope for map rendering",
+    "user": "Dayaan"
+  },
+  {
+    "id": 717798,
+    "branch": "main/terrain_textures_review",
+    "changeset": "168235",
+    "created": "2026-10-16T06:32:31",
+    "message": "Add iso grid topology option",
+    "user": "Dayaan"
+  },
+  {
+    "id": 717782,
+    "branch": "main/optimize_decay_frame_budget",
+    "changeset": "168234",
+    "created": "2026-10-16T06:07:42",
+    "message": "Fix bases decaying despite TC having upkeep when the decay tick gets slowed down on very high entity count servers\r\n- change decay tick from being a hardcoded 5 entities per tick to budgetted to 0.25ms per tick\r\n- in practice most servers won't hit this: this is 200k decay entities & 10 server FPS to start reaching the budget\r\n- paces so we don't burn budget looping through the list too quickly",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 717694,
     "branch": "main/terrain_textures_review",
     "changeset": "168233",
@@ -2742,21 +2766,5 @@
     "created": "2026-10-13T08:33:22",
     "message": "Forward jump down animations for cow and sheep",
     "user": "wes.b"
-  },
-  {
-    "id": 715431,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "167780",
-    "created": "2026-10-13T07:30:58",
-    "message": "Rebind rendertarget to camera target after rendergraph and move SetupCameraProperties back",
-    "user": "Dayaan"
-  },
-  {
-    "id": 715416,
-    "branch": "main",
-    "changeset": "167779",
-    "created": "2026-10-13T07:08:33",
-    "message": "Handmade SMG damage Increased 20 > 21",
-    "user": "Rin"
   }
 ]
