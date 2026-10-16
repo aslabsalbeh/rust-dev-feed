@@ -1,39 +1,51 @@
 {
   "2026-10-15": {
-    "commit_count": 98,
-    "relevant_commit_count": 47,
-    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464,717475",
+    "commit_count": 113,
+    "relevant_commit_count": 53,
+    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464,717475,717477,717523,717526,717534,717554,717555",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Exploration",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Lighthouse repair restores its light and unlocks the deep‑sea area.",
+            "text": "Pause menu now displays the actual connected server name.",
             "commit_ids": [
-              717449
+              717534
             ]
           },
           {
-            "text": "Terrain now renders correctly with indirect instancing, eliminating invisible ground patches.",
-            "commit_ids": [
-              717109
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Controls",
-        "items": [
-          {
-            "text": "Boats edit‑mode UI now shows correct privilege info, preventing misleading permissions.",
+            "text": "Boat edit‑mode no longer shows privileges for boats you don't own.",
             "commit_ids": [
               717357
             ]
           },
           {
-            "text": "Restrained players can no longer pilot PT boats, stopping unintended movement.",
+            "text": "Crafting interfaces now have per‑source toggles, hiding disabled mixing table entries without breaking layout or search.",
+            "commit_ids": [
+              717099
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay",
+        "items": [
+          {
+            "text": "Clan features are disabled in Softcore mode and the clan table is marked restricted, cleaning up tech‑tree displays.",
+            "commit_ids": [
+              717526
+            ]
+          },
+          {
+            "text": "Lighthouses can be repaired; fixing them restores their light and opens access to the deep‑sea area.",
+            "commit_ids": [
+              717449
+            ]
+          },
+          {
+            "text": "Players can no longer operate PT boats while restrained, closing an exploit.",
             "commit_ids": [
               717161
             ]
@@ -41,18 +53,35 @@
         ]
       },
       {
-        "title": "Combat & Grenades",
+        "title": "Combat",
         "items": [
           {
-            "text": "Grenade throws in third‑person no longer swing sideways while standing still; throws go straight forward.",
+            "text": "Nailgun now has a proper muzzle point, fixing turret placement errors.",
+            "commit_ids": [
+              717523
+            ]
+          },
+          {
+            "text": "Third‑person grenade throws no longer swing sideways when standing still, improving accuracy.",
             "commit_ids": [
               717273
             ]
           },
           {
-            "text": "Grenade release timing is now synchronized between drop and attach animations, fixing out‑of‑sync releases.",
+            "text": "Grenade release timing is now synchronized across drop and attach animations.",
             "commit_ids": [
               717262
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Audio",
+        "items": [
+          {
+            "text": "Movement sound triggers use correct collider layers, ensuring proper audio cues when moving through structures such as floating cities and islands.",
+            "commit_ids": [
+              717188
             ]
           }
         ]
@@ -61,41 +90,41 @@
         "title": "Performance",
         "items": [
           {
-            "text": "Client stutter when loading large bases is reduced thanks to snapshot‑send budgeting and a configurable rate.",
+            "text": "Entity snapshot sending is now budgeted per tick, reducing client stutter when loading large bases.",
             "commit_ids": [
               717355
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & Cooking",
-        "items": [
-          {
-            "text": "Mixing table UI adds per‑source toggle buttons, letting you enable or disable individual recipe entries on cooking stations.",
-            "commit_ids": [
-              717099
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Movement sounds now trigger correctly in floating cities, islands, jungle ruins, and the Ziggurat.",
-            "commit_ids": [
-              717188
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Exploration\n- Lighthouse repair restores its light and unlocks the deep‑sea area.\n- Terrain now renders correctly with indirect instancing, eliminating invisible ground patches.\n\n### Vehicles & Controls\n- Boats edit‑mode UI now shows correct privilege info, preventing misleading permissions.\n- Restrained players can no longer pilot PT boats, stopping unintended movement.\n\n### Combat & Grenades\n- Grenade throws in third‑person no longer swing sideways while standing still; throws go straight forward.\n- Grenade release timing is now synchronized between drop and attach animations, fixing out‑of‑sync releases.\n\n### Performance\n- Client stutter when loading large bases is reduced thanks to snapshot‑send budgeting and a configurable rate.\n\n### Crafting & Cooking\n- Mixing table UI adds per‑source toggle buttons, letting you enable or disable individual recipe entries on cooking stations.\n\n### Gameplay & Balance\n- Movement sounds now trigger correctly in floating cities, islands, jungle ruins, and the Ziggurat.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### User Interface\n- Pause menu now displays the actual connected server name.\n- Boat edit‑mode no longer shows privileges for boats you don't own.\n- Crafting interfaces now have per‑source toggles, hiding disabled mixing table entries without breaking layout or search.\n\n### Gameplay\n- Clan features are disabled in Softcore mode and the clan table is marked restricted, cleaning up tech‑tree displays.\n- Lighthouses can be repaired; fixing them restores their light and opens access to the deep‑sea area.\n- Players can no longer operate PT boats while restrained, closing an exploit.\n\n### Combat\n- Nailgun now has a proper muzzle point, fixing turret placement errors.\n- Third‑person grenade throws no longer swing sideways when standing still, improving accuracy.\n- Grenade release timing is now synchronized across drop and attach animations.\n\n### Audio\n- Movement sound triggers use correct collider layers, ensuring proper audio cues when moving through structures such as floating cities and islands.\n\n### Performance\n- Entity snapshot sending is now budgeted per tick, reducing client stutter when loading large bases.",
+    "new_items": [
+      {
+        "text": "Pause menu now displays the actual connected server name.",
+        "commit_ids": [
+          717534
+        ],
+        "section": "User Interface"
+      },
+      {
+        "text": "Clan features are disabled in Softcore mode and the clan table is marked restricted, cleaning up tech‑tree displays.",
+        "commit_ids": [
+          717526
+        ],
+        "section": "Gameplay"
+      },
+      {
+        "text": "Nailgun now has a proper muzzle point, fixing turret placement errors.",
+        "commit_ids": [
+          717523
+        ],
+        "section": "Combat"
+      }
+    ],
+    "new_relevant_count": 3,
+    "new_summary": "- Pause menu now displays the actual connected server name.\n- Clan features are disabled in Softcore mode and the clan table is marked restricted, cleaning up tech‑tree displays.\n- Nailgun now has a proper muzzle point, fixing turret placement errors."
   },
   "2026-10-14": {
     "commit_count": 137,

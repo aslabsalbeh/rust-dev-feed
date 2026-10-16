@@ -1,5 +1,117 @@
 [
   {
+    "id": 717555,
+    "branch": "main",
+    "changeset": "168225",
+    "created": "2026-10-15T23:59:02",
+    "message": "Fixed failing NPC mounting tests (switched tests to use sheep and not cow)",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 717554,
+    "branch": "main/tattoos/art_pass",
+    "changeset": "168224",
+    "created": "2026-10-15T23:55:35",
+    "message": "MeshPaintable3D uses 16-bit unorm UV buffer instead of Half float. Increases precision up to 32x without increasing memory since all 3d painted meshes have UVs in the 0-1 space. Fixes blotchy and jagged brush strokes. Also effects egg suit.",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 717548,
+    "branch": "main",
+    "changeset": "168222",
+    "created": "2026-10-15T23:43:59",
+    "message": "Cherrypick 168219",
+    "user": "Flavien"
+  },
+  {
+    "id": 717547,
+    "branch": "▉▇█▉▆▅▇▋▌▉▌▊▇█▇▆▋▉▇▅█▍",
+    "changeset": "▍▉█▇▅▇",
+    "created": "2026-10-15T23:41:46",
+    "message": "██▉▌█▇▊▉▉▉▄▋▄▄▊▅▆▊▍▄▊ █▄▅█▉▋",
+    "user": "Flavien"
+  },
+  {
+    "id": 717546,
+    "branch": "main/tattoos/art_pass",
+    "changeset": "168220",
+    "created": "2026-10-15T23:34:20",
+    "message": "Restore opacity slider to tattoo UI\r\nChanged tattoo UI to sample colours from a .asset instead of colour picking from an image so we can use tattoo-appropriate colours (currently uses same colours as before except black)",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 717544,
+    "branch": "▅▍██▋▌▌▅▆▊▆▋▋▅▄▅█▉▊▍▍▌",
+    "changeset": "▇▇██▉▊",
+    "created": "2026-10-15T23:32:12",
+    "message": "▌▉█▆▄▊▇▄ ▅█▌█▄▉ ▉▆ ▍▋▌▌▆▋▉▄▅▊ ▅▊ ▉▄██▍ ▆▊ ▊ ▅▋▅▊▅▉ ▉█ ▍▊▅█▊▉▆▅ ▅▉ ▋ ▅▄▇▅█ ▉▊▉",
+    "user": "Flavien"
+  },
+  {
+    "id": 717543,
+    "branch": "main/tattoos/art_pass",
+    "changeset": "168218",
+    "created": "2026-10-15T23:29:01",
+    "message": "Add bump effect to tattoos",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 717534,
+    "branch": "main/development_server_fix",
+    "changeset": "168217",
+    "created": "2026-10-15T22:48:39",
+    "message": "Fix servers saying 'Development Server' in the pause menu when you're connected to a normal server",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 717530,
+    "branch": "main/optimize_position_update",
+    "changeset": "168216",
+    "created": "2026-10-15T22:37:36",
+    "message": "Lower quant from 1cm -> 1mm for position\n- switch from sending delta position to sending quantized acceleration so we can keep 1 byte per update after moving to a 10x smaller quant\n- if acceleration is larger than 0.127m / tick then it will send full acceleration (allows it to support instant teleports and large changes in velocity)\n- will fine-tune values further",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 717528,
+    "branch": "▇▆▆▌█▊▅▋▌█▉▇▇▋▅▅▉▆▉▌▄▄",
+    "changeset": "▌▌▇▉▌▄",
+    "created": "2026-10-15T22:33:24",
+    "message": "▉▌▆▌▌▋ ▅▄▅▉ ▄▍▄▅",
+    "user": "Flavien"
+  },
+  {
+    "id": 717526,
+    "branch": "main/gamemode_clans_restrictions",
+    "changeset": "168214",
+    "created": "2026-10-15T22:25:59",
+    "message": "- Disable clan features in softcore, like they already are in hardcore\r\n- Add clan table as a restricted item in softcore and hardcore. You can't use them anyway\r\n- Fix tech trees showing restricted items. Saved me having to make a whole new tech tree for softcore just to hide the clan table\r\n- Fix the custom inspector stuff on ItemDefinition for setting a restricted item not working in all prefab modes\r\n- Add dictionary lookup for finding gamemode item restrictions",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 717525,
+    "branch": "main/fruit_trees",
+    "changeset": "168213",
+    "created": "2026-10-15T22:16:19",
+    "message": "Disabled saving on both the apple.tree and coconut.tree prefabs (this stops the fruit piling up and floating after server restarts oops).\r\nReplaced array with a list and use Facepunch.pool instead of allocating an array each time.\r\nSet the positon and rotation of the fruit straight away.\r\nRemoved apple chance from oak_f. Instead move to oak_e which has a chance of spawning apples and a beehive.\r\nGeneral code clean up.",
+    "user": "Lukester"
+  },
+  {
+    "id": 717523,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "168211",
+    "created": "2026-10-15T22:09:47",
+    "message": "Fixed nailgun missing muzzlepoint, was erroring when put in a turret",
+    "user": "Flavien"
+  },
+  {
+    "id": 717521,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "168210",
+    "created": "2026-10-15T22:07:29",
+    "message": "Fixed nailgun world model outlline",
+    "user": "Flavien"
+  },
+  {
     "id": 717507,
     "branch": "main/skinviewer_nailgun",
     "changeset": "168207",
@@ -30,6 +142,14 @@
     "created": "2026-10-15T21:14:11",
     "message": "Added modular contraption kit, textures and materials for testing purposes.",
     "user": "tom.be"
+  },
+  {
+    "id": 717477,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "168202",
+    "created": "2026-10-15T20:36:09",
+    "message": "updated workshopsource nailgun model",
+    "user": "matt.i"
   },
   {
     "id": 717475,
@@ -2733,110 +2853,6 @@
     "changeset": "167751",
     "created": "2026-10-13T00:22:29",
     "message": "Added a level of hit forgiveness if the player is attacking a thin tree and misses\r\nOnly affects trees with a trunk radius of < 0.15m (hit_forgiveness_max_trunk)\r\nIf the player misses, we do an additional sweep of 0.12m to try and hit the tree",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 715158,
-    "branch": "main",
-    "changeset": "167750",
-    "created": "2026-10-13T00:12:26",
-    "message": "~Update manifest, last merge broke play mode",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 715157,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167749",
-    "created": "2026-10-13T00:07:49",
-    "message": "Fixed all the references to the default unity Quad in particles not actually using it\r\nAny of these particle being set active in builds could spike up to 7ms, caused by ParticleSystemRenderer::UpdateCachedMesh walking the Quad whole user list to check whether its already registered\r\n\r\nIt was referenced by thousands of renderers in monument prefabs, this is why the AK muzzle was slow to spawn in 167737",
-    "user": "Flavien"
-  },
-  {
-    "id": 715151,
-    "branch": "▇▊▌▅▋▅▍▇▍▋▉▊█▉▍▅▌▅▆▊▆█",
-    "changeset": "▌▆▉▋▄▆",
-    "created": "2026-10-12T23:56:37",
-    "message": "▋ █▋█▊█▅▉ ▄▍▌▅ ▍▉ ▉▋▄▅▄▆ ▇▊▄▄▉█▋ ▍▉▋ ▄▅▊ ▆▄▍ ▌▍▇▌ ▄▋ █▊▆ ▇▍▍▍ ▆▆▉▍▍▊▄",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 715149,
-    "branch": "main",
-    "changeset": "167747",
-    "created": "2026-10-12T23:49:17",
-    "message": "Merge from car_spawning_prefill\r\nModular cars spawned in the wild now have half of their engine slots filled with low quality parts\r\nThese parts are locked and cannot be removed until the car is loaded onto a modular car lift - making it easier to get a car up and running",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 715146,
-    "branch": "main/Halloween_2026_update",
-    "changeset": "167745",
-    "created": "2026-10-12T23:39:25",
-    "message": "Exiting the halloween/xmas portals now shows exit as an interaction prompt",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 715143,
-    "branch": "main/Halloween_2026_update",
-    "changeset": "167744",
-    "created": "2026-10-12T23:29:34",
-    "message": "Cherry pick 167632 - prevent seasonal dungeons spawning in building priv\r\nAlso applied a 1s cache to prevent it hammering physics too much",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 715137,
-    "branch": "main/lightgroupattime_optimization",
-    "changeset": "167742",
-    "created": "2026-10-12T23:20:49",
-    "message": "WIP fixes",
-    "user": "lamalove"
-  },
-  {
-    "id": 715128,
-    "branch": "main/hotreload_playmode_brick_fix",
-    "changeset": "167740",
-    "created": "2026-10-12T23:01:30",
-    "message": "Possible fix for hot reload sometimes causing issues when entering playmode and causing server startup to fail, because it held on to the port from a previous playmode session",
-    "user": "cipeaX"
-  },
-  {
-    "id": 715127,
-    "branch": "main/Halloween_2026_update",
-    "changeset": "167739",
-    "created": "2026-10-12T23:00:58",
-    "message": "Fixed halloween NPCs spawning inside safezones",
-    "user": "Nick.H"
-  },
-  {
-    "id": 715125,
-    "branch": "main/misc_alloc_cleanup",
-    "changeset": "167738",
-    "created": "2026-10-12T22:54:40",
-    "message": "Skip ItemIcon refreshing while not visible, now deferred to when the inventory opens\r\nBefore, any hidden icons would refresh on inventory changes, for example updating their amount and hover text every time you shot a gun\r\nAlso avoid some unnecessary OnItemAmountChanged broadcasts and hover text rebuild if data didn't change",
-    "user": "cipeaX"
-  },
-  {
-    "id": 715123,
-    "branch": "main/gunfiring_optims",
-    "changeset": "167737",
-    "created": "2026-10-12T22:51:39",
-    "message": "Stop HideIfAiming deactivating the muzzle flash once its particles finish. Every reused attack effect had to reactivate it\r\n\r\nWas spiking up to ~5-7ms in a build and only 0.2ms in editor somehow, now 0\r\nIt points at ParticleSystemRenderer::UpdateCachedMesh, checking that next",
-    "user": "Flavien"
-  },
-  {
-    "id": 715122,
-    "branch": "main/Halloween_2026_update",
-    "changeset": "167736",
-    "created": "2026-10-12T22:50:59",
-    "message": "Fixed dead halloween and easter candies persisting after server restart",
-    "user": "Nick.H"
-  },
-  {
-    "id": 715101,
-    "branch": "main/skim_changes",
-    "changeset": "167733",
-    "created": "2026-10-12T22:18:09",
-    "message": "Fix food spoliling in workbench recycle bin upgrade container",
     "user": "Jarryd Campi"
   }
 ]
