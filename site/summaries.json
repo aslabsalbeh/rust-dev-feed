@@ -1,27 +1,16 @@
 {
   "2026-10-16": {
-    "commit_count": 25,
-    "relevant_commit_count": 12,
-    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996",
+    "commit_count": 38,
+    "relevant_commit_count": 18,
+    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Decay",
+        "title": "Combat & Animals",
         "items": [
           {
-            "text": "Fixed bases decaying even when the Tool Cupboard had upkeep, especially on high‑entity‑count servers.",
-            "commit_ids": [
-              717782
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & AI",
-        "items": [
-          {
-            "text": "Animals now correctly attack players standing next to vehicles.",
+            "text": "Fixed animals not attacking players standing next to vehicles.",
             "commit_ids": [
               717905
             ]
@@ -29,37 +18,88 @@
         ]
       },
       {
-        "title": "Animal Interaction",
+        "title": "Base & Decay",
         "items": [
           {
-            "text": "Leading an animal remains the default action before you can pet it.",
+            "text": "Base decay now respects TC upkeep even on very high entity count servers, fixing unintended decay.",
+            "commit_ids": [
+              717782
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Server Settings",
+        "items": [
+          {
+            "text": "Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.",
+            "commit_ids": [
+              718034
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interactions",
+        "items": [
+          {
+            "text": "Leading remains the default interaction before petting livestock, ensuring consistent animal handling.",
             "commit_ids": [
               717928
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Graphics & Visibility",
+        "items": [
+          {
+            "text": "Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.",
+            "commit_ids": [
+              718041
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally.",
+            "commit_ids": [
+              717996
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Base Decay\n- Fixed bases decaying even when the Tool Cupboard had upkeep, especially on high‑entity‑count servers.\n\n### Animals & AI\n- Animals now correctly attack players standing next to vehicles.\n\n### Animal Interaction\n- Leading an animal remains the default action before you can pet it.",
+    "summary": "### Combat & Animals\n- Fixed animals not attacking players standing next to vehicles.\n\n### Base & Decay\n- Base decay now respects TC upkeep even on very high entity count servers, fixing unintended decay.\n\n### Server Settings\n- Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.\n\n### Interactions\n- Leading remains the default interaction before petting livestock, ensuring consistent animal handling.\n\n### Graphics & Visibility\n- Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.\n\n### Gameplay & Balance\n- Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally.",
     "new_items": [
       {
-        "text": "Animals now correctly attack players standing next to vehicles.",
+        "text": "Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.",
         "commit_ids": [
-          717905
+          718034
         ],
-        "section": "Animals & AI"
+        "section": "Server Settings"
       },
       {
-        "text": "Leading an animal remains the default action before you can pet it.",
+        "text": "Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.",
         "commit_ids": [
-          717928
+          718041
         ],
-        "section": "Animal Interaction"
+        "section": "Graphics & Visibility"
+      },
+      {
+        "text": "Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally.",
+        "commit_ids": [
+          717996
+        ],
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Animals now correctly attack players standing next to vehicles.\n- Leading an animal remains the default action before you can pet it."
+    "new_relevant_count": 3,
+    "new_summary": "- Client joins no longer reset server convars (e.g., gamemode settings) to defaults when using C+S.\n- Fixed invisible renderers that could appear after toggling BRG, restoring proper object visibility.\n- Live tattoo painting now respects separate visibility for live and old layers, preventing new ink from fading unintentionally."
   },
   "2026-10-15": {
     "commit_count": 118,
