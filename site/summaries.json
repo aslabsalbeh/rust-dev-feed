@@ -1,174 +1,46 @@
 {
   "2026-10-15": {
-    "commit_count": 117,
-    "relevant_commit_count": 56,
-    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464,717475,717477,717523,717526,717534,717554,717555",
+    "commit_count": 118,
+    "relevant_commit_count": 57,
+    "relevant_signature": "717099,717100,717109,717121,717128,717153,717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262,717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464,717475,717477,717523,717526,717534,717554,717555,717566,717569,717571,717623",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "717263,717270,717273,717293,717312,717313,717327,717333,717342,717355,717357,717412,717427,717449,717464,717475,717477,717523,717526,717534,717554,717555,717566,717569,717571": [
-        {
-          "title": "Server & UI",
-          "items": [
-            {
-              "text": "Fixed pause menu incorrectly labeling normal servers as \"Development Server\".",
-              "commit_ids": [
-                717534
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Clans & Gameplay Restrictions",
-          "items": [
-            {
-              "text": "Disabled clan features in softcore and marked the clan table as a restricted item in both softcore and hardcore, also fixed tech trees to hide restricted items.",
-              "commit_ids": [
-                717526
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons",
-          "items": [
-            {
-              "text": "Fixed missing muzzle point on the nailgun, preventing errors when the weapon is placed in a turret.",
-              "commit_ids": [
-                717523
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Structures",
-          "items": [
-            {
-              "text": "Reworked the lighthouse: it now requires repair to restore its light and unlock the deep sea area, using a new RepairableStructure base class (also applied to the airwolf helipad).",
-              "commit_ids": [
-                717449
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Boat Mechanics",
-          "items": [
-            {
-              "text": "Corrected client UI that incorrectly showed boat edit privileges for boats you don't have authority over.",
-              "commit_ids": [
-                717357
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Performance",
-          "items": [
-            {
-              "text": "Implemented snapshot send budgeting to reduce client stutter when loading large bases, capping snapshots per tick and adding a configurable send rate.",
-              "commit_ids": [
-                717355
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat",
-          "items": [
-            {
-              "text": "Fixed third‑person grenade throws that previously swung sideways while standing still, ensuring throws go straight ahead.",
-              "commit_ids": [
-                717273
-              ]
-            }
-          ]
-        }
-      ],
-      "717157,717159,717161,717162,717186,717188,717198,717203,717225,717227,717230,717233,717235,717240,717244,717247,717248,717252,717253,717255,717256,717257,717258,717261,717262": [
-        {
-          "title": "Weapons & Explosives",
-          "items": [
-            {
-              "text": "Grenade drop and attach animations now sync correctly, ensuring grenades release at the same moment as the throw animation.",
-              "commit_ids": [
-                717262
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Vehicles",
-          "items": [
-            {
-              "text": "Players can no longer operate the PT boat while restrained, preventing unintended boat usage.",
-              "commit_ids": [
-                717161
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio",
-          "items": [
-            {
-              "text": "Fixed movement sound triggers that were on the wrong collision layer, restoring proper environmental audio cues.",
-              "commit_ids": [
-                717188
-              ]
-            },
-            {
-              "text": "Stir sound for the biofuel generator is no longer cut off, providing the full audio loop.",
-              "commit_ids": [
-                717233
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "User Interface",
+        "title": "World & Exploration",
         "items": [
           {
-            "text": "Pause menu now displays the actual connected server name.",
+            "text": "Lighthouse now requires repair; fixing restores its light and opens access to the deep sea area.",
             "commit_ids": [
-              717534
-            ]
-          },
-          {
-            "text": "Boat edit‑mode no longer shows privileges for boats you don't own.",
-            "commit_ids": [
-              717357
-            ]
-          },
-          {
-            "text": "Crafting interfaces now have per‑source toggles, hiding disabled mixing table entries without breaking layout or search.",
-            "commit_ids": [
-              717099
+              717449
             ]
           }
         ]
       },
       {
-        "title": "Gameplay",
+        "title": "Clans & Game Modes",
         "items": [
           {
-            "text": "Clan features are disabled in Softcore mode and the clan table is marked restricted, cleaning up tech‑tree displays.",
+            "text": "Clan features have been disabled in Softcore and the clan table is now a restricted item in both Softcore and Hardcore, fixing tech‑tree displays.",
             "commit_ids": [
               717526
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Structures & Building",
+        "items": [
           {
-            "text": "Lighthouses can be repaired; fixing them restores their light and opens access to the deep‑sea area.",
+            "text": "Uploaded signs (uploadsign) no longer get cleared unexpectedly due to an internal keying issue.",
             "commit_ids": [
-              717449
+              717623
             ]
           },
           {
-            "text": "Players can no longer operate PT boats while restrained, closing an exploit.",
+            "text": "Nailgun muzzle point fixed, allowing it to be placed in turrets without errors.",
             "commit_ids": [
-              717161
+              717523
             ]
           }
         ]
@@ -177,50 +49,53 @@
         "title": "Combat",
         "items": [
           {
-            "text": "Nailgun now has a proper muzzle point, fixing turret placement errors.",
+            "text": "Grenade throws now behave correctly: side‑swing when standing still is fixed and release timing is synchronized across animations.",
             "commit_ids": [
-              717523
-            ]
-          },
-          {
-            "text": "Third‑person grenade throws no longer swing sideways when standing still, improving accuracy.",
-            "commit_ids": [
-              717273
-            ]
-          },
-          {
-            "text": "Grenade release timing is now synchronized across drop and attach animations.",
-            "commit_ids": [
+              717273,
               717262
             ]
           }
         ]
       },
       {
-        "title": "Audio",
+        "title": "User Interface & Store",
         "items": [
           {
-            "text": "Movement sound triggers use correct collider layers, ensuring proper audio cues when moving through structures such as floating cities and islands.",
+            "text": "Pause menu now shows the actual server name and boat privilege UI no longer displays edit‑mode privileges you lack.",
             "commit_ids": [
-              717188
+              717534,
+              717357
+            ]
+          },
+          {
+            "text": "Store pages now reference the correct assets, fixing previously incorrect item displays.",
+            "commit_ids": [
+              717263
             ]
           }
         ]
       },
       {
-        "title": "Performance",
+        "title": "Performance & Audio",
         "items": [
           {
-            "text": "Entity snapshot sending is now budgeted per tick, reducing client stutter when loading large bases.",
+            "text": "Snapshot send budget implemented to reduce client stutter when loading large bases; server now caps snapshots per tick.",
             "commit_ids": [
               717355
+            ]
+          },
+          {
+            "text": "Biofuel generator stirring sound no longer cuts off prematurely and movement sound triggers work correctly after collider fixes.",
+            "commit_ids": [
+              717233,
+              717188
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### User Interface\n- Pause menu now displays the actual connected server name.\n- Boat edit‑mode no longer shows privileges for boats you don't own.\n- Crafting interfaces now have per‑source toggles, hiding disabled mixing table entries without breaking layout or search.\n\n### Gameplay\n- Clan features are disabled in Softcore mode and the clan table is marked restricted, cleaning up tech‑tree displays.\n- Lighthouses can be repaired; fixing them restores their light and opens access to the deep‑sea area.\n- Players can no longer operate PT boats while restrained, closing an exploit.\n\n### Combat\n- Nailgun now has a proper muzzle point, fixing turret placement errors.\n- Third‑person grenade throws no longer swing sideways when standing still, improving accuracy.\n- Grenade release timing is now synchronized across drop and attach animations.\n\n### Audio\n- Movement sound triggers use correct collider layers, ensuring proper audio cues when moving through structures such as floating cities and islands.\n\n### Performance\n- Entity snapshot sending is now budgeted per tick, reducing client stutter when loading large bases.",
+    "summary": "### World & Exploration\n- Lighthouse now requires repair; fixing restores its light and opens access to the deep sea area.\n\n### Clans & Game Modes\n- Clan features have been disabled in Softcore and the clan table is now a restricted item in both Softcore and Hardcore, fixing tech‑tree displays.\n\n### Structures & Building\n- Uploaded signs (uploadsign) no longer get cleared unexpectedly due to an internal keying issue.\n- Nailgun muzzle point fixed, allowing it to be placed in turrets without errors.\n\n### Combat\n- Grenade throws now behave correctly: side‑swing when standing still is fixed and release timing is synchronized across animations.\n\n### User Interface & Store\n- Pause menu now shows the actual server name and boat privilege UI no longer displays edit‑mode privileges you lack.\n- Store pages now reference the correct assets, fixing previously incorrect item displays.\n\n### Performance & Audio\n- Snapshot send budget implemented to reduce client stutter when loading large bases; server now caps snapshots per tick.\n- Biofuel generator stirring sound no longer cuts off prematurely and movement sound triggers work correctly after collider fixes.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -405,7 +280,7 @@
     "new_summary": ""
   },
   "2026-10-13": {
-    "commit_count": 96,
+    "commit_count": 94,
     "relevant_commit_count": 51,
     "relevant_signature": "715347,715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773,715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059,716078,716083,716106,716107,716119,716120,716129,716136",
     "prompt_version": "structured-read-state-v7-explicit-empty",
