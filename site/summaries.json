@@ -1,28 +1,45 @@
 {
   "2026-10-16": {
-    "commit_count": 64,
-    "relevant_commit_count": 28,
-    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214",
+    "commit_count": 67,
+    "relevant_commit_count": 29,
+    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & AI",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed crabs and jellyfish job errors, restoring their proper behavior.",
+            "text": "Fixed scarecrow errors that prevented them from functioning correctly.",
+            "commit_ids": [
+              718198
+            ]
+          },
+          {
+            "text": "Resolved job system errors for crabs and jellyfish, restoring their intended behaviors.",
             "commit_ids": [
               718159
             ]
           },
           {
-            "text": "Fixed animals not attacking players standing next to vehicles, ensuring combat works correctly.",
+            "text": "Corrected jellyfish prefab naming issue (was mistakenly named \"crabs\"), ensuring proper spawning and behavior.",
             "commit_ids": [
-              717905
+              718134
             ]
           },
           {
-            "text": "Changed default interaction order for livestock: leading now remains the default before petting.",
+            "text": "Fixed animals not attacking players standing next to vehicles, restoring intended combat behavior.",
+            "commit_ids": [
+              717905
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interactions",
+        "items": [
+          {
+            "text": "Adjusted livestock interaction order so leading remains the default action before petting.",
             "commit_ids": [
               717928
             ]
@@ -30,22 +47,10 @@
         ]
       },
       {
-        "title": "World Interactions",
+        "title": "Server Settings",
         "items": [
           {
-            "text": "Refined busy collider movement and updated the garage door prefab for more precise interaction.",
-            "commit_ids": [
-              718174,
-              718060
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Server & Gameplay Settings",
-        "items": [
-          {
-            "text": "Fixed issue where joining clients reset server convars (including gamemode settings) to defaults when running C+S.",
+            "text": "Fixed a bug where joining clients reset server convars (including gamemode settings) to defaults when running C+S, preserving server configurations.",
             "commit_ids": [
               718034
             ]
@@ -53,10 +58,21 @@
         ]
       },
       {
-        "title": "Base Decay & Upkeep",
+        "title": "Events & Dungeons",
         "items": [
           {
-            "text": "Fixed bases incorrectly decaying even when TC upkeep was active by adjusting the decay tick budgeting, preventing decay on high‑entity‑count servers.",
+            "text": "Applied dungeon fixes (cherry‑pick 168240) addressing various bugs in the Halloween 2026 update dungeons.",
+            "commit_ids": [
+              717903
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Upkeep & Decay",
+        "items": [
+          {
+            "text": "Fixed bases decaying incorrectly on high‑entity‑count servers, ensuring upkeep still prevents decay even when the decay tick is slowed down.",
             "commit_ids": [
               717782
             ]
@@ -67,60 +83,37 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Scarecrow error fixed, restoring proper scarecrow functionality in the Halloween event.",
-            "commit_ids": [
-              718198
-            ]
-          },
-          {
-            "text": "Wounded head IK now correctly points up/down; player turn pooling issues resolved, improving animation consistency and turn responsiveness.",
+            "text": "Fixed wounded head IK direction and resolved player pooling issues during mid-turns, preventing visual glitches and turn stalls.",
             "commit_ids": [
               718182
             ]
           },
           {
-            "text": "Tattoo painting now separates visibility for live and old layers, preventing unintended fading of new ink during live painting.",
+            "text": "Separated visibility for live and old tattoo layers, fixing fade issues on new tattoo ink during live painting.",
             "commit_ids": [
               717996
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Interaction",
+        "items": [
           {
-            "text": "Dungeon fixes applied, addressing various bugs that could affect navigation and combat in the Halloween 2026 update dungeons.",
+            "text": "Warhead garage door collision is now more granular and precise, improving player movement through the door and reducing clipping issues.",
             "commit_ids": [
-              717903
+              718174,
+              718060
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Animals & AI\n- Fixed crabs and jellyfish job errors, restoring their proper behavior.\n- Fixed animals not attacking players standing next to vehicles, ensuring combat works correctly.\n- Changed default interaction order for livestock: leading now remains the default before petting.\n\n### World Interactions\n- Refined busy collider movement and updated the garage door prefab for more precise interaction.\n\n### Server & Gameplay Settings\n- Fixed issue where joining clients reset server convars (including gamemode settings) to defaults when running C+S.\n\n### Base Decay & Upkeep\n- Fixed bases incorrectly decaying even when TC upkeep was active by adjusting the decay tick budgeting, preventing decay on high‑entity‑count servers.\n\n### Gameplay & Balance\n- Scarecrow error fixed, restoring proper scarecrow functionality in the Halloween event.\n- Wounded head IK now correctly points up/down; player turn pooling issues resolved, improving animation consistency and turn responsiveness.\n- Tattoo painting now separates visibility for live and old layers, preventing unintended fading of new ink during live painting.\n- Dungeon fixes applied, addressing various bugs that could affect navigation and combat in the Halloween 2026 update dungeons.",
-    "new_items": [
-      {
-        "text": "Refined busy collider movement and updated the garage door prefab for more precise interaction.",
-        "commit_ids": [
-          718174,
-          718060
-        ],
-        "section": "World Interactions"
-      },
-      {
-        "text": "Scarecrow error fixed, restoring proper scarecrow functionality in the Halloween event.",
-        "commit_ids": [
-          718198
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Wounded head IK now correctly points up/down; player turn pooling issues resolved, improving animation consistency and turn responsiveness.",
-        "commit_ids": [
-          718182
-        ],
-        "section": "Gameplay & Balance"
-      }
-    ],
-    "new_relevant_count": 4,
-    "new_summary": "- Refined busy collider movement and updated the garage door prefab for more precise interaction.\n- Scarecrow error fixed, restoring proper scarecrow functionality in the Halloween event.\n- Wounded head IK now correctly points up/down; player turn pooling issues resolved, improving animation consistency and turn responsiveness."
+    "summary": "### NPC & AI\n- Fixed scarecrow errors that prevented them from functioning correctly.\n- Resolved job system errors for crabs and jellyfish, restoring their intended behaviors.\n- Corrected jellyfish prefab naming issue (was mistakenly named \"crabs\"), ensuring proper spawning and behavior.\n- Fixed animals not attacking players standing next to vehicles, restoring intended combat behavior.\n\n### Interactions\n- Adjusted livestock interaction order so leading remains the default action before petting.\n\n### Server Settings\n- Fixed a bug where joining clients reset server convars (including gamemode settings) to defaults when running C+S, preserving server configurations.\n\n### Events & Dungeons\n- Applied dungeon fixes (cherry‑pick 168240) addressing various bugs in the Halloween 2026 update dungeons.\n\n### Upkeep & Decay\n- Fixed bases decaying incorrectly on high‑entity‑count servers, ensuring upkeep still prevents decay even when the decay tick is slowed down.\n\n### Gameplay & Balance\n- Fixed wounded head IK direction and resolved player pooling issues during mid-turns, preventing visual glitches and turn stalls.\n- Separated visibility for live and old tattoo layers, fixing fade issues on new tattoo ink during live painting.\n\n### Gameplay & Interaction\n- Warhead garage door collision is now more granular and precise, improving player movement through the door and reducing clipping issues.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-15": {
     "commit_count": 118,
