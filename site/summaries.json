@@ -1,4 +1,17 @@
 {
+  "2026-10-16": {
+    "commit_count": 1,
+    "relevant_commit_count": 1,
+    "relevant_signature": "717694",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-15": {
     "commit_count": 118,
     "relevant_commit_count": 57,
@@ -275,134 +288,6 @@
     ],
     "status": "ok",
     "summary": "### Combat & Weapon Balancing\n- Nerfed damage of arrows, paintball projectiles, speargun spears, and shotgun slugs.\n- Increased UZI 9mm magazine capacity and fire rate for better combat performance.\n- Fixed turret viewmodel aim inconsistencies, improving targeting accuracy.\n\n### World & Environment Fixes\n- Cliffs now correctly remove heightmap mesh colliders when loading cached maps, eliminating collision glitches.\n- Players no longer get stuck on Christmas and Halloween lights, ensuring smooth navigation.\n- Fixed missing maps and pieces in Halloween and Xmas dungeons and corrected network group alignment for various map sizes.\n- Restored Frankenstein pet mobility by fixing a missing NavAgent component.\n\n### Gameplay Interactions & Mechanics\n- Item pickup UI now displays the total number of mushrooms owned after collection.\n- Frankenstein table can be used even when building is blocked.\n- Sail placement detection corrected so sails block appropriately whether lowered or raised.\n\n### Balance Adjustments\n- Removed admin cars, lowered snowball damage, reduced boat building block durability, cut ballista and static ballista seat counts, and decreased battering ram seats.\n- Monument blockers outside military tunnels now require explosives to break, matching other blockers.\n\n### Quality of Life & Economy\n- Fixed invisible or disconnected players blocking Halloween candy spawns.\n- Resolved marketplace terminal error that displayed a pending item notice after purchase.\n\n### Gameplay & Balance\n- Reduced the bonuses from Advanced, Pure, and Creamy/Milky teas (Advanced ~11% nerf, Pure/Milky ~18% nerf, Creamy ~20% nerf). Healing, Crafting Quality, and Rad Removal teas remain unchanged.\n- Fixed deep sea containers so they no longer spam tree‑spawn RPCs to all players when opened, removing related lag spikes.\n\n### Audio\n- Train sounds now play correctly, fixing missing audio from pooled train vehicles.\n- Metal detector swing now produces audible sound effects.\n- Ballista and catapult weapons now emit their respective firing sounds.\n\n### UI\n- Fixed a non‑interactable modal, restoring the ability to click through the affected UI window.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-13": {
-    "commit_count": 94,
-    "relevant_commit_count": 51,
-    "relevant_signature": "715347,715352,715368,715416,715431,715457,715460,715470,715527,715548,715550,715557,715568,715569,715585,715586,715596,715599,715607,715664,715699,715716,715736,715739,715751,715773,715777,715792,715823,715828,715832,715873,715880,715889,715892,715911,715960,715998,715999,716001,716009,716019,716059,716078,716083,716106,716107,716119,716120,716129,716136",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Survival & Movement",
-        "items": [
-          {
-            "text": "Sprint now consumes double calories and fluids by default (server.sprintmetabolismscale = 2).",
-            "commit_ids": [
-              716136
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Shotguns fully reload all chambers when switching ammo types.",
-            "commit_ids": [
-              716119
-            ]
-          },
-          {
-            "text": "UZI 9mm now has separate ADS and recoil settings depending on stock deployment.",
-            "commit_ids": [
-              715880
-            ]
-          },
-          {
-            "text": "Handmade SMG damage increased from 20 to 21.",
-            "commit_ids": [
-              715416
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Utilities",
-        "items": [
-          {
-            "text": "Distance flares no longer stay permanently off.",
-            "commit_ids": [
-              716129
-            ]
-          },
-          {
-            "text": "Blocks placed with a building plan now receive proper network IDs.",
-            "commit_ids": [
-              715960
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Map",
-        "items": [
-          {
-            "text": "Car spawning pre‑fills more engine slots (5‑slot engines start with 3 slots filled).",
-            "commit_ids": [
-              715368
-            ]
-          },
-          {
-            "text": "Middle‑mouse button can now drag map markers to reposition them.",
-            "commit_ids": [
-              715347
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Tattoo Customization",
-        "items": [
-          {
-            "text": "Tattoo system upgraded: brush size limited to 1‑5, zoom‑independent scaling, UV smoothing, and a two‑layer editing workflow with merging and fading, all synced server‑side.",
-            "commit_ids": [
-              715892,
-              715792
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Mechanics",
-        "items": [
-          {
-            "text": "Rear turret crosshair no longer sticks, restoring proper aiming",
-            "commit_ids": [
-              715999
-            ]
-          },
-          {
-            "text": "Fixed far‑shot and shell replay bugs, improving long‑range shooting consistency",
-            "commit_ids": [
-              715751
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Controls",
-        "items": [
-          {
-            "text": "Tooltip bindings now display correct keys, fixing mismatched prompts",
-            "commit_ids": [
-              715527
-            ]
-          },
-          {
-            "text": "Steam Input glyphs corrected and cached, ensuring accurate controller button icons",
-            "commit_ids": [
-              715460
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Survival & Movement\n- Sprint now consumes double calories and fluids by default (server.sprintmetabolismscale = 2).\n\n### Combat & Weapons\n- Shotguns fully reload all chambers when switching ammo types.\n- UZI 9mm now has separate ADS and recoil settings depending on stock deployment.\n- Handmade SMG damage increased from 20 to 21.\n\n### Building & Utilities\n- Distance flares no longer stay permanently off.\n- Blocks placed with a building plan now receive proper network IDs.\n\n### Vehicles & Map\n- Car spawning pre‑fills more engine slots (5‑slot engines start with 3 slots filled).\n- Middle‑mouse button can now drag map markers to reposition them.\n\n### Tattoo Customization\n- Tattoo system upgraded: brush size limited to 1‑5, zoom‑independent scaling, UV smoothing, and a two‑layer editing workflow with merging and fading, all synced server‑side.\n\n### Combat & Mechanics\n- Rear turret crosshair no longer sticks, restoring proper aiming\n- Fixed far‑shot and shell replay bugs, improving long‑range shooting consistency\n\n### UI & Controls\n- Tooltip bindings now display correct keys, fixing mismatched prompts\n- Steam Input glyphs corrected and cached, ensuring accurate controller button icons",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
