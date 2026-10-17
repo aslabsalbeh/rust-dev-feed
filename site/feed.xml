@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sat, 17 Oct 2026 12:17:31 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 14:17:26 -0400</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Oct 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -87,37 +87,29 @@
     <item>
       <title>Rust Development Updates — Oct 14</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;68 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;57 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Core Gameplay Fixes&lt;/h3&gt;
+&lt;h3&gt;World Interaction &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="716910,716911"&gt;Restored use of the Frankenstein table when the building area is blocked.&lt;/li&gt;
-&lt;li data-rust-commits="716791,716746"&gt;Improved sailing mechanics: sail guide now correctly detects blocking when lowered, and server/client collision checks are synchronized to validate sail placement.&lt;/li&gt;
-&lt;li data-rust-commits="716726,716719"&gt;Fixed dungeon map issues: restored missing data for the Halloween and Christmas dungeons and corrected network group alignment for spawned dungeons on various map sizes.&lt;/li&gt;
+&lt;li data-rust-commits="716913"&gt;Pickup notices now correctly display the total number of mushrooms collected.&lt;/li&gt;
+&lt;li data-rust-commits="716911,716910"&gt;Frankenstein table can now be used even when an adjacent building is blocked.&lt;/li&gt;
+&lt;li data-rust-commits="716791,716746"&gt;Sail placement guide now correctly detects blocking both when sails are lowered and raised, fixing mismatched server/client checks.&lt;/li&gt;
+&lt;li data-rust-commits="716886"&gt;Cliffs correctly remove their heightmap mesh collider when loading from cached maps, preventing unexpected collisions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Item &amp;amp; Weapon Balance&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="716792"&gt;Reduced projectile damage: arrows, paintball, speargun spears, and shotgun slugs now deal significantly less damage.&lt;/li&gt;
-&lt;li data-rust-commits="716790"&gt;Adjusted entity limits and damage values: admin cars removed, snowball and snowball‑gun projectiles damage lowered, and boat building block limits reduced.&lt;/li&gt;
-&lt;li data-rust-commits="716833"&gt;Lowered crew seat counts for ballista, static ballista, battering ram, and catapult to improve balance.&lt;/li&gt;
+&lt;li data-rust-commits="716833"&gt;Ballista and static ballista health (or count) reduced from 8 to 2; battering ram and catapult seats reduced from 8.&lt;/li&gt;
+&lt;li data-rust-commits="716792"&gt;Projectile damage values lowered: arrows 100→25, paintball projectile 100→5, speargun spear 100→5, shotgun slug 100→10.&lt;/li&gt;
+&lt;li data-rust-commits="716790"&gt;General balance tweaks: admin cars removed (2→0), snowball damage reduced (100→5), snowball gun projectile reduced (100→5), boat building block durability reduced (100→15).&lt;/li&gt;
+&lt;li data-rust-commits="716814"&gt;Advanced, Pure, and Creamy/Milky tea bonuses nerfed (Advanced ~11%, Pure/Milky ~18%, Creamy ~20%); healing, crafting quality, rad removal unchanged.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Tea Buff Adjustments&lt;/h3&gt;
+&lt;h3&gt;Dungeon &amp;amp; Map Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="716814"&gt;Nerfed tea bonuses: Advanced tea ~‑11%, Pure/Milky teas ~‑18%, Creamy tea ~‑20%; healing, crafting quality, and radiation removal teas remain unchanged.&lt;/li&gt;
+&lt;li data-rust-commits="716726,716719"&gt;Halloween dungeon map loading fixed; missing pieces in Xmas dungeon restored; dungeon network groups now align correctly with spawned dungeons on all map sizes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Feedback&lt;/h3&gt;
+&lt;h3&gt;Pets &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="716913"&gt;Mushroom pickup UI now displays the total amount owned after collection.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Audio &amp;amp; Companion Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="716897"&gt;Restored missing destruction and gib sound effects for several traincar variants.&lt;/li&gt;
-&lt;li data-rust-commits="716676"&gt;Fixed Frankenstein pet movement by adding the required navigation agent component.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="716886"&gt;Cliffs now correctly remove their heightmap mesh colliders when loading from cached maps, preventing unexpected collision issues on procedurally generated terrain.&lt;/li&gt;
-&lt;li data-rust-commits="716728"&gt;Opening deep sea containers no longer triggers massive tree‑spawn RPC spam, reducing lag and network traffic for all nearby players.&lt;/li&gt;
+&lt;li data-rust-commits="716676"&gt;Fixed Frankenstein pet not moving by adding the missing navigation agent component.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-14</guid>
