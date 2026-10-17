@@ -1,35 +1,18 @@
 {
   "2026-10-16": {
-    "commit_count": 71,
-    "relevant_commit_count": 30,
-    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718414",
+    "commit_count": 74,
+    "relevant_commit_count": 31,
+    "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Explosives",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Grenades now appear instantly when attached, fixing delayed visibility and prediction issues.",
+            "text": "Grenades now appear promptly when thrown or attached, fixing the previous invisibility until the attach_reveal animation event.",
             "commit_ids": [
               718414
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Halloween 2026 Update",
-        "items": [
-          {
-            "text": "Resolved scarecrow error that could interrupt the Halloween event.",
-            "commit_ids": [
-              718198
-            ]
-          },
-          {
-            "text": "Implemented dungeon stability fixes, improving gameplay in Halloween dungeons.",
-            "commit_ids": [
-              717903
             ]
           }
         ]
@@ -38,7 +21,7 @@
         "title": "Server & Settings",
         "items": [
           {
-            "text": "Client joins no longer reset server convars such as gamemode settings when running C+S.",
+            "text": "Joining clients no longer reset server convars, preserving gamemode and other server settings when running C+S.",
             "commit_ids": [
               718034
             ]
@@ -46,24 +29,34 @@
         ]
       },
       {
-        "title": "Animals & AI",
+        "title": "Cosmetics",
         "items": [
           {
-            "text": "Animals now attack players standing next to vehicles.",
+            "text": "Tattoo painting now correctly handles fade, keeping new ink visible while older layers fade as intended.",
             "commit_ids": [
-              717905
+              717996
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Interactions",
+        "items": [
           {
-            "text": "Fixed job errors for crabs and jellyfish, restoring their intended behavior.",
-            "commit_ids": [
-              718159
-            ]
-          },
-          {
-            "text": "Leading is now the default interaction before petting livestock.",
+            "text": "The 'leading' action is now the default before petting livestock, improving interaction consistency.",
             "commit_ids": [
               717928
+            ]
+          }
+        ]
+      },
+      {
+        "title": "AI & NPC",
+        "items": [
+          {
+            "text": "Animals will now attack players standing next to vehicles, restoring expected combat behavior.",
+            "commit_ids": [
+              717905
             ]
           }
         ]
@@ -72,7 +65,7 @@
         "title": "Base Decay & Upkeep",
         "items": [
           {
-            "text": "Bases with an active Tool Cupboard no longer decay, even on high-entity-count servers that previously slowed decay ticks.",
+            "text": "Bases no longer decay when the Tool Cupboard has sufficient upkeep, even on high‑entity‑count servers where decay ticks were previously slowed.",
             "commit_ids": [
               717782
             ]
@@ -83,40 +76,44 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Wounded head IK now correctly points up/down, fixing visual glitches when injured; pooling issues during player turns resolved.",
+            "text": "Scarecrows no longer trigger errors, restoring their defensive behavior.",
+            "commit_ids": [
+              718198
+            ]
+          },
+          {
+            "text": "Dungeon bugs fixed, improving raid stability and loot generation.",
+            "commit_ids": [
+              717903
+            ]
+          },
+          {
+            "text": "Player pooling issue during turn actions resolved, preventing missed actions and ensuring smoother turn transitions.",
             "commit_ids": [
               718182
             ]
           },
           {
-            "text": "Live tattoo painting now respects separate visibility for new and old layers, preventing unintended fading of fresh ink.",
-            "commit_ids": [
-              717996
-            ]
-          },
-          {
-            "text": "Warhead garage door collision and interaction refined for more precise movement and smoother player handling.",
+            "text": "Warhead garage doors now feature more granular collider movement, making entry and exit interactions more precise.",
             "commit_ids": [
               718174,
               718060
+            ]
+          },
+          {
+            "text": "Job errors for crab and jellyfish harvesting have been fixed, restoring reliable resource gathering.",
+            "commit_ids": [
+              718159
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Explosives\n- Grenades now appear instantly when attached, fixing delayed visibility and prediction issues.\n\n### Halloween 2026 Update\n- Resolved scarecrow error that could interrupt the Halloween event.\n- Implemented dungeon stability fixes, improving gameplay in Halloween dungeons.\n\n### Server & Settings\n- Client joins no longer reset server convars such as gamemode settings when running C+S.\n\n### Animals & AI\n- Animals now attack players standing next to vehicles.\n- Fixed job errors for crabs and jellyfish, restoring their intended behavior.\n- Leading is now the default interaction before petting livestock.\n\n### Base Decay & Upkeep\n- Bases with an active Tool Cupboard no longer decay, even on high-entity-count servers that previously slowed decay ticks.\n\n### Gameplay & Balance\n- Wounded head IK now correctly points up/down, fixing visual glitches when injured; pooling issues during player turns resolved.\n- Live tattoo painting now respects separate visibility for new and old layers, preventing unintended fading of fresh ink.\n- Warhead garage door collision and interaction refined for more precise movement and smoother player handling.",
-    "new_items": [
-      {
-        "text": "Grenades now appear instantly when attached, fixing delayed visibility and prediction issues.",
-        "commit_ids": [
-          718414
-        ],
-        "section": "Combat & Explosives"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Grenades now appear instantly when attached, fixing delayed visibility and prediction issues."
+    "summary": "### Combat & Weapons\n- Grenades now appear promptly when thrown or attached, fixing the previous invisibility until the attach_reveal animation event.\n\n### Server & Settings\n- Joining clients no longer reset server convars, preserving gamemode and other server settings when running C+S.\n\n### Cosmetics\n- Tattoo painting now correctly handles fade, keeping new ink visible while older layers fade as intended.\n\n### Livestock & Interactions\n- The 'leading' action is now the default before petting livestock, improving interaction consistency.\n\n### AI & NPC\n- Animals will now attack players standing next to vehicles, restoring expected combat behavior.\n\n### Base Decay & Upkeep\n- Bases no longer decay when the Tool Cupboard has sufficient upkeep, even on high‑entity‑count servers where decay ticks were previously slowed.\n\n### Gameplay & Balance\n- Scarecrows no longer trigger errors, restoring their defensive behavior.\n- Dungeon bugs fixed, improving raid stability and loot generation.\n- Player pooling issue during turn actions resolved, preventing missed actions and ensuring smoother turn transitions.\n- Warhead garage doors now feature more granular collider movement, making entry and exit interactions more precise.\n- Job errors for crab and jellyfish harvesting have been fixed, restoring reliable resource gathering.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-15": {
     "commit_count": 118,
