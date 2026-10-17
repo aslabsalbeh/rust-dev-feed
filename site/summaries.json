@@ -217,37 +217,77 @@
     "new_summary": ""
   },
   "2026-10-14": {
-    "commit_count": 57,
-    "relevant_commit_count": 28,
-    "relevant_signature": "716674,716676,716678,716679,716683,716701,716717,716719,716721,716726,716728,716735,716746,716763,716782,716785,716786,716790,716791,716792,716814,716833,716886,716894,716897,716910,716911,716913",
+    "commit_count": 53,
+    "relevant_commit_count": 27,
+    "relevant_signature": "716676,716678,716679,716683,716701,716717,716719,716721,716726,716728,716735,716746,716763,716782,716785,716786,716790,716791,716792,716814,716833,716886,716894,716897,716910,716911,716913",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World Interaction & UI",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Pickup notices now correctly display the total number of mushrooms collected.",
+            "text": "Reduced ballista and static ballista seat count; adjusted battering ram and catapult seats",
+            "commit_ids": [
+              716833
+            ]
+          },
+          {
+            "text": "Nerfed Advanced, Pure, Creamy/Milky teas (Advanced ~11%, Pure/Milky ~18%, Creamy ~20%); healing, crafting quality and rad removal unchanged",
+            "commit_ids": [
+              716814
+            ]
+          },
+          {
+            "text": "Lowered damage/impact values: arrows 100→25, paintball projectile 100→5, speargun spear 100→5, shotgun slug 100→10",
+            "commit_ids": [
+              716792
+            ]
+          },
+          {
+            "text": "Adjusted various pool values: admin cars 2→0, snowball 100→5, snowball gun projectile 100→5, boat building blocks 100→15",
+            "commit_ids": [
+              716790
+            ]
+          },
+          {
+            "text": "Fixed dungeon placement so network groups align correctly on all map sizes, eliminating misaligned dungeons and ensuring reliable access for players.",
+            "commit_ids": [
+              716719
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Structures",
+        "items": [
+          {
+            "text": "Mushroom pickup now correctly shows total owned",
             "commit_ids": [
               716913
             ]
           },
           {
-            "text": "Frankenstein table can now be used even when an adjacent building is blocked.",
+            "text": "Frankenstein table code lock visual fixed",
             "commit_ids": [
-              716911,
-              716910
+              716786
             ]
           },
           {
-            "text": "Sail placement guide now correctly detects blocking both when sails are lowered and raised, fixing mismatched server/client checks.",
+            "text": "Frankenstein table can now be used even when building is blocked",
             "commit_ids": [
-              716791,
-              716746
+              716910,
+              716911
             ]
           },
           {
-            "text": "Cliffs correctly remove their heightmap mesh collider when loading from cached maps, preventing unexpected collisions.",
+            "text": "Frankenstein pet now moves correctly",
+            "commit_ids": [
+              716676
+            ]
+          },
+          {
+            "text": "Cliffs no longer retain hidden colliders, preventing performance issues",
             "commit_ids": [
               716886
             ]
@@ -255,60 +295,47 @@
         ]
       },
       {
-        "title": "Combat & Balance",
+        "title": "Sailing & Navigation",
         "items": [
           {
-            "text": "Ballista and static ballista health (or count) reduced from 8 to 2; battering ram and catapult seats reduced from 8.",
+            "text": "Sail guide detection now matches sail state (raised or lowered)",
             "commit_ids": [
-              716833
+              716791
             ]
           },
           {
-            "text": "Projectile damage values lowered: arrows 100→25, paintball projectile 100→5, speargun spear 100→5, shotgun slug 100→10.",
+            "text": "Server and client sail collision checks aligned, preventing placement mismatches",
             "commit_ids": [
-              716792
-            ]
-          },
-          {
-            "text": "General balance tweaks: admin cars removed (2→0), snowball damage reduced (100→5), snowball gun projectile reduced (100→5), boat building block durability reduced (100→15).",
-            "commit_ids": [
-              716790
-            ]
-          },
-          {
-            "text": "Advanced, Pure, and Creamy/Milky tea bonuses nerfed (Advanced ~11%, Pure/Milky ~18%, Creamy ~20%); healing, crafting quality, rad removal unchanged.",
-            "commit_ids": [
-              716814
+              716746
             ]
           }
         ]
       },
       {
-        "title": "Dungeon & Map Fixes",
+        "title": "Audio & Immersion",
         "items": [
           {
-            "text": "Halloween dungeon map loading fixed; missing pieces in Xmas dungeon restored; dungeon network groups now align correctly with spawned dungeons on all map sizes.",
+            "text": "Destruction and gib sound effects restored for several traincar variants",
             "commit_ids": [
-              716726,
-              716719
+              716897
             ]
           }
         ]
       },
       {
-        "title": "Pets & AI",
+        "title": "Dungeons",
         "items": [
           {
-            "text": "Fixed Frankenstein pet not moving by adding the missing navigation agent component.",
+            "text": "Missing maps and pieces restored in Halloween and Xmas dungeons",
             "commit_ids": [
-              716676
+              716726
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World Interaction & UI\n- Pickup notices now correctly display the total number of mushrooms collected.\n- Frankenstein table can now be used even when an adjacent building is blocked.\n- Sail placement guide now correctly detects blocking both when sails are lowered and raised, fixing mismatched server/client checks.\n- Cliffs correctly remove their heightmap mesh collider when loading from cached maps, preventing unexpected collisions.\n\n### Combat & Balance\n- Ballista and static ballista health (or count) reduced from 8 to 2; battering ram and catapult seats reduced from 8.\n- Projectile damage values lowered: arrows 100→25, paintball projectile 100→5, speargun spear 100→5, shotgun slug 100→10.\n- General balance tweaks: admin cars removed (2→0), snowball damage reduced (100→5), snowball gun projectile reduced (100→5), boat building block durability reduced (100→15).\n- Advanced, Pure, and Creamy/Milky tea bonuses nerfed (Advanced ~11%, Pure/Milky ~18%, Creamy ~20%); healing, crafting quality, rad removal unchanged.\n\n### Dungeon & Map Fixes\n- Halloween dungeon map loading fixed; missing pieces in Xmas dungeon restored; dungeon network groups now align correctly with spawned dungeons on all map sizes.\n\n### Pets & AI\n- Fixed Frankenstein pet not moving by adding the missing navigation agent component.",
+    "summary": "### Gameplay & Balance\n- Reduced ballista and static ballista seat count; adjusted battering ram and catapult seats\n- Nerfed Advanced, Pure, Creamy/Milky teas (Advanced ~11%, Pure/Milky ~18%, Creamy ~20%); healing, crafting quality and rad removal unchanged\n- Lowered damage/impact values: arrows 100→25, paintball projectile 100→5, speargun spear 100→5, shotgun slug 100→10\n- Adjusted various pool values: admin cars 2→0, snowball 100→5, snowball gun projectile 100→5, boat building blocks 100→15\n- Fixed dungeon placement so network groups align correctly on all map sizes, eliminating misaligned dungeons and ensuring reliable access for players.\n\n### World & Structures\n- Mushroom pickup now correctly shows total owned\n- Frankenstein table code lock visual fixed\n- Frankenstein table can now be used even when building is blocked\n- Frankenstein pet now moves correctly\n- Cliffs no longer retain hidden colliders, preventing performance issues\n\n### Sailing & Navigation\n- Sail guide detection now matches sail state (raised or lowered)\n- Server and client sail collision checks aligned, preventing placement mismatches\n\n### Audio & Immersion\n- Destruction and gib sound effects restored for several traincar variants\n\n### Dungeons\n- Missing maps and pieces restored in Halloween and Xmas dungeons",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
