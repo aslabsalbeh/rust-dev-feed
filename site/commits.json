@@ -1534,13 +1534,5 @@
     "created": "2026-10-15T08:34:01",
     "message": "Add toggle buttons per source, so you can toggle mixing table entries on/off for cooking workbench, etc.\r\nSearch still searches across all categories, hidden or not.\r\nPooling fixes.\r\nLayout tweaks.",
     "user": "Adam W"
-  },
-  {
-    "id": 716963,
-    "branch": "main/optimize_position_update",
-    "changeset": "168078",
-    "created": "2026-10-15T04:43:20",
-    "message": "Store entity ID for position ticks in a 1000 sized cache\n- reduces entity ID from 8 -> 5 -> 2 bytes (8 now, would be ~5 with VarInt encoding, 2 bytes with index lookup)\n- also compresses the parent's network ID when parented\n- overkill just for network IDs but basically free since we also want to do lossy compression for positions\n- demos store the network ID lookup in the keyframes so it can skip forwards & backwards still\n- make batch position packets ordered now (not a big deal since they are way smaller than old ones and max one per server frame)",
-    "user": "Jake_Rich"
   }
 ]
