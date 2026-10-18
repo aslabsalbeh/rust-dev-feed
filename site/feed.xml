@@ -6,43 +6,44 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sat, 17 Oct 2026 18:17:25 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 20:17:27 -0400</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Oct 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;74 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;76 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="718414"&gt;Grenades now appear promptly when thrown or attached, fixing the previous invisibility until the attach_reveal animation event.&lt;/li&gt;
+&lt;li data-rust-commits="718414"&gt;Fixed delay where attached grenades were invisible until a viewmodel event, ensuring they appear correctly when spawned.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Building &amp;amp; Structures&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="718342"&gt;Added an invisible, invulnerable building tier with collision that can host items, useful for blocking areas or creating floating displays.&lt;/li&gt;
+&lt;li data-rust-commits="718174,718060"&gt;Improved Warhead Garage Door colliders for finer, more precise movement and updated its prefab LODs and scripts.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Server &amp;amp; Settings&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="718034"&gt;Joining clients no longer reset server convars, preserving gamemode and other server settings when running C+S.&lt;/li&gt;
+&lt;li data-rust-commits="718034"&gt;Resolved an issue where joining clients reset server convars, including gamemode settings, when using C+S.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Cosmetics&lt;/h3&gt;
+&lt;h3&gt;Interactions&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="717996"&gt;Tattoo painting now correctly handles fade, keeping new ink visible while older layers fade as intended.&lt;/li&gt;
+&lt;li data-rust-commits="717928"&gt;Adjusted interaction order so leading interaction remains default before petting livestock.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Interactions&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="717928"&gt;The &amp;#x27;leading&amp;#x27; action is now the default before petting livestock, improving interaction consistency.&lt;/li&gt;
+&lt;li data-rust-commits="717905"&gt;Fixed animals not attacking players standing next to vehicles.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; NPC&lt;/h3&gt;
+&lt;h3&gt;Upkeep &amp;amp; Decay&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="717905"&gt;Animals will now attack players standing next to vehicles, restoring expected combat behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Base Decay &amp;amp; Upkeep&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="717782"&gt;Bases no longer decay when the Tool Cupboard has sufficient upkeep, even on high‑entity‑count servers where decay ticks were previously slowed.&lt;/li&gt;
+&lt;li data-rust-commits="717782"&gt;Prevented bases from decaying despite TC upkeep on high-entity-count servers by adjusting decay tick budgeting.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="718198"&gt;Scarecrows no longer trigger errors, restoring their defensive behavior.&lt;/li&gt;
-&lt;li data-rust-commits="717903"&gt;Dungeon bugs fixed, improving raid stability and loot generation.&lt;/li&gt;
-&lt;li data-rust-commits="718182"&gt;Player pooling issue during turn actions resolved, preventing missed actions and ensuring smoother turn transitions.&lt;/li&gt;
-&lt;li data-rust-commits="718174,718060"&gt;Warhead garage doors now feature more granular collider movement, making entry and exit interactions more precise.&lt;/li&gt;
-&lt;li data-rust-commits="718159"&gt;Job errors for crab and jellyfish harvesting have been fixed, restoring reliable resource gathering.&lt;/li&gt;
+&lt;li data-rust-commits="718198"&gt;Scarecrows now work reliably during the Halloween 2026 event.&lt;/li&gt;
+&lt;li data-rust-commits="718182"&gt;Turn transitions are now smooth; player actions no longer get dropped or delayed.&lt;/li&gt;
+&lt;li data-rust-commits="717996"&gt;Tattoo painting no longer causes unintended fading of new ink.&lt;/li&gt;
+&lt;li data-rust-commits="717903"&gt;Dungeon bugs fixed, improving stability and preventing players from getting stuck.&lt;/li&gt;
+&lt;li data-rust-commits="718159"&gt;Crab and jellyfish gathering jobs now complete successfully, fixing previous errors that prevented resource collection.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-16</guid>
@@ -87,7 +88,7 @@
     <item>
       <title>Rust Development Updates — Oct 14</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;31 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;18 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;UI &amp;amp; Feedback&lt;/h3&gt;
 &lt;ul&gt;
