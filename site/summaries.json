@@ -1,27 +1,39 @@
 {
   "2026-10-19": {
-    "commit_count": 42,
-    "relevant_commit_count": 25,
-    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145",
+    "commit_count": 62,
+    "relevant_commit_count": 38,
+    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Resources",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Coconut trees now spawn at 25% chance (was 100%) and have reduced network range; apple and beehive spawn chances on oak trees increased to 25% (from 15%).",
+            "text": "Coconut tree spawns are now rarer—chance reduced to 25%, network range lowered, and they no longer appear on certain palm trees.",
             "commit_ids": [
               720093
+            ]
+          },
+          {
+            "text": "Apple and beehive spawn chances on oak trees have been increased, making these resources more common.",
+            "commit_ids": [
+              720093
+            ]
+          },
+          {
+            "text": "Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.",
+            "commit_ids": [
+              720194
             ]
           }
         ]
       },
       {
-        "title": "Monuments",
+        "title": "Lighthouse Mechanics",
         "items": [
           {
-            "text": "All lighthouses now share a single repair progress bar, so repairing one contributes to all.",
+            "text": "All lighthouses in a network share the same resource and repair progress, simplifying maintenance.",
             "commit_ids": [
               720021
             ]
@@ -29,39 +41,87 @@
         ]
       },
       {
-        "title": "UI Improvements",
+        "title": "Inventory & UI",
         "items": [
           {
-            "text": "Fixed gamepad inventory UI overlapping panels on certain resolutions, improving visibility of items.",
+            "text": "Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.",
+            "commit_ids": [
+              720174
+            ]
+          },
+          {
+            "text": "Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.",
             "commit_ids": [
               720142
             ]
           },
           {
-            "text": "Added a separate \"currently craftable\" list and an \"All\" button in the cooking UI, making it easier to see what you can craft.",
+            "text": "Cooking UI now features a dedicated list of craftable items, an “All” button, and toggleable category groups for clearer navigation.",
             "commit_ids": [
-              720059
-            ]
-          },
-          {
-            "text": "Inventory category buttons now act as toggles, showing only the selected category; an \"All\" button returns to full view.",
-            "commit_ids": [
+              720059,
               720032
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Visual & Lighting",
         "items": [
           {
-            "text": "Helicopter rumble now only triggers when the helicopter is active, eliminating false rumble cues.",
+            "text": "Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.",
+            "commit_ids": [
+              720160
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Visual & Performance Fixes",
+        "items": [
+          {
+            "text": "Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.",
+            "commit_ids": [
+              720188
+            ]
+          },
+          {
+            "text": "Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.",
+            "commit_ids": [
+              720181
+            ]
+          },
+          {
+            "text": "Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.",
+            "commit_ids": [
+              720157
+            ]
+          },
+          {
+            "text": "Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.",
+            "commit_ids": [
+              720149
+            ]
+          },
+          {
+            "text": "Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.",
             "commit_ids": [
               720144
             ]
           },
           {
-            "text": "Minigun bullets now correctly render when hitting surfaces within close range, fixing visual clipping near the player’s view.",
+            "text": "Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.",
+            "commit_ids": [
+              720135
+            ]
+          },
+          {
+            "text": "Fixed broken third‑person shading on the crossbow mesh, restoring proper visual appearance.",
+            "commit_ids": [
+              720046
+            ]
+          },
+          {
+            "text": "Corrected minigun bullet visuals so they no longer clip through nearby surfaces, matching the server‑side damage behavior.",
             "commit_ids": [
               719994
             ]
@@ -70,32 +130,81 @@
       }
     ],
     "status": "ok",
-    "summary": "### World & Resources\n- Coconut trees now spawn at 25% chance (was 100%) and have reduced network range; apple and beehive spawn chances on oak trees increased to 25% (from 15%).\n\n### Monuments\n- All lighthouses now share a single repair progress bar, so repairing one contributes to all.\n\n### UI Improvements\n- Fixed gamepad inventory UI overlapping panels on certain resolutions, improving visibility of items.\n- Added a separate \"currently craftable\" list and an \"All\" button in the cooking UI, making it easier to see what you can craft.\n- Inventory category buttons now act as toggles, showing only the selected category; an \"All\" button returns to full view.\n\n### Gameplay & Balance\n- Helicopter rumble now only triggers when the helicopter is active, eliminating false rumble cues.\n- Minigun bullets now correctly render when hitting surfaces within close range, fixing visual clipping near the player’s view.",
+    "summary": "### World & Environment\n- Coconut tree spawns are now rarer—chance reduced to 25%, network range lowered, and they no longer appear on certain palm trees.\n- Apple and beehive spawn chances on oak trees have been increased, making these resources more common.\n- Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.\n\n### Lighthouse Mechanics\n- All lighthouses in a network share the same resource and repair progress, simplifying maintenance.\n\n### Inventory & UI\n- Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.\n- Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.\n- Cooking UI now features a dedicated list of craftable items, an “All” button, and toggleable category groups for clearer navigation.\n\n### Visual & Lighting\n- Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.\n\n### Visual & Performance Fixes\n- Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.\n- Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.\n- Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.\n- Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.\n- Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.\n- Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.\n- Fixed broken third‑person shading on the crossbow mesh, restoring proper visual appearance.\n- Corrected minigun bullet visuals so they no longer clip through nearby surfaces, matching the server‑side damage behavior.",
     "new_items": [
       {
-        "text": "Coconut trees now spawn at 25% chance (was 100%) and have reduced network range; apple and beehive spawn chances on oak trees increased to 25% (from 15%).",
+        "text": "Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.",
         "commit_ids": [
-          720093
+          720194
         ],
-        "section": "World & Resources"
+        "section": "World & Environment"
       },
       {
-        "text": "Fixed gamepad inventory UI overlapping panels on certain resolutions, improving visibility of items.",
+        "text": "Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.",
+        "commit_ids": [
+          720174
+        ],
+        "section": "Inventory & UI"
+      },
+      {
+        "text": "Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.",
         "commit_ids": [
           720142
         ],
-        "section": "UI Improvements"
+        "section": "Inventory & UI"
       },
       {
-        "text": "Helicopter rumble now only triggers when the helicopter is active, eliminating false rumble cues.",
+        "text": "Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.",
+        "commit_ids": [
+          720160
+        ],
+        "section": "Visual & Lighting"
+      },
+      {
+        "text": "Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.",
+        "commit_ids": [
+          720188
+        ],
+        "section": "Visual & Performance Fixes"
+      },
+      {
+        "text": "Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.",
+        "commit_ids": [
+          720181
+        ],
+        "section": "Visual & Performance Fixes"
+      },
+      {
+        "text": "Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.",
+        "commit_ids": [
+          720157
+        ],
+        "section": "Visual & Performance Fixes"
+      },
+      {
+        "text": "Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.",
+        "commit_ids": [
+          720149
+        ],
+        "section": "Visual & Performance Fixes"
+      },
+      {
+        "text": "Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.",
         "commit_ids": [
           720144
         ],
-        "section": "Gameplay & Balance"
+        "section": "Visual & Performance Fixes"
+      },
+      {
+        "text": "Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.",
+        "commit_ids": [
+          720135
+        ],
+        "section": "Visual & Performance Fixes"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Coconut trees now spawn at 25% chance (was 100%) and have reduced network range; apple and beehive spawn chances on oak trees increased to 25% (from 15%).\n- Fixed gamepad inventory UI overlapping panels on certain resolutions, improving visibility of items.\n- Helicopter rumble now only triggers when the helicopter is active, eliminating false rumble cues."
+    "new_relevant_count": 10,
+    "new_summary": "- Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.\n- Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.\n- Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.\n- Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.\n- Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.\n- Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.\n- Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.\n- Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.\n- Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.\n- Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors."
   },
   "2026-10-18": {
     "commit_count": 11,
@@ -145,8 +254,8 @@
     "new_summary": ""
   },
   "2026-10-16": {
-    "commit_count": 38,
-    "relevant_commit_count": 14,
+    "commit_count": 22,
+    "relevant_commit_count": 7,
     "relevant_signature": "718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},

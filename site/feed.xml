@@ -6,41 +6,60 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 19 Oct 2026 10:17:30 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 12:17:35 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 19</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;42 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;62 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720093"&gt;Coconut trees now spawn at 25% chance (was 100%) and have reduced network range; apple and beehive spawn chances on oak trees increased to 25% (from 15%).&lt;/li&gt;
-&lt;li data-rust-commits="720142"&gt;Fixed gamepad inventory UI overlapping panels on certain resolutions, improving visibility of items.&lt;/li&gt;
-&lt;li data-rust-commits="720144"&gt;Helicopter rumble now only triggers when the helicopter is active, eliminating false rumble cues.&lt;/li&gt;
+&lt;li data-rust-commits="720194"&gt;Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.&lt;/li&gt;
+&lt;li data-rust-commits="720174"&gt;Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.&lt;/li&gt;
+&lt;li data-rust-commits="720142"&gt;Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.&lt;/li&gt;
+&lt;li data-rust-commits="720160"&gt;Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.&lt;/li&gt;
+&lt;li data-rust-commits="720188"&gt;Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.&lt;/li&gt;
+&lt;li data-rust-commits="720181"&gt;Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.&lt;/li&gt;
+&lt;li data-rust-commits="720157"&gt;Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.&lt;/li&gt;
+&lt;li data-rust-commits="720149"&gt;Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.&lt;/li&gt;
+&lt;li data-rust-commits="720144"&gt;Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.&lt;/li&gt;
+&lt;li data-rust-commits="720135"&gt;Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;World &amp;amp; Resources&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720093"&gt;Coconut trees now spawn at 25% chance (was 100%) and have reduced network range; apple and beehive spawn chances on oak trees increased to 25% (from 15%).&lt;/li&gt;
+&lt;li data-rust-commits="720093"&gt;Coconut tree spawns are now rarer—chance reduced to 25%, network range lowered, and they no longer appear on certain palm trees.&lt;/li&gt;
+&lt;li data-rust-commits="720093"&gt;Apple and beehive spawn chances on oak trees have been increased, making these resources more common.&lt;/li&gt;
+&lt;li data-rust-commits="720194"&gt;Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Monuments&lt;/h3&gt;
+&lt;h3&gt;Lighthouse Mechanics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720021"&gt;All lighthouses now share a single repair progress bar, so repairing one contributes to all.&lt;/li&gt;
+&lt;li data-rust-commits="720021"&gt;All lighthouses in a network share the same resource and repair progress, simplifying maintenance.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI Improvements&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720142"&gt;Fixed gamepad inventory UI overlapping panels on certain resolutions, improving visibility of items.&lt;/li&gt;
-&lt;li data-rust-commits="720059"&gt;Added a separate &amp;quot;currently craftable&amp;quot; list and an &amp;quot;All&amp;quot; button in the cooking UI, making it easier to see what you can craft.&lt;/li&gt;
-&lt;li data-rust-commits="720032"&gt;Inventory category buttons now act as toggles, showing only the selected category; an &amp;quot;All&amp;quot; button returns to full view.&lt;/li&gt;
+&lt;li data-rust-commits="720174"&gt;Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.&lt;/li&gt;
+&lt;li data-rust-commits="720142"&gt;Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.&lt;/li&gt;
+&lt;li data-rust-commits="720059,720032"&gt;Cooking UI now features a dedicated list of craftable items, an “All” button, and toggleable category groups for clearer navigation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Visual &amp;amp; Lighting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720144"&gt;Helicopter rumble now only triggers when the helicopter is active, eliminating false rumble cues.&lt;/li&gt;
-&lt;li data-rust-commits="719994"&gt;Minigun bullets now correctly render when hitting surfaces within close range, fixing visual clipping near the player’s view.&lt;/li&gt;
+&lt;li data-rust-commits="720160"&gt;Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Visual &amp;amp; Performance Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720188"&gt;Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.&lt;/li&gt;
+&lt;li data-rust-commits="720181"&gt;Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.&lt;/li&gt;
+&lt;li data-rust-commits="720157"&gt;Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.&lt;/li&gt;
+&lt;li data-rust-commits="720149"&gt;Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.&lt;/li&gt;
+&lt;li data-rust-commits="720144"&gt;Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.&lt;/li&gt;
+&lt;li data-rust-commits="720135"&gt;Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.&lt;/li&gt;
+&lt;li data-rust-commits="720046"&gt;Fixed broken third‑person shading on the crossbow mesh, restoring proper visual appearance.&lt;/li&gt;
+&lt;li data-rust-commits="719994"&gt;Corrected minigun bullet visuals so they no longer clip through nearby surfaces, matching the server‑side damage behavior.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-19</guid>
-      <pubDate>Mon, 19 Oct 2026 10:17:30 -0400</pubDate>
+      <pubDate>Mon, 19 Oct 2026 12:17:35 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 18</title>
@@ -66,7 +85,7 @@
     <item>
       <title>Rust Development Updates — Oct 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;38 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;22 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;Combat &amp;amp; Explosives&lt;/h3&gt;
 &lt;ul&gt;
