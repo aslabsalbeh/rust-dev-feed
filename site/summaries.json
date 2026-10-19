@@ -1,6 +1,6 @@
 {
   "2026-10-19": {
-    "commit_count": 3,
+    "commit_count": 4,
     "relevant_commit_count": 2,
     "relevant_signature": "719992,719994",
     "prompt_version": "structured-read-state-v7-explicit-empty",
@@ -60,17 +60,17 @@
     "new_summary": ""
   },
   "2026-10-16": {
-    "commit_count": 74,
-    "relevant_commit_count": 30,
-    "relevant_signature": "717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
+    "commit_count": 72,
+    "relevant_commit_count": 29,
+    "relevant_signature": "717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Tools",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Attached grenades now appear instantly when the attach_reveal animation triggers, removing previous delays where grenades could be hidden or appear late.",
+            "text": "Fixed attached grenades visibility delay so grenades appear correctly when attached to a player.",
             "commit_ids": [
               718414
             ]
@@ -78,16 +78,16 @@
         ]
       },
       {
-        "title": "Building & World",
+        "title": "Building & Structures",
         "items": [
           {
-            "text": "A new invisible, invulnerable but collidable building tier was added, letting players block off spaces or create floating displays that still interact with items and wallpaper.",
+            "text": "Added a new creative building tier that is invisible and invulnerable but still collidable, useful for area blocking or floating displays.",
             "commit_ids": [
               718342
             ]
           },
           {
-            "text": "Garage doors now have more granular collider movement and updated prefabs, improving precision, LODs, and interaction smoothness.",
+            "text": "Improved Warhead Garage Door colliders for more precise movement, fixing related collision issues.",
             "commit_ids": [
               718174,
               718060
@@ -96,27 +96,22 @@
         ]
       },
       {
-        "title": "Seasonal Events",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Scarecrows now function correctly for the Halloween 2026 update, fixing a critical error that previously broke them.",
+            "text": "Fixed scarecrow error preventing it from functioning.",
             "commit_ids": [
               718198
             ]
-          }
-        ]
-      },
-      {
-        "title": "Critters & AI",
-        "items": [
+          },
           {
-            "text": "Job assignment bugs for crabs and jellyfish have been resolved, ensuring they behave as intended.",
+            "text": "Resolved job errors for crabs and jellyfish, restoring their AI behavior.",
             "commit_ids": [
               718159
             ]
           },
           {
-            "text": "Animals can now attack players standing next to vehicles, fixing a previous immunity issue.",
+            "text": "Fixed animals not attacking players standing next to vehicles.",
             "commit_ids": [
               717905
             ]
@@ -124,10 +119,16 @@
         ]
       },
       {
-        "title": "Livestock Interaction",
+        "title": "Server & Gameplay Settings",
         "items": [
           {
-            "text": "Leading remains the default action before petting livestock, making interaction order more consistent.",
+            "text": "Fixed bug where joining clients reset server convars (including gamemode settings) to defaults when using C+S.",
+            "commit_ids": [
+              718034
+            ]
+          },
+          {
+            "text": "Made \"leading\" the default interaction before petting livestock, changing the interaction order for petting.",
             "commit_ids": [
               717928
             ]
@@ -135,36 +136,31 @@
         ]
       },
       {
-        "title": "Server Stability",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Joining clients no longer reset server convars or gamemode settings, preserving custom configurations during C+S sessions.",
-            "commit_ids": [
-              718034
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bug Fixes",
-        "items": [
-          {
-            "text": "Wounded head orientation now displays correctly and animation pooling glitches during mid‑turns are resolved.",
+            "text": "Resolved pooling issues that could interrupt player actions during mid-turns, ensuring smoother turn transitions.",
             "commit_ids": [
               718182
             ]
           },
           {
-            "text": "Live tattoo painting now uses separate visibility for new ink, preventing unwanted fading of fresh tattoos.",
+            "text": "Fixed tattoo painting so new ink no longer fades unintentionally, improving live tattoo customization.",
             "commit_ids": [
               717996
+            ]
+          },
+          {
+            "text": "Implemented a series of dungeon fixes that address various bugs, improving stability and gameplay in the Halloween 2026 update dungeons.",
+            "commit_ids": [
+              717903
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Tools\n- Attached grenades now appear instantly when the attach_reveal animation triggers, removing previous delays where grenades could be hidden or appear late.\n\n### Building & World\n- A new invisible, invulnerable but collidable building tier was added, letting players block off spaces or create floating displays that still interact with items and wallpaper.\n- Garage doors now have more granular collider movement and updated prefabs, improving precision, LODs, and interaction smoothness.\n\n### Seasonal Events\n- Scarecrows now function correctly for the Halloween 2026 update, fixing a critical error that previously broke them.\n\n### Critters & AI\n- Job assignment bugs for crabs and jellyfish have been resolved, ensuring they behave as intended.\n- Animals can now attack players standing next to vehicles, fixing a previous immunity issue.\n\n### Livestock Interaction\n- Leading remains the default action before petting livestock, making interaction order more consistent.\n\n### Server Stability\n- Joining clients no longer reset server convars or gamemode settings, preserving custom configurations during C+S sessions.\n\n### Bug Fixes\n- Wounded head orientation now displays correctly and animation pooling glitches during mid‑turns are resolved.\n- Live tattoo painting now uses separate visibility for new ink, preventing unwanted fading of fresh tattoos.",
+    "summary": "### Combat & Weapons\n- Fixed attached grenades visibility delay so grenades appear correctly when attached to a player.\n\n### Building & Structures\n- Added a new creative building tier that is invisible and invulnerable but still collidable, useful for area blocking or floating displays.\n- Improved Warhead Garage Door colliders for more precise movement, fixing related collision issues.\n\n### NPC & AI\n- Fixed scarecrow error preventing it from functioning.\n- Resolved job errors for crabs and jellyfish, restoring their AI behavior.\n- Fixed animals not attacking players standing next to vehicles.\n\n### Server & Gameplay Settings\n- Fixed bug where joining clients reset server convars (including gamemode settings) to defaults when using C+S.\n- Made \"leading\" the default interaction before petting livestock, changing the interaction order for petting.\n\n### Gameplay & Balance\n- Resolved pooling issues that could interrupt player actions during mid-turns, ensuring smoother turn transitions.\n- Fixed tattoo painting so new ink no longer fades unintentionally, improving live tattoo customization.\n- Implemented a series of dungeon fixes that address various bugs, improving stability and gameplay in the Halloween 2026 update dungeons.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
