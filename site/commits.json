@@ -1,5 +1,93 @@
 [
   {
+    "id": 720251,
+    "branch": "main",
+    "changeset": "168477",
+    "created": "2026-10-19T19:40:50",
+    "message": "~Privilege cache enabled by default (client and server)",
+    "user": "Flavien"
+  },
+  {
+    "id": 720248,
+    "branch": "main/unity_6000.3.26f1",
+    "changeset": "168476",
+    "created": "2026-10-19T19:29:01",
+    "message": "Buildfix: configure unity_installer_url for fpbuild\r\nTests: none",
+    "user": "Daniel P"
+  },
+  {
+    "id": 720246,
+    "branch": "main/ddraw_parent_fix",
+    "changeset": "168475",
+    "created": "2026-10-19T19:21:09",
+    "message": "Fixed parented DDraw objects not clearing when their parent gets destroyed, drawing them at origin",
+    "user": "Raul"
+  },
+  {
+    "id": 720244,
+    "branch": "main/menuhero_fix",
+    "changeset": "168473",
+    "created": "2026-10-19T19:19:27",
+    "message": "Fixed home's store hero playing and rolling its videos with the menu closed",
+    "user": "Flavien"
+  },
+  {
+    "id": 720237,
+    "branch": "▋▄█▌",
+    "changeset": "▄▇▋▉▋▇",
+    "created": "2026-10-19T19:12:23",
+    "message": "▋▋ ▋▄▍▄▍ ▅▇█▌ ▌▇▉▊▄▄█▋▉▄█▊▌▄▋█▆▇▌▊▋▌",
+    "user": "cipeaX"
+  },
+  {
+    "id": 720236,
+    "branch": "█▉▍▄",
+    "changeset": "▊▊▄▄▆▉",
+    "created": "2026-10-19T19:11:09",
+    "message": "▆█ ▄▌█▆█ ▊▅▄▅ ▅▊▄▍█▉▌▋▆▍▅",
+    "user": "cipeaX"
+  },
+  {
+    "id": 720233,
+    "branch": "main/net_group_null_log_fix",
+    "changeset": "168463",
+    "created": "2026-10-19T18:28:37",
+    "message": "Moved sub entity spawning of cargo ship, travelling vendor and pt boats from ServerInit to ServerInitPostNetworkGroupAssign\r\nFixes various \"changed its network group to null\" warnings when they spawned",
+    "user": "cipeaX"
+  },
+  {
+    "id": 720228,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168461",
+    "created": "2026-10-19T18:25:04",
+    "message": "When queuing a sign to be uploaded use the imageId instead of the raw data so we can buffer images in filestorage instead of keeping a 2nd copy in memory",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720229,
+    "branch": "main/ongui_allocs_fix",
+    "changeset": "168460",
+    "created": "2026-10-19T18:25:02",
+    "message": "DeferredExtension.OnGUI and  CoverageQueries.OnGUI gui layout set to false, was only running in editor",
+    "user": "Flavien"
+  },
+  {
+    "id": 720226,
+    "branch": "main/ongui_allocs_fix",
+    "changeset": "168459",
+    "created": "2026-10-19T18:24:01",
+    "message": "Disabled GUILayout on DDraw and OcclusionCulling\r\nWas 0.7KB a frame for nothing, their OnGUI methods dont use GUI layouts",
+    "user": "Flavien"
+  },
+  {
+    "id": 720227,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168458",
+    "created": "2026-10-19T18:23:31",
+    "message": "Don't send voicemails & sculptures\n- not planning to moderate them, keep it simple by not sending them",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 720225,
     "branch": "main/cookingworkbench_kettle_fix2",
     "changeset": "168456",
@@ -710,37 +798,5 @@
     "created": "2026-10-16T20:27:14",
     "message": "made creative building tier for hackweek idea. Building tier is invulnerable, invisible but still has collision and can be deployed on with items, wallpaper etc. Can be used to block off areas or have floating displays.",
     "user": "matt.i"
-  },
-  {
-    "id": 718322,
-    "branch": "██▍▆▅▇▌██▄▆▆▊▌▍▆▅▅▊▌▉▇",
-    "changeset": "▇▍▄▇▌▌",
-    "created": "2026-10-16T20:16:05",
-    "message": "▇ ▌▆▇▇▉ ▌▇ █▆▄▌▌ ▆▅▅▄ ▅▍▅▊▉▄▌ ▇▄▄▋█▉▊ ▇▋ ▋▇█▉▍ ▇█▇▊▊█▅ ▌▌ ▊▊▇▊▋▉▄ ▉ ▋▌▇▍ ▇▉▅▍ ▌▊▊▄ ▄▍▋▉ ▄ ▋▉▋ ▍▍ ▉▋▉▆ █▄▄▍▍▌▋ ▆▊▉▆ ▄ ▄▌▆▋▌▌█▋▋▊▍▌▉▍▄▇▊▌▇▊ █▄ ▅▅▍▌▋▌▆▌▇▆ ▇▄▋▊█▆▄▊ ▇▋▉▋▅▆█▍▌█▉▋▆▊▉▍▊▄▋▄ ▅▉▉ ▌▇▋█ ▉▆▇▌▇▋▊ ▆▊▉█▄▋▇ ▋▄▋ ▆▉▍ ▋█▋▍██ ▄▉▋ ▅▊█▇▋ ▍▋█▊ ▆▄▊▇▍▇▆▄ ▄▊▇▉▋▉▋▋▊ ▄█▇█▍▋▄▉█▍▍▊▍█▄▉▅▄▉▇█▉█▋ ▇▇▇ ▅▅█▅▊▊ ▄▌▆▅ ▆▆▆▉▋██ ▆▇▄ ▅▇▄▊█ ▆█▆▉ ▄▊ ▄▉█▌█▄▌▇▄ ▍▊ ▋▇▌▋ ▆▋▊▅ ▍█▄ ▆▅▌▅▌▊▇▅ ▌▆▆▉ ▆▋▌▋▇ ▇▊▍ ▆▅▉ ▉▊▋▊▍▊ ▉█ ▄▆▄ ▆▆▍▇▆▅ ▍▍▄▇▉▌▊▄█▄▇▋▇█▋▅▉▇█▄▍██▆▌▆▇▆ █▉▋▄▅█ ▍▇ ▄▆▄▌▅ ▊▉▊▅▊▋▋ ▆▅ ▊▉▌▅▆▉ █▌█▆▉▇ ▉▌▆▇▊▌▉ ▇▄▇▇▊▍▆▌▌▄▆▉ ▊▍ ▇▍▅ ▅▍▅▇▍▆▋ ▋▇ ▋▅ ▋▇▌▄▌ ▅▍▄ ▆▆▆▅▍▋▊ ▋▆▋▌█▅▌▅▆▊▊▅▇▋▊▊▆▆▅▄ █▆▅▋█▍▆▊▍ ▌▋▆ ▊▇██▍█▆ ▍▍▆▉▇▅▄▉▇▊▉▄▍▌▋▆ █▅ ▄",
-    "user": "max.p"
-  },
-  {
-    "id": 718233,
-    "branch": "main/render_pipeline_testing",
-    "changeset": "168317",
-    "created": "2026-10-16T19:34:55",
-    "message": "set up empty renderer data for chippy camera, fixes viewmodel rendering inside chippy",
-    "user": "Brian"
-  },
-  {
-    "id": 718228,
-    "branch": "main/fruit_trees",
-    "changeset": "168316",
-    "created": "2026-10-16T19:32:33",
-    "message": "S2P tropical Island 2 + 3",
-    "user": "Lukester"
-  },
-  {
-    "id": 718215,
-    "branch": "main/tattoos/art_pass",
-    "changeset": "168313",
-    "created": "2026-10-16T18:25:07",
-    "message": "Update all skin materials with tattoo values, tattoo enabled defaulted to off",
-    "user": "Taylor Reynolds"
   }
 ]

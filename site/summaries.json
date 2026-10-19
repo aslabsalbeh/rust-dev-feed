@@ -1,57 +1,18 @@
 {
   "2026-10-19": {
-    "commit_count": 70,
-    "relevant_commit_count": 44,
-    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225",
+    "commit_count": 81,
+    "relevant_commit_count": 51,
+    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Environment",
+        "title": "Crafting & Cooking",
         "items": [
           {
-            "text": "Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.",
+            "text": "Fixed cooking workbench not showing the kettle for new teas and added a dedicated craftable list with an “All” button and toggle‑group category navigation.",
             "commit_ids": [
-              720222
-            ]
-          },
-          {
-            "text": "Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.",
-            "commit_ids": [
-              720213
-            ]
-          },
-          {
-            "text": "Adjusted coconut tree network range, corrected coconut spawn chance to 25%, and increased apple/beehive spawn chance on oak trees to 25% (up from 15%).",
-            "commit_ids": [
-              720093
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Pets & Animals",
-        "items": [
-          {
-            "text": "Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.",
-            "commit_ids": [
-              720208
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & UI",
-        "items": [
-          {
-            "text": "Fixed cooking workbench not showing the kettle when preparing newly added teas.",
-            "commit_ids": [
-              720225
-            ]
-          },
-          {
-            "text": "Overhauled Mixing/Cooking UI: added a separate \"currently craftable\" list, an \"All\" button, and toggle-group category buttons that show only the selected category.",
-            "commit_ids": [
+              720225,
               720059,
               720032
             ]
@@ -59,68 +20,87 @@
         ]
       },
       {
-        "title": "Audio & Visual Effects",
+        "title": "Structures & World Safety",
         "items": [
           {
-            "text": "Restored helicopter rumble sound by adding a missing IsOn check.",
+            "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing on stairs, introduced DungeonGridBlocker to canyon tunnels to prevent unsafe underground train tunnels, and made all lighthouses share resource and repair progress for unified upkeep.",
             "commit_ids": [
-              720144
-            ]
-          },
-          {
-            "text": "Fixed visual bug where minigun bullets appeared to pass through surfaces within ~2 m of the player’s view.",
-            "commit_ids": [
-              719994
+              720222,
+              720213,
+              720021
             ]
           }
         ]
       },
       {
-        "title": "Structures & Resources",
+        "title": "Pets & Companions",
         "items": [
           {
-            "text": "Unified lighthouse repair progress: repairing any lighthouse contributes to a shared resource and repair pool for all lighthouses.",
+            "text": "Fixed Frankenstein pet sinking in terrain, invisible ranged attacks, occasional kicking of the owner, and passing through windows.",
             "commit_ids": [
-              720021
+              720208
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Environment & Resources",
+        "items": [
+          {
+            "text": "Adjusted coconut tree spawn mechanics (range, 25% chance, removed spawns on certain palms) and increased apple and beehive spawn chances on oak trees.",
+            "commit_ids": [
+              720093
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Map & Navigation",
+        "items": [
+          {
+            "text": "Resolved artifacting on cargo map markers.",
+            "commit_ids": [
+              720181
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Security & Code Locks",
+        "items": [
+          {
+            "text": "Fixed MeshCull reuse bug that caused code lock light indicators to render at any distance after spawning.",
+            "commit_ids": [
+              720160
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Environment\n- Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.\n- Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.\n- Adjusted coconut tree network range, corrected coconut spawn chance to 25%, and increased apple/beehive spawn chance on oak trees to 25% (up from 15%).\n\n### Pets & Animals\n- Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.\n\n### Crafting & UI\n- Fixed cooking workbench not showing the kettle when preparing newly added teas.\n- Overhauled Mixing/Cooking UI: added a separate \"currently craftable\" list, an \"All\" button, and toggle-group category buttons that show only the selected category.\n\n### Audio & Visual Effects\n- Restored helicopter rumble sound by adding a missing IsOn check.\n- Fixed visual bug where minigun bullets appeared to pass through surfaces within ~2 m of the player’s view.\n\n### Structures & Resources\n- Unified lighthouse repair progress: repairing any lighthouse contributes to a shared resource and repair pool for all lighthouses.",
+    "summary": "### Crafting & Cooking\n- Fixed cooking workbench not showing the kettle for new teas and added a dedicated craftable list with an “All” button and toggle‑group category navigation.\n\n### Structures & World Safety\n- Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing on stairs, introduced DungeonGridBlocker to canyon tunnels to prevent unsafe underground train tunnels, and made all lighthouses share resource and repair progress for unified upkeep.\n\n### Pets & Companions\n- Fixed Frankenstein pet sinking in terrain, invisible ranged attacks, occasional kicking of the owner, and passing through windows.\n\n### Environment & Resources\n- Adjusted coconut tree spawn mechanics (range, 25% chance, removed spawns on certain palms) and increased apple and beehive spawn chances on oak trees.\n\n### Map & Navigation\n- Resolved artifacting on cargo map markers.\n\n### Security & Code Locks\n- Fixed MeshCull reuse bug that caused code lock light indicators to render at any distance after spawning.",
     "new_items": [
       {
-        "text": "Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.",
+        "text": "Fixed cooking workbench not showing the kettle for new teas and added a dedicated craftable list with an “All” button and toggle‑group category navigation.",
         "commit_ids": [
-          720222
+          720225,
+          720059,
+          720032
         ],
-        "section": "World & Environment"
+        "section": "Crafting & Cooking"
       },
       {
-        "text": "Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.",
+        "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing on stairs, introduced DungeonGridBlocker to canyon tunnels to prevent unsafe underground train tunnels, and made all lighthouses share resource and repair progress for unified upkeep.",
         "commit_ids": [
-          720213
+          720222,
+          720213,
+          720021
         ],
-        "section": "World & Environment"
-      },
-      {
-        "text": "Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.",
-        "commit_ids": [
-          720208
-        ],
-        "section": "Pets & Animals"
-      },
-      {
-        "text": "Fixed cooking workbench not showing the kettle when preparing newly added teas.",
-        "commit_ids": [
-          720225
-        ],
-        "section": "Crafting & UI"
+        "section": "Structures & World Safety"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.\n- Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.\n- Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.\n- Fixed cooking workbench not showing the kettle when preparing newly added teas."
+    "new_relevant_count": 6,
+    "new_summary": "- Fixed cooking workbench not showing the kettle for new teas and added a dedicated craftable list with an “All” button and toggle‑group category navigation.\n- Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing on stairs, introduced DungeonGridBlocker to canyon tunnels to prevent unsafe underground train tunnels, and made all lighthouses share resource and repair progress for unified upkeep."
   },
   "2026-10-18": {
     "commit_count": 11,
@@ -170,8 +150,8 @@
     "new_summary": ""
   },
   "2026-10-16": {
-    "commit_count": 12,
-    "relevant_commit_count": 4,
+    "commit_count": 8,
+    "relevant_commit_count": 3,
     "relevant_signature": "718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
