@@ -1,22 +1,38 @@
 {
   "2026-10-18": {
-    "commit_count": 8,
-    "relevant_commit_count": 4,
-    "relevant_signature": "719972,719974,719978,719980",
+    "commit_count": 11,
+    "relevant_commit_count": 5,
+    "relevant_signature": "719972,719974,719978,719980,719987",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Animals & Farming",
+        "title": "Combat Audio",
         "items": [
           {
-            "text": "Fixed seeds planted outside of planters showing incorrect gene information in the UI.",
+            "text": "Headshot sound now matches the actual direction, fixing reversed left/right audio cues.",
+            "commit_ids": [
+              719987
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Farming & UI",
+        "items": [
+          {
+            "text": "Seeds planted outside planters now display correct gene information in the UI.",
             "commit_ids": [
               719980
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Vehicle & Animal Transport",
+        "items": [
           {
-            "text": "Fixed inability to load a sheep onto a small transport module while also leading a cow.",
+            "text": "Sheep can now be loaded onto small modules even when also leading a cow.",
             "commit_ids": [
               719978
             ]
@@ -25,32 +41,122 @@
       }
     ],
     "status": "ok",
-    "summary": "### Animals & Farming\n- Fixed seeds planted outside of planters showing incorrect gene information in the UI.\n- Fixed inability to load a sheep onto a small transport module while also leading a cow.",
-    "new_items": [
-      {
-        "text": "Fixed seeds planted outside of planters showing incorrect gene information in the UI.",
-        "commit_ids": [
-          719980
-        ],
-        "section": "Animals & Farming"
-      },
-      {
-        "text": "Fixed inability to load a sheep onto a small transport module while also leading a cow.",
-        "commit_ids": [
-          719978
-        ],
-        "section": "Animals & Farming"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Fixed seeds planted outside of planters showing incorrect gene information in the UI.\n- Fixed inability to load a sheep onto a small transport module while also leading a cow."
+    "summary": "### Combat Audio\n- Headshot sound now matches the actual direction, fixing reversed left/right audio cues.\n\n### Farming & UI\n- Seeds planted outside planters now display correct gene information in the UI.\n\n### Vehicle & Animal Transport\n- Sheep can now be loaded onto small modules even when also leading a cow.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-16": {
-    "commit_count": 76,
-    "relevant_commit_count": 32,
+    "commit_count": 75,
+    "relevant_commit_count": 31,
     "relevant_signature": "717694,717782,717815,717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504": [
+        {
+          "title": "Grenade Visibility Fix",
+          "items": [
+            {
+              "text": "Attached grenades now become visible immediately when the attach_reveal animation event fires, eliminating the previous delay where grenades could appear late or be hidden until spawning.",
+              "commit_ids": [
+                718414
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Creative Building Tier (Invisible & Invulnerable)",
+          "items": [
+            {
+              "text": "Introduced a new building tier for the hackweek that is invisible and invulnerable but still collidable, allowing players to block off areas or create floating displays that interact with items, wallpaper, etc.",
+              "commit_ids": [
+                718342
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Warhead Garage Door Improvements",
+          "items": [
+            {
+              "text": "Made the garage door's busy colliders movement more granular and precise, updated the prefab with new colliders, fixed LODs, and refreshed scripts for smoother and more accurate interactions.",
+              "commit_ids": [
+                718174,
+                718060
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Scarecrow Error Fix (Halloween 2026)",
+          "items": [
+            {
+              "text": "Fixed a critical error that prevented scarecrows from functioning correctly during the Halloween 2026 update.",
+              "commit_ids": [
+                718198
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Critter Job Errors Fixed",
+          "items": [
+            {
+              "text": "Resolved job assignment errors for crabs and jellyfish, ensuring these critters behave as intended.",
+              "commit_ids": [
+                718159
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Server Convar Reset on Client Join Fixed",
+          "items": [
+            {
+              "text": "Fixed an issue where client joins would reset server convars (including gamemode settings) to defaults when running C+S, preserving custom server configurations.",
+              "commit_ids": [
+                718034
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock Petting Interaction Update",
+          "items": [
+            {
+              "text": "Changed the default interaction order for livestock petting: leading now remains the default action before petting, improving consistency of player interactions.",
+              "commit_ids": [
+                717928
+              ]
+            }
+          ]
+        }
+      ],
+      "717782,717815,717844,717896,717903,717905": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Fixed animals not attacking players standing next to vehicles.",
+              "commit_ids": [
+                717905
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Base Upkeep & Decay",
+          "items": [
+            {
+              "text": "Corrected base decay behavior so bases with TC upkeep no longer decay on high‑entity‑count servers; decay now respects a 0.25 ms per‑tick budget.",
+              "commit_ids": [
+                717782
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Combat",
@@ -163,31 +269,6 @@
     ],
     "status": "ok",
     "summary": "### Combat\n- Fixed delay where attached grenades were invisible until a viewmodel event, ensuring they appear correctly when spawned.\n\n### Building & Structures\n- Added an invisible, invulnerable building tier with collision that can host items, useful for blocking areas or creating floating displays.\n- Improved Warhead Garage Door colliders for finer, more precise movement and updated its prefab LODs and scripts.\n\n### Server & Settings\n- Resolved an issue where joining clients reset server convars, including gamemode settings, when using C+S.\n\n### Interactions\n- Adjusted interaction order so leading interaction remains default before petting livestock.\n\n### NPC & AI\n- Fixed animals not attacking players standing next to vehicles.\n\n### Upkeep & Decay\n- Prevented bases from decaying despite TC upkeep on high-entity-count servers by adjusting decay tick budgeting.\n\n### Gameplay & Balance\n- Scarecrows now work reliably during the Halloween 2026 event.\n- Turn transitions are now smooth; player actions no longer get dropped or delayed.\n- Tattoo painting no longer causes unintended fading of new ink.\n- Dungeon bugs fixed, improving stability and preventing players from getting stuck.\n- Crab and jellyfish gathering jobs now complete successfully, fixing previous errors that prevented resource collection.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-15": {
-    "commit_count": 1,
-    "relevant_commit_count": 1,
-    "relevant_signature": "717623",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Base & Building",
-        "items": [
-          {
-            "text": "Fixed signs being cleared when multiple signs had identical text.",
-            "commit_ids": [
-              717623
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Base & Building\n- Fixed signs being cleared when multiple signs had identical text.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

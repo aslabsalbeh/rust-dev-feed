@@ -1,5 +1,29 @@
 [
   {
+    "id": 719987,
+    "branch": "main/headshot_spread_sfx_fix",
+    "changeset": "168346",
+    "created": "2026-10-19T03:32:55",
+    "message": "Fixed headshot sfx marked as 360 spread, effectively flipping it's audio direction\r\nNow 0 spread, so a headshot that happens to your left will no longer sound like it came from the right",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 719984,
+    "branch": "▄▍▉█",
+    "changeset": "▅▆▅▅█▊",
+    "created": "2026-10-19T02:22:01",
+    "message": "▉▉▍▄▋▍ ▉▅▄▅ █▇▇▍▉▄▊▉▍▊█▇▌█▆",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 719983,
+    "branch": "▍▌▉▉▅▄█▌▉▍▊▍▍▉▇▊█▅▍▉",
+    "changeset": "▅▊▍▄▆█",
+    "created": "2026-10-19T02:21:38",
+    "message": "▄▆▆▌▆▅ ▅ ▊▌▋▋ ▉▋ █▌█▆▍ ▌▆▇▄ ▋▅▅▇▄ ▌▆▆▌▌▋█▇▇█",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 719981,
     "branch": "▌▊▆▌▊▆▉▆▋▉▆▊▄▋▇█▆▊▄▊",
     "changeset": "▆▋▆▇▉▄",
@@ -662,21 +686,5 @@
     "created": "2026-10-16T06:07:42",
     "message": "Fix bases decaying despite TC having upkeep when the decay tick gets slowed down on very high entity count servers\r\n- change decay tick from being a hardcoded 5 entities per tick to budgetted to 0.25ms per tick\r\n- in practice most servers won't hit this: this is 200k decay entities & 10 server FPS to start reaching the budget\r\n- paces so we don't burn budget looping through the list too quickly",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 717694,
-    "branch": "main/terrain_textures_review",
-    "changeset": "168233",
-    "created": "2026-10-16T04:07:58",
-    "message": "Enable terrain normal mips and use for lower detailed lods\r\nFix ring position rounding issues at lower cell sizes\r\nRemove terrain stencil material from terrainConfig (is now the default)\r\nUse y-distance from terrain to skip LOD rings",
-    "user": "Dayaan"
-  },
-  {
-    "id": 717623,
-    "branch": "main/filestorage_key_refactor",
-    "changeset": "168232",
-    "created": "2026-10-16T02:40:43",
-    "message": "Refactor how files (paintings, cassettes, etc) are keyed internally\r\nFixes signs with the same contents (uploadsign) being cleared unexpectedly",
-    "user": "lamalove"
   }
 ]
