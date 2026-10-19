@@ -1,8 +1,8 @@
 {
   "2026-10-19": {
-    "commit_count": 62,
-    "relevant_commit_count": 38,
-    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196",
+    "commit_count": 70,
+    "relevant_commit_count": 44,
+    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -10,53 +10,47 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Coconut tree spawns are now rarer—chance reduced to 25%, network range lowered, and they no longer appear on certain palm trees.",
+            "text": "Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.",
             "commit_ids": [
-              720093
+              720222
             ]
           },
           {
-            "text": "Apple and beehive spawn chances on oak trees have been increased, making these resources more common.",
+            "text": "Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.",
             "commit_ids": [
-              720093
+              720213
             ]
           },
           {
-            "text": "Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.",
+            "text": "Adjusted coconut tree network range, corrected coconut spawn chance to 25%, and increased apple/beehive spawn chance on oak trees to 25% (up from 15%).",
             "commit_ids": [
-              720194
+              720093
             ]
           }
         ]
       },
       {
-        "title": "Lighthouse Mechanics",
+        "title": "Pets & Animals",
         "items": [
           {
-            "text": "All lighthouses in a network share the same resource and repair progress, simplifying maintenance.",
+            "text": "Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.",
             "commit_ids": [
-              720021
+              720208
             ]
           }
         ]
       },
       {
-        "title": "Inventory & UI",
+        "title": "Crafting & UI",
         "items": [
           {
-            "text": "Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.",
+            "text": "Fixed cooking workbench not showing the kettle when preparing newly added teas.",
             "commit_ids": [
-              720174
+              720225
             ]
           },
           {
-            "text": "Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.",
-            "commit_ids": [
-              720142
-            ]
-          },
-          {
-            "text": "Cooking UI now features a dedicated list of craftable items, an “All” button, and toggleable category groups for clearer navigation.",
+            "text": "Overhauled Mixing/Cooking UI: added a separate \"currently craftable\" list, an \"All\" button, and toggle-group category buttons that show only the selected category.",
             "commit_ids": [
               720059,
               720032
@@ -65,146 +59,68 @@
         ]
       },
       {
-        "title": "Visual & Lighting",
+        "title": "Audio & Visual Effects",
         "items": [
           {
-            "text": "Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.",
-            "commit_ids": [
-              720160
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Visual & Performance Fixes",
-        "items": [
-          {
-            "text": "Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.",
-            "commit_ids": [
-              720188
-            ]
-          },
-          {
-            "text": "Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.",
-            "commit_ids": [
-              720181
-            ]
-          },
-          {
-            "text": "Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.",
-            "commit_ids": [
-              720157
-            ]
-          },
-          {
-            "text": "Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.",
-            "commit_ids": [
-              720149
-            ]
-          },
-          {
-            "text": "Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.",
+            "text": "Restored helicopter rumble sound by adding a missing IsOn check.",
             "commit_ids": [
               720144
             ]
           },
           {
-            "text": "Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.",
-            "commit_ids": [
-              720135
-            ]
-          },
-          {
-            "text": "Fixed broken third‑person shading on the crossbow mesh, restoring proper visual appearance.",
-            "commit_ids": [
-              720046
-            ]
-          },
-          {
-            "text": "Corrected minigun bullet visuals so they no longer clip through nearby surfaces, matching the server‑side damage behavior.",
+            "text": "Fixed visual bug where minigun bullets appeared to pass through surfaces within ~2 m of the player’s view.",
             "commit_ids": [
               719994
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Structures & Resources",
+        "items": [
+          {
+            "text": "Unified lighthouse repair progress: repairing any lighthouse contributes to a shared resource and repair pool for all lighthouses.",
+            "commit_ids": [
+              720021
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Environment\n- Coconut tree spawns are now rarer—chance reduced to 25%, network range lowered, and they no longer appear on certain palm trees.\n- Apple and beehive spawn chances on oak trees have been increased, making these resources more common.\n- Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.\n\n### Lighthouse Mechanics\n- All lighthouses in a network share the same resource and repair progress, simplifying maintenance.\n\n### Inventory & UI\n- Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.\n- Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.\n- Cooking UI now features a dedicated list of craftable items, an “All” button, and toggleable category groups for clearer navigation.\n\n### Visual & Lighting\n- Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.\n\n### Visual & Performance Fixes\n- Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.\n- Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.\n- Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.\n- Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.\n- Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.\n- Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.\n- Fixed broken third‑person shading on the crossbow mesh, restoring proper visual appearance.\n- Corrected minigun bullet visuals so they no longer clip through nearby surfaces, matching the server‑side damage behavior.",
+    "summary": "### World & Environment\n- Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.\n- Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.\n- Adjusted coconut tree network range, corrected coconut spawn chance to 25%, and increased apple/beehive spawn chance on oak trees to 25% (up from 15%).\n\n### Pets & Animals\n- Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.\n\n### Crafting & UI\n- Fixed cooking workbench not showing the kettle when preparing newly added teas.\n- Overhauled Mixing/Cooking UI: added a separate \"currently craftable\" list, an \"All\" button, and toggle-group category buttons that show only the selected category.\n\n### Audio & Visual Effects\n- Restored helicopter rumble sound by adding a missing IsOn check.\n- Fixed visual bug where minigun bullets appeared to pass through surfaces within ~2 m of the player’s view.\n\n### Structures & Resources\n- Unified lighthouse repair progress: repairing any lighthouse contributes to a shared resource and repair pool for all lighthouses.",
     "new_items": [
       {
-        "text": "Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.",
+        "text": "Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.",
         "commit_ids": [
-          720194
+          720222
         ],
         "section": "World & Environment"
       },
       {
-        "text": "Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.",
+        "text": "Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.",
         "commit_ids": [
-          720174
+          720213
         ],
-        "section": "Inventory & UI"
+        "section": "World & Environment"
       },
       {
-        "text": "Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.",
+        "text": "Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.",
         "commit_ids": [
-          720142
+          720208
         ],
-        "section": "Inventory & UI"
+        "section": "Pets & Animals"
       },
       {
-        "text": "Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.",
+        "text": "Fixed cooking workbench not showing the kettle when preparing newly added teas.",
         "commit_ids": [
-          720160
+          720225
         ],
-        "section": "Visual & Lighting"
-      },
-      {
-        "text": "Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.",
-        "commit_ids": [
-          720188
-        ],
-        "section": "Visual & Performance Fixes"
-      },
-      {
-        "text": "Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.",
-        "commit_ids": [
-          720181
-        ],
-        "section": "Visual & Performance Fixes"
-      },
-      {
-        "text": "Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.",
-        "commit_ids": [
-          720157
-        ],
-        "section": "Visual & Performance Fixes"
-      },
-      {
-        "text": "Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.",
-        "commit_ids": [
-          720149
-        ],
-        "section": "Visual & Performance Fixes"
-      },
-      {
-        "text": "Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.",
-        "commit_ids": [
-          720144
-        ],
-        "section": "Visual & Performance Fixes"
-      },
-      {
-        "text": "Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors.",
-        "commit_ids": [
-          720135
-        ],
-        "section": "Visual & Performance Fixes"
+        "section": "Crafting & UI"
       }
     ],
-    "new_relevant_count": 10,
-    "new_summary": "- Tall cliff slope prefabs now include side anchors, eliminating geometry gaps that could affect movement.\n- Container ordering is fixed when jumping with the bumper buttons in D‑pad controller mode, preventing misplaced items.\n- Gamepad glyph icons no longer overlap in the inventory on certain resolutions and aspect ratios.\n- Code‑lock light quads are correctly culled after reuse, so they no longer stay visible at any distance.\n- Reduced memory allocations for large bases, cutting LOD component overhead from 417 KB to 15 KB, which lessens stutter when many structures are loaded.\n- Removed map marker artifacting on cargo ships, ensuring the marker displays cleanly.\n- Stopped distant particle effects (conveyor flashes, furnace heat shimmers) from playing when out of view, fixing visual noise and shaving ~0.15 ms on particle processing.\n- Eliminated a brief swarm of loose bees that appeared near the hand when throwing a bee grenade.\n- Added a missing check to prevent helicopter rumble sounds from playing when the helicopter is off.\n- Enabled culling of door controller lights, saving ~0.2 ms on light processing for dozens of doors."
+    "new_relevant_count": 4,
+    "new_summary": "- Fixed disappearing/reappearing on stairs in nuclear missile silo by adding an extra CaveNetworkGroupLayerOverride.\n- Prevented underground train tunnels from spawning too close in canyon areas, eliminating rare canyon-bottom deaths.\n- Resolved multiple issues with the Frankenstein pet: sinking terrain, invisible ranged attacks, accidental kicks, and window clipping.\n- Fixed cooking workbench not showing the kettle when preparing newly added teas."
   },
   "2026-10-18": {
     "commit_count": 11,
@@ -254,8 +170,8 @@
     "new_summary": ""
   },
   "2026-10-16": {
-    "commit_count": 22,
-    "relevant_commit_count": 7,
+    "commit_count": 12,
+    "relevant_commit_count": 4,
     "relevant_signature": "718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
