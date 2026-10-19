@@ -1,5 +1,149 @@
 [
   {
+    "id": 720300,
+    "branch": "main",
+    "changeset": "168502",
+    "created": "2026-10-19T21:54:27",
+    "message": "Fixed parachute reusing a field with the same name (lastPosition) as a parent\r\nFixes a build error",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 720299,
+    "branch": "main/analytics_apartment_breakin",
+    "changeset": "168501",
+    "created": "2026-10-19T21:52:16",
+    "message": "Add missing analytics for apartments\r\n- evictions\r\n- apartment value at the time of break-ins (expose raw value from method)",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720294,
+    "branch": "main",
+    "changeset": "168500",
+    "created": "2026-10-19T21:33:10",
+    "message": "Fix frankenstein pet ignoring shields",
+    "user": "Maverick"
+  },
+  {
+    "id": 720293,
+    "branch": "main/Livestock_animals",
+    "changeset": "168499",
+    "created": "2026-10-19T21:32:21",
+    "message": "Always use brackets after \"if\" or \"for\", remove usless comments",
+    "user": "Maverick"
+  },
+  {
+    "id": 720288,
+    "branch": "main/Halloween_2026_update",
+    "changeset": "168498",
+    "created": "2026-10-19T21:31:29",
+    "message": "Assigned missing physic materals to Wooden Cross, Skull Fire Pit and Spooky Speaker (was cloth)",
+    "user": "Raul"
+  },
+  {
+    "id": 720284,
+    "branch": "main/UZI 9mm",
+    "changeset": "168495",
+    "created": "2026-10-19T21:26:58",
+    "message": "Viewmodel - Added bespoke idle/fire/dryfire ADS anims, tightened up transitions & conditions going in/out of ADS",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 720283,
+    "branch": "main/fix_tc_upkeep_spacing",
+    "changeset": "168494",
+    "created": "2026-10-19T21:24:33",
+    "message": "Reserialize TC loot panel prefab first so we can have a clean diff",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720282,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168493",
+    "created": "2026-10-19T21:22:34",
+    "message": "- try catch the upload so we can remove it from the queue if it fails\n- fix static fields not resetting in editor",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720279,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168490",
+    "created": "2026-10-19T21:19:04",
+    "message": "Formatting",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720278,
+    "branch": "main/corpse_lootable_fix",
+    "changeset": "168489",
+    "created": "2026-10-19T21:18:53",
+    "message": "Fix npc corpses being unlootable after a server restart",
+    "user": "cipeaX"
+  },
+  {
+    "id": 720275,
+    "branch": "main/halloween_costume_2026",
+    "changeset": "168487",
+    "created": "2026-10-19T21:08:19",
+    "message": "Alien costume protection changed to bone armour\r\nOccupation slots match bone armour",
+    "user": "Taylor Reynolds"
+  },
+  {
+    "id": 720274,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168486",
+    "created": "2026-10-19T21:01:25",
+    "message": "Add \"GetByCrc()\" method to FileStorage so we can find files solely by their CRC\nFix the cache not having the EntityID being updated when using ReassignEntityId()\n- will fold these into the FileStorage refactor when it lands",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720272,
+    "branch": "main/ScareCrowDungeonSpawnFix",
+    "changeset": "168485",
+    "created": "2026-10-19T21:00:11",
+    "message": "Fixed scarecrows sometimes not spawning in one of the halloween dungeon corridors",
+    "user": "Nick.H"
+  },
+  {
+    "id": 720267,
+    "branch": "main/prefab_hierarchy_flatten",
+    "changeset": "168483",
+    "created": "2026-10-19T20:34:37",
+    "message": "Also flatten entities nested within prefabs for consistency",
+    "user": "lamalove"
+  },
+  {
+    "id": 720265,
+    "branch": "main/ddraw_parent_fix",
+    "changeset": "168481",
+    "created": "2026-10-19T20:34:11",
+    "message": "Don't attempt to clear parents if the client has no active parented ddraws",
+    "user": "Raul"
+  },
+  {
+    "id": 720261,
+    "branch": "main/RadiationDungeonFix",
+    "changeset": "168480",
+    "created": "2026-10-19T20:29:47",
+    "message": "Fixed radiation starting immediately upon entering the halloween and xmas dungeons",
+    "user": "Nick.H"
+  },
+  {
+    "id": 720260,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168479",
+    "created": "2026-10-19T20:24:33",
+    "message": "Codegen",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 720259,
+    "branch": "main/ugc_censor_option",
+    "changeset": "168478",
+    "created": "2026-10-19T20:24:04",
+    "message": "Update the UGC uploader to reference FileStorage too instead of buffering in memory\n- references CRC, won't upload if the image has been deleted / modified since\n- add debouncing so it won't upload images from a sign until a small delay (example: autosave sends image every 30s)",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 720251,
     "branch": "main",
     "changeset": "168477",
@@ -742,61 +886,5 @@
     "created": "2026-10-16T22:25:11",
     "message": "Somewhat experimental optimisation pass:\r\nTattoo textures are compressed and generate mipmaps. Reduces a tattooed player's cost from +8.4mb in ram and +8.4mb in vram to +2mb (just in vram) compared to non-tattooed players",
     "user": "Taylor Reynolds"
-  },
-  {
-    "id": 718493,
-    "branch": "main/orbitcam_scrollwheel_hog",
-    "changeset": "168329",
-    "created": "2026-10-16T22:17:19",
-    "message": "Zooming with scroll wheel whilst using the 3p orbit cam (holding alt in 3p) now consumes all scroll wheel input\r\nStops inventory hotbar from being cycled whilst zooming the camera",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 718483,
-    "branch": "main/grenade_drop_animations",
-    "changeset": "168328",
-    "created": "2026-10-16T22:07:48",
-    "message": "Setup 3p attach anims\r\nBeancan, bee, smoke, supply signal and flashbang now use the grenade animation subsystem",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 718447,
-    "branch": "▍▍▌▅▅▋▇▇█▅▊▄▍▇▉▌▍▅▅▇█",
-    "changeset": "▉▇█▄▇▇",
-    "created": "2026-10-16T21:20:58",
-    "message": "▊ ▉▉▍▋▌ ▌▄▌▇ ▅█▋▇▊▅▉▊▇ ▉▆▆▅▉▊█ █▅ ▍▆▌▆▄",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 718415,
-    "branch": "▌▌▍▇▍▊█▆▄▅▌▄▅█▉▆█▌▇▄▉",
-    "changeset": "▌▌▍▅▆▋",
-    "created": "2026-10-16T21:02:46",
-    "message": "▍ ▅▆▅▇▌ ▉▄▍▉ ▉█▋ ▊▆▆▅▌ █▅▄█ ▋▇ █▌▍▇▅█▄▌▅▅▌█ ▉▇ ▆▆ ▋▉▌▍▅ ▋█ ▄▋▊█▊ ▅▍▅██▌▊ █▌▆▍█▉ ▊▆ ▊▌▌▊ ▋▉▆▇ █▉ ▋▆▋█▍▉█ ▄▇▋ ▆▍▇▄▋ ▊▋▇▉ ▉█ █ ██▋▆▍▄ ▊▅▌▊▋▍▊▊▍▄▍▊ ▉ ▇▆▍▄▋ ▉▌▌ ▅▋▍▋ ▌▄ ▇▋▆▊▊▊ ▇█ ▅▌▉ ▆▇▇▄▋ ▋▇▍▄ ▅▅▉█▍▊ ▅▅▉█▍",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 718414,
-    "branch": "main/grenade_drop_animations",
-    "changeset": "168325",
-    "created": "2026-10-16T21:02:31",
-    "message": "Fix attached grenades having a delay until becoming visible\r\nAttached grenades are visible once a \"attach_reveal\" viewmodel anim event fires\r\nIf the event happens before the actual grenade is spawned, show a predicted attached grenade until the real one spawns \r\nIf the actual grenade is spawned before the event, hide the actual grenade until we get that event",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 718345,
-    "branch": "main/weapon_refresh_nailgun",
-    "changeset": "168324",
-    "created": "2026-10-16T20:28:19",
-    "message": "Update Nailgun Viewmodel, Worldmodel and Textures to improve shading and fix shading issues",
-    "user": "Alfie Birch"
-  },
-  {
-    "id": 718342,
-    "branch": "main/hackweek_creative_building_tier",
-    "changeset": "168323",
-    "created": "2026-10-16T20:27:14",
-    "message": "made creative building tier for hackweek idea. Building tier is invulnerable, invisible but still has collision and can be deployed on with items, wallpaper etc. Can be used to block off areas or have floating displays.",
-    "user": "matt.i"
   }
 ]
