@@ -1,16 +1,56 @@
 {
   "2026-10-19": {
-    "commit_count": 4,
-    "relevant_commit_count": 2,
-    "relevant_signature": "719992,719994",
+    "commit_count": 18,
+    "relevant_commit_count": 8,
+    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
-    "sections": [],
-    "status": "no_significant_updates",
-    "summary": "No notable player-facing changes were identified in the latest development commits.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "sections": [
+      {
+        "title": "UI & Crafting",
+        "items": [
+          {
+            "text": "Crafting UI now separates currently craftable items and adds category toggle buttons with an All view, changing how items are displayed.",
+            "commit_ids": [
+              720059,
+              720032
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monuments",
+        "items": [
+          {
+            "text": "All lighthouses now share a single resource and repair progress pool, affecting lighthouse maintenance.",
+            "commit_ids": [
+              720021
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "ok",
+    "summary": "### UI & Crafting\n- Crafting UI now separates currently craftable items and adds category toggle buttons with an All view, changing how items are displayed.\n\n### Monuments\n- All lighthouses now share a single resource and repair progress pool, affecting lighthouse maintenance.",
+    "new_items": [
+      {
+        "text": "Crafting UI now separates currently craftable items and adds category toggle buttons with an All view, changing how items are displayed.",
+        "commit_ids": [
+          720059,
+          720032
+        ],
+        "section": "UI & Crafting"
+      },
+      {
+        "text": "All lighthouses now share a single resource and repair progress pool, affecting lighthouse maintenance.",
+        "commit_ids": [
+          720021
+        ],
+        "section": "Monuments"
+      }
+    ],
+    "new_relevant_count": 3,
+    "new_summary": "- Crafting UI now separates currently craftable items and adds category toggle buttons with an All view, changing how items are displayed.\n- All lighthouses now share a single resource and repair progress pool, affecting lighthouse maintenance."
   },
   "2026-10-18": {
     "commit_count": 11,
@@ -60,17 +100,17 @@
     "new_summary": ""
   },
   "2026-10-16": {
-    "commit_count": 72,
-    "relevant_commit_count": 29,
-    "relevant_signature": "717844,717896,717903,717905,717928,717940,717941,717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
+    "commit_count": 63,
+    "relevant_commit_count": 22,
+    "relevant_signature": "717950,717996,718033,718034,718037,718041,718056,718060,718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Combat & Grenades",
         "items": [
           {
-            "text": "Fixed attached grenades visibility delay so grenades appear correctly when attached to a player.",
+            "text": "Fixed grenades attached to players not appearing until the reveal animation, ensuring they are visible immediately.",
             "commit_ids": [
               718414
             ]
@@ -78,59 +118,12 @@
         ]
       },
       {
-        "title": "Building & Structures",
+        "title": "Server & Settings",
         "items": [
           {
-            "text": "Added a new creative building tier that is invisible and invulnerable but still collidable, useful for area blocking or floating displays.",
-            "commit_ids": [
-              718342
-            ]
-          },
-          {
-            "text": "Improved Warhead Garage Door colliders for more precise movement, fixing related collision issues.",
-            "commit_ids": [
-              718174,
-              718060
-            ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "Fixed scarecrow error preventing it from functioning.",
-            "commit_ids": [
-              718198
-            ]
-          },
-          {
-            "text": "Resolved job errors for crabs and jellyfish, restoring their AI behavior.",
-            "commit_ids": [
-              718159
-            ]
-          },
-          {
-            "text": "Fixed animals not attacking players standing next to vehicles.",
-            "commit_ids": [
-              717905
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Server & Gameplay Settings",
-        "items": [
-          {
-            "text": "Fixed bug where joining clients reset server convars (including gamemode settings) to defaults when using C+S.",
+            "text": "Fixed a bug where joining a server would reset custom game mode settings (convars) to defaults, preserving clan and server configurations.",
             "commit_ids": [
               718034
-            ]
-          },
-          {
-            "text": "Made \"leading\" the default interaction before petting livestock, changing the interaction order for petting.",
-            "commit_ids": [
-              717928
             ]
           }
         ]
@@ -139,28 +132,39 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Resolved pooling issues that could interrupt player actions during mid-turns, ensuring smoother turn transitions.",
+            "text": "Scarecrows no longer trigger errors, restoring their defensive functionality.",
+            "commit_ids": [
+              718198
+            ]
+          },
+          {
+            "text": "Head IK now correctly follows up/down movements, and player pooling during turn transitions is stable, reducing combat glitches.",
             "commit_ids": [
               718182
             ]
           },
           {
-            "text": "Fixed tattoo painting so new ink no longer fades unintentionally, improving live tattoo customization.",
+            "text": "Live tattoo painting now respects separate visibility for new ink, preventing unintended fading of fresh designs.",
             "commit_ids": [
               717996
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Development",
+        "items": [
           {
-            "text": "Implemented a series of dungeon fixes that address various bugs, improving stability and gameplay in the Halloween 2026 update dungeons.",
+            "text": "WIP: Unify FSM states, sharing dead, repellant flee, and debug move states.",
             "commit_ids": [
-              717903
+              718168
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Fixed attached grenades visibility delay so grenades appear correctly when attached to a player.\n\n### Building & Structures\n- Added a new creative building tier that is invisible and invulnerable but still collidable, useful for area blocking or floating displays.\n- Improved Warhead Garage Door colliders for more precise movement, fixing related collision issues.\n\n### NPC & AI\n- Fixed scarecrow error preventing it from functioning.\n- Resolved job errors for crabs and jellyfish, restoring their AI behavior.\n- Fixed animals not attacking players standing next to vehicles.\n\n### Server & Gameplay Settings\n- Fixed bug where joining clients reset server convars (including gamemode settings) to defaults when using C+S.\n- Made \"leading\" the default interaction before petting livestock, changing the interaction order for petting.\n\n### Gameplay & Balance\n- Resolved pooling issues that could interrupt player actions during mid-turns, ensuring smoother turn transitions.\n- Fixed tattoo painting so new ink no longer fades unintentionally, improving live tattoo customization.\n- Implemented a series of dungeon fixes that address various bugs, improving stability and gameplay in the Halloween 2026 update dungeons.",
+    "summary": "### Combat & Grenades\n- Fixed grenades attached to players not appearing until the reveal animation, ensuring they are visible immediately.\n\n### Server & Settings\n- Fixed a bug where joining a server would reset custom game mode settings (convars) to defaults, preserving clan and server configurations.\n\n### Gameplay & Balance\n- Scarecrows no longer trigger errors, restoring their defensive functionality.\n- Head IK now correctly follows up/down movements, and player pooling during turn transitions is stable, reducing combat glitches.\n- Live tattoo painting now respects separate visibility for new ink, preventing unintended fading of fresh designs.\n\n### Development\n- WIP: Unify FSM states, sharing dead, repellant flee, and debug move states.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
