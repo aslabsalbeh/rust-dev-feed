@@ -6,29 +6,39 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 19 Oct 2026 06:17:28 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 08:17:41 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 19</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;18 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;32 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720059,720032"&gt;Crafting UI now separates currently craftable items and adds category toggle buttons with an All view, changing how items are displayed.&lt;/li&gt;
-&lt;li data-rust-commits="720021"&gt;All lighthouses now share a single resource and repair progress pool, affecting lighthouse maintenance.&lt;/li&gt;
+&lt;li data-rust-commits="720093"&gt;Coconut tree network range reduced; coconut spawns stopped on certain palm trees; coconut tree spawn chance lowered to 25%; apple and beehive spawn chance on oak increased to 25% (from 15%).&lt;/li&gt;
+&lt;li data-rust-commits="720059,720032"&gt;Cooking UI now has a separate list for currently craftable items, an “All” button, and category buttons act as toggles, simplifying item selection.&lt;/li&gt;
+&lt;li data-rust-commits="720046"&gt;Crossbow mesh shading fixed for third‑person view, restoring proper appearance when viewing other players.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;UI &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Resources &amp;amp; Gathering&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720059,720032"&gt;Crafting UI now separates currently craftable items and adds category toggle buttons with an All view, changing how items are displayed.&lt;/li&gt;
+&lt;li data-rust-commits="720093"&gt;Coconut tree network range reduced; coconut spawns stopped on certain palm trees; coconut tree spawn chance lowered to 25%; apple and beehive spawn chance on oak increased to 25% (from 15%).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Cooking UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720059,720032"&gt;Cooking UI now has a separate list for currently craftable items, an “All” button, and category buttons act as toggles, simplifying item selection.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Monuments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720021"&gt;All lighthouses now share a single resource and repair progress pool, affecting lighthouse maintenance.&lt;/li&gt;
+&lt;li data-rust-commits="720021"&gt;All lighthouses now share a single resource and repair progress bar, so repairing one contributes to all.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Visual &amp;amp; Gameplay Fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720046"&gt;Crossbow mesh shading fixed for third‑person view, restoring proper appearance when viewing other players.&lt;/li&gt;
+&lt;li data-rust-commits="719994"&gt;Minigun bullets now correctly render when firing near walls, no longer appearing to pass through surfaces.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-19</guid>
-      <pubDate>Mon, 19 Oct 2026 06:17:28 -0400</pubDate>
+      <pubDate>Mon, 19 Oct 2026 08:17:41 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 18</title>
@@ -54,25 +64,27 @@
     <item>
       <title>Rust Development Updates — Oct 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;63 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;50 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Combat &amp;amp; Grenades&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Explosives&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="718414"&gt;Fixed grenades attached to players not appearing until the reveal animation, ensuring they are visible immediately.&lt;/li&gt;
+&lt;li data-rust-commits="718414"&gt;Fixed attached grenades sometimes not appearing until a later animation event, ensuring grenades are visible immediately when thrown or equipped.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Base &amp;amp; Doors&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="718174,718060"&gt;Improved Warhead Garage Door movement precision and updated its prefab, making the door’s busy colliders more accurate and fixing related LOD issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Animals &amp;amp; AI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="718168"&gt;Added shared dead and flee states to livestock FSMs, improving how cows, sheep, and other critters react to threats and repellents.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Server &amp;amp; Settings&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="718034"&gt;Fixed a bug where joining a server would reset custom game mode settings (convars) to defaults, preserving clan and server configurations.&lt;/li&gt;
+&lt;li data-rust-commits="718034"&gt;Fixed a bug where joining a server with C+S would reset custom server convars (like gamemode settings) to defaults.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Monuments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="718198"&gt;Scarecrows no longer trigger errors, restoring their defensive functionality.&lt;/li&gt;
-&lt;li data-rust-commits="718182"&gt;Head IK now correctly follows up/down movements, and player pooling during turn transitions is stable, reducing combat glitches.&lt;/li&gt;
-&lt;li data-rust-commits="717996"&gt;Live tattoo painting now respects separate visibility for new ink, preventing unintended fading of fresh designs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Development&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="718168"&gt;WIP: Unify FSM states, sharing dead, repellant flee, and debug move states.&lt;/li&gt;
+&lt;li data-rust-commits="718198"&gt;Fixed scarecrow error that could prevent scarecrows from spawning correctly during the Halloween 2026 update.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-16</guid>

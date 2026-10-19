@@ -1,5 +1,117 @@
 [
   {
+    "id": 720095,
+    "branch": "main/io_optims",
+    "changeset": "168403",
+    "created": "2026-10-19T11:33:45",
+    "message": "Fixed industrial pipes drawing invisible line renderers inside the pipe meshes, component wasnt disabled\r\n\r\nFor a base with 223 pipes:\r\nWas 0.05ms on the main thread and 0.5ms on workers every frame",
+    "user": "Flavien"
+  },
+  {
+    "id": 720093,
+    "branch": "main/fruit_trees",
+    "changeset": "168401",
+    "created": "2026-10-19T11:23:55",
+    "message": "Reduced coconut.tree network range to 128.\r\nStop coconuts spawning on palm_tree_tropical_med_a until i find a way of stopping the tree sway.\r\nIncreased chance of apples/beehive spawning on oak_d to 25% from 15%.\r\nAdjusted coconut tree spawn chance to 25% (left it at 100% by mistake).",
+    "user": "Lukester"
+  },
+  {
+    "id": 720092,
+    "branch": "main/io_optims",
+    "changeset": "168400",
+    "created": "2026-10-19T11:12:41",
+    "message": "Another visual cooking pooling fix",
+    "user": "Flavien"
+  },
+  {
+    "id": 720089,
+    "branch": "main/io_optims",
+    "changeset": "168398",
+    "created": "2026-10-19T11:05:29",
+    "message": "Now poolable:\r\n- Cooking workbench\r\n- Metal embrasures\r\n- Flower pots\r\n\r\nFixed some visual cooking pooling bugs",
+    "user": "Flavien"
+  },
+  {
+    "id": 720088,
+    "branch": "main/lighthouse_deep_sea",
+    "changeset": "168397",
+    "created": "2026-10-19T10:59:04",
+    "message": "Auto-repair on startup if deep sea is disabled",
+    "user": "Adam W"
+  },
+  {
+    "id": 720085,
+    "branch": "main/character_customisation",
+    "changeset": "168395",
+    "created": "2026-10-19T10:53:17",
+    "message": "Customiser animation updates with eye movement test",
+    "user": "wes.b"
+  },
+  {
+    "id": 720080,
+    "branch": "main/full_parented_mounting",
+    "changeset": "168392",
+    "created": "2026-10-19T10:41:38",
+    "message": "Better comment for the suitable parent hack when dismounting (ensure the correct triggers fire when dismounting from a parent mountable)",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 720075,
+    "branch": "main",
+    "changeset": "168388",
+    "created": "2026-10-19T10:37:17",
+    "message": "Removed the max light cookie cap warning that would appear when loading into a server",
+    "user": "aidan.m"
+  },
+  {
+    "id": 720073,
+    "branch": "main/io_optims",
+    "changeset": "168386",
+    "created": "2026-10-19T10:33:53",
+    "message": "Windmills now use two syncvars to send wind updates instead of full network updates\r\nThey're poolable too",
+    "user": "Flavien"
+  },
+  {
+    "id": 720072,
+    "branch": "main/full_parented_mounting",
+    "changeset": "168385",
+    "created": "2026-10-19T10:30:27",
+    "message": "Swap over to fully using the parented mountable system rather than only using it for a few specific types of vehicles\r\nThis should reduce network overhead when driving any vehicle/sitting in a seat",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 720067,
+    "branch": "main/weapon_refresh_nailgun",
+    "changeset": "168382",
+    "created": "2026-10-19T10:12:14",
+    "message": "Checked if Updated Nailgun works and can be skinned properly.\r\nUpdated Nailgun Workshop Source Obj",
+    "user": "Alfie Birch"
+  },
+  {
+    "id": 720063,
+    "branch": "main",
+    "changeset": "168379",
+    "created": "2026-10-19T10:10:12",
+    "message": "pt_boat_turret_rewrite -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 720062,
+    "branch": "▇▊▍▍▆▄▉▅▋█▍▄▌▌█▄▋▌▅▄▌▄",
+    "changeset": "▍▄▊█▇▍",
+    "created": "2026-10-19T10:08:14",
+    "message": "▇██▋▍▅▉",
+    "user": "Grigler"
+  },
+  {
+    "id": 720060,
+    "branch": "main/mixingcooking_ui",
+    "changeset": "168377",
+    "created": "2026-10-19T10:06:31",
+    "message": "Icon change",
+    "user": "Adam W"
+  },
+  {
     "id": 720059,
     "branch": "main/mixingcooking_ui",
     "changeset": "168376",
@@ -630,109 +742,5 @@
     "created": "2026-10-16T12:31:26",
     "message": "Fix client join resetting server convars (like gamemode settings) to defaults when running C+S",
     "user": "Martyn Chapman"
-  },
-  {
-    "id": 718011,
-    "branch": "main/indirect_instancing",
-    "changeset": "168266",
-    "created": "2026-10-16T12:15:44",
-    "message": "Don't strip BRG shader variants from builds\nUse only one instancing method at a time and begin deprecating RenderMeshIndirect() path by toggling it via a uniform. (not a keyword)",
-    "user": "Felix"
-  },
-  {
-    "id": 717998,
-    "branch": "main/gamemode_clans_restrictions",
-    "changeset": "168265",
-    "created": "2026-10-16T12:01:26",
-    "message": "Undo snuck in files",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 717996,
-    "branch": "main/tattoos/art_pass",
-    "changeset": "168264",
-    "created": "2026-10-16T11:57:02",
-    "message": "Give live and old layers seperate visibility values (fixes fade applying to new tatto ink in live painting)",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 717990,
-    "branch": "main/gamemode_clans_restrictions",
-    "changeset": "168263",
-    "created": "2026-10-16T11:54:55",
-    "message": "Cleanup softcore and hardcore changelogs",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 717983,
-    "branch": "main/rust_birthday_2026",
-    "changeset": "168262",
-    "created": "2026-10-16T11:41:46",
-    "message": "rust 13th birthday cake\r\n- lods added\r\n- prefabs updated",
-    "user": "curt"
-  },
-  {
-    "id": 717974,
-    "branch": "main/grenade_drop_animations",
-    "changeset": "168261",
-    "created": "2026-10-16T11:28:21",
-    "message": "exported 3p attach anims for grenade, smoke grenade, flare, crackers and beancan grenade",
-    "user": "julek"
-  },
-  {
-    "id": 717972,
-    "branch": "main/tattoos/art_pass",
-    "changeset": "168260",
-    "created": "2026-10-16T11:17:02",
-    "message": "Min fade value so even brand new tattoos are slightly transparent",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 717962,
-    "branch": "main",
-    "changeset": "168259",
-    "created": "2026-10-16T10:54:22",
-    "message": "~Updated skinviewer nailgun to use the rigged VM",
-    "user": "Flavien"
-  },
-  {
-    "id": 717954,
-    "branch": "main/seagull_update",
-    "changeset": "168258",
-    "created": "2026-10-16T10:34:10",
-    "message": "- added updated seagull model, textures and materials",
-    "user": "Toffer"
-  },
-  {
-    "id": 717953,
-    "branch": "main/vip_warhead",
-    "changeset": "168257",
-    "created": "2026-10-16T10:31:01",
-    "message": "Updating warhead garage door rig and open mesh",
-    "user": "jeddooo"
-  },
-  {
-    "id": 717952,
-    "branch": "main/bc_improvements/rbf_solver",
-    "changeset": "168256",
-    "created": "2026-10-16T10:30:35",
-    "message": "first pass, experimenting",
-    "user": "Grigler"
-  },
-  {
-    "id": 717950,
-    "branch": "main/weapon_refresh_nailgun",
-    "changeset": "168254",
-    "created": "2026-10-16T10:25:36",
-    "message": "updated nailgun workshopsource model",
-    "user": "matt.i"
-  },
-  {
-    "id": 717946,
-    "branch": "main/indirect_instancing",
-    "changeset": "168253",
-    "created": "2026-10-16T10:17:25",
-    "message": "Make wind shaders SRP batcher compatible",
-    "user": "Felix"
   }
 ]
