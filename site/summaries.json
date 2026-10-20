@@ -1,73 +1,62 @@
 {
   "2026-10-20": {
-    "commit_count": 63,
-    "relevant_commit_count": 37,
-    "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650",
+    "commit_count": 68,
+    "relevant_commit_count": 42,
+    "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650,720656,720658,720659,720660,720663",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World Generation & Structures",
+        "title": "World & Terrain",
         "items": [
           {
-            "text": "Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.",
+            "text": "Monument spawn bounds increased to prevent overlapping terrain and too‑close spawns.",
             "commit_ids": [
               720642
             ]
           },
           {
-            "text": "Repainted terrain at the exit computer room and truck garage area to stop terrain clipping that could trap players in underground rooms.",
+            "text": "Repainted terrain at the exit computer room and truck garage stops clipping that could trap players.",
             "commit_ids": [
               720598
             ]
           },
           {
-            "text": "Fixed train track splines retaining descendants and restored tunnel lights functionality.",
-            "commit_ids": [
-              720378
-            ]
-          },
-          {
-            "text": "Fixed errors when generating underwater labs by ensuring DungeonBaseLink retains its descendants.",
+            "text": "Underwater labs now generate correctly, fixing previous generation errors.",
             "commit_ids": [
               720377
             ]
-          },
-          {
-            "text": "Fixed wires attached to doors stretching towards the world origin after exiting or entering network range.",
-            "commit_ids": [
-              720540
-            ]
           }
         ]
       },
       {
-        "title": "AI & NPC",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.",
+            "text": "Scientists on the PT boat now respect the ignore‑players setting.",
             "commit_ids": [
               720626
             ]
-          }
-        ]
-      },
-      {
-        "title": "Lighting & Visibility",
-        "items": [
+          },
           {
-            "text": "AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.",
+            "text": "Vines now reset correctly after server restarts, fixing mountable errors.",
             "commit_ids": [
-              720639
+              720660
             ]
           }
         ]
       },
       {
-        "title": "Line of Sight",
+        "title": "Combat & Interaction",
         "items": [
           {
-            "text": "Added extra line‑of‑sight checks for stairs (including L, U, spiral, and triangle spiral) to correctly detect clear sight and prevent false LOS blocks.",
+            "text": "Mortar now shows its firing animation, providing visual feedback.",
+            "commit_ids": [
+              720570
+            ]
+          },
+          {
+            "text": "Added extra line‑of‑sight checks on stairs, fixing LOS errors when a clear view exists.",
             "commit_ids": [
               720589
             ]
@@ -75,68 +64,65 @@
         ]
       },
       {
-        "title": "Repair Bench",
+        "title": "Building & Structures",
         "items": [
           {
-            "text": "Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench.",
+            "text": "Wires attached to doors stay in place when moving in and out of network range.",
             "commit_ids": [
-              720611
+              720540
+            ]
+          },
+          {
+            "text": "Train track splines retain their descendants, restoring tunnel lighting.",
+            "commit_ids": [
+              720378
             ]
           }
         ]
       },
       {
-        "title": "Gamepad & UI",
+        "title": "UI & Controls",
         "items": [
           {
-            "text": "Map zoom with a gamepad now centers around the crosshair.",
+            "text": "Repair bench now allows changing gun accessories without needing a skin.",
+            "commit_ids": [
+              720611
+            ]
+          },
+          {
+            "text": "Gamepad map zoom now centers on the crosshair for better navigation.",
             "commit_ids": [
               720554
             ]
           },
           {
-            "text": "Improved D‑pad behavior in the inventory screen.",
+            "text": "D‑pad inventory navigation smoother on gamepads.",
             "commit_ids": [
               720546
+            ]
+          },
+          {
+            "text": "Boosts UI no longer shows movement‑speed modifiers when leading animals or pulling siege weapons.",
+            "commit_ids": [
+              720567
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World Generation & Structures\n- Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.\n- Repainted terrain at the exit computer room and truck garage area to stop terrain clipping that could trap players in underground rooms.\n- Fixed train track splines retaining descendants and restored tunnel lights functionality.\n- Fixed errors when generating underwater labs by ensuring DungeonBaseLink retains its descendants.\n- Fixed wires attached to doors stretching towards the world origin after exiting or entering network range.\n\n### AI & NPC\n- Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.\n\n### Lighting & Visibility\n- AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.\n\n### Line of Sight\n- Added extra line‑of‑sight checks for stairs (including L, U, spiral, and triangle spiral) to correctly detect clear sight and prevent false LOS blocks.\n\n### Repair Bench\n- Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench.\n\n### Gamepad & UI\n- Map zoom with a gamepad now centers around the crosshair.\n- Improved D‑pad behavior in the inventory screen.",
+    "summary": "### World & Terrain\n- Monument spawn bounds increased to prevent overlapping terrain and too‑close spawns.\n- Repainted terrain at the exit computer room and truck garage stops clipping that could trap players.\n- Underwater labs now generate correctly, fixing previous generation errors.\n\n### NPC & AI\n- Scientists on the PT boat now respect the ignore‑players setting.\n- Vines now reset correctly after server restarts, fixing mountable errors.\n\n### Combat & Interaction\n- Mortar now shows its firing animation, providing visual feedback.\n- Added extra line‑of‑sight checks on stairs, fixing LOS errors when a clear view exists.\n\n### Building & Structures\n- Wires attached to doors stay in place when moving in and out of network range.\n- Train track splines retain their descendants, restoring tunnel lighting.\n\n### UI & Controls\n- Repair bench now allows changing gun accessories without needing a skin.\n- Gamepad map zoom now centers on the crosshair for better navigation.\n- D‑pad inventory navigation smoother on gamepads.\n- Boosts UI no longer shows movement‑speed modifiers when leading animals or pulling siege weapons.",
     "new_items": [
       {
-        "text": "Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.",
+        "text": "Vines now reset correctly after server restarts, fixing mountable errors.",
         "commit_ids": [
-          720642
+          720660
         ],
-        "section": "World Generation & Structures"
-      },
-      {
-        "text": "Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.",
-        "commit_ids": [
-          720626
-        ],
-        "section": "AI & NPC"
-      },
-      {
-        "text": "AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.",
-        "commit_ids": [
-          720639
-        ],
-        "section": "Lighting & Visibility"
-      },
-      {
-        "text": "Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench.",
-        "commit_ids": [
-          720611
-        ],
-        "section": "Repair Bench"
+        "section": "NPC & AI"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.\n- Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.\n- AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.\n- Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench."
+    "new_relevant_count": 1,
+    "new_summary": "- Vines now reset correctly after server restarts, fixing mountable errors."
   },
   "2026-10-19": {
     "commit_count": 125,
