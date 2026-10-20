@@ -1,229 +1,142 @@
 {
   "2026-10-20": {
-    "commit_count": 53,
-    "relevant_commit_count": 28,
-    "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611",
+    "commit_count": 63,
+    "relevant_commit_count": 37,
+    "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Repair & Construction",
+        "title": "World Generation & Structures",
         "items": [
           {
-            "text": "Fixed inability to change accessories on guns without skins in the repair bench.",
+            "text": "Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.",
             "commit_ids": [
-              720611
+              720642
             ]
           },
           {
-            "text": "Fixed socket hierarchy issues that caused misaligned attachments, ensuring proper placement of building parts.",
-            "commit_ids": [
-              720376
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Terrain",
-        "items": [
-          {
-            "text": "Fixed terrain clipping at the exit computer room and blocked‑off garage, preventing players from getting trapped.",
+            "text": "Repainted terrain at the exit computer room and truck garage area to stop terrain clipping that could trap players in underground rooms.",
             "commit_ids": [
               720598
             ]
           },
           {
-            "text": "Fixed generation errors for underwater labs, ensuring they spawn correctly.",
+            "text": "Fixed train track splines retaining descendants and restored tunnel lights functionality.",
+            "commit_ids": [
+              720378
+            ]
+          },
+          {
+            "text": "Fixed errors when generating underwater labs by ensuring DungeonBaseLink retains its descendants.",
             "commit_ids": [
               720377
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Menu",
-        "items": [
-          {
-            "text": "Fixed main‑menu chat covering the screen when RRP is enabled.",
-            "commit_ids": [
-              720590
-            ]
           },
           {
-            "text": "Fixed persistent safe‑zone warning on the main menu and restored its title.",
+            "text": "Fixed wires attached to doors stretching towards the world origin after exiting or entering network range.",
             "commit_ids": [
-              720585
-            ]
-          },
-          {
-            "text": "Fixed tutorial welcome video playback.",
-            "commit_ids": [
-              720591
-            ]
-          },
-          {
-            "text": "Removed misleading movement‑speed modifier from the boosts UI when leading animals or pulling siege weapons.",
-            "commit_ids": [
-              720567
+              720540
             ]
           }
         ]
       },
       {
-        "title": "Combat & Visibility",
+        "title": "AI & NPC",
         "items": [
           {
-            "text": "Added extra line‑of‑sight checks on stair types to stop false LOS blocking.",
+            "text": "Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.",
+            "commit_ids": [
+              720626
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Lighting & Visibility",
+        "items": [
+          {
+            "text": "AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.",
+            "commit_ids": [
+              720639
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Line of Sight",
+        "items": [
+          {
+            "text": "Added extra line‑of‑sight checks for stairs (including L, U, spiral, and triangle spiral) to correctly detect clear sight and prevent false LOS blocks.",
             "commit_ids": [
               720589
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Repair Bench",
+        "items": [
           {
-            "text": "Fixed mortar snapping after firing, ensuring the animation plays correctly.",
+            "text": "Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench.",
             "commit_ids": [
-              720570
+              720611
             ]
           }
         ]
       },
       {
-        "title": "Controls & Navigation",
+        "title": "Gamepad & UI",
         "items": [
           {
-            "text": "Gamepad map zoom now centers around the crosshair for better aiming.",
+            "text": "Map zoom with a gamepad now centers around the crosshair.",
             "commit_ids": [
               720554
             ]
           },
           {
-            "text": "Improved D‑pad inventory navigation behavior.",
+            "text": "Improved D‑pad behavior in the inventory screen.",
             "commit_ids": [
               720546
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Economy",
-        "items": [
-          {
-            "text": "Upkeep labels now have proper spacing and positioning, preventing overlap of large numbers.",
-            "commit_ids": [
-              720580,
-              720579
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Infrastructure",
-        "items": [
-          {
-            "text": "Wires attached to doors no longer stretch when moving out of network range, restoring correct wire behavior.",
-            "commit_ids": [
-              720540
-            ]
-          },
-          {
-            "text": "Train track splines retain their descendants, fixing tunnel lights on tracks.",
-            "commit_ids": [
-              720378
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Repair & Construction\n- Fixed inability to change accessories on guns without skins in the repair bench.\n- Fixed socket hierarchy issues that caused misaligned attachments, ensuring proper placement of building parts.\n\n### World & Terrain\n- Fixed terrain clipping at the exit computer room and blocked‑off garage, preventing players from getting trapped.\n- Fixed generation errors for underwater labs, ensuring they spawn correctly.\n\n### UI & Menu\n- Fixed main‑menu chat covering the screen when RRP is enabled.\n- Fixed persistent safe‑zone warning on the main menu and restored its title.\n- Fixed tutorial welcome video playback.\n- Removed misleading movement‑speed modifier from the boosts UI when leading animals or pulling siege weapons.\n\n### Combat & Visibility\n- Added extra line‑of‑sight checks on stair types to stop false LOS blocking.\n- Fixed mortar snapping after firing, ensuring the animation plays correctly.\n\n### Controls & Navigation\n- Gamepad map zoom now centers around the crosshair for better aiming.\n- Improved D‑pad inventory navigation behavior.\n\n### UI & Economy\n- Upkeep labels now have proper spacing and positioning, preventing overlap of large numbers.\n\n### Building & Infrastructure\n- Wires attached to doors no longer stretch when moving out of network range, restoring correct wire behavior.\n- Train track splines retain their descendants, fixing tunnel lights on tracks.",
+    "summary": "### World Generation & Structures\n- Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.\n- Repainted terrain at the exit computer room and truck garage area to stop terrain clipping that could trap players in underground rooms.\n- Fixed train track splines retaining descendants and restored tunnel lights functionality.\n- Fixed errors when generating underwater labs by ensuring DungeonBaseLink retains its descendants.\n- Fixed wires attached to doors stretching towards the world origin after exiting or entering network range.\n\n### AI & NPC\n- Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.\n\n### Lighting & Visibility\n- AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.\n\n### Line of Sight\n- Added extra line‑of‑sight checks for stairs (including L, U, spiral, and triangle spiral) to correctly detect clear sight and prevent false LOS blocks.\n\n### Repair Bench\n- Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench.\n\n### Gamepad & UI\n- Map zoom with a gamepad now centers around the crosshair.\n- Improved D‑pad behavior in the inventory screen.",
     "new_items": [
       {
-        "text": "Fixed inability to change accessories on guns without skins in the repair bench.",
+        "text": "Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.",
+        "commit_ids": [
+          720642
+        ],
+        "section": "World Generation & Structures"
+      },
+      {
+        "text": "Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.",
+        "commit_ids": [
+          720626
+        ],
+        "section": "AI & NPC"
+      },
+      {
+        "text": "AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.",
+        "commit_ids": [
+          720639
+        ],
+        "section": "Lighting & Visibility"
+      },
+      {
+        "text": "Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench.",
         "commit_ids": [
           720611
         ],
-        "section": "Repair & Construction"
-      },
-      {
-        "text": "Fixed terrain clipping at the exit computer room and blocked‑off garage, preventing players from getting trapped.",
-        "commit_ids": [
-          720598
-        ],
-        "section": "World & Terrain"
-      },
-      {
-        "text": "Fixed main‑menu chat covering the screen when RRP is enabled.",
-        "commit_ids": [
-          720590
-        ],
-        "section": "UI & Menu"
-      },
-      {
-        "text": "Fixed persistent safe‑zone warning on the main menu and restored its title.",
-        "commit_ids": [
-          720585
-        ],
-        "section": "UI & Menu"
-      },
-      {
-        "text": "Fixed tutorial welcome video playback.",
-        "commit_ids": [
-          720591
-        ],
-        "section": "UI & Menu"
-      },
-      {
-        "text": "Removed misleading movement‑speed modifier from the boosts UI when leading animals or pulling siege weapons.",
-        "commit_ids": [
-          720567
-        ],
-        "section": "UI & Menu"
-      },
-      {
-        "text": "Added extra line‑of‑sight checks on stair types to stop false LOS blocking.",
-        "commit_ids": [
-          720589
-        ],
-        "section": "Combat & Visibility"
-      },
-      {
-        "text": "Fixed mortar snapping after firing, ensuring the animation plays correctly.",
-        "commit_ids": [
-          720570
-        ],
-        "section": "Combat & Visibility"
-      },
-      {
-        "text": "Gamepad map zoom now centers around the crosshair for better aiming.",
-        "commit_ids": [
-          720554
-        ],
-        "section": "Controls & Navigation"
-      },
-      {
-        "text": "Improved D‑pad inventory navigation behavior.",
-        "commit_ids": [
-          720546
-        ],
-        "section": "Controls & Navigation"
-      },
-      {
-        "text": "Upkeep labels now have proper spacing and positioning, preventing overlap of large numbers.",
-        "commit_ids": [
-          720580,
-          720579
-        ],
-        "section": "UI & Economy"
-      },
-      {
-        "text": "Wires attached to doors no longer stretch when moving out of network range, restoring correct wire behavior.",
-        "commit_ids": [
-          720540
-        ],
-        "section": "Building & Infrastructure"
+        "section": "Repair Bench"
       }
     ],
-    "new_relevant_count": 13,
-    "new_summary": "- Fixed inability to change accessories on guns without skins in the repair bench.\n- Fixed terrain clipping at the exit computer room and blocked‑off garage, preventing players from getting trapped.\n- Fixed main‑menu chat covering the screen when RRP is enabled.\n- Fixed persistent safe‑zone warning on the main menu and restored its title.\n- Fixed tutorial welcome video playback.\n- Removed misleading movement‑speed modifier from the boosts UI when leading animals or pulling siege weapons.\n- Added extra line‑of‑sight checks on stair types to stop false LOS blocking.\n- Fixed mortar snapping after firing, ensuring the animation plays correctly.\n- Gamepad map zoom now centers around the crosshair for better aiming.\n- Improved D‑pad inventory navigation behavior.\n- Upkeep labels now have proper spacing and positioning, preventing overlap of large numbers.\n- Wires attached to doors no longer stretch when moving out of network range, restoring correct wire behavior."
+    "new_relevant_count": 4,
+    "new_summary": "- Increased monument spawn bounds to prevent overlapping terrain, fixing placement for Military Tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.\n- Boat scientists now respect the ignore‑players setting, allowing them to stay out of a player’s way when the flag is enabled.\n- AmbientLightLOD lights no longer stay dark after teleporting or respawning, improving visibility.\n- Fixed the inability to change gun accessories (e.g., M16) on weapons without skins in the repair bench."
   },
   "2026-10-19": {
     "commit_count": 125,
