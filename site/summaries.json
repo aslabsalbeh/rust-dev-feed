@@ -1,10 +1,200 @@
 {
-  "2026-10-19": {
-    "commit_count": 116,
-    "relevant_commit_count": 71,
-    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331",
+  "2026-10-20": {
+    "commit_count": 1,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
+  "2026-10-19": {
+    "commit_count": 125,
+    "relevant_commit_count": 76,
+    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {
+      "720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331,720340,720348,720350,720352,720354": [
+        {
+          "title": "Crafting & Vision",
+          "items": [
+            {
+              "text": "Updated bone armour crafting recipe to match intended values and swapped egg vision effect to candy vision.",
+              "commit_ids": [
+                720352
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Movement & Collision",
+          "items": [
+            {
+              "text": "Prevented jumping while crouched when a solid object is directly above, fixing head clipping and unintended explosion damage.",
+              "commit_ids": [
+                720320
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Physics & Building",
+          "items": [
+            {
+              "text": "Fixed gravestone collider to use the correct convex shape, improving physics impacts.",
+              "commit_ids": [
+                720313
+              ]
+            },
+            {
+              "text": "Fixed Cursed Cauldron collider issues by removing an unused mesh collider and correcting the building‑prevent collider layer.",
+              "commit_ids": [
+                720306
+              ]
+            },
+            {
+              "text": "Assigned proper physics materials to Wooden Cross, Skull Fire Pit, and Spooky Speaker, correcting their physical behavior.",
+              "commit_ids": [
+                720288
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Pets",
+          "items": [
+            {
+              "text": "Fixed Frankenstein pet ignoring player shields, restoring correct shield interaction.",
+              "commit_ids": [
+                720294
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Loot & NPCs",
+          "items": [
+            {
+              "text": "Fixed NPC corpses becoming unlootable after a server restart, restoring loot access.",
+              "commit_ids": [
+                720278
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Dungeon & Event Fixes",
+          "items": [
+            {
+              "text": "Fixed scarecrows sometimes not spawning in Halloween dungeon corridors.",
+              "commit_ids": [
+                720272
+              ]
+            },
+            {
+              "text": "Fixed radiation starting immediately upon entering Halloween and Christmas dungeons, ensuring proper radiation timing.",
+              "commit_ids": [
+                720261
+              ]
+            }
+          ]
+        }
+      ],
+      "720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248": [
+        {
+          "title": "World & Environment",
+          "items": [
+            {
+              "text": "Added a DungeonGridBlocker to canyon areas to stop underground train tunnels from spawning too close and removing terrain collision, preventing rare deaths at canyon bottoms.",
+              "commit_ids": [
+                720213
+              ]
+            },
+            {
+              "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo's living quarters and computer room, fixing players and NPCs disappearing/reappearing on the stairs.",
+              "commit_ids": [
+                720222
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Pets & Creatures",
+          "items": [
+            {
+              "text": "Fixed the Frankenstein pet sinking into terrain, performing invisible ranged attacks, occasionally kicking its owner, and passing through windows.",
+              "commit_ids": [
+                720208
+              ]
+            },
+            {
+              "text": "Fixed merged animation controllers and the livestock FSM, restoring correct animal behavior.",
+              "commit_ids": [
+                720214
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Gameplay Mechanics",
+          "items": [
+            {
+              "text": "Corrected MeshCull to properly hide its renderer when reused from the pool while culled, preventing code‑lock light quads from being visible at any distance after spawning.",
+              "commit_ids": [
+                720160
+              ]
+            },
+            {
+              "text": "Fixed group‑change polling bugs that could affect entity grouping logic.",
+              "commit_ids": [
+                720155
+              ]
+            }
+          ]
+        }
+      ],
+      "719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149": [
+        {
+          "title": "UI Improvements",
+          "items": [
+            {
+              "text": "Fixed gamepad glyph panel overlapping inventory UI on certain resolutions/aspects.",
+              "commit_ids": [
+                720142
+              ]
+            },
+            {
+              "text": "Added a separate 'currently craftable' list and an 'All' button; category buttons now toggle groups, improving crafting UI navigation.",
+              "commit_ids": [
+                720059,
+                720032
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World & Resource Changes",
+          "items": [
+            {
+              "text": "Adjusted fruit tree spawn mechanics: coconut trees now have reduced network range (128) and spawn chance corrected to 25%; apple and beehive spawn chance on oak trees increased to 25%.",
+              "commit_ids": [
+                720093
+              ]
+            },
+            {
+              "text": "Lighthouses now share a common resource and repair progress pool, allowing multiple lighthouses to contribute to the same upgrade.",
+              "commit_ids": [
+                720021
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Gameplay & World Fixes",
@@ -126,20 +316,9 @@
     ],
     "status": "ok",
     "summary": "### Gameplay & World Fixes\n- Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts.\n- Added a second layer override to the nuclear missile silo and a tunnel blocker in canyon areas, preventing disappearing players/NPCs on stairs and rare deaths from underground train tunnels.\n- Scarecrows now always spawn in Halloween dungeon corridors and radiation no longer activates immediately on entry, giving players time to react.\n- Adjusted fruit tree spawn mechanics: coconut trees have reduced network range, spawn chances corrected, and apple/beehive spawn rates on oak trees increased to 25%.\n- All lighthouses now share a common repair progress, so multiple lighthouses contribute to and reflect the same repair status.\n\n### Player Mechanics & Combat\n- Jumping while crouched under a solid object is now prevented, stopping head clipping and unintended explosion damage.\n- Frankenstein pet now respects player shields and no longer sinks, become invisible, kick the owner, or pass through windows.\n\n### NPC & Loot\n- NPC corpses are lootable after a server restart, restoring expected loot drops from dead enemies.\n\n### UI & Controls Improvements\n- Cooking UI overhaul adds a separate list for craftable items, an \"All\" button, and toggle groups for categories.\n- Fixed mouse cursor flicker when scrolling UI with the right stick and resolved gamepad UI overlap issues in inventory.\n\n### Visual & Audio Polish\n- Fixed artifacting on cargo mapmarkers and corrected particle system culling, eliminating distant visual glitches and improving performance.\n\n### Gameplay & Balance\n- Cooking workbench now correctly displays the kettle when preparing the newly added teas, ensuring players can see the brewing process.\n- Code lock light indicators no longer persist at extreme distances after spawning, fixing misleading visual cues.",
-    "new_items": [
-      {
-        "text": "Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts.",
-        "commit_ids": [
-          720328,
-          720313,
-          720306,
-          720288
-        ],
-        "section": "Gameplay & World Fixes"
-      }
-    ],
-    "new_relevant_count": 4,
-    "new_summary": "- Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-18": {
     "commit_count": 11,
