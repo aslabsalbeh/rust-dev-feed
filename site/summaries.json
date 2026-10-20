@@ -1,283 +1,122 @@
 {
   "2026-10-19": {
-    "commit_count": 114,
+    "commit_count": 116,
     "relevant_commit_count": 71,
-    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248",
+    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {
-      "720228,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331": [
-        {
-          "title": "World & Environment",
-          "items": [
-            {
-              "text": "Fixed ambient lights staying on after a base streams back in, reducing unnecessary lighting and improving performance.",
-              "commit_ids": [
-                720328
-              ]
-            },
-            {
-              "text": "Corrected gravestone collider to use the intended convex shape, fixing unexpected physics impacts when interacting with gravestones.",
-              "commit_ids": [
-                720313
-              ]
-            },
-            {
-              "text": "Removed an unused mesh collider and fixed layer issues on the Cursed Cauldron, preventing incorrect building collisions and physics glitches.",
-              "commit_ids": [
-                720306
-              ]
-            },
-            {
-              "text": "Assigned proper physics materials to Wooden Cross, Skull Fire Pit, and Spooky Speaker, ensuring correct collision behavior.",
-              "commit_ids": [
-                720288
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Player Mechanics",
-          "items": [
-            {
-              "text": "Prevented jumping while crouched under a solid object, stopping the head from clipping through floors and avoiding unintended explosion damage.",
-              "commit_ids": [
-                720320
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Combat & Pets",
-          "items": [
-            {
-              "text": "Fixed the Frankenstein pet ignoring player shields, allowing shields to protect against its attacks as intended.",
-              "commit_ids": [
-                720294
-              ]
-            }
-          ]
-        },
-        {
-          "title": "NPC & Loot",
-          "items": [
-            {
-              "text": "NPC corpses are now lootable after a server restart, restoring expected loot drops from dead enemies.",
-              "commit_ids": [
-                720278
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Dungeons",
-          "items": [
-            {
-              "text": "Ensured scarecrows always spawn in all Halloween dungeon corridors, fixing missing enemy spawns.",
-              "commit_ids": [
-                720272
-              ]
-            },
-            {
-              "text": "Radiation no longer starts immediately upon entering Halloween and Christmas dungeons, giving players time to react after entry.",
-              "commit_ids": [
-                720261
-              ]
-            }
-          ]
-        }
-      ],
-      "720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720229": [
-        {
-          "title": "Cooking & Workbench",
-          "items": [
-            {
-              "text": "Fixed cooking workbench not showing the kettle when preparing newly added teas.",
-              "commit_ids": [
-                720225
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Structures",
-          "items": [
-            {
-              "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to cover living quarters and computer room, fixing players and NPCs disappearing/reappearing on stairs.",
-              "commit_ids": [
-                720222
-              ]
-            },
-            {
-              "text": "Added new DungeonGridBlocker to canyon areas to prevent underground train tunnels from generating too close and removing terrain collision, preventing rare deaths at canyon bottoms.",
-              "commit_ids": [
-                720213
-              ]
-            },
-            {
-              "text": "Added two new side anchors to cliff_tall_slope_l_a to fix gaps in the geometry.",
-              "commit_ids": [
-                720194
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Pets",
-          "items": [
-            {
-              "text": "Fixed Frankenstein pet sinking in terrain, invisible ranged attacks, occasional kicking of the owner, and moving through windows.",
-              "commit_ids": [
-                720208
-              ]
-            }
-          ]
-        },
-        {
-          "title": "UI & Controls",
-          "items": [
-            {
-              "text": "Fixed flickering mouse cursor when scrolling UI options with the right stick and resolved double hover state.",
-              "commit_ids": [
-                720200
-              ]
-            },
-            {
-              "text": "Fixed container order when jumping with bumpers in D‑pad mode.",
-              "commit_ids": [
-                720174
-              ]
-            },
-            {
-              "text": "Fixed gamepad glyph display panel UI overlapping in inventory on certain resolutions/aspects.",
-              "commit_ids": [
-                720142
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Graphics & Visuals",
-          "items": [
-            {
-              "text": "Fixed artifacting on cargo mapmarker.",
-              "commit_ids": [
-                720181
-              ]
-            },
-            {
-              "text": "Fixed MeshCull not hiding its renderer when reused from the pool while culled, preventing code lock light quads from drawing at any distance.",
-              "commit_ids": [
-                720160
-              ]
-            },
-            {
-              "text": "Fixed ParticleSystemCull playing particle systems at any distance when turned on, fixing conveyor flashing and furnace heat shimmers, and saving 0.15 ms on the particle main thread.",
-              "commit_ids": [
-                720157
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Weapons & Grenades",
-          "items": [
-            {
-              "text": "Fixed a swarm of loose bees briefly appearing near the hand when throwing a bee grenade.",
-              "commit_ids": [
-                720149
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Livestock",
-          "items": [
-            {
-              "text": "Fixed badly merged animation controllers and livestock FSM.",
-              "commit_ids": [
-                720214
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Audio",
-          "items": [
-            {
-              "text": "Added missing IsOn check for helicopter rumble.",
-              "commit_ids": [
-                720144
-              ]
-            }
-          ]
-        }
-      ]
-    },
+    "chunk_cache": {},
     "sections": [
       {
-        "title": "Crafting & Cooking",
+        "title": "Gameplay & World Fixes",
         "items": [
           {
-            "text": "Fixed cooking workbench not showing the kettle for new teas and added a dedicated craftable list with an “All” button and toggle‑group category navigation.",
+            "text": "Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts.",
             "commit_ids": [
-              720225,
-              720059,
-              720032
+              720328,
+              720313,
+              720306,
+              720288
             ]
-          }
-        ]
-      },
-      {
-        "title": "Structures & World Safety",
-        "items": [
+          },
           {
-            "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing on stairs, introduced DungeonGridBlocker to canyon tunnels to prevent unsafe underground train tunnels, and made all lighthouses share resource and repair progress for unified upkeep.",
+            "text": "Added a second layer override to the nuclear missile silo and a tunnel blocker in canyon areas, preventing disappearing players/NPCs on stairs and rare deaths from underground train tunnels.",
             "commit_ids": [
               720222,
-              720213,
+              720213
+            ]
+          },
+          {
+            "text": "Scarecrows now always spawn in Halloween dungeon corridors and radiation no longer activates immediately on entry, giving players time to react.",
+            "commit_ids": [
+              720272,
+              720261
+            ]
+          },
+          {
+            "text": "Adjusted fruit tree spawn mechanics: coconut trees have reduced network range, spawn chances corrected, and apple/beehive spawn rates on oak trees increased to 25%.",
+            "commit_ids": [
+              720093
+            ]
+          },
+          {
+            "text": "All lighthouses now share a common repair progress, so multiple lighthouses contribute to and reflect the same repair status.",
+            "commit_ids": [
               720021
             ]
           }
         ]
       },
       {
-        "title": "Pets & Companions",
+        "title": "Player Mechanics & Combat",
         "items": [
           {
-            "text": "Fixed Frankenstein pet sinking in terrain, invisible ranged attacks, occasional kicking of the owner, and passing through windows.",
+            "text": "Jumping while crouched under a solid object is now prevented, stopping head clipping and unintended explosion damage.",
             "commit_ids": [
+              720320
+            ]
+          },
+          {
+            "text": "Frankenstein pet now respects player shields and no longer sinks, become invisible, kick the owner, or pass through windows.",
+            "commit_ids": [
+              720294,
               720208
             ]
           }
         ]
       },
       {
-        "title": "Environment & Resources",
+        "title": "NPC & Loot",
         "items": [
           {
-            "text": "Adjusted coconut tree spawn mechanics (range, 25% chance, removed spawns on certain palms) and increased apple and beehive spawn chances on oak trees.",
+            "text": "NPC corpses are lootable after a server restart, restoring expected loot drops from dead enemies.",
             "commit_ids": [
-              720093
+              720278
             ]
           }
         ]
       },
       {
-        "title": "Map & Navigation",
+        "title": "UI & Controls Improvements",
         "items": [
           {
-            "text": "Resolved artifacting on cargo map markers.",
+            "text": "Cooking UI overhaul adds a separate list for craftable items, an \"All\" button, and toggle groups for categories.",
             "commit_ids": [
-              720181
+              720059,
+              720032
+            ]
+          },
+          {
+            "text": "Fixed mouse cursor flicker when scrolling UI with the right stick and resolved gamepad UI overlap issues in inventory.",
+            "commit_ids": [
+              720200,
+              720142
             ]
           }
         ]
       },
       {
-        "title": "Security & Code Locks",
+        "title": "Visual & Audio Polish",
         "items": [
           {
-            "text": "Fixed MeshCull reuse bug that caused code lock light indicators to render at any distance after spawning.",
+            "text": "Fixed artifacting on cargo mapmarkers and corrected particle system culling, eliminating distant visual glitches and improving performance.",
+            "commit_ids": [
+              720181,
+              720157
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Cooking workbench now correctly displays the kettle when preparing the newly added teas, ensuring players can see the brewing process.",
+            "commit_ids": [
+              720225
+            ]
+          },
+          {
+            "text": "Code lock light indicators no longer persist at extreme distances after spawning, fixing misleading visual cues.",
             "commit_ids": [
               720160
             ]
@@ -286,10 +125,21 @@
       }
     ],
     "status": "ok",
-    "summary": "### Crafting & Cooking\n- Fixed cooking workbench not showing the kettle for new teas and added a dedicated craftable list with an “All” button and toggle‑group category navigation.\n\n### Structures & World Safety\n- Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing on stairs, introduced DungeonGridBlocker to canyon tunnels to prevent unsafe underground train tunnels, and made all lighthouses share resource and repair progress for unified upkeep.\n\n### Pets & Companions\n- Fixed Frankenstein pet sinking in terrain, invisible ranged attacks, occasional kicking of the owner, and passing through windows.\n\n### Environment & Resources\n- Adjusted coconut tree spawn mechanics (range, 25% chance, removed spawns on certain palms) and increased apple and beehive spawn chances on oak trees.\n\n### Map & Navigation\n- Resolved artifacting on cargo map markers.\n\n### Security & Code Locks\n- Fixed MeshCull reuse bug that caused code lock light indicators to render at any distance after spawning.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Gameplay & World Fixes\n- Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts.\n- Added a second layer override to the nuclear missile silo and a tunnel blocker in canyon areas, preventing disappearing players/NPCs on stairs and rare deaths from underground train tunnels.\n- Scarecrows now always spawn in Halloween dungeon corridors and radiation no longer activates immediately on entry, giving players time to react.\n- Adjusted fruit tree spawn mechanics: coconut trees have reduced network range, spawn chances corrected, and apple/beehive spawn rates on oak trees increased to 25%.\n- All lighthouses now share a common repair progress, so multiple lighthouses contribute to and reflect the same repair status.\n\n### Player Mechanics & Combat\n- Jumping while crouched under a solid object is now prevented, stopping head clipping and unintended explosion damage.\n- Frankenstein pet now respects player shields and no longer sinks, become invisible, kick the owner, or pass through windows.\n\n### NPC & Loot\n- NPC corpses are lootable after a server restart, restoring expected loot drops from dead enemies.\n\n### UI & Controls Improvements\n- Cooking UI overhaul adds a separate list for craftable items, an \"All\" button, and toggle groups for categories.\n- Fixed mouse cursor flicker when scrolling UI with the right stick and resolved gamepad UI overlap issues in inventory.\n\n### Visual & Audio Polish\n- Fixed artifacting on cargo mapmarkers and corrected particle system culling, eliminating distant visual glitches and improving performance.\n\n### Gameplay & Balance\n- Cooking workbench now correctly displays the kettle when preparing the newly added teas, ensuring players can see the brewing process.\n- Code lock light indicators no longer persist at extreme distances after spawning, fixing misleading visual cues.",
+    "new_items": [
+      {
+        "text": "Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts.",
+        "commit_ids": [
+          720328,
+          720313,
+          720306,
+          720288
+        ],
+        "section": "Gameplay & World Fixes"
+      }
+    ],
+    "new_relevant_count": 4,
+    "new_summary": "- Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts."
   },
   "2026-10-18": {
     "commit_count": 11,
