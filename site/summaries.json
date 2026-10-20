@@ -1,28 +1,63 @@
 {
   "2026-10-20": {
-    "commit_count": 68,
-    "relevant_commit_count": 42,
-    "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650,720656,720658,720659,720660,720663",
+    "commit_count": 81,
+    "relevant_commit_count": 48,
+    "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650,720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Terrain",
+        "title": "Siege & Combat",
         "items": [
           {
-            "text": "Monument spawn bounds increased to prevent overlapping terrain and too‑close spawns.",
+            "text": "Fixed siege weapons retaining pulling flag after a server restart and removed lingering catapult reload bars when a catapult dies mid‑reload.",
+            "commit_ids": [
+              720719
+            ]
+          },
+          {
+            "text": "Stairs, ladders and spirals now correctly respect line‑of‑sight, eliminating false LOS blocks.",
+            "commit_ids": [
+              720589
+            ]
+          },
+          {
+            "text": "Mortar weapons no longer snap back after firing; the firing animation now plays correctly.",
+            "commit_ids": [
+              720570
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & World",
+        "items": [
+          {
+            "text": "Roof‑overhang collider inconsistencies in building skins that blocked block placement have been resolved.",
+            "commit_ids": [
+              720709
+            ]
+          },
+          {
+            "text": "Increased bounds of several monuments (Military tunnels, Powerplant, Trainyard, Water Treatment Plant, Launchsite) to prevent overlapping spawns and terrain clipping.",
             "commit_ids": [
               720642
             ]
           },
           {
-            "text": "Repainted terrain at the exit computer room and truck garage stops clipping that could trap players.",
+            "text": "Terrain in the exit computer room and truck garage area repainted to stop clipping that could trap players.",
             "commit_ids": [
               720598
             ]
           },
           {
-            "text": "Underwater labs now generate correctly, fixing previous generation errors.",
+            "text": "Tunnel lights now work correctly after track spline changes, removing dark tunnels.",
+            "commit_ids": [
+              720378
+            ]
+          },
+          {
+            "text": "Underwater labs now generate without errors, restoring proper dungeon base links.",
             "commit_ids": [
               720377
             ]
@@ -30,99 +65,71 @@
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "Equipment & Repair",
         "items": [
           {
-            "text": "Scientists on the PT boat now respect the ignore‑players setting.",
-            "commit_ids": [
-              720626
-            ]
-          },
-          {
-            "text": "Vines now reset correctly after server restarts, fixing mountable errors.",
-            "commit_ids": [
-              720660
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Interaction",
-        "items": [
-          {
-            "text": "Mortar now shows its firing animation, providing visual feedback.",
-            "commit_ids": [
-              720570
-            ]
-          },
-          {
-            "text": "Added extra line‑of‑sight checks on stairs, fixing LOS errors when a clear view exists.",
-            "commit_ids": [
-              720589
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Structures",
-        "items": [
-          {
-            "text": "Wires attached to doors stay in place when moving in and out of network range.",
-            "commit_ids": [
-              720540
-            ]
-          },
-          {
-            "text": "Train track splines retain their descendants, restoring tunnel lighting.",
-            "commit_ids": [
-              720378
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Controls",
-        "items": [
-          {
-            "text": "Repair bench now allows changing gun accessories without needing a skin.",
+            "text": "Fixed inability to change gun accessories on the repair bench when the weapon has no skin.",
             "commit_ids": [
               720611
             ]
           },
           {
-            "text": "Gamepad map zoom now centers on the crosshair for better navigation.",
+            "text": "Fixed parented wire issues on boats when exiting edit mode.",
             "commit_ids": [
-              720554
+              720671
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "UI, HUD & Controls",
+        "items": [
           {
-            "text": "D‑pad inventory navigation smoother on gamepads.",
+            "text": "Safe‑zone warning no longer persists on the main menu and its title is restored; upkeep labels now have proper spacing to avoid overlap, and misleading movement‑speed modifiers are hidden when leading animals or pulling siege weapons.",
             "commit_ids": [
-              720546
-            ]
-          },
-          {
-            "text": "Boosts UI no longer shows movement‑speed modifiers when leading animals or pulling siege weapons.",
-            "commit_ids": [
+              720585,
+              720580,
+              720579,
               720567
+            ]
+          },
+          {
+            "text": "Gamepad map zoom now centers on the crosshair, and D‑pad inventory navigation has been improved for smoother item selection on controllers.",
+            "commit_ids": [
+              720554,
+              720546
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Terrain\n- Monument spawn bounds increased to prevent overlapping terrain and too‑close spawns.\n- Repainted terrain at the exit computer room and truck garage stops clipping that could trap players.\n- Underwater labs now generate correctly, fixing previous generation errors.\n\n### NPC & AI\n- Scientists on the PT boat now respect the ignore‑players setting.\n- Vines now reset correctly after server restarts, fixing mountable errors.\n\n### Combat & Interaction\n- Mortar now shows its firing animation, providing visual feedback.\n- Added extra line‑of‑sight checks on stairs, fixing LOS errors when a clear view exists.\n\n### Building & Structures\n- Wires attached to doors stay in place when moving in and out of network range.\n- Train track splines retain their descendants, restoring tunnel lighting.\n\n### UI & Controls\n- Repair bench now allows changing gun accessories without needing a skin.\n- Gamepad map zoom now centers on the crosshair for better navigation.\n- D‑pad inventory navigation smoother on gamepads.\n- Boosts UI no longer shows movement‑speed modifiers when leading animals or pulling siege weapons.",
+    "summary": "### Siege & Combat\n- Fixed siege weapons retaining pulling flag after a server restart and removed lingering catapult reload bars when a catapult dies mid‑reload.\n- Stairs, ladders and spirals now correctly respect line‑of‑sight, eliminating false LOS blocks.\n- Mortar weapons no longer snap back after firing; the firing animation now plays correctly.\n\n### Building & World\n- Roof‑overhang collider inconsistencies in building skins that blocked block placement have been resolved.\n- Increased bounds of several monuments (Military tunnels, Powerplant, Trainyard, Water Treatment Plant, Launchsite) to prevent overlapping spawns and terrain clipping.\n- Terrain in the exit computer room and truck garage area repainted to stop clipping that could trap players.\n- Tunnel lights now work correctly after track spline changes, removing dark tunnels.\n- Underwater labs now generate without errors, restoring proper dungeon base links.\n\n### Equipment & Repair\n- Fixed inability to change gun accessories on the repair bench when the weapon has no skin.\n- Fixed parented wire issues on boats when exiting edit mode.\n\n### UI, HUD & Controls\n- Safe‑zone warning no longer persists on the main menu and its title is restored; upkeep labels now have proper spacing to avoid overlap, and misleading movement‑speed modifiers are hidden when leading animals or pulling siege weapons.\n- Gamepad map zoom now centers on the crosshair, and D‑pad inventory navigation has been improved for smoother item selection on controllers.",
     "new_items": [
       {
-        "text": "Vines now reset correctly after server restarts, fixing mountable errors.",
+        "text": "Fixed siege weapons retaining pulling flag after a server restart and removed lingering catapult reload bars when a catapult dies mid‑reload.",
         "commit_ids": [
-          720660
+          720719
         ],
-        "section": "NPC & AI"
+        "section": "Siege & Combat"
+      },
+      {
+        "text": "Roof‑overhang collider inconsistencies in building skins that blocked block placement have been resolved.",
+        "commit_ids": [
+          720709
+        ],
+        "section": "Building & World"
+      },
+      {
+        "text": "Fixed parented wire issues on boats when exiting edit mode.",
+        "commit_ids": [
+          720671
+        ],
+        "section": "Equipment & Repair"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Vines now reset correctly after server restarts, fixing mountable errors."
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed siege weapons retaining pulling flag after a server restart and removed lingering catapult reload bars when a catapult dies mid‑reload.\n- Roof‑overhang collider inconsistencies in building skins that blocked block placement have been resolved.\n- Fixed parented wire issues on boats when exiting edit mode."
   },
   "2026-10-19": {
     "commit_count": 125,
