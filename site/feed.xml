@@ -6,52 +6,55 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 20 Oct 2026 00:17:54 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 02:17:31 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 20</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;1 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-20</guid>
-      <pubDate>Tue, 20 Oct 2026 00:17:54 -0400</pubDate>
+      <pubDate>Tue, 20 Oct 2026 02:17:31 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 19</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;125 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Gameplay &amp;amp; World Fixes&lt;/h3&gt;
+&lt;h3&gt;Crafting &amp;amp; Vision&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720328,720313,720306,720288"&gt;Various physics and collision fixes (ambient lights, gravestone colliders, Cursed Cauldron collisions, and physics materials) improve performance and prevent unexpected impacts.&lt;/li&gt;
-&lt;li data-rust-commits="720222,720213"&gt;Added a second layer override to the nuclear missile silo and a tunnel blocker in canyon areas, preventing disappearing players/NPCs on stairs and rare deaths from underground train tunnels.&lt;/li&gt;
-&lt;li data-rust-commits="720272,720261"&gt;Scarecrows now always spawn in Halloween dungeon corridors and radiation no longer activates immediately on entry, giving players time to react.&lt;/li&gt;
-&lt;li data-rust-commits="720093"&gt;Adjusted fruit tree spawn mechanics: coconut trees have reduced network range, spawn chances corrected, and apple/beehive spawn rates on oak trees increased to 25%.&lt;/li&gt;
-&lt;li data-rust-commits="720021"&gt;All lighthouses now share a common repair progress, so multiple lighthouses contribute to and reflect the same repair status.&lt;/li&gt;
+&lt;li data-rust-commits="720352"&gt;Updated bone armour crafting values and swapped the egg vision effect for candy vision, improving crafting balance and visual experience.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player Mechanics &amp;amp; Combat&lt;/h3&gt;
+&lt;h3&gt;Movement &amp;amp; Collision&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720320"&gt;Jumping while crouched under a solid object is now prevented, stopping head clipping and unintended explosion damage.&lt;/li&gt;
-&lt;li data-rust-commits="720294,720208"&gt;Frankenstein pet now respects player shields and no longer sinks, become invisible, kick the owner, or pass through windows.&lt;/li&gt;
+&lt;li data-rust-commits="720320"&gt;Prevented jumping while crouched when an overhead solid object is present, eliminating head clipping and unintended explosion damage.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; Loot&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720278"&gt;NPC corpses are lootable after a server restart, restoring expected loot drops from dead enemies.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Controls Improvements&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="720059,720032"&gt;Cooking UI overhaul adds a separate list for craftable items, an &amp;quot;All&amp;quot; button, and toggle groups for categories.&lt;/li&gt;
-&lt;li data-rust-commits="720200,720142"&gt;Fixed mouse cursor flicker when scrolling UI with the right stick and resolved gamepad UI overlap issues in inventory.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Visual &amp;amp; Audio Polish&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="720181,720157"&gt;Fixed artifacting on cargo mapmarkers and corrected particle system culling, eliminating distant visual glitches and improving performance.&lt;/li&gt;
+&lt;li data-rust-commits="720313,720306,720288"&gt;Fixed colliders for gravestones, cursed cauldrons, and applied correct physics materials to wooden cross, skull fire pit, and spooky speaker, resulting in more accurate physical behavior.&lt;/li&gt;
+&lt;li data-rust-commits="720213,720222"&gt;Added a DungeonGridBlocker to canyon areas to stop underground train tunnels from spawning dangerously close and fixed cave network layer overrides in the nuclear missile silo, preventing disappearing players and NPCs on stairs.&lt;/li&gt;
+&lt;li data-rust-commits="720278"&gt;Resolved an issue where NPC corpses became unlootable after a server restart, restoring access to their loot.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720225"&gt;Cooking workbench now correctly displays the kettle when preparing the newly added teas, ensuring players can see the brewing process.&lt;/li&gt;
-&lt;li data-rust-commits="720160"&gt;Code lock light indicators no longer persist at extreme distances after spawning, fixing misleading visual cues.&lt;/li&gt;
+&lt;li data-rust-commits="720294"&gt;Frankenstein pet now respects player shields&lt;/li&gt;
+&lt;li data-rust-commits="720208"&gt;Frankenstein pet no longer sinks, performs invisible attacks, kicks owners, or passes through windows&lt;/li&gt;
+&lt;li data-rust-commits="720261"&gt;Radiation no longer activates immediately upon entering Halloween and Christmas dungeons&lt;/li&gt;
+&lt;li data-rust-commits="720021"&gt;All lighthouses now share a single repair progress bar&lt;/li&gt;
+&lt;li data-rust-commits="720093"&gt;Coconut tree spawn chance reduced to 25%; apple and beehive spawn chances on oak trees increased&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720225"&gt;Cooking workbench now shows the kettle when brewing new teas&lt;/li&gt;
+&lt;li data-rust-commits="720059"&gt;Crafting UI now features a separate list for currently craftable items and an All button&lt;/li&gt;
+&lt;li data-rust-commits="720032"&gt;Crafting category buttons now toggle categories instead of stacking, with an All view option&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Performance &amp;amp; Visual&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720328"&gt;Ambient lights correctly turn off when reused from the pool, cutting unnecessary lighting and improving performance&lt;/li&gt;
+&lt;li data-rust-commits="720160"&gt;MeshCull now hides renderers when reused, preventing distant code lock lights from staying visible&lt;/li&gt;
+&lt;li data-rust-commits="720157"&gt;Particle systems respect culling, stopping distant conveyor flashes and furnace heat shimmers and saving CPU time&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-19</guid>

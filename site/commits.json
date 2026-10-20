@@ -1,5 +1,21 @@
 [
   {
+    "id": 720363,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "168548",
+    "created": "2026-10-20T05:36:19",
+    "message": "Fix water pistol z-fighting",
+    "user": "Dayaan"
+  },
+  {
+    "id": 720361,
+    "branch": "main/mod_entity_belt_only",
+    "changeset": "168546",
+    "created": "2026-10-20T05:13:21",
+    "message": "Added new logic to ItemModEntity that only creates corresponding entities for items marked as player only when they are in the belt\r\nWe've already enabled this for most items so they don't spawn and destroy entities when they are in containers, this extends this behaviour so that the entity only gets created when it ends up in the player belt\r\nThis should result in less entities broadly, particularly when creating a corpse as we paid a cost for destroying the entities as we transferred the items to the corpse\r\nDisabled by default",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 720355,
     "branch": "main/corpse_height_fix",
     "changeset": "168541",
