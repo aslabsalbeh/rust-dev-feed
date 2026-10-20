@@ -1,28 +1,67 @@
 {
   "2026-10-19": {
-    "commit_count": 99,
-    "relevant_commit_count": 64,
+    "commit_count": 114,
+    "relevant_commit_count": 71,
     "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300": [
+      "720228,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331": [
         {
-          "title": "Companion Pets",
+          "title": "World & Environment",
           "items": [
             {
-              "text": "Fixed multiple Frankenstein pet bugs: ignoring shields, sinking in terrain, invisible ranged attacks, kicking owners, and moving through windows.",
+              "text": "Fixed ambient lights staying on after a base streams back in, reducing unnecessary lighting and improving performance.",
               "commit_ids": [
-                720294,
-                720208
+                720328
+              ]
+            },
+            {
+              "text": "Corrected gravestone collider to use the intended convex shape, fixing unexpected physics impacts when interacting with gravestones.",
+              "commit_ids": [
+                720313
+              ]
+            },
+            {
+              "text": "Removed an unused mesh collider and fixed layer issues on the Cursed Cauldron, preventing incorrect building collisions and physics glitches.",
+              "commit_ids": [
+                720306
+              ]
+            },
+            {
+              "text": "Assigned proper physics materials to Wooden Cross, Skull Fire Pit, and Spooky Speaker, ensuring correct collision behavior.",
+              "commit_ids": [
+                720288
               ]
             }
           ]
         },
         {
-          "title": "NPC Loot",
+          "title": "Player Mechanics",
           "items": [
             {
-              "text": "Fixed NPC corpses being unlootable after a server restart.",
+              "text": "Prevented jumping while crouched under a solid object, stopping the head from clipping through floors and avoiding unintended explosion damage.",
+              "commit_ids": [
+                720320
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Pets",
+          "items": [
+            {
+              "text": "Fixed the Frankenstein pet ignoring player shields, allowing shields to protect against its attacks as intended.",
+              "commit_ids": [
+                720294
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & Loot",
+          "items": [
+            {
+              "text": "NPC corpses are now lootable after a server restart, restoring expected loot drops from dead enemies.",
               "commit_ids": [
                 720278
               ]
@@ -30,40 +69,122 @@
           ]
         },
         {
-          "title": "Event AI",
+          "title": "Dungeons",
           "items": [
             {
-              "text": "Fixed scarecrows sometimes not spawning in one of the Halloween dungeon corridors.",
+              "text": "Ensured scarecrows always spawn in all Halloween dungeon corridors, fixing missing enemy spawns.",
               "commit_ids": [
                 720272
               ]
-            }
-          ]
-        },
-        {
-          "title": "Radiation & Dungeons",
-          "items": [
+            },
             {
-              "text": "Fixed radiation starting immediately upon entering the Halloween and Xmas dungeons.",
+              "text": "Radiation no longer starts immediately upon entering Halloween and Christmas dungeons, giving players time to react after entry.",
               "commit_ids": [
                 720261
               ]
             }
           ]
-        },
+        }
+      ],
+      "720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720229": [
         {
-          "title": "World & Environment",
+          "title": "Cooking & Workbench",
           "items": [
             {
-              "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to stop players and NPCs disappearing/reappearing on stairs.",
+              "text": "Fixed cooking workbench not showing the kettle when preparing newly added teas.",
+              "commit_ids": [
+                720225
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World & Structures",
+          "items": [
+            {
+              "text": "Added a second CaveNetworkGroupLayerOverride to the nuclear missile silo to cover living quarters and computer room, fixing players and NPCs disappearing/reappearing on stairs.",
               "commit_ids": [
                 720222
               ]
             },
             {
-              "text": "Added a DungeonGridBlocker to canyon tunnels to prevent underground train tunnels from generating too close and removing terrain collision, reducing accidental deaths at canyon bottoms.",
+              "text": "Added new DungeonGridBlocker to canyon areas to prevent underground train tunnels from generating too close and removing terrain collision, preventing rare deaths at canyon bottoms.",
               "commit_ids": [
                 720213
+              ]
+            },
+            {
+              "text": "Added two new side anchors to cliff_tall_slope_l_a to fix gaps in the geometry.",
+              "commit_ids": [
+                720194
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Pets",
+          "items": [
+            {
+              "text": "Fixed Frankenstein pet sinking in terrain, invisible ranged attacks, occasional kicking of the owner, and moving through windows.",
+              "commit_ids": [
+                720208
+              ]
+            }
+          ]
+        },
+        {
+          "title": "UI & Controls",
+          "items": [
+            {
+              "text": "Fixed flickering mouse cursor when scrolling UI options with the right stick and resolved double hover state.",
+              "commit_ids": [
+                720200
+              ]
+            },
+            {
+              "text": "Fixed container order when jumping with bumpers in D‑pad mode.",
+              "commit_ids": [
+                720174
+              ]
+            },
+            {
+              "text": "Fixed gamepad glyph display panel UI overlapping in inventory on certain resolutions/aspects.",
+              "commit_ids": [
+                720142
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Graphics & Visuals",
+          "items": [
+            {
+              "text": "Fixed artifacting on cargo mapmarker.",
+              "commit_ids": [
+                720181
+              ]
+            },
+            {
+              "text": "Fixed MeshCull not hiding its renderer when reused from the pool while culled, preventing code lock light quads from drawing at any distance.",
+              "commit_ids": [
+                720160
+              ]
+            },
+            {
+              "text": "Fixed ParticleSystemCull playing particle systems at any distance when turned on, fixing conveyor flashing and furnace heat shimmers, and saving 0.15 ms on the particle main thread.",
+              "commit_ids": [
+                720157
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons & Grenades",
+          "items": [
+            {
+              "text": "Fixed a swarm of loose bees briefly appearing near the hand when throwing a bee grenade.",
+              "commit_ids": [
+                720149
               ]
             }
           ]
@@ -72,81 +193,20 @@
           "title": "Livestock",
           "items": [
             {
-              "text": "Fixed badly merged animation controllers and livestock FSM, restoring proper animal behavior.",
+              "text": "Fixed badly merged animation controllers and livestock FSM.",
               "commit_ids": [
                 720214
               ]
             }
           ]
-        }
-      ],
-      "720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200": [
-        {
-          "title": "World & Environment",
-          "items": [
-            {
-              "text": "Adjusted tree spawn rates: coconut trees now spawn at 25% chance (previously 100%) and reduced their network range; apple/beehive spawn chance on oak trees increased to 25% (from 15%).",
-              "commit_ids": [
-                720093
-              ]
-            }
-          ]
         },
         {
-          "title": "Lighting & Visual Effects",
+          "title": "Audio",
           "items": [
             {
-              "text": "Fixed code lock light quads staying visible at any distance after spawning.",
+              "text": "Added missing IsOn check for helicopter rumble.",
               "commit_ids": [
-                720160
-              ]
-            },
-            {
-              "text": "Fixed door controller lights not being culled, preventing them from rendering at unintended distances.",
-              "commit_ids": [
-                720135
-              ]
-            },
-            {
-              "text": "Fixed particle systems (e.g., conveyor flashes, furnace heat shimmers) playing at any distance when enabled, reducing unintended distant visual effects.",
-              "commit_ids": [
-                720157
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Group & Multiplayer Mechanics",
-          "items": [
-            {
-              "text": "Resolved bugs with group change polling, improving reliability of group membership updates.",
-              "commit_ids": [
-                720155
-              ]
-            }
-          ]
-        }
-      ],
-      "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092": [
-        {
-          "title": "Cooking UI Improvements",
-          "items": [
-            {
-              "text": "Added a separate \"currently craftable\" list and an \"All\" button, and changed category buttons to a toggle group that switches to the selected category only, improving navigation of craftable items.",
-              "commit_ids": [
-                720059,
-                720032
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Lighthouse Resource Sharing",
-          "items": [
-            {
-              "text": "Multiple lighthouses now share their resource and repair progress, streamlining maintenance across lighthouse structures.",
-              "commit_ids": [
-                720021
+                720144
               ]
             }
           ]
@@ -274,31 +334,6 @@
     ],
     "status": "ok",
     "summary": "### Combat Audio\n- Headshot sound now matches the actual direction, fixing reversed left/right audio cues.\n\n### Farming & UI\n- Seeds planted outside planters now display correct gene information in the UI.\n\n### Vehicle & Animal Transport\n- Sheep can now be loaded onto small modules even when also leading a cow.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-16": {
-    "commit_count": 1,
-    "relevant_commit_count": 1,
-    "relevant_signature": "718134,718135,718144,718159,718168,718174,718182,718198,718203,718214,718233,718342,718414,718504",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Combat & Explosives",
-        "items": [
-          {
-            "text": "Fixed attached grenades staying invisible until the reveal animation event, so they now appear correctly when thrown or attached.",
-            "commit_ids": [
-              718414
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Combat & Explosives\n- Fixed attached grenades staying invisible until the reveal animation event, so they now appear correctly when thrown or attached.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
