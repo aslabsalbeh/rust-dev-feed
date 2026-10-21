@@ -1,10 +1,184 @@
 {
   "2026-10-20": {
-    "commit_count": 90,
-    "relevant_commit_count": 53,
+    "commit_count": 94,
+    "relevant_commit_count": 57,
     "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650,720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "720629,720631,720639,720642,720650,720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752,720759,720760,720761,720764": [
+        {
+          "title": "Wearables",
+          "items": [
+            {
+              "text": "Reduced creation cost for many wearables (e.g., buzzcut, wolf headdress, diving fins, gas mask, knight armor hat, NVG, ninja suit, jumpsuits, etc.) from >1 ms to <0.1 ms, improving performance when players change clothing or enter range.",
+              "commit_ids": [
+                720764
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vendor Interactions",
+          "items": [
+            {
+              "text": "Added a new dialogue stage to the livestock vendor when a player brings a young animal.",
+              "commit_ids": [
+                720759
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building & Placement",
+          "items": [
+            {
+              "text": "Fixed low ramps being blocked by deployables in rooms below, and added a setting to skip deploy volume checks for certain sockets.",
+              "commit_ids": [
+                720749
+              ]
+            },
+            {
+              "text": "Corrected roof overhang collider inconsistencies for building skins that could block block placement.",
+              "commit_ids": [
+                720709
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicles & Mounting",
+          "items": [
+            {
+              "text": "Resolved an issue where players couldn't mount a car after previously mounting another vehicle; also doubled dismount rotation speed.",
+              "commit_ids": [
+                720748
+              ]
+            },
+            {
+              "text": "Fixed horses losing their towed entity after a server restart.",
+              "commit_ids": [
+                720739
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Siege Weapons",
+          "items": [
+            {
+              "text": "Fixed siege weapons retaining their pulling flag after a server restart.",
+              "commit_ids": [
+                720719
+              ]
+            },
+            {
+              "text": "Fixed catapult reload progress bar staying on screen if the catapult dies mid‑reload.",
+              "commit_ids": [
+                720719
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Audio",
+          "items": [
+            {
+              "text": "Restored missing reload sound events for mortars.",
+              "commit_ids": [
+                720667
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vines",
+          "items": [
+            {
+              "text": "Fixed vine mountable errors after server restarts and ensured vines reset to their default state correctly.",
+              "commit_ids": [
+                720660
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Generation",
+          "items": [
+            {
+              "text": "Increased bounds of several monuments (military tunnels, powerplant, trainyard, water treatment plant, launchsite) to prevent overlapping spawns.",
+              "commit_ids": [
+                720642
+              ]
+            }
+          ]
+        }
+      ],
+      "720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628": [
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Boat scientists now respect the Convar.AI.ignoreplayers setting, allowing them to be ignored like other players.",
+              "commit_ids": [
+                720626
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Repair & Crafting",
+          "items": [
+            {
+              "text": "Players can now change accessories on guns without skins (e.g., M16) in the repair bench.",
+              "commit_ids": [
+                720611
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World & Terrain",
+          "items": [
+            {
+              "text": "Fixed terrain clipping at the exit computer room and truck‑blocked garage, preventing players from getting stuck in underground areas.",
+              "commit_ids": [
+                720598
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat & Targeting",
+          "items": [
+            {
+              "text": "Added extra line‑of‑sight check positions on various stair types, fixing false LOS blockages and improving targeting accuracy.",
+              "commit_ids": [
+                720589
+              ]
+            }
+          ]
+        }
+      ],
+      "720361,720363,720376,720377,720378,720380,720381": [
+        {
+          "title": "World & Structures",
+          "items": [
+            {
+              "text": "Fixed tunnel lights not working, restoring proper illumination in tunnels.",
+              "commit_ids": [
+                720378
+              ]
+            },
+            {
+              "text": "Fixed errors when generating underwater labs, preventing generation failures.",
+              "commit_ids": [
+                720377
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Building & Placement",
@@ -138,45 +312,10 @@
           720752
         ],
         "section": "Building & Placement"
-      },
-      {
-        "text": "Low ramps can be placed/upgraded without being blocked by deployables below; added option to skip deploy volumes on specific sockets.",
-        "commit_ids": [
-          720749
-        ],
-        "section": "Building & Placement"
-      },
-      {
-        "text": "Building skin roof overhang colliders fixed, allowing block placement where overhangs previously blocked it.",
-        "commit_ids": [
-          720709
-        ],
-        "section": "Building & Placement"
-      },
-      {
-        "text": "Fixed inability to mount a car after previously mounting a vehicle and increased dismount rotation speed.",
-        "commit_ids": [
-          720748
-        ],
-        "section": "Vehicles & Mounting"
-      },
-      {
-        "text": "Horses no longer lose their towed entities after a server restart.",
-        "commit_ids": [
-          720739
-        ],
-        "section": "Vehicles & Mounting"
-      },
-      {
-        "text": "Siege weapons retain correct pulling state after server restarts; catapult reload progress bar no longer persists if the catapult dies mid‑reload.",
-        "commit_ids": [
-          720719
-        ],
-        "section": "Siege Weapons"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Rooms now only regenerate modified parts, preventing full room resets when changes are made.\n- Low ramps can be placed/upgraded without being blocked by deployables below; added option to skip deploy volumes on specific sockets.\n- Building skin roof overhang colliders fixed, allowing block placement where overhangs previously blocked it.\n- Fixed inability to mount a car after previously mounting a vehicle and increased dismount rotation speed.\n- Horses no longer lose their towed entities after a server restart.\n- Siege weapons retain correct pulling state after server restarts; catapult reload progress bar no longer persists if the catapult dies mid‑reload."
+    "new_relevant_count": 1,
+    "new_summary": "- Rooms now only regenerate modified parts, preventing full room resets when changes are made."
   },
   "2026-10-19": {
     "commit_count": 125,
