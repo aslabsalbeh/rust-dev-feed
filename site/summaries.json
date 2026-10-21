@@ -1,13 +1,24 @@
 {
   "2026-10-21": {
-    "commit_count": 42,
-    "relevant_commit_count": 14,
-    "relevant_signature": "720807,720808,720815,720835,720840,720844,720847,720848,720852,720859,720862,720892,720902,720939",
+    "commit_count": 53,
+    "relevant_commit_count": 21,
+    "relevant_signature": "720807,720808,720815,720835,720840,720844,720847,720848,720852,720859,720862,720892,720902,720939,720961,720962,720968,720971,720973,720974,720975",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Building & Structure Placement",
+        "title": "NPC & AI",
+        "items": [
+          {
+            "text": "Bird flocks now react to players and obstacles, using boid movement and variable flapping.",
+            "commit_ids": [
+              720971
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & Placement",
         "items": [
           {
             "text": "Triangle foundations can now be placed on top of brutalist ramps.",
@@ -16,31 +27,26 @@
             ]
           },
           {
-            "text": "Ramps are no longer blocked by other ramps up to 3 m above them, even through floors.",
+            "text": "Ramps no longer get blocked by other ramps up to 3 m above them, even through floors.",
             "commit_ids": [
               720862
             ]
           },
           {
-            "text": "Square roof side overhangs no longer block foundations placed beside them.",
+            "text": "Stone frames and triangle floor frames now share correct colliders, fixing placement and roof‑blocking issues.",
+            "commit_ids": [
+              720852,
+              720844
+            ]
+          },
+          {
+            "text": "Square roof side overhangs no longer block adjacent foundations.",
             "commit_ids": [
               720815
             ]
           },
           {
-            "text": "Triangle roofs are no longer blocked by stone frames based on orientation.",
-            "commit_ids": [
-              720844
-            ]
-          },
-          {
-            "text": "All stone frame skins of the same grade now share the same collider, fixing inconsistent blocking.",
-            "commit_ids": [
-              720852
-            ]
-          },
-          {
-            "text": "Graveyard fence collider import settings corrected, improving fence placement behavior.",
+            "text": "Graveyard fence collider settings corrected, improving fence placement.",
             "commit_ids": [
               720840
             ]
@@ -48,12 +54,18 @@
         ]
       },
       {
-        "title": "Base Defense",
+        "title": "Items & Interactables",
         "items": [
           {
-            "text": "Carvable pumpkins can now be secured with a code lock.",
+            "text": "Pumpkin carvable objects can no longer be code‑locked, fixing an exploit.",
             "commit_ids": [
               720847
+            ]
+          },
+          {
+            "text": "Skull trophies now display distinct variants and have proper colliders, fixing visual and physics issues.",
+            "commit_ids": [
+              720859
             ]
           }
         ]
@@ -62,41 +74,34 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Skull trophies now display distinct visuals for each variant, correctly update when a skull is inside or during nighttime, and have accurate colliders matching their sizes.",
+            "text": "Fixed aim offset for the UZI, improving its accuracy and handling.",
             "commit_ids": [
-              720859
+              720939
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Building & Structure Placement\n- Triangle foundations can now be placed on top of brutalist ramps.\n- Ramps are no longer blocked by other ramps up to 3 m above them, even through floors.\n- Square roof side overhangs no longer block foundations placed beside them.\n- Triangle roofs are no longer blocked by stone frames based on orientation.\n- All stone frame skins of the same grade now share the same collider, fixing inconsistent blocking.\n- Graveyard fence collider import settings corrected, improving fence placement behavior.\n\n### Base Defense\n- Carvable pumpkins can now be secured with a code lock.\n\n### Gameplay & Balance\n- Skull trophies now display distinct visuals for each variant, correctly update when a skull is inside or during nighttime, and have accurate colliders matching their sizes.",
+    "summary": "### NPC & AI\n- Bird flocks now react to players and obstacles, using boid movement and variable flapping.\n\n### Building & Placement\n- Triangle foundations can now be placed on top of brutalist ramps.\n- Ramps no longer get blocked by other ramps up to 3 m above them, even through floors.\n- Stone frames and triangle floor frames now share correct colliders, fixing placement and roof‑blocking issues.\n- Square roof side overhangs no longer block adjacent foundations.\n- Graveyard fence collider settings corrected, improving fence placement.\n\n### Items & Interactables\n- Pumpkin carvable objects can no longer be code‑locked, fixing an exploit.\n- Skull trophies now display distinct variants and have proper colliders, fixing visual and physics issues.\n\n### Gameplay & Balance\n- Fixed aim offset for the UZI, improving its accuracy and handling.",
     "new_items": [
       {
-        "text": "Triangle foundations can now be placed on top of brutalist ramps.",
+        "text": "Bird flocks now react to players and obstacles, using boid movement and variable flapping.",
         "commit_ids": [
-          720892
+          720971
         ],
-        "section": "Building & Structure Placement"
+        "section": "NPC & AI"
       },
       {
-        "text": "Ramps are no longer blocked by other ramps up to 3 m above them, even through floors.",
+        "text": "Fixed aim offset for the UZI, improving its accuracy and handling.",
         "commit_ids": [
-          720862
-        ],
-        "section": "Building & Structure Placement"
-      },
-      {
-        "text": "Skull trophies now display distinct visuals for each variant, correctly update when a skull is inside or during nighttime, and have accurate colliders matching their sizes.",
-        "commit_ids": [
-          720859
+          720939
         ],
         "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Triangle foundations can now be placed on top of brutalist ramps.\n- Ramps are no longer blocked by other ramps up to 3 m above them, even through floors.\n- Skull trophies now display distinct visuals for each variant, correctly update when a skull is inside or during nighttime, and have accurate colliders matching their sizes."
+    "new_relevant_count": 2,
+    "new_summary": "- Bird flocks now react to players and obstacles, using boid movement and variable flapping.\n- Fixed aim offset for the UZI, improving its accuracy and handling."
   },
   "2026-10-20": {
     "commit_count": 100,
