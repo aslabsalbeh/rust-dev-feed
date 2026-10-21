@@ -6,44 +6,72 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 21 Oct 2026 00:17:28 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 02:17:28 -0400</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Oct 21</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;5 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-10-21</guid>
+      <pubDate>Wed, 21 Oct 2026 02:17:28 -0400</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 20</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;100 development commits&lt;/strong&gt;&lt;/p&gt;
 
+&lt;h3&gt;Livestock Vendor&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720774"&gt;Young animals now appear at the end of the vendor list, keeping sellable animals visible.&lt;/li&gt;
+&lt;li data-rust-commits="720759,720761"&gt;New dialogue stage and additional system info are shown when bringing a young animal to the vendor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Economy &amp;amp; Crafting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="720771"&gt;Rentable shops no longer drop sulfur during transactions, reducing unintended resource loss.&lt;/li&gt;
+&lt;li data-rust-commits="720766"&gt;Blueprint system overhaul: fragments removed from workbench recipes, new progression items (Fragment, Page, Book) with specific loot sources, and blueprint usage now drives tech‑tree progression.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Building &amp;amp; Placement&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720752"&gt;Rooms now only regenerate modified parts, preventing full room resets when changes are made.&lt;/li&gt;
-&lt;li data-rust-commits="720749"&gt;Low ramps can be placed/upgraded without being blocked by deployables below; added option to skip deploy volumes on specific sockets.&lt;/li&gt;
-&lt;li data-rust-commits="720709"&gt;Building skin roof overhang colliders fixed, allowing block placement where overhangs previously blocked it.&lt;/li&gt;
-&lt;li data-rust-commits="720671"&gt;Parented wires on boats remain functional after exiting edit mode.&lt;/li&gt;
+&lt;li data-rust-commits="720749,720709"&gt;Low ramps can be placed or upgraded without being blocked by deployables below, and roof overhang colliders are fixed, allowing previously blocked block placement.&lt;/li&gt;
+&lt;li data-rust-commits="720540"&gt;Wires attached to doors no longer stretch toward the world origin when moving in or out of network range.&lt;/li&gt;
+&lt;li data-rust-commits="720639"&gt;AmbientLightLOD lights correctly update after teleport or respawn, preventing dark lights.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Mounting&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Siege&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720748"&gt;Fixed inability to mount a car after previously mounting a vehicle and increased dismount rotation speed.&lt;/li&gt;
-&lt;li data-rust-commits="720739"&gt;Horses no longer lose their towed entities after a server restart.&lt;/li&gt;
+&lt;li data-rust-commits="720748"&gt;Players can now mount a car after previously mounting another vehicle, and dismount rotation speed is increased for smoother transitions.&lt;/li&gt;
+&lt;li data-rust-commits="720739"&gt;Horses retain their towed entities after a server restart.&lt;/li&gt;
+&lt;li data-rust-commits="720719"&gt;Siege weapons no longer keep pulling flags after a restart, and catapult reload bars disappear if the catapult dies mid‑reload.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Siege Weapons&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720719"&gt;Siege weapons retain correct pulling state after server restarts; catapult reload progress bar no longer persists if the catapult dies mid‑reload.&lt;/li&gt;
+&lt;li data-rust-commits="720642"&gt;Monument spawn bounds expanded, preventing overlapping monuments and fixing spawn collisions for many structures.&lt;/li&gt;
+&lt;li data-rust-commits="720598"&gt;Terrain repaint at the exit computer room and truck‑blocked garage stops clipping that could trap players underground.&lt;/li&gt;
+&lt;li data-rust-commits="720377"&gt;Underwater labs now generate correctly, fixing previous spawn errors.&lt;/li&gt;
+&lt;li data-rust-commits="720378"&gt;Tunnel lights work again after train track spline hierarchy changes.&lt;/li&gt;
+&lt;li data-rust-commits="720626"&gt;Patrol boat scientists now respect the ignoreplayers setting, staying out of sight of players who enable it.&lt;/li&gt;
+&lt;li data-rust-commits="720768"&gt;Resource ping functionality restored, allowing players to locate resources.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Terrain&lt;/h3&gt;
+&lt;h3&gt;Performance &amp;amp; Stability&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720642"&gt;Monument spacing increased to prevent overlapping spawns for several monuments.&lt;/li&gt;
-&lt;li data-rust-commits="720598"&gt;Repainted terrain at the exit computer room and truck garage area to stop terrain clipping that could trap players underground.&lt;/li&gt;
-&lt;li data-rust-commits="720589"&gt;Added extra line‑of‑sight checks for all stair types, eliminating false LOS blocks when a clear view exists.&lt;/li&gt;
-&lt;li data-rust-commits="720377"&gt;Fixed generation errors for underwater labs by preserving DungeonBaseLink descendants.&lt;/li&gt;
-&lt;li data-rust-commits="720378"&gt;Train track splines now retain descendants, fixing tunnel lights that previously failed.&lt;/li&gt;
-&lt;li data-rust-commits="720660"&gt;Vine mountables no longer throw errors after server restarts and correctly reset to default state.&lt;/li&gt;
+&lt;li data-rust-commits="720764"&gt;Wearable creation cost dramatically reduced, cutting load time from &amp;gt;1 ms to &amp;lt;0.1 ms when players equip or enter range with many clothing items.&lt;/li&gt;
+&lt;li data-rust-commits="720752"&gt;Room regeneration now only updates modified parts, preventing unnecessary full‑room rebuilds and reducing lag during building edits.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Repair &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720611"&gt;Fixed inability to change gun accessories on weapons without skins in the repair bench (e.g., M16).&lt;/li&gt;
+&lt;li data-rust-commits="720671"&gt;Fixed parented wire glitches on boats when exiting edit mode, restoring proper wire functionality.&lt;/li&gt;
+&lt;li data-rust-commits="720667"&gt;Mortar reload sound events restored, giving audio feedback for each shot.&lt;/li&gt;
+&lt;li data-rust-commits="720570"&gt;Mortar no longer snaps to a static pose after firing; the proper firing animation now plays.&lt;/li&gt;
+&lt;li data-rust-commits="720660"&gt;Resolved vine mountable error after server restarts and ensured vines reset correctly, preventing crashes and stuck states.&lt;/li&gt;
+&lt;li data-rust-commits="720611"&gt;Repair bench now allows changing gun accessories (e.g., M16) even when the weapon has no skin applied.&lt;/li&gt;
+&lt;li data-rust-commits="720589"&gt;Added extra line‑of‑sight checks for all stair types, fixing false LOS blocks when the view is actually clear.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Menus&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="720590,720585,720567"&gt;Fixed main‑menu chat overlay obscuring the screen when RRP is enabled, safe‑zone warning persisting on the main menu, and removed incorrect movement‑speed modifier display from the boosts UI.&lt;/li&gt;
+&lt;li data-rust-commits="720624"&gt;Fixed UI issue that left the country selection list empty and corrected related UI initialization problems.&lt;/li&gt;
+&lt;li data-rust-commits="720590"&gt;Main‑menu chat no longer obscures the rest of the screen when RRP is enabled.&lt;/li&gt;
+&lt;li data-rust-commits="720585"&gt;Safe‑zone warning popup no longer persists on the main menu and now displays its title correctly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-20</guid>
@@ -91,27 +119,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-19</guid>
       <pubDate>Mon, 19 Oct 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Oct 18</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;11 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Combat Audio&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="719987"&gt;Headshot sound now matches the actual direction, fixing reversed left/right audio cues.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Farming &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="719980"&gt;Seeds planted outside planters now display correct gene information in the UI.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicle &amp;amp; Animal Transport&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="719978"&gt;Sheep can now be loaded onto small modules even when also leading a cow.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-10-18</guid>
-      <pubDate>Sun, 18 Oct 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
