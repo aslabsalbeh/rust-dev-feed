@@ -1,44 +1,67 @@
 {
   "2026-10-20": {
-    "commit_count": 94,
-    "relevant_commit_count": 57,
+    "commit_count": 100,
+    "relevant_commit_count": 62,
     "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650,720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "720629,720631,720639,720642,720650,720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752,720759,720760,720761,720764": [
+      "720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752,720759,720760,720761,720764,720766,720767,720768,720771,720774": [
         {
-          "title": "Wearables",
+          "title": "Livestock Vendor",
           "items": [
             {
-              "text": "Reduced creation cost for many wearables (e.g., buzzcut, wolf headdress, diving fins, gas mask, knight armor hat, NVG, ninja suit, jumpsuits, etc.) from >1 ms to <0.1 ms, improving performance when players change clothing or enter range.",
+              "text": "Young animals are now shown last in the vendor list, preventing them from obscuring sellable animals.",
               "commit_ids": [
-                720764
+                720774
               ]
-            }
-          ]
-        },
-        {
-          "title": "Vendor Interactions",
-          "items": [
+            },
             {
-              "text": "Added a new dialogue stage to the livestock vendor when a player brings a young animal.",
+              "text": "Added a new dialogue stage when bringing a young animal to the vendor.",
               "commit_ids": [
                 720759
               ]
+            },
+            {
+              "text": "Vendor conversation now includes additional information about the livestock system.",
+              "commit_ids": [
+                720761
+              ]
             }
           ]
         },
         {
-          "title": "Building & Placement",
+          "title": "Shop Economy",
           "items": [
             {
-              "text": "Fixed low ramps being blocked by deployables in rooms below, and added a setting to skip deploy volume checks for certain sockets.",
+              "text": "Rentable shops no longer drop sulfur during transactions.",
+              "commit_ids": [
+                720771
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Blueprint & Crafting Overhaul",
+          "items": [
+            {
+              "text": "Blueprint fragments removed from workbench recipes and replaced with scrap values; new blueprint progression items (Fragment, Page, Book) introduced with specific loot sources and upgrade paths; blueprint usage now drives tech tree progression.",
+              "commit_ids": [
+                720766
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building Placement Fixes",
+          "items": [
+            {
+              "text": "Low ramps can now be placed or upgraded without being blocked by deployables in the room below.",
               "commit_ids": [
                 720749
               ]
             },
             {
-              "text": "Corrected roof overhang collider inconsistencies for building skins that could block block placement.",
+              "text": "Roof overhang colliders on building skins have been fixed, allowing block placement where it previously was blocked.",
               "commit_ids": [
                 720709
               ]
@@ -46,33 +69,27 @@
           ]
         },
         {
-          "title": "Vehicles & Mounting",
+          "title": "Vehicle & Mounting Fixes",
           "items": [
             {
-              "text": "Resolved an issue where players couldn't mount a car after previously mounting another vehicle; also doubled dismount rotation speed.",
+              "text": "Players can now mount a car after previously mounting a vehicle; dismount rotation speed increased for smoother transitions.",
               "commit_ids": [
                 720748
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Siege Weapons & Horses",
+          "items": [
             {
-              "text": "Fixed horses losing their towed entity after a server restart.",
+              "text": "Horses retain their towed entities after a server restart.",
               "commit_ids": [
                 720739
               ]
-            }
-          ]
-        },
-        {
-          "title": "Siege Weapons",
-          "items": [
-            {
-              "text": "Fixed siege weapons retaining their pulling flag after a server restart.",
-              "commit_ids": [
-                720719
-              ]
             },
             {
-              "text": "Fixed catapult reload progress bar staying on screen if the catapult dies mid‑reload.",
+              "text": "Siege weapons no longer keep their pulling flag after a server restart, and catapult reload progress bars disappear if the catapult dies mid‑reload.",
               "commit_ids": [
                 720719
               ]
@@ -80,21 +97,21 @@
           ]
         },
         {
-          "title": "Audio",
+          "title": "Wiring on Boats",
           "items": [
             {
-              "text": "Restored missing reload sound events for mortars.",
+              "text": "Parented wire issues on boats are fixed when leaving edit mode, improving wire stability.",
               "commit_ids": [
-                720667
+                720671
               ]
             }
           ]
         },
         {
-          "title": "Vines",
+          "title": "Vine Interaction",
           "items": [
             {
-              "text": "Fixed vine mountable errors after server restarts and ensured vines reset to their default state correctly.",
+              "text": "Fixed errors causing vines to fail after server restarts and ensured vines reset correctly.",
               "commit_ids": [
                 720660
               ]
@@ -102,45 +119,29 @@
           ]
         },
         {
-          "title": "World Generation",
+          "title": "Resource Pings",
           "items": [
             {
-              "text": "Increased bounds of several monuments (military tunnels, powerplant, trainyard, water treatment plant, launchsite) to prevent overlapping spawns.",
+              "text": "Resource ping functionality restored.",
               "commit_ids": [
-                720642
+                720768
               ]
             }
           ]
         }
       ],
-      "720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628": [
+      "720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650": [
         {
-          "title": "NPC & AI",
+          "title": "World Generation & Terrain",
           "items": [
             {
-              "text": "Boat scientists now respect the Convar.AI.ignoreplayers setting, allowing them to be ignored like other players.",
+              "text": "Monument spawn bounds increased to prevent monuments from overlapping each other or terrain, fixing spawn collisions for Military tunnels, Powerplant, Trainyard, Water Treatment Plant, Launchsite, etc.",
               "commit_ids": [
-                720626
+                720642
               ]
-            }
-          ]
-        },
-        {
-          "title": "Repair & Crafting",
-          "items": [
+            },
             {
-              "text": "Players can now change accessories on guns without skins (e.g., M16) in the repair bench.",
-              "commit_ids": [
-                720611
-              ]
-            }
-          ]
-        },
-        {
-          "title": "World & Terrain",
-          "items": [
-            {
-              "text": "Fixed terrain clipping at the exit computer room and truck‑blocked garage, preventing players from getting stuck in underground areas.",
+              "text": "Repainted terrain at the exit computer room and the truck‑blocked garage area to stop terrain clipping that could trap players in underground rooms.",
               "commit_ids": [
                 720598
               ]
@@ -148,29 +149,73 @@
           ]
         },
         {
-          "title": "Combat & Targeting",
+          "title": "NPC & AI",
           "items": [
             {
-              "text": "Added extra line‑of‑sight check positions on various stair types, fixing false LOS blockages and improving targeting accuracy.",
+              "text": "Patrol boat scientists now respect the Convar.AI.ignoreplayers setting, so they will ignore players who have that flag enabled.",
+              "commit_ids": [
+                720626
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Repair Bench & Weapon Customization",
+          "items": [
+            {
+              "text": "Fixed the inability to change gun accessories (e.g., on the M16) in the repair bench when the weapon has no skin applied.",
+              "commit_ids": [
+                720611
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Line of Sight & Combat",
+          "items": [
+            {
+              "text": "Added extra line‑of‑sight check positions for all stair types (L, U, spiral, triangle spiral) to correctly detect clear sight and stop false LOS block errors.",
               "commit_ids": [
                 720589
               ]
             }
           ]
-        }
-      ],
-      "720361,720363,720376,720377,720378,720380,720381": [
+        },
         {
-          "title": "World & Structures",
+          "title": "Lighting",
           "items": [
             {
-              "text": "Fixed tunnel lights not working, restoring proper illumination in tunnels.",
+              "text": "AmbientLightLOD lights no longer stay dark when their entity is reused after teleporting or respawning near the player.",
+              "commit_ids": [
+                720639
+              ]
+            }
+          ]
+        }
+      ],
+      "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540": [
+        {
+          "title": "Building & Structures",
+          "items": [
+            {
+              "text": "Fixed wires attached to doors stretching towards the world origin when moving in/out of network range.",
+              "commit_ids": [
+                720540
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Environment",
+          "items": [
+            {
+              "text": "Fixed tunnel lights not working due to train track spline hierarchy changes.",
               "commit_ids": [
                 720378
               ]
             },
             {
-              "text": "Fixed errors when generating underwater labs, preventing generation failures.",
+              "text": "Resolved generation errors for underwater labs, ensuring they spawn correctly.",
               "commit_ids": [
                 720377
               ]
@@ -305,17 +350,9 @@
     ],
     "status": "ok",
     "summary": "### Building & Placement\n- Rooms now only regenerate modified parts, preventing full room resets when changes are made.\n- Low ramps can be placed/upgraded without being blocked by deployables below; added option to skip deploy volumes on specific sockets.\n- Building skin roof overhang colliders fixed, allowing block placement where overhangs previously blocked it.\n- Parented wires on boats remain functional after exiting edit mode.\n\n### Vehicles & Mounting\n- Fixed inability to mount a car after previously mounting a vehicle and increased dismount rotation speed.\n- Horses no longer lose their towed entities after a server restart.\n\n### Siege Weapons\n- Siege weapons retain correct pulling state after server restarts; catapult reload progress bar no longer persists if the catapult dies mid‑reload.\n\n### World & Terrain\n- Monument spacing increased to prevent overlapping spawns for several monuments.\n- Repainted terrain at the exit computer room and truck garage area to stop terrain clipping that could trap players underground.\n- Added extra line‑of‑sight checks for all stair types, eliminating false LOS blocks when a clear view exists.\n- Fixed generation errors for underwater labs by preserving DungeonBaseLink descendants.\n- Train track splines now retain descendants, fixing tunnel lights that previously failed.\n- Vine mountables no longer throw errors after server restarts and correctly reset to default state.\n\n### Repair & Crafting\n- Fixed inability to change gun accessories on weapons without skins in the repair bench (e.g., M16).\n\n### UI & Menus\n- Fixed main‑menu chat overlay obscuring the screen when RRP is enabled, safe‑zone warning persisting on the main menu, and removed incorrect movement‑speed modifier display from the boosts UI.",
-    "new_items": [
-      {
-        "text": "Rooms now only regenerate modified parts, preventing full room resets when changes are made.",
-        "commit_ids": [
-          720752
-        ],
-        "section": "Building & Placement"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Rooms now only regenerate modified parts, preventing full room resets when changes are made."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-19": {
     "commit_count": 125,
