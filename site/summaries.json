@@ -1,6 +1,39 @@
 {
+  "2026-10-22": {
+    "commit_count": 1,
+    "relevant_commit_count": 1,
+    "relevant_signature": "721075",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Food & Crafting",
+        "items": [
+          {
+            "text": "Croc pie now has a recipe and grants animal repellent effect.",
+            "commit_ids": [
+              721075
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "ok",
+    "summary": "### Food & Crafting\n- Croc pie now has a recipe and grants animal repellent effect.",
+    "new_items": [
+      {
+        "text": "Croc pie now has a recipe and grants animal repellent effect.",
+        "commit_ids": [
+          721075
+        ],
+        "section": "Food & Crafting"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- Croc pie now has a recipe and grants animal repellent effect."
+  },
   "2026-10-21": {
-    "commit_count": 71,
+    "commit_count": 73,
     "relevant_commit_count": 26,
     "relevant_signature": "720807,720808,720815,720835,720840,720844,720847,720848,720852,720859,720862,720892,720902,720939,720961,720962,720968,720971,720973,720974,720975,720989,720995,721001,721023,721031",
     "prompt_version": "structured-read-state-v7-explicit-empty",
@@ -319,149 +352,6 @@
     ],
     "status": "ok",
     "summary": "### Livestock Vendor\n- Young animals now appear at the end of the vendor list, keeping sellable animals visible.\n- New dialogue stage and additional system info are shown when bringing a young animal to the vendor.\n\n### Economy & Crafting\n- Rentable shops no longer drop sulfur during transactions, reducing unintended resource loss.\n- Blueprint system overhaul: fragments removed from workbench recipes, new progression items (Fragment, Page, Book) with specific loot sources, and blueprint usage now drives tech‑tree progression.\n\n### Building & Placement\n- Low ramps can be placed or upgraded without being blocked by deployables below, and roof overhang colliders are fixed, allowing previously blocked block placement.\n- Wires attached to doors no longer stretch toward the world origin when moving in or out of network range.\n- AmbientLightLOD lights correctly update after teleport or respawn, preventing dark lights.\n\n### Vehicles & Siege\n- Players can now mount a car after previously mounting another vehicle, and dismount rotation speed is increased for smoother transitions.\n- Horses retain their towed entities after a server restart.\n- Siege weapons no longer keep pulling flags after a restart, and catapult reload bars disappear if the catapult dies mid‑reload.\n\n### World & Environment\n- Monument spawn bounds expanded, preventing overlapping monuments and fixing spawn collisions for many structures.\n- Terrain repaint at the exit computer room and truck‑blocked garage stops clipping that could trap players underground.\n- Underwater labs now generate correctly, fixing previous spawn errors.\n- Tunnel lights work again after train track spline hierarchy changes.\n- Patrol boat scientists now respect the ignoreplayers setting, staying out of sight of players who enable it.\n- Resource ping functionality restored, allowing players to locate resources.\n\n### Performance & Stability\n- Wearable creation cost dramatically reduced, cutting load time from >1 ms to <0.1 ms when players equip or enter range with many clothing items.\n- Room regeneration now only updates modified parts, preventing unnecessary full‑room rebuilds and reducing lag during building edits.\n\n### Gameplay & Combat\n- Fixed parented wire glitches on boats when exiting edit mode, restoring proper wire functionality.\n- Mortar reload sound events restored, giving audio feedback for each shot.\n- Mortar no longer snaps to a static pose after firing; the proper firing animation now plays.\n- Resolved vine mountable error after server restarts and ensured vines reset correctly, preventing crashes and stuck states.\n- Repair bench now allows changing gun accessories (e.g., M16) even when the weapon has no skin applied.\n- Added extra line‑of‑sight checks for all stair types, fixing false LOS blocks when the view is actually clear.\n\n### UI & Quality of Life\n- Fixed UI issue that left the country selection list empty and corrected related UI initialization problems.\n- Main‑menu chat no longer obscures the rest of the screen when RRP is enabled.\n- Safe‑zone warning popup no longer persists on the main menu and now displays its title correctly.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-19": {
-    "commit_count": 125,
-    "relevant_commit_count": 76,
-    "relevant_signature": "719992,719994,720021,720032,720037,720046,720057,720059,720063,720067,720072,720080,720089,720092,720093,720095,720118,720121,720128,720131,720135,720136,720142,720144,720145,720149,720151,720155,720157,720159,720160,720174,720176,720181,720188,720190,720194,720196,720200,720208,720213,720214,720222,720225,720226,720228,720229,720233,720244,720246,720248,720259,720261,720265,720272,720274,720278,720282,720283,720288,720293,720294,720299,720300,720306,720313,720320,720328,720329,720330,720331,720340,720348,720350,720352,720354",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Crafting & Vision",
-        "items": [
-          {
-            "text": "Updated bone armour crafting values and swapped the egg vision effect for candy vision, improving crafting balance and visual experience.",
-            "commit_ids": [
-              720352
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Movement & Collision",
-        "items": [
-          {
-            "text": "Prevented jumping while crouched when an overhead solid object is present, eliminating head clipping and unintended explosion damage.",
-            "commit_ids": [
-              720320
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Interaction",
-        "items": [
-          {
-            "text": "Fixed colliders for gravestones, cursed cauldrons, and applied correct physics materials to wooden cross, skull fire pit, and spooky speaker, resulting in more accurate physical behavior.",
-            "commit_ids": [
-              720313,
-              720306,
-              720288
-            ]
-          },
-          {
-            "text": "Added a DungeonGridBlocker to canyon areas to stop underground train tunnels from spawning dangerously close and fixed cave network layer overrides in the nuclear missile silo, preventing disappearing players and NPCs on stairs.",
-            "commit_ids": [
-              720213,
-              720222
-            ]
-          },
-          {
-            "text": "Resolved an issue where NPC corpses became unlootable after a server restart, restoring access to their loot.",
-            "commit_ids": [
-              720278
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Frankenstein pet now respects player shields",
-            "commit_ids": [
-              720294
-            ]
-          },
-          {
-            "text": "Frankenstein pet no longer sinks, performs invisible attacks, kicks owners, or passes through windows",
-            "commit_ids": [
-              720208
-            ]
-          },
-          {
-            "text": "Radiation no longer activates immediately upon entering Halloween and Christmas dungeons",
-            "commit_ids": [
-              720261
-            ]
-          },
-          {
-            "text": "All lighthouses now share a single repair progress bar",
-            "commit_ids": [
-              720021
-            ]
-          },
-          {
-            "text": "Coconut tree spawn chance reduced to 25%; apple and beehive spawn chances on oak trees increased",
-            "commit_ids": [
-              720093
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Cooking workbench now shows the kettle when brewing new teas",
-            "commit_ids": [
-              720225
-            ]
-          },
-          {
-            "text": "Crafting UI now features a separate list for currently craftable items and an All button",
-            "commit_ids": [
-              720059
-            ]
-          },
-          {
-            "text": "Crafting category buttons now toggle categories instead of stacking, with an All view option",
-            "commit_ids": [
-              720032
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Performance & Visual",
-        "items": [
-          {
-            "text": "Ambient lights correctly turn off when reused from the pool, cutting unnecessary lighting and improving performance",
-            "commit_ids": [
-              720328
-            ]
-          },
-          {
-            "text": "MeshCull now hides renderers when reused, preventing distant code lock lights from staying visible",
-            "commit_ids": [
-              720160
-            ]
-          },
-          {
-            "text": "Particle systems respect culling, stopping distant conveyor flashes and furnace heat shimmers and saving CPU time",
-            "commit_ids": [
-              720157
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Crafting & Vision\n- Updated bone armour crafting values and swapped the egg vision effect for candy vision, improving crafting balance and visual experience.\n\n### Movement & Collision\n- Prevented jumping while crouched when an overhead solid object is present, eliminating head clipping and unintended explosion damage.\n\n### World & Interaction\n- Fixed colliders for gravestones, cursed cauldrons, and applied correct physics materials to wooden cross, skull fire pit, and spooky speaker, resulting in more accurate physical behavior.\n- Added a DungeonGridBlocker to canyon areas to stop underground train tunnels from spawning dangerously close and fixed cave network layer overrides in the nuclear missile silo, preventing disappearing players and NPCs on stairs.\n- Resolved an issue where NPC corpses became unlootable after a server restart, restoring access to their loot.\n\n### Gameplay & Balance\n- Frankenstein pet now respects player shields\n- Frankenstein pet no longer sinks, performs invisible attacks, kicks owners, or passes through windows\n- Radiation no longer activates immediately upon entering Halloween and Christmas dungeons\n- All lighthouses now share a single repair progress bar\n- Coconut tree spawn chance reduced to 25%; apple and beehive spawn chances on oak trees increased\n\n### UI & Quality of Life\n- Cooking workbench now shows the kettle when brewing new teas\n- Crafting UI now features a separate list for currently craftable items and an All button\n- Crafting category buttons now toggle categories instead of stacking, with an All view option\n\n### Performance & Visual\n- Ambient lights correctly turn off when reused from the pool, cutting unnecessary lighting and improving performance\n- MeshCull now hides renderers when reused, preventing distant code lock lights from staying visible\n- Particle systems respect culling, stopping distant conveyor flashes and furnace heat shimmers and saving CPU time",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
