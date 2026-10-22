@@ -1,5 +1,93 @@
 [
   {
+    "id": 721170,
+    "branch": "main/dynamiclod_parenting_fix",
+    "changeset": "168869",
+    "created": "2026-10-22T11:52:58",
+    "message": "Fixed light occludees and LODs not being marked as dynamic when their entity is parented. Setting an entity dynamic only reached active children, so inactive renderers stayed static\r\nFixes lamps on player boats disappearing after moving away from where they were switched on",
+    "user": "Flavien"
+  },
+  {
+    "id": 721168,
+    "branch": "▆▉▇▊▍▄▋▌▍▅▆▉▍▅▉▊▇▄▆▅▄▋",
+    "changeset": "▄▉▋▇▆▇",
+    "created": "2026-10-22T11:50:42",
+    "message": "▅▍▉▋▆▊ ▄▅▉▋ ▋▋▇▍",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 721167,
+    "branch": "main/underground_train_network_update",
+    "changeset": "168867",
+    "created": "2026-10-22T11:48:44",
+    "message": "Submitting WIP work on random room small A to switch branches",
+    "user": "hannah.watts"
+  },
+  {
+    "id": 721165,
+    "branch": "main",
+    "changeset": "168866",
+    "created": "2026-10-22T11:46:42",
+    "message": "Fixed the lighting on the confetti particles",
+    "user": "aidan.m"
+  },
+  {
+    "id": 721162,
+    "branch": "main/vcc/dpad_crafting",
+    "changeset": "168865",
+    "created": "2026-10-22T11:37:17",
+    "message": "wip",
+    "user": "Adam W"
+  },
+  {
+    "id": 721154,
+    "branch": "main/automated_testing",
+    "changeset": "168860",
+    "created": "2026-10-22T11:16:20",
+    "message": "Removed TestMethodAsync, we use TestMethod for all test methods now",
+    "user": "Flavien"
+  },
+  {
+    "id": 721153,
+    "branch": "main/automated_testing",
+    "changeset": "168859",
+    "created": "2026-10-22T10:58:31",
+    "message": "Building block tests checking the roof overhangs only block deployables",
+    "user": "Flavien"
+  },
+  {
+    "id": 721151,
+    "branch": "main/scrap_king_buildingskin_dlc",
+    "changeset": "168858",
+    "created": "2026-10-22T10:53:54",
+    "message": "scrap king\r\n- ramps gibs updated",
+    "user": "curt"
+  },
+  {
+    "id": 721140,
+    "branch": "main/ambientlight_lod_fix",
+    "changeset": "168855",
+    "created": "2026-10-22T10:20:41",
+    "message": "Fixed lights switched on beyond their culling distance flashing at full brightness before turning off",
+    "user": "Flavien"
+  },
+  {
+    "id": 721138,
+    "branch": "main/fsm_optim",
+    "changeset": "168854",
+    "created": "2026-10-22T10:18:48",
+    "message": "re-order and split checks in Trans_HasThreatTarget so that female livestock don't run any targeting checks, large part of idle fsm cost",
+    "user": "Grigler"
+  },
+  {
+    "id": 721130,
+    "branch": "main",
+    "changeset": "168852",
+    "created": "2026-10-22T10:08:15",
+    "message": "Merge: from lifestoryworkqueue_nre_fix\r\n- Bugfix for ObjectWorkQueue processing destroyed UnityEngine.Objects\r\nTests: ran unit tests",
+    "user": "Daniel P"
+  },
+  {
     "id": 721126,
     "branch": "main/skinviewer_cartbutton_fix",
     "changeset": "168850",
@@ -2206,93 +2294,5 @@
     "created": "2026-10-19T12:43:17",
     "message": "Workshop metal/smoothness tweaks and fixes (changed glossiness to smoothness and added warning when metal/smoothness is used)",
     "user": "andre"
-  },
-  {
-    "id": 720100,
-    "branch": "main/UZI 9mm",
-    "changeset": "168404",
-    "created": "2026-10-19T12:08:43",
-    "message": "viewmodell anim tests + placeholder sounds",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 720095,
-    "branch": "main/io_optims",
-    "changeset": "168403",
-    "created": "2026-10-19T11:33:45",
-    "message": "Fixed industrial pipes drawing invisible line renderers inside the pipe meshes, component wasnt disabled\r\n\r\nFor a base with 223 pipes:\r\nWas 0.05ms on the main thread and 0.5ms on workers every frame",
-    "user": "Flavien"
-  },
-  {
-    "id": 720093,
-    "branch": "main/fruit_trees",
-    "changeset": "168401",
-    "created": "2026-10-19T11:23:55",
-    "message": "Reduced coconut.tree network range to 128.\r\nStop coconuts spawning on palm_tree_tropical_med_a until i find a way of stopping the tree sway.\r\nIncreased chance of apples/beehive spawning on oak_d to 25% from 15%.\r\nAdjusted coconut tree spawn chance to 25% (left it at 100% by mistake).",
-    "user": "Lukester"
-  },
-  {
-    "id": 720092,
-    "branch": "main/io_optims",
-    "changeset": "168400",
-    "created": "2026-10-19T11:12:41",
-    "message": "Another visual cooking pooling fix",
-    "user": "Flavien"
-  },
-  {
-    "id": 720089,
-    "branch": "main/io_optims",
-    "changeset": "168398",
-    "created": "2026-10-19T11:05:29",
-    "message": "Now poolable:\r\n- Cooking workbench\r\n- Metal embrasures\r\n- Flower pots\r\n\r\nFixed some visual cooking pooling bugs",
-    "user": "Flavien"
-  },
-  {
-    "id": 720088,
-    "branch": "main/lighthouse_deep_sea",
-    "changeset": "168397",
-    "created": "2026-10-19T10:59:04",
-    "message": "Auto-repair on startup if deep sea is disabled",
-    "user": "Adam W"
-  },
-  {
-    "id": 720085,
-    "branch": "main/character_customisation",
-    "changeset": "168395",
-    "created": "2026-10-19T10:53:17",
-    "message": "Customiser animation updates with eye movement test",
-    "user": "wes.b"
-  },
-  {
-    "id": 720080,
-    "branch": "main/full_parented_mounting",
-    "changeset": "168392",
-    "created": "2026-10-19T10:41:38",
-    "message": "Better comment for the suitable parent hack when dismounting (ensure the correct triggers fire when dismounting from a parent mountable)",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 720075,
-    "branch": "main",
-    "changeset": "168388",
-    "created": "2026-10-19T10:37:17",
-    "message": "Removed the max light cookie cap warning that would appear when loading into a server",
-    "user": "aidan.m"
-  },
-  {
-    "id": 720073,
-    "branch": "main/io_optims",
-    "changeset": "168386",
-    "created": "2026-10-19T10:33:53",
-    "message": "Windmills now use two syncvars to send wind updates instead of full network updates\r\nThey're poolable too",
-    "user": "Flavien"
-  },
-  {
-    "id": 720072,
-    "branch": "main/full_parented_mounting",
-    "changeset": "168385",
-    "created": "2026-10-19T10:30:27",
-    "message": "Swap over to fully using the parented mountable system rather than only using it for a few specific types of vehicles\r\nThis should reduce network overhead when driving any vehicle/sitting in a seat",
-    "user": "Ian Henderson"
   }
 ]
