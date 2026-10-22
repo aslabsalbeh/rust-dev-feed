@@ -1,22 +1,49 @@
 {
   "2026-10-22": {
-    "commit_count": 66,
-    "relevant_commit_count": 34,
-    "relevant_signature": "721075,721077,721084,721107,721109,721113,721125,721126,721130,721138,721140,721151,721162,721165,721170,721178,721194,721196,721197,721203,721205,721213,721218,721224,721232,721236,721238,721243,721254,721299,721310,721335,721341,721373",
+    "commit_count": 78,
+    "relevant_commit_count": 40,
+    "relevant_signature": "721075,721077,721084,721107,721109,721113,721125,721126,721130,721138,721140,721151,721162,721165,721170,721178,721194,721196,721197,721203,721205,721213,721218,721224,721232,721236,721238,721243,721254,721299,721310,721335,721341,721373,721375,721376,721395,721399,721403,721415",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "UI & Controls",
+        "items": [
+          {
+            "text": "Fixed quit button not responding.",
+            "commit_ids": [
+              721395
+            ]
+          }
+        ]
+      },
+      {
         "title": "Gameplay & Modes",
         "items": [
           {
-            "text": "Softcore mode now disables the deployable corpse system and raises the maximum team size from 3 to 6.",
+            "text": "Disabled deployable corpse system in Softcore mode and increased maximum team count from 3 to 6.",
             "commit_ids": [
               721232
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Boat & Lighting",
+        "items": [
           {
-            "text": "Non‑admin players can no longer be killed unexpectedly in Halloween dungeons.",
+            "text": "Fixed lamps on player boats disappearing after moving away from where they were switched on.",
+            "commit_ids": [
+              721170
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Dungeon Gameplay",
+        "items": [
+          {
+            "text": "Fixed non‑admin players being killed in Halloween dungeons.",
             "commit_ids": [
               721077
             ]
@@ -24,27 +51,10 @@
         ]
       },
       {
-        "title": "Lighting",
+        "title": "Crafting & Recipes",
         "items": [
           {
-            "text": "Lamps on player boats remain active after moving away from their activation point.",
-            "commit_ids": [
-              721170
-            ]
-          },
-          {
-            "text": "Lights beyond their culling distance no longer flash at full brightness before turning off.",
-            "commit_ids": [
-              721140
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting",
-        "items": [
-          {
-            "text": "New Croc Pie recipe added, using the animal repellent modifier, with updated UI support.",
+            "text": "Added new Croc Pie recipe using the animal repellent modifier, including UI updates.",
             "commit_ids": [
               721075
             ]
@@ -52,22 +62,56 @@
         ]
       },
       {
-        "title": "Configuration",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Fixed a bug where entering play mode unintentionally changed biome generation or monument placement settings, preserving intended world configuration.",
+            "text": "Lights now correctly turn back on after being occlusion‑culled, preventing dark spots.",
             "commit_ids": [
-              721224
+              721399
+            ]
+          },
+          {
+            "text": "Lights beyond their culling distance no longer flash at full brightness before turning off, improving visual consistency.",
+            "commit_ids": [
+              721140
+            ]
+          },
+          {
+            "text": "Door recalculations are no longer triggered by unrelated building‑block destruction, reducing lag and preventing door glitches.",
+            "commit_ids": [
+              721415
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Gameplay & Modes\n- Softcore mode now disables the deployable corpse system and raises the maximum team size from 3 to 6.\n- Non‑admin players can no longer be killed unexpectedly in Halloween dungeons.\n\n### Lighting\n- Lamps on player boats remain active after moving away from their activation point.\n- Lights beyond their culling distance no longer flash at full brightness before turning off.\n\n### Crafting\n- New Croc Pie recipe added, using the animal repellent modifier, with updated UI support.\n\n### Configuration\n- Fixed a bug where entering play mode unintentionally changed biome generation or monument placement settings, preserving intended world configuration.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### UI & Controls\n- Fixed quit button not responding.\n\n### Gameplay & Modes\n- Disabled deployable corpse system in Softcore mode and increased maximum team count from 3 to 6.\n\n### Boat & Lighting\n- Fixed lamps on player boats disappearing after moving away from where they were switched on.\n\n### Dungeon Gameplay\n- Fixed non‑admin players being killed in Halloween dungeons.\n\n### Crafting & Recipes\n- Added new Croc Pie recipe using the animal repellent modifier, including UI updates.\n\n### World & Environment\n- Lights now correctly turn back on after being occlusion‑culled, preventing dark spots.\n- Lights beyond their culling distance no longer flash at full brightness before turning off, improving visual consistency.\n- Door recalculations are no longer triggered by unrelated building‑block destruction, reducing lag and preventing door glitches.",
+    "new_items": [
+      {
+        "text": "Fixed quit button not responding.",
+        "commit_ids": [
+          721395
+        ],
+        "section": "UI & Controls"
+      },
+      {
+        "text": "Lights now correctly turn back on after being occlusion‑culled, preventing dark spots.",
+        "commit_ids": [
+          721399
+        ],
+        "section": "World & Environment"
+      },
+      {
+        "text": "Door recalculations are no longer triggered by unrelated building‑block destruction, reducing lag and preventing door glitches.",
+        "commit_ids": [
+          721415
+        ],
+        "section": "World & Environment"
+      }
+    ],
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed quit button not responding.\n- Lights now correctly turn back on after being occlusion‑culled, preventing dark spots.\n- Door recalculations are no longer triggered by unrelated building‑block destruction, reducing lag and preventing door glitches."
   },
   "2026-10-21": {
     "commit_count": 73,
