@@ -1,38 +1,22 @@
 {
   "2026-10-22": {
-    "commit_count": 48,
-    "relevant_commit_count": 26,
-    "relevant_signature": "721075,721077,721084,721107,721109,721113,721125,721126,721130,721138,721140,721151,721162,721165,721170,721178,721194,721196,721197,721203,721205,721213,721218,721224,721232,721236",
+    "commit_count": 60,
+    "relevant_commit_count": 31,
+    "relevant_signature": "721075,721077,721084,721107,721109,721113,721125,721126,721130,721138,721140,721151,721162,721165,721170,721178,721194,721196,721197,721203,721205,721213,721218,721224,721232,721236,721238,721243,721254,721299,721310",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Softcore Gameplay",
+        "title": "Gameplay Changes",
         "items": [
           {
-            "text": "Deployable corpse system disabled in Softcore mode and Tool Cupboard limit increased to six per server.",
+            "text": "Softcore mode now disables the deployable corpse system and raises the maximum team size from 3 to 6, with the main menu reflecting the new limit.",
             "commit_ids": [
               721232
             ]
-          }
-        ]
-      },
-      {
-        "title": "Boat Lighting",
-        "items": [
+          },
           {
-            "text": "Lamps on player‑owned boats now stay visible after moving away, as dynamic lighting is correctly maintained.",
-            "commit_ids": [
-              721170
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Halloween Dungeon",
-        "items": [
-          {
-            "text": "Non‑admin players no longer die automatically in Halloween dungeons.",
+            "text": "Fixed a bug that allowed non‑admin players to be killed in Halloween dungeons.",
             "commit_ids": [
               721077
             ]
@@ -40,12 +24,46 @@
         ]
       },
       {
-        "title": "Food & Cooking",
+        "title": "Lighting Fixes",
         "items": [
           {
-            "text": "Croc pie now benefits from the animal repellent modifier, and a new recipe with updated UI is available.",
+            "text": "Lamps on player‑owned boats no longer disappear after moving away, as dynamic light entities are correctly handled.",
+            "commit_ids": [
+              721170
+            ]
+          },
+          {
+            "text": "Lights now properly dim and turn off beyond their culling distance instead of flashing at full brightness.",
+            "commit_ids": [
+              721140
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Crafting & Recipes",
+        "items": [
+          {
+            "text": "Croc Pie now incorporates the new animal repellent modifier, with added recipes, a richer version, and updated UI.",
             "commit_ids": [
               721075
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Male hand models stay visible in the tattoo t‑pose preview, fixing disappearing hands during customization.",
+            "commit_ids": [
+              721310
+            ]
+          },
+          {
+            "text": "Skin viewer UI no longer displays an unintended cart button when opened from the Steam inventory.",
+            "commit_ids": [
+              721126
             ]
           }
         ]
@@ -54,45 +72,41 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Entering Play Mode no longer unintentionally alters biome generation or monument placement settings.",
+            "text": "Fixed an issue where entering play mode prevented changes to biome generation or monument placement settings, allowing players to customize map generation as intended.",
             "commit_ids": [
               721224
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "The skin viewer no longer displays a cart button when opened from the Steam inventory, eliminating accidental purchase prompts.",
-            "commit_ids": [
-              721126
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Softcore Gameplay\n- Deployable corpse system disabled in Softcore mode and Tool Cupboard limit increased to six per server.\n\n### Boat Lighting\n- Lamps on player‑owned boats now stay visible after moving away, as dynamic lighting is correctly maintained.\n\n### Halloween Dungeon\n- Non‑admin players no longer die automatically in Halloween dungeons.\n\n### Food & Cooking\n- Croc pie now benefits from the animal repellent modifier, and a new recipe with updated UI is available.\n\n### Gameplay & Balance\n- Entering Play Mode no longer unintentionally alters biome generation or monument placement settings.\n\n### UI & Quality of Life\n- The skin viewer no longer displays a cart button when opened from the Steam inventory, eliminating accidental purchase prompts.",
+    "summary": "### Gameplay Changes\n- Softcore mode now disables the deployable corpse system and raises the maximum team size from 3 to 6, with the main menu reflecting the new limit.\n- Fixed a bug that allowed non‑admin players to be killed in Halloween dungeons.\n\n### Lighting Fixes\n- Lamps on player‑owned boats no longer disappear after moving away, as dynamic light entities are correctly handled.\n- Lights now properly dim and turn off beyond their culling distance instead of flashing at full brightness.\n\n### Crafting & Recipes\n- Croc Pie now incorporates the new animal repellent modifier, with added recipes, a richer version, and updated UI.\n\n### Quality of Life\n- Male hand models stay visible in the tattoo t‑pose preview, fixing disappearing hands during customization.\n- Skin viewer UI no longer displays an unintended cart button when opened from the Steam inventory.\n\n### Gameplay & Balance\n- Fixed an issue where entering play mode prevented changes to biome generation or monument placement settings, allowing players to customize map generation as intended.",
     "new_items": [
       {
-        "text": "Deployable corpse system disabled in Softcore mode and Tool Cupboard limit increased to six per server.",
+        "text": "Softcore mode now disables the deployable corpse system and raises the maximum team size from 3 to 6, with the main menu reflecting the new limit.",
         "commit_ids": [
           721232
         ],
-        "section": "Softcore Gameplay"
+        "section": "Gameplay Changes"
       },
       {
-        "text": "Entering Play Mode no longer unintentionally alters biome generation or monument placement settings.",
+        "text": "Male hand models stay visible in the tattoo t‑pose preview, fixing disappearing hands during customization.",
+        "commit_ids": [
+          721310
+        ],
+        "section": "Quality of Life"
+      },
+      {
+        "text": "Fixed an issue where entering play mode prevented changes to biome generation or monument placement settings, allowing players to customize map generation as intended.",
         "commit_ids": [
           721224
         ],
         "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Deployable corpse system disabled in Softcore mode and Tool Cupboard limit increased to six per server.\n- Entering Play Mode no longer unintentionally alters biome generation or monument placement settings."
+    "new_relevant_count": 3,
+    "new_summary": "- Softcore mode now disables the deployable corpse system and raises the maximum team size from 3 to 6, with the main menu reflecting the new limit.\n- Male hand models stay visible in the tattoo t‑pose preview, fixing disappearing hands during customization.\n- Fixed an issue where entering play mode prevented changes to biome generation or monument placement settings, allowing players to customize map generation as intended."
   },
   "2026-10-21": {
     "commit_count": 73,
