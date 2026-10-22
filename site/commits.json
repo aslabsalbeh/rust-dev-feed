@@ -1,5 +1,53 @@
 [
   {
+    "id": 721373,
+    "branch": "main/fix_foundation_clipping_rocks",
+    "changeset": "168932",
+    "created": "2026-10-22T20:05:34",
+    "message": "Add automated tests for placing foundations in rocks",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 721371,
+    "branch": "▋▋▋▉",
+    "changeset": "▅▋▊▉▊▌",
+    "created": "2026-10-22T19:53:54",
+    "message": "▅ ██▄ ▍▄▄▄▊▊▇▆▌▉▇▆▋▉█▊▋▊▇▄▅▄█▍▉ ▅▇█▌ ▆▍▉▅▌ ▉▊▄▋▅▉ ▊▍ ▅ ▇▉▇▌▍█▅▄▉ ▅█▍▌▊ ▅ ██▇▌▇▊▉▌ ▄▌▄ ▌▉▍ █▌▇▆▍▄▇▆▆ ▇▄▊▅█▇ ▋▍▊▍ ▍▇▊▅▌▉ █▌▋ ▆ ▍▍▉▉▄▄▇▄▊▌▉▋▆ ▅▍ ▋▊▉ ▅█▇▌▇▌ ▊▊▋ ▊▉▋█▆ ▊▍▇██▅ ▄▇▍▋▇▌█▆▅█ ▆▄▌▍▊ ▆▍ ▅▉▋▍█▆ ▋█▍▇▇ ▅▆▌▉▆▉█▌▉▉ ▉▉█▇▉▇ ██▌▉▉▇▍▆ ▌▋▅ ▊▄▅▆ ▇█▄▄▌▊▊▋▇█ ▌▋ ▇▉ ▄▆▉▍▍▇▄▄ ▌▋ ▋ ▆▊▋▉█▌▌▇ ▇▆▅▇▇▊",
+    "user": "cipeaX"
+  },
+  {
+    "id": 721369,
+    "branch": "main/character_customisation",
+    "changeset": "168930",
+    "created": "2026-10-22T19:41:43",
+    "message": "tone down eye lid opening bounce",
+    "user": "wes.b"
+  },
+  {
+    "id": 721367,
+    "branch": "main/updaterequired_improvements",
+    "changeset": "168929",
+    "created": "2026-10-22T19:23:30",
+    "message": "Changed \"Client update required\" kick message wording. Can be translated too",
+    "user": "Flavien"
+  },
+  {
+    "id": 721341,
+    "branch": "main/skinviewer_waterpurifier_fix",
+    "changeset": "168926",
+    "created": "2026-10-22T18:36:44",
+    "message": "Fixed water purifier showing its viewmodel in the skin viewer (its using the old deployer still)",
+    "user": "Flavien"
+  },
+  {
+    "id": 721335,
+    "branch": "main/character_customisation",
+    "changeset": "168924",
+    "created": "2026-10-22T18:09:30",
+    "message": "Play eye movement and blinks from the customiser anims\r\n\r\n- updated blink anims\r\n- each clip's mask is the v4RustPlayerMask bones plus l_eye, r_eye, l_eyelid, r_eyelid\r\n- UI_CharacterPreview - removes the procedural eye look-at and blink in the preview\r\n- PlayerModel.ApplyHeadEyePositions - the preview re-applies each head's eye positions after the animation, to fix eyeballs sinking into skull\r\n-  self contained eye code changes in the customiser, In-game eye behaviour is unchanged",
+    "user": "Alex Webster"
+  },
+  {
     "id": 721313,
     "branch": "main/tattoos/art_pass",
     "changeset": "168921",
@@ -2213,94 +2261,6 @@
     "changeset": "168478",
     "created": "2026-10-19T20:24:04",
     "message": "Update the UGC uploader to reference FileStorage too instead of buffering in memory\n- references CRC, won't upload if the image has been deleted / modified since\n- add debouncing so it won't upload images from a sign until a small delay (example: autosave sends image every 30s)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 720251,
-    "branch": "main",
-    "changeset": "168477",
-    "created": "2026-10-19T19:40:50",
-    "message": "~Privilege cache enabled by default (client and server)",
-    "user": "Flavien"
-  },
-  {
-    "id": 720248,
-    "branch": "main/unity_6000.3.26f1",
-    "changeset": "168476",
-    "created": "2026-10-19T19:29:01",
-    "message": "Buildfix: configure unity_installer_url for fpbuild\r\nTests: none",
-    "user": "Daniel P"
-  },
-  {
-    "id": 720246,
-    "branch": "main/ddraw_parent_fix",
-    "changeset": "168475",
-    "created": "2026-10-19T19:21:09",
-    "message": "Fixed parented DDraw objects not clearing when their parent gets destroyed, drawing them at origin",
-    "user": "Raul"
-  },
-  {
-    "id": 720244,
-    "branch": "main/menuhero_fix",
-    "changeset": "168473",
-    "created": "2026-10-19T19:19:27",
-    "message": "Fixed home's store hero playing and rolling its videos with the menu closed",
-    "user": "Flavien"
-  },
-  {
-    "id": 720237,
-    "branch": "▋▄█▌",
-    "changeset": "▄▇▋▉▋▇",
-    "created": "2026-10-19T19:12:23",
-    "message": "▋▋ ▋▄▍▄▍ ▅▇█▌ ▌▇▉▊▄▄█▋▉▄█▊▌▄▋█▆▇▌▊▋▌",
-    "user": "cipeaX"
-  },
-  {
-    "id": 720236,
-    "branch": "█▉▍▄",
-    "changeset": "▊▊▄▄▆▉",
-    "created": "2026-10-19T19:11:09",
-    "message": "▆█ ▄▌█▆█ ▊▅▄▅ ▅▊▄▍█▉▌▋▆▍▅",
-    "user": "cipeaX"
-  },
-  {
-    "id": 720233,
-    "branch": "main/net_group_null_log_fix",
-    "changeset": "168463",
-    "created": "2026-10-19T18:28:37",
-    "message": "Moved sub entity spawning of cargo ship, travelling vendor and pt boats from ServerInit to ServerInitPostNetworkGroupAssign\r\nFixes various \"changed its network group to null\" warnings when they spawned",
-    "user": "cipeaX"
-  },
-  {
-    "id": 720228,
-    "branch": "main/ugc_censor_option",
-    "changeset": "168461",
-    "created": "2026-10-19T18:25:04",
-    "message": "When queuing a sign to be uploaded use the imageId instead of the raw data so we can buffer images in filestorage instead of keeping a 2nd copy in memory",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 720229,
-    "branch": "main/ongui_allocs_fix",
-    "changeset": "168460",
-    "created": "2026-10-19T18:25:02",
-    "message": "DeferredExtension.OnGUI and  CoverageQueries.OnGUI gui layout set to false, was only running in editor",
-    "user": "Flavien"
-  },
-  {
-    "id": 720226,
-    "branch": "main/ongui_allocs_fix",
-    "changeset": "168459",
-    "created": "2026-10-19T18:24:01",
-    "message": "Disabled GUILayout on DDraw and OcclusionCulling\r\nWas 0.7KB a frame for nothing, their OnGUI methods dont use GUI layouts",
-    "user": "Flavien"
-  },
-  {
-    "id": 720227,
-    "branch": "main/ugc_censor_option",
-    "changeset": "168458",
-    "created": "2026-10-19T18:23:31",
-    "message": "Don't send voicemails & sculptures\n- not planning to moderate them, keep it simple by not sending them",
     "user": "Jake_Rich"
   }
 ]
