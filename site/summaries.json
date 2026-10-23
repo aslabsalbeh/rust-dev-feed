@@ -213,11 +213,172 @@
     "new_summary": ""
   },
   "2026-10-20": {
-    "commit_count": 99,
-    "relevant_commit_count": 62,
+    "commit_count": 97,
+    "relevant_commit_count": 60,
     "relevant_signature": "720361,720363,720376,720377,720378,720380,720381,720385,720427,720433,720519,720540,720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650,720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752,720759,720760,720761,720764,720766,720767,720768,720771,720774",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "720656,720658,720659,720660,720663,720667,720670,720671,720672,720709,720719,720739,720748,720749,720751,720752,720759,720760,720761,720764,720766,720767,720768,720771,720774": [
+        {
+          "title": "Livestock Vendor & Trading",
+          "items": [
+            {
+              "text": "Sorted animals in the vendor list so young animals appear last, preventing them from drowning out sellable animals. Added extra conversation info and a new dialogue stage when you bring a young animal to the vendor.",
+              "commit_ids": [
+                720774,
+                720761,
+                720759
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Rentable Shops",
+          "items": [
+            {
+              "text": "Fixed a bug where rentable shops would incorrectly drop sulfur during transactions.",
+              "commit_ids": [
+                720771
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Blueprint & Crafting Overhaul",
+          "items": [
+            {
+              "text": "Replaced scrap requirements with blueprint fragments for workbench crafting. Introduced three tiers (Fragment, Page, Book) with new drop locations and upgrade paths, shifting tech‑tree progression to blueprint collection rather than scrap accumulation.",
+              "commit_ids": [
+                720766
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building Placement & Structure",
+          "items": [
+            {
+              "text": "Low ramps are no longer blocked by deployables in rooms below when placing or upgrading them. Fixed roof overhang collider inconsistencies that prevented block placement on building skins.",
+              "commit_ids": [
+                720749,
+                720709
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicle Mounting & Siege Weapons",
+          "items": [
+            {
+              "text": "Resolved an issue where players couldn't mount a car after previously mounting a vehicle and increased dismount rotation speed. Fixed horses losing towed entities after server restarts. Fixed siege weapons retaining a pulling flag after a restart and corrected catapult reload progress bar lingering after the catapult dies.",
+              "commit_ids": [
+                720748,
+                720739,
+                720719
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Audio Feedback",
+          "items": [
+            {
+              "text": "Restored missing reload sound events for mortars.",
+              "commit_ids": [
+                720667
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vine Mechanics",
+          "items": [
+            {
+              "text": "Fixed a null‑action error and state reset issue for vine mountables that occurred after a server restart.",
+              "commit_ids": [
+                720660
+              ]
+            }
+          ]
+        }
+      ],
+      "720546,720554,720555,720562,720567,720570,720579,720580,720581,720585,720589,720590,720591,720598,720608,720611,720623,720624,720626,720628,720629,720631,720639,720642,720650": [
+        {
+          "title": "World Generation & Monuments",
+          "items": [
+            {
+              "text": "Increased monument bounds to prevent them from spawning too close together and overlapping terrain, fixing spawn issues for Military tunnels, Powerplant, Trainyard, Water Treatment Plant, and Launchsite.",
+              "commit_ids": [
+                720642
+              ]
+            },
+            {
+              "text": "Repainted terrain at the exit computer room and the truck‑blocked garage area to stop terrain clipping that could trap players underground.",
+              "commit_ids": [
+                720598
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & NPC Behavior",
+          "items": [
+            {
+              "text": "Boat scientists now respect the Convar.AI.ignoreplayers setting, allowing them to ignore players when that option is enabled.",
+              "commit_ids": [
+                720626
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Repair Bench & Item Customization",
+          "items": [
+            {
+              "text": "Fixed the inability to change gun accessories (e.g., M16) on the repair bench when the weapon has no skin applied.",
+              "commit_ids": [
+                720611
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat Line of Sight",
+          "items": [
+            {
+              "text": "Added extra line‑of‑sight check positions for various stair types (L, U, spiral, triangle spiral) to correctly detect clear sight and prevent LOS blocking errors.",
+              "commit_ids": [
+                720589
+              ]
+            }
+          ]
+        }
+      ],
+      "720376,720377,720378,720380,720381,720385,720427,720433,720519,720540": [
+        {
+          "title": "Building & Structures",
+          "items": [
+            {
+              "text": "Fixed wires attached to doors stretching towards the world origin after leaving or re-entering network range.",
+              "commit_ids": [
+                720540
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Generation",
+          "items": [
+            {
+              "text": "Resolved an error that prevented underwater labs from generating correctly.",
+              "commit_ids": [
+                720377
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Livestock Vendor",
