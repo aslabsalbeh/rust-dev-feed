@@ -1,77 +1,59 @@
 {
   "2026-10-23": {
-    "commit_count": 65,
-    "relevant_commit_count": 24,
-    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630,721634,721635,721643,721646,721658",
+    "commit_count": 72,
+    "relevant_commit_count": 29,
+    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630,721634,721635,721643,721646,721658,721681,721682,721684,721692,721693",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Building & Construction",
+        "title": "Gathering & Tools",
         "items": [
           {
-            "text": "Fixed a bug where flipping a block caused the building to split each time.",
+            "text": "Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.",
             "commit_ids": [
-              721634
+              721693
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building",
+        "items": [
+          {
+            "text": "Demolish now correctly tells you when you lack building privilege and no longer shows a misleading “Building blocked” message; disabled demolish shows a standard toast like other options.",
+            "commit_ids": [
+              721518,
+              721511
             ]
           },
           {
-            "text": "Corrected the toast message shown when rotating boat building blocks.",
-            "commit_ids": [
-              721646
-            ]
-          },
-          {
-            "text": "Prevented rotation or flipping of stairs when a deployable is placed on them, avoiding accidental destroys.",
+            "text": "Rotating or flipping building blocks is now blocked when a deployable sits on stairs, preventing accidental destruction.",
             "commit_ids": [
               721583
             ]
           },
           {
-            "text": "Demolish option now correctly requires building privilege and shows an appropriate toast; rotation/flip checks now consider final rotation.",
+            "text": "Building blocks no longer split each time they’re flipped, fixing a long‑standing structural glitch.",
             "commit_ids": [
-              721518,
-              721511
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Tools",
-        "items": [
-          {
-            "text": "DPV fuel consumption reduced from 0.15 L/s to 0.08 L/s and acceleration speed doubled.",
-            "commit_ids": [
-              721516
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & NPCs",
-        "items": [
-          {
-            "text": "Animals no longer turn toward the player when petted, preventing them from getting stuck.",
-            "commit_ids": [
-              721580
+              721634
             ]
           },
           {
-            "text": "Bird flocks (crows and seagulls) now appear at greater distances with low population counts.",
+            "text": "Rotating boat building blocks no longer triggers an incorrect toast message.",
             "commit_ids": [
-              721595,
-              721591
+              721646
             ]
           }
         ]
       },
       {
-        "title": "World & Monuments",
+        "title": "Animals",
         "items": [
           {
-            "text": "River terrain now tapers smoothly near monuments, eliminating terrain holes caused by blend errors.",
+            "text": "Animals no longer turn toward you when petted, eliminating the chance of getting stuck after recent collider changes.",
             "commit_ids": [
-              721550
+              721580
             ]
           }
         ]
@@ -80,9 +62,26 @@
         "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Rock and torch skins now respect the player’s selected skin on first join instead defaulting.",
+            "text": "First‑join placed rocks and torches now keep the skin you selected instead of defaulting to the base skin.",
             "commit_ids": [
               721573
+            ]
+          },
+          {
+            "text": "The workshop camera now uses explicit position and rotation vectors, letting it focus on objects without being forced to look at the player model’s center.",
+            "commit_ids": [
+              721560
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles",
+        "items": [
+          {
+            "text": "The DPV’s radial menu now includes Mount, Fuel, and Pickup options; picking up a vehicle no longer removes its condition, acceleration is doubled, and fuel consumption drops from 0.15 → 0.08 L/s with lower idle usage.",
+            "commit_ids": [
+              721516
             ]
           }
         ]
@@ -91,43 +90,52 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Spectator mode now correctly plays attach animations.",
+            "text": "Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.",
+            "commit_ids": [
+              721692
+            ]
+          },
+          {
+            "text": "Attach animations now play correctly for spectators, improving the viewing experience of player actions.",
             "commit_ids": [
               721643
             ]
           },
           {
-            "text": "Workshop camera now focuses on objects without being forced to point at the player model, improving object inspection.",
-            "commit_ids": [
-              721560
-            ]
-          },
-          {
-            "text": "Skull trophies are now visible in the skin viewer.",
+            "text": "Skull trophies are now visible in the skin viewer, allowing players to see their trophies when previewing skins.",
             "commit_ids": [
               721517
             ]
           },
           {
-            "text": "Camera animations have been restored, fixing previously non‑working animations.",
+            "text": "Restored camera animations that were previously non‑functional, fixing missing camera movements during certain actions.",
             "commit_ids": [
               721512
-            ]
-          },
-          {
-            "text": "Fixed building collision handling for overhangs and frames, improving placement stability and preventing clipping issues.",
-            "commit_ids": [
-              721599
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Building & Construction\n- Fixed a bug where flipping a block caused the building to split each time.\n- Corrected the toast message shown when rotating boat building blocks.\n- Prevented rotation or flipping of stairs when a deployable is placed on them, avoiding accidental destroys.\n- Demolish option now correctly requires building privilege and shows an appropriate toast; rotation/flip checks now consider final rotation.\n\n### Vehicles & Tools\n- DPV fuel consumption reduced from 0.15 L/s to 0.08 L/s and acceleration speed doubled.\n\n### Animals & NPCs\n- Animals no longer turn toward the player when petted, preventing them from getting stuck.\n- Bird flocks (crows and seagulls) now appear at greater distances with low population counts.\n\n### World & Monuments\n- River terrain now tapers smoothly near monuments, eliminating terrain holes caused by blend errors.\n\n### UI & Quality of Life\n- Rock and torch skins now respect the player’s selected skin on first join instead defaulting.\n\n### Gameplay & Balance\n- Spectator mode now correctly plays attach animations.\n- Workshop camera now focuses on objects without being forced to point at the player model, improving object inspection.\n- Skull trophies are now visible in the skin viewer.\n- Camera animations have been restored, fixing previously non‑working animations.\n- Fixed building collision handling for overhangs and frames, improving placement stability and preventing clipping issues.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Gathering & Tools\n- Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.\n\n### Building\n- Demolish now correctly tells you when you lack building privilege and no longer shows a misleading “Building blocked” message; disabled demolish shows a standard toast like other options.\n- Rotating or flipping building blocks is now blocked when a deployable sits on stairs, preventing accidental destruction.\n- Building blocks no longer split each time they’re flipped, fixing a long‑standing structural glitch.\n- Rotating boat building blocks no longer triggers an incorrect toast message.\n\n### Animals\n- Animals no longer turn toward you when petted, eliminating the chance of getting stuck after recent collider changes.\n\n### UI & Quality of Life\n- First‑join placed rocks and torches now keep the skin you selected instead of defaulting to the base skin.\n- The workshop camera now uses explicit position and rotation vectors, letting it focus on objects without being forced to look at the player model’s center.\n\n### Vehicles\n- The DPV’s radial menu now includes Mount, Fuel, and Pickup options; picking up a vehicle no longer removes its condition, acceleration is doubled, and fuel consumption drops from 0.15 → 0.08 L/s with lower idle usage.\n\n### Gameplay & Balance\n- Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.\n- Attach animations now play correctly for spectators, improving the viewing experience of player actions.\n- Skull trophies are now visible in the skin viewer, allowing players to see their trophies when previewing skins.\n- Restored camera animations that were previously non‑functional, fixing missing camera movements during certain actions.",
+    "new_items": [
+      {
+        "text": "Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.",
+        "commit_ids": [
+          721693
+        ],
+        "section": "Gathering & Tools"
+      },
+      {
+        "text": "Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.",
+        "commit_ids": [
+          721692
+        ],
+        "section": "Gameplay & Balance"
+      }
+    ],
+    "new_relevant_count": 2,
+    "new_summary": "- Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.\n- Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably."
   },
   "2026-10-22": {
     "commit_count": 94,
