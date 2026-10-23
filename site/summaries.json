@@ -1,26 +1,33 @@
 {
   "2026-10-23": {
-    "commit_count": 35,
-    "relevant_commit_count": 14,
-    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583",
+    "commit_count": 47,
+    "relevant_commit_count": 19,
+    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Building & Construction",
+        "title": "Building & Deployables",
         "items": [
           {
-            "text": "Deployables on stairs can no longer be rotated or flipped, preventing accidental destruction.",
+            "text": "Deployable rotation or flip on mirrored stairs no longer destroys the structure, and demolish UI now correctly indicates building privilege requirements.",
             "commit_ids": [
               721583,
-              721518
+              721518,
+              721511
             ]
           },
           {
-            "text": "Demolish option now correctly shows a privilege warning and a toast when you lack building rights or the option is disabled.",
+            "text": "Animal petting no longer causes livestock to turn toward the player and get stuck.",
             "commit_ids": [
-              721518,
-              721511
+              721580
+            ]
+          },
+          {
+            "text": "Scrap King building skin now has proper collision on overhangs and metal frame colliders, preventing clipping issues.",
+            "commit_ids": [
+              721599,
+              721582
             ]
           }
         ]
@@ -29,7 +36,7 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "DPV acceleration speed doubled and fuel consumption reduced (0.15 → 0.08 L/s, idle fuel also lowered).",
+            "text": "DPV now accelerates twice as fast and uses less fuel (0.08 L/s idle, 0.08 L/s while active vs 0.15 L/s), and the radial menu shows Mount, Fuel, and Pickup options.",
             "commit_ids": [
               721516
             ]
@@ -37,21 +44,10 @@
         ]
       },
       {
-        "title": "Animals & NPC",
+        "title": "World",
         "items": [
           {
-            "text": "Animals no longer turn toward you when petted, fixing cases where they could become stuck.",
-            "commit_ids": [
-              721580
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Terrain",
-        "items": [
-          {
-            "text": "River terrain near monuments now tapers smoothly, preventing terrain from being unintentionally removed.",
+            "text": "River terrain now tapers smoothly near monuments, preventing abrupt terrain holes.",
             "commit_ids": [
               721550
             ]
@@ -59,10 +55,10 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Starting rock and torch now retain your selected skin on first join after a wipe.",
+            "text": "Spawned rock and torch now respect your chosen skin on first join after a wipe.",
             "commit_ids": [
               721573
             ]
@@ -71,40 +67,42 @@
       }
     ],
     "status": "ok",
-    "summary": "### Building & Construction\n- Deployables on stairs can no longer be rotated or flipped, preventing accidental destruction.\n- Demolish option now correctly shows a privilege warning and a toast when you lack building rights or the option is disabled.\n\n### Vehicles\n- DPV acceleration speed doubled and fuel consumption reduced (0.15 → 0.08 L/s, idle fuel also lowered).\n\n### Animals & NPC\n- Animals no longer turn toward you when petted, fixing cases where they could become stuck.\n\n### World & Terrain\n- River terrain near monuments now tapers smoothly, preventing terrain from being unintentionally removed.\n\n### Gameplay & Balance\n- Starting rock and torch now retain your selected skin on first join after a wipe.",
+    "summary": "### Building & Deployables\n- Deployable rotation or flip on mirrored stairs no longer destroys the structure, and demolish UI now correctly indicates building privilege requirements.\n- Animal petting no longer causes livestock to turn toward the player and get stuck.\n- Scrap King building skin now has proper collision on overhangs and metal frame colliders, preventing clipping issues.\n\n### Vehicles\n- DPV now accelerates twice as fast and uses less fuel (0.08 L/s idle, 0.08 L/s while active vs 0.15 L/s), and the radial menu shows Mount, Fuel, and Pickup options.\n\n### World\n- River terrain now tapers smoothly near monuments, preventing abrupt terrain holes.\n\n### Bug Fixes\n- Spawned rock and torch now respect your chosen skin on first join after a wipe.",
     "new_items": [
       {
-        "text": "Deployables on stairs can no longer be rotated or flipped, preventing accidental destruction.",
+        "text": "Deployable rotation or flip on mirrored stairs no longer destroys the structure, and demolish UI now correctly indicates building privilege requirements.",
         "commit_ids": [
           721583,
-          721518
+          721518,
+          721511
         ],
-        "section": "Building & Construction"
+        "section": "Building & Deployables"
       },
       {
-        "text": "Animals no longer turn toward you when petted, fixing cases where they could become stuck.",
+        "text": "Animal petting no longer causes livestock to turn toward the player and get stuck.",
         "commit_ids": [
           721580
         ],
-        "section": "Animals & NPC"
+        "section": "Building & Deployables"
       },
       {
-        "text": "River terrain near monuments now tapers smoothly, preventing terrain from being unintentionally removed.",
+        "text": "Scrap King building skin now has proper collision on overhangs and metal frame colliders, preventing clipping issues.",
         "commit_ids": [
-          721550
+          721599,
+          721582
         ],
-        "section": "World & Terrain"
+        "section": "Building & Deployables"
       },
       {
-        "text": "Starting rock and torch now retain your selected skin on first join after a wipe.",
+        "text": "Spawned rock and torch now respect your chosen skin on first join after a wipe.",
         "commit_ids": [
           721573
         ],
-        "section": "Gameplay & Balance"
+        "section": "Bug Fixes"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Deployables on stairs can no longer be rotated or flipped, preventing accidental destruction.\n- Animals no longer turn toward you when petted, fixing cases where they could become stuck.\n- River terrain near monuments now tapers smoothly, preventing terrain from being unintentionally removed.\n- Starting rock and torch now retain your selected skin on first join after a wipe."
+    "new_relevant_count": 7,
+    "new_summary": "- Deployable rotation or flip on mirrored stairs no longer destroys the structure, and demolish UI now correctly indicates building privilege requirements.\n- Animal petting no longer causes livestock to turn toward the player and get stuck.\n- Scrap King building skin now has proper collision on overhangs and metal frame colliders, preventing clipping issues.\n- Spawned rock and torch now respect your chosen skin on first join after a wipe."
   },
   "2026-10-22": {
     "commit_count": 94,
