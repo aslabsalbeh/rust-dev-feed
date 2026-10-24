@@ -1,27 +1,55 @@
 {
   "2026-10-23": {
-    "commit_count": 74,
-    "relevant_commit_count": 30,
-    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630,721634,721635,721643,721646,721658,721681,721682,721684,721692,721693,721707",
+    "commit_count": 75,
+    "relevant_commit_count": 31,
+    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630,721634,721635,721643,721646,721658,721681,721682,721684,721692,721693,721707,721723",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Plants & Environment",
+        "title": "Building & Construction",
         "items": [
           {
-            "text": "Plants that grow on boats no longer disappear after sailing.",
+            "text": "Fixed roof overhang collider behavior and added proper ColliderInfo to overhangs and frames, preventing incorrect collisions when building.",
             "commit_ids": [
-              721707
+              721723,
+              721599
+            ]
+          },
+          {
+            "text": "Corrected the toast notification shown when rotating boat building blocks.",
+            "commit_ids": [
+              721646
+            ]
+          },
+          {
+            "text": "Buildings no longer split when blocks are flipped; rotation and flip checks now account for final orientation, fixing mirrored stairs issues and the 10‑minute flip window reset bug.",
+            "commit_ids": [
+              721634,
+              721583,
+              721518
+            ]
+          },
+          {
+            "text": "Demolish option now correctly requires building privilege and shows an informative toast when disabled.",
+            "commit_ids": [
+              721518,
+              721511
+            ]
+          },
+          {
+            "text": "Enabled the Scrap King building skin in standalone mode.",
+            "commit_ids": [
+              721582
             ]
           }
         ]
       },
       {
-        "title": "Tool Balance",
+        "title": "Tools & Item Balance",
         "items": [
           {
-            "text": "Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged.",
+            "text": "Shears now yield 25% more wool, have 200% knife durability, and deal 50% less damage.",
             "commit_ids": [
               721693
             ]
@@ -29,81 +57,59 @@
         ]
       },
       {
-        "title": "Building & Construction",
+        "title": "World & Creatures",
         "items": [
           {
-            "text": "Building rotation and flipping bugs fixed: correct toast messages when rotating, prevent accidental destruction of deployables on stairs, stop blocks from splitting on flip, ensure rotation checks consider final orientation, and demolish now shows an accurate privilege-missing toast.",
+            "text": "Plants grown on boats remain visible while sailing by using dynamic renderers.",
             "commit_ids": [
-              721646,
-              721634,
-              721583,
-              721518,
-              721511
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Interaction",
-        "items": [
-          {
-            "text": "Animals no longer automatically turn toward you when petted, preventing them from getting stuck.",
-            "commit_ids": [
-              721580
+              721707
             ]
           },
           {
-            "text": "Bird flocks now populate the sky (about four of each type per 3 km map) and remain visible at greater distances.",
+            "text": "Animals no longer automatically turn toward the player when petted, preventing them from getting stuck.",
             "commit_ids": [
-              721591,
-              721595
+              721580
             ]
           }
         ]
       },
       {
-        "title": "Vehicles - DPV",
+        "title": "Player Items & Skins",
         "items": [
           {
-            "text": "DPV radial menu now includes Mount, Fuel, and Pickup options; acceleration speed is doubled and fuel consumption reduced from 0.15 to 0.08 per second (lower idle use).",
-            "commit_ids": [
-              721516
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bug Fixes",
-        "items": [
-          {
-            "text": "Rocks and torches you spawn with now keep your selected skin on first join after a wipe.",
+            "text": "First‑join bug fixed: spawned rocks and torches now use the selected skin instead of the default.",
             "commit_ids": [
               721573
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Delivery Pod Vehicle",
+        "items": [
+          {
+            "text": "DPV radial menu now shows Mount, Fuel, and Pickup; condition persists after pickup; acceleration speed doubled; fuel consumption reduced from 0.15 → 0.08 /s and idle fuel usage lowered.",
+            "commit_ids": [
+              721516
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Plants & Environment\n- Plants that grow on boats no longer disappear after sailing.\n\n### Tool Balance\n- Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged.\n\n### Building & Construction\n- Building rotation and flipping bugs fixed: correct toast messages when rotating, prevent accidental destruction of deployables on stairs, stop blocks from splitting on flip, ensure rotation checks consider final orientation, and demolish now shows an accurate privilege-missing toast.\n\n### Animals & Interaction\n- Animals no longer automatically turn toward you when petted, preventing them from getting stuck.\n- Bird flocks now populate the sky (about four of each type per 3 km map) and remain visible at greater distances.\n\n### Vehicles - DPV\n- DPV radial menu now includes Mount, Fuel, and Pickup options; acceleration speed is doubled and fuel consumption reduced from 0.15 to 0.08 per second (lower idle use).\n\n### Bug Fixes\n- Rocks and torches you spawn with now keep your selected skin on first join after a wipe.",
+    "summary": "### Building & Construction\n- Fixed roof overhang collider behavior and added proper ColliderInfo to overhangs and frames, preventing incorrect collisions when building.\n- Corrected the toast notification shown when rotating boat building blocks.\n- Buildings no longer split when blocks are flipped; rotation and flip checks now account for final orientation, fixing mirrored stairs issues and the 10‑minute flip window reset bug.\n- Demolish option now correctly requires building privilege and shows an informative toast when disabled.\n- Enabled the Scrap King building skin in standalone mode.\n\n### Tools & Item Balance\n- Shears now yield 25% more wool, have 200% knife durability, and deal 50% less damage.\n\n### World & Creatures\n- Plants grown on boats remain visible while sailing by using dynamic renderers.\n- Animals no longer automatically turn toward the player when petted, preventing them from getting stuck.\n\n### Player Items & Skins\n- First‑join bug fixed: spawned rocks and torches now use the selected skin instead of the default.\n\n### Delivery Pod Vehicle\n- DPV radial menu now shows Mount, Fuel, and Pickup; condition persists after pickup; acceleration speed doubled; fuel consumption reduced from 0.15 → 0.08 /s and idle fuel usage lowered.",
     "new_items": [
       {
-        "text": "Plants that grow on boats no longer disappear after sailing.",
+        "text": "Fixed roof overhang collider behavior and added proper ColliderInfo to overhangs and frames, preventing incorrect collisions when building.",
         "commit_ids": [
-          721707
+          721723,
+          721599
         ],
-        "section": "Plants & Environment"
-      },
-      {
-        "text": "Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged.",
-        "commit_ids": [
-          721693
-        ],
-        "section": "Tool Balance"
+        "section": "Building & Construction"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- Plants that grow on boats no longer disappear after sailing.\n- Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged."
+    "new_summary": "- Fixed roof overhang collider behavior and added proper ColliderInfo to overhangs and frames, preventing incorrect collisions when building."
   },
   "2026-10-22": {
     "commit_count": 94,
