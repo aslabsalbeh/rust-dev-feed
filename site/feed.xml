@@ -6,52 +6,46 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 23 Oct 2026 18:18:11 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 20:18:19 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;72 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;74 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721693"&gt;Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.&lt;/li&gt;
-&lt;li data-rust-commits="721692"&gt;Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.&lt;/li&gt;
+&lt;li data-rust-commits="721707"&gt;Plants that grow on boats no longer disappear after sailing.&lt;/li&gt;
+&lt;li data-rust-commits="721693"&gt;Shears now yield 25% more wool, have double the knife&amp;#x27;s durability, and deal 50% less damage; other blades unchanged.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Gathering &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;Plants &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721693"&gt;Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.&lt;/li&gt;
+&lt;li data-rust-commits="721707"&gt;Plants that grow on boats no longer disappear after sailing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Building&lt;/h3&gt;
+&lt;h3&gt;Tool Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721518,721511"&gt;Demolish now correctly tells you when you lack building privilege and no longer shows a misleading “Building blocked” message; disabled demolish shows a standard toast like other options.&lt;/li&gt;
-&lt;li data-rust-commits="721583"&gt;Rotating or flipping building blocks is now blocked when a deployable sits on stairs, preventing accidental destruction.&lt;/li&gt;
-&lt;li data-rust-commits="721634"&gt;Building blocks no longer split each time they’re flipped, fixing a long‑standing structural glitch.&lt;/li&gt;
-&lt;li data-rust-commits="721646"&gt;Rotating boat building blocks no longer triggers an incorrect toast message.&lt;/li&gt;
+&lt;li data-rust-commits="721693"&gt;Shears now yield 25% more wool, have double the knife&amp;#x27;s durability, and deal 50% less damage; other blades unchanged.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals&lt;/h3&gt;
+&lt;h3&gt;Building &amp;amp; Construction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721580"&gt;Animals no longer turn toward you when petted, eliminating the chance of getting stuck after recent collider changes.&lt;/li&gt;
+&lt;li data-rust-commits="721646,721634,721583,721518,721511"&gt;Building rotation and flipping bugs fixed: correct toast messages when rotating, prevent accidental destruction of deployables on stairs, stop blocks from splitting on flip, ensure rotation checks consider final orientation, and demolish now shows an accurate privilege-missing toast.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721573"&gt;First‑join placed rocks and torches now keep the skin you selected instead of defaulting to the base skin.&lt;/li&gt;
-&lt;li data-rust-commits="721560"&gt;The workshop camera now uses explicit position and rotation vectors, letting it focus on objects without being forced to look at the player model’s center.&lt;/li&gt;
+&lt;li data-rust-commits="721580"&gt;Animals no longer automatically turn toward you when petted, preventing them from getting stuck.&lt;/li&gt;
+&lt;li data-rust-commits="721591,721595"&gt;Bird flocks now populate the sky (about four of each type per 3 km map) and remain visible at greater distances.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;h3&gt;Vehicles - DPV&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721516"&gt;The DPV’s radial menu now includes Mount, Fuel, and Pickup options; picking up a vehicle no longer removes its condition, acceleration is doubled, and fuel consumption drops from 0.15 → 0.08 L/s with lower idle usage.&lt;/li&gt;
+&lt;li data-rust-commits="721516"&gt;DPV radial menu now includes Mount, Fuel, and Pickup options; acceleration speed is doubled and fuel consumption reduced from 0.15 to 0.08 per second (lower idle use).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="721692"&gt;Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.&lt;/li&gt;
-&lt;li data-rust-commits="721643"&gt;Attach animations now play correctly for spectators, improving the viewing experience of player actions.&lt;/li&gt;
-&lt;li data-rust-commits="721517"&gt;Skull trophies are now visible in the skin viewer, allowing players to see their trophies when previewing skins.&lt;/li&gt;
-&lt;li data-rust-commits="721512"&gt;Restored camera animations that were previously non‑functional, fixing missing camera movements during certain actions.&lt;/li&gt;
+&lt;li data-rust-commits="721573"&gt;Rocks and torches you spawn with now keep your selected skin on first join after a wipe.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-23</guid>
-      <pubDate>Fri, 23 Oct 2026 18:18:11 -0400</pubDate>
+      <pubDate>Fri, 23 Oct 2026 20:18:19 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 22</title>

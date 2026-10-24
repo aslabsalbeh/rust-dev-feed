@@ -1,16 +1,27 @@
 {
   "2026-10-23": {
-    "commit_count": 72,
-    "relevant_commit_count": 29,
-    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630,721634,721635,721643,721646,721658,721681,721682,721684,721692,721693",
+    "commit_count": 74,
+    "relevant_commit_count": 30,
+    "relevant_signature": "721492,721511,721512,721516,721517,721518,721525,721550,721557,721560,721573,721580,721582,721583,721591,721595,721599,721616,721630,721634,721635,721643,721646,721658,721681,721682,721684,721692,721693,721707",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gathering & Tools",
+        "title": "Plants & Environment",
         "items": [
           {
-            "text": "Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.",
+            "text": "Plants that grow on boats no longer disappear after sailing.",
+            "commit_ids": [
+              721707
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tool Balance",
+        "items": [
+          {
+            "text": "Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged.",
             "commit_ids": [
               721693
             ]
@@ -18,68 +29,43 @@
         ]
       },
       {
-        "title": "Building",
+        "title": "Building & Construction",
         "items": [
           {
-            "text": "Demolish now correctly tells you when you lack building privilege and no longer shows a misleading “Building blocked” message; disabled demolish shows a standard toast like other options.",
+            "text": "Building rotation and flipping bugs fixed: correct toast messages when rotating, prevent accidental destruction of deployables on stairs, stop blocks from splitting on flip, ensure rotation checks consider final orientation, and demolish now shows an accurate privilege-missing toast.",
             "commit_ids": [
+              721646,
+              721634,
+              721583,
               721518,
               721511
             ]
-          },
-          {
-            "text": "Rotating or flipping building blocks is now blocked when a deployable sits on stairs, preventing accidental destruction.",
-            "commit_ids": [
-              721583
-            ]
-          },
-          {
-            "text": "Building blocks no longer split each time they’re flipped, fixing a long‑standing structural glitch.",
-            "commit_ids": [
-              721634
-            ]
-          },
-          {
-            "text": "Rotating boat building blocks no longer triggers an incorrect toast message.",
-            "commit_ids": [
-              721646
-            ]
           }
         ]
       },
       {
-        "title": "Animals",
+        "title": "Animals & Interaction",
         "items": [
           {
-            "text": "Animals no longer turn toward you when petted, eliminating the chance of getting stuck after recent collider changes.",
+            "text": "Animals no longer automatically turn toward you when petted, preventing them from getting stuck.",
             "commit_ids": [
               721580
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "First‑join placed rocks and torches now keep the skin you selected instead of defaulting to the base skin.",
-            "commit_ids": [
-              721573
-            ]
           },
           {
-            "text": "The workshop camera now uses explicit position and rotation vectors, letting it focus on objects without being forced to look at the player model’s center.",
+            "text": "Bird flocks now populate the sky (about four of each type per 3 km map) and remain visible at greater distances.",
             "commit_ids": [
-              721560
+              721591,
+              721595
             ]
           }
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Vehicles - DPV",
         "items": [
           {
-            "text": "The DPV’s radial menu now includes Mount, Fuel, and Pickup options; picking up a vehicle no longer removes its condition, acceleration is doubled, and fuel consumption drops from 0.15 → 0.08 L/s with lower idle usage.",
+            "text": "DPV radial menu now includes Mount, Fuel, and Pickup options; acceleration speed is doubled and fuel consumption reduced from 0.15 to 0.08 per second (lower idle use).",
             "commit_ids": [
               721516
             ]
@@ -87,55 +73,37 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.",
+            "text": "Rocks and torches you spawn with now keep your selected skin on first join after a wipe.",
             "commit_ids": [
-              721692
-            ]
-          },
-          {
-            "text": "Attach animations now play correctly for spectators, improving the viewing experience of player actions.",
-            "commit_ids": [
-              721643
-            ]
-          },
-          {
-            "text": "Skull trophies are now visible in the skin viewer, allowing players to see their trophies when previewing skins.",
-            "commit_ids": [
-              721517
-            ]
-          },
-          {
-            "text": "Restored camera animations that were previously non‑functional, fixing missing camera movements during certain actions.",
-            "commit_ids": [
-              721512
+              721573
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Gathering & Tools\n- Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.\n\n### Building\n- Demolish now correctly tells you when you lack building privilege and no longer shows a misleading “Building blocked” message; disabled demolish shows a standard toast like other options.\n- Rotating or flipping building blocks is now blocked when a deployable sits on stairs, preventing accidental destruction.\n- Building blocks no longer split each time they’re flipped, fixing a long‑standing structural glitch.\n- Rotating boat building blocks no longer triggers an incorrect toast message.\n\n### Animals\n- Animals no longer turn toward you when petted, eliminating the chance of getting stuck after recent collider changes.\n\n### UI & Quality of Life\n- First‑join placed rocks and torches now keep the skin you selected instead of defaulting to the base skin.\n- The workshop camera now uses explicit position and rotation vectors, letting it focus on objects without being forced to look at the player model’s center.\n\n### Vehicles\n- The DPV’s radial menu now includes Mount, Fuel, and Pickup options; picking up a vehicle no longer removes its condition, acceleration is doubled, and fuel consumption drops from 0.15 → 0.08 L/s with lower idle usage.\n\n### Gameplay & Balance\n- Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.\n- Attach animations now play correctly for spectators, improving the viewing experience of player actions.\n- Skull trophies are now visible in the skin viewer, allowing players to see their trophies when previewing skins.\n- Restored camera animations that were previously non‑functional, fixing missing camera movements during certain actions.",
+    "summary": "### Plants & Environment\n- Plants that grow on boats no longer disappear after sailing.\n\n### Tool Balance\n- Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged.\n\n### Building & Construction\n- Building rotation and flipping bugs fixed: correct toast messages when rotating, prevent accidental destruction of deployables on stairs, stop blocks from splitting on flip, ensure rotation checks consider final orientation, and demolish now shows an accurate privilege-missing toast.\n\n### Animals & Interaction\n- Animals no longer automatically turn toward you when petted, preventing them from getting stuck.\n- Bird flocks now populate the sky (about four of each type per 3 km map) and remain visible at greater distances.\n\n### Vehicles - DPV\n- DPV radial menu now includes Mount, Fuel, and Pickup options; acceleration speed is doubled and fuel consumption reduced from 0.15 to 0.08 per second (lower idle use).\n\n### Bug Fixes\n- Rocks and torches you spawn with now keep your selected skin on first join after a wipe.",
     "new_items": [
       {
-        "text": "Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.",
+        "text": "Plants that grow on boats no longer disappear after sailing.",
+        "commit_ids": [
+          721707
+        ],
+        "section": "Plants & Environment"
+      },
+      {
+        "text": "Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged.",
         "commit_ids": [
           721693
         ],
-        "section": "Gathering & Tools"
-      },
-      {
-        "text": "Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably.",
-        "commit_ids": [
-          721692
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Tool Balance"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- Shears now produce up to 25% more wool per sheep (12‑13 wool), have double the durability of knives, and deal half the knife’s damage. Other blades unchanged.\n- Fixed a state machine bug that caused random level jumps and added proper success/fail transitions, making related in‑game systems behave predictably."
+    "new_summary": "- Plants that grow on boats no longer disappear after sailing.\n- Shears now yield 25% more wool, have double the knife's durability, and deal 50% less damage; other blades unchanged."
   },
   "2026-10-22": {
     "commit_count": 94,
