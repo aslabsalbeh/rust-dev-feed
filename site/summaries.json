@@ -210,34 +210,23 @@
     "new_summary": ""
   },
   "2026-10-21": {
-    "commit_count": 63,
-    "relevant_commit_count": 26,
-    "relevant_signature": "720807,720808,720815,720835,720840,720844,720847,720848,720852,720859,720862,720892,720902,720939,720961,720962,720968,720971,720973,720974,720975,720989,720995,721001,721023,721031",
+    "commit_count": 54,
+    "relevant_commit_count": 23,
+    "relevant_signature": "720835,720840,720844,720847,720848,720852,720859,720862,720892,720902,720939,720961,720962,720968,720971,720973,720974,720975,720989,720995,721001,721023,721031",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Inventory & Item Bugs",
+        "title": "Resources & Harvesting",
         "items": [
           {
-            "text": "Fixed several item and container bugs that caused rare errors when moving items from or destroying chicken coops, ensuring proper entity removal and preventing crashes.",
+            "text": "Fixed rare errors when moving items from or destroying chicken coops, preventing lingering entities.",
             "commit_ids": [
               721031
             ]
           },
           {
-            "text": "Fixed all four skull trophy variants to have distinct visuals and correct state updates, and updated their colliders and glass physics material for the jar variants.",
-            "commit_ids": [
-              720859
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Resource Gathering",
-        "items": [
-          {
-            "text": "Corrected oak trees to drop apples only where appropriate, adjusted apple positions on oak varieties, and removed unnecessary loot refreshes on natural beehives, apple trees, and coconut trees.",
+            "text": "Apple trees now drop apples correctly (oak_e) and natural beehives, apple and coconut trees no longer refresh loot unexpectedly.",
             "commit_ids": [
               720995
             ]
@@ -245,41 +234,44 @@
         ]
       },
       {
-        "title": "Building & Structure Placement",
+        "title": "Base Building",
         "items": [
           {
-            "text": "Fixed triangle foundations being deployable on top of brutalist ramps and resolved square roof side overhangs blocking adjacent foundations.",
+            "text": "Triangle foundations can now be placed on top of brutalist ramps.",
             "commit_ids": [
-              720892,
-              720815
+              720892
             ]
           },
           {
-            "text": "Fixed ramps being incorrectly blocked by another ramp up to 3 m above them, even through a floor.",
+            "text": "Ramps are no longer blocked by other ramps up to 3 m above them.",
             "commit_ids": [
               720862
             ]
           },
           {
-            "text": "Unified colliders for floor frame and triangle floor frame skins of the same grade and standardized mesh colliders for stone frames and triangle roofs, eliminating placement blocking issues.",
+            "text": "All stone frame and triangle floor frame skins share the same collider, preventing roofs from being blocked.",
             "commit_ids": [
-              720852,
               720844
-            ]
-          },
-          {
-            "text": "Adjusted graveyard fence collider import settings to match expected collision behavior.",
-            "commit_ids": [
-              720840
             ]
           }
         ]
       },
       {
-        "title": "Security & Locks",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Prevented the carvable pumpkin from being codelocked, closing an exploit that let players lock pumpkins they shouldn't be able to.",
+            "text": "Bird flocks now react to obstacles and players, using boid movement and more realistic flapping.",
+            "commit_ids": [
+              720971
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Locks & Security",
+        "items": [
+          {
+            "text": "Carvable pumpkins can no longer be locked with a code lock, fixing an exploit.",
             "commit_ids": [
               720847
             ]
@@ -287,12 +279,12 @@
         ]
       },
       {
-        "title": "Combat & Weapons",
+        "title": "World & Items",
         "items": [
           {
-            "text": "UZI weapon aim offset corrected, restoring proper aiming and shooting accuracy.",
+            "text": "Skull trophies now show distinct appearances for each variant, correctly update their visuals based on whether a skull is inside and during nighttime, and have improved colliders with appropriate glass material.",
             "commit_ids": [
-              720939
+              720859
             ]
           }
         ]
@@ -301,16 +293,22 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Added reactive bird flocks that move in swarms, avoid obstacles and players, and use boid movement with dynamic flapping, affecting hunting and wildlife encounters.",
+            "text": "Floor frame and triangle floor frame skins now use the same collider, fixing placement and interaction inconsistencies across grades.",
             "commit_ids": [
-              720971
+              720852
+            ]
+          },
+          {
+            "text": "Graveyard fence collision settings corrected, restoring proper fence interaction with players and objects.",
+            "commit_ids": [
+              720840
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Inventory & Item Bugs\n- Fixed several item and container bugs that caused rare errors when moving items from or destroying chicken coops, ensuring proper entity removal and preventing crashes.\n- Fixed all four skull trophy variants to have distinct visuals and correct state updates, and updated their colliders and glass physics material for the jar variants.\n\n### Resource Gathering\n- Corrected oak trees to drop apples only where appropriate, adjusted apple positions on oak varieties, and removed unnecessary loot refreshes on natural beehives, apple trees, and coconut trees.\n\n### Building & Structure Placement\n- Fixed triangle foundations being deployable on top of brutalist ramps and resolved square roof side overhangs blocking adjacent foundations.\n- Fixed ramps being incorrectly blocked by another ramp up to 3 m above them, even through a floor.\n- Unified colliders for floor frame and triangle floor frame skins of the same grade and standardized mesh colliders for stone frames and triangle roofs, eliminating placement blocking issues.\n- Adjusted graveyard fence collider import settings to match expected collision behavior.\n\n### Security & Locks\n- Prevented the carvable pumpkin from being codelocked, closing an exploit that let players lock pumpkins they shouldn't be able to.\n\n### Combat & Weapons\n- UZI weapon aim offset corrected, restoring proper aiming and shooting accuracy.\n\n### Gameplay & Balance\n- Added reactive bird flocks that move in swarms, avoid obstacles and players, and use boid movement with dynamic flapping, affecting hunting and wildlife encounters.",
+    "summary": "### Resources & Harvesting\n- Fixed rare errors when moving items from or destroying chicken coops, preventing lingering entities.\n- Apple trees now drop apples correctly (oak_e) and natural beehives, apple and coconut trees no longer refresh loot unexpectedly.\n\n### Base Building\n- Triangle foundations can now be placed on top of brutalist ramps.\n- Ramps are no longer blocked by other ramps up to 3 m above them.\n- All stone frame and triangle floor frame skins share the same collider, preventing roofs from being blocked.\n\n### NPC & AI\n- Bird flocks now react to obstacles and players, using boid movement and more realistic flapping.\n\n### Locks & Security\n- Carvable pumpkins can no longer be locked with a code lock, fixing an exploit.\n\n### World & Items\n- Skull trophies now show distinct appearances for each variant, correctly update their visuals based on whether a skull is inside and during nighttime, and have improved colliders with appropriate glass material.\n\n### Gameplay & Balance\n- Floor frame and triangle floor frame skins now use the same collider, fixing placement and interaction inconsistencies across grades.\n- Graveyard fence collision settings corrected, restoring proper fence interaction with players and objects.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
