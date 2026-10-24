@@ -1934,53 +1934,5 @@
     "created": "2026-10-21T04:22:39",
     "message": "Instead of running BuildAssetBundles over all assets when making a tutorial build and putting all non tutorial assets in the private bundle, just run BuildAssetBundles over the assets needed by the tutorial\r\nCuts down tutorial bundle builds to a couple of minutes from 15",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 720774,
-    "branch": "main/livestock_vendor_young_animal",
-    "changeset": "168699",
-    "created": "2026-10-21T03:45:42",
-    "message": "Sort animals to show in the vendor list, show young animals last so they can't drown out actual sellable animals\nFixes remaining tests",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 720771,
-    "branch": "main/rent_shop_sulfur_fix",
-    "changeset": "168697",
-    "created": "2026-10-21T03:30:32",
-    "message": "Fixed rentable shops dropping sulfur when used in a transaction",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 720770,
-    "branch": "main/blueprints_2",
-    "changeset": "168696",
-    "created": "2026-10-21T03:21:40",
-    "message": "Salvage Workbench Upgrade now has a 20% chance to not consume a blueprint. Effectly the same as before\r\nUpdated testlist\r\n1 missed file",
-    "user": "Rin"
-  },
-  {
-    "id": 720768,
-    "branch": "main/hackweek_local_tutorial",
-    "changeset": "168695",
-    "created": "2026-10-21T03:14:41",
-    "message": "More intelligent process for finding assets that need to be in the tutorial asset bundles\r\nStrip shaders entirely when building server or tutorial bundles - they end up in the private bundle and are deleted anyway but are still compiled and packed, now clear all variants for the build\r\nReduces tutorial bundle build process from 40 minutes to 20 minutes\r\nFixed some more missing assets in the tutorial bundles\r\nFixed resource pings not working\r\nCan now boot a client, run the tutorial locally and client and server combined uses < 10gb of memory",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 720767,
-    "branch": "main",
-    "changeset": "168694",
-    "created": "2026-10-21T03:07:23",
-    "message": "Fix foliage grid NRE in cases when heightmap doesn't exist yet",
-    "user": "Dayaan"
-  },
-  {
-    "id": 720766,
-    "branch": "main/blueprints_2",
-    "changeset": "168693",
-    "created": "2026-10-21T02:29:47",
-    "message": "Removed blueprint fragments from workbench crafting recipes. Replacing with old scrap values\r\nWB LVL1 - 50\r\nWB LVL2 - 500\r\nWB LVL3 - 1250\r\n\r\nBlueprints will now be used to progress the tech trees instead of scrap. Currently 1 per item.\r\nWB LVL1 - Blueprint Fragment\r\nWB LVL2 - Blueprint Page\r\nWB LVL3 - Blueprint Book\r\nEngineering workbench will use Blueprint fragments\r\n\r\nBlueprint Fragment can be found in barrels, boxes and common low end loot sources\r\nBlueprint Pages can be found where Basic Blueprint Fragments previously were\r\nBlueprint Books can be found where Advanced Blueprint Fragments previously were\r\n\r\nBlueprint Fragment can be upgraded into Blueprint pages at 10:1\r\nBlueprint Pages can't upgrade into Blueprint Books\r\n\r\nItems can still be researched via the research table for scrap\r\nDefault blueprints 10\nCommon 15 > 20\nUncommon 30 > 40\nRare 60 > 100\nVery Rare 120 > 300\r\n\r\nMore balancing and changes to come",
-    "user": "Rin"
   }
 ]
