@@ -1494,21 +1494,5 @@
     "created": "2026-10-21T20:41:25",
     "message": "▊ ▍▉▇▆█ ██ ▄▋▋▍▍ ▋▅██ ▆▇▉▅▅▉ ▊▆▍ ▉▋▋▉▆▍ ▋▋▊▍▌▌▍▌▅ █▍█▉ ▄▌▅▋▍▋",
     "user": "nick.m"
-  },
-  {
-    "id": 721031,
-    "branch": "main/chickencoop_item_errors_fix",
-    "changeset": "168805",
-    "created": "2026-10-21T20:00:34",
-    "message": "Fixed some item / container bugs, together they caused multiple rare errors when moving items from or destroying chicken coops, which also lead to the entity not getting killed correctly\r\n- ItemContainer.Load now ignores slot reservations (if an item was in a valid slot before the restart, it should be after - slot reservations are only used to stop new items being placed)\r\n- A failed Insert due to not finding a valid position now early exits before adding the item to the item list\r\n- Item swaps into reserved slots now fail immediately instead of moving, then failing and reverting (the revert could fail and delete the item)\r\n- Guard ItemContainer.Take against collecting items queued for removal which could lead to double free",
-    "user": "cipeaX"
-  },
-  {
-    "id": 721023,
-    "branch": "main/cargoshop_crate_optim",
-    "changeset": "168803",
-    "created": "2026-10-21T19:05:07",
-    "message": "Cargoship crates no longer mark themselves as dropped\r\n- Prevents an unnecessary raycast being ran for each crate 66 times a second (costing ~80 µs each call) for as long as they're active",
-    "user": "Ryan"
   }
 ]
