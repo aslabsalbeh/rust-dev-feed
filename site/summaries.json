@@ -145,9 +145,9 @@
     "new_summary": ""
   },
   "2026-10-22": {
-    "commit_count": 93,
-    "relevant_commit_count": 45,
-    "relevant_signature": "721077,721084,721107,721109,721113,721125,721126,721130,721138,721140,721151,721162,721165,721170,721178,721194,721196,721197,721203,721205,721213,721218,721224,721232,721236,721238,721243,721254,721299,721310,721335,721341,721373,721375,721376,721395,721399,721403,721415,721419,721422,721430,721443,721446,721457",
+    "commit_count": 92,
+    "relevant_commit_count": 44,
+    "relevant_signature": "721084,721107,721109,721113,721125,721126,721130,721138,721140,721151,721162,721165,721170,721178,721194,721196,721197,721203,721205,721213,721218,721224,721232,721236,721238,721243,721254,721299,721310,721335,721341,721373,721375,721376,721395,721399,721403,721415,721419,721422,721430,721443,721446,721457",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -155,23 +155,15 @@
         "title": "Building & Construction",
         "items": [
           {
-            "text": "Merged rotate and flip into a single pie‑menu slot with E/Q shortcuts, preserving muscle memory while shifting building tier order.",
+            "text": "Merged rotate and flip actions into a single pie‑menu slot, toggled with E/Q, preserving muscle memory and adjusting building tiers.",
             "commit_ids": [
               721457
             ]
           },
           {
-            "text": "Added mirrored stair skin prefabs, a bake tool, and updated stair blocks and colliders for Scrap King DLC, expanding stair design options.",
+            "text": "Added mirrored stair skin prefabs and a bake tool, expanding the variety of usable building skins.",
             "commit_ids": [
-              721446,
-              721196
-            ]
-          },
-          {
-            "text": "General block updates for Scrap King DLC, including ramps and other blocks.",
-            "commit_ids": [
-              721178,
-              721107
+              721446
             ]
           }
         ]
@@ -180,7 +172,7 @@
         "title": "Tools & Items",
         "items": [
           {
-            "text": "Fixed spray can becoming unusable after quickly looking away and prevented duplicate third‑person spray animation.",
+            "text": "Fixed a bug where the spray can became unusable after quickly looking away, requiring re‑equip, and removed a duplicate third‑person spray animation.",
             "commit_ids": [
               721443
             ]
@@ -188,28 +180,32 @@
         ]
       },
       {
-        "title": "Structures, Vehicles & Lighting",
+        "title": "Sailing",
         "items": [
           {
-            "text": "Corrected sail collider activation so only the appropriate (raised or lowered) collider is active after spawning, preventing abnormal collisions.",
+            "text": "Corrected the server collider for sails so only the appropriate (raised or lowered) collider is active after spawning.",
             "commit_ids": [
               721422
-            ]
-          },
-          {
-            "text": "Fixed lights that stayed off after being reused from the pool when occlusion‑culled, and repaired lamps on player boats that disappeared after moving away.",
-            "commit_ids": [
-              721399,
-              721170
             ]
           }
         ]
       },
       {
-        "title": "Gameplay Modes & Settings",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Disabled the deployable corpse system in Softcore mode and increased the maximum team count from 3 to 6; updated the main‑menu changelog to reflect the new limit.",
+            "text": "Fixed the quit button so it now works correctly.",
+            "commit_ids": [
+              721395
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Softcore Mode Adjustments",
+        "items": [
+          {
+            "text": "Disabled the deployable corpse system in softcore mode and increased the maximum team count from 3 to 6; updated the main‑menu changelog to reflect the new limit.",
             "commit_ids": [
               721232
             ]
@@ -217,22 +213,67 @@
         ]
       },
       {
-        "title": "User Interface & Controls",
+        "title": "Lighting",
         "items": [
           {
-            "text": "Fixed the quit button functionality.",
+            "text": "Fixed lamps on player boats disappearing after moving away from where they were switched on.",
             "commit_ids": [
-              721395
+              721170
             ]
           },
           {
-            "text": "Clarified and inverted the inventory/crafting D‑pad setting description for better usability.",
+            "text": "Fixed lights beyond their culling distance flashing at full brightness before turning off.",
+            "commit_ids": [
+              721140
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Visual & Lighting",
+        "items": [
+          {
+            "text": "Lights that were occlusion‑culled now correctly turn back on when reused or switched on, preventing dark areas after pool reuse.",
+            "commit_ids": [
+              721399
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Building",
+        "items": [
+          {
+            "text": "Stair blocks in the Scrap King building skin now have corrected geometry and colliders, improving placement and traversal.",
+            "commit_ids": [
+              721196
+            ]
+          },
+          {
+            "text": "Additional block updates for the Scrap King skin fix placement and interaction issues.",
+            "commit_ids": [
+              721178
+            ]
+          },
+          {
+            "text": "Further block tweaks for Scrap King skin resolve lingering building quirks.",
+            "commit_ids": [
+              721107
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Inventory/crafting D‑pad toggle description clarified and inverted, reducing confusion when configuring controls.",
             "commit_ids": [
               721194
             ]
           },
           {
-            "text": "Fixed the skin viewer showing an erroneous cart button when opened from the Steam inventory.",
+            "text": "Skin viewer no longer shows an erroneous cart button when opened from the Steam inventory.",
             "commit_ids": [
               721126
             ]
@@ -241,7 +282,7 @@
       }
     ],
     "status": "ok",
-    "summary": "### Building & Construction\n- Merged rotate and flip into a single pie‑menu slot with E/Q shortcuts, preserving muscle memory while shifting building tier order.\n- Added mirrored stair skin prefabs, a bake tool, and updated stair blocks and colliders for Scrap King DLC, expanding stair design options.\n- General block updates for Scrap King DLC, including ramps and other blocks.\n\n### Tools & Items\n- Fixed spray can becoming unusable after quickly looking away and prevented duplicate third‑person spray animation.\n\n### Structures, Vehicles & Lighting\n- Corrected sail collider activation so only the appropriate (raised or lowered) collider is active after spawning, preventing abnormal collisions.\n- Fixed lights that stayed off after being reused from the pool when occlusion‑culled, and repaired lamps on player boats that disappeared after moving away.\n\n### Gameplay Modes & Settings\n- Disabled the deployable corpse system in Softcore mode and increased the maximum team count from 3 to 6; updated the main‑menu changelog to reflect the new limit.\n\n### User Interface & Controls\n- Fixed the quit button functionality.\n- Clarified and inverted the inventory/crafting D‑pad setting description for better usability.\n- Fixed the skin viewer showing an erroneous cart button when opened from the Steam inventory.",
+    "summary": "### Building & Construction\n- Merged rotate and flip actions into a single pie‑menu slot, toggled with E/Q, preserving muscle memory and adjusting building tiers.\n- Added mirrored stair skin prefabs and a bake tool, expanding the variety of usable building skins.\n\n### Tools & Items\n- Fixed a bug where the spray can became unusable after quickly looking away, requiring re‑equip, and removed a duplicate third‑person spray animation.\n\n### Sailing\n- Corrected the server collider for sails so only the appropriate (raised or lowered) collider is active after spawning.\n\n### User Interface\n- Fixed the quit button so it now works correctly.\n\n### Softcore Mode Adjustments\n- Disabled the deployable corpse system in softcore mode and increased the maximum team count from 3 to 6; updated the main‑menu changelog to reflect the new limit.\n\n### Lighting\n- Fixed lamps on player boats disappearing after moving away from where they were switched on.\n- Fixed lights beyond their culling distance flashing at full brightness before turning off.\n\n### Visual & Lighting\n- Lights that were occlusion‑culled now correctly turn back on when reused or switched on, preventing dark areas after pool reuse.\n\n### Gameplay & Building\n- Stair blocks in the Scrap King building skin now have corrected geometry and colliders, improving placement and traversal.\n- Additional block updates for the Scrap King skin fix placement and interaction issues.\n- Further block tweaks for Scrap King skin resolve lingering building quirks.\n\n### UI & Quality of Life\n- Inventory/crafting D‑pad toggle description clarified and inverted, reducing confusion when configuring controls.\n- Skin viewer no longer shows an erroneous cart button when opened from the Steam inventory.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
