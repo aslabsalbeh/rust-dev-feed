@@ -1,5 +1,13 @@
 [
   {
+    "id": 721886,
+    "branch": "main/batch_all_packets",
+    "changeset": "169079",
+    "created": "2026-10-24T22:38:24",
+    "message": "Take the idea of batching position packets and instead apply it to all types of packets\n- queue up packets per frame\n- send them out after invokes finish\n- packets are batched on the network thread so no change to the main thread\n- new packet type to indicate if it's a batch of small packets\n- ConVar to control batching at runtime\n- client can handle both batched & unbatched packets\n- batches are sent as \"immediate\" so they bypass raknet's internal buffering since we are now basically doing the buffering RakNet was doing",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 721801,
     "branch": "main/Livestock_animals/shears",
     "changeset": "169078",
@@ -1453,22 +1461,6 @@
     "changeset": "▆▆▆██▌",
     "created": "2026-10-22T00:29:03",
     "message": "▇ ▋▉▋ ▋▊▍▉ ▋▋▌▇ ▉▇▅▅▄▌ ▅▆ ▅▉▉▅▅▆▇ ▇▄▊▇▌ ▌▉▅ ▆▋▇▅▌▅▋ ▄▌ ▇█▄▉▊▍▆▄▄▌▋ ▋▅█▉█ ▇▊█▄█▍▉ ▍▆▍█ ▋▋▇▄▇█▋▌▋▆▋▊▅ █▆▌▍ ▋▇▅ ▆▋▊▉▉▇▄█▇ ▍▄▇▋█▉▇ ▋▌ █▇█▊ ▌▆▉▍▆▊▅▅▉▆▌▋▅ ▄▄▋█▄█ ▆█▌▆▇▌▊▌ ▍▅▅ ▆▄▋▊▌▇▄▊▄▇ ▆▅▇▋▉▄ ▆▉ ▆▍▇█ ▌▅▅ ▍▄▅▄▊ ▋▅▄ ▇▍▌▍█ ▅▋▋▌ ▍▅▄ ▇██ ▌▌▇▇▋ ▅▌▌▅▊▉▍▇",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 721062,
-    "branch": "main/hempcolourblind",
-    "changeset": "168815",
-    "created": "2026-10-22T00:11:38",
-    "message": "Rebake the hemp impostor, now matches visually\r\nAdded an impostor accessibility bake component to bake out textures of alt materials",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 721053,
-    "branch": "main/animal_renaming",
-    "changeset": "168811",
-    "created": "2026-10-21T22:24:42",
-    "message": "Initial commit for animal renaming\r\nPort over work from hackweek_horse_naming\r\nCan now rename horses, misc minor improvements for renaming chickens",
     "user": "Martyn Chapman"
   }
 ]
