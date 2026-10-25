@@ -1,5 +1,13 @@
 [
   {
+    "id": 721941,
+    "branch": "main/batch_all_packets",
+    "changeset": "169083",
+    "created": "2026-10-25T17:18:41",
+    "message": "Fix NetWrite.SendImmediate() not using the writeLock (pre-existing issue)",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 721896,
     "branch": "main",
     "changeset": "169082",
@@ -950,93 +958,5 @@
     "created": "2026-10-22T18:36:44",
     "message": "Fixed water purifier showing its viewmodel in the skin viewer (its using the old deployer still)",
     "user": "Flavien"
-  },
-  {
-    "id": 721335,
-    "branch": "main/character_customisation",
-    "changeset": "168924",
-    "created": "2026-10-22T18:09:30",
-    "message": "Play eye movement and blinks from the customiser anims\r\n\r\n- updated blink anims\r\n- each clip's mask is the v4RustPlayerMask bones plus l_eye, r_eye, l_eyelid, r_eyelid\r\n- UI_CharacterPreview - removes the procedural eye look-at and blink in the preview\r\n- PlayerModel.ApplyHeadEyePositions - the preview re-applies each head's eye positions after the animation, to fix eyeballs sinking into skull\r\n-  self contained eye code changes in the customiser, In-game eye behaviour is unchanged",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 721313,
-    "branch": "main/tattoos/art_pass",
-    "changeset": "168921",
-    "created": "2026-10-22T17:28:51",
-    "message": "apply tattoo material properties to viewmodel material",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 721312,
-    "branch": "main/tattoos/art_pass",
-    "changeset": "168920",
-    "created": "2026-10-22T17:26:51",
-    "message": "Update viewmodel arms with UV1 that matches the body UV1",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 721310,
-    "branch": "main/tattoos/art_pass",
-    "changeset": "168919",
-    "created": "2026-10-22T17:24:48",
-    "message": "adjust hands.male bounds so they don't disappear in the tattoo tpose",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 721307,
-    "branch": "main/character_customisation",
-    "changeset": "168918",
-    "created": "2026-10-22T17:22:24",
-    "message": "- Use idle breathing instead of regular idles when up close.\r\n- Dont use idle 2 and 7",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 721304,
-    "branch": "▍▌▊██▉▍▊▋▌▅▍▊▊▄▌▇▄▅▉▌▍",
-    "changeset": "▉▉▊▊▆▄",
-    "created": "2026-10-22T17:16:30",
-    "message": "▅▌▊▋▊▉▍█ ▇▍▍",
-    "user": "Helk"
-  },
-  {
-    "id": 721299,
-    "branch": "main/weaponrack_posing_optim",
-    "changeset": "168916",
-    "created": "2026-10-22T17:12:04",
-    "message": "Remove the temporary pivots used for positioning, calculate it all instead.\r\nRemoves some unecessary gameobjects.\r\nFix a couple of minor display bugs too.",
-    "user": "Adam W"
-  },
-  {
-    "id": 721266,
-    "branch": "▊▍▍▆▋▍▌▋▉█▊▄▌▌▉▇▌▉▅▌▉▉",
-    "changeset": "▉▌▊▉▇▄",
-    "created": "2026-10-22T16:48:04",
-    "message": "▇▊▄▊▉▇▍▇",
-    "user": "Helk"
-  },
-  {
-    "id": 721254,
-    "branch": "main/character_customisation",
-    "changeset": "168914",
-    "created": "2026-10-22T16:39:41",
-    "message": "Add support to be able to skip certain clips when zoomed in on the head so we can bypass larger head movements when zoomed right in",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 721252,
-    "branch": "▆▆▆▋",
-    "changeset": "▋▇▆▉▇▇",
-    "created": "2026-10-22T16:38:25",
-    "message": "▄▉ ▆▊▅▄▊▇▌ ▋▊▇▄▊▄▍▊▋▆▊ ▍█▅█▉▉ ▅▅ ▋▆▇▅ ▄▆█▇▊▋▅ ▄▋▋▄▄▍▅ ▊▉ ▍▊▄▇▍ ▍▆ ▉▇▌ ▅▊▍▉ ▉▉▇ ▉▇▌ ▅▊▇▍▊▅▌▆▇▅ ▉█▍▊▆ ▄▆▄ ▆▄▍▌▄ ▌▉█▄ ▆▅█▊ █▋▋ ▇▆▆ ▄▊▋▄▍",
-    "user": "WeakV"
-  },
-  {
-    "id": 721243,
-    "branch": "main/npc_phone_debug_fix",
-    "changeset": "168906",
-    "created": "2026-10-22T16:20:00",
-    "message": "Fix convar for accessing test NPC phone conversations",
-    "user": "Martyn Chapman"
   }
 ]
