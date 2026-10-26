@@ -1,5 +1,37 @@
 [
   {
+    "id": 722002,
+    "branch": "main/Livestock_animals",
+    "changeset": "169094",
+    "created": "2026-10-26T00:02:09",
+    "message": "Bulls and rams will no longer flee from players with the animal repellant effect active\r\nThey will also not charge",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 722001,
+    "branch": "main/Livestock_animals",
+    "changeset": "169093",
+    "created": "2026-10-25T23:55:16",
+    "message": "Bee swarms won't chase players with the animal repellant buff (Croc pie)\r\nCan still take damage if you walk through them though",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 721999,
+    "branch": "main",
+    "changeset": "169091",
+    "created": "2026-10-25T23:39:02",
+    "message": "~RendererLOD stats now show float values in the text entry, but the slider will still round to an integer",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 721990,
+    "branch": "main/hackweek_local_tutorial",
+    "changeset": "169088",
+    "created": "2026-10-25T22:13:57",
+    "message": "Local server instance handler for Mac (only required some minor directory changes and disabling visual console convar)\nUpdated ignore file",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 721955,
     "branch": "main/planner_blockedby_fix",
     "changeset": "169086",
@@ -742,93 +774,5 @@
     "created": "2026-10-23T00:19:04",
     "message": "Rotate and flip share the same slot in the pie menu and E/Q switch between them like building skins\r\nWe merge them together to not break muscle memory and shift the building tiers around",
     "user": "Flavien"
-  },
-  {
-    "id": 721455,
-    "branch": "main/network_lods",
-    "changeset": "168966",
-    "created": "2026-10-23T00:04:30",
-    "message": "Swap net lods to use distance comparisons instead of cells to ensure its consistent between small and large network entity settings",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 721449,
-    "branch": "main/belt_main_priority_stack",
-    "changeset": "168964",
-    "created": "2026-10-22T23:49:36",
-    "message": "When right click transferring items from a container only move those items to the belt if there is an unfilled stack that we can fill up, otherwise it will go into the main inventory",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 721446,
-    "branch": "main/mirrored_stairs",
-    "changeset": "168963",
-    "created": "2026-10-22T23:35:02",
-    "message": "Added all the mirrored stair skin prefabs \r\nCan bake all the meshes and prefabs using Tools > Building Blocks > Bake Mirrored Stairs",
-    "user": "Flavien"
-  },
-  {
-    "id": 721445,
-    "branch": "main/mirrored_stairs",
-    "changeset": "168962",
-    "created": "2026-10-22T23:19:40",
-    "message": "Added mirrored versions of the L and U stairs\n- can be flipped with SHIFT + R when deploying\n- or using the hammer if placed less than 10 minutes ago\r\n\r\nhttps://files.facepunch.com/Flavien/oFr7SIxlXyO1eTFm.png",
-    "user": "Flavien"
-  },
-  {
-    "id": 721443,
-    "branch": "main/spray_anim_fixes",
-    "changeset": "168960",
-    "created": "2026-10-22T23:18:33",
-    "message": "Fixed spraycan becoming unusable until the item is requipped if player sprays at a surface and then quickly looks away\r\nAlso fixed spraycan 3p spray anim playing twice",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 721437,
-    "branch": "main/network_lods",
-    "changeset": "168959",
-    "created": "2026-10-22T22:52:23",
-    "message": "main -> network_lods",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 721433,
-    "branch": "main/character_customisation",
-    "changeset": "168958",
-    "created": "2026-10-22T22:49:05",
-    "message": "- Massive code cleanup\r\n- Reduce/remove a bunch of un-needed allocations\r\n- Remove some un-needed procedural eye code",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 721430,
-    "branch": "main/double_anim_event_fix",
-    "changeset": "168956",
-    "created": "2026-10-22T22:44:19",
-    "message": "Don't allow multiple identical animation events to fire in the same frame on PlayerAnimationEvents\r\nWe're now running concurrent, identical controllers on a single animator and when they use animation events they are both firing at the same time",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 721422,
-    "branch": "main/fix_sail_guide_mismatch",
-    "changeset": "168953",
-    "created": "2026-10-22T22:23:58",
-    "message": "Fix server collider for sail having both the \"lowered\" and \"raised\" colliders active after it was first spawned",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 721420,
-    "branch": "main/base_occlusion",
-    "changeset": "168952",
-    "created": "2026-10-22T22:21:03",
-    "message": "Add 50MB zip test case",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 721419,
-    "branch": "main/base_occlusion",
-    "changeset": "168951",
-    "created": "2026-10-22T22:20:29",
-    "message": "Add ability for room occlusion to take one of the newer saves with cached entity links and export that directly to a full server state of the world (instead of only splitting it into multiple copy paste files)\n- allows loading an entire server to benchmark performance\n- can now zip base occlusion test fixtures because JSON files don't scale well to 400MB (who would have expected)",
-    "user": "Jake_Rich"
   }
 ]
