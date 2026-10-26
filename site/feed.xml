@@ -6,49 +6,49 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 26 Oct 2026 10:17:29 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 12:17:29 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 26</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;41 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;59 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722222"&gt;Static CCTV cameras now function correctly after an infinite power bug fix.&lt;/li&gt;
-&lt;li data-rust-commits="722195"&gt;Animal fences and gates can now be placed on sloped terrain more easily.&lt;/li&gt;
-&lt;li data-rust-commits="722205"&gt;Sprinklers now reliably produce splash effects and maintain their fuel type, fixing occasional skips and null‑fuel glitches.&lt;/li&gt;
-&lt;li data-rust-commits="722194"&gt;Water guns, pistols and sprinklers now use the proper colored splashes and no longer start with plain water.&lt;/li&gt;
+&lt;li data-rust-commits="722257,722247"&gt;Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.&lt;/li&gt;
+&lt;li data-rust-commits="722248"&gt;Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.&lt;/li&gt;
+&lt;li data-rust-commits="722222"&gt;Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.&lt;/li&gt;
+&lt;li data-rust-commits="722229"&gt;Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Deployables &amp;amp; Building&lt;/h3&gt;
+&lt;h3&gt;NPCs &amp;amp; Creatures&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722222"&gt;Static CCTV cameras now function correctly after an infinite power bug fix.&lt;/li&gt;
-&lt;li data-rust-commits="722195"&gt;Animal fences and gates can now be placed on sloped terrain more easily.&lt;/li&gt;
-&lt;li data-rust-commits="722048"&gt;Ramps have corrected line‑of‑sight positions, fixing the blue LOS blockage issue.&lt;/li&gt;
+&lt;li data-rust-commits="722257,722247"&gt;Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.&lt;/li&gt;
+&lt;li data-rust-commits="722248"&gt;Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Water &amp;amp; Sprinklers&lt;/h3&gt;
+&lt;h3&gt;World Building &amp;amp; Structures&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722205"&gt;Sprinklers now reliably produce splash effects and maintain their fuel type, fixing occasional skips and null‑fuel glitches.&lt;/li&gt;
-&lt;li data-rust-commits="722194"&gt;Water guns, pistols and sprinklers now use the proper colored splashes and no longer start with plain water.&lt;/li&gt;
+&lt;li data-rust-commits="722195"&gt;Animal fences and gates can now be placed more easily on sloped terrain, simplifying fence deployment.&lt;/li&gt;
+&lt;li data-rust-commits="722222"&gt;Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.&lt;/li&gt;
+&lt;li data-rust-commits="722205,722194"&gt;Multiple sprinkler bugs fixed: splash effects now trigger reliably, fuel type null‑spikes are removed, radwater tint flicker is gone, sprinklers start with proper water, and view‑model water guns/pistols now produce correct green radwater splash effects.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Loot&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722040"&gt;Bag markers assigned to you while dead now appear on the map immediately, fixing missing visibility after death.&lt;/li&gt;
+&lt;li data-rust-commits="722229"&gt;Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.&lt;/li&gt;
+&lt;li data-rust-commits="722026,722023"&gt;Adjusted random gutting bonuses for Catfish, Orange Roughy, Salmon, and Small Shark: a 20% chance now yields a blueprint fragment instead of cloth, and added blueprint fragments and pages to underwater crate loot pools.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Map &amp;amp; Death&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722026"&gt;Fish gutting now has a 20% chance to yield a blueprint fragment instead of cloth.&lt;/li&gt;
-&lt;li data-rust-commits="722023"&gt;Underwater crates now contain blueprint fragments and pages, expanding loot options.&lt;/li&gt;
+&lt;li data-rust-commits="722040"&gt;Bags assigned to a dead player now appear on the map immediately, preventing them from being hidden after death or server rejoin.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Gameplay Fixes&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722047"&gt;Death screen sleeping bag buttons now size correctly, preventing overlap and misclicks.&lt;/li&gt;
-&lt;li data-rust-commits="722028"&gt;Dungeon spawn no longer creates a dark square, improving visibility in new areas.&lt;/li&gt;
-&lt;li data-rust-commits="722027"&gt;Explosion screen bounce and screenshake now function correctly, restoring intended visual feedback during explosions.&lt;/li&gt;
+&lt;li data-rust-commits="722048"&gt;Ramps now correctly grant line‑of‑sight, removing the blue LOS blockage when standing on or near them.&lt;/li&gt;
+&lt;li data-rust-commits="722047"&gt;Death‑screen sleeping‑bag buttons no longer overlap or resize incorrectly, preventing misclicks when respawning.&lt;/li&gt;
+&lt;li data-rust-commits="722028"&gt;Dark square glitch that appeared during dungeon spawns has been removed, clearing the view for players entering dungeons.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-26</guid>
-      <pubDate>Mon, 26 Oct 2026 10:17:29 -0400</pubDate>
+      <pubDate>Mon, 26 Oct 2026 12:17:29 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 25</title>

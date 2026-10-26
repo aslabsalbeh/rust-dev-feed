@@ -1,56 +1,76 @@
 {
   "2026-10-26": {
-    "commit_count": 41,
-    "relevant_commit_count": 18,
-    "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222",
+    "commit_count": 59,
+    "relevant_commit_count": 28,
+    "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Deployables & Building",
+        "title": "NPCs & Creatures",
         "items": [
           {
-            "text": "Static CCTV cameras now function correctly after an infinite power bug fix.",
+            "text": "Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.",
             "commit_ids": [
-              722222
+              722257,
+              722247
             ]
           },
           {
-            "text": "Animal fences and gates can now be placed on sloped terrain more easily.",
+            "text": "Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.",
             "commit_ids": [
-              722195
-            ]
-          },
-          {
-            "text": "Ramps have corrected line‑of‑sight positions, fixing the blue LOS blockage issue.",
-            "commit_ids": [
-              722048
+              722248
             ]
           }
         ]
       },
       {
-        "title": "Water & Sprinklers",
+        "title": "World Building & Structures",
         "items": [
           {
-            "text": "Sprinklers now reliably produce splash effects and maintain their fuel type, fixing occasional skips and null‑fuel glitches.",
+            "text": "Animal fences and gates can now be placed more easily on sloped terrain, simplifying fence deployment.",
             "commit_ids": [
-              722205
+              722195
             ]
           },
           {
-            "text": "Water guns, pistols and sprinklers now use the proper colored splashes and no longer start with plain water.",
+            "text": "Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.",
             "commit_ids": [
+              722222
+            ]
+          },
+          {
+            "text": "Multiple sprinkler bugs fixed: splash effects now trigger reliably, fuel type null‑spikes are removed, radwater tint flicker is gone, sprinklers start with proper water, and view‑model water guns/pistols now produce correct green radwater splash effects.",
+            "commit_ids": [
+              722205,
               722194
             ]
           }
         ]
       },
       {
-        "title": "Map & UI",
+        "title": "Inventory & Loot",
         "items": [
           {
-            "text": "Bag markers assigned to you while dead now appear on the map immediately, fixing missing visibility after death.",
+            "text": "Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.",
+            "commit_ids": [
+              722229
+            ]
+          },
+          {
+            "text": "Adjusted random gutting bonuses for Catfish, Orange Roughy, Salmon, and Small Shark: a 20% chance now yields a blueprint fragment instead of cloth, and added blueprint fragments and pages to underwater crate loot pools.",
+            "commit_ids": [
+              722026,
+              722023
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Map & Death",
+        "items": [
+          {
+            "text": "Bags assigned to a dead player now appear on the map immediately, preventing them from being hidden after death or server rejoin.",
             "commit_ids": [
               722040
             ]
@@ -58,80 +78,64 @@
         ]
       },
       {
-        "title": "Loot & Crafting",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fish gutting now has a 20% chance to yield a blueprint fragment instead of cloth.",
+            "text": "Ramps now correctly grant line‑of‑sight, removing the blue LOS blockage when standing on or near them.",
             "commit_ids": [
-              722026
+              722048
             ]
           },
           {
-            "text": "Underwater crates now contain blueprint fragments and pages, expanding loot options.",
-            "commit_ids": [
-              722023
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Gameplay Fixes",
-        "items": [
-          {
-            "text": "Death screen sleeping bag buttons now size correctly, preventing overlap and misclicks.",
+            "text": "Death‑screen sleeping‑bag buttons no longer overlap or resize incorrectly, preventing misclicks when respawning.",
             "commit_ids": [
               722047
             ]
           },
           {
-            "text": "Dungeon spawn no longer creates a dark square, improving visibility in new areas.",
+            "text": "Dark square glitch that appeared during dungeon spawns has been removed, clearing the view for players entering dungeons.",
             "commit_ids": [
               722028
-            ]
-          },
-          {
-            "text": "Explosion screen bounce and screenshake now function correctly, restoring intended visual feedback during explosions.",
-            "commit_ids": [
-              722027
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Deployables & Building\n- Static CCTV cameras now function correctly after an infinite power bug fix.\n- Animal fences and gates can now be placed on sloped terrain more easily.\n- Ramps have corrected line‑of‑sight positions, fixing the blue LOS blockage issue.\n\n### Water & Sprinklers\n- Sprinklers now reliably produce splash effects and maintain their fuel type, fixing occasional skips and null‑fuel glitches.\n- Water guns, pistols and sprinklers now use the proper colored splashes and no longer start with plain water.\n\n### Map & UI\n- Bag markers assigned to you while dead now appear on the map immediately, fixing missing visibility after death.\n\n### Loot & Crafting\n- Fish gutting now has a 20% chance to yield a blueprint fragment instead of cloth.\n- Underwater crates now contain blueprint fragments and pages, expanding loot options.\n\n### UI & Gameplay Fixes\n- Death screen sleeping bag buttons now size correctly, preventing overlap and misclicks.\n- Dungeon spawn no longer creates a dark square, improving visibility in new areas.\n- Explosion screen bounce and screenshake now function correctly, restoring intended visual feedback during explosions.",
+    "summary": "### NPCs & Creatures\n- Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.\n- Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.\n\n### World Building & Structures\n- Animal fences and gates can now be placed more easily on sloped terrain, simplifying fence deployment.\n- Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.\n- Multiple sprinkler bugs fixed: splash effects now trigger reliably, fuel type null‑spikes are removed, radwater tint flicker is gone, sprinklers start with proper water, and view‑model water guns/pistols now produce correct green radwater splash effects.\n\n### Inventory & Loot\n- Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.\n- Adjusted random gutting bonuses for Catfish, Orange Roughy, Salmon, and Small Shark: a 20% chance now yields a blueprint fragment instead of cloth, and added blueprint fragments and pages to underwater crate loot pools.\n\n### Map & Death\n- Bags assigned to a dead player now appear on the map immediately, preventing them from being hidden after death or server rejoin.\n\n### Gameplay & Balance\n- Ramps now correctly grant line‑of‑sight, removing the blue LOS blockage when standing on or near them.\n- Death‑screen sleeping‑bag buttons no longer overlap or resize incorrectly, preventing misclicks when respawning.\n- Dark square glitch that appeared during dungeon spawns has been removed, clearing the view for players entering dungeons.",
     "new_items": [
       {
-        "text": "Static CCTV cameras now function correctly after an infinite power bug fix.",
+        "text": "Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.",
+        "commit_ids": [
+          722257,
+          722247
+        ],
+        "section": "NPCs & Creatures"
+      },
+      {
+        "text": "Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.",
+        "commit_ids": [
+          722248
+        ],
+        "section": "NPCs & Creatures"
+      },
+      {
+        "text": "Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.",
         "commit_ids": [
           722222
         ],
-        "section": "Deployables & Building"
+        "section": "World Building & Structures"
       },
       {
-        "text": "Animal fences and gates can now be placed on sloped terrain more easily.",
+        "text": "Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.",
         "commit_ids": [
-          722195
+          722229
         ],
-        "section": "Deployables & Building"
-      },
-      {
-        "text": "Sprinklers now reliably produce splash effects and maintain their fuel type, fixing occasional skips and null‑fuel glitches.",
-        "commit_ids": [
-          722205
-        ],
-        "section": "Water & Sprinklers"
-      },
-      {
-        "text": "Water guns, pistols and sprinklers now use the proper colored splashes and no longer start with plain water.",
-        "commit_ids": [
-          722194
-        ],
-        "section": "Water & Sprinklers"
+        "section": "Inventory & Loot"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Static CCTV cameras now function correctly after an infinite power bug fix.\n- Animal fences and gates can now be placed on sloped terrain more easily.\n- Sprinklers now reliably produce splash effects and maintain their fuel type, fixing occasional skips and null‑fuel glitches.\n- Water guns, pistols and sprinklers now use the proper colored splashes and no longer start with plain water."
+    "new_relevant_count": 5,
+    "new_summary": "- Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.\n- Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.\n- Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.\n- Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously."
   },
   "2026-10-25": {
     "commit_count": 16,
