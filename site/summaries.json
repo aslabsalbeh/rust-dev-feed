@@ -1,23 +1,99 @@
 {
   "2026-10-26": {
-    "commit_count": 59,
-    "relevant_commit_count": 28,
-    "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266",
+    "commit_count": 80,
+    "relevant_commit_count": 40,
+    "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352,722367,722371",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPCs & Creatures",
+        "title": "AI & Enemy Behavior",
         "items": [
           {
-            "text": "Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.",
+            "text": "Boat scientists now only pursue visible players, switch targets if blocked, give up after long chases, limit pursuit distance, and stop when no crew sees the target.",
             "commit_ids": [
+              722350,
+              722329,
+              722278,
               722257,
               722247
             ]
+          }
+        ]
+      },
+      {
+        "title": "Item Management & Loot",
+        "items": [
+          {
+            "text": "Fixed multiple item handling bugs: Water Purifier no longer stacks garbage, Research Table retains item definitions, ItemContainer.Clear properly invalidates items, and Cookable items cache data before destruction, preventing cooking errors.",
+            "commit_ids": [
+              722268,
+              722267,
+              722259,
+              722245
+            ]
           },
           {
-            "text": "Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.",
+            "text": "Increased default item pool size from 512 to 2,048, reducing overflow and improving loot variety.",
+            "commit_ids": [
+              722229
+            ]
+          },
+          {
+            "text": "Adjusted random gutting bonuses for several fish and swapped a cloth drop chance for a blueprint fragment, adding more valuable loot.",
+            "commit_ids": [
+              722026
+            ]
+          },
+          {
+            "text": "Added blueprint fragments and pages to underwater crates, aligning them with other loot sources.",
+            "commit_ids": [
+              722023
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base Building & Utilities",
+        "items": [
+          {
+            "text": "Security cameras now work again after fixing an infinite power configuration bug.",
+            "commit_ids": [
+              722222
+            ]
+          },
+          {
+            "text": "Sprinklers and radwater effects improved: reliable splash, stable fuel type, correct water visuals, and support for water guns/pistols.",
+            "commit_ids": [
+              722205,
+              722194
+            ]
+          },
+          {
+            "text": "Animal fences and gates can now be placed on sloped terrain more easily.",
+            "commit_ids": [
+              722195
+            ]
+          },
+          {
+            "text": "Scrap king roof colliders adjusted for smoother building interactions.",
+            "commit_ids": [
+              722206
+            ]
+          },
+          {
+            "text": "Added extra line-of-sight position for ramps, fixing LOS blockage.",
+            "commit_ids": [
+              722048
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Livestock & Animals",
+        "items": [
+          {
+            "text": "Cows can meet their light requirement using lamps, simplifying livestock care.",
             "commit_ids": [
               722248
             ]
@@ -25,117 +101,57 @@
         ]
       },
       {
-        "title": "World Building & Structures",
+        "title": "UI & Map Improvements",
         "items": [
           {
-            "text": "Animal fences and gates can now be placed more easily on sloped terrain, simplifying fence deployment.",
-            "commit_ids": [
-              722195
-            ]
-          },
-          {
-            "text": "Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.",
-            "commit_ids": [
-              722222
-            ]
-          },
-          {
-            "text": "Multiple sprinkler bugs fixed: splash effects now trigger reliably, fuel type null‑spikes are removed, radwater tint flicker is gone, sprinklers start with proper water, and view‑model water guns/pistols now produce correct green radwater splash effects.",
-            "commit_ids": [
-              722205,
-              722194
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & Loot",
-        "items": [
-          {
-            "text": "Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.",
-            "commit_ids": [
-              722229
-            ]
-          },
-          {
-            "text": "Adjusted random gutting bonuses for Catfish, Orange Roughy, Salmon, and Small Shark: a 20% chance now yields a blueprint fragment instead of cloth, and added blueprint fragments and pages to underwater crate loot pools.",
-            "commit_ids": [
-              722026,
-              722023
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map & Death",
-        "items": [
-          {
-            "text": "Bags assigned to a dead player now appear on the map immediately, preventing them from being hidden after death or server rejoin.",
-            "commit_ids": [
-              722040
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Ramps now correctly grant line‑of‑sight, removing the blue LOS blockage when standing on or near them.",
-            "commit_ids": [
-              722048
-            ]
-          },
-          {
-            "text": "Death‑screen sleeping‑bag buttons no longer overlap or resize incorrectly, preventing misclicks when respawning.",
+            "text": "Death-screen sleeping bag button size and overlap fixed, reducing misclicks.",
             "commit_ids": [
               722047
             ]
           },
           {
-            "text": "Dark square glitch that appeared during dungeon spawns has been removed, clearing the view for players entering dungeons.",
+            "text": "Bags assigned while dead now appear on the map immediately, preventing loss of visibility after death or rejoin.",
             "commit_ids": [
-              722028
+              722040
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### NPCs & Creatures\n- Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.\n- Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.\n\n### World Building & Structures\n- Animal fences and gates can now be placed more easily on sloped terrain, simplifying fence deployment.\n- Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.\n- Multiple sprinkler bugs fixed: splash effects now trigger reliably, fuel type null‑spikes are removed, radwater tint flicker is gone, sprinklers start with proper water, and view‑model water guns/pistols now produce correct green radwater splash effects.\n\n### Inventory & Loot\n- Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.\n- Adjusted random gutting bonuses for Catfish, Orange Roughy, Salmon, and Small Shark: a 20% chance now yields a blueprint fragment instead of cloth, and added blueprint fragments and pages to underwater crate loot pools.\n\n### Map & Death\n- Bags assigned to a dead player now appear on the map immediately, preventing them from being hidden after death or server rejoin.\n\n### Gameplay & Balance\n- Ramps now correctly grant line‑of‑sight, removing the blue LOS blockage when standing on or near them.\n- Death‑screen sleeping‑bag buttons no longer overlap or resize incorrectly, preventing misclicks when respawning.\n- Dark square glitch that appeared during dungeon spawns has been removed, clearing the view for players entering dungeons.",
+    "summary": "### AI & Enemy Behavior\n- Boat scientists now only pursue visible players, switch targets if blocked, give up after long chases, limit pursuit distance, and stop when no crew sees the target.\n\n### Item Management & Loot\n- Fixed multiple item handling bugs: Water Purifier no longer stacks garbage, Research Table retains item definitions, ItemContainer.Clear properly invalidates items, and Cookable items cache data before destruction, preventing cooking errors.\n- Increased default item pool size from 512 to 2,048, reducing overflow and improving loot variety.\n- Adjusted random gutting bonuses for several fish and swapped a cloth drop chance for a blueprint fragment, adding more valuable loot.\n- Added blueprint fragments and pages to underwater crates, aligning them with other loot sources.\n\n### Base Building & Utilities\n- Security cameras now work again after fixing an infinite power configuration bug.\n- Sprinklers and radwater effects improved: reliable splash, stable fuel type, correct water visuals, and support for water guns/pistols.\n- Animal fences and gates can now be placed on sloped terrain more easily.\n- Scrap king roof colliders adjusted for smoother building interactions.\n- Added extra line-of-sight position for ramps, fixing LOS blockage.\n\n### Livestock & Animals\n- Cows can meet their light requirement using lamps, simplifying livestock care.\n\n### UI & Map Improvements\n- Death-screen sleeping bag button size and overlap fixed, reducing misclicks.\n- Bags assigned while dead now appear on the map immediately, preventing loss of visibility after death or rejoin.",
     "new_items": [
       {
-        "text": "Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.",
+        "text": "Boat scientists now only pursue visible players, switch targets if blocked, give up after long chases, limit pursuit distance, and stop when no crew sees the target.",
         "commit_ids": [
+          722350,
+          722329,
+          722278,
           722257,
           722247
         ],
-        "section": "NPCs & Creatures"
+        "section": "AI & Enemy Behavior"
       },
       {
-        "text": "Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.",
+        "text": "Fixed multiple item handling bugs: Water Purifier no longer stacks garbage, Research Table retains item definitions, ItemContainer.Clear properly invalidates items, and Cookable items cache data before destruction, preventing cooking errors.",
+        "commit_ids": [
+          722268,
+          722267,
+          722259,
+          722245
+        ],
+        "section": "Item Management & Loot"
+      },
+      {
+        "text": "Cows can meet their light requirement using lamps, simplifying livestock care.",
         "commit_ids": [
           722248
         ],
-        "section": "NPCs & Creatures"
-      },
-      {
-        "text": "Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.",
-        "commit_ids": [
-          722222
-        ],
-        "section": "World Building & Structures"
-      },
-      {
-        "text": "Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously.",
-        "commit_ids": [
-          722229
-        ],
-        "section": "Inventory & Loot"
+        "section": "Livestock & Animals"
       }
     ],
-    "new_relevant_count": 5,
-    "new_summary": "- Scientist boats now skip invalid targets and will turn around to face a visible player if none of the crew can see the current target.\n- Cows can satisfy their light requirement using lamps, allowing indoor lighting to keep them happy.\n- Fixed an infinite‑power console variable that broke static CCTV cameras, restoring camera functionality.\n- Item pool size increased from 512 to 2,048 slots, reducing overflow issues and allowing more items to exist simultaneously."
+    "new_relevant_count": 10,
+    "new_summary": "- Boat scientists now only pursue visible players, switch targets if blocked, give up after long chases, limit pursuit distance, and stop when no crew sees the target.\n- Fixed multiple item handling bugs: Water Purifier no longer stacks garbage, Research Table retains item definitions, ItemContainer.Clear properly invalidates items, and Cookable items cache data before destruction, preventing cooking errors.\n- Cows can meet their light requirement using lamps, simplifying livestock care."
   },
   "2026-10-25": {
     "commit_count": 16,
