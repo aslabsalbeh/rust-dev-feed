@@ -1,5 +1,37 @@
 [
   {
+    "id": 722492,
+    "branch": "main/terrain_textures_review",
+    "changeset": "169285",
+    "created": "2026-10-27T03:49:25",
+    "message": "Increase terrain cell LOD count\r\nHandle off-centre ring holes\r\nAdd debug colour option",
+    "user": "Dayaan"
+  },
+  {
+    "id": 722491,
+    "branch": "main/base_occlusion",
+    "changeset": "169284",
+    "created": "2026-10-27T03:18:28",
+    "message": "Switch the full server export for base occlusion export JSON -> protobuf\n- although it was zipped it was taking 30s to deserialize, yikes\n- still supports JSON exports for the smaller pastes",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 722490,
+    "branch": "main/workshopskin_warmup_server",
+    "changeset": "169283",
+    "created": "2026-10-27T03:05:02",
+    "message": "Fixed servers stalling for up to ~200ms when a player crafts a workshop skinned item for the first time after a restart or steam definitions update\r\n- The steam item definitions warmup now runs on the server too, it was client only so dedicated servers always read them cold\r\n- Also warms WorkshopId, (HasWorkshopSkin reads it for every owned item and each cold read is a native Steamworks call)\r\n- Moved SteamItemDefinitionWarmup out of the Client folder \r\n\r\n7.81ms -> 0.07ms on first call",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722488,
+    "branch": "main/repairbench_reskin_stall_fix",
+    "changeset": "169282",
+    "created": "2026-10-27T02:30:56",
+    "message": "Fixed repair bench reskins freezing the server for ~0.7s after a steam item definitions update\r\n- Reskinning a redirect back to default or to a workshop skin went through skins2, scanning every steam definition\r\n- Now a direct definition lookup, 1275ms -> 0.66ms in editor. Was happening ~95 times a day across official servers",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 722486,
     "branch": "main/radiation_watergun_fix",
     "changeset": "169280",

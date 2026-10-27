@@ -1,16 +1,33 @@
 {
   "2026-10-26": {
-    "commit_count": 127,
-    "relevant_commit_count": 71,
+    "commit_count": 131,
+    "relevant_commit_count": 74,
     "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352,722367,722371,722375,722394,722396,722398,722410",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "722417,722421,722422,722423,722425,722426,722427,722428,722429,722430,722433,722436,722446,722451,722458,722462,722466,722474,722475,722479,722481,722482,722483,722484,722486": [
+      "722423,722425,722426,722427,722428,722429,722430,722433,722436,722446,722451,722458,722462,722466,722474,722475,722479,722481,722482,722483,722484,722486,722488,722490,722492": [
         {
-          "title": "Weapons & Tools",
+          "title": "Server Performance",
           "items": [
             {
-              "text": "Fixed watergun streams not being colored when using radwater, restoring proper visual effect.",
+              "text": "Reduced server stall when crafting workshop-skinned items for the first time after a restart or Steam definitions update (200 ms → 0.07 ms).",
+              "commit_ids": [
+                722490
+              ]
+            },
+            {
+              "text": "Eliminated ~0.7 s server freeze when reskinning repair benches after a Steam item definitions update (1275 ms → 0.66 ms).",
+              "commit_ids": [
+                722488
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons & Combat",
+          "items": [
+            {
+              "text": "Radiation watergun streams now display the correct color for rad‑water, fixing a visual bug that hid radiation indication.",
               "commit_ids": [
                 722486
               ]
@@ -18,10 +35,10 @@
           ]
         },
         {
-          "title": "Crafting & Upgrades",
+          "title": "Crafting & Blueprint Balance",
           "items": [
             {
-              "text": "Prototype Workbench Upgrade now has a 25% chance of success, consumes 4 blueprints on average, and plays a sound on failure.",
+              "text": "Prototype Workbench Upgrade success chance changed to 25 % (previously always failed), increasing average blueprint consumption from 2.67 to 4 and adding a failure sound.",
               "commit_ids": [
                 722484
               ]
@@ -32,30 +49,24 @@
           "title": "Animals & Livestock",
           "items": [
             {
-              "text": "Cows now follow smoothly and move at normal speed when led.",
+              "text": "Cows now follow the player smoothly instead of moving slowly and erratically when being led.",
               "commit_ids": [
                 722482
-              ]
-            },
-            {
-              "text": "Animals now flee when attacked from afar and no longer sleep unexpectedly.",
-              "commit_ids": [
-                722417
               ]
             }
           ]
         },
         {
-          "title": "Boats & World Events",
+          "title": "Scientist Boats",
           "items": [
             {
-              "text": "Scientist boat groups spawn 1-2 groups every 5-8 hours; each group remains for 30-60 minutes before egress.",
+              "text": "Scientist boat groups now spawn every 5‑8 hours, each lasting 30‑60 minutes before egress.",
               "commit_ids": [
                 722458
               ]
             },
             {
-              "text": "PT boat can no longer be taken out of the deepsea, matching behavior of other boats.",
+              "text": "Players can no longer take the PT boat out of the deep sea, matching behavior of other boats.",
               "commit_ids": [
                 722446
               ]
@@ -63,41 +74,143 @@
           ]
         }
       ],
-      "722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352,722367,722371,722375,722394,722396,722398,722410,722416": [
+      "722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352,722367,722371,722375,722394,722396,722398,722410,722416,722417,722421,722422": [
         {
-          "title": "NPC & AI",
+          "title": "Livestock Animals",
           "items": [
             {
-              "text": "AI Sleep Zones now work correctly, restoring proper sleep behavior for AI entities.",
+              "text": "Animals now flee when attacked from a distance and no longer sleep, fixing previous AI issues.",
               "commit_ids": [
-                722398
+                722417
               ]
             },
             {
-              "text": "Boat scientist AI targeting refined: boats only turn when they can see a player, switch targets if the current one is obstructed or hidden, give up after prolonged chase or if the player shoots them, and will turn around to face visible players.",
+              "text": "Sheep feeding bug fixed: sheep no longer starve despite a trough; feeding times are now synchronized with cows.",
+              "commit_ids": [
+                722396
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI Sleep Zones",
+          "items": [
+            {
+              "text": "AI Sleep Zones now work correctly again after a race‑condition bug prevented zones outside BaseEntity from initializing.",
+              "commit_ids": [
+                722398
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Boat Scientist NPCs",
+          "items": [
+            {
+              "text": "Improved targeting logic: scientists only turn when they can see the player, swap to new targets if the current one is obstructed or hidden, give up after chasing too long or beyond a set distance, and bail out when no valid target remains.",
               "commit_ids": [
                 722350,
                 722329,
                 722278,
-                722257,
+                722257
+              ]
+            }
+          ]
+        }
+      ],
+      "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249": [
+        {
+          "title": "Livestock & Animals",
+          "items": [
+            {
+              "text": "Cows can now satisfy their light requirement using lamps.",
+              "commit_ids": [
+                722248
+              ]
+            },
+            {
+              "text": "Cows no longer clip through walls when lying down.",
+              "commit_ids": [
+                722230
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & NPC",
+          "items": [
+            {
+              "text": "Scientist boats will now turn to face a target player if none of the crew can see them.",
+              "commit_ids": [
                 722247
               ]
             }
           ]
         },
         {
-          "title": "Livestock",
+          "title": "Item & Loot System",
           "items": [
             {
-              "text": "Sheep no longer starve while a trough is present; feeding times are synchronized with cows to prevent desynchronization.",
+              "text": "Default item pool increased from 512 to 2,048, reducing overflow and allowing larger loot batches.",
               "commit_ids": [
-                722396
+                722229
               ]
             },
             {
-              "text": "Cows can now meet their light requirement using lamps, improving indoor livestock management.",
+              "text": "Underwater crates now contain blueprint fragments and pages, matching other loot pools.",
               "commit_ids": [
-                722248
+                722023
+              ]
+            },
+            {
+              "text": "Adjusted random gutting bonuses for certain fish; 20% chance now yields a blueprint fragment instead of 8 cloth.",
+              "commit_ids": [
+                722026
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building & Deployment",
+          "items": [
+            {
+              "text": "Animal fences and gates can be placed more easily on sloped terrain.",
+              "commit_ids": [
+                722195
+              ]
+            },
+            {
+              "text": "Ramp deployment line‑of‑sight now includes an extra check, fixing blue LOS blockage.",
+              "commit_ids": [
+                722048
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sprinklers & Water Effects",
+          "items": [
+            {
+              "text": "Sprinklers no longer skip splash effects, briefly lose fuel type, or cause radwater tint flicker.",
+              "commit_ids": [
+                722205
+              ]
+            },
+            {
+              "text": "Radwater splashes now use green effect variants; sprinklers start with correct water type; added viewmodel and water gun/pistol support.",
+              "commit_ids": [
+                722194
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Bag Tracking",
+          "items": [
+            {
+              "text": "Bags assigned to you while dead now appear on the map immediately, preventing them from disappearing after rejoining.",
+              "commit_ids": [
+                722040
               ]
             }
           ]
