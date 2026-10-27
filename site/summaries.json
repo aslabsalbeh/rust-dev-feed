@@ -1,22 +1,61 @@
 {
   "2026-10-27": {
-    "commit_count": 45,
-    "relevant_commit_count": 32,
-    "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656",
+    "commit_count": 57,
+    "relevant_commit_count": 39,
+    "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656,722657,722658,722665,722668,722674,722681,722690",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "AI & NPC",
+        "title": "Items & Crafting",
         "items": [
           {
-            "text": "Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.",
+            "text": "Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.",
+            "commit_ids": [
+              722690,
+              722653,
+              722639,
+              722593,
+              722536
+            ]
+          },
+          {
+            "text": "Added Shears as a new craftable tool (requires 2 Blades and a WBLVL1 blueprint).",
+            "commit_ids": [
+              722496
+            ]
+          },
+          {
+            "text": "Updated Crate_normal_2 to drop two blueprint fragments and changed livestock vendor rewards to full blueprint pages, improving reward value.",
+            "commit_ids": [
+              722498
+            ]
+          },
+          {
+            "text": "Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.",
+            "commit_ids": [
+              722674
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Animals & AI Behavior",
+        "items": [
+          {
+            "text": "Cows and bulls no longer push you while being led, making herd management smoother.",
+            "commit_ids": [
+              722657
+            ]
+          },
+          {
+            "text": "Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.",
             "commit_ids": [
               722649
             ]
           },
           {
-            "text": "Improved scientist boat AI: smoother steering, better obstacle avoidance, unstuck behavior, and fixed endless circling.",
+            "text": "Scientist boats now steer smoothly, avoid obstacles, and reliably unstuck themselves, eliminating erratic weaving and stuck‑reverse behavior.",
             "commit_ids": [
               722540
             ]
@@ -24,16 +63,16 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Vehicles & Boats",
         "items": [
           {
-            "text": "Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.",
+            "text": "Dismounting a cannon on a boat now correctly orients you to face forward.",
             "commit_ids": [
               722644
             ]
           },
           {
-            "text": "Removed stale driver flags from dead drivers, eliminating ghost driver issues.",
+            "text": "Boats no longer stay marked as occupied after a driver dies, freeing them for other players.",
             "commit_ids": [
               722606
             ]
@@ -44,7 +83,7 @@
         "title": "Weapons",
         "items": [
           {
-            "text": "Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.",
+            "text": "UZI stock change now blocks other actions until the animation finishes; holstering early cancels the change, and ADS settings have been tweaked for better handling.",
             "commit_ids": [
               722647
             ]
@@ -52,100 +91,61 @@
         ]
       },
       {
-        "title": "Environment & Structures",
+        "title": "World Objects & Environment",
         "items": [
           {
-            "text": "Restored proper weather effects by fixing weather settings application.",
-            "commit_ids": [
-              722654
-            ]
-          },
-          {
-            "text": "Added a placeholder renovation device deployable for new interactive building tasks.",
-            "commit_ids": [
-              722542
-            ]
-          },
-          {
-            "text": "Fixed ladder hatches so they can close from all angles.",
+            "text": "Ladder hatches can now be closed from all angles, fixing a long‑standing annoyance.",
             "commit_ids": [
               722526
             ]
           },
           {
-            "text": "Added damage states to lighthouse lamps and made them repairable.",
+            "text": "Lighthouse lamps now have damage states and can be repaired, restoring functionality after combat.",
             "commit_ids": [
               722518
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Loot & Crafting",
-        "items": [
-          {
-            "text": "Fixed Crate_normal_2 to spawn two blueprint fragments and changed livestock vendor rewards to give blueprint pages instead of fragments.",
-            "commit_ids": [
-              722498
-            ]
-          },
-          {
-            "text": "Introduced Shears with name/description, a crafting recipe requiring 2 blades, and a default blueprint (WIP).",
-            "commit_ids": [
-              722496
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### AI & NPC\n- Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.\n- Improved scientist boat AI: smoother steering, better obstacle avoidance, unstuck behavior, and fixed endless circling.\n\n### Vehicles\n- Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.\n- Removed stale driver flags from dead drivers, eliminating ghost driver issues.\n\n### Weapons\n- Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.\n\n### Environment & Structures\n- Restored proper weather effects by fixing weather settings application.\n- Added a placeholder renovation device deployable for new interactive building tasks.\n- Fixed ladder hatches so they can close from all angles.\n- Added damage states to lighthouse lamps and made them repairable.\n\n### Loot & Crafting\n- Fixed Crate_normal_2 to spawn two blueprint fragments and changed livestock vendor rewards to give blueprint pages instead of fragments.\n- Introduced Shears with name/description, a crafting recipe requiring 2 blades, and a default blueprint (WIP).",
+    "summary": "### Items & Crafting\n- Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.\n- Added Shears as a new craftable tool (requires 2 Blades and a WBLVL1 blueprint).\n- Updated Crate_normal_2 to drop two blueprint fragments and changed livestock vendor rewards to full blueprint pages, improving reward value.\n- Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.\n\n### Animals & AI Behavior\n- Cows and bulls no longer push you while being led, making herd management smoother.\n- Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.\n- Scientist boats now steer smoothly, avoid obstacles, and reliably unstuck themselves, eliminating erratic weaving and stuck‑reverse behavior.\n\n### Vehicles & Boats\n- Dismounting a cannon on a boat now correctly orients you to face forward.\n- Boats no longer stay marked as occupied after a driver dies, freeing them for other players.\n\n### Weapons\n- UZI stock change now blocks other actions until the animation finishes; holstering early cancels the change, and ADS settings have been tweaked for better handling.\n\n### World Objects & Environment\n- Ladder hatches can now be closed from all angles, fixing a long‑standing annoyance.\n- Lighthouse lamps now have damage states and can be repaired, restoring functionality after combat.",
     "new_items": [
       {
-        "text": "Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.",
+        "text": "Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.",
+        "commit_ids": [
+          722690,
+          722653,
+          722639,
+          722593,
+          722536
+        ],
+        "section": "Items & Crafting"
+      },
+      {
+        "text": "Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.",
+        "commit_ids": [
+          722674
+        ],
+        "section": "Items & Crafting"
+      },
+      {
+        "text": "Cows and bulls no longer push you while being led, making herd management smoother.",
+        "commit_ids": [
+          722657
+        ],
+        "section": "Animals & AI Behavior"
+      },
+      {
+        "text": "Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.",
         "commit_ids": [
           722649
         ],
-        "section": "AI & NPC"
-      },
-      {
-        "text": "Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.",
-        "commit_ids": [
-          722644
-        ],
-        "section": "Vehicles"
-      },
-      {
-        "text": "Removed stale driver flags from dead drivers, eliminating ghost driver issues.",
-        "commit_ids": [
-          722606
-        ],
-        "section": "Vehicles"
-      },
-      {
-        "text": "Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.",
-        "commit_ids": [
-          722647
-        ],
-        "section": "Weapons"
-      },
-      {
-        "text": "Restored proper weather effects by fixing weather settings application.",
-        "commit_ids": [
-          722654
-        ],
-        "section": "Environment & Structures"
-      },
-      {
-        "text": "Added a placeholder renovation device deployable for new interactive building tasks.",
-        "commit_ids": [
-          722542
-        ],
-        "section": "Environment & Structures"
+        "section": "Animals & AI Behavior"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.\n- Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.\n- Removed stale driver flags from dead drivers, eliminating ghost driver issues.\n- Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.\n- Restored proper weather effects by fixing weather settings application.\n- Added a placeholder renovation device deployable for new interactive building tasks."
+    "new_relevant_count": 8,
+    "new_summary": "- Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.\n- Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.\n- Cows and bulls no longer push you while being led, making herd management smoother.\n- Sleeping AI now runs movement logic on spawn, fixing instances where they never moved."
   },
   "2026-10-26": {
     "commit_count": 131,

@@ -1,5 +1,101 @@
 [
   {
+    "id": 722690,
+    "branch": "main/itemmanager_immediateremove",
+    "changeset": "169370",
+    "created": "2026-10-27T16:01:37",
+    "message": "Bugfix: fix potential cases of use-after-free related to ItemModConsumable.DoAction\r\nTests: consumed berries, water, flask (discovered new source of issues >.>)",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722686,
+    "branch": "main/itemmanager_immediateremove",
+    "changeset": "169368",
+    "created": "2026-10-27T15:30:16",
+    "message": "Update: test list export\r\nTests: none, trivial change",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722685,
+    "branch": "main/itemmanager_immediateremove",
+    "changeset": "169367",
+    "created": "2026-10-27T15:29:42",
+    "message": "Update: standardize ItemContainer.onItemRemovedFromStack calls\r\n- added auto test for storage monitor\r\nRemoves a blocker for immediate item removal logic (and saves us headaches in the future)\r\nTests: auto tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722682,
+    "branch": "main/seagull_update",
+    "changeset": "169365",
+    "created": "2026-10-27T15:23:38",
+    "message": "exported test anim for seagull land",
+    "user": "julek"
+  },
+  {
+    "id": 722681,
+    "branch": "main/fruit_trees",
+    "changeset": "169363",
+    "created": "2026-10-27T15:21:55",
+    "message": "S2P All tropical islands, both ranches, outpost, sat dish and apartment complex. This fixes those scenes using older versions of the apple/coconut trees.",
+    "user": "Lukester"
+  },
+  {
+    "id": 722678,
+    "branch": "main/base_reno",
+    "changeset": "169362",
+    "created": "2026-10-27T14:57:23",
+    "message": "Add SocketMod_Renovation\r\nReno device can be deployed, successfully changing wall to door after a duration.",
+    "user": "Adam W"
+  },
+  {
+    "id": 722674,
+    "branch": "main/fruit_trees",
+    "changeset": "169360",
+    "created": "2026-10-27T14:53:16",
+    "message": "Fix beehive.natural kill warning.\r\nRemoved apples from oak_d. Increased apple spawn chance on oak_e to 50% to compensate.",
+    "user": "Lukester"
+  },
+  {
+    "id": 722668,
+    "branch": "main/socialmenu_perf_fixs",
+    "changeset": "169358",
+    "created": "2026-10-27T14:36:20",
+    "message": "Virtualised the friend sections so we don't have a ton of prefab instantiated\r\nChanged the friends name sort to ordinal ignore case\r\n\r\n1000 friends rebuild, menu opened: ~159ms -> ~14ms",
+    "user": "Flavien"
+  },
+  {
+    "id": 722667,
+    "branch": "main/fruit_trees",
+    "changeset": "169357",
+    "created": "2026-10-27T14:30:59",
+    "message": "Subtract current wind swaying implementation for the apple trees. \r\nGoing to explore doing this with a shader in the future instead as the current implementation can be expensive.",
+    "user": "Lukester"
+  },
+  {
+    "id": 722665,
+    "branch": "main/demoui2_fixes",
+    "changeset": "169355",
+    "created": "2026-10-27T14:15:19",
+    "message": "more keyframe code cleanup",
+    "user": "octo"
+  },
+  {
+    "id": 722658,
+    "branch": "main/render_pipeline_testing",
+    "changeset": "169349",
+    "created": "2026-10-27T14:07:37",
+    "message": "potential fix for contacts mugshots weirdness on first render",
+    "user": "Brian"
+  },
+  {
+    "id": 722657,
+    "branch": "main/Livestock_animals",
+    "changeset": "169348",
+    "created": "2026-10-27T14:06:38",
+    "message": "Prevent cows and bulls from pushing you when you lead them",
+    "user": "Maverick"
+  },
+  {
     "id": 722656,
     "branch": "main/demoui2_fixes",
     "changeset": "169347",
@@ -1582,13 +1678,5 @@
     "created": "2026-10-24T17:37:04",
     "message": "Shears balance - files missing from cs:169063 (fixes branch compile error)\r\n- new ItemModShearTool on shears.item: 25% more wool than a knife\r\n- shears.item: durability 200 (2x the knife)\r\n- shears.entity: damage 4 slash + 4 stab (half the knife)\r\n- Sheep.cs: applies the shear tool wool bonus, other blades unchanged\r\n\r\nAdded:\r\n- Assets/Scripts/Item/ItemDef2/ItemModShearTool.cs (+ .meta)",
     "user": "Alex Webster"
-  },
-  {
-    "id": 721784,
-    "branch": "main/store_bundle_owned",
-    "changeset": "169074",
-    "created": "2026-10-24T16:09:14",
-    "message": "Store bundles show as owned when you own everything in them",
-    "user": "Flavien"
   }
 ]

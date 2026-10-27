@@ -6,51 +6,50 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 27 Oct 2026 10:17:53 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 12:17:45 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 27</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;45 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;57 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722649"&gt;Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.&lt;/li&gt;
-&lt;li data-rust-commits="722644"&gt;Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.&lt;/li&gt;
-&lt;li data-rust-commits="722606"&gt;Removed stale driver flags from dead drivers, eliminating ghost driver issues.&lt;/li&gt;
-&lt;li data-rust-commits="722647"&gt;Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.&lt;/li&gt;
-&lt;li data-rust-commits="722654"&gt;Restored proper weather effects by fixing weather settings application.&lt;/li&gt;
-&lt;li data-rust-commits="722542"&gt;Added a placeholder renovation device deployable for new interactive building tasks.&lt;/li&gt;
+&lt;li data-rust-commits="722690,722653,722639,722593,722536"&gt;Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.&lt;/li&gt;
+&lt;li data-rust-commits="722674"&gt;Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.&lt;/li&gt;
+&lt;li data-rust-commits="722657"&gt;Cows and bulls no longer push you while being led, making herd management smoother.&lt;/li&gt;
+&lt;li data-rust-commits="722649"&gt;Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;AI &amp;amp; NPC&lt;/h3&gt;
+&lt;h3&gt;Items &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722649"&gt;Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.&lt;/li&gt;
-&lt;li data-rust-commits="722540"&gt;Improved scientist boat AI: smoother steering, better obstacle avoidance, unstuck behavior, and fixed endless circling.&lt;/li&gt;
+&lt;li data-rust-commits="722690,722653,722639,722593,722536"&gt;Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.&lt;/li&gt;
+&lt;li data-rust-commits="722496"&gt;Added Shears as a new craftable tool (requires 2 Blades and a WBLVL1 blueprint).&lt;/li&gt;
+&lt;li data-rust-commits="722498"&gt;Updated Crate_normal_2 to drop two blueprint fragments and changed livestock vendor rewards to full blueprint pages, improving reward value.&lt;/li&gt;
+&lt;li data-rust-commits="722674"&gt;Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; AI Behavior&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722644"&gt;Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.&lt;/li&gt;
-&lt;li data-rust-commits="722606"&gt;Removed stale driver flags from dead drivers, eliminating ghost driver issues.&lt;/li&gt;
+&lt;li data-rust-commits="722657"&gt;Cows and bulls no longer push you while being led, making herd management smoother.&lt;/li&gt;
+&lt;li data-rust-commits="722649"&gt;Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.&lt;/li&gt;
+&lt;li data-rust-commits="722540"&gt;Scientist boats now steer smoothly, avoid obstacles, and reliably unstuck themselves, eliminating erratic weaving and stuck‑reverse behavior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles &amp;amp; Boats&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722644"&gt;Dismounting a cannon on a boat now correctly orients you to face forward.&lt;/li&gt;
+&lt;li data-rust-commits="722606"&gt;Boats no longer stay marked as occupied after a driver dies, freeing them for other players.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722647"&gt;Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.&lt;/li&gt;
+&lt;li data-rust-commits="722647"&gt;UZI stock change now blocks other actions until the animation finishes; holstering early cancels the change, and ADS settings have been tweaked for better handling.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Environment &amp;amp; Structures&lt;/h3&gt;
+&lt;h3&gt;World Objects &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722654"&gt;Restored proper weather effects by fixing weather settings application.&lt;/li&gt;
-&lt;li data-rust-commits="722542"&gt;Added a placeholder renovation device deployable for new interactive building tasks.&lt;/li&gt;
-&lt;li data-rust-commits="722526"&gt;Fixed ladder hatches so they can close from all angles.&lt;/li&gt;
-&lt;li data-rust-commits="722518"&gt;Added damage states to lighthouse lamps and made them repairable.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Crafting&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="722498"&gt;Fixed Crate_normal_2 to spawn two blueprint fragments and changed livestock vendor rewards to give blueprint pages instead of fragments.&lt;/li&gt;
-&lt;li data-rust-commits="722496"&gt;Introduced Shears with name/description, a crafting recipe requiring 2 blades, and a default blueprint (WIP).&lt;/li&gt;
+&lt;li data-rust-commits="722526"&gt;Ladder hatches can now be closed from all angles, fixing a long‑standing annoyance.&lt;/li&gt;
+&lt;li data-rust-commits="722518"&gt;Lighthouse lamps now have damage states and can be repaired, restoring functionality after combat.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-27</guid>
-      <pubDate>Tue, 27 Oct 2026 10:17:53 -0400</pubDate>
+      <pubDate>Tue, 27 Oct 2026 12:17:45 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 26</title>
