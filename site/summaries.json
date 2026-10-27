@@ -1,16 +1,22 @@
 {
   "2026-10-27": {
-    "commit_count": 23,
-    "relevant_commit_count": 15,
-    "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593",
+    "commit_count": 45,
+    "relevant_commit_count": 32,
+    "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "AI & NPC",
         "items": [
           {
-            "text": "Scientist boats now steer smoothly, avoid getting stuck, and correctly back off when blocked.",
+            "text": "Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.",
+            "commit_ids": [
+              722649
+            ]
+          },
+          {
+            "text": "Improved scientist boat AI: smoother steering, better obstacle avoidance, unstuck behavior, and fixed endless circling.",
             "commit_ids": [
               722540
             ]
@@ -18,21 +24,56 @@
         ]
       },
       {
-        "title": "Base & Building",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Ladder hatches can now be closed from all angles, fixing a build glitch.",
+            "text": "Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.",
             "commit_ids": [
-              722526
+              722644
+            ]
+          },
+          {
+            "text": "Removed stale driver flags from dead drivers, eliminating ghost driver issues.",
+            "commit_ids": [
+              722606
             ]
           }
         ]
       },
       {
-        "title": "Monuments & World",
+        "title": "Weapons",
         "items": [
           {
-            "text": "Lighthouse lamps now have damage states and can be repaired, adding a new target for raiders.",
+            "text": "Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.",
+            "commit_ids": [
+              722647
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Environment & Structures",
+        "items": [
+          {
+            "text": "Restored proper weather effects by fixing weather settings application.",
+            "commit_ids": [
+              722654
+            ]
+          },
+          {
+            "text": "Added a placeholder renovation device deployable for new interactive building tasks.",
+            "commit_ids": [
+              722542
+            ]
+          },
+          {
+            "text": "Fixed ladder hatches so they can close from all angles.",
+            "commit_ids": [
+              722526
+            ]
+          },
+          {
+            "text": "Added damage states to lighthouse lamps and made them repairable.",
             "commit_ids": [
               722518
             ]
@@ -40,45 +81,16 @@
         ]
       },
       {
-        "title": "Loot & Economy",
+        "title": "Loot & Crafting",
         "items": [
           {
-            "text": "Crates now reliably drop two blueprint fragments, and livestock vendor rewards have been switched to blueprint pages.",
+            "text": "Fixed Crate_normal_2 to spawn two blueprint fragments and changed livestock vendor rewards to give blueprint pages instead of fragments.",
             "commit_ids": [
               722498
             ]
-          }
-        ]
-      },
-      {
-        "title": "Items & Crafting",
-        "items": [
-          {
-            "text": "Item usage crashes (e.g., boomerangs) have been fixed, improving stability when using items.",
-            "commit_ids": [
-              722593,
-              722536
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Friends list now updates at most once every 2 seconds while the menu is open, reducing UI lag.",
-            "commit_ids": [
-              722537
-            ]
           },
           {
-            "text": "Undo no longer restores sandbox tracks unintentionally, fixing a bug that could revert player-built layouts.",
-            "commit_ids": [
-              722512
-            ]
-          },
-          {
-            "text": "Shears receive a proper name and description and a new crafting recipe requiring 2 blades (WIP – not yet live).",
+            "text": "Introduced Shears with name/description, a crafting recipe requiring 2 blades, and a default blueprint (WIP).",
             "commit_ids": [
               722496
             ]
@@ -87,47 +99,53 @@
       }
     ],
     "status": "ok",
-    "summary": "### NPC & AI\n- Scientist boats now steer smoothly, avoid getting stuck, and correctly back off when blocked.\n\n### Base & Building\n- Ladder hatches can now be closed from all angles, fixing a build glitch.\n\n### Monuments & World\n- Lighthouse lamps now have damage states and can be repaired, adding a new target for raiders.\n\n### Loot & Economy\n- Crates now reliably drop two blueprint fragments, and livestock vendor rewards have been switched to blueprint pages.\n\n### Items & Crafting\n- Item usage crashes (e.g., boomerangs) have been fixed, improving stability when using items.\n\n### Gameplay & Balance\n- Friends list now updates at most once every 2 seconds while the menu is open, reducing UI lag.\n- Undo no longer restores sandbox tracks unintentionally, fixing a bug that could revert player-built layouts.\n- Shears receive a proper name and description and a new crafting recipe requiring 2 blades (WIP – not yet live).",
+    "summary": "### AI & NPC\n- Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.\n- Improved scientist boat AI: smoother steering, better obstacle avoidance, unstuck behavior, and fixed endless circling.\n\n### Vehicles\n- Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.\n- Removed stale driver flags from dead drivers, eliminating ghost driver issues.\n\n### Weapons\n- Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.\n\n### Environment & Structures\n- Restored proper weather effects by fixing weather settings application.\n- Added a placeholder renovation device deployable for new interactive building tasks.\n- Fixed ladder hatches so they can close from all angles.\n- Added damage states to lighthouse lamps and made them repairable.\n\n### Loot & Crafting\n- Fixed Crate_normal_2 to spawn two blueprint fragments and changed livestock vendor rewards to give blueprint pages instead of fragments.\n- Introduced Shears with name/description, a crafting recipe requiring 2 blades, and a default blueprint (WIP).",
     "new_items": [
       {
-        "text": "Scientist boats now steer smoothly, avoid getting stuck, and correctly back off when blocked.",
+        "text": "Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.",
         "commit_ids": [
-          722540
+          722649
         ],
-        "section": "NPC & AI"
+        "section": "AI & NPC"
       },
       {
-        "text": "Ladder hatches can now be closed from all angles, fixing a build glitch.",
+        "text": "Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.",
         "commit_ids": [
-          722526
+          722644
         ],
-        "section": "Base & Building"
+        "section": "Vehicles"
       },
       {
-        "text": "Lighthouse lamps now have damage states and can be repaired, adding a new target for raiders.",
+        "text": "Removed stale driver flags from dead drivers, eliminating ghost driver issues.",
         "commit_ids": [
-          722518
+          722606
         ],
-        "section": "Monuments & World"
+        "section": "Vehicles"
       },
       {
-        "text": "Item usage crashes (e.g., boomerangs) have been fixed, improving stability when using items.",
+        "text": "Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.",
         "commit_ids": [
-          722593,
-          722536
+          722647
         ],
-        "section": "Items & Crafting"
+        "section": "Weapons"
       },
       {
-        "text": "Friends list now updates at most once every 2 seconds while the menu is open, reducing UI lag.",
+        "text": "Restored proper weather effects by fixing weather settings application.",
         "commit_ids": [
-          722537
+          722654
         ],
-        "section": "Gameplay & Balance"
+        "section": "Environment & Structures"
+      },
+      {
+        "text": "Added a placeholder renovation device deployable for new interactive building tasks.",
+        "commit_ids": [
+          722542
+        ],
+        "section": "Environment & Structures"
       }
     ],
     "new_relevant_count": 6,
-    "new_summary": "- Scientist boats now steer smoothly, avoid getting stuck, and correctly back off when blocked.\n- Ladder hatches can now be closed from all angles, fixing a build glitch.\n- Lighthouse lamps now have damage states and can be repaired, adding a new target for raiders.\n- Item usage crashes (e.g., boomerangs) have been fixed, improving stability when using items.\n- Friends list now updates at most once every 2 seconds while the menu is open, reducing UI lag."
+    "new_summary": "- Fixed AI movement tick for sleeping AI at spawn so they receive destinations and move correctly.\n- Fixed player orientation after dismounting a boat cannon, ensuring you face the correct direction.\n- Removed stale driver flags from dead drivers, eliminating ghost driver issues.\n- Updated UZI 9mm: changing the stock now blocks other actions, holstering during stock change cancels it, and ADS settings have been adjusted.\n- Restored proper weather effects by fixing weather settings application.\n- Added a placeholder renovation device deployable for new interactive building tasks."
   },
   "2026-10-26": {
     "commit_count": 131,

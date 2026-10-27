@@ -1,5 +1,181 @@
 [
   {
+    "id": 722656,
+    "branch": "main/demoui2_fixes",
+    "changeset": "169347",
+    "created": "2026-10-27T13:57:41",
+    "message": "nuke more unused code",
+    "user": "octo"
+  },
+  {
+    "id": 722655,
+    "branch": "main/demoui2_fixes",
+    "changeset": "169346",
+    "created": "2026-10-27T13:51:40",
+    "message": "-clean up input handling between dolly/director/sandbox\r\n-throw all demo session code into #if CLIENT\r\n-remove old timeline grid",
+    "user": "octo"
+  },
+  {
+    "id": 722654,
+    "branch": "main/demoui2_fixes",
+    "changeset": "169345",
+    "created": "2026-10-27T13:45:33",
+    "message": "- fix invisble players after switching demoui2 scenes\r\n- fix baked animation clips not being cleaned up properly\r\n- fix weather settings not being applied \r\n- backup scene save files if they can't be read.\r\n- a bunch of curve editor fixes\r\n- clean up a lot of per frame updates for options that aren't needed",
+    "user": "octo"
+  },
+  {
+    "id": 722653,
+    "branch": "main/itemmanager_immediateremove",
+    "changeset": "169344",
+    "created": "2026-10-27T13:42:08",
+    "message": "Bugfix: batch of potential use-after-free fixes for Item.LoseCondition\r\nJust one dangerous method left (plz no more)\r\nTests: industrial + turret automated tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722651,
+    "branch": "main/wool_armourinsert",
+    "changeset": "169343",
+    "created": "2026-10-27T13:25:32",
+    "message": "added wool armour plate, worldmodel/LODs. materials/textures. Icon and prefab setup\r\nwill need values adjusting - used wood as a base.",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 722649,
+    "branch": "main/aibrain_sleep_spawn_fix",
+    "changeset": "169341",
+    "created": "2026-10-27T13:24:25",
+    "message": "AI movement tick is not ran on AI init if they are sleeping on spawn\r\n- long-standing bug, because Think never runs on sleeping AI a destination is never actually set and movement tick is wasted processing",
+    "user": "Ryan"
+  },
+  {
+    "id": 722648,
+    "branch": "main/cinelightmeshfix",
+    "changeset": "169340",
+    "created": "2026-10-27T13:22:45",
+    "message": "Cinelight mesh fix",
+    "user": "Petur"
+  },
+  {
+    "id": 722646,
+    "branch": "main/UZI 9mm",
+    "changeset": "169339",
+    "created": "2026-10-27T13:16:31",
+    "message": ".meta file",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 722647,
+    "branch": "main/UZI 9mm",
+    "changeset": "169338",
+    "created": "2026-10-27T13:16:21",
+    "message": "Changing the uzi stock now blocks other actions, like a reload\r\nHolstering before the stock change animation finishes cancels the stock change\r\nFix animation issue when firing first shot upon entering play mode\r\nFix admire animation not being cancelled\r\nAdjust ADS settings again",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 722644,
+    "branch": "main/cannon_dismount_rotation_fix",
+    "changeset": "169336",
+    "created": "2026-10-27T13:14:50",
+    "message": "Fix for facing the wrong way after dismounting a cannon on a boat",
+    "user": "cipeaX"
+  },
+  {
+    "id": 722639,
+    "branch": "main/itemmanager_immediateremove",
+    "changeset": "169335",
+    "created": "2026-10-27T12:55:22",
+    "message": "Bugfix: another batch of fixes from Item.Remove audit\r\n- removed 1 alloc DropUtil\r\nTests: ItemContainer unit tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722634,
+    "branch": "main/foliage_shadows_optim",
+    "changeset": "169333",
+    "created": "2026-10-27T12:37:18",
+    "message": "Set renderparam bounds to coarse culling camera bounds\r\nAdd separate shadow pass with shadow distance convar for testing",
+    "user": "Dayaan"
+  },
+  {
+    "id": 722614,
+    "branch": "main",
+    "changeset": "169330",
+    "created": "2026-10-27T12:16:32",
+    "message": "boataicoordinate_tryclaim_fix -> main (broken merge last time)",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722609,
+    "branch": "main",
+    "changeset": "169329",
+    "created": "2026-10-27T12:15:35",
+    "message": "boataicoordinate_tryclaim_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722607,
+    "branch": "▄▊▍▉",
+    "changeset": "▄▍▉▉▌▅",
+    "created": "2026-10-27T12:15:25",
+    "message": "▍▅▇▍▍▆▌ ▅▉▇▍▅▉ ▉▉▆▆▌▍▆▍▌▅▌ ▇▄▅▋ ▍ ▉▊▄ ▌▅▉ ▅▄▅▅█▍ ▅▇▇▇▇▊▋▇▋█",
+    "user": "Petur"
+  },
+  {
+    "id": 722606,
+    "branch": "main/boataicoordinate_tryclaim_fix",
+    "changeset": "169327",
+    "created": "2026-10-27T12:15:16",
+    "message": "Ensure dead drivers dont keep stale HasDriver flags around",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722604,
+    "branch": "main",
+    "changeset": "169326",
+    "created": "2026-10-27T12:12:13",
+    "message": "boataicoordinate_tryclaim_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722603,
+    "branch": "main",
+    "changeset": "169325",
+    "created": "2026-10-27T12:11:56",
+    "message": "~ boat_ai_movement_improvements -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722602,
+    "branch": "main",
+    "changeset": "169324",
+    "created": "2026-10-27T12:11:41",
+    "message": "~ workshopskin_warmup_server -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722601,
+    "branch": "main",
+    "changeset": "169323",
+    "created": "2026-10-27T12:11:22",
+    "message": "~ repairbench_reskin_stall_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722600,
+    "branch": "main",
+    "changeset": "169322",
+    "created": "2026-10-27T12:10:58",
+    "message": "~ radiation_watergun_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722598,
+    "branch": "main/boataicoordinate_tryclaim_fix",
+    "changeset": "169321",
+    "created": "2026-10-27T12:10:06",
+    "message": "Fixed the NRE in BoatAICoordination.TryClaimTarget",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 722593,
     "branch": "main/itemmanager_immediateremove",
     "changeset": "169320",
@@ -1414,29 +1590,5 @@
     "created": "2026-10-24T16:09:14",
     "message": "Store bundles show as owned when you own everything in them",
     "user": "Flavien"
-  },
-  {
-    "id": 721759,
-    "branch": "main/viewmodel_skinning_update",
-    "changeset": "169073",
-    "created": "2026-10-24T13:45:07",
-    "message": "Fixing camera bone position for viewmodel",
-    "user": "jeddooo"
-  },
-  {
-    "id": 721756,
-    "branch": "█▋▄▄▌▆▄▄▆▇█▌▆▆▍▄▉",
-    "changeset": "▄▍▆█▆▋",
-    "created": "2026-10-24T13:25:48",
-    "message": "▇ █▉▆▋▉▉▅▆▉ ▍▌▉▌▌▋▉ ▆▌ ▋▍▄▇▉▍▋ ██▍▅█▍▊ ▌█▆▅ ▆█▆▊▋█ ▄▊▍▅█▅▆ ▉█▆▊▅▆▄ ▄▇ ▄▄▄▆▄▅▄▅▊█▊▊▇ ▋▊▅▅▊▇ ▌▍▉▄ ▆▊ ▊▍▊▄▋▅ ▅▄ ▌█▅▉ ▉▇▍▉▌█▍ ▉▊▆▊ ▉▉▍▉ ▋▅ ██▄▋▉█ ▅▇▄▍▆█ ▉█▇ ▉▉▊▆▇▇ ▅▅ ▄▋▄▇▆▅▉▋▉▇ ▍█▍ ▅▌▍▍▋▅▋",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 721750,
-    "branch": "main/network_lods",
-    "changeset": "169071",
-    "created": "2026-10-24T12:27:12",
-    "message": "- Net LODs use 16m position cells for all ranges instead of cached group lists\r\n- Set network lods to be off by default\r\n- Profiling\r\n- Code cleanup",
-    "user": "Ian Henderson"
   }
 ]
