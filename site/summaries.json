@@ -1,75 +1,29 @@
 {
   "2026-10-27": {
-    "commit_count": 99,
-    "relevant_commit_count": 58,
+    "commit_count": 110,
+    "relevant_commit_count": 63,
     "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656,722657,722658,722665,722668,722674,722681,722690",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "722658,722665,722668,722674,722681,722690,722695,722697,722698,722702,722705,722712,722715,722717,722719,722722,722723,722728,722730,722741,722795,722797,722822,722834,722845": [
+      "722690,722695,722697,722698,722702,722705,722712,722715,722717,722719,722722,722723,722728,722730,722741,722795,722797,722822,722834,722845,722846,722849,722859,722878,722926": [
         {
-          "title": "Livestock & Animal Saves",
+          "title": "Livestock & Animals",
           "items": [
             {
-              "text": "Fixed a compatibility issue that could corrupt or break existing server saves for livestock, ensuring animals persist after updates.",
+              "text": "Infant animals now only need to reach 80% happiness to max out their potential stats, making breeding easier.",
               "commit_ids": [
-                722845
+                722926
               ]
             }
           ]
         },
         {
-          "title": "Seagull Behavior",
+          "title": "Wildlife & Critters",
           "items": [
             {
-              "text": "Added seagull \"groups\" that land at interest points, have hitboxes, can be shot with ragdoll corpses, and dynamically switch between landed groups and high‑altitude flocks.",
+              "text": "Introduced seagull \"groups\" with hitboxes that can land at interest points, be startled, transition to flocks, and be shot with ragdoll effects, adding new combat interactions with birds.",
               "commit_ids": [
                 722795
-              ]
-            }
-          ]
-        },
-        {
-          "title": "AI Scientist Targeting",
-          "items": [
-            {
-              "text": "Implemented a new AI scientist targeting system that remembers lost target locations, auto‑switches to visible players, and continues attacking even when targets hide, resulting in more stable and fun encounters.",
-              "commit_ids": [
-                722717
-              ]
-            }
-          ]
-        },
-        {
-          "title": "New Craftable Item – Wool Armor",
-          "items": [
-            {
-              "text": "Introduced Wool Armor with a crafting cost of 20 wool, providing 3 cold, 2 melee, and 1 projectile protection, and placed it in the Tier 1 tech tree.",
-              "commit_ids": [
-                722702
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Fruit Tree Resource Adjustments",
-          "items": [
-            {
-              "text": "Fixed a beehive natural‑kill warning, removed apples from oak_d trees, and increased apple spawn chance on oak_e trees to 50% to balance fruit availability.",
-              "commit_ids": [
-                722674
-              ]
-            }
-          ]
-        }
-      ],
-      "722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656,722657": [
-        {
-          "title": "Animals",
-          "items": [
-            {
-              "text": "Cows and bulls no longer push you when you lead them.",
-              "commit_ids": [
-                722657
               ]
             }
           ]
@@ -78,21 +32,73 @@
           "title": "AI & NPC",
           "items": [
             {
-              "text": "Sleeping AI now receives a movement tick on spawn, fixing missing destinations.",
+              "text": "Improved AI scientist boat targeting: remembers lost targets, auto‑switches to visible players, continues attacking hidden targets, resulting in more stable and engaging combat.",
               "commit_ids": [
-                722649
+                722717
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Items & Crafting",
+          "items": [
+            {
+              "text": "Added Wool Armor: crafts with 20 wool, provides tier‑1 protection (3 cold, 2 melee, 1 projectile) and is placed in the tech tree.",
+              "commit_ids": [
+                722702
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Stacking",
+          "items": [
+            {
+              "text": "Fixed missing OnItemAdded/Removed callbacks for stack operations, ensuring items correctly trigger add/remove events when stacked or unstacked.",
+              "commit_ids": [
+                722730,
+                722722
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Consumables",
+          "items": [
+            {
+              "text": "Resolved a use‑after‑free bug in consumable actions (e.g., berries, water, flasks), preventing crashes and ensuring proper consumption behavior.",
+              "commit_ids": [
+                722690
+              ]
+            }
+          ]
+        }
+      ],
+      "722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656,722657,722658,722665,722668,722674,722681": [
+        {
+          "title": "Environment & Resources",
+          "items": [
+            {
+              "text": "Updated tropical island, ranch, outpost, satellite dish, and apartment complex fruit trees to use the latest apple and coconut models, fixing older tree versions.",
+              "commit_ids": [
+                722681
               ]
             },
             {
-              "text": "Scientist boat AI movement and avoidance greatly improved: smoother steering, better unstuck behavior, proper patrolling, and fixed reverse logic at high FPS.",
+              "text": "Adjusted apple spawn rates: removed apples from oak_d and increased spawn chance on oak_e to 50%; also fixed the beehive natural‑kill warning.",
               "commit_ids": [
-                722540
+                722674
               ]
-            },
+            }
+          ]
+        },
+        {
+          "title": "Livestock & Animals",
+          "items": [
             {
-              "text": "Dead drivers no longer leave stale HasDriver flags, preventing ghost control issues on boats.",
+              "text": "Cows and bulls no longer push the player when being led.",
               "commit_ids": [
-                722606
+                722657
               ]
             }
           ]
@@ -101,7 +107,7 @@
           "title": "Weapons",
           "items": [
             {
-              "text": "Changing the UZI 9mm stock now blocks other actions (e.g., reload) until the animation finishes; holstering mid‑stock‑change cancels it. First‑shot and admire animations fixed, ADS settings adjusted.",
+              "text": "UZI 9mm stock change now blocks other actions (e.g., reload) until finished; holstering during stock change cancels it; fixed first‑shot animation on play‑mode entry; corrected admire animation cancellation; tweaked ADS settings.",
               "commit_ids": [
                 722647
               ]
@@ -112,9 +118,73 @@
           "title": "Vehicles",
           "items": [
             {
-              "text": "After dismounting a cannon on a boat, you now face the correct direction.",
+              "text": "Fixed orientation issue when dismounting a cannon on a boat, ensuring the player faces the correct direction.",
               "commit_ids": [
                 722644
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structures & Items",
+          "items": [
+            {
+              "text": "Added a placeholder renovation device deployable for base remodeling.",
+              "commit_ids": [
+                722542
+              ]
+            }
+          ]
+        }
+      ],
+      "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540": [
+        {
+          "title": "AI & Boat Behavior",
+          "items": [
+            {
+              "text": "Scientist boats now steer smoothly with 16-direction context steering, can back off when stalled, and no longer get stuck or circle off shore.",
+              "commit_ids": [
+                722540
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Items & Crafting",
+          "items": [
+            {
+              "text": "Fixed use‑after‑free bugs in Item.UseItem, preventing crashes when using items such as boomerangs.",
+              "commit_ids": [
+                722536
+              ]
+            },
+            {
+              "text": "Added Shears item with name, description, and a 2‑blade crafting recipe (WBLVL1).",
+              "commit_ids": [
+                722496
+              ]
+            },
+            {
+              "text": "Crate_normal_2 now correctly spawns two blueprint fragments; livestock vendor rewards switched from fragments to full blueprint pages.",
+              "commit_ids": [
+                722498
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Interactions",
+          "items": [
+            {
+              "text": "Ladder hatches can now be closed from all angles.",
+              "commit_ids": [
+                722526
+              ]
+            },
+            {
+              "text": "Lighthouse lamps now have damage states and are repairable as prefabs.",
+              "commit_ids": [
+                722518
               ]
             }
           ]
