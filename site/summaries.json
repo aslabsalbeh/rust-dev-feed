@@ -1,93 +1,68 @@
 {
   "2026-10-26": {
-    "commit_count": 108,
-    "relevant_commit_count": 60,
+    "commit_count": 115,
+    "relevant_commit_count": 63,
     "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352,722367,722371,722375,722394,722396,722398,722410",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "722346,722350,722352,722367,722371,722375,722394,722396,722398,722410,722416,722417,722421,722422,722423,722425,722426,722427,722428,722429,722430,722433,722436,722446,722451": [
+      "722367,722371,722375,722394,722396,722398,722410,722416,722417,722421,722422,722423,722425,722426,722427,722428,722429,722430,722433,722436,722446,722451,722458,722462,722466": [
         {
-          "title": "Boats & Marine Vehicles",
+          "title": "Boats & Watercraft",
           "items": [
             {
-              "text": "Scientists' PT boats can no longer be taken out of the deepsea, matching behavior of other boats.",
+              "text": "Boat groups now spawn every 5–8 hours, each lasting 30–60 minutes before disappearing.",
               "commit_ids": [
-                722446
+                722458
               ]
             },
             {
-              "text": "Scientist boats now only attempt to turn when they have line of sight to the player, reducing erratic movement.",
+              "text": "Fixed PT boat being stuck in the deepsea; it can now be taken out like other boats.",
               "commit_ids": [
-                722350
+                722446
               ]
             }
           ]
         },
         {
-          "title": "Animals & Livestock",
+          "title": "NPC & AI",
           "items": [
             {
-              "text": "Animals now flee when attacked from a distance and will no longer sleep, fixing previous AI issues.",
+              "text": "AI Sleep Zones now initialize correctly outside of BaseEntity structures, restoring proper sleep behavior.",
               "commit_ids": [
-                722417
+                722398
               ]
             },
             {
-              "text": "Sheep feeding bug fixed: they no longer starve despite a trough, and feeding times are synchronized with cows.",
+              "text": "Animals now flee when attacked from a distance and no longer sleep.",
+              "commit_ids": [
+                722417
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Livestock",
+          "items": [
+            {
+              "text": "Sheep feeding time synced with cows, preventing starvation despite troughs.",
               "commit_ids": [
                 722396
               ]
             }
           ]
-        },
-        {
-          "title": "AI Sleep Zones",
-          "items": [
-            {
-              "text": "AI Sleep Zones are functional again after a race‑condition fix, restoring proper AI sleeping behavior.",
-              "commit_ids": [
-                722398
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Item Interaction",
-          "items": [
-            {
-              "text": "Item.UseItem now correctly reports full consumption of an item, and a use‑after‑free bug in Industrial Conveyors has been fixed, improving item handling reliability.",
-              "commit_ids": [
-                722394
-              ]
-            }
-          ]
         }
       ],
-      "722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330": [
+      "722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352": [
         {
           "title": "NPC & AI",
           "items": [
             {
-              "text": "Boat scientist NPCs will now give up chasing a player after a set time and will only pursue up to a maximum distance.",
+              "text": "Boat scientist AI improvements: only attempt turns when the player is visible, give up after chasing for a while, limit pursuit distance, swap to a new target if the current one is obstructed or hidden, and turn the boat around when no crew can see the target.",
               "commit_ids": [
-                722329
-              ]
-            },
-            {
-              "text": "If a boat scientist's main target becomes obstructed, it will swap to another visible target, or bail out if the target stays hidden for long.",
-              "commit_ids": [
-                722278
-              ]
-            },
-            {
-              "text": "When a boat scientist's current target is no longer valid, it will select a new visible player or abort the chase.",
-              "commit_ids": [
-                722257
-              ]
-            },
-            {
-              "text": "If none of the crew on a scientist boat can see the target player, the boat will turn around to face the player before attempting to engage.",
-              "commit_ids": [
+                722350,
+                722329,
+                722278,
+                722257,
                 722247
               ]
             }
@@ -97,36 +72,48 @@
           "title": "Livestock",
           "items": [
             {
-              "text": "Cows can now satisfy their light requirement using lamps.",
+              "text": "Cows can now satisfy their light requirement using lamps, and clipping through walls while lying down has been fixed.",
               "commit_ids": [
-                722248
+                722248,
+                722230
               ]
             }
           ]
         },
         {
-          "title": "Item & Crafting System",
+          "title": "Item Management & Crafting",
           "items": [
             {
-              "text": "Fixed Water Purifier incorrectly increasing the garbage stack before removal, preventing inventory clutter.",
+              "text": "Water Purifier no longer incorrectly increases the garbage stack in its output before removal.",
               "commit_ids": [
                 722268
               ]
             },
             {
-              "text": "Research tables now preserve the ItemDef of removed items, eliminating null‑reference crashes during research attempts.",
+              "text": "Research Table no longer crashes when a research attempt finishes because the removed item's definition is now preserved.",
               "commit_ids": [
                 722267
               ]
             },
             {
-              "text": "Cookable items now cache necessary data before being destroyed, ensuring cooking tests pass and preventing loss of information.",
+              "text": "ItemContainer.Clear loop reimplemented to safely invalidate items after iteration, fixing potential item loss.",
               "commit_ids": [
-                722245
+                722259
               ]
             },
             {
-              "text": "Expanded the default item pool from 512 to 2,048 slots, with batch removal and loot container resets to reduce overflow issues.",
+              "text": "Cookable items cache necessary information before being destroyed, preventing null‑reference errors during cooking.",
+              "commit_ids": [
+                722245
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory Capacity",
+          "items": [
+            {
+              "text": "Default item pool increased from 512 to 2,048 slots, reducing overflow and batch removal issues.",
               "commit_ids": [
                 722229
               ]
@@ -134,24 +121,31 @@
           ]
         },
         {
-          "title": "Water & Sprinklers",
+          "title": "Utilities & Sprinklers",
           "items": [
             {
-              "text": "Sprinklers now reliably produce splash effects, maintain a valid fuel type, and stop radwater tint flickering on circuit and output changes.",
+              "text": "Sprinklers now reliably emit splash effects, maintain a valid fuel type, and radwater tint flicker on circuit/output changes is fixed.",
               "commit_ids": [
                 722205
-              ]
-            },
-            {
-              "text": "Radwater splashes now use green effect variants; sprinklers start with proper water, and water‑gun/pistol support with viewmodel integration has been added.",
-              "commit_ids": [
-                722194
               ]
             }
           ]
         },
         {
-          "title": "Environment & Deployment",
+          "title": "CCTV & Security",
+          "items": [
+            {
+              "text": "Fixed infinite power console variable that broke static CCTV cameras, restoring their functionality.",
+              "commit_ids": [
+                722222
+              ]
+            }
+          ]
+        }
+      ],
+      "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195": [
+        {
+          "title": "Building & Placement",
           "items": [
             {
               "text": "Animal fences and gates can now be placed more easily on sloped terrain.",
@@ -162,23 +156,21 @@
           ]
         },
         {
-          "title": "Security",
+          "title": "Weapons & Items",
           "items": [
             {
-              "text": "Fixed an infinite‑power console variable that broke static CCTV cameras, restoring their functionality.",
+              "text": "Added support for water guns and water pistols, and radwater splashes now use green effect variants.",
               "commit_ids": [
-                722222
+                722194
               ]
             }
           ]
-        }
-      ],
-      "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103": [
+        },
         {
           "title": "World Interaction",
           "items": [
             {
-              "text": "Fixed line-of-sight blocking on ramps, removing the blue LOS indicator that prevented players from seeing the ramp correctly.",
+              "text": "Ramp line-of-sight now correctly accounts for additional positions, fixing blue LOS blockage.",
               "commit_ids": [
                 722048
               ]
@@ -186,16 +178,16 @@
           ]
         },
         {
-          "title": "UI & Inventory",
+          "title": "UI Fixes",
           "items": [
             {
-              "text": "Corrected death-screen sleeping-bag button sizing and overlap, preventing misclicks when trying to respawn or interact.",
+              "text": "Death-screen sleeping-bag buttons no longer mis-size or overlap, preventing misclicks.",
               "commit_ids": [
                 722047
               ]
             },
             {
-              "text": "Ensured bags assigned to a dead player appear on the map immediately, fixing the issue where bags were invisible after death or after rejoining.",
+              "text": "Bags assigned while dead now appear on the map immediately, fixing loss of bag markers after death or rejoin.",
               "commit_ids": [
                 722040
               ]
@@ -206,15 +198,15 @@
           "title": "Loot & Crafting",
           "items": [
             {
-              "text": "Adjusted random gutting bonuses for catfish, orange roughy, salmon, and small sharks: the 20% chance now yields a blueprint fragment instead of 8 cloth.",
+              "text": "Underwater crates now contain blueprint fragments and pages, matching other loot pools.",
               "commit_ids": [
-                722026
+                722023
               ]
             },
             {
-              "text": "Added blueprint fragments and blueprint pages to underwater crates, aligning their loot pool with other crate types.",
+              "text": "Adjusted random gutting bonuses for catfish, orange roughy, salmon and small shark: 20% chance now yields a blueprint fragment instead of 8 cloth.",
               "commit_ids": [
-                722023
+                722026
               ]
             }
           ]

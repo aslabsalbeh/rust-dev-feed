@@ -1,5 +1,61 @@
 [
   {
+    "id": 722472,
+    "branch": "main/animal_renaming",
+    "changeset": "169266",
+    "created": "2026-10-27T00:00:51",
+    "message": "Add renaming for cows and sheep\r\nPlayer instigated renames start a new name dynasty, utilising the existing name dynasty stuff\r\nPlayers can't rename animals spawned with the raree special names/genes. These names now appear gold with a star",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 722470,
+    "branch": "main/more_lod_optims",
+    "changeset": "169265",
+    "created": "2026-10-26T23:45:50",
+    "message": "Stop bush clutter running physics queries on every LODManager visit and taking a large part of its budget, now only runs when bush culling blocks (foundations) change\r\nDisable CullBushes on boat hull blocks, not needed",
+    "user": "cipeaX"
+  },
+  {
+    "id": 722466,
+    "branch": "main/uiblur_faded_fix",
+    "changeset": "169262",
+    "created": "2026-10-26T23:13:11",
+    "message": "Moved MenuUI2's UIBlurCanvasesBehind from FadedBackground to PageBackground as it needs a CanvasRenderer",
+    "user": "Flavien"
+  },
+  {
+    "id": 722464,
+    "branch": "main/UZI 9mm",
+    "changeset": "169261",
+    "created": "2026-10-26T23:12:41",
+    "message": "Uzi: mag drop and shell ejection\r\n\r\n- Mag drop on world model reloads\r\n- Shell ejection in first person and 3p: new eject_shell (viewmodel) and w_eject_pistol_shell (world, on the uzi shell_eject bone)\r\n-  viewmodel updated, shell eject position + enforceClipWeights on so fire/fire_ADS sharing a blend tree don't spawn two shells per shot",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 722462,
+    "branch": "main/base_occlusion/foundation_offset_fix",
+    "changeset": "169259",
+    "created": "2026-10-26T23:08:58",
+    "message": "Fix after merge",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 722458,
+    "branch": "main/mainisland_roaming_scientistboats",
+    "changeset": "169257",
+    "created": "2026-10-26T22:27:50",
+    "message": "- 1-2 boat groups will spawn every 5-8  hours (spawn together)\r\n- Each individual group gets a random lifetime of 30-60 minutes before egress",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722454,
+    "branch": "main/UZI 9mm",
+    "changeset": "169256",
+    "created": "2026-10-26T22:14:16",
+    "message": "viewmodel lasersight/brake attachment placment",
+    "user": "Alex Webster"
+  },
+  {
     "id": 722451,
     "branch": "main/base_occlusion/foundation_offset_fix",
     "changeset": "169255",
@@ -1077,14 +1133,6 @@
     "changeset": "169069",
     "created": "2026-10-24T01:09:02",
     "message": "Fixed roof overhangs collider info using OnlyBlockBuildingBlock instead of OnlyBlockDeployables",
-    "user": "Flavien"
-  },
-  {
-    "id": 721707,
-    "branch": "main/plants_dynamicculling_fix",
-    "changeset": "169066",
-    "created": "2026-10-23T23:13:58",
-    "message": "Fixed entity spawning renderers after it was parented not setting them as dynamic (plants)\r\nFixes plants growing on boats disappearing after sailing",
     "user": "Flavien"
   }
 ]
