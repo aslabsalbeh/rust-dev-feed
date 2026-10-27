@@ -6,53 +6,75 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 27 Oct 2026 02:17:26 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 04:17:42 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 27</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;1 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722496"&gt;Shears now require 2 blades to craft and have updated name/description.&lt;/li&gt;
+&lt;li data-rust-commits="722498"&gt;Livestock vendor now rewards players with full blueprint pages instead of fragments, and Crate_normal_2 now correctly spawns its two blueprint fragments.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
+&lt;h3&gt;Vendors &amp;amp; Economy&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722498"&gt;Livestock vendor now rewards players with full blueprint pages instead of fragments, and Crate_normal_2 now correctly spawns its two blueprint fragments.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Items &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722496"&gt;Shears now require 2 blades to craft and have updated name/description.&lt;/li&gt;
+&lt;li data-rust-commits="722496"&gt;Shears are being reworked: they now have an updated name and description and require 2 blades to craft (WIP).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-27</guid>
-      <pubDate>Tue, 27 Oct 2026 02:17:26 -0400</pubDate>
+      <pubDate>Tue, 27 Oct 2026 04:17:42 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 26</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;131 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;AI &amp;amp; NPC Behavior&lt;/h3&gt;
+&lt;h3&gt;Server Performance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722398"&gt;AI Sleep Zones now work correctly, restoring proper AI sleeping behavior.&lt;/li&gt;
-&lt;li data-rust-commits="722350,722278,722247,722329,722257"&gt;Boat scientist AI now only attempts turns when the player is visible, switches targets if the current one is obstructed, rotates to face players when unseen, and gives up chasing after a maximum distance or time or when shot.&lt;/li&gt;
+&lt;li data-rust-commits="722490,722488"&gt;Server stalls have been dramatically reduced: crafting workshop‑skinned items now takes ~0.07 ms (down from 200 ms) and reskinning repair benches after a definitions update now takes ~0.66 ms (down from 1.27 s).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Livestock &amp;amp; Farming&lt;/h3&gt;
+&lt;h3&gt;Crafting, Blueprint &amp;amp; Loot&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722396,722248"&gt;Sheep feeding bug fixed so they no longer starve at troughs, and cows can satisfy their light requirement using lamps.&lt;/li&gt;
-&lt;li data-rust-commits="722230,722195"&gt;Cows no longer clip through walls when lying down, and animal fences and gates can now be placed more easily on sloped terrain.&lt;/li&gt;
+&lt;li data-rust-commits="722484"&gt;Prototype Workbench Upgrade now has a 25 % success chance (instead of always failing), increasing average blueprint consumption and adding a failure sound.&lt;/li&gt;
+&lt;li data-rust-commits="722229"&gt;Item pool size increased from 512 to 2,048, reducing overflow and allowing larger loot batches.&lt;/li&gt;
+&lt;li data-rust-commits="722023,722026"&gt;Underwater crates now contain blueprint fragments and pages, and fish gutting now has a 20 % chance to yield a blueprint fragment instead of 8 cloth.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Item &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Animals &amp;amp; Livestock&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722268"&gt;Water Purifier no longer incorrectly increases the garbage stack before removal, preventing inventory overflow.&lt;/li&gt;
+&lt;li data-rust-commits="722482,722248,722230"&gt;Cows follow the player smoothly when led, can meet their light requirement using lamps, and no longer clip through walls while lying down.&lt;/li&gt;
+&lt;li data-rust-commits="722417"&gt;All livestock now flee when attacked from a distance and no longer sleep, fixing AI issues.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Item Pool&lt;/h3&gt;
+&lt;h3&gt;Base &amp;amp; Visibility&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722229"&gt;Default item pool size increased from 512 to 2,048 to stop overflow issues.&lt;/li&gt;
-&lt;li data-rust-commits="722026,722023"&gt;Gutting bonuses for catfish, orange roughy, salmon, and small shark adjusted; 20% chance to get 8 cloth replaced with 20% chance to get a blueprint fragment, and blueprint fragments/pages added to underwater crates.&lt;/li&gt;
+&lt;li data-rust-commits="722429,722428,722427"&gt;Vending machines now block sight like doors, restoring proper base occlusion.&lt;/li&gt;
+&lt;li data-rust-commits="722423"&gt;Foundations adjacent to walls no longer incorrectly connect across offsets, fixing unintended visibility leaks.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Sprinklers &amp;amp; Radwater&lt;/h3&gt;
+&lt;h3&gt;AI &amp;amp; Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722205"&gt;Fixed sprinklers skipping splash effects, temporary null fuel type, and radwater tint flicker on circuit/output changes; sprinklers now start with proper water.&lt;/li&gt;
-&lt;li data-rust-commits="722194"&gt;Radwater splashes now use green effect variants; added support for water gun and water pistol with viewmodel integration.&lt;/li&gt;
+&lt;li data-rust-commits="722398"&gt;AI Sleep Zones function correctly again, allowing sleepers to rest as intended.&lt;/li&gt;
+&lt;li data-rust-commits="722396"&gt;Sheep now feed properly from troughs without starving, aligning their feeding cycle with cows.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Items &amp;amp; Processing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722268"&gt;Water Purifiers no longer add extra garbage to output stacks before removal, ensuring correct resource handling.&lt;/li&gt;
+&lt;li data-rust-commits="722205"&gt;Sprinklers reliably produce splash effects and maintain fuel, eliminating missed splashes and brief fuel gaps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Security &amp;amp; Surveillance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722222"&gt;Static CCTV cameras work again, restoring surveillance functionality.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722040"&gt;Bag markers assigned while dead now appear on the map immediately, preventing loss of tracking after death.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ramp Visibility&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722048"&gt;Ramps now correctly calculate line‑of‑sight, removing false blue LOS blocks.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-26</guid>
