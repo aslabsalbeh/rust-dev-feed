@@ -1,5 +1,173 @@
 [
   {
+    "id": 722741,
+    "branch": "main",
+    "changeset": "169399",
+    "created": "2026-10-27T18:02:00",
+    "message": "Nail visual projectile tweaks.",
+    "user": "Petur"
+  },
+  {
+    "id": 722737,
+    "branch": "main",
+    "changeset": "169398",
+    "created": "2026-10-27T17:40:37",
+    "message": "Tweak on nailgun attack FX.",
+    "user": "Petur"
+  },
+  {
+    "id": 722730,
+    "branch": "main",
+    "changeset": "169396",
+    "created": "2026-10-27T17:18:23",
+    "message": "Merge: from consolidate_onitemremovedfromstack\r\n- Bugfix: added missing invokes for OnItemAddded/RemovedFromStack\r\nTests: unit tests + automated tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722729,
+    "branch": "main/consolidate_onitemremovedfromstack",
+    "changeset": "169395",
+    "created": "2026-10-27T17:16:44",
+    "message": "Update: refresh server test list\r\nTests: ran my new tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722728,
+    "branch": "main/more_lod_optims",
+    "changeset": "169394",
+    "created": "2026-10-27T17:15:21",
+    "message": "Fix caboose lights missing their volumetric beams the first time you turn them on with the light switch\r\nCaused by AmbientLightLOD skipping the first faded toggle after an instant one",
+    "user": "cipeaX"
+  },
+  {
+    "id": 722726,
+    "branch": "main/Livestock_animals",
+    "changeset": "169393",
+    "created": "2026-10-27T17:08:46",
+    "message": "lamb sprint animation test",
+    "user": "wes.b"
+  },
+  {
+    "id": 722723,
+    "branch": "main/more_lod_optims",
+    "changeset": "169392",
+    "created": "2026-10-27T17:06:55",
+    "message": "Fix LightGroupAtTime pooling bugs, caused caboose lights to become darker on reuse\r\nCache authored light intensities once at the start, later they could be changed from their defaults when coming out of the pool",
+    "user": "cipeaX"
+  },
+  {
+    "id": 722722,
+    "branch": "main/consolidate_onitemremovedfromstack",
+    "changeset": "169391",
+    "created": "2026-10-27T17:06:03",
+    "message": "Bugfix: make sure we call onItemAddedToStack when using ItemContainer.AddItem\r\nTests: unit + auto tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722719,
+    "branch": "main/more_lod_optims",
+    "changeset": "169390",
+    "created": "2026-10-27T16:57:45",
+    "message": "Rework previous fix for entities that were forced dynamic due to being parented never resetting the flag when pooled\r\nNew IPoolReset interface that Poolable calls when entering the pool to reset cached behaviours, instead of multiple GetComponentsInChildren in ResetState\r\nAlso reset RendererBatch disabled flag set by parenting so that a pooled instance can batch again after reuse",
+    "user": "cipeaX"
+  },
+  {
+    "id": 722717,
+    "branch": "main/boat_targetting_improvments_2",
+    "changeset": "169389",
+    "created": "2026-10-27T16:55:48",
+    "message": "New targetting system for ai scientists:\r\n- Remembers locations of previously lost targets\r\n- Auto switches between visible players if it loses its main target\r\n- Ai scientists will keep attacking even if the target hides\r\n- More stable/fun overall",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722718,
+    "branch": "▉▉▊▍▉▇▉▍▇▍▍▌▅█",
+    "changeset": "▅▄▌▍▌▅",
+    "created": "2026-10-27T16:55:37",
+    "message": "▍▋▍▊▄▆▉ ▋▆ ▇▋▌▌▇▆ ▉▍▊▍▆▋▄▍ ▉▅█",
+    "user": "jeddooo"
+  },
+  {
+    "id": 722715,
+    "branch": "main/cui_blur_fix2",
+    "changeset": "169386",
+    "created": "2026-10-27T16:54:33",
+    "message": "Fixed allocations in SortBlurredLayers",
+    "user": "Flavien"
+  },
+  {
+    "id": 722712,
+    "branch": "main/cui_blur_fix2",
+    "changeset": "169385",
+    "created": "2026-10-27T16:44:29",
+    "message": "Raised the UI blur capture limit from 4 to 6 per frame\nCUI blurs only take a capture of their own when they cover UI drawn before them\nCUI blur sorting runs once per frame instead of on every AddUI/DestroyUI",
+    "user": "Flavien"
+  },
+  {
+    "id": 722706,
+    "branch": "main/consolidate_onitemremovedfromstack",
+    "changeset": "169381",
+    "created": "2026-10-27T16:38:32",
+    "message": "Merge: cherry pick 169367 + 169368 from itemmanager_immediateremove\r\nMoves all onItemRemovedFromStack calls to Item methods (SplitItem, UseItem, MoveToContainer)\r\nTests: auto tests",
+    "user": "Daniel P"
+  },
+  {
+    "id": 722705,
+    "branch": "main/animal_renaming",
+    "changeset": "169380",
+    "created": "2026-10-27T16:36:16",
+    "message": "Unfuck merge",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 722702,
+    "branch": "main/wool_armourinsert",
+    "changeset": "169377",
+    "created": "2026-10-27T16:25:51",
+    "message": "Copied over my item setup from woolarmorinsert.  tech tree, crafting cost. \r\n- 20 wool to craft\r\n- 3 cold, 2 melee, 1 projectile protection\r\n- Tier 1 tech tree",
+    "user": "Nick.H"
+  },
+  {
+    "id": 722701,
+    "branch": "main/base_reno",
+    "changeset": "169376",
+    "created": "2026-10-27T16:24:56",
+    "message": "Added renovation saw item/prefab/entity.\r\nRennovation saw now shows cut track on construction.\r\nSaw follows track,emitting sparks and leaving a glowing trail.\r\nVisual progress matches timers.\r\nSetup placeholder cutting audio.",
+    "user": "Adam W"
+  },
+  {
+    "id": 722698,
+    "branch": "main",
+    "changeset": "169375",
+    "created": "2026-10-27T16:16:41",
+    "message": "waterpistol_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722697,
+    "branch": "main/waterpistol_fix",
+    "changeset": "169374",
+    "created": "2026-10-27T16:16:07",
+    "message": "Fix waterpistol error during manifest generation",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 722695,
+    "branch": "main/scrap_king_buildingskin_dlc",
+    "changeset": "169373",
+    "created": "2026-10-27T16:15:48",
+    "message": "scrap king - updated roof bottom edge colliders",
+    "user": "Lain"
+  },
+  {
+    "id": 722694,
+    "branch": "main/foliage_shadows_optim",
+    "changeset": "169371",
+    "created": "2026-10-27T16:12:04",
+    "message": "Per shadow split foliage culling test",
+    "user": "Dayaan"
+  },
+  {
     "id": 722690,
     "branch": "main/itemmanager_immediateremove",
     "changeset": "169370",
@@ -1654,29 +1822,5 @@
     "created": "2026-10-24T22:38:24",
     "message": "Take the idea of batching position packets and instead apply it to all types of packets\n- queue up packets per frame\n- send them out after invokes finish\n- packets are batched on the network thread so no change to the main thread\n- new packet type to indicate if it's a batch of small packets\n- ConVar to control batching at runtime\n- client can handle both batched & unbatched packets\n- batches are sent as \"immediate\" so they bypass raknet's internal buffering since we are now basically doing the buffering RakNet was doing",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 721801,
-    "branch": "main/Livestock_animals/shears",
-    "changeset": "169078",
-    "created": "2026-10-24T17:43:42",
-    "message": "prefab updates",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 721800,
-    "branch": "main/Livestock_animals/shears",
-    "changeset": "169077",
-    "created": "2026-10-24T17:41:47",
-    "message": "prefab updates",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 721796,
-    "branch": "main/Livestock_animals/shears",
-    "changeset": "169076",
-    "created": "2026-10-24T17:37:04",
-    "message": "Shears balance - files missing from cs:169063 (fixes branch compile error)\r\n- new ItemModShearTool on shears.item: 25% more wool than a knife\r\n- shears.item: durability 200 (2x the knife)\r\n- shears.entity: damage 4 slash + 4 stab (half the knife)\r\n- Sheep.cs: applies the shear tool wool bonus, other blades unchanged\r\n\r\nAdded:\r\n- Assets/Scripts/Item/ItemDef2/ItemModShearTool.cs (+ .meta)",
-    "user": "Alex Webster"
   }
 ]

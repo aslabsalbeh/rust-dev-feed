@@ -1,10 +1,208 @@
 {
   "2026-10-27": {
-    "commit_count": 57,
-    "relevant_commit_count": 39,
+    "commit_count": 78,
+    "relevant_commit_count": 53,
     "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656,722657,722658,722665,722668,722674,722681,722690",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "722653,722654,722655,722656,722657,722658,722665,722668,722674,722681,722690,722695,722697,722698,722702,722705,722712,722715,722717,722719,722722,722723,722728,722730,722741": [
+        {
+          "title": "Inventory & Items",
+          "items": [
+            {
+              "text": "Fixed missing OnItemAdded/Removed callbacks for item stacks, preventing inventory stacking bugs.",
+              "commit_ids": [
+                722730,
+                722722
+              ]
+            },
+            {
+              "text": "Resolved use‑after‑free issues in consumable actions (berries, water, flasks) ensuring items are consumed correctly.",
+              "commit_ids": [
+                722690
+              ]
+            },
+            {
+              "text": "Patched use‑after‑free bugs in Item.LoseCondition, improving item durability handling.",
+              "commit_ids": [
+                722653
+              ]
+            },
+            {
+              "text": "Added Wool Armor with crafting cost of 20 wool and protection stats (3 cold, 2 melee, 1 projectile), placed in Tier 1 tech tree.",
+              "commit_ids": [
+                722702
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & NPC",
+          "items": [
+            {
+              "text": "New AI scientist targeting system: remembers lost target locations, auto‑switches to visible players, and continues attacking hidden targets for more stable and fun encounters.",
+              "commit_ids": [
+                722717
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Resources & World",
+          "items": [
+            {
+              "text": "Adjusted apple spawn rates: removed apples from oak_d and increased spawn chance on oak_e to 50%.",
+              "commit_ids": [
+                722674
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Animals",
+          "items": [
+            {
+              "text": "Cows and bulls no longer push the player when being led, reducing unwanted movement interference.",
+              "commit_ids": [
+                722657
+              ]
+            }
+          ]
+        }
+      ],
+      "722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649": [
+        {
+          "title": "AI & NPC",
+          "items": [
+            {
+              "text": "Fixed AI that spawns sleeping not receiving movement ticks, ensuring they set destinations correctly.",
+              "commit_ids": [
+                722649
+              ]
+            },
+            {
+              "text": "Improved scientist boat AI movement: smoother steering, better obstacle avoidance, and fixes for getting unstuck.",
+              "commit_ids": [
+                722540
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Boat & Vehicle Mechanics",
+          "items": [
+            {
+              "text": "Corrected facing direction after dismounting a cannon on a boat.",
+              "commit_ids": [
+                722644
+              ]
+            },
+            {
+              "text": "Dead drivers no longer retain stale HasDriver flags, preventing ghost driver issues.",
+              "commit_ids": [
+                722606
+              ]
+            },
+            {
+              "text": "Fixed null reference error in BoatAICoordination.TryClaimTarget, improving boat AI reliability.",
+              "commit_ids": [
+                722598
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons",
+          "items": [
+            {
+              "text": "UZI 9mm stock change now blocks other actions correctly; holstering before stock change animation cancels the change; fixed first‑shot animation on play mode entry; fixed admire animation cancellation; adjusted ADS settings.",
+              "commit_ids": [
+                722647
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Items",
+          "items": [
+            {
+              "text": "Resolved use‑after‑free bugs in Item.UseItem, preventing crashes when using items such as boomerangs.",
+              "commit_ids": [
+                722536
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building & Tools",
+          "items": [
+            {
+              "text": "Added a placeholder renovation device deployable for future construction mechanics.",
+              "commit_ids": [
+                722542
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structures",
+          "items": [
+            {
+              "text": "Implemented damage states for lighthouse lamps and made them repairable, with updated prefab.",
+              "commit_ids": [
+                722518
+              ]
+            }
+          ]
+        },
+        {
+          "title": "World Interaction",
+          "items": [
+            {
+              "text": "Fixed ladder hatches that could not be closed from certain angles.",
+              "commit_ids": [
+                722526
+              ]
+            }
+          ]
+        }
+      ],
+      "722496,722498,722512": [
+        {
+          "title": "Undo & Building",
+          "items": [
+            {
+              "text": "Fixed undo action that unintentionally restored sandbox tracks, preventing unwanted changes when reverting builds.",
+              "commit_ids": [
+                722512
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vendor Rewards & Crate Bugs",
+          "items": [
+            {
+              "text": "Corrected Crate_normal_2 to spawn the intended two blueprint fragments and changed livestock vendor rewards to give blueprint pages instead of fragments, altering loot progression.",
+              "commit_ids": [
+                722498
+              ]
+            }
+          ]
+        },
+        {
+          "title": "New Tool: Shears",
+          "items": [
+            {
+              "text": "Added Shears with proper name/description, craftable using 2 Blades at workbench level 1, and provided a default blueprint (WIP).",
+              "commit_ids": [
+                722496
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Items & Crafting",
@@ -121,31 +319,10 @@
           722536
         ],
         "section": "Items & Crafting"
-      },
-      {
-        "text": "Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.",
-        "commit_ids": [
-          722674
-        ],
-        "section": "Items & Crafting"
-      },
-      {
-        "text": "Cows and bulls no longer push you while being led, making herd management smoother.",
-        "commit_ids": [
-          722657
-        ],
-        "section": "Animals & AI Behavior"
-      },
-      {
-        "text": "Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.",
-        "commit_ids": [
-          722649
-        ],
-        "section": "Animals & AI Behavior"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.\n- Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.\n- Cows and bulls no longer push you while being led, making herd management smoother.\n- Sleeping AI now runs movement logic on spawn, fixing instances where they never moved."
+    "new_relevant_count": 5,
+    "new_summary": "- Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes."
   },
   "2026-10-26": {
     "commit_count": 131,
