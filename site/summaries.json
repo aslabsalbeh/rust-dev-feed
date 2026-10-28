@@ -1,8 +1,8 @@
 {
   "2026-10-28": {
-    "commit_count": 46,
-    "relevant_commit_count": 22,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394",
+    "commit_count": 58,
+    "relevant_commit_count": 29,
+    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -10,7 +10,7 @@
         "title": "Weapons",
         "items": [
           {
-            "text": "Uzi 3p now correctly deploys its stock after weapon swaps and no longer plays a stock swing when holstered.",
+            "text": "Fixed Uzi 3P stock deployment after weapon swap and prevented stock swing animation on holster, ensuring proper stock behavior.",
             "commit_ids": [
               724111
             ]
@@ -18,10 +18,10 @@
         ]
       },
       {
-        "title": "Events",
+        "title": "Events & Scheduling",
         "items": [
           {
-            "text": "Event schedule now saves the remaining hours for timed events across server restarts, preventing loss of cooldown timers.",
+            "text": "Event schedule now saves remaining hours for events (e.g., cargo ship spawn), preventing loss of cooldown after server restarts.",
             "commit_ids": [
               724046
             ]
@@ -29,45 +29,21 @@
         ]
       },
       {
-        "title": "Monuments & World",
+        "title": "Structures & Defenses",
         "items": [
           {
-            "text": "Lighthouse lamp damage stages now have proper LOD materials and collision, improving visual fidelity and interaction when the lamp is damaged.",
-            "commit_ids": [
-              724205
-            ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "Scarecrow null reference error fixed, stopping scarecrows from malfunctioning or causing crashes.",
+            "text": "Fixed a null reference error that could crash or disable scarecrows, restoring their functionality.",
             "commit_ids": [
               724185
             ]
-          },
-          {
-            "text": "Bird groups now have increased network range, so flocks remain visible and animate correctly at greater distances.",
-            "commit_ids": [
-              724361
-            ]
-          },
-          {
-            "text": "Added new seagull group flying, disperse, takeoff and landing sounds, enhancing audio feedback for bird flocks.",
-            "commit_ids": [
-              724370,
-              724347
-            ]
           }
         ]
       },
       {
-        "title": "Items",
+        "title": "Tools & Items",
         "items": [
           {
-            "text": "Shears now show missing visual effects and have an updated description for clearer usage.",
+            "text": "Added missing visual effects for shears and updated the shears item description.",
             "commit_ids": [
               723009
             ]
@@ -75,10 +51,10 @@
         ]
       },
       {
-        "title": "Visuals & Gameplay",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Fixed a camera clipping issue where the volumetric light beam could obscure the view when wearing the miner hat.",
+            "text": "Fixed camera clipping caused by volumetric light beams while wearing the miner hat, restoring clear view.",
             "commit_ids": [
               724068
             ]
@@ -87,26 +63,10 @@
       }
     ],
     "status": "ok",
-    "summary": "### Weapons\n- Uzi 3p now correctly deploys its stock after weapon swaps and no longer plays a stock swing when holstered.\n\n### Events\n- Event schedule now saves the remaining hours for timed events across server restarts, preventing loss of cooldown timers.\n\n### Monuments & World\n- Lighthouse lamp damage stages now have proper LOD materials and collision, improving visual fidelity and interaction when the lamp is damaged.\n\n### NPC & AI\n- Scarecrow null reference error fixed, stopping scarecrows from malfunctioning or causing crashes.\n- Bird groups now have increased network range, so flocks remain visible and animate correctly at greater distances.\n- Added new seagull group flying, disperse, takeoff and landing sounds, enhancing audio feedback for bird flocks.\n\n### Items\n- Shears now show missing visual effects and have an updated description for clearer usage.\n\n### Visuals & Gameplay\n- Fixed a camera clipping issue where the volumetric light beam could obscure the view when wearing the miner hat.",
-    "new_items": [
-      {
-        "text": "Bird groups now have increased network range, so flocks remain visible and animate correctly at greater distances.",
-        "commit_ids": [
-          724361
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Added new seagull group flying, disperse, takeoff and landing sounds, enhancing audio feedback for bird flocks.",
-        "commit_ids": [
-          724370,
-          724347
-        ],
-        "section": "NPC & AI"
-      }
-    ],
-    "new_relevant_count": 3,
-    "new_summary": "- Bird groups now have increased network range, so flocks remain visible and animate correctly at greater distances.\n- Added new seagull group flying, disperse, takeoff and landing sounds, enhancing audio feedback for bird flocks."
+    "summary": "### Weapons\n- Fixed Uzi 3P stock deployment after weapon swap and prevented stock swing animation on holster, ensuring proper stock behavior.\n\n### Events & Scheduling\n- Event schedule now saves remaining hours for events (e.g., cargo ship spawn), preventing loss of cooldown after server restarts.\n\n### Structures & Defenses\n- Fixed a null reference error that could crash or disable scarecrows, restoring their functionality.\n\n### Tools & Items\n- Added missing visual effects for shears and updated the shears item description.\n\n### Bug Fixes\n- Fixed camera clipping caused by volumetric light beams while wearing the miner hat, restoring clear view.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-27": {
     "commit_count": 132,
