@@ -6,38 +6,53 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 28 Oct 2026 00:18:22 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 02:18:18 -0400</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Oct 28</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;4 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-10-28</guid>
+      <pubDate>Wed, 28 Oct 2026 02:18:18 -0400</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 27</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;132 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Items &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Boat &amp;amp; Watercraft AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722690,722653,722639,722593,722536"&gt;Fixed use‑after‑free crashes when using or consuming items, preventing game‑breaking freezes.&lt;/li&gt;
-&lt;li data-rust-commits="722496"&gt;Added Shears as a new craftable tool (requires 2 Blades and a WBLVL1 blueprint).&lt;/li&gt;
-&lt;li data-rust-commits="722498"&gt;Updated Crate_normal_2 to drop two blueprint fragments and changed livestock vendor rewards to full blueprint pages, improving reward value.&lt;/li&gt;
-&lt;li data-rust-commits="722674"&gt;Adjusted apple spawn rates: removed apples from oak_d and set oak_e spawn chance to 50%, affecting foraging.&lt;/li&gt;
+&lt;li data-rust-commits="722540,722606,722598,722603,722604,722609,722614,722993,723005"&gt;Boat AI improvements: dead driver flags cleared, smoother scientist boat movement with better avoidance and unsticking, roaming boats now patrol closer to coast (35 m) and stop chasing hidden players after 45 s, and lingering boat spawn bugs fixed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; AI Behavior&lt;/h3&gt;
+&lt;h3&gt;Scientist &amp;amp; NPC Behavior&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722657"&gt;Cows and bulls no longer push you while being led, making herd management smoother.&lt;/li&gt;
-&lt;li data-rust-commits="722649"&gt;Sleeping AI now runs movement logic on spawn, fixing instances where they never moved.&lt;/li&gt;
-&lt;li data-rust-commits="722540"&gt;Scientist boats now steer smoothly, avoid obstacles, and reliably unstuck themselves, eliminating erratic weaving and stuck‑reverse behavior.&lt;/li&gt;
+&lt;li data-rust-commits="722717,722649"&gt;Scientist AI targeting overhauled to remember lost target locations, auto‑switch to visible players, and continue attacking hidden targets for more stable encounters; also fixed a movement‑initialization bug that kept sleeping AI from receiving their first movement tick.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Boats&lt;/h3&gt;
+&lt;h3&gt;Weapons &amp;amp; Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722644"&gt;Dismounting a cannon on a boat now correctly orients you to face forward.&lt;/li&gt;
-&lt;li data-rust-commits="722606"&gt;Boats no longer stay marked as occupied after a driver dies, freeing them for other players.&lt;/li&gt;
+&lt;li data-rust-commits="722976,722647"&gt;UZI tweaks: recoil adjusted, stock changes now block other actions, holstering cancels stock‑change animation, first‑shot animation fixed, and ADS settings refined.&lt;/li&gt;
+&lt;li data-rust-commits="722644"&gt;Cannon dismount rotation fixed so players face the correct direction after leaving a cannon on a boat.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons&lt;/h3&gt;
+&lt;h3&gt;Items, Crafting &amp;amp; Inventory&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722647"&gt;UZI stock change now blocks other actions until the animation finishes; holstering early cancels the change, and ADS settings have been tweaked for better handling.&lt;/li&gt;
+&lt;li data-rust-commits="722722,722690,722653,722639,722593,722536"&gt;Item system stability: fixed stacking, use‑after‑free bugs in consumables and item durability, and other removal bugs that could cause items to disappear or malfunction.&lt;/li&gt;
+&lt;li data-rust-commits="722702,722496"&gt;New craftables added: Wool Armor (costs 20 wool, Tier 1 protection) and Shears (crafted from 2 blades).&lt;/li&gt;
+&lt;li data-rust-commits="723004"&gt;Scientist loot updates: 20 % chance for a blueprint page on RHIBs and 20 % chance for a blueprint book on PT boats.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World Objects &amp;amp; Environment&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Resources&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="722526"&gt;Ladder hatches can now be closed from all angles, fixing a long‑standing annoyance.&lt;/li&gt;
-&lt;li data-rust-commits="722518"&gt;Lighthouse lamps now have damage states and can be repaired, restoring functionality after combat.&lt;/li&gt;
+&lt;li data-rust-commits="722674"&gt;Apple spawn rebalanced: removed from oak_d, increased spawn chance on oak_e to 50 %; beehive natural‑kill warning fixed.&lt;/li&gt;
+&lt;li data-rust-commits="722795"&gt;Seagull groups introduced: land at interest points, can be startled, transition to flocks, have hitboxes, can be shot, with improved flock movement.&lt;/li&gt;
+&lt;li data-rust-commits="722498"&gt;Vendor crate spawning now includes missing blueprint fragments and livestock vendor rewards upgraded from fragments to full blueprint pages.&lt;/li&gt;
+&lt;li data-rust-commits="722600"&gt;Radiation issue with the water gun fixed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="722960"&gt;Shears no longer hurt or startle sheep (they still deal small damage to other entities).&lt;/li&gt;
+&lt;li data-rust-commits="722730"&gt;Item stack events now correctly fire OnItemAdded and OnItemRemovedFromStack, fixing inventory‑related scripts and automation.&lt;/li&gt;
+&lt;li data-rust-commits="722526"&gt;Ladder hatches can now be closed from any angle, restoring full interaction.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-27</guid>
@@ -93,34 +108,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-26</guid>
       <pubDate>Mon, 26 Oct 2026 12:00:00 -0400</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Oct 25</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;16 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Animals &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="722004,722002,722001"&gt;Animal repellant buff now only affects sharks (they flee) and bee swarms (they won&amp;#x27;t chase); bulls and rams ignore the buff and will neither flee nor charge.&lt;/li&gt;
-&lt;li data-rust-commits="722017"&gt;Chickens on the tutorial island no longer act aggressively.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Farming&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="722019"&gt;Sunflower seed-stage plants can now be cleared reliably with a melee weapon.&lt;/li&gt;
-&lt;li data-rust-commits="722010"&gt;Child livestock can leave their mother&amp;#x27;s leash radius to eat from a trough, preventing them from getting stuck hungry in pens.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Building &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="721955"&gt;Building planner now shows the specific blocker name instead of a generic &amp;quot;Cannot build in this area&amp;quot; message.&lt;/li&gt;
-&lt;li data-rust-commits="721952"&gt;Ramp placement improved: aiming at the center of a foundation now places ramps correctly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Bug Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="722018"&gt;Wrapping paper can no longer be filled with water, preventing unintended item behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-10-25</guid>
-      <pubDate>Sun, 25 Oct 2026 12:00:00 -0400</pubDate>
     </item>
   </channel>
 </rss>
