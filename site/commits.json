@@ -1,5 +1,85 @@
 [
   {
+    "id": 722979,
+    "branch": "▉▊▍▊▊▄▋▄▅▆▊▉▉▇▆▍█▊▍▅▋",
+    "changeset": "▊▋▇▍▊▇",
+    "created": "2026-10-28T00:05:22",
+    "message": "▆▇█▇ ▍▇█▋▉▉ ▍▊▇▅ ▍▉▊█▍▇█▅▄ ▋▋▇▍ ▆▋▅▍ ▄█▉█▆▅▋ ▌▊ ▉ ▉▅██▍▆",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 722976,
+    "branch": "main/UZI 9mm",
+    "changeset": "169450",
+    "created": "2026-10-28T00:03:06",
+    "message": "Adjust recoil, weapon rack config",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 722971,
+    "branch": "main/base_occlusion",
+    "changeset": "169449",
+    "created": "2026-10-27T23:52:13",
+    "message": "Optimize time taken when room occlusion is turned on at runtime (18s -> 4s)\n- only visit every face once instead of refreshing nearby faces and calculating multiple times",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 722961,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "169446",
+    "created": "2026-10-27T23:41:06",
+    "message": "Updated description",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 722960,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "169445",
+    "created": "2026-10-27T23:40:34",
+    "message": "Hitting a sheeps skin with shears won't hurt or startle them (still does small amounts of damage to other entities)",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 722951,
+    "branch": "main/base_occlusion",
+    "changeset": "169443",
+    "created": "2026-10-27T23:24:03",
+    "message": "Optimize network group assignment after a room is recalculated",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 722947,
+    "branch": "▋▅██▄▊▇▄▌▆▍▊▄▌▅▍▍▆▊█▍",
+    "changeset": "▍▌▅▅▄▇",
+    "created": "2026-10-27T22:55:44",
+    "message": "▉▍▄█ █▇▅▊▉ ▋█▊▇█ ▉▉▅▊▅▍▅ ▆▊ ▉▊▋██▍ ▇▅▊▊▋▆▌ ▊▍▇█▍▊▌▌ ▉▋▇▄▉▊▍▆▋▆▊▆▆█ ▌▋ ▍▋▋▆▊▋▄ ▉▅▊▌ ▆▆▊▍▉█ ▌▄▌█▇▌ ▆█▌▌▇▄ ▄▉▆ ▄▊▉▆ ▌▊▆▋▋▋▌ ▌▌▊ ▄▅▇▄▌ ██▄▆▉ ▌▉▋ ▋▍▊▉▅▅▊▆ ▉▄ ▊▊ ▋▊ ▆▄▊█ ▄█▋▌ ▊▄▄▅▅▋ ▄▇▄ ▇▇▌█▌▅▆▋",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 722946,
+    "branch": "main/bird_critters",
+    "changeset": "169440",
+    "created": "2026-10-27T22:40:40",
+    "message": "Seagull audio tweaks",
+    "user": "diogo.c"
+  },
+  {
+    "id": 722941,
+    "branch": "main/Livestock_animals/shears",
+    "changeset": "169439",
+    "created": "2026-10-27T22:19:17",
+    "message": "shear sounds",
+    "user": "Alex R"
+  },
+  {
+    "id": 722939,
+    "branch": "main/swamp_tree_x_improvement",
+    "changeset": "169437",
+    "created": "2026-10-27T22:18:42",
+    "message": "Lowered marker points on swamp_tree_f",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 722926,
     "branch": "main/Livestock_animals",
     "changeset": "169434",
@@ -2070,13 +2150,5 @@
     "created": "2026-10-25T00:32:42",
     "message": "▋▍▅▆▌▄▆▌█▌ █▄▊▍▉▉▊██ █▇▆▉▆ ▋▍ ▄▊▅ ▊▋█▇▅▅▍▊▉▌▊▆▅ ▇▌▋▇▊█▍ ▉▋ ▉█▆▇▉▇▌ █▍▍ ▉▋▋▄▄▋ █▌ ▊▍▄▉▌▆▅▌▊▉█▆▊▊▉▍▆▍▄▋▊▉▋▄▍▊▊▇▊▋▊▊▆▊▇▊▊▍▊▄▅▋▋▆▄▊▇▍▆▌▌▄▊▋▆▅▅▄▊▅▊▌▆▌▍▌▄▍▇▌▆▇▇▄▉▌▋▉▍▇▇▊▅▋",
     "user": "Rin"
-  },
-  {
-    "id": 721886,
-    "branch": "main/batch_all_packets",
-    "changeset": "169079",
-    "created": "2026-10-24T22:38:24",
-    "message": "Take the idea of batching position packets and instead apply it to all types of packets\n- queue up packets per frame\n- send them out after invokes finish\n- packets are batched on the network thread so no change to the main thread\n- new packet type to indicate if it's a batch of small packets\n- ConVar to control batching at runtime\n- client can handle both batched & unbatched packets\n- batches are sent as \"immediate\" so they bypass raknet's internal buffering since we are now basically doing the buffering RakNet was doing",
-    "user": "Jake_Rich"
   }
 ]
