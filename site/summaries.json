@@ -1,16 +1,16 @@
 {
   "2026-10-28": {
-    "commit_count": 22,
-    "relevant_commit_count": 10,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112",
+    "commit_count": 29,
+    "relevant_commit_count": 15,
+    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Events & Scheduling",
+        "title": "Events & Timers",
         "items": [
           {
-            "text": "Event timers now persist across server restarts, so you won’t lose remaining time for scheduled events such as the Cargo Ship.",
+            "text": "Event schedule timers now persist across server restarts, so cooldowns for events like the cargo ship aren’t lost after a restart.",
             "commit_ids": [
               724046
             ]
@@ -18,37 +18,70 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Tools",
         "items": [
           {
-            "text": "Uzi now correctly deploys its stock after swapping weapons and no longer plays the swing animation when holstered, ensuring smoother handling.",
+            "text": "Shears now display proper visual effects when used and have an updated item description.",
+            "commit_ids": [
+              723009
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons",
+        "items": [
+          {
+            "text": "Uzi stock now deploys correctly after weapon swaps and holstering, fixing animation glitches.",
             "commit_ids": [
               724111
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployables",
+        "items": [
+          {
+            "text": "Scarecrow crash bug fixed, preventing errors when placing or interacting with scarecrows.",
+            "commit_ids": [
+              724185
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Visuals & Quality",
+        "items": [
+          {
+            "text": "Fixed a camera clipping issue that occurred when using the miner hat, preventing the view from being obstructed by volumetric light beams.",
+            "commit_ids": [
+              724068
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Events & Scheduling\n- Event timers now persist across server restarts, so you won’t lose remaining time for scheduled events such as the Cargo Ship.\n\n### Gameplay & Balance\n- Uzi now correctly deploys its stock after swapping weapons and no longer plays the swing animation when holstered, ensuring smoother handling.",
+    "summary": "### Events & Timers\n- Event schedule timers now persist across server restarts, so cooldowns for events like the cargo ship aren’t lost after a restart.\n\n### Tools\n- Shears now display proper visual effects when used and have an updated item description.\n\n### Weapons\n- Uzi stock now deploys correctly after weapon swaps and holstering, fixing animation glitches.\n\n### Deployables\n- Scarecrow crash bug fixed, preventing errors when placing or interacting with scarecrows.\n\n### Visuals & Quality\n- Fixed a camera clipping issue that occurred when using the miner hat, preventing the view from being obstructed by volumetric light beams.",
     "new_items": [
       {
-        "text": "Event timers now persist across server restarts, so you won’t lose remaining time for scheduled events such as the Cargo Ship.",
-        "commit_ids": [
-          724046
-        ],
-        "section": "Events & Scheduling"
-      },
-      {
-        "text": "Uzi now correctly deploys its stock after swapping weapons and no longer plays the swing animation when holstered, ensuring smoother handling.",
+        "text": "Uzi stock now deploys correctly after weapon swaps and holstering, fixing animation glitches.",
         "commit_ids": [
           724111
         ],
-        "section": "Gameplay & Balance"
+        "section": "Weapons"
+      },
+      {
+        "text": "Scarecrow crash bug fixed, preventing errors when placing or interacting with scarecrows.",
+        "commit_ids": [
+          724185
+        ],
+        "section": "Deployables"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- Event timers now persist across server restarts, so you won’t lose remaining time for scheduled events such as the Cargo Ship.\n- Uzi now correctly deploys its stock after swapping weapons and no longer plays the swing animation when holstered, ensuring smoother handling."
+    "new_summary": "- Uzi stock now deploys correctly after weapon swaps and holstering, fixing animation glitches.\n- Scarecrow crash bug fixed, preventing errors when placing or interacting with scarecrows."
   },
   "2026-10-27": {
     "commit_count": 132,
