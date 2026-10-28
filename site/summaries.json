@@ -1,64 +1,53 @@
 {
   "2026-10-28": {
-    "commit_count": 71,
-    "relevant_commit_count": 34,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549",
+    "commit_count": 81,
+    "relevant_commit_count": 41,
+    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay Bugs",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Fixed doors staying half‑open after alt‑tabbing, preventing players from getting stuck.",
+            "text": "Fixed weapon aiming while holding items and turning.",
             "commit_ids": [
-              724538
+              724640
             ]
           },
           {
-            "text": "Resolved a null‑reference error that broke scarecrows, restoring their functionality.",
+            "text": "Fixed melee head wobble when jogging.",
             "commit_ids": [
-              724185
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Wildlife & Audio",
-        "items": [
-          {
-            "text": "Increased network range for bird groups, allowing seagull and crow flocks to be seen and heard from farther away.",
-            "commit_ids": [
-              724361
+              724640
             ]
           },
           {
-            "text": "Added new flying, disperse, take‑off and landing sounds for seagulls and crows, improving wildlife audio cues.",
-            "commit_ids": [
-              724370,
-              724347
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Interaction",
-        "items": [
-          {
-            "text": "Implemented proper collision for each damage stage of the lighthouse lamp, affecting player movement and interactions with damaged lamps.",
-            "commit_ids": [
-              724205
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons",
-        "items": [
-          {
-            "text": "Fixed Uzi stock deployment after weapon swap and removed unwanted stock swing animation when holstering, improving weapon handling.",
+            "text": "Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing when holstering.",
             "commit_ids": [
               724111
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Controls",
+        "items": [
+          {
+            "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.",
+            "commit_ids": [
+              724639
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Environmental Hazards",
+        "items": [
+          {
+            "text": "Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray.",
+            "commit_ids": [
+              724609,
+              724450
             ]
           }
         ]
@@ -67,7 +56,7 @@
         "title": "World Events",
         "items": [
           {
-            "text": "Event schedule now saves remaining hours, fixing cargo ship spawn resets after server restarts and ensuring cooldowns persist.",
+            "text": "Event schedule now saves remaining hours on server restart, preventing full cooldown resets such as cargo ship spawn.",
             "commit_ids": [
               724046
             ]
@@ -75,16 +64,33 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Structures & Interactions",
         "items": [
           {
-            "text": "Upload queue limit raised to 1,000, allowing players to submit more UGC items before processing.",
+            "text": "Re‑enabled dynamic occlusion pausing, resolving doors getting stuck half‑open after alt‑tabbing.",
             "commit_ids": [
-              724543
+              724538
             ]
           },
           {
-            "text": "Shears now display proper visual effects and have an updated item description for clearer usage information.",
+            "text": "Fixed a null reference error that could break scarecrow functionality.",
+            "commit_ids": [
+              724185
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Items",
+        "items": [
+          {
+            "text": "Lighthouse lamps now feature separate damage stages with active collision, changing how they can be damaged and interact with players and objects.",
+            "commit_ids": [
+              724205
+            ]
+          },
+          {
+            "text": "Shears now show cutting visual effects and have an updated item description for clearer usage information.",
             "commit_ids": [
               723009
             ]
@@ -93,25 +99,40 @@
       }
     ],
     "status": "ok",
-    "summary": "### Gameplay Bugs\n- Fixed doors staying half‑open after alt‑tabbing, preventing players from getting stuck.\n- Resolved a null‑reference error that broke scarecrows, restoring their functionality.\n\n### Wildlife & Audio\n- Increased network range for bird groups, allowing seagull and crow flocks to be seen and heard from farther away.\n- Added new flying, disperse, take‑off and landing sounds for seagulls and crows, improving wildlife audio cues.\n\n### World Interaction\n- Implemented proper collision for each damage stage of the lighthouse lamp, affecting player movement and interactions with damaged lamps.\n\n### Weapons\n- Fixed Uzi stock deployment after weapon swap and removed unwanted stock swing animation when holstering, improving weapon handling.\n\n### World Events\n- Event schedule now saves remaining hours, fixing cargo ship spawn resets after server restarts and ensuring cooldowns persist.\n\n### Gameplay & Balance\n- Upload queue limit raised to 1,000, allowing players to submit more UGC items before processing.\n- Shears now display proper visual effects and have an updated item description for clearer usage information.",
+    "summary": "### Combat & Weapons\n- Fixed weapon aiming while holding items and turning.\n- Fixed melee head wobble when jogging.\n- Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing when holstering.\n\n### Vehicle Controls\n- Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.\n\n### Environmental Hazards\n- Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray.\n\n### World Events\n- Event schedule now saves remaining hours on server restart, preventing full cooldown resets such as cargo ship spawn.\n\n### Structures & Interactions\n- Re‑enabled dynamic occlusion pausing, resolving doors getting stuck half‑open after alt‑tabbing.\n- Fixed a null reference error that could break scarecrow functionality.\n\n### World & Items\n- Lighthouse lamps now feature separate damage stages with active collision, changing how they can be damaged and interact with players and objects.\n- Shears now show cutting visual effects and have an updated item description for clearer usage information.",
     "new_items": [
       {
-        "text": "Fixed doors staying half‑open after alt‑tabbing, preventing players from getting stuck.",
+        "text": "Fixed weapon aiming while holding items and turning.",
         "commit_ids": [
-          724538
+          724640
         ],
-        "section": "Gameplay Bugs"
+        "section": "Combat & Weapons"
       },
       {
-        "text": "Upload queue limit raised to 1,000, allowing players to submit more UGC items before processing.",
+        "text": "Fixed melee head wobble when jogging.",
         "commit_ids": [
-          724543
+          724640
         ],
-        "section": "Gameplay & Balance"
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.",
+        "commit_ids": [
+          724639
+        ],
+        "section": "Vehicle Controls"
+      },
+      {
+        "text": "Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray.",
+        "commit_ids": [
+          724609,
+          724450
+        ],
+        "section": "Environmental Hazards"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Fixed doors staying half‑open after alt‑tabbing, preventing players from getting stuck.\n- Upload queue limit raised to 1,000, allowing players to submit more UGC items before processing."
+    "new_relevant_count": 4,
+    "new_summary": "- Fixed weapon aiming while holding items and turning.\n- Fixed melee head wobble when jogging.\n- Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.\n- Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray."
   },
   "2026-10-27": {
     "commit_count": 132,

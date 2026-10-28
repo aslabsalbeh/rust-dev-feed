@@ -1,5 +1,85 @@
 [
   {
+    "id": 724640,
+    "branch": "main/held_item_fixes",
+    "changeset": "169594",
+    "created": "2026-10-28T21:50:30",
+    "message": "fix weapons aim while holding items and turning + melee head wobble when jogging. (move more code to HasHeldItemAnimations to work with subsystem held items)",
+    "user": "octo"
+  },
+  {
+    "id": 724642,
+    "branch": "main/bird_critters",
+    "changeset": "169593",
+    "created": "2026-10-28T21:50:15",
+    "message": "Compile fix",
+    "user": "cipeaX"
+  },
+  {
+    "id": 724639,
+    "branch": "main/held_item_fixes",
+    "changeset": "169592",
+    "created": "2026-10-28T21:47:17",
+    "message": "fix predict turn feet yaw being completely wrong in rowboats, use raw aim yaw instead.",
+    "user": "octo"
+  },
+  {
+    "id": 724630,
+    "branch": "main/fix_packet_capture_rustrelay",
+    "changeset": "169590",
+    "created": "2026-10-28T21:33:53",
+    "message": "Fix packet capture writing packets sent to rust relay\n- intended to only capture player-facing traffic\n- can use convar `packet_capture_rust_relay` to enable capturing rust relay if you really want",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 724623,
+    "branch": "▋▌▆▆",
+    "changeset": "▊▇▇▆▊▊",
+    "created": "2026-10-28T21:30:31",
+    "message": "▅ ▊▉▆ ▅▄▄█ ▍▌ ▅▅██▊ ▆▋▋▉▌▌█▍▄▌ ▋█▌▌▅▌▄▉ ▋▉ █▍▄ █▅▊▆▋▉▆▋▉▇▆▅▊▊▌▊▆ ▊▋█▇█ ▊▆▊▋▍▄▉",
+    "user": "octo"
+  },
+  {
+    "id": 724617,
+    "branch": "main/base_occlusion",
+    "changeset": "169588",
+    "created": "2026-10-28T21:29:01",
+    "message": "Fix edge links which have identical distances flipping based on what was placed first\n- make the tiebreak use the lower network ID so tests don't have to wonder about this small inconsistency",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 724610,
+    "branch": "main",
+    "changeset": "169587",
+    "created": "2026-10-28T21:22:36",
+    "message": "sprinkler_color_fix -> main",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 724609,
+    "branch": "main/sprinkler_color_fix",
+    "changeset": "169586",
+    "created": "2026-10-28T21:22:22",
+    "message": "Fix radwater sprinklers spraying clear water for a moment when switched on\r\nSprinkler now gets its container to adopt it before its On flag is networked, so the rad effect shows from the first frame",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 724596,
+    "branch": "main/more_lod_optims",
+    "changeset": "169584",
+    "created": "2026-10-28T20:25:34",
+    "message": "Use a sparse grid for CullWhenInside so foundations changing only queues nearby bushes into the work queue\r\nAdd some pool analyzer attributes",
+    "user": "cipeaX"
+  },
+  {
+    "id": 724594,
+    "branch": "█▇▆▉▋▋█▊▅▇▍▍▅▆▅▉▍▇▉▉▍",
+    "changeset": "▅▅▅▇▄▆",
+    "created": "2026-10-28T20:25:08",
+    "message": "▍ ▅▆▄▄▊ ▅▍▇ ▅▌█▉▇▇ ▅▉▋▋▊▄ ▇▄▍▄▄█▌ ▌▌▅ █▍▄▇ ▆▍▇█▊▇▆▅▆▍ ▆▊▌",
+    "user": "nick.m"
+  },
+  {
     "id": 724578,
     "branch": "main/vip_warhead",
     "changeset": "169582",
@@ -2757,14 +2837,6 @@
     "changeset": "169091",
     "created": "2026-10-25T23:39:02",
     "message": "~RendererLOD stats now show float values in the text entry, but the slider will still round to an integer",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 721990,
-    "branch": "main/hackweek_local_tutorial",
-    "changeset": "169088",
-    "created": "2026-10-25T22:13:57",
-    "message": "Local server instance handler for Mac (only required some minor directory changes and disabling visual console convar)\nUpdated ignore file",
     "user": "Jarryd Campi"
   }
 ]
