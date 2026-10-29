@@ -1,5 +1,85 @@
 [
   {
+    "id": 725515,
+    "branch": "main/bird_critters",
+    "changeset": "169685",
+    "created": "2026-10-29T18:05:19",
+    "message": "move all \"swarm\" critter jobs to static classes marked with [BurstCompile]",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725505,
+    "branch": "main/more_lod_optims",
+    "changeset": "169681",
+    "created": "2026-10-29T17:42:46",
+    "message": "Use a hashset for the combined mesh lookup from 169597, Contains was slow on big ass bases",
+    "user": "Flavien"
+  },
+  {
+    "id": 725500,
+    "branch": "main/underground_train_network_update",
+    "changeset": "169680",
+    "created": "2026-10-29T17:19:53",
+    "message": "Set dressing, shell polish, wires added to Random Room Small A. Updated mani so CCTV console would work.",
+    "user": "hannah.watts"
+  },
+  {
+    "id": 725497,
+    "branch": "main",
+    "changeset": "169679",
+    "created": "2026-10-29T17:08:43",
+    "message": "Cherry Picked 169677 to fix an issue with contact shadows",
+    "user": "aidan.m"
+  },
+  {
+    "id": 725443,
+    "branch": "main/loadoutsui_delete_fix",
+    "changeset": "169674",
+    "created": "2026-10-29T17:01:34",
+    "message": "Fixed loadouts UI deleting popup being uninteractible",
+    "user": "Raul"
+  },
+  {
+    "id": 725431,
+    "branch": "main",
+    "changeset": "169673",
+    "created": "2026-10-29T16:48:02",
+    "message": "Fix nightvision goggle sound restarting when gesturing",
+    "user": "octo"
+  },
+  {
+    "id": 725414,
+    "branch": "▉███",
+    "changeset": "█▍▇▆▌█",
+    "created": "2026-10-29T16:25:50",
+    "message": "▇▋ █▄▆▆▉▇ ▌█▍ ▊▆▍▇▆▆▅▍ ▅▍▉",
+    "user": "WeakV"
+  },
+  {
+    "id": 725413,
+    "branch": "main",
+    "changeset": "169670",
+    "created": "2026-10-29T16:24:57",
+    "message": "Fix mortar ammo indicator not updating",
+    "user": "octo"
+  },
+  {
+    "id": 725412,
+    "branch": "main/indirect_instancing",
+    "changeset": "169669",
+    "created": "2026-10-29T16:22:19",
+    "message": "Use monster meshes for BRG",
+    "user": "Felix"
+  },
+  {
+    "id": 725411,
+    "branch": "main",
+    "changeset": "169668",
+    "created": "2026-10-29T16:12:32",
+    "message": "Change mac build to arm64-only",
+    "user": "andre"
+  },
+  {
     "id": 725409,
     "branch": "main/swarm_fixes",
     "changeset": "169666",
@@ -2510,189 +2590,5 @@
     "created": "2026-10-26T18:38:15",
     "message": "Optimize doors when recalculating series of connected rooms when doors are opened & closed",
     "user": "Jake_Rich"
-  },
-  {
-    "id": 722376,
-    "branch": "main",
-    "changeset": "169218",
-    "created": "2026-10-26T18:11:45",
-    "message": "~ merge from analytics_base_occlusion -> main",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722375,
-    "branch": "main/analytics_base_occlusion",
-    "changeset": "169217",
-    "created": "2026-10-26T18:11:10",
-    "message": "Fix compile errors",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722371,
-    "branch": "main/UZI 9mm",
-    "changeset": "169215",
-    "created": "2026-10-26T18:00:07",
-    "message": "- anims and clips for weapons own anims, inc stock deploy + collapse, reload and fire\r\n- initial animator setup for these weapon anims\r\n- clip update of 3p idle\r\n- avatar setup for world weapon rig",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 722367,
-    "branch": "main/analytics_base_occlusion",
-    "changeset": "169214",
-    "created": "2026-10-26T17:57:59",
-    "message": "Add analytics events for rotating and flipping building blocks",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722366,
-    "branch": "▍███",
-    "changeset": "▊▉▍▅█▊",
-    "created": "2026-10-26T17:57:39",
-    "message": "▄ █▍█▅▊ ▌▅▋▉ ▇▄▍▅▌▊▍██▍▍▋█▊▊▄",
-    "user": "Ryan"
-  },
-  {
-    "id": 722365,
-    "branch": "▅▋▌▋▍▅▆█▄▊▌▊▆▆▆▆▋▅▆▇▉",
-    "changeset": "▉▋▅▋▇▇",
-    "created": "2026-10-26T17:57:28",
-    "message": "█ ▅ ▆▆▋▋▇ ▊▉▅▊ ▆▆▊▅▄ ▉▌ ▇▉▌ █▆▆▉█▄▋▅▊▆ ▇▉▅▄▊▉▆▋ ▄▅▍▌▍▋▆▇▍▊▋ ▇▍ ▌▊▄ ▍▌▍▊ ▆▊▉▉ ▍▌ ▇▊▄▊▉█▆▄▇▇ ▍▊▇▉▇▅▅▅ ▇▇ ▇▉▌ ▄▄▋▊▊ █▇ ▉▇▍▄ █▉▆▇▅▆▄ ▌█▆▅ ▇▉█▇▅ ▉█▅ ▉▉▌▋▄▉▋▌ ▊▊▄▋▉▊▆",
-    "user": "Ryan"
-  },
-  {
-    "id": 722352,
-    "branch": "main",
-    "changeset": "169211",
-    "created": "2026-10-26T17:32:26",
-    "message": "boat_scientists_improvements -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722350,
-    "branch": "main/boat_scientists_improvements",
-    "changeset": "169210",
-    "created": "2026-10-26T17:32:01",
-    "message": "Only attempt turns when we can actually see the player",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722347,
-    "branch": "main/work_queue_optims",
-    "changeset": "169209",
-    "created": "2026-10-26T17:29:14",
-    "message": "Lap interval pass on additional work queues\r\n- DroppedItemUnderwaterQueue, 0.05, keep inline (ish) with physics tick rate\r\n- BotColliderWorkQueue, 0.1, this is only refreshed every 0.2-0.3 seconds anyway",
-    "user": "Ryan"
-  },
-  {
-    "id": 722346,
-    "branch": "main/Livestock_animals",
-    "changeset": "169208",
-    "created": "2026-10-26T17:28:29",
-    "message": "Fix bad merge when updated before submitting livestock lamp changes",
-    "user": "Maverick"
-  },
-  {
-    "id": 722336,
-    "branch": "main",
-    "changeset": "169206",
-    "created": "2026-10-26T17:16:35",
-    "message": "~ merge from analytics_base_occlusion -> main",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722330,
-    "branch": "main",
-    "changeset": "169205",
-    "created": "2026-10-26T17:13:51",
-    "message": "boat_scientist_improvements -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722329,
-    "branch": "main/boat_scientists_improvements",
-    "changeset": "169204",
-    "created": "2026-10-26T17:13:28",
-    "message": "- Give up players if you've been chasing them for a while\r\n- Pursue for a max set of meters unless that player shoost you",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722327,
-    "branch": "main",
-    "changeset": "169203",
-    "created": "2026-10-26T17:12:53",
-    "message": "~ replicated_convar_error_change -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722326,
-    "branch": "main",
-    "changeset": "169202",
-    "created": "2026-10-26T17:12:31",
-    "message": "~ item_pool_expansion -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722325,
-    "branch": "main",
-    "changeset": "169201",
-    "created": "2026-10-26T17:12:03",
-    "message": "~ sprinkler_fixes -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722324,
-    "branch": "main",
-    "changeset": "169200",
-    "created": "2026-10-26T17:11:44",
-    "message": "~ radwater_color_throw_fix -> main",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722323,
-    "branch": "main/analytics_base_occlusion",
-    "changeset": "169199",
-    "created": "2026-10-26T17:11:01",
-    "message": "Add \"isOpen\" to the existing door toggled event",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722309,
-    "branch": "main/UZI 9mm",
-    "changeset": "169198",
-    "created": "2026-10-26T16:54:14",
-    "message": "3p setup wip\r\n- 3p anims\r\n- holdtype controller population\r\n- holster placement",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 722294,
-    "branch": "▊█▉▉▊▇█▄▆▅▍▆▍▅▊▊▋▅▆▆▊▋",
-    "changeset": "▍▅▌▋█▊",
-    "created": "2026-10-26T16:47:18",
-    "message": "▇ ▇▉▅▊▋ ▉▄ ▌▍▇▌█ ▋█▋▊▋ █▄█▄▆█▊▋▄ ▋▉█▄▊ ▄▇▆▉▋▌▉ ▋▊▆▆▍ ▆▋ ▅▌▋▇▄▍▆▆▌ ▇▄▅█ ▌▊▋▉▇ ▍▋▌ ▄█▍▍▌▆ ▋▇▆▌ ▇▅▍▉▅ ▄▅█▅▇▌ █▍▉▊ █▊▄▍▊▍▄▉▍▅▇▌█▆ ▋█▌▊█▊▍▉▇ ▉▊▇▍▌ ▇▍▉▉▇▇▇▉ ▋█▉ ▍▇▉▍█▋▆ ▋▅▇▍▍▋ █▌▊▌▇█▆▆▄▆▆▍▉▌█▄▌▅ ▋▇▅▉▇▇▉▌▋ █▉▋█▇▍▋▄ ▉▊▉ ▅▆▆▆ ▍▅▇ ▄ ▍▍▌▊▆▅▅ ▊▊▌ █▇▆▉▋ ▋▊▆ ▋▌▍▋▋▌█▇▄▉ ▄▍▊▆▄▉▌ ▋▊ ▌█▆▆▇▅▆▄▇▆",
-    "user": "max.p"
-  },
-  {
-    "id": 722278,
-    "branch": "main/boat_scientists_improvements",
-    "changeset": "169196",
-    "created": "2026-10-26T16:39:06",
-    "message": "- Swap to another target if the boats main target is obstructed\r\n- Otherwise decide to bail if the target has been hidden for a long time",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722268,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169195",
-    "created": "2026-10-26T16:21:34",
-    "message": "Bugfix: fix WaterPurifier incorrectly increasing stack of garbage in output just before removing it\r\nTests: none, trivial change",
-    "user": "Daniel P"
-  },
-  {
-    "id": 722267,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169194",
-    "created": "2026-10-26T16:17:28",
-    "message": "Bugfix: ResearchTable.ResearchAttemptFinished - preserve ItemDef from the removed item to avoid NREs\r\nTests: none, trivial change",
-    "user": "Daniel P"
   }
 ]
