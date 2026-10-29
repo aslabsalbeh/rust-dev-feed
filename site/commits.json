@@ -1,5 +1,61 @@
 [
   {
+    "id": 725531,
+    "branch": "main/scrap_king_buildingskin_dlc",
+    "changeset": "169694",
+    "created": "2026-10-29T19:41:20",
+    "message": "scrap king - updated collider and gibs sounds",
+    "user": "Lain"
+  },
+  {
+    "id": 725530,
+    "branch": "main/bird_critters",
+    "changeset": "169693",
+    "created": "2026-10-29T19:40:43",
+    "message": "mess with some values to make flocks move more like scavenger birds, with flitting movements and less obvious circling",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725528,
+    "branch": "main/UZI 9mm",
+    "changeset": "169692",
+    "created": "2026-10-29T19:30:00",
+    "message": "Add shield compatibility when stock is folded",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 725523,
+    "branch": "main/bird_critters",
+    "changeset": "169690",
+    "created": "2026-10-29T18:53:02",
+    "message": "code clean up, added server convar commands for forcing gull groups to startle, and to land\r\nadded prefab for Seagull Land Point\r\nfixed birds sometimes flying through obstacles",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725522,
+    "branch": "main/bird_critters",
+    "changeset": "169689",
+    "created": "2026-10-29T18:31:15",
+    "message": "S2P both oilrigs, both harbors",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725521,
+    "branch": "main/bird_critters",
+    "changeset": "169688",
+    "created": "2026-10-29T18:26:14",
+    "message": "add seagull flock interest zones to coastal monument scenes\r\n- both oilrigs\r\n- both harbor variants",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725520,
+    "branch": "main/bird_critters",
+    "changeset": "169687",
+    "created": "2026-10-29T18:25:02",
+    "message": "add hook-ins for flock interest & fleeing\r\n- bird interest zones can be placed in monument scenes to attract flocks \"active\" monuments\r\n- corpses attract crow flocks (low priority) for a short time\r\n- timed explosives make bird flocks flee the area",
+    "user": "ElliotH"
+  },
+  {
     "id": 725515,
     "branch": "main/bird_critters",
     "changeset": "169685",
@@ -2510,85 +2566,5 @@
     "created": "2026-10-26T20:39:03",
     "message": "UIBlurCanvasesBehind skips the capture while a CanvasGroup above is faded out",
     "user": "Flavien"
-  },
-  {
-    "id": 722414,
-    "branch": "▋▉▇▉▉▇▇▍▅▅▊▅▇▆▆▇▅▋▅▊▅",
-    "changeset": "▌▌▉▍▉▉",
-    "created": "2026-10-26T20:09:40",
-    "message": "▄ ▉█▋ ▌▉▇▆▊ ▆▋▉▍▅ █▊▅▅",
-    "user": "nick.m"
-  },
-  {
-    "id": 722410,
-    "branch": "main/demoui2_fixes",
-    "changeset": "169231",
-    "created": "2026-10-26T19:49:20",
-    "message": "rename `demo.newui` to `demo.oldui`,  enable demoui2 by default.\r\n[old ui stays. we really don't have a reason to nuke it for now and there are still some people that prefer the old one.]",
-    "user": "octo"
-  },
-  {
-    "id": 722405,
-    "branch": "main/base_occlusion",
-    "changeset": "169229",
-    "created": "2026-10-26T19:29:35",
-    "message": "Set \"occlusion_door_immediate\" to false by default (was supposed to be since we show everything within 32m)",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722400,
-    "branch": "main/vcc",
-    "changeset": "169225",
-    "created": "2026-10-26T19:21:12",
-    "message": "Add special staging-only gamepad UI button option that hackily enables gamepad override just for that session.\r\nHide all other gamepad options in the gamepad section until it is enabled.",
-    "user": "Adam W"
-  },
-  {
-    "id": 722399,
-    "branch": "main",
-    "changeset": "169224",
-    "created": "2026-10-26T19:18:22",
-    "message": "Fix navmesh building on top of cargoship",
-    "user": "Maverick"
-  },
-  {
-    "id": 722398,
-    "branch": "main/aizone_sleep_fix",
-    "changeset": "169223",
-    "created": "2026-10-26T19:16:41",
-    "message": "Fix AI Sleep Zones not working correctly since May\r\n- race condition fix earlier this year inadvertently made any zone outside of a BaseEntity not initialise correctly (all except underwater labs)\r\n- before / after on fresh procmap: https://files.facepunch.com/ryanw/2026/October/26_19-06-IndelibleBlackrhino.png / https://files.facepunch.com/ryanw/2026/October/26_18-54-FluffyDaddylonglegs.png",
-    "user": "Ryan"
-  },
-  {
-    "id": 722396,
-    "branch": "main/Livestock_animals",
-    "changeset": "169222",
-    "created": "2026-10-26T19:15:08",
-    "message": "Fix sheeps starving despite a trough, their feed time was lower than cows so they wasted time shuffling with each other for a turn, now feeding time can't desync between sheep and cows",
-    "user": "Maverick"
-  },
-  {
-    "id": 722394,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169221",
-    "created": "2026-10-26T18:51:32",
-    "message": "Update: Item.UseItem now returns if the entire item was consumed\r\n- bugfix IndustrialConveyor's use-after-free of item in QuickMove path\r\nTests: ran conveyor tests, no longer failing",
-    "user": "Daniel P"
-  },
-  {
-    "id": 722392,
-    "branch": "▉▍██▅▍▇▄▊▇▍▅▄▍▋▆▍▅▌▅▉▄",
-    "changeset": "▉▄▇▍▍▉",
-    "created": "2026-10-26T18:43:49",
-    "message": "▉ ▄▅▄▌▇ █▆ ▍▅▉▇ ▋▋▄▍▌▉▅▄█▅▌ ▋▆▋▆▉ ▊█▆██ ▌█▋▍▊▇▇▍█▇ ▄ ▍▄▉▇▇ ▇█ ▅█▅▉█▆▇▋ ▅▄▍▊▉ ▌▄▍▍▆▆▍▆ ▅▋▅▍▋▌▋▆▆ ▌▆▆▍▅▍▆▇▄▉▉ ▌▆▆▍ ▋▋▅ ▌▅▉▅▄▇▆ ▍▊▄▉ ▊█▊▉▌ ▅▋▇▉▋ ▅▊▊▆▊ █▇▍ █▅▅▄ ▊▌▄▋▋▅ ▍▋▅▆ ▅▌ ▇▅▌▇█ ▄▆█▆▇ ▋█▌▍▇▌▍▍▆ ▍▇▊▋▋▉▄█▉▇▌▉▌█▌▌▉▉▄▉▇▍▋▋▆▅ ▉▌▌ ▌▄▋▆▄▆█▊ █▅▌▇▊▊▄▇ ▌▍▄▄▄ ▌▇▍ █▌▍▉ ▌█▊ ▍▆▊▋▇▄▇▋▅▇▆▄█▅▅▋▆▊ ██▅▉▌ ▋▍▋▌ ▋▆▆▍▋▍█▌▅▄▍▋▆█ ▅▌▊▌ ▋▌▋▆▅▊▌█▄ █▇▇▌▋▉▅▉",
-    "user": "max.p"
-  },
-  {
-    "id": 722390,
-    "branch": "main/base_occlusion",
-    "changeset": "169219",
-    "created": "2026-10-26T18:38:15",
-    "message": "Optimize doors when recalculating series of connected rooms when doors are opened & closed",
-    "user": "Jake_Rich"
   }
 ]

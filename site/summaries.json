@@ -1,8 +1,8 @@
 {
   "2026-10-29": {
-    "commit_count": 44,
-    "relevant_commit_count": 19,
-    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497",
+    "commit_count": 51,
+    "relevant_commit_count": 25,
+    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -10,42 +10,15 @@
         "title": "UI & HUD",
         "items": [
           {
-            "text": "Loadouts UI delete popup is now responsive, allowing items to be removed correctly.",
-            "commit_ids": [
-              725443
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio",
-        "items": [
-          {
-            "text": "Nightvision goggles no longer restart their sound when gesturing.",
-            "commit_ids": [
-              725431
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "Mortar ammo indicator now updates correctly, showing remaining shells.",
+            "text": "Mortar ammo counter now updates correctly when firing.",
             "commit_ids": [
               725413
             ]
-          }
-        ]
-      },
-      {
-        "title": "World & Structures",
-        "items": [
+          },
           {
-            "text": "Beacon repairable collider no longer blocks ladders, restoring smooth ladder climbing near beacons.",
+            "text": "Loadout deletion popup is now interactive, allowing you to confirm or cancel deletions.",
             "commit_ids": [
-              725305
+              725443
             ]
           }
         ]
@@ -54,10 +27,28 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Bird groups (seagulls) no longer get stuck in landing state and have larger hit‑registration bounds, improving hunting reliability.",
+            "text": "Corpses temporarily attract crow flocks; explosions cause bird flocks to flee, and new seagull interest zones draw flocks to oil rigs and harbors.",
+            "commit_ids": [
+              725520,
+              725521
+            ]
+          },
+          {
+            "text": "Bird groups no longer get stuck in landing state and have larger hit‑registration bounds, fixing occasional flying‑through‑obstacle glitches.",
             "commit_ids": [
               725390,
-              724761
+              725523
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Monuments",
+        "items": [
+          {
+            "text": "Beacon repairable collider no longer blocks ladder climbing on oil rigs and harbors.",
+            "commit_ids": [
+              725305
             ]
           }
         ]
@@ -66,56 +57,48 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Crab and jellyfish harvesting jobs have been fixed, restoring proper resource yields and behavior.",
+            "text": "Nightvision goggles no longer restart their sound when you gesture, eliminating the repetitive audio glitch.",
+            "commit_ids": [
+              725431
+            ]
+          },
+          {
+            "text": "Crab and jellyfish harvesting jobs have been fixed, ensuring proper resource yields; crab colour tints are now more distinct, making rare blue crabs easier to spot.",
             "commit_ids": [
               725409
+            ]
+          },
+          {
+            "text": "Job UI feedback improvements resolve missing or incorrect messages during job processing.",
+            "commit_ids": [
+              725375
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### UI & HUD\n- Loadouts UI delete popup is now responsive, allowing items to be removed correctly.\n\n### Audio\n- Nightvision goggles no longer restart their sound when gesturing.\n\n### Combat\n- Mortar ammo indicator now updates correctly, showing remaining shells.\n\n### World & Structures\n- Beacon repairable collider no longer blocks ladders, restoring smooth ladder climbing near beacons.\n\n### NPC & AI\n- Bird groups (seagulls) no longer get stuck in landing state and have larger hit‑registration bounds, improving hunting reliability.\n\n### Gameplay & Balance\n- Crab and jellyfish harvesting jobs have been fixed, restoring proper resource yields and behavior.",
+    "summary": "### UI & HUD\n- Mortar ammo counter now updates correctly when firing.\n- Loadout deletion popup is now interactive, allowing you to confirm or cancel deletions.\n\n### NPC & AI\n- Corpses temporarily attract crow flocks; explosions cause bird flocks to flee, and new seagull interest zones draw flocks to oil rigs and harbors.\n- Bird groups no longer get stuck in landing state and have larger hit‑registration bounds, fixing occasional flying‑through‑obstacle glitches.\n\n### World & Monuments\n- Beacon repairable collider no longer blocks ladder climbing on oil rigs and harbors.\n\n### Gameplay & Balance\n- Nightvision goggles no longer restart their sound when you gesture, eliminating the repetitive audio glitch.\n- Crab and jellyfish harvesting jobs have been fixed, ensuring proper resource yields; crab colour tints are now more distinct, making rare blue crabs easier to spot.\n- Job UI feedback improvements resolve missing or incorrect messages during job processing.",
     "new_items": [
       {
-        "text": "Loadouts UI delete popup is now responsive, allowing items to be removed correctly.",
+        "text": "Corpses temporarily attract crow flocks; explosions cause bird flocks to flee, and new seagull interest zones draw flocks to oil rigs and harbors.",
         "commit_ids": [
-          725443
-        ],
-        "section": "UI & HUD"
-      },
-      {
-        "text": "Nightvision goggles no longer restart their sound when gesturing.",
-        "commit_ids": [
-          725431
-        ],
-        "section": "Audio"
-      },
-      {
-        "text": "Mortar ammo indicator now updates correctly, showing remaining shells.",
-        "commit_ids": [
-          725413
-        ],
-        "section": "Combat"
-      },
-      {
-        "text": "Bird groups (seagulls) no longer get stuck in landing state and have larger hit‑registration bounds, improving hunting reliability.",
-        "commit_ids": [
-          725390,
-          724761
+          725520,
+          725521
         ],
         "section": "NPC & AI"
       },
       {
-        "text": "Crab and jellyfish harvesting jobs have been fixed, restoring proper resource yields and behavior.",
+        "text": "Bird groups no longer get stuck in landing state and have larger hit‑registration bounds, fixing occasional flying‑through‑obstacle glitches.",
         "commit_ids": [
-          725409
+          725390,
+          725523
         ],
-        "section": "Gameplay & Balance"
+        "section": "NPC & AI"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Loadouts UI delete popup is now responsive, allowing items to be removed correctly.\n- Nightvision goggles no longer restart their sound when gesturing.\n- Mortar ammo indicator now updates correctly, showing remaining shells.\n- Bird groups (seagulls) no longer get stuck in landing state and have larger hit‑registration bounds, improving hunting reliability.\n- Crab and jellyfish harvesting jobs have been fixed, restoring proper resource yields and behavior."
+    "new_relevant_count": 4,
+    "new_summary": "- Corpses temporarily attract crow flocks; explosions cause bird flocks to flee, and new seagull interest zones draw flocks to oil rigs and harbors.\n- Bird groups no longer get stuck in landing state and have larger hit‑registration bounds, fixing occasional flying‑through‑obstacle glitches."
   },
   "2026-10-28": {
     "commit_count": 99,
