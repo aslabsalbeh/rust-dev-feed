@@ -1,5 +1,29 @@
 [
   {
+    "id": 724728,
+    "branch": "main/batch_all_packets",
+    "changeset": "169600",
+    "created": "2026-10-28T23:58:39",
+    "message": "Fix steam networking bug from only sending the last batch as Immediate\n- set every single batch as immediate on steam networking, only set last batch on raknet\n- fixes every packet waiting 5ms for nagle in steam networking",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 724725,
+    "branch": "main/high_stakes_dlc",
+    "changeset": "169598",
+    "created": "2026-10-28T23:30:56",
+    "message": "small games wooden table;\r\n- texture polish",
+    "user": "curt"
+  },
+  {
+    "id": 724702,
+    "branch": "main/more_lod_optims",
+    "changeset": "169597",
+    "created": "2026-10-28T22:29:12",
+    "message": "Optimised RendererGroup invalidation, only the combined mesh holding the block is switched back to separate renderers\r\n\nEditor profiling, walking around the same big base: slowest LOD switch ~2.5ms -> ~1ms",
+    "user": "Flavien"
+  },
+  {
     "id": 724640,
     "branch": "main/held_item_fixes",
     "changeset": "169594",
@@ -2805,38 +2829,6 @@
     "changeset": "169099",
     "created": "2026-10-26T00:53:44",
     "message": "Missing meta",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722004,
-    "branch": "main/Livestock_animals",
-    "changeset": "169096",
-    "created": "2026-10-26T00:12:15",
-    "message": "Sharks now flee from players with animal repellant buff",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722002,
-    "branch": "main/Livestock_animals",
-    "changeset": "169094",
-    "created": "2026-10-26T00:02:09",
-    "message": "Bulls and rams will no longer flee from players with the animal repellant effect active\r\nThey will also not charge",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722001,
-    "branch": "main/Livestock_animals",
-    "changeset": "169093",
-    "created": "2026-10-25T23:55:16",
-    "message": "Bee swarms won't chase players with the animal repellant buff (Croc pie)\r\nCan still take damage if you walk through them though",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 721999,
-    "branch": "main",
-    "changeset": "169091",
-    "created": "2026-10-25T23:39:02",
-    "message": "~RendererLOD stats now show float values in the text entry, but the slider will still round to an integer",
     "user": "Jarryd Campi"
   }
 ]

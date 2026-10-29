@@ -1,30 +1,18 @@
 {
   "2026-10-28": {
-    "commit_count": 81,
-    "relevant_commit_count": 41,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642",
+    "commit_count": 84,
+    "relevant_commit_count": 42,
+    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642,724728",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Combat & Weapon Handling",
         "items": [
           {
-            "text": "Fixed weapon aiming while holding items and turning.",
+            "text": "Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.",
             "commit_ids": [
               724640
-            ]
-          },
-          {
-            "text": "Fixed melee head wobble when jogging.",
-            "commit_ids": [
-              724640
-            ]
-          },
-          {
-            "text": "Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing when holstering.",
-            "commit_ids": [
-              724111
             ]
           }
         ]
@@ -33,7 +21,7 @@
         "title": "Vehicle Controls",
         "items": [
           {
-            "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.",
+            "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.",
             "commit_ids": [
               724639
             ]
@@ -41,13 +29,23 @@
         ]
       },
       {
-        "title": "Environmental Hazards",
+        "title": "World Interaction",
         "items": [
           {
-            "text": "Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray.",
+            "text": "Resolved issue where doors could become half‑open after alt‑tabbing, restoring proper door behavior.",
             "commit_ids": [
-              724609,
-              724450
+              724538
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons",
+        "items": [
+          {
+            "text": "Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing on holster.",
+            "commit_ids": [
+              724111
             ]
           }
         ]
@@ -56,7 +54,7 @@
         "title": "World Events",
         "items": [
           {
-            "text": "Event schedule now saves remaining hours on server restart, preventing full cooldown resets such as cargo ship spawn.",
+            "text": "Event schedule now saves remaining hours for events (e.g., cargo ship spawn), preventing a full cooldown after server restarts.",
             "commit_ids": [
               724046
             ]
@@ -64,75 +62,73 @@
         ]
       },
       {
-        "title": "Structures & Interactions",
+        "title": "Tools",
         "items": [
           {
-            "text": "Re‑enabled dynamic occlusion pausing, resolving doors getting stuck half‑open after alt‑tabbing.",
+            "text": "Added missing visual effects for shears and updated its item description.",
             "commit_ids": [
-              724538
-            ]
-          },
-          {
-            "text": "Fixed a null reference error that could break scarecrow functionality.",
-            "commit_ids": [
-              724185
+              723009
             ]
           }
         ]
       },
       {
-        "title": "World & Items",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Lighthouse lamps now feature separate damage stages with active collision, changing how they can be damaged and interact with players and objects.",
+            "text": "Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash.",
+            "commit_ids": [
+              724609
+            ]
+          },
+          {
+            "text": "Rad water sprinklers start with the correct radiation color, ensuring visual feedback matches their effect from the moment they turn on.",
+            "commit_ids": [
+              724450
+            ]
+          },
+          {
+            "text": "Lighthouse lamps now have functional collision for each damage stage, so their physical presence changes as they are damaged, affecting cover and placement.",
             "commit_ids": [
               724205
             ]
           },
           {
-            "text": "Shears now show cutting visual effects and have an updated item description for clearer usage information.",
+            "text": "Scarecrows no longer cause a crash, restoring their ability to deter wildlife reliably.",
             "commit_ids": [
-              723009
+              724185
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Fixed weapon aiming while holding items and turning.\n- Fixed melee head wobble when jogging.\n- Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing when holstering.\n\n### Vehicle Controls\n- Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.\n\n### Environmental Hazards\n- Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray.\n\n### World Events\n- Event schedule now saves remaining hours on server restart, preventing full cooldown resets such as cargo ship spawn.\n\n### Structures & Interactions\n- Re‑enabled dynamic occlusion pausing, resolving doors getting stuck half‑open after alt‑tabbing.\n- Fixed a null reference error that could break scarecrow functionality.\n\n### World & Items\n- Lighthouse lamps now feature separate damage stages with active collision, changing how they can be damaged and interact with players and objects.\n- Shears now show cutting visual effects and have an updated item description for clearer usage information.",
+    "summary": "### Combat & Weapon Handling\n- Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.\n\n### Vehicle Controls\n- Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.\n\n### World Interaction\n- Resolved issue where doors could become half‑open after alt‑tabbing, restoring proper door behavior.\n\n### Weapons\n- Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing on holster.\n\n### World Events\n- Event schedule now saves remaining hours for events (e.g., cargo ship spawn), preventing a full cooldown after server restarts.\n\n### Tools\n- Added missing visual effects for shears and updated its item description.\n\n### Gameplay & Balance\n- Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash.\n- Rad water sprinklers start with the correct radiation color, ensuring visual feedback matches their effect from the moment they turn on.\n- Lighthouse lamps now have functional collision for each damage stage, so their physical presence changes as they are damaged, affecting cover and placement.\n- Scarecrows no longer cause a crash, restoring their ability to deter wildlife reliably.",
     "new_items": [
       {
-        "text": "Fixed weapon aiming while holding items and turning.",
+        "text": "Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.",
         "commit_ids": [
           724640
         ],
-        "section": "Combat & Weapons"
+        "section": "Combat & Weapon Handling"
       },
       {
-        "text": "Fixed melee head wobble when jogging.",
-        "commit_ids": [
-          724640
-        ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.",
+        "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.",
         "commit_ids": [
           724639
         ],
         "section": "Vehicle Controls"
       },
       {
-        "text": "Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray.",
+        "text": "Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash.",
         "commit_ids": [
-          724609,
-          724450
+          724609
         ],
-        "section": "Environmental Hazards"
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Fixed weapon aiming while holding items and turning.\n- Fixed melee head wobble when jogging.\n- Corrected rowboat turning prediction by using raw aim yaw, fixing foot yaw direction.\n- Radwater sprinklers now display the correct radioactive color instantly when turned on, removing the brief clear water spray."
+    "new_relevant_count": 3,
+    "new_summary": "- Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.\n- Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.\n- Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash."
   },
   "2026-10-27": {
     "commit_count": 132,
