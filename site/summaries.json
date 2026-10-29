@@ -1,46 +1,39 @@
 {
   "2026-10-28": {
-    "commit_count": 93,
-    "relevant_commit_count": 45,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642,724728,724729,724731,724739",
+    "commit_count": 99,
+    "relevant_commit_count": 49,
+    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642,724728,724729,724731,724739,724744,724748,724750,724752",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Structures & World Stability",
+        "title": "Base Building & Construction",
         "items": [
           {
-            "text": "Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.",
+            "text": "Storage containers no longer require authorization when unlocked in softcore mode.",
             "commit_ids": [
-              724739,
-              724538
+              724752
             ]
           },
           {
-            "text": "Fixed a null reference crash that could affect scarecrow objects, improving stability.",
+            "text": "Angled walls now correctly select the adjacent half‑height wall, fixing placement glitches.",
             "commit_ids": [
-              724185
+              724748
             ]
           }
         ]
       },
       {
-        "title": "Combat & Weapon Handling",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Improved weapon aiming while holding items and reduced melee head wobble when jogging.",
+            "text": "AI‑controlled boats that flip now auto‑right themselves and keep passengers aboard.",
             "commit_ids": [
-              724640
+              724750
             ]
           },
           {
-            "text": "Fixed Uzi 3p stock deployment after weapon swaps and removed unwanted stock swing animation on holster for smoother handling.",
-            "commit_ids": [
-              724111
-            ]
-          },
-          {
-            "text": "Corrected rowboat turning prediction so feet yaw matches the actual aim direction.",
+            "text": "Rowboat turning prediction corrected; aiming now matches actual yaw.",
             "commit_ids": [
               724639
             ]
@@ -48,32 +41,69 @@
         ]
       },
       {
-        "title": "Livestock & Breeding",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics.",
+            "text": "Scientist‑spawned boats are removed when the scientist dies, preventing abandoned vessels.",
+            "commit_ids": [
+              724744
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Weapon handling improvements: aiming while holding another item, melee head wobble while jogging, and Uzi stock deployment/holster behavior fixed.",
+            "commit_ids": [
+              724640,
+              724111
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Interaction",
+        "items": [
+          {
+            "text": "Radiation water sprinklers now start with the correct color and no brief clear‑water flash.",
+            "commit_ids": [
+              724609,
+              724450
+            ]
+          },
+          {
+            "text": "Doors no longer get stuck half‑open after alt‑tabbing; dynamic occlusion pausing re‑enabled.",
+            "commit_ids": [
+              724538
+            ]
+          },
+          {
+            "text": "Scarecrow null reference error resolved, restoring its functionality for base defense.",
+            "commit_ids": [
+              724185
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay Systems",
+        "items": [
+          {
+            "text": "Recessive gene names are now shown explicitly in the UI and vendor, clarifying genetics.",
             "commit_ids": [
               724731
             ]
-          }
-        ]
-      },
-      {
-        "title": "Networking & Visibility",
-        "items": [
+          },
           {
-            "text": "Increased network range for animal groups, keeping them visible and animated correctly at greater distances.",
+            "text": "UGC upload limits raised to 1,000 per queue and server IP/port now included in request body after API changes.",
             "commit_ids": [
-              724361
+              724543
             ]
-          }
-        ]
-      },
-      {
-        "title": "Events & Scheduling",
-        "items": [
+          },
           {
-            "text": "Event schedule now saves remaining hours on server restart, preventing loss of cooldowns such as cargo ship spawns.",
+            "text": "Event schedule now saves remaining hours on server restart, preventing full cooldown resets (e.g., cargo ship spawn).",
             "commit_ids": [
               724046
             ]
@@ -82,26 +112,10 @@
       }
     ],
     "status": "ok",
-    "summary": "### Structures & World Stability\n- Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.\n- Fixed a null reference crash that could affect scarecrow objects, improving stability.\n\n### Combat & Weapon Handling\n- Improved weapon aiming while holding items and reduced melee head wobble when jogging.\n- Fixed Uzi 3p stock deployment after weapon swaps and removed unwanted stock swing animation on holster for smoother handling.\n- Corrected rowboat turning prediction so feet yaw matches the actual aim direction.\n\n### Livestock & Breeding\n- Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics.\n\n### Networking & Visibility\n- Increased network range for animal groups, keeping them visible and animated correctly at greater distances.\n\n### Events & Scheduling\n- Event schedule now saves remaining hours on server restart, preventing loss of cooldowns such as cargo ship spawns.",
-    "new_items": [
-      {
-        "text": "Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.",
-        "commit_ids": [
-          724739,
-          724538
-        ],
-        "section": "Structures & World Stability"
-      },
-      {
-        "text": "Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics.",
-        "commit_ids": [
-          724731
-        ],
-        "section": "Livestock & Breeding"
-      }
-    ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.\n- Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics."
+    "summary": "### Base Building & Construction\n- Storage containers no longer require authorization when unlocked in softcore mode.\n- Angled walls now correctly select the adjacent half‑height wall, fixing placement glitches.\n\n### Vehicles\n- AI‑controlled boats that flip now auto‑right themselves and keep passengers aboard.\n- Rowboat turning prediction corrected; aiming now matches actual yaw.\n\n### NPC & AI\n- Scientist‑spawned boats are removed when the scientist dies, preventing abandoned vessels.\n\n### Combat & Weapons\n- Weapon handling improvements: aiming while holding another item, melee head wobble while jogging, and Uzi stock deployment/holster behavior fixed.\n\n### World Interaction\n- Radiation water sprinklers now start with the correct color and no brief clear‑water flash.\n- Doors no longer get stuck half‑open after alt‑tabbing; dynamic occlusion pausing re‑enabled.\n- Scarecrow null reference error resolved, restoring its functionality for base defense.\n\n### Gameplay Systems\n- Recessive gene names are now shown explicitly in the UI and vendor, clarifying genetics.\n- UGC upload limits raised to 1,000 per queue and server IP/port now included in request body after API changes.\n- Event schedule now saves remaining hours on server restart, preventing full cooldown resets (e.g., cargo ship spawn).",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-27": {
     "commit_count": 132,
@@ -248,7 +262,7 @@
     "new_summary": ""
   },
   "2026-10-26": {
-    "commit_count": 131,
+    "commit_count": 130,
     "relevant_commit_count": 74,
     "relevant_signature": "722023,722026,722027,722028,722037,722040,722047,722048,722102,722103,722165,722194,722195,722205,722206,722210,722216,722222,722229,722230,722245,722247,722248,722249,722257,722259,722265,722266,722267,722268,722278,722324,722325,722329,722330,722346,722350,722352,722367,722371,722375,722394,722396,722398,722410,722416,722417,722421,722422,722423,722425,722426,722427,722428,722429,722430,722433,722436,722446,722451,722458,722462,722466,722474,722475,722479,722481,722482,722483,722484,722486,722488,722490,722492",
     "prompt_version": "structured-read-state-v7-explicit-empty",
