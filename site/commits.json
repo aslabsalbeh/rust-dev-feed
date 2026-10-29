@@ -1,5 +1,101 @@
 [
   {
+    "id": 725409,
+    "branch": "main/swarm_fixes",
+    "changeset": "169666",
+    "created": "2026-10-29T16:05:36",
+    "message": "other swarm fixes\r\n- crab and jellyfish jobs fixes\r\n- crabs random colour tints are stronger, rare blue far more noticeable",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725407,
+    "branch": "main/more_lod_optims",
+    "changeset": "169665",
+    "created": "2026-10-29T15:53:42",
+    "message": "Fixed LODs showing their level a second time after being enabled, was tooking batched blocks out of their batch and back in for nothing",
+    "user": "Flavien"
+  },
+  {
+    "id": 725404,
+    "branch": "▋▇▍▄▍▊▆▊ ▄▍▍",
+    "changeset": "█▄▌▋▉▅",
+    "created": "2026-10-29T15:46:10",
+    "message": "▅▌█▍▋▉▄▇ ▉▋▉▌▇",
+    "user": "Petur"
+  },
+  {
+    "id": 725403,
+    "branch": "main/UZI 9mm",
+    "changeset": "169662",
+    "created": "2026-10-29T15:45:09",
+    "message": "FX stuff",
+    "user": "Petur"
+  },
+  {
+    "id": 725399,
+    "branch": "main/bird_critters",
+    "changeset": "169660",
+    "created": "2026-10-29T15:35:05",
+    "message": "add seagull groups to livestock scene",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725392,
+    "branch": "main/lighthouse_deep_sea",
+    "changeset": "169657",
+    "created": "2026-10-29T15:25:59",
+    "message": "s2p lighthouse",
+    "user": "Adam W"
+  },
+  {
+    "id": 725391,
+    "branch": "main/lighthouse_deep_sea",
+    "changeset": "169656",
+    "created": "2026-10-29T15:24:03",
+    "message": "Deep sea opening by any route now lights all lighthouses correctly (if not already)",
+    "user": "Adam W"
+  },
+  {
+    "id": 725390,
+    "branch": "main/bird_critters",
+    "changeset": "169655",
+    "created": "2026-10-29T15:22:34",
+    "message": "more bird fixes\r\n- seagull group prefab now uses prefabs for the prebaked birds inside (easier to handle)\r\n- fix groups being stuck in the landing state\r\n- increased bounds size, and even bigger when flying, to keep birds in hitreg range\r\n- switched to one ground cast per group instead of every bird doing it\r\n- added exclusion layers to server collider",
+    "user": "ElliotH"
+  },
+  {
+    "id": 725384,
+    "branch": "main/entity_id",
+    "changeset": "169654",
+    "created": "2026-10-29T15:08:02",
+    "message": "Explicitly set serialisation attributes everywhere: NonSerialized, Serializable, SerializeField, FormerlySerializedAs\n\nUnity 6.7 added a few more warnings about serialisation attributes, probably to avoid unintended behavior with CoreCLR. This change adds explicit attributes everywhere while retaining the existing behavior.",
+    "user": "Felix"
+  },
+  {
+    "id": 725381,
+    "branch": "main/lighthouse_deep_sea",
+    "changeset": "169653",
+    "created": "2026-10-29T14:38:20",
+    "message": "Raise the lighthouse particle/beam back to previous height",
+    "user": "Adam W"
+  },
+  {
+    "id": 725380,
+    "branch": "main",
+    "changeset": "169652",
+    "created": "2026-10-29T14:35:47",
+    "message": "Fixed an issue where the deploy guide renderer would bind a null depth render texture handle when needDepth was false, causing a warning log",
+    "user": "aidan.m"
+  },
+  {
+    "id": 725375,
+    "branch": "main/bird_critters",
+    "changeset": "169651",
+    "created": "2026-10-29T14:22:05",
+    "message": "feedback fixes for the jobs (ty Graham)",
+    "user": "ElliotH"
+  },
+  {
     "id": 725338,
     "branch": "main",
     "changeset": "169649",
@@ -2598,149 +2694,5 @@
     "created": "2026-10-26T16:17:28",
     "message": "Bugfix: ResearchTable.ResearchAttemptFinished - preserve ItemDef from the removed item to avoid NREs\r\nTests: none, trivial change",
     "user": "Daniel P"
-  },
-  {
-    "id": 722266,
-    "branch": "main/milkicons_fix",
-    "changeset": "169193",
-    "created": "2026-10-26T16:04:06",
-    "message": "commit remaining textures that were for some reason not included",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 722265,
-    "branch": "main/milkicons_fix",
-    "changeset": "169192",
-    "created": "2026-10-26T16:03:45",
-    "message": "added new milk icons so its clearer what they are when in fridge. updated asset textures accordingly",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 722262,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169191",
-    "created": "2026-10-26T15:58:50",
-    "message": "Optim: use IndexOf to avoid double scan in ItemContainer.Remove\r\nTests: ran unit tests",
-    "user": "Daniel P"
-  },
-  {
-    "id": 722260,
-    "branch": "▅▄▉▊▇█▇▄▊▋▋█▉▋▋▅▇▋▉▇█▌",
-    "changeset": "▅▊▉▆▄▍",
-    "created": "2026-10-26T15:54:00",
-    "message": "▊▇▌▌▆ ▍▇▄▊ █▆▆ ▄▄▊██▋ ▉▍▌▋▉ ▉▇▌▋▋",
-    "user": "jeddooo"
-  },
-  {
-    "id": 722259,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169189",
-    "created": "2026-10-26T15:51:10",
-    "message": "Bugfix: reimplement ItemContainer.Clear loop to invalidate items at the end of iteration\r\n- removed couple cases of dead code\r\nTests: unit tests + server automated tests, down to 1 failing",
-    "user": "Daniel P"
-  },
-  {
-    "id": 722257,
-    "branch": "main/boat_scientists_improvements",
-    "changeset": "169188",
-    "created": "2026-10-26T15:50:05",
-    "message": "If the target is no longer valid then move on to someone we can see, or bail out",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722256,
-    "branch": "main/workshop_qol_26",
-    "changeset": "169187",
-    "created": "2026-10-26T15:47:41",
-    "message": "Workshop Downloadable Source - Default name for files now uses dashes instead of dots. \"rifle.ak.obj\" would now be \"rifle-ak.obj\" to prevent issues",
-    "user": "mauro.a"
-  },
-  {
-    "id": 722255,
-    "branch": "main/workshop_qol_26",
-    "changeset": "169186",
-    "created": "2026-10-26T15:44:20",
-    "message": "Workshop Downloadable Source Models - Updated all files, adding a (correctly shaded) _triangulated mesh for every quadded mesh. Kept the quadded meshes when they existed for skinners to choose. Downloading meshes now downloads one file with all the meshes inside instead of one mesh per file. Updated .skinnable files to match the new file names. Removed old files",
-    "user": "mauro.a"
-  },
-  {
-    "id": 722252,
-    "branch": "main/seagull_update",
-    "changeset": "169185",
-    "created": "2026-10-26T15:42:54",
-    "message": "exported seagull take off anim",
-    "user": "julek"
-  },
-  {
-    "id": 722248,
-    "branch": "main/Livestock_animals",
-    "changeset": "169183",
-    "created": "2026-10-26T15:23:52",
-    "message": "Allow cows light need to be fulfilled by lamps",
-    "user": "Maverick"
-  },
-  {
-    "id": 722249,
-    "branch": "main/work_queue_optims",
-    "changeset": "169182",
-    "created": "2026-10-26T15:23:49",
-    "message": "Fix water junkpile queue leaking at about 150 entries/hour, causing budget to max out pretty quickly\r\n- also introduce concept of work queue intervals, allowing the enforcement of min seconds between two passes, UpdateNearbyPlayers only runs every 0.5-1 second so queue has been changed to match this",
-    "user": "Ryan"
-  },
-  {
-    "id": 722247,
-    "branch": "main/boat_scientists_improvements",
-    "changeset": "169181",
-    "created": "2026-10-26T15:23:08",
-    "message": "If none of the crew of a scientist boat can see the target player then turn the boat around so it can face them",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722246,
-    "branch": "main/replicated_convar_error_change",
-    "changeset": "169180",
-    "created": "2026-10-26T15:19:44",
-    "message": "Swap 'Replicated convar not found on client' to a warning for this patch\r\nI previously marked replicated convars as saved, so everyone will get replicated errors the first time they join a staging server as everything regenerates\r\n(fine to swap back to an error next patch)",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722245,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169179",
-    "created": "2026-10-26T15:18:07",
-    "message": "Bugfix: ItemModCookable - cache relevant information before destroying item\r\nTests: cookign tests pass",
-    "user": "Daniel P"
-  },
-  {
-    "id": 722243,
-    "branch": "main/itemmanager_immediateremove",
-    "changeset": "169178",
-    "created": "2026-10-26T15:16:30",
-    "message": "Update: add ItemManager.RemoveImmediate to validate removing DoRemove\r\nTemp set to true, will revert back to default false before merging\r\nTests: ran automated tests - a bunch of failures",
-    "user": "Daniel P"
-  },
-  {
-    "id": 722230,
-    "branch": "main/Livestock_animals",
-    "changeset": "169176",
-    "created": "2026-10-26T14:49:22",
-    "message": "Fix cows still clipping through walls when lying down",
-    "user": "Maverick"
-  },
-  {
-    "id": 722229,
-    "branch": "main/item_pool_expansion",
-    "changeset": "169175",
-    "created": "2026-10-26T14:48:32",
-    "message": "Item pool 512 -> 2,048\r\n\r\nWe really should have a bigger default item pool. We are consistently overflowing it.\r\n - Do Remove works in batches\r\n - Loot container resets in batches",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722224,
-    "branch": "▌▍▋▌",
-    "changeset": "▆▅▋▆▆▅",
-    "created": "2026-10-26T14:20:51",
-    "message": "▌▋▊▅▄▉▆ ▍▅▅▋▅▆▇█ ▄▆▇▉▍▅▌█▄ ▋▋ ▌█▆▅ ▆▅▌▉▌▉▋▅▉▍ ▍▋▅▄▇▄▇▋▌ ▅▍█▇▍▌▍ ▇▊▇ ▇ ▋▋▋▄▍ ▉▇▊█▍▆▄▌▉ ▄▇▋█▊▊▇▄▉▄▅▌",
-    "user": "Flavien"
   }
 ]
