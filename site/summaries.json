@@ -1,27 +1,46 @@
 {
   "2026-10-28": {
-    "commit_count": 84,
-    "relevant_commit_count": 42,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642,724728",
+    "commit_count": 93,
+    "relevant_commit_count": 45,
+    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642,724728,724729,724731,724739",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapon Handling",
+        "title": "Structures & World Stability",
         "items": [
           {
-            "text": "Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.",
+            "text": "Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.",
             "commit_ids": [
-              724640
+              724739,
+              724538
+            ]
+          },
+          {
+            "text": "Fixed a null reference crash that could affect scarecrow objects, improving stability.",
+            "commit_ids": [
+              724185
             ]
           }
         ]
       },
       {
-        "title": "Vehicle Controls",
+        "title": "Combat & Weapon Handling",
         "items": [
           {
-            "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.",
+            "text": "Improved weapon aiming while holding items and reduced melee head wobble when jogging.",
+            "commit_ids": [
+              724640
+            ]
+          },
+          {
+            "text": "Fixed Uzi 3p stock deployment after weapon swaps and removed unwanted stock swing animation on holster for smoother handling.",
+            "commit_ids": [
+              724111
+            ]
+          },
+          {
+            "text": "Corrected rowboat turning prediction so feet yaw matches the actual aim direction.",
             "commit_ids": [
               724639
             ]
@@ -29,106 +48,60 @@
         ]
       },
       {
-        "title": "World Interaction",
+        "title": "Livestock & Breeding",
         "items": [
           {
-            "text": "Resolved issue where doors could become half‑open after alt‑tabbing, restoring proper door behavior.",
+            "text": "Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics.",
             "commit_ids": [
-              724538
+              724731
             ]
           }
         ]
       },
       {
-        "title": "Weapons",
+        "title": "Networking & Visibility",
         "items": [
           {
-            "text": "Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing on holster.",
+            "text": "Increased network range for animal groups, keeping them visible and animated correctly at greater distances.",
             "commit_ids": [
-              724111
+              724361
             ]
           }
         ]
       },
       {
-        "title": "World Events",
+        "title": "Events & Scheduling",
         "items": [
           {
-            "text": "Event schedule now saves remaining hours for events (e.g., cargo ship spawn), preventing a full cooldown after server restarts.",
+            "text": "Event schedule now saves remaining hours on server restart, preventing loss of cooldowns such as cargo ship spawns.",
             "commit_ids": [
               724046
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Tools",
-        "items": [
-          {
-            "text": "Added missing visual effects for shears and updated its item description.",
-            "commit_ids": [
-              723009
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash.",
-            "commit_ids": [
-              724609
-            ]
-          },
-          {
-            "text": "Rad water sprinklers start with the correct radiation color, ensuring visual feedback matches their effect from the moment they turn on.",
-            "commit_ids": [
-              724450
-            ]
-          },
-          {
-            "text": "Lighthouse lamps now have functional collision for each damage stage, so their physical presence changes as they are damaged, affecting cover and placement.",
-            "commit_ids": [
-              724205
-            ]
-          },
-          {
-            "text": "Scarecrows no longer cause a crash, restoring their ability to deter wildlife reliably.",
-            "commit_ids": [
-              724185
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapon Handling\n- Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.\n\n### Vehicle Controls\n- Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.\n\n### World Interaction\n- Resolved issue where doors could become half‑open after alt‑tabbing, restoring proper door behavior.\n\n### Weapons\n- Fixed Uzi 3p stock deployment after weapon swap and removed unwanted stock swing on holster.\n\n### World Events\n- Event schedule now saves remaining hours for events (e.g., cargo ship spawn), preventing a full cooldown after server restarts.\n\n### Tools\n- Added missing visual effects for shears and updated its item description.\n\n### Gameplay & Balance\n- Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash.\n- Rad water sprinklers start with the correct radiation color, ensuring visual feedback matches their effect from the moment they turn on.\n- Lighthouse lamps now have functional collision for each damage stage, so their physical presence changes as they are damaged, affecting cover and placement.\n- Scarecrows no longer cause a crash, restoring their ability to deter wildlife reliably.",
+    "summary": "### Structures & World Stability\n- Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.\n- Fixed a null reference crash that could affect scarecrow objects, improving stability.\n\n### Combat & Weapon Handling\n- Improved weapon aiming while holding items and reduced melee head wobble when jogging.\n- Fixed Uzi 3p stock deployment after weapon swaps and removed unwanted stock swing animation on holster for smoother handling.\n- Corrected rowboat turning prediction so feet yaw matches the actual aim direction.\n\n### Livestock & Breeding\n- Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics.\n\n### Networking & Visibility\n- Increased network range for animal groups, keeping them visible and animated correctly at greater distances.\n\n### Events & Scheduling\n- Event schedule now saves remaining hours on server restart, preventing loss of cooldowns such as cargo ship spawns.",
     "new_items": [
       {
-        "text": "Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.",
+        "text": "Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.",
         "commit_ids": [
-          724640
+          724739,
+          724538
         ],
-        "section": "Combat & Weapon Handling"
+        "section": "Structures & World Stability"
       },
       {
-        "text": "Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.",
+        "text": "Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics.",
         "commit_ids": [
-          724639
+          724731
         ],
-        "section": "Vehicle Controls"
-      },
-      {
-        "text": "Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash.",
-        "commit_ids": [
-          724609
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Livestock & Breeding"
       }
     ],
     "new_relevant_count": 3,
-    "new_summary": "- Fixed weapons aiming incorrectly while holding items and turning, and removed melee head wobble when jogging.\n- Corrected rowboat turning prediction by using raw aim yaw, fixing incorrect feet yaw during turns.\n- Rad water sprinklers now display the radiation effect immediately on activation, eliminating the brief clear‑water flash."
+    "new_summary": "- Fixed doors getting stuck half‑open after alt‑tabbing and reduced door animation spam.\n- Made recessive gene information explicit in UI and vendor screens, clarifying animal breeding mechanics."
   },
   "2026-10-27": {
     "commit_count": 132,
