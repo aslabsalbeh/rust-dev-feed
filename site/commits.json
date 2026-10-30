@@ -1,5 +1,37 @@
 [
   {
+    "id": 725592,
+    "branch": "main/base_occlusion",
+    "changeset": "169729",
+    "created": "2026-10-30T03:14:12",
+    "message": "Run full voxel based flooding of every single base to get a good source of truth of what every base's visibility should be, so we can then sus out faces of building blocks that have missing sockets & incorrect connections",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 725591,
+    "branch": "main/base_occlusion",
+    "changeset": "169728",
+    "created": "2026-10-30T03:09:40",
+    "message": "Fix full height walls sometimes having the bottom face connecting to the top face of a neighboring wall",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 725590,
+    "branch": "main",
+    "changeset": "169727",
+    "created": "2026-10-30T02:43:11",
+    "message": "Starter car parts spawned in cars now spawn with 40-75% condition (was 15-50)",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 725589,
+    "branch": "main",
+    "changeset": "169726",
+    "created": "2026-10-30T02:14:05",
+    "message": "Reduce blueprint fragment chance in barrels from 20% to 16.6%\r\nReduce 2 blueprint fragment chance in crate_normal_2 from 25% to 20%",
+    "user": "Rin"
+  },
+  {
     "id": 725581,
     "branch": "main/new_phone_conversations",
     "changeset": "169723",
@@ -2430,37 +2462,5 @@
     "created": "2026-10-27T05:02:09",
     "message": "Shears name and description\r\n2 Blades to craft\r\nWBLVL1\r\nDefault BP\r\n\r\nWIP",
     "user": "Rin"
-  },
-  {
-    "id": 722492,
-    "branch": "main/terrain_textures_review",
-    "changeset": "169285",
-    "created": "2026-10-27T03:49:25",
-    "message": "Increase terrain cell LOD count\r\nHandle off-centre ring holes\r\nAdd debug colour option",
-    "user": "Dayaan"
-  },
-  {
-    "id": 722491,
-    "branch": "main/base_occlusion",
-    "changeset": "169284",
-    "created": "2026-10-27T03:18:28",
-    "message": "Switch the full server export for base occlusion export JSON -> protobuf\n- although it was zipped it was taking 30s to deserialize, yikes\n- still supports JSON exports for the smaller pastes",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722490,
-    "branch": "main/workshopskin_warmup_server",
-    "changeset": "169283",
-    "created": "2026-10-27T03:05:02",
-    "message": "Fixed servers stalling for up to ~200ms when a player crafts a workshop skinned item for the first time after a restart or steam definitions update\r\n- The steam item definitions warmup now runs on the server too, it was client only so dedicated servers always read them cold\r\n- Also warms WorkshopId, (HasWorkshopSkin reads it for every owned item and each cold read is a native Steamworks call)\r\n- Moved SteamItemDefinitionWarmup out of the Client folder \r\n\r\n7.81ms -> 0.07ms on first call",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 722488,
-    "branch": "main/repairbench_reskin_stall_fix",
-    "changeset": "169282",
-    "created": "2026-10-27T02:30:56",
-    "message": "Fixed repair bench reskins freezing the server for ~0.7s after a steam item definitions update\r\n- Reskinning a redirect back to default or to a workshop skin went through skins2, scanning every steam definition\r\n- Now a direct definition lookup, 1275ms -> 0.66ms in editor. Was happening ~95 times a day across official servers",
-    "user": "Ian Henderson"
   }
 ]

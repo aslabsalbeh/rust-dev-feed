@@ -1,51 +1,51 @@
 {
   "2026-10-29": {
-    "commit_count": 73,
-    "relevant_commit_count": 32,
-    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575,725581",
+    "commit_count": 77,
+    "relevant_commit_count": 34,
+    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575,725581,725591,725592",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay & Mechanics",
+        "title": "Base Building",
         "items": [
           {
-            "text": "The UZI 9mm can no longer be researched or crafted, and its sight mod no longer changes aim-down-sights speed when the stock is collapsed.",
+            "text": "Fixed full‑height walls where the bottom face could incorrectly connect to the top face of a neighboring wall.",
             "commit_ids": [
-              725555
+              725591
             ]
           },
           {
-            "text": "Monuments can no longer be placed overlapping rivers, eliminating floating water bugs.",
+            "text": "Added a full voxel‑based visibility flood for each base to correctly detect missing sockets and incorrect block connections.",
             "commit_ids": [
-              725536
-            ]
-          },
-          {
-            "text": "Swarm AI tweaks improve crab and jellyfish behavior, and rare blue crab color tints are now more vivid.",
-            "commit_ids": [
-              725409
-            ]
-          },
-          {
-            "text": "Bird flocks are attracted to interest zones, briefly gather around corpses, and scatter when explosives go off.",
-            "commit_ids": [
-              725520
+              725592
             ]
           }
         ]
       },
       {
-        "title": "UI & HUD",
+        "title": "Weapons & Combat",
         "items": [
           {
-            "text": "The delete confirmation popup in the Loadouts UI can now be interacted with.",
+            "text": "Disabled research and crafting for the UZI 9mm, removing it from the tech tree.",
             "commit_ids": [
-              725443
+              725555
             ]
           },
           {
-            "text": "Mortar ammo indicator updates correctly when you reload or expend ammo.",
+            "text": "Fixed a sight‑mod bug where ADS values were overridden when the stock was collapsed.",
+            "commit_ids": [
+              725555
+            ]
+          },
+          {
+            "text": "Corrected night‑vision goggle sound restarting when gesturing.",
+            "commit_ids": [
+              725431
+            ]
+          },
+          {
+            "text": "Fixed mortar ammo indicator not updating correctly.",
             "commit_ids": [
               725413
             ]
@@ -53,69 +53,82 @@
         ]
       },
       {
-        "title": "Audio",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Nightvision goggles no longer reset their sound effect when you gesture.",
+            "text": "Fixed the loadouts UI delete confirmation popup being uninteractive.",
             "commit_ids": [
-              725431
+              725443
             ]
           }
         ]
       },
       {
-        "title": "Building & Structures",
+        "title": "Map & Environment",
         "items": [
           {
-            "text": "Beacon repair colliders no longer block ladder climbing.",
+            "text": "Prevented monument placement where terrain blend maps overlap river topology, stopping floating water glitches.",
+            "commit_ids": [
+              725536
+            ]
+          },
+          {
+            "text": "Various swarm fixes: corrected crab and jellyfish job behavior and made rare blue crab color tints more noticeable.",
+            "commit_ids": [
+              725409
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Interaction & NPC",
+        "items": [
+          {
+            "text": "Fixed beacon repairable collider so it no longer blocks ladders, preventing players from climbing near beacons.",
             "commit_ids": [
               725305
             ]
+          },
+          {
+            "text": "Fixed crow flock error, restoring proper crow behavior.",
+            "commit_ids": [
+              724761
+            ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Wildlife & World",
         "items": [
           {
-            "text": "Seagull groups can now be forced to startle or land via server commands, and birds no longer clip through obstacles.",
+            "text": "Server admins can now force gull groups to startle or land via console commands, and gulls no longer clip through obstacles.",
             "commit_ids": [
               725523
             ]
           },
           {
-            "text": "Seagull groups no longer get stuck in the landing state, and their hit detection area has been expanded, making them easier to hit while flying.",
+            "text": "Bird interest zones can be placed in monuments to attract flocks; corpses briefly draw crows, and explosions cause birds to flee the area.",
+            "commit_ids": [
+              725520
+            ]
+          },
+          {
+            "text": "Seagull groups have been added to the livestock scene, increasing wildlife activity there.",
+            "commit_ids": [
+              725399
+            ]
+          },
+          {
+            "text": "Bird hit detection bounds have been increased, keeping birds within hit‑registration range and reducing missed shots.",
             "commit_ids": [
               725390
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Visuals",
-        "items": [
-          {
-            "text": "A missing mesh hole in the lighthouse exterior (visible when the window is removed) has been patched, restoring a solid appearance.",
-            "commit_ids": [
-              724783
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Feedback",
-        "items": [
-          {
-            "text": "Job progress and status messages have been corrected, providing clearer feedback to players.",
-            "commit_ids": [
-              725375
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Gameplay & Mechanics\n- The UZI 9mm can no longer be researched or crafted, and its sight mod no longer changes aim-down-sights speed when the stock is collapsed.\n- Monuments can no longer be placed overlapping rivers, eliminating floating water bugs.\n- Swarm AI tweaks improve crab and jellyfish behavior, and rare blue crab color tints are now more vivid.\n- Bird flocks are attracted to interest zones, briefly gather around corpses, and scatter when explosives go off.\n\n### UI & HUD\n- The delete confirmation popup in the Loadouts UI can now be interacted with.\n- Mortar ammo indicator updates correctly when you reload or expend ammo.\n\n### Audio\n- Nightvision goggles no longer reset their sound effect when you gesture.\n\n### Building & Structures\n- Beacon repair colliders no longer block ladder climbing.\n\n### Gameplay & Balance\n- Seagull groups can now be forced to startle or land via server commands, and birds no longer clip through obstacles.\n- Seagull groups no longer get stuck in the landing state, and their hit detection area has been expanded, making them easier to hit while flying.\n\n### World & Visuals\n- A missing mesh hole in the lighthouse exterior (visible when the window is removed) has been patched, restoring a solid appearance.\n\n### UI & Feedback\n- Job progress and status messages have been corrected, providing clearer feedback to players.",
+    "summary": "### Base Building\n- Fixed full‑height walls where the bottom face could incorrectly connect to the top face of a neighboring wall.\n- Added a full voxel‑based visibility flood for each base to correctly detect missing sockets and incorrect block connections.\n\n### Weapons & Combat\n- Disabled research and crafting for the UZI 9mm, removing it from the tech tree.\n- Fixed a sight‑mod bug where ADS values were overridden when the stock was collapsed.\n- Corrected night‑vision goggle sound restarting when gesturing.\n- Fixed mortar ammo indicator not updating correctly.\n\n### User Interface\n- Fixed the loadouts UI delete confirmation popup being uninteractive.\n\n### Map & Environment\n- Prevented monument placement where terrain blend maps overlap river topology, stopping floating water glitches.\n- Various swarm fixes: corrected crab and jellyfish job behavior and made rare blue crab color tints more noticeable.\n\n### World Interaction & NPC\n- Fixed beacon repairable collider so it no longer blocks ladders, preventing players from climbing near beacons.\n- Fixed crow flock error, restoring proper crow behavior.\n\n### Wildlife & World\n- Server admins can now force gull groups to startle or land via console commands, and gulls no longer clip through obstacles.\n- Bird interest zones can be placed in monuments to attract flocks; corpses briefly draw crows, and explosions cause birds to flee the area.\n- Seagull groups have been added to the livestock scene, increasing wildlife activity there.\n- Bird hit detection bounds have been increased, keeping birds within hit‑registration range and reducing missed shots.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
