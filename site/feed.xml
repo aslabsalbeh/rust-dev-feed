@@ -6,51 +6,43 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 29 Oct 2026 18:17:30 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 20:17:27 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 29</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;64 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;71 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Weapons &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725556"&gt;Removed stray rocks deep underground in the excavator monument to prevent unexpected collisions.&lt;/li&gt;
-&lt;li data-rust-commits="725536"&gt;Prevented monuments from spawning overlapping river topology, fixing floating water bug.&lt;/li&gt;
-&lt;li data-rust-commits="725530,725523,725521,725520,725399,725390"&gt;Overhauled seagull and bird flock behavior: added interest zones, fleeing reactions to corpses and explosives, refined movement patterns, fixed landing glitches, and introduced seagull groups in livestock scenes.&lt;/li&gt;
-&lt;li data-rust-commits="725555"&gt;Disabled research and crafting for the UZI 9mm, and corrected sight‑mod ADS values when the stock is collapsed.&lt;/li&gt;
-&lt;li data-rust-commits="725531"&gt;Updated Scrap King weapon collider and added new gib sounds for more accurate hit detection.&lt;/li&gt;
+&lt;li data-rust-commits="725555"&gt;UZI 9mm weapon is no longer researchable or craftable, and sight mod no longer overrides ADS values when the stock is collapsed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
+&lt;h3&gt;World Generation &amp;amp; Monuments&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725556"&gt;Removed stray rocks deep underground in the excavator monument to prevent unexpected collisions.&lt;/li&gt;
-&lt;li data-rust-commits="725536"&gt;Prevented monuments from spawning overlapping river topology, fixing floating water bug.&lt;/li&gt;
-&lt;li data-rust-commits="725305"&gt;Fixed beacon repairable collider so it no longer blocks ladder climbing.&lt;/li&gt;
-&lt;li data-rust-commits="725302"&gt;Fixed double door opening causing batched walls to rebuild, keeping the door frame batched and stable.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="725530,725523,725521,725520,725399,725390"&gt;Overhauled seagull and bird flock behavior: added interest zones, fleeing reactions to corpses and explosives, refined movement patterns, fixed landing glitches, and introduced seagull groups in livestock scenes.&lt;/li&gt;
-&lt;li data-rust-commits="725409"&gt;Fixed crab and jellyfish job behavior and made rare blue crab color more noticeable.&lt;/li&gt;
-&lt;li data-rust-commits="724761"&gt;Fixed error affecting crow flock behavior, restoring proper AI for crows.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Combat&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="725555"&gt;Disabled research and crafting for the UZI 9mm, and corrected sight‑mod ADS values when the stock is collapsed.&lt;/li&gt;
-&lt;li data-rust-commits="725531"&gt;Updated Scrap King weapon collider and added new gib sounds for more accurate hit detection.&lt;/li&gt;
+&lt;li data-rust-commits="725536"&gt;Monument placement now prevented from overlapping river blend maps, eliminating rare floating‑water glitches.&lt;/li&gt;
+&lt;li data-rust-commits="725305"&gt;Beacon repairable collider adjusted so it no longer blocks ladder climbing.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;UI &amp;amp; HUD&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725443"&gt;Fixed loadouts UI delete popup being uninteractive.&lt;/li&gt;
-&lt;li data-rust-commits="725413"&gt;Fixed mortar ammo indicator not updating correctly.&lt;/li&gt;
+&lt;li data-rust-commits="725443"&gt;Loadouts UI delete confirmation popup is now interactable.&lt;/li&gt;
+&lt;li data-rust-commits="725413"&gt;Mortar ammo indicator correctly updates when ammo changes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Audio &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725431"&gt;Nightvision goggles no longer restart their sound when you gesture, keeping audio consistent.&lt;/li&gt;
+&lt;li data-rust-commits="724761"&gt;Fixed error that broke crow flocks, restoring normal crow behavior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="725523"&gt;Birds no longer clip through obstacles, fixing collision issues.&lt;/li&gt;
+&lt;li data-rust-commits="725520"&gt;Bird interest zones can attract flocks, corpses temporarily draw crows, and explosives cause bird flocks to flee, adding new strategic interactions.&lt;/li&gt;
+&lt;li data-rust-commits="725431"&gt;Nightvision goggles sound no longer restarts when gesturing, eliminating repetitive audio glitches.&lt;/li&gt;
+&lt;li data-rust-commits="725409"&gt;Crab and jellyfish job fixes improve resource gathering reliability.&lt;/li&gt;
+&lt;li data-rust-commits="725399"&gt;Seagull groups added to the livestock scene, increasing bird activity around livestock areas.&lt;/li&gt;
+&lt;li data-rust-commits="725390"&gt;Bird groups no longer get stuck in the landing state and have larger hit‑registration bounds, making them more reliably interactable.&lt;/li&gt;
+&lt;li data-rust-commits="725531"&gt;Scrap King building now has an updated collision shape, improving placement and interaction accuracy.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-29</guid>
-      <pubDate>Thu, 29 Oct 2026 18:17:30 -0400</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:17:27 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 28</title>

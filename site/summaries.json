@@ -1,81 +1,35 @@
 {
   "2026-10-29": {
-    "commit_count": 64,
-    "relevant_commit_count": 29,
-    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556",
+    "commit_count": 71,
+    "relevant_commit_count": 31,
+    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Environment",
+        "title": "Weapons & Crafting",
         "items": [
           {
-            "text": "Removed stray rocks deep underground in the excavator monument to prevent unexpected collisions.",
+            "text": "UZI 9mm weapon is no longer researchable or craftable, and sight mod no longer overrides ADS values when the stock is collapsed.",
             "commit_ids": [
-              725556
+              725555
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "World Generation & Monuments",
+        "items": [
           {
-            "text": "Prevented monuments from spawning overlapping river topology, fixing floating water bug.",
+            "text": "Monument placement now prevented from overlapping river blend maps, eliminating rare floating‑water glitches.",
             "commit_ids": [
               725536
             ]
           },
           {
-            "text": "Fixed beacon repairable collider so it no longer blocks ladder climbing.",
+            "text": "Beacon repairable collider adjusted so it no longer blocks ladder climbing.",
             "commit_ids": [
               725305
-            ]
-          },
-          {
-            "text": "Fixed double door opening causing batched walls to rebuild, keeping the door frame batched and stable.",
-            "commit_ids": [
-              725302
-            ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "Overhauled seagull and bird flock behavior: added interest zones, fleeing reactions to corpses and explosives, refined movement patterns, fixed landing glitches, and introduced seagull groups in livestock scenes.",
-            "commit_ids": [
-              725530,
-              725523,
-              725521,
-              725520,
-              725399,
-              725390
-            ]
-          },
-          {
-            "text": "Fixed crab and jellyfish job behavior and made rare blue crab color more noticeable.",
-            "commit_ids": [
-              725409
-            ]
-          },
-          {
-            "text": "Fixed error affecting crow flock behavior, restoring proper AI for crows.",
-            "commit_ids": [
-              724761
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Combat",
-        "items": [
-          {
-            "text": "Disabled research and crafting for the UZI 9mm, and corrected sight‑mod ADS values when the stock is collapsed.",
-            "commit_ids": [
-              725555
-            ]
-          },
-          {
-            "text": "Updated Scrap King weapon collider and added new gib sounds for more accurate hit detection.",
-            "commit_ids": [
-              725531
             ]
           }
         ]
@@ -84,13 +38,13 @@
         "title": "UI & HUD",
         "items": [
           {
-            "text": "Fixed loadouts UI delete popup being uninteractive.",
+            "text": "Loadouts UI delete confirmation popup is now interactable.",
             "commit_ids": [
               725443
             ]
           },
           {
-            "text": "Fixed mortar ammo indicator not updating correctly.",
+            "text": "Mortar ammo indicator correctly updates when ammo changes.",
             "commit_ids": [
               725413
             ]
@@ -98,63 +52,69 @@
         ]
       },
       {
-        "title": "Audio & UI",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Nightvision goggles no longer restart their sound when you gesture, keeping audio consistent.",
+            "text": "Fixed error that broke crow flocks, restoring normal crow behavior.",
+            "commit_ids": [
+              724761
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Birds no longer clip through obstacles, fixing collision issues.",
+            "commit_ids": [
+              725523
+            ]
+          },
+          {
+            "text": "Bird interest zones can attract flocks, corpses temporarily draw crows, and explosives cause bird flocks to flee, adding new strategic interactions.",
+            "commit_ids": [
+              725520
+            ]
+          },
+          {
+            "text": "Nightvision goggles sound no longer restarts when gesturing, eliminating repetitive audio glitches.",
             "commit_ids": [
               725431
+            ]
+          },
+          {
+            "text": "Crab and jellyfish job fixes improve resource gathering reliability.",
+            "commit_ids": [
+              725409
+            ]
+          },
+          {
+            "text": "Seagull groups added to the livestock scene, increasing bird activity around livestock areas.",
+            "commit_ids": [
+              725399
+            ]
+          },
+          {
+            "text": "Bird groups no longer get stuck in the landing state and have larger hit‑registration bounds, making them more reliably interactable.",
+            "commit_ids": [
+              725390
+            ]
+          },
+          {
+            "text": "Scrap King building now has an updated collision shape, improving placement and interaction accuracy.",
+            "commit_ids": [
+              725531
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Environment\n- Removed stray rocks deep underground in the excavator monument to prevent unexpected collisions.\n- Prevented monuments from spawning overlapping river topology, fixing floating water bug.\n- Fixed beacon repairable collider so it no longer blocks ladder climbing.\n- Fixed double door opening causing batched walls to rebuild, keeping the door frame batched and stable.\n\n### NPC & AI\n- Overhauled seagull and bird flock behavior: added interest zones, fleeing reactions to corpses and explosives, refined movement patterns, fixed landing glitches, and introduced seagull groups in livestock scenes.\n- Fixed crab and jellyfish job behavior and made rare blue crab color more noticeable.\n- Fixed error affecting crow flock behavior, restoring proper AI for crows.\n\n### Weapons & Combat\n- Disabled research and crafting for the UZI 9mm, and corrected sight‑mod ADS values when the stock is collapsed.\n- Updated Scrap King weapon collider and added new gib sounds for more accurate hit detection.\n\n### UI & HUD\n- Fixed loadouts UI delete popup being uninteractive.\n- Fixed mortar ammo indicator not updating correctly.\n\n### Audio & UI\n- Nightvision goggles no longer restart their sound when you gesture, keeping audio consistent.",
-    "new_items": [
-      {
-        "text": "Removed stray rocks deep underground in the excavator monument to prevent unexpected collisions.",
-        "commit_ids": [
-          725556
-        ],
-        "section": "World & Environment"
-      },
-      {
-        "text": "Prevented monuments from spawning overlapping river topology, fixing floating water bug.",
-        "commit_ids": [
-          725536
-        ],
-        "section": "World & Environment"
-      },
-      {
-        "text": "Overhauled seagull and bird flock behavior: added interest zones, fleeing reactions to corpses and explosives, refined movement patterns, fixed landing glitches, and introduced seagull groups in livestock scenes.",
-        "commit_ids": [
-          725530,
-          725523,
-          725521,
-          725520,
-          725399,
-          725390
-        ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Disabled research and crafting for the UZI 9mm, and corrected sight‑mod ADS values when the stock is collapsed.",
-        "commit_ids": [
-          725555
-        ],
-        "section": "Weapons & Combat"
-      },
-      {
-        "text": "Updated Scrap King weapon collider and added new gib sounds for more accurate hit detection.",
-        "commit_ids": [
-          725531
-        ],
-        "section": "Weapons & Combat"
-      }
-    ],
-    "new_relevant_count": 10,
-    "new_summary": "- Removed stray rocks deep underground in the excavator monument to prevent unexpected collisions.\n- Prevented monuments from spawning overlapping river topology, fixing floating water bug.\n- Overhauled seagull and bird flock behavior: added interest zones, fleeing reactions to corpses and explosives, refined movement patterns, fixed landing glitches, and introduced seagull groups in livestock scenes.\n- Disabled research and crafting for the UZI 9mm, and corrected sight‑mod ADS values when the stock is collapsed.\n- Updated Scrap King weapon collider and added new gib sounds for more accurate hit detection."
+    "summary": "### Weapons & Crafting\n- UZI 9mm weapon is no longer researchable or craftable, and sight mod no longer overrides ADS values when the stock is collapsed.\n\n### World Generation & Monuments\n- Monument placement now prevented from overlapping river blend maps, eliminating rare floating‑water glitches.\n- Beacon repairable collider adjusted so it no longer blocks ladder climbing.\n\n### UI & HUD\n- Loadouts UI delete confirmation popup is now interactable.\n- Mortar ammo indicator correctly updates when ammo changes.\n\n### NPC & AI\n- Fixed error that broke crow flocks, restoring normal crow behavior.\n\n### Gameplay & Balance\n- Birds no longer clip through obstacles, fixing collision issues.\n- Bird interest zones can attract flocks, corpses temporarily draw crows, and explosives cause bird flocks to flee, adding new strategic interactions.\n- Nightvision goggles sound no longer restarts when gesturing, eliminating repetitive audio glitches.\n- Crab and jellyfish job fixes improve resource gathering reliability.\n- Seagull groups added to the livestock scene, increasing bird activity around livestock areas.\n- Bird groups no longer get stuck in the landing state and have larger hit‑registration bounds, making them more reliably interactable.\n- Scrap King building now has an updated collision shape, improving placement and interaction accuracy.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-10-28": {
     "commit_count": 99,
