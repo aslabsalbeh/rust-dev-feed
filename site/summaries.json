@@ -1,29 +1,39 @@
 {
   "2026-10-30": {
-    "commit_count": 103,
-    "relevant_commit_count": 30,
-    "relevant_signature": "725621,725626,725634,725669,725671,725681,725683,725685,725686,725689,725693,725694,725696,725698,725706,725709,725720,725726,725735,725744,725758,725760,725763,725765,725768,725783,725824,725833,725901,725916",
+    "commit_count": 107,
+    "relevant_commit_count": 31,
+    "relevant_signature": "725621,725626,725634,725669,725671,725681,725683,725685,725686,725689,725693,725694,725696,725698,725706,725709,725720,725726,725735,725744,725758,725760,725763,725765,725768,725783,725824,725833,725901,725916,726005",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "Wildlife & AI",
         "items": [
           {
-            "text": "Added new seagull group spawn points and interest zones across monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities) and switched population control to a convar, fixing a string ID issue that previously prevented proper spawning.",
+            "text": "New seagull groups now spawn in deep sea, fishing villages, harbors, ferry terminals, oil rigs, and floating cities, with dedicated interest zones and flock spawners.",
             "commit_ids": [
-              725901,
-              725916,
+              725901
+            ]
+          },
+          {
+            "text": "Seagull population counts fixed by correcting the group ID.",
+            "commit_ids": [
+              725916
+            ]
+          },
+          {
+            "text": "Seagull spawn management improved by using ConvarControlledSpawnPointPopulation and registering it with procedural generation.",
+            "commit_ids": [
               725763
             ]
           }
         ]
       },
       {
-        "title": "World Loot",
+        "title": "Harbor & Loot",
         "items": [
           {
-            "text": "Fixed a bug where harbors in Tier 2 (especially on custom maps) did not spawn any supply crates.",
+            "text": "Harbors now correctly spawn crates in tier‑2 custom map settings.",
             "commit_ids": [
               725833
             ]
@@ -31,10 +41,22 @@
         ]
       },
       {
-        "title": "Vehicle & Movement",
+        "title": "Controls & UI",
         "items": [
           {
-            "text": "Adjusted horse canter control for smoother acceleration and handling.",
+            "text": "Quick craft can be focused and used with D‑pad navigation mode.",
+            "commit_ids": [
+              725758
+            ]
+          },
+          {
+            "text": "Gamepad UI drag‑threshold handling adjusted for smoother navigation.",
+            "commit_ids": [
+              725744
+            ]
+          },
+          {
+            "text": "Horse canter controls tweaked for better handling.",
             "commit_ids": [
               725726
             ]
@@ -42,10 +64,10 @@
         ]
       },
       {
-        "title": "Weapons",
+        "title": "Combat & Gear",
         "items": [
           {
-            "text": "Added new weapon addon points, enabling additional attachments on firearms.",
+            "text": "Weapon addon points added, unlocking new attachment options.",
             "commit_ids": [
               725709
             ]
@@ -53,86 +75,98 @@
         ]
       },
       {
-        "title": "User Interface",
+        "title": "Store & Notifications",
         "items": [
           {
-            "text": "Quick‑craft items are now focusable and usable when navigating the UI with a D‑pad, improving controller usability.",
+            "text": "Store’s “NEW” badge now correctly appears when new skins are released.",
             "commit_ids": [
-              725758
+              725685
             ]
           },
           {
-            "text": "Store UI fixes: the “NEW” badge now appears correctly for new skins, and a NullReferenceException that could crash or limit the store grid UI has been resolved.",
+            "text": "Null reference error fixed, restoring full store grid functionality.",
             "commit_ids": [
-              725685,
               725621
-            ]
-          },
-          {
-            "text": "Store UI formatting corrected, improving readability of item listings.",
-            "commit_ids": [
-              725696
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Controls",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Turning in place now respects parent yaw, fixing misaligned rotation for players.",
+            "text": "Pumpkin artifacting issue resolved in the Halloween Hunt event.",
+            "commit_ids": [
+              725671
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Apple consumable UI no longer extends into the Split Item panel, removing extra empty space.",
+            "commit_ids": [
+              726005
+            ]
+          },
+          {
+            "text": "Store UI formatting corrected, fixing misaligned items and improving readability.",
+            "commit_ids": [
+              725696
+            ]
+          },
+          {
+            "text": "Pie menu icons and emojis no longer overlap in the top‑right corner, clearing the UI.",
+            "commit_ids": [
+              725626
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Turning in place now respects the parent’s yaw, ensuring accurate orientation when rotating on the spot.",
             "commit_ids": [
               725783
             ]
           },
           {
-            "text": "Gamepad UI now respects drag threshold, preventing accidental menu selections.",
+            "text": "Erosion system retuned with a new soil‑removal splat map, delivering more realistic terrain wear across biomes.",
             "commit_ids": [
-              725744
+              725693
             ]
           }
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "World Generation",
         "items": [
           {
-            "text": "World generation now places caves above power line layouts, eliminating floating powerlines over caves.",
+            "text": "Cave terrain now generates above power‑line layouts, preventing floating powerlines over caves.",
             "commit_ids": [
               725720
-            ]
-          },
-          {
-            "text": "Erosion system refined with per‑biome soil removal, delivering more natural terrain shaping without altering overall resource availability.",
-            "commit_ids": [
-              725693
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### NPC & AI\n- Added new seagull group spawn points and interest zones across monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities) and switched population control to a convar, fixing a string ID issue that previously prevented proper spawning.\n\n### World Loot\n- Fixed a bug where harbors in Tier 2 (especially on custom maps) did not spawn any supply crates.\n\n### Vehicle & Movement\n- Adjusted horse canter control for smoother acceleration and handling.\n\n### Weapons\n- Added new weapon addon points, enabling additional attachments on firearms.\n\n### User Interface\n- Quick‑craft items are now focusable and usable when navigating the UI with a D‑pad, improving controller usability.\n- Store UI fixes: the “NEW” badge now appears correctly for new skins, and a NullReferenceException that could crash or limit the store grid UI has been resolved.\n- Store UI formatting corrected, improving readability of item listings.\n\n### Gameplay & Controls\n- Turning in place now respects parent yaw, fixing misaligned rotation for players.\n- Gamepad UI now respects drag threshold, preventing accidental menu selections.\n\n### World & Environment\n- World generation now places caves above power line layouts, eliminating floating powerlines over caves.\n- Erosion system refined with per‑biome soil removal, delivering more natural terrain shaping without altering overall resource availability.",
+    "summary": "### Wildlife & AI\n- New seagull groups now spawn in deep sea, fishing villages, harbors, ferry terminals, oil rigs, and floating cities, with dedicated interest zones and flock spawners.\n- Seagull population counts fixed by correcting the group ID.\n- Seagull spawn management improved by using ConvarControlledSpawnPointPopulation and registering it with procedural generation.\n\n### Harbor & Loot\n- Harbors now correctly spawn crates in tier‑2 custom map settings.\n\n### Controls & UI\n- Quick craft can be focused and used with D‑pad navigation mode.\n- Gamepad UI drag‑threshold handling adjusted for smoother navigation.\n- Horse canter controls tweaked for better handling.\n\n### Combat & Gear\n- Weapon addon points added, unlocking new attachment options.\n\n### Store & Notifications\n- Store’s “NEW” badge now correctly appears when new skins are released.\n- Null reference error fixed, restoring full store grid functionality.\n\n### Bug Fixes\n- Pumpkin artifacting issue resolved in the Halloween Hunt event.\n\n### UI & Quality of Life\n- Apple consumable UI no longer extends into the Split Item panel, removing extra empty space.\n- Store UI formatting corrected, fixing misaligned items and improving readability.\n- Pie menu icons and emojis no longer overlap in the top‑right corner, clearing the UI.\n\n### Gameplay & Balance\n- Turning in place now respects the parent’s yaw, ensuring accurate orientation when rotating on the spot.\n- Erosion system retuned with a new soil‑removal splat map, delivering more realistic terrain wear across biomes.\n\n### World Generation\n- Cave terrain now generates above power‑line layouts, preventing floating powerlines over caves.",
     "new_items": [
       {
-        "text": "Added new seagull group spawn points and interest zones across monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities) and switched population control to a convar, fixing a string ID issue that previously prevented proper spawning.",
+        "text": "Apple consumable UI no longer extends into the Split Item panel, removing extra empty space.",
         "commit_ids": [
-          725901,
-          725916,
-          725763
+          726005
         ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Fixed a bug where harbors in Tier 2 (especially on custom maps) did not spawn any supply crates.",
-        "commit_ids": [
-          725833
-        ],
-        "section": "World Loot"
+        "section": "UI & Quality of Life"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Added new seagull group spawn points and interest zones across monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities) and switched population control to a convar, fixing a string ID issue that previously prevented proper spawning.\n- Fixed a bug where harbors in Tier 2 (especially on custom maps) did not spawn any supply crates."
+    "new_relevant_count": 1,
+    "new_summary": "- Apple consumable UI no longer extends into the Split Item panel, removing extra empty space."
   },
   "2026-10-29": {
     "commit_count": 77,
