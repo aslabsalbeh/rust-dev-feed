@@ -6,64 +6,53 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 30 Oct 2026 14:17:31 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:17:28 -0400</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Oct 30</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;89 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;103 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725833"&gt;Fixed harbors not spawning any crates in Tier 2 (including custom maps).&lt;/li&gt;
-&lt;li data-rust-commits="725783"&gt;Turn‑in‑place now respects the parent yaw, correcting rotation behavior.&lt;/li&gt;
-&lt;li data-rust-commits="725763"&gt;Switched seagull group population to a convar‑controlled system and added the population to procedural generation registers.&lt;/li&gt;
-&lt;li data-rust-commits="725758"&gt;Quick‑craft actions are now focusable and usable when navigating with the D‑pad.&lt;/li&gt;
-&lt;li data-rust-commits="725744"&gt;Fixed gamepad UI drag‑threshold, making menu navigation smoother for controller players.&lt;/li&gt;
+&lt;li data-rust-commits="725901,725916,725763"&gt;Added new seagull group spawn points and interest zones across monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities) and switched population control to a convar, fixing a string ID issue that previously prevented proper spawning.&lt;/li&gt;
+&lt;li data-rust-commits="725833"&gt;Fixed a bug where harbors in Tier 2 (especially on custom maps) did not spawn any supply crates.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;World &amp;amp; Resources&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725833"&gt;Fixed harbors not spawning any crates in Tier 2 (including custom maps).&lt;/li&gt;
+&lt;li data-rust-commits="725901,725916,725763"&gt;Added new seagull group spawn points and interest zones across monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities) and switched population control to a convar, fixing a string ID issue that previously prevented proper spawning.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player Controls&lt;/h3&gt;
+&lt;h3&gt;World Loot&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725783"&gt;Turn‑in‑place now respects the parent yaw, correcting rotation behavior.&lt;/li&gt;
+&lt;li data-rust-commits="725833"&gt;Fixed a bug where harbors in Tier 2 (especially on custom maps) did not spawn any supply crates.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Mounts &amp;amp; Vehicles&lt;/h3&gt;
+&lt;h3&gt;Vehicle &amp;amp; Movement&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725726"&gt;Adjusted horse canter control for smoother handling.&lt;/li&gt;
+&lt;li data-rust-commits="725726"&gt;Adjusted horse canter control for smoother acceleration and handling.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Wildlife&lt;/h3&gt;
+&lt;h3&gt;Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725763"&gt;Switched seagull group population to a convar‑controlled system and added the population to procedural generation registers.&lt;/li&gt;
+&lt;li data-rust-commits="725709"&gt;Added new weapon addon points, enabling additional attachments on firearms.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;User Interface&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725758"&gt;Quick‑craft actions are now focusable and usable when navigating with the D‑pad.&lt;/li&gt;
+&lt;li data-rust-commits="725758"&gt;Quick‑craft items are now focusable and usable when navigating the UI with a D‑pad, improving controller usability.&lt;/li&gt;
+&lt;li data-rust-commits="725685,725621"&gt;Store UI fixes: the “NEW” badge now appears correctly for new skins, and a NullReferenceException that could crash or limit the store grid UI has been resolved.&lt;/li&gt;
+&lt;li data-rust-commits="725696"&gt;Store UI formatting corrected, improving readability of item listings.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Inventory &amp;amp; Store&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725621"&gt;Fixed a NullReferenceException that could occur in the limited store grid, preventing crashes and UI errors when accessing the store.&lt;/li&gt;
+&lt;li data-rust-commits="725783"&gt;Turning in place now respects parent yaw, fixing misaligned rotation for players.&lt;/li&gt;
+&lt;li data-rust-commits="725744"&gt;Gamepad UI now respects drag threshold, preventing accidental menu selections.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="725720"&gt;Adjusted world generation order to keep caves above power line layouts, eliminating floating powerlines over caves.&lt;/li&gt;
-&lt;li data-rust-commits="725693"&gt;Improved erosion system with per‑biome soil removal and new splat map, delivering more realistic terrain shaping.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="725744"&gt;Fixed gamepad UI drag‑threshold, making menu navigation smoother for controller players.&lt;/li&gt;
-&lt;li data-rust-commits="725696"&gt;Corrected store UI formatting, ensuring item listings display properly.&lt;/li&gt;
-&lt;li data-rust-commits="725685"&gt;Resolved missing &amp;#x27;NEW&amp;#x27; badge on store items when new skins are released, so players see fresh content notifications.&lt;/li&gt;
-&lt;li data-rust-commits="725626"&gt;Fixed overlapping icons and emoji offsets in the pie menu, improving clarity of quick‑access selections.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="725669"&gt;Map movement now behaves consistently at any zoom level, making navigation smoother.&lt;/li&gt;
+&lt;li data-rust-commits="725720"&gt;World generation now places caves above power line layouts, eliminating floating powerlines over caves.&lt;/li&gt;
+&lt;li data-rust-commits="725693"&gt;Erosion system refined with per‑biome soil removal, delivering more natural terrain shaping without altering overall resource availability.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-10-30</guid>
-      <pubDate>Fri, 30 Oct 2026 14:17:31 -0400</pubDate>
+      <pubDate>Fri, 30 Oct 2026 16:17:28 -0400</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Oct 29</title>
