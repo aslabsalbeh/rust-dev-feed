@@ -1,65 +1,73 @@
 {
   "2026-10-30": {
-    "commit_count": 71,
-    "relevant_commit_count": 22,
-    "relevant_signature": "725621,725626,725634,725669,725671,725681,725683,725685,725686,725689,725693,725694,725696,725698,725706,725709,725720,725726,725735,725744,725758,725760",
+    "commit_count": 89,
+    "relevant_commit_count": 28,
+    "relevant_signature": "725621,725626,725634,725669,725671,725681,725683,725685,725686,725689,725693,725694,725696,725698,725706,725709,725720,725726,725735,725744,725758,725760,725763,725765,725768,725783,725824,725833",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Controls & Gameplay",
+        "title": "World & Resources",
         "items": [
           {
-            "text": "Horse canter control tweaked for smoother riding.",
+            "text": "Fixed harbors not spawning any crates in Tier 2 (including custom maps).",
             "commit_ids": [
-              725726
-            ]
-          },
-          {
-            "text": "Quick craft now works with D‑pad navigation on controllers.",
-            "commit_ids": [
-              725758
-            ]
-          },
-          {
-            "text": "Gamepad UI drag‑threshold fixed, improving menu navigation.",
-            "commit_ids": [
-              725744
-            ]
-          },
-          {
-            "text": "Map movement now feels consistent at any zoom level.",
-            "commit_ids": [
-              725669
+              725833
             ]
           }
         ]
       },
       {
-        "title": "UI & Store",
+        "title": "Player Controls",
         "items": [
           {
-            "text": "Store UI formatting corrected, items now align properly.",
+            "text": "Turn‑in‑place now respects the parent yaw, correcting rotation behavior.",
             "commit_ids": [
-              725696
+              725783
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Mounts & Vehicles",
+        "items": [
           {
-            "text": "New item notification now appears correctly when skins are released.",
+            "text": "Adjusted horse canter control for smoother handling.",
             "commit_ids": [
-              725685
+              725726
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Wildlife",
+        "items": [
           {
-            "text": "Store grid crash fixed, preventing errors when browsing items.",
+            "text": "Switched seagull group population to a convar‑controlled system and added the population to procedural generation registers.",
+            "commit_ids": [
+              725763
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Crafting",
+        "items": [
+          {
+            "text": "Quick‑craft actions are now focusable and usable when navigating with the D‑pad.",
+            "commit_ids": [
+              725758
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & Store",
+        "items": [
+          {
+            "text": "Fixed a NullReferenceException that could occur in the limited store grid, preventing crashes and UI errors when accessing the store.",
             "commit_ids": [
               725621
-            ]
-          },
-          {
-            "text": "Pie menu icons and emojis positioning fixed, improving menu readability.",
-            "commit_ids": [
-              725626
             ]
           }
         ]
@@ -68,81 +76,101 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Floating powerlines over caves removed by adjusting world‑generation order.",
+            "text": "Adjusted world generation order to keep caves above power line layouts, eliminating floating powerlines over caves.",
             "commit_ids": [
               725720
             ]
           },
           {
-            "text": "Erosion system retuned with new soil‑removal maps, giving more realistic terrain per biome.",
+            "text": "Improved erosion system with per‑biome soil removal and new splat map, delivering more realistic terrain shaping.",
             "commit_ids": [
               725693
             ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Fixed gamepad UI drag‑threshold, making menu navigation smoother for controller players.",
+            "commit_ids": [
+              725744
+            ]
           },
           {
-            "text": "Pumpkin artifacting in Halloween event fixed, visuals now render correctly.",
+            "text": "Corrected store UI formatting, ensuring item listings display properly.",
             "commit_ids": [
-              725671
+              725696
+            ]
+          },
+          {
+            "text": "Resolved missing 'NEW' badge on store items when new skins are released, so players see fresh content notifications.",
+            "commit_ids": [
+              725685
+            ]
+          },
+          {
+            "text": "Fixed overlapping icons and emoji offsets in the pie menu, improving clarity of quick‑access selections.",
+            "commit_ids": [
+              725626
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Map movement now behaves consistently at any zoom level, making navigation smoother.",
+            "commit_ids": [
+              725669
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Controls & Gameplay\n- Horse canter control tweaked for smoother riding.\n- Quick craft now works with D‑pad navigation on controllers.\n- Gamepad UI drag‑threshold fixed, improving menu navigation.\n- Map movement now feels consistent at any zoom level.\n\n### UI & Store\n- Store UI formatting corrected, items now align properly.\n- New item notification now appears correctly when skins are released.\n- Store grid crash fixed, preventing errors when browsing items.\n- Pie menu icons and emojis positioning fixed, improving menu readability.\n\n### World & Environment\n- Floating powerlines over caves removed by adjusting world‑generation order.\n- Erosion system retuned with new soil‑removal maps, giving more realistic terrain per biome.\n- Pumpkin artifacting in Halloween event fixed, visuals now render correctly.",
+    "summary": "### World & Resources\n- Fixed harbors not spawning any crates in Tier 2 (including custom maps).\n\n### Player Controls\n- Turn‑in‑place now respects the parent yaw, correcting rotation behavior.\n\n### Mounts & Vehicles\n- Adjusted horse canter control for smoother handling.\n\n### Wildlife\n- Switched seagull group population to a convar‑controlled system and added the population to procedural generation registers.\n\n### UI & Crafting\n- Quick‑craft actions are now focusable and usable when navigating with the D‑pad.\n\n### Inventory & Store\n- Fixed a NullReferenceException that could occur in the limited store grid, preventing crashes and UI errors when accessing the store.\n\n### World & Environment\n- Adjusted world generation order to keep caves above power line layouts, eliminating floating powerlines over caves.\n- Improved erosion system with per‑biome soil removal and new splat map, delivering more realistic terrain shaping.\n\n### UI & Quality of Life\n- Fixed gamepad UI drag‑threshold, making menu navigation smoother for controller players.\n- Corrected store UI formatting, ensuring item listings display properly.\n- Resolved missing 'NEW' badge on store items when new skins are released, so players see fresh content notifications.\n- Fixed overlapping icons and emoji offsets in the pie menu, improving clarity of quick‑access selections.\n\n### Gameplay & Balance\n- Map movement now behaves consistently at any zoom level, making navigation smoother.",
     "new_items": [
       {
-        "text": "Horse canter control tweaked for smoother riding.",
+        "text": "Fixed harbors not spawning any crates in Tier 2 (including custom maps).",
         "commit_ids": [
-          725726
+          725833
         ],
-        "section": "Controls & Gameplay"
+        "section": "World & Resources"
       },
       {
-        "text": "Quick craft now works with D‑pad navigation on controllers.",
+        "text": "Turn‑in‑place now respects the parent yaw, correcting rotation behavior.",
+        "commit_ids": [
+          725783
+        ],
+        "section": "Player Controls"
+      },
+      {
+        "text": "Switched seagull group population to a convar‑controlled system and added the population to procedural generation registers.",
+        "commit_ids": [
+          725763
+        ],
+        "section": "Wildlife"
+      },
+      {
+        "text": "Quick‑craft actions are now focusable and usable when navigating with the D‑pad.",
         "commit_ids": [
           725758
         ],
-        "section": "Controls & Gameplay"
+        "section": "UI & Crafting"
       },
       {
-        "text": "Gamepad UI drag‑threshold fixed, improving menu navigation.",
+        "text": "Fixed gamepad UI drag‑threshold, making menu navigation smoother for controller players.",
         "commit_ids": [
           725744
         ],
-        "section": "Controls & Gameplay"
-      },
-      {
-        "text": "Store UI formatting corrected, items now align properly.",
-        "commit_ids": [
-          725696
-        ],
-        "section": "UI & Store"
-      },
-      {
-        "text": "New item notification now appears correctly when skins are released.",
-        "commit_ids": [
-          725685
-        ],
-        "section": "UI & Store"
-      },
-      {
-        "text": "Floating powerlines over caves removed by adjusting world‑generation order.",
-        "commit_ids": [
-          725720
-        ],
-        "section": "World & Environment"
-      },
-      {
-        "text": "Erosion system retuned with new soil‑removal maps, giving more realistic terrain per biome.",
-        "commit_ids": [
-          725693
-        ],
-        "section": "World & Environment"
+        "section": "UI & Quality of Life"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Horse canter control tweaked for smoother riding.\n- Quick craft now works with D‑pad navigation on controllers.\n- Gamepad UI drag‑threshold fixed, improving menu navigation.\n- Store UI formatting corrected, items now align properly.\n- New item notification now appears correctly when skins are released.\n- Floating powerlines over caves removed by adjusting world‑generation order.\n- Erosion system retuned with new soil‑removal maps, giving more realistic terrain per biome."
+    "new_relevant_count": 5,
+    "new_summary": "- Fixed harbors not spawning any crates in Tier 2 (including custom maps).\n- Turn‑in‑place now respects the parent yaw, correcting rotation behavior.\n- Switched seagull group population to a convar‑controlled system and added the population to procedural generation registers.\n- Quick‑craft actions are now focusable and usable when navigating with the D‑pad.\n- Fixed gamepad UI drag‑threshold, making menu navigation smoother for controller players."
   },
   "2026-10-29": {
     "commit_count": 77,
