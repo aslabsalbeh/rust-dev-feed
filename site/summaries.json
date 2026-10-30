@@ -1,4 +1,17 @@
 {
+  "2026-10-30": {
+    "commit_count": 1,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-29": {
     "commit_count": 77,
     "relevant_commit_count": 34,
@@ -247,150 +260,6 @@
     ],
     "status": "ok",
     "summary": "### Base Building & Construction\n- Storage containers no longer require authorization when unlocked in softcore mode.\n- Angled walls now correctly select the adjacent half‑height wall, fixing placement glitches.\n\n### Vehicles\n- AI‑controlled boats that flip now auto‑right themselves and keep passengers aboard.\n- Rowboat turning prediction corrected; aiming now matches actual yaw.\n\n### NPC & AI\n- Scientist‑spawned boats are removed when the scientist dies, preventing abandoned vessels.\n\n### Combat & Weapons\n- Weapon handling improvements: aiming while holding another item, melee head wobble while jogging, and Uzi stock deployment/holster behavior fixed.\n\n### World Interaction\n- Radiation water sprinklers now start with the correct color and no brief clear‑water flash.\n- Doors no longer get stuck half‑open after alt‑tabbing; dynamic occlusion pausing re‑enabled.\n- Scarecrow null reference error resolved, restoring its functionality for base defense.\n\n### Gameplay Systems\n- Recessive gene names are now shown explicitly in the UI and vendor, clarifying genetics.\n- UGC upload limits raised to 1,000 per queue and server IP/port now included in request body after API changes.\n- Event schedule now saves remaining hours on server restart, preventing full cooldown resets (e.g., cargo ship spawn).",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-27": {
-    "commit_count": 132,
-    "relevant_commit_count": 74,
-    "relevant_signature": "722496,722498,722512,722513,722518,722520,722526,722528,722529,722532,722536,722537,722540,722542,722593,722598,722600,722601,722603,722604,722606,722609,722614,722639,722644,722647,722648,722649,722653,722654,722655,722656,722657,722658,722665,722668,722674,722681,722690,722695,722697,722698,722702,722705,722712,722715,722717,722719,722722,722723,722728,722730,722741,722795,722797,722822,722834,722845,722846,722849,722859,722878,722926,722941,722951,722960,722961,722976,722989,722993,723003,723004,723005,723007",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Boat & Watercraft AI",
-        "items": [
-          {
-            "text": "Boat AI improvements: dead driver flags cleared, smoother scientist boat movement with better avoidance and unsticking, roaming boats now patrol closer to coast (35 m) and stop chasing hidden players after 45 s, and lingering boat spawn bugs fixed.",
-            "commit_ids": [
-              722540,
-              722606,
-              722598,
-              722603,
-              722604,
-              722609,
-              722614,
-              722993,
-              723005
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Scientist & NPC Behavior",
-        "items": [
-          {
-            "text": "Scientist AI targeting overhauled to remember lost target locations, auto‑switch to visible players, and continue attacking hidden targets for more stable encounters; also fixed a movement‑initialization bug that kept sleeping AI from receiving their first movement tick.",
-            "commit_ids": [
-              722717,
-              722649
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Combat",
-        "items": [
-          {
-            "text": "UZI tweaks: recoil adjusted, stock changes now block other actions, holstering cancels stock‑change animation, first‑shot animation fixed, and ADS settings refined.",
-            "commit_ids": [
-              722976,
-              722647
-            ]
-          },
-          {
-            "text": "Cannon dismount rotation fixed so players face the correct direction after leaving a cannon on a boat.",
-            "commit_ids": [
-              722644
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items, Crafting & Inventory",
-        "items": [
-          {
-            "text": "Item system stability: fixed stacking, use‑after‑free bugs in consumables and item durability, and other removal bugs that could cause items to disappear or malfunction.",
-            "commit_ids": [
-              722722,
-              722690,
-              722653,
-              722639,
-              722593,
-              722536
-            ]
-          },
-          {
-            "text": "New craftables added: Wool Armor (costs 20 wool, Tier 1 protection) and Shears (crafted from 2 blades).",
-            "commit_ids": [
-              722702,
-              722496
-            ]
-          },
-          {
-            "text": "Scientist loot updates: 20 % chance for a blueprint page on RHIBs and 20 % chance for a blueprint book on PT boats.",
-            "commit_ids": [
-              723004
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Resources",
-        "items": [
-          {
-            "text": "Apple spawn rebalanced: removed from oak_d, increased spawn chance on oak_e to 50 %; beehive natural‑kill warning fixed.",
-            "commit_ids": [
-              722674
-            ]
-          },
-          {
-            "text": "Seagull groups introduced: land at interest points, can be startled, transition to flocks, have hitboxes, can be shot, with improved flock movement.",
-            "commit_ids": [
-              722795
-            ]
-          },
-          {
-            "text": "Vendor crate spawning now includes missing blueprint fragments and livestock vendor rewards upgraded from fragments to full blueprint pages.",
-            "commit_ids": [
-              722498
-            ]
-          },
-          {
-            "text": "Radiation issue with the water gun fixed.",
-            "commit_ids": [
-              722600
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Shears no longer hurt or startle sheep (they still deal small damage to other entities).",
-            "commit_ids": [
-              722960
-            ]
-          },
-          {
-            "text": "Item stack events now correctly fire OnItemAdded and OnItemRemovedFromStack, fixing inventory‑related scripts and automation.",
-            "commit_ids": [
-              722730
-            ]
-          },
-          {
-            "text": "Ladder hatches can now be closed from any angle, restoring full interaction.",
-            "commit_ids": [
-              722526
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Boat & Watercraft AI\n- Boat AI improvements: dead driver flags cleared, smoother scientist boat movement with better avoidance and unsticking, roaming boats now patrol closer to coast (35 m) and stop chasing hidden players after 45 s, and lingering boat spawn bugs fixed.\n\n### Scientist & NPC Behavior\n- Scientist AI targeting overhauled to remember lost target locations, auto‑switch to visible players, and continue attacking hidden targets for more stable encounters; also fixed a movement‑initialization bug that kept sleeping AI from receiving their first movement tick.\n\n### Weapons & Combat\n- UZI tweaks: recoil adjusted, stock changes now block other actions, holstering cancels stock‑change animation, first‑shot animation fixed, and ADS settings refined.\n- Cannon dismount rotation fixed so players face the correct direction after leaving a cannon on a boat.\n\n### Items, Crafting & Inventory\n- Item system stability: fixed stacking, use‑after‑free bugs in consumables and item durability, and other removal bugs that could cause items to disappear or malfunction.\n- New craftables added: Wool Armor (costs 20 wool, Tier 1 protection) and Shears (crafted from 2 blades).\n- Scientist loot updates: 20 % chance for a blueprint page on RHIBs and 20 % chance for a blueprint book on PT boats.\n\n### World & Resources\n- Apple spawn rebalanced: removed from oak_d, increased spawn chance on oak_e to 50 %; beehive natural‑kill warning fixed.\n- Seagull groups introduced: land at interest points, can be startled, transition to flocks, have hitboxes, can be shot, with improved flock movement.\n- Vendor crate spawning now includes missing blueprint fragments and livestock vendor rewards upgraded from fragments to full blueprint pages.\n- Radiation issue with the water gun fixed.\n\n### Gameplay & Balance\n- Shears no longer hurt or startle sheep (they still deal small damage to other entities).\n- Item stack events now correctly fire OnItemAdded and OnItemRemovedFromStack, fixing inventory‑related scripts and automation.\n- Ladder hatches can now be closed from any angle, restoring full interaction.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
