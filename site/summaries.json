@@ -1,141 +1,45 @@
 {
   "2026-10-30": {
-    "commit_count": 107,
-    "relevant_commit_count": 31,
-    "relevant_signature": "725621,725626,725634,725669,725671,725681,725683,725685,725686,725689,725693,725694,725696,725698,725706,725709,725720,725726,725735,725744,725758,725760,725763,725765,725768,725783,725824,725833,725901,725916,726005",
+    "commit_count": 115,
+    "relevant_commit_count": 33,
+    "relevant_signature": "725621,725626,725634,725669,725671,725681,725683,725685,725686,725689,725693,725694,725696,725698,725706,725709,725720,725726,725735,725744,725758,725760,725763,725765,725768,725783,725824,725833,725901,725916,726005,726017,726024",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Wildlife & AI",
+        "title": "Resource Production",
         "items": [
           {
-            "text": "New seagull groups now spawn in deep sea, fishing villages, harbors, ferry terminals, oil rigs, and floating cities, with dedicated interest zones and flock spawners.",
+            "text": "Crude oil pumped from the sphere tank now counts toward oil production.",
+            "commit_ids": [
+              726024
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Environment",
+        "items": [
+          {
+            "text": "Seagull groups with spawn points, interest zones, and flock spawners added to deep‑sea monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities).",
             "commit_ids": [
               725901
             ]
           },
           {
-            "text": "Seagull population counts fixed by correcting the group ID.",
+            "text": "Distance flares range increased to 2000 m, letting players see monument and cargo lights from far away at night; flares removed from train tunnel prefabs to prevent overload.",
             "commit_ids": [
-              725916
+              726017
             ]
           },
           {
-            "text": "Seagull spawn management improved by using ConvarControlledSpawnPointPopulation and registering it with procedural generation.",
+            "text": "Floating powerlines over caves are removed, preventing visual glitches and keeping powerlines grounded in cave areas.",
             "commit_ids": [
-              725763
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Harbor & Loot",
-        "items": [
-          {
-            "text": "Harbors now correctly spawn crates in tier‑2 custom map settings.",
-            "commit_ids": [
-              725833
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Controls & UI",
-        "items": [
-          {
-            "text": "Quick craft can be focused and used with D‑pad navigation mode.",
-            "commit_ids": [
-              725758
+              725720
             ]
           },
           {
-            "text": "Gamepad UI drag‑threshold handling adjusted for smoother navigation.",
-            "commit_ids": [
-              725744
-            ]
-          },
-          {
-            "text": "Horse canter controls tweaked for better handling.",
-            "commit_ids": [
-              725726
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Gear",
-        "items": [
-          {
-            "text": "Weapon addon points added, unlocking new attachment options.",
-            "commit_ids": [
-              725709
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Store & Notifications",
-        "items": [
-          {
-            "text": "Store’s “NEW” badge now correctly appears when new skins are released.",
-            "commit_ids": [
-              725685
-            ]
-          },
-          {
-            "text": "Null reference error fixed, restoring full store grid functionality.",
-            "commit_ids": [
-              725621
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Bug Fixes",
-        "items": [
-          {
-            "text": "Pumpkin artifacting issue resolved in the Halloween Hunt event.",
-            "commit_ids": [
-              725671
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Apple consumable UI no longer extends into the Split Item panel, removing extra empty space.",
-            "commit_ids": [
-              726005
-            ]
-          },
-          {
-            "text": "Store UI formatting corrected, fixing misaligned items and improving readability.",
-            "commit_ids": [
-              725696
-            ]
-          },
-          {
-            "text": "Pie menu icons and emojis no longer overlap in the top‑right corner, clearing the UI.",
-            "commit_ids": [
-              725626
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Turning in place now respects the parent’s yaw, ensuring accurate orientation when rotating on the spot.",
-            "commit_ids": [
-              725783
-            ]
-          },
-          {
-            "text": "Erosion system retuned with a new soil‑removal splat map, delivering more realistic terrain wear across biomes.",
+            "text": "Erosion system updated with new soil‑removal splat maps and per‑biome tuning, delivering more realistic terrain changes while maintaining overall resource yields.",
             "commit_ids": [
               725693
             ]
@@ -143,30 +47,97 @@
         ]
       },
       {
-        "title": "World Generation",
+        "title": "Loot & Gameplay",
         "items": [
           {
-            "text": "Cave terrain now generates above power‑line layouts, preventing floating powerlines over caves.",
+            "text": "Harbors now correctly spawn Tier 2 crates, including on custom maps.",
             "commit_ids": [
-              725720
+              725833
+            ]
+          },
+          {
+            "text": "Horse canter speed and control tweaked for smoother riding.",
+            "commit_ids": [
+              725726
+            ]
+          },
+          {
+            "text": "Weapon addon points added, expanding attachment options.",
+            "commit_ids": [
+              725709
+            ]
+          },
+          {
+            "text": "Map movement is now consistent at all zoom levels, improving navigation.",
+            "commit_ids": [
+              725669
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Store",
+        "items": [
+          {
+            "text": "Apple item UI no longer extends into the split‑item panel, clearing empty space in consumables UI.",
+            "commit_ids": [
+              726005
+            ]
+          },
+          {
+            "text": "Quick‑craft is focusable and usable with D‑pad navigation mode.",
+            "commit_ids": [
+              725758
+            ]
+          },
+          {
+            "text": "Gamepad UI drag‑threshold behavior fixed for smoother navigation.",
+            "commit_ids": [
+              725744
+            ]
+          },
+          {
+            "text": "Store UI formatting issues resolved, missing “NEW” notifications for new skins now appear, and crashes from a NullReferenceException in the limited store grid are fixed.",
+            "commit_ids": [
+              725696,
+              725685,
+              725621
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Events",
+        "items": [
+          {
+            "text": "Pumpkin artifacting fixed in the Halloween Hunt event, improving visual clarity.",
+            "commit_ids": [
+              725671
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Wildlife & AI\n- New seagull groups now spawn in deep sea, fishing villages, harbors, ferry terminals, oil rigs, and floating cities, with dedicated interest zones and flock spawners.\n- Seagull population counts fixed by correcting the group ID.\n- Seagull spawn management improved by using ConvarControlledSpawnPointPopulation and registering it with procedural generation.\n\n### Harbor & Loot\n- Harbors now correctly spawn crates in tier‑2 custom map settings.\n\n### Controls & UI\n- Quick craft can be focused and used with D‑pad navigation mode.\n- Gamepad UI drag‑threshold handling adjusted for smoother navigation.\n- Horse canter controls tweaked for better handling.\n\n### Combat & Gear\n- Weapon addon points added, unlocking new attachment options.\n\n### Store & Notifications\n- Store’s “NEW” badge now correctly appears when new skins are released.\n- Null reference error fixed, restoring full store grid functionality.\n\n### Bug Fixes\n- Pumpkin artifacting issue resolved in the Halloween Hunt event.\n\n### UI & Quality of Life\n- Apple consumable UI no longer extends into the Split Item panel, removing extra empty space.\n- Store UI formatting corrected, fixing misaligned items and improving readability.\n- Pie menu icons and emojis no longer overlap in the top‑right corner, clearing the UI.\n\n### Gameplay & Balance\n- Turning in place now respects the parent’s yaw, ensuring accurate orientation when rotating on the spot.\n- Erosion system retuned with a new soil‑removal splat map, delivering more realistic terrain wear across biomes.\n\n### World Generation\n- Cave terrain now generates above power‑line layouts, preventing floating powerlines over caves.",
+    "summary": "### Resource Production\n- Crude oil pumped from the sphere tank now counts toward oil production.\n\n### World & Environment\n- Seagull groups with spawn points, interest zones, and flock spawners added to deep‑sea monuments (fishing villages, harbors, ferry terminals, oil rigs, floating cities).\n- Distance flares range increased to 2000 m, letting players see monument and cargo lights from far away at night; flares removed from train tunnel prefabs to prevent overload.\n- Floating powerlines over caves are removed, preventing visual glitches and keeping powerlines grounded in cave areas.\n- Erosion system updated with new soil‑removal splat maps and per‑biome tuning, delivering more realistic terrain changes while maintaining overall resource yields.\n\n### Loot & Gameplay\n- Harbors now correctly spawn Tier 2 crates, including on custom maps.\n- Horse canter speed and control tweaked for smoother riding.\n- Weapon addon points added, expanding attachment options.\n- Map movement is now consistent at all zoom levels, improving navigation.\n\n### UI & Store\n- Apple item UI no longer extends into the split‑item panel, clearing empty space in consumables UI.\n- Quick‑craft is focusable and usable with D‑pad navigation mode.\n- Gamepad UI drag‑threshold behavior fixed for smoother navigation.\n- Store UI formatting issues resolved, missing “NEW” notifications for new skins now appear, and crashes from a NullReferenceException in the limited store grid are fixed.\n\n### Events\n- Pumpkin artifacting fixed in the Halloween Hunt event, improving visual clarity.",
     "new_items": [
       {
-        "text": "Apple consumable UI no longer extends into the Split Item panel, removing extra empty space.",
+        "text": "Crude oil pumped from the sphere tank now counts toward oil production.",
         "commit_ids": [
-          726005
+          726024
         ],
-        "section": "UI & Quality of Life"
+        "section": "Resource Production"
+      },
+      {
+        "text": "Distance flares range increased to 2000 m, letting players see monument and cargo lights from far away at night; flares removed from train tunnel prefabs to prevent overload.",
+        "commit_ids": [
+          726017
+        ],
+        "section": "World & Environment"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Apple consumable UI no longer extends into the Split Item panel, removing extra empty space."
+    "new_relevant_count": 2,
+    "new_summary": "- Crude oil pumped from the sphere tank now counts toward oil production.\n- Distance flares range increased to 2000 m, letting players see monument and cargo lights from far away at night; flares removed from train tunnel prefabs to prevent overload."
   },
   "2026-10-29": {
     "commit_count": 77,

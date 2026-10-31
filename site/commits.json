@@ -1,5 +1,69 @@
 [
   {
+    "id": 726024,
+    "branch": "main/analytics_oil_prod_fix",
+    "changeset": "169882",
+    "created": "2026-10-30T23:38:05",
+    "message": "Ensure that crude oil being pumped from the sphere tank is added to production",
+    "user": "Daniel Carrington"
+  },
+  {
+    "id": 726022,
+    "branch": "main/unity_6.7.0",
+    "changeset": "169880",
+    "created": "2026-10-30T23:09:55",
+    "message": "Update: couple materials that popped up after big reimport\r\nTests: none",
+    "user": "Daniel P"
+  },
+  {
+    "id": 726021,
+    "branch": "main",
+    "changeset": "169879",
+    "created": "2026-10-30T23:06:04",
+    "message": "~DIsable blend shapes on collider_settings import preset",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 726019,
+    "branch": "main/unity_6.7.0",
+    "changeset": "169877",
+    "created": "2026-10-30T22:58:51",
+    "message": "Update: 19.6k updated meta files for textures\r\nTests: editor opens",
+    "user": "Daniel P"
+  },
+  {
+    "id": 726018,
+    "branch": "main/unity_6.7.0",
+    "changeset": "169876",
+    "created": "2026-10-30T22:55:10",
+    "message": "Update: auto-updated package manifest + other global objects\r\nTests: editor boots",
+    "user": "Daniel P"
+  },
+  {
+    "id": 726017,
+    "branch": "main/distance_flare_extended_range",
+    "changeset": "169875",
+    "created": "2026-10-30T22:51:13",
+    "message": "Override distance flares range so that they render from much further (2000m) away, so you can see monument/cargo lights from far away at night\r\nMake them render through a central component that makes it more GPU driven instead of piggybacking on the LOD system\r\nRemove the distance flares from the train tunnel prefabs, they significantly outnumbered the monument ones and you can't even see very far down there",
+    "user": "lamalove"
+  },
+  {
+    "id": 726016,
+    "branch": "main/animal_renaming",
+    "changeset": "169874",
+    "created": "2026-10-30T22:46:09",
+    "message": "Can now rename animals whilst in streamer mode\r\nOnly animals which have been renamed by other players are filtered whilst streamer mode is enabled and shown as a random name instead",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 726014,
+    "branch": "main/tattoochair",
+    "changeset": "169873",
+    "created": "2026-10-30T22:32:45",
+    "message": "blockout update",
+    "user": "Pilgrim"
+  },
+  {
     "id": 726011,
     "branch": "█▍▍█",
     "changeset": "▋▌▆▄▆▋",
@@ -2334,109 +2398,5 @@
     "created": "2026-10-28T00:20:57",
     "message": "Prototype Rust+ camera that renders real models, textures, etc. withn the app\r\nEditor tooling exports mobile-friendly assets for uploading to our CDN",
     "user": "lamalove"
-  },
-  {
-    "id": 722983,
-    "branch": "main/UZI 9mm",
-    "changeset": "169455",
-    "created": "2026-10-28T00:12:45",
-    "message": "Codegen",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 722982,
-    "branch": "main/base_occlusion",
-    "changeset": "169454",
-    "created": "2026-10-28T00:07:51",
-    "message": "Optimize empty room search after blocks are destroyed\n- track rooms when they have all faces removed and mark as destroyed instead of checking to see if any rooms need to be cleaned up",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722981,
-    "branch": "▊█▆▋",
-    "changeset": "▊▉▆▉▅▇",
-    "created": "2026-10-28T00:07:12",
-    "message": "▇▍▌▋▌▄ ▇▋▌▇ █▅▊▅▇▋█▋▄▄▊▊██▍▊",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722979,
-    "branch": "▉▊▍▊▊▄▋▄▅▆▊▉▉▇▆▍█▊▍▅▋",
-    "changeset": "▊▋▇▍▊▇",
-    "created": "2026-10-28T00:05:22",
-    "message": "▆▇█▇ ▍▇█▋▉▉ ▍▊▇▅ ▍▉▊█▍▇█▅▄ ▋▋▇▍ ▆▋▅▍ ▄█▉█▆▅▋ ▌▊ ▉ ▉▅██▍▆",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722976,
-    "branch": "main/UZI 9mm",
-    "changeset": "169450",
-    "created": "2026-10-28T00:03:06",
-    "message": "Adjust recoil, weapon rack config",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 722971,
-    "branch": "main/base_occlusion",
-    "changeset": "169449",
-    "created": "2026-10-27T23:52:13",
-    "message": "Optimize time taken when room occlusion is turned on at runtime (18s -> 4s)\n- only visit every face once instead of refreshing nearby faces and calculating multiple times",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722961,
-    "branch": "main/Livestock_animals/shears",
-    "changeset": "169446",
-    "created": "2026-10-27T23:41:06",
-    "message": "Updated description",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722960,
-    "branch": "main/Livestock_animals/shears",
-    "changeset": "169445",
-    "created": "2026-10-27T23:40:34",
-    "message": "Hitting a sheeps skin with shears won't hurt or startle them (still does small amounts of damage to other entities)",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722951,
-    "branch": "main/base_occlusion",
-    "changeset": "169443",
-    "created": "2026-10-27T23:24:03",
-    "message": "Optimize network group assignment after a room is recalculated",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 722947,
-    "branch": "▋▅██▄▊▇▄▌▆▍▊▄▌▅▍▍▆▊█▍",
-    "changeset": "▍▌▅▅▄▇",
-    "created": "2026-10-27T22:55:44",
-    "message": "▉▍▄█ █▇▅▊▉ ▋█▊▇█ ▉▉▅▊▅▍▅ ▆▊ ▉▊▋██▍ ▇▅▊▊▋▆▌ ▊▍▇█▍▊▌▌ ▉▋▇▄▉▊▍▆▋▆▊▆▆█ ▌▋ ▍▋▋▆▊▋▄ ▉▅▊▌ ▆▆▊▍▉█ ▌▄▌█▇▌ ▆█▌▌▇▄ ▄▉▆ ▄▊▉▆ ▌▊▆▋▋▋▌ ▌▌▊ ▄▅▇▄▌ ██▄▆▉ ▌▉▋ ▋▍▊▉▅▅▊▆ ▉▄ ▊▊ ▋▊ ▆▄▊█ ▄█▋▌ ▊▄▄▅▅▋ ▄▇▄ ▇▇▌█▌▅▆▋",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 722946,
-    "branch": "main/bird_critters",
-    "changeset": "169440",
-    "created": "2026-10-27T22:40:40",
-    "message": "Seagull audio tweaks",
-    "user": "diogo.c"
-  },
-  {
-    "id": 722941,
-    "branch": "main/Livestock_animals/shears",
-    "changeset": "169439",
-    "created": "2026-10-27T22:19:17",
-    "message": "shear sounds",
-    "user": "Alex R"
-  },
-  {
-    "id": 722939,
-    "branch": "main/swamp_tree_x_improvement",
-    "changeset": "169437",
-    "created": "2026-10-27T22:18:42",
-    "message": "Lowered marker points on swamp_tree_f",
-    "user": "Jarryd Campi"
   }
 ]
