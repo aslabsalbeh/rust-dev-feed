@@ -1,4 +1,17 @@
 {
+  "2026-10-31": {
+    "commit_count": 2,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-10-30": {
     "commit_count": 124,
     "relevant_commit_count": 38,
@@ -261,124 +274,6 @@
     ],
     "status": "ok",
     "summary": "### Base Building\n- Fixed full‑height walls where the bottom face could incorrectly connect to the top face of a neighboring wall.\n- Added a full voxel‑based visibility flood for each base to correctly detect missing sockets and incorrect block connections.\n\n### Weapons & Combat\n- Disabled research and crafting for the UZI 9mm, removing it from the tech tree.\n- Fixed a sight‑mod bug where ADS values were overridden when the stock was collapsed.\n- Corrected night‑vision goggle sound restarting when gesturing.\n- Fixed mortar ammo indicator not updating correctly.\n\n### User Interface\n- Fixed the loadouts UI delete confirmation popup being uninteractive.\n\n### Map & Environment\n- Prevented monument placement where terrain blend maps overlap river topology, stopping floating water glitches.\n- Various swarm fixes: corrected crab and jellyfish job behavior and made rare blue crab color tints more noticeable.\n\n### World Interaction & NPC\n- Fixed beacon repairable collider so it no longer blocks ladders, preventing players from climbing near beacons.\n- Fixed crow flock error, restoring proper crow behavior.\n\n### Wildlife & World\n- Server admins can now force gull groups to startle or land via console commands, and gulls no longer clip through obstacles.\n- Bird interest zones can be placed in monuments to attract flocks; corpses briefly draw crows, and explosions cause birds to flee the area.\n- Seagull groups have been added to the livestock scene, increasing wildlife activity there.\n- Bird hit detection bounds have been increased, keeping birds within hit‑registration range and reducing missed shots.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-10-28": {
-    "commit_count": 99,
-    "relevant_commit_count": 49,
-    "relevant_signature": "723009,724013,724017,724037,724043,724044,724046,724068,724111,724112,724185,724191,724205,724213,724259,724347,724349,724358,724361,724370,724384,724394,724401,724403,724450,724467,724468,724502,724518,724525,724536,724538,724543,724549,724609,724610,724617,724630,724639,724640,724642,724728,724729,724731,724739,724744,724748,724750,724752",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Base Building & Construction",
-        "items": [
-          {
-            "text": "Storage containers no longer require authorization when unlocked in softcore mode.",
-            "commit_ids": [
-              724752
-            ]
-          },
-          {
-            "text": "Angled walls now correctly select the adjacent half‑height wall, fixing placement glitches.",
-            "commit_ids": [
-              724748
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "AI‑controlled boats that flip now auto‑right themselves and keep passengers aboard.",
-            "commit_ids": [
-              724750
-            ]
-          },
-          {
-            "text": "Rowboat turning prediction corrected; aiming now matches actual yaw.",
-            "commit_ids": [
-              724639
-            ]
-          }
-        ]
-      },
-      {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "Scientist‑spawned boats are removed when the scientist dies, preventing abandoned vessels.",
-            "commit_ids": [
-              724744
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Weapon handling improvements: aiming while holding another item, melee head wobble while jogging, and Uzi stock deployment/holster behavior fixed.",
-            "commit_ids": [
-              724640,
-              724111
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Interaction",
-        "items": [
-          {
-            "text": "Radiation water sprinklers now start with the correct color and no brief clear‑water flash.",
-            "commit_ids": [
-              724609,
-              724450
-            ]
-          },
-          {
-            "text": "Doors no longer get stuck half‑open after alt‑tabbing; dynamic occlusion pausing re‑enabled.",
-            "commit_ids": [
-              724538
-            ]
-          },
-          {
-            "text": "Scarecrow null reference error resolved, restoring its functionality for base defense.",
-            "commit_ids": [
-              724185
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay Systems",
-        "items": [
-          {
-            "text": "Recessive gene names are now shown explicitly in the UI and vendor, clarifying genetics.",
-            "commit_ids": [
-              724731
-            ]
-          },
-          {
-            "text": "UGC upload limits raised to 1,000 per queue and server IP/port now included in request body after API changes.",
-            "commit_ids": [
-              724543
-            ]
-          },
-          {
-            "text": "Event schedule now saves remaining hours on server restart, preventing full cooldown resets (e.g., cargo ship spawn).",
-            "commit_ids": [
-              724046
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Base Building & Construction\n- Storage containers no longer require authorization when unlocked in softcore mode.\n- Angled walls now correctly select the adjacent half‑height wall, fixing placement glitches.\n\n### Vehicles\n- AI‑controlled boats that flip now auto‑right themselves and keep passengers aboard.\n- Rowboat turning prediction corrected; aiming now matches actual yaw.\n\n### NPC & AI\n- Scientist‑spawned boats are removed when the scientist dies, preventing abandoned vessels.\n\n### Combat & Weapons\n- Weapon handling improvements: aiming while holding another item, melee head wobble while jogging, and Uzi stock deployment/holster behavior fixed.\n\n### World Interaction\n- Radiation water sprinklers now start with the correct color and no brief clear‑water flash.\n- Doors no longer get stuck half‑open after alt‑tabbing; dynamic occlusion pausing re‑enabled.\n- Scarecrow null reference error resolved, restoring its functionality for base defense.\n\n### Gameplay Systems\n- Recessive gene names are now shown explicitly in the UI and vendor, clarifying genetics.\n- UGC upload limits raised to 1,000 per queue and server IP/port now included in request body after API changes.\n- Event schedule now saves remaining hours on server restart, preventing full cooldown resets (e.g., cargo ship spawn).",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
