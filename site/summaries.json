@@ -145,9 +145,9 @@
     "new_summary": ""
   },
   "2026-10-29": {
-    "commit_count": 76,
-    "relevant_commit_count": 34,
-    "relevant_signature": "724761,724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575,725581,725591,725592",
+    "commit_count": 73,
+    "relevant_commit_count": 33,
+    "relevant_signature": "724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575,725581,725591,725592",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -155,13 +155,13 @@
         "title": "Base Building",
         "items": [
           {
-            "text": "Fixed full‑height walls where the bottom face could incorrectly connect to the top face of a neighboring wall.",
+            "text": "Fixed full-height walls connecting incorrectly, removing visual glitches and wrong wall connections.",
             "commit_ids": [
               725591
             ]
           },
           {
-            "text": "Added a full voxel‑based visibility flood for each base to correctly detect missing sockets and incorrect block connections.",
+            "text": "Added a voxel‑based flooding pass that improves base visibility and flags building blocks with missing sockets or bad connections.",
             "commit_ids": [
               725592
             ]
@@ -169,28 +169,50 @@
         ]
       },
       {
-        "title": "Weapons & Combat",
+        "title": "Weapons & Crafting",
         "items": [
           {
-            "text": "Disabled research and crafting for the UZI 9mm, removing it from the tech tree.",
+            "text": "Removed the UZI 9mm from the tech tree and crafting menu, so it can no longer be researched or built.",
             "commit_ids": [
               725555
             ]
           },
           {
-            "text": "Fixed a sight‑mod bug where ADS values were overridden when the stock was collapsed.",
+            "text": "Fixed sight‑mod interactions that previously overrode ADS values when the stock was collapsed, restoring proper aiming.",
             "commit_ids": [
               725555
             ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
+          {
+            "text": "Stopped monuments from spawning too close to rivers where terrain blends overlap, eliminating floating water issues.",
+            "commit_ids": [
+              725536
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Audio",
+        "items": [
+          {
+            "text": "Made the loadout delete confirmation popup interactive again, so deletions can be confirmed.",
+            "commit_ids": [
+              725443
+            ]
           },
           {
-            "text": "Corrected night‑vision goggle sound restarting when gesturing.",
+            "text": "Fixed night‑vision goggle sound to play continuously during gestures.",
             "commit_ids": [
               725431
             ]
           },
           {
-            "text": "Fixed mortar ammo indicator not updating correctly.",
+            "text": "Corrected the mortar ammo counter to update correctly.",
             "commit_ids": [
               725413
             ]
@@ -198,27 +220,10 @@
         ]
       },
       {
-        "title": "User Interface",
+        "title": "Swarm AI",
         "items": [
           {
-            "text": "Fixed the loadouts UI delete confirmation popup being uninteractive.",
-            "commit_ids": [
-              725443
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map & Environment",
-        "items": [
-          {
-            "text": "Prevented monument placement where terrain blend maps overlap river topology, stopping floating water glitches.",
-            "commit_ids": [
-              725536
-            ]
-          },
-          {
-            "text": "Various swarm fixes: corrected crab and jellyfish job behavior and made rare blue crab color tints more noticeable.",
+            "text": "Fixed crab and jellyfish behavior bugs and increased the visibility of rare blue crabs with stronger colour tints.",
             "commit_ids": [
               725409
             ]
@@ -226,45 +231,33 @@
         ]
       },
       {
-        "title": "World Interaction & NPC",
+        "title": "World Interaction",
         "items": [
           {
-            "text": "Fixed beacon repairable collider so it no longer blocks ladders, preventing players from climbing near beacons.",
+            "text": "Fixed the beacon repair collider so it no longer blocks ladders, allowing smooth ladder climbing.",
             "commit_ids": [
               725305
-            ]
-          },
-          {
-            "text": "Fixed crow flock error, restoring proper crow behavior.",
-            "commit_ids": [
-              724761
             ]
           }
         ]
       },
       {
-        "title": "Wildlife & World",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Server admins can now force gull groups to startle or land via console commands, and gulls no longer clip through obstacles.",
+            "text": "Admins can now use server commands to force gull groups to startle or land, allowing dynamic control of bird behavior.",
             "commit_ids": [
               725523
             ]
           },
           {
-            "text": "Bird interest zones can be placed in monuments to attract flocks; corpses briefly draw crows, and explosions cause birds to flee the area.",
+            "text": "Flock interest zones can be placed in monuments to attract bird flocks; corpses briefly draw crow flocks, and timed explosives cause flocks to flee, adding new strategic environmental interactions.",
             "commit_ids": [
               725520
             ]
           },
           {
-            "text": "Seagull groups have been added to the livestock scene, increasing wildlife activity there.",
-            "commit_ids": [
-              725399
-            ]
-          },
-          {
-            "text": "Bird hit detection bounds have been increased, keeping birds within hit‑registration range and reducing missed shots.",
+            "text": "Bird hit‑registration bounds have been increased, keeping birds within hit‑reg range and making them easier to target in combat.",
             "commit_ids": [
               725390
             ]
@@ -273,7 +266,7 @@
       }
     ],
     "status": "ok",
-    "summary": "### Base Building\n- Fixed full‑height walls where the bottom face could incorrectly connect to the top face of a neighboring wall.\n- Added a full voxel‑based visibility flood for each base to correctly detect missing sockets and incorrect block connections.\n\n### Weapons & Combat\n- Disabled research and crafting for the UZI 9mm, removing it from the tech tree.\n- Fixed a sight‑mod bug where ADS values were overridden when the stock was collapsed.\n- Corrected night‑vision goggle sound restarting when gesturing.\n- Fixed mortar ammo indicator not updating correctly.\n\n### User Interface\n- Fixed the loadouts UI delete confirmation popup being uninteractive.\n\n### Map & Environment\n- Prevented monument placement where terrain blend maps overlap river topology, stopping floating water glitches.\n- Various swarm fixes: corrected crab and jellyfish job behavior and made rare blue crab color tints more noticeable.\n\n### World Interaction & NPC\n- Fixed beacon repairable collider so it no longer blocks ladders, preventing players from climbing near beacons.\n- Fixed crow flock error, restoring proper crow behavior.\n\n### Wildlife & World\n- Server admins can now force gull groups to startle or land via console commands, and gulls no longer clip through obstacles.\n- Bird interest zones can be placed in monuments to attract flocks; corpses briefly draw crows, and explosions cause birds to flee the area.\n- Seagull groups have been added to the livestock scene, increasing wildlife activity there.\n- Bird hit detection bounds have been increased, keeping birds within hit‑registration range and reducing missed shots.",
+    "summary": "### Base Building\n- Fixed full-height walls connecting incorrectly, removing visual glitches and wrong wall connections.\n- Added a voxel‑based flooding pass that improves base visibility and flags building blocks with missing sockets or bad connections.\n\n### Weapons & Crafting\n- Removed the UZI 9mm from the tech tree and crafting menu, so it can no longer be researched or built.\n- Fixed sight‑mod interactions that previously overrode ADS values when the stock was collapsed, restoring proper aiming.\n\n### World Generation\n- Stopped monuments from spawning too close to rivers where terrain blends overlap, eliminating floating water issues.\n\n### UI & Audio\n- Made the loadout delete confirmation popup interactive again, so deletions can be confirmed.\n- Fixed night‑vision goggle sound to play continuously during gestures.\n- Corrected the mortar ammo counter to update correctly.\n\n### Swarm AI\n- Fixed crab and jellyfish behavior bugs and increased the visibility of rare blue crabs with stronger colour tints.\n\n### World Interaction\n- Fixed the beacon repair collider so it no longer blocks ladders, allowing smooth ladder climbing.\n\n### Gameplay & Balance\n- Admins can now use server commands to force gull groups to startle or land, allowing dynamic control of bird behavior.\n- Flock interest zones can be placed in monuments to attract bird flocks; corpses briefly draw crow flocks, and timed explosives cause flocks to flee, adding new strategic environmental interactions.\n- Bird hit‑registration bounds have been increased, keeping birds within hit‑reg range and making them easier to target in combat.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
