@@ -1,5 +1,13 @@
 [
   {
+    "id": 726169,
+    "branch": "main/procgen_fix_icelake_placement",
+    "changeset": "169916",
+    "created": "2026-11-01T22:11:12",
+    "message": "Made icelake placement much fairer so Ice Lake 4 isn't disproportionately spawning compared to the other 3 variants - larger icelakes now spawn more often.\r\n\r\nUses a new TerrainAnchorBlendGenerator to generate terrain anchors using the icelake's blend map so anchors are used more sparsely and only in the areas they are needed to make placement easier. The big disc anchors were too mean.\r\n\r\nManually reviewed all icelakes across 25 seeds and observed much more diverse placement.",
+    "user": "Jakb"
+  },
+  {
     "id": 726142,
     "branch": "main/hotfix_livestock_loop",
     "changeset": "169912",
@@ -1118,53 +1126,5 @@
     "created": "2026-10-29T23:50:06",
     "message": "▉▊▇▌ ▌▋▉▅▍ ▉▄▍▇▋█▄▋▆▇▆▊▉ ▅▇▇▇▊▍ ▇█▄▇▅▊▊ ▌▆▆▋▌▄▇▊ █▆▌▅▆█▆ █▊▅▄▆▄█▄ █▉▄ ▉▋█▉▊▋ ▊▅▊▋██▉▆ ▇▍ ▊▅▉▆▇▉▄▍█▆ ▅█▊▇▆▌▆▋█▉ ▅▍▉▅█▅ ▌█▍▅ ▊▌▍▄▌▌▍▇▋▄▊▉▄█ ▉▆█▆▉▊▆▋ ▋▋▋▋▉ ▇▋▅▊ ▉▍▇▉▇▉▉▉▇ ▌▍▍█▌▊▌▅▉ ▆▊▉▍▇ ▍▌▄▅▆▄▆▉▉",
     "user": "Martyn Chapman"
-  },
-  {
-    "id": 725575,
-    "branch": "main/vclouds_optim",
-    "changeset": "169717",
-    "created": "2026-10-29T23:05:52",
-    "message": "vclouds optimizations:\r\n- move ExecuteCommandBuffer() call to generate weather textures from LateUpdate() into rendering code callback, calling it in LateUpdate() created a thread sync point\r\n- completely skip rendering the cirrus cloud layer as it's unused (wasted some GPU time)\r\n- fix rounding math for compute group sizes, also add a bounds check in the main CloudMarch shader",
-    "user": "Brian"
-  },
-  {
-    "id": 725573,
-    "branch": "main/wolf_eye",
-    "changeset": "169715",
-    "created": "2026-10-29T22:34:44",
-    "message": "Adjusted the wolf night time eye effect to be more of a pale white instead of green\r\nDidn't change the other animal eyes visually but improved the LOD behaviour",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 725572,
-    "branch": "main/UZI 9mm",
-    "changeset": "169714",
-    "created": "2026-10-29T22:26:04",
-    "message": "- viewmodel anim updates\r\n- controller updates (no need for sep ADS fire and dryfire with no stock mode)\r\n- anim event timing tweaks",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 725570,
-    "branch": "▇▋▅▇",
-    "changeset": "█▊█▄▅▌",
-    "created": "2026-10-29T22:10:33",
-    "message": "▌▉ █▇▋▉█▉▅ ▄▌██▄ ▉▊▋▍▅ ▉▊▋ ▍▍▋▌▉ ▊█▌█▉▇ █▅ ▉██▉▌▊▇ ▉▊▉▋▋▅▋▇ ▊█▄▊▌▄▊ ▉▊▌▍▋▅ ▆▉▇▄ ▄▍ ▄▆▇ ▇▇▍ ▇▅▆█▍▄█ ▌▄ ▅▄ █▋ ▊▅▍▌▌▊ ▌▌▅▇▅▅▊ ▋▆ ▋▅▇▅ ▋▋█▌▇▅▊▋ ▉▍▅▄█▌▇",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 725563,
-    "branch": "main/box_collider_authoring",
-    "changeset": "169710",
-    "created": "2026-10-29T21:45:40",
-    "message": "Revert all biofuel asset changes and remove the test asset",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 725558,
-    "branch": "main",
-    "changeset": "169709",
-    "created": "2026-10-29T21:27:53",
-    "message": "~Allow fog density convars to be sent from server again",
-    "user": "cipeaX"
   }
 ]
