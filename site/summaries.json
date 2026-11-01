@@ -145,23 +145,23 @@
     "new_summary": ""
   },
   "2026-10-29": {
-    "commit_count": 73,
-    "relevant_commit_count": 33,
-    "relevant_signature": "724776,724783,724795,725260,725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575,725581,725591,725592",
+    "commit_count": 64,
+    "relevant_commit_count": 29,
+    "relevant_signature": "725302,725305,725338,725375,725380,725384,725390,725399,725407,725409,725413,725431,725443,725497,725520,725521,725522,725523,725530,725531,725536,725550,725555,725556,725573,725575,725581,725591,725592",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building",
+        "title": "Base Building & Visibility",
         "items": [
           {
-            "text": "Fixed full-height walls connecting incorrectly, removing visual glitches and wrong wall connections.",
+            "text": "Fixed full‑height walls that could incorrectly connect to neighboring walls, preventing unexpected wall merges.",
             "commit_ids": [
               725591
             ]
           },
           {
-            "text": "Added a voxel‑based flooding pass that improves base visibility and flags building blocks with missing sockets or bad connections.",
+            "text": "Implemented a voxel‑based flood fill to provide reliable base visibility, now detecting missing sockets and incorrect block connections.",
             "commit_ids": [
               725592
             ]
@@ -169,16 +169,10 @@
         ]
       },
       {
-        "title": "Weapons & Crafting",
+        "title": "Weapon & Gear Adjustments",
         "items": [
           {
-            "text": "Removed the UZI 9mm from the tech tree and crafting menu, so it can no longer be researched or built.",
-            "commit_ids": [
-              725555
-            ]
-          },
-          {
-            "text": "Fixed sight‑mod interactions that previously overrode ADS values when the stock was collapsed, restoring proper aiming.",
+            "text": "Research and crafting for the UZI 9mm have been disabled, and a sight‑mod bug that overwrote ADS values when the stock collapsed has been fixed.",
             "commit_ids": [
               725555
             ]
@@ -186,87 +180,54 @@
         ]
       },
       {
-        "title": "World Generation",
+        "title": "UI & Audio Fixes",
         "items": [
           {
-            "text": "Stopped monuments from spawning too close to rivers where terrain blends overlap, eliminating floating water issues.",
-            "commit_ids": [
-              725536
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Audio",
-        "items": [
-          {
-            "text": "Made the loadout delete confirmation popup interactive again, so deletions can be confirmed.",
+            "text": "Loadouts UI delete popup is interactive again.",
             "commit_ids": [
               725443
             ]
           },
           {
-            "text": "Fixed night‑vision goggle sound to play continuously during gestures.",
+            "text": "Night‑vision goggle sound no longer restarts when gesturing.",
             "commit_ids": [
               725431
             ]
           },
           {
-            "text": "Corrected the mortar ammo counter to update correctly.",
+            "text": "Mortar ammo indicator now updates correctly when ammo changes.",
             "commit_ids": [
               725413
             ]
-          }
-        ]
-      },
-      {
-        "title": "Swarm AI",
-        "items": [
+          },
           {
-            "text": "Fixed crab and jellyfish behavior bugs and increased the visibility of rare blue crabs with stronger colour tints.",
+            "text": "Job feedback UI now shows correct messages during job execution.",
             "commit_ids": [
-              725409
+              725375
             ]
           }
         ]
       },
       {
-        "title": "World Interaction",
+        "title": "World & Structures",
         "items": [
           {
-            "text": "Fixed the beacon repair collider so it no longer blocks ladders, allowing smooth ladder climbing.",
+            "text": "Monuments are no longer placed where terrain blend maps overlap river topology, eliminating floating water on monuments.",
+            "commit_ids": [
+              725536
+            ]
+          },
+          {
+            "text": "Beacon repairable objects no longer block ladders, allowing uninterrupted climbing.",
             "commit_ids": [
               725305
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Admins can now use server commands to force gull groups to startle or land, allowing dynamic control of bird behavior.",
-            "commit_ids": [
-              725523
-            ]
-          },
-          {
-            "text": "Flock interest zones can be placed in monuments to attract bird flocks; corpses briefly draw crow flocks, and timed explosives cause flocks to flee, adding new strategic environmental interactions.",
-            "commit_ids": [
-              725520
-            ]
-          },
-          {
-            "text": "Bird hit‑registration bounds have been increased, keeping birds within hit‑reg range and making them easier to target in combat.",
-            "commit_ids": [
-              725390
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Base Building\n- Fixed full-height walls connecting incorrectly, removing visual glitches and wrong wall connections.\n- Added a voxel‑based flooding pass that improves base visibility and flags building blocks with missing sockets or bad connections.\n\n### Weapons & Crafting\n- Removed the UZI 9mm from the tech tree and crafting menu, so it can no longer be researched or built.\n- Fixed sight‑mod interactions that previously overrode ADS values when the stock was collapsed, restoring proper aiming.\n\n### World Generation\n- Stopped monuments from spawning too close to rivers where terrain blends overlap, eliminating floating water issues.\n\n### UI & Audio\n- Made the loadout delete confirmation popup interactive again, so deletions can be confirmed.\n- Fixed night‑vision goggle sound to play continuously during gestures.\n- Corrected the mortar ammo counter to update correctly.\n\n### Swarm AI\n- Fixed crab and jellyfish behavior bugs and increased the visibility of rare blue crabs with stronger colour tints.\n\n### World Interaction\n- Fixed the beacon repair collider so it no longer blocks ladders, allowing smooth ladder climbing.\n\n### Gameplay & Balance\n- Admins can now use server commands to force gull groups to startle or land, allowing dynamic control of bird behavior.\n- Flock interest zones can be placed in monuments to attract bird flocks; corpses briefly draw crow flocks, and timed explosives cause flocks to flee, adding new strategic environmental interactions.\n- Bird hit‑registration bounds have been increased, keeping birds within hit‑reg range and making them easier to target in combat.",
+    "summary": "### Base Building & Visibility\n- Fixed full‑height walls that could incorrectly connect to neighboring walls, preventing unexpected wall merges.\n- Implemented a voxel‑based flood fill to provide reliable base visibility, now detecting missing sockets and incorrect block connections.\n\n### Weapon & Gear Adjustments\n- Research and crafting for the UZI 9mm have been disabled, and a sight‑mod bug that overwrote ADS values when the stock collapsed has been fixed.\n\n### UI & Audio Fixes\n- Loadouts UI delete popup is interactive again.\n- Night‑vision goggle sound no longer restarts when gesturing.\n- Mortar ammo indicator now updates correctly when ammo changes.\n- Job feedback UI now shows correct messages during job execution.\n\n### World & Structures\n- Monuments are no longer placed where terrain blend maps overlap river topology, eliminating floating water on monuments.\n- Beacon repairable objects no longer block ladders, allowing uninterrupted climbing.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
