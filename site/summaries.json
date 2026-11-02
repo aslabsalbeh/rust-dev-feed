@@ -1,40 +1,34 @@
 {
   "2026-11-02": {
-    "commit_count": 71,
-    "relevant_commit_count": 35,
-    "relevant_signature": "726209,726217,726243,726253,726255,726272,726273,726282,726287,726290,726303,726310,726317,726322,726327,726328,726330,726332,726334,726345,726347,726348,726353,726355,726362,726364,726366,726373,726376,726380,726381,726382,726383,726386,726387",
+    "commit_count": 85,
+    "relevant_commit_count": 47,
+    "relevant_signature": "726209,726217,726243,726253,726255,726272,726273,726282,726287,726290,726303,726310,726317,726322,726327,726328,726330,726332,726334,726345,726347,726348,726353,726355,726362,726364,726366,726373,726376,726380,726381,726382,726383,726386,726387,726397,726401,726405,726410,726412,726424,726425,726432,726439,726443,726444,726447",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay & AI",
+        "title": "Vehicles & Boats",
         "items": [
           {
-            "text": "Oil rigs now spawn only one boat group, cutting down excess boat traffic.",
+            "text": "PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns.",
+            "commit_ids": [
+              726424,
+              726412
+            ]
+          },
+          {
+            "text": "Boat group spawns at large oil rigs reduced from two groups to one, decreasing encounter frequency.",
             "commit_ids": [
               726386
-            ]
-          },
-          {
-            "text": "Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling.",
-            "commit_ids": [
-              726376,
-              726362
-            ]
-          },
-          {
-            "text": "Birds now glide when descending, flee distance increased to 1000 m for longer‑range reactions, and crows circle corpses from higher altitude, improving avian realism and explosion tracking.",
-            "commit_ids": [
-              726332
             ]
           }
         ]
       },
       {
-        "title": "Weapon Balance",
+        "title": "Weapons",
         "items": [
           {
-            "text": "UZI condition decay rate doubled, making the weapon wear out faster.",
+            "text": "UZI 9 mm durability doubled and other balance tweaks applied, extending weapon condition life.",
             "commit_ids": [
               726353
             ]
@@ -42,57 +36,49 @@
         ]
       },
       {
-        "title": "Stability & Performance",
+        "title": "Birds & Critters",
         "items": [
           {
-            "text": "Fixed a crash caused by a null reference in the phone system, preventing errors when phones are destroyed.",
+            "text": "Gull groups now avoid obstacles better, have a limited startle radius, improved shooting accuracy, and can spawn in deep‑sea areas, reducing stutter and making them more predictable.",
             "commit_ids": [
-              726290
+              726362,
+              726376
             ]
           },
           {
-            "text": "Map markers are now more efficient: shop markers refresh only on data changes and monument markers are pre‑built, making the map open faster.",
+            "text": "Birds glide when descending, their flee distance increased to 1000 units allowing map‑wide travel and explosion tracking; crows now circle corpses from higher altitude.",
             "commit_ids": [
-              726243,
-              726217
+              726332
             ]
           }
         ]
       },
       {
-        "title": "Localization",
+        "title": "Systems",
         "items": [
           {
-            "text": "Fixed right‑to‑left text formatting and animal name display for RTL languages, ensuring proper localization.",
+            "text": "Phone system stability improved by fixing a crash that occurred during server shutdown.",
             "commit_ids": [
-              726347,
-              726330
+              726290
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Gameplay & AI\n- Oil rigs now spawn only one boat group, cutting down excess boat traffic.\n- Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling.\n- Birds now glide when descending, flee distance increased to 1000 m for longer‑range reactions, and crows circle corpses from higher altitude, improving avian realism and explosion tracking.\n\n### Weapon Balance\n- UZI condition decay rate doubled, making the weapon wear out faster.\n\n### Stability & Performance\n- Fixed a crash caused by a null reference in the phone system, preventing errors when phones are destroyed.\n- Map markers are now more efficient: shop markers refresh only on data changes and monument markers are pre‑built, making the map open faster.\n\n### Localization\n- Fixed right‑to‑left text formatting and animal name display for RTL languages, ensuring proper localization.",
+    "summary": "### Vehicles & Boats\n- PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns.\n- Boat group spawns at large oil rigs reduced from two groups to one, decreasing encounter frequency.\n\n### Weapons\n- UZI 9 mm durability doubled and other balance tweaks applied, extending weapon condition life.\n\n### Birds & Critters\n- Gull groups now avoid obstacles better, have a limited startle radius, improved shooting accuracy, and can spawn in deep‑sea areas, reducing stutter and making them more predictable.\n- Birds glide when descending, their flee distance increased to 1000 units allowing map‑wide travel and explosion tracking; crows now circle corpses from higher altitude.\n\n### Systems\n- Phone system stability improved by fixing a crash that occurred during server shutdown.",
     "new_items": [
       {
-        "text": "Oil rigs now spawn only one boat group, cutting down excess boat traffic.",
+        "text": "PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns.",
         "commit_ids": [
-          726386
+          726424,
+          726412
         ],
-        "section": "Gameplay & AI"
-      },
-      {
-        "text": "Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling.",
-        "commit_ids": [
-          726376,
-          726362
-        ],
-        "section": "Gameplay & AI"
+        "section": "Vehicles & Boats"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Oil rigs now spawn only one boat group, cutting down excess boat traffic.\n- Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling."
+    "new_relevant_count": 2,
+    "new_summary": "- PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns."
   },
   "2026-11-01": {
     "commit_count": 3,
