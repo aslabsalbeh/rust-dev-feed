@@ -1,31 +1,31 @@
 {
   "2026-11-02": {
-    "commit_count": 60,
-    "relevant_commit_count": 27,
-    "relevant_signature": "726209,726217,726243,726253,726255,726272,726273,726282,726287,726290,726303,726310,726317,726322,726327,726328,726330,726332,726334,726345,726347,726348,726353,726355,726362,726364,726366",
+    "commit_count": 71,
+    "relevant_commit_count": 35,
+    "relevant_signature": "726209,726217,726243,726253,726255,726272,726273,726282,726287,726290,726303,726310,726317,726322,726327,726328,726330,726332,726334,726345,726347,726348,726353,726355,726362,726364,726366,726373,726376,726380,726381,726382,726383,726386,726387",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "AI & Wildlife",
+        "title": "Gameplay & AI",
         "items": [
           {
-            "text": "Gulls now avoid obstacles more reliably, stay on surface, have reduced startle radius, inherit velocity when killed, and can spawn in deep‑sea zones.",
+            "text": "Oil rigs now spawn only one boat group, cutting down excess boat traffic.",
             "commit_ids": [
+              726386
+            ]
+          },
+          {
+            "text": "Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling.",
+            "commit_ids": [
+              726376,
               726362
             ]
           },
           {
-            "text": "Birds can glide; flocks no longer flap while descending, flee distance increased to 1000 m for better explosion tracking, and crows circle corpses from higher altitude.",
+            "text": "Birds now glide when descending, flee distance increased to 1000 m for longer‑range reactions, and crows circle corpses from higher altitude, improving avian realism and explosion tracking.",
             "commit_ids": [
               726332
-            ]
-          },
-          {
-            "text": "Added missing seagull spawn points in floating city, ferry terminal, and lighthouse, ensuring seagulls appear in those areas.",
-            "commit_ids": [
-              726334,
-              726322
             ]
           }
         ]
@@ -34,7 +34,7 @@
         "title": "Weapon Balance",
         "items": [
           {
-            "text": "UZI damage and durability have been doubled.",
+            "text": "UZI condition decay rate doubled, making the weapon wear out faster.",
             "commit_ids": [
               726353
             ]
@@ -42,39 +42,30 @@
         ]
       },
       {
-        "title": "Phone System Stability",
+        "title": "Stability & Performance",
         "items": [
           {
-            "text": "Fixed a null‑reference crash when phones are destroyed, improving overall stability.",
+            "text": "Fixed a crash caused by a null reference in the phone system, preventing errors when phones are destroyed.",
             "commit_ids": [
               726290
             ]
-          }
-        ]
-      },
-      {
-        "title": "Map Performance",
-        "items": [
+          },
           {
-            "text": "Monument markers are now generated during world setup, cutting initial map open time from ~19 ms to ~2.7 ms.",
+            "text": "Map markers are now more efficient: shop markers refresh only on data changes and monument markers are pre‑built, making the map open faster.",
             "commit_ids": [
+              726243,
               726217
             ]
           }
         ]
       },
       {
-        "title": "UI & Localization",
+        "title": "Localization",
         "items": [
           {
-            "text": "Corrected right‑to‑left language formatting when passing arguments, fixing display issues for non‑RTL languages.",
+            "text": "Fixed right‑to‑left text formatting and animal name display for RTL languages, ensuring proper localization.",
             "commit_ids": [
-              726347
-            ]
-          },
-          {
-            "text": "Fixed animal name display for right‑to‑left languages, ensuring proper localization.",
-            "commit_ids": [
+              726347,
               726330
             ]
           }
@@ -82,54 +73,26 @@
       }
     ],
     "status": "ok",
-    "summary": "### AI & Wildlife\n- Gulls now avoid obstacles more reliably, stay on surface, have reduced startle radius, inherit velocity when killed, and can spawn in deep‑sea zones.\n- Birds can glide; flocks no longer flap while descending, flee distance increased to 1000 m for better explosion tracking, and crows circle corpses from higher altitude.\n- Added missing seagull spawn points in floating city, ferry terminal, and lighthouse, ensuring seagulls appear in those areas.\n\n### Weapon Balance\n- UZI damage and durability have been doubled.\n\n### Phone System Stability\n- Fixed a null‑reference crash when phones are destroyed, improving overall stability.\n\n### Map Performance\n- Monument markers are now generated during world setup, cutting initial map open time from ~19 ms to ~2.7 ms.\n\n### UI & Localization\n- Corrected right‑to‑left language formatting when passing arguments, fixing display issues for non‑RTL languages.\n- Fixed animal name display for right‑to‑left languages, ensuring proper localization.",
+    "summary": "### Gameplay & AI\n- Oil rigs now spawn only one boat group, cutting down excess boat traffic.\n- Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling.\n- Birds now glide when descending, flee distance increased to 1000 m for longer‑range reactions, and crows circle corpses from higher altitude, improving avian realism and explosion tracking.\n\n### Weapon Balance\n- UZI condition decay rate doubled, making the weapon wear out faster.\n\n### Stability & Performance\n- Fixed a crash caused by a null reference in the phone system, preventing errors when phones are destroyed.\n- Map markers are now more efficient: shop markers refresh only on data changes and monument markers are pre‑built, making the map open faster.\n\n### Localization\n- Fixed right‑to‑left text formatting and animal name display for RTL languages, ensuring proper localization.",
     "new_items": [
       {
-        "text": "Gulls now avoid obstacles more reliably, stay on surface, have reduced startle radius, inherit velocity when killed, and can spawn in deep‑sea zones.",
+        "text": "Oil rigs now spawn only one boat group, cutting down excess boat traffic.",
         "commit_ids": [
+          726386
+        ],
+        "section": "Gameplay & AI"
+      },
+      {
+        "text": "Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling.",
+        "commit_ids": [
+          726376,
           726362
         ],
-        "section": "AI & Wildlife"
-      },
-      {
-        "text": "Birds can glide; flocks no longer flap while descending, flee distance increased to 1000 m for better explosion tracking, and crows circle corpses from higher altitude.",
-        "commit_ids": [
-          726332
-        ],
-        "section": "AI & Wildlife"
-      },
-      {
-        "text": "Added missing seagull spawn points in floating city, ferry terminal, and lighthouse, ensuring seagulls appear in those areas.",
-        "commit_ids": [
-          726334,
-          726322
-        ],
-        "section": "AI & Wildlife"
-      },
-      {
-        "text": "UZI damage and durability have been doubled.",
-        "commit_ids": [
-          726353
-        ],
-        "section": "Weapon Balance"
-      },
-      {
-        "text": "Corrected right‑to‑left language formatting when passing arguments, fixing display issues for non‑RTL languages.",
-        "commit_ids": [
-          726347
-        ],
-        "section": "UI & Localization"
-      },
-      {
-        "text": "Fixed animal name display for right‑to‑left languages, ensuring proper localization.",
-        "commit_ids": [
-          726330
-        ],
-        "section": "UI & Localization"
+        "section": "Gameplay & AI"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Gulls now avoid obstacles more reliably, stay on surface, have reduced startle radius, inherit velocity when killed, and can spawn in deep‑sea zones.\n- Birds can glide; flocks no longer flap while descending, flee distance increased to 1000 m for better explosion tracking, and crows circle corpses from higher altitude.\n- Added missing seagull spawn points in floating city, ferry terminal, and lighthouse, ensuring seagulls appear in those areas.\n- UZI damage and durability have been doubled.\n- Corrected right‑to‑left language formatting when passing arguments, fixing display issues for non‑RTL languages.\n- Fixed animal name display for right‑to‑left languages, ensuring proper localization."
+    "new_relevant_count": 3,
+    "new_summary": "- Oil rigs now spawn only one boat group, cutting down excess boat traffic.\n- Gull AI overhauled: better tracking, larger flight area, stronger obstacle avoidance, smoother behavior, realistic landings, proper corpse handling."
   },
   "2026-11-01": {
     "commit_count": 3,
