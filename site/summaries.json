@@ -1,50 +1,77 @@
 {
   "2026-11-03": {
-    "commit_count": 70,
-    "relevant_commit_count": 33,
-    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644,726655,726659,726662,726672,726685,726690,726698",
+    "commit_count": 78,
+    "relevant_commit_count": 40,
+    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644,726655,726659,726662,726672,726685,726690,726698,726704,726705,726711,726714,726716,726718,726721",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Loot",
+        "title": "Buildings & World",
         "items": [
           {
-            "text": "Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.",
+            "text": "Increased apartment building bounds to prevent them from being too small.",
+            "commit_ids": [
+              726721
+            ]
+          },
+          {
+            "text": "Fixed biofuel generator snapping to the wrong spot in corners with advanced snapping.",
+            "commit_ids": [
+              726685
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployables & Doors",
+        "items": [
+          {
+            "text": "Deployables now check all nearby building block changes instead of only the most recent one.",
+            "commit_ids": [
+              726714
+            ]
+          },
+          {
+            "text": "Placing or destroying a door now refreshes only the modified door on the server, reducing unnecessary updates.",
+            "commit_ids": [
+              726705
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons, Loot & Combat",
+        "items": [
+          {
+            "text": "Fixed magazines staying invisible after swapping weapons mid‑reload.",
             "commit_ids": [
               726690
             ]
           },
           {
-            "text": "Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.",
+            "text": "Adjusted Uzi drops in hackable, elite, and underwater crates to avoid overlap, tweaked weight values, and added ammo to elite and underwater crates.",
             "commit_ids": [
               726672,
               726655
             ]
           },
           {
-            "text": "Weapons retain their stock‑extended properties while mounted in turrets, regardless of stock configuration.",
+            "text": "Patrol helicopter rocket kills now correctly display the helicopter on the death screen.",
             "commit_ids": [
-              726578
+              726659
             ]
           },
           {
-            "text": "Drop‑item keybind no longer unintentionally discards the held belt item while the inventory is open.",
+            "text": "Added combat log entries when hitting gull groups.",
             "commit_ids": [
-              726583
+              726604
             ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Terrain",
-        "items": [
+          },
           {
-            "text": "Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions.",
+            "text": "Expanded the splash‑damage hitbox of triangular‑prism deployables to include grills and triangle hatches, improving damage consistency.",
             "commit_ids": [
-              726685,
-              726621,
-              726619
+              726537
             ]
           }
         ]
@@ -53,102 +80,120 @@
         "title": "Player Interaction & UI",
         "items": [
           {
-            "text": "Players can now dismount from computer stations even when the space behind the chair is blocked, with added dismount points and a notification when dismount is refused.",
+            "text": "Players no longer get stuck in computer stations when the space behind the chair is blocked; added extra dismount points and a toast notification for refused dismounts.",
             "commit_ids": [
               726662
             ]
           },
           {
-            "text": "Phone conversation UI bugs fixed: opening inventory during a call no longer crashes, and conversation details display correctly after server commands.",
+            "text": "Fixed a null‑reference error when opening the inventory screen during a phone conversation.",
             "commit_ids": [
-              726595,
+              726595
+            ]
+          },
+          {
+            "text": "Fixed a bug where using the drop-item keybind unintentionally removed the held item from your belt while the inventory UI was open.",
+            "commit_ids": [
+              726583
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Turrets",
+        "items": [
+          {
+            "text": "Turret stock now always applies its extended properties while you are seated in a turret, regardless of how the stock was originally set.",
+            "commit_ids": [
+              726578
+            ]
+          },
+          {
+            "text": "Resolved a null‑reference crash in PlayerBoat.UpdateWake after rejoining a server; lingering wake effects from destroyed boats are now correctly cleared.",
+            "commit_ids": [
+              726525
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
+          {
+            "text": "Shore ice no longer spawns on railway tracks, preventing ice blocks on rails.",
+            "commit_ids": [
+              726621
+            ]
+          },
+          {
+            "text": "Roadside waterpipes will no longer appear on top of roads at T‑junctions, keeping roadways clear.",
+            "commit_ids": [
+              726619
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Communication",
+        "items": [
+          {
+            "text": "Phone conversation UI now shows correct information after server commands, fixing misleading text.",
+            "commit_ids": [
               726594
             ]
           }
         ]
       },
       {
-        "title": "Combat",
+        "title": "Combat Log",
         "items": [
           {
-            "text": "Patrol helicopter rockets now appear as the attacker on the death screen when they kill a player.",
-            "commit_ids": [
-              726659
-            ]
-          },
-          {
-            "text": "Combat log now records hits on gull groups, giving feedback on bird encounters.",
-            "commit_ids": [
-              726604
-            ]
-          },
-          {
-            "text": "Triangular prism splash damage now includes grills and triangle hatches, providing more accurate damage coverage.",
-            "commit_ids": [
-              726537
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Miscellaneous",
-        "items": [
-          {
-            "text": "Boat wake visual effects no longer linger after rejoining a server following a boat's destruction.",
-            "commit_ids": [
-              726525
-            ]
-          },
-          {
-            "text": "Steam description for the Scrap King building skin now correctly reads “upgrade to scrap king”.",
-            "commit_ids": [
-              726533
-            ]
-          }
-        ]
-      },
-      {
-        "title": "User Interface",
-        "items": [
-          {
-            "text": "Combat logs now display weapons using their short prefab names, making kill feeds clearer and easier to read.",
+            "text": "Combat log now displays short weapon prefab names, making kill feeds easier to read.",
             "commit_ids": [
               726568
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Steam Items",
+        "items": [
+          {
+            "text": "Steam item for Scrap King now correctly reads “upgrade to scrap king,” fixing the previous description error.",
+            "commit_ids": [
+              726533
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Weapons & Loot\n- Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.\n- Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.\n- Weapons retain their stock‑extended properties while mounted in turrets, regardless of stock configuration.\n- Drop‑item keybind no longer unintentionally discards the held belt item while the inventory is open.\n\n### Building & Terrain\n- Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions.\n\n### Player Interaction & UI\n- Players can now dismount from computer stations even when the space behind the chair is blocked, with added dismount points and a notification when dismount is refused.\n- Phone conversation UI bugs fixed: opening inventory during a call no longer crashes, and conversation details display correctly after server commands.\n\n### Combat\n- Patrol helicopter rockets now appear as the attacker on the death screen when they kill a player.\n- Combat log now records hits on gull groups, giving feedback on bird encounters.\n- Triangular prism splash damage now includes grills and triangle hatches, providing more accurate damage coverage.\n\n### Miscellaneous\n- Boat wake visual effects no longer linger after rejoining a server following a boat's destruction.\n- Steam description for the Scrap King building skin now correctly reads “upgrade to scrap king”.\n\n### User Interface\n- Combat logs now display weapons using their short prefab names, making kill feeds clearer and easier to read.",
+    "summary": "### Buildings & World\n- Increased apartment building bounds to prevent them from being too small.\n- Fixed biofuel generator snapping to the wrong spot in corners with advanced snapping.\n\n### Deployables & Doors\n- Deployables now check all nearby building block changes instead of only the most recent one.\n- Placing or destroying a door now refreshes only the modified door on the server, reducing unnecessary updates.\n\n### Weapons, Loot & Combat\n- Fixed magazines staying invisible after swapping weapons mid‑reload.\n- Adjusted Uzi drops in hackable, elite, and underwater crates to avoid overlap, tweaked weight values, and added ammo to elite and underwater crates.\n- Patrol helicopter rocket kills now correctly display the helicopter on the death screen.\n- Added combat log entries when hitting gull groups.\n- Expanded the splash‑damage hitbox of triangular‑prism deployables to include grills and triangle hatches, improving damage consistency.\n\n### Player Interaction & UI\n- Players no longer get stuck in computer stations when the space behind the chair is blocked; added extra dismount points and a toast notification for refused dismounts.\n- Fixed a null‑reference error when opening the inventory screen during a phone conversation.\n- Fixed a bug where using the drop-item keybind unintentionally removed the held item from your belt while the inventory UI was open.\n\n### Vehicles & Turrets\n- Turret stock now always applies its extended properties while you are seated in a turret, regardless of how the stock was originally set.\n- Resolved a null‑reference crash in PlayerBoat.UpdateWake after rejoining a server; lingering wake effects from destroyed boats are now correctly cleared.\n\n### World Generation\n- Shore ice no longer spawns on railway tracks, preventing ice blocks on rails.\n- Roadside waterpipes will no longer appear on top of roads at T‑junctions, keeping roadways clear.\n\n### Communication\n- Phone conversation UI now shows correct information after server commands, fixing misleading text.\n\n### Combat Log\n- Combat log now displays short weapon prefab names, making kill feeds easier to read.\n\n### Steam Items\n- Steam item for Scrap King now correctly reads “upgrade to scrap king,” fixing the previous description error.",
     "new_items": [
       {
-        "text": "Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.",
+        "text": "Increased apartment building bounds to prevent them from being too small.",
         "commit_ids": [
-          726690
+          726721
         ],
-        "section": "Weapons & Loot"
+        "section": "Buildings & World"
       },
       {
-        "text": "Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.",
+        "text": "Deployables now check all nearby building block changes instead of only the most recent one.",
         "commit_ids": [
-          726672,
-          726655
+          726714
         ],
-        "section": "Weapons & Loot"
+        "section": "Deployables & Doors"
       },
       {
-        "text": "Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions.",
+        "text": "Placing or destroying a door now refreshes only the modified door on the server, reducing unnecessary updates.",
         "commit_ids": [
-          726685,
-          726621,
-          726619
+          726705
         ],
-        "section": "Building & Terrain"
+        "section": "Deployables & Doors"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.\n- Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.\n- Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions."
+    "new_relevant_count": 3,
+    "new_summary": "- Increased apartment building bounds to prevent them from being too small.\n- Deployables now check all nearby building block changes instead of only the most recent one.\n- Placing or destroying a door now refreshes only the modified door on the server, reducing unnecessary updates."
   },
   "2026-11-02": {
     "commit_count": 91,
