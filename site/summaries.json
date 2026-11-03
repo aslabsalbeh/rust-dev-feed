@@ -1,29 +1,89 @@
 {
   "2026-11-03": {
-    "commit_count": 63,
-    "relevant_commit_count": 30,
-    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644,726655,726659,726662,726672",
+    "commit_count": 70,
+    "relevant_commit_count": 33,
+    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644,726655,726659,726662,726672,726685,726690,726698",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Gear",
+        "title": "Weapons & Loot",
         "items": [
           {
-            "text": "Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.",
+            "text": "Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.",
+            "commit_ids": [
+              726690
+            ]
+          },
+          {
+            "text": "Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.",
             "commit_ids": [
               726672,
               726655
             ]
           },
           {
-            "text": "Uzi stock behavior updated: when mounted on a turret, the weapon always uses the stock's extended properties regardless of the equipped stock.",
+            "text": "Weapons retain their stock‑extended properties while mounted in turrets, regardless of stock configuration.",
             "commit_ids": [
               726578
             ]
           },
           {
-            "text": "Triangular prism deployable splash damage now reaches grills and triangle hatches, with refined hatch bounds.",
+            "text": "Drop‑item keybind no longer unintentionally discards the held belt item while the inventory is open.",
+            "commit_ids": [
+              726583
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & Terrain",
+        "items": [
+          {
+            "text": "Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions.",
+            "commit_ids": [
+              726685,
+              726621,
+              726619
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Player Interaction & UI",
+        "items": [
+          {
+            "text": "Players can now dismount from computer stations even when the space behind the chair is blocked, with added dismount points and a notification when dismount is refused.",
+            "commit_ids": [
+              726662
+            ]
+          },
+          {
+            "text": "Phone conversation UI bugs fixed: opening inventory during a call no longer crashes, and conversation details display correctly after server commands.",
+            "commit_ids": [
+              726595,
+              726594
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat",
+        "items": [
+          {
+            "text": "Patrol helicopter rockets now appear as the attacker on the death screen when they kill a player.",
+            "commit_ids": [
+              726659
+            ]
+          },
+          {
+            "text": "Combat log now records hits on gull groups, giving feedback on bird encounters.",
+            "commit_ids": [
+              726604
+            ]
+          },
+          {
+            "text": "Triangular prism splash damage now includes grills and triangle hatches, providing more accurate damage coverage.",
             "commit_ids": [
               726537
             ]
@@ -31,123 +91,16 @@
         ]
       },
       {
-        "title": "Combat & Feedback",
+        "title": "Miscellaneous",
         "items": [
           {
-            "text": "Combat log now records hits on gull groups.",
+            "text": "Boat wake visual effects no longer linger after rejoining a server following a boat's destruction.",
             "commit_ids": [
-              726604
+              726525
             ]
           },
           {
-            "text": "Combat log entries use short weapon prefab names for clearer, more concise logs.",
-            "commit_ids": [
-              726568
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Movement & Interaction",
-        "items": [
-          {
-            "text": "Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.",
-            "commit_ids": [
-              726662
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Kill Feed",
-        "items": [
-          {
-            "text": "Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen.",
-            "commit_ids": [
-              726659
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Generation",
-        "items": [
-          {
-            "text": "Shore ice will no longer spawn over railway tracks.",
-            "commit_ids": [
-              726621
-            ]
-          },
-          {
-            "text": "Roadside waterpipes are prevented from spawning on top of roads at T‑junctions.",
-            "commit_ids": [
-              726619
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & UI",
-        "items": [
-          {
-            "text": "Dropping items from inventory no longer unintentionally removes the held belt item.",
-            "commit_ids": [
-              726583
-            ]
-          },
-          {
-            "text": "Opening the inventory during a phone conversation no longer triggers a null reference error.",
-            "commit_ids": [
-              726595
-            ]
-          },
-          {
-            "text": "New phone conversations now display correct information after server commands.",
-            "commit_ids": [
-              726594
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Bunker entrance radius and fade reduced to better match monument footprint, cleaning up out‑of‑bounds paint data.",
-            "commit_ids": [
-              726588
-            ]
-          },
-          {
-            "text": "Radiation town radius and fade trimmed, smoothing blend and preventing overreach beyond intended area.",
-            "commit_ids": [
-              726538
-            ]
-          },
-          {
-            "text": "Jungle ruins monument tile and map size reduced, eliminating radius overhang and unused splat layers.",
-            "commit_ids": [
-              726509
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio",
-        "items": [
-          {
-            "text": "Bird flock audio now respects proper distance, making distant flocks quieter.",
-            "commit_ids": [
-              726566
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Items",
-        "items": [
-          {
-            "text": "Scrap King building skin Steam item description corrected to “upgrade to scrap king”.",
+            "text": "Steam description for the Scrap King building skin now correctly reads “upgrade to scrap king”.",
             "commit_ids": [
               726533
             ]
@@ -155,45 +108,47 @@
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Player boats no longer leave lingering wake effects after rejoining a server; NRE crash fixed.",
+            "text": "Combat logs now display weapons using their short prefab names, making kill feeds clearer and easier to read.",
             "commit_ids": [
-              726525
+              726568
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Weapons & Gear\n- Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.\n- Uzi stock behavior updated: when mounted on a turret, the weapon always uses the stock's extended properties regardless of the equipped stock.\n- Triangular prism deployable splash damage now reaches grills and triangle hatches, with refined hatch bounds.\n\n### Combat & Feedback\n- Combat log now records hits on gull groups.\n- Combat log entries use short weapon prefab names for clearer, more concise logs.\n\n### Movement & Interaction\n- Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.\n\n### Vehicles & Kill Feed\n- Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen.\n\n### World Generation\n- Shore ice will no longer spawn over railway tracks.\n- Roadside waterpipes are prevented from spawning on top of roads at T‑junctions.\n\n### Inventory & UI\n- Dropping items from inventory no longer unintentionally removes the held belt item.\n- Opening the inventory during a phone conversation no longer triggers a null reference error.\n- New phone conversations now display correct information after server commands.\n\n### Gameplay & Balance\n- Bunker entrance radius and fade reduced to better match monument footprint, cleaning up out‑of‑bounds paint data.\n- Radiation town radius and fade trimmed, smoothing blend and preventing overreach beyond intended area.\n- Jungle ruins monument tile and map size reduced, eliminating radius overhang and unused splat layers.\n\n### Audio\n- Bird flock audio now respects proper distance, making distant flocks quieter.\n\n### UI & Items\n- Scrap King building skin Steam item description corrected to “upgrade to scrap king”.\n\n### Bug Fixes\n- Player boats no longer leave lingering wake effects after rejoining a server; NRE crash fixed.",
+    "summary": "### Weapons & Loot\n- Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.\n- Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.\n- Weapons retain their stock‑extended properties while mounted in turrets, regardless of stock configuration.\n- Drop‑item keybind no longer unintentionally discards the held belt item while the inventory is open.\n\n### Building & Terrain\n- Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions.\n\n### Player Interaction & UI\n- Players can now dismount from computer stations even when the space behind the chair is blocked, with added dismount points and a notification when dismount is refused.\n- Phone conversation UI bugs fixed: opening inventory during a call no longer crashes, and conversation details display correctly after server commands.\n\n### Combat\n- Patrol helicopter rockets now appear as the attacker on the death screen when they kill a player.\n- Combat log now records hits on gull groups, giving feedback on bird encounters.\n- Triangular prism splash damage now includes grills and triangle hatches, providing more accurate damage coverage.\n\n### Miscellaneous\n- Boat wake visual effects no longer linger after rejoining a server following a boat's destruction.\n- Steam description for the Scrap King building skin now correctly reads “upgrade to scrap king”.\n\n### User Interface\n- Combat logs now display weapons using their short prefab names, making kill feeds clearer and easier to read.",
     "new_items": [
       {
-        "text": "Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.",
+        "text": "Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.",
+        "commit_ids": [
+          726690
+        ],
+        "section": "Weapons & Loot"
+      },
+      {
+        "text": "Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.",
         "commit_ids": [
           726672,
           726655
         ],
-        "section": "Weapons & Gear"
+        "section": "Weapons & Loot"
       },
       {
-        "text": "Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.",
+        "text": "Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions.",
         "commit_ids": [
-          726662
+          726685,
+          726621,
+          726619
         ],
-        "section": "Movement & Interaction"
-      },
-      {
-        "text": "Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen.",
-        "commit_ids": [
-          726659
-        ],
-        "section": "Vehicles & Kill Feed"
+        "section": "Building & Terrain"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.\n- Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.\n- Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen."
+    "new_relevant_count": 6,
+    "new_summary": "- Invisible magazines now appear correctly when swapping weapons mid‑reload, preventing them from disappearing after holstering.\n- Uzi loot has been rebalanced: overlapping spawns are prevented, bolt‑action and LR weight reduced to curb loot dilution, and extra ammo added to elite and underwater crates.\n- Generator snapping, shore ice, and roadside waterpipe placement have been fixed to respect terrain features, eliminating corner snapping errors, ice over railway tracks, and waterpipes on road junctions."
   },
   "2026-11-02": {
     "commit_count": 91,
