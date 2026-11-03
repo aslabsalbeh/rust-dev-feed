@@ -1,22 +1,39 @@
 {
   "2026-11-03": {
-    "commit_count": 34,
-    "relevant_commit_count": 19,
-    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604",
+    "commit_count": 53,
+    "relevant_commit_count": 26,
+    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Combat log now records hits on gull groups.",
+            "text": "Fixed shore ice spawning over railway tracks by preventing ice placement on rails.",
+            "commit_ids": [
+              726621
+            ]
+          },
+          {
+            "text": "Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.",
+            "commit_ids": [
+              726619
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat",
+        "items": [
+          {
+            "text": "Added a combat log entry when hitting gull groups, giving players feedback on those attacks.",
             "commit_ids": [
               726604
             ]
           },
           {
-            "text": "Triangular prism splash damage now reaches grills and triangle hatches.",
+            "text": "Extended triangular prism splash damage bounds to include grills and triangle hatches, slightly adjusting hatch bounds.",
             "commit_ids": [
               726537
             ]
@@ -24,27 +41,22 @@
         ]
       },
       {
-        "title": "UI & Inventory",
+        "title": "Inventory",
         "items": [
           {
-            "text": "Inventory no longer crashes when opened during a phone conversation.",
+            "text": "Fixed a crash that occurred when opening the inventory during a phone conversation.",
             "commit_ids": [
               726595
             ]
           },
           {
-            "text": "Phone conversation UI now shows correct information after server commands.",
+            "text": "Fixed incorrect information shown in new phone conversations after server commands were used.",
             "commit_ids": [
               726594
             ]
-          }
-        ]
-      },
-      {
-        "title": "Controls",
-        "items": [
+          },
           {
-            "text": "Drop item bind fixed: no longer drops the held belt item while the inventory is open.",
+            "text": "Fixed the drop-item keybind so it now drops the intended item instead of the held belt item while the inventory is open.",
             "commit_ids": [
               726583
             ]
@@ -52,10 +64,10 @@
         ]
       },
       {
-        "title": "Turrets",
+        "title": "Weapons & Turrets",
         "items": [
           {
-            "text": "Turret stock properties now always apply, ensuring consistent performance regardless of stock configuration.",
+            "text": "Ensured turrets always use the stock's extended properties, making turret behavior consistent regardless of stock configuration.",
             "commit_ids": [
               726578
             ]
@@ -63,12 +75,46 @@
         ]
       },
       {
-        "title": "Audio & Environment",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Flock audio distance corrected, making bird sounds audible at the proper range.",
+            "text": "Fixed a crash after rejoining a server that caused lingering wake effects from destroyed boats.",
             "commit_ids": [
-              726566
+              726525
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Monuments",
+        "items": [
+          {
+            "text": "Bunker entrance size and fade have been tightened to match the monument footprint, improving entry alignment and removing out‑of‑bounds paint data.",
+            "commit_ids": [
+              726588
+            ]
+          },
+          {
+            "text": "Radiation Town radius and blend have been slightly reduced and smoothed, preventing the effect from spilling beyond its intended area.",
+            "commit_ids": [
+              726538
+            ]
+          },
+          {
+            "text": "Jungle Ruins D monument tile and terrain map sizes were reduced, eliminating radius overhang and unused splat areas for cleaner boundaries.",
+            "commit_ids": [
+              726509
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability",
+        "items": [
+          {
+            "text": "Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability.",
+            "commit_ids": [
+              726598
             ]
           }
         ]
@@ -77,81 +123,48 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed a rare network read error that could cause crashes or disconnects when player position data is accessed.",
+            "text": "Adjusted flock audio distance, extending the range at which players can hear bird flocks and improving situational awareness.",
             "commit_ids": [
-              726598
-            ]
-          },
-          {
-            "text": "Steam item for the Scrap King building now correctly shows “Upgrade to Scrap King” instead of an incorrect token.",
-            "commit_ids": [
-              726533
-            ]
-          },
-          {
-            "text": "Resolved lingering boat wake effects after rejoining a server, preventing visual clutter and related performance issues.",
-            "commit_ids": [
-              726525
+              726566
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Combat log now records hits on gull groups.\n- Triangular prism splash damage now reaches grills and triangle hatches.\n\n### UI & Inventory\n- Inventory no longer crashes when opened during a phone conversation.\n- Phone conversation UI now shows correct information after server commands.\n\n### Controls\n- Drop item bind fixed: no longer drops the held belt item while the inventory is open.\n\n### Turrets\n- Turret stock properties now always apply, ensuring consistent performance regardless of stock configuration.\n\n### Audio & Environment\n- Flock audio distance corrected, making bird sounds audible at the proper range.\n\n### Gameplay & Balance\n- Fixed a rare network read error that could cause crashes or disconnects when player position data is accessed.\n- Steam item for the Scrap King building now correctly shows “Upgrade to Scrap King” instead of an incorrect token.\n- Resolved lingering boat wake effects after rejoining a server, preventing visual clutter and related performance issues.",
+    "summary": "### World & Environment\n- Fixed shore ice spawning over railway tracks by preventing ice placement on rails.\n- Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.\n\n### Combat\n- Added a combat log entry when hitting gull groups, giving players feedback on those attacks.\n- Extended triangular prism splash damage bounds to include grills and triangle hatches, slightly adjusting hatch bounds.\n\n### Inventory\n- Fixed a crash that occurred when opening the inventory during a phone conversation.\n- Fixed incorrect information shown in new phone conversations after server commands were used.\n- Fixed the drop-item keybind so it now drops the intended item instead of the held belt item while the inventory is open.\n\n### Weapons & Turrets\n- Ensured turrets always use the stock's extended properties, making turret behavior consistent regardless of stock configuration.\n\n### Vehicles\n- Fixed a crash after rejoining a server that caused lingering wake effects from destroyed boats.\n\n### World & Monuments\n- Bunker entrance size and fade have been tightened to match the monument footprint, improving entry alignment and removing out‑of‑bounds paint data.\n- Radiation Town radius and blend have been slightly reduced and smoothed, preventing the effect from spilling beyond its intended area.\n- Jungle Ruins D monument tile and terrain map sizes were reduced, eliminating radius overhang and unused splat areas for cleaner boundaries.\n\n### Stability\n- Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability.\n\n### Gameplay & Balance\n- Adjusted flock audio distance, extending the range at which players can hear bird flocks and improving situational awareness.",
     "new_items": [
       {
-        "text": "Combat log now records hits on gull groups.",
+        "text": "Fixed shore ice spawning over railway tracks by preventing ice placement on rails.",
+        "commit_ids": [
+          726621
+        ],
+        "section": "World & Environment"
+      },
+      {
+        "text": "Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.",
+        "commit_ids": [
+          726619
+        ],
+        "section": "World & Environment"
+      },
+      {
+        "text": "Added a combat log entry when hitting gull groups, giving players feedback on those attacks.",
         "commit_ids": [
           726604
         ],
-        "section": "Combat & Weapons"
+        "section": "Combat"
       },
       {
-        "text": "Inventory no longer crashes when opened during a phone conversation.",
-        "commit_ids": [
-          726595
-        ],
-        "section": "UI & Inventory"
-      },
-      {
-        "text": "Phone conversation UI now shows correct information after server commands.",
-        "commit_ids": [
-          726594
-        ],
-        "section": "UI & Inventory"
-      },
-      {
-        "text": "Drop item bind fixed: no longer drops the held belt item while the inventory is open.",
-        "commit_ids": [
-          726583
-        ],
-        "section": "Controls"
-      },
-      {
-        "text": "Turret stock properties now always apply, ensuring consistent performance regardless of stock configuration.",
-        "commit_ids": [
-          726578
-        ],
-        "section": "Turrets"
-      },
-      {
-        "text": "Flock audio distance corrected, making bird sounds audible at the proper range.",
-        "commit_ids": [
-          726566
-        ],
-        "section": "Audio & Environment"
-      },
-      {
-        "text": "Fixed a rare network read error that could cause crashes or disconnects when player position data is accessed.",
+        "text": "Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability.",
         "commit_ids": [
           726598
         ],
-        "section": "Gameplay & Balance"
+        "section": "Stability"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Combat log now records hits on gull groups.\n- Inventory no longer crashes when opened during a phone conversation.\n- Phone conversation UI now shows correct information after server commands.\n- Drop item bind fixed: no longer drops the held belt item while the inventory is open.\n- Turret stock properties now always apply, ensuring consistent performance regardless of stock configuration.\n- Flock audio distance corrected, making bird sounds audible at the proper range.\n- Fixed a rare network read error that could cause crashes or disconnects when player position data is accessed."
+    "new_relevant_count": 4,
+    "new_summary": "- Fixed shore ice spawning over railway tracks by preventing ice placement on rails.\n- Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.\n- Added a combat log entry when hitting gull groups, giving players feedback on those attacks.\n- Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability."
   },
   "2026-11-02": {
     "commit_count": 91,
