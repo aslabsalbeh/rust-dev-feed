@@ -1,39 +1,29 @@
 {
   "2026-11-03": {
-    "commit_count": 53,
-    "relevant_commit_count": 26,
-    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644",
+    "commit_count": 63,
+    "relevant_commit_count": 30,
+    "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644,726655,726659,726662,726672",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Environment",
+        "title": "Weapons & Gear",
         "items": [
           {
-            "text": "Fixed shore ice spawning over railway tracks by preventing ice placement on rails.",
+            "text": "Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.",
             "commit_ids": [
-              726621
+              726672,
+              726655
             ]
           },
           {
-            "text": "Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.",
+            "text": "Uzi stock behavior updated: when mounted on a turret, the weapon always uses the stock's extended properties regardless of the equipped stock.",
             "commit_ids": [
-              726619
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "Added a combat log entry when hitting gull groups, giving players feedback on those attacks.",
-            "commit_ids": [
-              726604
+              726578
             ]
           },
           {
-            "text": "Extended triangular prism splash damage bounds to include grills and triangle hatches, slightly adjusting hatch bounds.",
+            "text": "Triangular prism deployable splash damage now reaches grills and triangle hatches, with refined hatch bounds.",
             "commit_ids": [
               726537
             ]
@@ -41,80 +31,80 @@
         ]
       },
       {
-        "title": "Inventory",
+        "title": "Combat & Feedback",
         "items": [
           {
-            "text": "Fixed a crash that occurred when opening the inventory during a phone conversation.",
+            "text": "Combat log now records hits on gull groups.",
+            "commit_ids": [
+              726604
+            ]
+          },
+          {
+            "text": "Combat log entries use short weapon prefab names for clearer, more concise logs.",
+            "commit_ids": [
+              726568
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Movement & Interaction",
+        "items": [
+          {
+            "text": "Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.",
+            "commit_ids": [
+              726662
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Kill Feed",
+        "items": [
+          {
+            "text": "Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen.",
+            "commit_ids": [
+              726659
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
+          {
+            "text": "Shore ice will no longer spawn over railway tracks.",
+            "commit_ids": [
+              726621
+            ]
+          },
+          {
+            "text": "Roadside waterpipes are prevented from spawning on top of roads at T‑junctions.",
+            "commit_ids": [
+              726619
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & UI",
+        "items": [
+          {
+            "text": "Dropping items from inventory no longer unintentionally removes the held belt item.",
+            "commit_ids": [
+              726583
+            ]
+          },
+          {
+            "text": "Opening the inventory during a phone conversation no longer triggers a null reference error.",
             "commit_ids": [
               726595
             ]
           },
           {
-            "text": "Fixed incorrect information shown in new phone conversations after server commands were used.",
+            "text": "New phone conversations now display correct information after server commands.",
             "commit_ids": [
               726594
-            ]
-          },
-          {
-            "text": "Fixed the drop-item keybind so it now drops the intended item instead of the held belt item while the inventory is open.",
-            "commit_ids": [
-              726583
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons & Turrets",
-        "items": [
-          {
-            "text": "Ensured turrets always use the stock's extended properties, making turret behavior consistent regardless of stock configuration.",
-            "commit_ids": [
-              726578
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Fixed a crash after rejoining a server that caused lingering wake effects from destroyed boats.",
-            "commit_ids": [
-              726525
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Monuments",
-        "items": [
-          {
-            "text": "Bunker entrance size and fade have been tightened to match the monument footprint, improving entry alignment and removing out‑of‑bounds paint data.",
-            "commit_ids": [
-              726588
-            ]
-          },
-          {
-            "text": "Radiation Town radius and blend have been slightly reduced and smoothed, preventing the effect from spilling beyond its intended area.",
-            "commit_ids": [
-              726538
-            ]
-          },
-          {
-            "text": "Jungle Ruins D monument tile and terrain map sizes were reduced, eliminating radius overhang and unused splat areas for cleaner boundaries.",
-            "commit_ids": [
-              726509
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Stability",
-        "items": [
-          {
-            "text": "Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability.",
-            "commit_ids": [
-              726598
             ]
           }
         ]
@@ -123,48 +113,87 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Adjusted flock audio distance, extending the range at which players can hear bird flocks and improving situational awareness.",
+            "text": "Bunker entrance radius and fade reduced to better match monument footprint, cleaning up out‑of‑bounds paint data.",
+            "commit_ids": [
+              726588
+            ]
+          },
+          {
+            "text": "Radiation town radius and fade trimmed, smoothing blend and preventing overreach beyond intended area.",
+            "commit_ids": [
+              726538
+            ]
+          },
+          {
+            "text": "Jungle ruins monument tile and map size reduced, eliminating radius overhang and unused splat layers.",
+            "commit_ids": [
+              726509
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Audio",
+        "items": [
+          {
+            "text": "Bird flock audio now respects proper distance, making distant flocks quieter.",
             "commit_ids": [
               726566
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Items",
+        "items": [
+          {
+            "text": "Scrap King building skin Steam item description corrected to “upgrade to scrap king”.",
+            "commit_ids": [
+              726533
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Player boats no longer leave lingering wake effects after rejoining a server; NRE crash fixed.",
+            "commit_ids": [
+              726525
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Environment\n- Fixed shore ice spawning over railway tracks by preventing ice placement on rails.\n- Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.\n\n### Combat\n- Added a combat log entry when hitting gull groups, giving players feedback on those attacks.\n- Extended triangular prism splash damage bounds to include grills and triangle hatches, slightly adjusting hatch bounds.\n\n### Inventory\n- Fixed a crash that occurred when opening the inventory during a phone conversation.\n- Fixed incorrect information shown in new phone conversations after server commands were used.\n- Fixed the drop-item keybind so it now drops the intended item instead of the held belt item while the inventory is open.\n\n### Weapons & Turrets\n- Ensured turrets always use the stock's extended properties, making turret behavior consistent regardless of stock configuration.\n\n### Vehicles\n- Fixed a crash after rejoining a server that caused lingering wake effects from destroyed boats.\n\n### World & Monuments\n- Bunker entrance size and fade have been tightened to match the monument footprint, improving entry alignment and removing out‑of‑bounds paint data.\n- Radiation Town radius and blend have been slightly reduced and smoothed, preventing the effect from spilling beyond its intended area.\n- Jungle Ruins D monument tile and terrain map sizes were reduced, eliminating radius overhang and unused splat areas for cleaner boundaries.\n\n### Stability\n- Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability.\n\n### Gameplay & Balance\n- Adjusted flock audio distance, extending the range at which players can hear bird flocks and improving situational awareness.",
+    "summary": "### Weapons & Gear\n- Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.\n- Uzi stock behavior updated: when mounted on a turret, the weapon always uses the stock's extended properties regardless of the equipped stock.\n- Triangular prism deployable splash damage now reaches grills and triangle hatches, with refined hatch bounds.\n\n### Combat & Feedback\n- Combat log now records hits on gull groups.\n- Combat log entries use short weapon prefab names for clearer, more concise logs.\n\n### Movement & Interaction\n- Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.\n\n### Vehicles & Kill Feed\n- Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen.\n\n### World Generation\n- Shore ice will no longer spawn over railway tracks.\n- Roadside waterpipes are prevented from spawning on top of roads at T‑junctions.\n\n### Inventory & UI\n- Dropping items from inventory no longer unintentionally removes the held belt item.\n- Opening the inventory during a phone conversation no longer triggers a null reference error.\n- New phone conversations now display correct information after server commands.\n\n### Gameplay & Balance\n- Bunker entrance radius and fade reduced to better match monument footprint, cleaning up out‑of‑bounds paint data.\n- Radiation town radius and fade trimmed, smoothing blend and preventing overreach beyond intended area.\n- Jungle ruins monument tile and map size reduced, eliminating radius overhang and unused splat layers.\n\n### Audio\n- Bird flock audio now respects proper distance, making distant flocks quieter.\n\n### UI & Items\n- Scrap King building skin Steam item description corrected to “upgrade to scrap king”.\n\n### Bug Fixes\n- Player boats no longer leave lingering wake effects after rejoining a server; NRE crash fixed.",
     "new_items": [
       {
-        "text": "Fixed shore ice spawning over railway tracks by preventing ice placement on rails.",
+        "text": "Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.",
         "commit_ids": [
-          726621
+          726672,
+          726655
         ],
-        "section": "World & Environment"
+        "section": "Weapons & Gear"
       },
       {
-        "text": "Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.",
+        "text": "Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.",
         "commit_ids": [
-          726619
+          726662
         ],
-        "section": "World & Environment"
+        "section": "Movement & Interaction"
       },
       {
-        "text": "Added a combat log entry when hitting gull groups, giving players feedback on those attacks.",
+        "text": "Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen.",
         "commit_ids": [
-          726604
+          726659
         ],
-        "section": "Combat"
-      },
-      {
-        "text": "Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability.",
-        "commit_ids": [
-          726598
-        ],
-        "section": "Stability"
+        "section": "Vehicles & Kill Feed"
       }
     ],
     "new_relevant_count": 4,
-    "new_summary": "- Fixed shore ice spawning over railway tracks by preventing ice placement on rails.\n- Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology.\n- Added a combat log entry when hitting gull groups, giving players feedback on those attacks.\n- Fixed a potential null‑reference crash when accessing NetRead position data, improving connection stability."
+    "new_summary": "- Uzi weapons now drop from hackable, elite, and underwater lab crates with ammo; spawn positions adjusted to avoid overlapping other guns, and bolt and LR weight reduced to limit dilution.\n- Players no longer get stuck in computer stations when the space behind the chair is blocked; extra dismount points added and a toast appears if dismount is refused.\n- Patrol helicopter rocket kills now correctly credit the helicopter as the attacker and display the rocket item on the death screen."
   },
   "2026-11-02": {
     "commit_count": 91,
