@@ -1,23 +1,22 @@
 {
   "2026-11-02": {
-    "commit_count": 85,
-    "relevant_commit_count": 47,
-    "relevant_signature": "726209,726217,726243,726253,726255,726272,726273,726282,726287,726290,726303,726310,726317,726322,726327,726328,726330,726332,726334,726345,726347,726348,726353,726355,726362,726364,726366,726373,726376,726380,726381,726382,726383,726386,726387,726397,726401,726405,726410,726412,726424,726425,726432,726439,726443,726444,726447",
+    "commit_count": 90,
+    "relevant_commit_count": 50,
+    "relevant_signature": "726209,726217,726243,726253,726255,726272,726273,726282,726287,726290,726303,726310,726317,726322,726327,726328,726330,726332,726334,726345,726347,726348,726353,726355,726362,726364,726366,726373,726376,726380,726381,726382,726383,726386,726387,726397,726401,726405,726410,726412,726424,726425,726432,726439,726443,726444,726447,726457,726460,726462",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles & Boats",
+        "title": "Transport",
         "items": [
           {
-            "text": "PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns.",
+            "text": "Fixed CH‑47 cargo crates getting stuck on powerline poles at the powerplant.",
             "commit_ids": [
-              726424,
-              726412
+              726462
             ]
           },
           {
-            "text": "Boat group spawns at large oil rigs reduced from two groups to one, decreasing encounter frequency.",
+            "text": "Reduced boat groups spawned at large oil rigs from two to one, easing traffic and spawn congestion.",
             "commit_ids": [
               726386
             ]
@@ -25,10 +24,17 @@
         ]
       },
       {
-        "title": "Weapons",
+        "title": "Combat",
         "items": [
           {
-            "text": "UZI 9 mm durability doubled and other balance tweaks applied, extending weapon condition life.",
+            "text": "PT‑boat turret aim cone widened and damage reduced, with front turret now using standard crosshair.",
+            "commit_ids": [
+              726424,
+              726412
+            ]
+          },
+          {
+            "text": "UZI now consumes double the condition per use, affecting its durability.",
             "commit_ids": [
               726353
             ]
@@ -36,28 +42,44 @@
         ]
       },
       {
-        "title": "Birds & Critters",
+        "title": "AI & Wildlife",
         "items": [
           {
-            "text": "Gull groups now avoid obstacles better, have a limited startle radius, improved shooting accuracy, and can spawn in deep‑sea areas, reducing stutter and making them more predictable.",
+            "text": "Birds and gulls receive stronger obstacle avoidance, better walking step handling, reduced startle radius, and corpses now inherit velocity; shooting distance calculations fixed and missing seagull points added.",
             "commit_ids": [
               726362,
-              726376
+              726334,
+              726332,
+              726322
             ]
           },
           {
-            "text": "Birds glide when descending, their flee distance increased to 1000 units allowing map‑wide travel and explosion tracking; crows now circle corpses from higher altitude.",
+            "text": "New gliding behavior, far‑range flee response, higher circling for crows, and deep‑sea gull spawning improve wildlife dynamics.",
             "commit_ids": [
-              726332
+              726362,
+              726334,
+              726332,
+              726322
             ]
           }
         ]
       },
       {
-        "title": "Systems",
+        "title": "Audio & Effects",
         "items": [
           {
-            "text": "Phone system stability improved by fixing a crash that occurred during server shutdown.",
+            "text": "Splash effect timing unified across buoyancy points and minimum interval lowered, preventing audio cut‑outs during storms.",
+            "commit_ids": [
+              726457
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability",
+        "items": [
+          {
+            "text": "Fixed null reference exception when destroying phone objects, preventing crashes.",
             "commit_ids": [
               726290
             ]
@@ -66,19 +88,25 @@
       }
     ],
     "status": "ok",
-    "summary": "### Vehicles & Boats\n- PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns.\n- Boat group spawns at large oil rigs reduced from two groups to one, decreasing encounter frequency.\n\n### Weapons\n- UZI 9 mm durability doubled and other balance tweaks applied, extending weapon condition life.\n\n### Birds & Critters\n- Gull groups now avoid obstacles better, have a limited startle radius, improved shooting accuracy, and can spawn in deep‑sea areas, reducing stutter and making them more predictable.\n- Birds glide when descending, their flee distance increased to 1000 units allowing map‑wide travel and explosion tracking; crows now circle corpses from higher altitude.\n\n### Systems\n- Phone system stability improved by fixing a crash that occurred during server shutdown.",
+    "summary": "### Transport\n- Fixed CH‑47 cargo crates getting stuck on powerline poles at the powerplant.\n- Reduced boat groups spawned at large oil rigs from two to one, easing traffic and spawn congestion.\n\n### Combat\n- PT‑boat turret aim cone widened and damage reduced, with front turret now using standard crosshair.\n- UZI now consumes double the condition per use, affecting its durability.\n\n### AI & Wildlife\n- Birds and gulls receive stronger obstacle avoidance, better walking step handling, reduced startle radius, and corpses now inherit velocity; shooting distance calculations fixed and missing seagull points added.\n- New gliding behavior, far‑range flee response, higher circling for crows, and deep‑sea gull spawning improve wildlife dynamics.\n\n### Audio & Effects\n- Splash effect timing unified across buoyancy points and minimum interval lowered, preventing audio cut‑outs during storms.\n\n### Stability\n- Fixed null reference exception when destroying phone objects, preventing crashes.",
     "new_items": [
       {
-        "text": "PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns.",
+        "text": "Fixed CH‑47 cargo crates getting stuck on powerline poles at the powerplant.",
         "commit_ids": [
-          726424,
-          726412
+          726462
         ],
-        "section": "Vehicles & Boats"
+        "section": "Transport"
+      },
+      {
+        "text": "Splash effect timing unified across buoyancy points and minimum interval lowered, preventing audio cut‑outs during storms.",
+        "commit_ids": [
+          726457
+        ],
+        "section": "Audio & Effects"
       }
     ],
     "new_relevant_count": 2,
-    "new_summary": "- PT boat front turret now uses the regular crosshair, has a wider aim cone (0.2 → 1) and reduced damage (damageScale 1 → 0.75) for both front and rear 50 cal guns."
+    "new_summary": "- Fixed CH‑47 cargo crates getting stuck on powerline poles at the powerplant.\n- Splash effect timing unified across buoyancy points and minimum interval lowered, preventing audio cut‑outs during storms."
   },
   "2026-11-01": {
     "commit_count": 3,
