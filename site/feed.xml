@@ -6,57 +6,59 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 04 Nov 2026 14:17:23 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 16:17:30 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 04</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;87 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;91 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727271,727155"&gt;Lighthouse crates now spawn correctly on the surface instead of inside the ground.&lt;/li&gt;
-&lt;li data-rust-commits="727241"&gt;UZI 9mm turrets now consistently use the correct automatic fire rate.&lt;/li&gt;
-&lt;li data-rust-commits="727238"&gt;The alien costume is craftable again after restoring its metadata.&lt;/li&gt;
-&lt;li data-rust-commits="727302"&gt;Swimming NPCs and sharks no longer suffer zero‑rotation glitches.&lt;/li&gt;
-&lt;li data-rust-commits="727316"&gt;Fixed a crash when opening the water wheel menu.&lt;/li&gt;
-&lt;li data-rust-commits="727239"&gt;Tattoo items now correctly save and load after recent merge, preventing loss of player-applied tattoos.&lt;/li&gt;
+&lt;li data-rust-commits="727377"&gt;Fixed landlocked lakes near spawn beach creating invalid spawn points; players now only spawn on true beaches, and lighthouses now spawn correctly on beaches.&lt;/li&gt;
+&lt;li data-rust-commits="727353,727131"&gt;Fixed floating and buried railway tracks by adding a Rail Lift stage that raises tracks to prevent them from being underground and improves workcart usage.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;World &amp;amp; Monuments&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Spawn&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727271,727155"&gt;Lighthouse crates now spawn correctly on the surface instead of inside the ground.&lt;/li&gt;
-&lt;li data-rust-commits="727131"&gt;Railway tracks are no longer buried by terrain; a new &amp;quot;Rail Lift&amp;quot; stage raises them, improving rail visuals and workcart travel.&lt;/li&gt;
-&lt;li data-rust-commits="726790"&gt;Seagull corpses now contain additional resources.&lt;/li&gt;
-&lt;li data-rust-commits="726800"&gt;Stashes now decay over time as intended.&lt;/li&gt;
+&lt;li data-rust-commits="727377"&gt;Fixed landlocked lakes near spawn beach creating invalid spawn points; players now only spawn on true beaches, and lighthouses now spawn correctly on beaches.&lt;/li&gt;
+&lt;li data-rust-commits="727271,727155"&gt;Fixed lighthouse crates spawning inside the ground, ensuring both brown and generic crates appear correctly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Turrets&lt;/h3&gt;
+&lt;h3&gt;Transportation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727241"&gt;UZI 9mm turrets now consistently use the correct automatic fire rate.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Items &amp;amp; Crafting&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="727238"&gt;The alien costume is craftable again after restoring its metadata.&lt;/li&gt;
+&lt;li data-rust-commits="727353,727131"&gt;Fixed floating and buried railway tracks by adding a Rail Lift stage that raises tracks to prevent them from being underground and improves workcart usage.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726873"&gt;Snakes can now be damaged by explosions, fixing previous immunity.&lt;/li&gt;
-&lt;li data-rust-commits="727302"&gt;Swimming NPCs and sharks no longer suffer zero‑rotation glitches.&lt;/li&gt;
+&lt;li data-rust-commits="727302"&gt;Fixed swimming NPCs and simple shark rotation errors that caused incorrect facing.&lt;/li&gt;
+&lt;li data-rust-commits="726873"&gt;Updated snake collision and damage handling: snakes no longer collide with horses and now take explosion damage correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Items&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="727241"&gt;Fixed turret automatic fire rate when placed, ensuring the intended fire rate is used.&lt;/li&gt;
+&lt;li data-rust-commits="727238"&gt;Restored alien costume craftability by fixing its meta GUID.&lt;/li&gt;
+&lt;li data-rust-commits="727239"&gt;Fixed tattoo file storage after merge, preventing loss of player tattoos.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;UI &amp;amp; Stability&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727316"&gt;Fixed a crash when opening the water wheel menu.&lt;/li&gt;
-&lt;li data-rust-commits="726802"&gt;Opening the items tab during loading no longer triggers a UI error.&lt;/li&gt;
-&lt;li data-rust-commits="726799"&gt;Item pickup notifications no longer cause a null reference error.&lt;/li&gt;
+&lt;li data-rust-commits="727316"&gt;Fixed water wheel menu null reference error, preventing crashes when opening the menu.&lt;/li&gt;
+&lt;li data-rust-commits="727212"&gt;Fixed null reference error in Rust+ CameraInput when the target camera was destroyed.&lt;/li&gt;
+&lt;li data-rust-commits="726802"&gt;Fixed UI_DevListBase null reference error when opening the items tab mid‑loading, improving stability.&lt;/li&gt;
+&lt;li data-rust-commits="726799"&gt;Fixed a null reference error that could prevent the ItemPickupNotice from displaying when picking up items, ensuring pickup notifications work reliably.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Bug Fixes &amp;amp; Gameplay&lt;/h3&gt;
+&lt;h3&gt;Decay &amp;amp; Loot&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727239"&gt;Tattoo items now correctly save and load after recent merge, preventing loss of player-applied tattoos.&lt;/li&gt;
-&lt;li data-rust-commits="727212"&gt;Crash when a destroyed camera was targeted is resolved, improving stability during camera switches.&lt;/li&gt;
-&lt;li data-rust-commits="727013,726777"&gt;Explosion effects now trigger proper screen shake and visual overlay, restoring intended feedback during blasts.&lt;/li&gt;
+&lt;li data-rust-commits="726800"&gt;Fixed stashes not decaying and added a configurable duration convar.&lt;/li&gt;
+&lt;li data-rust-commits="726790"&gt;Added additional resources to seagull corpses, increasing loot yield from seagull kills.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="727013"&gt;Explosion screen shake now works correctly for all explosion prefabs.&lt;/li&gt;
+&lt;li data-rust-commits="726777"&gt;Explosions overlay now resets properly and viewmodel shake is applied, improving combat feedback.&lt;/li&gt;
+&lt;li data-rust-commits="726809"&gt;Discord integration is currently disabled in CoreCLR builds (temporarily unavailable).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-04</guid>
-      <pubDate>Wed, 04 Nov 2026 14:17:23 -0500</pubDate>
+      <pubDate>Wed, 04 Nov 2026 16:17:30 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 03</title>
