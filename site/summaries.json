@@ -1,10 +1,190 @@
 {
   "2026-11-03": {
-    "commit_count": 88,
-    "relevant_commit_count": 46,
+    "commit_count": 97,
+    "relevant_commit_count": 50,
     "relevant_signature": "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639,726644,726655,726659,726662,726672,726685,726690,726698,726704,726705,726711,726714,726716,726718,726721,726740,726741,726745,726746,726748,726749",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "726644,726655,726659,726662,726672,726685,726690,726698,726704,726705,726711,726714,726716,726718,726721,726740,726741,726745,726746,726748,726749,726753,726754,726760,726761": [
+        {
+          "title": "Stability & Crash Fixes",
+          "items": [
+            {
+              "text": "Fixed deep sea water height update copying the whole texture when joining a server, dropping a 256 MB allocation and preventing a major client crash.",
+              "commit_ids": [
+                726760
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Food & Loot Mechanics",
+          "items": [
+            {
+              "text": "Food spawned in loot containers no longer spoils until the container is looted or the item is removed, with an option exposed on the container entity.",
+              "commit_ids": [
+                726746
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapon & Equipment",
+          "items": [
+            {
+              "text": "Fixed magazines staying invisible after swapping weapons mid‑reload.",
+              "commit_ids": [
+                726690
+              ]
+            },
+            {
+              "text": "Adjusted Uzi drops in hackable crates to avoid overlapping spawns, reduced bolt and weight to limit dilution, and ensured they spawn with some ammo.",
+              "commit_ids": [
+                726672
+              ]
+            },
+            {
+              "text": "Added Uzi loot spawns to hackable, elite, and underwater crate variants.",
+              "commit_ids": [
+                726655
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building & Placement",
+          "items": [
+            {
+              "text": "Fixed biofuel generator snapping to the wrong spot in corners when using advanced snapping; now aligns correctly with bounds centre offset.",
+              "commit_ids": [
+                726685
+              ]
+            },
+            {
+              "text": "Fixed door placement and destruction to refresh only the modified door on the server, eliminating unnecessary updates.",
+              "commit_ids": [
+                726705
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicle & AI",
+          "items": [
+            {
+              "text": "Patrol helicopter rockets now correctly attribute the heli as the attacker on death screens, showing proper kill information.",
+              "commit_ids": [
+                726659
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Tutorial & Cinematics",
+          "items": [
+            {
+              "text": "Fixed broken camera position in the tutorial cinematic by adding IFlattenKeepsChildren to CinematicScenePlaybackEntity.",
+              "commit_ids": [
+                726740
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Interaction Fixes",
+          "items": [
+            {
+              "text": "Prevented players from getting stuck in computer stations when the space behind the chair is blocked; added extra dismount points and toast notifications for refused dismounts.",
+              "commit_ids": [
+                726662
+              ]
+            }
+          ]
+        }
+      ],
+      "726509,726518,726523,726525,726533,726537,726538,726559,726566,726568,726572,726578,726583,726585,726588,726594,726595,726598,726604,726619,726621,726622,726623,726624,726639": [
+        {
+          "title": "World Generation Fixes",
+          "items": [
+            {
+              "text": "Fixed shore ice spawning over railway tracks, preventing ice placement on rail topology.",
+              "commit_ids": [
+                726621
+              ]
+            },
+            {
+              "text": "Fixed roadside waterpipes spawning on top of roads at T‑junctions by excluding road topology in spawn filter.",
+              "commit_ids": [
+                726619
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Combat Log & Damage",
+          "items": [
+            {
+              "text": "Added combat log entry when hitting gull groups.",
+              "commit_ids": [
+                726604
+              ]
+            },
+            {
+              "text": "Combat log now shows short prefab names for weapons.",
+              "commit_ids": [
+                726568
+              ]
+            },
+            {
+              "text": "Extended triangular prism splash damage bounds to include grills and triangle hatches.",
+              "commit_ids": [
+                726537
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & UI Bugs",
+          "items": [
+            {
+              "text": "Fixed crash (NRE) when opening inventory during a phone conversation.",
+              "commit_ids": [
+                726595
+              ]
+            },
+            {
+              "text": "Fixed incorrect information display in new phone conversations after server commands.",
+              "commit_ids": [
+                726594
+              ]
+            },
+            {
+              "text": "Fixed drop item bind issue that caused held belt items to be dropped while in inventory.",
+              "commit_ids": [
+                726583
+              ]
+            },
+            {
+              "text": "Fixed crash (NRE) in PlayerBoat.UpdateWake after rejoining a server, ensuring boat wake effects are cleared.",
+              "commit_ids": [
+                726525
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Turret Weapon Handling",
+          "items": [
+            {
+              "text": "Turrets now correctly use stock extended properties regardless of stock set.",
+              "commit_ids": [
+                726578
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Loot & Resources",

@@ -1,5 +1,77 @@
 [
   {
+    "id": 726762,
+    "branch": "main/effect_spawn_dist_test",
+    "changeset": "170176",
+    "created": "2026-11-04T02:58:19",
+    "message": "All deploy and door open/close effects now have MaxSpawnDistance components\r\nMost stop spawning around 40m\r\n288 effects modified",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 726761,
+    "branch": "main/base_occlusion",
+    "changeset": "170175",
+    "created": "2026-11-04T02:48:55",
+    "message": "Fix allocations from anchoring of faces -> network groups",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 726760,
+    "branch": "main/deepsea_crash_fix",
+    "changeset": "170174",
+    "created": "2026-11-04T02:47:22",
+    "message": "Fixed deep sea water height update copying the whole texture into a temporary array when joining a server\nDrops a 256MB allocation, was the reason behind the third biggest client RATN crash",
+    "user": "Flavien"
+  },
+  {
+    "id": 726759,
+    "branch": "███▌▇▅▍▄█▆▄▅▍▄▆▍▌▋▄▍▄▋",
+    "changeset": "▌█▌▆▉▅",
+    "created": "2026-11-04T02:26:59",
+    "message": "▄█▉▅▉▊▅▄▆█▌ ▋▌▊ ▌▆ ▉▄▇▍▊▉ ▍▆▆▉▌▇▌██ ▋▉ ▆▇▄▇▋▆▍█▊ ▌▆▇ ▋▆▋ ▍▉▌▇ ▅▌▍▉ ▉▆▌▍▋▋▆▋▄ ▅ ▆▉▇▋▌▌▌▇▉▍▊ ▊▌█▇▄█▇ ▊▅▉▊▇▌▉ ▄▌▆▅▊█▄▆▆ ▉▊█▅▊ ▍█ ▌▇▍▍▌▇█ ▊▋ ▇▍▅▍▉▉ ▆█▆ ▌▍▊ ▆▌▉▉█▉ ▌▊▊▆▊ ▊▊▋▇█▍▊▊█▉█▆█▍▆▋▄█▍▌▌▄▌▊█▇▇▇▋▊▄▅▅▆▉▆▌▆▋▉▉▅▉▄▋▉▄▊▅▌▌▅▊▇▌▉▌▄▌▅▉▆▌▌▉▇▅▆▇▄▌▋▋█▇▊▉▋▌▍▆▋▆▍▋▌█▋▇▄█▋█▊▄▇▆▊",
+    "user": "Flavien"
+  },
+  {
+    "id": 726755,
+    "branch": "main/foliage_shadows_optim",
+    "changeset": "170171",
+    "created": "2026-11-04T02:15:04",
+    "message": "set foliage shadow blocks as default and enable behind grass quality level",
+    "user": "Dayaan"
+  },
+  {
+    "id": 726754,
+    "branch": "main/analytics_shield_damage",
+    "changeset": "170170",
+    "created": "2026-11-04T02:14:36",
+    "message": "Fix line endings",
+    "user": "Jake_Rich"
+  },
+  {
+    "id": 726753,
+    "branch": "main/effect_spawn_dist_test",
+    "changeset": "170169",
+    "created": "2026-11-04T02:08:48",
+    "message": "Testing out a test to find effects that are missing or having incorrectly configured MaxSpawnDistance\r\nNeeds some manual configuring still, curerntly flagging 1818 misconfigured effects\r\nAdded an inspector UI to automatically add the component with the alculated max distance it should be set to\r\nNoticed this becasue we were spawning door-open and close effects every time a door was opened or closed even if it was hundreds of metres away, costs 0.1ms each time",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 726752,
+    "branch": "▇█▍▄▍▉▄▆▇█▍▆▉",
+    "changeset": "▊▇▊▅▅▉",
+    "created": "2026-11-04T01:51:02",
+    "message": "▇ ▇▊▊ ▇▉▄▉▇▌▊ ▆▄▄▍▌ ▊▋▅▆▋▋▋▌▉▄ ▌▄▌▋▌▌▊▅ ▍ ▋▉▄▄▍▄▋▌ █▋▊▌▊▆▉▍▅▅ █▉▉▊▌▄ ▇▊▍▊▉▄▋▉▍▅ ▅▆▊▋ ▅▅▄▍▆▅▍▅▅▋ ▇▋▊▋▆▊▇ ▄▋▍▋▆▄▄",
+    "user": "curt"
+  },
+  {
+    "id": 726750,
+    "branch": "main/unity_6.7.0/contentdirs_backend",
+    "changeset": "170167",
+    "created": "2026-11-04T01:08:09",
+    "message": "Update: enable ContentDir build\r\n- use Uncompressed, loose output while iterating\r\n- clean up generated ContentDirRoot after build\r\nTests: made a couple builds",
+    "user": "Daniel P"
+  },
+  {
     "id": 726749,
     "branch": "main/skinviewer_warning_fix",
     "changeset": "170166",
