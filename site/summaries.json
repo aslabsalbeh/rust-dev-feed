@@ -1,27 +1,50 @@
 {
   "2026-11-04": {
-    "commit_count": 55,
-    "relevant_commit_count": 15,
-    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131",
+    "commit_count": 77,
+    "relevant_commit_count": 22,
+    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Monuments",
+        "title": "Turrets",
         "items": [
           {
-            "text": "Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.",
+            "text": "Turrets now consistently use the intended automatic fire rate.",
             "commit_ids": [
-              727056
+              727241
             ]
           }
         ]
       },
       {
-        "title": "Transportation",
+        "title": "Items & Crafting",
         "items": [
           {
-            "text": "Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized.",
+            "text": "Alien costume is craftable again after meta GUID restoration.",
+            "commit_ids": [
+              727238
+            ]
+          },
+          {
+            "text": "Seagull corpses now drop additional resources.",
+            "commit_ids": [
+              726790
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Monuments",
+        "items": [
+          {
+            "text": "Brown crates no longer spawn inside the floor of unrepaired lighthouses.",
+            "commit_ids": [
+              727155
+            ]
+          },
+          {
+            "text": "Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.",
             "commit_ids": [
               727131
             ]
@@ -32,7 +55,7 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Snakes now take explosion damage and have corrected collision behavior; they no longer ride horses.",
+            "text": "Snakes no longer block horses and now take explosion damage.",
             "commit_ids": [
               726873
             ]
@@ -40,10 +63,10 @@
         ]
       },
       {
-        "title": "Base & Storage",
+        "title": "Base Management",
         "items": [
           {
-            "text": "Stashes now decay correctly; decay duration can be adjusted via convar.",
+            "text": "Stashes now decay correctly; decay timer can be adjusted via convar.",
             "commit_ids": [
               726800
             ]
@@ -51,54 +74,88 @@
         ]
       },
       {
-        "title": "Resources & Loot",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Seagull corpses now drop additional resources.",
+            "text": "Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.",
             "commit_ids": [
-              726790
+              727239
+            ]
+          },
+          {
+            "text": "Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events.",
+            "commit_ids": [
+              727212
+            ]
+          },
+          {
+            "text": "Resolved a null reference error in the item pickup notification, ensuring pickup alerts display correctly and preventing related crashes.",
+            "commit_ids": [
+              726799
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Resolved a crash when opening the items tab during loading, preventing UI freeze.",
+            "text": "Opening the items tab during loading no longer triggers UI errors, allowing smooth access to items.",
             "commit_ids": [
               726802
-            ]
-          },
-          {
-            "text": "Fixed a null reference error that could stop item pickup notifications from appearing.",
-            "commit_ids": [
-              726799
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Monuments\n- Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.\n\n### Transportation\n- Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized.\n\n### NPC & AI\n- Snakes now take explosion damage and have corrected collision behavior; they no longer ride horses.\n\n### Base & Storage\n- Stashes now decay correctly; decay duration can be adjusted via convar.\n\n### Resources & Loot\n- Seagull corpses now drop additional resources.\n\n### Bug Fixes\n- Resolved a crash when opening the items tab during loading, preventing UI freeze.\n- Fixed a null reference error that could stop item pickup notifications from appearing.",
+    "summary": "### Turrets\n- Turrets now consistently use the intended automatic fire rate.\n\n### Items & Crafting\n- Alien costume is craftable again after meta GUID restoration.\n- Seagull corpses now drop additional resources.\n\n### World & Monuments\n- Brown crates no longer spawn inside the floor of unrepaired lighthouses.\n- Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.\n\n### NPC & AI\n- Snakes no longer block horses and now take explosion damage.\n\n### Base Management\n- Stashes now decay correctly; decay timer can be adjusted via convar.\n\n### Gameplay & Balance\n- Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.\n- Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events.\n- Resolved a null reference error in the item pickup notification, ensuring pickup alerts display correctly and preventing related crashes.\n\n### UI & Quality of Life\n- Opening the items tab during loading no longer triggers UI errors, allowing smooth access to items.",
     "new_items": [
       {
-        "text": "Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.",
+        "text": "Turrets now consistently use the intended automatic fire rate.",
         "commit_ids": [
-          727056
+          727241
+        ],
+        "section": "Turrets"
+      },
+      {
+        "text": "Alien costume is craftable again after meta GUID restoration.",
+        "commit_ids": [
+          727238
+        ],
+        "section": "Items & Crafting"
+      },
+      {
+        "text": "Brown crates no longer spawn inside the floor of unrepaired lighthouses.",
+        "commit_ids": [
+          727155
         ],
         "section": "World & Monuments"
       },
       {
-        "text": "Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized.",
+        "text": "Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.",
         "commit_ids": [
           727131
         ],
-        "section": "Transportation"
+        "section": "World & Monuments"
+      },
+      {
+        "text": "Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.",
+        "commit_ids": [
+          727239
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events.",
+        "commit_ids": [
+          727212
+        ],
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.\n- Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized."
+    "new_relevant_count": 6,
+    "new_summary": "- Turrets now consistently use the intended automatic fire rate.\n- Alien costume is craftable again after meta GUID restoration.\n- Brown crates no longer spawn inside the floor of unrepaired lighthouses.\n- Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.\n- Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.\n- Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events."
   },
   "2026-11-03": {
     "commit_count": 104,
