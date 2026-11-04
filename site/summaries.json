@@ -1,34 +1,58 @@
 {
   "2026-11-04": {
-    "commit_count": 91,
-    "relevant_commit_count": 28,
-    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377",
+    "commit_count": 101,
+    "relevant_commit_count": 34,
+    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Spawn",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Fixed landlocked lakes near spawn beach creating invalid spawn points; players now only spawn on true beaches, and lighthouses now spawn correctly on beaches.",
+            "text": "Ballista bolts now fire correctly, fixing a regression.",
             "commit_ids": [
-              727377
+              727620
             ]
           },
           {
-            "text": "Fixed lighthouse crates spawning inside the ground, ensuring both brown and generic crates appear correctly.",
+            "text": "Melee combat no longer crashes due to null reference errors.",
             "commit_ids": [
-              727271,
-              727155
+              727556
+            ]
+          },
+          {
+            "text": "UZI 9mm automatic fire rate in turrets corrected and unused reload sounds removed.",
+            "commit_ids": [
+              727241
+            ]
+          },
+          {
+            "text": "Explosion visual overlay and viewmodel shake reset properly, restoring feedback.",
+            "commit_ids": [
+              726777
             ]
           }
         ]
       },
       {
-        "title": "Transportation",
+        "title": "World Generation & Spawns",
         "items": [
           {
-            "text": "Fixed floating and buried railway tracks by adding a Rail Lift stage that raises tracks to prevent them from being underground and improves workcart usage.",
+            "text": "Spawn points are limited to true beaches and lighthouses no longer appear inland.",
+            "commit_ids": [
+              727377
+            ]
+          },
+          {
+            "text": "Lighthouse crates now spawn correctly above ground, even when unrepaired.",
+            "commit_ids": [
+              727271,
+              727155
+            ]
+          },
+          {
+            "text": "Railway tracks are raised by a new Rail Lift stage, fixing buried/floating tracks and improving workcart travel.",
             "commit_ids": [
               727353,
               727131
@@ -37,16 +61,16 @@
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "NPC & Animal Behavior",
         "items": [
           {
-            "text": "Fixed swimming NPCs and simple shark rotation errors that caused incorrect facing.",
+            "text": "Swimming NPCs and simple sharks now rotate correctly, eliminating visual glitches.",
             "commit_ids": [
               727302
             ]
           },
           {
-            "text": "Updated snake collision and damage handling: snakes no longer collide with horses and now take explosion damage correctly.",
+            "text": "Snakes no longer collide with horses and correctly take explosion damage.",
             "commit_ids": [
               726873
             ]
@@ -54,51 +78,23 @@
         ]
       },
       {
-        "title": "Combat & Items",
+        "title": "Buildings, UI & Items",
         "items": [
           {
-            "text": "Fixed turret automatic fire rate when placed, ensuring the intended fire rate is used.",
+            "text": "Water wheel menu and Rust+ CameraInput crashes resolved, preventing UI freezes.",
             "commit_ids": [
-              727241
+              727316,
+              727212
             ]
           },
           {
-            "text": "Restored alien costume craftability by fixing its meta GUID.",
+            "text": "Alien costume is craftable again after fixing its meta GUID.",
             "commit_ids": [
               727238
             ]
           },
           {
-            "text": "Fixed tattoo file storage after merge, preventing loss of player tattoos.",
-            "commit_ids": [
-              727239
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Stability",
-        "items": [
-          {
-            "text": "Fixed water wheel menu null reference error, preventing crashes when opening the menu.",
-            "commit_ids": [
-              727316
-            ]
-          },
-          {
-            "text": "Fixed null reference error in Rust+ CameraInput when the target camera was destroyed.",
-            "commit_ids": [
-              727212
-            ]
-          },
-          {
-            "text": "Fixed UI_DevListBase null reference error when opening the items tab mid‑loading, improving stability.",
-            "commit_ids": [
-              726802
-            ]
-          },
-          {
-            "text": "Fixed a null reference error that could prevent the ItemPickupNotice from displaying when picking up items, ensuring pickup notifications work reliably.",
+            "text": "Item pickup notifications display reliably without null reference errors.",
             "commit_ids": [
               726799
             ]
@@ -106,67 +102,56 @@
         ]
       },
       {
-        "title": "Decay & Loot",
+        "title": "Gameplay Systems & Map",
         "items": [
           {
-            "text": "Fixed stashes not decaying and added a configurable duration convar.",
+            "text": "Dynamic monument map markers can now change label text and position at runtime.",
+            "commit_ids": [
+              727533
+            ]
+          },
+          {
+            "text": "Stashes now decay over time; the decay duration is configurable via a convar.",
             "commit_ids": [
               726800
             ]
           },
           {
-            "text": "Added additional resources to seagull corpses, increasing loot yield from seagull kills.",
+            "text": "Seagull corpses drop additional resources.",
             "commit_ids": [
               726790
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Explosion screen shake now works correctly for all explosion prefabs.",
-            "commit_ids": [
-              727013
-            ]
-          },
-          {
-            "text": "Explosions overlay now resets properly and viewmodel shake is applied, improving combat feedback.",
-            "commit_ids": [
-              726777
-            ]
-          },
-          {
-            "text": "Discord integration is currently disabled in CoreCLR builds (temporarily unavailable).",
-            "commit_ids": [
-              726809
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Spawn\n- Fixed landlocked lakes near spawn beach creating invalid spawn points; players now only spawn on true beaches, and lighthouses now spawn correctly on beaches.\n- Fixed lighthouse crates spawning inside the ground, ensuring both brown and generic crates appear correctly.\n\n### Transportation\n- Fixed floating and buried railway tracks by adding a Rail Lift stage that raises tracks to prevent them from being underground and improves workcart usage.\n\n### NPC & AI\n- Fixed swimming NPCs and simple shark rotation errors that caused incorrect facing.\n- Updated snake collision and damage handling: snakes no longer collide with horses and now take explosion damage correctly.\n\n### Combat & Items\n- Fixed turret automatic fire rate when placed, ensuring the intended fire rate is used.\n- Restored alien costume craftability by fixing its meta GUID.\n- Fixed tattoo file storage after merge, preventing loss of player tattoos.\n\n### UI & Stability\n- Fixed water wheel menu null reference error, preventing crashes when opening the menu.\n- Fixed null reference error in Rust+ CameraInput when the target camera was destroyed.\n- Fixed UI_DevListBase null reference error when opening the items tab mid‑loading, improving stability.\n- Fixed a null reference error that could prevent the ItemPickupNotice from displaying when picking up items, ensuring pickup notifications work reliably.\n\n### Decay & Loot\n- Fixed stashes not decaying and added a configurable duration convar.\n- Added additional resources to seagull corpses, increasing loot yield from seagull kills.\n\n### Gameplay & Balance\n- Explosion screen shake now works correctly for all explosion prefabs.\n- Explosions overlay now resets properly and viewmodel shake is applied, improving combat feedback.\n- Discord integration is currently disabled in CoreCLR builds (temporarily unavailable).",
+    "summary": "### Combat & Weapons\n- Ballista bolts now fire correctly, fixing a regression.\n- Melee combat no longer crashes due to null reference errors.\n- UZI 9mm automatic fire rate in turrets corrected and unused reload sounds removed.\n- Explosion visual overlay and viewmodel shake reset properly, restoring feedback.\n\n### World Generation & Spawns\n- Spawn points are limited to true beaches and lighthouses no longer appear inland.\n- Lighthouse crates now spawn correctly above ground, even when unrepaired.\n- Railway tracks are raised by a new Rail Lift stage, fixing buried/floating tracks and improving workcart travel.\n\n### NPC & Animal Behavior\n- Swimming NPCs and simple sharks now rotate correctly, eliminating visual glitches.\n- Snakes no longer collide with horses and correctly take explosion damage.\n\n### Buildings, UI & Items\n- Water wheel menu and Rust+ CameraInput crashes resolved, preventing UI freezes.\n- Alien costume is craftable again after fixing its meta GUID.\n- Item pickup notifications display reliably without null reference errors.\n\n### Gameplay Systems & Map\n- Dynamic monument map markers can now change label text and position at runtime.\n- Stashes now decay over time; the decay duration is configurable via a convar.\n- Seagull corpses drop additional resources.",
     "new_items": [
       {
-        "text": "Fixed landlocked lakes near spawn beach creating invalid spawn points; players now only spawn on true beaches, and lighthouses now spawn correctly on beaches.",
+        "text": "Ballista bolts now fire correctly, fixing a regression.",
         "commit_ids": [
-          727377
+          727620
         ],
-        "section": "World & Spawn"
+        "section": "Combat & Weapons"
       },
       {
-        "text": "Fixed floating and buried railway tracks by adding a Rail Lift stage that raises tracks to prevent them from being underground and improves workcart usage.",
+        "text": "Melee combat no longer crashes due to null reference errors.",
         "commit_ids": [
-          727353,
-          727131
+          727556
         ],
-        "section": "Transportation"
+        "section": "Combat & Weapons"
+      },
+      {
+        "text": "Dynamic monument map markers can now change label text and position at runtime.",
+        "commit_ids": [
+          727533
+        ],
+        "section": "Gameplay Systems & Map"
       }
     ],
     "new_relevant_count": 3,
-    "new_summary": "- Fixed landlocked lakes near spawn beach creating invalid spawn points; players now only spawn on true beaches, and lighthouses now spawn correctly on beaches.\n- Fixed floating and buried railway tracks by adding a Rail Lift stage that raises tracks to prevent them from being underground and improves workcart usage."
+    "new_summary": "- Ballista bolts now fire correctly, fixing a regression.\n- Melee combat no longer crashes due to null reference errors.\n- Dynamic monument map markers can now change label text and position at runtime."
   },
   "2026-11-03": {
     "commit_count": 104,
