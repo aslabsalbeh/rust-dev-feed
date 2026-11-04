@@ -6,38 +6,73 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 04 Nov 2026 00:17:26 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 02:17:28 -0500</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Nov 04</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;6 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-11-04</guid>
+      <pubDate>Wed, 04 Nov 2026 02:17:28 -0500</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 03</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;104 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Loot &amp;amp; Resources&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Weapon Reliability&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726746"&gt;Food spawned in loot containers no longer spoils until the container is looted or the item is removed.&lt;/li&gt;
-&lt;li data-rust-commits="726672,726655"&gt;Uzi loot spawns in hackable, elite, and underwater crates have been rebalanced with improved positions and weight distribution.&lt;/li&gt;
+&lt;li data-rust-commits="726690"&gt;Magazines no longer disappear when swapping weapons during a reload.&lt;/li&gt;
+&lt;li data-rust-commits="726578"&gt;Turrets always apply the stock&amp;#x27;s extended properties, ensuring consistent performance regardless of stock configuration.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base Building&lt;/h3&gt;
+&lt;h3&gt;Building &amp;amp; World Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726705"&gt;Door placement and destruction now refresh only the modified door, avoiding unnecessary server-wide updates.&lt;/li&gt;
-&lt;li data-rust-commits="726685"&gt;Biofuel generators snap correctly when using advanced corner snapping.&lt;/li&gt;
+&lt;li data-rust-commits="726685"&gt;Biofuel generators now snap correctly in corners when using advanced snapping.&lt;/li&gt;
+&lt;li data-rust-commits="726705"&gt;Placing or destroying a door updates only that door on the server, eliminating unnecessary refreshes of all doors.&lt;/li&gt;
+&lt;li data-rust-commits="726662"&gt;Players can no longer become trapped in computer stations; additional dismount points and notifications prevent stuck situations.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Interaction &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Loot, Crates &amp;amp; Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726662"&gt;Players no longer get stuck in computer stations; extra dismount points and notifications have been added for blocked exits.&lt;/li&gt;
-&lt;li data-rust-commits="726595,726594"&gt;Opening inventory during a phone conversation no longer crashes, and the phone UI now displays correct information after server commands.&lt;/li&gt;
-&lt;li data-rust-commits="726748"&gt;Binoculars screen effect works even when domain reload is disabled.&lt;/li&gt;
-&lt;li data-rust-commits="726659"&gt;Patrol helicopter rocket kills now correctly show the helicopter on the death screen.&lt;/li&gt;
+&lt;li data-rust-commits="726655,726672"&gt;Uzi weapons now appear as loot in new hackable, elite, and underwater crate types, with drop weights adjusted to avoid overlap and include ammunition.&lt;/li&gt;
+&lt;li data-rust-commits="726746"&gt;Food stored in loot containers remains fresh until the container is opened or the item is removed, with an option to control this behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Damage&lt;/h3&gt;
+&lt;h3&gt;Combat Feedback&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726578"&gt;Turrets consistently apply the weapon’s stock extended properties, ensuring reliable performance regardless of stock configuration.&lt;/li&gt;
-&lt;li data-rust-commits="726537"&gt;Deployable splash damage now includes grills and triangle hatches for consistent damage to those structures.&lt;/li&gt;
-&lt;li data-rust-commits="726604,726568"&gt;Combat log entries now record hits on gull groups and use short weapon names for clearer information.&lt;/li&gt;
+&lt;li data-rust-commits="726659"&gt;Patrol helicopter rocket kills now correctly display the helicopter on the death screen and credit the kill to the helicopter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stability &amp;amp; Performance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="726760"&gt;Deep sea water height updates no longer allocate excessive memory, preventing major client crashes.&lt;/li&gt;
+&lt;li data-rust-commits="726595"&gt;Opening the inventory during a phone conversation no longer crashes the game.&lt;/li&gt;
+&lt;li data-rust-commits="726525"&gt;Rejoining a server no longer triggers a boat wake error; destroyed boats are properly removed from visual effects.&lt;/li&gt;
+&lt;li data-rust-commits="726518"&gt;Fixed a prefab syntax issue that could cause structures to fail loading or behave incorrectly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Item Interaction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="726766"&gt;Blood effect no longer appears when shearing sheep.&lt;/li&gt;
+&lt;li data-rust-commits="726583"&gt;Dropping items from the belt while in inventory no longer unintentionally removes the held item.&lt;/li&gt;
+&lt;li data-rust-commits="726537"&gt;Triangular prism deployable splash damage area expanded to include grills and triangle hatches, increasing its effectiveness.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726621,726619"&gt;Shore ice and waterpipes no longer spawn on top of railways and roads, eliminating visual glitches and movement issues.&lt;/li&gt;
+&lt;li data-rust-commits="726621"&gt;Shore ice will no longer spawn on top of railway tracks, preventing unrealistic ice coverage.&lt;/li&gt;
+&lt;li data-rust-commits="726619"&gt;Roadside water pipes no longer appear on roads at T‑junctions, cleaning up road visuals.&lt;/li&gt;
+&lt;li data-rust-commits="726588"&gt;Bunker entrance terrain blend adjusted to match monument footprint, removing stray paint data and improving visual consistency.&lt;/li&gt;
+&lt;li data-rust-commits="726538"&gt;RadTown monument blend radius slightly reduced and smoothed to prevent overreach beyond its intended area.&lt;/li&gt;
+&lt;li data-rust-commits="726509"&gt;Jungle Ruins D terrain tile size reduced, cutting unnecessary blend area and improving performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audio &amp;amp; Visual Effects&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="726748"&gt;Binoculars now correctly display their screen overlay even with domain reload disabled.&lt;/li&gt;
+&lt;li data-rust-commits="726740"&gt;Tutorial cinematic camera position fixed, ensuring proper view during the tutorial.&lt;/li&gt;
+&lt;li data-rust-commits="726594"&gt;Phone conversation UI now shows accurate information after server commands are used.&lt;/li&gt;
+&lt;li data-rust-commits="726566"&gt;Bird flock sounds now respect proper distance attenuation, making distant flocks quieter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Store&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="726533"&gt;Scrap King building skin Steam item now correctly displays “Upgrade to Scrap King” instead of a generic token.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-03</guid>
@@ -74,23 +109,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-02</guid>
       <pubDate>Mon, 02 Nov 2026 12:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Nov 01</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;World Generation&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726169"&gt;Ice Lake placement rebalanced: larger ice lakes now spawn more often and anchors are used more sparsely, resulting in more varied lake distribution across new maps.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726142,726139"&gt;Fixed livestock getting stuck in loops or pausing when being led, especially in tight corridors or when many animals are present.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-11-01</guid>
-      <pubDate>Sun, 01 Nov 2026 12:00:00 -0500</pubDate>
     </item>
   </channel>
 </rss>
