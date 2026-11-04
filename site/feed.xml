@@ -6,68 +6,48 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 03 Nov 2026 18:18:10 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:18:20 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 03</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;78 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;88 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726721"&gt;Increased apartment building bounds to prevent them from being too small.&lt;/li&gt;
-&lt;li data-rust-commits="726714"&gt;Deployables now check all nearby building block changes instead of only the most recent one.&lt;/li&gt;
-&lt;li data-rust-commits="726705"&gt;Placing or destroying a door now refreshes only the modified door on the server, reducing unnecessary updates.&lt;/li&gt;
+&lt;li data-rust-commits="726746"&gt;Food spawned in loot containers no longer spoils until the container is looted or the item is removed.&lt;/li&gt;
+&lt;li data-rust-commits="726748"&gt;Binoculars screen effect works even when domain reload is disabled.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Buildings &amp;amp; World&lt;/h3&gt;
+&lt;h3&gt;Loot &amp;amp; Resources&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726721"&gt;Increased apartment building bounds to prevent them from being too small.&lt;/li&gt;
-&lt;li data-rust-commits="726685"&gt;Fixed biofuel generator snapping to the wrong spot in corners with advanced snapping.&lt;/li&gt;
+&lt;li data-rust-commits="726746"&gt;Food spawned in loot containers no longer spoils until the container is looted or the item is removed.&lt;/li&gt;
+&lt;li data-rust-commits="726672,726655"&gt;Uzi loot spawns in hackable, elite, and underwater crates have been rebalanced with improved positions and weight distribution.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Deployables &amp;amp; Doors&lt;/h3&gt;
+&lt;h3&gt;Base Building&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726714"&gt;Deployables now check all nearby building block changes instead of only the most recent one.&lt;/li&gt;
-&lt;li data-rust-commits="726705"&gt;Placing or destroying a door now refreshes only the modified door on the server, reducing unnecessary updates.&lt;/li&gt;
+&lt;li data-rust-commits="726705"&gt;Door placement and destruction now refresh only the modified door, avoiding unnecessary server-wide updates.&lt;/li&gt;
+&lt;li data-rust-commits="726685"&gt;Biofuel generators snap correctly when using advanced corner snapping.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons, Loot &amp;amp; Combat&lt;/h3&gt;
+&lt;h3&gt;Interaction &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726690"&gt;Fixed magazines staying invisible after swapping weapons mid‑reload.&lt;/li&gt;
-&lt;li data-rust-commits="726672,726655"&gt;Adjusted Uzi drops in hackable, elite, and underwater crates to avoid overlap, tweaked weight values, and added ammo to elite and underwater crates.&lt;/li&gt;
-&lt;li data-rust-commits="726659"&gt;Patrol helicopter rocket kills now correctly display the helicopter on the death screen.&lt;/li&gt;
-&lt;li data-rust-commits="726604"&gt;Added combat log entries when hitting gull groups.&lt;/li&gt;
-&lt;li data-rust-commits="726537"&gt;Expanded the splash‑damage hitbox of triangular‑prism deployables to include grills and triangle hatches, improving damage consistency.&lt;/li&gt;
+&lt;li data-rust-commits="726662"&gt;Players no longer get stuck in computer stations; extra dismount points and notifications have been added for blocked exits.&lt;/li&gt;
+&lt;li data-rust-commits="726595,726594"&gt;Opening inventory during a phone conversation no longer crashes, and the phone UI now displays correct information after server commands.&lt;/li&gt;
+&lt;li data-rust-commits="726748"&gt;Binoculars screen effect works even when domain reload is disabled.&lt;/li&gt;
+&lt;li data-rust-commits="726659"&gt;Patrol helicopter rocket kills now correctly show the helicopter on the death screen.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player Interaction &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Damage&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726662"&gt;Players no longer get stuck in computer stations when the space behind the chair is blocked; added extra dismount points and a toast notification for refused dismounts.&lt;/li&gt;
-&lt;li data-rust-commits="726595"&gt;Fixed a null‑reference error when opening the inventory screen during a phone conversation.&lt;/li&gt;
-&lt;li data-rust-commits="726583"&gt;Fixed a bug where using the drop-item keybind unintentionally removed the held item from your belt while the inventory UI was open.&lt;/li&gt;
+&lt;li data-rust-commits="726578"&gt;Turrets consistently apply the weapon’s stock extended properties, ensuring reliable performance regardless of stock configuration.&lt;/li&gt;
+&lt;li data-rust-commits="726537"&gt;Deployable splash damage now includes grills and triangle hatches for consistent damage to those structures.&lt;/li&gt;
+&lt;li data-rust-commits="726604,726568"&gt;Combat log entries now record hits on gull groups and use short weapon names for clearer information.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Turrets&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726578"&gt;Turret stock now always applies its extended properties while you are seated in a turret, regardless of how the stock was originally set.&lt;/li&gt;
-&lt;li data-rust-commits="726525"&gt;Resolved a null‑reference crash in PlayerBoat.UpdateWake after rejoining a server; lingering wake effects from destroyed boats are now correctly cleared.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World Generation&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726621"&gt;Shore ice no longer spawns on railway tracks, preventing ice blocks on rails.&lt;/li&gt;
-&lt;li data-rust-commits="726619"&gt;Roadside waterpipes will no longer appear on top of roads at T‑junctions, keeping roadways clear.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Communication&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726594"&gt;Phone conversation UI now shows correct information after server commands, fixing misleading text.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat Log&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726568"&gt;Combat log now displays short weapon prefab names, making kill feeds easier to read.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Steam Items&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726533"&gt;Steam item for Scrap King now correctly reads “upgrade to scrap king,” fixing the previous description error.&lt;/li&gt;
+&lt;li data-rust-commits="726621,726619"&gt;Shore ice and waterpipes no longer spawn on top of railways and roads, eliminating visual glitches and movement issues.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-03</guid>
-      <pubDate>Tue, 03 Nov 2026 18:18:10 -0500</pubDate>
+      <pubDate>Tue, 03 Nov 2026 20:18:20 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 02</title>
