@@ -1,16 +1,46 @@
 {
   "2026-11-04": {
-    "commit_count": 77,
-    "relevant_commit_count": 22,
-    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241",
+    "commit_count": 87,
+    "relevant_commit_count": 25,
+    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Turrets",
+        "title": "World & Monuments",
         "items": [
           {
-            "text": "Turrets now consistently use the intended automatic fire rate.",
+            "text": "Lighthouse crates now spawn correctly on the surface instead of inside the ground.",
+            "commit_ids": [
+              727271,
+              727155
+            ]
+          },
+          {
+            "text": "Railway tracks are no longer buried by terrain; a new \"Rail Lift\" stage raises them, improving rail visuals and workcart travel.",
+            "commit_ids": [
+              727131
+            ]
+          },
+          {
+            "text": "Seagull corpses now contain additional resources.",
+            "commit_ids": [
+              726790
+            ]
+          },
+          {
+            "text": "Stashes now decay over time as intended.",
+            "commit_ids": [
+              726800
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons & Turrets",
+        "items": [
+          {
+            "text": "UZI 9mm turrets now consistently use the correct automatic fire rate.",
             "commit_ids": [
               727241
             ]
@@ -21,32 +51,9 @@
         "title": "Items & Crafting",
         "items": [
           {
-            "text": "Alien costume is craftable again after meta GUID restoration.",
+            "text": "The alien costume is craftable again after restoring its metadata.",
             "commit_ids": [
               727238
-            ]
-          },
-          {
-            "text": "Seagull corpses now drop additional resources.",
-            "commit_ids": [
-              726790
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Monuments",
-        "items": [
-          {
-            "text": "Brown crates no longer spawn inside the floor of unrepaired lighthouses.",
-            "commit_ids": [
-              727155
-            ]
-          },
-          {
-            "text": "Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.",
-            "commit_ids": [
-              727131
             ]
           }
         ]
@@ -55,41 +62,36 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Snakes no longer block horses and now take explosion damage.",
+            "text": "Snakes can now be damaged by explosions, fixing previous immunity.",
             "commit_ids": [
               726873
             ]
-          }
-        ]
-      },
-      {
-        "title": "Base Management",
-        "items": [
+          },
           {
-            "text": "Stashes now decay correctly; decay timer can be adjusted via convar.",
+            "text": "Swimming NPCs and sharks no longer suffer zero‑rotation glitches.",
             "commit_ids": [
-              726800
+              727302
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "UI & Stability",
         "items": [
           {
-            "text": "Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.",
+            "text": "Fixed a crash when opening the water wheel menu.",
             "commit_ids": [
-              727239
+              727316
             ]
           },
           {
-            "text": "Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events.",
+            "text": "Opening the items tab during loading no longer triggers a UI error.",
             "commit_ids": [
-              727212
+              726802
             ]
           },
           {
-            "text": "Resolved a null reference error in the item pickup notification, ensuring pickup alerts display correctly and preventing related crashes.",
+            "text": "Item pickup notifications no longer cause a null reference error.",
             "commit_ids": [
               726799
             ]
@@ -97,65 +99,79 @@
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Bug Fixes & Gameplay",
         "items": [
           {
-            "text": "Opening the items tab during loading no longer triggers UI errors, allowing smooth access to items.",
+            "text": "Tattoo items now correctly save and load after recent merge, preventing loss of player-applied tattoos.",
             "commit_ids": [
-              726802
+              727239
+            ]
+          },
+          {
+            "text": "Crash when a destroyed camera was targeted is resolved, improving stability during camera switches.",
+            "commit_ids": [
+              727212
+            ]
+          },
+          {
+            "text": "Explosion effects now trigger proper screen shake and visual overlay, restoring intended feedback during blasts.",
+            "commit_ids": [
+              727013,
+              726777
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Turrets\n- Turrets now consistently use the intended automatic fire rate.\n\n### Items & Crafting\n- Alien costume is craftable again after meta GUID restoration.\n- Seagull corpses now drop additional resources.\n\n### World & Monuments\n- Brown crates no longer spawn inside the floor of unrepaired lighthouses.\n- Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.\n\n### NPC & AI\n- Snakes no longer block horses and now take explosion damage.\n\n### Base Management\n- Stashes now decay correctly; decay timer can be adjusted via convar.\n\n### Gameplay & Balance\n- Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.\n- Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events.\n- Resolved a null reference error in the item pickup notification, ensuring pickup alerts display correctly and preventing related crashes.\n\n### UI & Quality of Life\n- Opening the items tab during loading no longer triggers UI errors, allowing smooth access to items.",
+    "summary": "### World & Monuments\n- Lighthouse crates now spawn correctly on the surface instead of inside the ground.\n- Railway tracks are no longer buried by terrain; a new \"Rail Lift\" stage raises them, improving rail visuals and workcart travel.\n- Seagull corpses now contain additional resources.\n- Stashes now decay over time as intended.\n\n### Weapons & Turrets\n- UZI 9mm turrets now consistently use the correct automatic fire rate.\n\n### Items & Crafting\n- The alien costume is craftable again after restoring its metadata.\n\n### NPC & AI\n- Snakes can now be damaged by explosions, fixing previous immunity.\n- Swimming NPCs and sharks no longer suffer zero‑rotation glitches.\n\n### UI & Stability\n- Fixed a crash when opening the water wheel menu.\n- Opening the items tab during loading no longer triggers a UI error.\n- Item pickup notifications no longer cause a null reference error.\n\n### Bug Fixes & Gameplay\n- Tattoo items now correctly save and load after recent merge, preventing loss of player-applied tattoos.\n- Crash when a destroyed camera was targeted is resolved, improving stability during camera switches.\n- Explosion effects now trigger proper screen shake and visual overlay, restoring intended feedback during blasts.",
     "new_items": [
       {
-        "text": "Turrets now consistently use the intended automatic fire rate.",
+        "text": "Lighthouse crates now spawn correctly on the surface instead of inside the ground.",
+        "commit_ids": [
+          727271,
+          727155
+        ],
+        "section": "World & Monuments"
+      },
+      {
+        "text": "UZI 9mm turrets now consistently use the correct automatic fire rate.",
         "commit_ids": [
           727241
         ],
-        "section": "Turrets"
+        "section": "Weapons & Turrets"
       },
       {
-        "text": "Alien costume is craftable again after meta GUID restoration.",
+        "text": "The alien costume is craftable again after restoring its metadata.",
         "commit_ids": [
           727238
         ],
         "section": "Items & Crafting"
       },
       {
-        "text": "Brown crates no longer spawn inside the floor of unrepaired lighthouses.",
+        "text": "Swimming NPCs and sharks no longer suffer zero‑rotation glitches.",
         "commit_ids": [
-          727155
+          727302
         ],
-        "section": "World & Monuments"
+        "section": "NPC & AI"
       },
       {
-        "text": "Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.",
+        "text": "Fixed a crash when opening the water wheel menu.",
         "commit_ids": [
-          727131
+          727316
         ],
-        "section": "World & Monuments"
+        "section": "UI & Stability"
       },
       {
-        "text": "Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.",
+        "text": "Tattoo items now correctly save and load after recent merge, preventing loss of player-applied tattoos.",
         "commit_ids": [
           727239
         ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events.",
-        "commit_ids": [
-          727212
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Bug Fixes & Gameplay"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Turrets now consistently use the intended automatic fire rate.\n- Alien costume is craftable again after meta GUID restoration.\n- Brown crates no longer spawn inside the floor of unrepaired lighthouses.\n- Railway tracks are prevented from being buried by terrain smoothing; buried rails are automatically raised.\n- Tattoos now reliably save and load after recent merge, preventing loss of player-applied tattoos.\n- Fixed a crash caused by a null reference when the game camera is destroyed, improving stability during certain events."
+    "new_relevant_count": 7,
+    "new_summary": "- Lighthouse crates now spawn correctly on the surface instead of inside the ground.\n- UZI 9mm turrets now consistently use the correct automatic fire rate.\n- The alien costume is craftable again after restoring its metadata.\n- Swimming NPCs and sharks no longer suffer zero‑rotation glitches.\n- Fixed a crash when opening the water wheel menu.\n- Tattoo items now correctly save and load after recent merge, preventing loss of player-applied tattoos."
   },
   "2026-11-03": {
     "commit_count": 104,
