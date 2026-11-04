@@ -1,16 +1,38 @@
 {
   "2026-11-04": {
-    "commit_count": 32,
-    "relevant_commit_count": 10,
-    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874",
+    "commit_count": 55,
+    "relevant_commit_count": 15,
+    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & AI",
+        "title": "World & Monuments",
         "items": [
           {
-            "text": "Snakes now take explosion damage and no longer collide with horses.",
+            "text": "Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.",
+            "commit_ids": [
+              727056
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Transportation",
+        "items": [
+          {
+            "text": "Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized.",
+            "commit_ids": [
+              727131
+            ]
+          }
+        ]
+      },
+      {
+        "title": "NPC & AI",
+        "items": [
+          {
+            "text": "Snakes now take explosion damage and have corrected collision behavior; they no longer ride horses.",
             "commit_ids": [
               726873
             ]
@@ -21,7 +43,7 @@
         "title": "Base & Storage",
         "items": [
           {
-            "text": "Stash containers now decay correctly (previously they never decayed).",
+            "text": "Stashes now decay correctly; decay duration can be adjusted via convar.",
             "commit_ids": [
               726800
             ]
@@ -29,7 +51,7 @@
         ]
       },
       {
-        "title": "Loot",
+        "title": "Resources & Loot",
         "items": [
           {
             "text": "Seagull corpses now drop additional resources.",
@@ -40,68 +62,43 @@
         ]
       },
       {
-        "title": "UI",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Item pickup notifications no longer cause a crash (NRE fixed).",
-            "commit_ids": [
-              726799
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Fixed a crash that occurred when opening the Items tab during loading, preventing UI errors.",
+            "text": "Resolved a crash when opening the items tab during loading, preventing UI freeze.",
             "commit_ids": [
               726802
             ]
           },
           {
-            "text": "Explosions overlay now resets correctly and viewmodel shake is applied, restoring proper screen shake feedback during explosions.",
+            "text": "Fixed a null reference error that could stop item pickup notifications from appearing.",
             "commit_ids": [
-              726777
+              726799
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & AI\n- Snakes now take explosion damage and no longer collide with horses.\n\n### Base & Storage\n- Stash containers now decay correctly (previously they never decayed).\n\n### Loot\n- Seagull corpses now drop additional resources.\n\n### UI\n- Item pickup notifications no longer cause a crash (NRE fixed).\n\n### Gameplay & Balance\n- Fixed a crash that occurred when opening the Items tab during loading, preventing UI errors.\n- Explosions overlay now resets correctly and viewmodel shake is applied, restoring proper screen shake feedback during explosions.",
+    "summary": "### World & Monuments\n- Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.\n\n### Transportation\n- Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized.\n\n### NPC & AI\n- Snakes now take explosion damage and have corrected collision behavior; they no longer ride horses.\n\n### Base & Storage\n- Stashes now decay correctly; decay duration can be adjusted via convar.\n\n### Resources & Loot\n- Seagull corpses now drop additional resources.\n\n### Bug Fixes\n- Resolved a crash when opening the items tab during loading, preventing UI freeze.\n- Fixed a null reference error that could stop item pickup notifications from appearing.",
     "new_items": [
       {
-        "text": "Snakes now take explosion damage and no longer collide with horses.",
+        "text": "Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.",
         "commit_ids": [
-          726873
+          727056
         ],
-        "section": "Combat & AI"
+        "section": "World & Monuments"
       },
       {
-        "text": "Stash containers now decay correctly (previously they never decayed).",
+        "text": "Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized.",
         "commit_ids": [
-          726800
+          727131
         ],
-        "section": "Base & Storage"
-      },
-      {
-        "text": "Item pickup notifications no longer cause a crash (NRE fixed).",
-        "commit_ids": [
-          726799
-        ],
-        "section": "UI"
-      },
-      {
-        "text": "Fixed a crash that occurred when opening the Items tab during loading, preventing UI errors.",
-        "commit_ids": [
-          726802
-        ],
-        "section": "Gameplay & Balance"
+        "section": "Transportation"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Snakes now take explosion damage and no longer collide with horses.\n- Stash containers now decay correctly (previously they never decayed).\n- Item pickup notifications no longer cause a crash (NRE fixed).\n- Fixed a crash that occurred when opening the Items tab during loading, preventing UI errors."
+    "new_relevant_count": 2,
+    "new_summary": "- Removed old cave monument prefabs from procedural cave generation, altering cave locations and loot spawns.\n- Railway tracks no longer get buried by terrain smoothing; rail visuals improved and workcart operation stabilized."
   },
   "2026-11-03": {
     "commit_count": 104,
