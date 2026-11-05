@@ -1,5 +1,45 @@
 [
   {
+    "id": 728643,
+    "branch": "main/vclouds_kernel_not_set_error",
+    "changeset": "170398",
+    "created": "2026-11-05T18:59:49",
+    "message": "fix vclouds \"kernel not set\" error sometimes showing up",
+    "user": "Brian"
+  },
+  {
+    "id": 728620,
+    "branch": "▉▉▉▅█▊▌▌▉▍▊▇▆▆▌█▉▄▌▉▋▄",
+    "changeset": "▍▊▍▍▆▊",
+    "created": "2026-11-05T18:16:56",
+    "message": "▆█▇▇ ▋▍▍▋█▊▌▊▆▌██▌▍▋▉▍▄██▊▉▌█▌▅█▍▌▍ ▅▋▍ ▄▍▊▅▋▊▌ ▉▊█▍▋█▄▄ ▊▍▉▅▄▍▋▆▄▉▌▆▆▍▋▆ ▊▋▉▌▍▄ █▆ █▉▌▍ ▅▍▋▇▅▇▆▌ █▍▊▍▇ ▊▉▉ ▌▇▊▊▍▅▆▍ ▍▅▄▊▉▇▋█▅▋ ▄▅▌█ ▄▌▋▌▌▋▅▊ ▉▇▉▌▇▄ ▍▆▄▍▊▋█▍▇▊▆▅▆▅ ▌▉▊▇ ▋▇▇▋ ▍▄▆▉▌▇▊▋ ▄▋▍ ▋█▍ ▋▄█▄▄▅ ▉▄▊▋█▍▌▍ ▊▅▄▄ ▋▆▇▄▋▅▍▅▇",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 728589,
+    "branch": "main/clothing_item_insert_fix",
+    "changeset": "170396",
+    "created": "2026-11-05T17:44:11",
+    "message": "OnClothingItemContentsChanged no longer calls OnClothingChanged\r\nLooks like it was doing this for recalculating protection from armour inserts, but this only needs to call SV_ClothingChanged\r\nFixes a bug where items moved to/from slot 7 of a backpack were being treated as equipping/unequipping a backpack. Also removes some redundant inventory server updates on every item moved to/from a piece of clothing",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 728578,
+    "branch": "▅▊▅▌██▉▆▊▆▉▄▄▆▄▌▉▆█▌█▇",
+    "changeset": "▋▍▋▍▅▋",
+    "created": "2026-11-05T17:19:53",
+    "message": "▇▅▄▇▋▆▅▊ ▆▆▍ ▌▇▄▄▆▆▌▉▆▇▋▇▋▉▉▋█▆▇▍▌▍▌ ▉▌▅█▋▋ ▌▄▊▄█▊▅▆ ▊▍▅▅▅█▅▉▌ ▆▌▆▉ ▋█▌▆▄▌█ ▉▅▅▌ ▅▋▇▇ ▅▆▇ ▌██▋▇▆▌▋▉▋ ▍▄▌▉█▆▅▊▋▌▇▌▊▋ █▌▇▄▇▄▌ ▇▉▍▄▌▄▍ ▄▊█▇▇▊▉▅ ▆▆▊█▆▊██▍▄▋▋▇▉▌ ▌▇█▍▉█▌ ▉▉ ▆▅▉▄█ ▍█▍ ▆▆▉ ▄▇▌▋▅▍▅ ▄▄▅▇▊▉▋ ▊▄▌▋▍▊ █▋ ▅▆▄ ▄▇ ▄▍▉▋█▄ ▍▌▉ █▋▌▉▆▌██▍ ▉▄▆▋▍ ▊▆▆▉▅▇▅ ▊▋ ▄▊▅▄▉▇▌▉ ▉▍",
+    "user": "Daniel P"
+  },
+  {
+    "id": 728576,
+    "branch": "main/contact_note_save",
+    "changeset": "170393",
+    "created": "2026-11-05T17:17:06",
+    "message": "Contact list note saving fix",
+    "user": "Adam W"
+  },
+  {
     "id": 728572,
     "branch": "main/leveractionrifle",
     "changeset": "170392",
@@ -2342,109 +2382,5 @@
     "created": "2026-11-02T19:26:21",
     "message": "Fixed frontier building skin not batching at all:\n- set read/write true on all FBXs\r\n- set AllowSubmeshes to true on the ramp prefabs",
     "user": "Flavien"
-  },
-  {
-    "id": 726369,
-    "branch": "main/ice_sculptures26/sculpting_improvements",
-    "changeset": "169999",
-    "created": "2026-11-02T19:06:13",
-    "message": "first pass on improvements\r\n- improved push/pull that actuall feels like it's pushing and pulling, much more intutive\r\n- mirror mode for X/Z/XZ",
-    "user": "Grigler"
-  },
-  {
-    "id": 726367,
-    "branch": "main/more_lod_optims",
-    "changeset": "169998",
-    "created": "2026-11-02T18:52:17",
-    "message": "One more CullWhenInside iteration, the previous one could cause big delays in bushes updating in the jungle, due to all loaded bushes clogging the work queue\r\nNow: One grid for bushes, one grid for foundations, no work queue, no physics",
-    "user": "cipeaX"
-  },
-  {
-    "id": 726366,
-    "branch": "main/terrain_blend_fixes",
-    "changeset": "169997",
-    "created": "2026-11-02T18:50:26",
-    "message": "Slightly lowered radius, fade, and blend map of satellite scene to stop huge radius overhang",
-    "user": "hannah.watts"
-  },
-  {
-    "id": 726364,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "169996",
-    "created": "2026-11-02T18:44:47",
-    "message": "Added test checking building skin meshes are all batchable\r\n87 are failing",
-    "user": "Flavien"
-  },
-  {
-    "id": 726362,
-    "branch": "main/bird_critters",
-    "changeset": "169995",
-    "created": "2026-11-02T18:39:55",
-    "message": "gull group fixes & improvements\r\n- stronger obstacle avoidance when taking off from land point\r\n- removed per-frame raycasts from the scattering run (might have been the stutter)\r\n- add step height 0.1m for walking gulls, so they stay on the surface they landed on\r\n- landing groups only startle against players within 6m, instead of any target seen in the last 15s\r\n- gull corpses inherit velocity\r\n- try fix \"entity_distance\" when shooting flying and landing gulls by adjusting bounds depending on state\r\n- groups spawn in deep sea with a hook into DeepSeaManager, since populations make it not naturally spawn\r\n- birds turning into animators are capped per frame because its the heaviest cost for reactivation",
-    "user": "ElliotH"
-  },
-  {
-    "id": 726358,
-    "branch": "▉▌▅▅▆▇▍▋█▊▉▍▆▄▅▊▆▆▆▌▉",
-    "changeset": "▅▉▆▋▇▄",
-    "created": "2026-11-02T18:21:19",
-    "message": "▉ ▋▆▉█▆█ ▍▉▉█▊▆▄▅▋▄██▊▇ ▅ ▅▆▍▊ ▄▌ ▄█▇▅▆▆▇ ▊▅█▉▆▉▆█▌ ▍▊▌▉▋▉▆▉▋▅ ▊█▊ ▄▊▌▅",
-    "user": "nick.m"
-  },
-  {
-    "id": 726355,
-    "branch": "main/scrapking_batching_fix",
-    "changeset": "169990",
-    "created": "2026-11-02T18:08:42",
-    "message": "Fixed scrap king building skin not batching:\r\n- set AllowSubmeshes to true on all prefabs\r\n- set wall frame and floor triangle frame fbx as readable",
-    "user": "Flavien"
-  },
-  {
-    "id": 726354,
-    "branch": "main/RichCrocPie",
-    "changeset": "169989",
-    "created": "2026-11-02T18:00:13",
-    "message": "Rich Crocodile pie icon setup/import",
-    "user": "Nick.H"
-  },
-  {
-    "id": 726353,
-    "branch": "main",
-    "changeset": "169988",
-    "created": "2026-11-02T17:59:32",
-    "message": "uzi balance + condition doubled",
-    "user": "Helk"
-  },
-  {
-    "id": 726348,
-    "branch": "main/procgen_fix_underwater_grass",
-    "changeset": "169987",
-    "created": "2026-11-02T17:44:42",
-    "message": "Don't paint grass or forest splat on ocean or oceanside terrain when placing monuments - fixes large monuments sometimes painting green patches under water",
-    "user": "Jakb"
-  },
-  {
-    "id": 726347,
-    "branch": "main/animal_renaming",
-    "changeset": "169986",
-    "created": "2026-11-02T17:43:03",
-    "message": "Fix RTL text not formatted correctly when passed as an argument whilst the set language is not RTL",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 726345,
-    "branch": "main/render_pipeline_testing/brp_cleanup",
-    "changeset": "169985",
-    "created": "2026-11-02T17:33:12",
-    "message": "Removed remaining Add/Get/Remove command buffer from camera/light calls and CameraEvents, as those are BiRP only",
-    "user": "aidan.m"
-  },
-  {
-    "id": 726341,
-    "branch": "main/unity_6.7.0/contentdirs_backend",
-    "changeset": "169984",
-    "created": "2026-11-02T17:30:04",
-    "message": "Update(editor): start working on ContentDir build process\r\nTranslation from AssetBundle mapping seems to work, need to figure out how to treat scenes and try actually generating data\r\nTests: ran it for server, inspected produced ContentDirRoot(unity doesn't recognize it, but raw data is there)",
-    "user": "Daniel P"
   }
 ]

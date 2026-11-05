@@ -6,54 +6,60 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 05 Nov 2026 12:17:25 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 14:17:23 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 05</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;41 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;46 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728564"&gt;Scientist boat event now correctly runs coastal passes and formation maneuvers during the event.&lt;/li&gt;
-&lt;li data-rust-commits="728558"&gt;Primitive mode supply drops now include the expected blueprint pages.&lt;/li&gt;
-&lt;li data-rust-commits="728485"&gt;PT Boat turret viewmodel now displays an empty magazine when out of ammo.&lt;/li&gt;
-&lt;li data-rust-commits="728476"&gt;Rockets now properly damage large seagull groups and gulls no longer disappear when they cannot find a landing spot.&lt;/li&gt;
-&lt;li data-rust-commits="728571"&gt;Demo names longer than 15 characters no longer overflow UI.&lt;/li&gt;
-&lt;li data-rust-commits="728569"&gt;Demo exports now retain original frame rate (no 240 fps cap) and timescale runs smoothly at low speeds.&lt;/li&gt;
-&lt;li data-rust-commits="728528"&gt;Distance flares render at correct brightness, fixing blown‑out glare.&lt;/li&gt;
-&lt;li data-rust-commits="728473"&gt;Default game settings refreshed – outdated console variables cleared and max shadow quality set to a sensible default.&lt;/li&gt;
-&lt;li data-rust-commits="728462"&gt;Locked crates display the correct remaining time after restarting the game.&lt;/li&gt;
+&lt;li data-rust-commits="728589"&gt;Backpack slot 7 no longer triggers false equip/unequip events, fixing inventory glitches when moving items.&lt;/li&gt;
+&lt;li data-rust-commits="728558"&gt;Supply drops in Primitive mode now include blueprint pages, restoring expected loot.&lt;/li&gt;
+&lt;li data-rust-commits="728564"&gt;Scientist boat event runs correctly, with the group approaching the shore in formation as intended.&lt;/li&gt;
+&lt;li data-rust-commits="728571"&gt;Demo names now display correctly without overflow when 16 characters or longer.&lt;/li&gt;
+&lt;li data-rust-commits="728643"&gt;Fix intermittent &amp;quot;kernel not set&amp;quot; error for vclouds, preventing unexpected cloud sync failures.&lt;/li&gt;
+&lt;li data-rust-commits="728576"&gt;Resolve issue where notes attached to contacts failed to save, ensuring player notes persist.&lt;/li&gt;
+&lt;li data-rust-commits="728569"&gt;Remove 240 fps cap on demo export and eliminate timescale stuttering below 0.2, allowing smoother, higher‑frame recordings.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Events&lt;/h3&gt;
+&lt;h3&gt;Items &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728564"&gt;Scientist boat event now correctly runs coastal passes and formation maneuvers during the event.&lt;/li&gt;
+&lt;li data-rust-commits="728589"&gt;Backpack slot 7 no longer triggers false equip/unequip events, fixing inventory glitches when moving items.&lt;/li&gt;
+&lt;li data-rust-commits="728558"&gt;Supply drops in Primitive mode now include blueprint pages, restoring expected loot.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Supply Drops&lt;/h3&gt;
+&lt;h3&gt;World Events&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728558"&gt;Primitive mode supply drops now include the expected blueprint pages.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728485"&gt;PT Boat turret viewmodel now displays an empty magazine when out of ammo.&lt;/li&gt;
+&lt;li data-rust-commits="728564"&gt;Scientist boat event runs correctly, with the group approaching the shore in formation as intended.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Animals &amp;amp; NPCs&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728476"&gt;Rockets now properly damage large seagull groups and gulls no longer disappear when they cannot find a landing spot.&lt;/li&gt;
+&lt;li data-rust-commits="728476"&gt;Rockets now correctly damage large seagull groups, and gulls no longer disappear when unable to find a landing spot.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player-Facing Fixes&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728571"&gt;Demo names longer than 15 characters no longer overflow UI.&lt;/li&gt;
-&lt;li data-rust-commits="728569"&gt;Demo exports now retain original frame rate (no 240 fps cap) and timescale runs smoothly at low speeds.&lt;/li&gt;
-&lt;li data-rust-commits="728528"&gt;Distance flares render at correct brightness, fixing blown‑out glare.&lt;/li&gt;
-&lt;li data-rust-commits="728473"&gt;Default game settings refreshed – outdated console variables cleared and max shadow quality set to a sensible default.&lt;/li&gt;
-&lt;li data-rust-commits="728462"&gt;Locked crates display the correct remaining time after restarting the game.&lt;/li&gt;
-&lt;li data-rust-commits="728366"&gt;Thrown weapons now correctly show their skins while in flight, and workshop skins stay consistent after reloads.&lt;/li&gt;
-&lt;li data-rust-commits="728283"&gt;Gamepad/control focus null‑reference crashes resolved, preventing UI lock‑ups.&lt;/li&gt;
+&lt;li data-rust-commits="728462"&gt;Locked crate timer now displays the correct time after server restarts.&lt;/li&gt;
+&lt;li data-rust-commits="728571"&gt;Demo names now display correctly without overflow when 16 characters or longer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Weapons &amp;amp; Skins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728366"&gt;Weapon skins now stay applied on thrown weapons during flight, and workshop skins reset correctly if loading is interrupted.&lt;/li&gt;
+&lt;li data-rust-commits="728485"&gt;PT Boat turret viewmodels now show empty magazines when fully depleted, improving ammo awareness.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Visuals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728528"&gt;Distance flare rendering fixed to prevent blown‑out flares caused by incorrect HDR gamma conversion.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728643"&gt;Fix intermittent &amp;quot;kernel not set&amp;quot; error for vclouds, preventing unexpected cloud sync failures.&lt;/li&gt;
+&lt;li data-rust-commits="728576"&gt;Resolve issue where notes attached to contacts failed to save, ensuring player notes persist.&lt;/li&gt;
+&lt;li data-rust-commits="728569"&gt;Remove 240 fps cap on demo export and eliminate timescale stuttering below 0.2, allowing smoother, higher‑frame recordings.&lt;/li&gt;
+&lt;li data-rust-commits="728283"&gt;Fix null reference error when changing UI focus, preventing crashes or freezes during control switching.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-05</guid>
-      <pubDate>Thu, 05 Nov 2026 12:17:25 -0500</pubDate>
+      <pubDate>Thu, 05 Nov 2026 14:17:23 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 04</title>
