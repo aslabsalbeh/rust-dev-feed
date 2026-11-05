@@ -1,5 +1,77 @@
 [
   {
+    "id": 728722,
+    "branch": "main/Twitchdropsrender",
+    "changeset": "170425",
+    "created": "2026-11-05T23:04:13",
+    "message": "Nail gun position and rotation amended",
+    "user": "jen.n"
+  },
+  {
+    "id": 728720,
+    "branch": "main/travellingvendor_wheel_nre_sound_fix",
+    "changeset": "170424",
+    "created": "2026-11-05T22:56:04",
+    "message": "Fixed TravellingVendorSounds.UpdateTireSounds NRE properly - caused by vehicle pooling\r\n- VisualTick kept running after DoClientDestroy",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 728719,
+    "branch": "main/Twitchdropsrender",
+    "changeset": "170423",
+    "created": "2026-11-05T22:55:16",
+    "message": "Added in the Uzi into the scene",
+    "user": "jen.n"
+  },
+  {
+    "id": 728718,
+    "branch": "main/travellingvendor_wheel_nre_sound_fix",
+    "changeset": "170422",
+    "created": "2026-11-05T22:49:24",
+    "message": "Fix TravellingVendorSounds.UpdateTireSounds NRE \r\n- Real cause probably vehicle pooling",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 728717,
+    "branch": "main/UZI 9mm",
+    "changeset": "170421",
+    "created": "2026-11-05T22:42:40",
+    "message": "Uzi: stock always folded when holstered, unfolds on deploy\r\n\r\n- new w_uzi deploy_stock anim with the stock unfold, hooked up in w_uzi controller\r\n- 3p deploy_stock updated to match the viewmodel unfold\r\n- Uzi.cs: holstered world model always shows the stock folded (visual only, still in rifle mode)\r\n- updated 3p aniims to match correct bolt position, fix out of sync issues",
+    "user": "Alex Webster"
+  },
+  {
+    "id": 728716,
+    "branch": "main/door_setswingdynamic_nre_fix",
+    "changeset": "170420",
+    "created": "2026-11-05T22:31:36",
+    "message": "Door.SetSwingDynamic NRE guards",
+    "user": "cipeaX"
+  },
+  {
+    "id": 728680,
+    "branch": "▉▇▉▅█▊█▉▊▋▍█▅▇▊▍",
+    "changeset": "▅▋▅▇▍▊",
+    "created": "2026-11-05T21:36:33",
+    "message": "▊▄▇▅▌█▌▌▌▌▄ ██▄█▍ ▅▅▇▋▍▋",
+    "user": "Petur"
+  },
+  {
+    "id": 728676,
+    "branch": "▇▆▅▊",
+    "changeset": "▇▇▋▅▆▆",
+    "created": "2026-11-05T21:34:10",
+    "message": "▉▍▉▆▄▍▄ ▌▇▇▅ ▇▋▍▊██▊▆▆▇▌▌▍▅▉▄▅",
+    "user": "cipeaX"
+  },
+  {
+    "id": 728668,
+    "branch": "main/hackweek_local_tutorial",
+    "changeset": "170404",
+    "created": "2026-11-05T21:18:04",
+    "message": "Merge fix",
+    "user": "Jarryd Campi"
+  },
+  {
     "id": 728666,
     "branch": "main/UZI 9mm",
     "changeset": "170403",
@@ -2222,109 +2294,5 @@
     "created": "2026-11-02T23:37:00",
     "message": "Fixed buoyancy points never respecting the nextSplashTime interval\r\nMoved the interval to the parent Buoyancy component so it's shared between all points and lowered the minimum time between splash fx to 0.1\r\nFixes audio cutting out when driving through storms (starved audio decoders)",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 726447,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "170026",
-    "created": "2026-11-02T23:03:15",
-    "message": "Updated the test to catch more stuff",
-    "user": "Flavien"
-  },
-  {
-    "id": 726444,
-    "branch": "main/rhib_hand_fix",
-    "changeset": "170025",
-    "created": "2026-11-02T22:37:28",
-    "message": "Fixed RHIB drivers reaching for nothing with their arms stretched out\r\nThe pooled driver seat kept its cached RHIB when it was reused on another boat, so the hands went for the old boat's wheel",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 726443,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "170024",
-    "created": "2026-11-02T22:35:33",
-    "message": "Fixed adobe woodbeams not batching (forgot to add the RendererBatch when implementing wallpaper)",
-    "user": "Flavien"
-  },
-  {
-    "id": 726439,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "170023",
-    "created": "2026-11-02T22:19:37",
-    "message": "Fixed the rest of the stuff not batching:\n- Crypt stairs and spiral landings\n- Adobe roof lines and low wall corners\n- Brick roofs\n- Twig roofs and roof lines\n- Brutalist triangle spiral landing",
-    "user": "Flavien"
-  },
-  {
-    "id": 726432,
-    "branch": "main/UZI 9mm",
-    "changeset": "170021",
-    "created": "2026-11-02T22:00:49",
-    "message": "viewmodel updates\r\n- tightened up fire anims\r\n- edited reload & bolt pulls to avoid clipping when using a scope\r\n- added a new deploy with stock so it can be played at correct speed\r\n- added sound events\r\n- set deploy stock in animator back to 1",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 726429,
-    "branch": "main/UZI 9mm",
-    "changeset": "170020",
-    "created": "2026-11-02T21:53:21",
-    "message": "- scope attachment position update",
-    "user": "Alex Webster"
-  },
-  {
-    "id": 726425,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "170019",
-    "created": "2026-11-02T21:53:02",
-    "message": "Fixed gingerbread building skin not batching at all",
-    "user": "Flavien"
-  },
-  {
-    "id": 726424,
-    "branch": "main/ptboat_frontturret_balancing",
-    "changeset": "170018",
-    "created": "2026-11-02T21:50:17",
-    "message": "PT boat turrets: front turret uses the regular crosshair & wider front aimcone - less damage on both\r\n- Front 50cal guns: aimCone 0.2 -> 1\r\n- Front and rear 50cal guns: damageScale 1 -> 0.75",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 726412,
-    "branch": "main/ptboat_frontturret_balancing",
-    "changeset": "170017",
-    "created": "2026-11-02T21:40:36",
-    "message": "give front pt boat turret the regular crosshair rather than a dot",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 726410,
-    "branch": "main/base_occlusion",
-    "changeset": "170016",
-    "created": "2026-11-02T21:34:36",
-    "message": "Fix line endings",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 726405,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "170015",
-    "created": "2026-11-02T21:30:17",
-    "message": "Fixed HQM walls, frames and spiral stairs LOD0 blocks not batching",
-    "user": "Flavien"
-  },
-  {
-    "id": 726404,
-    "branch": "main/nail_lod_fixes",
-    "changeset": "170014",
-    "created": "2026-11-02T21:29:53",
-    "message": "Updated Nailgun World Model to Fix World Model Nails having wrong UV Channels",
-    "user": "Alfie Birch"
-  },
-  {
-    "id": 726401,
-    "branch": "main/nail_lod_fixes",
-    "changeset": "170013",
-    "created": "2026-11-02T21:18:55",
-    "message": "Updated Nailgun Nails LOD distance so shouldn't change to quickly",
-    "user": "Alfie Birch"
   }
 ]
