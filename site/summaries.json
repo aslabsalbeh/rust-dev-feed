@@ -1,13 +1,59 @@
 {
   "2026-11-04": {
-    "commit_count": 110,
-    "relevant_commit_count": 38,
-    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620,727650,727664,727833,727917",
+    "commit_count": 117,
+    "relevant_commit_count": 40,
+    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620,727650,727664,727833,727917,728009,728085",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Items & Weapons",
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Reload animation now resets correctly when switching identical guns, preventing unintended continuous reloads.",
+            "commit_ids": [
+              728085
+            ]
+          },
+          {
+            "text": "Ballista bolts are functional again, restoring ranged siege capability.",
+            "commit_ids": [
+              727620
+            ]
+          },
+          {
+            "text": "Melee attacks no longer cause crashes, ensuring stable combat.",
+            "commit_ids": [
+              727556
+            ]
+          },
+          {
+            "text": "Turrets now fire at their intended automatic rate when placed.",
+            "commit_ids": [
+              727241
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Transportation",
+        "items": [
+          {
+            "text": "Tomaha snowmobile can be prepared without errors, restoring its use.",
+            "commit_ids": [
+              728009
+            ]
+          },
+          {
+            "text": "Railway tracks no longer become buried by terrain; a world‑setup step raises them, improving rail visuals and workcart operation.",
+            "commit_ids": [
+              727131
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Spawn",
         "items": [
           {
             "text": "Hoppers now correctly collect body bags.",
@@ -16,72 +62,25 @@
             ]
           },
           {
-            "text": "Ballista bolts fire again after a regression.",
-            "commit_ids": [
-              727620
-            ]
-          },
-          {
-            "text": "Melee combat no longer crashes due to a null‑reference error.",
-            "commit_ids": [
-              727556
-            ]
-          },
-          {
-            "text": "UZI 9mm now respects its intended automatic fire rate when placed in a turret.",
-            "commit_ids": [
-              727241
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Crafting & Cosmetics",
-        "items": [
-          {
-            "text": "Alien costume is craftable again after a metadata fix.",
-            "commit_ids": [
-              727238
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Generation",
-        "items": [
-          {
-            "text": "Spawn points are now limited to true beaches; landlocked lakes and inland lighthouses no longer generate valid spawns.",
+            "text": "Beach spawn points fixed: players spawn only on true beaches, and lighthouses no longer appear inland.",
             "commit_ids": [
               727377
             ]
           },
           {
-            "text": "Lighthouse crates now spawn on the ground instead of inside it.",
+            "text": "Lighthouse and brown crates now spawn above ground, making loot accessible.",
             "commit_ids": [
               727271,
               727155
-            ]
-          },
-          {
-            "text": "Floating or buried rail tracks are lifted and aligned, fixing rail visual glitches and workcart navigation.",
-            "commit_ids": [
-              727353,
-              727131
-            ]
-          },
-          {
-            "text": "Removed old cave monument prefabs, updating procedural cave generation.",
-            "commit_ids": [
-              727056
             ]
           }
         ]
       },
       {
-        "title": "AI & Creatures",
+        "title": "AI & Animals",
         "items": [
           {
-            "text": "Snakes now correctly collide, no longer block horses, and take explosion damage.",
+            "text": "Snakes now collide properly with world layers, no longer ride horses, and take explosion damage as intended.",
             "commit_ids": [
               726873
             ]
@@ -89,56 +88,74 @@
         ]
       },
       {
-        "title": "Upkeep & Loot",
+        "title": "Items, Loot & Decay",
         "items": [
           {
-            "text": "Fixed stash decay; stashes now decay over time with configurable duration.",
+            "text": "Alien costume is craftable again.",
             "commit_ids": [
-              726800
+              727238
             ]
           },
           {
-            "text": "Seagull corpses now drop additional resources.",
+            "text": "Seagull corpses now drop extra resources.",
             "commit_ids": [
               726790
             ]
-          }
-        ]
-      },
-      {
-        "title": "Map & UI",
-        "items": [
+          },
           {
-            "text": "Dynamic monument map markers can now change label text and position at runtime.",
+            "text": "Stashes decay over time again, with adjustable duration via a console variable.",
             "commit_ids": [
-              727533
+              726800
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "World & Mechanics",
         "items": [
           {
-            "text": "Water wheel menu no longer crashes, allowing players to access and operate water wheels.",
+            "text": "Dynamic monument map markers can now update their label and position in real time, improving navigation to changing points of interest.",
+            "commit_ids": [
+              727533
+            ]
+          },
+          {
+            "text": "Rail lifts no longer suffer from floating rails at junctions, preventing visual glitches and potential traversal issues.",
+            "commit_ids": [
+              727353
+            ]
+          },
+          {
+            "text": "Old cave monument prefabs have been removed from procedural generation, cleaning up cave layouts.",
+            "commit_ids": [
+              727056
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Water wheel control menu no longer crashes due to a null reference, restoring access to wheel settings.",
             "commit_ids": [
               727316
             ]
           },
           {
-            "text": "Tattoo customization now saves correctly after recent merge, preventing loss of tattoo selections.",
+            "text": "Tattoo files are now stored correctly after merging, ensuring player tattoos persist and display properly.",
             "commit_ids": [
               727239
             ]
           },
           {
-            "text": "Opening the items tab during loading no longer triggers a crash, ensuring stable inventory access.",
+            "text": "Opening the items tab during loading no longer triggers a UI error, allowing smoother inventory access.",
             "commit_ids": [
               726802
             ]
           },
           {
-            "text": "Item pickup notifications display correctly without causing errors, so players receive feedback when collecting items.",
+            "text": "Item pickup notifications are fixed, so players receive proper feedback when collecting items.",
             "commit_ids": [
               726799
             ]
@@ -147,18 +164,10 @@
       }
     ],
     "status": "ok",
-    "summary": "### Items & Weapons\n- Hoppers now correctly collect body bags.\n- Ballista bolts fire again after a regression.\n- Melee combat no longer crashes due to a null‑reference error.\n- UZI 9mm now respects its intended automatic fire rate when placed in a turret.\n\n### Crafting & Cosmetics\n- Alien costume is craftable again after a metadata fix.\n\n### World Generation\n- Spawn points are now limited to true beaches; landlocked lakes and inland lighthouses no longer generate valid spawns.\n- Lighthouse crates now spawn on the ground instead of inside it.\n- Floating or buried rail tracks are lifted and aligned, fixing rail visual glitches and workcart navigation.\n- Removed old cave monument prefabs, updating procedural cave generation.\n\n### AI & Creatures\n- Snakes now correctly collide, no longer block horses, and take explosion damage.\n\n### Upkeep & Loot\n- Fixed stash decay; stashes now decay over time with configurable duration.\n- Seagull corpses now drop additional resources.\n\n### Map & UI\n- Dynamic monument map markers can now change label text and position at runtime.\n\n### Bug Fixes\n- Water wheel menu no longer crashes, allowing players to access and operate water wheels.\n- Tattoo customization now saves correctly after recent merge, preventing loss of tattoo selections.\n- Opening the items tab during loading no longer triggers a crash, ensuring stable inventory access.\n- Item pickup notifications display correctly without causing errors, so players receive feedback when collecting items.",
-    "new_items": [
-      {
-        "text": "Hoppers now correctly collect body bags.",
-        "commit_ids": [
-          727917
-        ],
-        "section": "Items & Weapons"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Hoppers now correctly collect body bags."
+    "summary": "### Combat & Weapons\n- Reload animation now resets correctly when switching identical guns, preventing unintended continuous reloads.\n- Ballista bolts are functional again, restoring ranged siege capability.\n- Melee attacks no longer cause crashes, ensuring stable combat.\n- Turrets now fire at their intended automatic rate when placed.\n\n### Vehicles & Transportation\n- Tomaha snowmobile can be prepared without errors, restoring its use.\n- Railway tracks no longer become buried by terrain; a world‑setup step raises them, improving rail visuals and workcart operation.\n\n### World & Spawn\n- Hoppers now correctly collect body bags.\n- Beach spawn points fixed: players spawn only on true beaches, and lighthouses no longer appear inland.\n- Lighthouse and brown crates now spawn above ground, making loot accessible.\n\n### AI & Animals\n- Snakes now collide properly with world layers, no longer ride horses, and take explosion damage as intended.\n\n### Items, Loot & Decay\n- Alien costume is craftable again.\n- Seagull corpses now drop extra resources.\n- Stashes decay over time again, with adjustable duration via a console variable.\n\n### World & Mechanics\n- Dynamic monument map markers can now update their label and position in real time, improving navigation to changing points of interest.\n- Rail lifts no longer suffer from floating rails at junctions, preventing visual glitches and potential traversal issues.\n- Old cave monument prefabs have been removed from procedural generation, cleaning up cave layouts.\n\n### UI & Quality of Life\n- Water wheel control menu no longer crashes due to a null reference, restoring access to wheel settings.\n- Tattoo files are now stored correctly after merging, ensuring player tattoos persist and display properly.\n- Opening the items tab during loading no longer triggers a UI error, allowing smoother inventory access.\n- Item pickup notifications are fixed, so players receive proper feedback when collecting items.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-03": {
     "commit_count": 104,

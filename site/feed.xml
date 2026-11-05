@@ -6,61 +6,59 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 04 Nov 2026 22:17:30 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 00:17:29 -0500</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Nov 04</title>
+      <title>Yesterday's Rust Updates — Nov 04</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;110 development commits&lt;/strong&gt;&lt;/p&gt;
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;117 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728085"&gt;Reload animation now resets correctly when switching identical guns, preventing unintended continuous reloads.&lt;/li&gt;
+&lt;li data-rust-commits="727620"&gt;Ballista bolts are functional again, restoring ranged siege capability.&lt;/li&gt;
+&lt;li data-rust-commits="727556"&gt;Melee attacks no longer cause crashes, ensuring stable combat.&lt;/li&gt;
+&lt;li data-rust-commits="727241"&gt;Turrets now fire at their intended automatic rate when placed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles &amp;amp; Transportation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728009"&gt;Tomaha snowmobile can be prepared without errors, restoring its use.&lt;/li&gt;
+&lt;li data-rust-commits="727131"&gt;Railway tracks no longer become buried by terrain; a world‑setup step raises them, improving rail visuals and workcart operation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World &amp;amp; Spawn&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li data-rust-commits="727917"&gt;Hoppers now correctly collect body bags.&lt;/li&gt;
+&lt;li data-rust-commits="727377"&gt;Beach spawn points fixed: players spawn only on true beaches, and lighthouses no longer appear inland.&lt;/li&gt;
+&lt;li data-rust-commits="727271,727155"&gt;Lighthouse and brown crates now spawn above ground, making loot accessible.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3&gt;Items &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;AI &amp;amp; Animals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727917"&gt;Hoppers now correctly collect body bags.&lt;/li&gt;
-&lt;li data-rust-commits="727620"&gt;Ballista bolts fire again after a regression.&lt;/li&gt;
-&lt;li data-rust-commits="727556"&gt;Melee combat no longer crashes due to a null‑reference error.&lt;/li&gt;
-&lt;li data-rust-commits="727241"&gt;UZI 9mm now respects its intended automatic fire rate when placed in a turret.&lt;/li&gt;
+&lt;li data-rust-commits="726873"&gt;Snakes now collide properly with world layers, no longer ride horses, and take explosion damage as intended.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Crafting &amp;amp; Cosmetics&lt;/h3&gt;
+&lt;h3&gt;Items, Loot &amp;amp; Decay&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727238"&gt;Alien costume is craftable again after a metadata fix.&lt;/li&gt;
+&lt;li data-rust-commits="727238"&gt;Alien costume is craftable again.&lt;/li&gt;
+&lt;li data-rust-commits="726790"&gt;Seagull corpses now drop extra resources.&lt;/li&gt;
+&lt;li data-rust-commits="726800"&gt;Stashes decay over time again, with adjustable duration via a console variable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World Generation&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Mechanics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="727377"&gt;Spawn points are now limited to true beaches; landlocked lakes and inland lighthouses no longer generate valid spawns.&lt;/li&gt;
-&lt;li data-rust-commits="727271,727155"&gt;Lighthouse crates now spawn on the ground instead of inside it.&lt;/li&gt;
-&lt;li data-rust-commits="727353,727131"&gt;Floating or buried rail tracks are lifted and aligned, fixing rail visual glitches and workcart navigation.&lt;/li&gt;
-&lt;li data-rust-commits="727056"&gt;Removed old cave monument prefabs, updating procedural cave generation.&lt;/li&gt;
+&lt;li data-rust-commits="727533"&gt;Dynamic monument map markers can now update their label and position in real time, improving navigation to changing points of interest.&lt;/li&gt;
+&lt;li data-rust-commits="727353"&gt;Rail lifts no longer suffer from floating rails at junctions, preventing visual glitches and potential traversal issues.&lt;/li&gt;
+&lt;li data-rust-commits="727056"&gt;Old cave monument prefabs have been removed from procedural generation, cleaning up cave layouts.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; Creatures&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="726873"&gt;Snakes now correctly collide, no longer block horses, and take explosion damage.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Upkeep &amp;amp; Loot&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726800"&gt;Fixed stash decay; stashes now decay over time with configurable duration.&lt;/li&gt;
-&lt;li data-rust-commits="726790"&gt;Seagull corpses now drop additional resources.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="727533"&gt;Dynamic monument map markers can now change label text and position at runtime.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Bug Fixes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="727316"&gt;Water wheel menu no longer crashes, allowing players to access and operate water wheels.&lt;/li&gt;
-&lt;li data-rust-commits="727239"&gt;Tattoo customization now saves correctly after recent merge, preventing loss of tattoo selections.&lt;/li&gt;
-&lt;li data-rust-commits="726802"&gt;Opening the items tab during loading no longer triggers a crash, ensuring stable inventory access.&lt;/li&gt;
-&lt;li data-rust-commits="726799"&gt;Item pickup notifications display correctly without causing errors, so players receive feedback when collecting items.&lt;/li&gt;
+&lt;li data-rust-commits="727316"&gt;Water wheel control menu no longer crashes due to a null reference, restoring access to wheel settings.&lt;/li&gt;
+&lt;li data-rust-commits="727239"&gt;Tattoo files are now stored correctly after merging, ensuring player tattoos persist and display properly.&lt;/li&gt;
+&lt;li data-rust-commits="726802"&gt;Opening the items tab during loading no longer triggers a UI error, allowing smoother inventory access.&lt;/li&gt;
+&lt;li data-rust-commits="726799"&gt;Item pickup notifications are fixed, so players receive proper feedback when collecting items.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-04</guid>
-      <pubDate>Wed, 04 Nov 2026 22:17:30 -0500</pubDate>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Nov 03</title>
+      <title>Rust Updates — 2 Days Ago — Nov 03</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;104 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -121,7 +119,7 @@
       <pubDate>Tue, 03 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Rust Updates — 2 Days Ago — Nov 02</title>
+      <title>Rust Development Updates — Nov 02</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;91 development commits&lt;/strong&gt;&lt;/p&gt;
 
