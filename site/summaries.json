@@ -1,22 +1,39 @@
 {
   "2026-11-05": {
-    "commit_count": 46,
-    "relevant_commit_count": 25,
-    "relevant_signature": "728276,728282,728283,728297,728329,728366,728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643",
+    "commit_count": 51,
+    "relevant_commit_count": 28,
+    "relevant_signature": "728276,728282,728283,728297,728329,728366,728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Items & Crafting",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Backpack slot 7 no longer triggers false equip/unequip events, fixing inventory glitches when moving items.",
+            "text": "NPC phone calls now ignore the MaxConcurrentCalls limit, allowing more simultaneous calls.",
+            "commit_ids": [
+              728658
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & Crafting",
+        "items": [
+          {
+            "text": "Moving items to or from slot 7 of a backpack no longer triggers equip/unequip events, fixing incorrect backpack behavior.",
             "commit_ids": [
               728589
             ]
           },
           {
-            "text": "Supply drops in Primitive mode now include blueprint pages, restoring expected loot.",
+            "text": "Contact list notes are now saved correctly.",
+            "commit_ids": [
+              728576
+            ]
+          },
+          {
+            "text": "Supply drops in the Primitive game mode now include blueprint pages.",
             "commit_ids": [
               728558
             ]
@@ -24,10 +41,10 @@
         ]
       },
       {
-        "title": "World Events",
+        "title": "Events",
         "items": [
           {
-            "text": "Scientist boat event runs correctly, with the group approaching the shore in formation as intended.",
+            "text": "Coast runs during the scientist boat event now function correctly, with the group approaching and driving along the shore in formation.",
             "commit_ids": [
               728564
             ]
@@ -35,10 +52,10 @@
         ]
       },
       {
-        "title": "Animals & NPCs",
+        "title": "Wildlife",
         "items": [
           {
-            "text": "Rockets now correctly damage large seagull groups, and gulls no longer disappear when unable to find a landing spot.",
+            "text": "Rockets now correctly collide with large seagull group colliders, and seagulls no longer disappear when they can't find a landing spot.",
             "commit_ids": [
               728476
             ]
@@ -46,46 +63,24 @@
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Controls & UI",
         "items": [
           {
-            "text": "Locked crate timer now displays the correct time after server restarts.",
+            "text": "Fixed a NullReferenceException causing control focus issues, improving gamepad and UI responsiveness.",
             "commit_ids": [
-              728462
-            ]
-          },
-          {
-            "text": "Demo names now display correctly without overflow when 16 characters or longer.",
-            "commit_ids": [
-              728571
+              728283
             ]
           }
         ]
       },
       {
-        "title": "Weapons & Skins",
+        "title": "World & Terrain",
         "items": [
           {
-            "text": "Weapon skins now stay applied on thrown weapons during flight, and workshop skins reset correctly if loading is interrupted.",
+            "text": "Adjusted the radius of Lake C and Oasis B slightly and refined terrain blending, resulting in smoother terrain transitions and slightly larger water bodies.",
             "commit_ids": [
-              728366
-            ]
-          },
-          {
-            "text": "PT Boat turret viewmodels now show empty magazines when fully depleted, improving ammo awareness.",
-            "commit_ids": [
-              728485
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Visuals",
-        "items": [
-          {
-            "text": "Distance flare rendering fixed to prevent blown‑out flares caused by incorrect HDR gamma conversion.",
-            "commit_ids": [
-              728528
+              728282,
+              728276
             ]
           }
         ]
@@ -94,87 +89,89 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fix intermittent \"kernel not set\" error for vclouds, preventing unexpected cloud sync failures.",
+            "text": "NPC encounters now run reliably after timer error fix.",
             "commit_ids": [
-              728643
+              728647
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Demo & Recording",
+        "items": [
           {
-            "text": "Resolve issue where notes attached to contacts failed to save, ensuring player notes persist.",
-            "commit_ids": [
-              728576
-            ]
-          },
-          {
-            "text": "Remove 240 fps cap on demo export and eliminate timescale stuttering below 0.2, allowing smoother, higher‑frame recordings.",
+            "text": "Demo export no longer capped at 240 fps and low timescale stutter resolved, enabling smoother recordings.",
             "commit_ids": [
               728569
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Graphics & Visibility",
+        "items": [
           {
-            "text": "Fix null reference error when changing UI focus, preventing crashes or freezes during control switching.",
+            "text": "Distance flares render correctly without over‑brightening, fixing HDR gamma conversion issue.",
             "commit_ids": [
-              728283
+              728528
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Settings & Performance",
+        "items": [
+          {
+            "text": "Default server settings regenerated, updating outdated convars and setting max shadow quality to a sensible default.",
+            "commit_ids": [
+              728473
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Locked crate UI now shows correct timer after restarts.",
+            "commit_ids": [
+              728462
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cosmetics & Identification",
+        "items": [
+          {
+            "text": "Thrown weapons correctly retain or drop skins during flight, fixing visual inconsistencies.",
+            "commit_ids": [
+              728366
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Items & Crafting\n- Backpack slot 7 no longer triggers false equip/unequip events, fixing inventory glitches when moving items.\n- Supply drops in Primitive mode now include blueprint pages, restoring expected loot.\n\n### World Events\n- Scientist boat event runs correctly, with the group approaching the shore in formation as intended.\n\n### Animals & NPCs\n- Rockets now correctly damage large seagull groups, and gulls no longer disappear when unable to find a landing spot.\n\n### UI & Quality of Life\n- Locked crate timer now displays the correct time after server restarts.\n- Demo names now display correctly without overflow when 16 characters or longer.\n\n### Weapons & Skins\n- Weapon skins now stay applied on thrown weapons during flight, and workshop skins reset correctly if loading is interrupted.\n- PT Boat turret viewmodels now show empty magazines when fully depleted, improving ammo awareness.\n\n### Visuals\n- Distance flare rendering fixed to prevent blown‑out flares caused by incorrect HDR gamma conversion.\n\n### Gameplay & Balance\n- Fix intermittent \"kernel not set\" error for vclouds, preventing unexpected cloud sync failures.\n- Resolve issue where notes attached to contacts failed to save, ensuring player notes persist.\n- Remove 240 fps cap on demo export and eliminate timescale stuttering below 0.2, allowing smoother, higher‑frame recordings.\n- Fix null reference error when changing UI focus, preventing crashes or freezes during control switching.",
+    "summary": "### NPC & AI\n- NPC phone calls now ignore the MaxConcurrentCalls limit, allowing more simultaneous calls.\n\n### Inventory & Crafting\n- Moving items to or from slot 7 of a backpack no longer triggers equip/unequip events, fixing incorrect backpack behavior.\n- Contact list notes are now saved correctly.\n- Supply drops in the Primitive game mode now include blueprint pages.\n\n### Events\n- Coast runs during the scientist boat event now function correctly, with the group approaching and driving along the shore in formation.\n\n### Wildlife\n- Rockets now correctly collide with large seagull group colliders, and seagulls no longer disappear when they can't find a landing spot.\n\n### Controls & UI\n- Fixed a NullReferenceException causing control focus issues, improving gamepad and UI responsiveness.\n\n### World & Terrain\n- Adjusted the radius of Lake C and Oasis B slightly and refined terrain blending, resulting in smoother terrain transitions and slightly larger water bodies.\n\n### Gameplay & Balance\n- NPC encounters now run reliably after timer error fix.\n\n### Demo & Recording\n- Demo export no longer capped at 240 fps and low timescale stutter resolved, enabling smoother recordings.\n\n### Graphics & Visibility\n- Distance flares render correctly without over‑brightening, fixing HDR gamma conversion issue.\n\n### Settings & Performance\n- Default server settings regenerated, updating outdated convars and setting max shadow quality to a sensible default.\n\n### UI & Quality of Life\n- Locked crate UI now shows correct timer after restarts.\n\n### Cosmetics & Identification\n- Thrown weapons correctly retain or drop skins during flight, fixing visual inconsistencies.",
     "new_items": [
       {
-        "text": "Backpack slot 7 no longer triggers false equip/unequip events, fixing inventory glitches when moving items.",
+        "text": "NPC phone calls now ignore the MaxConcurrentCalls limit, allowing more simultaneous calls.",
         "commit_ids": [
-          728589
+          728658
         ],
-        "section": "Items & Crafting"
+        "section": "NPC & AI"
       },
       {
-        "text": "Supply drops in Primitive mode now include blueprint pages, restoring expected loot.",
+        "text": "NPC encounters now run reliably after timer error fix.",
         "commit_ids": [
-          728558
-        ],
-        "section": "Items & Crafting"
-      },
-      {
-        "text": "Scientist boat event runs correctly, with the group approaching the shore in formation as intended.",
-        "commit_ids": [
-          728564
-        ],
-        "section": "World Events"
-      },
-      {
-        "text": "Demo names now display correctly without overflow when 16 characters or longer.",
-        "commit_ids": [
-          728571
-        ],
-        "section": "UI & Quality of Life"
-      },
-      {
-        "text": "Fix intermittent \"kernel not set\" error for vclouds, preventing unexpected cloud sync failures.",
-        "commit_ids": [
-          728643
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Resolve issue where notes attached to contacts failed to save, ensuring player notes persist.",
-        "commit_ids": [
-          728576
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Remove 240 fps cap on demo export and eliminate timescale stuttering below 0.2, allowing smoother, higher‑frame recordings.",
-        "commit_ids": [
-          728569
+          728647
         ],
         "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 7,
-    "new_summary": "- Backpack slot 7 no longer triggers false equip/unequip events, fixing inventory glitches when moving items.\n- Supply drops in Primitive mode now include blueprint pages, restoring expected loot.\n- Scientist boat event runs correctly, with the group approaching the shore in formation as intended.\n- Demo names now display correctly without overflow when 16 characters or longer.\n- Fix intermittent \"kernel not set\" error for vclouds, preventing unexpected cloud sync failures.\n- Resolve issue where notes attached to contacts failed to save, ensuring player notes persist.\n- Remove 240 fps cap on demo export and eliminate timescale stuttering below 0.2, allowing smoother, higher‑frame recordings."
+    "new_relevant_count": 2,
+    "new_summary": "- NPC phone calls now ignore the MaxConcurrentCalls limit, allowing more simultaneous calls.\n- NPC encounters now run reliably after timer error fix."
   },
   "2026-11-04": {
     "commit_count": 117,
