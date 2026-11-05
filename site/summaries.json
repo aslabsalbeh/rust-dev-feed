@@ -1,52 +1,45 @@
 {
   "2026-11-04": {
-    "commit_count": 105,
-    "relevant_commit_count": 36,
-    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620,727650,727664",
+    "commit_count": 110,
+    "relevant_commit_count": 38,
+    "relevant_signature": "726777,726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620,727650,727664,727833,727917",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Items & Weapons",
         "items": [
           {
-            "text": "Ballista bolts now fire correctly.",
+            "text": "Hoppers now correctly collect body bags.",
+            "commit_ids": [
+              727917
+            ]
+          },
+          {
+            "text": "Ballista bolts fire again after a regression.",
             "commit_ids": [
               727620
             ]
           },
           {
-            "text": "Turrets now consistently use their intended automatic fire rate when placed.",
+            "text": "Melee combat no longer crashes due to a null‑reference error.",
             "commit_ids": [
-              727241
+              727556
             ]
           },
           {
-            "text": "Melee crashes caused by null references have been fixed, restoring melee attacks.",
+            "text": "UZI 9mm now respects its intended automatic fire rate when placed in a turret.",
             "commit_ids": [
-              727556
+              727241
             ]
           }
         ]
       },
       {
-        "title": "Spawn & Loot",
+        "title": "Crafting & Cosmetics",
         "items": [
           {
-            "text": "Spawn points are now limited to true beaches; lake and inland lighthouse spawns have been removed.",
-            "commit_ids": [
-              727377
-            ]
-          },
-          {
-            "text": "Lighthouse crates now spawn above ground, making loot reachable.",
-            "commit_ids": [
-              727271,
-              727155
-            ]
-          },
-          {
-            "text": "The alien costume is craftable again.",
+            "text": "Alien costume is craftable again after a metadata fix.",
             "commit_ids": [
               727238
             ]
@@ -54,19 +47,32 @@
         ]
       },
       {
-        "title": "World & Map",
+        "title": "World Generation",
         "items": [
           {
-            "text": "Floating or buried railway tracks are automatically lifted, eliminating visual glitches and workcart problems.",
+            "text": "Spawn points are now limited to true beaches; landlocked lakes and inland lighthouses no longer generate valid spawns.",
+            "commit_ids": [
+              727377
+            ]
+          },
+          {
+            "text": "Lighthouse crates now spawn on the ground instead of inside it.",
+            "commit_ids": [
+              727271,
+              727155
+            ]
+          },
+          {
+            "text": "Floating or buried rail tracks are lifted and aligned, fixing rail visual glitches and workcart navigation.",
             "commit_ids": [
               727353,
               727131
             ]
           },
           {
-            "text": "Monument map markers can now update their labels and positions dynamically at runtime.",
+            "text": "Removed old cave monument prefabs, updating procedural cave generation.",
             "commit_ids": [
-              727533
+              727056
             ]
           }
         ]
@@ -75,7 +81,7 @@
         "title": "AI & Creatures",
         "items": [
           {
-            "text": "Snakes now collide correctly with terrain layers, no longer ragdoll horses, and they take explosion damage as intended.",
+            "text": "Snakes now correctly collide, no longer block horses, and take explosion damage.",
             "commit_ids": [
               726873
             ]
@@ -83,19 +89,14 @@
         ]
       },
       {
-        "title": "Stash Decay",
+        "title": "Upkeep & Loot",
         "items": [
           {
-            "text": "Stashes now decay over time again, with the decay duration adjustable via a console variable.",
+            "text": "Fixed stash decay; stashes now decay over time with configurable duration.",
             "commit_ids": [
               726800
             ]
-          }
-        ]
-      },
-      {
-        "title": "Loot Adjustments",
-        "items": [
+          },
           {
             "text": "Seagull corpses now drop additional resources.",
             "commit_ids": [
@@ -105,99 +106,59 @@
         ]
       },
       {
-        "title": "Controls & Camera",
+        "title": "Map & UI",
         "items": [
           {
-            "text": "First‑person turn‑in‑place rotation no longer doubles each frame, eliminating sudden camera pops.",
+            "text": "Dynamic monument map markers can now change label text and position at runtime.",
             "commit_ids": [
-              727479
+              727533
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Water wheel control panel no longer crashes, allowing reliable operation of water wheels.",
+            "text": "Water wheel menu no longer crashes, allowing players to access and operate water wheels.",
             "commit_ids": [
               727316
             ]
           },
           {
-            "text": "Opening the items tab during loading no longer triggers a UI crash, preventing disconnections.",
+            "text": "Tattoo customization now saves correctly after recent merge, preventing loss of tattoo selections.",
+            "commit_ids": [
+              727239
+            ]
+          },
+          {
+            "text": "Opening the items tab during loading no longer triggers a crash, ensuring stable inventory access.",
             "commit_ids": [
               726802
             ]
           },
           {
-            "text": "Item pickup notifications display correctly without causing errors, ensuring loot alerts are visible.",
+            "text": "Item pickup notifications display correctly without causing errors, so players receive feedback when collecting items.",
             "commit_ids": [
               726799
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & NPCs",
-        "items": [
-          {
-            "text": "Swimming NPCs and sharks now maintain correct orientation, fixing rare visual glitches while swimming.",
-            "commit_ids": [
-              727302
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Cosmetics",
-        "items": [
-          {
-            "text": "Custom tattoos are now saved correctly after updates, preventing loss of player‑applied designs.",
-            "commit_ids": [
-              727239
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Visual Feedback",
-        "items": [
-          {
-            "text": "All explosion effects now trigger proper screen shake, restoring expected combat feedback.",
-            "commit_ids": [
-              727013
-            ]
-          },
-          {
-            "text": "Explosion overlay resets correctly and viewmodel shake is applied, improving the feel of explosions and weapon recoil.",
-            "commit_ids": [
-              726777
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Ballista bolts now fire correctly.\n- Turrets now consistently use their intended automatic fire rate when placed.\n- Melee crashes caused by null references have been fixed, restoring melee attacks.\n\n### Spawn & Loot\n- Spawn points are now limited to true beaches; lake and inland lighthouse spawns have been removed.\n- Lighthouse crates now spawn above ground, making loot reachable.\n- The alien costume is craftable again.\n\n### World & Map\n- Floating or buried railway tracks are automatically lifted, eliminating visual glitches and workcart problems.\n- Monument map markers can now update their labels and positions dynamically at runtime.\n\n### AI & Creatures\n- Snakes now collide correctly with terrain layers, no longer ragdoll horses, and they take explosion damage as intended.\n\n### Stash Decay\n- Stashes now decay over time again, with the decay duration adjustable via a console variable.\n\n### Loot Adjustments\n- Seagull corpses now drop additional resources.\n\n### Controls & Camera\n- First‑person turn‑in‑place rotation no longer doubles each frame, eliminating sudden camera pops.\n\n### UI & Quality of Life\n- Water wheel control panel no longer crashes, allowing reliable operation of water wheels.\n- Opening the items tab during loading no longer triggers a UI crash, preventing disconnections.\n- Item pickup notifications display correctly without causing errors, ensuring loot alerts are visible.\n\n### World & NPCs\n- Swimming NPCs and sharks now maintain correct orientation, fixing rare visual glitches while swimming.\n\n### Cosmetics\n- Custom tattoos are now saved correctly after updates, preventing loss of player‑applied designs.\n\n### Combat & Visual Feedback\n- All explosion effects now trigger proper screen shake, restoring expected combat feedback.\n- Explosion overlay resets correctly and viewmodel shake is applied, improving the feel of explosions and weapon recoil.",
+    "summary": "### Items & Weapons\n- Hoppers now correctly collect body bags.\n- Ballista bolts fire again after a regression.\n- Melee combat no longer crashes due to a null‑reference error.\n- UZI 9mm now respects its intended automatic fire rate when placed in a turret.\n\n### Crafting & Cosmetics\n- Alien costume is craftable again after a metadata fix.\n\n### World Generation\n- Spawn points are now limited to true beaches; landlocked lakes and inland lighthouses no longer generate valid spawns.\n- Lighthouse crates now spawn on the ground instead of inside it.\n- Floating or buried rail tracks are lifted and aligned, fixing rail visual glitches and workcart navigation.\n- Removed old cave monument prefabs, updating procedural cave generation.\n\n### AI & Creatures\n- Snakes now correctly collide, no longer block horses, and take explosion damage.\n\n### Upkeep & Loot\n- Fixed stash decay; stashes now decay over time with configurable duration.\n- Seagull corpses now drop additional resources.\n\n### Map & UI\n- Dynamic monument map markers can now change label text and position at runtime.\n\n### Bug Fixes\n- Water wheel menu no longer crashes, allowing players to access and operate water wheels.\n- Tattoo customization now saves correctly after recent merge, preventing loss of tattoo selections.\n- Opening the items tab during loading no longer triggers a crash, ensuring stable inventory access.\n- Item pickup notifications display correctly without causing errors, so players receive feedback when collecting items.",
     "new_items": [
       {
-        "text": "Ballista bolts now fire correctly.",
+        "text": "Hoppers now correctly collect body bags.",
         "commit_ids": [
-          727620
+          727917
         ],
-        "section": "Combat & Weapons"
-      },
-      {
-        "text": "Melee crashes caused by null references have been fixed, restoring melee attacks.",
-        "commit_ids": [
-          727556
-        ],
-        "section": "Combat & Weapons"
+        "section": "Items & Weapons"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Ballista bolts now fire correctly.\n- Melee crashes caused by null references have been fixed, restoring melee attacks."
+    "new_relevant_count": 1,
+    "new_summary": "- Hoppers now correctly collect body bags."
   },
   "2026-11-03": {
     "commit_count": 104,
