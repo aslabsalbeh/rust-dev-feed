@@ -6,41 +6,72 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 06 Nov 2026 00:17:35 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 02:17:52 -0500</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Nov 06</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;2 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-11-06</guid>
+      <pubDate>Fri, 06 Nov 2026 02:17:52 -0500</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 05</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;75 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Boats &amp;amp; Vehicles&lt;/h3&gt;
+&lt;h3&gt;AI &amp;amp; Events&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728744"&gt;Fixed issue where stolen PT boats were incorrectly removed after the roaming boat event; only uncrewed boats are now cleaned up.&lt;/li&gt;
-&lt;li data-rust-commits="728485"&gt;PT Boat turret viewmodels now correctly show empty magazines when fully empty.&lt;/li&gt;
-&lt;li data-rust-commits="728564"&gt;Adjusted scientist boat event so coast runs work properly and the group drives along the shore in formation.&lt;/li&gt;
+&lt;li data-rust-commits="728758,728756"&gt;Boat scientists no longer stay locked onto hidden targets for too long, fixing prolonged invisibility.&lt;/li&gt;
+&lt;li data-rust-commits="728757"&gt;Roaming boat groups now reliably attack players on the beach.&lt;/li&gt;
+&lt;li data-rust-commits="728658"&gt;NPC phone calls no longer exceed the MaxConcurrentCalls limit, preventing call spam.&lt;/li&gt;
+&lt;li data-rust-commits="728564"&gt;Coast runs during the scientist boat event now function correctly, with groups approaching and driving along the shore in formation.&lt;/li&gt;
+&lt;li data-rust-commits="728476"&gt;Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they can&amp;#x27;t find a landing spot.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; Wildlife&lt;/h3&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728658"&gt;NPC phone calls now bypass the MaxConcurrentCalls limit, allowing more simultaneous calls.&lt;/li&gt;
-&lt;li data-rust-commits="728476"&gt;Rockets no longer collide with large seagull group colliders, and gulls will no longer disappear when they can&amp;#x27;t find a landing spot.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728589"&gt;Fixed bug where moving items to/from slot 7 of a backpack was mistakenly treated as equipping/unequipping a backpack, and reduced redundant inventory server updates.&lt;/li&gt;
-&lt;li data-rust-commits="728558"&gt;Added missing blueprint pages to supply drops in the Primitive game mode.&lt;/li&gt;
+&lt;li data-rust-commits="728744"&gt;Stolen PT boats now persist after the roaming boat event ends unless crew is lost.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728666"&gt;Added a client‑only AttachmentMountScale component for the UZI, ensuring attached mods inherit the mount’s scale correctly; updated the UZI prefab with tuned attachment scales.&lt;/li&gt;
-&lt;li data-rust-commits="728366"&gt;Fixed thrown weapons not showing applied skins during flight and prevented workshop skins from persisting after a reset during load.&lt;/li&gt;
+&lt;li data-rust-commits="728666"&gt;UZI 9mm now correctly scales attached mods (flashlight, barrel) thanks to new AttachmentMountScale component.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728462"&gt;Fixed locked crates displaying incorrect time after a restart.&lt;/li&gt;
+&lt;li data-rust-commits="728589"&gt;Moving items to/from backpack slot 7 no longer triggers incorrect backpack equip/unequip events and reduces unnecessary server updates.&lt;/li&gt;
+&lt;li data-rust-commits="728558"&gt;Primitive mode supply drops now include blueprint pages.&lt;/li&gt;
+&lt;li data-rust-commits="728477"&gt;Added experimental UI that shows all items craftable with a selected ingredient, helping players discover recipes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Quality of Life&lt;/h3&gt;
+&lt;h3&gt;Server &amp;amp; Social&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728740"&gt;Server browser now reliably lists favorited servers and no longer shows &amp;#x27;No servers found&amp;#x27; while the list is loading.&lt;/li&gt;
-&lt;li data-rust-commits="728576"&gt;Contact list notes now save correctly, ensuring your personal notes persist.&lt;/li&gt;
+&lt;li data-rust-commits="728740"&gt;Server favorites and history now list reliably; IP:port saved instantly and DNS fallback improved.&lt;/li&gt;
+&lt;li data-rust-commits="728576"&gt;Contact list notes are now saved properly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Audio&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728720,728718"&gt;Travelling vendor vehicles no longer produce missing tire sound errors or lingering visual ticks after being destroyed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728716"&gt;Doors now reliably swing dynamically without causing crashes.&lt;/li&gt;
+&lt;li data-rust-commits="728647"&gt;NPC encounter timers function correctly, preventing missed or delayed encounters.&lt;/li&gt;
+&lt;li data-rust-commits="728329"&gt;Player and horse modifiers are pooled correctly, fixing missing buffs/debuffs.&lt;/li&gt;
+&lt;li data-rust-commits="728462"&gt;Locked crates retain the correct unlock timer after restarting the game.&lt;/li&gt;
+&lt;li data-rust-commits="728283"&gt;Gamepad focus no longer crashes, improving controller navigation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728485"&gt;PT boat turret UI now correctly shows an empty magazine when out of ammo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Demo &amp;amp; Recording&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728569"&gt;Demo recordings can now exceed 240 fps and maintain smooth timescale below 0.2, fixing stutter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Skins &amp;amp; Visuals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728366"&gt;Weapon skins now stay applied while thrown and workshop skins no longer reset mid‑load.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-05</guid>
@@ -95,67 +126,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-04</guid>
       <pubDate>Wed, 04 Nov 2026 12:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Nov 03</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;104 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3&gt;Combat &amp;amp; Weapon Reliability&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726690"&gt;Magazines no longer disappear when swapping weapons during a reload.&lt;/li&gt;
-&lt;li data-rust-commits="726578"&gt;Turrets always apply the stock&amp;#x27;s extended properties, ensuring consistent performance regardless of stock configuration.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Building &amp;amp; World Interaction&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726685"&gt;Biofuel generators now snap correctly in corners when using advanced snapping.&lt;/li&gt;
-&lt;li data-rust-commits="726705"&gt;Placing or destroying a door updates only that door on the server, eliminating unnecessary refreshes of all doors.&lt;/li&gt;
-&lt;li data-rust-commits="726662"&gt;Players can no longer become trapped in computer stations; additional dismount points and notifications prevent stuck situations.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Loot, Crates &amp;amp; Economy&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726655,726672"&gt;Uzi weapons now appear as loot in new hackable, elite, and underwater crate types, with drop weights adjusted to avoid overlap and include ammunition.&lt;/li&gt;
-&lt;li data-rust-commits="726746"&gt;Food stored in loot containers remains fresh until the container is opened or the item is removed, with an option to control this behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat Feedback&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726659"&gt;Patrol helicopter rocket kills now correctly display the helicopter on the death screen and credit the kill to the helicopter.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Stability &amp;amp; Performance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726760"&gt;Deep sea water height updates no longer allocate excessive memory, preventing major client crashes.&lt;/li&gt;
-&lt;li data-rust-commits="726595"&gt;Opening the inventory during a phone conversation no longer crashes the game.&lt;/li&gt;
-&lt;li data-rust-commits="726525"&gt;Rejoining a server no longer triggers a boat wake error; destroyed boats are properly removed from visual effects.&lt;/li&gt;
-&lt;li data-rust-commits="726518"&gt;Fixed a prefab syntax issue that could cause structures to fail loading or behave incorrectly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Item Interaction&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726766"&gt;Blood effect no longer appears when shearing sheep.&lt;/li&gt;
-&lt;li data-rust-commits="726583"&gt;Dropping items from the belt while in inventory no longer unintentionally removes the held item.&lt;/li&gt;
-&lt;li data-rust-commits="726537"&gt;Triangular prism deployable splash damage area expanded to include grills and triangle hatches, increasing its effectiveness.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726621"&gt;Shore ice will no longer spawn on top of railway tracks, preventing unrealistic ice coverage.&lt;/li&gt;
-&lt;li data-rust-commits="726619"&gt;Roadside water pipes no longer appear on roads at T‑junctions, cleaning up road visuals.&lt;/li&gt;
-&lt;li data-rust-commits="726588"&gt;Bunker entrance terrain blend adjusted to match monument footprint, removing stray paint data and improving visual consistency.&lt;/li&gt;
-&lt;li data-rust-commits="726538"&gt;RadTown monument blend radius slightly reduced and smoothed to prevent overreach beyond its intended area.&lt;/li&gt;
-&lt;li data-rust-commits="726509"&gt;Jungle Ruins D terrain tile size reduced, cutting unnecessary blend area and improving performance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Audio &amp;amp; Visual Effects&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726748"&gt;Binoculars now correctly display their screen overlay even with domain reload disabled.&lt;/li&gt;
-&lt;li data-rust-commits="726740"&gt;Tutorial cinematic camera position fixed, ensuring proper view during the tutorial.&lt;/li&gt;
-&lt;li data-rust-commits="726594"&gt;Phone conversation UI now shows accurate information after server commands are used.&lt;/li&gt;
-&lt;li data-rust-commits="726566"&gt;Bird flock sounds now respect proper distance attenuation, making distant flocks quieter.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Store&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="726533"&gt;Scrap King building skin Steam item now correctly displays “Upgrade to Scrap King” instead of a generic token.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-11-03</guid>
-      <pubDate>Tue, 03 Nov 2026 12:00:00 -0500</pubDate>
     </item>
   </channel>
 </rss>
