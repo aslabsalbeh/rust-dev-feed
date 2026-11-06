@@ -1,18 +1,103 @@
 {
   "2026-11-06": {
-    "commit_count": 27,
-    "relevant_commit_count": 15,
-    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981",
+    "commit_count": 43,
+    "relevant_commit_count": 22,
+    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Inventory & Crafting",
+        "title": "Gameplay & Crafting",
         "items": [
           {
-            "text": "Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.",
+            "text": "Backpack contents are now considered when searching for items, affecting crafting, building, vending machines, mission items, and tech tree unlocks.",
             "commit_ids": [
               728891
+            ]
+          },
+          {
+            "text": "Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.",
+            "commit_ids": [
+              729023
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons & Tools",
+        "items": [
+          {
+            "text": "Flamethrower fuel gauge needle now accurately tracks fuel level.",
+            "commit_ids": [
+              729007
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Map",
+        "items": [
+          {
+            "text": "Vending machine markers remain visible under generic markers after reopening the map.",
+            "commit_ids": [
+              729057
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability & Crashes",
+        "items": [
+          {
+            "text": "Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.",
+            "commit_ids": [
+              728981,
+              728979
+            ]
+          },
+          {
+            "text": "Fixed network LOD crashes when reading destroyed entities and boat wake effects.",
+            "commit_ids": [
+              728912,
+              728898
+            ]
+          },
+          {
+            "text": "Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.",
+            "commit_ids": [
+              728966,
+              728967,
+              728928,
+              728896
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.",
+            "commit_ids": [
+              729026
+            ]
+          },
+          {
+            "text": "Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.",
+            "commit_ids": [
+              729001
+            ]
+          },
+          {
+            "text": "Fixed wire tool thickness bug, preventing unusually thick wires during construction.",
+            "commit_ids": [
+              728892
+            ]
+          },
+          {
+            "text": "Adjusted spotlight block range calculations, restoring intended illumination distances for spotlights.",
+            "commit_ids": [
+              728770
             ]
           }
         ]
@@ -21,164 +106,86 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Resolved crashes and sound errors when crab or bird movement sounds were destroyed.",
-            "commit_ids": [
-              728981
-            ]
-          },
-          {
-            "text": "Prevented sound manager errors when recycling already-recycled sounds.",
-            "commit_ids": [
-              728979
-            ]
-          },
-          {
-            "text": "Corrected floating visual glitch of harbor containers on cargo ships.",
+            "text": "Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.",
             "commit_ids": [
               728973
             ]
           },
           {
-            "text": "Fixed level unloading order to ensure proper map reloads.",
-            "commit_ids": [
-              728967
-            ]
-          },
-          {
-            "text": "Added guard against NRE in player ping transmission.",
-            "commit_ids": [
-              728966
-            ]
-          },
-          {
-            "text": "Ensured inventory preview reappears correctly after map reloads.",
-            "commit_ids": [
-              728928
-            ]
-          },
-          {
-            "text": "Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.",
-            "commit_ids": [
-              728912
-            ]
-          },
-          {
-            "text": "Fixed tablet painting to maintain continuous strokes during fast drawing.",
+            "text": "Tablet painting strokes are smooth again; rapid strokes no longer break into dots.",
             "commit_ids": [
               728900
-            ]
-          },
-          {
-            "text": "Stopped NRE spam from PlayerBoat wake effects when network LOD is active.",
-            "commit_ids": [
-              728898
-            ]
-          },
-          {
-            "text": "Cleared residual map networkables on load to prevent lingering issues.",
-            "commit_ids": [
-              728896
-            ]
-          },
-          {
-            "text": "Fixed wire tool thickness bug causing overly thick wires during use.",
-            "commit_ids": [
-              728892
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Inventory & Crafting\n- Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.\n\n### Gameplay & Balance\n- Resolved crashes and sound errors when crab or bird movement sounds were destroyed.\n- Prevented sound manager errors when recycling already-recycled sounds.\n- Corrected floating visual glitch of harbor containers on cargo ships.\n- Fixed level unloading order to ensure proper map reloads.\n- Added guard against NRE in player ping transmission.\n- Ensured inventory preview reappears correctly after map reloads.\n- Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.\n- Fixed tablet painting to maintain continuous strokes during fast drawing.\n- Stopped NRE spam from PlayerBoat wake effects when network LOD is active.\n- Cleared residual map networkables on load to prevent lingering issues.\n- Fixed wire tool thickness bug causing overly thick wires during use.",
+    "summary": "### Gameplay & Crafting\n- Backpack contents are now considered when searching for items, affecting crafting, building, vending machines, mission items, and tech tree unlocks.\n- Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.\n\n### Weapons & Tools\n- Flamethrower fuel gauge needle now accurately tracks fuel level.\n\n### UI & Map\n- Vending machine markers remain visible under generic markers after reopening the map.\n\n### Stability & Crashes\n- Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.\n- Fixed network LOD crashes when reading destroyed entities and boat wake effects.\n- Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.\n\n### Quality of Life\n- Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.\n- Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.\n- Fixed wire tool thickness bug, preventing unusually thick wires during construction.\n- Adjusted spotlight block range calculations, restoring intended illumination distances for spotlights.\n\n### Gameplay & Balance\n- Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.\n- Tablet painting strokes are smooth again; rapid strokes no longer break into dots.",
     "new_items": [
       {
-        "text": "Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.",
+        "text": "Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.",
         "commit_ids": [
-          728891
+          729023
         ],
-        "section": "Inventory & Crafting"
+        "section": "Gameplay & Crafting"
       },
       {
-        "text": "Resolved crashes and sound errors when crab or bird movement sounds were destroyed.",
+        "text": "Flamethrower fuel gauge needle now accurately tracks fuel level.",
         "commit_ids": [
-          728981
+          729007
         ],
-        "section": "Gameplay & Balance"
+        "section": "Weapons & Tools"
       },
       {
-        "text": "Prevented sound manager errors when recycling already-recycled sounds.",
+        "text": "Vending machine markers remain visible under generic markers after reopening the map.",
         "commit_ids": [
+          729057
+        ],
+        "section": "UI & Map"
+      },
+      {
+        "text": "Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.",
+        "commit_ids": [
+          728981,
           728979
         ],
-        "section": "Gameplay & Balance"
+        "section": "Stability & Crashes"
       },
       {
-        "text": "Corrected floating visual glitch of harbor containers on cargo ships.",
+        "text": "Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.",
         "commit_ids": [
-          728973
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Fixed level unloading order to ensure proper map reloads.",
-        "commit_ids": [
-          728967
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Added guard against NRE in player ping transmission.",
-        "commit_ids": [
-          728966
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Ensured inventory preview reappears correctly after map reloads.",
-        "commit_ids": [
-          728928
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.",
-        "commit_ids": [
-          728912
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Fixed tablet painting to maintain continuous strokes during fast drawing.",
-        "commit_ids": [
-          728900
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Stopped NRE spam from PlayerBoat wake effects when network LOD is active.",
-        "commit_ids": [
-          728898
-        ],
-        "section": "Gameplay & Balance"
-      },
-      {
-        "text": "Cleared residual map networkables on load to prevent lingering issues.",
-        "commit_ids": [
+          728966,
+          728967,
+          728928,
           728896
         ],
-        "section": "Gameplay & Balance"
+        "section": "Stability & Crashes"
       },
       {
-        "text": "Fixed wire tool thickness bug causing overly thick wires during use.",
+        "text": "Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.",
         "commit_ids": [
-          728892
+          729026
+        ],
+        "section": "Quality of Life"
+      },
+      {
+        "text": "Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.",
+        "commit_ids": [
+          729001
+        ],
+        "section": "Quality of Life"
+      },
+      {
+        "text": "Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.",
+        "commit_ids": [
+          728973
         ],
         "section": "Gameplay & Balance"
       }
     ],
     "new_relevant_count": 12,
-    "new_summary": "- Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.\n- Resolved crashes and sound errors when crab or bird movement sounds were destroyed.\n- Prevented sound manager errors when recycling already-recycled sounds.\n- Corrected floating visual glitch of harbor containers on cargo ships.\n- Fixed level unloading order to ensure proper map reloads.\n- Added guard against NRE in player ping transmission.\n- Ensured inventory preview reappears correctly after map reloads.\n- Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.\n- Fixed tablet painting to maintain continuous strokes during fast drawing.\n- Stopped NRE spam from PlayerBoat wake effects when network LOD is active.\n- Cleared residual map networkables on load to prevent lingering issues.\n- Fixed wire tool thickness bug causing overly thick wires during use."
+    "new_summary": "- Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.\n- Flamethrower fuel gauge needle now accurately tracks fuel level.\n- Vending machine markers remain visible under generic markers after reopening the map.\n- Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.\n- Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.\n- Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.\n- Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.\n- Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches."
   },
   "2026-11-05": {
     "commit_count": 75,

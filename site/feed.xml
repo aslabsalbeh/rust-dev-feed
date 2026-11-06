@@ -6,49 +6,58 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 06 Nov 2026 10:17:28 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 12:17:24 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;27 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;43 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728891"&gt;Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.&lt;/li&gt;
-&lt;li data-rust-commits="728981"&gt;Resolved crashes and sound errors when crab or bird movement sounds were destroyed.&lt;/li&gt;
-&lt;li data-rust-commits="728979"&gt;Prevented sound manager errors when recycling already-recycled sounds.&lt;/li&gt;
-&lt;li data-rust-commits="728973"&gt;Corrected floating visual glitch of harbor containers on cargo ships.&lt;/li&gt;
-&lt;li data-rust-commits="728967"&gt;Fixed level unloading order to ensure proper map reloads.&lt;/li&gt;
-&lt;li data-rust-commits="728966"&gt;Added guard against NRE in player ping transmission.&lt;/li&gt;
-&lt;li data-rust-commits="728928"&gt;Ensured inventory preview reappears correctly after map reloads.&lt;/li&gt;
-&lt;li data-rust-commits="728912"&gt;Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.&lt;/li&gt;
-&lt;li data-rust-commits="728900"&gt;Fixed tablet painting to maintain continuous strokes during fast drawing.&lt;/li&gt;
-&lt;li data-rust-commits="728898"&gt;Stopped NRE spam from PlayerBoat wake effects when network LOD is active.&lt;/li&gt;
-&lt;li data-rust-commits="728896"&gt;Cleared residual map networkables on load to prevent lingering issues.&lt;/li&gt;
-&lt;li data-rust-commits="728892"&gt;Fixed wire tool thickness bug causing overly thick wires during use.&lt;/li&gt;
+&lt;li data-rust-commits="729023"&gt;Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.&lt;/li&gt;
+&lt;li data-rust-commits="729007"&gt;Flamethrower fuel gauge needle now accurately tracks fuel level.&lt;/li&gt;
+&lt;li data-rust-commits="729057"&gt;Vending machine markers remain visible under generic markers after reopening the map.&lt;/li&gt;
+&lt;li data-rust-commits="728981,728979"&gt;Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.&lt;/li&gt;
+&lt;li data-rust-commits="728966,728967,728928,728896"&gt;Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.&lt;/li&gt;
+&lt;li data-rust-commits="729026"&gt;Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.&lt;/li&gt;
+&lt;li data-rust-commits="729001"&gt;Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.&lt;/li&gt;
+&lt;li data-rust-commits="728973"&gt;Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728891"&gt;Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.&lt;/li&gt;
+&lt;li data-rust-commits="728891"&gt;Backpack contents are now considered when searching for items, affecting crafting, building, vending machines, mission items, and tech tree unlocks.&lt;/li&gt;
+&lt;li data-rust-commits="729023"&gt;Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Weapons &amp;amp; Tools&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="729007"&gt;Flamethrower fuel gauge needle now accurately tracks fuel level.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Map&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="729057"&gt;Vending machine markers remain visible under generic markers after reopening the map.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Stability &amp;amp; Crashes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728981,728979"&gt;Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.&lt;/li&gt;
+&lt;li data-rust-commits="728912,728898"&gt;Fixed network LOD crashes when reading destroyed entities and boat wake effects.&lt;/li&gt;
+&lt;li data-rust-commits="728966,728967,728928,728896"&gt;Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="729026"&gt;Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.&lt;/li&gt;
+&lt;li data-rust-commits="729001"&gt;Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.&lt;/li&gt;
+&lt;li data-rust-commits="728892"&gt;Fixed wire tool thickness bug, preventing unusually thick wires during construction.&lt;/li&gt;
+&lt;li data-rust-commits="728770"&gt;Adjusted spotlight block range calculations, restoring intended illumination distances for spotlights.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728981"&gt;Resolved crashes and sound errors when crab or bird movement sounds were destroyed.&lt;/li&gt;
-&lt;li data-rust-commits="728979"&gt;Prevented sound manager errors when recycling already-recycled sounds.&lt;/li&gt;
-&lt;li data-rust-commits="728973"&gt;Corrected floating visual glitch of harbor containers on cargo ships.&lt;/li&gt;
-&lt;li data-rust-commits="728967"&gt;Fixed level unloading order to ensure proper map reloads.&lt;/li&gt;
-&lt;li data-rust-commits="728966"&gt;Added guard against NRE in player ping transmission.&lt;/li&gt;
-&lt;li data-rust-commits="728928"&gt;Ensured inventory preview reappears correctly after map reloads.&lt;/li&gt;
-&lt;li data-rust-commits="728912"&gt;Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.&lt;/li&gt;
-&lt;li data-rust-commits="728900"&gt;Fixed tablet painting to maintain continuous strokes during fast drawing.&lt;/li&gt;
-&lt;li data-rust-commits="728898"&gt;Stopped NRE spam from PlayerBoat wake effects when network LOD is active.&lt;/li&gt;
-&lt;li data-rust-commits="728896"&gt;Cleared residual map networkables on load to prevent lingering issues.&lt;/li&gt;
-&lt;li data-rust-commits="728892"&gt;Fixed wire tool thickness bug causing overly thick wires during use.&lt;/li&gt;
+&lt;li data-rust-commits="728973"&gt;Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.&lt;/li&gt;
+&lt;li data-rust-commits="728900"&gt;Tablet painting strokes are smooth again; rapid strokes no longer break into dots.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-06</guid>
-      <pubDate>Fri, 06 Nov 2026 10:17:28 -0500</pubDate>
+      <pubDate>Fri, 06 Nov 2026 12:17:24 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 05</title>
