@@ -1,27 +1,22 @@
 {
   "2026-11-06": {
-    "commit_count": 51,
-    "relevant_commit_count": 24,
-    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083",
+    "commit_count": 57,
+    "relevant_commit_count": 27,
+    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083,729147,729149,729150",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Deployables & Respawn",
+        "title": "Equipment & Wearables",
         "items": [
           {
-            "text": "Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.",
+            "text": "Night vision goggles no longer get stuck and function correctly; scientists' NVG suit eyes now glow after trophy head unload.",
             "commit_ids": [
-              729063
+              729147
             ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & Crafting",
-        "items": [
+          },
           {
-            "text": "Backpacks are now included in most item lookups (crafting, building, vending, mission items, tech tree unlocks), so required items can be found inside them.",
+            "text": "Backpack contents are now considered when searching for items, affecting crafting, vending, missions, and tech unlocks.",
             "commit_ids": [
               728891
             ]
@@ -29,138 +24,88 @@
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Deployables & Respawn",
         "items": [
           {
-            "text": "Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.",
+            "text": "Sleeping bags cannot be placed in spaces too tight for a player, and you cannot respawn on a sleeping bag that would trap you; a warning toast alerts when placement blocks respawn.",
+            "commit_ids": [
+              729063
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Visual Effects & UI",
+        "items": [
+          {
+            "text": "Distance flares now support elongated ranges and are less overly bright, improving visibility in Floating City.",
+            "commit_ids": [
+              729150
+            ]
+          },
+          {
+            "text": "Disabled blueprint tooltip now correctly shows a \"cannot learn\" message.",
             "commit_ids": [
               729026
             ]
           },
           {
-            "text": "Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.",
+            "text": "Watercatcher and chicken coop loot panels now correctly select the bucket when it is in the belt.",
             "commit_ids": [
               729023
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Combat & Targeting",
+        "items": [
           {
-            "text": "Flamethrower fuel gauge now accurately reflects remaining fuel, with the needle moving correctly.",
+            "text": "Spotlight block range calculations have been fixed, correcting how far spotlights block line of sight.",
+            "commit_ids": [
+              728770
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Flamethrower fuel gauge now accurately reflects remaining fuel, fixing needle tracking.",
             "commit_ids": [
               729007
             ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & UI",
-        "items": [
-          {
-            "text": "Vending machine markers now appear correctly above generic markers after reopening the map.",
-            "commit_ids": [
-              729057
-            ]
           },
           {
-            "text": "Building shutters no longer get stuck in the wrong frame when entering a network range.",
+            "text": "Shutter animations now maintain correct open/closed state when entering network range.",
             "commit_ids": [
               729001
-            ]
-          },
-          {
-            "text": "Player inventory preview is restored correctly after using the map reload command.",
-            "commit_ids": [
-              728928
-            ]
-          },
-          {
-            "text": "Tablet painting produces continuous strokes instead of broken dots when drawing quickly.",
-            "commit_ids": [
-              728900
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Stability & Crashes",
-        "items": [
-          {
-            "text": "Fixed a crash caused by BasePlayer.SendPingsToClient when ping data is missing.",
-            "commit_ids": [
-              728966
-            ]
-          },
-          {
-            "text": "Resolved client crashes when network LOD accessed destroyed entities, preventing errors for disconnected players with dead boats.",
-            "commit_ids": [
-              728912
-            ]
-          },
-          {
-            "text": "Eliminated NRE spam from PlayerBoat wake effects when network LOD is active.",
-            "commit_ids": [
-              728898
-            ]
-          },
-          {
-            "text": "Corrected invalid level unloading order during map reloads, improving map stability.",
-            "commit_ids": [
-              728967
-            ]
-          },
-          {
-            "text": "Ensured all map networkables are cleared after loading a new map, reducing residual bugs.",
-            "commit_ids": [
-              728896
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Visibility & Lighting",
-        "items": [
-          {
-            "text": "Spotlight block range calculations have been fixed, restoring expected lighting coverage.",
-            "commit_ids": [
-              728770
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Deployables & Respawn\n- Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.\n\n### Inventory & Crafting\n- Backpacks are now included in most item lookups (crafting, building, vending, mission items, tech tree unlocks), so required items can be found inside them.\n\n### UI & Quality of Life\n- Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.\n- Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.\n- Flamethrower fuel gauge now accurately reflects remaining fuel, with the needle moving correctly.\n\n### Gameplay & UI\n- Vending machine markers now appear correctly above generic markers after reopening the map.\n- Building shutters no longer get stuck in the wrong frame when entering a network range.\n- Player inventory preview is restored correctly after using the map reload command.\n- Tablet painting produces continuous strokes instead of broken dots when drawing quickly.\n\n### Stability & Crashes\n- Fixed a crash caused by BasePlayer.SendPingsToClient when ping data is missing.\n- Resolved client crashes when network LOD accessed destroyed entities, preventing errors for disconnected players with dead boats.\n- Eliminated NRE spam from PlayerBoat wake effects when network LOD is active.\n- Corrected invalid level unloading order during map reloads, improving map stability.\n- Ensured all map networkables are cleared after loading a new map, reducing residual bugs.\n\n### Visibility & Lighting\n- Spotlight block range calculations have been fixed, restoring expected lighting coverage.",
+    "summary": "### Equipment & Wearables\n- Night vision goggles no longer get stuck and function correctly; scientists' NVG suit eyes now glow after trophy head unload.\n- Backpack contents are now considered when searching for items, affecting crafting, vending, missions, and tech unlocks.\n\n### Deployables & Respawn\n- Sleeping bags cannot be placed in spaces too tight for a player, and you cannot respawn on a sleeping bag that would trap you; a warning toast alerts when placement blocks respawn.\n\n### Visual Effects & UI\n- Distance flares now support elongated ranges and are less overly bright, improving visibility in Floating City.\n- Disabled blueprint tooltip now correctly shows a \"cannot learn\" message.\n- Watercatcher and chicken coop loot panels now correctly select the bucket when it is in the belt.\n\n### Combat & Targeting\n- Spotlight block range calculations have been fixed, correcting how far spotlights block line of sight.\n\n### Gameplay & Balance\n- Flamethrower fuel gauge now accurately reflects remaining fuel, fixing needle tracking.\n- Shutter animations now maintain correct open/closed state when entering network range.",
     "new_items": [
       {
-        "text": "Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.",
+        "text": "Night vision goggles no longer get stuck and function correctly; scientists' NVG suit eyes now glow after trophy head unload.",
         "commit_ids": [
-          729063
+          729147
         ],
-        "section": "Deployables & Respawn"
+        "section": "Equipment & Wearables"
       },
       {
-        "text": "Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.",
+        "text": "Distance flares now support elongated ranges and are less overly bright, improving visibility in Floating City.",
         "commit_ids": [
-          729026
+          729150
         ],
-        "section": "UI & Quality of Life"
-      },
-      {
-        "text": "Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.",
-        "commit_ids": [
-          729023
-        ],
-        "section": "UI & Quality of Life"
-      },
-      {
-        "text": "Vending machine markers now appear correctly above generic markers after reopening the map.",
-        "commit_ids": [
-          729057
-        ],
-        "section": "Gameplay & UI"
+        "section": "Visual Effects & UI"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.\n- Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.\n- Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.\n- Vending machine markers now appear correctly above generic markers after reopening the map."
+    "new_relevant_count": 2,
+    "new_summary": "- Night vision goggles no longer get stuck and function correctly; scientists' NVG suit eyes now glow after trophy head unload.\n- Distance flares now support elongated ranges and are less overly bright, improving visibility in Floating City."
   },
   "2026-11-05": {
     "commit_count": 75,
