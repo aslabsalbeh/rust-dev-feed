@@ -1,5 +1,21 @@
 [
   {
+    "id": 728740,
+    "branch": "main/favorite_server_fixes",
+    "changeset": "170437",
+    "created": "2026-11-06T00:58:30",
+    "message": "Fix favorites and history not listing reliably in the server browser\r\n- Favoriting a server saves IP:port straight away, then its favendpoint if the server reports one\r\n- favorites.cfg saves each hostname's last resolved IP:port so queries generally succeed even if the DNS queries haven't finished yet\r\n- Hostnames that fail DNS queries for 30+ days revert to IP:port so they don't log failures forever\r\n- \"No servers found\" no longer shows over results while a refresh or a feeding list is still loading",
+    "user": "lamalove"
+  },
+  {
+    "id": 728724,
+    "branch": "main/Twitchdropsrender",
+    "changeset": "170426",
+    "created": "2026-11-05T23:14:24",
+    "message": "Added in barricade pillbox into the scene as well",
+    "user": "jen.n"
+  },
+  {
     "id": 728722,
     "branch": "main/Twitchdropsrender",
     "changeset": "170425",
@@ -2246,53 +2262,5 @@
     "created": "2026-11-03T08:29:40",
     "message": "Rework belt select changes to support usable items",
     "user": "Adam W"
-  },
-  {
-    "id": 726477,
-    "branch": "main/apartment_occlusion_rewrite",
-    "changeset": "170035",
-    "created": "2026-11-03T01:17:03",
-    "message": "Redo the occlusion of apartment rooms\n- check the camera position of the player instead of relying on the occlusion culling system",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 726473,
-    "branch": "main/base_occlusion",
-    "changeset": "170033",
-    "created": "2026-11-03T00:39:36",
-    "message": "Codegen",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 726463,
-    "branch": "main/water_light_sources",
-    "changeset": "170031",
-    "created": "2026-11-02T23:47:04",
-    "message": "light sources on water w/ shadows, water also receives sun shadows now as well",
-    "user": "Brian"
-  },
-  {
-    "id": 726462,
-    "branch": "main/Powerline_Cratefix",
-    "changeset": "170030",
-    "created": "2026-11-02T23:46:10",
-    "message": "Fixed edge cases of the CH47 crate landing on top of the powerline pole at powerplant",
-    "user": "Nick.H"
-  },
-  {
-    "id": 726460,
-    "branch": "main/buildingblock_batching_fixes",
-    "changeset": "170029",
-    "created": "2026-11-02T23:41:21",
-    "message": "Fixed more blocks not batching\n- Jungle ramps, spiral, L and U stairs\r\n- Container roofl ines\n- Frontier square floor details",
-    "user": "Flavien"
-  },
-  {
-    "id": 726457,
-    "branch": "main/splash_fx_fix",
-    "changeset": "170027",
-    "created": "2026-11-02T23:37:00",
-    "message": "Fixed buoyancy points never respecting the nextSplashTime interval\r\nMoved the interval to the parent Buoyancy component so it's shared between all points and lowered the minimum time between splash fx to 0.1\r\nFixes audio cutting out when driving through storms (starved audio decoders)",
-    "user": "Jarryd Campi"
   }
 ]
