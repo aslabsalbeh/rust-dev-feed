@@ -1,10 +1,178 @@
 {
   "2026-11-05": {
-    "commit_count": 67,
-    "relevant_commit_count": 34,
+    "commit_count": 75,
+    "relevant_commit_count": 37,
     "relevant_signature": "728276,728282,728283,728297,728329,728366,728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758": [
+        {
+          "title": "AI & NPC",
+          "items": [
+            {
+              "text": "Boat scientists no longer stay locked onto hidden targets for too long, fixing prolonged invisibility.",
+              "commit_ids": [
+                728758,
+                728756
+              ]
+            },
+            {
+              "text": "Roaming boat groups now reliably attack players on the beach.",
+              "commit_ids": [
+                728757
+              ]
+            },
+            {
+              "text": "NPC phone calls no longer exceed the MaxConcurrentCalls limit, preventing call spam.",
+              "commit_ids": [
+                728658
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Vehicles",
+          "items": [
+            {
+              "text": "Stolen PT boats now persist after the roaming boat event ends unless crew is lost.",
+              "commit_ids": [
+                728744
+              ]
+            },
+            {
+              "text": "PT boat turret viewmodels correctly display empty magazines when fully empty.",
+              "commit_ids": [
+                728485
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Server Browser",
+          "items": [
+            {
+              "text": "Server favorites and history now list reliably; IP:port saved instantly and DNS fallback improved.",
+              "commit_ids": [
+                728740
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Weapons",
+          "items": [
+            {
+              "text": "UZI 9mm now correctly scales attached mods (flashlight, barrel) thanks to new AttachmentMountScale component.",
+              "commit_ids": [
+                728666
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Clothing",
+          "items": [
+            {
+              "text": "Moving items to/from backpack slot 7 no longer triggers incorrect backpack equip/unequip events and reduces unnecessary server updates.",
+              "commit_ids": [
+                728589
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Social",
+          "items": [
+            {
+              "text": "Contact list notes are now saved properly.",
+              "commit_ids": [
+                728576
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Demos & UI",
+          "items": [
+            {
+              "text": "Demo names longer than 15 characters no longer overflow.",
+              "commit_ids": [
+                728571
+              ]
+            },
+            {
+              "text": "Demo export no longer capped at 240 fps and timescale stutter below 0.2 is fixed.",
+              "commit_ids": [
+                728569
+              ]
+            },
+            {
+              "text": "Demo UI sorting order corrected to appear above community UI.",
+              "commit_ids": [
+                728566
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Events",
+          "items": [
+            {
+              "text": "Coast runs during the scientist boat event now function correctly, with groups approaching and driving along the shore in formation.",
+              "commit_ids": [
+                728564
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Supply Drops",
+          "items": [
+            {
+              "text": "Primitive mode supply drops now include blueprint pages.",
+              "commit_ids": [
+                728558
+              ]
+            }
+          ]
+        }
+      ],
+      "728276,728282,728283,728297,728329,728366,728453,728462,728473,728476,728477,728484": [
+        {
+          "title": "Crafting UI",
+          "items": [
+            {
+              "text": "Added experimental UI that shows all items craftable with a selected ingredient, helping players discover recipes.",
+              "commit_ids": [
+                728477
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they can't find a landing spot.",
+              "commit_ids": [
+                728476
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory UI",
+          "items": [
+            {
+              "text": "Corrected locked crate UI to display the proper unlock time after a game restart.",
+              "commit_ids": [
+                728462
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Boats & Vehicles",
@@ -111,24 +279,9 @@
     ],
     "status": "ok",
     "summary": "### Boats & Vehicles\n- Fixed issue where stolen PT boats were incorrectly removed after the roaming boat event; only uncrewed boats are now cleaned up.\n- PT Boat turret viewmodels now correctly show empty magazines when fully empty.\n- Adjusted scientist boat event so coast runs work properly and the group drives along the shore in formation.\n\n### NPC & Wildlife\n- NPC phone calls now bypass the MaxConcurrentCalls limit, allowing more simultaneous calls.\n- Rockets no longer collide with large seagull group colliders, and gulls will no longer disappear when they can't find a landing spot.\n\n### Inventory & Crafting\n- Fixed bug where moving items to/from slot 7 of a backpack was mistakenly treated as equipping/unequipping a backpack, and reduced redundant inventory server updates.\n- Added missing blueprint pages to supply drops in the Primitive game mode.\n\n### Weapons\n- Added a client‑only AttachmentMountScale component for the UZI, ensuring attached mods inherit the mount’s scale correctly; updated the UZI prefab with tuned attachment scales.\n- Fixed thrown weapons not showing applied skins during flight and prevented workshop skins from persisting after a reset during load.\n\n### UI\n- Fixed locked crates displaying incorrect time after a restart.\n\n### Quality of Life\n- Server browser now reliably lists favorited servers and no longer shows 'No servers found' while the list is loading.\n- Contact list notes now save correctly, ensuring your personal notes persist.",
-    "new_items": [
-      {
-        "text": "Fixed issue where stolen PT boats were incorrectly removed after the roaming boat event; only uncrewed boats are now cleaned up.",
-        "commit_ids": [
-          728744
-        ],
-        "section": "Boats & Vehicles"
-      },
-      {
-        "text": "Server browser now reliably lists favorited servers and no longer shows 'No servers found' while the list is loading.",
-        "commit_ids": [
-          728740
-        ],
-        "section": "Quality of Life"
-      }
-    ],
-    "new_relevant_count": 2,
-    "new_summary": "- Fixed issue where stolen PT boats were incorrectly removed after the roaming boat event; only uncrewed boats are now cleaned up.\n- Server browser now reliably lists favorited servers and no longer shows 'No servers found' while the list is loading."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-04": {
     "commit_count": 117,
