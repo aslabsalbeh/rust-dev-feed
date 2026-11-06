@@ -1,8 +1,8 @@
 {
   "2026-11-06": {
-    "commit_count": 12,
-    "relevant_commit_count": 8,
-    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900",
+    "commit_count": 27,
+    "relevant_commit_count": 15,
+    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -10,7 +10,7 @@
         "title": "Inventory & Crafting",
         "items": [
           {
-            "text": "Backpacks now count toward item requirements for crafting, building, mission objectives, tech tree unlocks, and vending machines.",
+            "text": "Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.",
             "commit_ids": [
               728891
             ]
@@ -18,50 +18,167 @@
         ]
       },
       {
-        "title": "World & Visuals",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Resolved crashes and missing wake visuals for player boats when network LOD is enabled, ensuring wake effects display correctly and eliminating error spam.",
+            "text": "Resolved crashes and sound errors when crab or bird movement sounds were destroyed.",
+            "commit_ids": [
+              728981
+            ]
+          },
+          {
+            "text": "Prevented sound manager errors when recycling already-recycled sounds.",
+            "commit_ids": [
+              728979
+            ]
+          },
+          {
+            "text": "Corrected floating visual glitch of harbor containers on cargo ships.",
+            "commit_ids": [
+              728973
+            ]
+          },
+          {
+            "text": "Fixed level unloading order to ensure proper map reloads.",
+            "commit_ids": [
+              728967
+            ]
+          },
+          {
+            "text": "Added guard against NRE in player ping transmission.",
+            "commit_ids": [
+              728966
+            ]
+          },
+          {
+            "text": "Ensured inventory preview reappears correctly after map reloads.",
+            "commit_ids": [
+              728928
+            ]
+          },
+          {
+            "text": "Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.",
+            "commit_ids": [
+              728912
+            ]
+          },
+          {
+            "text": "Fixed tablet painting to maintain continuous strokes during fast drawing.",
+            "commit_ids": [
+              728900
+            ]
+          },
+          {
+            "text": "Stopped NRE spam from PlayerBoat wake effects when network LOD is active.",
             "commit_ids": [
               728898
             ]
           },
           {
-            "text": "Ensured all map-specific network objects are cleared on map reload, preventing leftover items or entities from persisting across maps.",
+            "text": "Cleared residual map networkables on load to prevent lingering issues.",
             "commit_ids": [
               728896
+            ]
+          },
+          {
+            "text": "Fixed wire tool thickness bug causing overly thick wires during use.",
+            "commit_ids": [
+              728892
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Inventory & Crafting\n- Backpacks now count toward item requirements for crafting, building, mission objectives, tech tree unlocks, and vending machines.\n\n### World & Visuals\n- Resolved crashes and missing wake visuals for player boats when network LOD is enabled, ensuring wake effects display correctly and eliminating error spam.\n- Ensured all map-specific network objects are cleared on map reload, preventing leftover items or entities from persisting across maps.",
+    "summary": "### Inventory & Crafting\n- Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.\n\n### Gameplay & Balance\n- Resolved crashes and sound errors when crab or bird movement sounds were destroyed.\n- Prevented sound manager errors when recycling already-recycled sounds.\n- Corrected floating visual glitch of harbor containers on cargo ships.\n- Fixed level unloading order to ensure proper map reloads.\n- Added guard against NRE in player ping transmission.\n- Ensured inventory preview reappears correctly after map reloads.\n- Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.\n- Fixed tablet painting to maintain continuous strokes during fast drawing.\n- Stopped NRE spam from PlayerBoat wake effects when network LOD is active.\n- Cleared residual map networkables on load to prevent lingering issues.\n- Fixed wire tool thickness bug causing overly thick wires during use.",
     "new_items": [
       {
-        "text": "Backpacks now count toward item requirements for crafting, building, mission objectives, tech tree unlocks, and vending machines.",
+        "text": "Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.",
         "commit_ids": [
           728891
         ],
         "section": "Inventory & Crafting"
       },
       {
-        "text": "Resolved crashes and missing wake visuals for player boats when network LOD is enabled, ensuring wake effects display correctly and eliminating error spam.",
+        "text": "Resolved crashes and sound errors when crab or bird movement sounds were destroyed.",
+        "commit_ids": [
+          728981
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Prevented sound manager errors when recycling already-recycled sounds.",
+        "commit_ids": [
+          728979
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Corrected floating visual glitch of harbor containers on cargo ships.",
+        "commit_ids": [
+          728973
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Fixed level unloading order to ensure proper map reloads.",
+        "commit_ids": [
+          728967
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Added guard against NRE in player ping transmission.",
+        "commit_ids": [
+          728966
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Ensured inventory preview reappears correctly after map reloads.",
+        "commit_ids": [
+          728928
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.",
+        "commit_ids": [
+          728912
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Fixed tablet painting to maintain continuous strokes during fast drawing.",
+        "commit_ids": [
+          728900
+        ],
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Stopped NRE spam from PlayerBoat wake effects when network LOD is active.",
         "commit_ids": [
           728898
         ],
-        "section": "World & Visuals"
+        "section": "Gameplay & Balance"
       },
       {
-        "text": "Ensured all map-specific network objects are cleared on map reload, preventing leftover items or entities from persisting across maps.",
+        "text": "Cleared residual map networkables on load to prevent lingering issues.",
         "commit_ids": [
           728896
         ],
-        "section": "World & Visuals"
+        "section": "Gameplay & Balance"
+      },
+      {
+        "text": "Fixed wire tool thickness bug causing overly thick wires during use.",
+        "commit_ids": [
+          728892
+        ],
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Backpacks now count toward item requirements for crafting, building, mission objectives, tech tree unlocks, and vending machines.\n- Resolved crashes and missing wake visuals for player boats when network LOD is enabled, ensuring wake effects display correctly and eliminating error spam.\n- Ensured all map-specific network objects are cleared on map reload, preventing leftover items or entities from persisting across maps."
+    "new_relevant_count": 12,
+    "new_summary": "- Backpacks now count toward mission items, tech tree unlocks, and vending machine requirements.\n- Resolved crashes and sound errors when crab or bird movement sounds were destroyed.\n- Prevented sound manager errors when recycling already-recycled sounds.\n- Corrected floating visual glitch of harbor containers on cargo ships.\n- Fixed level unloading order to ensure proper map reloads.\n- Added guard against NRE in player ping transmission.\n- Ensured inventory preview reappears correctly after map reloads.\n- Eliminated client crashes when network LOD accessed destroyed entities, such as dead boats.\n- Fixed tablet painting to maintain continuous strokes during fast drawing.\n- Stopped NRE spam from PlayerBoat wake effects when network LOD is active.\n- Cleared residual map networkables on load to prevent lingering issues.\n- Fixed wire tool thickness bug causing overly thick wires during use."
   },
   "2026-11-05": {
     "commit_count": 75,
