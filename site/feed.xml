@@ -6,58 +6,56 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 06 Nov 2026 12:17:24 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 14:17:25 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;43 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;51 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729023"&gt;Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.&lt;/li&gt;
-&lt;li data-rust-commits="729007"&gt;Flamethrower fuel gauge needle now accurately tracks fuel level.&lt;/li&gt;
-&lt;li data-rust-commits="729057"&gt;Vending machine markers remain visible under generic markers after reopening the map.&lt;/li&gt;
-&lt;li data-rust-commits="728981,728979"&gt;Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.&lt;/li&gt;
-&lt;li data-rust-commits="728966,728967,728928,728896"&gt;Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.&lt;/li&gt;
-&lt;li data-rust-commits="729026"&gt;Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.&lt;/li&gt;
-&lt;li data-rust-commits="729001"&gt;Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.&lt;/li&gt;
-&lt;li data-rust-commits="728973"&gt;Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.&lt;/li&gt;
+&lt;li data-rust-commits="729063"&gt;Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.&lt;/li&gt;
+&lt;li data-rust-commits="729026"&gt;Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.&lt;/li&gt;
+&lt;li data-rust-commits="729023"&gt;Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.&lt;/li&gt;
+&lt;li data-rust-commits="729057"&gt;Vending machine markers now appear correctly above generic markers after reopening the map.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Gameplay &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Deployables &amp;amp; Respawn&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728891"&gt;Backpack contents are now considered when searching for items, affecting crafting, building, vending machines, mission items, and tech tree unlocks.&lt;/li&gt;
-&lt;li data-rust-commits="729023"&gt;Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.&lt;/li&gt;
+&lt;li data-rust-commits="729063"&gt;Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729007"&gt;Flamethrower fuel gauge needle now accurately tracks fuel level.&lt;/li&gt;
+&lt;li data-rust-commits="728891"&gt;Backpacks are now included in most item lookups (crafting, building, vending, mission items, tech tree unlocks), so required items can be found inside them.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Map&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729057"&gt;Vending machine markers remain visible under generic markers after reopening the map.&lt;/li&gt;
+&lt;li data-rust-commits="729026"&gt;Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.&lt;/li&gt;
+&lt;li data-rust-commits="729023"&gt;Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.&lt;/li&gt;
+&lt;li data-rust-commits="729007"&gt;Flamethrower fuel gauge now accurately reflects remaining fuel, with the needle moving correctly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="729057"&gt;Vending machine markers now appear correctly above generic markers after reopening the map.&lt;/li&gt;
+&lt;li data-rust-commits="729001"&gt;Building shutters no longer get stuck in the wrong frame when entering a network range.&lt;/li&gt;
+&lt;li data-rust-commits="728928"&gt;Player inventory preview is restored correctly after using the map reload command.&lt;/li&gt;
+&lt;li data-rust-commits="728900"&gt;Tablet painting produces continuous strokes instead of broken dots when drawing quickly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Stability &amp;amp; Crashes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728981,728979"&gt;Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.&lt;/li&gt;
-&lt;li data-rust-commits="728912,728898"&gt;Fixed network LOD crashes when reading destroyed entities and boat wake effects.&lt;/li&gt;
-&lt;li data-rust-commits="728966,728967,728928,728896"&gt;Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.&lt;/li&gt;
+&lt;li data-rust-commits="728966"&gt;Fixed a crash caused by BasePlayer.SendPingsToClient when ping data is missing.&lt;/li&gt;
+&lt;li data-rust-commits="728912"&gt;Resolved client crashes when network LOD accessed destroyed entities, preventing errors for disconnected players with dead boats.&lt;/li&gt;
+&lt;li data-rust-commits="728898"&gt;Eliminated NRE spam from PlayerBoat wake effects when network LOD is active.&lt;/li&gt;
+&lt;li data-rust-commits="728967"&gt;Corrected invalid level unloading order during map reloads, improving map stability.&lt;/li&gt;
+&lt;li data-rust-commits="728896"&gt;Ensured all map networkables are cleared after loading a new map, reducing residual bugs.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Quality of Life&lt;/h3&gt;
+&lt;h3&gt;Visibility &amp;amp; Lighting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729026"&gt;Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.&lt;/li&gt;
-&lt;li data-rust-commits="729001"&gt;Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.&lt;/li&gt;
-&lt;li data-rust-commits="728892"&gt;Fixed wire tool thickness bug, preventing unusually thick wires during construction.&lt;/li&gt;
-&lt;li data-rust-commits="728770"&gt;Adjusted spotlight block range calculations, restoring intended illumination distances for spotlights.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728973"&gt;Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.&lt;/li&gt;
-&lt;li data-rust-commits="728900"&gt;Tablet painting strokes are smooth again; rapid strokes no longer break into dots.&lt;/li&gt;
+&lt;li data-rust-commits="728770"&gt;Spotlight block range calculations have been fixed, restoring expected lighting coverage.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-06</guid>
-      <pubDate>Fri, 06 Nov 2026 12:17:24 -0500</pubDate>
+      <pubDate>Fri, 06 Nov 2026 14:17:25 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 05</title>

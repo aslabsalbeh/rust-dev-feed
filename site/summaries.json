@@ -1,33 +1,50 @@
 {
   "2026-11-06": {
-    "commit_count": 43,
-    "relevant_commit_count": 22,
-    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057",
+    "commit_count": 51,
+    "relevant_commit_count": 24,
+    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay & Crafting",
+        "title": "Deployables & Respawn",
         "items": [
           {
-            "text": "Backpack contents are now considered when searching for items, affecting crafting, building, vending machines, mission items, and tech tree unlocks.",
+            "text": "Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.",
             "commit_ids": [
-              728891
-            ]
-          },
-          {
-            "text": "Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.",
-            "commit_ids": [
-              729023
+              729063
             ]
           }
         ]
       },
       {
-        "title": "Weapons & Tools",
+        "title": "Inventory & Crafting",
         "items": [
           {
-            "text": "Flamethrower fuel gauge needle now accurately tracks fuel level.",
+            "text": "Backpacks are now included in most item lookups (crafting, building, vending, mission items, tech tree unlocks), so required items can be found inside them.",
+            "commit_ids": [
+              728891
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.",
+            "commit_ids": [
+              729026
+            ]
+          },
+          {
+            "text": "Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.",
+            "commit_ids": [
+              729023
+            ]
+          },
+          {
+            "text": "Flamethrower fuel gauge now accurately reflects remaining fuel, with the needle moving correctly.",
             "commit_ids": [
               729007
             ]
@@ -35,12 +52,30 @@
         ]
       },
       {
-        "title": "UI & Map",
+        "title": "Gameplay & UI",
         "items": [
           {
-            "text": "Vending machine markers remain visible under generic markers after reopening the map.",
+            "text": "Vending machine markers now appear correctly above generic markers after reopening the map.",
             "commit_ids": [
               729057
+            ]
+          },
+          {
+            "text": "Building shutters no longer get stuck in the wrong frame when entering a network range.",
+            "commit_ids": [
+              729001
+            ]
+          },
+          {
+            "text": "Player inventory preview is restored correctly after using the map reload command.",
+            "commit_ids": [
+              728928
+            ]
+          },
+          {
+            "text": "Tablet painting produces continuous strokes instead of broken dots when drawing quickly.",
+            "commit_ids": [
+              728900
             ]
           }
         ]
@@ -49,143 +84,83 @@
         "title": "Stability & Crashes",
         "items": [
           {
-            "text": "Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.",
+            "text": "Fixed a crash caused by BasePlayer.SendPingsToClient when ping data is missing.",
             "commit_ids": [
-              728981,
-              728979
+              728966
             ]
           },
           {
-            "text": "Fixed network LOD crashes when reading destroyed entities and boat wake effects.",
+            "text": "Resolved client crashes when network LOD accessed destroyed entities, preventing errors for disconnected players with dead boats.",
             "commit_ids": [
-              728912,
+              728912
+            ]
+          },
+          {
+            "text": "Eliminated NRE spam from PlayerBoat wake effects when network LOD is active.",
+            "commit_ids": [
               728898
             ]
           },
           {
-            "text": "Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.",
+            "text": "Corrected invalid level unloading order during map reloads, improving map stability.",
             "commit_ids": [
-              728966,
-              728967,
-              728928,
+              728967
+            ]
+          },
+          {
+            "text": "Ensured all map networkables are cleared after loading a new map, reducing residual bugs.",
+            "commit_ids": [
               728896
             ]
           }
         ]
       },
       {
-        "title": "Quality of Life",
+        "title": "Visibility & Lighting",
         "items": [
           {
-            "text": "Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.",
-            "commit_ids": [
-              729026
-            ]
-          },
-          {
-            "text": "Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.",
-            "commit_ids": [
-              729001
-            ]
-          },
-          {
-            "text": "Fixed wire tool thickness bug, preventing unusually thick wires during construction.",
-            "commit_ids": [
-              728892
-            ]
-          },
-          {
-            "text": "Adjusted spotlight block range calculations, restoring intended illumination distances for spotlights.",
+            "text": "Spotlight block range calculations have been fixed, restoring expected lighting coverage.",
             "commit_ids": [
               728770
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.",
-            "commit_ids": [
-              728973
-            ]
-          },
-          {
-            "text": "Tablet painting strokes are smooth again; rapid strokes no longer break into dots.",
-            "commit_ids": [
-              728900
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Gameplay & Crafting\n- Backpack contents are now considered when searching for items, affecting crafting, building, vending machines, mission items, and tech tree unlocks.\n- Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.\n\n### Weapons & Tools\n- Flamethrower fuel gauge needle now accurately tracks fuel level.\n\n### UI & Map\n- Vending machine markers remain visible under generic markers after reopening the map.\n\n### Stability & Crashes\n- Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.\n- Fixed network LOD crashes when reading destroyed entities and boat wake effects.\n- Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.\n\n### Quality of Life\n- Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.\n- Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.\n- Fixed wire tool thickness bug, preventing unusually thick wires during construction.\n- Adjusted spotlight block range calculations, restoring intended illumination distances for spotlights.\n\n### Gameplay & Balance\n- Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.\n- Tablet painting strokes are smooth again; rapid strokes no longer break into dots.",
+    "summary": "### Deployables & Respawn\n- Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.\n\n### Inventory & Crafting\n- Backpacks are now included in most item lookups (crafting, building, vending, mission items, tech tree unlocks), so required items can be found inside them.\n\n### UI & Quality of Life\n- Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.\n- Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.\n- Flamethrower fuel gauge now accurately reflects remaining fuel, with the needle moving correctly.\n\n### Gameplay & UI\n- Vending machine markers now appear correctly above generic markers after reopening the map.\n- Building shutters no longer get stuck in the wrong frame when entering a network range.\n- Player inventory preview is restored correctly after using the map reload command.\n- Tablet painting produces continuous strokes instead of broken dots when drawing quickly.\n\n### Stability & Crashes\n- Fixed a crash caused by BasePlayer.SendPingsToClient when ping data is missing.\n- Resolved client crashes when network LOD accessed destroyed entities, preventing errors for disconnected players with dead boats.\n- Eliminated NRE spam from PlayerBoat wake effects when network LOD is active.\n- Corrected invalid level unloading order during map reloads, improving map stability.\n- Ensured all map networkables are cleared after loading a new map, reducing residual bugs.\n\n### Visibility & Lighting\n- Spotlight block range calculations have been fixed, restoring expected lighting coverage.",
     "new_items": [
       {
-        "text": "Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.",
+        "text": "Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.",
         "commit_ids": [
-          729023
+          729063
         ],
-        "section": "Gameplay & Crafting"
+        "section": "Deployables & Respawn"
       },
       {
-        "text": "Flamethrower fuel gauge needle now accurately tracks fuel level.",
-        "commit_ids": [
-          729007
-        ],
-        "section": "Weapons & Tools"
-      },
-      {
-        "text": "Vending machine markers remain visible under generic markers after reopening the map.",
-        "commit_ids": [
-          729057
-        ],
-        "section": "UI & Map"
-      },
-      {
-        "text": "Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.",
-        "commit_ids": [
-          728981,
-          728979
-        ],
-        "section": "Stability & Crashes"
-      },
-      {
-        "text": "Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.",
-        "commit_ids": [
-          728966,
-          728967,
-          728928,
-          728896
-        ],
-        "section": "Stability & Crashes"
-      },
-      {
-        "text": "Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.",
+        "text": "Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.",
         "commit_ids": [
           729026
         ],
-        "section": "Quality of Life"
+        "section": "UI & Quality of Life"
       },
       {
-        "text": "Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.",
+        "text": "Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.",
         "commit_ids": [
-          729001
+          729023
         ],
-        "section": "Quality of Life"
+        "section": "UI & Quality of Life"
       },
       {
-        "text": "Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches.",
+        "text": "Vending machine markers now appear correctly above generic markers after reopening the map.",
         "commit_ids": [
-          728973
+          729057
         ],
-        "section": "Gameplay & Balance"
+        "section": "Gameplay & UI"
       }
     ],
-    "new_relevant_count": 12,
-    "new_summary": "- Watercatcher and chicken coop troughs now correctly select a bucket when using belt inventory.\n- Flamethrower fuel gauge needle now accurately tracks fuel level.\n- Vending machine markers remain visible under generic markers after reopening the map.\n- Fixed sound system crashes (crabs, bird flocks, and sound recycling) that could cause client errors.\n- Fixed BasePlayer ping sending NRE and map reload ordering issues, improving overall server stability.\n- Restored tooltip for disabled blueprints, informing players why they cannot learn certain blueprints.\n- Corrected shutter frame state when entering network range, ensuring doors display the proper open/closed status.\n- Harbor containers now stay correctly positioned on cargo ships, eliminating floating visual glitches."
+    "new_relevant_count": 4,
+    "new_summary": "- Sleeping bags can no longer be placed or respawned in spaces too tight for a player, preventing stuck spawns; a warning appears if placement would block respawn.\n- Restored the disabled‑blueprint tooltip, so players now see why a blueprint cannot be learned.\n- Fixed loot panel selection for watercatchers (and chicken coop troughs) so buckets in the belt are correctly selected.\n- Vending machine markers now appear correctly above generic markers after reopening the map."
   },
   "2026-11-05": {
     "commit_count": 75,
