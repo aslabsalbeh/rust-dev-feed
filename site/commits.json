@@ -1,5 +1,61 @@
 [
   {
+    "id": 728900,
+    "branch": "main/painting_tablet_fix",
+    "changeset": "170485",
+    "created": "2026-11-06T13:02:41",
+    "message": "Fixed tablet pen strokes breaking into dots when painting quickly\nSince Unity 6000.3.20f1 every pen event also moves the mouse with its button up, and the painting code read that as the pen lifting",
+    "user": "Flavien"
+  },
+  {
+    "id": 728898,
+    "branch": "main/get_networklodcell_fix",
+    "changeset": "170484",
+    "created": "2026-11-06T13:00:16",
+    "message": "Fixed PlayerBoat wake effects NRE spam when network LOD is on\r\n- Boats destroyed outside NetworkDestroy stay in the fx queue, and network LOD made GetWorldVelocity read their destroyed transform",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 728896,
+    "branch": "main/reloadmap_bugs",
+    "changeset": "170483",
+    "created": "2026-11-06T12:56:09",
+    "message": "Bugfix: cl_loadmap - nuke all map networkables after loading map\r\nTests: reloaded map",
+    "user": "Daniel P"
+  },
+  {
+    "id": 728895,
+    "branch": "main/get_networklodcell_fix",
+    "changeset": "170482",
+    "created": "2026-11-06T12:56:00",
+    "message": "main -> get_networklodcell_fix",
+    "user": "Ian Henderson"
+  },
+  {
+    "id": 728892,
+    "branch": "main/fat_wire_fix",
+    "changeset": "170481",
+    "created": "2026-11-06T12:43:39",
+    "message": "Fix pooling bug causing io wires while actively using the wire tool to sometimes be thicc",
+    "user": "cipeaX"
+  },
+  {
+    "id": 728891,
+    "branch": "main/inventory_backpack_fixes",
+    "changeset": "170480",
+    "created": "2026-11-06T12:40:48",
+    "message": "Attempt cleanup of considering backpacks when searching for items in player inventory\r\nLooks like we forget to consider backpacks in lots of places. Item lookups are now opt out for checking backpacks\r\nCrafting, building, weapon reloads still don't look in backpacks like before\r\nMission items, tech tree unlocks, vending machines, and many more now look in backpacks for required items",
+    "user": "Martyn Chapman"
+  },
+  {
+    "id": 728873,
+    "branch": "main/underground_train_network_update",
+    "changeset": "170478",
+    "created": "2026-11-06T12:04:38",
+    "message": "LODs and collision meshes for Train Tunnels - Randomised Room A. Prefabbed up submeshes and setup. LOD3 bake. Rejigged folder organisation to be more room specific, for clarity.",
+    "user": "hannah.watts"
+  },
+  {
     "id": 728807,
     "branch": "main/UZI 9mm/UZI Texture Fix",
     "changeset": "170477",
@@ -2230,117 +2286,5 @@
     "created": "2026-11-03T13:22:23",
     "message": "UZI viewmodel\r\n\r\n- Add Picatinny rail to rig & updated\r\n- set up rail to show when sights are attached\r\n- adjusted attachment positions\r\n- rail/mag ViewModelRenderers",
     "user": "Alex Webster"
-  },
-  {
-    "id": 726578,
-    "branch": "main/UZI 9mm",
-    "changeset": "170080",
-    "created": "2026-11-03T13:05:24",
-    "message": "Use stock extended properties whilst in a turret, regardless of how the stock set",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 726574,
-    "branch": "main/tattoos",
-    "changeset": "170079",
-    "created": "2026-11-03T12:52:24",
-    "message": "restrict brush type and size",
-    "user": "Taylor Reynolds"
-  },
-  {
-    "id": 726572,
-    "branch": "main/indirect_instancing",
-    "changeset": "170078",
-    "created": "2026-11-03T12:46:11",
-    "message": "Cherry-pick directory case fix",
-    "user": "Felix"
-  },
-  {
-    "id": 726568,
-    "branch": "main/combatlog_weapon_short",
-    "changeset": "170076",
-    "created": "2026-11-03T12:37:26",
-    "message": "Use short prefab name for weapon in combatlog",
-    "user": "cipeaX"
-  },
-  {
-    "id": 726566,
-    "branch": "main/bird_flock_audio_distance",
-    "changeset": "170075",
-    "created": "2026-11-03T12:33:26",
-    "message": "Flock audio distance fix",
-    "user": "diogo.c"
-  },
-  {
-    "id": 726563,
-    "branch": "main/UZI 9mm",
-    "changeset": "170073",
-    "created": "2026-11-03T12:25:52",
-    "message": "Adjust various UZI mod points",
-    "user": "Martyn Chapman"
-  },
-  {
-    "id": 726559,
-    "branch": "main/terrain_blend_fixes",
-    "changeset": "170071",
-    "created": "2026-11-03T12:05:27",
-    "message": "Draw monument gizmos when editing terrain to help line up painting blend/splat within the radius and topology bounds",
-    "user": "Jakb"
-  },
-  {
-    "id": 726557,
-    "branch": "main/character_customisation",
-    "changeset": "170070",
-    "created": "2026-11-03T11:59:00",
-    "message": "main -> character_customisation",
-    "user": "Ian Henderson"
-  },
-  {
-    "id": 726543,
-    "branch": "main/brutalist_rock",
-    "changeset": "170066",
-    "created": "2026-11-03T11:48:44",
-    "message": "Brutalist Rock - Initial prefab setup, placeholder model and materials, loc, manifest, skins",
-    "user": "mauro.a"
-  },
-  {
-    "id": 726542,
-    "branch": "main/render_pipeline_testing/brp_cleanup",
-    "changeset": "170065",
-    "created": "2026-11-03T11:47:31",
-    "message": "- Removed all handle-to-identifier conversions within RustRenderPasses, as this was only needed for BiRP\r\n- Further cleanup of BiRP only code in various areas",
-    "user": "aidan.m"
-  },
-  {
-    "id": 726539,
-    "branch": "main/batteries_skin",
-    "changeset": "170063",
-    "created": "2026-11-03T11:41:09",
-    "message": "More performant light offset maybe.",
-    "user": "Petur"
-  },
-  {
-    "id": 726538,
-    "branch": "main/terrain_blend_fixes",
-    "changeset": "170062",
-    "created": "2026-11-03T11:38:56",
-    "message": "Slightly reduced radius and fade of radtown to reduce overreach. Smoothed radtown blend and pulled it in slightly where it extended past the radius. S2P. Checked in procmap.",
-    "user": "hannah.watts"
-  },
-  {
-    "id": 726537,
-    "branch": "main/tri_frame_deployables_bounds",
-    "changeset": "170061",
-    "created": "2026-11-03T11:37:50",
-    "message": "extended triangular prism splash damage bounds to grills and triangle hatches as well\r\n- slight adjustment to trianglular hatch bounds",
-    "user": "Grigler"
-  },
-  {
-    "id": 726533,
-    "branch": "main",
-    "changeset": "170059",
-    "created": "2026-11-03T11:33:44",
-    "message": "fixed scrap king building skin steam item sharing token with the building tier so it read \"upgrade to scrap king\" on the steam item",
-    "user": "matt.i"
   }
 ]
