@@ -1,5 +1,13 @@
 [
   {
+    "id": 729237,
+    "branch": "main/fsmtransitionbase_getagent_fix",
+    "changeset": "170547",
+    "created": "2026-11-07T09:20:23",
+    "message": "Fixed an NRE every FSM tick in Trans_IsNavmeshReady when an animal entered a state that was never given an owner",
+    "user": "Ian Henderson"
+  },
+  {
     "id": 729198,
     "branch": "main/water_light_sources",
     "changeset": "170544",
@@ -1846,85 +1854,5 @@
     "created": "2026-11-04T11:17:47",
     "message": "▋ ▉▄▌▇▋▋▊▄ ▋▇▊▊▆▇▉▋▅▌ ▆▍▍▅▉▊ ▍▅█▄▋▋▆▊▊ ▉█▍▆",
     "user": "cipeaX"
-  },
-  {
-    "id": 726813,
-    "branch": "main/render_pipeline_testing/brp_cleanup",
-    "changeset": "170209",
-    "created": "2026-11-04T11:16:34",
-    "message": "- Removed unused RenderPipelineSwitchNode and RenderPipelineCondition scripts\r\n- Removed RustRenderPipeline.IsActive branches\r\n- Removed LightingOverride as nothing uses it anymore; lighting overrides are now part of the CameraSettings on the RRP Camera component\r\n- Removed dead callbacks to Camera.onPreRender and removed OnPreCull and OnPostRender methods, as these are BiRP only",
-    "user": "aidan.m"
-  },
-  {
-    "id": 726810,
-    "branch": "main/unity_6.7.0",
-    "changeset": "170208",
-    "created": "2026-11-04T11:13:32",
-    "message": "Don't try to set GC mode when using CoreCLR",
-    "user": "Felix"
-  },
-  {
-    "id": 726809,
-    "branch": "main/unity_6.7.0",
-    "changeset": "170207",
-    "created": "2026-11-04T11:12:01",
-    "message": "Disable Discord in CoreCLR builds (needs fixing)",
-    "user": "Felix"
-  },
-  {
-    "id": 726807,
-    "branch": "main/unity_6.7.0",
-    "changeset": "170206",
-    "created": "2026-11-04T11:10:34",
-    "message": "Declare `precise` keyword as a macro because Unity's shader analyser does not know about it",
-    "user": "Felix"
-  },
-  {
-    "id": 726803,
-    "branch": "main/M79_Grenade_Launcher",
-    "changeset": "170205",
-    "created": "2026-11-04T10:41:55",
-    "message": "Updated M79 Textures",
-    "user": "Alfie Birch"
-  },
-  {
-    "id": 726802,
-    "branch": "main/f1items_nre_fix",
-    "changeset": "170204",
-    "created": "2026-11-04T10:39:34",
-    "message": "Fixed UI_DevListBase nre when opening the items tab mid loading",
-    "user": "Flavien"
-  },
-  {
-    "id": 726800,
-    "branch": "main/stash_decay_fix",
-    "changeset": "170203",
-    "created": "2026-11-04T10:32:54",
-    "message": "Fix stashes not decaying.\r\nConvar the duration while I'm at it.",
-    "user": "Adam W"
-  },
-  {
-    "id": 726799,
-    "branch": "main/pickupnotice_nre_fix",
-    "changeset": "170202",
-    "created": "2026-11-04T10:30:57",
-    "message": "Fixed ItemPickupNotice NRE",
-    "user": "Flavien"
-  },
-  {
-    "id": 726797,
-    "branch": "main/mirroredstairs_gametip",
-    "changeset": "170201",
-    "created": "2026-11-04T10:18:50",
-    "message": "Added a gametip explaining how to flip stairs when deploying U or L stairs",
-    "user": "Flavien"
-  },
-  {
-    "id": 726794,
-    "branch": "main/UZI 9mm",
-    "changeset": "170200",
-    "created": "2026-11-04T10:01:11",
-    "message": "Adjusted Uzi repair cost. Removed need for metal fragments.",
-    "user": "Rin"
   }
 ]
