@@ -309,31 +309,37 @@
     "new_summary": ""
   },
   "2026-11-04": {
-    "commit_count": 111,
-    "relevant_commit_count": 39,
-    "relevant_signature": "726790,726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620,727650,727664,727833,727917,728009,728085",
+    "commit_count": 107,
+    "relevant_commit_count": 38,
+    "relevant_signature": "726799,726800,726802,726809,726833,726857,726873,726874,726965,727013,727056,727089,727131,727155,727212,727220,727221,727238,727239,727241,727271,727302,727316,727348,727353,727377,727479,727530,727533,727556,727572,727620,727650,727664,727833,727917,728009,728085",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Combat",
+        "title": "Combat & Weaponry",
         "items": [
           {
-            "text": "Base projectiles now reset hold type and trigger deploy animation in third‑person, fixing reload continuation when switching between identical guns.",
+            "text": "Reload animations now reset correctly when switching identical guns, preventing unintended continued reloads.",
             "commit_ids": [
               728085
             ]
           },
           {
-            "text": "Ballista bolts are functional again.",
+            "text": "Ballista bolts have been restored, allowing you to fire them as intended.",
             "commit_ids": [
               727620
             ]
           },
           {
-            "text": "Turrets now use the intended automatic fire rate when placed.",
+            "text": "Turret automatic fire‑rate is now applied correctly when placed.",
             "commit_ids": [
               727241
+            ]
+          },
+          {
+            "text": "Melee actions no longer cause crashes, improving combat stability.",
+            "commit_ids": [
+              727556
             ]
           }
         ]
@@ -342,54 +348,71 @@
         "title": "Vehicles & Transportation",
         "items": [
           {
-            "text": "Tomaha snowmobile no longer throws an Unsupported Type error during preparation.",
+            "text": "The Tomaha snowmobile no longer crashes during preparation, fixing the ‘Unsupported Type’ error.",
             "commit_ids": [
               728009
-            ]
-          },
-          {
-            "text": "Hoppers now correctly collect body bags.",
-            "commit_ids": [
-              727917
-            ]
-          },
-          {
-            "text": "Railway tracks are no longer buried by terrain smoothing; a new World Setup stage lifts buried rails, improving rail visuals and workcart usage.",
-            "commit_ids": [
-              727131
             ]
           }
         ]
       },
       {
-        "title": "World & Spawn",
+        "title": "Loot, Items & Crafting",
         "items": [
           {
-            "text": "Players can now spawn only on true beaches; landlocked lakes and inland lighthouses no longer create valid spawn points.",
+            "text": "Hoppers now collect body bags correctly.",
             "commit_ids": [
-              727377
+              727917
             ]
           },
           {
-            "text": "Lighthouse crates no longer spawn inside the ground, fixing loot visibility.",
+            "text": "Lighthouse crates spawn above ground, making them reachable.",
             "commit_ids": [
               727271,
               727155
             ]
           },
           {
-            "text": "Outdated cave monument prefabs have been removed from procedural caves, cleaning up cave spawns.",
+            "text": "The alien costume is craftable again after fixing its metadata.",
             "commit_ids": [
-              727056
+              727238
             ]
           }
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "World & Exploration",
         "items": [
           {
-            "text": "Snakes now correctly collide, no longer ride horses, and take explosion damage.",
+            "text": "Spawn points are limited to true beaches; inland lakes and lighthouses no longer generate spawns.",
+            "commit_ids": [
+              727377
+            ]
+          },
+          {
+            "text": "Railway tracks are automatically raised if terrain smoothing would bury them, improving rail visuals and workcart use.",
+            "commit_ids": [
+              727131
+            ]
+          },
+          {
+            "text": "Obsolete cave monument prefabs have been removed from procedural caves.",
+            "commit_ids": [
+              727056
+            ]
+          },
+          {
+            "text": "Dynamic monument map markers can now update their label and position in real time, enhancing map clarity.",
+            "commit_ids": [
+              727533
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Creatures & AI",
+        "items": [
+          {
+            "text": "Snakes no longer get stuck on horses and now correctly take explosion damage.",
             "commit_ids": [
               726873
             ]
@@ -397,25 +420,25 @@
         ]
       },
       {
-        "title": "Upkeep & Loot",
+        "title": "Inventory & UI",
         "items": [
           {
-            "text": "Stashes now decay over time again; decay duration is adjustable via a console variable.",
+            "text": "Stashes now decay over time, with a configurable decay duration.",
             "commit_ids": [
               726800
             ]
           },
           {
-            "text": "Seagull corpses now drop additional resources.",
+            "text": "Item pickup notifications are fixed and will display reliably.",
             "commit_ids": [
-              726790
+              726799
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Weapons & Combat\n- Base projectiles now reset hold type and trigger deploy animation in third‑person, fixing reload continuation when switching between identical guns.\n- Ballista bolts are functional again.\n- Turrets now use the intended automatic fire rate when placed.\n\n### Vehicles & Transportation\n- Tomaha snowmobile no longer throws an Unsupported Type error during preparation.\n- Hoppers now correctly collect body bags.\n- Railway tracks are no longer buried by terrain smoothing; a new World Setup stage lifts buried rails, improving rail visuals and workcart usage.\n\n### World & Spawn\n- Players can now spawn only on true beaches; landlocked lakes and inland lighthouses no longer create valid spawn points.\n- Lighthouse crates no longer spawn inside the ground, fixing loot visibility.\n- Outdated cave monument prefabs have been removed from procedural caves, cleaning up cave spawns.\n\n### NPC & AI\n- Snakes now correctly collide, no longer ride horses, and take explosion damage.\n\n### Upkeep & Loot\n- Stashes now decay over time again; decay duration is adjustable via a console variable.\n- Seagull corpses now drop additional resources.",
+    "summary": "### Combat & Weaponry\n- Reload animations now reset correctly when switching identical guns, preventing unintended continued reloads.\n- Ballista bolts have been restored, allowing you to fire them as intended.\n- Turret automatic fire‑rate is now applied correctly when placed.\n- Melee actions no longer cause crashes, improving combat stability.\n\n### Vehicles & Transportation\n- The Tomaha snowmobile no longer crashes during preparation, fixing the ‘Unsupported Type’ error.\n\n### Loot, Items & Crafting\n- Hoppers now collect body bags correctly.\n- Lighthouse crates spawn above ground, making them reachable.\n- The alien costume is craftable again after fixing its metadata.\n\n### World & Exploration\n- Spawn points are limited to true beaches; inland lakes and lighthouses no longer generate spawns.\n- Railway tracks are automatically raised if terrain smoothing would bury them, improving rail visuals and workcart use.\n- Obsolete cave monument prefabs have been removed from procedural caves.\n- Dynamic monument map markers can now update their label and position in real time, enhancing map clarity.\n\n### Creatures & AI\n- Snakes no longer get stuck on horses and now correctly take explosion damage.\n\n### Inventory & UI\n- Stashes now decay over time, with a configurable decay duration.\n- Item pickup notifications are fixed and will display reliably.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
