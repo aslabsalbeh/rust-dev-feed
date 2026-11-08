@@ -159,126 +159,119 @@
     "new_summary": ""
   },
   "2026-11-05": {
-    "commit_count": 68,
-    "relevant_commit_count": 32,
-    "relevant_signature": "728366,728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758",
+    "commit_count": 64,
+    "relevant_commit_count": 31,
+    "relevant_signature": "728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Boats & Naval Events",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed scientists on boats staying locked onto hidden targets too long.",
+            "text": "Boat scientists no longer lock onto hidden players for an excessive duration, fixing prolonged targeting of hidden players.",
             "commit_ids": [
               728758,
               728756
             ]
           },
           {
-            "text": "Fixed roaming boat groups sometimes not attacking beach players.",
+            "text": "Roaming boat groups now consistently attack players on the beach.",
             "commit_ids": [
               728757
             ]
           },
           {
-            "text": "Fixed stolen PT boats being removed after the roaming boat event; now only empty boats are cleaned up.",
+            "text": "Coast runs during the scientist boat event now function correctly, with groups approaching and moving along the shore as intended.",
+            "commit_ids": [
+              728564
+            ]
+          },
+          {
+            "text": "Rockets now collide with large seagull groups and gulls no longer disappear when they can't find a landing spot.",
+            "commit_ids": [
+              728476
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Boats",
+        "items": [
+          {
+            "text": "Stolen PT boats persist after the roaming boat event ends; only empty boats are cleaned up.",
             "commit_ids": [
               728744
             ]
           },
           {
-            "text": "Adjusted boat event behavior so coast runs work properly and groups drive along the shore in formation.",
+            "text": "PT boat turret viewmodels correctly display empty magazines when fully depleted.",
             "commit_ids": [
-              728564
+              728485
             ]
           }
         ]
       },
       {
-        "title": "Inventory & Crafting UI",
+        "title": "Server & UI",
         "items": [
           {
-            "text": "Fixed clothing inventory bug where moving items to slot 7 of a backpack was misinterpreted as equipping or unequipping a backpack.",
+            "text": "Server browser favorites and history are saved immediately, and DNS failures no longer hide servers.",
+            "commit_ids": [
+              728740
+            ]
+          },
+          {
+            "text": "Locked crate timer display on the laptop screen is correct after server restarts.",
+            "commit_ids": [
+              728462
+            ]
+          },
+          {
+            "text": "Demo export is no longer capped at 240 fps and timescale stuttering below 0.2× is fixed.",
+            "commit_ids": [
+              728569
+            ]
+          },
+          {
+            "text": "Experimental crafting UI lists all items craftable with a selected ingredient, helping discover recipes.",
+            "commit_ids": [
+              728477
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & Contacts",
+        "items": [
+          {
+            "text": "Moving items to or from slot 7 of a backpack no longer triggers false equip/unequip events.",
             "commit_ids": [
               728589
             ]
           },
           {
-            "text": "Fixed contact list notes now persist correctly.",
+            "text": "Contact list notes are now saved correctly.",
             "commit_ids": [
               728576
             ]
-          },
-          {
-            "text": "Added experimental UI showing all items craftable with a selected ingredient, helping players discover recipes.",
-            "commit_ids": [
-              728477
-            ]
-          },
-          {
-            "text": "Fixed locked crate UI timer display after a restart.",
-            "commit_ids": [
-              728462
-            ]
           }
         ]
       },
       {
-        "title": "Server Browser & Connectivity",
+        "title": "Supply Drops",
         "items": [
           {
-            "text": "Fixed favorites and history listing reliability; IP:port saved instantly and DNS handling improved.",
-            "commit_ids": [
-              728740
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Demo Recording",
-        "items": [
-          {
-            "text": "Fixed demo name overflow for long names, removed the 240 fps export cap, and eliminated timescale stutter below 0.2, improving recording stability and UI ordering.",
-            "commit_ids": [
-              728571,
-              728569,
-              728566
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Supply Drops",
-        "items": [
-          {
-            "text": "Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they couldn't find a landing spot.",
-            "commit_ids": [
-              728476
-            ]
-          },
-          {
-            "text": "Fixed supply drops in Primitive mode to include blueprint pages.",
+            "text": "Supply drops in Primitive mode now include blueprint pages.",
             "commit_ids": [
               728558
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Fixed NPC encounter timer error, ensuring scheduled NPC encounters trigger reliably.",
-            "commit_ids": [
-              728647
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Boats & Naval Events\n- Fixed scientists on boats staying locked onto hidden targets too long.\n- Fixed roaming boat groups sometimes not attacking beach players.\n- Fixed stolen PT boats being removed after the roaming boat event; now only empty boats are cleaned up.\n- Adjusted boat event behavior so coast runs work properly and groups drive along the shore in formation.\n\n### Inventory & Crafting UI\n- Fixed clothing inventory bug where moving items to slot 7 of a backpack was misinterpreted as equipping or unequipping a backpack.\n- Fixed contact list notes now persist correctly.\n- Added experimental UI showing all items craftable with a selected ingredient, helping players discover recipes.\n- Fixed locked crate UI timer display after a restart.\n\n### Server Browser & Connectivity\n- Fixed favorites and history listing reliability; IP:port saved instantly and DNS handling improved.\n\n### Demo Recording\n- Fixed demo name overflow for long names, removed the 240 fps export cap, and eliminated timescale stutter below 0.2, improving recording stability and UI ordering.\n\n### World & Supply Drops\n- Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they couldn't find a landing spot.\n- Fixed supply drops in Primitive mode to include blueprint pages.\n\n### Gameplay & Balance\n- Fixed NPC encounter timer error, ensuring scheduled NPC encounters trigger reliably.",
+    "summary": "### NPC & AI\n- Boat scientists no longer lock onto hidden players for an excessive duration, fixing prolonged targeting of hidden players.\n- Roaming boat groups now consistently attack players on the beach.\n- Coast runs during the scientist boat event now function correctly, with groups approaching and moving along the shore as intended.\n- Rockets now collide with large seagull groups and gulls no longer disappear when they can't find a landing spot.\n\n### Vehicles & Boats\n- Stolen PT boats persist after the roaming boat event ends; only empty boats are cleaned up.\n- PT boat turret viewmodels correctly display empty magazines when fully depleted.\n\n### Server & UI\n- Server browser favorites and history are saved immediately, and DNS failures no longer hide servers.\n- Locked crate timer display on the laptop screen is correct after server restarts.\n- Demo export is no longer capped at 240 fps and timescale stuttering below 0.2× is fixed.\n- Experimental crafting UI lists all items craftable with a selected ingredient, helping discover recipes.\n\n### Inventory & Contacts\n- Moving items to or from slot 7 of a backpack no longer triggers false equip/unequip events.\n- Contact list notes are now saved correctly.\n\n### Supply Drops\n- Supply drops in Primitive mode now include blueprint pages.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
