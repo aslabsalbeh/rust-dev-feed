@@ -159,9 +159,9 @@
     "new_summary": ""
   },
   "2026-11-05": {
-    "commit_count": 33,
-    "relevant_commit_count": 14,
-    "relevant_signature": "728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758",
+    "commit_count": 28,
+    "relevant_commit_count": 11,
+    "relevant_signature": "728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -169,17 +169,11 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Boat scientists now stop targeting hidden players promptly and correctly attack players on the beach.",
+            "text": "Boat scientists now stop targeting hidden players more quickly and reliably attack players on the beach.",
             "commit_ids": [
               728758,
               728756,
               728757
-            ]
-          },
-          {
-            "text": "Fixed NPC encounter timer errors that could interrupt NPC spawns.",
-            "commit_ids": [
-              728647
             ]
           }
         ]
@@ -188,13 +182,13 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Stolen PT boats now remain in the world after the roaming boat event ends as long as they still have crew.",
+            "text": "Stolen PT boats are no longer auto‑removed when the roaming boat event ends; only boats without crew are cleaned up.",
             "commit_ids": [
               728744
             ]
           },
           {
-            "text": "Resolved rare crashes caused by travelling vendor sound updates during vehicle pooling.",
+            "text": "Fixed a crash in Travelling Vendor sound updates caused by vehicle pooling.",
             "commit_ids": [
               728720,
               728718
@@ -203,10 +197,10 @@
         ]
       },
       {
-        "title": "Structures",
+        "title": "Base Building",
         "items": [
           {
-            "text": "Fixed occasional door-related crashes caused by swing dynamics calculations.",
+            "text": "Added guard against Door.SetSwingDynamic null reference errors, preventing door glitches.",
             "commit_ids": [
               728716
             ]
@@ -214,36 +208,30 @@
         ]
       },
       {
-        "title": "Inventory & Items",
+        "title": "Server Browser",
         "items": [
           {
-            "text": "Moving items to or from backpack slot 7 no longer triggers false backpack equip/unequip events.",
+            "text": "Server browser now reliably lists favorited servers and recent history, with immediate IP:port saving and fallback to IP after prolonged DNS failures; the 'No servers found' message no longer appears while the list is still loading.",
             "commit_ids": [
-              728589
+              728740
             ]
           }
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Weapon Mechanics",
         "items": [
           {
-            "text": "Server browser now reliably shows favorited servers and history; favorites are saved instantly and DNS delays no longer hide servers; the 'No servers found' message no longer appears while the list is still loading.",
+            "text": "UZI 9mm weapon attachments now correctly inherit mount scaling, fixing previous visual and alignment issues with flashlights and barrel mods in third‑person view.",
             "commit_ids": [
-              728740
-            ]
-          },
-          {
-            "text": "Intermittent \"kernel not set\" error in vclouds has been fixed, preventing unexpected error messages during cloud operations.",
-            "commit_ids": [
-              728643
+              728666
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### NPC & AI\n- Boat scientists now stop targeting hidden players promptly and correctly attack players on the beach.\n- Fixed NPC encounter timer errors that could interrupt NPC spawns.\n\n### Vehicles\n- Stolen PT boats now remain in the world after the roaming boat event ends as long as they still have crew.\n- Resolved rare crashes caused by travelling vendor sound updates during vehicle pooling.\n\n### Structures\n- Fixed occasional door-related crashes caused by swing dynamics calculations.\n\n### Inventory & Items\n- Moving items to or from backpack slot 7 no longer triggers false backpack equip/unequip events.\n\n### Bug Fixes\n- Server browser now reliably shows favorited servers and history; favorites are saved instantly and DNS delays no longer hide servers; the 'No servers found' message no longer appears while the list is still loading.\n- Intermittent \"kernel not set\" error in vclouds has been fixed, preventing unexpected error messages during cloud operations.",
+    "summary": "### NPC & AI\n- Boat scientists now stop targeting hidden players more quickly and reliably attack players on the beach.\n\n### Vehicles\n- Stolen PT boats are no longer auto‑removed when the roaming boat event ends; only boats without crew are cleaned up.\n- Fixed a crash in Travelling Vendor sound updates caused by vehicle pooling.\n\n### Base Building\n- Added guard against Door.SetSwingDynamic null reference errors, preventing door glitches.\n\n### Server Browser\n- Server browser now reliably lists favorited servers and recent history, with immediate IP:port saving and fallback to IP after prolonged DNS failures; the 'No servers found' message no longer appears while the list is still loading.\n\n### Weapon Mechanics\n- UZI 9mm weapon attachments now correctly inherit mount scaling, fixing previous visual and alignment issues with flashlights and barrel mods in third‑person view.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
