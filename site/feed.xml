@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sun, 08 Nov 2026 04:17:14 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 06:18:17 -0500</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Nov 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -65,58 +65,38 @@
     <item>
       <title>Rust Development Updates — Nov 05</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;73 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;68 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;AI &amp;amp; Events&lt;/h3&gt;
+&lt;h3&gt;Boats &amp;amp; Naval Events&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728758,728756"&gt;Boat scientists no longer stay locked onto hidden targets for too long, fixing prolonged invisibility.&lt;/li&gt;
-&lt;li data-rust-commits="728757"&gt;Roaming boat groups now reliably attack players on the beach.&lt;/li&gt;
-&lt;li data-rust-commits="728658"&gt;NPC phone calls no longer exceed the MaxConcurrentCalls limit, preventing call spam.&lt;/li&gt;
-&lt;li data-rust-commits="728564"&gt;Coast runs during the scientist boat event now function correctly, with groups approaching and driving along the shore in formation.&lt;/li&gt;
-&lt;li data-rust-commits="728476"&gt;Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they can&amp;#x27;t find a landing spot.&lt;/li&gt;
+&lt;li data-rust-commits="728758,728756"&gt;Fixed scientists on boats staying locked onto hidden targets too long.&lt;/li&gt;
+&lt;li data-rust-commits="728757"&gt;Fixed roaming boat groups sometimes not attacking beach players.&lt;/li&gt;
+&lt;li data-rust-commits="728744"&gt;Fixed stolen PT boats being removed after the roaming boat event; now only empty boats are cleaned up.&lt;/li&gt;
+&lt;li data-rust-commits="728564"&gt;Adjusted boat event behavior so coast runs work properly and groups drive along the shore in formation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Crafting UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728744"&gt;Stolen PT boats now persist after the roaming boat event ends unless crew is lost.&lt;/li&gt;
+&lt;li data-rust-commits="728589"&gt;Fixed clothing inventory bug where moving items to slot 7 of a backpack was misinterpreted as equipping or unequipping a backpack.&lt;/li&gt;
+&lt;li data-rust-commits="728576"&gt;Fixed contact list notes now persist correctly.&lt;/li&gt;
+&lt;li data-rust-commits="728477"&gt;Added experimental UI showing all items craftable with a selected ingredient, helping players discover recipes.&lt;/li&gt;
+&lt;li data-rust-commits="728462"&gt;Fixed locked crate UI timer display after a restart.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons&lt;/h3&gt;
+&lt;h3&gt;Server Browser &amp;amp; Connectivity&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728666"&gt;UZI 9mm now correctly scales attached mods (flashlight, barrel) thanks to new AttachmentMountScale component.&lt;/li&gt;
+&lt;li data-rust-commits="728740"&gt;Fixed favorites and history listing reliability; IP:port saved instantly and DNS handling improved.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Demo Recording&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728589"&gt;Moving items to/from backpack slot 7 no longer triggers incorrect backpack equip/unequip events and reduces unnecessary server updates.&lt;/li&gt;
-&lt;li data-rust-commits="728558"&gt;Primitive mode supply drops now include blueprint pages.&lt;/li&gt;
-&lt;li data-rust-commits="728477"&gt;Added experimental UI that shows all items craftable with a selected ingredient, helping players discover recipes.&lt;/li&gt;
+&lt;li data-rust-commits="728571,728569,728566"&gt;Fixed demo name overflow for long names, removed the 240 fps export cap, and eliminated timescale stutter below 0.2, improving recording stability and UI ordering.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Server &amp;amp; Social&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Supply Drops&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728740"&gt;Server favorites and history now list reliably; IP:port saved instantly and DNS fallback improved.&lt;/li&gt;
-&lt;li data-rust-commits="728576"&gt;Contact list notes are now saved properly.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Audio&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728720,728718"&gt;Travelling vendor vehicles no longer produce missing tire sound errors or lingering visual ticks after being destroyed.&lt;/li&gt;
+&lt;li data-rust-commits="728476"&gt;Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they couldn&amp;#x27;t find a landing spot.&lt;/li&gt;
+&lt;li data-rust-commits="728558"&gt;Fixed supply drops in Primitive mode to include blueprint pages.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728716"&gt;Doors now reliably swing dynamically without causing crashes.&lt;/li&gt;
-&lt;li data-rust-commits="728647"&gt;NPC encounter timers function correctly, preventing missed or delayed encounters.&lt;/li&gt;
-&lt;li data-rust-commits="728329"&gt;Player and horse modifiers are pooled correctly, fixing missing buffs/debuffs.&lt;/li&gt;
-&lt;li data-rust-commits="728462"&gt;Locked crates retain the correct unlock timer after restarting the game.&lt;/li&gt;
-&lt;li data-rust-commits="728283"&gt;Gamepad focus no longer crashes, improving controller navigation.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728485"&gt;PT boat turret UI now correctly shows an empty magazine when out of ammo.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Demo &amp;amp; Recording&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728569"&gt;Demo recordings can now exceed 240 fps and maintain smooth timescale below 0.2, fixing stutter.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Skins &amp;amp; Visuals&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728366"&gt;Weapon skins now stay applied while thrown and workshop skins no longer reset mid‑load.&lt;/li&gt;
+&lt;li data-rust-commits="728647"&gt;Fixed NPC encounter timer error, ensuring scheduled NPC encounters trigger reliably.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-05</guid>

@@ -159,118 +159,108 @@
     "new_summary": ""
   },
   "2026-11-05": {
-    "commit_count": 73,
-    "relevant_commit_count": 37,
-    "relevant_signature": "728276,728282,728283,728297,728329,728366,728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758",
+    "commit_count": 68,
+    "relevant_commit_count": 32,
+    "relevant_signature": "728366,728453,728462,728473,728476,728477,728484,728485,728505,728528,728537,728558,728562,728564,728566,728569,728571,728576,728589,728643,728647,728658,728666,728668,728716,728718,728720,728740,728744,728756,728757,728758",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "AI & Events",
+        "title": "Boats & Naval Events",
         "items": [
           {
-            "text": "Boat scientists no longer stay locked onto hidden targets for too long, fixing prolonged invisibility.",
+            "text": "Fixed scientists on boats staying locked onto hidden targets too long.",
             "commit_ids": [
               728758,
               728756
             ]
           },
           {
-            "text": "Roaming boat groups now reliably attack players on the beach.",
+            "text": "Fixed roaming boat groups sometimes not attacking beach players.",
             "commit_ids": [
               728757
             ]
           },
           {
-            "text": "NPC phone calls no longer exceed the MaxConcurrentCalls limit, preventing call spam.",
-            "commit_ids": [
-              728658
-            ]
-          },
-          {
-            "text": "Coast runs during the scientist boat event now function correctly, with groups approaching and driving along the shore in formation.",
-            "commit_ids": [
-              728564
-            ]
-          },
-          {
-            "text": "Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they can't find a landing spot.",
-            "commit_ids": [
-              728476
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
-          {
-            "text": "Stolen PT boats now persist after the roaming boat event ends unless crew is lost.",
+            "text": "Fixed stolen PT boats being removed after the roaming boat event; now only empty boats are cleaned up.",
             "commit_ids": [
               728744
             ]
-          }
-        ]
-      },
-      {
-        "title": "Weapons",
-        "items": [
+          },
           {
-            "text": "UZI 9mm now correctly scales attached mods (flashlight, barrel) thanks to new AttachmentMountScale component.",
+            "text": "Adjusted boat event behavior so coast runs work properly and groups drive along the shore in formation.",
             "commit_ids": [
-              728666
+              728564
             ]
           }
         ]
       },
       {
-        "title": "Inventory & Crafting",
+        "title": "Inventory & Crafting UI",
         "items": [
           {
-            "text": "Moving items to/from backpack slot 7 no longer triggers incorrect backpack equip/unequip events and reduces unnecessary server updates.",
+            "text": "Fixed clothing inventory bug where moving items to slot 7 of a backpack was misinterpreted as equipping or unequipping a backpack.",
             "commit_ids": [
               728589
             ]
           },
           {
-            "text": "Primitive mode supply drops now include blueprint pages.",
-            "commit_ids": [
-              728558
-            ]
-          },
-          {
-            "text": "Added experimental UI that shows all items craftable with a selected ingredient, helping players discover recipes.",
-            "commit_ids": [
-              728477
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Server & Social",
-        "items": [
-          {
-            "text": "Server favorites and history now list reliably; IP:port saved instantly and DNS fallback improved.",
-            "commit_ids": [
-              728740
-            ]
-          },
-          {
-            "text": "Contact list notes are now saved properly.",
+            "text": "Fixed contact list notes now persist correctly.",
             "commit_ids": [
               728576
             ]
+          },
+          {
+            "text": "Added experimental UI showing all items craftable with a selected ingredient, helping players discover recipes.",
+            "commit_ids": [
+              728477
+            ]
+          },
+          {
+            "text": "Fixed locked crate UI timer display after a restart.",
+            "commit_ids": [
+              728462
+            ]
           }
         ]
       },
       {
-        "title": "Audio",
+        "title": "Server Browser & Connectivity",
         "items": [
           {
-            "text": "Travelling vendor vehicles no longer produce missing tire sound errors or lingering visual ticks after being destroyed.",
+            "text": "Fixed favorites and history listing reliability; IP:port saved instantly and DNS handling improved.",
             "commit_ids": [
-              728720,
-              728718
+              728740
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Demo Recording",
+        "items": [
+          {
+            "text": "Fixed demo name overflow for long names, removed the 240 fps export cap, and eliminated timescale stutter below 0.2, improving recording stability and UI ordering.",
+            "commit_ids": [
+              728571,
+              728569,
+              728566
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Supply Drops",
+        "items": [
+          {
+            "text": "Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they couldn't find a landing spot.",
+            "commit_ids": [
+              728476
+            ]
+          },
+          {
+            "text": "Fixed supply drops in Primitive mode to include blueprint pages.",
+            "commit_ids": [
+              728558
             ]
           }
         ]
@@ -279,73 +269,16 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Doors now reliably swing dynamically without causing crashes.",
-            "commit_ids": [
-              728716
-            ]
-          },
-          {
-            "text": "NPC encounter timers function correctly, preventing missed or delayed encounters.",
+            "text": "Fixed NPC encounter timer error, ensuring scheduled NPC encounters trigger reliably.",
             "commit_ids": [
               728647
-            ]
-          },
-          {
-            "text": "Player and horse modifiers are pooled correctly, fixing missing buffs/debuffs.",
-            "commit_ids": [
-              728329
-            ]
-          },
-          {
-            "text": "Locked crates retain the correct unlock timer after restarting the game.",
-            "commit_ids": [
-              728462
-            ]
-          },
-          {
-            "text": "Gamepad focus no longer crashes, improving controller navigation.",
-            "commit_ids": [
-              728283
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "PT boat turret UI now correctly shows an empty magazine when out of ammo.",
-            "commit_ids": [
-              728485
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Demo & Recording",
-        "items": [
-          {
-            "text": "Demo recordings can now exceed 240 fps and maintain smooth timescale below 0.2, fixing stutter.",
-            "commit_ids": [
-              728569
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Skins & Visuals",
-        "items": [
-          {
-            "text": "Weapon skins now stay applied while thrown and workshop skins no longer reset mid‑load.",
-            "commit_ids": [
-              728366
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### AI & Events\n- Boat scientists no longer stay locked onto hidden targets for too long, fixing prolonged invisibility.\n- Roaming boat groups now reliably attack players on the beach.\n- NPC phone calls no longer exceed the MaxConcurrentCalls limit, preventing call spam.\n- Coast runs during the scientist boat event now function correctly, with groups approaching and driving along the shore in formation.\n- Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they can't find a landing spot.\n\n### Vehicles\n- Stolen PT boats now persist after the roaming boat event ends unless crew is lost.\n\n### Weapons\n- UZI 9mm now correctly scales attached mods (flashlight, barrel) thanks to new AttachmentMountScale component.\n\n### Inventory & Crafting\n- Moving items to/from backpack slot 7 no longer triggers incorrect backpack equip/unequip events and reduces unnecessary server updates.\n- Primitive mode supply drops now include blueprint pages.\n- Added experimental UI that shows all items craftable with a selected ingredient, helping players discover recipes.\n\n### Server & Social\n- Server favorites and history now list reliably; IP:port saved instantly and DNS fallback improved.\n- Contact list notes are now saved properly.\n\n### Audio\n- Travelling vendor vehicles no longer produce missing tire sound errors or lingering visual ticks after being destroyed.\n\n### Gameplay & Balance\n- Doors now reliably swing dynamically without causing crashes.\n- NPC encounter timers function correctly, preventing missed or delayed encounters.\n- Player and horse modifiers are pooled correctly, fixing missing buffs/debuffs.\n- Locked crates retain the correct unlock timer after restarting the game.\n- Gamepad focus no longer crashes, improving controller navigation.\n\n### UI & Quality of Life\n- PT boat turret UI now correctly shows an empty magazine when out of ammo.\n\n### Demo & Recording\n- Demo recordings can now exceed 240 fps and maintain smooth timescale below 0.2, fixing stutter.\n\n### Skins & Visuals\n- Weapon skins now stay applied while thrown and workshop skins no longer reset mid‑load.",
+    "summary": "### Boats & Naval Events\n- Fixed scientists on boats staying locked onto hidden targets too long.\n- Fixed roaming boat groups sometimes not attacking beach players.\n- Fixed stolen PT boats being removed after the roaming boat event; now only empty boats are cleaned up.\n- Adjusted boat event behavior so coast runs work properly and groups drive along the shore in formation.\n\n### Inventory & Crafting UI\n- Fixed clothing inventory bug where moving items to slot 7 of a backpack was misinterpreted as equipping or unequipping a backpack.\n- Fixed contact list notes now persist correctly.\n- Added experimental UI showing all items craftable with a selected ingredient, helping players discover recipes.\n- Fixed locked crate UI timer display after a restart.\n\n### Server Browser & Connectivity\n- Fixed favorites and history listing reliability; IP:port saved instantly and DNS handling improved.\n\n### Demo Recording\n- Fixed demo name overflow for long names, removed the 240 fps export cap, and eliminated timescale stutter below 0.2, improving recording stability and UI ordering.\n\n### World & Supply Drops\n- Fixed rockets colliding with large seagull group collider and prevented seagulls from disappearing when they couldn't find a landing spot.\n- Fixed supply drops in Primitive mode to include blueprint pages.\n\n### Gameplay & Balance\n- Fixed NPC encounter timer error, ensuring scheduled NPC encounters trigger reliably.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
