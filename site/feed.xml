@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sun, 08 Nov 2026 14:17:20 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 16:17:34 -0500</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Nov 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -65,28 +65,22 @@
     <item>
       <title>Rust Development Updates — Nov 05</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;28 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;24 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728758,728756,728757"&gt;Boat scientists now stop targeting hidden players more quickly and reliably attack players on the beach.&lt;/li&gt;
+&lt;li data-rust-commits="728758,728756"&gt;Boat scientists no longer lock onto hidden targets longer than necessary, reducing unwanted attacks.&lt;/li&gt;
+&lt;li data-rust-commits="728757"&gt;Roaming boat groups now reliably attack players on the beach.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728744"&gt;Stolen PT boats are no longer auto‑removed when the roaming boat event ends; only boats without crew are cleaned up.&lt;/li&gt;
-&lt;li data-rust-commits="728720,728718"&gt;Fixed a crash in Travelling Vendor sound updates caused by vehicle pooling.&lt;/li&gt;
+&lt;li data-rust-commits="728744"&gt;Stolen PT boats now remain after the roaming boat event ends unless their crew is gone, preventing unexpected loss.&lt;/li&gt;
+&lt;li data-rust-commits="728720,728718"&gt;Fixed a null reference crash in TravellingVendorSounds.UpdateTireSounds, stopping vehicle‑related sound and tick errors after destruction.&lt;/li&gt;
+&lt;li data-rust-commits="728716"&gt;Added null‑reference guards to Door.SetSwingDynamic, reducing door‑related crashes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base Building&lt;/h3&gt;
+&lt;h3&gt;Server Browser &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728716"&gt;Added guard against Door.SetSwingDynamic null reference errors, preventing door glitches.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Server Browser&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728740"&gt;Server browser now reliably lists favorited servers and recent history, with immediate IP:port saving and fallback to IP after prolonged DNS failures; the &amp;#x27;No servers found&amp;#x27; message no longer appears while the list is still loading.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Weapon Mechanics&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728666"&gt;UZI 9mm weapon attachments now correctly inherit mount scaling, fixing previous visual and alignment issues with flashlights and barrel mods in third‑person view.&lt;/li&gt;
+&lt;li data-rust-commits="728740"&gt;Favorites now save instantly and retain a fallback IP after long DNS failures, improving server list reliability; history and favorites consistently appear, and the &amp;#x27;No servers found&amp;#x27; notice no longer blocks results while loading.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-05</guid>
