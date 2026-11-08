@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sun, 08 Nov 2026 10:18:15 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:17:22 -0500</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Nov 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -65,43 +65,30 @@
     <item>
       <title>Rust Development Updates — Nov 05</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;51 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;33 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728758,728756"&gt;Fixed boat scientists staying locked onto hidden targets longer than necessary.&lt;/li&gt;
-&lt;li data-rust-commits="728757"&gt;Fixed roaming boat groups sometimes not properly attacking players on the beach.&lt;/li&gt;
-&lt;li data-rust-commits="728647"&gt;Fixed NPCEncounterTimer error that could prevent NPC encounters from triggering.&lt;/li&gt;
+&lt;li data-rust-commits="728758,728756,728757"&gt;Boat scientists now stop targeting hidden players promptly and correctly attack players on the beach.&lt;/li&gt;
+&lt;li data-rust-commits="728647"&gt;Fixed NPC encounter timer errors that could interrupt NPC spawns.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Boat Events&lt;/h3&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728744"&gt;Fixed stolen PT boats being removed when the roaming boat event ends; only empty boats are cleaned up now.&lt;/li&gt;
-&lt;li data-rust-commits="728564"&gt;Forced coast runs to work properly, ensuring scientist boat groups drive along the shore in formation during the event.&lt;/li&gt;
+&lt;li data-rust-commits="728744"&gt;Stolen PT boats now remain in the world after the roaming boat event ends as long as they still have crew.&lt;/li&gt;
+&lt;li data-rust-commits="728720,728718"&gt;Resolved rare crashes caused by travelling vendor sound updates during vehicle pooling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Structures&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="728716"&gt;Fixed occasional door-related crashes caused by swing dynamics calculations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Inventory &amp;amp; Items&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728589"&gt;Fixed backpack slot 7 bug where moving items was incorrectly treated as equipping or unequipping a backpack.&lt;/li&gt;
+&lt;li data-rust-commits="728589"&gt;Moving items to or from backpack slot 7 no longer triggers false backpack equip/unequip events.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Game Modes&lt;/h3&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="728558"&gt;Fixed supply drops in Primitive mode missing blueprint pages.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Server Browser&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728740"&gt;Favorites and history now list reliably, with immediate IP:port saving, DNS‑failure fallback, and no &amp;quot;No servers found&amp;quot; flash while loading.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Social&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728576"&gt;Contact list notes are saved correctly, letting players attach personal notes to friends.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Demo System&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728571"&gt;Demo names longer than 15 characters no longer overflow in the UI.&lt;/li&gt;
-&lt;li data-rust-commits="728569"&gt;Demo export is no longer capped at 240 fps and low timescale values (&amp;lt; 0.2) no longer cause stutter, resulting in smoother playback.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Visual Effects&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="728528"&gt;Distance flares now render with correct brightness, fixing blown‑out flares and improving distant visibility.&lt;/li&gt;
+&lt;li data-rust-commits="728740"&gt;Server browser now reliably shows favorited servers and history; favorites are saved instantly and DNS delays no longer hide servers; the &amp;#x27;No servers found&amp;#x27; message no longer appears while the list is still loading.&lt;/li&gt;
+&lt;li data-rust-commits="728643"&gt;Intermittent &amp;quot;kernel not set&amp;quot; error in vclouds has been fixed, preventing unexpected error messages during cloud operations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-05</guid>
