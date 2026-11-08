@@ -1,5 +1,13 @@
 [
   {
+    "id": 729339,
+    "branch": "main/fix_encryption_enable_race",
+    "changeset": "170560",
+    "created": "2026-11-08T02:06:57",
+    "message": "Set the encryption level on the network thread instead of setting it on the main thread\r\n- ensures we don't set the encryption level before the client recieved approved (existing issue) and ensure batches are flushed before the packet is sent (new issue)",
+    "user": "Jake_Rich"
+  },
+  {
     "id": 729308,
     "branch": "▉▉▊▋",
     "changeset": "█▇▇█▇▍",
@@ -1174,45 +1182,5 @@
     "created": "2026-11-05T03:17:45",
     "message": "Fixed Tomaha snowmobile throwing an Unsupported Type error when geetting prepared",
     "user": "Jarryd Campi"
-  },
-  {
-    "id": 727967,
-    "branch": "▊▉█▌█▆█▍▆▉▅█▍▄▄▌▌",
-    "changeset": "▇▄▍▇▊▆",
-    "created": "2026-11-05T02:50:58",
-    "message": "▅▌▍▍▍▇▇▅▊ ▍▌▌ ▇▅█ ▊▇▄▄▊▅▌▄▇",
-    "user": "Flavien"
-  },
-  {
-    "id": 727948,
-    "branch": "main/iaudiogenerator",
-    "changeset": "170325",
-    "created": "2026-11-05T02:37:09",
-    "message": "Testing out converting our voice and radio streaming process to use Unity's new IAudioGenerator interface, performance seems underwhelming (our existing implementations are pretty fast)\r\nJust parking on a branch for posterity",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 727917,
-    "branch": "main/hopper_bodybag",
-    "changeset": "170324",
-    "created": "2026-11-05T02:12:19",
-    "message": "Fixed hoppers not collecting body bags",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 727915,
-    "branch": "█▆▌▆█▍█▉▊▍▆▌▄",
-    "changeset": "▄▅▋▄▋▍",
-    "created": "2026-11-05T02:12:02",
-    "message": "▍ ▊▊▌ █▌▄▄▆▋█ ▆▉▄▄▅▉▌ ▊▉▆▅▆▅▉▄▋▊ ▅█▆▆ ▇▆▄▅▍ ▉▅▇▌▌▆▄▌▌▉ ▌▌▆▅▇▇▇▇ ▌▇█▇▇▅█▍▌▉ ▆▌▆ ▄▌▆▍▊▆▊█ ▌▆▆ ▋▉▌▋▌▆▌▍▄▍▅▋",
-    "user": "curt"
-  },
-  {
-    "id": 727833,
-    "branch": "main/foliage_shadows_optim",
-    "changeset": "170321",
-    "created": "2026-11-05T01:18:09",
-    "message": "build fix",
-    "user": "Dayaan"
   }
 ]
