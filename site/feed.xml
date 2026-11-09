@@ -6,7 +6,7 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 09 Nov 2026 02:17:39 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 04:17:24 -0500</lastBuildDate>
     <item>
       <title>Rust Updates — 2 Days Ago — Nov 07</title>
       <description>&lt;div class="rust-dev-summary"&gt;
@@ -28,35 +28,31 @@
     <item>
       <title>Rust Development Updates — Nov 06</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;56 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;55 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;Equipment &amp;amp; Wearables&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729147"&gt;Night Vision Goggles no longer get stuck and their glow is restored on scientists&amp;#x27; suits after trophy head removal.&lt;/li&gt;
-&lt;li data-rust-commits="729007"&gt;Flamethrower fuel gauge now accurately tracks fuel level and includes a wobble animation for readability.&lt;/li&gt;
+&lt;li data-rust-commits="729147"&gt;Night vision goggles no longer get stuck, and scientists&amp;#x27; NVG suits correctly display glowing eyes after trophy head removal.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Environment &amp;amp; Visuals&lt;/h3&gt;
+&lt;h3&gt;Environmental &amp;amp; World Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729150"&gt;Elongated distance flares added and overly bright Floating City flares dimmed for better visibility.&lt;/li&gt;
+&lt;li data-rust-commits="729150"&gt;Overly bright flares in the Floating City have been dimmed to normal levels.&lt;/li&gt;
+&lt;li data-rust-commits="729063"&gt;Sleeping bags can no longer be placed or respawn in spaces too tight for a player, preventing stuck-on-respawn bugs; a warning toast alerts when placement would block respawn.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Deployables &amp;amp; Respawn&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; HUD&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729063"&gt;Players can no longer respawn on sleeping bags placed in overly tight spaces; placement restrictions and a warning toast have been added.&lt;/li&gt;
+&lt;li data-rust-commits="729026"&gt;The disabled blueprint tooltip now correctly shows &amp;quot;cannot learn&amp;quot; information.&lt;/li&gt;
+&lt;li data-rust-commits="729023"&gt;Watercatcher and chicken coop loot panels automatically select the bucket when it’s in the belt.&lt;/li&gt;
+&lt;li data-rust-commits="729007"&gt;The flamethrower fuel gauge needle now accurately reflects fuel level and includes a subtle wobble animation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Crafting, Inventory &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729026"&gt;Disabled blueprint tooltip now shows &amp;quot;cannot learn&amp;quot; for clearer feedback.&lt;/li&gt;
-&lt;li data-rust-commits="729023"&gt;Watercatcher and chicken coop loot panels correctly select the bucket when it is in the belt.&lt;/li&gt;
-&lt;li data-rust-commits="728891"&gt;Backpack contents are now counted for mission items, tech tree unlocks, vending machines and other required‑item checks.&lt;/li&gt;
+&lt;li data-rust-commits="728891"&gt;Backpacks are now considered for many item lookups, allowing mission items, tech tree unlocks, vending machines and other systems to pull required items from backpacks (crafting, building, and weapon reloads still ignore backpacks).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Stability&lt;/h3&gt;
+&lt;h3&gt;Bug Fixes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="729001"&gt;Shutter frames now correctly reflect their state when entering network range, preventing doors from appearing open or closed incorrectly.&lt;/li&gt;
-&lt;li data-rust-commits="728967"&gt;Fixed map reload issues that could cause invalid level unloading order, improving stability when reloading maps (e.g., Craggy).&lt;/li&gt;
-&lt;li data-rust-commits="728966"&gt;Resolved a rare client crash caused by BasePlayer.SendPingsToClient null reference, reducing disconnects.&lt;/li&gt;
-&lt;li data-rust-commits="728912"&gt;Prevented crashes when network LOD processes destroyed entities, ensuring smoother gameplay for players with disconnected boats.&lt;/li&gt;
-&lt;li data-rust-commits="728898"&gt;Fixed recurring null reference errors from PlayerBoat wake effects when boats are destroyed, stopping error spam and potential lag.&lt;/li&gt;
-&lt;li data-rust-commits="728896"&gt;Cleaned up map loading by removing leftover networkable objects after a map load, reducing post‑load glitches.&lt;/li&gt;
+&lt;li data-rust-commits="729001"&gt;Shutter doors now correctly retain their open/closed state when entering a new network range, preventing unexpected frame changes.&lt;/li&gt;
+&lt;li data-rust-commits="728900"&gt;Painting tablet strokes remain smooth during fast drawing, eliminating broken dot artifacts.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-06</guid>

@@ -42,9 +42,9 @@
     "new_summary": ""
   },
   "2026-11-06": {
-    "commit_count": 56,
-    "relevant_commit_count": 28,
-    "relevant_signature": "728770,728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083,729147,729149,729150,729198",
+    "commit_count": 55,
+    "relevant_commit_count": 27,
+    "relevant_signature": "728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083,729147,729149,729150,729198",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -52,35 +52,24 @@
         "title": "Equipment & Wearables",
         "items": [
           {
-            "text": "Night Vision Goggles no longer get stuck and their glow is restored on scientists' suits after trophy head removal.",
+            "text": "Night vision goggles no longer get stuck, and scientists' NVG suits correctly display glowing eyes after trophy head removal.",
             "commit_ids": [
               729147
             ]
-          },
-          {
-            "text": "Flamethrower fuel gauge now accurately tracks fuel level and includes a wobble animation for readability.",
-            "commit_ids": [
-              729007
-            ]
           }
         ]
       },
       {
-        "title": "Environment & Visuals",
+        "title": "Environmental & World Interaction",
         "items": [
           {
-            "text": "Elongated distance flares added and overly bright Floating City flares dimmed for better visibility.",
+            "text": "Overly bright flares in the Floating City have been dimmed to normal levels.",
             "commit_ids": [
               729150
             ]
-          }
-        ]
-      },
-      {
-        "title": "Deployables & Respawn",
-        "items": [
+          },
           {
-            "text": "Players can no longer respawn on sleeping bags placed in overly tight spaces; placement restrictions and a warning toast have been added.",
+            "text": "Sleeping bags can no longer be placed or respawn in spaces too tight for a player, preventing stuck-on-respawn bugs; a warning toast alerts when placement would block respawn.",
             "commit_ids": [
               729063
             ]
@@ -88,22 +77,33 @@
         ]
       },
       {
-        "title": "Crafting, Inventory & UI",
+        "title": "UI & HUD",
         "items": [
           {
-            "text": "Disabled blueprint tooltip now shows \"cannot learn\" for clearer feedback.",
+            "text": "The disabled blueprint tooltip now correctly shows \"cannot learn\" information.",
             "commit_ids": [
               729026
             ]
           },
           {
-            "text": "Watercatcher and chicken coop loot panels correctly select the bucket when it is in the belt.",
+            "text": "Watercatcher and chicken coop loot panels automatically select the bucket when it’s in the belt.",
             "commit_ids": [
               729023
             ]
           },
           {
-            "text": "Backpack contents are now counted for mission items, tech tree unlocks, vending machines and other required‑item checks.",
+            "text": "The flamethrower fuel gauge needle now accurately reflects fuel level and includes a subtle wobble animation.",
+            "commit_ids": [
+              729007
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Inventory & Crafting",
+        "items": [
+          {
+            "text": "Backpacks are now considered for many item lookups, allowing mission items, tech tree unlocks, vending machines and other systems to pull required items from backpacks (crafting, building, and weapon reloads still ignore backpacks).",
             "commit_ids": [
               728891
             ]
@@ -111,49 +111,25 @@
         ]
       },
       {
-        "title": "Gameplay & Stability",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Shutter frames now correctly reflect their state when entering network range, preventing doors from appearing open or closed incorrectly.",
+            "text": "Shutter doors now correctly retain their open/closed state when entering a new network range, preventing unexpected frame changes.",
             "commit_ids": [
               729001
             ]
           },
           {
-            "text": "Fixed map reload issues that could cause invalid level unloading order, improving stability when reloading maps (e.g., Craggy).",
+            "text": "Painting tablet strokes remain smooth during fast drawing, eliminating broken dot artifacts.",
             "commit_ids": [
-              728967
-            ]
-          },
-          {
-            "text": "Resolved a rare client crash caused by BasePlayer.SendPingsToClient null reference, reducing disconnects.",
-            "commit_ids": [
-              728966
-            ]
-          },
-          {
-            "text": "Prevented crashes when network LOD processes destroyed entities, ensuring smoother gameplay for players with disconnected boats.",
-            "commit_ids": [
-              728912
-            ]
-          },
-          {
-            "text": "Fixed recurring null reference errors from PlayerBoat wake effects when boats are destroyed, stopping error spam and potential lag.",
-            "commit_ids": [
-              728898
-            ]
-          },
-          {
-            "text": "Cleaned up map loading by removing leftover networkable objects after a map load, reducing post‑load glitches.",
-            "commit_ids": [
-              728896
+              728900
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Equipment & Wearables\n- Night Vision Goggles no longer get stuck and their glow is restored on scientists' suits after trophy head removal.\n- Flamethrower fuel gauge now accurately tracks fuel level and includes a wobble animation for readability.\n\n### Environment & Visuals\n- Elongated distance flares added and overly bright Floating City flares dimmed for better visibility.\n\n### Deployables & Respawn\n- Players can no longer respawn on sleeping bags placed in overly tight spaces; placement restrictions and a warning toast have been added.\n\n### Crafting, Inventory & UI\n- Disabled blueprint tooltip now shows \"cannot learn\" for clearer feedback.\n- Watercatcher and chicken coop loot panels correctly select the bucket when it is in the belt.\n- Backpack contents are now counted for mission items, tech tree unlocks, vending machines and other required‑item checks.\n\n### Gameplay & Stability\n- Shutter frames now correctly reflect their state when entering network range, preventing doors from appearing open or closed incorrectly.\n- Fixed map reload issues that could cause invalid level unloading order, improving stability when reloading maps (e.g., Craggy).\n- Resolved a rare client crash caused by BasePlayer.SendPingsToClient null reference, reducing disconnects.\n- Prevented crashes when network LOD processes destroyed entities, ensuring smoother gameplay for players with disconnected boats.\n- Fixed recurring null reference errors from PlayerBoat wake effects when boats are destroyed, stopping error spam and potential lag.\n- Cleaned up map loading by removing leftover networkable objects after a map load, reducing post‑load glitches.",
+    "summary": "### Equipment & Wearables\n- Night vision goggles no longer get stuck, and scientists' NVG suits correctly display glowing eyes after trophy head removal.\n\n### Environmental & World Interaction\n- Overly bright flares in the Floating City have been dimmed to normal levels.\n- Sleeping bags can no longer be placed or respawn in spaces too tight for a player, preventing stuck-on-respawn bugs; a warning toast alerts when placement would block respawn.\n\n### UI & HUD\n- The disabled blueprint tooltip now correctly shows \"cannot learn\" information.\n- Watercatcher and chicken coop loot panels automatically select the bucket when it’s in the belt.\n- The flamethrower fuel gauge needle now accurately reflects fuel level and includes a subtle wobble animation.\n\n### Inventory & Crafting\n- Backpacks are now considered for many item lookups, allowing mission items, tech tree unlocks, vending machines and other systems to pull required items from backpacks (crafting, building, and weapon reloads still ignore backpacks).\n\n### Bug Fixes\n- Shutter doors now correctly retain their open/closed state when entering a new network range, preventing unexpected frame changes.\n- Painting tablet strokes remain smooth during fast drawing, eliminating broken dot artifacts.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
