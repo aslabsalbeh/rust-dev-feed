@@ -42,59 +42,42 @@
     "new_summary": ""
   },
   "2026-11-06": {
-    "commit_count": 55,
-    "relevant_commit_count": 27,
-    "relevant_signature": "728807,728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083,729147,729149,729150,729198",
+    "commit_count": 54,
+    "relevant_commit_count": 26,
+    "relevant_signature": "728891,728892,728895,728896,728898,728900,728912,728928,728966,728967,728973,728979,728981,729000,729001,729007,729019,729023,729026,729057,729063,729083,729147,729149,729150,729198",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Equipment & Wearables",
+        "title": "Gear & Equipment",
         "items": [
           {
-            "text": "Night vision goggles no longer get stuck, and scientists' NVG suits correctly display glowing eyes after trophy head removal.",
+            "text": "Night Vision Goggles no longer get stuck and work reliably for night vision.",
             "commit_ids": [
               729147
             ]
-          }
-        ]
-      },
-      {
-        "title": "Environmental & World Interaction",
-        "items": [
+          },
           {
-            "text": "Overly bright flares in the Floating City have been dimmed to normal levels.",
+            "text": "Scientists' suit eyes now glow correctly after trophy head unload.",
             "commit_ids": [
-              729150
+              729147
             ]
           },
           {
-            "text": "Sleeping bags can no longer be placed or respawn in spaces too tight for a player, preventing stuck-on-respawn bugs; a warning toast alerts when placement would block respawn.",
-            "commit_ids": [
-              729063
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & HUD",
-        "items": [
-          {
-            "text": "The disabled blueprint tooltip now correctly shows \"cannot learn\" information.",
-            "commit_ids": [
-              729026
-            ]
-          },
-          {
-            "text": "Watercatcher and chicken coop loot panels automatically select the bucket when it’s in the belt.",
-            "commit_ids": [
-              729023
-            ]
-          },
-          {
-            "text": "The flamethrower fuel gauge needle now accurately reflects fuel level and includes a subtle wobble animation.",
+            "text": "Flamethrower fuel gauge now accurately tracks fuel and includes a subtle needle wobble animation.",
             "commit_ids": [
               729007
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base Building & Respawn",
+        "items": [
+          {
+            "text": "Sleeping bags cannot be placed or respawn in spaces too tight for a player; a warning toast appears on invalid placement.",
+            "commit_ids": [
+              729063
             ]
           }
         ]
@@ -103,9 +86,21 @@
         "title": "Inventory & Crafting",
         "items": [
           {
-            "text": "Backpacks are now considered for many item lookups, allowing mission items, tech tree unlocks, vending machines and other systems to pull required items from backpacks (crafting, building, and weapon reloads still ignore backpacks).",
+            "text": "Backpack contents are now considered for mission item checks, tech tree unlocks, vending machine purchases, and other requirements (crafting, building, and weapon reloads still ignore backpacks).",
             "commit_ids": [
               728891
+            ]
+          },
+          {
+            "text": "The “cannot learn” tooltip for disabled blueprints is restored, explaining why a blueprint is unavailable.",
+            "commit_ids": [
+              729026
+            ]
+          },
+          {
+            "text": "Watercatcher and chicken coop trough loot panels now automatically select the appropriate bucket, speeding up collection.",
+            "commit_ids": [
+              729023
             ]
           }
         ]
@@ -114,22 +109,45 @@
         "title": "Bug Fixes",
         "items": [
           {
-            "text": "Shutter doors now correctly retain their open/closed state when entering a new network range, preventing unexpected frame changes.",
+            "text": "Fixed an issue where painting quickly with the tablet pen would cause strokes to break into dots.",
             "commit_ids": [
-              729001
+              728900
             ]
           },
           {
-            "text": "Painting tablet strokes remain smooth during fast drawing, eliminating broken dot artifacts.",
+            "text": "Fixed a bug where IO wires would occasionally appear oversized while using the wire tool.",
             "commit_ids": [
-              728900
+              728892
+            ]
+          },
+          {
+            "text": "Fixed shutter frames appearing in the wrong state when entering network range.",
+            "commit_ids": [
+              729001
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Elongated distance flares now persist longer, extending visual range for signaling and spotting.",
+            "commit_ids": [
+              729150
+            ]
+          },
+          {
+            "text": "Floating City flares brightness reduced, improving visibility and reducing glare.",
+            "commit_ids": [
+              729150
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Equipment & Wearables\n- Night vision goggles no longer get stuck, and scientists' NVG suits correctly display glowing eyes after trophy head removal.\n\n### Environmental & World Interaction\n- Overly bright flares in the Floating City have been dimmed to normal levels.\n- Sleeping bags can no longer be placed or respawn in spaces too tight for a player, preventing stuck-on-respawn bugs; a warning toast alerts when placement would block respawn.\n\n### UI & HUD\n- The disabled blueprint tooltip now correctly shows \"cannot learn\" information.\n- Watercatcher and chicken coop loot panels automatically select the bucket when it’s in the belt.\n- The flamethrower fuel gauge needle now accurately reflects fuel level and includes a subtle wobble animation.\n\n### Inventory & Crafting\n- Backpacks are now considered for many item lookups, allowing mission items, tech tree unlocks, vending machines and other systems to pull required items from backpacks (crafting, building, and weapon reloads still ignore backpacks).\n\n### Bug Fixes\n- Shutter doors now correctly retain their open/closed state when entering a new network range, preventing unexpected frame changes.\n- Painting tablet strokes remain smooth during fast drawing, eliminating broken dot artifacts.",
+    "summary": "### Gear & Equipment\n- Night Vision Goggles no longer get stuck and work reliably for night vision.\n- Scientists' suit eyes now glow correctly after trophy head unload.\n- Flamethrower fuel gauge now accurately tracks fuel and includes a subtle needle wobble animation.\n\n### Base Building & Respawn\n- Sleeping bags cannot be placed or respawn in spaces too tight for a player; a warning toast appears on invalid placement.\n\n### Inventory & Crafting\n- Backpack contents are now considered for mission item checks, tech tree unlocks, vending machine purchases, and other requirements (crafting, building, and weapon reloads still ignore backpacks).\n- The “cannot learn” tooltip for disabled blueprints is restored, explaining why a blueprint is unavailable.\n- Watercatcher and chicken coop trough loot panels now automatically select the appropriate bucket, speeding up collection.\n\n### Bug Fixes\n- Fixed an issue where painting quickly with the tablet pen would cause strokes to break into dots.\n- Fixed a bug where IO wires would occasionally appear oversized while using the wire tool.\n- Fixed shutter frames appearing in the wrong state when entering network range.\n\n### Gameplay & Balance\n- Elongated distance flares now persist longer, extending visual range for signaling and spotting.\n- Floating City flares brightness reduced, improving visibility and reducing glare.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
