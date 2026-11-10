@@ -1,6 +1,10 @@
 import json
 import os
 import re
+import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+from math import isfinite
 from collections import Counter
 
 import requests
@@ -63,6 +67,9 @@ def safe_excerpt(value, api_key="", limit=750):
     return text[:limit] + ("..." if len(text) > limit else "")
 
 
+MAX_GROQ_RETRIES = 2
+MAX_RETRY_AFTER_SECONDS = 10
+
 RATE_LIMIT_HEADERS = (
     "retry-after", "ratelimit-limit", "ratelimit-remaining", "ratelimit-reset",
     "x-ratelimit-limit", "x-ratelimit-remaining", "x-ratelimit-reset",
@@ -70,6 +77,24 @@ RATE_LIMIT_HEADERS = (
     "x-ratelimit-reset-requests", "x-ratelimit-limit-tokens",
     "x-ratelimit-remaining-tokens", "x-ratelimit-reset-tokens",
 )
+
+
+def short_retry_after(headers):
+    """Return a short Retry-After delay, or None for invalid/long values."""
+    value = str(headers.get("retry-after", "")).strip()
+    try:
+        delay = float(value)
+    except ValueError:
+        try:
+            retry_at = parsedate_to_datetime(value)
+            if retry_at.tzinfo is None:
+                return None
+            delay = (retry_at - datetime.now(timezone.utc)).total_seconds()
+        except (TypeError, ValueError, IndexError):
+            return None
+    if not isfinite(delay) or not 0 <= delay <= MAX_RETRY_AFTER_SECONDS:
+        return None
+    return delay
 
 
 def parse_structured_summary(text, allowed_commit_ids):
@@ -198,29 +223,23 @@ def call_chat_api(
             "type": "json_object"
         }
 
-    try:
-        response = requests.post(
-            url,
-            headers={
-                "Authorization": (
-                    f"Bearer {api_key}"
-                ),
-                "Content-Type": (
-                    "application/json"
-                ),
-            },
-            json=payload,
-            timeout=90,
-        )
+    for attempt in range(MAX_GROQ_RETRIES + 1 if provider_name == "Groq" else 1):
+        try:
+            response = requests.post(
+                url,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json=payload,
+                timeout=90,
+            )
+        except requests.RequestException as error:
+            print(f"{provider_name} network error: {safe_excerpt(error, api_key)}")
+            return None
 
-    except requests.RequestException as error:
-        print(
-            f"{provider_name} network error: "
-            f"{safe_excerpt(error, api_key)}"
-        )
-        return None
-
-    if response.status_code == 429:
+        if response.status_code != 429:
+            break
         headers = {key.lower(): value for key, value in response.headers.items()}
         details = " ".join(
             f"{key}={safe_excerpt(headers[key], api_key, 100)}"
@@ -228,7 +247,11 @@ def call_chat_api(
         )
         print(f"{provider_name} HTTP 429 rate-limited: {details} "
               f"body={safe_excerpt(response.text, api_key)}")
-        return None
+        delay = short_retry_after(headers)
+        if provider_name != "Groq" or attempt >= MAX_GROQ_RETRIES or delay is None:
+            return None
+        print(f"Retrying Groq after {delay:g}s (retry {attempt + 1}/{MAX_GROQ_RETRIES}).")
+        time.sleep(delay)
 
     if not response.ok:
         print(
