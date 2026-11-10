@@ -1,23 +1,48 @@
 {
   "2026-11-10": {
-    "commit_count": 97,
-    "relevant_commit_count": 27,
-    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409",
+    "commit_count": 126,
+    "relevant_commit_count": 33,
+    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Map & Extraction",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.",
+            "text": "Scientists now flank correctly during combat, improving their behavior.",
+            "commit_ids": [
+              732465,
+              732464
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Containers",
+        "items": [
+          {
+            "text": "Rare mainland shipping containers require lock‑breaking or code notes to open, feature stronger explosives needed for code‑locked doors and lock health UI appears only when aimed at the lock.",
+            "commit_ids": [
+              732371,
+              732178,
+              732194
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Extraction & Raids",
+        "items": [
+          {
+            "text": "Extraction map expanded with new monuments and a 3 km procedural scene for raids.",
             "commit_ids": [
               732409,
               732407
             ]
           },
           {
-            "text": "Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.",
+            "text": "Extracted loot is automatically banked in a stash, and raider NPCs now spawn at the start of raids.",
             "commit_ids": [
               732408
             ]
@@ -25,80 +50,40 @@
         ]
       },
       {
-        "title": "Combat UI",
+        "title": "Weapons & Items",
         "items": [
           {
-            "text": "Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.",
-            "commit_ids": [
-              732404
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Shipping & Cargo",
-        "items": [
-          {
-            "text": "Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players.",
-            "commit_ids": [
-              732371
-            ]
-          },
-          {
-            "text": "Updated lock mechanics: cargo container doors stay intact until the lock is broken, with increased explosive damage needed for codelocked containers and lock‑only health UI.",
-            "commit_ids": [
-              732194,
-              732178
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Arrow Customization",
-        "items": [
-          {
-            "text": "Added a deployable fletching jig station for customizing arrows, plus a clear‑customization action to revert skinned arrows to their base type.",
+            "text": "Arrow customization added: a deployable fletching jig for crafting and a clear‑customization action to revert skinned arrows.",
             "commit_ids": [
               732116,
               732227
             ]
-          }
-        ]
-      },
-      {
-        "title": "Grenades & Explosives",
-        "items": [
-          {
-            "text": "Reworked the 40 mm Incendiary Grenade with new effects, sound, icon, and balanced damage.",
-            "commit_ids": [
-              732051
-            ]
           },
           {
-            "text": "Updated the 40 mm Flare: new visual effect, white colour, self‑destruct when shot into ground, and fixed parachute shadow.",
+            "text": "40 mm flare now appears white, uses road‑flare visuals, and self‑destructs if shot into the ground at close range.",
             "commit_ids": [
               732093
             ]
+          },
+          {
+            "text": "40 mm Incendiary Grenade damage rebalanced with updated visual and sound effects and a new icon.",
+            "commit_ids": [
+              732051
+            ]
           }
         ]
       },
       {
-        "title": "Base Building & Deployables",
+        "title": "Deployables & Vehicles",
         "items": [
           {
-            "text": "Conveyor belts now transport up to 24 items per tick, speeding up item movement.",
-            "commit_ids": [
-              732014
-            ]
-          },
-          {
-            "text": "Added a prototype deployable trampoline for player mobility.",
+            "text": "Prototype deployable trampoline lets players place a bounce platform for movement and tactical options.",
             "commit_ids": [
               732076
             ]
           },
           {
-            "text": "Fixed FPV Drone script bugs, improving stability and reliability.",
+            "text": "FPV drone scripts fixed to prevent flag and sound‑modulation errors, improving drone reliability.",
             "commit_ids": [
               732143
             ]
@@ -106,52 +91,71 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Base & UI",
         "items": [
           {
-            "text": "Fixed an issue where placed building blocks could become invisible, ensuring structures remain visible to all players.",
+            "text": "Conveyor belts now move up to 24 items per tick, speeding up base logistics.",
+            "commit_ids": [
+              732014
+            ]
+          },
+          {
+            "text": "Building blocks no longer become invisible, ensuring structures stay visible.",
             "commit_ids": [
               732046
+            ]
+          },
+          {
+            "text": "Reload bar displayed beside the weapon when using the shoulder camera.",
+            "commit_ids": [
+              732404
+            ]
+          },
+          {
+            "text": "UI scrolling performance improved, panel flicker resolved, and video playback crashes fixed when killed or dismounted during tape playback.",
+            "commit_ids": [
+              732397,
+              732138,
+              732453
+            ]
+          }
+        ]
+      },
+      {
+        "title": "New Content",
+        "items": [
+          {
+            "text": "FPV drone and goggles are being integrated (WIP).",
+            "commit_ids": [
+              732162
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Map & Extraction\n- Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.\n- Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.\n\n### Combat UI\n- Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.\n\n### Shipping & Cargo\n- Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players.\n- Updated lock mechanics: cargo container doors stay intact until the lock is broken, with increased explosive damage needed for codelocked containers and lock‑only health UI.\n\n### Arrow Customization\n- Added a deployable fletching jig station for customizing arrows, plus a clear‑customization action to revert skinned arrows to their base type.\n\n### Grenades & Explosives\n- Reworked the 40 mm Incendiary Grenade with new effects, sound, icon, and balanced damage.\n- Updated the 40 mm Flare: new visual effect, white colour, self‑destruct when shot into ground, and fixed parachute shadow.\n\n### Base Building & Deployables\n- Conveyor belts now transport up to 24 items per tick, speeding up item movement.\n- Added a prototype deployable trampoline for player mobility.\n- Fixed FPV Drone script bugs, improving stability and reliability.\n\n### Gameplay & Balance\n- Fixed an issue where placed building blocks could become invisible, ensuring structures remain visible to all players.",
+    "summary": "### NPC & AI\n- Scientists now flank correctly during combat, improving their behavior.\n\n### World & Containers\n- Rare mainland shipping containers require lock‑breaking or code notes to open, feature stronger explosives needed for code‑locked doors and lock health UI appears only when aimed at the lock.\n\n### Extraction & Raids\n- Extraction map expanded with new monuments and a 3 km procedural scene for raids.\n- Extracted loot is automatically banked in a stash, and raider NPCs now spawn at the start of raids.\n\n### Weapons & Items\n- Arrow customization added: a deployable fletching jig for crafting and a clear‑customization action to revert skinned arrows.\n- 40 mm flare now appears white, uses road‑flare visuals, and self‑destructs if shot into the ground at close range.\n- 40 mm Incendiary Grenade damage rebalanced with updated visual and sound effects and a new icon.\n\n### Deployables & Vehicles\n- Prototype deployable trampoline lets players place a bounce platform for movement and tactical options.\n- FPV drone scripts fixed to prevent flag and sound‑modulation errors, improving drone reliability.\n\n### Base & UI\n- Conveyor belts now move up to 24 items per tick, speeding up base logistics.\n- Building blocks no longer become invisible, ensuring structures stay visible.\n- Reload bar displayed beside the weapon when using the shoulder camera.\n- UI scrolling performance improved, panel flicker resolved, and video playback crashes fixed when killed or dismounted during tape playback.\n\n### New Content\n- FPV drone and goggles are being integrated (WIP).",
     "new_items": [
       {
-        "text": "Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.",
+        "text": "Scientists now flank correctly during combat, improving their behavior.",
         "commit_ids": [
-          732409,
-          732407
+          732465,
+          732464
         ],
-        "section": "Map & Extraction"
+        "section": "NPC & AI"
       },
       {
-        "text": "Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.",
+        "text": "UI scrolling performance improved, panel flicker resolved, and video playback crashes fixed when killed or dismounted during tape playback.",
         "commit_ids": [
-          732408
+          732397,
+          732138,
+          732453
         ],
-        "section": "Map & Extraction"
-      },
-      {
-        "text": "Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.",
-        "commit_ids": [
-          732404
-        ],
-        "section": "Combat UI"
-      },
-      {
-        "text": "Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players.",
-        "commit_ids": [
-          732371
-        ],
-        "section": "Shipping & Cargo"
+        "section": "Base & UI"
       }
     ],
     "new_relevant_count": 5,
-    "new_summary": "- Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.\n- Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.\n- Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.\n- Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players."
+    "new_summary": "- Scientists now flank correctly during combat, improving their behavior.\n- UI scrolling performance improved, panel flicker resolved, and video playback crashes fixed when killed or dismounted during tape playback."
   },
   "2026-11-09": {
     "commit_count": 184,
