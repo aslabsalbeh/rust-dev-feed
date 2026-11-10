@@ -11,24 +11,16 @@ class FakeResponse:
         return self.payload
 
 
-def test_fetch_latest_skips_one_malformed_record(monkeypatch):
-    payload = {"results": [
-        {"id": 1, "branch": "main", "changeset": "100",
-         "created": "2026-09-03T12:00:00",
-         "message": "Fixed player inventory bug", "user": {"name": "Dev"}},
-        {"branch": "main", "created": "2026-09-03T12:01:00",
-         "message": "missing id"},
-        {"id": 2, "branch": "main", "changeset": "101",
-         "created": "2026-09-03T12:02:00",
-         "message": "Fixed vehicle bug"},
-    ]}
-    monkeypatch.setattr(
-        build_feed.requests, "get",
-        lambda *args, **kwargs: FakeResponse(payload),
-    )
-    result = build_feed.fetch_latest()
-    assert [item["id"] for item in result] == [1, 2]
-    assert result[1]["user"] == "Unknown"
+def test_malformed_record_fails_closed(monkeypatch):
+    monkeypatch.setattr(build_feed.requests, "get", lambda *args, **kwargs:
+                        FakeResponse({"total": 1, "skip": 0, "take": 50,
+                                      "results": [{"message": "missing id"}]}))
+    try:
+        build_feed.fetch_source("Rust", datetime(2026, 9, 1, tzinfo=timezone.utc))
+    except RuntimeError as error:
+        assert "invalid ID/date" in str(error)
+    else:
+        raise AssertionError("Malformed source records must not cause a partial archive.")
 
 
 def test_is_noise_keeps_multiline_merge_with_real_content():
