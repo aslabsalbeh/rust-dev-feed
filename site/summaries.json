@@ -1,57 +1,63 @@
 {
   "2026-11-10": {
-    "commit_count": 82,
-    "relevant_commit_count": 22,
-    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371",
+    "commit_count": 97,
+    "relevant_commit_count": 27,
+    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Loot",
+        "title": "Map & Extraction",
         "items": [
           {
-            "text": "New rare shipping containers can spawn on any coast (jungle, arctic, desert) and must be lock‑broken or code‑unlocked to open, with increased explosive damage required to destroy the lock.",
+            "text": "Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.",
             "commit_ids": [
-              732371,
-              732178,
-              732194
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Grenades",
-        "items": [
-          {
-            "text": "40mm flare now uses road‑flare VFX, appears white, and the round will self‑destruct if shot into the ground at close range.",
-            "commit_ids": [
-              732093
+              732409,
+              732407
             ]
           },
           {
-            "text": "40mm incendiary grenade received new visual/sound effects and its damage was rebalanced.",
+            "text": "Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.",
             "commit_ids": [
-              732051
+              732408
             ]
           }
         ]
       },
       {
-        "title": "Base Building",
+        "title": "Combat UI",
         "items": [
           {
-            "text": "Conveyor belts now move up to 24 items per tick, speeding up item transport.",
+            "text": "Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.",
             "commit_ids": [
-              732014
+              732404
             ]
           }
         ]
       },
       {
-        "title": "Weapons & Tools",
+        "title": "Shipping & Cargo",
         "items": [
           {
-            "text": "Added a deployable arrow‑customisation station and a \"clear customisation\" action that returns skinned arrows to their original ammo type.",
+            "text": "Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players.",
+            "commit_ids": [
+              732371
+            ]
+          },
+          {
+            "text": "Updated lock mechanics: cargo container doors stay intact until the lock is broken, with increased explosive damage needed for codelocked containers and lock‑only health UI.",
+            "commit_ids": [
+              732194,
+              732178
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Arrow Customization",
+        "items": [
+          {
+            "text": "Added a deployable fletching jig station for customizing arrows, plus a clear‑customization action to revert skinned arrows to their base type.",
             "commit_ids": [
               732116,
               732227
@@ -60,44 +66,92 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Grenades & Explosives",
         "items": [
           {
-            "text": "Fixed drone script SetFlag behavior and resolved sound modulation null reference errors, improving FPV drone reliability.",
+            "text": "Reworked the 40 mm Incendiary Grenade with new effects, sound, icon, and balanced damage.",
+            "commit_ids": [
+              732051
+            ]
+          },
+          {
+            "text": "Updated the 40 mm Flare: new visual effect, white colour, self‑destruct when shot into ground, and fixed parachute shadow.",
+            "commit_ids": [
+              732093
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base Building & Deployables",
+        "items": [
+          {
+            "text": "Conveyor belts now transport up to 24 items per tick, speeding up item movement.",
+            "commit_ids": [
+              732014
+            ]
+          },
+          {
+            "text": "Added a prototype deployable trampoline for player mobility.",
+            "commit_ids": [
+              732076
+            ]
+          },
+          {
+            "text": "Fixed FPV Drone script bugs, improving stability and reliability.",
             "commit_ids": [
               732143
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
           {
-            "text": "Restored visibility of building blocks, fixing a bug where structures could appear invisible.",
+            "text": "Fixed an issue where placed building blocks could become invisible, ensuring structures remain visible to all players.",
             "commit_ids": [
               732046
-            ]
-          },
-          {
-            "text": "Adds a prototype deployable trampoline that provides temporary vertical boost; currently WIP.",
-            "commit_ids": [
-              732076
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Loot\n- New rare shipping containers can spawn on any coast (jungle, arctic, desert) and must be lock‑broken or code‑unlocked to open, with increased explosive damage required to destroy the lock.\n\n### Combat & Grenades\n- 40mm flare now uses road‑flare VFX, appears white, and the round will self‑destruct if shot into the ground at close range.\n- 40mm incendiary grenade received new visual/sound effects and its damage was rebalanced.\n\n### Base Building\n- Conveyor belts now move up to 24 items per tick, speeding up item transport.\n\n### Weapons & Tools\n- Added a deployable arrow‑customisation station and a \"clear customisation\" action that returns skinned arrows to their original ammo type.\n\n### Gameplay & Balance\n- Fixed drone script SetFlag behavior and resolved sound modulation null reference errors, improving FPV drone reliability.\n- Restored visibility of building blocks, fixing a bug where structures could appear invisible.\n- Adds a prototype deployable trampoline that provides temporary vertical boost; currently WIP.",
+    "summary": "### Map & Extraction\n- Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.\n- Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.\n\n### Combat UI\n- Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.\n\n### Shipping & Cargo\n- Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players.\n- Updated lock mechanics: cargo container doors stay intact until the lock is broken, with increased explosive damage needed for codelocked containers and lock‑only health UI.\n\n### Arrow Customization\n- Added a deployable fletching jig station for customizing arrows, plus a clear‑customization action to revert skinned arrows to their base type.\n\n### Grenades & Explosives\n- Reworked the 40 mm Incendiary Grenade with new effects, sound, icon, and balanced damage.\n- Updated the 40 mm Flare: new visual effect, white colour, self‑destruct when shot into ground, and fixed parachute shadow.\n\n### Base Building & Deployables\n- Conveyor belts now transport up to 24 items per tick, speeding up item movement.\n- Added a prototype deployable trampoline for player mobility.\n- Fixed FPV Drone script bugs, improving stability and reliability.\n\n### Gameplay & Balance\n- Fixed an issue where placed building blocks could become invisible, ensuring structures remain visible to all players.",
     "new_items": [
       {
-        "text": "New rare shipping containers can spawn on any coast (jungle, arctic, desert) and must be lock‑broken or code‑unlocked to open, with increased explosive damage required to destroy the lock.",
+        "text": "Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.",
         "commit_ids": [
-          732371,
-          732178,
-          732194
+          732409,
+          732407
         ],
-        "section": "World & Loot"
+        "section": "Map & Extraction"
+      },
+      {
+        "text": "Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.",
+        "commit_ids": [
+          732408
+        ],
+        "section": "Map & Extraction"
+      },
+      {
+        "text": "Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.",
+        "commit_ids": [
+          732404
+        ],
+        "section": "Combat UI"
+      },
+      {
+        "text": "Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players.",
+        "commit_ids": [
+          732371
+        ],
+        "section": "Shipping & Cargo"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- New rare shipping containers can spawn on any coast (jungle, arctic, desert) and must be lock‑broken or code‑unlocked to open, with increased explosive damage required to destroy the lock."
+    "new_relevant_count": 5,
+    "new_summary": "- Expanded the extraction map with new monuments and a massive 3 km procedural raid zone, adding fresh terrain for end‑game fights.\n- Added a loot stash that banks extracted loot and introduced raider spawns at raid start, enhancing risk/reward.\n- Added a reload progress bar visible when using the shoulder camera, giving clearer reload timing feedback.\n- Introduced rare coastal shipping containers that require lock‑breaking and contain unique loot; spawn rate ~1 per 100 players."
   },
   "2026-11-09": {
     "commit_count": 184,
