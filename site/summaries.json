@@ -1,106 +1,163 @@
 {
+  "2026-11-11": {
+    "commit_count": 5,
+    "relevant_commit_count": 3,
+    "relevant_signature": "732567,732568,732569",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-11-10": {
-    "commit_count": 158,
-    "relevant_commit_count": 43,
-    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503,732532,732533,732542,732543,732553",
+    "commit_count": 159,
+    "relevant_commit_count": 44,
+    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503,732532,732533,732542,732543,732553,732564",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Exploration",
+        "title": "Combat & Weapon Systems",
         "items": [
           {
-            "text": "New 3k procedural map scene with additional monuments and a loot stash that banks extracted items and drops raiders at raid start.",
+            "text": "Turret weapons now take damage when firing and can break, shutting off their laser and sparking.",
             "commit_ids": [
-              732407,
-              732409,
-              732408
+              732564
             ]
           },
           {
-            "text": "Rare mainland shipping containers now spawn on jungle, arctic, and desert coasts at a rate of 1 per 100 players, containing unique loot.",
+            "text": "A reload progress bar is displayed beside the weapon in shoulder‑camera view.",
             "commit_ids": [
-              732371
+              732404
             ]
           },
           {
-            "text": "Shipping containers feature tougher codelocked locks requiring 1.5× satchel damage; lock health UI appears only when looking at the lock, doors must be forced open, and one container can be opened with explosives or a code note.",
+            "text": "Grenade updates – 40 mm flare now uses road flare VFX, appears white, and self‑destructs if shot into the ground; 40 mm incendiary grenade receives new visual and sound effects, an updated icon, and rebalanced damage.",
             "commit_ids": [
-              732194,
-              732178
+              732093,
+              732051
             ]
           }
         ]
       },
       {
-        "title": "Combat & Gear",
+        "title": "AI & NPC Behavior",
         "items": [
           {
-            "text": "40mm grenades rebalanced – incendiary damage adjusted and flare rounds self‑destruct when fired into the ground.",
+            "text": "Scientists now correctly flank targets, fixing previous failures.",
             "commit_ids": [
-              732051,
-              732093
+              732464
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Raids & Extraction",
+        "items": [
+          {
+            "text": "Extraction maps expanded with additional monuments and a new 3 km procedural map scene for raids.",
+            "commit_ids": [
+              732409,
+              732407
             ]
           },
           {
-            "text": "Arrow customization improvements – players can clear skins from arrows and use a new fletching jig deployable to customize arrows.",
+            "text": "Extracted loot is automatically banked in a stash and raiders are spawned at raid start.",
+            "commit_ids": [
+              732408
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Loot",
+        "items": [
+          {
+            "text": "New shipping containers can spawn on mainland coasts (jungle, arctic, desert); they require lock‑breaking to open, are rare (~1 per 100 players), and contain unique loot.",
+            "commit_ids": [
+              732371
+            ]
+          },
+          {
+            "text": "Tool cupboards now fill resources evenly, similar to furnaces, improving resource balance.",
+            "commit_ids": [
+              732543
+            ]
+          },
+          {
+            "text": "CCTV recordings now handle player death or dismount events without crashing playback.",
+            "commit_ids": [
+              732453
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployables & Crafting",
+        "items": [
+          {
+            "text": "Added a deployable trampoline prototype for players to place and use.",
+            "commit_ids": [
+              732076
+            ]
+          },
+          {
+            "text": "Added a “clear customisation” action for skinned arrows and introduced a deployable fletching jig (arrow customization station).",
             "commit_ids": [
               732227,
               732116
             ]
           },
           {
-            "text": "Prototype deployable trampoline added for mobility.",
+            "text": "Introduced a new FPV drone and goggles system, with script fixes for SetFlag behavior and null reference errors.",
             "commit_ids": [
-              732076
+              732162,
+              732143
             ]
           }
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "Infrastructure & Systems",
         "items": [
           {
-            "text": "Scientists now correctly flank and handle edge cases, improving combat behavior.",
+            "text": "Cargo containers are now codelocked; breaking them requires 1.5× the damage of a timed satchel, health UI appears only when looking at the lock, doors cannot be destroyed and must be opened after unlocking; one container includes a code note.",
             "commit_ids": [
-              732464,
-              732465
+              732194,
+              732178
             ]
-          }
-        ]
-      },
-      {
-        "title": "Logistics & Building",
-        "items": [
+          },
           {
-            "text": "Tool cupboards fill evenly like furnaces, and conveyor belts now transport 24 items per tick, increasing throughput.",
+            "text": "Conveyor belts now move up to 24 items per tick, increasing throughput.",
             "commit_ids": [
-              732543,
               732014
             ]
           }
         ]
       },
       {
-        "title": "Surveillance & UI",
+        "title": "UI & Visuals",
         "items": [
           {
-            "text": "CCTV playback safely handles player death or dismount during tape playback.",
+            "text": "Scrolling panels no longer flicker, providing a stable UI view while moving through inventories or menus.",
             "commit_ids": [
-              732453
+              732138
             ]
           },
           {
-            "text": "Reload progress bar displayed next to weapon when using shoulder camera view.",
+            "text": "Previously invisible building blocks are now visible, ensuring structures can be placed and seen correctly.",
             "commit_ids": [
-              732404
+              732046
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### World & Exploration\n- New 3k procedural map scene with additional monuments and a loot stash that banks extracted items and drops raiders at raid start.\n- Rare mainland shipping containers now spawn on jungle, arctic, and desert coasts at a rate of 1 per 100 players, containing unique loot.\n- Shipping containers feature tougher codelocked locks requiring 1.5× satchel damage; lock health UI appears only when looking at the lock, doors must be forced open, and one container can be opened with explosives or a code note.\n\n### Combat & Gear\n- 40mm grenades rebalanced – incendiary damage adjusted and flare rounds self‑destruct when fired into the ground.\n- Arrow customization improvements – players can clear skins from arrows and use a new fletching jig deployable to customize arrows.\n- Prototype deployable trampoline added for mobility.\n\n### NPC & AI\n- Scientists now correctly flank and handle edge cases, improving combat behavior.\n\n### Logistics & Building\n- Tool cupboards fill evenly like furnaces, and conveyor belts now transport 24 items per tick, increasing throughput.\n\n### Surveillance & UI\n- CCTV playback safely handles player death or dismount during tape playback.\n- Reload progress bar displayed next to weapon when using shoulder camera view.",
+    "summary": "### Combat & Weapon Systems\n- Turret weapons now take damage when firing and can break, shutting off their laser and sparking.\n- A reload progress bar is displayed beside the weapon in shoulder‑camera view.\n- Grenade updates – 40 mm flare now uses road flare VFX, appears white, and self‑destructs if shot into the ground; 40 mm incendiary grenade receives new visual and sound effects, an updated icon, and rebalanced damage.\n\n### AI & NPC Behavior\n- Scientists now correctly flank targets, fixing previous failures.\n\n### Raids & Extraction\n- Extraction maps expanded with additional monuments and a new 3 km procedural map scene for raids.\n- Extracted loot is automatically banked in a stash and raiders are spawned at raid start.\n\n### World & Loot\n- New shipping containers can spawn on mainland coasts (jungle, arctic, desert); they require lock‑breaking to open, are rare (~1 per 100 players), and contain unique loot.\n- Tool cupboards now fill resources evenly, similar to furnaces, improving resource balance.\n- CCTV recordings now handle player death or dismount events without crashing playback.\n\n### Deployables & Crafting\n- Added a deployable trampoline prototype for players to place and use.\n- Added a “clear customisation” action for skinned arrows and introduced a deployable fletching jig (arrow customization station).\n- Introduced a new FPV drone and goggles system, with script fixes for SetFlag behavior and null reference errors.\n\n### Infrastructure & Systems\n- Cargo containers are now codelocked; breaking them requires 1.5× the damage of a timed satchel, health UI appears only when looking at the lock, doors cannot be destroyed and must be opened after unlocking; one container includes a code note.\n- Conveyor belts now move up to 24 items per tick, increasing throughput.\n\n### UI & Visuals\n- Scrolling panels no longer flicker, providing a stable UI view while moving through inventories or menus.\n- Previously invisible building blocks are now visible, ensuring structures can be placed and seen correctly.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -240,19 +297,6 @@
     ],
     "status": "ok",
     "summary": "### Seamless Server Travel\n- Fixed bugs that left players behind boats, caused sleeping, sinking boats, or duplicated/incorrect entities during server transfers.\n- Enabled exiting vehicles and crossing between seamless servers, adding full neighbor connections, server links, vehicle transfers, and client handling for smoother travel.\n\n### Base Building & Logistics\n- Rewrote the conveyor system to move a fixed amount of items per tick, speed up when outputs near full, and resume scans after multi‑tick transfers.\n- Fixed a UI bug where powered storage adaptors incorrectly displayed a power requirement message.\n\n### World Content\n- Added two Minicopter wrecks per map at monuments that can be repaired for gears, metal fragments, high‑quality metal, and a random tier‑2 modular car part.\n- Implemented BoatDockTrigger on all fishing village docks, preventing vehicles from getting stuck and gently pulling them to the centre of water docks.\n\n### Inventory & Combat\n- Fixed AK rifle stacking display so a stack correctly shows 20 AKs instead of an erroneous label.\n- Added a toggle to keep mouse sensitivity consistent across all weapons.\n- Added an ammo indicator to the 40 mm Flashbang grenade.\n\n### XCOM Mode Overhaul\n- Introduced a major expansion to the experimental Rust XCOM mode, adding proper weapon handling, new enemy types, ladders, doors, manual furnace, full armoury with loadouts, melee options, overwatch, research, crafting, bases, terrain changes, camera controls, combat animations, cover improvements, loot drops, persistent squads, resource economy, repeatable raids, battle camera, and many other gameplay systems.\n\n### Tools & Building\n- Fixed a crash caused by a NullReferenceException in the Wire Tool preview, preventing crashes and missing wire previews.\n\n### Loot & Exploration\n- Cargo ship interior loot is now secured inside seven shipping containers; players must break them open (explosives/melee) to access loot, with one empty and one unlocked container containing brown crates.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-08": {
-    "commit_count": 32,
-    "relevant_commit_count": 2,
-    "relevant_signature": "730524,731525",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [],
-    "status": "no_significant_updates",
-    "summary": "No notable player-facing changes were identified in the latest development commits.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

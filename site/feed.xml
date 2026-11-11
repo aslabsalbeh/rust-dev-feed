@@ -6,36 +6,58 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 11 Nov 2026 00:18:10 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 02:18:28 -0500</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Nov 11</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;5 development commits&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-11-11</guid>
+      <pubDate>Wed, 11 Nov 2026 02:18:28 -0500</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 10</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;158 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;159 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;World &amp;amp; Exploration&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Weapon Systems&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732407,732409,732408"&gt;New 3k procedural map scene with additional monuments and a loot stash that banks extracted items and drops raiders at raid start.&lt;/li&gt;
-&lt;li data-rust-commits="732371"&gt;Rare mainland shipping containers now spawn on jungle, arctic, and desert coasts at a rate of 1 per 100 players, containing unique loot.&lt;/li&gt;
-&lt;li data-rust-commits="732194,732178"&gt;Shipping containers feature tougher codelocked locks requiring 1.5× satchel damage; lock health UI appears only when looking at the lock, doors must be forced open, and one container can be opened with explosives or a code note.&lt;/li&gt;
+&lt;li data-rust-commits="732564"&gt;Turret weapons now take damage when firing and can break, shutting off their laser and sparking.&lt;/li&gt;
+&lt;li data-rust-commits="732404"&gt;A reload progress bar is displayed beside the weapon in shoulder‑camera view.&lt;/li&gt;
+&lt;li data-rust-commits="732093,732051"&gt;Grenade updates – 40 mm flare now uses road flare VFX, appears white, and self‑destructs if shot into the ground; 40 mm incendiary grenade receives new visual and sound effects, an updated icon, and rebalanced damage.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Gear&lt;/h3&gt;
+&lt;h3&gt;AI &amp;amp; NPC Behavior&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732051,732093"&gt;40mm grenades rebalanced – incendiary damage adjusted and flare rounds self‑destruct when fired into the ground.&lt;/li&gt;
-&lt;li data-rust-commits="732227,732116"&gt;Arrow customization improvements – players can clear skins from arrows and use a new fletching jig deployable to customize arrows.&lt;/li&gt;
-&lt;li data-rust-commits="732076"&gt;Prototype deployable trampoline added for mobility.&lt;/li&gt;
+&lt;li data-rust-commits="732464"&gt;Scientists now correctly flank targets, fixing previous failures.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Raids &amp;amp; Extraction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732464,732465"&gt;Scientists now correctly flank and handle edge cases, improving combat behavior.&lt;/li&gt;
+&lt;li data-rust-commits="732409,732407"&gt;Extraction maps expanded with additional monuments and a new 3 km procedural map scene for raids.&lt;/li&gt;
+&lt;li data-rust-commits="732408"&gt;Extracted loot is automatically banked in a stash and raiders are spawned at raid start.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Logistics &amp;amp; Building&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Loot&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732543,732014"&gt;Tool cupboards fill evenly like furnaces, and conveyor belts now transport 24 items per tick, increasing throughput.&lt;/li&gt;
+&lt;li data-rust-commits="732371"&gt;New shipping containers can spawn on mainland coasts (jungle, arctic, desert); they require lock‑breaking to open, are rare (~1 per 100 players), and contain unique loot.&lt;/li&gt;
+&lt;li data-rust-commits="732543"&gt;Tool cupboards now fill resources evenly, similar to furnaces, improving resource balance.&lt;/li&gt;
+&lt;li data-rust-commits="732453"&gt;CCTV recordings now handle player death or dismount events without crashing playback.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Surveillance &amp;amp; UI&lt;/h3&gt;
+&lt;h3&gt;Deployables &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732453"&gt;CCTV playback safely handles player death or dismount during tape playback.&lt;/li&gt;
-&lt;li data-rust-commits="732404"&gt;Reload progress bar displayed next to weapon when using shoulder camera view.&lt;/li&gt;
+&lt;li data-rust-commits="732076"&gt;Added a deployable trampoline prototype for players to place and use.&lt;/li&gt;
+&lt;li data-rust-commits="732227,732116"&gt;Added a “clear customisation” action for skinned arrows and introduced a deployable fletching jig (arrow customization station).&lt;/li&gt;
+&lt;li data-rust-commits="732162,732143"&gt;Introduced a new FPV drone and goggles system, with script fixes for SetFlag behavior and null reference errors.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Infrastructure &amp;amp; Systems&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="732194,732178"&gt;Cargo containers are now codelocked; breaking them requires 1.5× the damage of a timed satchel, health UI appears only when looking at the lock, doors cannot be destroyed and must be opened after unlocking; one container includes a code note.&lt;/li&gt;
+&lt;li data-rust-commits="732014"&gt;Conveyor belts now move up to 24 items per tick, increasing throughput.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Visuals&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="732138"&gt;Scrolling panels no longer flicker, providing a stable UI view while moving through inventories or menus.&lt;/li&gt;
+&lt;li data-rust-commits="732046"&gt;Previously invisible building blocks are now visible, ensuring structures can be placed and seen correctly.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-10</guid>
@@ -82,16 +104,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-09</guid>
       <pubDate>Mon, 09 Nov 2026 12:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Nov 08</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;32 development commits&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-11-08</guid>
-      <pubDate>Sun, 08 Nov 2026 12:00:00 -0500</pubDate>
     </item>
   </channel>
 </rss>
