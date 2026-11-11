@@ -1,28 +1,30 @@
 {
   "2026-11-10": {
-    "commit_count": 153,
-    "relevant_commit_count": 42,
-    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503,732532,732533,732542,732543",
+    "commit_count": 158,
+    "relevant_commit_count": 43,
+    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503,732532,732533,732542,732543,732553",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Base Building & Logistics",
+        "title": "World & Exploration",
         "items": [
           {
-            "text": "Tool cupboards now fill evenly across the base, similar to furnaces.",
+            "text": "New 3k procedural map scene with additional monuments and a loot stash that banks extracted items and drops raiders at raid start.",
             "commit_ids": [
-              732543
+              732407,
+              732409,
+              732408
             ]
           },
           {
-            "text": "Conveyor belts now move up to 24 items per tick, speeding up item transport.",
+            "text": "Rare mainland shipping containers now spawn on jungle, arctic, and desert coasts at a rate of 1 per 100 players, containing unique loot.",
             "commit_ids": [
-              732014
+              732371
             ]
           },
           {
-            "text": "Cargo container doors can no longer be destroyed; they must be unlocked with melee or explosives. One container is codelocked and requires a large amount of explosives or a code note, with increased explosive damage required and lock UI only visible when looking directly at it.",
+            "text": "Shipping containers feature tougher codelocked locks requiring 1.5× satchel damage; lock health UI appears only when looking at the lock, doors must be forced open, and one container can be opened with explosives or a code note.",
             "commit_ids": [
               732194,
               732178
@@ -31,61 +33,24 @@
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "Combat & Gear",
         "items": [
           {
-            "text": "Scientists now correctly flank targets, fixing previous failures to flank.",
+            "text": "40mm grenades rebalanced – incendiary damage adjusted and flare rounds self‑destruct when fired into the ground.",
             "commit_ids": [
-              732464
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Extraction & Raids",
-        "items": [
-          {
-            "text": "Extraction maps now include additional monuments, providing more raid destinations.",
-            "commit_ids": [
-              732409
+              732051,
+              732093
             ]
           },
           {
-            "text": "Extracted loot is automatically deposited into a stash, and raiders spawn at the start of a raid.",
+            "text": "Arrow customization improvements – players can clear skins from arrows and use a new fletching jig deployable to customize arrows.",
             "commit_ids": [
-              732408
-            ]
-          },
-          {
-            "text": "A new 3 km procedural map scene has been added for extraction raids.",
-            "commit_ids": [
-              732407
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Content",
-        "items": [
-          {
-            "text": "Rare shipping containers can spawn on mainland coasts (jungle, arctic, desert) with unique loot; they appear at a rate of one per 100 players.",
-            "commit_ids": [
-              732371
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Deployables & Mobility",
-        "items": [
-          {
-            "text": "A fletching jig deployable allows on-site arrow customization.",
-            "commit_ids": [
+              732227,
               732116
             ]
           },
           {
-            "text": "A prototype trampoline deployable adds a new mobility tool for players.",
+            "text": "Prototype deployable trampoline added for mobility.",
             "commit_ids": [
               732076
             ]
@@ -93,59 +58,52 @@
         ]
       },
       {
-        "title": "Weapon & Grenade Updates",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "40 mm incendiary grenade received a new visual effect, sound, icon, and rebalanced damage values.",
+            "text": "Scientists now correctly flank and handle edge cases, improving combat behavior.",
             "commit_ids": [
-              732051
-            ]
-          },
-          {
-            "text": "40 mm flare now uses road flare visuals, appears white, and self-destructs if shot into the ground at close range.",
-            "commit_ids": [
-              732093
+              732464,
+              732465
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Logistics & Building",
         "items": [
           {
-            "text": "Playing back CCTV footage now safely handles death or dismount, preventing crashes or stuck states.",
+            "text": "Tool cupboards fill evenly like furnaces, and conveyor belts now transport 24 items per tick, increasing throughput.",
+            "commit_ids": [
+              732543,
+              732014
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Surveillance & UI",
+        "items": [
+          {
+            "text": "CCTV playback safely handles player death or dismount during tape playback.",
             "commit_ids": [
               732453
             ]
           },
           {
-            "text": "A reload progress bar appears next to the weapon when using the shoulder camera, giving clear reload timing.",
+            "text": "Reload progress bar displayed next to weapon when using shoulder camera view.",
             "commit_ids": [
               732404
-            ]
-          },
-          {
-            "text": "Arrows with custom skins can now be cleared, reverting them to their original ammo type.",
-            "commit_ids": [
-              732227
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Base Building & Logistics\n- Tool cupboards now fill evenly across the base, similar to furnaces.\n- Conveyor belts now move up to 24 items per tick, speeding up item transport.\n- Cargo container doors can no longer be destroyed; they must be unlocked with melee or explosives. One container is codelocked and requires a large amount of explosives or a code note, with increased explosive damage required and lock UI only visible when looking directly at it.\n\n### NPC & AI\n- Scientists now correctly flank targets, fixing previous failures to flank.\n\n### Extraction & Raids\n- Extraction maps now include additional monuments, providing more raid destinations.\n- Extracted loot is automatically deposited into a stash, and raiders spawn at the start of a raid.\n- A new 3 km procedural map scene has been added for extraction raids.\n\n### World Content\n- Rare shipping containers can spawn on mainland coasts (jungle, arctic, desert) with unique loot; they appear at a rate of one per 100 players.\n\n### Deployables & Mobility\n- A fletching jig deployable allows on-site arrow customization.\n- A prototype trampoline deployable adds a new mobility tool for players.\n\n### Weapon & Grenade Updates\n- 40 mm incendiary grenade received a new visual effect, sound, icon, and rebalanced damage values.\n- 40 mm flare now uses road flare visuals, appears white, and self-destructs if shot into the ground at close range.\n\n### Gameplay & Balance\n- Playing back CCTV footage now safely handles death or dismount, preventing crashes or stuck states.\n- A reload progress bar appears next to the weapon when using the shoulder camera, giving clear reload timing.\n- Arrows with custom skins can now be cleared, reverting them to their original ammo type.",
-    "new_items": [
-      {
-        "text": "Tool cupboards now fill evenly across the base, similar to furnaces.",
-        "commit_ids": [
-          732543
-        ],
-        "section": "Base Building & Logistics"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Tool cupboards now fill evenly across the base, similar to furnaces."
+    "summary": "### World & Exploration\n- New 3k procedural map scene with additional monuments and a loot stash that banks extracted items and drops raiders at raid start.\n- Rare mainland shipping containers now spawn on jungle, arctic, and desert coasts at a rate of 1 per 100 players, containing unique loot.\n- Shipping containers feature tougher codelocked locks requiring 1.5× satchel damage; lock health UI appears only when looking at the lock, doors must be forced open, and one container can be opened with explosives or a code note.\n\n### Combat & Gear\n- 40mm grenades rebalanced – incendiary damage adjusted and flare rounds self‑destruct when fired into the ground.\n- Arrow customization improvements – players can clear skins from arrows and use a new fletching jig deployable to customize arrows.\n- Prototype deployable trampoline added for mobility.\n\n### NPC & AI\n- Scientists now correctly flank and handle edge cases, improving combat behavior.\n\n### Logistics & Building\n- Tool cupboards fill evenly like furnaces, and conveyor belts now transport 24 items per tick, increasing throughput.\n\n### Surveillance & UI\n- CCTV playback safely handles player death or dismount during tape playback.\n- Reload progress bar displayed next to weapon when using shoulder camera view.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-09": {
     "commit_count": 184,
