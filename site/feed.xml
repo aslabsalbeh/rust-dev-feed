@@ -6,54 +6,58 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 11 Nov 2026 16:18:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 18:18:27 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 11</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;109 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;137 development commits&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732991"&gt;Players can no longer deploy structures while they are crafting, preventing accidental deployments during crafting actions.&lt;/li&gt;
-&lt;li data-rust-commits="732962"&gt;Helicopters that are pooled now tick correctly on the client, fixing missing helicopter movement and interaction.&lt;/li&gt;
-&lt;li data-rust-commits="732930"&gt;When looting, a safe‑pocket indicator is shown beside the loot container, helping players see where their inventory will go.&lt;/li&gt;
+&lt;li data-rust-commits="733076"&gt;Scrap values are now displayed on the loot UI, letting players see the worth of items they find.&lt;/li&gt;
+&lt;li data-rust-commits="733055"&gt;Building pieces automatically merge when placed near each other, simplifying base construction and management.&lt;/li&gt;
+&lt;li data-rust-commits="732991"&gt;Deployments are blocked while a player is crafting, preventing accidental placements during crafting.&lt;/li&gt;
+&lt;li data-rust-commits="733039,732962"&gt;Helicopter prediction bounce issues have been fixed and pooled helicopters now tick correctly on the client, improving helicopter reliability.&lt;/li&gt;
+&lt;li data-rust-commits="733007,733006,733017"&gt;Players can now shoot entities on neighboring seamless servers; nearby vehicles and players stay clustered on a single server, and full PvE waves spawn outside terrain for consistent encounters.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Gameplay Rules&lt;/h3&gt;
+&lt;h3&gt;Loot &amp;amp; Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732991"&gt;Players can no longer deploy structures while they are crafting, preventing accidental deployments during crafting actions.&lt;/li&gt;
+&lt;li data-rust-commits="733076"&gt;Scrap values are now displayed on the loot UI, letting players see the worth of items they find.&lt;/li&gt;
+&lt;li data-rust-commits="732800"&gt;Beach loot containers now use three distinct loot pools—Tools, Ammo/Meds, and Food—with many crates but no high‑tier weapons, altering beach loot distribution.&lt;/li&gt;
+&lt;li data-rust-commits="732861"&gt;The Outpost now appears on the extraction map, allowing players to locate it during raids.&lt;/li&gt;
+&lt;li data-rust-commits="732763,732766"&gt;Rentable NPC services such as armour slots and restoration garages are available at the Outpost; rental earnings are held for 48 hours and restoration pricing has been updated.&lt;/li&gt;
+&lt;li data-rust-commits="732765,732764,732767"&gt;Free resident meals are provided at the Apartment Complex, and a giga furnace drop‑off service has been added at Bandit Camp with the furnace moved inside.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Mobility&lt;/h3&gt;
+&lt;h3&gt;Base Building &amp;amp; Crafting&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732962"&gt;Helicopters that are pooled now tick correctly on the client, fixing missing helicopter movement and interaction.&lt;/li&gt;
-&lt;li data-rust-commits="732826"&gt;FPV drones now display a dynamic artificial horizon showing pitch and roll angles, giving pilots clearer flight feedback.&lt;/li&gt;
-&lt;li data-rust-commits="732930"&gt;When looting, a safe‑pocket indicator is shown beside the loot container, helping players see where their inventory will go.&lt;/li&gt;
+&lt;li data-rust-commits="733055"&gt;Building pieces automatically merge when placed near each other, simplifying base construction and management.&lt;/li&gt;
+&lt;li data-rust-commits="732991"&gt;Deployments are blocked while a player is crafting, preventing accidental placements during crafting.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Map &amp;amp; Extraction&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732861"&gt;The Outpost location is now marked on the extraction map, making it easier to navigate to this extraction point.&lt;/li&gt;
+&lt;li data-rust-commits="732693"&gt;A new 40 mm Tracker Round grenade attaches to surfaces and creates a 5‑minute map marker with audio beeps and a flashing LED.&lt;/li&gt;
+&lt;li data-rust-commits="733039,732962"&gt;Helicopter prediction bounce issues have been fixed and pooled helicopters now tick correctly on the client, improving helicopter reliability.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; Spawn&lt;/h3&gt;
+&lt;h3&gt;Seamless Multiplayer&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732800"&gt;Beached loot containers now use unique loot pools (tools, ammo/meds, food) and contain many crates but no high‑tier weapons, changing beach loot composition.&lt;/li&gt;
+&lt;li data-rust-commits="733007,733006,733017"&gt;Players can now shoot entities on neighboring seamless servers; nearby vehicles and players stay clustered on a single server, and full PvE waves spawn outside terrain for consistent encounters.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC Services &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;NPC Services &amp;amp; Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732778"&gt;NPC service system overhaul adds profession‑based name prefixes/suffixes, voice mumbling, and smoother conversation movement.&lt;/li&gt;
-&lt;li data-rust-commits="732777,732775"&gt;Armour and restoration booths now have full kiosk structures, and dedicated UI panels for restoration, armour, and giga‑furnace services improve visual layout and access.&lt;/li&gt;
-&lt;li data-rust-commits="732776"&gt;Canteen NPCs automatically refill their food supplies to 80%, ensuring they stay stocked.&lt;/li&gt;
-&lt;li data-rust-commits="732763,732773"&gt;Rentable NPC services with an armor slot and restoration garages are available at the Outpost, and players can run these services by talking directly to the attendant.&lt;/li&gt;
-&lt;li data-rust-commits="732772,732764"&gt;The giga furnace can be operated from a walk‑in counter and a new drop‑off service is available at Bandit Camp.&lt;/li&gt;
-&lt;li data-rust-commits="732765"&gt;Free resident meals are now provided at the Apartment Complex.&lt;/li&gt;
-&lt;li data-rust-commits="732766"&gt;Finished rental earnings are held for 48 hours and restoration pricing has been updated.&lt;/li&gt;
+&lt;li data-rust-commits="732777,732773"&gt;Service booths now feature full kiosks with attendant NPCs; players must talk to an attendant to use services, adding a new interaction step.&lt;/li&gt;
+&lt;li data-rust-commits="732778,732776"&gt;NPCs now have profession prefixes, random name suffixes, voice mumbling, smoother conversation movement, and canteens refill resident NPCs&amp;#x27; food to 80%, enhancing immersion.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Weapons&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732693"&gt;A new 40 mm Tracker Round grenade sticks to vehicles and structures, creates a map tracking marker for five minutes, and emits a beep and flashing LED.&lt;/li&gt;
+&lt;li data-rust-commits="732930"&gt;Safe pocket now displayed beside looted containers, letting players see stored items without opening inventory.&lt;/li&gt;
+&lt;li data-rust-commits="732826"&gt;FPV drone UI now includes an artificial horizon showing real‑time pitch and roll angles, improving flight control.&lt;/li&gt;
+&lt;li data-rust-commits="732775"&gt;Restoration, armour slot, and giga furnace services each receive dedicated UI panels, streamlining management.&lt;/li&gt;
+&lt;li data-rust-commits="732772"&gt;Giga furnace can now be operated from a walk‑in counter in its yard, and booth counters have been fixed, altering furnace access.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-11</guid>
-      <pubDate>Wed, 11 Nov 2026 16:18:14 -0500</pubDate>
+      <pubDate>Wed, 11 Nov 2026 18:18:27 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 10</title>
