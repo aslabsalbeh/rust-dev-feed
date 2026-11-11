@@ -1,43 +1,29 @@
 {
   "2026-11-10": {
-    "commit_count": 140,
-    "relevant_commit_count": 38,
-    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503",
+    "commit_count": 153,
+    "relevant_commit_count": 42,
+    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503,732532,732533,732542,732543",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "NPC & AI",
+        "title": "Base Building & Logistics",
         "items": [
           {
-            "text": "Scientists now correctly flank and position themselves during combat, fixing previous AI behavior issues.",
+            "text": "Tool cupboards now fill evenly across the base, similar to furnaces.",
             "commit_ids": [
-              732464,
-              732465
+              732543
             ]
-          }
-        ]
-      },
-      {
-        "title": "Extraction & Map",
-        "items": [
+          },
           {
-            "text": "New extraction map adds extra monuments, a large 3 km procedural raid zone, and a loot stash system that banks extracted loot while raiders spawn at the start of the raid.",
+            "text": "Conveyor belts now move up to 24 items per tick, speeding up item transport.",
             "commit_ids": [
-              732409,
-              732408,
-              732407
+              732014
             ]
-          }
-        ]
-      },
-      {
-        "title": "Cargo & Containers",
-        "items": [
+          },
           {
-            "text": "Rare mainland shipping containers now contain unique loot, and codelocked containers require higher explosive damage and lock‑breaking instead of simple destruction.",
+            "text": "Cargo container doors can no longer be destroyed; they must be unlocked with melee or explosives. One container is codelocked and requires a large amount of explosives or a code note, with increased explosive damage required and lock UI only visible when looking directly at it.",
             "commit_ids": [
-              732371,
               732194,
               732178
             ]
@@ -45,17 +31,61 @@
         ]
       },
       {
-        "title": "Arrow & Crafting Tools",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "A deployable fletching jig lets you customize arrows, and a new \"clear customization\" action lets you revert skinned arrows to their original type.",
+            "text": "Scientists now correctly flank targets, fixing previous failures to flank.",
             "commit_ids": [
-              732116,
-              732227
+              732464
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Extraction & Raids",
+        "items": [
+          {
+            "text": "Extraction maps now include additional monuments, providing more raid destinations.",
+            "commit_ids": [
+              732409
             ]
           },
           {
-            "text": "Prototype deployable trampoline provides a temporary platform for movement and combat.",
+            "text": "Extracted loot is automatically deposited into a stash, and raiders spawn at the start of a raid.",
+            "commit_ids": [
+              732408
+            ]
+          },
+          {
+            "text": "A new 3 km procedural map scene has been added for extraction raids.",
+            "commit_ids": [
+              732407
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Content",
+        "items": [
+          {
+            "text": "Rare shipping containers can spawn on mainland coasts (jungle, arctic, desert) with unique loot; they appear at a rate of one per 100 players.",
+            "commit_ids": [
+              732371
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployables & Mobility",
+        "items": [
+          {
+            "text": "A fletching jig deployable allows on-site arrow customization.",
+            "commit_ids": [
+              732116
+            ]
+          },
+          {
+            "text": "A prototype trampoline deployable adds a new mobility tool for players.",
             "commit_ids": [
               732076
             ]
@@ -63,25 +93,18 @@
         ]
       },
       {
-        "title": "Vehicles, Drones & Base Systems",
+        "title": "Weapon & Grenade Updates",
         "items": [
           {
-            "text": "FPV drone scripts are stabilized, eliminating crashes, and base conveyors now move up to 24 items per tick for faster item transport.",
+            "text": "40 mm incendiary grenade received a new visual effect, sound, icon, and rebalanced damage values.",
             "commit_ids": [
-              732143,
-              732014
+              732051
             ]
           },
           {
-            "text": "A reload progress bar appears next to the weapon in shoulder‑camera view, giving clear feedback on reload timing.",
+            "text": "40 mm flare now uses road flare visuals, appears white, and self-destructs if shot into the ground at close range.",
             "commit_ids": [
-              732404
-            ]
-          },
-          {
-            "text": "Recorded CCTV playback no longer crashes when a player is killed or dismounted during viewing.",
-            "commit_ids": [
-              732453
+              732093
             ]
           }
         ]
@@ -90,25 +113,39 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "40mm grenades now destroy when shot into the ground at close range, removing lingering projectiles.",
+            "text": "Playing back CCTV footage now safely handles death or dismount, preventing crashes or stuck states.",
             "commit_ids": [
-              732093
+              732453
             ]
           },
           {
-            "text": "40mm Incendiary Grenade damage has been rebalanced.",
+            "text": "A reload progress bar appears next to the weapon when using the shoulder camera, giving clear reload timing.",
             "commit_ids": [
-              732051
+              732404
+            ]
+          },
+          {
+            "text": "Arrows with custom skins can now be cleared, reverting them to their original ammo type.",
+            "commit_ids": [
+              732227
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### NPC & AI\n- Scientists now correctly flank and position themselves during combat, fixing previous AI behavior issues.\n\n### Extraction & Map\n- New extraction map adds extra monuments, a large 3 km procedural raid zone, and a loot stash system that banks extracted loot while raiders spawn at the start of the raid.\n\n### Cargo & Containers\n- Rare mainland shipping containers now contain unique loot, and codelocked containers require higher explosive damage and lock‑breaking instead of simple destruction.\n\n### Arrow & Crafting Tools\n- A deployable fletching jig lets you customize arrows, and a new \"clear customization\" action lets you revert skinned arrows to their original type.\n- Prototype deployable trampoline provides a temporary platform for movement and combat.\n\n### Vehicles, Drones & Base Systems\n- FPV drone scripts are stabilized, eliminating crashes, and base conveyors now move up to 24 items per tick for faster item transport.\n- A reload progress bar appears next to the weapon in shoulder‑camera view, giving clear feedback on reload timing.\n- Recorded CCTV playback no longer crashes when a player is killed or dismounted during viewing.\n\n### Gameplay & Balance\n- 40mm grenades now destroy when shot into the ground at close range, removing lingering projectiles.\n- 40mm Incendiary Grenade damage has been rebalanced.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Base Building & Logistics\n- Tool cupboards now fill evenly across the base, similar to furnaces.\n- Conveyor belts now move up to 24 items per tick, speeding up item transport.\n- Cargo container doors can no longer be destroyed; they must be unlocked with melee or explosives. One container is codelocked and requires a large amount of explosives or a code note, with increased explosive damage required and lock UI only visible when looking directly at it.\n\n### NPC & AI\n- Scientists now correctly flank targets, fixing previous failures to flank.\n\n### Extraction & Raids\n- Extraction maps now include additional monuments, providing more raid destinations.\n- Extracted loot is automatically deposited into a stash, and raiders spawn at the start of a raid.\n- A new 3 km procedural map scene has been added for extraction raids.\n\n### World Content\n- Rare shipping containers can spawn on mainland coasts (jungle, arctic, desert) with unique loot; they appear at a rate of one per 100 players.\n\n### Deployables & Mobility\n- A fletching jig deployable allows on-site arrow customization.\n- A prototype trampoline deployable adds a new mobility tool for players.\n\n### Weapon & Grenade Updates\n- 40 mm incendiary grenade received a new visual effect, sound, icon, and rebalanced damage values.\n- 40 mm flare now uses road flare visuals, appears white, and self-destructs if shot into the ground at close range.\n\n### Gameplay & Balance\n- Playing back CCTV footage now safely handles death or dismount, preventing crashes or stuck states.\n- A reload progress bar appears next to the weapon when using the shoulder camera, giving clear reload timing.\n- Arrows with custom skins can now be cleared, reverting them to their original ammo type.",
+    "new_items": [
+      {
+        "text": "Tool cupboards now fill evenly across the base, similar to furnaces.",
+        "commit_ids": [
+          732543
+        ],
+        "section": "Base Building & Logistics"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- Tool cupboards now fill evenly across the base, similar to furnaces."
   },
   "2026-11-09": {
     "commit_count": 184,

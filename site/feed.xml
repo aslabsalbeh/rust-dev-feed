@@ -6,43 +6,56 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 10 Nov 2026 20:18:29 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 22:18:13 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 10</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;140 development commits&lt;/strong&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;153 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="732543"&gt;Tool cupboards now fill evenly across the base, similar to furnaces.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3&gt;Base Building &amp;amp; Logistics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="732543"&gt;Tool cupboards now fill evenly across the base, similar to furnaces.&lt;/li&gt;
+&lt;li data-rust-commits="732014"&gt;Conveyor belts now move up to 24 items per tick, speeding up item transport.&lt;/li&gt;
+&lt;li data-rust-commits="732194,732178"&gt;Cargo container doors can no longer be destroyed; they must be unlocked with melee or explosives. One container is codelocked and requires a large amount of explosives or a code note, with increased explosive damage required and lock UI only visible when looking directly at it.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732464,732465"&gt;Scientists now correctly flank and position themselves during combat, fixing previous AI behavior issues.&lt;/li&gt;
+&lt;li data-rust-commits="732464"&gt;Scientists now correctly flank targets, fixing previous failures to flank.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Extraction &amp;amp; Map&lt;/h3&gt;
+&lt;h3&gt;Extraction &amp;amp; Raids&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732409,732408,732407"&gt;New extraction map adds extra monuments, a large 3 km procedural raid zone, and a loot stash system that banks extracted loot while raiders spawn at the start of the raid.&lt;/li&gt;
+&lt;li data-rust-commits="732409"&gt;Extraction maps now include additional monuments, providing more raid destinations.&lt;/li&gt;
+&lt;li data-rust-commits="732408"&gt;Extracted loot is automatically deposited into a stash, and raiders spawn at the start of a raid.&lt;/li&gt;
+&lt;li data-rust-commits="732407"&gt;A new 3 km procedural map scene has been added for extraction raids.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Cargo &amp;amp; Containers&lt;/h3&gt;
+&lt;h3&gt;World Content&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732371,732194,732178"&gt;Rare mainland shipping containers now contain unique loot, and codelocked containers require higher explosive damage and lock‑breaking instead of simple destruction.&lt;/li&gt;
+&lt;li data-rust-commits="732371"&gt;Rare shipping containers can spawn on mainland coasts (jungle, arctic, desert) with unique loot; they appear at a rate of one per 100 players.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Arrow &amp;amp; Crafting Tools&lt;/h3&gt;
+&lt;h3&gt;Deployables &amp;amp; Mobility&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732116,732227"&gt;A deployable fletching jig lets you customize arrows, and a new &amp;quot;clear customization&amp;quot; action lets you revert skinned arrows to their original type.&lt;/li&gt;
-&lt;li data-rust-commits="732076"&gt;Prototype deployable trampoline provides a temporary platform for movement and combat.&lt;/li&gt;
+&lt;li data-rust-commits="732116"&gt;A fletching jig deployable allows on-site arrow customization.&lt;/li&gt;
+&lt;li data-rust-commits="732076"&gt;A prototype trampoline deployable adds a new mobility tool for players.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicles, Drones &amp;amp; Base Systems&lt;/h3&gt;
+&lt;h3&gt;Weapon &amp;amp; Grenade Updates&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732143,732014"&gt;FPV drone scripts are stabilized, eliminating crashes, and base conveyors now move up to 24 items per tick for faster item transport.&lt;/li&gt;
-&lt;li data-rust-commits="732404"&gt;A reload progress bar appears next to the weapon in shoulder‑camera view, giving clear feedback on reload timing.&lt;/li&gt;
-&lt;li data-rust-commits="732453"&gt;Recorded CCTV playback no longer crashes when a player is killed or dismounted during viewing.&lt;/li&gt;
+&lt;li data-rust-commits="732051"&gt;40 mm incendiary grenade received a new visual effect, sound, icon, and rebalanced damage values.&lt;/li&gt;
+&lt;li data-rust-commits="732093"&gt;40 mm flare now uses road flare visuals, appears white, and self-destructs if shot into the ground at close range.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732093"&gt;40mm grenades now destroy when shot into the ground at close range, removing lingering projectiles.&lt;/li&gt;
-&lt;li data-rust-commits="732051"&gt;40mm Incendiary Grenade damage has been rebalanced.&lt;/li&gt;
+&lt;li data-rust-commits="732453"&gt;Playing back CCTV footage now safely handles death or dismount, preventing crashes or stuck states.&lt;/li&gt;
+&lt;li data-rust-commits="732404"&gt;A reload progress bar appears next to the weapon when using the shoulder camera, giving clear reload timing.&lt;/li&gt;
+&lt;li data-rust-commits="732227"&gt;Arrows with custom skins can now be cleared, reverting them to their original ammo type.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-10</guid>
-      <pubDate>Tue, 10 Nov 2026 20:18:29 -0500</pubDate>
+      <pubDate>Tue, 10 Nov 2026 22:18:13 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 09</title>
