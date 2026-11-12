@@ -1,4 +1,55 @@
 {
+  "2026-11-12": {
+    "commit_count": 3,
+    "relevant_commit_count": 2,
+    "relevant_signature": "733179,733180",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [
+      {
+        "title": "Combat & Ammo",
+        "items": [
+          {
+            "text": "High‑velocity ammo now ignores projectile protection from armor inserts, making those inserts ineffective against HV rounds.",
+            "commit_ids": [
+              733180
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Dropbox sockets now always align flush with walls, eliminating awkward storage adaptor placements.",
+            "commit_ids": [
+              733179
+            ]
+          }
+        ]
+      }
+    ],
+    "status": "ok",
+    "summary": "### Combat & Ammo\n- High‑velocity ammo now ignores projectile protection from armor inserts, making those inserts ineffective against HV rounds.\n\n### Gameplay & Balance\n- Dropbox sockets now always align flush with walls, eliminating awkward storage adaptor placements.",
+    "new_items": [
+      {
+        "text": "High‑velocity ammo now ignores projectile protection from armor inserts, making those inserts ineffective against HV rounds.",
+        "commit_ids": [
+          733180
+        ],
+        "section": "Combat & Ammo"
+      },
+      {
+        "text": "Dropbox sockets now always align flush with walls, eliminating awkward storage adaptor placements.",
+        "commit_ids": [
+          733179
+        ],
+        "section": "Gameplay & Balance"
+      }
+    ],
+    "new_relevant_count": 2,
+    "new_summary": "- High‑velocity ammo now ignores projectile protection from armor inserts, making those inserts ineffective against HV rounds.\n- Dropbox sockets now always align flush with walls, eliminating awkward storage adaptor placements."
+  },
   "2026-11-11": {
     "commit_count": 161,
     "relevant_commit_count": 77,
@@ -249,7 +300,8 @@
             }
           ]
         }
-      ]
+      ],
+      "732567,732568": []
     },
     "sections": [
       {
@@ -539,145 +591,6 @@
     ],
     "status": "ok",
     "summary": "### Combat & Weapon Systems\n- Turret weapons now take damage when firing and can break, shutting off their laser and sparking.\n- A reload progress bar is displayed beside the weapon in shoulder‑camera view.\n- Grenade updates – 40 mm flare now uses road flare VFX, appears white, and self‑destructs if shot into the ground; 40 mm incendiary grenade receives new visual and sound effects, an updated icon, and rebalanced damage.\n\n### AI & NPC Behavior\n- Scientists now correctly flank targets, fixing previous failures.\n\n### Raids & Extraction\n- Extraction maps expanded with additional monuments and a new 3 km procedural map scene for raids.\n- Extracted loot is automatically banked in a stash and raiders are spawned at raid start.\n\n### World & Loot\n- New shipping containers can spawn on mainland coasts (jungle, arctic, desert); they require lock‑breaking to open, are rare (~1 per 100 players), and contain unique loot.\n- Tool cupboards now fill resources evenly, similar to furnaces, improving resource balance.\n- CCTV recordings now handle player death or dismount events without crashing playback.\n\n### Deployables & Crafting\n- Added a deployable trampoline prototype for players to place and use.\n- Added a “clear customisation” action for skinned arrows and introduced a deployable fletching jig (arrow customization station).\n- Introduced a new FPV drone and goggles system, with script fixes for SetFlag behavior and null reference errors.\n\n### Infrastructure & Systems\n- Cargo containers are now codelocked; breaking them requires 1.5× the damage of a timed satchel, health UI appears only when looking at the lock, doors cannot be destroyed and must be opened after unlocking; one container includes a code note.\n- Conveyor belts now move up to 24 items per tick, increasing throughput.\n\n### UI & Visuals\n- Scrolling panels no longer flicker, providing a stable UI view while moving through inventories or menus.\n- Previously invisible building blocks are now visible, ensuring structures can be placed and seen correctly.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-09": {
-    "commit_count": 184,
-    "relevant_commit_count": 54,
-    "relevant_signature": "731639,731647,731649,731651,731654,731656,731669,731670,731689,731693,731706,731707,731711,731724,731748,731760,731761,731764,731768,731769,731773,731776,731777,731783,731785,731786,731797,731810,731836,731847,731863,731864,731865,731866,731867,731868,731869,731870,731871,731872,731873,731881,731888,731891,731892,731912,731913,731945,731951,731956,731957,731960,731961,731981",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Seamless Server Travel",
-        "items": [
-          {
-            "text": "Fixed bugs that left players behind boats, caused sleeping, sinking boats, or duplicated/incorrect entities during server transfers.",
-            "commit_ids": [
-              731872,
-              731871,
-              731869,
-              731868
-            ]
-          },
-          {
-            "text": "Enabled exiting vehicles and crossing between seamless servers, adding full neighbor connections, server links, vehicle transfers, and client handling for smoother travel.",
-            "commit_ids": [
-              731870,
-              731866,
-              731865
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Building & Logistics",
-        "items": [
-          {
-            "text": "Rewrote the conveyor system to move a fixed amount of items per tick, speed up when outputs near full, and resume scans after multi‑tick transfers.",
-            "commit_ids": [
-              731888,
-              731891,
-              731892
-            ]
-          },
-          {
-            "text": "Fixed a UI bug where powered storage adaptors incorrectly displayed a power requirement message.",
-            "commit_ids": [
-              731689
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Content",
-        "items": [
-          {
-            "text": "Added two Minicopter wrecks per map at monuments that can be repaired for gears, metal fragments, high‑quality metal, and a random tier‑2 modular car part.",
-            "commit_ids": [
-              731847
-            ]
-          },
-          {
-            "text": "Implemented BoatDockTrigger on all fishing village docks, preventing vehicles from getting stuck and gently pulling them to the centre of water docks.",
-            "commit_ids": [
-              731836
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & Combat",
-        "items": [
-          {
-            "text": "Fixed AK rifle stacking display so a stack correctly shows 20 AKs instead of an erroneous label.",
-            "commit_ids": [
-              731957
-            ]
-          },
-          {
-            "text": "Added a toggle to keep mouse sensitivity consistent across all weapons.",
-            "commit_ids": [
-              731724
-            ]
-          },
-          {
-            "text": "Added an ammo indicator to the 40 mm Flashbang grenade.",
-            "commit_ids": [
-              731707
-            ]
-          }
-        ]
-      },
-      {
-        "title": "XCOM Mode Overhaul",
-        "items": [
-          {
-            "text": "Introduced a major expansion to the experimental Rust XCOM mode, adding proper weapon handling, new enemy types, ladders, doors, manual furnace, full armoury with loadouts, melee options, overwatch, research, crafting, bases, terrain changes, camera controls, combat animations, cover improvements, loot drops, persistent squads, resource economy, repeatable raids, battle camera, and many other gameplay systems.",
-            "commit_ids": [
-              731810,
-              731786,
-              731785,
-              731783,
-              731777,
-              731776,
-              731773,
-              731769,
-              731768,
-              731764,
-              731761,
-              731760
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Tools & Building",
-        "items": [
-          {
-            "text": "Fixed a crash caused by a NullReferenceException in the Wire Tool preview, preventing crashes and missing wire previews.",
-            "commit_ids": [
-              731647
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Loot & Exploration",
-        "items": [
-          {
-            "text": "Cargo ship interior loot is now secured inside seven shipping containers; players must break them open (explosives/melee) to access loot, with one empty and one unlocked container containing brown crates.",
-            "commit_ids": [
-              731797
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Seamless Server Travel\n- Fixed bugs that left players behind boats, caused sleeping, sinking boats, or duplicated/incorrect entities during server transfers.\n- Enabled exiting vehicles and crossing between seamless servers, adding full neighbor connections, server links, vehicle transfers, and client handling for smoother travel.\n\n### Base Building & Logistics\n- Rewrote the conveyor system to move a fixed amount of items per tick, speed up when outputs near full, and resume scans after multi‑tick transfers.\n- Fixed a UI bug where powered storage adaptors incorrectly displayed a power requirement message.\n\n### World Content\n- Added two Minicopter wrecks per map at monuments that can be repaired for gears, metal fragments, high‑quality metal, and a random tier‑2 modular car part.\n- Implemented BoatDockTrigger on all fishing village docks, preventing vehicles from getting stuck and gently pulling them to the centre of water docks.\n\n### Inventory & Combat\n- Fixed AK rifle stacking display so a stack correctly shows 20 AKs instead of an erroneous label.\n- Added a toggle to keep mouse sensitivity consistent across all weapons.\n- Added an ammo indicator to the 40 mm Flashbang grenade.\n\n### XCOM Mode Overhaul\n- Introduced a major expansion to the experimental Rust XCOM mode, adding proper weapon handling, new enemy types, ladders, doors, manual furnace, full armoury with loadouts, melee options, overwatch, research, crafting, bases, terrain changes, camera controls, combat animations, cover improvements, loot drops, persistent squads, resource economy, repeatable raids, battle camera, and many other gameplay systems.\n\n### Tools & Building\n- Fixed a crash caused by a NullReferenceException in the Wire Tool preview, preventing crashes and missing wire previews.\n\n### Loot & Exploration\n- Cargo ship interior loot is now secured inside seven shipping containers; players must break them open (explosives/melee) to access loot, with one empty and one unlocked container containing brown crates.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
