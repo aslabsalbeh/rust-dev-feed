@@ -1,22 +1,22 @@
 {
   "2026-11-11": {
-    "commit_count": 147,
-    "relevant_commit_count": 73,
+    "commit_count": 156,
+    "relevant_commit_count": 76,
     "relevant_signature": "732567,732568,732569,732648,732649,732650,732654,732664,732665,732693,732697,732698,732699,732700,732763,732764,732765,732766,732767,732768,732769,732770,732771,732772,732773,732774,732775,732776,732777,732778,732785,732792,732800,732823,732826,732861,732864,732874,732887,732925,732930,732936,732938,732952,732957,732962,732963,732976,732977,732978,732991,733006,733007,733008,733009,733010,733011,733012,733013,733014,733015,733016,733017,733039,733043,733044,733045,733054,733055,733076",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "732977,732978,732991,733006,733007,733008,733009,733010,733011,733012,733013,733014,733015,733016,733017,733039,733043,733044,733045,733054,733055,733076,733087,733089,733120": [
+      "733006,733007,733008,733009,733010,733011,733012,733013,733014,733015,733016,733017,733039,733043,733044,733045,733054,733055,733076,733087,733089,733120,733152,733155,733156": [
         {
           "title": "Inventory & Loot",
           "items": [
             {
-              "text": "Main inventory size on the extraction map is halved, reducing how much you can carry during extractions.",
+              "text": "Halved the main inventory size on the extraction map.",
               "commit_ids": [
                 733120
               ]
             },
             {
-              "text": "All items now have a displayed scrap value, letting players see the worth of loot at a glance.",
+              "text": "Added scrap value display for items, showing loot worth.",
               "commit_ids": [
                 733076
               ]
@@ -24,35 +24,12 @@
           ]
         },
         {
-          "title": "Building & Base Management",
+          "title": "Base Building",
           "items": [
             {
-              "text": "Nearby building pieces automatically merge into a single base, simplifying base construction and management.",
+              "text": "Nearby building blocks now automatically merge into a single base.",
               "commit_ids": [
                 733055
-              ]
-            },
-            {
-              "text": "Players can no longer deploy structures while they are crafting, preventing accidental deployments during crafting actions.",
-              "commit_ids": [
-                732991
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Seamless Server Gameplay",
-          "items": [
-            {
-              "text": "Seamless servers now spawn full waves of NPCs outside their terrain, restoring PvE challenge on border areas.",
-              "commit_ids": [
-                733017
-              ]
-            },
-            {
-              "text": "Players can now shoot entities (players, NPCs, structures) that reside on a neighboring seamless server, enabling cross‑server combat.",
-              "commit_ids": [
-                733007
               ]
             }
           ]
@@ -61,37 +38,112 @@
           "title": "Helicopter Mechanics",
           "items": [
             {
-              "text": "Fixed an issue where predicted helicopters would bounce on the ground at high latency, improving helicopter flight stability.",
+              "text": "Fixed predicted helicopters bouncing on the ground at high latency.",
               "commit_ids": [
                 733039
               ]
             }
           ]
-        }
-      ],
-      "732772,732773,732774,732775,732776,732777,732778,732785,732792,732800,732823,732826,732861,732864,732874,732887,732925,732930,732936,732938,732952,732957,732962,732963,732976": [
+        },
         {
-          "title": "World Stability",
+          "title": "Seamless Server Gameplay",
           "items": [
             {
-              "text": "Fixed islands disappearing for a single frame when switching seamless servers, preventing brief map gaps.",
+              "text": "Players can now shoot entities that reside on a neighboring seamless server.",
               "commit_ids": [
-                732976
+                733007
               ]
             }
           ]
         },
         {
-          "title": "Vehicle & Helicopter Gameplay",
+          "title": "Seamless Map UI",
           "items": [
             {
-              "text": "Added a tick sequence to mounted player input for smoother vehicle control.",
+              "text": "All seamless server islands are now shown on the map.",
               "commit_ids": [
-                732963
+                733009
               ]
             },
             {
-              "text": "Fixed pooled helicopters not ticking on the client, restoring proper helicopter behavior.",
+              "text": "Map can zoom out until every island fits on screen.",
+              "commit_ids": [
+                733010
+              ]
+            },
+            {
+              "text": "Islands fade towards the edges for smoother visual transition.",
+              "commit_ids": [
+                733011
+              ]
+            },
+            {
+              "text": "Grid is drawn on neighboring seamless islands.",
+              "commit_ids": [
+                733012
+              ]
+            },
+            {
+              "text": "Monument names are displayed on neighboring seamless islands.",
+              "commit_ids": [
+                733013
+              ]
+            },
+            {
+              "text": "Map grid hides when zoomed out beyond the usual limit.",
+              "commit_ids": [
+                733014
+              ]
+            },
+            {
+              "text": "Seamless servers now share the same time of day.",
+              "commit_ids": [
+                733015
+              ]
+            },
+            {
+              "text": "Ocean surface continues seamlessly across server borders.",
+              "commit_ids": [
+                733016
+              ]
+            },
+            {
+              "text": "Full wave simulation extends outside seamless server terrain.",
+              "commit_ids": [
+                733017
+              ]
+            }
+          ]
+        }
+      ],
+      "732775,732776,732777,732778,732785,732792,732800,732823,732826,732861,732864,732874,732887,732925,732930,732936,732938,732952,732957,732962,732963,732976,732977,732978,732991": [
+        {
+          "title": "Deployment & Crafting",
+          "items": [
+            {
+              "text": "Players can no longer deploy items while they are crafting, preventing accidental deployments.",
+              "commit_ids": [
+                732991
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Server Entity IDs",
+          "items": [
+            {
+              "text": "Seamless server transitions no longer reuse entity IDs, fixing potential duplication bugs.",
+              "commit_ids": [
+                732978
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Helicopter",
+          "items": [
+            {
+              "text": "Helicopter pooling bug fixed: helicopters now tick correctly on client, restoring proper behavior.",
               "commit_ids": [
                 732962
               ]
@@ -99,21 +151,38 @@
           ]
         },
         {
-          "title": "Extraction Map Updates",
+          "title": "Map & Navigation",
           "items": [
             {
-              "text": "Outpost locations are now shown on the extraction map.",
+              "text": "Outpost now appears on the extraction map, making it easier to locate.",
               "commit_ids": [
                 732861
+              ]
+            },
+            {
+              "text": "Safe pocket indicator displayed next to looted items, helping players see where their safe inventory is.",
+              "commit_ids": [
+                732930
               ]
             }
           ]
         },
         {
-          "title": "Beached Loot Containers",
+          "title": "FPV Drone UI",
           "items": [
             {
-              "text": "Introduced beached loot containers with three unique loot pools (Tools, Ammo/Meds, Food) and no high‑tier weapons.",
+              "text": "FPV drone HUD now shows a dynamic artificial horizon with pitch and roll angles, improving flight awareness.",
+              "commit_ids": [
+                732826
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Beach Loot Containers",
+          "items": [
+            {
+              "text": "Beach cargo ship loot containers receive unique loot pools (tools, ammo/meds, food) with no high‑tier gear, changing beach loot distribution.",
               "commit_ids": [
                 732800
               ]
@@ -121,64 +190,96 @@
           ]
         },
         {
-          "title": "NPC & AI",
+          "title": "NPC & AI Services",
           "items": [
             {
-              "text": "Extensive NPC services overhaul: added profession name prefixes, voice mumbling, and conversation movement smoothing; attendants now operate from full kiosks for armour and restoration booths; residents' canteen auto‑fills food to 80%; new panels for restoration, armour slot, and giga furnace services; NPC services are accessed by talking to attendants; the giga furnace can be run from a walk‑in counter in its yard; the apartment canteen was moved into an enclosed apartment room.",
+              "text": "NPC service kiosks now have dedicated attendants for armour and restoration booths.",
               "commit_ids": [
-                732778,
-                732777,
-                732776,
-                732775,
-                732773,
-                732772,
-                732774
+                732777
+              ]
+            },
+            {
+              "text": "Canteen now automatically refills resident food to 80%, improving NPC sustenance.",
+              "commit_ids": [
+                732776
+              ]
+            },
+            {
+              "text": "Restoration, armour, and giga furnace services each get their own UI panels.",
+              "commit_ids": [
+                732775
+              ]
+            },
+            {
+              "text": "NPCs now have profession prefixes, random name suffixes, voice mumbling, and smoother conversation movement.",
+              "commit_ids": [
+                732778
               ]
             }
           ]
         }
       ],
-      "732567,732568,732569,732648,732649,732650,732654,732664,732665,732693,732697,732698,732699,732700,732763,732764,732765,732766,732767,732768,732769,732770,732771": [
+      "732568,732569,732648,732649,732650,732654,732664,732665,732693,732697,732698,732699,732700,732763,732764,732765,732766,732767,732768,732769,732770,732771,732772,732773,732774": [
         {
-          "title": "NPC Services & Economy",
+          "title": "NPC Services & Rentals",
           "items": [
             {
-              "text": "Added rentable NPC services with an armour slot and restoration garages at the Outpost, plus free resident meals at the Apartment Complex and a new canteen behind the lobby.",
+              "text": "Players can now access NPC services by talking to an attendant, enabling service interactions.",
               "commit_ids": [
-                732763,
-                732765,
-                732770
+                732773
               ]
             },
             {
-              "text": "Implemented a 48‑hour hold on finished rental earnings and adjusted restoration pricing.",
+              "text": "Client‑only builds now correctly load NPC services, fixing previous crashes or missing functionality.",
+              "commit_ids": [
+                732768
+              ]
+            },
+            {
+              "text": "New rentable NPC services added at Outpost, including an armour slot and restoration garages.",
+              "commit_ids": [
+                732763
+              ]
+            },
+            {
+              "text": "Giga furnace drop‑off service introduced at Bandit Camp, allowing players to deliver furnace items there.",
+              "commit_ids": [
+                732764
+              ]
+            },
+            {
+              "text": "Free resident meals are provided at the Apartment Complex for residents.",
+              "commit_ids": [
+                732765
+              ]
+            },
+            {
+              "text": "Rental earnings are held for 48 hours after completion and restoration prices have been adjusted.",
               "commit_ids": [
                 732766
               ]
             },
             {
-              "text": "Relocated the Giga Furnace to a fenced yard at the Outpost and added a drop‑off service at Bandit Camp, moving it inside the camp and updating booth enclosures.",
+              "text": "Giga furnace can be operated from a walk‑in counter in its yard, improving convenience.",
               "commit_ids": [
-                732771,
-                732769,
-                732767,
-                732764
+                732772
               ]
             }
           ]
         },
         {
-          "title": "Combat",
+          "title": "Weapons",
           "items": [
             {
-              "text": "Introduced a 40mm Tracker Round grenade that sticks to surfaces (vehicles, bases) and provides a tracked marker on the map for 5 minutes, with audio and LED cues.",
+              "text": "40 mm Tracker Round added: sticks to vehicles, helicopters, boats or bases, creates a map tracking marker for 5 minutes with audio beep and flashing LED.",
               "commit_ids": [
                 732693
               ]
             }
           ]
         }
-      ]
+      ],
+      "732567": []
     },
     "sections": [
       {
@@ -318,17 +419,9 @@
     ],
     "status": "ok",
     "summary": "### Loot & Economy\n- Scrap values are now displayed on the loot UI, letting players see the worth of items they find.\n- Beach loot containers now use three distinct loot pools—Tools, Ammo/Meds, and Food—with many crates but no high‑tier weapons, altering beach loot distribution.\n- The Outpost now appears on the extraction map, allowing players to locate it during raids.\n- Rentable NPC services such as armour slots and restoration garages are available at the Outpost; rental earnings are held for 48 hours and restoration pricing has been updated.\n- Free resident meals are provided at the Apartment Complex, and a giga furnace drop‑off service has been added at Bandit Camp with the furnace moved inside.\n\n### Base Building & Crafting\n- Building pieces automatically merge when placed near each other, simplifying base construction and management.\n- Deployments are blocked while a player is crafting, preventing accidental placements during crafting.\n\n### Combat & Vehicles\n- A new 40 mm Tracker Round grenade attaches to surfaces and creates a 5‑minute map marker with audio beeps and a flashing LED.\n- Helicopter prediction bounce issues have been fixed and pooled helicopters now tick correctly on the client, improving helicopter reliability.\n\n### Seamless Multiplayer\n- Players can now shoot entities on neighboring seamless servers; nearby vehicles and players stay clustered on a single server, and full PvE waves spawn outside terrain for consistent encounters.\n\n### NPC Services & Interaction\n- Service booths now feature full kiosks with attendant NPCs; players must talk to an attendant to use services, adding a new interaction step.\n- NPCs now have profession prefixes, random name suffixes, voice mumbling, smoother conversation movement, and canteens refill resident NPCs' food to 80%, enhancing immersion.\n\n### Gameplay & Balance\n- Safe pocket now displayed beside looted containers, letting players see stored items without opening inventory.\n- FPV drone UI now includes an artificial horizon showing real‑time pitch and roll angles, improving flight control.\n- Restoration, armour slot, and giga furnace services each receive dedicated UI panels, streamlining management.\n- Giga furnace can now be operated from a walk‑in counter in its yard, and booth counters have been fixed, altering furnace access.",
-    "new_items": [
-      {
-        "text": "Scrap values are now displayed on the loot UI, letting players see the worth of items they find.",
-        "commit_ids": [
-          733076
-        ],
-        "section": "Loot & Economy"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Scrap values are now displayed on the loot UI, letting players see the worth of items they find."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-10": {
     "commit_count": 159,
