@@ -6,62 +6,79 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 12 Nov 2026 04:17:22 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 06:17:47 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 12</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;strong&gt;12 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="rust-new-updates"&gt;
+&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="733212"&gt;Extraction balloons now display a countdown timer and close sequentially, letting players gauge extraction timing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h3&gt;Extraction &amp;amp; Map UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="733212"&gt;Extraction balloons now display a countdown timer and close sequentially, letting players gauge extraction timing.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;Combat &amp;amp; Ammo&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733180"&gt;High‑velocity ammo now ignores projectile protection from armor inserts, making those inserts ineffective against HV rounds.&lt;/li&gt;
+&lt;li data-rust-commits="733180"&gt;High-velocity ammo now ignores projectile protection from armor inserts (including horse armor), increasing its penetration against heavily armored players.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733179"&gt;Dropbox sockets now always align flush with walls, eliminating awkward storage adaptor placements.&lt;/li&gt;
+&lt;li data-rust-commits="733179"&gt;Dropboxes now snap flush against walls, eliminating awkward placement of storage adapters.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-12</guid>
-      <pubDate>Thu, 12 Nov 2026 04:17:22 -0500</pubDate>
+      <pubDate>Thu, 12 Nov 2026 06:17:47 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 11</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;161 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Loot &amp;amp; Economy&lt;/h3&gt;
+&lt;h3&gt;Transportation &amp;amp; Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733076"&gt;Scrap values are now displayed on the loot UI, letting players see the worth of items they find.&lt;/li&gt;
-&lt;li data-rust-commits="732800"&gt;Beach loot containers now use three distinct loot pools—Tools, Ammo/Meds, and Food—with many crates but no high‑tier weapons, altering beach loot distribution.&lt;/li&gt;
-&lt;li data-rust-commits="732861"&gt;The Outpost now appears on the extraction map, allowing players to locate it during raids.&lt;/li&gt;
-&lt;li data-rust-commits="732763,732766"&gt;Rentable NPC services such as armour slots and restoration garages are available at the Outpost; rental earnings are held for 48 hours and restoration pricing has been updated.&lt;/li&gt;
-&lt;li data-rust-commits="732765,732764,732767"&gt;Free resident meals are provided at the Apartment Complex, and a giga furnace drop‑off service has been added at Bandit Camp with the furnace moved inside.&lt;/li&gt;
+&lt;li data-rust-commits="733172"&gt;Horse armor overhaul: rider protection removed, horse armor boosted, no speed penalty, heavy plates allowed, stamina drain added, and road signs gain 12 storage slots.&lt;/li&gt;
+&lt;li data-rust-commits="732963,732962,733039"&gt;Helicopter handling improvements: smoother mounted input sequencing, fixed client ticking and bounce bugs for predicted helicopters at high latency.&lt;/li&gt;
+&lt;li data-rust-commits="733006"&gt;Seamless vehicle clustering: nearby vehicles and players are grouped into server clusters, staying on a single server for consistent behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base Building &amp;amp; Crafting&lt;/h3&gt;
+&lt;h3&gt;Inventory, Loot &amp;amp; Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733055"&gt;Building pieces automatically merge when placed near each other, simplifying base construction and management.&lt;/li&gt;
-&lt;li data-rust-commits="732991"&gt;Deployments are blocked while a player is crafting, preventing accidental placements during crafting.&lt;/li&gt;
+&lt;li data-rust-commits="733120"&gt;Main inventory size on the extraction map halved, tightening looting decisions.&lt;/li&gt;
+&lt;li data-rust-commits="733076"&gt;Item UI now shows scrap value, letting you see loot worth at a glance.&lt;/li&gt;
+&lt;li data-rust-commits="732800"&gt;Cargo ship loot pools rebalanced: containers now contain only tools, ammo/meds, or food, removing high‑tier weapons.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Vehicles&lt;/h3&gt;
+&lt;h3&gt;Base Building &amp;amp; World Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732693"&gt;A new 40 mm Tracker Round grenade attaches to surfaces and creates a 5‑minute map marker with audio beeps and a flashing LED.&lt;/li&gt;
-&lt;li data-rust-commits="733039,732962"&gt;Helicopter prediction bounce issues have been fixed and pooled helicopters now tick correctly on the client, improving helicopter reliability.&lt;/li&gt;
+&lt;li data-rust-commits="733055"&gt;Buildings placed near each other automatically merge into a single base, simplifying expansion.&lt;/li&gt;
+&lt;li data-rust-commits="733017,733015,733007"&gt;Seamless servers now share a unified time of day, spawn full enemy waves beyond terrain borders, and allow shooting across server boundaries.&lt;/li&gt;
+&lt;li data-rust-commits="732991"&gt;Players can no longer deploy structures while crafting, preventing accidental placement interruptions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Seamless Multiplayer&lt;/h3&gt;
+&lt;h3&gt;NPC Services &amp;amp; Rentals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733007,733006,733017"&gt;Players can now shoot entities on neighboring seamless servers; nearby vehicles and players stay clustered on a single server, and full PvE waves spawn outside terrain for consistent encounters.&lt;/li&gt;
+&lt;li data-rust-commits="732777,732778,732764"&gt;Expanded NPC services: profession‑based name tags, voice mumbling, full kiosks with attendants for armour, restoration, and a new giga‑furnace drop‑off at Bandit Camp.&lt;/li&gt;
+&lt;li data-rust-commits="732763,732766"&gt;Rentable armour slots and restoration garages introduced at the Outpost, with rentals holding earnings for 48 hours and adjusted restoration pricing.&lt;/li&gt;
+&lt;li data-rust-commits="732776,732765,732773,732775,732768"&gt;Residents receive free meals in apartments and can refill food levels to 80% at canteen NPCs; all services are accessed via dedicated UI panels and now work reliably for all players.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC Services &amp;amp; Interaction&lt;/h3&gt;
+&lt;h3&gt;New Gear&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732777,732773"&gt;Service booths now feature full kiosks with attendant NPCs; players must talk to an attendant to use services, adding a new interaction step.&lt;/li&gt;
-&lt;li data-rust-commits="732778,732776"&gt;NPCs now have profession prefixes, random name suffixes, voice mumbling, smoother conversation movement, and canteens refill resident NPCs&amp;#x27; food to 80%, enhancing immersion.&lt;/li&gt;
+&lt;li data-rust-commits="732693"&gt;New 40 mm Tracker Round grenade attaches to surfaces and creates a 5‑minute tracking marker on the map.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;UI &amp;amp; Map Enhancements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="732861,732930,732826"&gt;Outpost location added to the extraction map, safe pocket indicator appears when accessing loot containers, and FPV drone UI now includes an artificial horizon showing pitch and roll.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="732976"&gt;Fixed brief island disappearance when switching seamless servers, removing a visual glitch.&lt;/li&gt;
+&lt;li data-rust-commits="732823"&gt;Added full FPV drone camera effects and HUD override support, enhancing drone piloting experience.&lt;/li&gt;
+&lt;li data-rust-commits="732772"&gt;Enabled operating the giga furnace from a walk‑in counter and corrected booth counter displays, improving base management.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="732930"&gt;Safe pocket now displayed beside looted containers, letting players see stored items without opening inventory.&lt;/li&gt;
-&lt;li data-rust-commits="732826"&gt;FPV drone UI now includes an artificial horizon showing real‑time pitch and roll angles, improving flight control.&lt;/li&gt;
-&lt;li data-rust-commits="732775"&gt;Restoration, armour slot, and giga furnace services each receive dedicated UI panels, streamlining management.&lt;/li&gt;
-&lt;li data-rust-commits="732772"&gt;Giga furnace can now be operated from a walk‑in counter in its yard, and booth counters have been fixed, altering furnace access.&lt;/li&gt;
+&lt;li data-rust-commits="732767"&gt;Giga Furnace is now located inside Bandit Camps, letting players use its crafting benefits within those zones.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-11</guid>
