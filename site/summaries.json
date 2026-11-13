@@ -1,4 +1,17 @@
 {
+  "2026-11-13": {
+    "commit_count": 8,
+    "relevant_commit_count": 1,
+    "relevant_signature": "733663",
+    "prompt_version": "structured-read-state-v7-explicit-empty",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-11-12": {
     "commit_count": 81,
     "relevant_commit_count": 22,
@@ -287,156 +300,6 @@
     ],
     "status": "ok",
     "summary": "### Transportation & Vehicles\n- Horse armor overhaul: rider protection removed, horse armor boosted, no speed penalty, heavy plates allowed, stamina drain added, and road signs gain 12 storage slots.\n- Helicopter handling improvements: smoother mounted input sequencing, fixed client ticking and bounce bugs for predicted helicopters at high latency.\n- Seamless vehicle clustering: nearby vehicles and players are grouped into server clusters, staying on a single server for consistent behavior.\n\n### Inventory, Loot & Economy\n- Main inventory size on the extraction map halved, tightening looting decisions.\n- Item UI now shows scrap value, letting you see loot worth at a glance.\n- Cargo ship loot pools rebalanced: containers now contain only tools, ammo/meds, or food, removing high‑tier weapons.\n\n### Base Building & World Interaction\n- Buildings placed near each other automatically merge into a single base, simplifying expansion.\n- Seamless servers now share a unified time of day, spawn full enemy waves beyond terrain borders, and allow shooting across server boundaries.\n- Players can no longer deploy structures while crafting, preventing accidental placement interruptions.\n\n### NPC Services & Rentals\n- Expanded NPC services: profession‑based name tags, voice mumbling, full kiosks with attendants for armour, restoration, and a new giga‑furnace drop‑off at Bandit Camp.\n- Rentable armour slots and restoration garages introduced at the Outpost, with rentals holding earnings for 48 hours and adjusted restoration pricing.\n- Residents receive free meals in apartments and can refill food levels to 80% at canteen NPCs; all services are accessed via dedicated UI panels and now work reliably for all players.\n\n### New Gear\n- New 40 mm Tracker Round grenade attaches to surfaces and creates a 5‑minute tracking marker on the map.\n\n### UI & Map Enhancements\n- Outpost location added to the extraction map, safe pocket indicator appears when accessing loot containers, and FPV drone UI now includes an artificial horizon showing pitch and roll.\n\n### Gameplay & Features\n- Fixed brief island disappearance when switching seamless servers, removing a visual glitch.\n- Added full FPV drone camera effects and HUD override support, enhancing drone piloting experience.\n- Enabled operating the giga furnace from a walk‑in counter and corrected booth counter displays, improving base management.\n\n### Gameplay & Balance\n- Giga Furnace is now located inside Bandit Camps, letting players use its crafting benefits within those zones.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-10": {
-    "commit_count": 159,
-    "relevant_commit_count": 44,
-    "relevant_signature": "732014,732044,732045,732046,732051,732055,732057,732076,732093,732116,732134,732138,732143,732162,732177,732178,732194,732199,732222,732227,732235,732371,732397,732404,732407,732408,732409,732453,732461,732462,732463,732464,732465,732490,732491,732492,732493,732503,732532,732533,732542,732543,732553,732564",
-    "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Combat & Weapon Systems",
-        "items": [
-          {
-            "text": "Turret weapons now take damage when firing and can break, shutting off their laser and sparking.",
-            "commit_ids": [
-              732564
-            ]
-          },
-          {
-            "text": "A reload progress bar is displayed beside the weapon in shoulder‑camera view.",
-            "commit_ids": [
-              732404
-            ]
-          },
-          {
-            "text": "Grenade updates – 40 mm flare now uses road flare VFX, appears white, and self‑destructs if shot into the ground; 40 mm incendiary grenade receives new visual and sound effects, an updated icon, and rebalanced damage.",
-            "commit_ids": [
-              732093,
-              732051
-            ]
-          }
-        ]
-      },
-      {
-        "title": "AI & NPC Behavior",
-        "items": [
-          {
-            "text": "Scientists now correctly flank targets, fixing previous failures.",
-            "commit_ids": [
-              732464
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Raids & Extraction",
-        "items": [
-          {
-            "text": "Extraction maps expanded with additional monuments and a new 3 km procedural map scene for raids.",
-            "commit_ids": [
-              732409,
-              732407
-            ]
-          },
-          {
-            "text": "Extracted loot is automatically banked in a stash and raiders are spawned at raid start.",
-            "commit_ids": [
-              732408
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Loot",
-        "items": [
-          {
-            "text": "New shipping containers can spawn on mainland coasts (jungle, arctic, desert); they require lock‑breaking to open, are rare (~1 per 100 players), and contain unique loot.",
-            "commit_ids": [
-              732371
-            ]
-          },
-          {
-            "text": "Tool cupboards now fill resources evenly, similar to furnaces, improving resource balance.",
-            "commit_ids": [
-              732543
-            ]
-          },
-          {
-            "text": "CCTV recordings now handle player death or dismount events without crashing playback.",
-            "commit_ids": [
-              732453
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Deployables & Crafting",
-        "items": [
-          {
-            "text": "Added a deployable trampoline prototype for players to place and use.",
-            "commit_ids": [
-              732076
-            ]
-          },
-          {
-            "text": "Added a “clear customisation” action for skinned arrows and introduced a deployable fletching jig (arrow customization station).",
-            "commit_ids": [
-              732227,
-              732116
-            ]
-          },
-          {
-            "text": "Introduced a new FPV drone and goggles system, with script fixes for SetFlag behavior and null reference errors.",
-            "commit_ids": [
-              732162,
-              732143
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Infrastructure & Systems",
-        "items": [
-          {
-            "text": "Cargo containers are now codelocked; breaking them requires 1.5× the damage of a timed satchel, health UI appears only when looking at the lock, doors cannot be destroyed and must be opened after unlocking; one container includes a code note.",
-            "commit_ids": [
-              732194,
-              732178
-            ]
-          },
-          {
-            "text": "Conveyor belts now move up to 24 items per tick, increasing throughput.",
-            "commit_ids": [
-              732014
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Visuals",
-        "items": [
-          {
-            "text": "Scrolling panels no longer flicker, providing a stable UI view while moving through inventories or menus.",
-            "commit_ids": [
-              732138
-            ]
-          },
-          {
-            "text": "Previously invisible building blocks are now visible, ensuring structures can be placed and seen correctly.",
-            "commit_ids": [
-              732046
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "summary": "### Combat & Weapon Systems\n- Turret weapons now take damage when firing and can break, shutting off their laser and sparking.\n- A reload progress bar is displayed beside the weapon in shoulder‑camera view.\n- Grenade updates – 40 mm flare now uses road flare VFX, appears white, and self‑destructs if shot into the ground; 40 mm incendiary grenade receives new visual and sound effects, an updated icon, and rebalanced damage.\n\n### AI & NPC Behavior\n- Scientists now correctly flank targets, fixing previous failures.\n\n### Raids & Extraction\n- Extraction maps expanded with additional monuments and a new 3 km procedural map scene for raids.\n- Extracted loot is automatically banked in a stash and raiders are spawned at raid start.\n\n### World & Loot\n- New shipping containers can spawn on mainland coasts (jungle, arctic, desert); they require lock‑breaking to open, are rare (~1 per 100 players), and contain unique loot.\n- Tool cupboards now fill resources evenly, similar to furnaces, improving resource balance.\n- CCTV recordings now handle player death or dismount events without crashing playback.\n\n### Deployables & Crafting\n- Added a deployable trampoline prototype for players to place and use.\n- Added a “clear customisation” action for skinned arrows and introduced a deployable fletching jig (arrow customization station).\n- Introduced a new FPV drone and goggles system, with script fixes for SetFlag behavior and null reference errors.\n\n### Infrastructure & Systems\n- Cargo containers are now codelocked; breaking them requires 1.5× the damage of a timed satchel, health UI appears only when looking at the lock, doors cannot be destroyed and must be opened after unlocking; one container includes a code note.\n- Conveyor belts now move up to 24 items per tick, increasing throughput.\n\n### UI & Visuals\n- Scrolling panels no longer flicker, providing a stable UI view while moving through inventories or menus.\n- Previously invisible building blocks are now visible, ensuring structures can be placed and seen correctly.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
