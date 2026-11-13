@@ -1,24 +1,42 @@
 {
   "2026-11-13": {
-    "commit_count": 82,
-    "relevant_commit_count": 19,
-    "relevant_signature": "733663,733704,733705,733728,733731,733734,733755,733756,733775,733786,733787,733819,733832,733833,733843,733870,733891,733909,733910",
+    "commit_count": 93,
+    "relevant_commit_count": 25,
+    "relevant_signature": "733663,733704,733705,733728,733731,733734,733755,733756,733775,733786,733787,733819,733832,733833,733843,733870,733891,733909,733910,733945,733966,733979,733981,733982,733995",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "Survival Mechanics",
+        "items": [
+          {
+            "text": "Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.",
+            "commit_ids": [
+              733979
+            ]
+          }
+        ]
+      },
+      {
         "title": "World & Monuments",
         "items": [
           {
-            "text": "Scout drones now patrol small monuments and raise an alarm when they detect activity.",
+            "text": "Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.",
             "commit_ids": [
-              733910
+              733966
             ]
           },
           {
-            "text": "The Outpost has been removed from the raid map.",
+            "text": "The Outpost has been taken off the raid map, so it can no longer be raided.",
             "commit_ids": [
               733909
+            ]
+          },
+          {
+            "text": "Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health.",
+            "commit_ids": [
+              733945,
+              733910
             ]
           }
         ]
@@ -27,7 +45,7 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Guards now drop loot that scales with their tier.",
+            "text": "Guards now drop loot based on tier, improving loot variety.",
             "commit_ids": [
               733833
             ]
@@ -35,35 +53,52 @@
         ]
       },
       {
-        "title": "Weapons & Gear",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Base gun wear reduced from 1.0 to 0.75.",
+            "text": "Gun wear has been reduced from 1.0 to 0.75 per use.",
             "commit_ids": [
               733728
             ]
           },
           {
-            "text": "Turrets now show a second health bar for weapon condition and an ammo counter (requires hammer and building authorization).",
+            "text": "Weapons now display a second durability bar, and turrets show an ammo counter (requires hammer and building authorization).",
             "commit_ids": [
               733728
             ]
-          }
-        ]
-      },
-      {
-        "title": "Explosives",
-        "items": [
+          },
           {
-            "text": "Flash grenades now have zone‑specific strength, deafness duration, and name‑tag visibility; looking away no longer helps in the inner 2 m zone.",
+            "text": "Flash grenades now have zone‑specific strength, duration, deafness and name‑tag visibility; looking away only helps in outer zones.",
             "commit_ids": [
               733705
             ]
           },
           {
-            "text": "Grenade damage radius changed to full damage within 1.75 m, falling to zero at 3.75 m; shrapnel now causes bleeding up to 2 m and displays visible streaks.",
+            "text": "Grenade damage is full within 1.75 m, falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m and requires line‑of‑sight.",
             "commit_ids": [
               733704
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Economy",
+        "items": [
+          {
+            "text": "Supplies shop prices have increased, every item now has a value, and higher‑tier gear drops more often as loot.",
+            "commit_ids": [
+              733870
+            ]
+          }
+        ]
+      },
+      {
+        "title": "New Content",
+        "items": [
+          {
+            "text": "Prototype Container Shelter (Tier 2 solo/duo) added: can be built after a raid, includes a Tier 0 workbench, and its door/shelter can be destroyed. (WIP, not yet balanced)",
+            "commit_ids": [
+              733843
             ]
           }
         ]
@@ -72,13 +107,7 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Introduced a new Tier‑2 Container Shelter (solo/duo) that offers a quick mid‑level shelter after a raid, includes a Tier‑0 workbench, and can be destroyed via its door or the shelter itself.",
-            "commit_ids": [
-              733843
-            ]
-          },
-          {
-            "text": "Arriving at the hub now bypasses the map view and death screen, and the hub shows its own unique markers.",
+            "text": "Arriving at the hub now uses its own markers and skips the map and death screen, streamlining entry.",
             "commit_ids": [
               733734
             ]
@@ -87,25 +116,33 @@
       }
     ],
     "status": "ok",
-    "summary": "### World & Monuments\n- Scout drones now patrol small monuments and raise an alarm when they detect activity.\n- The Outpost has been removed from the raid map.\n\n### NPC & AI\n- Guards now drop loot that scales with their tier.\n\n### Weapons & Gear\n- Base gun wear reduced from 1.0 to 0.75.\n- Turrets now show a second health bar for weapon condition and an ammo counter (requires hammer and building authorization).\n\n### Explosives\n- Flash grenades now have zone‑specific strength, deafness duration, and name‑tag visibility; looking away no longer helps in the inner 2 m zone.\n- Grenade damage radius changed to full damage within 1.75 m, falling to zero at 3.75 m; shrapnel now causes bleeding up to 2 m and displays visible streaks.\n\n### Gameplay & Balance\n- Introduced a new Tier‑2 Container Shelter (solo/duo) that offers a quick mid‑level shelter after a raid, includes a Tier‑0 workbench, and can be destroyed via its door or the shelter itself.\n- Arriving at the hub now bypasses the map view and death screen, and the hub shows its own unique markers.",
+    "summary": "### Survival Mechanics\n- Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.\n\n### World & Monuments\n- Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.\n- The Outpost has been taken off the raid map, so it can no longer be raided.\n- Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health.\n\n### NPC & AI\n- Guards now drop loot based on tier, improving loot variety.\n\n### Combat & Weapons\n- Gun wear has been reduced from 1.0 to 0.75 per use.\n- Weapons now display a second durability bar, and turrets show an ammo counter (requires hammer and building authorization).\n- Flash grenades now have zone‑specific strength, duration, deafness and name‑tag visibility; looking away only helps in outer zones.\n- Grenade damage is full within 1.75 m, falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m and requires line‑of‑sight.\n\n### Economy\n- Supplies shop prices have increased, every item now has a value, and higher‑tier gear drops more often as loot.\n\n### New Content\n- Prototype Container Shelter (Tier 2 solo/duo) added: can be built after a raid, includes a Tier 0 workbench, and its door/shelter can be destroyed. (WIP, not yet balanced)\n\n### Gameplay & Balance\n- Arriving at the hub now uses its own markers and skips the map and death screen, streamlining entry.",
     "new_items": [
       {
-        "text": "Scout drones now patrol small monuments and raise an alarm when they detect activity.",
+        "text": "Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.",
         "commit_ids": [
-          733910
+          733979
+        ],
+        "section": "Survival Mechanics"
+      },
+      {
+        "text": "Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.",
+        "commit_ids": [
+          733966
         ],
         "section": "World & Monuments"
       },
       {
-        "text": "The Outpost has been removed from the raid map.",
+        "text": "Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health.",
         "commit_ids": [
-          733909
+          733945,
+          733910
         ],
         "section": "World & Monuments"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Scout drones now patrol small monuments and raise an alarm when they detect activity.\n- The Outpost has been removed from the raid map."
+    "new_relevant_count": 4,
+    "new_summary": "- Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.\n- Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.\n- Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health."
   },
   "2026-11-12": {
     "commit_count": 81,
