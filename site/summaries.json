@@ -1,91 +1,59 @@
 {
   "2026-11-13": {
-    "commit_count": 93,
-    "relevant_commit_count": 25,
-    "relevant_signature": "733663,733704,733705,733728,733731,733734,733755,733756,733775,733786,733787,733819,733832,733833,733843,733870,733891,733909,733910,733945,733966,733979,733981,733982,733995",
+    "commit_count": 103,
+    "relevant_commit_count": 28,
+    "relevant_signature": "733663,733704,733705,733728,733731,733734,733755,733756,733775,733786,733787,733819,733832,733833,733843,733870,733891,733909,733910,733945,733966,733979,733981,733982,733995,734004,734032,734038",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Survival Mechanics",
+        "title": "World & Loot",
         "items": [
           {
-            "text": "Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.",
-            "commit_ids": [
-              733979
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Monuments",
-        "items": [
-          {
-            "text": "Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.",
+            "text": "Monuments no longer reset or respawn loot, and the old puzzle‑reset system has been removed.",
             "commit_ids": [
               733966
             ]
           },
           {
-            "text": "The Outpost has been taken off the raid map, so it can no longer be raided.",
+            "text": "The truck is now a single loot container; its size has been reduced for easier access, and the recycler and vending machine have been relocated to more convenient spots.",
             "commit_ids": [
+              733966
+            ]
+          },
+          {
+            "text": "All NPCs have been removed from the game world, and the Outpost is no longer present on the raid map.",
+            "commit_ids": [
+              733966,
               733909
             ]
-          },
-          {
-            "text": "Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health.",
-            "commit_ids": [
-              733945,
-              733910
-            ]
           }
         ]
       },
       {
-        "title": "NPC & AI",
+        "title": "Combat & Gear",
         "items": [
           {
-            "text": "Guards now drop loot based on tier, improving loot variety.",
-            "commit_ids": [
-              733833
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Gun wear has been reduced from 1.0 to 0.75 per use.",
+            "text": "Gun wear has been reduced, lowering the wear per shot from 1 to 0.75.",
             "commit_ids": [
               733728
             ]
           },
           {
-            "text": "Weapons now display a second durability bar, and turrets show an ammo counter (requires hammer and building authorization).",
+            "text": "Turrets now display a second health bar indicating weapon condition and an ammo counter; viewing these stats requires a hammer and building authorization.",
             "commit_ids": [
               733728
             ]
           },
           {
-            "text": "Flash grenades now have zone‑specific strength, duration, deafness and name‑tag visibility; looking away only helps in outer zones.",
+            "text": "Flash grenades now have distance‑based strength, duration, deafness, and name‑tag visibility (2 m, 6 m, 10 m zones), and heavy flash grenades also muffle sound. Explosive grenades deal full damage up to 1.75 m, tapering to zero at 3.75 m, with shrapnel adding 30 bleed within 2 m and visible streaks.",
             "commit_ids": [
-              733705
-            ]
-          },
-          {
-            "text": "Grenade damage is full within 1.75 m, falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m and requires line‑of‑sight.",
-            "commit_ids": [
+              733705,
               733704
             ]
-          }
-        ]
-      },
-      {
-        "title": "Economy",
-        "items": [
+          },
           {
-            "text": "Supplies shop prices have increased, every item now has a value, and higher‑tier gear drops more often as loot.",
+            "text": "Supplies shop prices have increased, every item now has an assigned value, and gear above a certain tier can now be looted.",
             "commit_ids": [
               733870
             ]
@@ -93,12 +61,54 @@
         ]
       },
       {
-        "title": "New Content",
+        "title": "AI & Drones",
         "items": [
           {
-            "text": "Prototype Container Shelter (Tier 2 solo/duo) added: can be built after a raid, includes a Tier 0 workbench, and its door/shelter can be destroyed. (WIP, not yet balanced)",
+            "text": "Scout drones now emit a visible light, have a search function, possess health for nuisance interactions, patrol small monuments, and raise an alarm when they detect players.",
             "commit_ids": [
-              733843
+              733945,
+              733910
+            ]
+          },
+          {
+            "text": "Guards now receive loot based on their tier, and dying heavy units no longer drop the client.",
+            "commit_ids": [
+              733833
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Equipment",
+        "items": [
+          {
+            "text": "FPV goggles work as intended, letting the wearer control RC units while the battery has charge; a ComputerStation now computes distance to the drone each tick.",
+            "commit_ids": [
+              734004
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tools & UI",
+        "items": [
+          {
+            "text": "F1 now correctly opens the UI panels, the health UI appears while breaking items, and the hub shows its own markers so players no longer see the map or death screen upon arrival.",
+            "commit_ids": [
+              734038,
+              733966,
+              733734
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Survival",
+        "items": [
+          {
+            "text": "Holding F while wounded speeds up the drain of “Time Remaining” and “Recovery Chance”; releasing F locks the recovery chance and pauses the timer, allowing players to give up faster.",
+            "commit_ids": [
+              733979
             ]
           }
         ]
@@ -107,42 +117,36 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Arriving at the hub now uses its own markers and skips the map and death screen, streamlining entry.",
+            "text": "Introduces a Tier‑2 solo/duo Container Shelter that can be built quickly after a raid, uses a Tier‑0 workbench, and allows players to destroy its door or the entire shelter (craft costs not yet balanced).",
             "commit_ids": [
-              733734
+              733843
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Survival Mechanics\n- Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.\n\n### World & Monuments\n- Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.\n- The Outpost has been taken off the raid map, so it can no longer be raided.\n- Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health.\n\n### NPC & AI\n- Guards now drop loot based on tier, improving loot variety.\n\n### Combat & Weapons\n- Gun wear has been reduced from 1.0 to 0.75 per use.\n- Weapons now display a second durability bar, and turrets show an ammo counter (requires hammer and building authorization).\n- Flash grenades now have zone‑specific strength, duration, deafness and name‑tag visibility; looking away only helps in outer zones.\n- Grenade damage is full within 1.75 m, falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m and requires line‑of‑sight.\n\n### Economy\n- Supplies shop prices have increased, every item now has a value, and higher‑tier gear drops more often as loot.\n\n### New Content\n- Prototype Container Shelter (Tier 2 solo/duo) added: can be built after a raid, includes a Tier 0 workbench, and its door/shelter can be destroyed. (WIP, not yet balanced)\n\n### Gameplay & Balance\n- Arriving at the hub now uses its own markers and skips the map and death screen, streamlining entry.",
+    "summary": "### World & Loot\n- Monuments no longer reset or respawn loot, and the old puzzle‑reset system has been removed.\n- The truck is now a single loot container; its size has been reduced for easier access, and the recycler and vending machine have been relocated to more convenient spots.\n- All NPCs have been removed from the game world, and the Outpost is no longer present on the raid map.\n\n### Combat & Gear\n- Gun wear has been reduced, lowering the wear per shot from 1 to 0.75.\n- Turrets now display a second health bar indicating weapon condition and an ammo counter; viewing these stats requires a hammer and building authorization.\n- Flash grenades now have distance‑based strength, duration, deafness, and name‑tag visibility (2 m, 6 m, 10 m zones), and heavy flash grenades also muffle sound. Explosive grenades deal full damage up to 1.75 m, tapering to zero at 3.75 m, with shrapnel adding 30 bleed within 2 m and visible streaks.\n- Supplies shop prices have increased, every item now has an assigned value, and gear above a certain tier can now be looted.\n\n### AI & Drones\n- Scout drones now emit a visible light, have a search function, possess health for nuisance interactions, patrol small monuments, and raise an alarm when they detect players.\n- Guards now receive loot based on their tier, and dying heavy units no longer drop the client.\n\n### Equipment\n- FPV goggles work as intended, letting the wearer control RC units while the battery has charge; a ComputerStation now computes distance to the drone each tick.\n\n### Tools & UI\n- F1 now correctly opens the UI panels, the health UI appears while breaking items, and the hub shows its own markers so players no longer see the map or death screen upon arrival.\n\n### Survival\n- Holding F while wounded speeds up the drain of “Time Remaining” and “Recovery Chance”; releasing F locks the recovery chance and pauses the timer, allowing players to give up faster.\n\n### Gameplay & Balance\n- Introduces a Tier‑2 solo/duo Container Shelter that can be built quickly after a raid, uses a Tier‑0 workbench, and allows players to destroy its door or the entire shelter (craft costs not yet balanced).",
     "new_items": [
       {
-        "text": "Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.",
+        "text": "FPV goggles work as intended, letting the wearer control RC units while the battery has charge; a ComputerStation now computes distance to the drone each tick.",
         "commit_ids": [
-          733979
+          734004
         ],
-        "section": "Survival Mechanics"
+        "section": "Equipment"
       },
       {
-        "text": "Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.",
+        "text": "F1 now correctly opens the UI panels, the health UI appears while breaking items, and the hub shows its own markers so players no longer see the map or death screen upon arrival.",
         "commit_ids": [
-          733966
+          734038,
+          733966,
+          733734
         ],
-        "section": "World & Monuments"
-      },
-      {
-        "text": "Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health.",
-        "commit_ids": [
-          733945,
-          733910
-        ],
-        "section": "World & Monuments"
+        "section": "Tools & UI"
       }
     ],
     "new_relevant_count": 4,
-    "new_summary": "- Hold F while wounded now lets you give up, pausing the recovery timer and locking the recovery chance.\n- Monuments no longer reset or respawn loot and all NPCs have been removed; trucks now act as full loot containers and breaking items shows a health UI.\n- Scout drones now patrol small monuments, raise alarms, emit a visible light, can search, and have health."
+    "new_summary": "- FPV goggles work as intended, letting the wearer control RC units while the battery has charge; a ComputerStation now computes distance to the drone each tick.\n- F1 now correctly opens the UI panels, the health UI appears while breaking items, and the hub shows its own markers so players no longer see the map or death screen upon arrival."
   },
   "2026-11-12": {
     "commit_count": 81,
