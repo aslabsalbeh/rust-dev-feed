@@ -1,8 +1,8 @@
 {
   "2026-11-12": {
-    "commit_count": 68,
-    "relevant_commit_count": 17,
-    "relevant_signature": "733179,733180,733212,733216,733247,733265,733273,733278,733428,733431,733440,733477,733478,733511,733585,733589,733590",
+    "commit_count": 74,
+    "relevant_commit_count": 19,
+    "relevant_signature": "733179,733180,733212,733216,733247,733265,733273,733278,733428,733431,733440,733477,733478,733511,733585,733589,733590,733613,733633",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -10,18 +10,19 @@
         "title": "Combat & Weapons",
         "items": [
           {
-            "text": "High-velocity ammo now bypasses projectile protection from armor inserts, including horse armor.",
+            "text": "High‑velocity ammo now penetrates armor inserts and horse armor, ignoring projectile protection.",
             "commit_ids": [
               733180
             ]
-          }
-        ]
-      },
-      {
-        "title": "Reviving",
-        "items": [
+          },
           {
-            "text": "Reviving another player no longer resets the wounded timer, and the timer now pauses correctly during a revive hold, preventing griefy timer resets.",
+            "text": "Woolly Boots recipe (≈10 wool, 5 leather, 1 sewing kit) reduces footstep and jump noise but lowers projectile protection, adding a stealth footwear option.",
+            "commit_ids": [
+              733265
+            ]
+          },
+          {
+            "text": "Reviving a downed player no longer resets their wounded timer, and the timer continues even if the reviver releases the key, preventing attackers from stalling revives.",
             "commit_ids": [
               733477
             ]
@@ -29,16 +30,39 @@
         ]
       },
       {
-        "title": "World & Spawns",
+        "title": "Raiding & Base",
         "items": [
           {
-            "text": "Beach spawns have been rebalanced: spawn checks reduced, more coastline and jungle/desert coast allowed, underwater spawns skipped, and weighting adjusted for smaller beaches.",
+            "text": "The safe pocket is now counted as carried inventory during raids, and the map is cleared after a raid ends.",
+            "commit_ids": [
+              733613
+            ]
+          },
+          {
+            "text": "Looting boxes now has a shorter delay, allowing faster container opening.",
+            "commit_ids": [
+              733440
+            ]
+          },
+          {
+            "text": "Catapults no longer fling players off the map after the parented mounting fix.",
+            "commit_ids": [
+              733247
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monuments & Spawns",
+        "items": [
+          {
+            "text": "Beach spawn points have been rebalanced: larger area coverage, reduced monument check radius, and spawns now allowed near jungle/desert coasts, resulting in more consistent beach spawns.",
             "commit_ids": [
               733431
             ]
           },
           {
-            "text": "Monuments are now guarded by tier, with weaker factions placed under the scientists.",
+            "text": "Monuments now feature tiered guard factions, with weaker groups placed under the scientists, altering monument encounter difficulty.",
             "commit_ids": [
               733511
             ]
@@ -46,10 +70,10 @@
         ]
       },
       {
-        "title": "Extraction",
+        "title": "Extraction & Map UI",
         "items": [
           {
-            "text": "Extraction balloons now appear on the map with a countdown timer and close one after another.",
+            "text": "Extraction balloons are now marked on the map with a countdown timer and will close in sequence, giving clearer extraction timing.",
             "commit_ids": [
               733212
             ]
@@ -57,19 +81,12 @@
         ]
       },
       {
-        "title": "Bug Fixes",
+        "title": "Events & NPCs",
         "items": [
           {
-            "text": "Catapults no longer fling players off the map after the recent mounting fix.",
+            "text": "The airfield puzzle now summons two chinook drops of scientists via an NPC mission instead of the reduced airdrop feature.",
             "commit_ids": [
-              733247,
-              733278
-            ]
-          },
-          {
-            "text": "Loot box opening delay reduced, allowing faster looting after opening.",
-            "commit_ids": [
-              733440
+              733273
             ]
           }
         ]
@@ -78,24 +95,13 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "New Woolly Boots can be crafted (10 wool, 5 leather, 1 sewing kit); they greatly silence footstep and jump sounds but provide reduced projectile protection, ideal for stealth.",
+            "text": "Fixed catapult off‑map clipping bug, ensuring catapults stay within the playable area.",
             "commit_ids": [
-              733265
+              733278
             ]
           },
           {
-            "text": "Pressing the tower button now triggers an NPC mission that summons two chinook helicopters to drop scientists at the airfield, replacing the previous reduced airdrop mechanic.",
-            "commit_ids": [
-              733273
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Placement",
-        "items": [
-          {
-            "text": "Dropbox containers now snap flush against walls, fixing previous awkward placement of storage adapters.",
+            "text": "Adjusted Dropbox sockets to sit flush with walls, eliminating awkward storage adaptor placement issues.",
             "commit_ids": [
               733179
             ]
@@ -104,10 +110,18 @@
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- High-velocity ammo now bypasses projectile protection from armor inserts, including horse armor.\n\n### Reviving\n- Reviving another player no longer resets the wounded timer, and the timer now pauses correctly during a revive hold, preventing griefy timer resets.\n\n### World & Spawns\n- Beach spawns have been rebalanced: spawn checks reduced, more coastline and jungle/desert coast allowed, underwater spawns skipped, and weighting adjusted for smaller beaches.\n- Monuments are now guarded by tier, with weaker factions placed under the scientists.\n\n### Extraction\n- Extraction balloons now appear on the map with a countdown timer and close one after another.\n\n### Bug Fixes\n- Catapults no longer fling players off the map after the recent mounting fix.\n- Loot box opening delay reduced, allowing faster looting after opening.\n\n### Gameplay & Balance\n- New Woolly Boots can be crafted (10 wool, 5 leather, 1 sewing kit); they greatly silence footstep and jump sounds but provide reduced projectile protection, ideal for stealth.\n- Pressing the tower button now triggers an NPC mission that summons two chinook helicopters to drop scientists at the airfield, replacing the previous reduced airdrop mechanic.\n\n### Building & Placement\n- Dropbox containers now snap flush against walls, fixing previous awkward placement of storage adapters.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Combat & Weapons\n- High‑velocity ammo now penetrates armor inserts and horse armor, ignoring projectile protection.\n- Woolly Boots recipe (≈10 wool, 5 leather, 1 sewing kit) reduces footstep and jump noise but lowers projectile protection, adding a stealth footwear option.\n- Reviving a downed player no longer resets their wounded timer, and the timer continues even if the reviver releases the key, preventing attackers from stalling revives.\n\n### Raiding & Base\n- The safe pocket is now counted as carried inventory during raids, and the map is cleared after a raid ends.\n- Looting boxes now has a shorter delay, allowing faster container opening.\n- Catapults no longer fling players off the map after the parented mounting fix.\n\n### Monuments & Spawns\n- Beach spawn points have been rebalanced: larger area coverage, reduced monument check radius, and spawns now allowed near jungle/desert coasts, resulting in more consistent beach spawns.\n- Monuments now feature tiered guard factions, with weaker groups placed under the scientists, altering monument encounter difficulty.\n\n### Extraction & Map UI\n- Extraction balloons are now marked on the map with a countdown timer and will close in sequence, giving clearer extraction timing.\n\n### Events & NPCs\n- The airfield puzzle now summons two chinook drops of scientists via an NPC mission instead of the reduced airdrop feature.\n\n### Gameplay & Balance\n- Fixed catapult off‑map clipping bug, ensuring catapults stay within the playable area.\n- Adjusted Dropbox sockets to sit flush with walls, eliminating awkward storage adaptor placement issues.",
+    "new_items": [
+      {
+        "text": "The safe pocket is now counted as carried inventory during raids, and the map is cleared after a raid ends.",
+        "commit_ids": [
+          733613
+        ],
+        "section": "Raiding & Base"
+      }
+    ],
+    "new_relevant_count": 1,
+    "new_summary": "- The safe pocket is now counted as carried inventory during raids, and the map is cleared after a raid ends."
   },
   "2026-11-11": {
     "commit_count": 161,
