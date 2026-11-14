@@ -109,17 +109,9 @@
     ],
     "status": "ok",
     "summary": "### Equipment & Gear\n- Rocketpack added as a new piece of equipment.\n- FPV Goggles let players control RC units while wearing them (battery‑dependent) and spawn a linked ComputerStation for distance handling.\n- Gun wear reduced from 1.0 to 0.75 per use, and turrets now display a second HP bar showing weapon condition plus an ammo counter, visible without powering off the turret.\n\n### AI & Drones\n- Scout drones patrol small monuments, raise alarms, and now feature a visible light, search behavior, and health values.\n- Guards now drop loot scaled by tier, and heavy units no longer cause client crashes on death.\n\n### Player Mechanics & Survival\n- Holding F while wounded lets players “give up”, accelerating time‑remaining and recovery‑chance drains; releasing F pauses the timer.\n- Flash grenades reworked with zone‑based flash and deafness, name‑tag hiding, adjusted damage radius, and shrapnel that adds bleed and shows visible streaks.\n\n### World & Loot\n- Entire trucks act as loot containers, can be looted, show health UI when broken, and have a reduced size for easier access.\n- Monuments no longer reset or respawn loot, all NPCs have been removed from the world, and the Outpost has been removed from the raid map.\n- Introduced a Tier 2 solo/duo Container Shelter prototype with a Tier 0 workbench and a destroyable door/shelter.\n- Hub now has its own arrival markers and you no longer see the map or death screen when arriving.\n\n### Economy & Shop\n- Supplies shop prices increased; every item now has a value and loot above‑made gear is accounted for.",
-    "new_items": [
-      {
-        "text": "Rocketpack added as a new piece of equipment.",
-        "commit_ids": [
-          734121
-        ],
-        "section": "Equipment & Gear"
-      }
-    ],
-    "new_relevant_count": 1,
-    "new_summary": "- Rocketpack added as a new piece of equipment."
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-12": {
     "commit_count": 81,
@@ -239,11 +231,259 @@
     "new_summary": ""
   },
   "2026-11-11": {
-    "commit_count": 161,
-    "relevant_commit_count": 77,
+    "commit_count": 156,
+    "relevant_commit_count": 74,
     "relevant_signature": "732567,732568,732569,732648,732649,732650,732654,732664,732665,732693,732697,732698,732699,732700,732763,732764,732765,732766,732767,732768,732769,732770,732771,732772,732773,732774,732775,732776,732777,732778,732785,732792,732800,732823,732826,732861,732864,732874,732887,732925,732930,732936,732938,732952,732957,732962,732963,732976,732977,732978,732991,733006,733007,733008,733009,733010,733011,733012,733013,733014,733015,733016,733017,733039,733043,733044,733045,733054,733055,733076,733087,733089,733120,733152,733155,733156,733172",
     "prompt_version": "structured-read-state-v7-explicit-empty",
-    "chunk_cache": {},
+    "chunk_cache": {
+      "733007,733008,733009,733010,733011,733012,733013,733014,733015,733016,733017,733039,733043,733044,733045,733054,733055,733076,733087,733089,733120,733152,733155,733156,733172": [
+        {
+          "title": "Mounts & Vehicles",
+          "items": [
+            {
+              "text": "Horse armour rework: rider protection removed, horse protection buffed, speed penalty removed, heavy plate can be mounted, stamina drain increased when wearing horse armour.",
+              "commit_ids": [
+                733172
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory Limits",
+          "items": [
+            {
+              "text": "Main inventory size on the extraction map halved.",
+              "commit_ids": [
+                733120
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory & Loot UI",
+          "items": [
+            {
+              "text": "Items now display a scrap value, showing the worth of loot.",
+              "commit_ids": [
+                733076
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Building System",
+          "items": [
+            {
+              "text": "Nearby buildings automatically merge into bases.",
+              "commit_ids": [
+                733055
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Helicopter Mechanics",
+          "items": [
+            {
+              "text": "Fixed helicopter prediction bug causing helicopters to bounce on the ground at high latency.",
+              "commit_ids": [
+                733039
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Seamless Server & Map Improvements",
+          "items": [
+            {
+              "text": "Seamless servers now have full wave activity outside their terrain.",
+              "commit_ids": [
+                733017
+              ]
+            },
+            {
+              "text": "All seamless servers share the same time of day.",
+              "commit_ids": [
+                733015
+              ]
+            },
+            {
+              "text": "Ocean now continues across seamless server borders.",
+              "commit_ids": [
+                733016
+              ]
+            },
+            {
+              "text": "Map now shows every seamless server island, allows zooming out until all islands fit, and displays monument names and markers on neighboring islands.",
+              "commit_ids": [
+                733009,
+                733010,
+                733013,
+                733008
+              ]
+            },
+            {
+              "text": "Players can shoot entities on neighboring seamless servers.",
+              "commit_ids": [
+                733007
+              ]
+            }
+          ]
+        }
+      ],
+      "732776,732777,732778,732785,732792,732800,732823,732826,732861,732864,732874,732887,732925,732930,732936,732938,732952,732957,732962,732963,732976,732977,732978,732991,733006": [
+        {
+          "title": "Crafting & Deploying",
+          "items": [
+            {
+              "text": "Players can no longer start deploying structures while a crafting action is in progress, preventing accidental deployment interruptions.",
+              "commit_ids": [
+                732991
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Helicopter Mechanics",
+          "items": [
+            {
+              "text": "Helicopter pooling bug fixed: helicopters now correctly tick on the client, ensuring proper movement and interaction.",
+              "commit_ids": [
+                732962
+              ]
+            },
+            {
+              "text": "Mounted player input now includes a tick sequence, improving responsiveness when controlling vehicles like helicopters.",
+              "commit_ids": [
+                732963
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map Updates",
+          "items": [
+            {
+              "text": "Outpost location added to the extraction map, allowing players to see and navigate to the Outpost during extraction phases.",
+              "commit_ids": [
+                732861
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Loot Containers",
+          "items": [
+            {
+              "text": "Beached loot containers now use unique loot pools (Tools, Ammo/Meds, Food) with many crates but no high‑tier weapons, changing loot distribution on beaches.",
+              "commit_ids": [
+                732800
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Inventory UI",
+          "items": [
+            {
+              "text": "Safe pocket indicator now appears next to any looted item, helping players track protected inventory space.",
+              "commit_ids": [
+                732930
+              ]
+            }
+          ]
+        },
+        {
+          "title": "NPC & AI",
+          "items": [
+            {
+              "text": "NPC service booths (armor and restoration) now have full kiosk structures with attendant NPCs, enhancing the visual and interactive experience.",
+              "commit_ids": [
+                732777
+              ]
+            },
+            {
+              "text": "NPC canteen now automatically fills resident food to 80%, improving NPC sustenance behavior.",
+              "commit_ids": [
+                732776
+              ]
+            },
+            {
+              "text": "NPCs now have profession‑based name prefixes/suffixes, voice mumbling, and smoother conversation movement, making interactions feel more realistic.",
+              "commit_ids": [
+                732778
+              ]
+            }
+          ]
+        }
+      ],
+      "732648,732649,732650,732654,732664,732665,732693,732697,732698,732699,732700,732763,732764,732765,732766,732767,732768,732769,732770,732771,732772,732773,732774,732775": [
+        {
+          "title": "NPC Services & Outpost",
+          "items": [
+            {
+              "text": "Added rentable NPC services including armour slot and restoration garages at the Outpost, with dedicated UI panels.",
+              "commit_ids": [
+                732763,
+                732775
+              ]
+            },
+            {
+              "text": "Players now access NPC services by talking to an attendant, and client‑only builds of NPC services have been fixed.",
+              "commit_ids": [
+                732773,
+                732768
+              ]
+            },
+            {
+              "text": "Rental earnings from finished rentals are now held for 48 hours and restoration prices have been adjusted.",
+              "commit_ids": [
+                732766
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Giga Furnace Services",
+          "items": [
+            {
+              "text": "Giga furnace can now be operated from a walk‑in counter in its yard and is offered as a drop‑off service at Bandit Camp; the furnace has been relocated to fenced yards and Outpost booths.",
+              "commit_ids": [
+                732772,
+                732764,
+                732771,
+                732769,
+                732767
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Apartment Complex Updates",
+          "items": [
+            {
+              "text": "The apartment canteen has been moved into an enclosed room behind the lobby, the apartment cook now has a dedicated canteen, and residents receive free meals.",
+              "commit_ids": [
+                732774,
+                732770,
+                732765
+              ]
+            }
+          ]
+        },
+        {
+          "title": "New 40mm Tracker Round",
+          "items": [
+            {
+              "text": "Introduced a 40mm Tracker Round that sticks to surfaces and vehicles, adds a map tracking marker for 5 minutes with audio and visual cues.",
+              "commit_ids": [
+                732693
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "sections": [
       {
         "title": "Transportation & Vehicles",
