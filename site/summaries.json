@@ -184,9 +184,9 @@
     "new_summary": ""
   },
   "2026-11-12": {
-    "commit_count": 80,
-    "relevant_commit_count": 21,
-    "relevant_signature": "733180,733212,733216,733247,733265,733273,733278,733428,733431,733440,733477,733478,733511,733585,733589,733590,733613,733633,733640,733652,733655",
+    "commit_count": 78,
+    "relevant_commit_count": 20,
+    "relevant_signature": "733212,733216,733247,733265,733273,733278,733428,733431,733440,733477,733478,733511,733585,733589,733590,733613,733633,733640,733652,733655",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
@@ -194,15 +194,9 @@
         "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Flamethrower fire now works in first‑person view.",
+            "text": "Flamethrower now fires correctly in first‑person view.",
             "commit_ids": [
               733652
-            ]
-          },
-          {
-            "text": "High‑velocity ammo now bypasses projectile protection from armor inserts and horse armor, increasing damage against heavily armored players.",
-            "commit_ids": [
-              733180
             ]
           }
         ]
@@ -211,9 +205,60 @@
         "title": "Reviving & Healing",
         "items": [
           {
-            "text": "Reviving another player no longer resets their wounded timer; if the timer expires during a revive hold you stay down until you release E, preventing griefy timer resets.",
+            "text": "Reviving another player no longer resets their wounded timer, and the timer now only pauses while holding E, preventing griefers from resetting revive progress.",
             "commit_ids": [
               733477
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Monuments & Spawns",
+        "items": [
+          {
+            "text": "Monument guards are now tier‑based, with weaker factions placed under the scientists.",
+            "commit_ids": [
+              733511
+            ]
+          },
+          {
+            "text": "Beach spawn algorithm updated for fairer distribution, allowing more spawn points on varied coastlines and reducing monument check radius.",
+            "commit_ids": [
+              733431
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Raiding & Loot",
+        "items": [
+          {
+            "text": "Safe pocket is now counted as carried loot and the map is cleared after a raid, affecting loot accounting.",
+            "commit_ids": [
+              733613
+            ]
+          },
+          {
+            "text": "Loot box interaction delay reduced, allowing faster looting.",
+            "commit_ids": [
+              733440
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Extraction & Events",
+        "items": [
+          {
+            "text": "Extraction balloons now show a countdown timer on the map and close sequentially.",
+            "commit_ids": [
+              733212
+            ]
+          },
+          {
+            "text": "Airfield puzzle replaced with an NPC mission: pressing the tower button summons two chinooks to drop scientists.",
+            "commit_ids": [
+              733273
             ]
           }
         ]
@@ -222,7 +267,7 @@
         "title": "Vehicles & Catapults",
         "items": [
           {
-            "text": "Catapult bug fixed – players are no longer yeeted off the map by catapults.",
+            "text": "Catapult no longer launches players off the map due to mounting changes.",
             "commit_ids": [
               733247,
               733278
@@ -231,70 +276,25 @@
         ]
       },
       {
-        "title": "World & Spawns",
-        "items": [
-          {
-            "text": "Beach monument spawn logic improved: more beach areas now receive spawns, spawn radius reduced, and weighting adjusted for smaller beaches.",
-            "commit_ids": [
-              733431
-            ]
-          },
-          {
-            "text": "Monument guards are now tier‑based, with weaker factions placed under scientists.",
-            "commit_ids": [
-              733511
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Loot & Interaction",
-        "items": [
-          {
-            "text": "Delay before looting boxes reduced, allowing faster access to loot.",
-            "commit_ids": [
-              733440
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Extraction & Map UI",
-        "items": [
-          {
-            "text": "Extraction balloons now display a timer on the map and close sequentially.",
-            "commit_ids": [
-              733212
-            ]
-          }
-        ]
-      },
-      {
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Introduces Woolly Boots, craftable with 10 wool, 5 leather and a sewing kit; wearing them significantly mutes footstep and jump sounds while lowering projectile protection, offering a stealth trade‑off.",
+            "text": "Reviving another player with a syringe now plays the correct third‑person sound effect.",
+            "commit_ids": [
+              733655
+            ]
+          },
+          {
+            "text": "Woolly Boots can be crafted (10 wool, 5 leather, 1 sewing kit); they silence footstep and jump noises but reduce projectile protection.",
             "commit_ids": [
               733265
-            ]
-          },
-          {
-            "text": "Safe pocket now counts toward carried weight and the map is automatically cleared after a raid, removing leftover loot and map clutter.",
-            "commit_ids": [
-              733613
-            ]
-          },
-          {
-            "text": "The airfield fuse puzzle was replaced with an NPC mission: pressing the tower button summons two chinook drops that deliver scientists to the airfield.",
-            "commit_ids": [
-              733273
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Combat & Weapons\n- Flamethrower fire now works in first‑person view.\n- High‑velocity ammo now bypasses projectile protection from armor inserts and horse armor, increasing damage against heavily armored players.\n\n### Reviving & Healing\n- Reviving another player no longer resets their wounded timer; if the timer expires during a revive hold you stay down until you release E, preventing griefy timer resets.\n\n### Vehicles & Catapults\n- Catapult bug fixed – players are no longer yeeted off the map by catapults.\n\n### World & Spawns\n- Beach monument spawn logic improved: more beach areas now receive spawns, spawn radius reduced, and weighting adjusted for smaller beaches.\n- Monument guards are now tier‑based, with weaker factions placed under scientists.\n\n### Loot & Interaction\n- Delay before looting boxes reduced, allowing faster access to loot.\n\n### Extraction & Map UI\n- Extraction balloons now display a timer on the map and close sequentially.\n\n### Gameplay & Balance\n- Introduces Woolly Boots, craftable with 10 wool, 5 leather and a sewing kit; wearing them significantly mutes footstep and jump sounds while lowering projectile protection, offering a stealth trade‑off.\n- Safe pocket now counts toward carried weight and the map is automatically cleared after a raid, removing leftover loot and map clutter.\n- The airfield fuse puzzle was replaced with an NPC mission: pressing the tower button summons two chinook drops that deliver scientists to the airfield.",
+    "summary": "### Combat & Weapons\n- Flamethrower now fires correctly in first‑person view.\n\n### Reviving & Healing\n- Reviving another player no longer resets their wounded timer, and the timer now only pauses while holding E, preventing griefers from resetting revive progress.\n\n### Monuments & Spawns\n- Monument guards are now tier‑based, with weaker factions placed under the scientists.\n- Beach spawn algorithm updated for fairer distribution, allowing more spawn points on varied coastlines and reducing monument check radius.\n\n### Raiding & Loot\n- Safe pocket is now counted as carried loot and the map is cleared after a raid, affecting loot accounting.\n- Loot box interaction delay reduced, allowing faster looting.\n\n### Extraction & Events\n- Extraction balloons now show a countdown timer on the map and close sequentially.\n- Airfield puzzle replaced with an NPC mission: pressing the tower button summons two chinooks to drop scientists.\n\n### Vehicles & Catapults\n- Catapult no longer launches players off the map due to mounting changes.\n\n### Gameplay & Balance\n- Reviving another player with a syringe now plays the correct third‑person sound effect.\n- Woolly Boots can be crafted (10 wool, 5 leather, 1 sewing kit); they silence footstep and jump noises but reduce projectile protection.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
