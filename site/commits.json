@@ -1,5 +1,37 @@
 [
   {
+    "id": 734431,
+    "branch": "hackweek_project_outpost",
+    "changeset": "a750f7",
+    "created": "2026-11-16T00:11:26.7",
+    "message": "Extraction: refine mission interactions and preserve safe-pocket items\n* Add hold-E mission interactions with movement and camera locking, target-anchored progress, and reset on cancellation.\n* Make ledger and maintenance-log reads take five seconds, and consume repair materials only after completion.\n* Refine the compact mission card, grow it for wrapped text, and add completion audio, right-aligned ticks and task transitions.\n* Use Water Treatment's existing pipe-access pit and valve for feedline repairs and pressure release.\n* Preserve safe-pocket contents when they load before the saved backpack.\n* Validate Unity compilation, 17 server tests, and in-game HUD and interaction checks.",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 734430,
+    "branch": "hackweek_project_outpost",
+    "changeset": "d27fd7",
+    "created": "2026-11-16T00:11:26.7",
+    "message": "Extraction: pop in the first loot item and keep outlines off the hotbar",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 734429,
+    "branch": "hackweek_project_outpost",
+    "changeset": "7bf702",
+    "created": "2026-11-16T00:11:26.6",
+    "message": "Extraction: refine missions and add loot reveal",
+    "user": "Pilgrim"
+  },
+  {
+    "id": 734414,
+    "branch": "hackweek_caretaker",
+    "changeset": "5e1c89",
+    "created": "2026-11-15T22:56:13.5",
+    "message": "Apartment complex caretaker NPC\n* Does a lap of the building a night\n* Knocks on doors of rented rooms and uses hackweek peephole\n* https://files.facepunch.com/rin/2026/November/16_08-37-SeparateXuanhuaceratops.mp4",
+    "user": "Rin"
+  },
+  {
     "id": 734392,
     "branch": "hackweek_project_outpost",
     "changeset": "c454ca",
@@ -1501,110 +1533,6 @@
     "changeset": "4544c3",
     "created": "2026-11-13T02:41:07",
     "message": "A bunch of reliability fixes to the radio streaming system\n* Streams should now be framerate independent (fixes distortion when a client is alt-tabbed and switches to a low framerate)\nBetter handling for dropped connections, retry the stream connection\nFixed some ordering issues\nA couple of tests in prep for future refactor",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 733616,
-    "branch": "Aux3",
-    "changeset": "82cc67",
-    "created": "2026-11-13T01:15:51.8",
-    "message": "Put hackweek_project_outpost on Aux3 again",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 733615,
-    "branch": "hackweek_project_outpost",
-    "changeset": "f3b8e3",
-    "created": "2026-11-13T01:15:29",
-    "message": "Dress the hub, keep players to its yard and deploy from the manhole",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 733614,
-    "branch": "hackweek_project_outpost",
-    "changeset": "ef8e6e",
-    "created": "2026-11-13T01:15:29",
-    "message": "Put extraction balloons clear of trees, and stop them crushing raiders",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 733613,
-    "branch": "hackweek_project_outpost",
-    "changeset": "c0fff2",
-    "created": "2026-11-13T01:15:28.9",
-    "message": "Count the safe pocket as carried, and clear the map after a raid",
-    "user": "Pilgrim"
-  },
-  {
-    "id": 733610,
-    "branch": "hackweek_hawk",
-    "changeset": "05d440",
-    "created": "2026-11-13T00:29:44",
-    "message": "updated hawk model with lods, tweaked flock parameters and added a hawk interest zone for cliffs",
-    "user": "Lain"
-  },
-  {
-    "id": 733609,
-    "branch": "hackweek_hawk",
-    "changeset": "f54dc8",
-    "created": "2026-11-13T00:29:44",
-    "message": "added preliminary hawk sounds and set the assets up",
-    "user": "Lain"
-  },
-  {
-    "id": 733608,
-    "branch": "hackweek_hawk",
-    "changeset": "abb591",
-    "created": "2026-11-13T00:29:43.9",
-    "message": "set up prefab and flock asset.",
-    "user": "Lain"
-  },
-  {
-    "id": 733607,
-    "branch": "hackweek_hawk",
-    "changeset": "17f480",
-    "created": "2026-11-13T00:29:43.9",
-    "message": "added hawk model, material, textures",
-    "user": "Lain"
-  },
-  {
-    "id": 733590,
-    "branch": "hackweek_loot_prediction",
-    "changeset": "bf7efb",
-    "created": "2026-11-12T23:33:59.1",
-    "message": "Open prefetched loot with the same path as normal loot",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 733589,
-    "branch": "hackweek_loot_prediction",
-    "changeset": "c7b09c",
-    "created": "2026-11-12T23:33:59.1",
-    "message": "Prefetch furnaces & corpses too",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 733585,
-    "branch": "hackweek_render_attachments",
-    "changeset": "877dc0",
-    "created": "2026-11-12T23:22:14.8",
-    "message": "Try rendering weapon icons with their attachments showing",
-    "user": "Jake_Rich"
-  },
-  {
-    "id": 733582,
-    "branch": "hackweek-rainy-days",
-    "changeset": "81b73b",
-    "created": "2026-11-12T23:18:38.5",
-    "message": "Gated all of the new rain features behind a graphics.advancedweather convar\n* Good news is the convar doesn't seem to change perf at all so these changes were very performant",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 733581,
-    "branch": "hackweek-rainy-days",
-    "changeset": "03e279",
-    "created": "2026-11-12T23:18:38.5",
-    "message": "Merge remote-tracking branch 'origin/main' into hackweek-rainy-days",
     "user": "Jarryd Campi"
   }
 ]
