@@ -6,9 +6,9 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Sun, 15 Nov 2026 22:17:30 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 00:18:05 -0500</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Nov 15</title>
+      <title>Yesterday's Rust Updates — Nov 15</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;29 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -34,10 +34,10 @@
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-15</guid>
-      <pubDate>Sun, 15 Nov 2026 22:17:30 -0500</pubDate>
+      <pubDate>Sun, 15 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Nov 14</title>
+      <title>Rust Updates — 2 Days Ago — Nov 14</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;27 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -64,36 +64,39 @@
       <pubDate>Sat, 14 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Rust Updates — 2 Days Ago — Nov 13</title>
+      <title>Rust Development Updates — Nov 13</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;128 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;121 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Equipment &amp;amp; Gear&lt;/h3&gt;
+&lt;h3&gt;Gear &amp;amp; Mobility&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734121"&gt;Rocketpack added as a new piece of equipment.&lt;/li&gt;
-&lt;li data-rust-commits="734004"&gt;FPV Goggles let players control RC units while wearing them (battery‑dependent) and spawn a linked ComputerStation for distance handling.&lt;/li&gt;
-&lt;li data-rust-commits="733728"&gt;Gun wear reduced from 1.0 to 0.75 per use, and turrets now display a second HP bar showing weapon condition plus an ammo counter, visible without powering off the turret.&lt;/li&gt;
+&lt;li data-rust-commits="734121"&gt;Added a Rocketpack for player use.&lt;/li&gt;
+&lt;li data-rust-commits="734004"&gt;Implemented FPV Goggles that let players control RC units (e.g., drones) while wearing them, provided the battery isn’t empty.&lt;/li&gt;
+&lt;li data-rust-commits="734111"&gt;Ground vehicles now feature a chase‑camera in third‑person view.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; Drones&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Survival&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733910,733945"&gt;Scout drones patrol small monuments, raise alarms, and now feature a visible light, search behavior, and health values.&lt;/li&gt;
-&lt;li data-rust-commits="733833"&gt;Guards now drop loot scaled by tier, and heavy units no longer cause client crashes on death.&lt;/li&gt;
+&lt;li data-rust-commits="733979"&gt;Holding **F** while wounded lets players “give up”; a timer and recovery‑chance gauge accelerate the longer **F** is held, and releasing **F** pauses the timer.&lt;/li&gt;
+&lt;li data-rust-commits="733728"&gt;Gun wear reduced from 1 to 0.75 and a second HP bar now shows weapon condition.&lt;/li&gt;
+&lt;li data-rust-commits="733728"&gt;Turrets now display an ammo counter without needing to power down (requires hammer and building authorization).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player Mechanics &amp;amp; Survival&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733979"&gt;Holding F while wounded lets players “give up”, accelerating time‑remaining and recovery‑chance drains; releasing F pauses the timer.&lt;/li&gt;
-&lt;li data-rust-commits="733705,733704"&gt;Flash grenades reworked with zone‑based flash and deafness, name‑tag hiding, adjusted damage radius, and shrapnel that adds bleed and shows visible streaks.&lt;/li&gt;
+&lt;li data-rust-commits="733966"&gt;Monuments no longer reset or respawn loot; the truck is now a full loot container and its health UI shows when breaking items; all NPCs have been removed from the world.&lt;/li&gt;
+&lt;li data-rust-commits="733910,733945"&gt;Scout drones added: they patrol small monuments, raise alarms, emit a visible light, can search for players, and have their own health pool.&lt;/li&gt;
+&lt;li data-rust-commits="733833"&gt;Guards now receive loot based on tier, and dying heavy units no longer drop the client.&lt;/li&gt;
+&lt;li data-rust-commits="733909"&gt;The Outpost has been removed from the raid map.&lt;/li&gt;
+&lt;li data-rust-commits="733734"&gt;Hub now has its own markers, and players no longer see the map or death screen when arriving.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Loot&lt;/h3&gt;
+&lt;h3&gt;Economy &amp;amp; Base&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733966"&gt;Entire trucks act as loot containers, can be looted, show health UI when broken, and have a reduced size for easier access.&lt;/li&gt;
-&lt;li data-rust-commits="733966,733909"&gt;Monuments no longer reset or respawn loot, all NPCs have been removed from the world, and the Outpost has been removed from the raid map.&lt;/li&gt;
-&lt;li data-rust-commits="733843"&gt;Introduced a Tier 2 solo/duo Container Shelter prototype with a Tier 0 workbench and a destroyable door/shelter.&lt;/li&gt;
-&lt;li data-rust-commits="733734"&gt;Hub now has its own arrival markers and you no longer see the map or death screen when arriving.&lt;/li&gt;
+&lt;li data-rust-commits="733870"&gt;Supplies shop prices increased; every item now has a defined value and loot above‑grade gear is treated as made gear.&lt;/li&gt;
+&lt;li data-rust-commits="733843"&gt;Introduced a Tier‑2 Container Shelter (solo/duo legacy shack) with a Tier‑2 tech tree but Tier‑0 workbench; it can be destroyed and currently has no balanced craft costs.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Economy &amp;amp; Shop&lt;/h3&gt;
+&lt;h3&gt;Explosives&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="733870"&gt;Supplies shop prices increased; every item now has a value and loot above‑made gear is accounted for.&lt;/li&gt;
+&lt;li data-rust-commits="733705"&gt;Flash grenades now have zone‑based effects (inner 2 m, mid 6 m, outer 10 m) with varying flash strength, duration, deafness, and name‑tag visibility; looking away only mitigates mid/outer zones, and heavy flash also muffles sound like a heavy plate helmet.&lt;/li&gt;
+&lt;li data-rust-commits="733704"&gt;Explosion damage radius changed to full damage within 1.75 m falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m, fading out to 8 m, requires line‑of‑sight, and visible shrapnel streaks are now shown.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-13</guid>

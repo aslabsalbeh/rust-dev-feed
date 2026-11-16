@@ -140,29 +140,52 @@
     "new_summary": ""
   },
   "2026-11-13": {
-    "commit_count": 128,
-    "relevant_commit_count": 31,
-    "relevant_signature": "733663,733704,733705,733728,733731,733734,733755,733756,733775,733786,733787,733819,733832,733833,733843,733870,733891,733909,733910,733945,733966,733979,733981,733982,733995,734004,734032,734038,734111,734117,734121",
+    "commit_count": 121,
+    "relevant_commit_count": 30,
+    "relevant_signature": "733704,733705,733728,733731,733734,733755,733756,733775,733786,733787,733819,733832,733833,733843,733870,733891,733909,733910,733945,733966,733979,733981,733982,733995,734004,734032,734038,734111,734117,734121",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Equipment & Gear",
+        "title": "Gear & Mobility",
         "items": [
           {
-            "text": "Rocketpack added as a new piece of equipment.",
+            "text": "Added a Rocketpack for player use.",
             "commit_ids": [
               734121
             ]
           },
           {
-            "text": "FPV Goggles let players control RC units while wearing them (battery‑dependent) and spawn a linked ComputerStation for distance handling.",
+            "text": "Implemented FPV Goggles that let players control RC units (e.g., drones) while wearing them, provided the battery isn’t empty.",
             "commit_ids": [
               734004
             ]
           },
           {
-            "text": "Gun wear reduced from 1.0 to 0.75 per use, and turrets now display a second HP bar showing weapon condition plus an ammo counter, visible without powering off the turret.",
+            "text": "Ground vehicles now feature a chase‑camera in third‑person view.",
+            "commit_ids": [
+              734111
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Survival",
+        "items": [
+          {
+            "text": "Holding **F** while wounded lets players “give up”; a timer and recovery‑chance gauge accelerate the longer **F** is held, and releasing **F** pauses the timer.",
+            "commit_ids": [
+              733979
+            ]
+          },
+          {
+            "text": "Gun wear reduced from 1 to 0.75 and a second HP bar now shows weapon condition.",
+            "commit_ids": [
+              733728
+            ]
+          },
+          {
+            "text": "Turrets now display an ammo counter without needing to power down (requires hammer and building authorization).",
             "commit_ids": [
               733728
             ]
@@ -170,65 +193,35 @@
         ]
       },
       {
-        "title": "AI & Drones",
+        "title": "World & UI",
         "items": [
           {
-            "text": "Scout drones patrol small monuments, raise alarms, and now feature a visible light, search behavior, and health values.",
+            "text": "Monuments no longer reset or respawn loot; the truck is now a full loot container and its health UI shows when breaking items; all NPCs have been removed from the world.",
+            "commit_ids": [
+              733966
+            ]
+          },
+          {
+            "text": "Scout drones added: they patrol small monuments, raise alarms, emit a visible light, can search for players, and have their own health pool.",
             "commit_ids": [
               733910,
               733945
             ]
           },
           {
-            "text": "Guards now drop loot scaled by tier, and heavy units no longer cause client crashes on death.",
+            "text": "Guards now receive loot based on tier, and dying heavy units no longer drop the client.",
             "commit_ids": [
               733833
             ]
-          }
-        ]
-      },
-      {
-        "title": "Player Mechanics & Survival",
-        "items": [
-          {
-            "text": "Holding F while wounded lets players “give up”, accelerating time‑remaining and recovery‑chance drains; releasing F pauses the timer.",
-            "commit_ids": [
-              733979
-            ]
           },
           {
-            "text": "Flash grenades reworked with zone‑based flash and deafness, name‑tag hiding, adjusted damage radius, and shrapnel that adds bleed and shows visible streaks.",
+            "text": "The Outpost has been removed from the raid map.",
             "commit_ids": [
-              733705,
-              733704
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Loot",
-        "items": [
-          {
-            "text": "Entire trucks act as loot containers, can be looted, show health UI when broken, and have a reduced size for easier access.",
-            "commit_ids": [
-              733966
-            ]
-          },
-          {
-            "text": "Monuments no longer reset or respawn loot, all NPCs have been removed from the world, and the Outpost has been removed from the raid map.",
-            "commit_ids": [
-              733966,
               733909
             ]
           },
           {
-            "text": "Introduced a Tier 2 solo/duo Container Shelter prototype with a Tier 0 workbench and a destroyable door/shelter.",
-            "commit_ids": [
-              733843
-            ]
-          },
-          {
-            "text": "Hub now has its own arrival markers and you no longer see the map or death screen when arriving.",
+            "text": "Hub now has its own markers, and players no longer see the map or death screen when arriving.",
             "commit_ids": [
               733734
             ]
@@ -236,19 +229,42 @@
         ]
       },
       {
-        "title": "Economy & Shop",
+        "title": "Economy & Base",
         "items": [
           {
-            "text": "Supplies shop prices increased; every item now has a value and loot above‑made gear is accounted for.",
+            "text": "Supplies shop prices increased; every item now has a defined value and loot above‑grade gear is treated as made gear.",
             "commit_ids": [
               733870
+            ]
+          },
+          {
+            "text": "Introduced a Tier‑2 Container Shelter (solo/duo legacy shack) with a Tier‑2 tech tree but Tier‑0 workbench; it can be destroyed and currently has no balanced craft costs.",
+            "commit_ids": [
+              733843
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Explosives",
+        "items": [
+          {
+            "text": "Flash grenades now have zone‑based effects (inner 2 m, mid 6 m, outer 10 m) with varying flash strength, duration, deafness, and name‑tag visibility; looking away only mitigates mid/outer zones, and heavy flash also muffles sound like a heavy plate helmet.",
+            "commit_ids": [
+              733705
+            ]
+          },
+          {
+            "text": "Explosion damage radius changed to full damage within 1.75 m falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m, fading out to 8 m, requires line‑of‑sight, and visible shrapnel streaks are now shown.",
+            "commit_ids": [
+              733704
             ]
           }
         ]
       }
     ],
     "status": "ok",
-    "summary": "### Equipment & Gear\n- Rocketpack added as a new piece of equipment.\n- FPV Goggles let players control RC units while wearing them (battery‑dependent) and spawn a linked ComputerStation for distance handling.\n- Gun wear reduced from 1.0 to 0.75 per use, and turrets now display a second HP bar showing weapon condition plus an ammo counter, visible without powering off the turret.\n\n### AI & Drones\n- Scout drones patrol small monuments, raise alarms, and now feature a visible light, search behavior, and health values.\n- Guards now drop loot scaled by tier, and heavy units no longer cause client crashes on death.\n\n### Player Mechanics & Survival\n- Holding F while wounded lets players “give up”, accelerating time‑remaining and recovery‑chance drains; releasing F pauses the timer.\n- Flash grenades reworked with zone‑based flash and deafness, name‑tag hiding, adjusted damage radius, and shrapnel that adds bleed and shows visible streaks.\n\n### World & Loot\n- Entire trucks act as loot containers, can be looted, show health UI when broken, and have a reduced size for easier access.\n- Monuments no longer reset or respawn loot, all NPCs have been removed from the world, and the Outpost has been removed from the raid map.\n- Introduced a Tier 2 solo/duo Container Shelter prototype with a Tier 0 workbench and a destroyable door/shelter.\n- Hub now has its own arrival markers and you no longer see the map or death screen when arriving.\n\n### Economy & Shop\n- Supplies shop prices increased; every item now has a value and loot above‑made gear is accounted for.",
+    "summary": "### Gear & Mobility\n- Added a Rocketpack for player use.\n- Implemented FPV Goggles that let players control RC units (e.g., drones) while wearing them, provided the battery isn’t empty.\n- Ground vehicles now feature a chase‑camera in third‑person view.\n\n### Combat & Survival\n- Holding **F** while wounded lets players “give up”; a timer and recovery‑chance gauge accelerate the longer **F** is held, and releasing **F** pauses the timer.\n- Gun wear reduced from 1 to 0.75 and a second HP bar now shows weapon condition.\n- Turrets now display an ammo counter without needing to power down (requires hammer and building authorization).\n\n### World & UI\n- Monuments no longer reset or respawn loot; the truck is now a full loot container and its health UI shows when breaking items; all NPCs have been removed from the world.\n- Scout drones added: they patrol small monuments, raise alarms, emit a visible light, can search for players, and have their own health pool.\n- Guards now receive loot based on tier, and dying heavy units no longer drop the client.\n- The Outpost has been removed from the raid map.\n- Hub now has its own markers, and players no longer see the map or death screen when arriving.\n\n### Economy & Base\n- Supplies shop prices increased; every item now has a defined value and loot above‑grade gear is treated as made gear.\n- Introduced a Tier‑2 Container Shelter (solo/duo legacy shack) with a Tier‑2 tech tree but Tier‑0 workbench; it can be destroyed and currently has no balanced craft costs.\n\n### Explosives\n- Flash grenades now have zone‑based effects (inner 2 m, mid 6 m, outer 10 m) with varying flash strength, duration, deafness, and name‑tag visibility; looking away only mitigates mid/outer zones, and heavy flash also muffles sound like a heavy plate helmet.\n- Explosion damage radius changed to full damage within 1.75 m falling to zero at 3.75 m; shrapnel adds up to 30 bleed within 2 m, fading out to 8 m, requires line‑of‑sight, and visible shrapnel streaks are now shown.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
