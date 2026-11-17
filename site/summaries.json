@@ -1,6 +1,6 @@
 {
   "2026-11-16": {
-    "commit_count": 319,
+    "commit_count": 322,
     "relevant_commit_count": 126,
     "relevant_signature": "",
     "prompt_version": "structured-read-state-v7-explicit-empty",
@@ -311,7 +311,238 @@
             }
           ]
         }
-      ]
+      ],
+      "734525,734526,734527,734528,734529,734530,734534,734536,734537,734538,734540,734541,734543,734544,734545,734546,734548,734549,734550,734556,734557,734559,734560,734563,734569": [
+        {
+          "title": "Gameplay & UI Bugs",
+          "items": [
+            {
+              "text": "Fixed turn‑in‑place rotation being applied twice per frame in first‑person view, eliminating visual pop‑in glitches.",
+              "commit_ids": [
+                734559
+              ]
+            },
+            {
+              "text": "Fixed a null‑reference crash when opening the water‑wheel interaction menu.",
+              "commit_ids": [
+                734557
+              ]
+            },
+            {
+              "text": "Fixed rotation errors for swimming NPCs and simple sharks, preventing them from looking in the wrong direction or freezing.",
+              "commit_ids": [
+                734556
+              ]
+            },
+            {
+              "text": "Fixed the vending‑machine admin UI “Remove All” popup so it can be interacted with again.",
+              "commit_ids": [
+                734525
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structure Placement & Terrain Clipping",
+          "items": [
+            {
+              "text": "Fixed Nuclear Missile Silo terrain clipping over doorways and underground tunnels, ensuring proper clearance on large maps.",
+              "commit_ids": [
+                734526
+              ]
+            },
+            {
+              "text": "Fixed railway tracks being buried by terrain smoothing and eliminated floating rails at junctions, improving rail stability and placement.",
+              "commit_ids": [
+                734529,
+                734530
+              ]
+            },
+            {
+              "text": "Prevented shore ice from spawning on top of railway tracks, removing unwanted ice blockage on rail lines.",
+              "commit_ids": [
+                734528
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Entity Model Assignment",
+          "items": [
+            {
+              "text": "Fixed BaseEntity.OnValidate incorrectly assigning a nested entity’s model to its parent, preventing wrong models from appearing on structures.",
+              "commit_ids": [
+                734527
+              ]
+            }
+          ]
+        }
+      ],
+      "734453,734455,734456,734457,734461,734462,734463,734465,734467,734468,734469,734470,734474,734481,734482,734488,734489,734491,734515,734516,734517,734520,734521,734522,734523": [
+        {
+          "title": "Buildings",
+          "items": [
+            {
+              "text": "Increased the bounds of the apartment building, allowing larger interior space.",
+              "commit_ids": [
+                734523
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Explosions",
+          "items": [
+            {
+              "text": "Fixed the ExplosionsOverlay so it properly resets after use, preventing lingering visual artifacts.",
+              "commit_ids": [
+                734516
+              ]
+            }
+          ]
+        },
+        {
+          "title": "XCOM Mod - Map & Missions",
+          "items": [
+            {
+              "text": "Added a new Water Treatment Plant mission, unlocked on the island map after completing Oxum's.",
+              "commit_ids": [
+                734489
+              ]
+            },
+            {
+              "text": "Baked the Water Treatment Plant scene and rebuilt Oxum's with Eoka bandits, plus a new base layout.",
+              "commit_ids": [
+                734491
+              ]
+            },
+            {
+              "text": "Introduced the Bradley APC boss mission at an abandoned military base with data‑driven mission names.",
+              "commit_ids": [
+                734468
+              ]
+            },
+            {
+              "text": "Regenerated the island map (including Hapis Island terrain and sea level) and updated monuments, cover props, and mission scenes.",
+              "commit_ids": [
+                734474,
+                734469
+              ]
+            }
+          ]
+        },
+        {
+          "title": "XCOM Mod - Combat Balance",
+          "items": [
+            {
+              "text": "Reduced Oxum's bandits and leader damage to 3‑5 per hit, preventing them from one‑shotting squads.",
+              "commit_ids": [
+                734488
+              ]
+            },
+            {
+              "text": "Increased bow damage for all soldiers.",
+              "commit_ids": [
+                734467
+              ]
+            },
+            {
+              "text": "Implemented free invites for players to join squads without a host.",
+              "commit_ids": [
+                734467
+              ]
+            }
+          ]
+        },
+        {
+          "title": "XCOM Mod - Fog of War & Visibility",
+          "items": [
+            {
+              "text": "Switched fog of war to a depth‑based camera effect, darkening props, grass, and buildings within fog and keeping map edges dark.",
+              "commit_ids": [
+                734481
+              ]
+            },
+            {
+              "text": "Added a fallback ground‑overlay fog of war implementation padded further out for cases without depth testing.",
+              "commit_ids": [
+                734482
+              ]
+            }
+          ]
+        },
+        {
+          "title": "XCOM Mod - UI & Quality of Life",
+          "items": [
+            {
+              "text": "Loadout changes now allow redressing a single soldier without cancelling ongoing jobs.",
+              "commit_ids": [
+                734465
+              ]
+            },
+            {
+              "text": "Injured soldiers now automatically rest on their own.",
+              "commit_ids": [
+                734465
+              ]
+            },
+            {
+              "text": "Outside walks now route around the base perimeter.",
+              "commit_ids": [
+                734456
+              ]
+            },
+            {
+              "text": "Construction mode now shows build guides only while actively building.",
+              "commit_ids": [
+                734456
+              ]
+            },
+            {
+              "text": "Room menu can be opened with a double‑click, and loot icons appear on the rewards screen.",
+              "commit_ids": [
+                734456
+              ]
+            },
+            {
+              "text": "Capitalised resource names on reward tiles for clearer reading.",
+              "commit_ids": [
+                734457
+              ]
+            },
+            {
+              "text": "Readable map labels maintain the render shape.",
+              "commit_ids": [
+                734470
+              ]
+            }
+          ]
+        },
+        {
+          "title": "XCOM Mod - Crafting & Recycler",
+          "items": [
+            {
+              "text": "Recycler now has 3D reach, allowing interaction from a distance.",
+              "commit_ids": [
+                734462
+              ]
+            },
+            {
+              "text": "Merged loot tiles and introduced two‑line crafting rows for better inventory display.",
+              "commit_ids": [
+                734462
+              ]
+            },
+            {
+              "text": "Fixed a line‑break bug in crafting rows.",
+              "commit_ids": [
+                734463
+              ]
+            }
+          ]
+        }
+      ],
+      "734452": []
     },
     "sections": [],
     "status": "no_significant_updates",
