@@ -67,8 +67,14 @@ def safe_excerpt(value, api_key="", limit=750):
     return text[:limit] + ("..." if len(text) > limit else "")
 
 
-MAX_GROQ_RETRIES = 2
-MAX_RETRY_AFTER_SECONDS = 10
+# Groq's token-per-minute limits commonly return Retry-After values around
+# 15-20 seconds. Waiting only 10 seconds guaranteed that every such request
+# fell through to OpenRouter, which is frequently rate-limited as well.
+MAX_GROQ_RETRIES = 3
+MAX_RETRY_AFTER_SECONDS = 30
+# Total time a single request may spend sleeping between retries. This keeps
+# the workflow bounded even when a provider keeps asking for long delays.
+MAX_TOTAL_RETRY_WAIT_SECONDS = 60
 
 RATE_LIMIT_HEADERS = (
     "retry-after", "ratelimit-limit", "ratelimit-remaining", "ratelimit-reset",
@@ -79,8 +85,13 @@ RATE_LIMIT_HEADERS = (
 )
 
 
-def short_retry_after(headers):
-    """Return a short Retry-After delay, or None for invalid/long values."""
+def bounded_retry_after(headers):
+    """Return a bounded Retry-After delay, or None for invalid/long values.
+
+    Both numeric seconds and HTTP dates are supported. Delays above
+    MAX_RETRY_AFTER_SECONDS are rejected so a provider cannot block the
+    workflow indefinitely; callers apply an additional total wait budget.
+    """
     value = str(headers.get("retry-after", "")).strip()
     try:
         delay = float(value)
@@ -95,6 +106,10 @@ def short_retry_after(headers):
     if not isfinite(delay) or not 0 <= delay <= MAX_RETRY_AFTER_SECONDS:
         return None
     return delay
+
+
+# Backwards-compatible alias for earlier callers/tests.
+short_retry_after = bounded_retry_after
 
 
 def parse_structured_summary(text, allowed_commit_ids):
@@ -223,6 +238,8 @@ def call_chat_api(
             "type": "json_object"
         }
 
+    waited = 0.0
+
     for attempt in range(MAX_GROQ_RETRIES + 1 if provider_name == "Groq" else 1):
         try:
             response = requests.post(
@@ -247,10 +264,24 @@ def call_chat_api(
         )
         print(f"{provider_name} HTTP 429 rate-limited: {details} "
               f"body={safe_excerpt(response.text, api_key)}")
-        delay = short_retry_after(headers)
-        if provider_name != "Groq" or attempt >= MAX_GROQ_RETRIES or delay is None:
+        if provider_name != "Groq" or attempt >= MAX_GROQ_RETRIES:
             return None
-        print(f"Retrying Groq after {delay:g}s (retry {attempt + 1}/{MAX_GROQ_RETRIES}).")
+        delay = bounded_retry_after(headers)
+        if delay is None:
+            return None
+        if waited + delay > MAX_TOTAL_RETRY_WAIT_SECONDS:
+            print(
+                f"Groq retry wait budget exhausted "
+                f"({waited:g}s used, {delay:g}s requested, "
+                f"budget {MAX_TOTAL_RETRY_WAIT_SECONDS:g}s)."
+            )
+            return None
+        waited += delay
+        print(
+            f"Retrying Groq after {delay:g}s "
+            f"(retry {attempt + 1}/{MAX_GROQ_RETRIES}, "
+            f"total wait {waited:g}s/{MAX_TOTAL_RETRY_WAIT_SECONDS:g}s)."
+        )
         time.sleep(delay)
 
     if not response.ok:

@@ -66,6 +66,8 @@ Daily summaries are generated using **Groq**, with **OpenRouter** available as a
 
 A player-relevance filter is applied before summarization to reduce development noise and prioritize useful changes.
 
+Large days are summarized in chunks. If a provider is temporarily rate-limited, completed chunks are cached and the next run resumes from them. While a day is incomplete, the feed shows a pending or coverage notice instead of presenting an older summary as current.
+
 ## Disclaimer
 
 This is an independent community project and is not affiliated with or endorsed by Facepunch Studios.

@@ -151,7 +151,10 @@ def test_failure_fallback_or_preservation(monkeypatch, tmp_path, old_good):
     entry = json.loads(path.read_text())[day]
     if old_good:
         assert entry['summary'] == old['summary'] and entry['sections'] == SECTIONS
-        assert entry['relevant_signature'] == 'old'
+        # The stored signature was stale, but every current relevant commit
+        # is already represented, so the entry is promoted to complete.
+        assert entry['relevant_signature'] == '1'
+        assert entry['status'] == 'ok'
     else:
         assert entry['summary'].startswith('AI summary temporarily unavailable.')
         assert entry['relevant_signature'] == ''

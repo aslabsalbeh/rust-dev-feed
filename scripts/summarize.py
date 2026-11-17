@@ -42,8 +42,8 @@ SUMMARY_FILE = Path("site/summaries.json")
 LOCAL_TZ = ZoneInfo("America/Toronto")
 CHUNK_SIZE = 25
 
-# Bump when prompt, relevance, merge, or rescue behavior changes.
-PROMPT_VERSION = "structured-read-state-v7-explicit-empty"
+# Bump when prompt, relevance, merge, rescue, or chunk-cache behavior changes.
+PROMPT_VERSION = "structured-read-state-v8-stable-chunks"
 
 
 
@@ -68,6 +68,21 @@ def atomic_write_json(path, data):
 
 NO_SIGNIFICANT_UPDATES = (
     "No notable player-facing changes were identified in the latest development commits."
+)
+
+PENDING_SUMMARY = (
+    "The AI summary for the latest development commits is still being generated. "
+    "The commit archive was updated successfully; this summary will refresh on the next run."
+)
+
+UNAVAILABLE_SUMMARY = (
+    "AI summary temporarily unavailable. "
+    "The development commit archive was updated successfully."
+)
+
+STALE_NOTICE = (
+    "This summary covers an earlier commit set; "
+    "{count} relevant commit(s) are not yet included."
 )
 
 
@@ -151,6 +166,40 @@ def parse_signature(signature):
     }
 
 
+def commit_order_key(commit):
+    """Return a deterministic oldest-first key for a commit.
+
+    Missing or malformed timestamps must not make chunking fail; those commits
+    fall back to ID order at the beginning of the day.
+    """
+    try:
+        created = commit_created_utc(commit)
+    except (KeyError, TypeError, ValueError):
+        created = datetime.min.replace(tzinfo=timezone.utc)
+
+    try:
+        numeric_id = int(commit["id"])
+    except (KeyError, TypeError, ValueError):
+        numeric_id = 0
+
+    return (created, numeric_id)
+
+
+def chronological_chunks(commits, size=CHUNK_SIZE):
+    """Split commits oldest-first so new arrivals do not shift every chunk.
+
+    Facepunch returns newest-first data. Slicing that order makes chunk 1
+    change whenever a single new commit arrives, invalidating every cached
+    chunk. Building chunks from the oldest commit keeps all completed chunks
+    stable and only extends/replaces the final (newest) chunk.
+    """
+    ordered = sorted(commits, key=commit_order_key)
+    return [
+        ordered[index:index + size]
+        for index in range(0, len(ordered), size)
+    ]
+
+
 def sections_to_markdown(
     sections,
 ):
@@ -183,6 +232,30 @@ def items_to_markdown(
         f"- {item['text']}"
         for item in items
     )
+
+
+def usable_cached_sections(cached_sections, allowed_ids):
+    """Return validated cached chunk sections, or None when unusable.
+
+    An explicit empty chunk result is a valid cached assessment. Non-empty
+    fragments are only trusted when every referenced commit belongs to the
+    current chunk, which prevents a stale cache entry from leaking commits
+    into the wrong chunk after boundaries change.
+    """
+    if not isinstance(cached_sections, list):
+        return None
+
+    if not cached_sections:
+        return []
+
+    represented = represented_commit_ids_from_sections(
+        cached_sections
+    )
+
+    if not represented or not represented <= allowed_ids:
+        return None
+
+    return cached_sections
 
 
 def call_ai(
@@ -230,22 +303,17 @@ def call_ai(
 
         return None, old_chunk_cache
 
-    # Large day: split into deterministic chunks.
-    chunks = [
-        commits[
-            index:index + CHUNK_SIZE
-        ]
-        for index in range(
-            0,
-            len(commits),
-            CHUNK_SIZE,
-        )
-    ]
+    # Large day: split into stable chronological chunks. New (newer) commits
+    # extend the end of the list, so completed older chunks stay reusable.
+    chunks = chronological_chunks(
+        commits,
+        CHUNK_SIZE,
+    )
 
     print(
         f"{day} has {len(commits)} relevant commits; "
         f"splitting into {len(chunks)} chunks "
-        f"of up to {CHUNK_SIZE}."
+        f"of up to {CHUNK_SIZE} (oldest first)."
     )
 
     # Cache keys are based on the exact commit IDs in each chunk.
@@ -254,6 +322,11 @@ def call_ai(
     chunk_cache = dict(
         old_chunk_cache
     )
+
+    current_chunk_keys = {
+        commit_signature(chunk)
+        for chunk in chunks
+    }
 
     active_chunk_keys = set()
     chunk_sections = []
@@ -274,11 +347,12 @@ def call_ai(
             chunk_key
         )
 
-        cached_sections = chunk_cache.get(
-            chunk_key
+        cached_sections = usable_cached_sections(
+            chunk_cache.get(chunk_key),
+            chunk_allowed_ids,
         )
 
-        if isinstance(cached_sections, list):
+        if cached_sections is not None:
             print(
                 f"Reusing cached chunk "
                 f"{index}/{len(chunks)} "
@@ -316,16 +390,12 @@ def call_ai(
                 "Completed chunks will be cached for the next run."
             )
 
-            # Remove stale cache entries that no longer correspond to a
-            # current chunk. Keep all successful current chunks.
+            # Keep every successful chunk for the current layout and drop
+            # stale entries from older commit layouts.
             chunk_cache = {
                 key: value
                 for key, value in chunk_cache.items()
-                if key in active_chunk_keys
-                or key in {
-                    commit_signature(item)
-                    for item in chunks[index:]
-                }
+                if key in current_chunk_keys
             }
 
             return None, chunk_cache
@@ -737,8 +807,16 @@ def main():
                     ),
                 )
             )
+            old_status = old_entry.get(
+                "status"
+            )
+            old_prompt_version = old_entry.get(
+                "prompt_version"
+            )
         else:
             old_full_signature = ""
+            old_status = None
+            old_prompt_version = None
 
         old_chunk_cache = (
             old_entry.get(
@@ -748,6 +826,12 @@ def main():
             if old_entry
             else {}
         )
+
+        if not isinstance(
+            old_chunk_cache,
+            dict,
+        ):
+            old_chunk_cache = {}
 
         # ----------------------------------------------------
         # CACHE STATE
@@ -777,19 +861,19 @@ def main():
             else None
         )
 
+        old_sections_list = (
+            old_sections
+            if isinstance(old_sections, list)
+            else []
+        )
+
         old_has_structured_sections = (
-            isinstance(
-                old_sections,
-                list,
-            )
-            and len(old_sections) > 0
+            len(old_sections_list) > 0
         )
 
         prompt_matches = (
             old_entry
-            and old_entry.get(
-                "prompt_version"
-            ) == PROMPT_VERSION
+            and old_prompt_version == PROMPT_VERSION
         )
 
         relevant_changed = (
@@ -798,8 +882,26 @@ def main():
         )
 
         old_explicit_empty = (
-            old_entry and old_entry.get("status") == "no_significant_updates"
-            and old_sections == [] and old_summary_text == NO_SIGNIFICANT_UPDATES
+            old_entry is not None
+            and old_status == "no_significant_updates"
+            and old_sections_list == []
+            and old_summary_text == NO_SIGNIFICANT_UPDATES
+        )
+
+        # A partial/pending entry means generation was already in progress.
+        # Its cached chunks must keep the day in the pending state instead of
+        # falling back to "unavailable".
+        old_in_progress = (
+            old_status == "pending"
+            or bool(old_chunk_cache)
+        )
+
+        old_has_usable_content = bool(
+            old_is_good
+            and (
+                old_has_structured_sections
+                or old_explicit_empty
+            )
         )
 
         needs_refresh = (
@@ -811,6 +913,10 @@ def main():
 
         generation_succeeded = False
         chunk_cache_out = old_chunk_cache
+        summary_status = None
+        summary_notice = ""
+        pending_relevant_count = 0
+        prompt_version_out = PROMPT_VERSION
 
         # ----------------------------------------------------
         # FULL DAILY SUMMARY
@@ -820,7 +926,7 @@ def main():
             not needs_refresh
             and old_entry
         ):
-            sections = old_sections
+            sections = old_sections_list
 
             summary_markdown = (
                 old_entry["summary"]
@@ -833,10 +939,21 @@ def main():
             # A completed summary never needs temporary chunks.
             chunk_cache_out = {}
 
+            summary_status = (
+                "ok" if sections
+                else "no_significant_updates"
+            )
+
+            prompt_version_out = (
+                old_prompt_version
+                or PROMPT_VERSION
+            )
+
             print(
-                f"No player-relevant changes for "
-                f"{day}; reusing structured "
-                "daily summary."
+                f"Reusing structured daily summary "
+                f"for {day} "
+                f"({len(relevant_commits)} relevant "
+                "commits; commit set unchanged)."
             )
 
         elif not relevant_commits:
@@ -850,6 +967,10 @@ def main():
 
             generation_succeeded = True
             chunk_cache_out = {}
+
+            summary_status = (
+                "no_significant_updates"
+            )
 
         else:
             if relevant_changed:
@@ -910,7 +1031,7 @@ def main():
                             openrouter_key,
                             day,
                             relevant_commits,
-                            old_sections,
+                            old_sections_list,
                             sections,
                         )
 
@@ -936,44 +1057,142 @@ def main():
                     True
                 )
 
+                summary_status = (
+                    "ok" if sections
+                    else "no_significant_updates"
+                )
+
+                prompt_version_out = PROMPT_VERSION
+
                 print(
                     f"Saved new structured "
                     f"summary for {day}."
                 )
 
-            elif old_is_good:
-                sections = (
-                    old_sections
-                    if old_has_structured_sections
-                    else []
+            elif old_has_usable_content and not relevant_changed:
+                # The preserved content already covers the current commit
+                # set. Only an optional prompt/structure refresh failed, so
+                # this is still a complete summary for this day.
+                sections = old_sections_list
+
+                summary_markdown = old_summary_text
+
+                full_signature_out = old_full_signature
+
+                summary_status = (
+                    "ok" if sections
+                    else "no_significant_updates"
                 )
 
-                summary_markdown = (
-                    old_summary_text
+                prompt_version_out = (
+                    old_prompt_version
+                    or PROMPT_VERSION
                 )
 
-                # IMPORTANT: the new commit set has NOT been fully
-                # summarized yet, so keep the last successful signature.
+                print(
+                    f"Preserved complete previous "
+                    f"summary for {day}."
+                )
+
+            elif (
+                relevant_changed
+                and old_has_usable_content
+                and old_has_structured_sections
+            ):
+                # Previously published content is real, but it does not
+                # cover the current commit set. Preserve it and label it
+                # clearly as stale instead of presenting it as new.
+                sections = old_sections_list
+
+                summary_markdown = old_summary_text
+
+                full_signature_out = old_full_signature
+
+                summary_status = "partial"
+
+                represented_ids = (
+                    represented_commit_ids_from_sections(
+                        sections
+                    )
+                )
+
+                pending_relevant_count = len(
+                    commit_ids(relevant_commits)
+                    - represented_ids
+                )
+
+                if pending_relevant_count == 0:
+                    # The preserved content already represents every current
+                    # relevant commit; only the stored signature was stale.
+                    summary_status = "ok"
+
+                    full_signature_out = (
+                        current_signature
+                    )
+
+                    summary_notice = ""
+                else:
+                    summary_notice = STALE_NOTICE.format(
+                        count=pending_relevant_count
+                    )
+
+                prompt_version_out = (
+                    old_prompt_version
+                    or PROMPT_VERSION
+                )
+
+                print(
+                    f"Preserved earlier summary for "
+                    f"{day}; {pending_relevant_count} "
+                    "newer relevant commit(s) are "
+                    "still pending."
+                )
+
+            elif (
+                (relevant_changed and old_explicit_empty)
+                or old_in_progress
+            ):
+                # An older explicit-empty result must never be presented as
+                # current when newer commits exist but generation failed.
+                sections = []
+
+                summary_markdown = PENDING_SUMMARY
+
                 full_signature_out = (
                     old_full_signature
                 )
 
+                summary_status = "pending"
+
+                pending_relevant_count = len(
+                    relevant_commits
+                )
+
+                prompt_version_out = (
+                    old_prompt_version
+                    or PROMPT_VERSION
+                )
+
                 print(
-                    f"Preserved previous good "
-                    f"summary for {day}."
+                    f"Summary for {day} is pending; "
+                    f"{pending_relevant_count} relevant "
+                    "commit(s) are not yet summarized."
                 )
 
             else:
                 sections = []
 
                 summary_markdown = (
-                    "AI summary temporarily "
-                    "unavailable. "
-                    "The development commit archive "
-                    "was updated successfully."
+                    UNAVAILABLE_SUMMARY
                 )
 
                 full_signature_out = ""
+
+                summary_status = "unavailable"
+
+                pending_relevant_count = len(
+                    relevant_commits
+                )
 
                 print(
                     f"No previous valid summary "
@@ -988,7 +1207,11 @@ def main():
         new_summary_markdown = ""
         new_relevant_count = 0
 
-        if day == today and sections:
+        if (
+            day == today
+            and sections
+            and summary_status == "ok"
+        ):
             # NEW is a true rolling time window. Recalculate it on every
             # workflow run, even when the full AI summary is reused.
             recent_ids = recent_commit_ids(
@@ -1051,7 +1274,7 @@ def main():
 
 
             "prompt_version": (
-                PROMPT_VERSION
+                prompt_version_out
             ),
 
             # Temporary successful chunk results. This remains populated
@@ -1062,10 +1285,15 @@ def main():
 
             # Structured form used for Mark as Read.
             "sections": sections,
-            "status": (
-                "no_significant_updates"
-                if not sections and summary_markdown == NO_SIGNIFICANT_UPDATES
-                else "ok" if sections else "unavailable"
+            "status": summary_status,
+
+            # Explains why displayed content does not cover the newest
+            # commits. Empty for complete summaries.
+            "notice": summary_notice,
+
+            # Relevant commits not represented by the displayed content.
+            "pending_relevant_count": (
+                pending_relevant_count
             ),
 
             # Existing Markdown form used by the current RSS.

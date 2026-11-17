@@ -36,6 +36,21 @@ HIGH_VALUE_TERMS = (
     # Combat systems
     "sam site", "sam sites", "drone", "drones", "missile", "missiles",
     "explosive", "explosives", "proximity fuse", "aim error",
+
+    # Progression, economy and hub/extraction gameplay
+    "shop", "buy", "buys", "sell", "sells", "scrap", "unlock", "unlocks",
+    "upgrade", "upgrades", "purchase", "purchases", "safe pocket",
+    "backpack", "backpacks", "stash", "stashes", "raid", "raids",
+    "deploy", "deploys", "deployment",
+
+    # Combat feedback and player-facing UI
+    "grenade", "grenades", "bow", "arrows", "aiming", "crosshair",
+    "waypoint", "compass", "scope", "binocular", "binoculars",
+    "heal", "heals", "shield", "shields", "recycler", "furnace",
+    "ladder", "ladders", "balloon", "balloons", "shoulder camera",
+
+    # NPCs and enemies beyond the base scientist/animal terms
+    "scout", "scouts", "bandit", "bandits", "guard", "guards",
 )
 
 
@@ -174,12 +189,22 @@ def commit_search_text(commit):
     ).lower().replace("_", " ")
 
 
-AMBIGUOUS_SINGLE_WORD_TERMS = {"team", "map", "cow", "dog", "gun"}
+WORD_BOUNDARY_TERMS = {
+    "team", "map", "cow", "dog", "gun", "mount", "mounts", "mounted",
+    "bear", "bears",
+    # Short or generic gameplay words that would otherwise match unrelated
+    # text (for example, "shop" inside "workshop").
+    "shop", "buy", "buys", "sell", "sells", "scrap",
+    "raid", "raids", "deploy", "deploys", "stash", "stashes",
+    "upgrade", "upgrades", "unlock", "unlocks",
+    "bow", "heal", "heals", "shield", "shields", "scope", "furnace",
+    "guard", "guards",
+}
 
 
 def contains_term(text, term):
-    if term in AMBIGUOUS_SINGLE_WORD_TERMS:
-        return re.search(rf"\\b{re.escape(term)}\\b", text) is not None
+    if term in WORD_BOUNDARY_TERMS:
+        return re.search(rf"\b{re.escape(term)}\b", text) is not None
     return term in text
 
 

@@ -251,9 +251,25 @@ def main():
 </div>
 """.strip()
 
+        notice = str(
+            data.get(
+                "notice",
+                "",
+            )
+        ).strip()
+
+        notice_html = ""
+        if notice:
+            notice_html = (
+                '<p class="rust-summary-notice">'
+                f"<em>{escape(notice)}</em>"
+                "</p>"
+            )
+
         description_html = f"""
 <div class="rust-dev-summary">
 <p><strong>{data.get('commit_count', 0)} development commits</strong></p>
+{notice_html}
 {new_html}
 {summary_html}
 </div>
