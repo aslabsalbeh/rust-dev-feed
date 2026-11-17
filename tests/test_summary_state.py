@@ -23,12 +23,14 @@ SECTIONS = [
 
 
 def make_commit(commit_id, created=None):
-    return {
+    commit = {
         "id": commit_id,
         "branch": "main",
         "message": f"Relevant change {commit_id}",
-        "created": created or "2026-11-16T12:00:00",
     }
+    if created is not None:
+        commit["created"] = created
+    return commit
 
 
 def explicit_empty_entry(signature=""):
