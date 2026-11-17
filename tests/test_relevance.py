@@ -1,5 +1,6 @@
 from scripts.relevance import (
     RELEVANCE_THRESHOLD,
+    contains_term,
     filter_player_relevant_commits,
     player_relevance_score,
 )
@@ -165,3 +166,39 @@ def test_steam_does_not_match_team_strategic_term():
         "created": "2026-09-03T12:00:00",
     }
     assert player_relevance_score(item) < RELEVANCE_THRESHOLD
+
+
+def test_word_boundary_terms_match_real_words_not_substrings():
+    assert contains_term("give each team an outpost", "team")
+    assert contains_term("the hub shop sells gear", "shop")
+    assert not contains_term("square steam images", "team")
+    assert not contains_term("workshop item upload", "shop")
+    assert not contains_term("elbow room", "bow")
+    assert not contains_term("safeguard the process", "guard")
+    assert not contains_term("adjust the amount of noise", "mount")
+    assert not contains_term("a bearable delay", "bear")
+
+
+def test_team_rule_change_is_relevant_now_that_word_boundaries_work():
+    assert_relevant("Give each team an Outpost of its own out at sea")
+
+
+def test_common_gameplay_vocabulary_is_not_suppressed():
+    for message in [
+        "Add a supplies shop to the hub that sells basic gear and buys for scrap",
+        "Give items a scrap value and show what loot is worth",
+        "Bank extracted loot in a stash and drop raiders in at raid start",
+        "Charge wood, stone and metal for what the hub unlocks",
+        "Have backpacks set the size of the inventory and the safe pocket",
+        "Improve third-person throwing, grenade controls and launcher aiming",
+        "Heal and shield players in the hub, ready up to deploy, sell stash rows",
+        "Restore binocular and scope views in third person",
+        "Extraction: migrate bandits to Gen2 AI",
+        "Extraction: improve third-person ladder climbing and setup",
+        "Add a server setting that keeps everyone in the shoulder camera",
+    ]:
+        assert_relevant(message)
+
+
+def test_low_value_visual_hackweek_commit_is_still_filtered():
+    assert_not_relevant("Hackweek: cap sticker textures at 256")

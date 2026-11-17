@@ -20,21 +20,39 @@ def reply(status, retry_after=None):
     )
 
 
-def test_short_rate_limit_retries_same_groq_request_and_recovers(monkeypatch):
+def test_sixteen_second_rate_limit_retries_groq_and_recovers(monkeypatch):
+    """Production Groq 429s return Retry-After: 16 (token-per-minute limit)."""
     calls = []
     sleeps = []
-    responses = iter([reply(429, '3'), reply(200)])
+    responses = iter([reply(429, '16'), reply(200)])
+
     def post(url, **kwargs):
         calls.append((url, kwargs))
         return next(responses)
+
     monkeypatch.setattr(providers.requests, 'post', post)
     monkeypatch.setattr(providers.time, 'sleep', sleeps.append)
+
     result = providers.request_sections('groq-key', 'openrouter-key', 'prompt', {'1'}, 'day')
+
     assert result == SECTIONS
-    assert sleeps == [3]
+    assert sleeps == [16]
     assert len(calls) == 2
     assert all(url == providers.GROQ_URL for url, _ in calls)
     assert calls[0][1] == calls[1][1]
+
+
+def test_twenty_second_rate_limit_is_supported(monkeypatch):
+    calls = []
+    sleeps = []
+    responses = iter([reply(429, '20'), reply(200)])
+    monkeypatch.setattr(providers.requests, 'post', lambda url, **kw: (calls.append(url), next(responses))[1])
+    monkeypatch.setattr(providers.time, 'sleep', sleeps.append)
+
+    assert providers.request_sections('groq-key', 'router-key', 'prompt', {'1'}, 'day') == SECTIONS
+    assert calls == [providers.GROQ_URL] * 2
+    assert sleeps == [20]
+    assert providers.MAX_RETRY_AFTER_SECONDS >= 20
 
 
 def test_two_short_rate_limits_allow_two_retries_then_success(monkeypatch):
@@ -48,13 +66,15 @@ def test_two_short_rate_limits_allow_two_retries_then_success(monkeypatch):
     assert sleeps == [0.5, 2]
 
 
-@pytest.mark.parametrize('header', [None, '', 'garbage', 'nan', '-1', '11', '60'])
-def test_missing_malformed_or_long_delay_falls_back_without_wait(monkeypatch, header):
+@pytest.mark.parametrize('header', [None, '', 'garbage', 'nan', '-1', '31', '60'])
+def test_missing_malformed_or_excessive_delay_falls_back_without_wait(monkeypatch, header):
     calls = []
     sleeps = []
+
     def post(url, **kwargs):
         calls.append(url)
         return reply(429, header) if url == providers.GROQ_URL else reply(200)
+
     monkeypatch.setattr(providers.requests, 'post', post)
     monkeypatch.setattr(providers.time, 'sleep', sleeps.append)
     assert providers.request_sections('groq-key', 'router-key', 'prompt', {'1'}, 'day') == SECTIONS
@@ -62,25 +82,47 @@ def test_missing_malformed_or_long_delay_falls_back_without_wait(monkeypatch, he
     assert sleeps == []
 
 
-def test_persistent_groq_429_falls_back_after_at_most_two_retries(monkeypatch):
+def test_persistent_groq_429_falls_back_after_at_most_three_retries(monkeypatch):
     calls = []
     sleeps = []
+
     def post(url, **kwargs):
         calls.append(url)
         return reply(429, '1') if url == providers.GROQ_URL else reply(200)
+
     monkeypatch.setattr(providers.requests, 'post', post)
     monkeypatch.setattr(providers.time, 'sleep', sleeps.append)
     assert providers.request_sections('groq-key', 'router-key', 'prompt', {'1'}, 'day') == SECTIONS
-    assert calls == [providers.GROQ_URL] * 3 + [providers.OPENROUTER_URL]
-    assert sleeps == [1, 1]
+    assert calls == [providers.GROQ_URL] * 4 + [providers.OPENROUTER_URL]
+    assert sleeps == [1, 1, 1]
+
+
+def test_total_retry_wait_budget_is_bounded(monkeypatch):
+    """Long-but-valid Retry-After values cannot sleep past the total budget."""
+    calls = []
+    sleeps = []
+
+    def post(url, **kwargs):
+        calls.append(url)
+        return reply(429, '25') if url == providers.GROQ_URL else reply(200)
+
+    monkeypatch.setattr(providers.requests, 'post', post)
+    monkeypatch.setattr(providers.time, 'sleep', sleeps.append)
+    monkeypatch.setattr(providers, 'MAX_TOTAL_RETRY_WAIT_SECONDS', 45)
+
+    assert providers.request_sections('groq-key', 'router-key', 'prompt', {'1'}, 'day') == SECTIONS
+    assert sleeps == [25]
+    assert calls == [providers.GROQ_URL] * 2 + [providers.OPENROUTER_URL]
 
 
 def test_permanent_error_never_retries(monkeypatch):
     calls = []
     sleeps = []
+
     def post(url, **kwargs):
         calls.append(url)
         return reply(401, '3') if url == providers.GROQ_URL else reply(200)
+
     monkeypatch.setattr(providers.requests, 'post', post)
     monkeypatch.setattr(providers.time, 'sleep', sleeps.append)
     assert providers.request_sections('groq-key', 'router-key', 'prompt', {'1'}, 'day') == SECTIONS
@@ -88,8 +130,10 @@ def test_permanent_error_never_retries(monkeypatch):
     assert sleeps == []
 
 
-def test_short_http_date_is_accepted_and_long_date_is_rejected():
+def test_retry_after_http_dates_are_bounded_by_the_same_limit():
     soon = format_datetime(datetime.now(timezone.utc) + timedelta(seconds=3))
-    later = format_datetime(datetime.now(timezone.utc) + timedelta(seconds=30))
-    assert 0 <= providers.short_retry_after({'retry-after': soon}) <= 3
-    assert providers.short_retry_after({'retry-after': later}) is None
+    supported = format_datetime(datetime.now(timezone.utc) + timedelta(seconds=25))
+    later = format_datetime(datetime.now(timezone.utc) + timedelta(seconds=35))
+    assert 0 <= providers.bounded_retry_after({'retry-after': soon}) <= 3
+    assert 0 <= providers.bounded_retry_after({'retry-after': supported}) <= 30
+    assert providers.bounded_retry_after({'retry-after': later}) is None
