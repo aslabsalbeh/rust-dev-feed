@@ -1,24 +1,24 @@
 {
   "2026-11-17": {
-    "commit_count": 54,
-    "relevant_commit_count": 17,
-    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159",
+    "commit_count": 77,
+    "relevant_commit_count": 26,
+    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159,735166,735169,735184,735185,735194,735216,735217,735220,735223",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Inventory & Crafting",
+        "title": "Inventory & Backpack",
         "items": [
           {
-            "text": "Inventory searches now include items stored in backpacks by default, making it easier to locate items without opening each backpack.",
+            "text": "Backpack is now considered in all item searches and taking, improving inventory management.",
             "commit_ids": [
-              735072,
+              735061,
               735062,
-              735061
+              735072
             ]
           },
           {
-            "text": "Crafting no longer unintentionally returns items to backpacks, preventing lost materials during production.",
+            "text": "Crafted items can now return directly to your backpack.",
             "commit_ids": [
               735070
             ]
@@ -26,10 +26,10 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Vehicle Prefab Fix",
         "items": [
           {
-            "text": "2‑module cars now load correctly after fixing a prefab ID mismatch, restoring proper vehicle behavior for modular builds.",
+            "text": "Fixed prefab ID mismatch for 2‑module cars, allowing them to spawn correctly.",
             "commit_ids": [
               735074
             ]
@@ -37,28 +37,22 @@
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "World Objects",
         "items": [
           {
-            "text": "Vines that have already finished swinging no longer cause a null reference error when loaded, reducing crashes near vines.",
+            "text": "Fixed vine client crash when loading a vine that has already finished swinging.",
             "commit_ids": [
               735109
             ]
           },
           {
-            "text": "Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.",
+            "text": "Shutter doors now maintain correct state when entering network range.",
             "commit_ids": [
               735159
             ]
           },
           {
-            "text": "Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.",
-            "commit_ids": [
-              735159
-            ]
-          },
-          {
-            "text": "Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.",
+            "text": "Watercatcher and chicken coop trough loot panels now correctly select the bucket when it’s in the belt.",
             "commit_ids": [
               735159
             ]
@@ -66,23 +60,29 @@
         ]
       },
       {
-        "title": "UI & Tooltips",
+        "title": "Sleeping Bag Respawn",
         "items": [
           {
-            "text": "Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable.",
+            "text": "Prevented players from respawning stuck inside a sleeping bag squeezed into tight gaps.",
             "commit_ids": [
-              735159
+              735184
+            ]
+          },
+          {
+            "text": "Respawns on sleeping bags are now only refused when the bag is directly clicked, reducing accidental refusals.",
+            "commit_ids": [
+              735185
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Cosmetics & Items",
         "items": [
           {
-            "text": "Fixed a problem where the two‑module chassis prefab could not be placed or used correctly, restoring proper vehicle construction.",
+            "text": "Cobalt tattoo stencil pack Steam item now unlocks the appropriate tattoo stencils for players.",
             "commit_ids": [
-              735076
+              735223
             ]
           }
         ]
@@ -91,39 +91,46 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Inventory & Crafting\n- Inventory searches now include items stored in backpacks by default, making it easier to locate items without opening each backpack.\n- Crafting no longer unintentionally returns items to backpacks, preventing lost materials during production.\n\n### Vehicles\n- 2‑module cars now load correctly after fixing a prefab ID mismatch, restoring proper vehicle behavior for modular builds.\n\n### World & Environment\n- Vines that have already finished swinging no longer cause a null reference error when loaded, reducing crashes near vines.\n- Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.\n- Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.\n- Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.\n\n### UI & Tooltips\n- Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable.\n\n### Gameplay & Balance\n- Fixed a problem where the two‑module chassis prefab could not be placed or used correctly, restoring proper vehicle construction.",
+    "summary": "### Inventory & Backpack\n- Backpack is now considered in all item searches and taking, improving inventory management.\n- Crafted items can now return directly to your backpack.\n\n### Vehicle Prefab Fix\n- Fixed prefab ID mismatch for 2‑module cars, allowing them to spawn correctly.\n\n### World Objects\n- Fixed vine client crash when loading a vine that has already finished swinging.\n- Shutter doors now maintain correct state when entering network range.\n- Watercatcher and chicken coop trough loot panels now correctly select the bucket when it’s in the belt.\n\n### Sleeping Bag Respawn\n- Prevented players from respawning stuck inside a sleeping bag squeezed into tight gaps.\n- Respawns on sleeping bags are now only refused when the bag is directly clicked, reducing accidental refusals.\n\n### Cosmetics & Items\n- Cobalt tattoo stencil pack Steam item now unlocks the appropriate tattoo stencils for players.",
     "new_items": [
       {
-        "text": "Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.",
+        "text": "Shutter doors now maintain correct state when entering network range.",
         "commit_ids": [
           735159
         ],
-        "section": "World & Environment"
+        "section": "World Objects"
       },
       {
-        "text": "Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.",
+        "text": "Watercatcher and chicken coop trough loot panels now correctly select the bucket when it’s in the belt.",
         "commit_ids": [
           735159
         ],
-        "section": "World & Environment"
+        "section": "World Objects"
       },
       {
-        "text": "Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.",
+        "text": "Prevented players from respawning stuck inside a sleeping bag squeezed into tight gaps.",
         "commit_ids": [
-          735159
+          735184
         ],
-        "section": "World & Environment"
+        "section": "Sleeping Bag Respawn"
       },
       {
-        "text": "Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable.",
+        "text": "Respawns on sleeping bags are now only refused when the bag is directly clicked, reducing accidental refusals.",
         "commit_ids": [
-          735159
+          735185
         ],
-        "section": "UI & Tooltips"
+        "section": "Sleeping Bag Respawn"
+      },
+      {
+        "text": "Cobalt tattoo stencil pack Steam item now unlocks the appropriate tattoo stencils for players.",
+        "commit_ids": [
+          735223
+        ],
+        "section": "Cosmetics & Items"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.\n- Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.\n- Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.\n- Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable."
+    "new_relevant_count": 4,
+    "new_summary": "- Shutter doors now maintain correct state when entering network range.\n- Watercatcher and chicken coop trough loot panels now correctly select the bucket when it’s in the belt.\n- Prevented players from respawning stuck inside a sleeping bag squeezed into tight gaps.\n- Respawns on sleeping bags are now only refused when the bag is directly clicked, reducing accidental refusals.\n- Cobalt tattoo stencil pack Steam item now unlocks the appropriate tattoo stencils for players."
   },
   "2026-11-16": {
     "commit_count": 323,
