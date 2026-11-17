@@ -1,8 +1,8 @@
 {
   "2026-11-17": {
-    "commit_count": 102,
-    "relevant_commit_count": 42,
-    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159,735166,735169,735184,735185,735194,735216,735217,735220,735223,735225,735246,735247,735251,735260,735263,735267,735268,735269,735270,735271,735272,735277,735278,735281,735287",
+    "commit_count": 103,
+    "relevant_commit_count": 43,
+    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159,735166,735169,735184,735185,735194,735216,735217,735220,735223,735225,735246,735247,735251,735260,735263,735267,735268,735269,735270,735271,735272,735277,735278,735281,735287,735302",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
@@ -10,40 +10,52 @@
         "title": "Inventory & Crafting",
         "items": [
           {
-            "text": "Backpack now participates in all item searches and can receive items returned from crafting.",
+            "text": "Item searches now automatically include backpacks, and crafted items can return directly to your backpack, fixing previous inventory lookup and crafting glitches.",
             "commit_ids": [
               735061,
               735062,
-              735072,
-              735070
+              735070,
+              735072
             ]
           }
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Vehicle & Base Interactions",
         "items": [
           {
-            "text": "Fixed chassis behavior for 2‑module cars by correcting prefab ID mismatches.",
+            "text": "2‑module cars now load the correct prefab ID, eliminating build and usage errors for those vehicles.",
             "commit_ids": [
               735074,
               735076
             ]
+          },
+          {
+            "text": "Shutter doors stay in the proper state when you enter their network range, preventing doors from getting stuck.",
+            "commit_ids": [
+              735159
+            ]
+          },
+          {
+            "text": "Watercatcher and chicken coop trough loot panels automatically select the bucket when it’s in the belt, speeding up resource collection.",
+            "commit_ids": [
+              735159
+            ]
           }
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "World & Mechanics Stability",
         "items": [
           {
-            "text": "Resolved a crash when loading vines that had finished swinging.",
+            "text": "Loading a vine that has already finished swinging no longer crashes the client, making vine traversal more reliable.",
             "commit_ids": [
               735109,
               735110
             ]
           },
           {
-            "text": "Players will no longer respawn stuck inside or on top of tightly placed sleeping bags; respawn on a bag now requires clicking it.",
+            "text": "Sleeping bags can no longer be respawned on when they’re squeezed into tight gaps, and respawning now requires you to click the bag, preventing players from getting stuck.",
             "commit_ids": [
               735184,
               735185,
@@ -53,40 +65,17 @@
         ]
       },
       {
-        "title": "Gameplay & UI Improvements",
+        "title": "Extraction & Outpost",
         "items": [
           {
-            "text": "Various UI fixes: shutter frames retain state across network range, watercatcher and chicken coop panels correctly select buckets, and disabled‑blueprint tooltips display properly.",
-            "commit_ids": [
-              735159
-            ]
-          },
-          {
-            "text": "Added a high‑explosive grenade launcher weapon.",
-            "commit_ids": [
-              735225
-            ]
-          },
-          {
-            "text": "Cobalt tattoo stencil pack now unlocks via a Steam item.",
-            "commit_ids": [
-              735223
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Extraction & Outpost Updates",
-        "items": [
-          {
-            "text": "Loot reveal now progresses forward with the best items shown last, and the reveal range has been increased.",
+            "text": "Extraction loot now appears in front of you with the best items shown last, and the reveal range and timing have been tweaked for clearer pickups.",
             "commit_ids": [
               735267,
               735268
             ]
           },
           {
-            "text": "New indestructible extraction balloons with doors, platforms, consoles, sirens, and Burn & Extract functionality have been added.",
+            "text": "New extraction infrastructure adds indestructible balloon doors and platforms with consoles and sirens, improving the extraction experience.",
             "commit_ids": [
               735269,
               735270,
@@ -94,7 +83,13 @@
             ]
           },
           {
-            "text": "Hub radio introduced, hidden shop items unlocked, and shop scroll behavior fixed.",
+            "text": "Bandit patrols have been expanded; guards will now search for lost players during extraction, and a new door‑unlock cue sound alerts you.",
+            "commit_ids": [
+              735272
+            ]
+          },
+          {
+            "text": "The extraction hub now features a hub radio, hidden shop items are unlocked, and the shop scroll behavior has been fixed.",
             "commit_ids": [
               735287
             ]
@@ -102,41 +97,29 @@
         ]
       },
       {
-        "title": "AI & Bandits",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Bandit patrols now cover larger areas and guards actively search for lost players; door unlock cues added.",
-            "commit_ids": [
-              735272
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Tattoo brush now draws smooth continuous lines without choppy gaps.",
-            "commit_ids": [
-              735260
-            ]
-          },
-          {
-            "text": "Sleeping cloth no longer clips into the player's body during burst animations.",
-            "commit_ids": [
-              735246
-            ]
-          },
-          {
-            "text": "Sleeping bag respawn issue fixed: players won't get stuck due to capsule sweep replacement.",
+            "text": "Sleeping bags no longer trap players on respawn, fixing stuck‑in‑bag issues.",
             "commit_ids": [
               735217
             ]
           },
           {
-            "text": "Sleeping players' cloth correctly appears when spawning, eliminating missing or broken cloth.",
+            "text": "Sleeping players' cloth no longer clips through the body when spawning, improving visual fidelity.",
             "commit_ids": [
               735169
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Added a high‑explosive (HE) projectile for the M79 Grenade Launcher, providing a new damage option.",
+            "commit_ids": [
+              735225
             ]
           }
         ]
@@ -145,49 +128,18 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Inventory & Crafting\n- Backpack now participates in all item searches and can receive items returned from crafting.\n\n### Vehicles\n- Fixed chassis behavior for 2‑module cars by correcting prefab ID mismatches.\n\n### World & Environment\n- Resolved a crash when loading vines that had finished swinging.\n- Players will no longer respawn stuck inside or on top of tightly placed sleeping bags; respawn on a bag now requires clicking it.\n\n### Gameplay & UI Improvements\n- Various UI fixes: shutter frames retain state across network range, watercatcher and chicken coop panels correctly select buckets, and disabled‑blueprint tooltips display properly.\n- Added a high‑explosive grenade launcher weapon.\n- Cobalt tattoo stencil pack now unlocks via a Steam item.\n\n### Extraction & Outpost Updates\n- Loot reveal now progresses forward with the best items shown last, and the reveal range has been increased.\n- New indestructible extraction balloons with doors, platforms, consoles, sirens, and Burn & Extract functionality have been added.\n- Hub radio introduced, hidden shop items unlocked, and shop scroll behavior fixed.\n\n### AI & Bandits\n- Bandit patrols now cover larger areas and guards actively search for lost players; door unlock cues added.\n\n### Quality of Life\n- Tattoo brush now draws smooth continuous lines without choppy gaps.\n- Sleeping cloth no longer clips into the player's body during burst animations.\n- Sleeping bag respawn issue fixed: players won't get stuck due to capsule sweep replacement.\n- Sleeping players' cloth correctly appears when spawning, eliminating missing or broken cloth.",
+    "summary": "### Inventory & Crafting\n- Item searches now automatically include backpacks, and crafted items can return directly to your backpack, fixing previous inventory lookup and crafting glitches.\n\n### Vehicle & Base Interactions\n- 2‑module cars now load the correct prefab ID, eliminating build and usage errors for those vehicles.\n- Shutter doors stay in the proper state when you enter their network range, preventing doors from getting stuck.\n- Watercatcher and chicken coop trough loot panels automatically select the bucket when it’s in the belt, speeding up resource collection.\n\n### World & Mechanics Stability\n- Loading a vine that has already finished swinging no longer crashes the client, making vine traversal more reliable.\n- Sleeping bags can no longer be respawned on when they’re squeezed into tight gaps, and respawning now requires you to click the bag, preventing players from getting stuck.\n\n### Extraction & Outpost\n- Extraction loot now appears in front of you with the best items shown last, and the reveal range and timing have been tweaked for clearer pickups.\n- New extraction infrastructure adds indestructible balloon doors and platforms with consoles and sirens, improving the extraction experience.\n- Bandit patrols have been expanded; guards will now search for lost players during extraction, and a new door‑unlock cue sound alerts you.\n- The extraction hub now features a hub radio, hidden shop items are unlocked, and the shop scroll behavior has been fixed.\n\n### Gameplay & Balance\n- Sleeping bags no longer trap players on respawn, fixing stuck‑in‑bag issues.\n- Sleeping players' cloth no longer clips through the body when spawning, improving visual fidelity.\n\n### Combat & Weapons\n- Added a high‑explosive (HE) projectile for the M79 Grenade Launcher, providing a new damage option.",
     "new_items": [
       {
-        "text": "Loot reveal now progresses forward with the best items shown last, and the reveal range has been increased.",
-        "commit_ids": [
-          735267,
-          735268
-        ],
-        "section": "Extraction & Outpost Updates"
-      },
-      {
-        "text": "New indestructible extraction balloons with doors, platforms, consoles, sirens, and Burn & Extract functionality have been added.",
-        "commit_ids": [
-          735269,
-          735270,
-          735271
-        ],
-        "section": "Extraction & Outpost Updates"
-      },
-      {
-        "text": "Hub radio introduced, hidden shop items unlocked, and shop scroll behavior fixed.",
+        "text": "The extraction hub now features a hub radio, hidden shop items are unlocked, and the shop scroll behavior has been fixed.",
         "commit_ids": [
           735287
         ],
-        "section": "Extraction & Outpost Updates"
-      },
-      {
-        "text": "Bandit patrols now cover larger areas and guards actively search for lost players; door unlock cues added.",
-        "commit_ids": [
-          735272
-        ],
-        "section": "AI & Bandits"
-      },
-      {
-        "text": "Tattoo brush now draws smooth continuous lines without choppy gaps.",
-        "commit_ids": [
-          735260
-        ],
-        "section": "Quality of Life"
+        "section": "Extraction & Outpost"
       }
     ],
-    "new_relevant_count": 8,
-    "new_summary": "- Loot reveal now progresses forward with the best items shown last, and the reveal range has been increased.\n- New indestructible extraction balloons with doors, platforms, consoles, sirens, and Burn & Extract functionality have been added.\n- Hub radio introduced, hidden shop items unlocked, and shop scroll behavior fixed.\n- Bandit patrols now cover larger areas and guards actively search for lost players; door unlock cues added.\n- Tattoo brush now draws smooth continuous lines without choppy gaps."
+    "new_relevant_count": 1,
+    "new_summary": "- The extraction hub now features a hub radio, hidden shop items are unlocked, and the shop scroll behavior has been fixed."
   },
   "2026-11-16": {
     "commit_count": 323,
