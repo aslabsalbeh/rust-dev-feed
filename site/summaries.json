@@ -1,52 +1,62 @@
 {
   "2026-11-16": {
-    "commit_count": 317,
-    "relevant_commit_count": 125,
+    "commit_count": 319,
+    "relevant_commit_count": 126,
     "relevant_signature": "",
     "prompt_version": "structured-read-state-v7-explicit-empty",
     "chunk_cache": {
-      "734783,734785,734791,734800,734801,734814,734821,734858,734897,734899,734912,734913,734914,734916,734917,734918,734919,734922,734923,734955,734956,734978,734981,734982,734984": [
+      "734785,734791,734800,734801,734814,734821,734858,734897,734899,734912,734913,734914,734916,734917,734918,734919,734922,734923,734955,734956,734978,734981,734982,734984,735008": [
         {
-          "title": "World & Terrain",
+          "title": "NPC & AI",
           "items": [
             {
-              "text": "Fixed shore vector calculations around the boat building station on the Tropical2 map, improving boat placement and navigation near the shore.",
+              "text": "Guard and scout health increased, making them tougher to kill.",
               "commit_ids": [
-                734984,
-                734982,
-                734981
+                735008
+              ]
+            },
+            {
+              "text": "Scout combat improvements: added hit reactions, recovery wobble, and damage smoke, affecting combat feedback.",
+              "commit_ids": [
+                735008
               ]
             }
           ]
         },
         {
-          "title": "Extraction & Monuments",
+          "title": "Mission & Navigation UI",
           "items": [
             {
-              "text": "Extended and refined monument ladders and corrected water entry points, making ladder climbing smoother and preventing accidental water entry.",
+              "text": "Added offset map search circles and icon‑only compass guidance for missions, improving waypoint visibility.",
               "commit_ids": [
-                734956,
-                734955
+                735008
+              ]
+            },
+            {
+              "text": "Fixed tooltip position offset that varied with FPS, ensuring consistent tooltip placement.",
+              "commit_ids": [
+                734913
+              ]
+            },
+            {
+              "text": "Fixed settings dropdowns re‑opening after closing, preventing UI annoyance.",
+              "commit_ids": [
+                734912
+              ]
+            },
+            {
+              "text": "Recycle Bin now correctly swaps items instead of showing an erroneous \"Container does not accept player items!\" message.",
+              "commit_ids": [
+                734785
               ]
             }
           ]
         },
         {
-          "title": "Doors & Controllers",
+          "title": "World Generation & Navigation",
           "items": [
             {
-              "text": "Fixed door controllers becoming unpaired when a door is re‑skinned, ensuring doors continue to work after cosmetic changes.",
-              "commit_ids": [
-                734899
-              ]
-            }
-          ]
-        },
-        {
-          "title": "Transportation (Trains)",
-          "items": [
-            {
-              "text": "Resolved multiple train network issues: tunnel entrances now spawn only where stations fit, stations avoid canyon blockers, and above‑ground ramps no longer create disconnected paths.",
+              "text": "Fixed train tunnel entrances, station orientations, and above‑ground ramp connections to prevent them spawning into voids or being blocked, improving map navigation.",
               "commit_ids": [
                 734897
               ]
@@ -54,40 +64,52 @@
           ]
         },
         {
-          "title": "Inventory & Crafting UI",
+          "title": "Monument Climbing",
           "items": [
             {
-              "text": "Fixed the Recycle Bin UI so dragging an item onto the workbench upgrade correctly swaps the item instead of showing an erroneous \"Container does not accept player items!\" message.",
+              "text": "Extended monument ladders, fixed water entry issues, and refined ladder movement contacts and performance for smoother and more reliable climbing.",
               "commit_ids": [
-                734785
-              ]
-            }
-          ]
-        }
-      ],
-      "734657,734658,734665,734668,734672,734673,734674,734675,734688,734690,734697,734702,734704,734705,734706,734707,734708,734710,734711,734712,734713,734715,734731,734732,734770": [
-        {
-          "title": "Combat & Weapons",
-          "items": [
-            {
-              "text": "Fixed catapult projectile clipping off the map, restoring proper projectile behavior.",
-              "commit_ids": [
-                734707
-              ]
-            },
-            {
-              "text": "Added hotbar action progress indicators and aligned third‑person reload animations for clearer feedback during weapon use.",
-              "commit_ids": [
-                734657
+                734955,
+                734956
               ]
             }
           ]
         },
         {
-          "title": "Building & Structures",
+          "title": "Base Building & Doors",
           "items": [
             {
-              "text": "Resolved invisible building block bug, ensuring all placed structures are visible to players.",
+              "text": "Door controllers no longer become unpaired when a door is re‑skinned, preserving door functionality.",
+              "commit_ids": [
+                734899
+              ]
+            }
+          ]
+        }
+      ],
+      "734658,734665,734668,734672,734673,734674,734675,734688,734690,734697,734702,734704,734705,734706,734707,734708,734710,734711,734712,734713,734715,734731,734732,734770,734783": [
+        {
+          "title": "Weapon & Projectile",
+          "items": [
+            {
+              "text": "Thrown weapon skins now correctly apply while the projectile is in flight.",
+              "commit_ids": [
+                734783
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Structures & Building",
+          "items": [
+            {
+              "text": "Catapult off‑map clipping bug fixed, preventing catapults from clipping through terrain.",
+              "commit_ids": [
+                734707
+              ]
+            },
+            {
+              "text": "Invisible building blocks bug fixed, ensuring placed blocks are visible to players.",
               "commit_ids": [
                 734706
               ]
@@ -95,28 +117,39 @@
           ]
         },
         {
-          "title": "Missions & Extraction",
+          "title": "Outpost Extraction Mission",
           "items": [
             {
-              "text": "Refined extraction mission interactions: added hold‑E mission mechanics with movement/camera lock, delayed ledger reads (5 s) and deferred material consumption until completion, expanded mission card UI, and preserved safe‑pocket items when loading backpacks.",
+              "text": "Added CZ‑721 backstory, optional conversations, and mission plan records to the Extraction mission.",
+              "commit_ids": [
+                734675
+              ]
+            },
+            {
+              "text": "Refined mission interactions: hold‑E mission lock, 5‑second ledger reads, repair materials consumed after completion, expanded mission card UI, and safe‑pocket items preserved on load.",
               "commit_ids": [
                 734674
               ]
             },
             {
-              "text": "Improved loot reveal flow: first loot item now appears automatically and hotbar outlines are disabled for a cleaner UI during extraction missions.",
+              "text": "First loot item now appears early in the mission and hotbar outlines are removed.",
               "commit_ids": [
-                734673,
+                734673
+              ]
+            },
+            {
+              "text": "Added loot reveal feature to Extraction missions.",
+              "commit_ids": [
                 734672
               ]
             }
           ]
         },
         {
-          "title": "Drones & Combat",
+          "title": "Scout Drones",
           "items": [
             {
-              "text": "Scout drones now perform exterior searches with a 4‑second wind‑up, emit dodgeable charges dealing 55 damage, and can strike mid‑fight, adding new tactical options.",
+              "text": "Scout drones now perform exterior searches with a 4‑second wind‑up, dodgeable charges, 55‑damage blasts, and mid‑fight strikes.",
               "commit_ids": [
                 734668
               ]
@@ -124,10 +157,10 @@
           ]
         },
         {
-          "title": "Raids",
+          "title": "Raid Rules",
           "items": [
             {
-              "text": "Raids will no longer crash; the game now refuses to start a raid without a valid raid map, preventing errors and improving stability.",
+              "text": "Raids cannot be started without a raid map; the game now blocks attempts lacking a map.",
               "commit_ids": [
                 734665
               ]
@@ -135,26 +168,145 @@
           ]
         }
       ],
-      "734569,734577,734580,734581,734582,734584,734591,734594,734602,734604,734607,734619,734620,734623,734626,734627,734629,734630,734631,734634,734642,734647,734648,734653,734654": [
+      "734577,734580,734581,734582,734584,734591,734594,734602,734604,734607,734619,734620,734623,734626,734627,734629,734630,734631,734634,734642,734647,734648,734653,734654,734657": [
         {
-          "title": "Combat & Third-Person View",
+          "title": "Combat & Weapon UI",
           "items": [
             {
-              "text": "Improved third-person combat visuals: removed first-person weapon shake when in third-person and fixed attack alignment, making attacks feel more accurate.",
+              "text": "Added hotbar action progress bar and aligned third‑person reload animations.",
               "commit_ids": [
-                734654,
+                734657
+              ]
+            },
+            {
+              "text": "Fixed third‑person attack alignment for more accurate hits.",
+              "commit_ids": [
                 734653
+              ]
+            },
+            {
+              "text": "Displayed reload progress bar next to the weapon in the shoulder camera.",
+              "commit_ids": [
+                734577
               ]
             }
           ]
         },
         {
-          "title": "Weapon UI",
+          "title": "Loot & Economy",
           "items": [
             {
-              "text": "Added a reload progress bar next to the weapon in shoulder camera, giving clear feedback on reload timing.",
+              "text": "Loot items now have explicit scrap values displayed, and pricing reflects item type, including furniture contents and blueprint weights.",
               "commit_ids": [
-                734577
+                734648,
+                734602
+              ]
+            },
+            {
+              "text": "Supplies shop prices increased and every item now has a value; loot above crafted gear is highlighted.",
+              "commit_ids": [
+                734629
+              ]
+            },
+            {
+              "text": "Safe pocket now counts toward carried weight and is shown beside looted items.",
+              "commit_ids": [
+                734620,
+                734591
+              ]
+            },
+            {
+              "text": "Main inventory size on the extraction map reduced by 50%.",
+              "commit_ids": [
+                734604
+              ]
+            },
+            {
+              "text": "Extracted loot is automatically banked in a stash; raiders start with loot at raid start.",
+              "commit_ids": [
+                734581
+              ]
+            }
+          ]
+        },
+        {
+          "title": "AI & NPC Rewards",
+          "items": [
+            {
+              "text": "Each enemy type, including monument guards, now grants its own specific reward.",
+              "commit_ids": [
+                734647
+              ]
+            },
+            {
+              "text": "Guard loot now scales by tier; heavy enemies no longer drop client objects on death.",
+              "commit_ids": [
+                734627
+              ]
+            },
+            {
+              "text": "Monuments are guarded by tiered forces, with weaker factions placed under scientists.",
+              "commit_ids": [
+                734619
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Scout Drones",
+          "items": [
+            {
+              "text": "Added scout drones that patrol small monuments, emit light, can search, and have health; they raise alarms when spotting players.",
+              "commit_ids": [
+                734631,
+                734634
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map & Extraction",
+          "items": [
+            {
+              "text": "Outpost added to the extraction map, with more monuments and a new 3 k procedural map scene for extraction raids.",
+              "commit_ids": [
+                734584,
+                734582,
+                734580
+              ]
+            },
+            {
+              "text": "Extraction balloons now show a timer on the map and close sequentially.",
+              "commit_ids": [
+                734607
+              ]
+            },
+            {
+              "text": "Outpost removed from the main raid map.",
+              "commit_ids": [
+                734630
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Gameplay Rules",
+          "items": [
+            {
+              "text": "Players can no longer deploy structures while crafting.",
+              "commit_ids": [
+                734594
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Hub",
+          "items": [
+            {
+              "text": "Hub now has its own markers; arriving players no longer see a map or death screen.",
+              "commit_ids": [
+                734623
               ]
             }
           ]
