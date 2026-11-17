@@ -1,18 +1,26 @@
 {
   "2026-11-17": {
-    "commit_count": 40,
-    "relevant_commit_count": 11,
-    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118",
+    "commit_count": 54,
+    "relevant_commit_count": 17,
+    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Objects",
+        "title": "Inventory & Crafting",
         "items": [
           {
-            "text": "Fixed a crash when loading a vine that had already finished swinging.",
+            "text": "Inventory searches now include items stored in backpacks by default, making it easier to locate items without opening each backpack.",
             "commit_ids": [
-              735109
+              735072,
+              735062,
+              735061
+            ]
+          },
+          {
+            "text": "Crafting no longer unintentionally returns items to backpacks, preventing lost materials during production.",
+            "commit_ids": [
+              735070
             ]
           }
         ]
@@ -21,7 +29,7 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Resolved a prefab ID mismatch error for 2‑module cars, preventing vehicle build failures.",
+            "text": "2‑module cars now load correctly after fixing a prefab ID mismatch, restoring proper vehicle behavior for modular builds.",
             "commit_ids": [
               735074
             ]
@@ -29,20 +37,52 @@
         ]
       },
       {
-        "title": "Inventory & Crafting",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Item searches now include backpacks by default (reload searches still exclude them).",
+            "text": "Vines that have already finished swinging no longer cause a null reference error when loaded, reducing crashes near vines.",
             "commit_ids": [
-              735072,
-              735062,
-              735061
+              735109
             ]
           },
           {
-            "text": "Fixed items incorrectly returning to backpacks during crafting.",
+            "text": "Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.",
             "commit_ids": [
-              735070
+              735159
+            ]
+          },
+          {
+            "text": "Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.",
+            "commit_ids": [
+              735159
+            ]
+          },
+          {
+            "text": "Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.",
+            "commit_ids": [
+              735159
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Tooltips",
+        "items": [
+          {
+            "text": "Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable.",
+            "commit_ids": [
+              735159
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Fixed a problem where the two‑module chassis prefab could not be placed or used correctly, restoring proper vehicle construction.",
+            "commit_ids": [
+              735076
             ]
           }
         ]
@@ -51,41 +91,39 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### World & Objects\n- Fixed a crash when loading a vine that had already finished swinging.\n\n### Vehicles\n- Resolved a prefab ID mismatch error for 2‑module cars, preventing vehicle build failures.\n\n### Inventory & Crafting\n- Item searches now include backpacks by default (reload searches still exclude them).\n- Fixed items incorrectly returning to backpacks during crafting.",
+    "summary": "### Inventory & Crafting\n- Inventory searches now include items stored in backpacks by default, making it easier to locate items without opening each backpack.\n- Crafting no longer unintentionally returns items to backpacks, preventing lost materials during production.\n\n### Vehicles\n- 2‑module cars now load correctly after fixing a prefab ID mismatch, restoring proper vehicle behavior for modular builds.\n\n### World & Environment\n- Vines that have already finished swinging no longer cause a null reference error when loaded, reducing crashes near vines.\n- Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.\n- Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.\n- Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.\n\n### UI & Tooltips\n- Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable.\n\n### Gameplay & Balance\n- Fixed a problem where the two‑module chassis prefab could not be placed or used correctly, restoring proper vehicle construction.",
     "new_items": [
       {
-        "text": "Fixed a crash when loading a vine that had already finished swinging.",
+        "text": "Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.",
         "commit_ids": [
-          735109
+          735159
         ],
-        "section": "World & Objects"
+        "section": "World & Environment"
       },
       {
-        "text": "Resolved a prefab ID mismatch error for 2‑module cars, preventing vehicle build failures.",
+        "text": "Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.",
         "commit_ids": [
-          735074
+          735159
         ],
-        "section": "Vehicles"
+        "section": "World & Environment"
       },
       {
-        "text": "Item searches now include backpacks by default (reload searches still exclude them).",
+        "text": "Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.",
         "commit_ids": [
-          735072,
-          735062,
-          735061
+          735159
         ],
-        "section": "Inventory & Crafting"
+        "section": "World & Environment"
       },
       {
-        "text": "Fixed items incorrectly returning to backpacks during crafting.",
+        "text": "Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable.",
         "commit_ids": [
-          735070
+          735159
         ],
-        "section": "Inventory & Crafting"
+        "section": "UI & Tooltips"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Fixed a crash when loading a vine that had already finished swinging.\n- Resolved a prefab ID mismatch error for 2‑module cars, preventing vehicle build failures.\n- Item searches now include backpacks by default (reload searches still exclude them).\n- Fixed items incorrectly returning to backpacks during crafting."
+    "new_relevant_count": 1,
+    "new_summary": "- Watercatcher and chicken coop loot panels now auto‑select the bucket when it’s in the belt, fixing a UI issue that slowed water collection.\n- Shutter doors now display the correct open/close state when entering a new network range, fixing a visual glitch.\n- Airfield terminal audio error fixed, restoring proper sound cues at the airfield monument.\n- Disabled blueprint tooltip now correctly shows the “cannot learn” message, clarifying why a blueprint is unavailable."
   },
   "2026-11-16": {
     "commit_count": 323,
