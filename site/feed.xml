@@ -6,13 +6,14 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 17 Nov 2026 00:17:52 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 02:21:57 -0500</lastBuildDate>
     <item>
       <title>Yesterday's Rust Updates — Nov 16</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;322 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;323 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+
+&lt;p&gt;The AI summary for the latest development commits is still being generated. The commit archive was updated successfully; this summary will refresh on the next run.&lt;/p&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-16</guid>
       <pubDate>Mon, 16 Nov 2026 12:00:00 -0500</pubDate>
@@ -22,25 +23,28 @@
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;29 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Missions &amp;amp; Interactions&lt;/h3&gt;
+
+&lt;h3&gt;AI &amp;amp; NPC&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734431"&gt;Mission interactions refined: hold‑E actions now lock movement and camera and cancel cleanly; ledger and maintenance‑log reads take 5 seconds and only consume repair materials after completion; safe‑pocket items are preserved when loading before the backpack.&lt;/li&gt;
+&lt;li data-rust-commits="734379"&gt;Bandits have been upgraded to Generation 2 AI, improving their combat behavior and pathfinding.&lt;/li&gt;
+&lt;li data-rust-commits="734414"&gt;A new caretaker NPC now patrols apartment complexes, knocking on rented rooms and using a peephole, adding an extra interactive element.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Drones&lt;/h3&gt;
+&lt;h3&gt;Raiding &amp;amp; Missions&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734352"&gt;Scout drones now perform exterior searches with a 4‑second wind‑up, fire dodgeable 55‑damage charges, and can strike mid‑fight.&lt;/li&gt;
+&lt;li data-rust-commits="734313"&gt;The server now refuses to start a raid without a valid raid map, preventing crashes and showing a clear error instead of throwing.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Raiding&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Drones&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734313"&gt;Starting a raid without a raid map now simply fails instead of causing an error, preventing crashes.&lt;/li&gt;
+&lt;li data-rust-commits="734352"&gt;Scout drones now emit flashing beeps, can fire dodgeable 55‑damage charges, and perform mid‑fight strikes, making them a more active threat.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734414"&gt;A new apartment‑complex caretaker NPC patrols the building at night, knocks on rented doors and looks through a peephole.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Loot &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="734430,734429"&gt;Mission loot is now revealed to players when earned, and the first loot item appears in inventory without hot‑bar outlines for clearer view.&lt;/li&gt;
+&lt;li data-rust-commits="734431"&gt;Hold‑E missions now lock movement and camera, tie progress to the target, and reset if cancelled.&lt;/li&gt;
+&lt;li data-rust-commits="734431"&gt;Ledger and maintenance‑log reads now take 5 seconds and only consume repair materials after the read finishes.&lt;/li&gt;
+&lt;li data-rust-commits="734431"&gt;Feedline repairs and pressure release can be performed using the existing pipe‑access pit and valve at Water Treatment.&lt;/li&gt;
+&lt;li data-rust-commits="734431"&gt;Items stored in the safe‑pocket are now retained when the pocket loads before the saved backpack.&lt;/li&gt;
+&lt;li data-rust-commits="734430"&gt;First loot item now appears during extraction and hotbar outlines are disabled.&lt;/li&gt;
+&lt;li data-rust-commits="734429"&gt;Extraction missions have been refined and loot is now revealed before extraction.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-15</guid>
@@ -49,25 +53,36 @@
     <item>
       <title>Rust Development Updates — Nov 14</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;27 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;25 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3&gt;Loot &amp;amp; Economy&lt;/h3&gt;
+
+&lt;h3&gt;Base &amp;amp; Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734183"&gt;Loot now has value‑based pricing, furniture containers have their own specific contents, and blueprints count toward inventory weight.&lt;/li&gt;
+&lt;li data-rust-commits="734168,734169,734243"&gt;Stash upgrades now cost scrap (1,000 for the first row, doubling each additional row), stash limited to four extra rows, and scrap stacks increased to 2,000.&lt;/li&gt;
+&lt;li data-rust-commits="734196"&gt;Outpost Supplies can now be both bought and sold from the same interface.&lt;/li&gt;
+&lt;li data-rust-commits="734183"&gt;Loot items are priced by their actual value, furniture has its own contents, and blueprints now have weight, affecting inventory.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Enemies&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734178"&gt;Each enemy type now drops its own unique reward, including monument guards.&lt;/li&gt;
+&lt;li data-rust-commits="734234"&gt;Grenade controls and rocket launcher aiming have been refined for more reliable throws and targeting.&lt;/li&gt;
+&lt;li data-rust-commits="734276,734282"&gt;Third‑person players now see accurate bow arcs and improved aiming feedback.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; Rewards&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734254"&gt;Hotbar now shows an action progress bar, indicating how long actions like building or using items will take.&lt;/li&gt;
-&lt;li data-rust-commits="734182"&gt;Console window is now resizable and includes a blurred backdrop, making command input clearer and UI more flexible.&lt;/li&gt;
-&lt;li data-rust-commits="734182"&gt;Error overlay stacking now respects stack‑trace order, ensuring error messages are displayed correctly.&lt;/li&gt;
+&lt;li data-rust-commits="734178"&gt;Each enemy type, including monument guards, now drops its own specific reward.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Feedback&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="734211"&gt;Fixed third-person attack alignment, ensuring attacks now line up correctly with target direction.&lt;/li&gt;
+&lt;li data-rust-commits="734254"&gt;Hotbar now displays progress bars for timed actions, giving clearer feedback.&lt;/li&gt;
+&lt;li data-rust-commits="734209"&gt;Binoculars and scopes are viewable in third‑person mode, improving scouting while staying behind cover.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Hub Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="734167"&gt;Added a progress board, unlockable furnace, retained ovens, and a pay panel to the hub for expanded base management.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Mechanics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="734211"&gt;Third‑person attacks now align correctly, fixing hit registration issues.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-14</guid>
