@@ -1,16 +1,42 @@
 {
   "2026-11-18": {
-    "commit_count": 33,
-    "relevant_commit_count": 9,
-    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481",
+    "commit_count": 58,
+    "relevant_commit_count": 15,
+    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481,735522,735524,735527,735550,735551,735556",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "World & Spawn",
+        "title": "World & Monuments",
         "items": [
           {
-            "text": "Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.",
+            "text": "Added dynamic monument map markers that can change label text and position at runtime.",
+            "commit_ids": [
+              735556,
+              735551,
+              735550
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployables",
+        "items": [
+          {
+            "text": "Increased deploy and clear bounds for bags and towels, making placement easier near edges.",
+            "commit_ids": [
+              735527,
+              735524,
+              735522
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Spawning & NPCs",
+        "items": [
+          {
+            "text": "Fixed a bug that could spawn new players under the sea and corrected the wolf's initial idle behavior.",
             "commit_ids": [
               735455,
               735452
@@ -19,34 +45,35 @@
         ]
       },
       {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.",
-            "commit_ids": [
-              735455
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection.",
-            "commit_ids": [
-              735458
-            ]
-          }
-        ]
-      },
-      {
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Resolved a server-side null reference error that could prevent SpinUpWeapon from functioning, restoring expected weapon behavior.",
+            "text": "Tattoo stencils now scale to screen space, fixing mismatched head and body stamp sizes.",
+            "commit_ids": [
+              735481
+            ]
+          },
+          {
+            "text": "Tattoo brush sampling updated to eliminate pixelation, giving smoother tattoo lines.",
+            "commit_ids": [
+              735474
+            ]
+          },
+          {
+            "text": "Server-side null reference issue with SpinUpWeapon fixed, reducing weapon spawn errors and crashes.",
             "commit_ids": [
               735391
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "Settings color dropdowns now close correctly after selection.",
+            "commit_ids": [
+              735458
             ]
           }
         ]
@@ -55,33 +82,29 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### World & Spawn\n- Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.\n\n### NPC & AI\n- Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.\n\n### UI & Quality of Life\n- Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection.\n\n### Gameplay & Balance\n- Resolved a server-side null reference error that could prevent SpinUpWeapon from functioning, restoring expected weapon behavior.",
+    "summary": "### World & Monuments\n- Added dynamic monument map markers that can change label text and position at runtime.\n\n### Deployables\n- Increased deploy and clear bounds for bags and towels, making placement easier near edges.\n\n### Spawning & NPCs\n- Fixed a bug that could spawn new players under the sea and corrected the wolf's initial idle behavior.\n\n### Gameplay & Balance\n- Tattoo stencils now scale to screen space, fixing mismatched head and body stamp sizes.\n- Tattoo brush sampling updated to eliminate pixelation, giving smoother tattoo lines.\n- Server-side null reference issue with SpinUpWeapon fixed, reducing weapon spawn errors and crashes.\n\n### Quality of Life\n- Settings color dropdowns now close correctly after selection.",
     "new_items": [
       {
-        "text": "Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.",
+        "text": "Added dynamic monument map markers that can change label text and position at runtime.",
         "commit_ids": [
-          735455,
-          735452
+          735556,
+          735551,
+          735550
         ],
-        "section": "World & Spawn"
+        "section": "World & Monuments"
       },
       {
-        "text": "Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.",
+        "text": "Increased deploy and clear bounds for bags and towels, making placement easier near edges.",
         "commit_ids": [
-          735455
+          735527,
+          735524,
+          735522
         ],
-        "section": "NPC & AI"
-      },
-      {
-        "text": "Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection.",
-        "commit_ids": [
-          735458
-        ],
-        "section": "UI & Quality of Life"
+        "section": "Deployables"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.\n- Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.\n- Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection."
+    "new_relevant_count": 6,
+    "new_summary": "- Added dynamic monument map markers that can change label text and position at runtime.\n- Increased deploy and clear bounds for bags and towels, making placement easier near edges."
   },
   "2026-11-17": {
     "commit_count": 122,
