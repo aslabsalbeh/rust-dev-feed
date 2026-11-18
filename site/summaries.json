@@ -1,8 +1,8 @@
 {
   "2026-11-17": {
-    "commit_count": 115,
-    "relevant_commit_count": 54,
-    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159,735166,735169,735184,735185,735194,735216,735217,735220,735223,735225,735246,735247,735251,735260,735263,735267,735268,735269,735270,735271,735272,735277,735278,735281,735287,735302,735328,735329,735330,735331,735333,735334,735335,735344,735346,735347,735351",
+    "commit_count": 116,
+    "relevant_commit_count": 55,
+    "relevant_signature": "735061,735062,735064,735070,735072,735074,735076,735086,735109,735110,735118,735128,735143,735149,735154,735157,735159,735166,735169,735184,735185,735194,735216,735217,735220,735223,735225,735246,735247,735251,735260,735263,735267,735268,735269,735270,735271,735272,735277,735278,735281,735287,735302,735328,735329,735330,735331,735333,735334,735335,735344,735346,735347,735351,735354",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
@@ -10,37 +10,64 @@
         "title": "Inventory & Crafting",
         "items": [
           {
-            "text": "Backpack items are now searchable and can be taken during inventory actions, and crafting no longer loses items—they return to your backpack.",
+            "text": "Backpack items are now included in all inventory searches and item transfers, streamlining crafting and item management.",
             "commit_ids": [
+              735061,
               735062,
               735070,
               735072
             ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles",
-        "items": [
+          },
           {
-            "text": "2‑module cars can now be built without prefab ID mismatches.",
+            "text": "Supplier missions, in‑raid crafting lists, and shop listings have been fixed, ensuring reliable mission rewards and crafting options.",
             "commit_ids": [
-              735074
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Objects",
-        "items": [
-          {
-            "text": "Loading finished‑swinging vines no longer crashes the client.",
-            "commit_ids": [
-              735109
+              735346
             ]
           },
           {
-            "text": "Respawning on a sleeping bag only works when the bag is clicked, preventing players from getting stuck in tight spaces.",
+            "text": "Contraband loot tier has been rebalanced for a more consistent reward curve.",
+            "commit_ids": [
+              735351
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & World Interaction",
+        "items": [
+          {
+            "text": "2‑module car prefabs now have correct IDs, eliminating errors when deploying those vehicles.",
+            "commit_ids": [
+              735074,
+              735076
+            ]
+          },
+          {
+            "text": "A crash caused by loading a vine that had already finished swinging has been resolved, improving overall stability.",
+            "commit_ids": [
+              735109,
+              735110
+            ]
+          },
+          {
+            "text": "Cobalt tattoo stencil pack now unlocks its stencils directly via the Steam item, making the new designs immediately usable.",
+            "commit_ids": [
+              735223
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Watercatcher and chicken coop loot panels now automatically select the bucket when it’s in the belt, and disabled blueprints display a clear “cannot learn” tooltip.",
+            "commit_ids": [
+              735159
+            ]
+          },
+          {
+            "text": "Sleeping bag respawns no longer trap players in tight spaces, and respawning on a bag now requires clicking the bag, preventing accidental stuck situations.",
             "commit_ids": [
               735184,
               735185
@@ -49,36 +76,36 @@
         ]
       },
       {
-        "title": "Extraction & Outpost",
+        "title": "Extraction Hub Overhaul",
         "items": [
           {
-            "text": "Extraction balloons are indestructible, so they can’t be damaged during extraction.",
-            "commit_ids": [
-              735271
-            ]
-          },
-          {
-            "text": "New doors, platforms, consoles and sirens have been added to extraction balloon outposts.",
-            "commit_ids": [
-              735269,
-              735270
-            ]
-          },
-          {
-            "text": "Loot now reveals forward first, with adjusted range and timing windows.",
+            "text": "Loot reveal order at extraction now shows forward items first and the best last, with adjusted reveal range for smoother looting.",
             "commit_ids": [
               735267,
               735268
             ]
           },
           {
-            "text": "Bandit patrols are larger and will actively search for lost players during extractions.",
+            "text": "Extraction balloons are now indestructible, ensuring they remain functional throughout the extraction phase.",
+            "commit_ids": [
+              735271
+            ]
+          },
+          {
+            "text": "New balloon doors, Burn & Extract mechanic, hub sounds, and balloon platforms with consoles and sirens have been added to the extraction hub, expanding interactive elements.",
+            "commit_ids": [
+              735269,
+              735270
+            ]
+          },
+          {
+            "text": "Bandit patrols cover a wider area, guards will search for lost players, and a door‑unlock cue has been added for clearer navigation.",
             "commit_ids": [
               735272
             ]
           },
           {
-            "text": "Hub radio now reveals hidden shop unlocks and includes a scroll fix.",
+            "text": "Hidden shop unlocks, a hub radio, and a fixed shop scroll UI enhance the outpost’s commerce experience.",
             "commit_ids": [
               735287
             ]
@@ -86,63 +113,18 @@
         ]
       },
       {
-        "title": "Missions & Crafting",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Supplier missions, in‑raid crafting lists and shop lists have been fixed, restoring mission progress and crafting UI.",
+            "text": "Turn‑in‑place animation no longer restarts when equipping items mid‑turn.",
             "commit_ids": [
-              735346
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Economy & Customization",
-        "items": [
-          {
-            "text": "Contraband loot tier values have been rebalanced, changing rarity and reward distribution.",
-            "commit_ids": [
-              735351
+              735334
             ]
           },
           {
-            "text": "The Cobalt tattoo stencil pack is now available as a Steam item, unlocking its tattoo stencils.",
-            "commit_ids": [
-              735223
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Sleeping bags no longer get stuck on respawn, preventing players from being trapped.",
+            "text": "Sleeping bags no longer get stuck on respawn, ensuring proper placement.",
             "commit_ids": [
               735217
-            ]
-          },
-          {
-            "text": "Watercatcher and chicken coop loot panels now correctly select the bucket when it’s equipped in the belt.",
-            "commit_ids": [
-              735159
-            ]
-          },
-          {
-            "text": "Disabled blueprints now display the proper “cannot learn” tooltip, informing players why they’re unavailable.",
-            "commit_ids": [
-              735159
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & Configuration",
-        "items": [
-          {
-            "text": "Backpack contents are now considered when searching your inventory, simplifying item location.",
-            "commit_ids": [
-              735061
             ]
           }
         ]
@@ -151,25 +133,18 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Inventory & Crafting\n- Backpack items are now searchable and can be taken during inventory actions, and crafting no longer loses items—they return to your backpack.\n\n### Vehicles\n- 2‑module cars can now be built without prefab ID mismatches.\n\n### World Objects\n- Loading finished‑swinging vines no longer crashes the client.\n- Respawning on a sleeping bag only works when the bag is clicked, preventing players from getting stuck in tight spaces.\n\n### Extraction & Outpost\n- Extraction balloons are indestructible, so they can’t be damaged during extraction.\n- New doors, platforms, consoles and sirens have been added to extraction balloon outposts.\n- Loot now reveals forward first, with adjusted range and timing windows.\n- Bandit patrols are larger and will actively search for lost players during extractions.\n- Hub radio now reveals hidden shop unlocks and includes a scroll fix.\n\n### Missions & Crafting\n- Supplier missions, in‑raid crafting lists and shop lists have been fixed, restoring mission progress and crafting UI.\n\n### Economy & Customization\n- Contraband loot tier values have been rebalanced, changing rarity and reward distribution.\n- The Cobalt tattoo stencil pack is now available as a Steam item, unlocking its tattoo stencils.\n\n### Quality of Life\n- Sleeping bags no longer get stuck on respawn, preventing players from being trapped.\n- Watercatcher and chicken coop loot panels now correctly select the bucket when it’s equipped in the belt.\n- Disabled blueprints now display the proper “cannot learn” tooltip, informing players why they’re unavailable.\n\n### Inventory & Configuration\n- Backpack contents are now considered when searching your inventory, simplifying item location.",
+    "summary": "### Inventory & Crafting\n- Backpack items are now included in all inventory searches and item transfers, streamlining crafting and item management.\n- Supplier missions, in‑raid crafting lists, and shop listings have been fixed, ensuring reliable mission rewards and crafting options.\n- Contraband loot tier has been rebalanced for a more consistent reward curve.\n\n### Vehicles & World Interaction\n- 2‑module car prefabs now have correct IDs, eliminating errors when deploying those vehicles.\n- A crash caused by loading a vine that had already finished swinging has been resolved, improving overall stability.\n- Cobalt tattoo stencil pack now unlocks its stencils directly via the Steam item, making the new designs immediately usable.\n\n### UI & Quality of Life\n- Watercatcher and chicken coop loot panels now automatically select the bucket when it’s in the belt, and disabled blueprints display a clear “cannot learn” tooltip.\n- Sleeping bag respawns no longer trap players in tight spaces, and respawning on a bag now requires clicking the bag, preventing accidental stuck situations.\n\n### Extraction Hub Overhaul\n- Loot reveal order at extraction now shows forward items first and the best last, with adjusted reveal range for smoother looting.\n- Extraction balloons are now indestructible, ensuring they remain functional throughout the extraction phase.\n- New balloon doors, Burn & Extract mechanic, hub sounds, and balloon platforms with consoles and sirens have been added to the extraction hub, expanding interactive elements.\n- Bandit patrols cover a wider area, guards will search for lost players, and a door‑unlock cue has been added for clearer navigation.\n- Hidden shop unlocks, a hub radio, and a fixed shop scroll UI enhance the outpost’s commerce experience.\n\n### Gameplay & Balance\n- Turn‑in‑place animation no longer restarts when equipping items mid‑turn.\n- Sleeping bags no longer get stuck on respawn, ensuring proper placement.",
     "new_items": [
       {
-        "text": "Supplier missions, in‑raid crafting lists and shop lists have been fixed, restoring mission progress and crafting UI.",
-        "commit_ids": [
-          735346
-        ],
-        "section": "Missions & Crafting"
-      },
-      {
-        "text": "Contraband loot tier values have been rebalanced, changing rarity and reward distribution.",
+        "text": "Contraband loot tier has been rebalanced for a more consistent reward curve.",
         "commit_ids": [
           735351
         ],
-        "section": "Economy & Customization"
+        "section": "Inventory & Crafting"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Supplier missions, in‑raid crafting lists and shop lists have been fixed, restoring mission progress and crafting UI.\n- Contraband loot tier values have been rebalanced, changing rarity and reward distribution."
+    "new_relevant_count": 1,
+    "new_summary": "- Contraband loot tier has been rebalanced for a more consistent reward curve."
   },
   "2026-11-16": {
     "commit_count": 323,
