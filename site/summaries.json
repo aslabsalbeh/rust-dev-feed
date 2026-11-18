@@ -1,90 +1,160 @@
 {
   "2026-11-18": {
-    "commit_count": 78,
-    "relevant_commit_count": 24,
-    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481,735522,735524,735527,735550,735551,735556,735596,735632,735646,735648,735650,735653,735654,735660,735664",
+    "commit_count": 90,
+    "relevant_commit_count": 29,
+    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481,735522,735524,735527,735550,735551,735556,735596,735632,735646,735648,735650,735653,735654,735660,735664,735677,735684,735685,735686,735700",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
+        "title": "Weapon Systems",
+        "items": [
+          {
+            "text": "Fixed server null reference error that could cause SpinUpWeapon to malfunction, improving weapon reliability.",
+            "commit_ids": [
+              735391,
+              735394
+            ]
+          },
+          {
+            "text": "Fixed multiple third‑person gun attachment issues, including barrel alignment and silencer muzzle offsets, ensuring attachments behave correctly.",
+            "commit_ids": [
+              735596,
+              735632,
+              735646,
+              735664
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Player Spawn & Item Placement",
+        "items": [
+          {
+            "text": "Prevented new players from spawning underwater, fixing a game‑breaking spawn location bug.",
+            "commit_ids": [
+              735452,
+              735455
+            ]
+          },
+          {
+            "text": "Improved placement reliability for deployable items such as bags and towels by increasing deployment bounds.",
+            "commit_ids": [
+              735522,
+              735524,
+              735527
+            ]
+          }
+        ]
+      },
+      {
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Travelling vendor now reliably spawns without requiring a server restart.",
+            "text": "Fixed travelling vendor spawn failures, ensuring vendors appear consistently without server restarts.",
             "commit_ids": [
-              735654,
-              735648
+              735648,
+              735654
+            ]
+          },
+          {
+            "text": "Corrected the wolf's initial idle animation, improving its behavior when first encountered.",
+            "commit_ids": [
+              735455
             ]
           }
         ]
       },
       {
-        "title": "World & Monuments",
+        "title": "Map & UI",
         "items": [
           {
-            "text": "Dynamic monument map markers added, allowing labels and positions to update in real time.",
+            "text": "Added dynamic monument map markers that can change label text and position at runtime, improving map navigation.",
             "commit_ids": [
-              735556,
-              735551,
-              735550
-            ]
-          },
-          {
-            "text": "New players no longer spawn underwater or on the sea floor.",
-            "commit_ids": [
-              735455,
-              735452
+              735550,
+              735556
             ]
           }
         ]
       },
       {
-        "title": "Base Building",
+        "title": "World Generation",
         "items": [
           {
-            "text": "Increased deploy and clear bounds for bags and towels, making placement easier.",
+            "text": "Adjusted river terrain generation to prevent cliffs from raising terrain over river beds, resulting in smoother rivers.",
             "commit_ids": [
-              735527,
-              735524,
-              735522
+              735677
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Extraction System",
         "items": [
           {
-            "text": "Fixed a server-side error that could prevent SpinUp weapons from functioning correctly.",
+            "text": "Added new stash filters (ammo, food, tools, building, etc.) and made extraction jobs stay locked until completed, granting recipes from hand‑ins.",
             "commit_ids": [
-              735391
+              735685,
+              735686
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "World & Terrain",
+        "items": [
           {
-            "text": "Gun attachments now function correctly, fixing previous issues with attachment behavior.",
+            "text": "Fixed a small terrain gap at river source rocks and water pipe decor, preventing players from falling through or seeing missing terrain.",
             "commit_ids": [
-              735632
+              735700
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Camera & View",
+        "items": [
           {
-            "text": "Attachment fixes for 3P weapons are still in development (WIP).",
+            "text": "Removed stray first‑person elements that appeared in the shoulder camera view.",
             "commit_ids": [
-              735596
+              735684
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Clothing & Sleep",
+        "items": [
           {
-            "text": "Tattoo stencils now scale based on screen space, eliminating size mismatches between head and body placements.",
+            "text": "Reverted a previous fix, so sleeping cloth may again clip into the player’s body during sleep animations.",
+            "commit_ids": [
+              735650
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Customization (Tattoos)",
+        "items": [
+          {
+            "text": "Tattoo stencil size now matches screen space, fixing mismatched head/body stamp sizes.",
             "commit_ids": [
               735481
             ]
+          },
+          {
+            "text": "Tattoo brush now uses proper sampling, eliminating pixelated brush marks.",
+            "commit_ids": [
+              735474
+            ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Settings UI",
         "items": [
           {
-            "text": "Settings color dropdowns now close properly after selection.",
+            "text": "Color dropdowns in settings now close correctly after selection.",
             "commit_ids": [
               735458
             ]
@@ -95,26 +165,40 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### NPC & AI\n- Travelling vendor now reliably spawns without requiring a server restart.\n\n### World & Monuments\n- Dynamic monument map markers added, allowing labels and positions to update in real time.\n- New players no longer spawn underwater or on the sea floor.\n\n### Base Building\n- Increased deploy and clear bounds for bags and towels, making placement easier.\n\n### Gameplay & Balance\n- Fixed a server-side error that could prevent SpinUp weapons from functioning correctly.\n- Gun attachments now function correctly, fixing previous issues with attachment behavior.\n- Attachment fixes for 3P weapons are still in development (WIP).\n- Tattoo stencils now scale based on screen space, eliminating size mismatches between head and body placements.\n\n### UI & Quality of Life\n- Settings color dropdowns now close properly after selection.",
+    "summary": "### Weapon Systems\n- Fixed server null reference error that could cause SpinUpWeapon to malfunction, improving weapon reliability.\n- Fixed multiple third‑person gun attachment issues, including barrel alignment and silencer muzzle offsets, ensuring attachments behave correctly.\n\n### Player Spawn & Item Placement\n- Prevented new players from spawning underwater, fixing a game‑breaking spawn location bug.\n- Improved placement reliability for deployable items such as bags and towels by increasing deployment bounds.\n\n### NPC & AI\n- Fixed travelling vendor spawn failures, ensuring vendors appear consistently without server restarts.\n- Corrected the wolf's initial idle animation, improving its behavior when first encountered.\n\n### Map & UI\n- Added dynamic monument map markers that can change label text and position at runtime, improving map navigation.\n\n### World Generation\n- Adjusted river terrain generation to prevent cliffs from raising terrain over river beds, resulting in smoother rivers.\n\n### Extraction System\n- Added new stash filters (ammo, food, tools, building, etc.) and made extraction jobs stay locked until completed, granting recipes from hand‑ins.\n\n### World & Terrain\n- Fixed a small terrain gap at river source rocks and water pipe decor, preventing players from falling through or seeing missing terrain.\n\n### Camera & View\n- Removed stray first‑person elements that appeared in the shoulder camera view.\n\n### Clothing & Sleep\n- Reverted a previous fix, so sleeping cloth may again clip into the player’s body during sleep animations.\n\n### Customization (Tattoos)\n- Tattoo stencil size now matches screen space, fixing mismatched head/body stamp sizes.\n- Tattoo brush now uses proper sampling, eliminating pixelated brush marks.\n\n### Settings UI\n- Color dropdowns in settings now close correctly after selection.",
     "new_items": [
       {
-        "text": "Travelling vendor now reliably spawns without requiring a server restart.",
+        "text": "Adjusted river terrain generation to prevent cliffs from raising terrain over river beds, resulting in smoother rivers.",
         "commit_ids": [
-          735654,
-          735648
+          735677
         ],
-        "section": "NPC & AI"
+        "section": "World Generation"
       },
       {
-        "text": "Gun attachments now function correctly, fixing previous issues with attachment behavior.",
+        "text": "Added new stash filters (ammo, food, tools, building, etc.) and made extraction jobs stay locked until completed, granting recipes from hand‑ins.",
         "commit_ids": [
-          735632
+          735685,
+          735686
         ],
-        "section": "Gameplay & Balance"
+        "section": "Extraction System"
+      },
+      {
+        "text": "Fixed a small terrain gap at river source rocks and water pipe decor, preventing players from falling through or seeing missing terrain.",
+        "commit_ids": [
+          735700
+        ],
+        "section": "World & Terrain"
+      },
+      {
+        "text": "Removed stray first‑person elements that appeared in the shoulder camera view.",
+        "commit_ids": [
+          735684
+        ],
+        "section": "Camera & View"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Travelling vendor now reliably spawns without requiring a server restart.\n- Gun attachments now function correctly, fixing previous issues with attachment behavior."
+    "new_relevant_count": 5,
+    "new_summary": "- Adjusted river terrain generation to prevent cliffs from raising terrain over river beds, resulting in smoother rivers.\n- Added new stash filters (ammo, food, tools, building, etc.) and made extraction jobs stay locked until completed, granting recipes from hand‑ins.\n- Fixed a small terrain gap at river source rocks and water pipe decor, preventing players from falling through or seeing missing terrain.\n- Removed stray first‑person elements that appeared in the shoulder camera view."
   },
   "2026-11-17": {
     "commit_count": 122,
