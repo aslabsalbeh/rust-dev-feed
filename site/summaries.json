@@ -1,16 +1,16 @@
 {
   "2026-11-18": {
-    "commit_count": 23,
-    "relevant_commit_count": 7,
-    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459",
+    "commit_count": 33,
+    "relevant_commit_count": 9,
+    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Spawning & World",
+        "title": "World & Spawn",
         "items": [
           {
-            "text": "Players no longer spawn underwater or on the sea floor after death.",
+            "text": "Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.",
             "commit_ids": [
               735455,
               735452
@@ -19,13 +19,12 @@
         ]
       },
       {
-        "title": "Weapons",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed a server error that could cause SpinUpWeapon to malfunction or crash.",
+            "text": "Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.",
             "commit_ids": [
-              735391,
-              735394
+              735455
             ]
           }
         ]
@@ -34,9 +33,20 @@
         "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Fixed settings color dropdowns that previously stayed open, restoring normal UI behavior.",
+            "text": "Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection.",
             "commit_ids": [
               735458
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Resolved a server-side null reference error that could prevent SpinUpWeapon from functioning, restoring expected weapon behavior.",
+            "commit_ids": [
+              735391
             ]
           }
         ]
@@ -45,18 +55,25 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Spawning & World\n- Players no longer spawn underwater or on the sea floor after death.\n\n### Weapons\n- Fixed a server error that could cause SpinUpWeapon to malfunction or crash.\n\n### UI & Quality of Life\n- Fixed settings color dropdowns that previously stayed open, restoring normal UI behavior.",
+    "summary": "### World & Spawn\n- Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.\n\n### NPC & AI\n- Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.\n\n### UI & Quality of Life\n- Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection.\n\n### Gameplay & Balance\n- Resolved a server-side null reference error that could prevent SpinUpWeapon from functioning, restoring expected weapon behavior.",
     "new_items": [
       {
-        "text": "Players no longer spawn underwater or on the sea floor after death.",
+        "text": "Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.",
         "commit_ids": [
           735455,
           735452
         ],
-        "section": "Spawning & World"
+        "section": "World & Spawn"
       },
       {
-        "text": "Fixed settings color dropdowns that previously stayed open, restoring normal UI behavior.",
+        "text": "Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.",
+        "commit_ids": [
+          735455
+        ],
+        "section": "NPC & AI"
+      },
+      {
+        "text": "Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection.",
         "commit_ids": [
           735458
         ],
@@ -64,7 +81,7 @@
       }
     ],
     "new_relevant_count": 3,
-    "new_summary": "- Players no longer spawn underwater or on the sea floor after death.\n- Fixed settings color dropdowns that previously stayed open, restoring normal UI behavior."
+    "new_summary": "- Fixed a bug that could spawn new players under the sea, preventing unexpected deaths.\n- Corrected wolves' initial idle behavior, ensuring they act normally when first encountered.\n- Fixed settings menu color dropdowns that previously stayed open, allowing proper navigation and selection."
   },
   "2026-11-17": {
     "commit_count": 122,
