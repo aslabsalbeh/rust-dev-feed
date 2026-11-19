@@ -1,77 +1,79 @@
 {
   "2026-11-18": {
-    "commit_count": 95,
-    "relevant_commit_count": 31,
-    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481,735522,735524,735527,735550,735551,735556,735596,735632,735646,735648,735650,735653,735654,735660,735664,735677,735684,735685,735686,735700,735735,735737",
+    "commit_count": 110,
+    "relevant_commit_count": 35,
+    "relevant_signature": "735391,735394,735452,735454,735455,735458,735459,735474,735481,735522,735524,735527,735550,735551,735556,735596,735632,735646,735648,735650,735653,735654,735660,735664,735677,735684,735685,735686,735700,735735,735737,735739,735756,735762,735775",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Attachments",
+        "title": "Player Spawning & Movement",
         "items": [
           {
-            "text": "Fixed server null‑reference errors for SpinUpWeapon, improving weapon spin‑up reliability.",
+            "text": "Prevent new players from spawning under the sea.",
             "commit_ids": [
-              735391,
-              735394
+              735452,
+              735455
             ]
           },
           {
-            "text": "Corrected barrel, muzzle and silencer offsets for third‑person weapon attachments, eliminating visual and functional attachment issues.",
+            "text": "Fix travelling vendor sometimes failing to spawn until server restart.",
+            "commit_ids": [
+              735648,
+              735654
+            ]
+          },
+          {
+            "text": "Fixed a bug where legs could become stuck after a turn animation, restoring smooth movement.",
+            "commit_ids": [
+              735735
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Deployables",
+        "items": [
+          {
+            "text": "Increase deploy and clear bounds for sleeping bags and towels to improve placement.",
+            "commit_ids": [
+              735522,
+              735524,
+              735527
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapons & Attachments",
+        "items": [
+          {
+            "text": "Fix SpinUpWeapon server null reference error, stabilizing weapon spin‑up.",
+            "commit_ids": [
+              735391
+            ]
+          },
+          {
+            "text": "Various third‑person weapon attachment fixes.",
             "commit_ids": [
               735596,
               735632,
-              735646,
+              735646
+            ]
+          },
+          {
+            "text": "Correct silencer muzzle offsets for all weapons.",
+            "commit_ids": [
               735664
             ]
           }
         ]
       },
       {
-        "title": "Player Spawn & Terrain",
+        "title": "Map & Monuments",
         "items": [
           {
-            "text": "Prevented new players from spawning on the sea floor, stopping underwater spawn deaths.",
-            "commit_ids": [
-              735452,
-              735455,
-              735459
-            ]
-          },
-          {
-            "text": "Adjusted coastal cliff generation near rivers to keep terrain from covering river beds, preserving natural river flow.",
-            "commit_ids": [
-              735677
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Items & Inventory",
-        "items": [
-          {
-            "text": "Increased deploy and clear bounds for bags and towels, making placement more reliable.",
-            "commit_ids": [
-              735522,
-              735524,
-              735527
-            ]
-          },
-          {
-            "text": "Added stash filters for ammo, food, tools, building items and other categories, and changed job unlocking to remain locked until the job is completed with recipes unlocked from hand‑ins.",
-            "commit_ids": [
-              735684,
-              735685,
-              735686
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Map & Navigation",
-        "items": [
-          {
-            "text": "Introduced dynamic monument map marker entities that can change label text and position at runtime, improving map navigation.",
+            "text": "Add dynamic monument map markers that can update label text and position at runtime.",
             "commit_ids": [
               735550,
               735556
@@ -80,24 +82,52 @@
         ]
       },
       {
-        "title": "Vendors",
+        "title": "Inventory, Crafting & AI",
         "items": [
           {
-            "text": "Fixed travelling vendor spawn failures that required a server restart, ensuring vendors appear consistently.",
+            "text": "Added new stash filters for ammo, food, tools, building and other categories, improving inventory organization.",
             "commit_ids": [
-              735648,
-              735654
+              735685
+            ]
+          },
+          {
+            "text": "Jobs now remain locked until the current job is completed, and recipes are granted from hand‑ins, tightening progression and crafting flow.",
+            "commit_ids": [
+              735686
+            ]
+          },
+          {
+            "text": "Scouts can now be heard by the state system, wrecks are searchable for loot, and guard AI is prevented from entering rock interiors, enhancing detection and loot mechanics.",
+            "commit_ids": [
+              735775
             ]
           }
         ]
       },
       {
-        "title": "Movement",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Fixed legs becoming stuck after a turn animation.",
+            "text": "Fixed occasional terrain gaps at river source rocks and roadside decor, preventing players from falling through or getting stuck.",
             "commit_ids": [
-              735735
+              735700
+            ]
+          },
+          {
+            "text": "Adjusted river terrain handling so cliffs no longer block or raise terrain over rivers, ensuring smooth river navigation.",
+            "commit_ids": [
+              735677
+            ]
+          }
+        ]
+      },
+      {
+        "title": "User Interface",
+        "items": [
+          {
+            "text": "Corrected settings color dropdowns so they close properly after selection.",
+            "commit_ids": [
+              735458
             ]
           }
         ]
@@ -106,31 +136,21 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed small terrain gaps at river source rocks and roadside decor, preventing unexpected falls or clipping when traversing those areas.",
+            "text": "Fixed lingering first‑person view elements in the shoulder camera during extraction, removing visual artifacts.",
             "commit_ids": [
-              735700
+              735684
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Settings",
-        "items": [
+          },
           {
-            "text": "Corrected settings color dropdowns so they now close properly after selection, improving menu usability.",
-            "commit_ids": [
-              735458
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Customization",
-        "items": [
-          {
-            "text": "Adjusted tattoo stencil sizing to use screen space, ensuring head and body tattoos match in size and appear consistent.",
+            "text": "Adjusted tattoo stencil sizing to use screen space, aligning head and body tattoo sizes correctly.",
             "commit_ids": [
               735481
+            ]
+          },
+          {
+            "text": "Patched a null reference error during weapon spin‑up, preventing crashes and ensuring consistent firing.",
+            "commit_ids": [
+              735394
             ]
           }
         ]
@@ -139,18 +159,25 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Weapons & Attachments\n- Fixed server null‑reference errors for SpinUpWeapon, improving weapon spin‑up reliability.\n- Corrected barrel, muzzle and silencer offsets for third‑person weapon attachments, eliminating visual and functional attachment issues.\n\n### Player Spawn & Terrain\n- Prevented new players from spawning on the sea floor, stopping underwater spawn deaths.\n- Adjusted coastal cliff generation near rivers to keep terrain from covering river beds, preserving natural river flow.\n\n### Items & Inventory\n- Increased deploy and clear bounds for bags and towels, making placement more reliable.\n- Added stash filters for ammo, food, tools, building items and other categories, and changed job unlocking to remain locked until the job is completed with recipes unlocked from hand‑ins.\n\n### Map & Navigation\n- Introduced dynamic monument map marker entities that can change label text and position at runtime, improving map navigation.\n\n### Vendors\n- Fixed travelling vendor spawn failures that required a server restart, ensuring vendors appear consistently.\n\n### Movement\n- Fixed legs becoming stuck after a turn animation.\n\n### Gameplay & Balance\n- Fixed small terrain gaps at river source rocks and roadside decor, preventing unexpected falls or clipping when traversing those areas.\n\n### UI & Settings\n- Corrected settings color dropdowns so they now close properly after selection, improving menu usability.\n\n### Customization\n- Adjusted tattoo stencil sizing to use screen space, ensuring head and body tattoos match in size and appear consistent.",
+    "summary": "### Player Spawning & Movement\n- Prevent new players from spawning under the sea.\n- Fix travelling vendor sometimes failing to spawn until server restart.\n- Fixed a bug where legs could become stuck after a turn animation, restoring smooth movement.\n\n### Deployables\n- Increase deploy and clear bounds for sleeping bags and towels to improve placement.\n\n### Weapons & Attachments\n- Fix SpinUpWeapon server null reference error, stabilizing weapon spin‑up.\n- Various third‑person weapon attachment fixes.\n- Correct silencer muzzle offsets for all weapons.\n\n### Map & Monuments\n- Add dynamic monument map markers that can update label text and position at runtime.\n\n### Inventory, Crafting & AI\n- Added new stash filters for ammo, food, tools, building and other categories, improving inventory organization.\n- Jobs now remain locked until the current job is completed, and recipes are granted from hand‑ins, tightening progression and crafting flow.\n- Scouts can now be heard by the state system, wrecks are searchable for loot, and guard AI is prevented from entering rock interiors, enhancing detection and loot mechanics.\n\n### World & Environment\n- Fixed occasional terrain gaps at river source rocks and roadside decor, preventing players from falling through or getting stuck.\n- Adjusted river terrain handling so cliffs no longer block or raise terrain over rivers, ensuring smooth river navigation.\n\n### User Interface\n- Corrected settings color dropdowns so they close properly after selection.\n\n### Gameplay & Balance\n- Fixed lingering first‑person view elements in the shoulder camera during extraction, removing visual artifacts.\n- Adjusted tattoo stencil sizing to use screen space, aligning head and body tattoo sizes correctly.\n- Patched a null reference error during weapon spin‑up, preventing crashes and ensuring consistent firing.",
     "new_items": [
       {
-        "text": "Fixed legs becoming stuck after a turn animation.",
+        "text": "Fixed a bug where legs could become stuck after a turn animation, restoring smooth movement.",
         "commit_ids": [
           735735
         ],
-        "section": "Movement"
+        "section": "Player Spawning & Movement"
+      },
+      {
+        "text": "Scouts can now be heard by the state system, wrecks are searchable for loot, and guard AI is prevented from entering rock interiors, enhancing detection and loot mechanics.",
+        "commit_ids": [
+          735775
+        ],
+        "section": "Inventory, Crafting & AI"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Fixed legs becoming stuck after a turn animation."
+    "new_relevant_count": 2,
+    "new_summary": "- Fixed a bug where legs could become stuck after a turn animation, restoring smooth movement.\n- Scouts can now be heard by the state system, wrecks are searchable for loot, and guard AI is prevented from entering rock interiors, enhancing detection and loot mechanics."
   },
   "2026-11-17": {
     "commit_count": 122,
