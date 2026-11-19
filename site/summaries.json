@@ -1,8 +1,8 @@
 {
   "2026-11-19": {
-    "commit_count": 114,
-    "relevant_commit_count": 41,
-    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068,736085,736086,736087,736088,736089,736090,736092,736095,736105,736106,736117",
+    "commit_count": 127,
+    "relevant_commit_count": 42,
+    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068,736085,736086,736087,736088,736089,736090,736092,736095,736105,736106,736117,736155",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
@@ -10,23 +10,29 @@
         "title": "Weapons",
         "items": [
           {
-            "text": "Flamethrower fuel gauge now correctly tracks fuel.",
+            "text": "Flamethrower fuel gauge needle now correctly tracks fuel.",
             "commit_ids": [
               735887,
               735888
             ]
           },
           {
-            "text": "Mid‑reload magazine bug fixed for smoother weapon reloads.",
+            "text": "Mid-reload magazine bug fixed, allowing smoother reloads.",
             "commit_ids": [
               735905
             ]
           },
           {
-            "text": "Uzi turn‑loop/spinning issue resolved, preventing stuck rotation when aiming.",
+            "text": "Fixed turn-in-place looping issue for the Uzi and other weapons, improving handling during turns.",
             "commit_ids": [
               736024,
               736025
+            ]
+          },
+          {
+            "text": "Added the remaining gun types, expanding the weapon roster.",
+            "commit_ids": [
+              736155
             ]
           }
         ]
@@ -35,13 +41,7 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Patrol helicopter rockets restored to proper functionality.",
-            "commit_ids": [
-              735896
-            ]
-          },
-          {
-            "text": "PT Boat front turret balance adjusted for better handling.",
+            "text": "PT boat front turret balance adjusted.",
             "commit_ids": [
               735899
             ]
@@ -49,16 +49,16 @@
         ]
       },
       {
-        "title": "World & Terrain",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Procedural generation fixes improve rivers, water pipes, inland spawns, train entrances, underwater flora, and terrain gaps.",
+            "text": "Procedural generation fixes (river gaps, missing train entrance, waterpipe placement, underwater grass/rocks) improve map consistency.",
             "commit_ids": [
               736020
             ]
           },
           {
-            "text": "Added TerrainHeightRaise objects to underground train tunnel junctions, preventing terrain collisions that could kill players or items.",
+            "text": "Fixed rare deaths in underground train tunnel junctions by adding TerrainHeightRaise objects to prevent terrain-collision triggers overlapping the seabed.",
             "commit_ids": [
               736057
             ]
@@ -69,19 +69,19 @@
         "title": "Base & Building",
         "items": [
           {
-            "text": "Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.",
+            "text": "Door placement and destruction now update only the modified door, reducing server-wide refreshes.",
             "commit_ids": [
               736085
             ]
           },
           {
-            "text": "Deployable logic now checks only the most recent building block changes, improving building reliability.",
+            "text": "Deployable logic now checks only the most recent building-block changes, improving building reliability.",
             "commit_ids": [
               736086
             ]
           },
           {
-            "text": "Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.",
+            "text": "Base occlusion visual bugs fixed: contents correctly hidden or shown behind ladder hatches, armored doors, and industrial garage doors.",
             "commit_ids": [
               736089,
               736090,
@@ -91,53 +91,18 @@
         ]
       },
       {
-        "title": "Audio",
+        "title": "Audio & Interactions",
         "items": [
           {
-            "text": "Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases.",
+            "text": "Computer station dismount bug fixed, allowing players to exit stations properly.",
+            "commit_ids": [
+              735902
+            ]
+          },
+          {
+            "text": "Audio for room-occluded entities now plays correctly when appropriate.",
             "commit_ids": [
               736117
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Generation & Environment",
-        "items": [
-          {
-            "text": "Fixed river source gaps, improving water flow consistency.",
-            "commit_ids": [
-              736014
-            ]
-          },
-          {
-            "text": "Prevented terrain from being raised around rivers, preserving natural riverbanks.",
-            "commit_ids": [
-              736013
-            ]
-          },
-          {
-            "text": "Added underwater grass and rocks, restoring expected underwater resources.",
-            "commit_ids": [
-              736012
-            ]
-          },
-          {
-            "text": "Restored missing train entrance structures, ensuring train travel works as intended.",
-            "commit_ids": [
-              736011
-            ]
-          },
-          {
-            "text": "Adjusted inland spawn locations for better resource distribution.",
-            "commit_ids": [
-              736010
-            ]
-          },
-          {
-            "text": "Improved river avoidance logic, reducing unnatural terrain intersections.",
-            "commit_ids": [
-              736008
             ]
           }
         ]
@@ -146,21 +111,15 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Fixed a bug where players could not dismount from computer stations.",
-            "commit_ids": [
-              735902
-            ]
-          },
-          {
-            "text": "Corrected off‑center snapping, allowing structures to align properly when placed.",
+            "text": "Fixed off‑center building snapping, improving placement precision.",
             "commit_ids": [
               735897
             ]
           },
           {
-            "text": "Fixed water pipe structures spawning on roads, removing obstruction for road building and vehicle movement.",
+            "text": "Patrol helicopter rockets now function correctly, restoring aerial combat capability.",
             "commit_ids": [
-              736009
+              735896
             ]
           }
         ]
@@ -169,41 +128,25 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Weapons\n- Flamethrower fuel gauge now correctly tracks fuel.\n- Mid‑reload magazine bug fixed for smoother weapon reloads.\n- Uzi turn‑loop/spinning issue resolved, preventing stuck rotation when aiming.\n\n### Vehicles\n- Patrol helicopter rockets restored to proper functionality.\n- PT Boat front turret balance adjusted for better handling.\n\n### World & Terrain\n- Procedural generation fixes improve rivers, water pipes, inland spawns, train entrances, underwater flora, and terrain gaps.\n- Added TerrainHeightRaise objects to underground train tunnel junctions, preventing terrain collisions that could kill players or items.\n\n### Base & Building\n- Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.\n- Deployable logic now checks only the most recent building block changes, improving building reliability.\n- Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.\n\n### Audio\n- Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases.\n\n### World Generation & Environment\n- Fixed river source gaps, improving water flow consistency.\n- Prevented terrain from being raised around rivers, preserving natural riverbanks.\n- Added underwater grass and rocks, restoring expected underwater resources.\n- Restored missing train entrance structures, ensuring train travel works as intended.\n- Adjusted inland spawn locations for better resource distribution.\n- Improved river avoidance logic, reducing unnatural terrain intersections.\n\n### Gameplay & Balance\n- Fixed a bug where players could not dismount from computer stations.\n- Corrected off‑center snapping, allowing structures to align properly when placed.\n- Fixed water pipe structures spawning on roads, removing obstruction for road building and vehicle movement.",
+    "summary": "### Weapons\n- Flamethrower fuel gauge needle now correctly tracks fuel.\n- Mid-reload magazine bug fixed, allowing smoother reloads.\n- Fixed turn-in-place looping issue for the Uzi and other weapons, improving handling during turns.\n- Added the remaining gun types, expanding the weapon roster.\n\n### Vehicles\n- PT boat front turret balance adjusted.\n\n### World & Environment\n- Procedural generation fixes (river gaps, missing train entrance, waterpipe placement, underwater grass/rocks) improve map consistency.\n- Fixed rare deaths in underground train tunnel junctions by adding TerrainHeightRaise objects to prevent terrain-collision triggers overlapping the seabed.\n\n### Base & Building\n- Door placement and destruction now update only the modified door, reducing server-wide refreshes.\n- Deployable logic now checks only the most recent building-block changes, improving building reliability.\n- Base occlusion visual bugs fixed: contents correctly hidden or shown behind ladder hatches, armored doors, and industrial garage doors.\n\n### Audio & Interactions\n- Computer station dismount bug fixed, allowing players to exit stations properly.\n- Audio for room-occluded entities now plays correctly when appropriate.\n\n### Gameplay & Balance\n- Fixed off‑center building snapping, improving placement precision.\n- Patrol helicopter rockets now function correctly, restoring aerial combat capability.",
     "new_items": [
       {
-        "text": "Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.",
+        "text": "Added the remaining gun types, expanding the weapon roster.",
         "commit_ids": [
-          736085
+          736155
         ],
-        "section": "Base & Building"
+        "section": "Weapons"
       },
       {
-        "text": "Deployable logic now checks only the most recent building block changes, improving building reliability.",
-        "commit_ids": [
-          736086
-        ],
-        "section": "Base & Building"
-      },
-      {
-        "text": "Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.",
-        "commit_ids": [
-          736089,
-          736090,
-          736092
-        ],
-        "section": "Base & Building"
-      },
-      {
-        "text": "Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases.",
+        "text": "Audio for room-occluded entities now plays correctly when appropriate.",
         "commit_ids": [
           736117
         ],
-        "section": "Audio"
+        "section": "Audio & Interactions"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.\n- Deployable logic now checks only the most recent building block changes, improving building reliability.\n- Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.\n- Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases."
+    "new_relevant_count": 2,
+    "new_summary": "- Added the remaining gun types, expanding the weapon roster.\n- Audio for room-occluded entities now plays correctly when appropriate."
   },
   "2026-11-18": {
     "commit_count": 114,
