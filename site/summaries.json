@@ -1,29 +1,29 @@
 {
   "2026-11-19": {
-    "commit_count": 94,
-    "relevant_commit_count": 30,
-    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068",
+    "commit_count": 114,
+    "relevant_commit_count": 41,
+    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068,736085,736086,736087,736088,736089,736090,736092,736095,736105,736106,736117",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons & Tools",
+        "title": "Weapons",
         "items": [
           {
-            "text": "Flamethrower fuel gauge needle now correctly tracks remaining fuel.",
+            "text": "Flamethrower fuel gauge now correctly tracks fuel.",
             "commit_ids": [
               735887,
               735888
             ]
           },
           {
-            "text": "Mid‑reload magazine bug fixed, allowing magazines to reload correctly during combat.",
+            "text": "Mid‑reload magazine bug fixed for smoother weapon reloads.",
             "commit_ids": [
               735905
             ]
           },
           {
-            "text": "Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.",
+            "text": "Uzi turn‑loop/spinning issue resolved, preventing stuck rotation when aiming.",
             "commit_ids": [
               736024,
               736025
@@ -35,15 +35,68 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "Patrol helicopter rockets fixed, restoring their functionality.",
+            "text": "Patrol helicopter rockets restored to proper functionality.",
             "commit_ids": [
               735896
             ]
           },
           {
-            "text": "PT boat front turret damage balanced for fairer combat.",
+            "text": "PT Boat front turret balance adjusted for better handling.",
             "commit_ids": [
               735899
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Terrain",
+        "items": [
+          {
+            "text": "Procedural generation fixes improve rivers, water pipes, inland spawns, train entrances, underwater flora, and terrain gaps.",
+            "commit_ids": [
+              736020
+            ]
+          },
+          {
+            "text": "Added TerrainHeightRaise objects to underground train tunnel junctions, preventing terrain collisions that could kill players or items.",
+            "commit_ids": [
+              736057
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Base & Building",
+        "items": [
+          {
+            "text": "Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.",
+            "commit_ids": [
+              736085
+            ]
+          },
+          {
+            "text": "Deployable logic now checks only the most recent building block changes, improving building reliability.",
+            "commit_ids": [
+              736086
+            ]
+          },
+          {
+            "text": "Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.",
+            "commit_ids": [
+              736089,
+              736090,
+              736092
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Audio",
+        "items": [
+          {
+            "text": "Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases.",
+            "commit_ids": [
+              736117
             ]
           }
         ]
@@ -52,44 +105,62 @@
         "title": "World Generation & Environment",
         "items": [
           {
-            "text": "Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.",
+            "text": "Fixed river source gaps, improving water flow consistency.",
             "commit_ids": [
-              736008,
-              736009,
-              736010,
-              736011,
-              736012,
-              736013,
-              736014,
-              736020
+              736014
+            ]
+          },
+          {
+            "text": "Prevented terrain from being raised around rivers, preserving natural riverbanks.",
+            "commit_ids": [
+              736013
+            ]
+          },
+          {
+            "text": "Added underwater grass and rocks, restoring expected underwater resources.",
+            "commit_ids": [
+              736012
+            ]
+          },
+          {
+            "text": "Restored missing train entrance structures, ensuring train travel works as intended.",
+            "commit_ids": [
+              736011
+            ]
+          },
+          {
+            "text": "Adjusted inland spawn locations for better resource distribution.",
+            "commit_ids": [
+              736010
+            ]
+          },
+          {
+            "text": "Improved river avoidance logic, reducing unnatural terrain intersections.",
+            "commit_ids": [
+              736008
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Interaction",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Computer station dismount bug fixed, allowing players to safely exit stations.",
+            "text": "Fixed a bug where players could not dismount from computer stations.",
             "commit_ids": [
               735902
             ]
           },
           {
-            "text": "Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed.",
-            "commit_ids": [
-              736057
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Construction",
-        "items": [
-          {
-            "text": "Fixed off‑center snapping, ensuring structures align precisely when placed.",
+            "text": "Corrected off‑center snapping, allowing structures to align properly when placed.",
             "commit_ids": [
               735897
+            ]
+          },
+          {
+            "text": "Fixed water pipe structures spawning on roads, removing obstruction for road building and vehicle movement.",
+            "commit_ids": [
+              736009
             ]
           }
         ]
@@ -98,40 +169,41 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Weapons & Tools\n- Flamethrower fuel gauge needle now correctly tracks remaining fuel.\n- Mid‑reload magazine bug fixed, allowing magazines to reload correctly during combat.\n- Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.\n\n### Vehicles\n- Patrol helicopter rockets fixed, restoring their functionality.\n- PT boat front turret damage balanced for fairer combat.\n\n### World Generation & Environment\n- Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.\n\n### Gameplay & Interaction\n- Computer station dismount bug fixed, allowing players to safely exit stations.\n- Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed.\n\n### Building & Construction\n- Fixed off‑center snapping, ensuring structures align precisely when placed.",
+    "summary": "### Weapons\n- Flamethrower fuel gauge now correctly tracks fuel.\n- Mid‑reload magazine bug fixed for smoother weapon reloads.\n- Uzi turn‑loop/spinning issue resolved, preventing stuck rotation when aiming.\n\n### Vehicles\n- Patrol helicopter rockets restored to proper functionality.\n- PT Boat front turret balance adjusted for better handling.\n\n### World & Terrain\n- Procedural generation fixes improve rivers, water pipes, inland spawns, train entrances, underwater flora, and terrain gaps.\n- Added TerrainHeightRaise objects to underground train tunnel junctions, preventing terrain collisions that could kill players or items.\n\n### Base & Building\n- Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.\n- Deployable logic now checks only the most recent building block changes, improving building reliability.\n- Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.\n\n### Audio\n- Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases.\n\n### World Generation & Environment\n- Fixed river source gaps, improving water flow consistency.\n- Prevented terrain from being raised around rivers, preserving natural riverbanks.\n- Added underwater grass and rocks, restoring expected underwater resources.\n- Restored missing train entrance structures, ensuring train travel works as intended.\n- Adjusted inland spawn locations for better resource distribution.\n- Improved river avoidance logic, reducing unnatural terrain intersections.\n\n### Gameplay & Balance\n- Fixed a bug where players could not dismount from computer stations.\n- Corrected off‑center snapping, allowing structures to align properly when placed.\n- Fixed water pipe structures spawning on roads, removing obstruction for road building and vehicle movement.",
     "new_items": [
       {
-        "text": "Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.",
+        "text": "Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.",
         "commit_ids": [
-          736024,
-          736025
+          736085
         ],
-        "section": "Weapons & Tools"
+        "section": "Base & Building"
       },
       {
-        "text": "Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.",
+        "text": "Deployable logic now checks only the most recent building block changes, improving building reliability.",
         "commit_ids": [
-          736008,
-          736009,
-          736010,
-          736011,
-          736012,
-          736013,
-          736014,
-          736020
+          736086
         ],
-        "section": "World Generation & Environment"
+        "section": "Base & Building"
       },
       {
-        "text": "Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed.",
+        "text": "Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.",
         "commit_ids": [
-          736057
+          736089,
+          736090,
+          736092
         ],
-        "section": "Gameplay & Interaction"
+        "section": "Base & Building"
+      },
+      {
+        "text": "Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases.",
+        "commit_ids": [
+          736117
+        ],
+        "section": "Audio"
       }
     ],
-    "new_relevant_count": 11,
-    "new_summary": "- Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.\n- Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.\n- Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed."
+    "new_relevant_count": 6,
+    "new_summary": "- Door placement and destruction now refresh only the modified door, reducing unnecessary server updates.\n- Deployable logic now checks only the most recent building block changes, improving building reliability.\n- Base occlusion visual bugs fixed: contents correctly hidden behind closed ladder hatches, armored doors with open hatches, and shut industrial garage doors.\n- Room‑occluded entities now produce audible sounds, restoring expected sound cues inside bases."
   },
   "2026-11-18": {
     "commit_count": 114,
