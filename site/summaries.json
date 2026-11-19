@@ -1,29 +1,29 @@
 {
   "2026-11-19": {
-    "commit_count": 74,
-    "relevant_commit_count": 26,
-    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025",
+    "commit_count": 94,
+    "relevant_commit_count": 30,
+    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Weapons",
+        "title": "Weapons & Tools",
         "items": [
           {
-            "text": "Flamethrower fuel gauge now correctly tracks fuel.",
+            "text": "Flamethrower fuel gauge needle now correctly tracks remaining fuel.",
             "commit_ids": [
               735887,
               735888
             ]
           },
           {
-            "text": "Mid‑reload magazine bug fixed for smoother reloads.",
+            "text": "Mid‑reload magazine bug fixed, allowing magazines to reload correctly during combat.",
             "commit_ids": [
               735905
             ]
           },
           {
-            "text": "Uzi turn‑loop issue resolved, eliminating stuck turning and animation glitches while rotating.",
+            "text": "Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.",
             "commit_ids": [
               736024,
               736025
@@ -32,27 +32,27 @@
         ]
       },
       {
-        "title": "Vehicles & Structures",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Front turret damage on PT boats rebalanced.",
+            "text": "Patrol helicopter rockets fixed, restoring their functionality.",
             "commit_ids": [
-              735899
+              735896
             ]
           },
           {
-            "text": "Computer stations can now be dismounted reliably.",
+            "text": "PT boat front turret damage balanced for fairer combat.",
             "commit_ids": [
-              735902
+              735899
             ]
           }
         ]
       },
       {
-        "title": "World Generation",
+        "title": "World Generation & Environment",
         "items": [
           {
-            "text": "Procedural‑generation fixes improve river handling, water‑pipe placement, inland spawn locations, add missing train entrance, and restore underwater grass and rocks.",
+            "text": "Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.",
             "commit_ids": [
               736008,
               736009,
@@ -67,18 +67,29 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Gameplay & Interaction",
         "items": [
           {
-            "text": "Building placement snapping is corrected, preventing off‑center misalignment of structures.",
+            "text": "Computer station dismount bug fixed, allowing players to safely exit stations.",
             "commit_ids": [
-              735897
+              735902
             ]
           },
           {
-            "text": "Patrol helicopter rockets now function correctly, dealing intended damage and behaving as expected in combat.",
+            "text": "Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed.",
             "commit_ids": [
-              735896
+              736057
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building & Construction",
+        "items": [
+          {
+            "text": "Fixed off‑center snapping, ensuring structures align precisely when placed.",
+            "commit_ids": [
+              735897
             ]
           }
         ]
@@ -87,18 +98,18 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Weapons\n- Flamethrower fuel gauge now correctly tracks fuel.\n- Mid‑reload magazine bug fixed for smoother reloads.\n- Uzi turn‑loop issue resolved, eliminating stuck turning and animation glitches while rotating.\n\n### Vehicles & Structures\n- Front turret damage on PT boats rebalanced.\n- Computer stations can now be dismounted reliably.\n\n### World Generation\n- Procedural‑generation fixes improve river handling, water‑pipe placement, inland spawn locations, add missing train entrance, and restore underwater grass and rocks.\n\n### Gameplay & Balance\n- Building placement snapping is corrected, preventing off‑center misalignment of structures.\n- Patrol helicopter rockets now function correctly, dealing intended damage and behaving as expected in combat.",
+    "summary": "### Weapons & Tools\n- Flamethrower fuel gauge needle now correctly tracks remaining fuel.\n- Mid‑reload magazine bug fixed, allowing magazines to reload correctly during combat.\n- Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.\n\n### Vehicles\n- Patrol helicopter rockets fixed, restoring their functionality.\n- PT boat front turret damage balanced for fairer combat.\n\n### World Generation & Environment\n- Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.\n\n### Gameplay & Interaction\n- Computer station dismount bug fixed, allowing players to safely exit stations.\n- Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed.\n\n### Building & Construction\n- Fixed off‑center snapping, ensuring structures align precisely when placed.",
     "new_items": [
       {
-        "text": "Uzi turn‑loop issue resolved, eliminating stuck turning and animation glitches while rotating.",
+        "text": "Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.",
         "commit_ids": [
           736024,
           736025
         ],
-        "section": "Weapons"
+        "section": "Weapons & Tools"
       },
       {
-        "text": "Procedural‑generation fixes improve river handling, water‑pipe placement, inland spawn locations, add missing train entrance, and restore underwater grass and rocks.",
+        "text": "Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.",
         "commit_ids": [
           736008,
           736009,
@@ -109,11 +120,18 @@
           736014,
           736020
         ],
-        "section": "World Generation"
+        "section": "World Generation & Environment"
+      },
+      {
+        "text": "Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed.",
+        "commit_ids": [
+          736057
+        ],
+        "section": "Gameplay & Interaction"
       }
     ],
-    "new_relevant_count": 10,
-    "new_summary": "- Uzi turn‑loop issue resolved, eliminating stuck turning and animation glitches while rotating.\n- Procedural‑generation fixes improve river handling, water‑pipe placement, inland spawn locations, add missing train entrance, and restore underwater grass and rocks."
+    "new_relevant_count": 11,
+    "new_summary": "- Turning while holding the Uzi no longer gets stuck in a loop, restoring normal movement.\n- Multiple procedural‑generation issues resolved: river terrain gaps, missing train entrance, water‑pipe placement on roads, inland spawn locations, underwater grass/rock placement, and river source gaps.\n- Added extra TerrainHeightRaise objects to underground train tunnel junction prefabs, eliminating rare TerrainCollisionTrigger overlaps that caused players and dropped items to die on the seabed."
   },
   "2026-11-18": {
     "commit_count": 114,
