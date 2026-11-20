@@ -6,54 +6,73 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 19 Nov 2026 18:17:43 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 20:18:26 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 19</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;127 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;149 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736155"&gt;Added the remaining gun types, expanding the weapon roster.&lt;/li&gt;
-&lt;li data-rust-commits="736117"&gt;Audio for room-occluded entities now plays correctly when appropriate.&lt;/li&gt;
+&lt;li data-rust-commits="736171"&gt;Scouts take longer to notice and investigate brief sightings, especially near large monuments, making stealth approaches more viable.&lt;/li&gt;
+&lt;li data-rust-commits="736167"&gt;Backpack size increased for raids and burlap clothing is now available, expanding inventory capacity and outfit options.&lt;/li&gt;
+&lt;li data-rust-commits="736174"&gt;Roadside junk piles on the raid map have been halved, clearing pathways and reducing clutter.&lt;/li&gt;
+&lt;li data-rust-commits="736168,736170,736176,736177,736178,736179,736180"&gt;Several quality‑of‑life upgrades: missions board tab now closes with Escape/Tab, shoulder camera aligns the barrel with the crosshair, quick‑craft pie added for fast food, quick‑craft queueing and cancellation with smoother movement, melee swings line up with the crosshair, and reticle/camera settings have been refined.&lt;/li&gt;
+&lt;li data-rust-commits="736155"&gt;Added the remaining weapon types, expanding the arsenal available to players.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3&gt;Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="735887,735888"&gt;Flamethrower fuel gauge needle now correctly tracks fuel.&lt;/li&gt;
-&lt;li data-rust-commits="735905"&gt;Mid-reload magazine bug fixed, allowing smoother reloads.&lt;/li&gt;
-&lt;li data-rust-commits="736024,736025"&gt;Fixed turn-in-place looping issue for the Uzi and other weapons, improving handling during turns.&lt;/li&gt;
-&lt;li data-rust-commits="736155"&gt;Added the remaining gun types, expanding the weapon roster.&lt;/li&gt;
+&lt;li data-rust-commits="735887,735888,735905"&gt;Flamethrower now shows fuel correctly and reloads complete reliably, fixing the empty‑gauge and mid‑reload bugs.&lt;/li&gt;
+&lt;li data-rust-commits="736024,736025"&gt;Uzi turn‑loop issue resolved, eliminating the stuck‑turning behavior and improving handling.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Vehicles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="735899"&gt;PT boat front turret balance adjusted.&lt;/li&gt;
+&lt;li data-rust-commits="735899"&gt;PT boat front turret rebalanced for more appropriate damage and smoother handling.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736020"&gt;Procedural generation fixes (river gaps, missing train entrance, waterpipe placement, underwater grass/rocks) improve map consistency.&lt;/li&gt;
-&lt;li data-rust-commits="736057"&gt;Fixed rare deaths in underground train tunnel junctions by adding TerrainHeightRaise objects to prevent terrain-collision triggers overlapping the seabed.&lt;/li&gt;
+&lt;li data-rust-commits="736057"&gt;Added extra TerrainHeightRaise objects in underground train tunnel junctions, preventing rare deaths from terrain collision overlap.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Base &amp;amp; Building&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736085"&gt;Door placement and destruction now update only the modified door, reducing server-wide refreshes.&lt;/li&gt;
-&lt;li data-rust-commits="736086"&gt;Deployable logic now checks only the most recent building-block changes, improving building reliability.&lt;/li&gt;
-&lt;li data-rust-commits="736089,736090,736092"&gt;Base occlusion visual bugs fixed: contents correctly hidden or shown behind ladder hatches, armored doors, and industrial garage doors.&lt;/li&gt;
+&lt;li data-rust-commits="736085,736086"&gt;Door placement and destruction now affect only the targeted door, and deployables check only the most recent building changes, reducing unintended breakage.&lt;/li&gt;
+&lt;li data-rust-commits="736089,736090,736092"&gt;Base occlusion visuals fixed: ladders, armored doors, and industrial garage doors now correctly hide interior contents when closed.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Audio &amp;amp; Interactions&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Audio&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="735902"&gt;Computer station dismount bug fixed, allowing players to exit stations properly.&lt;/li&gt;
-&lt;li data-rust-commits="736117"&gt;Audio for room-occluded entities now plays correctly when appropriate.&lt;/li&gt;
+&lt;li data-rust-commits="736117"&gt;Sounds from room‑occluded entities are audible again, restoring expected audio cues.&lt;/li&gt;
+&lt;li data-rust-commits="736171"&gt;Scouts take longer to notice and investigate brief sightings, especially near large monuments, making stealth approaches more viable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Extraction &amp;amp; Map Changes&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="735897"&gt;Fixed off‑center building snapping, improving placement precision.&lt;/li&gt;
-&lt;li data-rust-commits="735896"&gt;Patrol helicopter rockets now function correctly, restoring aerial combat capability.&lt;/li&gt;
+&lt;li data-rust-commits="736167"&gt;Backpack size increased for raids and burlap clothing is now available, expanding inventory capacity and outfit options.&lt;/li&gt;
+&lt;li data-rust-commits="736174"&gt;Roadside junk piles on the raid map have been halved, clearing pathways and reducing clutter.&lt;/li&gt;
+&lt;li data-rust-commits="736168,736170,736176,736177,736178,736179,736180"&gt;Several quality‑of‑life upgrades: missions board tab now closes with Escape/Tab, shoulder camera aligns the barrel with the crosshair, quick‑craft pie added for fast food, quick‑craft queueing and cancellation with smoother movement, melee swings line up with the crosshair, and reticle/camera settings have been refined.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World Generation &amp;amp; Environment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="736014"&gt;Fixed river source gaps, eliminating water holes that could trap players or disrupt base building.&lt;/li&gt;
+&lt;li data-rust-commits="736013"&gt;Stopped terrain from being raised around rivers, providing smoother riverbanks for construction.&lt;/li&gt;
+&lt;li data-rust-commits="736011"&gt;Restored missing train station entrances, re-enabling access to train travel.&lt;/li&gt;
+&lt;li data-rust-commits="736010"&gt;Adjusted inland spawn placement to prevent spawns in undesirable interior locations.&lt;/li&gt;
+&lt;li data-rust-commits="736009"&gt;Prevented water pipes from spawning on roads, removing obstruction to road networks.&lt;/li&gt;
+&lt;li data-rust-commits="736008"&gt;Improved river avoidance logic in terrain generation, reducing structures intersecting rivers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="736155"&gt;Added the remaining weapon types, expanding the arsenal available to players.&lt;/li&gt;
+&lt;li data-rust-commits="735896"&gt;Re-enabled rockets on patrol helicopters, restoring their combat capability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Interaction &amp;amp; Building&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="735902"&gt;Fixed a bug that prevented players from properly dismounting from computer stations.&lt;/li&gt;
+&lt;li data-rust-commits="735897"&gt;Corrected off‑center snapping, ensuring buildings align accurately to the grid.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-19</guid>
-      <pubDate>Thu, 19 Nov 2026 18:17:43 -0500</pubDate>
+      <pubDate>Thu, 19 Nov 2026 20:18:26 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 18</title>

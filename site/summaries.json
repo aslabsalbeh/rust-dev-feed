@@ -1,8 +1,8 @@
 {
   "2026-11-19": {
-    "commit_count": 127,
-    "relevant_commit_count": 42,
-    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068,736085,736086,736087,736088,736089,736090,736092,736095,736105,736106,736117,736155",
+    "commit_count": 149,
+    "relevant_commit_count": 55,
+    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068,736085,736086,736087,736088,736089,736090,736092,736095,736105,736106,736117,736155,736164,736167,736168,736170,736171,736174,736175,736176,736177,736178,736179,736180,736184",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
@@ -10,29 +10,18 @@
         "title": "Weapons",
         "items": [
           {
-            "text": "Flamethrower fuel gauge needle now correctly tracks fuel.",
+            "text": "Flamethrower now shows fuel correctly and reloads complete reliably, fixing the empty‑gauge and mid‑reload bugs.",
             "commit_ids": [
               735887,
-              735888
-            ]
-          },
-          {
-            "text": "Mid-reload magazine bug fixed, allowing smoother reloads.",
-            "commit_ids": [
+              735888,
               735905
             ]
           },
           {
-            "text": "Fixed turn-in-place looping issue for the Uzi and other weapons, improving handling during turns.",
+            "text": "Uzi turn‑loop issue resolved, eliminating the stuck‑turning behavior and improving handling.",
             "commit_ids": [
               736024,
               736025
-            ]
-          },
-          {
-            "text": "Added the remaining gun types, expanding the weapon roster.",
-            "commit_ids": [
-              736155
             ]
           }
         ]
@@ -41,7 +30,7 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "PT boat front turret balance adjusted.",
+            "text": "PT boat front turret rebalanced for more appropriate damage and smoother handling.",
             "commit_ids": [
               735899
             ]
@@ -52,13 +41,7 @@
         "title": "World & Environment",
         "items": [
           {
-            "text": "Procedural generation fixes (river gaps, missing train entrance, waterpipe placement, underwater grass/rocks) improve map consistency.",
-            "commit_ids": [
-              736020
-            ]
-          },
-          {
-            "text": "Fixed rare deaths in underground train tunnel junctions by adding TerrainHeightRaise objects to prevent terrain-collision triggers overlapping the seabed.",
+            "text": "Added extra TerrainHeightRaise objects in underground train tunnel junctions, preventing rare deaths from terrain collision overlap.",
             "commit_ids": [
               736057
             ]
@@ -69,19 +52,14 @@
         "title": "Base & Building",
         "items": [
           {
-            "text": "Door placement and destruction now update only the modified door, reducing server-wide refreshes.",
+            "text": "Door placement and destruction now affect only the targeted door, and deployables check only the most recent building changes, reducing unintended breakage.",
             "commit_ids": [
-              736085
-            ]
-          },
-          {
-            "text": "Deployable logic now checks only the most recent building-block changes, improving building reliability.",
-            "commit_ids": [
+              736085,
               736086
             ]
           },
           {
-            "text": "Base occlusion visual bugs fixed: contents correctly hidden or shown behind ladder hatches, armored doors, and industrial garage doors.",
+            "text": "Base occlusion visuals fixed: ladders, armored doors, and industrial garage doors now correctly hide interior contents when closed.",
             "commit_ids": [
               736089,
               736090,
@@ -91,35 +69,122 @@
         ]
       },
       {
-        "title": "Audio & Interactions",
+        "title": "Gameplay & Audio",
         "items": [
           {
-            "text": "Computer station dismount bug fixed, allowing players to exit stations properly.",
+            "text": "Sounds from room‑occluded entities are audible again, restoring expected audio cues.",
             "commit_ids": [
-              735902
+              736117
             ]
           },
           {
-            "text": "Audio for room-occluded entities now plays correctly when appropriate.",
+            "text": "Scouts take longer to notice and investigate brief sightings, especially near large monuments, making stealth approaches more viable.",
             "commit_ids": [
-              736117
+              736171
             ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Extraction & Map Changes",
         "items": [
           {
-            "text": "Fixed off‑center building snapping, improving placement precision.",
+            "text": "Backpack size increased for raids and burlap clothing is now available, expanding inventory capacity and outfit options.",
             "commit_ids": [
-              735897
+              736167
             ]
           },
           {
-            "text": "Patrol helicopter rockets now function correctly, restoring aerial combat capability.",
+            "text": "Roadside junk piles on the raid map have been halved, clearing pathways and reducing clutter.",
+            "commit_ids": [
+              736174
+            ]
+          },
+          {
+            "text": "Several quality‑of‑life upgrades: missions board tab now closes with Escape/Tab, shoulder camera aligns the barrel with the crosshair, quick‑craft pie added for fast food, quick‑craft queueing and cancellation with smoother movement, melee swings line up with the crosshair, and reticle/camera settings have been refined.",
+            "commit_ids": [
+              736168,
+              736170,
+              736176,
+              736177,
+              736178,
+              736179,
+              736180
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation & Environment",
+        "items": [
+          {
+            "text": "Fixed river source gaps, eliminating water holes that could trap players or disrupt base building.",
+            "commit_ids": [
+              736014
+            ]
+          },
+          {
+            "text": "Stopped terrain from being raised around rivers, providing smoother riverbanks for construction.",
+            "commit_ids": [
+              736013
+            ]
+          },
+          {
+            "text": "Restored missing train station entrances, re-enabling access to train travel.",
+            "commit_ids": [
+              736011
+            ]
+          },
+          {
+            "text": "Adjusted inland spawn placement to prevent spawns in undesirable interior locations.",
+            "commit_ids": [
+              736010
+            ]
+          },
+          {
+            "text": "Prevented water pipes from spawning on roads, removing obstruction to road networks.",
+            "commit_ids": [
+              736009
+            ]
+          },
+          {
+            "text": "Improved river avoidance logic in terrain generation, reducing structures intersecting rivers.",
+            "commit_ids": [
+              736008
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Weapons",
+        "items": [
+          {
+            "text": "Added the remaining weapon types, expanding the arsenal available to players.",
+            "commit_ids": [
+              736155
+            ]
+          },
+          {
+            "text": "Re-enabled rockets on patrol helicopters, restoring their combat capability.",
             "commit_ids": [
               735896
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interaction & Building",
+        "items": [
+          {
+            "text": "Fixed a bug that prevented players from properly dismounting from computer stations.",
+            "commit_ids": [
+              735902
+            ]
+          },
+          {
+            "text": "Corrected off‑center snapping, ensuring buildings align accurately to the grid.",
+            "commit_ids": [
+              735897
             ]
           }
         ]
@@ -128,25 +193,52 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Weapons\n- Flamethrower fuel gauge needle now correctly tracks fuel.\n- Mid-reload magazine bug fixed, allowing smoother reloads.\n- Fixed turn-in-place looping issue for the Uzi and other weapons, improving handling during turns.\n- Added the remaining gun types, expanding the weapon roster.\n\n### Vehicles\n- PT boat front turret balance adjusted.\n\n### World & Environment\n- Procedural generation fixes (river gaps, missing train entrance, waterpipe placement, underwater grass/rocks) improve map consistency.\n- Fixed rare deaths in underground train tunnel junctions by adding TerrainHeightRaise objects to prevent terrain-collision triggers overlapping the seabed.\n\n### Base & Building\n- Door placement and destruction now update only the modified door, reducing server-wide refreshes.\n- Deployable logic now checks only the most recent building-block changes, improving building reliability.\n- Base occlusion visual bugs fixed: contents correctly hidden or shown behind ladder hatches, armored doors, and industrial garage doors.\n\n### Audio & Interactions\n- Computer station dismount bug fixed, allowing players to exit stations properly.\n- Audio for room-occluded entities now plays correctly when appropriate.\n\n### Gameplay & Balance\n- Fixed off‑center building snapping, improving placement precision.\n- Patrol helicopter rockets now function correctly, restoring aerial combat capability.",
+    "summary": "### Weapons\n- Flamethrower now shows fuel correctly and reloads complete reliably, fixing the empty‑gauge and mid‑reload bugs.\n- Uzi turn‑loop issue resolved, eliminating the stuck‑turning behavior and improving handling.\n\n### Vehicles\n- PT boat front turret rebalanced for more appropriate damage and smoother handling.\n\n### World & Environment\n- Added extra TerrainHeightRaise objects in underground train tunnel junctions, preventing rare deaths from terrain collision overlap.\n\n### Base & Building\n- Door placement and destruction now affect only the targeted door, and deployables check only the most recent building changes, reducing unintended breakage.\n- Base occlusion visuals fixed: ladders, armored doors, and industrial garage doors now correctly hide interior contents when closed.\n\n### Gameplay & Audio\n- Sounds from room‑occluded entities are audible again, restoring expected audio cues.\n- Scouts take longer to notice and investigate brief sightings, especially near large monuments, making stealth approaches more viable.\n\n### Extraction & Map Changes\n- Backpack size increased for raids and burlap clothing is now available, expanding inventory capacity and outfit options.\n- Roadside junk piles on the raid map have been halved, clearing pathways and reducing clutter.\n- Several quality‑of‑life upgrades: missions board tab now closes with Escape/Tab, shoulder camera aligns the barrel with the crosshair, quick‑craft pie added for fast food, quick‑craft queueing and cancellation with smoother movement, melee swings line up with the crosshair, and reticle/camera settings have been refined.\n\n### World Generation & Environment\n- Fixed river source gaps, eliminating water holes that could trap players or disrupt base building.\n- Stopped terrain from being raised around rivers, providing smoother riverbanks for construction.\n- Restored missing train station entrances, re-enabling access to train travel.\n- Adjusted inland spawn placement to prevent spawns in undesirable interior locations.\n- Prevented water pipes from spawning on roads, removing obstruction to road networks.\n- Improved river avoidance logic in terrain generation, reducing structures intersecting rivers.\n\n### Combat & Weapons\n- Added the remaining weapon types, expanding the arsenal available to players.\n- Re-enabled rockets on patrol helicopters, restoring their combat capability.\n\n### Interaction & Building\n- Fixed a bug that prevented players from properly dismounting from computer stations.\n- Corrected off‑center snapping, ensuring buildings align accurately to the grid.",
     "new_items": [
       {
-        "text": "Added the remaining gun types, expanding the weapon roster.",
+        "text": "Scouts take longer to notice and investigate brief sightings, especially near large monuments, making stealth approaches more viable.",
+        "commit_ids": [
+          736171
+        ],
+        "section": "Gameplay & Audio"
+      },
+      {
+        "text": "Backpack size increased for raids and burlap clothing is now available, expanding inventory capacity and outfit options.",
+        "commit_ids": [
+          736167
+        ],
+        "section": "Extraction & Map Changes"
+      },
+      {
+        "text": "Roadside junk piles on the raid map have been halved, clearing pathways and reducing clutter.",
+        "commit_ids": [
+          736174
+        ],
+        "section": "Extraction & Map Changes"
+      },
+      {
+        "text": "Several quality‑of‑life upgrades: missions board tab now closes with Escape/Tab, shoulder camera aligns the barrel with the crosshair, quick‑craft pie added for fast food, quick‑craft queueing and cancellation with smoother movement, melee swings line up with the crosshair, and reticle/camera settings have been refined.",
+        "commit_ids": [
+          736168,
+          736170,
+          736176,
+          736177,
+          736178,
+          736179,
+          736180
+        ],
+        "section": "Extraction & Map Changes"
+      },
+      {
+        "text": "Added the remaining weapon types, expanding the arsenal available to players.",
         "commit_ids": [
           736155
         ],
-        "section": "Weapons"
-      },
-      {
-        "text": "Audio for room-occluded entities now plays correctly when appropriate.",
-        "commit_ids": [
-          736117
-        ],
-        "section": "Audio & Interactions"
+        "section": "Combat & Weapons"
       }
     ],
-    "new_relevant_count": 2,
-    "new_summary": "- Added the remaining gun types, expanding the weapon roster.\n- Audio for room-occluded entities now plays correctly when appropriate."
+    "new_relevant_count": 11,
+    "new_summary": "- Scouts take longer to notice and investigate brief sightings, especially near large monuments, making stealth approaches more viable.\n- Backpack size increased for raids and burlap clothing is now available, expanding inventory capacity and outfit options.\n- Roadside junk piles on the raid map have been halved, clearing pathways and reducing clutter.\n- Several quality‑of‑life upgrades: missions board tab now closes with Escape/Tab, shoulder camera aligns the barrel with the crosshair, quick‑craft pie added for fast food, quick‑craft queueing and cancellation with smoother movement, melee swings line up with the crosshair, and reticle/camera settings have been refined.\n- Added the remaining weapon types, expanding the arsenal available to players."
   },
   "2026-11-18": {
     "commit_count": 114,
