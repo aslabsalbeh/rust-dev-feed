@@ -1,40 +1,37 @@
 {
   "2026-11-20": {
-    "commit_count": 91,
-    "relevant_commit_count": 13,
-    "relevant_signature": "736344,736367,736372,736400,736416,736428,736523,736531,736558,736559,736575,736581,736584",
+    "commit_count": 108,
+    "relevant_commit_count": 19,
+    "relevant_signature": "736344,736367,736372,736400,736416,736428,736523,736531,736558,736559,736575,736581,736584,736681,736682,736684,736687,736688,736689",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles",
+        "title": "Base & Building",
         "items": [
           {
-            "text": "Fixed pooled vehicles playing overlapping engine sounds, reducing audio clutter.",
+            "text": "Base occlusion now correctly hides bases when a raised triangle foundation or a half‑step foundation is placed against walls.",
             "commit_ids": [
-              736584
+              736684,
+              736682
             ]
           }
         ]
       },
       {
-        "title": "Weapons",
+        "title": "Deployables & Loot",
         "items": [
           {
-            "text": "Added the M79 grenade launcher, a new explosive weapon.",
+            "text": "Dropboxes are now sent to players on both sides of walls, fixing one‑sided visibility.",
             "commit_ids": [
-              736575
+              736688
             ]
-          }
-        ]
-      },
-      {
-        "title": "World & Monuments",
-        "items": [
+          },
           {
-            "text": "Corrected train tunnel spawning near lakes to prevent tunnels being blocked by cliffs.",
+            "text": "Players and deployables in very tall rooms, on roofs, over foundation seams, or beside wall frames now register in the correct room, fixing placement and interaction bugs.",
             "commit_ids": [
-              736428
+              736689,
+              736687
             ]
           }
         ]
@@ -43,9 +40,54 @@
         "title": "Spectator Experience",
         "items": [
           {
-            "text": "Spectated players now move at normal speed, eliminating slow‑motion lag while watching.",
+            "text": "Spectated players no longer move in slow motion; spectator network LOD handling has been fixed.",
             "commit_ids": [
               736367
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Movement",
+        "items": [
+          {
+            "text": "Added a console variable to enable modern sprint strafing movement.",
+            "commit_ids": [
+              736581
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
+          {
+            "text": "Train rail links now spawn reliably near lakes, preventing tunnels from being blocked by cliffs.",
+            "commit_ids": [
+              736428
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Fixed engine sound pooling issue causing vehicles to play incorrect or missing engine noises.",
+            "commit_ids": [
+              736584
+            ]
+          },
+          {
+            "text": "Adjusted stencil rendering depth so building stencils no longer spread onto shoulders, improving placement accuracy.",
+            "commit_ids": [
+              736523
+            ]
+          },
+          {
+            "text": "New M79 grenade launcher added, giving players explosive projectile firepower.",
+            "commit_ids": [
+              736575
             ]
           }
         ]
@@ -54,10 +96,34 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Vehicles\n- Fixed pooled vehicles playing overlapping engine sounds, reducing audio clutter.\n\n### Weapons\n- Added the M79 grenade launcher, a new explosive weapon.\n\n### World & Monuments\n- Corrected train tunnel spawning near lakes to prevent tunnels being blocked by cliffs.\n\n### Spectator Experience\n- Spectated players now move at normal speed, eliminating slow‑motion lag while watching.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
+    "summary": "### Base & Building\n- Base occlusion now correctly hides bases when a raised triangle foundation or a half‑step foundation is placed against walls.\n\n### Deployables & Loot\n- Dropboxes are now sent to players on both sides of walls, fixing one‑sided visibility.\n- Players and deployables in very tall rooms, on roofs, over foundation seams, or beside wall frames now register in the correct room, fixing placement and interaction bugs.\n\n### Spectator Experience\n- Spectated players no longer move in slow motion; spectator network LOD handling has been fixed.\n\n### Movement\n- Added a console variable to enable modern sprint strafing movement.\n\n### World Generation\n- Train rail links now spawn reliably near lakes, preventing tunnels from being blocked by cliffs.\n\n### Gameplay & Balance\n- Fixed engine sound pooling issue causing vehicles to play incorrect or missing engine noises.\n- Adjusted stencil rendering depth so building stencils no longer spread onto shoulders, improving placement accuracy.\n- New M79 grenade launcher added, giving players explosive projectile firepower.",
+    "new_items": [
+      {
+        "text": "Base occlusion now correctly hides bases when a raised triangle foundation or a half‑step foundation is placed against walls.",
+        "commit_ids": [
+          736684,
+          736682
+        ],
+        "section": "Base & Building"
+      },
+      {
+        "text": "Dropboxes are now sent to players on both sides of walls, fixing one‑sided visibility.",
+        "commit_ids": [
+          736688
+        ],
+        "section": "Deployables & Loot"
+      },
+      {
+        "text": "Players and deployables in very tall rooms, on roofs, over foundation seams, or beside wall frames now register in the correct room, fixing placement and interaction bugs.",
+        "commit_ids": [
+          736689,
+          736687
+        ],
+        "section": "Deployables & Loot"
+      }
+    ],
+    "new_relevant_count": 5,
+    "new_summary": "- Base occlusion now correctly hides bases when a raised triangle foundation or a half‑step foundation is placed against walls.\n- Dropboxes are now sent to players on both sides of walls, fixing one‑sided visibility.\n- Players and deployables in very tall rooms, on roofs, over foundation seams, or beside wall frames now register in the correct room, fixing placement and interaction bugs."
   },
   "2026-11-19": {
     "commit_count": 176,
