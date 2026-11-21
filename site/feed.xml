@@ -6,50 +6,45 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 20 Nov 2026 18:17:21 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 22:18:01 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 20</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;108 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;155 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+
+&lt;h3&gt;Gameplay &amp;amp; Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736684,736682"&gt;Base occlusion now correctly hides bases when a raised triangle foundation or a half‑step foundation is placed against walls.&lt;/li&gt;
-&lt;li data-rust-commits="736688"&gt;Dropboxes are now sent to players on both sides of walls, fixing one‑sided visibility.&lt;/li&gt;
-&lt;li data-rust-commits="736689,736687"&gt;Players and deployables in very tall rooms, on roofs, over foundation seams, or beside wall frames now register in the correct room, fixing placement and interaction bugs.&lt;/li&gt;
+&lt;li data-rust-commits="736575"&gt;Added the M79 grenade launcher, a new explosive weapon for players.&lt;/li&gt;
+&lt;li data-rust-commits="736581"&gt;Introduced a convar to enable modern sprint strafing, allowing more fluid movement while sprinting.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3&gt;Base &amp;amp; Building&lt;/h3&gt;
+&lt;h3&gt;Movement &amp;amp; Camera&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736684,736682"&gt;Base occlusion now correctly hides bases when a raised triangle foundation or a half‑step foundation is placed against walls.&lt;/li&gt;
+&lt;li data-rust-commits="736740,736741,736743,736745,736747,736749,736750,736751,736754,736757"&gt;Shoulder camera now responds more dynamically: it follows forward/backward and vertical movement without drift, adjusts distance when crouched, leans with speed changes, reacts to melee hits, and briefly pauses after hard landings.&lt;/li&gt;
+&lt;li data-rust-commits="736758,736760,736761"&gt;Vehicle and mount chase cameras now have distinct profiles with smooth easing when mounting or dismounting and a configurable range for tuning.&lt;/li&gt;
+&lt;li data-rust-commits="736367,736372"&gt;Spectator view no longer experiences slow‑motion; it now correctly follows the target without lag.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Deployables &amp;amp; Loot&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736688"&gt;Dropboxes are now sent to players on both sides of walls, fixing one‑sided visibility.&lt;/li&gt;
-&lt;li data-rust-commits="736689,736687"&gt;Players and deployables in very tall rooms, on roofs, over foundation seams, or beside wall frames now register in the correct room, fixing placement and interaction bugs.&lt;/li&gt;
+&lt;li data-rust-commits="736428"&gt;Train tunnel rail links are prevented from spawning too close to lakes, eliminating blocked tunnels and terrain carving issues.&lt;/li&gt;
+&lt;li data-rust-commits="736682,736684,736687,736688,736689"&gt;Fixed multiple base occlusion and deployable visibility issues, including foundation placement errors, deployables on roofs and seams, dropbox visibility through walls, and placement problems in tall rooms.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Spectator Experience&lt;/h3&gt;
+&lt;h3&gt;Extraction &amp;amp; Raid Flow&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736367"&gt;Spectated players no longer move in slow motion; spectator network LOD handling has been fixed.&lt;/li&gt;
+&lt;li data-rust-commits="736732,736733,736736,736738,736739"&gt;Extraction improvements: failed jobs now return cargo, ground rope physics and cable tool behavior are fixed, bow handling is steadier, and walking animations are smoother with hip turning on diagonals.&lt;/li&gt;
+&lt;li data-rust-commits="736766,736767"&gt;Raid entry and exit now feature a black screen with a hatch sound, and returning home after a raid places you beside the deploy point behind the summary screen.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Movement&lt;/h3&gt;
+&lt;h3&gt;Economy &amp;amp; Storage&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736581"&gt;Added a console variable to enable modern sprint strafing movement.&lt;/li&gt;
+&lt;li data-rust-commits="736768"&gt;Scrap is now kept in a central bank at the hub rather than in individual stash slots.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World Generation&lt;/h3&gt;
+&lt;h3&gt;Audio &amp;amp; Immersion&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="736428"&gt;Train rail links now spawn reliably near lakes, preventing tunnels from being blocked by cliffs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736584"&gt;Fixed engine sound pooling issue causing vehicles to play incorrect or missing engine noises.&lt;/li&gt;
-&lt;li data-rust-commits="736523"&gt;Adjusted stencil rendering depth so building stencils no longer spread onto shoulders, improving placement accuracy.&lt;/li&gt;
-&lt;li data-rust-commits="736575"&gt;New M79 grenade launcher added, giving players explosive projectile firepower.&lt;/li&gt;
+&lt;li data-rust-commits="736584"&gt;Engine sounds now correctly play for pooled vehicles, fixing silent or overlapping audio.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-20</guid>
-      <pubDate>Fri, 20 Nov 2026 18:17:21 -0500</pubDate>
+      <pubDate>Fri, 20 Nov 2026 22:18:01 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 19</title>
