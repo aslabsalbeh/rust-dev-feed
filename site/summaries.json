@@ -1,4 +1,19 @@
 {
+  "2026-11-22": {
+    "commit_count": 2,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v8-stable-chunks",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "notice": "",
+    "pending_relevant_count": 0,
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-11-21": {
     "commit_count": 68,
     "relevant_commit_count": 20,
@@ -195,190 +210,6 @@
     "notice": "",
     "pending_relevant_count": 0,
     "summary": "### Gameplay & Combat\n- Added the M79 grenade launcher, a new explosive weapon for players.\n- Introduced a convar to enable modern sprint strafing, allowing more fluid movement while sprinting.\n\n### Movement & Camera\n- Shoulder camera now responds more dynamically: it follows forward/backward and vertical movement without drift, adjusts distance when crouched, leans with speed changes, reacts to melee hits, and briefly pauses after hard landings.\n- Vehicle and mount chase cameras now have distinct profiles with smooth easing when mounting or dismounting and a configurable range for tuning.\n- Spectator view no longer experiences slow‑motion; it now correctly follows the target without lag.\n\n### World & Environment\n- Train tunnel rail links are prevented from spawning too close to lakes, eliminating blocked tunnels and terrain carving issues.\n- Fixed multiple base occlusion and deployable visibility issues, including foundation placement errors, deployables on roofs and seams, dropbox visibility through walls, and placement problems in tall rooms.\n\n### Extraction & Raid Flow\n- Extraction improvements: failed jobs now return cargo, ground rope physics and cable tool behavior are fixed, bow handling is steadier, and walking animations are smoother with hip turning on diagonals.\n- Raid entry and exit now feature a black screen with a hatch sound, and returning home after a raid places you beside the deploy point behind the summary screen.\n\n### Economy & Storage\n- Scrap is now kept in a central bank at the hub rather than in individual stash slots.\n\n### Audio & Immersion\n- Engine sounds now correctly play for pooled vehicles, fixing silent or overlapping audio.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-19": {
-    "commit_count": 160,
-    "relevant_commit_count": 67,
-    "relevant_signature": "735887,735888,735896,735897,735899,735901,735902,735905,735907,735908,735909,735933,735934,735937,735985,736005,736008,736009,736010,736011,736012,736013,736014,736020,736024,736025,736043,736057,736067,736068,736085,736086,736087,736088,736089,736090,736092,736095,736105,736106,736117,736155,736164,736167,736168,736170,736171,736174,736175,736176,736177,736178,736179,736180,736184,736225,736226,736227,736228,736229,736230,736231,736232,736233,736234,736235,736236",
-    "prompt_version": "structured-read-state-v8-stable-chunks",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Combat & Weapons",
-        "items": [
-          {
-            "text": "Weapon handling improvements: flamethrower fuel gauge now tracks fuel correctly, mid‑reload magazine bug fixed for smoother reloading, and Uzi turn‑loop issue resolved.",
-            "commit_ids": [
-              735887,
-              735888,
-              735905,
-              736024,
-              736025
-            ]
-          },
-          {
-            "text": "All remaining guns added and melee swings now align with the crosshair; gathering hits no longer cause camera knockback.",
-            "commit_ids": [
-              736155,
-              736179
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Transport",
-        "items": [
-          {
-            "text": "PT boat front turret damage and accuracy rebalanced; computer station dismount bug fixed to prevent players from getting stuck.",
-            "commit_ids": [
-              735899,
-              735902
-            ]
-          },
-          {
-            "text": "CH‑47 helicopter disconnect bug resolved, reducing unexpected drops, and TerrainHeightRaise objects added to underground train tunnel junctions to prevent rare terrain‑collision deaths.",
-            "commit_ids": [
-              736226,
-              736057
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Environment",
-        "items": [
-          {
-            "text": "Procedural generation fixes improve river handling, water pipe placement, inland spawn locations, missing train entrance, underwater flora, river terrain behavior, and source gaps.",
-            "commit_ids": [
-              736008,
-              736009,
-              736010,
-              736011,
-              736012,
-              736013,
-              736014,
-              736020
-            ]
-          },
-          {
-            "text": "Roadside junk piles reduced by half, room‑occluded entity sounds restored for better audio awareness, and the Seagull Trophy achievement added.",
-            "commit_ids": [
-              736174,
-              736117,
-              736235
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Building & Crafting",
-        "items": [
-          {
-            "text": "Door placement and destruction now refresh only the modified door; half‑walls place correctly, improving building stability.",
-            "commit_ids": [
-              736085,
-              736225
-            ]
-          },
-          {
-            "text": "Quick crafting of pies enabled with queueing, canceling, and smoother movement; large backpack size increased and burlap clothing added for raids.",
-            "commit_ids": [
-              736176,
-              736177,
-              736167
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Base Visibility",
-        "items": [
-          {
-            "text": "Fixed visibility bugs that kept base contents hidden behind closed industrial garage doors, armored doors with open hatches, and shut ladder hatches.",
-            "commit_ids": [
-              736092,
-              736090,
-              736089
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Deployables",
-        "items": [
-          {
-            "text": "Deployables now correctly detect all nearby building block changes, improving placement reliability.",
-            "commit_ids": [
-              736086
-            ]
-          },
-          {
-            "text": "Off‑center snapping issue resolved, allowing structures to snap precisely to grid points.",
-            "commit_ids": [
-              735897
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat",
-        "items": [
-          {
-            "text": "Patrol helicopter rockets fixed to behave correctly, restoring intended damage output.",
-            "commit_ids": [
-              735896
-            ]
-          }
-        ]
-      },
-      {
-        "title": "User Interface",
-        "items": [
-          {
-            "text": "Missions board tab now has a fixed size and can be closed with Escape or Tab for smoother navigation.",
-            "commit_ids": [
-              736168
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Adjusted reticle stance and camera defaults, adding a shoulder‑camera tuning panel and thirds overlay for more precise aiming.",
-            "commit_ids": [
-              736180
-            ]
-          },
-          {
-            "text": "Removed vending machines from extraction zones; players can no longer purchase items there, affecting on‑site economy.",
-            "commit_ids": [
-              736178
-            ]
-          },
-          {
-            "text": "Scouts now have a longer detection delay, provide brief investigation glimpses, and are more likely to appear over large monuments, altering scouting strategy.",
-            "commit_ids": [
-              736171
-            ]
-          },
-          {
-            "text": "Shoulder camera now aligns the barrel with the crosshair, improving line‑of‑sight consistency.",
-            "commit_ids": [
-              736170
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "notice": "",
-    "pending_relevant_count": 0,
-    "summary": "### Combat & Weapons\n- Weapon handling improvements: flamethrower fuel gauge now tracks fuel correctly, mid‑reload magazine bug fixed for smoother reloading, and Uzi turn‑loop issue resolved.\n- All remaining guns added and melee swings now align with the crosshair; gathering hits no longer cause camera knockback.\n\n### Vehicles & Transport\n- PT boat front turret damage and accuracy rebalanced; computer station dismount bug fixed to prevent players from getting stuck.\n- CH‑47 helicopter disconnect bug resolved, reducing unexpected drops, and TerrainHeightRaise objects added to underground train tunnel junctions to prevent rare terrain‑collision deaths.\n\n### World & Environment\n- Procedural generation fixes improve river handling, water pipe placement, inland spawn locations, missing train entrance, underwater flora, river terrain behavior, and source gaps.\n- Roadside junk piles reduced by half, room‑occluded entity sounds restored for better audio awareness, and the Seagull Trophy achievement added.\n\n### Base Building & Crafting\n- Door placement and destruction now refresh only the modified door; half‑walls place correctly, improving building stability.\n- Quick crafting of pies enabled with queueing, canceling, and smoother movement; large backpack size increased and burlap clothing added for raids.\n\n### Base Visibility\n- Fixed visibility bugs that kept base contents hidden behind closed industrial garage doors, armored doors with open hatches, and shut ladder hatches.\n\n### Building & Deployables\n- Deployables now correctly detect all nearby building block changes, improving placement reliability.\n- Off‑center snapping issue resolved, allowing structures to snap precisely to grid points.\n\n### Combat\n- Patrol helicopter rockets fixed to behave correctly, restoring intended damage output.\n\n### User Interface\n- Missions board tab now has a fixed size and can be closed with Escape or Tab for smoother navigation.\n\n### Gameplay & Balance\n- Adjusted reticle stance and camera defaults, adding a shoulder‑camera tuning panel and thirds overlay for more precise aiming.\n- Removed vending machines from extraction zones; players can no longer purchase items there, affecting on‑site economy.\n- Scouts now have a longer detection delay, provide brief investigation glimpses, and are more likely to appear over large monuments, altering scouting strategy.\n- Shoulder camera now aligns the barrel with the crosshair, improving line‑of‑sight consistency.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
