@@ -1,117 +1,116 @@
 {
+  "2026-11-23": {
+    "commit_count": 7,
+    "relevant_commit_count": 0,
+    "relevant_signature": "",
+    "prompt_version": "structured-read-state-v8-stable-chunks",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "notice": "",
+    "pending_relevant_count": 0,
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-11-22": {
-    "commit_count": 120,
-    "relevant_commit_count": 32,
-    "relevant_signature": "737153,737155,737176,737177,737202,737203,737205,737206,737207,737208,737209,737210,737211,737212,737216,737217,737218,737219,737264,737265,737266,737267,737268,737272,737301,737305,737306,737310,737334,737335,737336,737340",
+    "commit_count": 121,
+    "relevant_commit_count": 33,
+    "relevant_signature": "737153,737155,737176,737177,737202,737203,737205,737206,737207,737208,737209,737210,737211,737212,737216,737217,737218,737219,737264,737265,737266,737267,737268,737272,737301,737305,737306,737310,737334,737335,737336,737340,737379",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Map Layout & Monument Placement",
+        "title": "Map Layout",
         "items": [
           {
-            "text": "Monuments are arranged in eccentric rings with the endgame core shifted to one side, the Power Plant placed centrally, and core monuments leaning inward and pinned to specific rings.",
+            "text": "Monuments are arranged in eccentric rings with the endgame core offset to one side; the Power Plant sits centrally, core monuments lean inward and are anchored to specific rings.",
             "commit_ids": [
               737202,
               737217
             ]
           },
           {
-            "text": "Core monuments are now guarded and monitored; a helicopter delivers reinforcements to weakened cores and a Bradley vehicle patrols them.",
+            "text": "The first closing balloon is placed in the outer ring, away from hatches.",
             "commit_ids": [
-              737219,
-              737264
-            ]
-          },
-          {
-            "text": "The first closing balloon is positioned in the outer ring away from hatches, and the raid map now uses a fixed seed (1929212934) for consistent generation.",
-            "commit_ids": [
-              737216,
-              737218
+              737216
             ]
           }
         ]
       },
       {
-        "title": "AI & Combat Enhancements",
+        "title": "AI & Reinforcements",
         "items": [
           {
-            "text": "Each Tier‑2 monument now spawns a gunner drone that fires pistol rounds and experiences recoil kickback.",
+            "text": "Tier‑2 monuments now host gunner drones that fire pistol rounds with recoil.",
             "commit_ids": [
               737203
             ]
           },
           {
-            "text": "Players near a monument receive a warning when reinforcements are inbound, and all players are warned before a balloon closes.",
+            "text": "Core monuments are guarded by AI; when their guards are depleted helicopters can deliver reinforcements and a Bradley patrols the core area, and players receive warnings near monuments and before a balloon closes.",
             "commit_ids": [
+              737219,
+              737264,
               737266
             ]
           }
         ]
       },
       {
-        "title": "Economy, Pricing & Loot",
+        "title": "Economy & Pricing",
         "items": [
           {
-            "text": "Item worth is calculated from supply stock and a fixed shop list, removing bandit‑camp pricing; gold‑floor items, condition‑scaled sales, and blueprint prices are standardized.",
+            "text": "Backpack sale price is fixed at 400 after completing Missing Shipment, and loot items have fixed rarity‑based pricing that no longer varies with colour.",
+            "commit_ids": [
+              737207,
+              737210
+            ]
+          },
+          {
+            "text": "Item values are calculated from supply stock and a fixed shop list (bandit camp excluded); gold‑floor items, condition‑scaled sales and blueprint prices are defined without bandit influence, the safe pocket only accepts non‑weapon/armour items and values them as the shop would pay, and the shop now buys only finished goods while components are sent to a recycler for a refund.",
             "commit_ids": [
               737208,
-              737209
-            ]
-          },
-          {
-            "text": "Loot tiers are fixed per item (with a few manual overrides); prices no longer change based on colour; low‑tier crates and barrels contain fewer tools/weapons, and junk‑pile crates no longer drop ring parts.",
-            "commit_ids": [
-              737210,
-              737265
-            ]
-          },
-          {
-            "text": "A new economic trial is enabled by default: the shop purchases only finished goods, while components are sent to a recycler that refunds their sale value.",
-            "commit_ids": [
+              737209,
+              737212,
               737267,
               737268
-            ]
-          },
-          {
-            "text": "An economy log now records every raider’s activity, and the safe pocket rejects weapons, armour, and contraband, valuing items as the shop would pay.",
-            "commit_ids": [
-              737205,
-              737212
             ]
           }
         ]
       },
       {
-        "title": "Inventory & Stash Adjustments",
+        "title": "Inventory & Loot",
         "items": [
           {
-            "text": "The player stash now expands by two rows at a time, up to a total of 96 slots.",
+            "text": "Stash capacity increased by two rows at a time up to a maximum of 96 slots.",
             "commit_ids": [
               737211
             ]
           },
           {
-            "text": "The large backpack’s sell price is set to 400 after completing the Missing Shipment quest.",
+            "text": "Low‑tier crates and barrels now contain fewer tools and weapons, and junk‑pile crates no longer include ring parts.",
             "commit_ids": [
-              737207
+              737265
             ]
           }
         ]
       },
       {
-        "title": "Extraction & Raids",
+        "title": "Raid & Extraction",
         "items": [
           {
-            "text": "Extraction balloons no longer carry an extra hot‑air balloon, fixing duplicate balloon spawns under each extraction balloon.",
+            "text": "Extraction balloons no longer carry a secondary hot‑air balloon; escape hatches can be opened with a Cobalt bypass card; outer‑ring crates now have a rare jackpot chance; and raid duration is extended to 35 minutes.",
             "commit_ids": [
-              737305
+              737305,
+              737306
             ]
           },
           {
-            "text": "Escape hatches can now be opened with a Cobalt bypass card; a rare jackpot item appears in outer‑ring crates, and raid duration is extended to 35 minutes.",
+            "text": "Raid reset now removes player‑placed structures along with their contents.",
             "commit_ids": [
-              737306
+              737206
             ]
           }
         ]
@@ -120,24 +119,21 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Adjusted beach spawn locations to reduce player clustering and improve early-game safety.",
+            "text": "Improved beach spawn locations reduce clustering and give more reliable initial placement.",
             "commit_ids": [
-              737336,
-              737340
+              737336
             ]
           },
           {
-            "text": "Enhanced fishing vendor with expanded inventory and more balanced pricing, making fishing a more viable income source.",
+            "text": "Fishing vendor updates add new bait options and adjust pricing for better resource management.",
             "commit_ids": [
-              737335,
-              737340
+              737335
             ]
           },
           {
-            "text": "Fixed train tunnel generation overlap bugs, eliminating map glitches that could trap players.",
+            "text": "Fixed overlapping train tunnel geometry, preventing players from getting stuck or falling through tunnels.",
             "commit_ids": [
-              737334,
-              737340
+              737334
             ]
           }
         ]
@@ -146,7 +142,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Map Layout & Monument Placement\n- Monuments are arranged in eccentric rings with the endgame core shifted to one side, the Power Plant placed centrally, and core monuments leaning inward and pinned to specific rings.\n- Core monuments are now guarded and monitored; a helicopter delivers reinforcements to weakened cores and a Bradley vehicle patrols them.\n- The first closing balloon is positioned in the outer ring away from hatches, and the raid map now uses a fixed seed (1929212934) for consistent generation.\n\n### AI & Combat Enhancements\n- Each Tier‑2 monument now spawns a gunner drone that fires pistol rounds and experiences recoil kickback.\n- Players near a monument receive a warning when reinforcements are inbound, and all players are warned before a balloon closes.\n\n### Economy, Pricing & Loot\n- Item worth is calculated from supply stock and a fixed shop list, removing bandit‑camp pricing; gold‑floor items, condition‑scaled sales, and blueprint prices are standardized.\n- Loot tiers are fixed per item (with a few manual overrides); prices no longer change based on colour; low‑tier crates and barrels contain fewer tools/weapons, and junk‑pile crates no longer drop ring parts.\n- A new economic trial is enabled by default: the shop purchases only finished goods, while components are sent to a recycler that refunds their sale value.\n- An economy log now records every raider’s activity, and the safe pocket rejects weapons, armour, and contraband, valuing items as the shop would pay.\n\n### Inventory & Stash Adjustments\n- The player stash now expands by two rows at a time, up to a total of 96 slots.\n- The large backpack’s sell price is set to 400 after completing the Missing Shipment quest.\n\n### Extraction & Raids\n- Extraction balloons no longer carry an extra hot‑air balloon, fixing duplicate balloon spawns under each extraction balloon.\n- Escape hatches can now be opened with a Cobalt bypass card; a rare jackpot item appears in outer‑ring crates, and raid duration is extended to 35 minutes.\n\n### Gameplay & Balance\n- Adjusted beach spawn locations to reduce player clustering and improve early-game safety.\n- Enhanced fishing vendor with expanded inventory and more balanced pricing, making fishing a more viable income source.\n- Fixed train tunnel generation overlap bugs, eliminating map glitches that could trap players.",
+    "summary": "### Map Layout\n- Monuments are arranged in eccentric rings with the endgame core offset to one side; the Power Plant sits centrally, core monuments lean inward and are anchored to specific rings.\n- The first closing balloon is placed in the outer ring, away from hatches.\n\n### AI & Reinforcements\n- Tier‑2 monuments now host gunner drones that fire pistol rounds with recoil.\n- Core monuments are guarded by AI; when their guards are depleted helicopters can deliver reinforcements and a Bradley patrols the core area, and players receive warnings near monuments and before a balloon closes.\n\n### Economy & Pricing\n- Backpack sale price is fixed at 400 after completing Missing Shipment, and loot items have fixed rarity‑based pricing that no longer varies with colour.\n- Item values are calculated from supply stock and a fixed shop list (bandit camp excluded); gold‑floor items, condition‑scaled sales and blueprint prices are defined without bandit influence, the safe pocket only accepts non‑weapon/armour items and values them as the shop would pay, and the shop now buys only finished goods while components are sent to a recycler for a refund.\n\n### Inventory & Loot\n- Stash capacity increased by two rows at a time up to a maximum of 96 slots.\n- Low‑tier crates and barrels now contain fewer tools and weapons, and junk‑pile crates no longer include ring parts.\n\n### Raid & Extraction\n- Extraction balloons no longer carry a secondary hot‑air balloon; escape hatches can be opened with a Cobalt bypass card; outer‑ring crates now have a rare jackpot chance; and raid duration is extended to 35 minutes.\n- Raid reset now removes player‑placed structures along with their contents.\n\n### Gameplay & Balance\n- Improved beach spawn locations reduce clustering and give more reliable initial placement.\n- Fishing vendor updates add new bait options and adjust pricing for better resource management.\n- Fixed overlapping train tunnel geometry, preventing players from getting stuck or falling through tunnels.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -214,139 +210,6 @@
     "notice": "",
     "pending_relevant_count": 0,
     "summary": "### NPC & AI\n- Fixed lambs getting stuck and failing to follow a sprinting player when led.\n- Scout NPCs that become trapped against signs or poles now automatically free themselves.\n\n### Monuments & World\n- Monument guard NPCs now spread out, scale with monument size, and can stand on any floor.\n- Raid maps now spawn only whitelisted monuments, with each tier‑1 monument appearing once per map.\n\n### UI & Quality of Life\n- Stash UI no longer repeats the bank balance, showing the correct amount only.\n- Bank balance is now always displayed on the Outpost screen for continuous fund monitoring.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-20": {
-    "commit_count": 155,
-    "relevant_commit_count": 42,
-    "relevant_signature": "736344,736367,736372,736400,736416,736428,736523,736531,736558,736559,736575,736581,736584,736681,736682,736684,736687,736688,736689,736718,736732,736733,736736,736738,736739,736740,736741,736743,736745,736747,736749,736750,736751,736754,736757,736758,736760,736761,736766,736767,736768,736769",
-    "prompt_version": "structured-read-state-v8-stable-chunks",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Gameplay & Combat",
-        "items": [
-          {
-            "text": "Added the M79 grenade launcher, a new explosive weapon for players.",
-            "commit_ids": [
-              736575
-            ]
-          },
-          {
-            "text": "Introduced a convar to enable modern sprint strafing, allowing more fluid movement while sprinting.",
-            "commit_ids": [
-              736581
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Movement & Camera",
-        "items": [
-          {
-            "text": "Shoulder camera now responds more dynamically: it follows forward/backward and vertical movement without drift, adjusts distance when crouched, leans with speed changes, reacts to melee hits, and briefly pauses after hard landings.",
-            "commit_ids": [
-              736740,
-              736741,
-              736743,
-              736745,
-              736747,
-              736749,
-              736750,
-              736751,
-              736754,
-              736757
-            ]
-          },
-          {
-            "text": "Vehicle and mount chase cameras now have distinct profiles with smooth easing when mounting or dismounting and a configurable range for tuning.",
-            "commit_ids": [
-              736758,
-              736760,
-              736761
-            ]
-          },
-          {
-            "text": "Spectator view no longer experiences slow‑motion; it now correctly follows the target without lag.",
-            "commit_ids": [
-              736367,
-              736372
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Environment",
-        "items": [
-          {
-            "text": "Train tunnel rail links are prevented from spawning too close to lakes, eliminating blocked tunnels and terrain carving issues.",
-            "commit_ids": [
-              736428
-            ]
-          },
-          {
-            "text": "Fixed multiple base occlusion and deployable visibility issues, including foundation placement errors, deployables on roofs and seams, dropbox visibility through walls, and placement problems in tall rooms.",
-            "commit_ids": [
-              736682,
-              736684,
-              736687,
-              736688,
-              736689
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Extraction & Raid Flow",
-        "items": [
-          {
-            "text": "Extraction improvements: failed jobs now return cargo, ground rope physics and cable tool behavior are fixed, bow handling is steadier, and walking animations are smoother with hip turning on diagonals.",
-            "commit_ids": [
-              736732,
-              736733,
-              736736,
-              736738,
-              736739
-            ]
-          },
-          {
-            "text": "Raid entry and exit now feature a black screen with a hatch sound, and returning home after a raid places you beside the deploy point behind the summary screen.",
-            "commit_ids": [
-              736766,
-              736767
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Economy & Storage",
-        "items": [
-          {
-            "text": "Scrap is now kept in a central bank at the hub rather than in individual stash slots.",
-            "commit_ids": [
-              736768
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Audio & Immersion",
-        "items": [
-          {
-            "text": "Engine sounds now correctly play for pooled vehicles, fixing silent or overlapping audio.",
-            "commit_ids": [
-              736584
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "notice": "",
-    "pending_relevant_count": 0,
-    "summary": "### Gameplay & Combat\n- Added the M79 grenade launcher, a new explosive weapon for players.\n- Introduced a convar to enable modern sprint strafing, allowing more fluid movement while sprinting.\n\n### Movement & Camera\n- Shoulder camera now responds more dynamically: it follows forward/backward and vertical movement without drift, adjusts distance when crouched, leans with speed changes, reacts to melee hits, and briefly pauses after hard landings.\n- Vehicle and mount chase cameras now have distinct profiles with smooth easing when mounting or dismounting and a configurable range for tuning.\n- Spectator view no longer experiences slow‑motion; it now correctly follows the target without lag.\n\n### World & Environment\n- Train tunnel rail links are prevented from spawning too close to lakes, eliminating blocked tunnels and terrain carving issues.\n- Fixed multiple base occlusion and deployable visibility issues, including foundation placement errors, deployables on roofs and seams, dropbox visibility through walls, and placement problems in tall rooms.\n\n### Extraction & Raid Flow\n- Extraction improvements: failed jobs now return cargo, ground rope physics and cable tool behavior are fixed, bow handling is steadier, and walking animations are smoother with hip turning on diagonals.\n- Raid entry and exit now feature a black screen with a hatch sound, and returning home after a raid places you beside the deploy point behind the summary screen.\n\n### Economy & Storage\n- Scrap is now kept in a central bank at the hub rather than in individual stash slots.\n\n### Audio & Immersion\n- Engine sounds now correctly play for pooled vehicles, fixing silent or overlapping audio.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

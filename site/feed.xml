@@ -6,46 +6,54 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 23 Nov 2026 00:17:16 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 02:18:04 -0500</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Nov 23</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;7 development commits&lt;/strong&gt;&lt;/p&gt;
+
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-11-23</guid>
+      <pubDate>Mon, 23 Nov 2026 02:18:04 -0500</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 22</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;120 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;121 development commits&lt;/strong&gt;&lt;/p&gt;
 
 
-&lt;h3&gt;Map Layout &amp;amp; Monument Placement&lt;/h3&gt;
+&lt;h3&gt;Map Layout&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737202,737217"&gt;Monuments are arranged in eccentric rings with the endgame core shifted to one side, the Power Plant placed centrally, and core monuments leaning inward and pinned to specific rings.&lt;/li&gt;
-&lt;li data-rust-commits="737219,737264"&gt;Core monuments are now guarded and monitored; a helicopter delivers reinforcements to weakened cores and a Bradley vehicle patrols them.&lt;/li&gt;
-&lt;li data-rust-commits="737216,737218"&gt;The first closing balloon is positioned in the outer ring away from hatches, and the raid map now uses a fixed seed (1929212934) for consistent generation.&lt;/li&gt;
+&lt;li data-rust-commits="737202,737217"&gt;Monuments are arranged in eccentric rings with the endgame core offset to one side; the Power Plant sits centrally, core monuments lean inward and are anchored to specific rings.&lt;/li&gt;
+&lt;li data-rust-commits="737216"&gt;The first closing balloon is placed in the outer ring, away from hatches.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; Combat Enhancements&lt;/h3&gt;
+&lt;h3&gt;AI &amp;amp; Reinforcements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737203"&gt;Each Tier‑2 monument now spawns a gunner drone that fires pistol rounds and experiences recoil kickback.&lt;/li&gt;
-&lt;li data-rust-commits="737266"&gt;Players near a monument receive a warning when reinforcements are inbound, and all players are warned before a balloon closes.&lt;/li&gt;
+&lt;li data-rust-commits="737203"&gt;Tier‑2 monuments now host gunner drones that fire pistol rounds with recoil.&lt;/li&gt;
+&lt;li data-rust-commits="737219,737264,737266"&gt;Core monuments are guarded by AI; when their guards are depleted helicopters can deliver reinforcements and a Bradley patrols the core area, and players receive warnings near monuments and before a balloon closes.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Economy, Pricing &amp;amp; Loot&lt;/h3&gt;
+&lt;h3&gt;Economy &amp;amp; Pricing&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737208,737209"&gt;Item worth is calculated from supply stock and a fixed shop list, removing bandit‑camp pricing; gold‑floor items, condition‑scaled sales, and blueprint prices are standardized.&lt;/li&gt;
-&lt;li data-rust-commits="737210,737265"&gt;Loot tiers are fixed per item (with a few manual overrides); prices no longer change based on colour; low‑tier crates and barrels contain fewer tools/weapons, and junk‑pile crates no longer drop ring parts.&lt;/li&gt;
-&lt;li data-rust-commits="737267,737268"&gt;A new economic trial is enabled by default: the shop purchases only finished goods, while components are sent to a recycler that refunds their sale value.&lt;/li&gt;
-&lt;li data-rust-commits="737205,737212"&gt;An economy log now records every raider’s activity, and the safe pocket rejects weapons, armour, and contraband, valuing items as the shop would pay.&lt;/li&gt;
+&lt;li data-rust-commits="737207,737210"&gt;Backpack sale price is fixed at 400 after completing Missing Shipment, and loot items have fixed rarity‑based pricing that no longer varies with colour.&lt;/li&gt;
+&lt;li data-rust-commits="737208,737209,737212,737267,737268"&gt;Item values are calculated from supply stock and a fixed shop list (bandit camp excluded); gold‑floor items, condition‑scaled sales and blueprint prices are defined without bandit influence, the safe pocket only accepts non‑weapon/armour items and values them as the shop would pay, and the shop now buys only finished goods while components are sent to a recycler for a refund.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Inventory &amp;amp; Stash Adjustments&lt;/h3&gt;
+&lt;h3&gt;Inventory &amp;amp; Loot&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737211"&gt;The player stash now expands by two rows at a time, up to a total of 96 slots.&lt;/li&gt;
-&lt;li data-rust-commits="737207"&gt;The large backpack’s sell price is set to 400 after completing the Missing Shipment quest.&lt;/li&gt;
+&lt;li data-rust-commits="737211"&gt;Stash capacity increased by two rows at a time up to a maximum of 96 slots.&lt;/li&gt;
+&lt;li data-rust-commits="737265"&gt;Low‑tier crates and barrels now contain fewer tools and weapons, and junk‑pile crates no longer include ring parts.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Extraction &amp;amp; Raids&lt;/h3&gt;
+&lt;h3&gt;Raid &amp;amp; Extraction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737305"&gt;Extraction balloons no longer carry an extra hot‑air balloon, fixing duplicate balloon spawns under each extraction balloon.&lt;/li&gt;
-&lt;li data-rust-commits="737306"&gt;Escape hatches can now be opened with a Cobalt bypass card; a rare jackpot item appears in outer‑ring crates, and raid duration is extended to 35 minutes.&lt;/li&gt;
+&lt;li data-rust-commits="737305,737306"&gt;Extraction balloons no longer carry a secondary hot‑air balloon; escape hatches can be opened with a Cobalt bypass card; outer‑ring crates now have a rare jackpot chance; and raid duration is extended to 35 minutes.&lt;/li&gt;
+&lt;li data-rust-commits="737206"&gt;Raid reset now removes player‑placed structures along with their contents.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737336,737340"&gt;Adjusted beach spawn locations to reduce player clustering and improve early-game safety.&lt;/li&gt;
-&lt;li data-rust-commits="737335,737340"&gt;Enhanced fishing vendor with expanded inventory and more balanced pricing, making fishing a more viable income source.&lt;/li&gt;
-&lt;li data-rust-commits="737334,737340"&gt;Fixed train tunnel generation overlap bugs, eliminating map glitches that could trap players.&lt;/li&gt;
+&lt;li data-rust-commits="737336"&gt;Improved beach spawn locations reduce clustering and give more reliable initial placement.&lt;/li&gt;
+&lt;li data-rust-commits="737335"&gt;Fishing vendor updates add new bait options and adjust pricing for better resource management.&lt;/li&gt;
+&lt;li data-rust-commits="737334"&gt;Fixed overlapping train tunnel geometry, preventing players from getting stuck or falling through tunnels.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-22</guid>
@@ -75,45 +83,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-21</guid>
       <pubDate>Sat, 21 Nov 2026 12:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Nov 20</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;155 development commits&lt;/strong&gt;&lt;/p&gt;
-
-
-&lt;h3&gt;Gameplay &amp;amp; Combat&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736575"&gt;Added the M79 grenade launcher, a new explosive weapon for players.&lt;/li&gt;
-&lt;li data-rust-commits="736581"&gt;Introduced a convar to enable modern sprint strafing, allowing more fluid movement while sprinting.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Movement &amp;amp; Camera&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736740,736741,736743,736745,736747,736749,736750,736751,736754,736757"&gt;Shoulder camera now responds more dynamically: it follows forward/backward and vertical movement without drift, adjusts distance when crouched, leans with speed changes, reacts to melee hits, and briefly pauses after hard landings.&lt;/li&gt;
-&lt;li data-rust-commits="736758,736760,736761"&gt;Vehicle and mount chase cameras now have distinct profiles with smooth easing when mounting or dismounting and a configurable range for tuning.&lt;/li&gt;
-&lt;li data-rust-commits="736367,736372"&gt;Spectator view no longer experiences slow‑motion; it now correctly follows the target without lag.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736428"&gt;Train tunnel rail links are prevented from spawning too close to lakes, eliminating blocked tunnels and terrain carving issues.&lt;/li&gt;
-&lt;li data-rust-commits="736682,736684,736687,736688,736689"&gt;Fixed multiple base occlusion and deployable visibility issues, including foundation placement errors, deployables on roofs and seams, dropbox visibility through walls, and placement problems in tall rooms.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Extraction &amp;amp; Raid Flow&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736732,736733,736736,736738,736739"&gt;Extraction improvements: failed jobs now return cargo, ground rope physics and cable tool behavior are fixed, bow handling is steadier, and walking animations are smoother with hip turning on diagonals.&lt;/li&gt;
-&lt;li data-rust-commits="736766,736767"&gt;Raid entry and exit now feature a black screen with a hatch sound, and returning home after a raid places you beside the deploy point behind the summary screen.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Economy &amp;amp; Storage&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736768"&gt;Scrap is now kept in a central bank at the hub rather than in individual stash slots.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Audio &amp;amp; Immersion&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736584"&gt;Engine sounds now correctly play for pooled vehicles, fixing silent or overlapping audio.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-11-20</guid>
-      <pubDate>Fri, 20 Nov 2026 12:00:00 -0500</pubDate>
     </item>
   </channel>
 </rss>
