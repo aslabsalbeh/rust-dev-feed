@@ -6,64 +6,74 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 23 Nov 2026 16:18:06 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 18:18:23 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;157 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;189 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737784,737788"&gt;Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.&lt;/li&gt;
-&lt;li data-rust-commits="737464,737853"&gt;Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.&lt;/li&gt;
-&lt;li data-rust-commits="737854"&gt;Improved scientists&amp;#x27; door-search logic, allowing them to correctly find and use doors when engaging targets.&lt;/li&gt;
+&lt;li data-rust-commits="737880"&gt;Fishing villages now spawn at appropriate distances from river mouths thanks to terrain filters.&lt;/li&gt;
+&lt;li data-rust-commits="737899,737900,737911"&gt;Mission items stored in backpacks now count toward mission objectives, and dispensers track progress correctly.&lt;/li&gt;
+&lt;li data-rust-commits="737944,737945,737947"&gt;Sleeping bags can be placed adjacent to each other; respawn space checks removed, preventing bags from getting stuck on respawn.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Gameplay &amp;amp; Mechanics&lt;/h3&gt;
+&lt;h3&gt;Movement&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737438,737473,737474"&gt;Added a modern sprint system with player-configurable settings.&lt;/li&gt;
-&lt;li data-rust-commits="737584,737585"&gt;Introduced the M939 Truck to the Gas Station and Mining Quarry monuments.&lt;/li&gt;
-&lt;li data-rust-commits="737746"&gt;Deployables placed next to a split-off base section now move with the newly built section instead of staying stuck.&lt;/li&gt;
-&lt;li data-rust-commits="737784,737788"&gt;Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.&lt;/li&gt;
-&lt;li data-rust-commits="737735,737737"&gt;Cars now correctly apply repel force when positioned exactly on an animal, restoring expected animal repulsion behavior.&lt;/li&gt;
-&lt;li data-rust-commits="737539,737619"&gt;New livestock animal types added, and the rename delay has been removed so names can be changed instantly.&lt;/li&gt;
-&lt;li data-rust-commits="737728"&gt;Sprinklers no longer wet players through floors or ceilings.&lt;/li&gt;
+&lt;li data-rust-commits="737438,737473,737474"&gt;Added a modern sprint system with in‑game configurable settings, allowing players to toggle sprint without admin privileges.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737464,737853"&gt;Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.&lt;/li&gt;
-&lt;li data-rust-commits="737470"&gt;Fixed scientists hovering while crouched after switching to the generic humanoid prefab.&lt;/li&gt;
-&lt;li data-rust-commits="737496,737514"&gt;Resolved scientists rotating incorrectly (tilting/flipping) when targeting players, and applied the fix to mounted scientists and seat aim limits.&lt;/li&gt;
-&lt;li data-rust-commits="737854"&gt;Improved scientists&amp;#x27; door-search logic, allowing them to correctly find and use doors when engaging targets.&lt;/li&gt;
+&lt;li data-rust-commits="737464"&gt;Scientists now use a replay‑based aim system, giving them accuracy comparable to real players.&lt;/li&gt;
+&lt;li data-rust-commits="737470,737853,737854"&gt;Fixed scientists hovering when crouched, corrected aim after crouch‑hovering, and enabled proper door searching when they have a target.&lt;/li&gt;
+&lt;li data-rust-commits="737496,737514"&gt;Fixed scientists rotating incorrectly and applied seat aim limits for mounted scientists.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Server &amp;amp; Connectivity&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Server&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737488"&gt;RakNet connection slots now automatically scale with the server&amp;#x27;s maximum player count, removing the previous fixed 1024-slot limit.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Environment&lt;/h3&gt;
-&lt;ul&gt;
+&lt;li data-rust-commits="737488"&gt;RakNet connection slots now scale with server.maxplayers, supporting larger servers.&lt;/li&gt;
 &lt;li data-rust-commits="737728"&gt;Sprinklers no longer wet players through floors or ceilings.&lt;/li&gt;
+&lt;li data-rust-commits="737710"&gt;Cave blending now respects underground tunnel bunker entrances, preventing overlap with monument topology.&lt;/li&gt;
+&lt;li data-rust-commits="737880"&gt;Fishing villages now spawn at appropriate distances from river mouths thanks to terrain filters.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Mounted Weapons&lt;/h3&gt;
+&lt;h3&gt;Gameplay Interactions&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737767,737769"&gt;Mounted gun hands now track pitch correctly, eliminating lag and improving aiming stability.&lt;/li&gt;
+&lt;li data-rust-commits="737619"&gt;Livestock can be renamed instantly, removing the previous delay.&lt;/li&gt;
+&lt;li data-rust-commits="737735"&gt;Car repel force works correctly even when the car is positioned directly on an animal.&lt;/li&gt;
+&lt;li data-rust-commits="737746"&gt;Deployables placed near a split‑off base part now correctly attach to the new building.&lt;/li&gt;
+&lt;li data-rust-commits="737784"&gt;Dropping items on thin surfaces (e.g., oil rig floors) no longer fails due to line‑of‑sight checks hitting the underside.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Environment &amp;amp; Movement&lt;/h3&gt;
+&lt;h3&gt;Missions &amp;amp; Progress&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737730"&gt;Sprinklers no longer leave wet floors, removing unintended slipping hazards.&lt;/li&gt;
+&lt;li data-rust-commits="737899,737900,737911"&gt;Mission items stored in backpacks now count toward mission objectives, and dispensers track progress correctly.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World Generation&lt;/h3&gt;
+&lt;h3&gt;Respawn &amp;amp; Sleeping Bags&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737710"&gt;Cave entrances are prevented from overlapping monument and tunnel entrances, ensuring cleaner terrain and fewer placement bugs.&lt;/li&gt;
+&lt;li data-rust-commits="737944,737945,737947"&gt;Sleeping bags can be placed adjacent to each other; respawn space checks removed, preventing bags from getting stuck on respawn.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737462"&gt;WIP: Scientists now use replayed human movement and aiming patterns, which may change their combat behavior.&lt;/li&gt;
+&lt;li data-rust-commits="737788"&gt;Items now drop correctly instead of being blocked, restoring expected loot retrieval.&lt;/li&gt;
+&lt;li data-rust-commits="737769,737767"&gt;Mounted gun and mortar hands now track pitch accurately, eliminating lag and improving aiming control.&lt;/li&gt;
+&lt;li data-rust-commits="737730"&gt;Sprinkler systems correctly wet floors again, re‑enabling slip mechanics on wet surfaces.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;New Content&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737737,737539"&gt;Livestock animals added, providing new farming resources.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737585"&gt;M939 Truck now spawns at Mining Quarry monuments, offering additional transport options.&lt;/li&gt;
+&lt;li data-rust-commits="737584"&gt;M939 Truck also available at Gas Station monuments.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;AI (WIP)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737462"&gt;Experimenting with replaying human sequences for scientist movement and aiming (WIP).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-23</guid>
-      <pubDate>Mon, 23 Nov 2026 16:18:06 -0500</pubDate>
+      <pubDate>Mon, 23 Nov 2026 18:18:23 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 22</title>
