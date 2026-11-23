@@ -6,66 +6,64 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 23 Nov 2026 14:18:00 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 16:18:06 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;147 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;157 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737728,737730"&gt;Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.&lt;/li&gt;
-&lt;li data-rust-commits="737735,737737"&gt;Cars now push animals away even when directly on top of them, ensuring proper repel force.&lt;/li&gt;
-&lt;li data-rust-commits="737746"&gt;Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.&lt;/li&gt;
-&lt;li data-rust-commits="737784,737788"&gt;Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.&lt;/li&gt;
-&lt;li data-rust-commits="737767,737769"&gt;Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.&lt;/li&gt;
-&lt;li data-rust-commits="737710"&gt;Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.&lt;/li&gt;
+&lt;li data-rust-commits="737784,737788"&gt;Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.&lt;/li&gt;
+&lt;li data-rust-commits="737464,737853"&gt;Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.&lt;/li&gt;
+&lt;li data-rust-commits="737854"&gt;Improved scientists&amp;#x27; door-search logic, allowing them to correctly find and use doors when engaging targets.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;
+&lt;h3&gt;Gameplay &amp;amp; Mechanics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737438,737473,737474"&gt;Sprint movement is now available with a configurable in‑game setting that persists across sessions.&lt;/li&gt;
+&lt;li data-rust-commits="737438,737473,737474"&gt;Added a modern sprint system with player-configurable settings.&lt;/li&gt;
+&lt;li data-rust-commits="737584,737585"&gt;Introduced the M939 Truck to the Gas Station and Mining Quarry monuments.&lt;/li&gt;
+&lt;li data-rust-commits="737746"&gt;Deployables placed next to a split-off base section now move with the newly built section instead of staying stuck.&lt;/li&gt;
+&lt;li data-rust-commits="737784,737788"&gt;Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.&lt;/li&gt;
+&lt;li data-rust-commits="737735,737737"&gt;Cars now correctly apply repel force when positioned exactly on an animal, restoring expected animal repulsion behavior.&lt;/li&gt;
+&lt;li data-rust-commits="737539,737619"&gt;New livestock animal types added, and the rename delay has been removed so names can be changed instantly.&lt;/li&gt;
+&lt;li data-rust-commits="737728"&gt;Sprinklers no longer wet players through floors or ceilings.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737462,737464"&gt;Scientists use a replay‑based system that mirrors human movement and aiming, giving them player‑like accuracy.&lt;/li&gt;
-&lt;li data-rust-commits="737470,737496,737514"&gt;Fixed scientists hovering while crouched and corrected rotation issues that could cause tilting, upside‑down flips, or unresponsiveness, including mounted scientists and seat aim limits.&lt;/li&gt;
+&lt;li data-rust-commits="737464,737853"&gt;Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.&lt;/li&gt;
+&lt;li data-rust-commits="737470"&gt;Fixed scientists hovering while crouched after switching to the generic humanoid prefab.&lt;/li&gt;
+&lt;li data-rust-commits="737496,737514"&gt;Resolved scientists rotating incorrectly (tilting/flipping) when targeting players, and applied the fix to mounted scientists and seat aim limits.&lt;/li&gt;
+&lt;li data-rust-commits="737854"&gt;Improved scientists&amp;#x27; door-search logic, allowing them to correctly find and use doors when engaging targets.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Server &amp;amp; Connectivity&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737488"&gt;Server connection slots now scale with the configured max‑players limit, removing the previous hard‑coded 1024‑player cap.&lt;/li&gt;
+&lt;li data-rust-commits="737488"&gt;RakNet connection slots now automatically scale with the server&amp;#x27;s maximum player count, removing the previous fixed 1024-slot limit.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World&lt;/h3&gt;
+&lt;h3&gt;Environment&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737728,737730"&gt;Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.&lt;/li&gt;
-&lt;li data-rust-commits="737619"&gt;Livestock can be renamed instantly without the previous delay.&lt;/li&gt;
-&lt;li data-rust-commits="737735,737737"&gt;Cars now push animals away even when directly on top of them, ensuring proper repel force.&lt;/li&gt;
+&lt;li data-rust-commits="737728"&gt;Sprinklers no longer wet players through floors or ceilings.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Base &amp;amp; Deployables&lt;/h3&gt;
+&lt;h3&gt;Mounted Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737746"&gt;Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.&lt;/li&gt;
+&lt;li data-rust-commits="737767,737769"&gt;Mounted gun hands now track pitch correctly, eliminating lag and improving aiming stability.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Item Interaction&lt;/h3&gt;
+&lt;h3&gt;Environment &amp;amp; Movement&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737784,737788"&gt;Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.&lt;/li&gt;
+&lt;li data-rust-commits="737730"&gt;Sprinklers no longer leave wet floors, removing unintended slipping hazards.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;World Generation&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737767,737769"&gt;Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Exploration&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737710"&gt;Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.&lt;/li&gt;
+&lt;li data-rust-commits="737710"&gt;Cave entrances are prevented from overlapping monument and tunnel entrances, ensuring cleaner terrain and fewer placement bugs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737585"&gt;M939 Truck can now be found at Mining Quarry Monuments, providing a new transport option for players.&lt;/li&gt;
-&lt;li data-rust-commits="737584"&gt;M939 Truck is now available at Gas Station Monuments, expanding vehicle loot locations.&lt;/li&gt;
+&lt;li data-rust-commits="737462"&gt;WIP: Scientists now use replayed human movement and aiming patterns, which may change their combat behavior.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-23</guid>
-      <pubDate>Mon, 23 Nov 2026 14:18:00 -0500</pubDate>
+      <pubDate>Mon, 23 Nov 2026 16:18:06 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 22</title>

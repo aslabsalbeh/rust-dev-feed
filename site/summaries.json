@@ -1,20 +1,60 @@
 {
   "2026-11-23": {
-    "commit_count": 147,
-    "relevant_commit_count": 36,
-    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807",
+    "commit_count": 157,
+    "relevant_commit_count": 40,
+    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807,737821,737853,737854,737866",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Movement & Controls",
+        "title": "Gameplay & Mechanics",
         "items": [
           {
-            "text": "Sprint movement is now available with a configurable in‑game setting that persists across sessions.",
+            "text": "Added a modern sprint system with player-configurable settings.",
             "commit_ids": [
               737438,
               737473,
               737474
+            ]
+          },
+          {
+            "text": "Introduced the M939 Truck to the Gas Station and Mining Quarry monuments.",
+            "commit_ids": [
+              737584,
+              737585
+            ]
+          },
+          {
+            "text": "Deployables placed next to a split-off base section now move with the newly built section instead of staying stuck.",
+            "commit_ids": [
+              737746
+            ]
+          },
+          {
+            "text": "Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.",
+            "commit_ids": [
+              737784,
+              737788
+            ]
+          },
+          {
+            "text": "Cars now correctly apply repel force when positioned exactly on an animal, restoring expected animal repulsion behavior.",
+            "commit_ids": [
+              737735,
+              737737
+            ]
+          },
+          {
+            "text": "New livestock animal types added, and the rename delay has been removed so names can be changed instantly.",
+            "commit_ids": [
+              737539,
+              737619
+            ]
+          },
+          {
+            "text": "Sprinklers no longer wet players through floors or ceilings.",
+            "commit_ids": [
+              737728
             ]
           }
         ]
@@ -23,18 +63,29 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Scientists use a replay‑based system that mirrors human movement and aiming, giving them player‑like accuracy.",
+            "text": "Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.",
             "commit_ids": [
-              737462,
-              737464
+              737464,
+              737853
             ]
           },
           {
-            "text": "Fixed scientists hovering while crouched and corrected rotation issues that could cause tilting, upside‑down flips, or unresponsiveness, including mounted scientists and seat aim limits.",
+            "text": "Fixed scientists hovering while crouched after switching to the generic humanoid prefab.",
             "commit_ids": [
-              737470,
+              737470
+            ]
+          },
+          {
+            "text": "Resolved scientists rotating incorrectly (tilting/flipping) when targeting players, and applied the fix to mounted scientists and seat aim limits.",
+            "commit_ids": [
               737496,
               737514
+            ]
+          },
+          {
+            "text": "Improved scientists' door-search logic, allowing them to correctly find and use doors when engaging targets.",
+            "commit_ids": [
+              737854
             ]
           }
         ]
@@ -43,7 +94,7 @@
         "title": "Server & Connectivity",
         "items": [
           {
-            "text": "Server connection slots now scale with the configured max‑players limit, removing the previous hard‑coded 1024‑player cap.",
+            "text": "RakNet connection slots now automatically scale with the server's maximum player count, removing the previous fixed 1024-slot limit.",
             "commit_ids": [
               737488
             ]
@@ -51,58 +102,21 @@
         ]
       },
       {
-        "title": "World",
+        "title": "Environment",
         "items": [
           {
-            "text": "Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.",
+            "text": "Sprinklers no longer wet players through floors or ceilings.",
             "commit_ids": [
-              737728,
-              737730
-            ]
-          },
-          {
-            "text": "Livestock can be renamed instantly without the previous delay.",
-            "commit_ids": [
-              737619
-            ]
-          },
-          {
-            "text": "Cars now push animals away even when directly on top of them, ensuring proper repel force.",
-            "commit_ids": [
-              737735,
-              737737
+              737728
             ]
           }
         ]
       },
       {
-        "title": "Base & Deployables",
+        "title": "Mounted Weapons",
         "items": [
           {
-            "text": "Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.",
-            "commit_ids": [
-              737746
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Item Interaction",
-        "items": [
-          {
-            "text": "Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.",
-            "commit_ids": [
-              737784,
-              737788
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Combat & Tools",
-        "items": [
-          {
-            "text": "Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.",
+            "text": "Mounted gun hands now track pitch correctly, eliminating lag and improving aiming stability.",
             "commit_ids": [
               737767,
               737769
@@ -111,10 +125,21 @@
         ]
       },
       {
-        "title": "World & Exploration",
+        "title": "Environment & Movement",
         "items": [
           {
-            "text": "Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.",
+            "text": "Sprinklers no longer leave wet floors, removing unintended slipping hazards.",
+            "commit_ids": [
+              737730
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
+          {
+            "text": "Cave entrances are prevented from overlapping monument and tunnel entrances, ensuring cleaner terrain and fewer placement bugs.",
             "commit_ids": [
               737710
             ]
@@ -125,15 +150,9 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "M939 Truck can now be found at Mining Quarry Monuments, providing a new transport option for players.",
+            "text": "WIP: Scientists now use replayed human movement and aiming patterns, which may change their combat behavior.",
             "commit_ids": [
-              737585
-            ]
-          },
-          {
-            "text": "M939 Truck is now available at Gas Station Monuments, expanding vehicle loot locations.",
-            "commit_ids": [
-              737584
+              737462
             ]
           }
         ]
@@ -142,57 +161,34 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Movement & Controls\n- Sprint movement is now available with a configurable in‑game setting that persists across sessions.\n\n### NPC & AI\n- Scientists use a replay‑based system that mirrors human movement and aiming, giving them player‑like accuracy.\n- Fixed scientists hovering while crouched and corrected rotation issues that could cause tilting, upside‑down flips, or unresponsiveness, including mounted scientists and seat aim limits.\n\n### Server & Connectivity\n- Server connection slots now scale with the configured max‑players limit, removing the previous hard‑coded 1024‑player cap.\n\n### World\n- Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.\n- Livestock can be renamed instantly without the previous delay.\n- Cars now push animals away even when directly on top of them, ensuring proper repel force.\n\n### Base & Deployables\n- Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.\n\n### Item Interaction\n- Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.\n\n### Combat & Tools\n- Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.\n\n### World & Exploration\n- Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.\n\n### Gameplay & Balance\n- M939 Truck can now be found at Mining Quarry Monuments, providing a new transport option for players.\n- M939 Truck is now available at Gas Station Monuments, expanding vehicle loot locations.",
+    "summary": "### Gameplay & Mechanics\n- Added a modern sprint system with player-configurable settings.\n- Introduced the M939 Truck to the Gas Station and Mining Quarry monuments.\n- Deployables placed next to a split-off base section now move with the newly built section instead of staying stuck.\n- Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.\n- Cars now correctly apply repel force when positioned exactly on an animal, restoring expected animal repulsion behavior.\n- New livestock animal types added, and the rename delay has been removed so names can be changed instantly.\n- Sprinklers no longer wet players through floors or ceilings.\n\n### NPC & AI\n- Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.\n- Fixed scientists hovering while crouched after switching to the generic humanoid prefab.\n- Resolved scientists rotating incorrectly (tilting/flipping) when targeting players, and applied the fix to mounted scientists and seat aim limits.\n- Improved scientists' door-search logic, allowing them to correctly find and use doors when engaging targets.\n\n### Server & Connectivity\n- RakNet connection slots now automatically scale with the server's maximum player count, removing the previous fixed 1024-slot limit.\n\n### Environment\n- Sprinklers no longer wet players through floors or ceilings.\n\n### Mounted Weapons\n- Mounted gun hands now track pitch correctly, eliminating lag and improving aiming stability.\n\n### Environment & Movement\n- Sprinklers no longer leave wet floors, removing unintended slipping hazards.\n\n### World Generation\n- Cave entrances are prevented from overlapping monument and tunnel entrances, ensuring cleaner terrain and fewer placement bugs.\n\n### Gameplay & Balance\n- WIP: Scientists now use replayed human movement and aiming patterns, which may change their combat behavior.",
     "new_items": [
       {
-        "text": "Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.",
-        "commit_ids": [
-          737728,
-          737730
-        ],
-        "section": "World"
-      },
-      {
-        "text": "Cars now push animals away even when directly on top of them, ensuring proper repel force.",
-        "commit_ids": [
-          737735,
-          737737
-        ],
-        "section": "World"
-      },
-      {
-        "text": "Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.",
-        "commit_ids": [
-          737746
-        ],
-        "section": "Base & Deployables"
-      },
-      {
-        "text": "Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.",
+        "text": "Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.",
         "commit_ids": [
           737784,
           737788
         ],
-        "section": "Item Interaction"
+        "section": "Gameplay & Mechanics"
       },
       {
-        "text": "Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.",
+        "text": "Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.",
         "commit_ids": [
-          737767,
-          737769
+          737464,
+          737853
         ],
-        "section": "Combat & Tools"
+        "section": "NPC & AI"
       },
       {
-        "text": "Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.",
+        "text": "Improved scientists' door-search logic, allowing them to correctly find and use doors when engaging targets.",
         "commit_ids": [
-          737710
+          737854
         ],
-        "section": "World & Exploration"
+        "section": "NPC & AI"
       }
     ],
-    "new_relevant_count": 10,
-    "new_summary": "- Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.\n- Cars now push animals away even when directly on top of them, ensuring proper repel force.\n- Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.\n- Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.\n- Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.\n- Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures."
+    "new_relevant_count": 5,
+    "new_summary": "- Item drops on thin surfaces (e.g., oil rig floors) now succeed thanks to added padding that prevents line-of-sight checks from blocking them.\n- Scientists now use a replay-based aim system, providing player-level accuracy and eliminating off-target shots after crouch-hover fixes.\n- Improved scientists' door-search logic, allowing them to correctly find and use doors when engaging targets."
   },
   "2026-11-22": {
     "commit_count": 121,
