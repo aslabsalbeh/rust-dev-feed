@@ -6,51 +6,66 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Mon, 23 Nov 2026 12:17:23 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 14:18:00 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;117 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;147 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737710"&gt;Cave generation now avoids overlapping underground tunnel bunker entrances, preventing unexpected cave‑monument intersections.&lt;/li&gt;
-&lt;li data-rust-commits="737619"&gt;Livestock can be renamed instantly without the previous delay.&lt;/li&gt;
+&lt;li data-rust-commits="737728,737730"&gt;Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.&lt;/li&gt;
+&lt;li data-rust-commits="737735,737737"&gt;Cars now push animals away even when directly on top of them, ensuring proper repel force.&lt;/li&gt;
+&lt;li data-rust-commits="737746"&gt;Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.&lt;/li&gt;
+&lt;li data-rust-commits="737784,737788"&gt;Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.&lt;/li&gt;
+&lt;li data-rust-commits="737767,737769"&gt;Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.&lt;/li&gt;
+&lt;li data-rust-commits="737710"&gt;Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;World &amp;amp; Terrain&lt;/h3&gt;
+&lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737710"&gt;Cave generation now avoids overlapping underground tunnel bunker entrances, preventing unexpected cave‑monument intersections.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicles&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737585,737584"&gt;M939 Truck added to Mining Quarry and Gas Station monuments, providing new vehicle spawn points.&lt;/li&gt;
+&lt;li data-rust-commits="737438,737473,737474"&gt;Sprint movement is now available with a configurable in‑game setting that persists across sessions.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737514,737496,737470,737464"&gt;Scientists&amp;#x27; aiming and rotation bugs fixed: they no longer flip upside down, hover when crouched, or miss seat aim limits, and their aim accuracy has been improved to mimic player behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Livestock&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737619"&gt;Livestock can be renamed instantly without the previous delay.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Movement Settings&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737473"&gt;Modern sprint movement can now be toggled in‑game via a saved setting available to all players.&lt;/li&gt;
+&lt;li data-rust-commits="737462,737464"&gt;Scientists use a replay‑based system that mirrors human movement and aiming, giving them player‑like accuracy.&lt;/li&gt;
+&lt;li data-rust-commits="737470,737496,737514"&gt;Fixed scientists hovering while crouched and corrected rotation issues that could cause tilting, upside‑down flips, or unresponsiveness, including mounted scientists and seat aim limits.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Server &amp;amp; Connectivity&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737488"&gt;Server connection slots now scale with the configured max player count instead of a fixed 1024 limit, enabling larger player populations per server.&lt;/li&gt;
+&lt;li data-rust-commits="737488"&gt;Server connection slots now scale with the configured max‑players limit, removing the previous hard‑coded 1024‑player cap.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Bug Fixes&lt;/h3&gt;
+&lt;h3&gt;World&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737486"&gt;Cows no longer display milk after being milked, fixing the lingering milk visual bug.&lt;/li&gt;
-&lt;li data-rust-commits="737486"&gt;Leads now correctly appear in the wheel tool, fixing the missing lead visual.&lt;/li&gt;
+&lt;li data-rust-commits="737728,737730"&gt;Sprinklers no longer wet players through floors or ceilings, and the wet‑floor effect now works correctly.&lt;/li&gt;
+&lt;li data-rust-commits="737619"&gt;Livestock can be renamed instantly without the previous delay.&lt;/li&gt;
+&lt;li data-rust-commits="737735,737737"&gt;Cars now push animals away even when directly on top of them, ensuring proper repel force.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Base &amp;amp; Deployables&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737746"&gt;Deployables placed near a split‑off base section automatically attach to the new building instead of staying with the old one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Item Interaction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737784,737788"&gt;Item drops work on thin surfaces like oil rig floors; line‑of‑sight checks have been padded to prevent false collisions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Combat &amp;amp; Tools&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737767,737769"&gt;Mortar hand models now correctly follow pitch, removing lag and improving aiming visuals.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World &amp;amp; Exploration&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737710"&gt;Cave generation has been adjusted to prevent overlaps with monument entrances, ensuring tunnels don’t intersect base structures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737585"&gt;M939 Truck can now be found at Mining Quarry Monuments, providing a new transport option for players.&lt;/li&gt;
+&lt;li data-rust-commits="737584"&gt;M939 Truck is now available at Gas Station Monuments, expanding vehicle loot locations.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-23</guid>
-      <pubDate>Mon, 23 Nov 2026 12:17:23 -0500</pubDate>
+      <pubDate>Mon, 23 Nov 2026 14:18:00 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 22</title>
