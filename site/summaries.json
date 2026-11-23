@@ -1,18 +1,18 @@
 {
   "2026-11-23": {
-    "commit_count": 91,
-    "relevant_commit_count": 22,
-    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619",
+    "commit_count": 117,
+    "relevant_commit_count": 23,
+    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Livestock",
+        "title": "World & Terrain",
         "items": [
           {
-            "text": "Removed the rename delay for livestock, allowing immediate renaming.",
+            "text": "Cave generation now avoids overlapping underground tunnel bunker entrances, preventing unexpected cave‑monument intersections.",
             "commit_ids": [
-              737619
+              737710
             ]
           }
         ]
@@ -21,7 +21,7 @@
         "title": "Vehicles",
         "items": [
           {
-            "text": "M939 trucks are now available at Mining Quarry and Gas Station monuments.",
+            "text": "M939 Truck added to Mining Quarry and Gas Station monuments, providing new vehicle spawn points.",
             "commit_ids": [
               737585,
               737584
@@ -33,7 +33,7 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Scientists now have corrected aiming and movement: they no longer flip upside‑down, aim limits apply when mounted, and their AI uses a replay‑based system for more realistic accuracy.",
+            "text": "Scientists' aiming and rotation bugs fixed: they no longer flip upside down, hover when crouched, or miss seat aim limits, and their aim accuracy has been improved to mimic player behavior.",
             "commit_ids": [
               737514,
               737496,
@@ -44,10 +44,21 @@
         ]
       },
       {
-        "title": "Movement",
+        "title": "Livestock",
         "items": [
           {
-            "text": "Added an in‑game setting to toggle modern sprint movement, saved per player and no longer admin‑only.",
+            "text": "Livestock can be renamed instantly without the previous delay.",
+            "commit_ids": [
+              737619
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Movement Settings",
+        "items": [
+          {
+            "text": "Modern sprint movement can now be toggled in‑game via a saved setting available to all players.",
             "commit_ids": [
               737473
             ]
@@ -66,19 +77,18 @@
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Bug Fixes",
         "items": [
           {
-            "text": "Leads now appear correctly in the inventory wheel, fixing the missing lead item issue.",
+            "text": "Cows no longer display milk after being milked, fixing the lingering milk visual bug.",
             "commit_ids": [
               737486
             ]
           },
           {
-            "text": "Sprint mechanics have been updated to a modern system, changing stamina usage and sprint speed for smoother movement.",
+            "text": "Leads now correctly appear in the wheel tool, fixing the missing lead visual.",
             "commit_ids": [
-              737474,
-              737438
+              737486
             ]
           }
         ]
@@ -87,26 +97,25 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Livestock\n- Removed the rename delay for livestock, allowing immediate renaming.\n\n### Vehicles\n- M939 trucks are now available at Mining Quarry and Gas Station monuments.\n\n### NPC & AI\n- Scientists now have corrected aiming and movement: they no longer flip upside‑down, aim limits apply when mounted, and their AI uses a replay‑based system for more realistic accuracy.\n\n### Movement\n- Added an in‑game setting to toggle modern sprint movement, saved per player and no longer admin‑only.\n\n### Server & Connectivity\n- Server connection slots now scale with the configured max player count instead of a fixed 1024 limit, enabling larger player populations per server.\n\n### Gameplay & Balance\n- Leads now appear correctly in the inventory wheel, fixing the missing lead item issue.\n- Sprint mechanics have been updated to a modern system, changing stamina usage and sprint speed for smoother movement.",
+    "summary": "### World & Terrain\n- Cave generation now avoids overlapping underground tunnel bunker entrances, preventing unexpected cave‑monument intersections.\n\n### Vehicles\n- M939 Truck added to Mining Quarry and Gas Station monuments, providing new vehicle spawn points.\n\n### NPC & AI\n- Scientists' aiming and rotation bugs fixed: they no longer flip upside down, hover when crouched, or miss seat aim limits, and their aim accuracy has been improved to mimic player behavior.\n\n### Livestock\n- Livestock can be renamed instantly without the previous delay.\n\n### Movement Settings\n- Modern sprint movement can now be toggled in‑game via a saved setting available to all players.\n\n### Server & Connectivity\n- Server connection slots now scale with the configured max player count instead of a fixed 1024 limit, enabling larger player populations per server.\n\n### Bug Fixes\n- Cows no longer display milk after being milked, fixing the lingering milk visual bug.\n- Leads now correctly appear in the wheel tool, fixing the missing lead visual.",
     "new_items": [
       {
-        "text": "Removed the rename delay for livestock, allowing immediate renaming.",
+        "text": "Cave generation now avoids overlapping underground tunnel bunker entrances, preventing unexpected cave‑monument intersections.",
+        "commit_ids": [
+          737710
+        ],
+        "section": "World & Terrain"
+      },
+      {
+        "text": "Livestock can be renamed instantly without the previous delay.",
         "commit_ids": [
           737619
         ],
         "section": "Livestock"
-      },
-      {
-        "text": "M939 trucks are now available at Mining Quarry and Gas Station monuments.",
-        "commit_ids": [
-          737585,
-          737584
-        ],
-        "section": "Vehicles"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Removed the rename delay for livestock, allowing immediate renaming.\n- M939 trucks are now available at Mining Quarry and Gas Station monuments."
+    "new_relevant_count": 2,
+    "new_summary": "- Cave generation now avoids overlapping underground tunnel bunker entrances, preventing unexpected cave‑monument intersections.\n- Livestock can be renamed instantly without the previous delay."
   },
   "2026-11-22": {
     "commit_count": 121,
