@@ -1,16 +1,31 @@
 {
+  "2026-11-24": {
+    "commit_count": 3,
+    "relevant_commit_count": 2,
+    "relevant_signature": "738070,738075",
+    "prompt_version": "structured-read-state-v8-stable-chunks",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "notice": "",
+    "pending_relevant_count": 0,
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-11-23": {
-    "commit_count": 229,
-    "relevant_commit_count": 75,
-    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807,737821,737853,737854,737866,737880,737887,737899,737900,737911,737912,737934,737935,737939,737941,737942,737944,737945,737947,737960,737974,737975,737976,737978,737984,737985,737988,737995,737997,738025,738026,738032,738033,738034,738035,738036,738037,738038,738063,738064",
+    "commit_count": 230,
+    "relevant_commit_count": 76,
+    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807,737821,737853,737854,737866,737880,737887,737899,737900,737911,737912,737934,737935,737939,737941,737942,737944,737945,737947,737960,737974,737975,737976,737978,737984,737985,737988,737995,737997,738025,738026,738032,738033,738034,738035,738036,738037,738038,738063,738064,738069",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Movement",
+        "title": "Movement & Controls",
         "items": [
           {
-            "text": "Added a modern sprint system with in‑game settings for speed and stamina.",
+            "text": "Sprint is now a toggleable option in the in‑game settings that persists across sessions, giving players consistent sprint behavior.",
             "commit_ids": [
               737438,
               737473,
@@ -20,118 +35,29 @@
         ]
       },
       {
+        "title": "Server Capacity",
+        "items": [
+          {
+            "text": "Server connection slots now scale with the configured max‑player limit, allowing larger player populations without the previous 1024‑player cap.",
+            "commit_ids": [
+              737488
+            ]
+          }
+        ]
+      },
+      {
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Scientists now use a replay‑based aim system, fixed crouch‑hover issues, corrected rotation bugs, and improved door‑search targeting for more reliable combat behavior.",
+            "text": "Scientists use a replay‑based aim system and corrected rotation, eliminating tilting and upside‑down targeting, and they now navigate doors correctly, resulting in more realistic and accurate combat behavior.",
             "commit_ids": [
+              737462,
               737464,
-              737470,
               737496,
               737514,
+              737470,
               737853,
               737854
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Animals & Livestock",
-        "items": [
-          {
-            "text": "Livestock can be renamed instantly without delay.",
-            "commit_ids": [
-              737619
-            ]
-          },
-          {
-            "text": "Cow models no longer display milk and the lead item appears correctly in the inventory wheel.",
-            "commit_ids": [
-              737486
-            ]
-          },
-          {
-            "text": "Dog commands were refined; dogs obey heel better and now run at player speed.",
-            "commit_ids": [
-              737974,
-              737988
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World & Environment",
-        "items": [
-          {
-            "text": "Sprinklers no longer wet players through floors or ceilings.",
-            "commit_ids": [
-              737728
-            ]
-          },
-          {
-            "text": "Fishing villages are placed farther from river mouths, avoiding unsuitable river terrain.",
-            "commit_ids": [
-              737880
-            ]
-          },
-          {
-            "text": "Overlap bugs fixed: masks use correct layers, junkpiles spawn after trees, and seagull groups no longer block on monument geometry.",
-            "commit_ids": [
-              737976,
-              737978,
-              737995
-            ]
-          },
-          {
-            "text": "Dropping items on thin surfaces (e.g., oil‑rig floors) works reliably without line‑of‑sight blockage.",
-            "commit_ids": [
-              737784
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Deployables",
-        "items": [
-          {
-            "text": "Cars now repel animals even when positioned directly on them, preventing animals from getting stuck.",
-            "commit_ids": [
-              737735
-            ]
-          },
-          {
-            "text": "Deployables placed near a split‑off base section now move with the new section instead of staying behind.",
-            "commit_ids": [
-              737746
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Missions & Endgame",
-        "items": [
-          {
-            "text": "Items stored in backpacks count toward mission objectives, and dispensers track progress correctly.",
-            "commit_ids": [
-              737899,
-              737900
-            ]
-          },
-          {
-            "text": "New team extraction: a freight lift in the exit test scene lets the whole squad leave together, with improved UI for escape hatch and balloon‑pad console.",
-            "commit_ids": [
-              737934,
-              737935,
-              737939,
-              737941
-            ]
-          },
-          {
-            "text": "Sleeping bags can be placed adjacent to each other and the respawn space check was removed, fixing stuck respawn issues.",
-            "commit_ids": [
-              737944,
-              737945,
-              737947
             ]
           }
         ]
@@ -140,65 +66,120 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Character creator now correctly retains each slot's selected underwear and prevents players from appearing naked when a body type lacks underwear parts.",
+            "text": "Thruster module recipe increased from 40 to 60 explosives, making it harder to craft.",
             "commit_ids": [
-              738035,
-              738034,
-              738033
+              738069
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Character Creator",
+        "items": [
+          {
+            "text": "Underwear now stays attached to each character slot, preventing loss when switching slots.",
+            "commit_ids": [
+              738035
             ]
           },
           {
-            "text": "Changing the body type instantly enables the facial hair tab, streamlining appearance customization.",
+            "text": "Body types without underwear parts no longer leave the player naked.",
             "commit_ids": [
-              738032
+              738034
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation & Environment",
+        "items": [
+          {
+            "text": "Fixed layer‑mask bug so trees, ore nodes and junkpiles correctly block each other, eliminating spawn overlaps.",
+            "commit_ids": [
+              737976
             ]
           },
           {
-            "text": "Closing the premium shop window also closes the skin viewer, fixing a UI hang-up for premium users.",
+            "text": "Fishing villages now keep a safe distance from river mouths, improving settlement placement.",
             "commit_ids": [
-              738038
+              737880
             ]
           },
           {
-            "text": "Mission item dispensers now reliably spawn items, fixing previous missing or duplicated rewards.",
-            "commit_ids": [
-              737911
-            ]
-          },
-          {
-            "text": "Item drops that were previously blocked by a bug now drop correctly, ensuring loot is obtainable.",
-            "commit_ids": [
-              737788
-            ]
-          },
-          {
-            "text": "Cave terrain blending no longer overlaps underground tunnel entrances or monument topology, improving map navigation and preventing impossible geometry.",
+            "text": "Cave terrain blends are prevented from overlapping monument topology and underground tunnel entrances.",
             "commit_ids": [
               737710
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Sleeping Bag & Respawn",
+        "items": [
           {
-            "text": "Mortar aiming now matches player pitch without hand lag, improving accuracy.",
+            "text": "Sleeping bag respawn logic adjusted to stop bags from getting stuck and removed the space‑check on manual respawn.",
             "commit_ids": [
-              737767
+              737947,
+              737945
             ]
           },
           {
-            "text": "M939 Truck now spawns at the Excavator Monument, providing a new vehicle option for players.",
+            "text": "Bag bounds tweaked so bags can be deployed right next to each other.",
             "commit_ids": [
-              737960
+              737944
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Mission Items",
+        "items": [
+          {
+            "text": "Mission item dispensers now correctly track objectives and progress, including items stored in backpacks.",
+            "commit_ids": [
+              737911,
+              737900,
+              737899
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Item Dropping & Building",
+        "items": [
+          {
+            "text": "Item drops are no longer blocked on thin surfaces such as oil‑rig floors.",
+            "commit_ids": [
+              737788,
+              737784
             ]
           },
           {
-            "text": "M939 Truck now spawns at Mining Quarry Monuments, expanding vehicle availability in quarry areas.",
+            "text": "Deployables placed beside a split‑off part of a base now stay with the correct building.",
             "commit_ids": [
-              737585
+              737746
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Interactions",
+        "items": [
           {
-            "text": "M939 Truck now spawns at the Gas Station Monument, adding another vehicle spawn point.",
+            "text": "Car repel force works even when the car is exactly on an animal, restoring intended vehicle‑animal interaction.",
             "commit_ids": [
-              737584
+              737735
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Sprinklers",
+        "items": [
+          {
+            "text": "Sprinklers no longer make players wet through floors or ceilings.",
+            "commit_ids": [
+              737728
             ]
           }
         ]
@@ -207,7 +188,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Movement\n- Added a modern sprint system with in‑game settings for speed and stamina.\n\n### NPC & AI\n- Scientists now use a replay‑based aim system, fixed crouch‑hover issues, corrected rotation bugs, and improved door‑search targeting for more reliable combat behavior.\n\n### Animals & Livestock\n- Livestock can be renamed instantly without delay.\n- Cow models no longer display milk and the lead item appears correctly in the inventory wheel.\n- Dog commands were refined; dogs obey heel better and now run at player speed.\n\n### World & Environment\n- Sprinklers no longer wet players through floors or ceilings.\n- Fishing villages are placed farther from river mouths, avoiding unsuitable river terrain.\n- Overlap bugs fixed: masks use correct layers, junkpiles spawn after trees, and seagull groups no longer block on monument geometry.\n- Dropping items on thin surfaces (e.g., oil‑rig floors) works reliably without line‑of‑sight blockage.\n\n### Vehicles & Deployables\n- Cars now repel animals even when positioned directly on them, preventing animals from getting stuck.\n- Deployables placed near a split‑off base section now move with the new section instead of staying behind.\n\n### Missions & Endgame\n- Items stored in backpacks count toward mission objectives, and dispensers track progress correctly.\n- New team extraction: a freight lift in the exit test scene lets the whole squad leave together, with improved UI for escape hatch and balloon‑pad console.\n- Sleeping bags can be placed adjacent to each other and the respawn space check was removed, fixing stuck respawn issues.\n\n### Gameplay & Balance\n- Character creator now correctly retains each slot's selected underwear and prevents players from appearing naked when a body type lacks underwear parts.\n- Changing the body type instantly enables the facial hair tab, streamlining appearance customization.\n- Closing the premium shop window also closes the skin viewer, fixing a UI hang-up for premium users.\n- Mission item dispensers now reliably spawn items, fixing previous missing or duplicated rewards.\n- Item drops that were previously blocked by a bug now drop correctly, ensuring loot is obtainable.\n- Cave terrain blending no longer overlaps underground tunnel entrances or monument topology, improving map navigation and preventing impossible geometry.\n- Mortar aiming now matches player pitch without hand lag, improving accuracy.\n- M939 Truck now spawns at the Excavator Monument, providing a new vehicle option for players.\n- M939 Truck now spawns at Mining Quarry Monuments, expanding vehicle availability in quarry areas.\n- M939 Truck now spawns at the Gas Station Monument, adding another vehicle spawn point.",
+    "summary": "### Movement & Controls\n- Sprint is now a toggleable option in the in‑game settings that persists across sessions, giving players consistent sprint behavior.\n\n### Server Capacity\n- Server connection slots now scale with the configured max‑player limit, allowing larger player populations without the previous 1024‑player cap.\n\n### NPC & AI\n- Scientists use a replay‑based aim system and corrected rotation, eliminating tilting and upside‑down targeting, and they now navigate doors correctly, resulting in more realistic and accurate combat behavior.\n\n### Gameplay & Balance\n- Thruster module recipe increased from 40 to 60 explosives, making it harder to craft.\n\n### Character Creator\n- Underwear now stays attached to each character slot, preventing loss when switching slots.\n- Body types without underwear parts no longer leave the player naked.\n\n### World Generation & Environment\n- Fixed layer‑mask bug so trees, ore nodes and junkpiles correctly block each other, eliminating spawn overlaps.\n- Fishing villages now keep a safe distance from river mouths, improving settlement placement.\n- Cave terrain blends are prevented from overlapping monument topology and underground tunnel entrances.\n\n### Sleeping Bag & Respawn\n- Sleeping bag respawn logic adjusted to stop bags from getting stuck and removed the space‑check on manual respawn.\n- Bag bounds tweaked so bags can be deployed right next to each other.\n\n### Mission Items\n- Mission item dispensers now correctly track objectives and progress, including items stored in backpacks.\n\n### Item Dropping & Building\n- Item drops are no longer blocked on thin surfaces such as oil‑rig floors.\n- Deployables placed beside a split‑off part of a base now stay with the correct building.\n\n### Vehicles & Interactions\n- Car repel force works even when the car is exactly on an animal, restoring intended vehicle‑animal interaction.\n\n### Sprinklers\n- Sprinklers no longer make players wet through floors or ceilings.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -341,73 +322,6 @@
     "notice": "",
     "pending_relevant_count": 0,
     "summary": "### Map Layout\n- Monuments are arranged in eccentric rings with the endgame core offset to one side; the Power Plant sits centrally, core monuments lean inward and are anchored to specific rings.\n- The first closing balloon is placed in the outer ring, away from hatches.\n\n### AI & Reinforcements\n- Tier‑2 monuments now host gunner drones that fire pistol rounds with recoil.\n- Core monuments are guarded by AI; when their guards are depleted helicopters can deliver reinforcements and a Bradley patrols the core area, and players receive warnings near monuments and before a balloon closes.\n\n### Economy & Pricing\n- Backpack sale price is fixed at 400 after completing Missing Shipment, and loot items have fixed rarity‑based pricing that no longer varies with colour.\n- Item values are calculated from supply stock and a fixed shop list (bandit camp excluded); gold‑floor items, condition‑scaled sales and blueprint prices are defined without bandit influence, the safe pocket only accepts non‑weapon/armour items and values them as the shop would pay, and the shop now buys only finished goods while components are sent to a recycler for a refund.\n\n### Inventory & Loot\n- Stash capacity increased by two rows at a time up to a maximum of 96 slots.\n- Low‑tier crates and barrels now contain fewer tools and weapons, and junk‑pile crates no longer include ring parts.\n\n### Raid & Extraction\n- Extraction balloons no longer carry a secondary hot‑air balloon; escape hatches can be opened with a Cobalt bypass card; outer‑ring crates now have a rare jackpot chance; and raid duration is extended to 35 minutes.\n- Raid reset now removes player‑placed structures along with their contents.\n\n### Gameplay & Balance\n- Improved beach spawn locations reduce clustering and give more reliable initial placement.\n- Fishing vendor updates add new bait options and adjust pricing for better resource management.\n- Fixed overlapping train tunnel geometry, preventing players from getting stuck or falling through tunnels.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-21": {
-    "commit_count": 68,
-    "relevant_commit_count": 20,
-    "relevant_signature": "736935,736936,736937,736939,736942,736943,736944,736950,736952,736953,736954,736955,736956,736957,736958,736959,736962,736963,736964,736965",
-    "prompt_version": "structured-read-state-v8-stable-chunks",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "NPC & AI",
-        "items": [
-          {
-            "text": "Fixed lambs getting stuck and failing to follow a sprinting player when led.",
-            "commit_ids": [
-              736965
-            ]
-          },
-          {
-            "text": "Scout NPCs that become trapped against signs or poles now automatically free themselves.",
-            "commit_ids": [
-              736963
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Monuments & World",
-        "items": [
-          {
-            "text": "Monument guard NPCs now spread out, scale with monument size, and can stand on any floor.",
-            "commit_ids": [
-              736964
-            ]
-          },
-          {
-            "text": "Raid maps now spawn only whitelisted monuments, with each tier‑1 monument appearing once per map.",
-            "commit_ids": [
-              736962
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Stash UI no longer repeats the bank balance, showing the correct amount only.",
-            "commit_ids": [
-              736942
-            ]
-          },
-          {
-            "text": "Bank balance is now always displayed on the Outpost screen for continuous fund monitoring.",
-            "commit_ids": [
-              736935
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "notice": "",
-    "pending_relevant_count": 0,
-    "summary": "### NPC & AI\n- Fixed lambs getting stuck and failing to follow a sprinting player when led.\n- Scout NPCs that become trapped against signs or poles now automatically free themselves.\n\n### Monuments & World\n- Monument guard NPCs now spread out, scale with monument size, and can stand on any floor.\n- Raid maps now spawn only whitelisted monuments, with each tier‑1 monument appearing once per map.\n\n### UI & Quality of Life\n- Stash UI no longer repeats the bank balance, showing the correct amount only.\n- Bank balance is now always displayed on the Outpost screen for continuous fund monitoring.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

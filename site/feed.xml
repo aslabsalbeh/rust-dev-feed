@@ -6,57 +6,72 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 24 Nov 2026 00:18:58 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 02:19:28 -0500</lastBuildDate>
+    <item>
+      <title>Today's Rust Updates — Nov 24</title>
+      <description>&lt;div class="rust-dev-summary"&gt;
+&lt;p&gt;&lt;strong&gt;3 development commits&lt;/strong&gt;&lt;/p&gt;
+
+
+&lt;p&gt;No notable player-facing changes were identified in the latest development commits.&lt;/p&gt;
+&lt;/div&gt;</description>
+      <guid isPermaLink="false">rust-dev-2026-11-24</guid>
+      <pubDate>Tue, 24 Nov 2026 02:19:29 -0500</pubDate>
+    </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;229 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;230 development commits&lt;/strong&gt;&lt;/p&gt;
 
 
-&lt;h3&gt;Movement&lt;/h3&gt;
+&lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737438,737473,737474"&gt;Added a modern sprint system with in‑game settings for speed and stamina.&lt;/li&gt;
+&lt;li data-rust-commits="737438,737473,737474"&gt;Sprint is now a toggleable option in the in‑game settings that persists across sessions, giving players consistent sprint behavior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Server Capacity&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737488"&gt;Server connection slots now scale with the configured max‑player limit, allowing larger player populations without the previous 1024‑player cap.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="737464,737470,737496,737514,737853,737854"&gt;Scientists now use a replay‑based aim system, fixed crouch‑hover issues, corrected rotation bugs, and improved door‑search targeting for more reliable combat behavior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Animals &amp;amp; Livestock&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737619"&gt;Livestock can be renamed instantly without delay.&lt;/li&gt;
-&lt;li data-rust-commits="737486"&gt;Cow models no longer display milk and the lead item appears correctly in the inventory wheel.&lt;/li&gt;
-&lt;li data-rust-commits="737974,737988"&gt;Dog commands were refined; dogs obey heel better and now run at player speed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737728"&gt;Sprinklers no longer wet players through floors or ceilings.&lt;/li&gt;
-&lt;li data-rust-commits="737880"&gt;Fishing villages are placed farther from river mouths, avoiding unsuitable river terrain.&lt;/li&gt;
-&lt;li data-rust-commits="737976,737978,737995"&gt;Overlap bugs fixed: masks use correct layers, junkpiles spawn after trees, and seagull groups no longer block on monument geometry.&lt;/li&gt;
-&lt;li data-rust-commits="737784"&gt;Dropping items on thin surfaces (e.g., oil‑rig floors) works reliably without line‑of‑sight blockage.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicles &amp;amp; Deployables&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737735"&gt;Cars now repel animals even when positioned directly on them, preventing animals from getting stuck.&lt;/li&gt;
-&lt;li data-rust-commits="737746"&gt;Deployables placed near a split‑off base section now move with the new section instead of staying behind.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Missions &amp;amp; Endgame&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="737899,737900"&gt;Items stored in backpacks count toward mission objectives, and dispensers track progress correctly.&lt;/li&gt;
-&lt;li data-rust-commits="737934,737935,737939,737941"&gt;New team extraction: a freight lift in the exit test scene lets the whole squad leave together, with improved UI for escape hatch and balloon‑pad console.&lt;/li&gt;
-&lt;li data-rust-commits="737944,737945,737947"&gt;Sleeping bags can be placed adjacent to each other and the respawn space check was removed, fixing stuck respawn issues.&lt;/li&gt;
+&lt;li data-rust-commits="737462,737464,737496,737514,737470,737853,737854"&gt;Scientists use a replay‑based aim system and corrected rotation, eliminating tilting and upside‑down targeting, and they now navigate doors correctly, resulting in more realistic and accurate combat behavior.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738035,738034,738033"&gt;Character creator now correctly retains each slot&amp;#x27;s selected underwear and prevents players from appearing naked when a body type lacks underwear parts.&lt;/li&gt;
-&lt;li data-rust-commits="738032"&gt;Changing the body type instantly enables the facial hair tab, streamlining appearance customization.&lt;/li&gt;
-&lt;li data-rust-commits="738038"&gt;Closing the premium shop window also closes the skin viewer, fixing a UI hang-up for premium users.&lt;/li&gt;
-&lt;li data-rust-commits="737911"&gt;Mission item dispensers now reliably spawn items, fixing previous missing or duplicated rewards.&lt;/li&gt;
-&lt;li data-rust-commits="737788"&gt;Item drops that were previously blocked by a bug now drop correctly, ensuring loot is obtainable.&lt;/li&gt;
-&lt;li data-rust-commits="737710"&gt;Cave terrain blending no longer overlaps underground tunnel entrances or monument topology, improving map navigation and preventing impossible geometry.&lt;/li&gt;
-&lt;li data-rust-commits="737767"&gt;Mortar aiming now matches player pitch without hand lag, improving accuracy.&lt;/li&gt;
-&lt;li data-rust-commits="737960"&gt;M939 Truck now spawns at the Excavator Monument, providing a new vehicle option for players.&lt;/li&gt;
-&lt;li data-rust-commits="737585"&gt;M939 Truck now spawns at Mining Quarry Monuments, expanding vehicle availability in quarry areas.&lt;/li&gt;
-&lt;li data-rust-commits="737584"&gt;M939 Truck now spawns at the Gas Station Monument, adding another vehicle spawn point.&lt;/li&gt;
+&lt;li data-rust-commits="738069"&gt;Thruster module recipe increased from 40 to 60 explosives, making it harder to craft.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Character Creator&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738035"&gt;Underwear now stays attached to each character slot, preventing loss when switching slots.&lt;/li&gt;
+&lt;li data-rust-commits="738034"&gt;Body types without underwear parts no longer leave the player naked.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;World Generation &amp;amp; Environment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737976"&gt;Fixed layer‑mask bug so trees, ore nodes and junkpiles correctly block each other, eliminating spawn overlaps.&lt;/li&gt;
+&lt;li data-rust-commits="737880"&gt;Fishing villages now keep a safe distance from river mouths, improving settlement placement.&lt;/li&gt;
+&lt;li data-rust-commits="737710"&gt;Cave terrain blends are prevented from overlapping monument topology and underground tunnel entrances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Sleeping Bag &amp;amp; Respawn&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737947,737945"&gt;Sleeping bag respawn logic adjusted to stop bags from getting stuck and removed the space‑check on manual respawn.&lt;/li&gt;
+&lt;li data-rust-commits="737944"&gt;Bag bounds tweaked so bags can be deployed right next to each other.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Mission Items&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737911,737900,737899"&gt;Mission item dispensers now correctly track objectives and progress, including items stored in backpacks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Item Dropping &amp;amp; Building&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737788,737784"&gt;Item drops are no longer blocked on thin surfaces such as oil‑rig floors.&lt;/li&gt;
+&lt;li data-rust-commits="737746"&gt;Deployables placed beside a split‑off part of a base now stay with the correct building.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vehicles &amp;amp; Interactions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737735"&gt;Car repel force works even when the car is exactly on an animal, restoring intended vehicle‑animal interaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Sprinklers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="737728"&gt;Sprinklers no longer make players wet through floors or ceilings.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-23</guid>
@@ -102,31 +117,6 @@
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-22</guid>
       <pubDate>Sun, 22 Nov 2026 12:00:00 -0500</pubDate>
-    </item>
-    <item>
-      <title>Rust Development Updates — Nov 21</title>
-      <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;68 development commits&lt;/strong&gt;&lt;/p&gt;
-
-
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736965"&gt;Fixed lambs getting stuck and failing to follow a sprinting player when led.&lt;/li&gt;
-&lt;li data-rust-commits="736963"&gt;Scout NPCs that become trapped against signs or poles now automatically free themselves.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Monuments &amp;amp; World&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736964"&gt;Monument guard NPCs now spread out, scale with monument size, and can stand on any floor.&lt;/li&gt;
-&lt;li data-rust-commits="736962"&gt;Raid maps now spawn only whitelisted monuments, with each tier‑1 monument appearing once per map.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="736942"&gt;Stash UI no longer repeats the bank balance, showing the correct amount only.&lt;/li&gt;
-&lt;li data-rust-commits="736935"&gt;Bank balance is now always displayed on the Outpost screen for continuous fund monitoring.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;</description>
-      <guid isPermaLink="false">rust-dev-2026-11-21</guid>
-      <pubDate>Sat, 21 Nov 2026 12:00:00 -0500</pubDate>
     </item>
   </channel>
 </rss>
