@@ -1,27 +1,20 @@
 {
   "2026-11-23": {
-    "commit_count": 224,
-    "relevant_commit_count": 73,
-    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807,737821,737853,737854,737866,737880,737887,737899,737900,737911,737912,737934,737935,737939,737941,737942,737944,737945,737947,737960,737974,737975,737976,737978,737984,737985,737988,737995,737997,738025,738026,738032,738033,738034,738035,738036,738037,738038",
+    "commit_count": 229,
+    "relevant_commit_count": 75,
+    "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807,737821,737853,737854,737866,737880,737887,737899,737900,737911,737912,737934,737935,737939,737941,737942,737944,737945,737947,737960,737974,737975,737976,737978,737984,737985,737988,737995,737997,738025,738026,738032,738033,738034,738035,738036,738037,738038,738063,738064",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Movement & Controls",
+        "title": "Movement",
         "items": [
           {
-            "text": "Added configurable sprint movement, now player‑controlled via in‑game settings.",
+            "text": "Added a modern sprint system with in‑game settings for speed and stamina.",
             "commit_ids": [
               737438,
               737473,
               737474
-            ]
-          },
-          {
-            "text": "Improved dog commands: better heel command and dogs now match player speed, making handling smoother.",
-            "commit_ids": [
-              737974,
-              737988
             ]
           }
         ]
@@ -30,9 +23,8 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Overhauled scientist AI with replay‑based aim, accurate after crouch‑hovering, and fixes for hovering, rotation, and door‑search bugs, resulting in reliable targeting and movement.",
+            "text": "Scientists now use a replay‑based aim system, fixed crouch‑hover issues, corrected rotation bugs, and improved door‑search targeting for more reliable combat behavior.",
             "commit_ids": [
-              737462,
               737464,
               737470,
               737496,
@@ -44,54 +36,50 @@
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "Animals & Livestock",
         "items": [
           {
-            "text": "Fishing villages now spawn at safer distances from river mouths, reducing clutter.",
+            "text": "Livestock can be renamed instantly without delay.",
             "commit_ids": [
-              737880
+              737619
             ]
           },
           {
-            "text": "Sprinklers no longer wet players through floors or ceilings, preventing unexpected wetness.",
+            "text": "Cow models no longer display milk and the lead item appears correctly in the inventory wheel.",
+            "commit_ids": [
+              737486
+            ]
+          },
+          {
+            "text": "Dog commands were refined; dogs obey heel better and now run at player speed.",
+            "commit_ids": [
+              737974,
+              737988
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World & Environment",
+        "items": [
+          {
+            "text": "Sprinklers no longer wet players through floors or ceilings.",
             "commit_ids": [
               737728
             ]
           },
           {
-            "text": "Fixed procedural spawn overlap issues, preventing trees, ore nodes, junkpiles, etc., from intersecting and allowing seagull groups to spawn correctly.",
+            "text": "Fishing villages are placed farther from river mouths, avoiding unsuitable river terrain.",
+            "commit_ids": [
+              737880
+            ]
+          },
+          {
+            "text": "Overlap bugs fixed: masks use correct layers, junkpiles spawn after trees, and seagull groups no longer block on monument geometry.",
             "commit_ids": [
               737976,
               737978,
               737995
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Transport",
-        "items": [
-          {
-            "text": "Added M939 Truck at Excavator Monument, providing a new transport option.",
-            "commit_ids": [
-              737960
-            ]
-          },
-          {
-            "text": "Fixed car repel force so it triggers correctly when an animal is exactly at the repelling position.",
-            "commit_ids": [
-              737735
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building, Items & Livestock",
-        "items": [
-          {
-            "text": "Deployables now follow split‑off base parts when they are moved, staying with the new structure.",
-            "commit_ids": [
-              737746
             ]
           },
           {
@@ -99,26 +87,47 @@
             "commit_ids": [
               737784
             ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Deployables",
+        "items": [
+          {
+            "text": "Cars now repel animals even when positioned directly on them, preventing animals from getting stuck.",
+            "commit_ids": [
+              737735
+            ]
           },
           {
-            "text": "Livestock can be renamed instantly, removing the previous delay.",
+            "text": "Deployables placed near a split‑off base section now move with the new section instead of staying behind.",
             "commit_ids": [
-              737619
+              737746
             ]
           }
         ]
       },
       {
-        "title": "Missions & Respawn",
+        "title": "Missions & Endgame",
         "items": [
           {
-            "text": "Items stored in backpacks now count toward mission progress.",
+            "text": "Items stored in backpacks count toward mission objectives, and dispensers track progress correctly.",
             "commit_ids": [
-              737899
+              737899,
+              737900
             ]
           },
           {
-            "text": "Sleeping bags can be placed adjacent and no longer get stuck on respawn, improving respawn reliability.",
+            "text": "New team extraction: a freight lift in the exit test scene lets the whole squad leave together, with improved UI for escape hatch and balloon‑pad console.",
+            "commit_ids": [
+              737934,
+              737935,
+              737939,
+              737941
+            ]
+          },
+          {
+            "text": "Sleeping bags can be placed adjacent to each other and the respawn space check was removed, fixing stuck respawn issues.",
             "commit_ids": [
               737944,
               737945,
@@ -128,95 +137,68 @@
         ]
       },
       {
-        "title": "Quality of Life",
+        "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Closing the premium window now also closes the skin viewer, preventing it from staying open unintentionally.",
+            "text": "Character creator now correctly retains each slot's selected underwear and prevents players from appearing naked when a body type lacks underwear parts.",
+            "commit_ids": [
+              738035,
+              738034,
+              738033
+            ]
+          },
+          {
+            "text": "Changing the body type instantly enables the facial hair tab, streamlining appearance customization.",
+            "commit_ids": [
+              738032
+            ]
+          },
+          {
+            "text": "Closing the premium shop window also closes the skin viewer, fixing a UI hang-up for premium users.",
             "commit_ids": [
               738038
             ]
           },
           {
-            "text": "Each character slot in the creator retains its own underwear selection, so changes in one slot no longer affect others.",
+            "text": "Mission item dispensers now reliably spawn items, fixing previous missing or duplicated rewards.",
             "commit_ids": [
-              738035
+              737911
             ]
           },
           {
-            "text": "Choosing a body type without underwear parts no longer results in a naked character.",
-            "commit_ids": [
-              738034
-            ]
-          },
-          {
-            "text": "The facial hair tab becomes active immediately after changing the body type, speeding up appearance customization.",
-            "commit_ids": [
-              738032
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Mission item dispensers now correctly dispense items and track objectives, fixing progression issues.",
-            "commit_ids": [
-              737911,
-              737900
-            ]
-          },
-          {
-            "text": "Item drop blockage bug fixed, ensuring items drop normally from containers and entities.",
+            "text": "Item drops that were previously blocked by a bug now drop correctly, ensuring loot is obtainable.",
             "commit_ids": [
               737788
             ]
           },
           {
-            "text": "Extraction UI now shows a large label, whole-number percentage and thick orange bar for hold progress.",
+            "text": "Cave terrain blending no longer overlaps underground tunnel entrances or monument topology, improving map navigation and preventing impossible geometry.",
             "commit_ids": [
-              737941
+              737710
             ]
           },
           {
-            "text": "Mortar weapon hands now correctly follow pitch, fixing lagging animation.",
+            "text": "Mortar aiming now matches player pitch without hand lag, improving accuracy.",
             "commit_ids": [
               737767
             ]
           },
           {
-            "text": "Sprinkler wet floor effect fixed, preventing unintended slipping.",
+            "text": "M939 Truck now spawns at the Excavator Monument, providing a new vehicle option for players.",
             "commit_ids": [
-              737730
+              737960
             ]
           },
           {
-            "text": "M939 truck added to Mining Quarry monuments, providing a new vehicle spawn location.",
+            "text": "M939 Truck now spawns at Mining Quarry Monuments, expanding vehicle availability in quarry areas.",
             "commit_ids": [
               737585
             ]
           },
           {
-            "text": "M939 truck added to Gas Station monument (HLOD updated).",
+            "text": "M939 Truck now spawns at the Gas Station Monument, adding another vehicle spawn point.",
             "commit_ids": [
               737584
-            ]
-          },
-          {
-            "text": "Freight lift prototype introduced in exit test scene as a team-wide exit option (WIP).",
-            "commit_ids": [
-              737934
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Generation",
-        "items": [
-          {
-            "text": "Cave generation now respects monument topology, preventing caves from overlapping monument entrances.",
-            "commit_ids": [
-              737710
             ]
           }
         ]
@@ -225,48 +207,10 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Movement & Controls\n- Added configurable sprint movement, now player‑controlled via in‑game settings.\n- Improved dog commands: better heel command and dogs now match player speed, making handling smoother.\n\n### NPC & AI\n- Overhauled scientist AI with replay‑based aim, accurate after crouch‑hovering, and fixes for hovering, rotation, and door‑search bugs, resulting in reliable targeting and movement.\n\n### World & Environment\n- Fishing villages now spawn at safer distances from river mouths, reducing clutter.\n- Sprinklers no longer wet players through floors or ceilings, preventing unexpected wetness.\n- Fixed procedural spawn overlap issues, preventing trees, ore nodes, junkpiles, etc., from intersecting and allowing seagull groups to spawn correctly.\n\n### Vehicles & Transport\n- Added M939 Truck at Excavator Monument, providing a new transport option.\n- Fixed car repel force so it triggers correctly when an animal is exactly at the repelling position.\n\n### Building, Items & Livestock\n- Deployables now follow split‑off base parts when they are moved, staying with the new structure.\n- Dropping items on thin surfaces (e.g., oil‑rig floors) works reliably without line‑of‑sight blockage.\n- Livestock can be renamed instantly, removing the previous delay.\n\n### Missions & Respawn\n- Items stored in backpacks now count toward mission progress.\n- Sleeping bags can be placed adjacent and no longer get stuck on respawn, improving respawn reliability.\n\n### Quality of Life\n- Closing the premium window now also closes the skin viewer, preventing it from staying open unintentionally.\n- Each character slot in the creator retains its own underwear selection, so changes in one slot no longer affect others.\n- Choosing a body type without underwear parts no longer results in a naked character.\n- The facial hair tab becomes active immediately after changing the body type, speeding up appearance customization.\n\n### Gameplay & Balance\n- Mission item dispensers now correctly dispense items and track objectives, fixing progression issues.\n- Item drop blockage bug fixed, ensuring items drop normally from containers and entities.\n- Extraction UI now shows a large label, whole-number percentage and thick orange bar for hold progress.\n- Mortar weapon hands now correctly follow pitch, fixing lagging animation.\n- Sprinkler wet floor effect fixed, preventing unintended slipping.\n- M939 truck added to Mining Quarry monuments, providing a new vehicle spawn location.\n- M939 truck added to Gas Station monument (HLOD updated).\n- Freight lift prototype introduced in exit test scene as a team-wide exit option (WIP).\n\n### World Generation\n- Cave generation now respects monument topology, preventing caves from overlapping monument entrances.",
-    "new_items": [
-      {
-        "text": "Fixed procedural spawn overlap issues, preventing trees, ore nodes, junkpiles, etc., from intersecting and allowing seagull groups to spawn correctly.",
-        "commit_ids": [
-          737976,
-          737978,
-          737995
-        ],
-        "section": "World & Environment"
-      },
-      {
-        "text": "Closing the premium window now also closes the skin viewer, preventing it from staying open unintentionally.",
-        "commit_ids": [
-          738038
-        ],
-        "section": "Quality of Life"
-      },
-      {
-        "text": "Each character slot in the creator retains its own underwear selection, so changes in one slot no longer affect others.",
-        "commit_ids": [
-          738035
-        ],
-        "section": "Quality of Life"
-      },
-      {
-        "text": "Choosing a body type without underwear parts no longer results in a naked character.",
-        "commit_ids": [
-          738034
-        ],
-        "section": "Quality of Life"
-      },
-      {
-        "text": "The facial hair tab becomes active immediately after changing the body type, speeding up appearance customization.",
-        "commit_ids": [
-          738032
-        ],
-        "section": "Quality of Life"
-      }
-    ],
-    "new_relevant_count": 7,
-    "new_summary": "- Fixed procedural spawn overlap issues, preventing trees, ore nodes, junkpiles, etc., from intersecting and allowing seagull groups to spawn correctly.\n- Closing the premium window now also closes the skin viewer, preventing it from staying open unintentionally.\n- Each character slot in the creator retains its own underwear selection, so changes in one slot no longer affect others.\n- Choosing a body type without underwear parts no longer results in a naked character.\n- The facial hair tab becomes active immediately after changing the body type, speeding up appearance customization."
+    "summary": "### Movement\n- Added a modern sprint system with in‑game settings for speed and stamina.\n\n### NPC & AI\n- Scientists now use a replay‑based aim system, fixed crouch‑hover issues, corrected rotation bugs, and improved door‑search targeting for more reliable combat behavior.\n\n### Animals & Livestock\n- Livestock can be renamed instantly without delay.\n- Cow models no longer display milk and the lead item appears correctly in the inventory wheel.\n- Dog commands were refined; dogs obey heel better and now run at player speed.\n\n### World & Environment\n- Sprinklers no longer wet players through floors or ceilings.\n- Fishing villages are placed farther from river mouths, avoiding unsuitable river terrain.\n- Overlap bugs fixed: masks use correct layers, junkpiles spawn after trees, and seagull groups no longer block on monument geometry.\n- Dropping items on thin surfaces (e.g., oil‑rig floors) works reliably without line‑of‑sight blockage.\n\n### Vehicles & Deployables\n- Cars now repel animals even when positioned directly on them, preventing animals from getting stuck.\n- Deployables placed near a split‑off base section now move with the new section instead of staying behind.\n\n### Missions & Endgame\n- Items stored in backpacks count toward mission objectives, and dispensers track progress correctly.\n- New team extraction: a freight lift in the exit test scene lets the whole squad leave together, with improved UI for escape hatch and balloon‑pad console.\n- Sleeping bags can be placed adjacent to each other and the respawn space check was removed, fixing stuck respawn issues.\n\n### Gameplay & Balance\n- Character creator now correctly retains each slot's selected underwear and prevents players from appearing naked when a body type lacks underwear parts.\n- Changing the body type instantly enables the facial hair tab, streamlining appearance customization.\n- Closing the premium shop window also closes the skin viewer, fixing a UI hang-up for premium users.\n- Mission item dispensers now reliably spawn items, fixing previous missing or duplicated rewards.\n- Item drops that were previously blocked by a bug now drop correctly, ensuring loot is obtainable.\n- Cave terrain blending no longer overlaps underground tunnel entrances or monument topology, improving map navigation and preventing impossible geometry.\n- Mortar aiming now matches player pitch without hand lag, improving accuracy.\n- M939 Truck now spawns at the Excavator Monument, providing a new vehicle option for players.\n- M939 Truck now spawns at Mining Quarry Monuments, expanding vehicle availability in quarry areas.\n- M939 Truck now spawns at the Gas Station Monument, adding another vehicle spawn point.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-22": {
     "commit_count": 121,
