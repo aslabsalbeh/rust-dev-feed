@@ -1,16 +1,16 @@
 {
   "2026-11-24": {
-    "commit_count": 111,
-    "relevant_commit_count": 41,
-    "relevant_signature": "738070,738075,738096,738099,738125,738146,738175,738177,738202,738229,738232,738239,738241,738274,738276,738280,738290,738294,738307,738310,738316,738317,738322,738331,738332,738333,738334,738335,738336,738343,738348,738351,738354,738355,738356,738360,738361,738370,738377,738379,738381",
+    "commit_count": 121,
+    "relevant_commit_count": 42,
+    "relevant_signature": "738070,738075,738096,738099,738125,738146,738175,738177,738202,738229,738232,738239,738241,738274,738276,738280,738290,738294,738307,738310,738316,738317,738322,738331,738332,738333,738334,738335,738336,738343,738348,738351,738354,738355,738356,738360,738361,738370,738377,738379,738381,738394",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicle & Tool Buffs",
+        "title": "Buffs & Balance",
         "items": [
           {
-            "text": "Added a thruster module buff improving vehicle maneuverability.",
+            "text": "Thruster module now provides a buff to players.",
             "commit_ids": [
               738070
             ]
@@ -21,7 +21,7 @@
         "title": "NPC & AI",
         "items": [
           {
-            "text": "Fixed human NPC aiming to stay upright, improving combat targeting.",
+            "text": "Human NPCs now aim upright, improving combat targeting.",
             "commit_ids": [
               738099
             ]
@@ -29,28 +29,46 @@
         ]
       },
       {
-        "title": "Player Customization",
+        "title": "Player UI & Persistence",
         "items": [
           {
-            "text": "Tattoo selections now persist through death and disconnects, with additional handling fixes.",
+            "text": "Contact list notes are saved correctly; Enter saves and Escape no longer clears them.",
             "commit_ids": [
-              738274,
-              738294
+              738175,
+              738177
+            ]
+          },
+          {
+            "text": "Tattoos now persist through death and disconnect.",
+            "commit_ids": [
+              738274
+            ]
+          },
+          {
+            "text": "Tattoo menu save button now closes the menu after saving.",
+            "commit_ids": [
+              738348
+            ]
+          },
+          {
+            "text": "Disconnect button restored on the session page, allowing players to leave servers correctly.",
+            "commit_ids": [
+              738379
             ]
           }
         ]
       },
       {
-        "title": "Raid & Base Mechanics",
+        "title": "Gameplay Mechanics & Timers",
         "items": [
           {
-            "text": "Softcore raid window countdown now reflects real time.",
+            "text": "Softcore raid window countdown now progresses correctly.",
             "commit_ids": [
               738276
             ]
           },
           {
-            "text": "Tool cupboard recharges are limited to their own base, preventing unintended recharge across bases.",
+            "text": "Renovation tool cupboard recharges only its own base.",
             "commit_ids": [
               738290
             ]
@@ -61,89 +79,28 @@
         "title": "Spawn & World Generation",
         "items": [
           {
-            "text": "Beach spawn gap exemptions fixed on bundled servers, ensuring proper spawn distribution.",
+            "text": "Beach spawn gap exemptions fixed for bundled servers, improving spawn reliability.",
             "commit_ids": [
               738307,
               738310
             ]
           },
           {
-            "text": "Procedural filters now exclude riverside areas near fishing villages, improving village placement.",
-            "commit_ids": [
-              738322
-            ]
-          },
-          {
-            "text": "Crocodile spawn attempts increased to guarantee their presence in swamps and rivers.",
+            "text": "Spawn bounds checks now use the entity's actual position and rotation, reducing spawn errors.",
             "commit_ids": [
               738343
             ]
           },
           {
-            "text": "SpawnBlocker triggers added to junkpiles to stop foliage respawning inside them, reducing overlapping vegetation.",
-            "commit_ids": [
-              738355
-            ]
-          }
-        ]
-      },
-      {
-        "title": "User Interface",
-        "items": [
-          {
-            "text": "Session page disconnect button restored and related links and server image display fixed.",
-            "commit_ids": [
-              738379
-            ]
-          }
-        ]
-      },
-      {
-        "title": "World Generation & Environment",
-        "items": [
-          {
-            "text": "Spawn bounds are now validated at the entity's actual spawn position and rotation, preventing overlapping structures from appearing incorrectly.",
+            "text": "Crocodile spawn attempts increased to avoid rejected spawns.",
             "commit_ids": [
               738351
             ]
           },
           {
-            "text": "Satellite wrecks no longer keep burning when they splash into water, removing lingering fire hazards.",
+            "text": "Spawn blockers prevent bushes, cacti, and trees from appearing inside junkpiles, reducing overlapping objects.",
             "commit_ids": [
-              738229
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Quality of Life",
-        "items": [
-          {
-            "text": "Contact list notes now save correctly, fixing the issue where notes were lost on exit or when pressing Escape.",
-            "commit_ids": [
-              738175
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
-          {
-            "text": "Tattoo menu button functionality restored, fixing broken button events and improving selection UI.",
-            "commit_ids": [
-              738316
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Building",
-        "items": [
-          {
-            "text": "New window embrasure workshop prefabs added, allowing players to craft and place window embrasures directly from the workshop.",
-            "commit_ids": [
-              738202
+              738355
             ]
           }
         ]
@@ -152,9 +109,50 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Contact notes now reliably save, preventing loss of saved player contact information.",
+            "text": "Rivers now avoid spawning directly adjacent to fishing villages, improving village access to land and reducing unwanted water obstruction.",
             "commit_ids": [
-              738177
+              738322
+            ]
+          },
+          {
+            "text": "Satellite wrecks no longer retain flames when they crash into water, removing a visual hazard and preventing fire damage in that scenario.",
+            "commit_ids": [
+              738229
+            ]
+          },
+          {
+            "text": "Added workshop prefabs for window embrasures that are raised off the floor with a straight‑on camera, simplifying placement and inspection.",
+            "commit_ids": [
+              738202
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Quality of Life",
+        "items": [
+          {
+            "text": "Spinner wheel UI bug fixed so the loading spinner is now visible during relevant screens.",
+            "commit_ids": [
+              738361
+            ]
+          },
+          {
+            "text": "Character creator tile labels updated for correct sizing, spacing, and crisp rendering, making them easier to read.",
+            "commit_ids": [
+              738360
+            ]
+          },
+          {
+            "text": "Tattoo menu UI refined: outline buttons added, button events corrected, and tattoos now fade in during inventory preview.",
+            "commit_ids": [
+              738316
+            ]
+          },
+          {
+            "text": "Multiple tattoo-related bugs resolved, improving tattoo placement, visibility, and overall functionality.",
+            "commit_ids": [
+              738294
             ]
           }
         ]
@@ -163,39 +161,18 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Vehicle & Tool Buffs\n- Added a thruster module buff improving vehicle maneuverability.\n\n### NPC & AI\n- Fixed human NPC aiming to stay upright, improving combat targeting.\n\n### Player Customization\n- Tattoo selections now persist through death and disconnects, with additional handling fixes.\n\n### Raid & Base Mechanics\n- Softcore raid window countdown now reflects real time.\n- Tool cupboard recharges are limited to their own base, preventing unintended recharge across bases.\n\n### Spawn & World Generation\n- Beach spawn gap exemptions fixed on bundled servers, ensuring proper spawn distribution.\n- Procedural filters now exclude riverside areas near fishing villages, improving village placement.\n- Crocodile spawn attempts increased to guarantee their presence in swamps and rivers.\n- SpawnBlocker triggers added to junkpiles to stop foliage respawning inside them, reducing overlapping vegetation.\n\n### User Interface\n- Session page disconnect button restored and related links and server image display fixed.\n\n### World Generation & Environment\n- Spawn bounds are now validated at the entity's actual spawn position and rotation, preventing overlapping structures from appearing incorrectly.\n- Satellite wrecks no longer keep burning when they splash into water, removing lingering fire hazards.\n\n### Quality of Life\n- Contact list notes now save correctly, fixing the issue where notes were lost on exit or when pressing Escape.\n\n### UI & Quality of Life\n- Tattoo menu button functionality restored, fixing broken button events and improving selection UI.\n\n### Gameplay & Building\n- New window embrasure workshop prefabs added, allowing players to craft and place window embrasures directly from the workshop.\n\n### Gameplay & Balance\n- Contact notes now reliably save, preventing loss of saved player contact information.",
+    "summary": "### Buffs & Balance\n- Thruster module now provides a buff to players.\n\n### NPC & AI\n- Human NPCs now aim upright, improving combat targeting.\n\n### Player UI & Persistence\n- Contact list notes are saved correctly; Enter saves and Escape no longer clears them.\n- Tattoos now persist through death and disconnect.\n- Tattoo menu save button now closes the menu after saving.\n- Disconnect button restored on the session page, allowing players to leave servers correctly.\n\n### Gameplay Mechanics & Timers\n- Softcore raid window countdown now progresses correctly.\n- Renovation tool cupboard recharges only its own base.\n\n### Spawn & World Generation\n- Beach spawn gap exemptions fixed for bundled servers, improving spawn reliability.\n- Spawn bounds checks now use the entity's actual position and rotation, reducing spawn errors.\n- Crocodile spawn attempts increased to avoid rejected spawns.\n- Spawn blockers prevent bushes, cacti, and trees from appearing inside junkpiles, reducing overlapping objects.\n\n### Gameplay & Balance\n- Rivers now avoid spawning directly adjacent to fishing villages, improving village access to land and reducing unwanted water obstruction.\n- Satellite wrecks no longer retain flames when they crash into water, removing a visual hazard and preventing fire damage in that scenario.\n- Added workshop prefabs for window embrasures that are raised off the floor with a straight‑on camera, simplifying placement and inspection.\n\n### UI & Quality of Life\n- Spinner wheel UI bug fixed so the loading spinner is now visible during relevant screens.\n- Character creator tile labels updated for correct sizing, spacing, and crisp rendering, making them easier to read.\n- Tattoo menu UI refined: outline buttons added, button events corrected, and tattoos now fade in during inventory preview.\n- Multiple tattoo-related bugs resolved, improving tattoo placement, visibility, and overall functionality.",
     "new_items": [
       {
-        "text": "Crocodile spawn attempts increased to guarantee their presence in swamps and rivers.",
-        "commit_ids": [
-          738343
-        ],
-        "section": "Spawn & World Generation"
-      },
-      {
-        "text": "SpawnBlocker triggers added to junkpiles to stop foliage respawning inside them, reducing overlapping vegetation.",
-        "commit_ids": [
-          738355
-        ],
-        "section": "Spawn & World Generation"
-      },
-      {
-        "text": "Session page disconnect button restored and related links and server image display fixed.",
+        "text": "Disconnect button restored on the session page, allowing players to leave servers correctly.",
         "commit_ids": [
           738379
         ],
-        "section": "User Interface"
-      },
-      {
-        "text": "Spawn bounds are now validated at the entity's actual spawn position and rotation, preventing overlapping structures from appearing incorrectly.",
-        "commit_ids": [
-          738351
-        ],
-        "section": "World Generation & Environment"
+        "section": "Player UI & Persistence"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Crocodile spawn attempts increased to guarantee their presence in swamps and rivers.\n- SpawnBlocker triggers added to junkpiles to stop foliage respawning inside them, reducing overlapping vegetation.\n- Session page disconnect button restored and related links and server image display fixed.\n- Spawn bounds are now validated at the entity's actual spawn position and rotation, preventing overlapping structures from appearing incorrectly."
+    "new_relevant_count": 1,
+    "new_summary": "- Disconnect button restored on the session page, allowing players to leave servers correctly."
   },
   "2026-11-23": {
     "commit_count": 230,
