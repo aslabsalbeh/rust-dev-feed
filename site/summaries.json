@@ -1,16 +1,29 @@
 {
   "2026-11-25": {
-    "commit_count": 96,
-    "relevant_commit_count": 45,
-    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808",
+    "commit_count": 112,
+    "relevant_commit_count": 48,
+    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Enemy Physics",
+        "title": "Lighting & Visibility",
         "items": [
           {
-            "text": "Scrap King now uses metal physics material, affecting its interactions and damage resistance.",
+            "text": "Improved night lighting with foreground/background floor fixes, anti‑gamma adjustments, and smoother brightness transitions at dawn and dusk.",
+            "commit_ids": [
+              738561,
+              738565,
+              738568
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Enemies",
+        "items": [
+          {
+            "text": "Scrap King now uses a metal physics material, changing its collision behavior and damage interactions.",
             "commit_ids": [
               738573
             ]
@@ -18,16 +31,10 @@
         ]
       },
       {
-        "title": "Inventory & Trading",
+        "title": "Economy & Trading",
         "items": [
           {
-            "text": "Crate generators now correctly recognize bundles, allowing players to obtain bundled items from crates.",
-            "commit_ids": [
-              738599
-            ]
-          },
-          {
-            "text": "Tradable skin bundles now display correctly as tradable, fixing a bug where they appeared non‑tradable.",
+            "text": "Workshop bundles of tradable skins are now correctly displayed as tradable.",
             "commit_ids": [
               738613
             ]
@@ -35,93 +42,60 @@
         ]
       },
       {
-        "title": "Vehicle & Boat Handling",
+        "title": "Vehicle Interactions",
         "items": [
           {
-            "text": "Fixed several parenting bugs that caused players to unintentionally switch to nearby cargo ships or excavator arms, and improved behavior when moving between boats and ladders, preventing unwanted dragging or incorrect vehicle attachment.",
+            "text": "Fixed multiple parenting bugs: players no longer unintentionally board cargo ships when nearby, exclusion zones prevent attachment to moving excavator arms, and ladder jumps onto cargo ships no longer drag players off.",
             "commit_ids": [
               738688,
               738689,
-              738690,
-              738707,
-              738709
+              738690
             ]
           }
         ]
       },
       {
-        "title": "Movement & Controls",
+        "title": "Movement Controls",
         "items": [
           {
-            "text": "Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprint and crouch behavior more consistent.",
+            "text": "Strafe input now cancels sprint and a crouch‑strafe bug has been resolved, restoring expected sprint cancellation and crouch movement behavior.",
             "commit_ids": [
-              738780,
-              738784
+              738780
             ]
           }
         ]
       },
       {
-        "title": "Player-Facing Changes",
+        "title": "Customization & UI",
         "items": [
           {
-            "text": "Spinner wheel now appears in the paint menu and brush outline regression is fixed, improving tattoo painting usability.",
+            "text": "Added a hide‑my‑tattoos setting so players can toggle tattoo visibility.",
+            "commit_ids": [
+              738841
+            ]
+          },
+          {
+            "text": "Paint menu fixes: spinner wheel now visible, brush outline regression resolved, colour picker no longer adds an outline.",
             "commit_ids": [
               738808
             ]
           },
           {
-            "text": "General tattoo system fixes improve stability when rotating and selecting tattoos.",
-            "commit_ids": [
-              738747
-            ]
-          },
-          {
-            "text": "Inventory preview colors are corrected to match in-game lighting, removing an overly bright and warm look.",
+            "text": "Inventory preview color grading corrected, removing overly bright/warm appearance.",
             "commit_ids": [
               738719
             ]
           },
           {
-            "text": "Character creator stage lighting no longer darkens the workshop or get wet in rain, keeping the room properly lit.",
+            "text": "Character creator workshop room lighting fixed, preventing the stage from going dark or getting wet in rain.",
             "commit_ids": [
               738669
             ]
           },
           {
-            "text": "Lighthouse lamp glow and mesh now render correctly, restoring its beacon visibility at night.",
-            "commit_ids": [
-              738662
-            ]
-          },
-          {
-            "text": "Gingerbread building walls now use proper physics material, affecting structural behavior for seasonal builds.",
-            "commit_ids": [
-              738632
-            ]
-          },
-          {
-            "text": "Fullscreen skin viewer paging works correctly with bundle skins, allowing smooth browsing.",
-            "commit_ids": [
-              738598
-            ]
-          },
-          {
-            "text": "Bundled skins display correctly after checkout, fixing blank skin issue.",
+            "text": "Bundled skins now display correctly after checkout, eliminating blank skin issues.",
             "commit_ids": [
               738597
-            ]
-          },
-          {
-            "text": "Dawn and dusk brightness transitions are smooth again, improving visual consistency.",
-            "commit_ids": [
-              738568
-            ]
-          },
-          {
-            "text": "Night light functionality restored, ensuring proper illumination during anti-gamma adjustments.",
-            "commit_ids": [
-              738565
             ]
           }
         ]
@@ -130,7 +104,31 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Selecting newly placed sandbox objects now works with a single click.",
+            "text": "Modern sprint system changes adjust sprint speed and stamina consumption.",
+            "commit_ids": [
+              738784
+            ]
+          },
+          {
+            "text": "Cargo now stays properly attached to boats, preventing loss during travel and dismounts.",
+            "commit_ids": [
+              738709,
+              738707
+            ]
+          },
+          {
+            "text": "Gingerbread low and half walls now use a physics material, making them react realistically to impacts.",
+            "commit_ids": [
+              738632
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
+            "text": "New sandbox objects can now be selected with a single click, fixing the previous two‑click requirement.",
             "commit_ids": [
               738604
             ]
@@ -141,33 +139,25 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Enemy Physics\n- Scrap King now uses metal physics material, affecting its interactions and damage resistance.\n\n### Inventory & Trading\n- Crate generators now correctly recognize bundles, allowing players to obtain bundled items from crates.\n- Tradable skin bundles now display correctly as tradable, fixing a bug where they appeared non‑tradable.\n\n### Vehicle & Boat Handling\n- Fixed several parenting bugs that caused players to unintentionally switch to nearby cargo ships or excavator arms, and improved behavior when moving between boats and ladders, preventing unwanted dragging or incorrect vehicle attachment.\n\n### Movement & Controls\n- Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprint and crouch behavior more consistent.\n\n### Player-Facing Changes\n- Spinner wheel now appears in the paint menu and brush outline regression is fixed, improving tattoo painting usability.\n- General tattoo system fixes improve stability when rotating and selecting tattoos.\n- Inventory preview colors are corrected to match in-game lighting, removing an overly bright and warm look.\n- Character creator stage lighting no longer darkens the workshop or get wet in rain, keeping the room properly lit.\n- Lighthouse lamp glow and mesh now render correctly, restoring its beacon visibility at night.\n- Gingerbread building walls now use proper physics material, affecting structural behavior for seasonal builds.\n- Fullscreen skin viewer paging works correctly with bundle skins, allowing smooth browsing.\n- Bundled skins display correctly after checkout, fixing blank skin issue.\n- Dawn and dusk brightness transitions are smooth again, improving visual consistency.\n- Night light functionality restored, ensuring proper illumination during anti-gamma adjustments.\n\n### Gameplay & Balance\n- Selecting newly placed sandbox objects now works with a single click.",
+    "summary": "### Lighting & Visibility\n- Improved night lighting with foreground/background floor fixes, anti‑gamma adjustments, and smoother brightness transitions at dawn and dusk.\n\n### Combat & Enemies\n- Scrap King now uses a metal physics material, changing its collision behavior and damage interactions.\n\n### Economy & Trading\n- Workshop bundles of tradable skins are now correctly displayed as tradable.\n\n### Vehicle Interactions\n- Fixed multiple parenting bugs: players no longer unintentionally board cargo ships when nearby, exclusion zones prevent attachment to moving excavator arms, and ladder jumps onto cargo ships no longer drag players off.\n\n### Movement Controls\n- Strafe input now cancels sprint and a crouch‑strafe bug has been resolved, restoring expected sprint cancellation and crouch movement behavior.\n\n### Customization & UI\n- Added a hide‑my‑tattoos setting so players can toggle tattoo visibility.\n- Paint menu fixes: spinner wheel now visible, brush outline regression resolved, colour picker no longer adds an outline.\n- Inventory preview color grading corrected, removing overly bright/warm appearance.\n- Character creator workshop room lighting fixed, preventing the stage from going dark or getting wet in rain.\n- Bundled skins now display correctly after checkout, eliminating blank skin issues.\n\n### Gameplay & Balance\n- Modern sprint system changes adjust sprint speed and stamina consumption.\n- Cargo now stays properly attached to boats, preventing loss during travel and dismounts.\n- Gingerbread low and half walls now use a physics material, making them react realistically to impacts.\n\n### Quality of Life\n- New sandbox objects can now be selected with a single click, fixing the previous two‑click requirement.",
     "new_items": [
       {
-        "text": "Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprint and crouch behavior more consistent.",
+        "text": "Added a hide‑my‑tattoos setting so players can toggle tattoo visibility.",
         "commit_ids": [
-          738780,
-          738784
+          738841
         ],
-        "section": "Movement & Controls"
+        "section": "Customization & UI"
       },
       {
-        "text": "Spinner wheel now appears in the paint menu and brush outline regression is fixed, improving tattoo painting usability.",
+        "text": "Paint menu fixes: spinner wheel now visible, brush outline regression resolved, colour picker no longer adds an outline.",
         "commit_ids": [
           738808
         ],
-        "section": "Player-Facing Changes"
-      },
-      {
-        "text": "General tattoo system fixes improve stability when rotating and selecting tattoos.",
-        "commit_ids": [
-          738747
-        ],
-        "section": "Player-Facing Changes"
+        "section": "Customization & UI"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprint and crouch behavior more consistent.\n- Spinner wheel now appears in the paint menu and brush outline regression is fixed, improving tattoo painting usability.\n- General tattoo system fixes improve stability when rotating and selecting tattoos."
+    "new_relevant_count": 2,
+    "new_summary": "- Added a hide‑my‑tattoos setting so players can toggle tattoo visibility.\n- Paint menu fixes: spinner wheel now visible, brush outline regression resolved, colour picker no longer adds an outline."
   },
   "2026-11-24": {
     "commit_count": 157,
