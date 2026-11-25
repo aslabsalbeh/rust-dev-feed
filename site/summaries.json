@@ -1,27 +1,16 @@
 {
   "2026-11-25": {
-    "commit_count": 70,
-    "relevant_commit_count": 31,
-    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669",
+    "commit_count": 83,
+    "relevant_commit_count": 39,
+    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Boss & AI",
+        "title": "Workshop & Trading",
         "items": [
           {
-            "text": "Updated Scrap King physics material to metal, affecting its interactions and damage behavior.",
-            "commit_ids": [
-              738573
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Trading & Skins",
-        "items": [
-          {
-            "text": "Fixed bundles of tradable skins incorrectly showing as non-tradable, restoring proper trade status.",
+            "text": "Fixed bundles of tradable skins being incorrectly marked as non‑tradable, restoring proper trade functionality.",
             "commit_ids": [
               738613
             ]
@@ -29,10 +18,23 @@
         ]
       },
       {
-        "title": "Building & Construction",
+        "title": "Vehicle & Parenting",
         "items": [
           {
-            "text": "Added gingerbread physics material to low and half walls, affecting building behavior for gingerbread structures.",
+            "text": "Fixed multiple parenting bugs: prevented players from unintentionally transferring to cargo ships when walking between floor blocks, corrected inverted exclusion zones that caused unwanted attachment to moving excavator arms, and ensured stable ladder climbing when jumping from player boats onto cargo ship ladders.",
+            "commit_ids": [
+              738688,
+              738689,
+              738690
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Building Physics",
+        "items": [
+          {
+            "text": "Added a dedicated gingerbread physics material for low and half walls, improving building stability when using the gingerbread building skin.",
             "commit_ids": [
               738632
             ]
@@ -40,65 +42,65 @@
         ]
       },
       {
-        "title": "Visual & Lighting Fixes",
+        "title": "Visual & UI",
         "items": [
           {
-            "text": "Fixed dark room and wet effect in the character creator workshop, restoring proper lighting.",
+            "text": "Inventory preview now shows correct brightness and colour, fixing an overly bright and warm look.",
+            "commit_ids": [
+              738719
+            ]
+          },
+          {
+            "text": "Character creator room no longer goes dark in the workshop or get wet in rain, ensuring proper lighting.",
             "commit_ids": [
               738669
             ]
           },
           {
-            "text": "Restored lighthouse lamp glow and prevented mesh disappearing before the beam, improving lighthouse visibility.",
+            "text": "Lighthouse lamp glow and mesh render correctly, improving night navigation cues.",
             "commit_ids": [
               738662
             ]
           },
           {
-            "text": "Corrected brightness transitions at dawn and dusk for smoother lighting changes.",
-            "commit_ids": [
-              738568
-            ]
-          },
-          {
-            "text": "Enabled night light to work with the anti-gamma fix, improving night visibility.",
-            "commit_ids": [
-              738565
-            ]
-          },
-          {
-            "text": "Added foreground and background floors for night shadows to fix gamma issues (toggleable), enhancing night shadow rendering.",
-            "commit_ids": [
-              738561
-            ]
-          },
-          {
-            "text": "Fixed animations not playing on some entities, ensuring visual feedback works correctly.",
-            "commit_ids": [
-              738605
-            ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Interaction Fixes",
-        "items": [
-          {
-            "text": "Fixed sandbox objects requiring two clicks to select, streamlining building workflow.",
-            "commit_ids": [
-              738604
-            ]
-          },
-          {
-            "text": "Fixed fullscreen skin viewer pagination onto bundles for smoother navigation.",
+            "text": "Fullscreen skin viewer paging works correctly with bundles, allowing smooth browsing of skins.",
             "commit_ids": [
               738598
             ]
           },
           {
-            "text": "Fixed bundled skins appearing blank after checkout, restoring proper skin display.",
+            "text": "Bundled skins now display correctly after checkout, fixing the blank skin issue.",
             "commit_ids": [
               738597
+            ]
+          },
+          {
+            "text": "Dawn and dusk brightness transitions are now smooth, fixing abrupt lighting changes.",
+            "commit_ids": [
+              738568
+            ]
+          },
+          {
+            "text": "Night light now functions correctly with the anti‑gamma fix, restoring night illumination.",
+            "commit_ids": [
+              738565
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Scrap King now uses metal physics material, affecting its weight and collision behavior.",
+            "commit_ids": [
+              738573
+            ]
+          },
+          {
+            "text": "New sandbox objects can now be selected with a single click.",
+            "commit_ids": [
+              738604
             ]
           }
         ]
@@ -107,53 +109,34 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Boss & AI\n- Updated Scrap King physics material to metal, affecting its interactions and damage behavior.\n\n### Trading & Skins\n- Fixed bundles of tradable skins incorrectly showing as non-tradable, restoring proper trade status.\n\n### Building & Construction\n- Added gingerbread physics material to low and half walls, affecting building behavior for gingerbread structures.\n\n### Visual & Lighting Fixes\n- Fixed dark room and wet effect in the character creator workshop, restoring proper lighting.\n- Restored lighthouse lamp glow and prevented mesh disappearing before the beam, improving lighthouse visibility.\n- Corrected brightness transitions at dawn and dusk for smoother lighting changes.\n- Enabled night light to work with the anti-gamma fix, improving night visibility.\n- Added foreground and background floors for night shadows to fix gamma issues (toggleable), enhancing night shadow rendering.\n- Fixed animations not playing on some entities, ensuring visual feedback works correctly.\n\n### UI & Interaction Fixes\n- Fixed sandbox objects requiring two clicks to select, streamlining building workflow.\n- Fixed fullscreen skin viewer pagination onto bundles for smoother navigation.\n- Fixed bundled skins appearing blank after checkout, restoring proper skin display.",
+    "summary": "### Workshop & Trading\n- Fixed bundles of tradable skins being incorrectly marked as non‑tradable, restoring proper trade functionality.\n\n### Vehicle & Parenting\n- Fixed multiple parenting bugs: prevented players from unintentionally transferring to cargo ships when walking between floor blocks, corrected inverted exclusion zones that caused unwanted attachment to moving excavator arms, and ensured stable ladder climbing when jumping from player boats onto cargo ship ladders.\n\n### Building Physics\n- Added a dedicated gingerbread physics material for low and half walls, improving building stability when using the gingerbread building skin.\n\n### Visual & UI\n- Inventory preview now shows correct brightness and colour, fixing an overly bright and warm look.\n- Character creator room no longer goes dark in the workshop or get wet in rain, ensuring proper lighting.\n- Lighthouse lamp glow and mesh render correctly, improving night navigation cues.\n- Fullscreen skin viewer paging works correctly with bundles, allowing smooth browsing of skins.\n- Bundled skins now display correctly after checkout, fixing the blank skin issue.\n- Dawn and dusk brightness transitions are now smooth, fixing abrupt lighting changes.\n- Night light now functions correctly with the anti‑gamma fix, restoring night illumination.\n\n### Gameplay & Balance\n- Scrap King now uses metal physics material, affecting its weight and collision behavior.\n- New sandbox objects can now be selected with a single click.",
     "new_items": [
       {
-        "text": "Fixed bundles of tradable skins incorrectly showing as non-tradable, restoring proper trade status.",
+        "text": "Fixed multiple parenting bugs: prevented players from unintentionally transferring to cargo ships when walking between floor blocks, corrected inverted exclusion zones that caused unwanted attachment to moving excavator arms, and ensured stable ladder climbing when jumping from player boats onto cargo ship ladders.",
         "commit_ids": [
-          738613
+          738688,
+          738689,
+          738690
         ],
-        "section": "Trading & Skins"
+        "section": "Vehicle & Parenting"
       },
       {
-        "text": "Added gingerbread physics material to low and half walls, affecting building behavior for gingerbread structures.",
+        "text": "Inventory preview now shows correct brightness and colour, fixing an overly bright and warm look.",
         "commit_ids": [
-          738632
+          738719
         ],
-        "section": "Building & Construction"
+        "section": "Visual & UI"
       },
       {
-        "text": "Fixed dark room and wet effect in the character creator workshop, restoring proper lighting.",
+        "text": "Character creator room no longer goes dark in the workshop or get wet in rain, ensuring proper lighting.",
         "commit_ids": [
           738669
         ],
-        "section": "Visual & Lighting Fixes"
-      },
-      {
-        "text": "Restored lighthouse lamp glow and prevented mesh disappearing before the beam, improving lighthouse visibility.",
-        "commit_ids": [
-          738662
-        ],
-        "section": "Visual & Lighting Fixes"
-      },
-      {
-        "text": "Fixed animations not playing on some entities, ensuring visual feedback works correctly.",
-        "commit_ids": [
-          738605
-        ],
-        "section": "Visual & Lighting Fixes"
-      },
-      {
-        "text": "Fixed sandbox objects requiring two clicks to select, streamlining building workflow.",
-        "commit_ids": [
-          738604
-        ],
-        "section": "UI & Interaction Fixes"
+        "section": "Visual & UI"
       }
     ],
-    "new_relevant_count": 6,
-    "new_summary": "- Fixed bundles of tradable skins incorrectly showing as non-tradable, restoring proper trade status.\n- Added gingerbread physics material to low and half walls, affecting building behavior for gingerbread structures.\n- Fixed dark room and wet effect in the character creator workshop, restoring proper lighting.\n- Restored lighthouse lamp glow and prevented mesh disappearing before the beam, improving lighthouse visibility.\n- Fixed animations not playing on some entities, ensuring visual feedback works correctly.\n- Fixed sandbox objects requiring two clicks to select, streamlining building workflow."
+    "new_relevant_count": 5,
+    "new_summary": "- Fixed multiple parenting bugs: prevented players from unintentionally transferring to cargo ships when walking between floor blocks, corrected inverted exclusion zones that caused unwanted attachment to moving excavator arms, and ensured stable ladder climbing when jumping from player boats onto cargo ship ladders.\n- Inventory preview now shows correct brightness and colour, fixing an overly bright and warm look.\n- Character creator room no longer goes dark in the workshop or get wet in rain, ensuring proper lighting."
   },
   "2026-11-24": {
     "commit_count": 157,
