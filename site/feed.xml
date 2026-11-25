@@ -6,61 +6,62 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Tue, 24 Nov 2026 18:17:59 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 20:18:30 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 24</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;121 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;126 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738379"&gt;Disconnect button restored on the session page, allowing players to leave servers correctly.&lt;/li&gt;
+&lt;li data-rust-commits="738457,738458"&gt;Vendor counters in bandit camps and fishing villages no longer clip through geometry, making them readable.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Buffs &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Gameplay Buffs &amp;amp; Mechanics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738070"&gt;Thruster module now provides a buff to players.&lt;/li&gt;
+&lt;li data-rust-commits="738070"&gt;Thruster module now provides a performance buff.&lt;/li&gt;
+&lt;li data-rust-commits="738276"&gt;Softcore raid window countdown now reflects real time instead of stalling at zero.&lt;/li&gt;
+&lt;li data-rust-commits="738290"&gt;Renovation tool cupboard recharges only on its own base, fixing previous cross‑base behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;NPC &amp;amp; AI&lt;/h3&gt;
+&lt;h3&gt;NPC &amp;amp; AI Adjustments&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li data-rust-commits="738099"&gt;Human NPCs now aim upright, improving combat targeting.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Player UI &amp;amp; Persistence&lt;/h3&gt;
+&lt;h3&gt;User Interface Improvements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738175,738177"&gt;Contact list notes are saved correctly; Enter saves and Escape no longer clears them.&lt;/li&gt;
-&lt;li data-rust-commits="738274"&gt;Tattoos now persist through death and disconnect.&lt;/li&gt;
-&lt;li data-rust-commits="738348"&gt;Tattoo menu save button now closes the menu after saving.&lt;/li&gt;
-&lt;li data-rust-commits="738379"&gt;Disconnect button restored on the session page, allowing players to leave servers correctly.&lt;/li&gt;
+&lt;li data-rust-commits="738175,738177"&gt;Contact list notes now save correctly; Enter submits and Escape no longer clears them.&lt;/li&gt;
+&lt;li data-rust-commits="738348,738361"&gt;Tattoo menu save button now closes the menu, greyscale button works, and the spinner wheel is visible.&lt;/li&gt;
+&lt;li data-rust-commits="738379"&gt;Session page UI restored: disconnect button appears, website link works, and server image displays fully.&lt;/li&gt;
+&lt;li data-rust-commits="738457,738458"&gt;Vendor counters in bandit camps and fishing villages no longer clip through geometry, making them readable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay Mechanics &amp;amp; Timers&lt;/h3&gt;
+&lt;h3&gt;World &amp;amp; Spawn System Enhancements&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738276"&gt;Softcore raid window countdown now progresses correctly.&lt;/li&gt;
-&lt;li data-rust-commits="738290"&gt;Renovation tool cupboard recharges only its own base.&lt;/li&gt;
+&lt;li data-rust-commits="738307,738310"&gt;Beach spawn gap exemptions now work correctly on bundled servers.&lt;/li&gt;
+&lt;li data-rust-commits="738322"&gt;Fishing village generation now excludes rivers and riversides, improving placement consistency.&lt;/li&gt;
+&lt;li data-rust-commits="738351,738355"&gt;Spawn placement improvements reduce overlapping clutter and ensure accurate positioning, including spawn bounds checks and blockers for junkpiles.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Spawn &amp;amp; World Generation&lt;/h3&gt;
+&lt;h3&gt;Vehicle &amp;amp; Monument Additions&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738307,738310"&gt;Beach spawn gap exemptions fixed for bundled servers, improving spawn reliability.&lt;/li&gt;
-&lt;li data-rust-commits="738343"&gt;Spawn bounds checks now use the entity&amp;#x27;s actual position and rotation, reducing spawn errors.&lt;/li&gt;
-&lt;li data-rust-commits="738351"&gt;Crocodile spawn attempts increased to avoid rejected spawns.&lt;/li&gt;
-&lt;li data-rust-commits="738355"&gt;Spawn blockers prevent bushes, cacti, and trees from appearing inside junkpiles, reducing overlapping objects.&lt;/li&gt;
+&lt;li data-rust-commits="738239"&gt;M939 Truck added to the Nuclear Missile Silo monument, expanding vehicle options at that site.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Tattoo Persistence&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738274,738294"&gt;Tattoos now persist through death and reconnect, fixing related bugs.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738322"&gt;Rivers now avoid spawning directly adjacent to fishing villages, improving village access to land and reducing unwanted water obstruction.&lt;/li&gt;
-&lt;li data-rust-commits="738229"&gt;Satellite wrecks no longer retain flames when they crash into water, removing a visual hazard and preventing fire damage in that scenario.&lt;/li&gt;
-&lt;li data-rust-commits="738202"&gt;Added workshop prefabs for window embrasures that are raised off the floor with a straight‑on camera, simplifying placement and inspection.&lt;/li&gt;
+&lt;li data-rust-commits="738343"&gt;Crocodile spawn attempts have been increased to maintain intended spawn rates in swamps and rivers, ensuring crocodiles appear as designed.&lt;/li&gt;
+&lt;li data-rust-commits="738316"&gt;Menu button event hooks have been fixed and tattoo previews now fade in, restoring proper tattoo menu interactions.&lt;/li&gt;
+&lt;li data-rust-commits="738229"&gt;Satellite wreck flames are automatically extinguished when the wreck lands in water, removing the fire hazard in that situation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
+&lt;h3&gt;Building &amp;amp; Construction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738361"&gt;Spinner wheel UI bug fixed so the loading spinner is now visible during relevant screens.&lt;/li&gt;
-&lt;li data-rust-commits="738360"&gt;Character creator tile labels updated for correct sizing, spacing, and crisp rendering, making them easier to read.&lt;/li&gt;
-&lt;li data-rust-commits="738316"&gt;Tattoo menu UI refined: outline buttons added, button events corrected, and tattoos now fade in during inventory preview.&lt;/li&gt;
-&lt;li data-rust-commits="738294"&gt;Multiple tattoo-related bugs resolved, improving tattoo placement, visibility, and overall functionality.&lt;/li&gt;
+&lt;li data-rust-commits="738202"&gt;Added workshop prefabs for window embrasures, now placed raised off the floor with a straight‑on workshop camera view.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-24</guid>
-      <pubDate>Tue, 24 Nov 2026 18:17:59 -0500</pubDate>
+      <pubDate>Tue, 24 Nov 2026 20:18:30 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 23</title>
