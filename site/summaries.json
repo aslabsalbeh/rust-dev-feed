@@ -1,4 +1,19 @@
 {
+  "2026-11-25": {
+    "commit_count": 7,
+    "relevant_commit_count": 3,
+    "relevant_signature": "738533,738534,738537",
+    "prompt_version": "structured-read-state-v8-stable-chunks",
+    "chunk_cache": {},
+    "sections": [],
+    "status": "no_significant_updates",
+    "notice": "",
+    "pending_relevant_count": 0,
+    "summary": "No notable player-facing changes were identified in the latest development commits.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
+  },
   "2026-11-24": {
     "commit_count": 157,
     "relevant_commit_count": 52,
@@ -381,139 +396,6 @@
     "notice": "",
     "pending_relevant_count": 0,
     "summary": "### Movement & Controls\n- Sprint is now a toggleable option in the in‑game settings that persists across sessions, giving players consistent sprint behavior.\n\n### Server Capacity\n- Server connection slots now scale with the configured max‑player limit, allowing larger player populations without the previous 1024‑player cap.\n\n### NPC & AI\n- Scientists use a replay‑based aim system and corrected rotation, eliminating tilting and upside‑down targeting, and they now navigate doors correctly, resulting in more realistic and accurate combat behavior.\n\n### Gameplay & Balance\n- Thruster module recipe increased from 40 to 60 explosives, making it harder to craft.\n\n### Character Creator\n- Underwear now stays attached to each character slot, preventing loss when switching slots.\n- Body types without underwear parts no longer leave the player naked.\n\n### World Generation & Environment\n- Fixed layer‑mask bug so trees, ore nodes and junkpiles correctly block each other, eliminating spawn overlaps.\n- Fishing villages now keep a safe distance from river mouths, improving settlement placement.\n- Cave terrain blends are prevented from overlapping monument topology and underground tunnel entrances.\n\n### Sleeping Bag & Respawn\n- Sleeping bag respawn logic adjusted to stop bags from getting stuck and removed the space‑check on manual respawn.\n- Bag bounds tweaked so bags can be deployed right next to each other.\n\n### Mission Items\n- Mission item dispensers now correctly track objectives and progress, including items stored in backpacks.\n\n### Item Dropping & Building\n- Item drops are no longer blocked on thin surfaces such as oil‑rig floors.\n- Deployables placed beside a split‑off part of a base now stay with the correct building.\n\n### Vehicles & Interactions\n- Car repel force works even when the car is exactly on an animal, restoring intended vehicle‑animal interaction.\n\n### Sprinklers\n- Sprinklers no longer make players wet through floors or ceilings.",
-    "new_items": [],
-    "new_relevant_count": 0,
-    "new_summary": ""
-  },
-  "2026-11-22": {
-    "commit_count": 121,
-    "relevant_commit_count": 33,
-    "relevant_signature": "737153,737155,737176,737177,737202,737203,737205,737206,737207,737208,737209,737210,737211,737212,737216,737217,737218,737219,737264,737265,737266,737267,737268,737272,737301,737305,737306,737310,737334,737335,737336,737340,737379",
-    "prompt_version": "structured-read-state-v8-stable-chunks",
-    "chunk_cache": {},
-    "sections": [
-      {
-        "title": "Map Layout",
-        "items": [
-          {
-            "text": "Monuments are arranged in eccentric rings with the endgame core offset to one side; the Power Plant sits centrally, core monuments lean inward and are anchored to specific rings.",
-            "commit_ids": [
-              737202,
-              737217
-            ]
-          },
-          {
-            "text": "The first closing balloon is placed in the outer ring, away from hatches.",
-            "commit_ids": [
-              737216
-            ]
-          }
-        ]
-      },
-      {
-        "title": "AI & Reinforcements",
-        "items": [
-          {
-            "text": "Tier‑2 monuments now host gunner drones that fire pistol rounds with recoil.",
-            "commit_ids": [
-              737203
-            ]
-          },
-          {
-            "text": "Core monuments are guarded by AI; when their guards are depleted helicopters can deliver reinforcements and a Bradley patrols the core area, and players receive warnings near monuments and before a balloon closes.",
-            "commit_ids": [
-              737219,
-              737264,
-              737266
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Economy & Pricing",
-        "items": [
-          {
-            "text": "Backpack sale price is fixed at 400 after completing Missing Shipment, and loot items have fixed rarity‑based pricing that no longer varies with colour.",
-            "commit_ids": [
-              737207,
-              737210
-            ]
-          },
-          {
-            "text": "Item values are calculated from supply stock and a fixed shop list (bandit camp excluded); gold‑floor items, condition‑scaled sales and blueprint prices are defined without bandit influence, the safe pocket only accepts non‑weapon/armour items and values them as the shop would pay, and the shop now buys only finished goods while components are sent to a recycler for a refund.",
-            "commit_ids": [
-              737208,
-              737209,
-              737212,
-              737267,
-              737268
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Inventory & Loot",
-        "items": [
-          {
-            "text": "Stash capacity increased by two rows at a time up to a maximum of 96 slots.",
-            "commit_ids": [
-              737211
-            ]
-          },
-          {
-            "text": "Low‑tier crates and barrels now contain fewer tools and weapons, and junk‑pile crates no longer include ring parts.",
-            "commit_ids": [
-              737265
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Raid & Extraction",
-        "items": [
-          {
-            "text": "Extraction balloons no longer carry a secondary hot‑air balloon; escape hatches can be opened with a Cobalt bypass card; outer‑ring crates now have a rare jackpot chance; and raid duration is extended to 35 minutes.",
-            "commit_ids": [
-              737305,
-              737306
-            ]
-          },
-          {
-            "text": "Raid reset now removes player‑placed structures along with their contents.",
-            "commit_ids": [
-              737206
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Balance",
-        "items": [
-          {
-            "text": "Improved beach spawn locations reduce clustering and give more reliable initial placement.",
-            "commit_ids": [
-              737336
-            ]
-          },
-          {
-            "text": "Fishing vendor updates add new bait options and adjust pricing for better resource management.",
-            "commit_ids": [
-              737335
-            ]
-          },
-          {
-            "text": "Fixed overlapping train tunnel geometry, preventing players from getting stuck or falling through tunnels.",
-            "commit_ids": [
-              737334
-            ]
-          }
-        ]
-      }
-    ],
-    "status": "ok",
-    "notice": "",
-    "pending_relevant_count": 0,
-    "summary": "### Map Layout\n- Monuments are arranged in eccentric rings with the endgame core offset to one side; the Power Plant sits centrally, core monuments lean inward and are anchored to specific rings.\n- The first closing balloon is placed in the outer ring, away from hatches.\n\n### AI & Reinforcements\n- Tier‑2 monuments now host gunner drones that fire pistol rounds with recoil.\n- Core monuments are guarded by AI; when their guards are depleted helicopters can deliver reinforcements and a Bradley patrols the core area, and players receive warnings near monuments and before a balloon closes.\n\n### Economy & Pricing\n- Backpack sale price is fixed at 400 after completing Missing Shipment, and loot items have fixed rarity‑based pricing that no longer varies with colour.\n- Item values are calculated from supply stock and a fixed shop list (bandit camp excluded); gold‑floor items, condition‑scaled sales and blueprint prices are defined without bandit influence, the safe pocket only accepts non‑weapon/armour items and values them as the shop would pay, and the shop now buys only finished goods while components are sent to a recycler for a refund.\n\n### Inventory & Loot\n- Stash capacity increased by two rows at a time up to a maximum of 96 slots.\n- Low‑tier crates and barrels now contain fewer tools and weapons, and junk‑pile crates no longer include ring parts.\n\n### Raid & Extraction\n- Extraction balloons no longer carry a secondary hot‑air balloon; escape hatches can be opened with a Cobalt bypass card; outer‑ring crates now have a rare jackpot chance; and raid duration is extended to 35 minutes.\n- Raid reset now removes player‑placed structures along with their contents.\n\n### Gameplay & Balance\n- Improved beach spawn locations reduce clustering and give more reliable initial placement.\n- Fishing vendor updates add new bait options and adjust pricing for better resource management.\n- Fixed overlapping train tunnel geometry, preventing players from getting stuck or falling through tunnels.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
