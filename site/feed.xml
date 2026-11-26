@@ -6,48 +6,59 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 25 Nov 2026 22:18:26 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 00:18:36 -0500</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Nov 25</title>
+      <title>Yesterday's Rust Updates — Nov 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;149 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;167 development commits&lt;/strong&gt;&lt;/p&gt;
 
 
-&lt;h3&gt;Skins &amp;amp; Bundles&lt;/h3&gt;
+&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738597"&gt;Fixed bundled skins showing blank after checkout, restoring visibility of purchased skins.&lt;/li&gt;
-&lt;li data-rust-commits="738598"&gt;Fixed fullscreen skin viewer paging onto bundles, ensuring proper navigation in the skin viewer.&lt;/li&gt;
-&lt;li data-rust-commits="738613"&gt;Corrected trade status for bundles of tradable skins, so they now appear as tradable in the market.&lt;/li&gt;
-&lt;li data-rust-commits="738599"&gt;Fixed crate generators not being recognized as bundles, restoring expected crate generation behavior.&lt;/li&gt;
+&lt;li data-rust-commits="738905"&gt;Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738780"&gt;Strafing now cancels sprint, and a crouch‑strafe bug has been fixed.&lt;/li&gt;
+&lt;li data-rust-commits="738688,738689,738690"&gt;Boat and cargo parenting bugs fixed: players no longer unintentionally transfer to cargo ships, exclusion zones prevent attachment to moving excavator arms, and ladder climbing from boats no longer drags players off.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Building &amp;amp; Structures&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738632"&gt;Gingerbread physics material added to low and half walls, affecting building physics for gingerbread structures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Trading &amp;amp; Crate System&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738613"&gt;Tradable skin bundles now retain their tradeable status, fixing incorrect non‑tradable markings.&lt;/li&gt;
+&lt;li data-rust-commits="738599"&gt;Crate generators are now correctly recognized as bundles, ensuring proper operation within the bundle system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Tech Tree &amp;amp; UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="739050,739059"&gt;Tech‑tree shuffled with a new in‑editor graph editor and reorganised tier 1‑3 trees for Hardcore and Primitive modes; UI now opens up to eight times faster, cutting load time from ~1.2 s to ~0.15 s.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Boss &amp;amp; NPC Physics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738573"&gt;Scrap King’s physics material changed to metal, altering its interactions and damage handling.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Customization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738841"&gt;New console variable lets players hide all tattoos&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Lighting &amp;amp; Visuals&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738561,738565,738568"&gt;Improved night lighting with foreground/background floors for shadows, fixed gamma issues, added a dev toggle, and ensured night lights work with anti‑gamma fix and smoother brightness transitions at dawn and dusk.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Physics &amp;amp; Combat&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738573"&gt;Updated Scrap King’s physics material to metal, changing its interaction and damage behavior.&lt;/li&gt;
-&lt;li data-rust-commits="738905"&gt;Reduced recoil application duration by 75% on most weapons, making it easier to stay on target while firing.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Vehicle &amp;amp; Movement&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738688,738689,738690"&gt;Fixed several parenting issues on player boats and cargo ships: prevented unintended ship switching, ensured parenting exclusion zones work, stopped ladder climbing from dragging players off, and respected ladder ownership.&lt;/li&gt;
-&lt;li data-rust-commits="738780"&gt;Strafe input now cancels sprint and a crouch‑strafe bug has been fixed, improving responsiveness when changing movement direction.&lt;/li&gt;
+&lt;li data-rust-commits="738568"&gt;Brightness transition at dawn and dusk is smoother&lt;/li&gt;
+&lt;li data-rust-commits="738565"&gt;Night light now works correctly with the anti‑gamma fix&lt;/li&gt;
+&lt;li data-rust-commits="738561"&gt;Added foreground and background floor geometry for night shadows to prevent gamma spikes; includes a toggle convar&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738841"&gt;Added a convar to hide tattoos, allowing players to toggle tattoo visibility.&lt;/li&gt;
-&lt;li data-rust-commits="738719"&gt;Fixed overly bright inventory preview caused by character creator lighting, restoring normal colors.&lt;/li&gt;
-&lt;li data-rust-commits="738669"&gt;Corrected occlusion culling in the character creator workshop, preventing the room from going dark or getting wet.&lt;/li&gt;
-&lt;li data-rust-commits="738632"&gt;Added gingerbread physics material to low and half walls, improving building physics for gingerbread structures.&lt;/li&gt;
-&lt;li data-rust-commits="738784"&gt;Updated sprint mechanics to the modern system, altering sprint speed and stamina usage.&lt;/li&gt;
+&lt;li data-rust-commits="738784"&gt;Sprint mechanics have been updated to the modern movement system, changing acceleration and stamina behavior for faster, smoother running.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-25</guid>
-      <pubDate>Wed, 25 Nov 2026 22:18:26 -0500</pubDate>
+      <pubDate>Wed, 25 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Nov 24</title>
+      <title>Rust Updates — 2 Days Ago — Nov 24</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;157 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -109,9 +120,9 @@
       <pubDate>Tue, 24 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Rust Updates — 2 Days Ago — Nov 23</title>
+      <title>Rust Development Updates — Nov 23</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;230 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;226 development commits&lt;/strong&gt;&lt;/p&gt;
 
 
 &lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;

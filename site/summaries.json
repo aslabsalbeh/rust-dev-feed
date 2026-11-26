@@ -1,36 +1,99 @@
 {
   "2026-11-25": {
-    "commit_count": 149,
-    "relevant_commit_count": 53,
-    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860,738877,738905,738965,738966,739013",
+    "commit_count": 167,
+    "relevant_commit_count": 58,
+    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860,738877,738905,738965,738966,739013,739030,739031,739050,739055,739059",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Skins & Bundles",
+        "title": "Combat & Weapons",
         "items": [
           {
-            "text": "Fixed bundled skins showing blank after checkout, restoring visibility of purchased skins.",
+            "text": "Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.",
             "commit_ids": [
-              738597
+              738905
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Movement & Controls",
+        "items": [
+          {
+            "text": "Strafing now cancels sprint, and a crouch‑strafe bug has been fixed.",
+            "commit_ids": [
+              738780
             ]
           },
           {
-            "text": "Fixed fullscreen skin viewer paging onto bundles, ensuring proper navigation in the skin viewer.",
+            "text": "Boat and cargo parenting bugs fixed: players no longer unintentionally transfer to cargo ships, exclusion zones prevent attachment to moving excavator arms, and ladder climbing from boats no longer drags players off.",
             "commit_ids": [
-              738598
+              738688,
+              738689,
+              738690
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Building & Structures",
+        "items": [
           {
-            "text": "Corrected trade status for bundles of tradable skins, so they now appear as tradable in the market.",
+            "text": "Gingerbread physics material added to low and half walls, affecting building physics for gingerbread structures.",
+            "commit_ids": [
+              738632
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Trading & Crate System",
+        "items": [
+          {
+            "text": "Tradable skin bundles now retain their tradeable status, fixing incorrect non‑tradable markings.",
             "commit_ids": [
               738613
             ]
           },
           {
-            "text": "Fixed crate generators not being recognized as bundles, restoring expected crate generation behavior.",
+            "text": "Crate generators are now correctly recognized as bundles, ensuring proper operation within the bundle system.",
             "commit_ids": [
               738599
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tech Tree & UI",
+        "items": [
+          {
+            "text": "Tech‑tree shuffled with a new in‑editor graph editor and reorganised tier 1‑3 trees for Hardcore and Primitive modes; UI now opens up to eight times faster, cutting load time from ~1.2 s to ~0.15 s.",
+            "commit_ids": [
+              739050,
+              739059
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Boss & NPC Physics",
+        "items": [
+          {
+            "text": "Scrap King’s physics material changed to metal, altering its interactions and damage handling.",
+            "commit_ids": [
+              738573
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Customization",
+        "items": [
+          {
+            "text": "New console variable lets players hide all tattoos",
+            "commit_ids": [
+              738841
             ]
           }
         ]
@@ -39,47 +102,21 @@
         "title": "Lighting & Visuals",
         "items": [
           {
-            "text": "Improved night lighting with foreground/background floors for shadows, fixed gamma issues, added a dev toggle, and ensured night lights work with anti‑gamma fix and smoother brightness transitions at dawn and dusk.",
+            "text": "Brightness transition at dawn and dusk is smoother",
             "commit_ids": [
-              738561,
-              738565,
               738568
             ]
-          }
-        ]
-      },
-      {
-        "title": "Physics & Combat",
-        "items": [
+          },
           {
-            "text": "Updated Scrap King’s physics material to metal, changing its interaction and damage behavior.",
+            "text": "Night light now works correctly with the anti‑gamma fix",
             "commit_ids": [
-              738573
+              738565
             ]
           },
           {
-            "text": "Reduced recoil application duration by 75% on most weapons, making it easier to stay on target while firing.",
+            "text": "Added foreground and background floor geometry for night shadows to prevent gamma spikes; includes a toggle convar",
             "commit_ids": [
-              738905
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicle & Movement",
-        "items": [
-          {
-            "text": "Fixed several parenting issues on player boats and cargo ships: prevented unintended ship switching, ensured parenting exclusion zones work, stopped ladder climbing from dragging players off, and respected ladder ownership.",
-            "commit_ids": [
-              738688,
-              738689,
-              738690
-            ]
-          },
-          {
-            "text": "Strafe input now cancels sprint and a crouch‑strafe bug has been fixed, improving responsiveness when changing movement direction.",
-            "commit_ids": [
-              738780
+              738561
             ]
           }
         ]
@@ -88,31 +125,7 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Added a convar to hide tattoos, allowing players to toggle tattoo visibility.",
-            "commit_ids": [
-              738841
-            ]
-          },
-          {
-            "text": "Fixed overly bright inventory preview caused by character creator lighting, restoring normal colors.",
-            "commit_ids": [
-              738719
-            ]
-          },
-          {
-            "text": "Corrected occlusion culling in the character creator workshop, preventing the room from going dark or getting wet.",
-            "commit_ids": [
-              738669
-            ]
-          },
-          {
-            "text": "Added gingerbread physics material to low and half walls, improving building physics for gingerbread structures.",
-            "commit_ids": [
-              738632
-            ]
-          },
-          {
-            "text": "Updated sprint mechanics to the modern system, altering sprint speed and stamina usage.",
+            "text": "Sprint mechanics have been updated to the modern movement system, changing acceleration and stamina behavior for faster, smoother running.",
             "commit_ids": [
               738784
             ]
@@ -123,7 +136,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Skins & Bundles\n- Fixed bundled skins showing blank after checkout, restoring visibility of purchased skins.\n- Fixed fullscreen skin viewer paging onto bundles, ensuring proper navigation in the skin viewer.\n- Corrected trade status for bundles of tradable skins, so they now appear as tradable in the market.\n- Fixed crate generators not being recognized as bundles, restoring expected crate generation behavior.\n\n### Lighting & Visuals\n- Improved night lighting with foreground/background floors for shadows, fixed gamma issues, added a dev toggle, and ensured night lights work with anti‑gamma fix and smoother brightness transitions at dawn and dusk.\n\n### Physics & Combat\n- Updated Scrap King’s physics material to metal, changing its interaction and damage behavior.\n- Reduced recoil application duration by 75% on most weapons, making it easier to stay on target while firing.\n\n### Vehicle & Movement\n- Fixed several parenting issues on player boats and cargo ships: prevented unintended ship switching, ensured parenting exclusion zones work, stopped ladder climbing from dragging players off, and respected ladder ownership.\n- Strafe input now cancels sprint and a crouch‑strafe bug has been fixed, improving responsiveness when changing movement direction.\n\n### Gameplay & Balance\n- Added a convar to hide tattoos, allowing players to toggle tattoo visibility.\n- Fixed overly bright inventory preview caused by character creator lighting, restoring normal colors.\n- Corrected occlusion culling in the character creator workshop, preventing the room from going dark or getting wet.\n- Added gingerbread physics material to low and half walls, improving building physics for gingerbread structures.\n- Updated sprint mechanics to the modern system, altering sprint speed and stamina usage.",
+    "summary": "### Combat & Weapons\n- Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.\n\n### Movement & Controls\n- Strafing now cancels sprint, and a crouch‑strafe bug has been fixed.\n- Boat and cargo parenting bugs fixed: players no longer unintentionally transfer to cargo ships, exclusion zones prevent attachment to moving excavator arms, and ladder climbing from boats no longer drags players off.\n\n### Building & Structures\n- Gingerbread physics material added to low and half walls, affecting building physics for gingerbread structures.\n\n### Trading & Crate System\n- Tradable skin bundles now retain their tradeable status, fixing incorrect non‑tradable markings.\n- Crate generators are now correctly recognized as bundles, ensuring proper operation within the bundle system.\n\n### Tech Tree & UI\n- Tech‑tree shuffled with a new in‑editor graph editor and reorganised tier 1‑3 trees for Hardcore and Primitive modes; UI now opens up to eight times faster, cutting load time from ~1.2 s to ~0.15 s.\n\n### Boss & NPC Physics\n- Scrap King’s physics material changed to metal, altering its interactions and damage handling.\n\n### Customization\n- New console variable lets players hide all tattoos\n\n### Lighting & Visuals\n- Brightness transition at dawn and dusk is smoother\n- Night light now works correctly with the anti‑gamma fix\n- Added foreground and background floor geometry for night shadows to prevent gamma spikes; includes a toggle convar\n\n### Gameplay & Balance\n- Sprint mechanics have been updated to the modern movement system, changing acceleration and stamina behavior for faster, smoother running.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -336,7 +349,7 @@
     "new_summary": ""
   },
   "2026-11-23": {
-    "commit_count": 230,
+    "commit_count": 226,
     "relevant_commit_count": 76,
     "relevant_signature": "737419,737420,737421,737438,737456,737462,737463,737464,737470,737473,737474,737486,737488,737496,737514,737539,737546,737565,737584,737585,737613,737619,737710,737722,737728,737730,737735,737737,737746,737767,737769,737784,737788,737796,737805,737807,737821,737853,737854,737866,737880,737887,737899,737900,737911,737912,737934,737935,737939,737941,737942,737944,737945,737947,737960,737974,737975,737976,737978,737984,737985,737988,737995,737997,738025,738026,738032,738033,738034,738035,738036,738037,738038,738063,738064,738069",
     "prompt_version": "structured-read-state-v8-stable-chunks",

@@ -1,5 +1,149 @@
 [
   {
+    "id": 739060,
+    "branch": "main",
+    "changeset": "87b7de",
+    "created": "2026-11-26T04:27:40",
+    "message": "Merge pull request #249 from Facepunch/Tech_Tree_Shuffle",
+    "user": "Rin"
+  },
+  {
+    "id": 739059,
+    "branch": "Tech_Tree_Shuffle",
+    "changeset": "54f0b1",
+    "created": "2026-11-26T04:25:29.8",
+    "message": "Make the tech tree open fast on trees where items have several parents\n* TechTreeDialog.AddNodesRecursive returns early for nodes it has already added, instead of rebuilding them once per parent\n* TechTreeData.CheckChainRecursive stops at the first path it finds and searches each node once\n* TechTreeData.GetNodesRequiredToUnlock works out each node's path once\n* The editor's TechTreePreview copies get the same fixes\n* A fully unlocked T2 builds in about 150 ms instead of 1,200 ms, and unlock results are unchanged",
+    "user": "Rin"
+  },
+  {
+    "id": 739058,
+    "branch": "Tech_Tree_Shuffle",
+    "changeset": "9a5b90",
+    "created": "2026-11-26T04:06:16.4",
+    "message": "Merge remote-tracking branch 'origin/main' into Tech_Tree_Shuffle",
+    "user": "Rin"
+  },
+  {
+    "id": 739057,
+    "branch": "Tech_Tree_Shuffle",
+    "changeset": "5957d4",
+    "created": "2026-11-26T04:06:16.4",
+    "message": "Merge remote-tracking branch 'origin/main' into Tech_Tree_Shuffle",
+    "user": "Rin"
+  },
+  {
+    "id": 739056,
+    "branch": "main",
+    "changeset": "a23576",
+    "created": "2026-11-26T04:04:56.5",
+    "message": "Merge pull request #251 from Facepunch/foot_ik_raycast_batch",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 739055,
+    "branch": "foot_ik_raycast_batch",
+    "changeset": "fda022",
+    "created": "2026-11-26T04:04:20.1",
+    "message": "Fixed a single frame window where left foot IK would disable while idling",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 739052,
+    "branch": "main",
+    "changeset": "0edeea",
+    "created": "2026-11-26T03:59:07.9",
+    "message": "Merge pull request #250 from Facepunch/foot_ik_raycast_batch",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 739050,
+    "branch": "Tech_Tree_Shuffle",
+    "changeset": "74dc44",
+    "created": "2026-11-26T03:52:24.6",
+    "message": "Tech tree shuffle and new tech tree editor\n* New Tech Tree Editor (open it from a tree asset's inspector): drag and drop graph editing with grid snapping, box select, linking, populate, copy/paste and removing links on a selection\n* Resizable side-by-side game preview that builds the real tech tree widgets and shows unlock path costs\n* Tree checks ported from Martyn's TechTreeLint (hackweek_grapheditors)\n* Tech tree columns can sit half a column over, so an even number of items centres under an odd number\n* Rearranged the IO, tier 1, tier 2 and tier 3 trees, and relinked tier 1\n* Hardcore and primitive trees use the new layouts, with links through removed items going straight to the next item that's present",
+    "user": "Rin"
+  },
+  {
+    "id": 739049,
+    "branch": "foot_ik_raycast_batch",
+    "changeset": "a460ed",
+    "created": "2026-11-26T03:50:54.9",
+    "message": "batch footstep effects into a batched raycast system",
+    "user": "Jarryd Campi"
+  },
+  {
+    "id": 739034,
+    "branch": "panels",
+    "changeset": "6b7be0",
+    "created": "2026-11-26T02:47:13.5",
+    "message": "Panels context menu component",
+    "user": "Flavien"
+  },
+  {
+    "id": 739033,
+    "branch": "▋▅▄▄▋▋",
+    "changeset": "▆█▇▉▉▉",
+    "created": "2026-11-26T02:47:13.5",
+    "message": "▆ ▌▍▍▄▌▉ ▋▋▉█▆▊ ▆▆▉ ▄▍▉▉ ▉▋▆▅▅▍▊█▄▇▋ ▋▅ ▄▅▍▉█▅ ▅▅▋█▆▊",
+    "user": "Flavien"
+  },
+  {
+    "id": 739032,
+    "branch": "panels",
+    "changeset": "60aea9",
+    "created": "2026-11-26T02:47:13.5",
+    "message": "Colour picker for $variables in the panels inspector",
+    "user": "Flavien"
+  },
+  {
+    "id": 739031,
+    "branch": "panels",
+    "changeset": "03e5d0",
+    "created": "2026-11-26T02:47:13.4",
+    "message": "Fixed bootstrap texts colour",
+    "user": "Flavien"
+  },
+  {
+    "id": 739030,
+    "branch": "panels",
+    "changeset": "5e745c",
+    "created": "2026-11-26T02:47:13.4",
+    "message": "Fixed the panels home video looking darker than uGUI",
+    "user": "Flavien"
+  },
+  {
+    "id": 739029,
+    "branch": "panels",
+    "changeset": "4b2020",
+    "created": "2026-11-26T02:47:13.3",
+    "message": "Home quick join converted to panels",
+    "user": "Flavien"
+  },
+  {
+    "id": 739028,
+    "branch": "panels",
+    "changeset": "c265c4",
+    "created": "2026-11-26T02:47:13.3",
+    "message": "Regenerated the panels menu header",
+    "user": "Flavien"
+  },
+  {
+    "id": 739027,
+    "branch": "panels",
+    "changeset": "0291ad",
+    "created": "2026-11-26T02:47:13.3",
+    "message": "Moved UI_Utils time formatting stuff into TimeFormatUtils",
+    "user": "Flavien"
+  },
+  {
+    "id": 739026,
+    "branch": "panels",
+    "changeset": "368e9a",
+    "created": "2026-11-26T02:47:13.2",
+    "message": "New menu header converted to panels",
+    "user": "Flavien"
+  },
+  {
     "id": 739024,
     "branch": "▊▉▇▍▍▋▆▋▅▆▉▄█▅▍▊▄▇▆▉▍▄",
     "changeset": "▄▅█▊▌▍",
@@ -4254,165 +4398,5 @@
     "created": "2026-11-23T06:42:51.3",
     "message": "█ ▄▆█▋ ▍▌▄ ▉▄▋▆▌ ▄▍▅▌▍▅ ▋▇▍ ▋▉▆▌ ▌▄▉ ▍▉▆▌▌▌▌ ▇█▍▌▉ ▉▍▇ ▍▋█ ▇▊▋▄▅ ▄▌ ▋▉▆▊▆▌ ▄▌█▉██",
     "user": "andre"
-  },
-  {
-    "id": 737385,
-    "branch": "▇▌▅▇▊█▊▋▉▇▇▍█▍▌▉",
-    "changeset": "▋▌██▆▄",
-    "created": "2026-11-23T05:16:43.4",
-    "message": "▇ ▇▄▅ ▄▊▅▍▌▌▇▉ ▋▍▋▇▇ ▅▍▇▉ █▋█▊▄▋",
-    "user": "curt"
-  },
-  {
-    "id": 737384,
-    "branch": "▉█▆█▅▍▄▍▇█▅▋▇▄▉▅",
-    "changeset": "▆▌▄▋▌▆",
-    "created": "2026-11-23T05:16:43.4",
-    "message": "▋ ▄▇▍▉▌▋█▊ █▉▌▄▇▄▋ ▍▉▍▍ █▆▉▄ ▉▇▌▊ ▉▇▍█▄▊▇ ▉▉ ▋▋▌▆▉▍ ▉▆▉▅ ▆▍▌▆▄▍█▇",
-    "user": "curt"
-  },
-  {
-    "id": 737383,
-    "branch": "▇▍▆▊▄█▊▇▋▌▌▇█▇▊▅",
-    "changeset": "▄▉▍▍▋▍",
-    "created": "2026-11-23T05:16:43.3",
-    "message": "▆ ▋▊▋▅▍ ▆▍ ▉▄▌▄▇▌▇▅ █▍▍▊ ▆▍█▋█▋▄ ▄▇ ▉▉▅ ▊▊▄█▋▄ ▉▆█ ▆▇█▋▋▋▆▌▊▄▉▆ ▆▅▇▇▌▆",
-    "user": "curt"
-  },
-  {
-    "id": 737382,
-    "branch": "▅▅█▄▋▆▍▆▊▊█▌▇█▋▊",
-    "changeset": "▄▋▇▆▌█",
-    "created": "2026-11-23T05:16:43.3",
-    "message": "▋ █▍▉▊▄▌█ █▊▅▆▊▇▊█▄▇▌ ▆▅▋▆▇▇",
-    "user": "curt"
-  },
-  {
-    "id": 737379,
-    "branch": "hackweek-rainy-days",
-    "changeset": "cfe1cd",
-    "created": "2026-11-23T04:58:08.5",
-    "message": "Review fixes",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 737373,
-    "branch": "hackweek-rainy-days",
-    "changeset": "fcafe6",
-    "created": "2026-11-23T04:28:47.6",
-    "message": "Merge branch 'main' into hackweek-rainy-days",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 737369,
-    "branch": "▍▇█▆██▄▆▅▌▅█▅▇▊█",
-    "changeset": "▇▌▇▇▄▄",
-    "created": "2026-11-23T03:55:02",
-    "message": "▍ ▊▌▋▋▋▄▍▌▍▉▄  ▋▉▉▇▊▆▉ ▅█▉▄▌▄▋",
-    "user": "curt"
-  },
-  {
-    "id": 737368,
-    "branch": "▄▋▍▅▋▋▌▉▊▍▇▊▇▌▇▅",
-    "changeset": "▅▅█▊▉▆",
-    "created": "2026-11-23T03:55:02",
-    "message": "█ ▇▅▉▇▌▉█▋▉▌▇ ▄▄▌▋▅ ▊▉▌▆▆▌▉▍▄ ▅▋▅ █▄▆▊▆▋▌▇▌",
-    "user": "curt"
-  },
-  {
-    "id": 737366,
-    "branch": "hackweek-rainy-days",
-    "changeset": "ec0cff",
-    "created": "2026-11-23T03:46:48.8",
-    "message": "Added option for rain benchmark to suppress effects in editor",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 737365,
-    "branch": "▍▅▌▉",
-    "changeset": "▉▌▄▄█▆",
-    "created": "2026-11-23T03:44:57.9",
-    "message": "▌ █▄▍▍ ▆ ▆▍▇█▉▍▍█▋ ▌▍▋█▊▍▉ ▇█▊▅▉▍▇▄▍█ █▅▋▊▌▋ ▉▄▊▆ ▄█▆ ▌▊▍ ▄▆▄█▅▉▉▇▄ ▉▆ ▌▊▇▊▆█ ▅▉▋▋▄▄ ▅▆▇▄▊█",
-    "user": "andre"
-  },
-  {
-    "id": 737364,
-    "branch": "█▌▌▇▋▋▌▇▊▆▋▇▍▇▉▋▊▌▇▋▋▍",
-    "changeset": "▇▌▇▊▉▌",
-    "created": "2026-11-23T03:44:45.2",
-    "message": "▇ ▅▇▊▉ ▇ ▋█▆▄▌▅▆▍▄ ▆▉▅█▆▋▆ ▆▅▉▉▊▆▄▆▉▅ ▄▅▇▊▍▄ ▇▉▌▄ █▇▋ ▍▇▍ ▍▅▌▄█▇▇▄▍ ▆▅ ▄▊█▇▍█ ▊▅▅▉▇▆",
-    "user": "andre"
-  },
-  {
-    "id": 737363,
-    "branch": "▋██▋",
-    "changeset": "█▊▇█▋▍",
-    "created": "2026-11-23T03:44:33.7",
-    "message": "▌ ▌▊█▄ █▇▍ ▄▊▅█▊█▇ ▊▄▉▇▌▊ ▄▄ ▋█▌▌▊ ▋█▅ ▌▊▅▄▊ ▅▇▅ ▍▄ ▋▍▆▆▅ ▍▍ ▌▄▋▉▋▅ ▅▋▌▌▍▆ ▊▊▅▊█▆",
-    "user": "andre"
-  },
-  {
-    "id": 737362,
-    "branch": "▄█▋▋▅▊▄▆▊▍▋▊▆▅▅▌▋▌▉▋█▉",
-    "changeset": "▄▊▍▌▌▊",
-    "created": "2026-11-23T03:44:20.1",
-    "message": "▇ ▉▍▆▊ ▉▌█ ▍▇▇▊ ▍▍▊▄ ▊▍▇ █▉▌▌ █▇ ▆▍▄▉▊▌▊ ▆▅▊▉▇▋ ▍▇▇█ ▇▅▊ ▆▊▌▋▌▊▅ ▄▍▍█▊▉▌▇▊ ▌▍ ▇█▋█▌▆ ▄▊▍▍▍▅",
-    "user": "andre"
-  },
-  {
-    "id": 737361,
-    "branch": "▊▄▋▄█▆▄▅▄█▌▆█▉▉▅▋▋▍▍▇▆",
-    "changeset": "▋█▆▋▄▄",
-    "created": "2026-11-23T03:44:20.1",
-    "message": "▋ ▆▆▄▅ ▋█▍ ▌▍▊▌▆█▍ ▇▆▇▇▄▇ ▉▊ ▄▆▉▄█ ▆▌█ ▇▌▄▇▉ ▉▄▌ ▌▉ ▅▋▍▅▇ ▆▌ ▊▋▉▊▆▋ ▋▆▉▅▋▉",
-    "user": "andre"
-  },
-  {
-    "id": 737359,
-    "branch": "▌██▇▋▌▇▇▊▇█▉▍▊▇",
-    "changeset": "▆▇█▇▆▌",
-    "created": "2026-11-23T03:43:21",
-    "message": "▋ ▊▌▊▆▍▉ ▍▊▆▅▆▌▇▉▅█▄ ▆▇▅▄▇▇▄ ▇▇▅▊▆▋▌▄▄▊ █▌▊█ ▊▄▊▊▋▅▉▊",
-    "user": "curt"
-  },
-  {
-    "id": 737358,
-    "branch": "▄▆▇▄▍▇▄▆▇▄▊▉▊▆▌",
-    "changeset": "▇▇▅▇▄▅",
-    "created": "2026-11-23T03:43:20.9",
-    "message": "▆ ▇▅█▌ ▄▄██▌█▉▅ ▌▌ ▉▍█ ▆▍▍▌▅▄▍▊▉ ▉██▇▉▊",
-    "user": "curt"
-  },
-  {
-    "id": 737357,
-    "branch": "▌▉▌▆▉▌▉▄▊▌▄▊▍▅▊",
-    "changeset": "▍▇▆▍▍▇",
-    "created": "2026-11-23T03:43:20.9",
-    "message": "▊ ▄█▅▇▆▊▍ ▇█▋▋█▇▅",
-    "user": "curt"
-  },
-  {
-    "id": 737356,
-    "branch": "▇▌▌▊▄▌▍▉▇▇▊▍▍▋▋",
-    "changeset": "▍█▉▍▉▋",
-    "created": "2026-11-23T03:43:20.9",
-    "message": "▅ ▋▋▍▍▇ ▆█▆▅▍▍▋▌█ ▆▅▆ ▅▅▋▇▌▇▌▇▋",
-    "user": "curt"
-  },
-  {
-    "id": 737354,
-    "branch": "main",
-    "changeset": "8122e9",
-    "created": "2026-11-23T03:24:59.3",
-    "message": "Merge pull request #148 from Facepunch/hackweek-rain-benchmark",
-    "user": "Jarryd Campi"
-  },
-  {
-    "id": 737353,
-    "branch": "hackweek-rain-benchmark",
-    "changeset": "63f1cf",
-    "created": "2026-11-23T03:24:20.8",
-    "message": "Include rain benchmark in scenes",
-    "user": "Jarryd Campi"
   }
 ]
