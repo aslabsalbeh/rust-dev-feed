@@ -1,54 +1,18 @@
 {
   "2026-11-26": {
-    "commit_count": 109,
-    "relevant_commit_count": 29,
-    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320",
+    "commit_count": 127,
+    "relevant_commit_count": 33,
+    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320,739359,739374,739377,739398",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Core Gameplay",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Sprint now behaves like modern versions, offering smoother acceleration and deceleration.",
-            "commit_ids": [
-              739171
-            ]
-          },
-          {
-            "text": "Cars stay visible at long distances thanks to fixed network culling of the chassis.",
+            "text": "Fixed car chassis network culling so chassis remain visible and functional at long distances, preventing cars from disappearing for distant players.",
             "commit_ids": [
               739196
-            ]
-          },
-          {
-            "text": "Trees that disappear will now respawn, preserving grove shapes and preventing over‑farming; a new setting lets you control this behavior.",
-            "commit_ids": [
-              739233,
-              739239,
-              739245
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Server Access",
-        "items": [
-          {
-            "text": "Premium players can skip the queue and join games instantly.",
-            "commit_ids": [
-              739179
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building",
-        "items": [
-          {
-            "text": "Window embrasures are placed correctly, fixing window behavior in buildings.",
-            "commit_ids": [
-              739180
             ]
           }
         ]
@@ -57,7 +21,7 @@
         "title": "Crafting & Resources",
         "items": [
           {
-            "text": "Composters now show a fertilizer progress bar in the loot panel.",
+            "text": "Added a progress indicator on the composter loot panel showing how close you are to the next fertilizer, giving clearer feedback on fertilizer production.",
             "commit_ids": [
               739207
             ]
@@ -65,42 +29,86 @@
         ]
       },
       {
-        "title": "User Interface",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "Menus correctly register clicks after closing the F1 help screen.",
+            "text": "Improved procedural tree respawn behavior: trees now only reject placement when trunks would intersect, respawn in missing locations, maintain grove shapes, and use a new RespawnWhereMissing setting to keep heavily harvested areas replenished while preventing overgrowth in untouched forests.",
+            "commit_ids": [
+              739227,
+              739233,
+              739239,
+              739245
+            ]
+          }
+        ]
+      },
+      {
+        "title": "UI & Menus",
+        "items": [
+          {
+            "text": "Fixed the menu not registering clicks after closing the F1 help screen.",
             "commit_ids": [
               739275
             ]
           },
           {
-            "text": "CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection.",
+            "text": "Improved CCTV station bookmark management: you can now drag bookmarks to reorder them, arrows appear only on hovered rows, stay within the visible list, and clicks near arrows no longer activate the underlying camera.",
             "commit_ids": [
               739318,
               739319,
               739320
             ]
-          }
-        ]
-      },
-      {
-        "title": "World Generation",
-        "items": [
+          },
           {
-            "text": "Tree placement now only blocked when trunks would intersect, allowing trees to spawn closer together and improving forest density.",
+            "text": "Restored release version UI for connect and session modals, bringing back the map button and full header image, and adjusted server‑join handling to match release behavior.",
             "commit_ids": [
-              739227
+              739398
             ]
           }
         ]
       },
       {
-        "title": "UI & Quality of Life",
+        "title": "Networking",
         "items": [
           {
-            "text": "F1 net panel now displays actual ping values and is restricted to admins; the panel automatically closes if access is lost.",
+            "text": "Fixed a null reference error on the F1 Net page when connecting via Steamworks; the page now safely returns an empty string instead of crashing.",
+            "commit_ids": [
+              739374
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Net panel (F1) now displays actual ping values and is restricted to admins.",
             "commit_ids": [
               739188
+            ]
+          },
+          {
+            "text": "Premium players can now bypass the queue when using Quick Join.",
+            "commit_ids": [
+              739179
+            ]
+          },
+          {
+            "text": "Fixed a Steam-specific crash on the Net information page, preventing errors for players.",
+            "commit_ids": [
+              739377
+            ]
+          },
+          {
+            "text": "Sprint mechanics have been overhauled, providing higher top speed and smoother acceleration while adjusting stamina consumption.",
+            "commit_ids": [
+              739171
+            ]
+          },
+          {
+            "text": "Window embrasures now function correctly, fixing placement issues and ensuring they block bullet penetration as intended.",
+            "commit_ids": [
+              739180
             ]
           }
         ]
@@ -109,27 +117,32 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Core Gameplay\n- Sprint now behaves like modern versions, offering smoother acceleration and deceleration.\n- Cars stay visible at long distances thanks to fixed network culling of the chassis.\n- Trees that disappear will now respawn, preserving grove shapes and preventing over‑farming; a new setting lets you control this behavior.\n\n### Server Access\n- Premium players can skip the queue and join games instantly.\n\n### Building\n- Window embrasures are placed correctly, fixing window behavior in buildings.\n\n### Crafting & Resources\n- Composters now show a fertilizer progress bar in the loot panel.\n\n### User Interface\n- Menus correctly register clicks after closing the F1 help screen.\n- CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection.\n\n### World Generation\n- Tree placement now only blocked when trunks would intersect, allowing trees to spawn closer together and improving forest density.\n\n### UI & Quality of Life\n- F1 net panel now displays actual ping values and is restricted to admins; the panel automatically closes if access is lost.",
+    "summary": "### Vehicles\n- Fixed car chassis network culling so chassis remain visible and functional at long distances, preventing cars from disappearing for distant players.\n\n### Crafting & Resources\n- Added a progress indicator on the composter loot panel showing how close you are to the next fertilizer, giving clearer feedback on fertilizer production.\n\n### World & Environment\n- Improved procedural tree respawn behavior: trees now only reject placement when trunks would intersect, respawn in missing locations, maintain grove shapes, and use a new RespawnWhereMissing setting to keep heavily harvested areas replenished while preventing overgrowth in untouched forests.\n\n### UI & Menus\n- Fixed the menu not registering clicks after closing the F1 help screen.\n- Improved CCTV station bookmark management: you can now drag bookmarks to reorder them, arrows appear only on hovered rows, stay within the visible list, and clicks near arrows no longer activate the underlying camera.\n- Restored release version UI for connect and session modals, bringing back the map button and full header image, and adjusted server‑join handling to match release behavior.\n\n### Networking\n- Fixed a null reference error on the F1 Net page when connecting via Steamworks; the page now safely returns an empty string instead of crashing.\n\n### Gameplay & Balance\n- Net panel (F1) now displays actual ping values and is restricted to admins.\n- Premium players can now bypass the queue when using Quick Join.\n- Fixed a Steam-specific crash on the Net information page, preventing errors for players.\n- Sprint mechanics have been overhauled, providing higher top speed and smoother acceleration while adjusting stamina consumption.\n- Window embrasures now function correctly, fixing placement issues and ensuring they block bullet penetration as intended.",
     "new_items": [
       {
-        "text": "Menus correctly register clicks after closing the F1 help screen.",
+        "text": "Restored release version UI for connect and session modals, bringing back the map button and full header image, and adjusted server‑join handling to match release behavior.",
         "commit_ids": [
-          739275
+          739398
         ],
-        "section": "User Interface"
+        "section": "UI & Menus"
       },
       {
-        "text": "CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection.",
+        "text": "Fixed a null reference error on the F1 Net page when connecting via Steamworks; the page now safely returns an empty string instead of crashing.",
         "commit_ids": [
-          739318,
-          739319,
-          739320
+          739374
         ],
-        "section": "User Interface"
+        "section": "Networking"
+      },
+      {
+        "text": "Fixed a Steam-specific crash on the Net information page, preventing errors for players.",
+        "commit_ids": [
+          739377
+        ],
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 4,
-    "new_summary": "- Menus correctly register clicks after closing the F1 help screen.\n- CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection."
+    "new_relevant_count": 3,
+    "new_summary": "- Restored release version UI for connect and session modals, bringing back the map button and full header image, and adjusted server‑join handling to match release behavior.\n- Fixed a null reference error on the F1 Net page when connecting via Steamworks; the page now safely returns an empty string instead of crashing.\n- Fixed a Steam-specific crash on the Net information page, preventing errors for players."
   },
   "2026-11-25": {
     "commit_count": 167,
