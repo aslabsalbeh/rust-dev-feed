@@ -1,46 +1,29 @@
 {
   "2026-11-26": {
-    "commit_count": 92,
-    "relevant_commit_count": 26,
-    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275",
+    "commit_count": 109,
+    "relevant_commit_count": 29,
+    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Movement",
+        "title": "Core Gameplay",
         "items": [
           {
-            "text": "Sprint mechanics updated with new speed and stamina handling.",
+            "text": "Sprint now behaves like modern versions, offering smoother acceleration and deceleration.",
             "commit_ids": [
               739171
             ]
-          }
-        ]
-      },
-      {
-        "title": "Queue & Matchmaking",
-        "items": [
+          },
           {
-            "text": "Premium players can no longer skip the queue when quick‑joining.",
+            "text": "Cars stay visible at long distances thanks to fixed network culling of the chassis.",
             "commit_ids": [
-              739179
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & World Resources",
-        "items": [
-          {
-            "text": "Window embrasure placement corrected for proper building behavior.",
-            "commit_ids": [
-              739180
+              739196
             ]
           },
           {
-            "text": "Procedural tree respawn now restores only missing trees, preserving grove shapes and preventing over‑ or under‑filling; toggleable via a console variable.",
+            "text": "Trees that disappear will now respawn, preserving grove shapes and preventing over‑farming; a new setting lets you control this behavior.",
             "commit_ids": [
-              739227,
               739233,
               739239,
               739245
@@ -49,22 +32,32 @@
         ]
       },
       {
-        "title": "Vehicles",
+        "title": "Server Access",
         "items": [
           {
-            "text": "Car chassis network range extended, keeping vehicles functional and visible at longer distances.",
+            "text": "Premium players can skip the queue and join games instantly.",
             "commit_ids": [
-              739196,
-              739222
+              739179
             ]
           }
         ]
       },
       {
-        "title": "Crafting",
+        "title": "Building",
         "items": [
           {
-            "text": "Composter now displays progress toward the next fertilizer on its loot panel.",
+            "text": "Window embrasures are placed correctly, fixing window behavior in buildings.",
+            "commit_ids": [
+              739180
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Crafting & Resources",
+        "items": [
+          {
+            "text": "Composters now show a fertilizer progress bar in the loot panel.",
             "commit_ids": [
               739207
             ]
@@ -72,12 +65,31 @@
         ]
       },
       {
-        "title": "UI & Menus",
+        "title": "User Interface",
         "items": [
           {
-            "text": "Menu clicks are now registered correctly after closing the F1 help screen.",
+            "text": "Menus correctly register clicks after closing the F1 help screen.",
             "commit_ids": [
               739275
+            ]
+          },
+          {
+            "text": "CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection.",
+            "commit_ids": [
+              739318,
+              739319,
+              739320
+            ]
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
+          {
+            "text": "Tree placement now only blocked when trunks would intersect, allowing trees to spawn closer together and improving forest density.",
+            "commit_ids": [
+              739227
             ]
           }
         ]
@@ -86,10 +98,9 @@
         "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "F1 net panel now displays actual ping values and is restricted to admins; the net side panel automatically closes when access is lost.",
+            "text": "F1 net panel now displays actual ping values and is restricted to admins; the panel automatically closes if access is lost.",
             "commit_ids": [
-              739188,
-              739189
+              739188
             ]
           }
         ]
@@ -98,51 +109,27 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Movement\n- Sprint mechanics updated with new speed and stamina handling.\n\n### Queue & Matchmaking\n- Premium players can no longer skip the queue when quick‑joining.\n\n### Building & World Resources\n- Window embrasure placement corrected for proper building behavior.\n- Procedural tree respawn now restores only missing trees, preserving grove shapes and preventing over‑ or under‑filling; toggleable via a console variable.\n\n### Vehicles\n- Car chassis network range extended, keeping vehicles functional and visible at longer distances.\n\n### Crafting\n- Composter now displays progress toward the next fertilizer on its loot panel.\n\n### UI & Menus\n- Menu clicks are now registered correctly after closing the F1 help screen.\n\n### UI & Quality of Life\n- F1 net panel now displays actual ping values and is restricted to admins; the net side panel automatically closes when access is lost.",
+    "summary": "### Core Gameplay\n- Sprint now behaves like modern versions, offering smoother acceleration and deceleration.\n- Cars stay visible at long distances thanks to fixed network culling of the chassis.\n- Trees that disappear will now respawn, preserving grove shapes and preventing over‑farming; a new setting lets you control this behavior.\n\n### Server Access\n- Premium players can skip the queue and join games instantly.\n\n### Building\n- Window embrasures are placed correctly, fixing window behavior in buildings.\n\n### Crafting & Resources\n- Composters now show a fertilizer progress bar in the loot panel.\n\n### User Interface\n- Menus correctly register clicks after closing the F1 help screen.\n- CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection.\n\n### World Generation\n- Tree placement now only blocked when trunks would intersect, allowing trees to spawn closer together and improving forest density.\n\n### UI & Quality of Life\n- F1 net panel now displays actual ping values and is restricted to admins; the panel automatically closes if access is lost.",
     "new_items": [
       {
-        "text": "Procedural tree respawn now restores only missing trees, preserving grove shapes and preventing over‑ or under‑filling; toggleable via a console variable.",
-        "commit_ids": [
-          739227,
-          739233,
-          739239,
-          739245
-        ],
-        "section": "Building & World Resources"
-      },
-      {
-        "text": "Car chassis network range extended, keeping vehicles functional and visible at longer distances.",
-        "commit_ids": [
-          739196,
-          739222
-        ],
-        "section": "Vehicles"
-      },
-      {
-        "text": "Composter now displays progress toward the next fertilizer on its loot panel.",
-        "commit_ids": [
-          739207
-        ],
-        "section": "Crafting"
-      },
-      {
-        "text": "Menu clicks are now registered correctly after closing the F1 help screen.",
+        "text": "Menus correctly register clicks after closing the F1 help screen.",
         "commit_ids": [
           739275
         ],
-        "section": "UI & Menus"
+        "section": "User Interface"
       },
       {
-        "text": "F1 net panel now displays actual ping values and is restricted to admins; the net side panel automatically closes when access is lost.",
+        "text": "CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection.",
         "commit_ids": [
-          739188,
-          739189
+          739318,
+          739319,
+          739320
         ],
-        "section": "UI & Quality of Life"
+        "section": "User Interface"
       }
     ],
-    "new_relevant_count": 10,
-    "new_summary": "- Procedural tree respawn now restores only missing trees, preserving grove shapes and preventing over‑ or under‑filling; toggleable via a console variable.\n- Car chassis network range extended, keeping vehicles functional and visible at longer distances.\n- Composter now displays progress toward the next fertilizer on its loot panel.\n- Menu clicks are now registered correctly after closing the F1 help screen.\n- F1 net panel now displays actual ping values and is restricted to admins; the net side panel automatically closes when access is lost."
+    "new_relevant_count": 4,
+    "new_summary": "- Menus correctly register clicks after closing the F1 help screen.\n- CCTV bookmarks can be dragged to reorder; arrows only appear on hovered rows and no longer interfere with camera selection."
   },
   "2026-11-25": {
     "commit_count": 167,
