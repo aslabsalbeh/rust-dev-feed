@@ -6,60 +6,77 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Wed, 25 Nov 2026 18:17:46 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 20:18:17 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;120 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;137 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738905"&gt;Recoil duration on most weapons has been reduced by 75%, making sustained fire feel smoother and easier to keep on target.&lt;/li&gt;
+&lt;li data-rust-commits="738965"&gt;Store skin item type text no longer overflows, improving readability.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Workshop &amp;amp; Item Fixes&lt;/h3&gt;
+&lt;h3&gt;Workshop &amp;amp; Item Bundles&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738597,738599,738613"&gt;Workshop bundles now correctly display skins after purchase, crate generators are recognized as bundles, and tradable skins retain their tradable status.&lt;/li&gt;
+&lt;li data-rust-commits="738613"&gt;Fixed bundles of tradable skins showing as non‑tradable, ensuring they retain their tradable status.&lt;/li&gt;
+&lt;li data-rust-commits="738599"&gt;Fixed crate generators not being recognized as bundles, restoring proper bundle functionality for crate generators.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;World &amp;amp; Environment&lt;/h3&gt;
+&lt;h3&gt;World Physics&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738573"&gt;Scrap King now uses a metal physics material, changing how it collides and interacts with the environment.&lt;/li&gt;
-&lt;li data-rust-commits="738685"&gt;Tree respawn overlap issues have been fixed, preventing trees from spawning inside each other during procedural generation.&lt;/li&gt;
+&lt;li data-rust-commits="738573"&gt;Updated Scrap King’s physics material to metal, changing its interaction behavior such as damage and sound.&lt;/li&gt;
+&lt;li data-rust-commits="738685"&gt;Fixed tree spawn overlaps, preventing trees from spawning on top of each other.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Vehicle &amp;amp; Movement Interactions&lt;/h3&gt;
+&lt;h3&gt;Vehicle &amp;amp; Boat Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738688,738689,738690,738707,738709"&gt;Parenting bugs that caused unintended switches to cargo ships or excavator arms have been resolved, and climbing ladders from boats now attaches correctly.&lt;/li&gt;
-&lt;li data-rust-commits="738780,738784"&gt;Strafing now cancels sprint, and a crouch‑strafe bug has been fixed for smoother movement control.&lt;/li&gt;
+&lt;li data-rust-commits="738688,738689,738690"&gt;Prevents unintended handover to cargo ships when walking between floor blocks on boats and cargo ships.&lt;/li&gt;
+&lt;li data-rust-commits="738688,738689,738690"&gt;Corrected inverted exclusion zones that caused players to be parented to moving excavator arms.&lt;/li&gt;
+&lt;li data-rust-commits="738688,738689,738690"&gt;Ensures stable transition when jumping onto cargo ladders.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Combat Tweaks&lt;/h3&gt;
+&lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738905"&gt;Recoil duration on most weapons has been reduced by 75%, making sustained fire feel smoother and easier to keep on target.&lt;/li&gt;
+&lt;li data-rust-commits="738780"&gt;Strafe now cancels sprint and the crouch‑strafe bug is fixed, improving sprint/strafe behavior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Weapon Balance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738905"&gt;Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Store &amp;amp; Skins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738965"&gt;Store skin item type text no longer overflows, improving readability.&lt;/li&gt;
+&lt;li data-rust-commits="738598"&gt;Fullscreen skin viewer paging works correctly with bundles.&lt;/li&gt;
+&lt;li data-rust-commits="738597"&gt;Bundled skins now display properly after checkout.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Tattoos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738841"&gt;New console variable lets players hide tattoos in-game.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Character Creator &amp;amp; Inventory&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738719"&gt;Inventory preview colour grading matches game lighting, fixing overly bright/warm look.&lt;/li&gt;
+&lt;li data-rust-commits="738669"&gt;Character creator room lighting stays bright in workshop and dry in rain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Lighting &amp;amp; Night Vision&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="738568"&gt;Dawn and dusk brightness transitions are smooth again.&lt;/li&gt;
+&lt;li data-rust-commits="738565"&gt;Night light functions correctly with anti‑gamma adjustments.&lt;/li&gt;
+&lt;li data-rust-commits="738561"&gt;Night shadows render with proper foreground/background floors, reducing gamma issues.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738841"&gt;Added a convar to hide tattoos, letting players toggle tattoo visibility.&lt;/li&gt;
-&lt;li data-rust-commits="738632"&gt;Applied gingerbread physics material to low and half walls, affecting building stability.&lt;/li&gt;
+&lt;li data-rust-commits="738784"&gt;Sprint mechanics updated with modern sprint movement changes.&lt;/li&gt;
+&lt;li data-rust-commits="738709"&gt;Boat cargo handling improved, making cargo attachment more reliable.&lt;/li&gt;
+&lt;li data-rust-commits="738632"&gt;Gingerbread low and half walls now use a dedicated physics material, affecting their durability and behavior.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738808"&gt;Spinner wheel now appears in the paint menu and brush/colour picker outlines are fixed, improving painting and tattoo UI.&lt;/li&gt;
-&lt;li data-rust-commits="738719"&gt;Inventory preview brightness and color grading are corrected, showing accurate player appearance.&lt;/li&gt;
-&lt;li data-rust-commits="738604"&gt;New sandbox objects can be selected with a single click, removing the previous double‑click requirement.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Character Creator&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738669"&gt;Lighting in the character creator workshop no longer goes dark or get wet in rain, fixing visual bugs.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Lighting &amp;amp; Visuals&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738568"&gt;Dawn and dusk brightness transitions are now smooth, eliminating abrupt lighting changes.&lt;/li&gt;
-&lt;li data-rust-commits="738565"&gt;Night light functions correctly with the anti‑gamma fix, improving night visibility.&lt;/li&gt;
-&lt;li data-rust-commits="738561"&gt;Added foreground and background floors for night shadows, reducing excessive gamma boost; toggle available via console.&lt;/li&gt;
+&lt;li data-rust-commits="738808"&gt;Paint menu spinner wheel now appears; brush outline regression fixed; colour picker no longer shows an outline.&lt;/li&gt;
+&lt;li data-rust-commits="738604"&gt;New sandbox objects can be selected with a single click.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-25</guid>
-      <pubDate>Wed, 25 Nov 2026 18:17:46 -0500</pubDate>
+      <pubDate>Wed, 25 Nov 2026 20:18:17 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 24</title>

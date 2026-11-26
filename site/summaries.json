@@ -1,35 +1,39 @@
 {
   "2026-11-25": {
-    "commit_count": 120,
-    "relevant_commit_count": 50,
-    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860,738877,738905",
+    "commit_count": 137,
+    "relevant_commit_count": 52,
+    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860,738877,738905,738965,738966",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Workshop & Item Fixes",
+        "title": "Workshop & Item Bundles",
         "items": [
           {
-            "text": "Workshop bundles now correctly display skins after purchase, crate generators are recognized as bundles, and tradable skins retain their tradable status.",
+            "text": "Fixed bundles of tradable skins showing as non‑tradable, ensuring they retain their tradable status.",
             "commit_ids": [
-              738597,
-              738599,
               738613
+            ]
+          },
+          {
+            "text": "Fixed crate generators not being recognized as bundles, restoring proper bundle functionality for crate generators.",
+            "commit_ids": [
+              738599
             ]
           }
         ]
       },
       {
-        "title": "World & Environment",
+        "title": "World Physics",
         "items": [
           {
-            "text": "Scrap King now uses a metal physics material, changing how it collides and interacts with the environment.",
+            "text": "Updated Scrap King’s physics material to metal, changing its interaction behavior such as damage and sound.",
             "commit_ids": [
               738573
             ]
           },
           {
-            "text": "Tree respawn overlap issues have been fixed, preventing trees from spawning inside each other during procedural generation.",
+            "text": "Fixed tree spawn overlaps, preventing trees from spawning on top of each other.",
             "commit_ids": [
               738685
             ]
@@ -37,34 +41,126 @@
         ]
       },
       {
-        "title": "Vehicle & Movement Interactions",
+        "title": "Vehicle & Boat Interaction",
         "items": [
           {
-            "text": "Parenting bugs that caused unintended switches to cargo ships or excavator arms have been resolved, and climbing ladders from boats now attaches correctly.",
+            "text": "Prevents unintended handover to cargo ships when walking between floor blocks on boats and cargo ships.",
             "commit_ids": [
               738688,
               738689,
-              738690,
-              738707,
-              738709
+              738690
             ]
           },
           {
-            "text": "Strafing now cancels sprint, and a crouch‑strafe bug has been fixed for smoother movement control.",
+            "text": "Corrected inverted exclusion zones that caused players to be parented to moving excavator arms.",
             "commit_ids": [
-              738780,
-              738784
+              738688,
+              738689,
+              738690
+            ]
+          },
+          {
+            "text": "Ensures stable transition when jumping onto cargo ladders.",
+            "commit_ids": [
+              738688,
+              738689,
+              738690
             ]
           }
         ]
       },
       {
-        "title": "Combat Tweaks",
+        "title": "Movement & Controls",
         "items": [
           {
-            "text": "Recoil duration on most weapons has been reduced by 75%, making sustained fire feel smoother and easier to keep on target.",
+            "text": "Strafe now cancels sprint and the crouch‑strafe bug is fixed, improving sprint/strafe behavior.",
+            "commit_ids": [
+              738780
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Weapon Balance",
+        "items": [
+          {
+            "text": "Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.",
             "commit_ids": [
               738905
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Store & Skins",
+        "items": [
+          {
+            "text": "Store skin item type text no longer overflows, improving readability.",
+            "commit_ids": [
+              738965
+            ]
+          },
+          {
+            "text": "Fullscreen skin viewer paging works correctly with bundles.",
+            "commit_ids": [
+              738598
+            ]
+          },
+          {
+            "text": "Bundled skins now display properly after checkout.",
+            "commit_ids": [
+              738597
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Tattoos",
+        "items": [
+          {
+            "text": "New console variable lets players hide tattoos in-game.",
+            "commit_ids": [
+              738841
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Character Creator & Inventory",
+        "items": [
+          {
+            "text": "Inventory preview colour grading matches game lighting, fixing overly bright/warm look.",
+            "commit_ids": [
+              738719
+            ]
+          },
+          {
+            "text": "Character creator room lighting stays bright in workshop and dry in rain.",
+            "commit_ids": [
+              738669
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Lighting & Night Vision",
+        "items": [
+          {
+            "text": "Dawn and dusk brightness transitions are smooth again.",
+            "commit_ids": [
+              738568
+            ]
+          },
+          {
+            "text": "Night light functions correctly with anti‑gamma adjustments.",
+            "commit_ids": [
+              738565
+            ]
+          },
+          {
+            "text": "Night shadows render with proper foreground/background floors, reducing gamma issues.",
+            "commit_ids": [
+              738561
             ]
           }
         ]
@@ -73,13 +169,19 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Added a convar to hide tattoos, letting players toggle tattoo visibility.",
+            "text": "Sprint mechanics updated with modern sprint movement changes.",
             "commit_ids": [
-              738841
+              738784
             ]
           },
           {
-            "text": "Applied gingerbread physics material to low and half walls, affecting building stability.",
+            "text": "Boat cargo handling improved, making cargo attachment more reliable.",
+            "commit_ids": [
+              738709
+            ]
+          },
+          {
+            "text": "Gingerbread low and half walls now use a dedicated physics material, affecting their durability and behavior.",
             "commit_ids": [
               738632
             ]
@@ -87,58 +189,18 @@
         ]
       },
       {
-        "title": "UI & Tools",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Spinner wheel now appears in the paint menu and brush/colour picker outlines are fixed, improving painting and tattoo UI.",
+            "text": "Paint menu spinner wheel now appears; brush outline regression fixed; colour picker no longer shows an outline.",
             "commit_ids": [
               738808
             ]
           },
           {
-            "text": "Inventory preview brightness and color grading are corrected, showing accurate player appearance.",
-            "commit_ids": [
-              738719
-            ]
-          },
-          {
-            "text": "New sandbox objects can be selected with a single click, removing the previous double‑click requirement.",
+            "text": "New sandbox objects can be selected with a single click.",
             "commit_ids": [
               738604
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Character Creator",
-        "items": [
-          {
-            "text": "Lighting in the character creator workshop no longer goes dark or get wet in rain, fixing visual bugs.",
-            "commit_ids": [
-              738669
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Lighting & Visuals",
-        "items": [
-          {
-            "text": "Dawn and dusk brightness transitions are now smooth, eliminating abrupt lighting changes.",
-            "commit_ids": [
-              738568
-            ]
-          },
-          {
-            "text": "Night light functions correctly with the anti‑gamma fix, improving night visibility.",
-            "commit_ids": [
-              738565
-            ]
-          },
-          {
-            "text": "Added foreground and background floors for night shadows, reducing excessive gamma boost; toggle available via console.",
-            "commit_ids": [
-              738561
             ]
           }
         ]
@@ -147,18 +209,18 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Workshop & Item Fixes\n- Workshop bundles now correctly display skins after purchase, crate generators are recognized as bundles, and tradable skins retain their tradable status.\n\n### World & Environment\n- Scrap King now uses a metal physics material, changing how it collides and interacts with the environment.\n- Tree respawn overlap issues have been fixed, preventing trees from spawning inside each other during procedural generation.\n\n### Vehicle & Movement Interactions\n- Parenting bugs that caused unintended switches to cargo ships or excavator arms have been resolved, and climbing ladders from boats now attaches correctly.\n- Strafing now cancels sprint, and a crouch‑strafe bug has been fixed for smoother movement control.\n\n### Combat Tweaks\n- Recoil duration on most weapons has been reduced by 75%, making sustained fire feel smoother and easier to keep on target.\n\n### Gameplay & Balance\n- Added a convar to hide tattoos, letting players toggle tattoo visibility.\n- Applied gingerbread physics material to low and half walls, affecting building stability.\n\n### UI & Tools\n- Spinner wheel now appears in the paint menu and brush/colour picker outlines are fixed, improving painting and tattoo UI.\n- Inventory preview brightness and color grading are corrected, showing accurate player appearance.\n- New sandbox objects can be selected with a single click, removing the previous double‑click requirement.\n\n### Character Creator\n- Lighting in the character creator workshop no longer goes dark or get wet in rain, fixing visual bugs.\n\n### Lighting & Visuals\n- Dawn and dusk brightness transitions are now smooth, eliminating abrupt lighting changes.\n- Night light functions correctly with the anti‑gamma fix, improving night visibility.\n- Added foreground and background floors for night shadows, reducing excessive gamma boost; toggle available via console.",
+    "summary": "### Workshop & Item Bundles\n- Fixed bundles of tradable skins showing as non‑tradable, ensuring they retain their tradable status.\n- Fixed crate generators not being recognized as bundles, restoring proper bundle functionality for crate generators.\n\n### World Physics\n- Updated Scrap King’s physics material to metal, changing its interaction behavior such as damage and sound.\n- Fixed tree spawn overlaps, preventing trees from spawning on top of each other.\n\n### Vehicle & Boat Interaction\n- Prevents unintended handover to cargo ships when walking between floor blocks on boats and cargo ships.\n- Corrected inverted exclusion zones that caused players to be parented to moving excavator arms.\n- Ensures stable transition when jumping onto cargo ladders.\n\n### Movement & Controls\n- Strafe now cancels sprint and the crouch‑strafe bug is fixed, improving sprint/strafe behavior.\n\n### Weapon Balance\n- Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.\n\n### Store & Skins\n- Store skin item type text no longer overflows, improving readability.\n- Fullscreen skin viewer paging works correctly with bundles.\n- Bundled skins now display properly after checkout.\n\n### Tattoos\n- New console variable lets players hide tattoos in-game.\n\n### Character Creator & Inventory\n- Inventory preview colour grading matches game lighting, fixing overly bright/warm look.\n- Character creator room lighting stays bright in workshop and dry in rain.\n\n### Lighting & Night Vision\n- Dawn and dusk brightness transitions are smooth again.\n- Night light functions correctly with anti‑gamma adjustments.\n- Night shadows render with proper foreground/background floors, reducing gamma issues.\n\n### Gameplay & Balance\n- Sprint mechanics updated with modern sprint movement changes.\n- Boat cargo handling improved, making cargo attachment more reliable.\n- Gingerbread low and half walls now use a dedicated physics material, affecting their durability and behavior.\n\n### UI & Quality of Life\n- Paint menu spinner wheel now appears; brush outline regression fixed; colour picker no longer shows an outline.\n- New sandbox objects can be selected with a single click.",
     "new_items": [
       {
-        "text": "Recoil duration on most weapons has been reduced by 75%, making sustained fire feel smoother and easier to keep on target.",
+        "text": "Store skin item type text no longer overflows, improving readability.",
         "commit_ids": [
-          738905
+          738965
         ],
-        "section": "Combat Tweaks"
+        "section": "Store & Skins"
       }
     ],
     "new_relevant_count": 1,
-    "new_summary": "- Recoil duration on most weapons has been reduced by 75%, making sustained fire feel smoother and easier to keep on target."
+    "new_summary": "- Store skin item type text no longer overflows, improving readability."
   },
   "2026-11-24": {
     "commit_count": 157,
