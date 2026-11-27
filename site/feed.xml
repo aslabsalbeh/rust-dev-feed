@@ -6,62 +6,50 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Thu, 26 Nov 2026 20:18:36 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 22:18:14 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 26</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;170 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;190 development commits&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class="rust-new-updates"&gt;
-&lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
+
+&lt;h3&gt;Networking &amp;amp; UI&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739486"&gt;Wire tool information moved from the crosshair to dedicated panels.&lt;/li&gt;
-&lt;li data-rust-commits="739511"&gt;Player lookup now requires a name, eliminating matches to any player when no name is supplied.&lt;/li&gt;
-&lt;li data-rust-commits="739504"&gt;Each raid now has its own dynamic time‑of‑day and weather, advancing six time slots and rolling weather from the mode’s table.&lt;/li&gt;
-&lt;li data-rust-commits="739505"&gt;Supplies shop now sells a snow jacket for 20 scrap, providing a ready‑made solution for cold raids.&lt;/li&gt;
-&lt;li data-rust-commits="739514"&gt;Extraction maps are rendered as survey prints showing monument footprints and woodland symbols, improving navigation.&lt;/li&gt;
-&lt;li data-rust-commits="739515,739517,739506,739516"&gt;Extraction UI refined: improved map navigation, clearer raid controls, enhanced HUD vitals with a balloon marker, and updated inventory, compass, and supplier panels.&lt;/li&gt;
+&lt;li data-rust-commits="739188"&gt;F1 network panel now shows real ping values and is limited to admins, fixing the previous incorrect display.&lt;/li&gt;
+&lt;li data-rust-commits="739275"&gt;Menus no longer ignore clicks after closing the F1 overlay, restoring normal interaction.&lt;/li&gt;
+&lt;li data-rust-commits="739318,739319,739320"&gt;CCTV bookmark UI upgraded: drag‑reorder, hover‑only arrows, and safeguards against accidental camera activation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
-&lt;h3&gt;Vehicles &amp;amp; World Resources&lt;/h3&gt;
+&lt;h3&gt;Vehicles &amp;amp; Tools&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739196"&gt;Car chassis no longer culls at long distances, keeping vehicles visible and networked for distant players.&lt;/li&gt;
-&lt;li data-rust-commits="739227,739233,739239,739245"&gt;Tree respawn logic overhauled: trees now respawn where cut, grove shapes are preserved, placement only rejected on trunk intersection, reducing overfarming and improving resource availability.&lt;/li&gt;
+&lt;li data-rust-commits="739196"&gt;Car chassis now stay visible at long distances, preventing vehicles from disappearing due to network culling.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI Enhancements &amp;amp; Tools&lt;/h3&gt;
+&lt;h3&gt;Farming &amp;amp; Resources&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739207"&gt;Composter loot panel now shows progress toward the next fertilizer.&lt;/li&gt;
-&lt;li data-rust-commits="739275"&gt;Fixed menu not registering clicks after closing the F1 overlay.&lt;/li&gt;
-&lt;li data-rust-commits="739398"&gt;Connect and session modals restored the map button and full header image.&lt;/li&gt;
-&lt;li data-rust-commits="739486"&gt;Wire tool information moved from the crosshair to dedicated panels.&lt;/li&gt;
-&lt;li data-rust-commits="739318,739320"&gt;CCTV station bookmarks support drag‑and‑drop reordering and click handling has been fixed to prevent accidental camera activation.&lt;/li&gt;
+&lt;li data-rust-commits="739207"&gt;Composter loot panel now includes a progress indicator showing how close you are to the next fertilizer boost.&lt;/li&gt;
+&lt;li data-rust-commits="739227,739233,739239,739245"&gt;Trees respawn only where they were cut, preserving grove shapes; a new setting controls this behavior, reducing over‑farming and barren zones.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Networking &amp;amp; Player Lookup&lt;/h3&gt;
+&lt;h3&gt;Outpost &amp;amp; Extraction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739374"&gt;Fixed a null‑reference error on the F1 Net page when connecting via Steamworks, preventing crashes.&lt;/li&gt;
-&lt;li data-rust-commits="739511"&gt;Player lookup now requires a name, eliminating matches to any player when no name is supplied.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Outpost Extraction Updates&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="739504"&gt;Each raid now has its own dynamic time‑of‑day and weather, advancing six time slots and rolling weather from the mode’s table.&lt;/li&gt;
-&lt;li data-rust-commits="739505"&gt;Supplies shop now sells a snow jacket for 20 scrap, providing a ready‑made solution for cold raids.&lt;/li&gt;
-&lt;li data-rust-commits="739514"&gt;Extraction maps are rendered as survey prints showing monument footprints and woodland symbols, improving navigation.&lt;/li&gt;
-&lt;li data-rust-commits="739515,739517,739506,739516"&gt;Extraction UI refined: improved map navigation, clearer raid controls, enhanced HUD vitals with a balloon marker, and updated inventory, compass, and supplier panels.&lt;/li&gt;
+&lt;li data-rust-commits="739504"&gt;Each raid now has its own time‑of‑day and weather, cycling through six day slots with a weather roll from the mode table.&lt;/li&gt;
+&lt;li data-rust-commits="739505"&gt;Supplies shop now sells a snow jacket for 20 scrap, providing essential protection for cold raids.&lt;/li&gt;
+&lt;li data-rust-commits="739506,739509,739513,739514,739515,739516,739517"&gt;Extraction UI refined: aligned inventory, stash, and supplier panels; updated compass markers and HUD vitals; added balloon extraction marker; maps render as survey prints with monument footprints; navigation and raid controls improved.&lt;/li&gt;
+&lt;li data-rust-commits="739511"&gt;Fixed a client player lookup bug where an empty name matched any player, preventing unintended targeting.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739179"&gt;Premium queue skip now works correctly with Quickjoin, reducing wait times for premium players.&lt;/li&gt;
-&lt;li data-rust-commits="739171"&gt;Sprint mechanics updated with modern sprint movement, altering sprint speed and stamina usage.&lt;/li&gt;
-&lt;li data-rust-commits="739167"&gt;M1 Garand weapon added, providing a new firearm option for players.&lt;/li&gt;
+&lt;li data-rust-commits="739374"&gt;Fixed a crash on the F1 Net page when connecting via Steamworks, ensuring server stats display correctly.&lt;/li&gt;
+&lt;li data-rust-commits="739179"&gt;Resolved an issue where premium players could be incorrectly skipped in the quick‑join queue, restoring proper queue priority.&lt;/li&gt;
+&lt;li data-rust-commits="739171"&gt;Sprint mechanics updated to modern movement system, altering sprint speed and stamina behavior.&lt;/li&gt;
+&lt;li data-rust-commits="739167"&gt;M1 Garand rifle added with functional stats; players can now equip and fire this new weapon (animations are placeholders).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;UI &amp;amp; Diagnostics&lt;/h3&gt;
+&lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739188"&gt;F1 net panel now displays actual ping values and is restricted to admins; non‑admin players no longer see the Net tab.&lt;/li&gt;
-&lt;li data-rust-commits="739126"&gt;Fixed missing script references for the Preview Camera and Icon Exposure, restoring proper building preview functionality.&lt;/li&gt;
+&lt;li data-rust-commits="739486"&gt;Wire tool information moved from the crosshair to panels, improving readability.&lt;/li&gt;
+&lt;li data-rust-commits="739398"&gt;Connect and session menus restored the map button and full header image, now display server info tags, and dev server joins no longer require a wipe ID.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-26</guid>
-      <pubDate>Thu, 26 Nov 2026 20:18:36 -0500</pubDate>
+      <pubDate>Thu, 26 Nov 2026 22:18:14 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 25</title>

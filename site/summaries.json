@@ -1,22 +1,58 @@
 {
   "2026-11-26": {
-    "commit_count": 170,
-    "relevant_commit_count": 46,
-    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320,739359,739374,739377,739398,739444,739486,739504,739505,739506,739509,739511,739513,739514,739515,739516,739517,739537",
+    "commit_count": 190,
+    "relevant_commit_count": 48,
+    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320,739359,739374,739377,739398,739444,739486,739504,739505,739506,739509,739511,739513,739514,739515,739516,739517,739537,739547,739548",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Vehicles & World Resources",
+        "title": "Networking & UI",
         "items": [
           {
-            "text": "Car chassis no longer culls at long distances, keeping vehicles visible and networked for distant players.",
+            "text": "F1 network panel now shows real ping values and is limited to admins, fixing the previous incorrect display.",
             "commit_ids": [
-              739196
+              739188
             ]
           },
           {
-            "text": "Tree respawn logic overhauled: trees now respawn where cut, grove shapes are preserved, placement only rejected on trunk intersection, reducing overfarming and improving resource availability.",
+            "text": "Menus no longer ignore clicks after closing the F1 overlay, restoring normal interaction.",
+            "commit_ids": [
+              739275
+            ]
+          },
+          {
+            "text": "CCTV bookmark UI upgraded: drag‑reorder, hover‑only arrows, and safeguards against accidental camera activation.",
+            "commit_ids": [
+              739318,
+              739319,
+              739320
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Vehicles & Tools",
+        "items": [
+          {
+            "text": "Car chassis now stay visible at long distances, preventing vehicles from disappearing due to network culling.",
+            "commit_ids": [
+              739196
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Farming & Resources",
+        "items": [
+          {
+            "text": "Composter loot panel now includes a progress indicator showing how close you are to the next fertilizer boost.",
+            "commit_ids": [
+              739207
+            ]
+          },
+          {
+            "text": "Trees respawn only where they were cut, preserving grove shapes; a new setting controls this behavior, reducing over‑farming and barren zones.",
             "commit_ids": [
               739227,
               739233,
@@ -27,86 +63,36 @@
         ]
       },
       {
-        "title": "UI Enhancements & Tools",
+        "title": "Outpost & Extraction",
         "items": [
           {
-            "text": "Composter loot panel now shows progress toward the next fertilizer.",
-            "commit_ids": [
-              739207
-            ]
-          },
-          {
-            "text": "Fixed menu not registering clicks after closing the F1 overlay.",
-            "commit_ids": [
-              739275
-            ]
-          },
-          {
-            "text": "Connect and session modals restored the map button and full header image.",
-            "commit_ids": [
-              739398
-            ]
-          },
-          {
-            "text": "Wire tool information moved from the crosshair to dedicated panels.",
-            "commit_ids": [
-              739486
-            ]
-          },
-          {
-            "text": "CCTV station bookmarks support drag‑and‑drop reordering and click handling has been fixed to prevent accidental camera activation.",
-            "commit_ids": [
-              739318,
-              739320
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Networking & Player Lookup",
-        "items": [
-          {
-            "text": "Fixed a null‑reference error on the F1 Net page when connecting via Steamworks, preventing crashes.",
-            "commit_ids": [
-              739374
-            ]
-          },
-          {
-            "text": "Player lookup now requires a name, eliminating matches to any player when no name is supplied.",
-            "commit_ids": [
-              739511
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Outpost Extraction Updates",
-        "items": [
-          {
-            "text": "Each raid now has its own dynamic time‑of‑day and weather, advancing six time slots and rolling weather from the mode’s table.",
+            "text": "Each raid now has its own time‑of‑day and weather, cycling through six day slots with a weather roll from the mode table.",
             "commit_ids": [
               739504
             ]
           },
           {
-            "text": "Supplies shop now sells a snow jacket for 20 scrap, providing a ready‑made solution for cold raids.",
+            "text": "Supplies shop now sells a snow jacket for 20 scrap, providing essential protection for cold raids.",
             "commit_ids": [
               739505
             ]
           },
           {
-            "text": "Extraction maps are rendered as survey prints showing monument footprints and woodland symbols, improving navigation.",
+            "text": "Extraction UI refined: aligned inventory, stash, and supplier panels; updated compass markers and HUD vitals; added balloon extraction marker; maps render as survey prints with monument footprints; navigation and raid controls improved.",
             "commit_ids": [
-              739514
+              739506,
+              739509,
+              739513,
+              739514,
+              739515,
+              739516,
+              739517
             ]
           },
           {
-            "text": "Extraction UI refined: improved map navigation, clearer raid controls, enhanced HUD vitals with a balloon marker, and updated inventory, compass, and supplier panels.",
+            "text": "Fixed a client player lookup bug where an empty name matched any player, preventing unintended targeting.",
             "commit_ids": [
-              739515,
-              739517,
-              739506,
-              739516
+              739511
             ]
           }
         ]
@@ -115,19 +101,25 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Premium queue skip now works correctly with Quickjoin, reducing wait times for premium players.",
+            "text": "Fixed a crash on the F1 Net page when connecting via Steamworks, ensuring server stats display correctly.",
+            "commit_ids": [
+              739374
+            ]
+          },
+          {
+            "text": "Resolved an issue where premium players could be incorrectly skipped in the quick‑join queue, restoring proper queue priority.",
             "commit_ids": [
               739179
             ]
           },
           {
-            "text": "Sprint mechanics updated with modern sprint movement, altering sprint speed and stamina usage.",
+            "text": "Sprint mechanics updated to modern movement system, altering sprint speed and stamina behavior.",
             "commit_ids": [
               739171
             ]
           },
           {
-            "text": "M1 Garand weapon added, providing a new firearm option for players.",
+            "text": "M1 Garand rifle added with functional stats; players can now equip and fire this new weapon (animations are placeholders).",
             "commit_ids": [
               739167
             ]
@@ -135,18 +127,18 @@
         ]
       },
       {
-        "title": "UI & Diagnostics",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "F1 net panel now displays actual ping values and is restricted to admins; non‑admin players no longer see the Net tab.",
+            "text": "Wire tool information moved from the crosshair to panels, improving readability.",
             "commit_ids": [
-              739188
+              739486
             ]
           },
           {
-            "text": "Fixed missing script references for the Preview Camera and Icon Exposure, restoring proper building preview functionality.",
+            "text": "Connect and session menus restored the map button and full header image, now display server info tags, and dev server joins no longer require a wipe ID.",
             "commit_ids": [
-              739126
+              739398
             ]
           }
         ]
@@ -155,56 +147,10 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Vehicles & World Resources\n- Car chassis no longer culls at long distances, keeping vehicles visible and networked for distant players.\n- Tree respawn logic overhauled: trees now respawn where cut, grove shapes are preserved, placement only rejected on trunk intersection, reducing overfarming and improving resource availability.\n\n### UI Enhancements & Tools\n- Composter loot panel now shows progress toward the next fertilizer.\n- Fixed menu not registering clicks after closing the F1 overlay.\n- Connect and session modals restored the map button and full header image.\n- Wire tool information moved from the crosshair to dedicated panels.\n- CCTV station bookmarks support drag‑and‑drop reordering and click handling has been fixed to prevent accidental camera activation.\n\n### Networking & Player Lookup\n- Fixed a null‑reference error on the F1 Net page when connecting via Steamworks, preventing crashes.\n- Player lookup now requires a name, eliminating matches to any player when no name is supplied.\n\n### Outpost Extraction Updates\n- Each raid now has its own dynamic time‑of‑day and weather, advancing six time slots and rolling weather from the mode’s table.\n- Supplies shop now sells a snow jacket for 20 scrap, providing a ready‑made solution for cold raids.\n- Extraction maps are rendered as survey prints showing monument footprints and woodland symbols, improving navigation.\n- Extraction UI refined: improved map navigation, clearer raid controls, enhanced HUD vitals with a balloon marker, and updated inventory, compass, and supplier panels.\n\n### Gameplay & Balance\n- Premium queue skip now works correctly with Quickjoin, reducing wait times for premium players.\n- Sprint mechanics updated with modern sprint movement, altering sprint speed and stamina usage.\n- M1 Garand weapon added, providing a new firearm option for players.\n\n### UI & Diagnostics\n- F1 net panel now displays actual ping values and is restricted to admins; non‑admin players no longer see the Net tab.\n- Fixed missing script references for the Preview Camera and Icon Exposure, restoring proper building preview functionality.",
-    "new_items": [
-      {
-        "text": "Wire tool information moved from the crosshair to dedicated panels.",
-        "commit_ids": [
-          739486
-        ],
-        "section": "UI Enhancements & Tools"
-      },
-      {
-        "text": "Player lookup now requires a name, eliminating matches to any player when no name is supplied.",
-        "commit_ids": [
-          739511
-        ],
-        "section": "Networking & Player Lookup"
-      },
-      {
-        "text": "Each raid now has its own dynamic time‑of‑day and weather, advancing six time slots and rolling weather from the mode’s table.",
-        "commit_ids": [
-          739504
-        ],
-        "section": "Outpost Extraction Updates"
-      },
-      {
-        "text": "Supplies shop now sells a snow jacket for 20 scrap, providing a ready‑made solution for cold raids.",
-        "commit_ids": [
-          739505
-        ],
-        "section": "Outpost Extraction Updates"
-      },
-      {
-        "text": "Extraction maps are rendered as survey prints showing monument footprints and woodland symbols, improving navigation.",
-        "commit_ids": [
-          739514
-        ],
-        "section": "Outpost Extraction Updates"
-      },
-      {
-        "text": "Extraction UI refined: improved map navigation, clearer raid controls, enhanced HUD vitals with a balloon marker, and updated inventory, compass, and supplier panels.",
-        "commit_ids": [
-          739515,
-          739517,
-          739506,
-          739516
-        ],
-        "section": "Outpost Extraction Updates"
-      }
-    ],
-    "new_relevant_count": 9,
-    "new_summary": "- Wire tool information moved from the crosshair to dedicated panels.\n- Player lookup now requires a name, eliminating matches to any player when no name is supplied.\n- Each raid now has its own dynamic time‑of‑day and weather, advancing six time slots and rolling weather from the mode’s table.\n- Supplies shop now sells a snow jacket for 20 scrap, providing a ready‑made solution for cold raids.\n- Extraction maps are rendered as survey prints showing monument footprints and woodland symbols, improving navigation.\n- Extraction UI refined: improved map navigation, clearer raid controls, enhanced HUD vitals with a balloon marker, and updated inventory, compass, and supplier panels."
+    "summary": "### Networking & UI\n- F1 network panel now shows real ping values and is limited to admins, fixing the previous incorrect display.\n- Menus no longer ignore clicks after closing the F1 overlay, restoring normal interaction.\n- CCTV bookmark UI upgraded: drag‑reorder, hover‑only arrows, and safeguards against accidental camera activation.\n\n### Vehicles & Tools\n- Car chassis now stay visible at long distances, preventing vehicles from disappearing due to network culling.\n\n### Farming & Resources\n- Composter loot panel now includes a progress indicator showing how close you are to the next fertilizer boost.\n- Trees respawn only where they were cut, preserving grove shapes; a new setting controls this behavior, reducing over‑farming and barren zones.\n\n### Outpost & Extraction\n- Each raid now has its own time‑of‑day and weather, cycling through six day slots with a weather roll from the mode table.\n- Supplies shop now sells a snow jacket for 20 scrap, providing essential protection for cold raids.\n- Extraction UI refined: aligned inventory, stash, and supplier panels; updated compass markers and HUD vitals; added balloon extraction marker; maps render as survey prints with monument footprints; navigation and raid controls improved.\n- Fixed a client player lookup bug where an empty name matched any player, preventing unintended targeting.\n\n### Gameplay & Balance\n- Fixed a crash on the F1 Net page when connecting via Steamworks, ensuring server stats display correctly.\n- Resolved an issue where premium players could be incorrectly skipped in the quick‑join queue, restoring proper queue priority.\n- Sprint mechanics updated to modern movement system, altering sprint speed and stamina behavior.\n- M1 Garand rifle added with functional stats; players can now equip and fire this new weapon (animations are placeholders).\n\n### UI & Quality of Life\n- Wire tool information moved from the crosshair to panels, improving readability.\n- Connect and session menus restored the map button and full header image, now display server info tags, and dev server joins no longer require a wipe ID.",
+    "new_items": [],
+    "new_relevant_count": 0,
+    "new_summary": ""
   },
   "2026-11-25": {
     "commit_count": 167,
