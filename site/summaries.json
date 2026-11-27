@@ -1,74 +1,65 @@
 {
   "2026-11-27": {
-    "commit_count": 127,
-    "relevant_commit_count": 53,
-    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970,740000,740011",
+    "commit_count": 157,
+    "relevant_commit_count": 58,
+    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970,740000,740011,740037,740057,740079,740086,740088",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "UI & Quality of Life",
+        "title": "UI & Interaction",
         "items": [
           {
-            "text": "Fixed undergarments button not responding, restoring ability to change underwear via UI.",
+            "text": "Fixed the undergarments button not responding to clicks.",
             "commit_ids": [
               739598
             ]
           },
           {
-            "text": "Fixed Rust+ pairing screen to allow attempts when no push‑enabled devices are present and show an error if the push fails.",
+            "text": "Fixed UI clipping of counters for bandit camp, fishing village, and bandit camp food vendors, ensuring counters display correctly.",
             "commit_ids": [
-              739847
+              739802,
+              739803,
+              739805
             ]
           },
           {
-            "text": "Updated network panel and overlay to display proper units (kb, kb/s, ms, etc.) and adjusted layout so the panel fills from the top for clearer statistics.",
-            "commit_ids": [
-              739896
-            ]
-          },
-          {
-            "text": "Fixed a memory leak when closing the tattoo UI, prevented downed players from being kicked out, added the new artist stool item, and corrected tattoo persistence after server wipes when dead.",
-            "commit_ids": [
-              739970,
-              740011,
-              739927
-            ]
-          },
-          {
-            "text": "Stopped chat emoji videos from playing indefinitely after they finish.",
+            "text": "Fixed chat emoji videos that would continue playing until disconnect.",
             "commit_ids": [
               739937
             ]
-          }
-        ]
-      },
-      {
-        "title": "Balloon Platform & Console",
-        "items": [
+          },
           {
-            "text": "Shrank the balloon platform, added a dedicated signal alarm with clearer volume and pitch, and enabled typing at the balloon console while its door opens.",
+            "text": "Fixed a memory leak that could occur when closing UI and prevented downed players from being unintentionally kicked from the UI.",
             "commit_ids": [
-              739599,
-              739600,
-              739601
+              739970
             ]
           }
         ]
       },
       {
-        "title": "Companion Dogs",
+        "title": "Dog AI",
         "items": [
           {
-            "text": "Improved dog heel responsiveness and seek behavior, fixed sniffing bugs (dogs can now sniff sleeping bags, players, and corpses), and enhanced fetch mechanics for smoother companion interactions.",
+            "text": "Improved dog heel behavior for more responsive movement while preserving realistic acceleration and turning.",
             "commit_ids": [
-              739689,
-              739690,
+              739689
+            ]
+          },
+          {
+            "text": "Fixed dog sniffing bugs: dogs no longer get confused when far from items, can now sniff sleeping bags, players, and animal corpses; also improved seek animation and hook sniff walk.",
+            "commit_ids": [
+              739690
+            ]
+          },
+          {
+            "text": "Enhanced dog fetch mechanics.",
+            "commit_ids": [
               739691
             ]
           },
           {
-            "text": "Refined free‑roam behavior by reducing exaggerated leaning, removing turning on the spot, and adding idle animations when dogs stop moving.",
+            "text": "Improved dog free‑roam behavior: reduced exaggerated leaning, removed turning on the spot, and added idle animations when dogs stop moving.",
             "commit_ids": [
               739968
             ]
@@ -76,44 +67,84 @@
         ]
       },
       {
-        "title": "Vendor Interaction",
+        "title": "Balloon Outpost",
         "items": [
           {
-            "text": "Bandit camp food vendor clipping fixed, restoring reliable interaction.",
+            "text": "Shrunk the balloon platform size and gave it its own signal alarm, with tuned volume and pitch.",
             "commit_ids": [
-              739805
+              739599,
+              739601
             ]
           },
           {
-            "text": "Fishing village vendor UI counters clipping resolved, improving information readability.",
+            "text": "Added ability to type at the balloon console while its door is opening and added a humming sound to its computer.",
             "commit_ids": [
-              739803
-            ]
-          },
-          {
-            "text": "Bandit camp vendor UI counters clipping fixed, enhancing clarity of vendor data.",
-            "commit_ids": [
-              739802
+              739600
             ]
           }
         ]
       },
       {
-        "title": "Raid Timing",
+        "title": "Rust+ Integration & Connectivity",
         "items": [
           {
-            "text": "Raid window timer corrected, providing accurate countdowns for raid events.",
+            "text": "Fixed Rust+ pairing screen so you can attempt pairing even without push-enabled devices and now shows an error if the push fails.",
+            "commit_ids": [
+              739847
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Player Cosmetics & Customization",
+        "items": [
+          {
+            "text": "Resolved issue where tattoos could persist after a server wipe if the player was dead at the time.",
+            "commit_ids": [
+              739927
+            ]
+          },
+          {
+            "text": "Tattoo quality‑of‑life improvements (easier application/preview) and added the new artist stool furniture item.",
+            "commit_ids": [
+              740011
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Combat & Structures",
+        "items": [
+          {
+            "text": "Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors.",
+            "commit_ids": [
+              740079
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & World",
+        "items": [
+          {
+            "text": "Raid window timer now counts correctly, ensuring raids start and end as intended.",
             "commit_ids": [
               739748
             ]
+          },
+          {
+            "text": "Tattoo chairs now have proper colliders, preventing players from falling through or getting stuck.",
+            "commit_ids": [
+              739712
+            ]
           }
         ]
       },
       {
-        "title": "Graphics & Performance",
+        "title": "Stability",
         "items": [
           {
-            "text": "DLSS startup hang fixed, preventing GPU freezes when launching with DLSS enabled.",
+            "text": "DLSS no longer hangs the GPU on startup, improving launch stability for users of the feature.",
             "commit_ids": [
               739609
             ]
@@ -121,12 +152,12 @@
         ]
       },
       {
-        "title": "Gameplay & Interaction",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Tattoo chairs now have functional colliders, restoring the ability to sit on them.",
+            "text": "Network panel and F8 overlay now show proper units (kb, kb/s, ms, b/s) and prevent line wrapping, improving readability of stats.",
             "commit_ids": [
-              739712
+              739896
             ]
           }
         ]
@@ -135,20 +166,18 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### UI & Quality of Life\n- Fixed undergarments button not responding, restoring ability to change underwear via UI.\n- Fixed Rust+ pairing screen to allow attempts when no push‑enabled devices are present and show an error if the push fails.\n- Updated network panel and overlay to display proper units (kb, kb/s, ms, etc.) and adjusted layout so the panel fills from the top for clearer statistics.\n- Fixed a memory leak when closing the tattoo UI, prevented downed players from being kicked out, added the new artist stool item, and corrected tattoo persistence after server wipes when dead.\n- Stopped chat emoji videos from playing indefinitely after they finish.\n\n### Balloon Platform & Console\n- Shrank the balloon platform, added a dedicated signal alarm with clearer volume and pitch, and enabled typing at the balloon console while its door opens.\n\n### Companion Dogs\n- Improved dog heel responsiveness and seek behavior, fixed sniffing bugs (dogs can now sniff sleeping bags, players, and corpses), and enhanced fetch mechanics for smoother companion interactions.\n- Refined free‑roam behavior by reducing exaggerated leaning, removing turning on the spot, and adding idle animations when dogs stop moving.\n\n### Vendor Interaction\n- Bandit camp food vendor clipping fixed, restoring reliable interaction.\n- Fishing village vendor UI counters clipping resolved, improving information readability.\n- Bandit camp vendor UI counters clipping fixed, enhancing clarity of vendor data.\n\n### Raid Timing\n- Raid window timer corrected, providing accurate countdowns for raid events.\n\n### Graphics & Performance\n- DLSS startup hang fixed, preventing GPU freezes when launching with DLSS enabled.\n\n### Gameplay & Interaction\n- Tattoo chairs now have functional colliders, restoring the ability to sit on them.",
+    "summary": "### UI & Interaction\n- Fixed the undergarments button not responding to clicks.\n- Fixed UI clipping of counters for bandit camp, fishing village, and bandit camp food vendors, ensuring counters display correctly.\n- Fixed chat emoji videos that would continue playing until disconnect.\n- Fixed a memory leak that could occur when closing UI and prevented downed players from being unintentionally kicked from the UI.\n\n### Dog AI\n- Improved dog heel behavior for more responsive movement while preserving realistic acceleration and turning.\n- Fixed dog sniffing bugs: dogs no longer get confused when far from items, can now sniff sleeping bags, players, and animal corpses; also improved seek animation and hook sniff walk.\n- Enhanced dog fetch mechanics.\n- Improved dog free‑roam behavior: reduced exaggerated leaning, removed turning on the spot, and added idle animations when dogs stop moving.\n\n### Balloon Outpost\n- Shrunk the balloon platform size and gave it its own signal alarm, with tuned volume and pitch.\n- Added ability to type at the balloon console while its door is opening and added a humming sound to its computer.\n\n### Rust+ Integration & Connectivity\n- Fixed Rust+ pairing screen so you can attempt pairing even without push-enabled devices and now shows an error if the push fails.\n\n### Player Cosmetics & Customization\n- Resolved issue where tattoos could persist after a server wipe if the player was dead at the time.\n- Tattoo quality‑of‑life improvements (easier application/preview) and added the new artist stool furniture item.\n\n### Combat & Structures\n- Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors.\n\n### Gameplay & World\n- Raid window timer now counts correctly, ensuring raids start and end as intended.\n- Tattoo chairs now have proper colliders, preventing players from falling through or getting stuck.\n\n### Stability\n- DLSS no longer hangs the GPU on startup, improving launch stability for users of the feature.\n\n### UI & Quality of Life\n- Network panel and F8 overlay now show proper units (kb, kb/s, ms, b/s) and prevent line wrapping, improving readability of stats.",
     "new_items": [
       {
-        "text": "Fixed a memory leak when closing the tattoo UI, prevented downed players from being kicked out, added the new artist stool item, and corrected tattoo persistence after server wipes when dead.",
+        "text": "Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors.",
         "commit_ids": [
-          739970,
-          740011,
-          739927
+          740079
         ],
-        "section": "UI & Quality of Life"
+        "section": "Combat & Structures"
       }
     ],
-    "new_relevant_count": 3,
-    "new_summary": "- Fixed a memory leak when closing the tattoo UI, prevented downed players from being kicked out, added the new artist stool item, and corrected tattoo persistence after server wipes when dead."
+    "new_relevant_count": 1,
+    "new_summary": "- Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors."
   },
   "2026-11-26": {
     "commit_count": 197,
