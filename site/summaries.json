@@ -1,56 +1,87 @@
 {
   "2026-11-27": {
-    "commit_count": 88,
-    "relevant_commit_count": 38,
-    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896",
+    "commit_count": 117,
+    "relevant_commit_count": 51,
+    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Balloon Platform",
+        "title": "Gameplay & World",
         "items": [
           {
-            "text": "The balloon platform size has been reduced, its own signal alarm added, the undergarments button now works, and you can type at the console while the door is open.",
+            "text": "Reduced the balloon platform size and enabled typing at the console while the door opens.",
             "commit_ids": [
-              739598,
               739599,
-              739600
+              739600,
+              739601
+            ]
+          },
+          {
+            "text": "Adjusted the balloon platform alarm’s volume and pitch for clearer feedback.",
+            "commit_ids": [
+              739599,
+              739600,
+              739601
             ]
           }
         ]
       },
       {
-        "title": "Dog AI Improvements",
+        "title": "AI & Creatures",
         "items": [
           {
-            "text": "Dogs now respond faster to heel commands, have smoother seek behavior and sniff animations, no longer get confused when far from sniff targets, can sniff sleeping bags, players and animal corpses, and fetch mechanics have been refined.",
+            "text": "Overhauled dog AI: improved heel responsiveness, more reliable seeking and sniffing of items, players and corpses, and enhanced fetch mechanics.",
             "commit_ids": [
               739689,
               739690,
               739691
             ]
-          }
-        ]
-      },
-      {
-        "title": "Lighting & Visibility",
-        "items": [
+          },
           {
-            "text": "Lighthouse lamps no longer have LODs that block light at long range, restoring distant lighthouse illumination, and the deployable poker light’s lighting and emission have been updated.",
+            "text": "Refined dog free‑roam behavior: reduced exaggerated leaning, eliminated turning on the spot, and added idle animations when stationary.",
             "commit_ids": [
-              739655,
-              739627
+              739968
             ]
           }
         ]
       },
       {
-        "title": "Rust+ Integration",
+        "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "The Rust+ server pairing screen now allows pairing attempts even without push‑enabled devices, and an error message appears if push notifications fail.",
+            "text": "Undergarments button now responds to clicks.",
+            "commit_ids": [
+              739598
+            ]
+          },
+          {
+            "text": "Downed players are no longer removed from the UI when it is closed.",
+            "commit_ids": [
+              739970
+            ]
+          },
+          {
+            "text": "Rust+ pairing screen now allows attempts without push‑enabled devices and shows an error if push fails.",
             "commit_ids": [
               739847
+            ]
+          },
+          {
+            "text": "Chat panel emoji videos stop playing when closed, preventing endless playback.",
+            "commit_ids": [
+              739937
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cosmetics & Server",
+        "items": [
+          {
+            "text": "Tattoos are correctly cleared after a server wipe, even for dead players.",
+            "commit_ids": [
+              739927
             ]
           }
         ]
@@ -59,32 +90,21 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Raid timer now displays correctly, showing the accurate window for raid events.",
+            "text": "Bandit camp food vendor no longer clips into the environment, restoring proper access for purchases.",
             "commit_ids": [
-              739748
+              739805
             ]
           },
           {
-            "text": "Tattoo chairs now have proper collision, allowing players to sit on them as intended.",
+            "text": "Tattoo chairs now have functional colliders, allowing players to sit and use them correctly.",
             "commit_ids": [
               739712
             ]
-          }
-        ]
-      },
-      {
-        "title": "Graphics & Performance",
-        "items": [
-          {
-            "text": "Added \"Performance\" and \"Balanced\" DLSS quality options, giving more control over visual fidelity vs performance.",
-            "commit_ids": [
-              739614
-            ]
           },
           {
-            "text": "Fixed a DLSS issue that could hang the GPU at game start; DLSS now initializes reliably with safety checks.",
+            "text": "Fixed raid window timer issue, ensuring raid start and end times function correctly.",
             "commit_ids": [
-              739609
+              739748
             ]
           }
         ]
@@ -93,18 +113,39 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Balloon Platform\n- The balloon platform size has been reduced, its own signal alarm added, the undergarments button now works, and you can type at the console while the door is open.\n\n### Dog AI Improvements\n- Dogs now respond faster to heel commands, have smoother seek behavior and sniff animations, no longer get confused when far from sniff targets, can sniff sleeping bags, players and animal corpses, and fetch mechanics have been refined.\n\n### Lighting & Visibility\n- Lighthouse lamps no longer have LODs that block light at long range, restoring distant lighthouse illumination, and the deployable poker light’s lighting and emission have been updated.\n\n### Rust+ Integration\n- The Rust+ server pairing screen now allows pairing attempts even without push‑enabled devices, and an error message appears if push notifications fail.\n\n### Gameplay & Balance\n- Raid timer now displays correctly, showing the accurate window for raid events.\n- Tattoo chairs now have proper collision, allowing players to sit on them as intended.\n\n### Graphics & Performance\n- Added \"Performance\" and \"Balanced\" DLSS quality options, giving more control over visual fidelity vs performance.\n- Fixed a DLSS issue that could hang the GPU at game start; DLSS now initializes reliably with safety checks.",
+    "summary": "### Gameplay & World\n- Reduced the balloon platform size and enabled typing at the console while the door opens.\n- Adjusted the balloon platform alarm’s volume and pitch for clearer feedback.\n\n### AI & Creatures\n- Overhauled dog AI: improved heel responsiveness, more reliable seeking and sniffing of items, players and corpses, and enhanced fetch mechanics.\n- Refined dog free‑roam behavior: reduced exaggerated leaning, eliminated turning on the spot, and added idle animations when stationary.\n\n### UI & Quality of Life\n- Undergarments button now responds to clicks.\n- Downed players are no longer removed from the UI when it is closed.\n- Rust+ pairing screen now allows attempts without push‑enabled devices and shows an error if push fails.\n- Chat panel emoji videos stop playing when closed, preventing endless playback.\n\n### Cosmetics & Server\n- Tattoos are correctly cleared after a server wipe, even for dead players.\n\n### Gameplay & Balance\n- Bandit camp food vendor no longer clips into the environment, restoring proper access for purchases.\n- Tattoo chairs now have functional colliders, allowing players to sit and use them correctly.\n- Fixed raid window timer issue, ensuring raid start and end times function correctly.",
     "new_items": [
       {
-        "text": "The Rust+ server pairing screen now allows pairing attempts even without push‑enabled devices, and an error message appears if push notifications fail.",
+        "text": "Refined dog free‑roam behavior: reduced exaggerated leaning, eliminated turning on the spot, and added idle animations when stationary.",
         "commit_ids": [
-          739847
+          739968
         ],
-        "section": "Rust+ Integration"
+        "section": "AI & Creatures"
+      },
+      {
+        "text": "Downed players are no longer removed from the UI when it is closed.",
+        "commit_ids": [
+          739970
+        ],
+        "section": "UI & Quality of Life"
+      },
+      {
+        "text": "Chat panel emoji videos stop playing when closed, preventing endless playback.",
+        "commit_ids": [
+          739937
+        ],
+        "section": "UI & Quality of Life"
+      },
+      {
+        "text": "Tattoos are correctly cleared after a server wipe, even for dead players.",
+        "commit_ids": [
+          739927
+        ],
+        "section": "Cosmetics & Server"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- The Rust+ server pairing screen now allows pairing attempts even without push‑enabled devices, and an error message appears if push notifications fail."
+    "new_relevant_count": 4,
+    "new_summary": "- Refined dog free‑roam behavior: reduced exaggerated leaning, eliminated turning on the spot, and added idle animations when stationary.\n- Downed players are no longer removed from the UI when it is closed.\n- Chat panel emoji videos stop playing when closed, preventing endless playback.\n- Tattoos are correctly cleared after a server wipe, even for dead players."
   },
   "2026-11-26": {
     "commit_count": 197,
