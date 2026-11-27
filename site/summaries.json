@@ -1,58 +1,16 @@
 {
   "2026-11-26": {
-    "commit_count": 190,
-    "relevant_commit_count": 48,
-    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320,739359,739374,739377,739398,739444,739486,739504,739505,739506,739509,739511,739513,739514,739515,739516,739517,739537,739547,739548",
+    "commit_count": 197,
+    "relevant_commit_count": 49,
+    "relevant_signature": "739063,739064,739065,739066,739075,739091,739092,739124,739126,739128,739134,739158,739167,739171,739179,739180,739188,739189,739196,739207,739222,739227,739233,739239,739245,739275,739318,739319,739320,739359,739374,739377,739398,739444,739486,739504,739505,739506,739509,739511,739513,739514,739515,739516,739517,739537,739547,739548,739588",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Networking & UI",
+        "title": "World & Environment",
         "items": [
           {
-            "text": "F1 network panel now shows real ping values and is limited to admins, fixing the previous incorrect display.",
-            "commit_ids": [
-              739188
-            ]
-          },
-          {
-            "text": "Menus no longer ignore clicks after closing the F1 overlay, restoring normal interaction.",
-            "commit_ids": [
-              739275
-            ]
-          },
-          {
-            "text": "CCTV bookmark UI upgraded: drag‑reorder, hover‑only arrows, and safeguards against accidental camera activation.",
-            "commit_ids": [
-              739318,
-              739319,
-              739320
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Vehicles & Tools",
-        "items": [
-          {
-            "text": "Car chassis now stay visible at long distances, preventing vehicles from disappearing due to network culling.",
-            "commit_ids": [
-              739196
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Farming & Resources",
-        "items": [
-          {
-            "text": "Composter loot panel now includes a progress indicator showing how close you are to the next fertilizer boost.",
-            "commit_ids": [
-              739207
-            ]
-          },
-          {
-            "text": "Trees respawn only where they were cut, preserving grove shapes; a new setting controls this behavior, reducing over‑farming and barren zones.",
+            "text": "Tree respawn logic improved to refill missing trees, preserve grove shapes, and avoid overfilling.",
             "commit_ids": [
               739227,
               739233,
@@ -63,22 +21,44 @@
         ]
       },
       {
-        "title": "Outpost & Extraction",
+        "title": "Vehicles",
         "items": [
           {
-            "text": "Each raid now has its own time‑of‑day and weather, cycling through six day slots with a weather roll from the mode table.",
+            "text": "Car chassis now stays networked at long distances, preventing it from disappearing before players can see it.",
+            "commit_ids": [
+              739196
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Stability & Networking",
+        "items": [
+          {
+            "text": "Fixed a null‑reference crash on the F1 Net page when connecting via Steamworks; the debug string now returns an empty string, preventing client and server crashes.",
+            "commit_ids": [
+              739374
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Outpost Extraction Overhaul",
+        "items": [
+          {
+            "text": "Each extraction raid now receives its own time‑of‑day and weather, advancing six time slots and rolling a weather entry from the mode’s table.",
             "commit_ids": [
               739504
             ]
           },
           {
-            "text": "Supplies shop now sells a snow jacket for 20 scrap, providing essential protection for cold raids.",
+            "text": "Snow jacket is now sold for 20 scrap in the supplies shop, making it affordable for cold‑weather raids.",
             "commit_ids": [
               739505
             ]
           },
           {
-            "text": "Extraction UI refined: aligned inventory, stash, and supplier panels; updated compass markers and HUD vitals; added balloon extraction marker; maps render as survey prints with monument footprints; navigation and raid controls improved.",
+            "text": "UI and HUD for extraction mode have been revamped: aligned inventory, stash and supplier panels; updated compass markers; refreshed HUD vitals; extraction maps rendered as survey‑style prints with improved navigation; and a new balloon marker indicates extraction points.",
             "commit_ids": [
               739506,
               739509,
@@ -88,40 +68,16 @@
               739516,
               739517
             ]
-          },
-          {
-            "text": "Fixed a client player lookup bug where an empty name matched any player, preventing unintended targeting.",
-            "commit_ids": [
-              739511
-            ]
           }
         ]
       },
       {
-        "title": "Gameplay & Balance",
+        "title": "Crafting & Resources",
         "items": [
           {
-            "text": "Fixed a crash on the F1 Net page when connecting via Steamworks, ensuring server stats display correctly.",
+            "text": "The composter loot panel now shows progress toward the next fertilizer batch.",
             "commit_ids": [
-              739374
-            ]
-          },
-          {
-            "text": "Resolved an issue where premium players could be incorrectly skipped in the quick‑join queue, restoring proper queue priority.",
-            "commit_ids": [
-              739179
-            ]
-          },
-          {
-            "text": "Sprint mechanics updated to modern movement system, altering sprint speed and stamina behavior.",
-            "commit_ids": [
-              739171
-            ]
-          },
-          {
-            "text": "M1 Garand rifle added with functional stats; players can now equip and fire this new weapon (animations are placeholders).",
-            "commit_ids": [
-              739167
+              739207
             ]
           }
         ]
@@ -130,15 +86,68 @@
         "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Wire tool information moved from the crosshair to panels, improving readability.",
+            "text": "Panels pie menu now plays its selection sounds correctly.",
+            "commit_ids": [
+              739588
+            ]
+          },
+          {
+            "text": "Player lookup commands now correctly require a name, preventing unintended matches.",
+            "commit_ids": [
+              739511
+            ]
+          },
+          {
+            "text": "Closing the F1 menu no longer blocks subsequent menu clicks.",
+            "commit_ids": [
+              739275
+            ]
+          },
+          {
+            "text": "Net panel (F1) now displays actual ping values and is restricted to admins; side panel auto‑closes when access is lost.",
+            "commit_ids": [
+              739188
+            ]
+          },
+          {
+            "text": "Wire tool info now appears in panels on the crosshair, giving clearer readouts.",
             "commit_ids": [
               739486
             ]
           },
           {
-            "text": "Connect and session menus restored the map button and full header image, now display server info tags, and dev server joins no longer require a wipe ID.",
+            "text": "Connect and session modals restored the map button and full header image, improving navigation.",
             "commit_ids": [
               739398
+            ]
+          },
+          {
+            "text": "CCTV bookmark arrows no longer cause accidental camera activation when clicking nearby.",
+            "commit_ids": [
+              739320
+            ]
+          },
+          {
+            "text": "CCTV station bookmarks can now be dragged to reorder, allowing custom organization.",
+            "commit_ids": [
+              739318
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Modern sprint movement changes improve sprint feel and speed.",
+            "commit_ids": [
+              739171
+            ]
+          },
+          {
+            "text": "Premium queue skip quickjoin fix reduces wait time for premium players.",
+            "commit_ids": [
+              739179
             ]
           }
         ]
@@ -147,7 +156,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Networking & UI\n- F1 network panel now shows real ping values and is limited to admins, fixing the previous incorrect display.\n- Menus no longer ignore clicks after closing the F1 overlay, restoring normal interaction.\n- CCTV bookmark UI upgraded: drag‑reorder, hover‑only arrows, and safeguards against accidental camera activation.\n\n### Vehicles & Tools\n- Car chassis now stay visible at long distances, preventing vehicles from disappearing due to network culling.\n\n### Farming & Resources\n- Composter loot panel now includes a progress indicator showing how close you are to the next fertilizer boost.\n- Trees respawn only where they were cut, preserving grove shapes; a new setting controls this behavior, reducing over‑farming and barren zones.\n\n### Outpost & Extraction\n- Each raid now has its own time‑of‑day and weather, cycling through six day slots with a weather roll from the mode table.\n- Supplies shop now sells a snow jacket for 20 scrap, providing essential protection for cold raids.\n- Extraction UI refined: aligned inventory, stash, and supplier panels; updated compass markers and HUD vitals; added balloon extraction marker; maps render as survey prints with monument footprints; navigation and raid controls improved.\n- Fixed a client player lookup bug where an empty name matched any player, preventing unintended targeting.\n\n### Gameplay & Balance\n- Fixed a crash on the F1 Net page when connecting via Steamworks, ensuring server stats display correctly.\n- Resolved an issue where premium players could be incorrectly skipped in the quick‑join queue, restoring proper queue priority.\n- Sprint mechanics updated to modern movement system, altering sprint speed and stamina behavior.\n- M1 Garand rifle added with functional stats; players can now equip and fire this new weapon (animations are placeholders).\n\n### UI & Quality of Life\n- Wire tool information moved from the crosshair to panels, improving readability.\n- Connect and session menus restored the map button and full header image, now display server info tags, and dev server joins no longer require a wipe ID.",
+    "summary": "### World & Environment\n- Tree respawn logic improved to refill missing trees, preserve grove shapes, and avoid overfilling.\n\n### Vehicles\n- Car chassis now stays networked at long distances, preventing it from disappearing before players can see it.\n\n### Stability & Networking\n- Fixed a null‑reference crash on the F1 Net page when connecting via Steamworks; the debug string now returns an empty string, preventing client and server crashes.\n\n### Outpost Extraction Overhaul\n- Each extraction raid now receives its own time‑of‑day and weather, advancing six time slots and rolling a weather entry from the mode’s table.\n- Snow jacket is now sold for 20 scrap in the supplies shop, making it affordable for cold‑weather raids.\n- UI and HUD for extraction mode have been revamped: aligned inventory, stash and supplier panels; updated compass markers; refreshed HUD vitals; extraction maps rendered as survey‑style prints with improved navigation; and a new balloon marker indicates extraction points.\n\n### Crafting & Resources\n- The composter loot panel now shows progress toward the next fertilizer batch.\n\n### UI & Quality of Life\n- Panels pie menu now plays its selection sounds correctly.\n- Player lookup commands now correctly require a name, preventing unintended matches.\n- Closing the F1 menu no longer blocks subsequent menu clicks.\n- Net panel (F1) now displays actual ping values and is restricted to admins; side panel auto‑closes when access is lost.\n- Wire tool info now appears in panels on the crosshair, giving clearer readouts.\n- Connect and session modals restored the map button and full header image, improving navigation.\n- CCTV bookmark arrows no longer cause accidental camera activation when clicking nearby.\n- CCTV station bookmarks can now be dragged to reorder, allowing custom organization.\n\n### Gameplay & Balance\n- Modern sprint movement changes improve sprint feel and speed.\n- Premium queue skip quickjoin fix reduces wait time for premium players.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -295,40 +304,34 @@
     "new_summary": ""
   },
   "2026-11-24": {
-    "commit_count": 157,
-    "relevant_commit_count": 52,
-    "relevant_signature": "738070,738075,738096,738099,738125,738146,738175,738177,738202,738229,738232,738239,738241,738274,738276,738280,738290,738294,738307,738310,738316,738317,738322,738331,738332,738333,738334,738335,738336,738343,738348,738351,738354,738355,738356,738360,738361,738370,738377,738379,738381,738394,738457,738458,738489,738503,738504,738505,738506,738507,738508,738509",
+    "commit_count": 156,
+    "relevant_commit_count": 51,
+    "relevant_signature": "738075,738096,738099,738125,738146,738175,738177,738202,738229,738232,738239,738241,738274,738276,738280,738290,738294,738307,738310,738316,738317,738322,738331,738332,738333,738334,738335,738336,738343,738348,738351,738354,738355,738356,738360,738361,738370,738377,738379,738381,738394,738457,738458,738489,738503,738504,738505,738506,738507,738508,738509",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Gameplay Buffs & Mechanics",
+        "title": "World & Monuments",
         "items": [
           {
-            "text": "Added a performance buff to the thruster module.",
+            "text": "Dynamic monument markers now display correctly on the map.",
             "commit_ids": [
-              738070
+              738096
             ]
           },
           {
-            "text": "Renovation now recharges only in its own tool cupboard base.",
+            "text": "The M939 Truck has been added to the Nuclear Missile Silo monument.",
             "commit_ids": [
-              738290
-            ]
-          },
-          {
-            "text": "Softcore raid window countdown now functions correctly, no longer stuck at zero.",
-            "commit_ids": [
-              738276
+              738239
             ]
           }
         ]
       },
       {
-        "title": "NPC & AI Improvements",
+        "title": "NPC & AI",
         "items": [
           {
-            "text": "Human NPCs now aim upright, improving combat accuracy.",
+            "text": "Human NPCs now aim upright correctly.",
             "commit_ids": [
               738099
             ]
@@ -336,77 +339,73 @@
         ]
       },
       {
-        "title": "World Generation & Spawning",
+        "title": "Player Interaction & UI",
         "items": [
           {
-            "text": "Crocodile spawn attempts increased for reliable appearances in swamps and rivers; vegetation no longer respawns inside junkpiles, preventing hidden resources.",
+            "text": "Contact list notes are saved with Enter and no longer revert with Escape.",
             "commit_ids": [
-              738343,
-              738351,
-              738355
+              738175
             ]
           },
           {
-            "text": "Beach spawn gap exemptions fixed on bundled servers, ensuring proper spawn behavior.",
+            "text": "Softcore raid window countdown now progresses correctly instead of staying at zero.",
             "commit_ids": [
-              738307,
-              738310
+              738276
             ]
           }
         ]
       },
       {
-        "title": "Navigation & UI Enhancements",
+        "title": "Base Building & Spawn",
         "items": [
           {
-            "text": "Dynamic markers now appear on monuments, improving navigation and awareness.",
+            "text": "Tool cupboard recharges affect only the cupboard’s own base.",
             "commit_ids": [
-              738096
+              738290
+            ]
+          },
+          {
+            "text": "Beach spawn gap exemptions work correctly on bundled servers.",
+            "commit_ids": [
+              738307
+            ]
+          },
+          {
+            "text": "Crocodile encounter rates in swamps and rivers have been restored.",
+            "commit_ids": [
+              738343
+            ]
+          },
+          {
+            "text": "Spawn bounds checks now run at the entity’s actual spawn position and rotation, fixing misplaced spawns.",
+            "commit_ids": [
+              738351
             ]
           }
         ]
       },
       {
-        "title": "Marketplace & Bundles",
+        "title": "Marketplace & Skins",
         "items": [
           {
-            "text": "Workshop skins can be sold as bundles, displayed with combined icons, and bundled skins are hidden from regular store search.",
+            "text": "Workshop skins can now be sold and purchased as bundles; bundles appear in the store UI and are hidden from individual search results.",
             "commit_ids": [
               738503,
-              738504,
               738505,
               738506,
-              738507
-            ]
-          },
-          {
-            "text": "Bundle contents now sync with Steam schema; tradable skin bundles are purchasable again.",
-            "commit_ids": [
-              738508,
               738509
             ]
           }
         ]
       },
       {
-        "title": "World & Gameplay",
+        "title": "Vendor & Economy",
         "items": [
           {
-            "text": "River generation now respects new exclusion zones around fishing villages, preventing rivers from spawning directly through village layouts.",
+            "text": "Vendor inventory counters now display correctly in fishing villages and bandit camps, fixing clipping issues that could show wrong amounts.",
             "commit_ids": [
-              738322
-            ]
-          },
-          {
-            "text": "Tattoos remain saved when a player disconnects while dead, persisting through reconnection.",
-            "commit_ids": [
-              738274
-            ]
-          },
-          {
-            "text": "Satellite wrecks no longer keep flames when they land in water, removing lingering fire hazards.",
-            "commit_ids": [
-              738229
+              738458,
+              738457
             ]
           }
         ]
@@ -415,79 +414,77 @@
         "title": "UI & Quality of Life",
         "items": [
           {
-            "text": "Vendor UI counters now display correctly, fixing missing or clipped item counts at fishing villages and bandit camps.",
-            "commit_ids": [
-              738458,
-              738457
-            ]
-          },
-          {
-            "text": "Session page now includes a functional disconnect button, restores the website link, and shows the full server image.",
+            "text": "Session page now includes a functional disconnect button, visible website link, and full server image display.",
             "commit_ids": [
               738379
             ]
           },
           {
-            "text": "Greyscale toggle and save button now work correctly, with the save button properly closing the menu.",
+            "text": "Save menu button correctly closes the menu after saving, fixing a UI hang.",
             "commit_ids": [
               738348
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "World Generation",
+        "items": [
           {
-            "text": "Contact list notes are now saved correctly, fixing the issue where notes were lost on Enter/Escape.",
+            "text": "New spawn blocker prevents bushes, cacti and trees from respawning inside existing junkpiles, reducing clutter and resource overlap.",
             "commit_ids": [
-              738175
+              738355
             ]
           },
           {
-            "text": "Tattoo UI spinner wheel visibility fixed, ensuring the loading indicator appears correctly.",
+            "text": "Fishing village placement refined by excluding River/Riverside points, improving village spawn locations near water.",
+            "commit_ids": [
+              738322
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Player Persistence",
+        "items": [
+          {
+            "text": "Tattoos now persist through death and disconnect, retaining your designs when you reconnect.",
+            "commit_ids": [
+              738274
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Bundle contents now fall back to the Steam schema, ensuring new bundles appear correctly even if the shipped list is outdated.",
+            "commit_ids": [
+              738508
+            ]
+          },
+          {
+            "text": "Satellite wrecks extinguish their flames upon landing in water, removing fire damage in that scenario.",
+            "commit_ids": [
+              738229
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bug Fixes",
+        "items": [
+          {
+            "text": "Spinner wheel UI is now visible, allowing players to see spin results.",
             "commit_ids": [
               738361
             ]
           },
           {
-            "text": "Tattoo menu buttons now respond correctly and inventory preview shows fade effect, improving tattoo selection.",
-            "commit_ids": [
-              738316
-            ]
-          },
-          {
-            "text": "Multiple tattoo-related bugs addressed, reducing errors when applying or previewing tattoos.",
+            "text": "Various tattoo-related bugs fixed, improving tattoo visibility and functionality.",
             "commit_ids": [
               738294
-            ]
-          }
-        ]
-      },
-      {
-        "title": "New Content",
-        "items": [
-          {
-            "text": "M939 Truck now spawns at the Nuclear Missile Silo Monument, providing a new vehicle option.",
-            "commit_ids": [
-              738239
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Construction",
-        "items": [
-          {
-            "text": "Window embrasure workshop prefabs are now available and positioned correctly, making construction easier.",
-            "commit_ids": [
-              738202
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Gameplay & Persistence",
-        "items": [
-          {
-            "text": "Contact notes now save reliably, preventing loss of player contact information.",
-            "commit_ids": [
-              738177
             ]
           }
         ]
@@ -496,7 +493,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Gameplay Buffs & Mechanics\n- Added a performance buff to the thruster module.\n- Renovation now recharges only in its own tool cupboard base.\n- Softcore raid window countdown now functions correctly, no longer stuck at zero.\n\n### NPC & AI Improvements\n- Human NPCs now aim upright, improving combat accuracy.\n\n### World Generation & Spawning\n- Crocodile spawn attempts increased for reliable appearances in swamps and rivers; vegetation no longer respawns inside junkpiles, preventing hidden resources.\n- Beach spawn gap exemptions fixed on bundled servers, ensuring proper spawn behavior.\n\n### Navigation & UI Enhancements\n- Dynamic markers now appear on monuments, improving navigation and awareness.\n\n### Marketplace & Bundles\n- Workshop skins can be sold as bundles, displayed with combined icons, and bundled skins are hidden from regular store search.\n- Bundle contents now sync with Steam schema; tradable skin bundles are purchasable again.\n\n### World & Gameplay\n- River generation now respects new exclusion zones around fishing villages, preventing rivers from spawning directly through village layouts.\n- Tattoos remain saved when a player disconnects while dead, persisting through reconnection.\n- Satellite wrecks no longer keep flames when they land in water, removing lingering fire hazards.\n\n### UI & Quality of Life\n- Vendor UI counters now display correctly, fixing missing or clipped item counts at fishing villages and bandit camps.\n- Session page now includes a functional disconnect button, restores the website link, and shows the full server image.\n- Greyscale toggle and save button now work correctly, with the save button properly closing the menu.\n- Contact list notes are now saved correctly, fixing the issue where notes were lost on Enter/Escape.\n- Tattoo UI spinner wheel visibility fixed, ensuring the loading indicator appears correctly.\n- Tattoo menu buttons now respond correctly and inventory preview shows fade effect, improving tattoo selection.\n- Multiple tattoo-related bugs addressed, reducing errors when applying or previewing tattoos.\n\n### New Content\n- M939 Truck now spawns at the Nuclear Missile Silo Monument, providing a new vehicle option.\n\n### Building & Construction\n- Window embrasure workshop prefabs are now available and positioned correctly, making construction easier.\n\n### Gameplay & Persistence\n- Contact notes now save reliably, preventing loss of player contact information.",
+    "summary": "### World & Monuments\n- Dynamic monument markers now display correctly on the map.\n- The M939 Truck has been added to the Nuclear Missile Silo monument.\n\n### NPC & AI\n- Human NPCs now aim upright correctly.\n\n### Player Interaction & UI\n- Contact list notes are saved with Enter and no longer revert with Escape.\n- Softcore raid window countdown now progresses correctly instead of staying at zero.\n\n### Base Building & Spawn\n- Tool cupboard recharges affect only the cupboard’s own base.\n- Beach spawn gap exemptions work correctly on bundled servers.\n- Crocodile encounter rates in swamps and rivers have been restored.\n- Spawn bounds checks now run at the entity’s actual spawn position and rotation, fixing misplaced spawns.\n\n### Marketplace & Skins\n- Workshop skins can now be sold and purchased as bundles; bundles appear in the store UI and are hidden from individual search results.\n\n### Vendor & Economy\n- Vendor inventory counters now display correctly in fishing villages and bandit camps, fixing clipping issues that could show wrong amounts.\n\n### UI & Quality of Life\n- Session page now includes a functional disconnect button, visible website link, and full server image display.\n- Save menu button correctly closes the menu after saving, fixing a UI hang.\n\n### World Generation\n- New spawn blocker prevents bushes, cacti and trees from respawning inside existing junkpiles, reducing clutter and resource overlap.\n- Fishing village placement refined by excluding River/Riverside points, improving village spawn locations near water.\n\n### Player Persistence\n- Tattoos now persist through death and disconnect, retaining your designs when you reconnect.\n\n### Gameplay & Balance\n- Bundle contents now fall back to the Steam schema, ensuring new bundles appear correctly even if the shipped list is outdated.\n- Satellite wrecks extinguish their flames upon landing in water, removing fire damage in that scenario.\n\n### Bug Fixes\n- Spinner wheel UI is now visible, allowing players to see spin results.\n- Various tattoo-related bugs fixed, improving tattoo visibility and functionality.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
