@@ -6,51 +6,56 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 27 Nov 2026 14:18:00 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 16:18:19 -0500</lastBuildDate>
     <item>
       <title>Today's Rust Updates — Nov 27</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;117 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;127 development commits&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class="rust-new-updates"&gt;
 &lt;h3&gt;✨ NEW — LAST 3 HRS&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739968"&gt;Refined dog free‑roam behavior: reduced exaggerated leaning, eliminated turning on the spot, and added idle animations when stationary.&lt;/li&gt;
-&lt;li data-rust-commits="739970"&gt;Downed players are no longer removed from the UI when it is closed.&lt;/li&gt;
-&lt;li data-rust-commits="739937"&gt;Chat panel emoji videos stop playing when closed, preventing endless playback.&lt;/li&gt;
-&lt;li data-rust-commits="739927"&gt;Tattoos are correctly cleared after a server wipe, even for dead players.&lt;/li&gt;
+&lt;li data-rust-commits="739970,740011,739927"&gt;Fixed a memory leak when closing the tattoo UI, prevented downed players from being kicked out, added the new artist stool item, and corrected tattoo persistence after server wipes when dead.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;h3&gt;Gameplay &amp;amp; World&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="739599,739600,739601"&gt;Reduced the balloon platform size and enabled typing at the console while the door opens.&lt;/li&gt;
-&lt;li data-rust-commits="739599,739600,739601"&gt;Adjusted the balloon platform alarm’s volume and pitch for clearer feedback.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;AI &amp;amp; Creatures&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="739689,739690,739691"&gt;Overhauled dog AI: improved heel responsiveness, more reliable seeking and sniffing of items, players and corpses, and enhanced fetch mechanics.&lt;/li&gt;
-&lt;li data-rust-commits="739968"&gt;Refined dog free‑roam behavior: reduced exaggerated leaning, eliminated turning on the spot, and added idle animations when stationary.&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h3&gt;UI &amp;amp; Quality of Life&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739598"&gt;Undergarments button now responds to clicks.&lt;/li&gt;
-&lt;li data-rust-commits="739970"&gt;Downed players are no longer removed from the UI when it is closed.&lt;/li&gt;
-&lt;li data-rust-commits="739847"&gt;Rust+ pairing screen now allows attempts without push‑enabled devices and shows an error if push fails.&lt;/li&gt;
-&lt;li data-rust-commits="739937"&gt;Chat panel emoji videos stop playing when closed, preventing endless playback.&lt;/li&gt;
+&lt;li data-rust-commits="739598"&gt;Fixed undergarments button not responding, restoring ability to change underwear via UI.&lt;/li&gt;
+&lt;li data-rust-commits="739847"&gt;Fixed Rust+ pairing screen to allow attempts when no push‑enabled devices are present and show an error if the push fails.&lt;/li&gt;
+&lt;li data-rust-commits="739896"&gt;Updated network panel and overlay to display proper units (kb, kb/s, ms, etc.) and adjusted layout so the panel fills from the top for clearer statistics.&lt;/li&gt;
+&lt;li data-rust-commits="739970,740011,739927"&gt;Fixed a memory leak when closing the tattoo UI, prevented downed players from being kicked out, added the new artist stool item, and corrected tattoo persistence after server wipes when dead.&lt;/li&gt;
+&lt;li data-rust-commits="739937"&gt;Stopped chat emoji videos from playing indefinitely after they finish.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Cosmetics &amp;amp; Server&lt;/h3&gt;
+&lt;h3&gt;Balloon Platform &amp;amp; Console&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739927"&gt;Tattoos are correctly cleared after a server wipe, even for dead players.&lt;/li&gt;
+&lt;li data-rust-commits="739599,739600,739601"&gt;Shrank the balloon platform, added a dedicated signal alarm with clearer volume and pitch, and enabled typing at the balloon console while its door opens.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
+&lt;h3&gt;Companion Dogs&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739805"&gt;Bandit camp food vendor no longer clips into the environment, restoring proper access for purchases.&lt;/li&gt;
-&lt;li data-rust-commits="739712"&gt;Tattoo chairs now have functional colliders, allowing players to sit and use them correctly.&lt;/li&gt;
-&lt;li data-rust-commits="739748"&gt;Fixed raid window timer issue, ensuring raid start and end times function correctly.&lt;/li&gt;
+&lt;li data-rust-commits="739689,739690,739691"&gt;Improved dog heel responsiveness and seek behavior, fixed sniffing bugs (dogs can now sniff sleeping bags, players, and corpses), and enhanced fetch mechanics for smoother companion interactions.&lt;/li&gt;
+&lt;li data-rust-commits="739968"&gt;Refined free‑roam behavior by reducing exaggerated leaning, removing turning on the spot, and adding idle animations when dogs stop moving.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Vendor Interaction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="739805"&gt;Bandit camp food vendor clipping fixed, restoring reliable interaction.&lt;/li&gt;
+&lt;li data-rust-commits="739803"&gt;Fishing village vendor UI counters clipping resolved, improving information readability.&lt;/li&gt;
+&lt;li data-rust-commits="739802"&gt;Bandit camp vendor UI counters clipping fixed, enhancing clarity of vendor data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Raid Timing&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="739748"&gt;Raid window timer corrected, providing accurate countdowns for raid events.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Graphics &amp;amp; Performance&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="739609"&gt;DLSS startup hang fixed, preventing GPU freezes when launching with DLSS enabled.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Gameplay &amp;amp; Interaction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="739712"&gt;Tattoo chairs now have functional colliders, restoring the ability to sit on them.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-27</guid>
-      <pubDate>Fri, 27 Nov 2026 14:18:00 -0500</pubDate>
+      <pubDate>Fri, 27 Nov 2026 16:18:19 -0500</pubDate>
     </item>
     <item>
       <title>Yesterday's Rust Updates — Nov 26</title>
