@@ -1,8 +1,8 @@
 {
   "2026-11-27": {
-    "commit_count": 157,
-    "relevant_commit_count": 58,
-    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970,740000,740011,740037,740057,740079,740086,740088",
+    "commit_count": 162,
+    "relevant_commit_count": 61,
+    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970,740000,740011,740037,740057,740079,740086,740088,740111,740116,740123",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
@@ -10,27 +10,19 @@
         "title": "UI & Interaction",
         "items": [
           {
-            "text": "Fixed the undergarments button not responding to clicks.",
+            "text": "Fixed the undergarments button so it now responds to clicks.",
             "commit_ids": [
               739598
             ]
           },
           {
-            "text": "Fixed UI clipping of counters for bandit camp, fishing village, and bandit camp food vendors, ensuring counters display correctly.",
+            "text": "You can now type at the balloon console while its door is opening, and the computer emits a humming sound.",
             "commit_ids": [
-              739802,
-              739803,
-              739805
+              739600
             ]
           },
           {
-            "text": "Fixed chat emoji videos that would continue playing until disconnect.",
-            "commit_ids": [
-              739937
-            ]
-          },
-          {
-            "text": "Fixed a memory leak that could occur when closing UI and prevented downed players from being unintentionally kicked from the UI.",
+            "text": "Resolved a UI memory leak on close and prevented downed players from being unexpectedly removed from the UI.",
             "commit_ids": [
               739970
             ]
@@ -38,28 +30,35 @@
         ]
       },
       {
-        "title": "Dog AI",
+        "title": "Balloon Platform & Building Placement",
         "items": [
           {
-            "text": "Improved dog heel behavior for more responsive movement while preserving realistic acceleration and turning.",
+            "text": "Reduced the balloon platform size and added a dedicated signal alarm.",
             "commit_ids": [
-              739689
+              739599
             ]
           },
           {
-            "text": "Fixed dog sniffing bugs: dogs no longer get confused when far from items, can now sniff sleeping bags, players, and animal corpses; also improved seek animation and hook sniff walk.",
+            "text": "Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.",
             "commit_ids": [
-              739690
+              740123
             ]
-          },
+          }
+        ]
+      },
+      {
+        "title": "Dog AI & Behavior",
+        "items": [
           {
-            "text": "Enhanced dog fetch mechanics.",
+            "text": "Dog heel, seek and fetch behaviors have been overhauled: heels are more responsive, dogs no longer lose track of distant sniff targets, can sniff sleeping bags, players and corpses, and fetch mechanics are smoother.",
             "commit_ids": [
+              739689,
+              739690,
               739691
             ]
           },
           {
-            "text": "Improved dog free‑roam behavior: reduced exaggerated leaning, removed turning on the spot, and added idle animations when dogs stop moving.",
+            "text": "Free‑roam dog movement now feels natural: exaggerated leaning and spot‑turning are removed, and dogs play idle animations when stopping.",
             "commit_ids": [
               739968
             ]
@@ -67,56 +66,23 @@
         ]
       },
       {
-        "title": "Balloon Outpost",
+        "title": "Tattoos",
         "items": [
           {
-            "text": "Shrunk the balloon platform size and gave it its own signal alarm, with tuned volume and pitch.",
+            "text": "Tattoo system received major QoL fixes: missing chair colliders restored, a new artist stool added for easier tattooing, and tattoos no longer persist through a server wipe when you die.",
             "commit_ids": [
-              739599,
-              739601
-            ]
-          },
-          {
-            "text": "Added ability to type at the balloon console while its door is opening and added a humming sound to its computer.",
-            "commit_ids": [
-              739600
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Rust+ Integration & Connectivity",
-        "items": [
-          {
-            "text": "Fixed Rust+ pairing screen so you can attempt pairing even without push-enabled devices and now shows an error if the push fails.",
-            "commit_ids": [
-              739847
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Player Cosmetics & Customization",
-        "items": [
-          {
-            "text": "Resolved issue where tattoos could persist after a server wipe if the player was dead at the time.",
-            "commit_ids": [
+              739712,
+              740011,
               739927
             ]
-          },
-          {
-            "text": "Tattoo quality‑of‑life improvements (easier application/preview) and added the new artist stool furniture item.",
-            "commit_ids": [
-              740011
-            ]
           }
         ]
       },
       {
-        "title": "Combat & Structures",
+        "title": "Combat – Door Damage",
         "items": [
           {
-            "text": "Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors.",
+            "text": "Explosive splash damage now correctly damages open doors based on their actual colliders, fixing the previous inconsistency.",
             "commit_ids": [
               740079
             ]
@@ -124,40 +90,47 @@
         ]
       },
       {
-        "title": "Gameplay & World",
+        "title": "Rust+ Mobile App",
         "items": [
           {
-            "text": "Raid window timer now counts correctly, ensuring raids start and end as intended.",
+            "text": "The Rust+ pairing screen now works even without push‑enabled devices and shows clear error feedback if push fails.",
+            "commit_ids": [
+              739847
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Gameplay & Balance",
+        "items": [
+          {
+            "text": "Item option icons now display correctly when panels are active.",
+            "commit_ids": [
+              740116
+            ]
+          },
+          {
+            "text": "Chat emoji videos stop playing when disconnected, preventing endless playback.",
+            "commit_ids": [
+              739937
+            ]
+          },
+          {
+            "text": "Raid window timer display fixed for accurate countdowns.",
             "commit_ids": [
               739748
             ]
           },
           {
-            "text": "Tattoo chairs now have proper colliders, preventing players from falling through or getting stuck.",
-            "commit_ids": [
-              739712
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Stability",
-        "items": [
-          {
-            "text": "DLSS no longer hangs the GPU on startup, improving launch stability for users of the feature.",
+            "text": "Fixed a DLSS issue that could hang the GPU at game start and added a preset option with safety checks.",
             "commit_ids": [
               739609
             ]
-          }
-        ]
-      },
-      {
-        "title": "UI & Quality of Life",
-        "items": [
+          },
           {
-            "text": "Network panel and F8 overlay now show proper units (kb, kb/s, ms, b/s) and prevent line wrapping, improving readability of stats.",
+            "text": "Adjusted the balloon signal alarm’s volume and pitch for clearer detection.",
             "commit_ids": [
-              739896
+              739601
             ]
           }
         ]
@@ -166,18 +139,25 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### UI & Interaction\n- Fixed the undergarments button not responding to clicks.\n- Fixed UI clipping of counters for bandit camp, fishing village, and bandit camp food vendors, ensuring counters display correctly.\n- Fixed chat emoji videos that would continue playing until disconnect.\n- Fixed a memory leak that could occur when closing UI and prevented downed players from being unintentionally kicked from the UI.\n\n### Dog AI\n- Improved dog heel behavior for more responsive movement while preserving realistic acceleration and turning.\n- Fixed dog sniffing bugs: dogs no longer get confused when far from items, can now sniff sleeping bags, players, and animal corpses; also improved seek animation and hook sniff walk.\n- Enhanced dog fetch mechanics.\n- Improved dog free‑roam behavior: reduced exaggerated leaning, removed turning on the spot, and added idle animations when dogs stop moving.\n\n### Balloon Outpost\n- Shrunk the balloon platform size and gave it its own signal alarm, with tuned volume and pitch.\n- Added ability to type at the balloon console while its door is opening and added a humming sound to its computer.\n\n### Rust+ Integration & Connectivity\n- Fixed Rust+ pairing screen so you can attempt pairing even without push-enabled devices and now shows an error if the push fails.\n\n### Player Cosmetics & Customization\n- Resolved issue where tattoos could persist after a server wipe if the player was dead at the time.\n- Tattoo quality‑of‑life improvements (easier application/preview) and added the new artist stool furniture item.\n\n### Combat & Structures\n- Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors.\n\n### Gameplay & World\n- Raid window timer now counts correctly, ensuring raids start and end as intended.\n- Tattoo chairs now have proper colliders, preventing players from falling through or getting stuck.\n\n### Stability\n- DLSS no longer hangs the GPU on startup, improving launch stability for users of the feature.\n\n### UI & Quality of Life\n- Network panel and F8 overlay now show proper units (kb, kb/s, ms, b/s) and prevent line wrapping, improving readability of stats.",
+    "summary": "### UI & Interaction\n- Fixed the undergarments button so it now responds to clicks.\n- You can now type at the balloon console while its door is opening, and the computer emits a humming sound.\n- Resolved a UI memory leak on close and prevented downed players from being unexpectedly removed from the UI.\n\n### Balloon Platform & Building Placement\n- Reduced the balloon platform size and added a dedicated signal alarm.\n- Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.\n\n### Dog AI & Behavior\n- Dog heel, seek and fetch behaviors have been overhauled: heels are more responsive, dogs no longer lose track of distant sniff targets, can sniff sleeping bags, players and corpses, and fetch mechanics are smoother.\n- Free‑roam dog movement now feels natural: exaggerated leaning and spot‑turning are removed, and dogs play idle animations when stopping.\n\n### Tattoos\n- Tattoo system received major QoL fixes: missing chair colliders restored, a new artist stool added for easier tattooing, and tattoos no longer persist through a server wipe when you die.\n\n### Combat – Door Damage\n- Explosive splash damage now correctly damages open doors based on their actual colliders, fixing the previous inconsistency.\n\n### Rust+ Mobile App\n- The Rust+ pairing screen now works even without push‑enabled devices and shows clear error feedback if push fails.\n\n### Gameplay & Balance\n- Item option icons now display correctly when panels are active.\n- Chat emoji videos stop playing when disconnected, preventing endless playback.\n- Raid window timer display fixed for accurate countdowns.\n- Fixed a DLSS issue that could hang the GPU at game start and added a preset option with safety checks.\n- Adjusted the balloon signal alarm’s volume and pitch for clearer detection.",
     "new_items": [
       {
-        "text": "Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors.",
+        "text": "Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.",
         "commit_ids": [
-          740079
+          740123
         ],
-        "section": "Combat & Structures"
+        "section": "Balloon Platform & Building Placement"
+      },
+      {
+        "text": "Item option icons now display correctly when panels are active.",
+        "commit_ids": [
+          740116
+        ],
+        "section": "Gameplay & Balance"
       }
     ],
-    "new_relevant_count": 1,
-    "new_summary": "- Open doors now take full explosive splash damage based on their actual colliders, aligning damage with closed doors and fixing previous under‑damage for open doors."
+    "new_relevant_count": 2,
+    "new_summary": "- Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.\n- Item option icons now display correctly when panels are active."
   },
   "2026-11-26": {
     "commit_count": 197,
