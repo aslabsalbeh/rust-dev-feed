@@ -1,45 +1,34 @@
 {
   "2026-11-27": {
-    "commit_count": 167,
-    "relevant_commit_count": 61,
-    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970,740000,740011,740037,740057,740079,740086,740088,740111,740116,740123",
+    "commit_count": 170,
+    "relevant_commit_count": 62,
+    "relevant_signature": "739598,739599,739600,739601,739608,739609,739610,739611,739612,739613,739614,739615,739616,739627,739640,739648,739655,739689,739690,739691,739712,739718,739736,739748,739797,739798,739799,739800,739801,739802,739803,739804,739805,739818,739847,739879,739880,739896,739927,739937,739943,739944,739951,739953,739954,739955,739956,739958,739968,739969,739970,740000,740011,740037,740057,740079,740086,740088,740111,740116,740123,740172",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "UI & Interaction",
+        "title": "Structures & Combat",
         "items": [
           {
-            "text": "Fixed the undergarments button so it now responds to clicks.",
-            "commit_ids": [
-              739598
-            ]
-          },
-          {
-            "text": "You can now type at the balloon console while its door is opening, and the computer emits a humming sound.",
-            "commit_ids": [
-              739600
-            ]
-          },
-          {
-            "text": "Resolved a UI memory leak on close and prevented downed players from being unexpectedly removed from the UI.",
-            "commit_ids": [
-              739970
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Balloon Platform & Building Placement",
-        "items": [
-          {
-            "text": "Reduced the balloon platform size and added a dedicated signal alarm.",
+            "text": "Balloon platform size reduced and now has its own signal alarm.",
             "commit_ids": [
               739599
             ]
           },
           {
-            "text": "Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.",
+            "text": "Balloon console can be typed at while its door opens, and the computer now hums.",
+            "commit_ids": [
+              739600
+            ]
+          },
+          {
+            "text": "Open doors now take full explosive splash damage based on their actual colliders, fixing previous reduced damage.",
+            "commit_ids": [
+              740079
+            ]
+          },
+          {
+            "text": "Large furnaces and water catchers can no longer be placed under conditional triangle roofs when placed first; they require floor grills or placement outside.",
             "commit_ids": [
               740123
             ]
@@ -50,7 +39,7 @@
         "title": "Dog AI & Behavior",
         "items": [
           {
-            "text": "Dog heel, seek and fetch behaviors have been overhauled: heels are more responsive, dogs no longer lose track of distant sniff targets, can sniff sleeping bags, players and corpses, and fetch mechanics are smoother.",
+            "text": "Heel command more responsive, seek behavior refined, fetch enhanced, and dogs can now sniff sleeping bags, players, and animal corpses; distance confusion bug fixed.",
             "commit_ids": [
               739689,
               739690,
@@ -58,7 +47,7 @@
             ]
           },
           {
-            "text": "Free‑roam dog movement now feels natural: exaggerated leaning and spot‑turning are removed, and dogs play idle animations when stopping.",
+            "text": "Free‑roam dogs have reduced exaggerated leaning, no longer turn on the spot, and now play idle animations when stopped.",
             "commit_ids": [
               739968
             ]
@@ -66,25 +55,24 @@
         ]
       },
       {
-        "title": "Tattoos",
+        "title": "Player Appearance & Customization",
         "items": [
           {
-            "text": "Tattoo system received major QoL fixes: missing chair colliders restored, a new artist stool added for easier tattooing, and tattoos no longer persist through a server wipe when you die.",
+            "text": "Tattoos now correctly disappear on server wipe, fixing the bug where they survived when dead.",
             "commit_ids": [
-              739712,
-              740011,
               739927
             ]
-          }
-        ]
-      },
-      {
-        "title": "Combat – Door Damage",
-        "items": [
+          },
           {
-            "text": "Explosive splash damage now correctly damages open doors based on their actual colliders, fixing the previous inconsistency.",
+            "text": "Added artist stool and other tattoo system improvements for easier customization.",
             "commit_ids": [
-              740079
+              740011
+            ]
+          },
+          {
+            "text": "Undergarments button now responds to clicks.",
+            "commit_ids": [
+              739598
             ]
           }
         ]
@@ -93,7 +81,7 @@
         "title": "Rust+ Mobile App",
         "items": [
           {
-            "text": "The Rust+ pairing screen now works even without push‑enabled devices and shows clear error feedback if push fails.",
+            "text": "Pairing screen now shows an error when trying to pair without any push‑enabled devices, instead of silently failing.",
             "commit_ids": [
               739847
             ]
@@ -104,31 +92,53 @@
         "title": "Gameplay & Balance",
         "items": [
           {
+            "text": "Fixed a memory leak that could cause UI crashes and prevented downed players from being unexpectedly removed from the UI.",
+            "commit_ids": [
+              739970
+            ]
+          },
+          {
+            "text": "Corrected the raid window timer, ensuring the countdown displays accurately for players.",
+            "commit_ids": [
+              739748
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Performance & Stability",
+        "items": [
+          {
+            "text": "Resolved a DLSS startup issue that could hang the GPU, improving game launch stability for DLSS users.",
+            "commit_ids": [
+              739609
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Quality of Life",
+        "items": [
+          {
             "text": "Item option icons now display correctly when panels are active.",
             "commit_ids": [
               740116
             ]
           },
           {
-            "text": "Chat emoji videos stop playing when disconnected, preventing endless playback.",
+            "text": "Panels chat emoji videos stop correctly instead of looping until disconnect.",
             "commit_ids": [
               739937
             ]
           },
           {
-            "text": "Raid window timer display fixed for accurate countdowns.",
+            "text": "Tattoo chairs now have proper colliders, restoring interaction.",
             "commit_ids": [
-              739748
+              739712
             ]
           },
           {
-            "text": "Fixed a DLSS issue that could hang the GPU at game start and added a preset option with safety checks.",
-            "commit_ids": [
-              739609
-            ]
-          },
-          {
-            "text": "Adjusted the balloon signal alarm’s volume and pitch for clearer detection.",
+            "text": "Balloon signal alarm volume and pitch tuned for clearer audio cues.",
             "commit_ids": [
               739601
             ]
@@ -139,7 +149,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### UI & Interaction\n- Fixed the undergarments button so it now responds to clicks.\n- You can now type at the balloon console while its door is opening, and the computer emits a humming sound.\n- Resolved a UI memory leak on close and prevented downed players from being unexpectedly removed from the UI.\n\n### Balloon Platform & Building Placement\n- Reduced the balloon platform size and added a dedicated signal alarm.\n- Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.\n\n### Dog AI & Behavior\n- Dog heel, seek and fetch behaviors have been overhauled: heels are more responsive, dogs no longer lose track of distant sniff targets, can sniff sleeping bags, players and corpses, and fetch mechanics are smoother.\n- Free‑roam dog movement now feels natural: exaggerated leaning and spot‑turning are removed, and dogs play idle animations when stopping.\n\n### Tattoos\n- Tattoo system received major QoL fixes: missing chair colliders restored, a new artist stool added for easier tattooing, and tattoos no longer persist through a server wipe when you die.\n\n### Combat – Door Damage\n- Explosive splash damage now correctly damages open doors based on their actual colliders, fixing the previous inconsistency.\n\n### Rust+ Mobile App\n- The Rust+ pairing screen now works even without push‑enabled devices and shows clear error feedback if push fails.\n\n### Gameplay & Balance\n- Item option icons now display correctly when panels are active.\n- Chat emoji videos stop playing when disconnected, preventing endless playback.\n- Raid window timer display fixed for accurate countdowns.\n- Fixed a DLSS issue that could hang the GPU at game start and added a preset option with safety checks.\n- Adjusted the balloon signal alarm’s volume and pitch for clearer detection.",
+    "summary": "### Structures & Combat\n- Balloon platform size reduced and now has its own signal alarm.\n- Balloon console can be typed at while its door opens, and the computer now hums.\n- Open doors now take full explosive splash damage based on their actual colliders, fixing previous reduced damage.\n- Large furnaces and water catchers can no longer be placed under conditional triangle roofs when placed first; they require floor grills or placement outside.\n\n### Dog AI & Behavior\n- Heel command more responsive, seek behavior refined, fetch enhanced, and dogs can now sniff sleeping bags, players, and animal corpses; distance confusion bug fixed.\n- Free‑roam dogs have reduced exaggerated leaning, no longer turn on the spot, and now play idle animations when stopped.\n\n### Player Appearance & Customization\n- Tattoos now correctly disappear on server wipe, fixing the bug where they survived when dead.\n- Added artist stool and other tattoo system improvements for easier customization.\n- Undergarments button now responds to clicks.\n\n### Rust+ Mobile App\n- Pairing screen now shows an error when trying to pair without any push‑enabled devices, instead of silently failing.\n\n### Gameplay & Balance\n- Fixed a memory leak that could cause UI crashes and prevented downed players from being unexpectedly removed from the UI.\n- Corrected the raid window timer, ensuring the countdown displays accurately for players.\n\n### Performance & Stability\n- Resolved a DLSS startup issue that could hang the GPU, improving game launch stability for DLSS users.\n\n### Quality of Life\n- Item option icons now display correctly when panels are active.\n- Panels chat emoji videos stop correctly instead of looping until disconnect.\n- Tattoo chairs now have proper colliders, restoring interaction.\n- Balloon signal alarm volume and pitch tuned for clearer audio cues.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""
@@ -307,64 +317,30 @@
     "new_summary": ""
   },
   "2026-11-25": {
-    "commit_count": 167,
-    "relevant_commit_count": 58,
-    "relevant_signature": "738533,738534,738537,738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860,738877,738905,738965,738966,739013,739030,739031,739050,739055,739059",
+    "commit_count": 162,
+    "relevant_commit_count": 55,
+    "relevant_signature": "738555,738556,738557,738558,738559,738560,738561,738562,738565,738568,738570,738573,738578,738597,738598,738599,738600,738604,738605,738609,738610,738613,738618,738619,738632,738656,738662,738669,738680,738685,738688,738689,738690,738707,738709,738719,738747,738780,738784,738799,738802,738808,738825,738841,738860,738877,738905,738965,738966,739013,739030,739031,739050,739055,739059",
     "prompt_version": "structured-read-state-v8-stable-chunks",
     "chunk_cache": {},
     "sections": [
       {
-        "title": "Combat & Weapons",
+        "title": "Workshop & Economy",
         "items": [
           {
-            "text": "Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.",
+            "text": "Fixed bundled skins appearing blank after checkout and corrected fullscreen skin viewer paging on bundles.",
             "commit_ids": [
-              738905
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Movement & Controls",
-        "items": [
-          {
-            "text": "Strafing now cancels sprint, and a crouch‑strafe bug has been fixed.",
-            "commit_ids": [
-              738780
+              738597,
+              738598
             ]
           },
           {
-            "text": "Boat and cargo parenting bugs fixed: players no longer unintentionally transfer to cargo ships, exclusion zones prevent attachment to moving excavator arms, and ladder climbing from boats no longer drags players off.",
-            "commit_ids": [
-              738688,
-              738689,
-              738690
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Building & Structures",
-        "items": [
-          {
-            "text": "Gingerbread physics material added to low and half walls, affecting building physics for gingerbread structures.",
-            "commit_ids": [
-              738632
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Trading & Crate System",
-        "items": [
-          {
-            "text": "Tradable skin bundles now retain their tradeable status, fixing incorrect non‑tradable markings.",
+            "text": "Fixed bundles of tradable skins being incorrectly marked as non‑tradable.",
             "commit_ids": [
               738613
             ]
           },
           {
-            "text": "Crate generators are now correctly recognized as bundles, ensuring proper operation within the bundle system.",
+            "text": "Resolved crate generators not being recognized as bundles.",
             "commit_ids": [
               738599
             ]
@@ -372,58 +348,55 @@
         ]
       },
       {
-        "title": "Tech Tree & UI",
+        "title": "Movement & Interaction",
         "items": [
           {
-            "text": "Tech‑tree shuffled with a new in‑editor graph editor and reorganised tier 1‑3 trees for Hardcore and Primitive modes; UI now opens up to eight times faster, cutting load time from ~1.2 s to ~0.15 s.",
+            "text": "Fixed several parenting bugs that caused players to be incorrectly attached to cargo ships, excavator arms, or dragged off ladders when moving between boats or climbing ladders. The system now prefers the current parent’s trigger, respects exclusion zones, and prevents unwanted ladder detachment.",
             "commit_ids": [
-              739050,
-              739059
+              738688,
+              738689,
+              738690,
+              738707
+            ]
+          },
+          {
+            "text": "Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprinting and crouching behave as expected.",
+            "commit_ids": [
+              738780
             ]
           }
         ]
       },
       {
-        "title": "Boss & NPC Physics",
+        "title": "Combat Tweaks",
         "items": [
           {
-            "text": "Scrap King’s physics material changed to metal, altering its interactions and damage handling.",
+            "text": "Recoil application duration reduced by 75% on most weapons, resulting in tighter control while firing.",
+            "commit_ids": [
+              738905
+            ]
+          },
+          {
+            "text": "Updated Scrap King physics material to metal, affecting weapon interactions.",
             "commit_ids": [
               738573
             ]
-          }
-        ]
-      },
-      {
-        "title": "Customization",
-        "items": [
+          },
           {
-            "text": "New console variable lets players hide all tattoos",
+            "text": "Added gingerbread physics material to low and half walls for gingerbread building skins.",
             "commit_ids": [
-              738841
+              738632
             ]
           }
         ]
       },
       {
-        "title": "Lighting & Visuals",
+        "title": "Tech Tree & Progression",
         "items": [
           {
-            "text": "Brightness transition at dawn and dusk is smoother",
+            "text": "Tech tree shuffled and reorganized: new editor added, trees (IO, tier 1‑3) rearranged, new layouts for Hardcore and Primitive modes, and column alignment improvements.",
             "commit_ids": [
-              738568
-            ]
-          },
-          {
-            "text": "Night light now works correctly with the anti‑gamma fix",
-            "commit_ids": [
-              738565
-            ]
-          },
-          {
-            "text": "Added foreground and background floor geometry for night shadows to prevent gamma spikes; includes a toggle convar",
-            "commit_ids": [
-              738561
+              739050
             ]
           }
         ]
@@ -432,7 +405,19 @@
         "title": "Gameplay & Balance",
         "items": [
           {
-            "text": "Sprint mechanics have been updated to the modern movement system, changing acceleration and stamina behavior for faster, smoother running.",
+            "text": "Tech tree opens up to fully unlocked Tier 2 in ~150 ms, a ten‑fold speedup with unlock results unchanged.",
+            "commit_ids": [
+              739059
+            ]
+          },
+          {
+            "text": "Sandbox objects can now be selected with a single click, fixing the previous two‑click requirement.",
+            "commit_ids": [
+              738604
+            ]
+          },
+          {
+            "text": "Sprint mechanics updated to the modern system, altering acceleration and stamina handling for smoother, more responsive sprinting.",
             "commit_ids": [
               738784
             ]
@@ -443,7 +428,7 @@
     "status": "ok",
     "notice": "",
     "pending_relevant_count": 0,
-    "summary": "### Combat & Weapons\n- Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.\n\n### Movement & Controls\n- Strafing now cancels sprint, and a crouch‑strafe bug has been fixed.\n- Boat and cargo parenting bugs fixed: players no longer unintentionally transfer to cargo ships, exclusion zones prevent attachment to moving excavator arms, and ladder climbing from boats no longer drags players off.\n\n### Building & Structures\n- Gingerbread physics material added to low and half walls, affecting building physics for gingerbread structures.\n\n### Trading & Crate System\n- Tradable skin bundles now retain their tradeable status, fixing incorrect non‑tradable markings.\n- Crate generators are now correctly recognized as bundles, ensuring proper operation within the bundle system.\n\n### Tech Tree & UI\n- Tech‑tree shuffled with a new in‑editor graph editor and reorganised tier 1‑3 trees for Hardcore and Primitive modes; UI now opens up to eight times faster, cutting load time from ~1.2 s to ~0.15 s.\n\n### Boss & NPC Physics\n- Scrap King’s physics material changed to metal, altering its interactions and damage handling.\n\n### Customization\n- New console variable lets players hide all tattoos\n\n### Lighting & Visuals\n- Brightness transition at dawn and dusk is smoother\n- Night light now works correctly with the anti‑gamma fix\n- Added foreground and background floor geometry for night shadows to prevent gamma spikes; includes a toggle convar\n\n### Gameplay & Balance\n- Sprint mechanics have been updated to the modern movement system, changing acceleration and stamina behavior for faster, smoother running.",
+    "summary": "### Workshop & Economy\n- Fixed bundled skins appearing blank after checkout and corrected fullscreen skin viewer paging on bundles.\n- Fixed bundles of tradable skins being incorrectly marked as non‑tradable.\n- Resolved crate generators not being recognized as bundles.\n\n### Movement & Interaction\n- Fixed several parenting bugs that caused players to be incorrectly attached to cargo ships, excavator arms, or dragged off ladders when moving between boats or climbing ladders. The system now prefers the current parent’s trigger, respects exclusion zones, and prevents unwanted ladder detachment.\n- Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprinting and crouching behave as expected.\n\n### Combat Tweaks\n- Recoil application duration reduced by 75% on most weapons, resulting in tighter control while firing.\n- Updated Scrap King physics material to metal, affecting weapon interactions.\n- Added gingerbread physics material to low and half walls for gingerbread building skins.\n\n### Tech Tree & Progression\n- Tech tree shuffled and reorganized: new editor added, trees (IO, tier 1‑3) rearranged, new layouts for Hardcore and Primitive modes, and column alignment improvements.\n\n### Gameplay & Balance\n- Tech tree opens up to fully unlocked Tier 2 in ~150 ms, a ten‑fold speedup with unlock results unchanged.\n- Sandbox objects can now be selected with a single click, fixing the previous two‑click requirement.\n- Sprint mechanics updated to the modern system, altering acceleration and stamina handling for smoother, more responsive sprinting.",
     "new_items": [],
     "new_relevant_count": 0,
     "new_summary": ""

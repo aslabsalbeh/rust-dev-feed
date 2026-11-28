@@ -6,55 +6,57 @@
     <description>AI-summarized daily Rust development updates from Facepunch source-control commits.</description>
     <language>en-ca</language>
     <ttl>15</ttl>
-    <lastBuildDate>Fri, 27 Nov 2026 22:17:22 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 00:19:59 -0500</lastBuildDate>
     <item>
-      <title>Today's Rust Updates — Nov 27</title>
+      <title>Yesterday's Rust Updates — Nov 27</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;167 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;170 development commits&lt;/strong&gt;&lt;/p&gt;
 
 
-&lt;h3&gt;UI &amp;amp; Interaction&lt;/h3&gt;
+&lt;h3&gt;Structures &amp;amp; Combat&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739598"&gt;Fixed the undergarments button so it now responds to clicks.&lt;/li&gt;
-&lt;li data-rust-commits="739600"&gt;You can now type at the balloon console while its door is opening, and the computer emits a humming sound.&lt;/li&gt;
-&lt;li data-rust-commits="739970"&gt;Resolved a UI memory leak on close and prevented downed players from being unexpectedly removed from the UI.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Balloon Platform &amp;amp; Building Placement&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="739599"&gt;Reduced the balloon platform size and added a dedicated signal alarm.&lt;/li&gt;
-&lt;li data-rust-commits="740123"&gt;Large furnaces and water catchers can no longer be placed under triangle roofs; they must be placed on floor grills or elsewhere.&lt;/li&gt;
+&lt;li data-rust-commits="739599"&gt;Balloon platform size reduced and now has its own signal alarm.&lt;/li&gt;
+&lt;li data-rust-commits="739600"&gt;Balloon console can be typed at while its door opens, and the computer now hums.&lt;/li&gt;
+&lt;li data-rust-commits="740079"&gt;Open doors now take full explosive splash damage based on their actual colliders, fixing previous reduced damage.&lt;/li&gt;
+&lt;li data-rust-commits="740123"&gt;Large furnaces and water catchers can no longer be placed under conditional triangle roofs when placed first; they require floor grills or placement outside.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Dog AI &amp;amp; Behavior&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739689,739690,739691"&gt;Dog heel, seek and fetch behaviors have been overhauled: heels are more responsive, dogs no longer lose track of distant sniff targets, can sniff sleeping bags, players and corpses, and fetch mechanics are smoother.&lt;/li&gt;
-&lt;li data-rust-commits="739968"&gt;Free‑roam dog movement now feels natural: exaggerated leaning and spot‑turning are removed, and dogs play idle animations when stopping.&lt;/li&gt;
+&lt;li data-rust-commits="739689,739690,739691"&gt;Heel command more responsive, seek behavior refined, fetch enhanced, and dogs can now sniff sleeping bags, players, and animal corpses; distance confusion bug fixed.&lt;/li&gt;
+&lt;li data-rust-commits="739968"&gt;Free‑roam dogs have reduced exaggerated leaning, no longer turn on the spot, and now play idle animations when stopped.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Tattoos&lt;/h3&gt;
+&lt;h3&gt;Player Appearance &amp;amp; Customization&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739712,740011,739927"&gt;Tattoo system received major QoL fixes: missing chair colliders restored, a new artist stool added for easier tattooing, and tattoos no longer persist through a server wipe when you die.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Combat – Door Damage&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="740079"&gt;Explosive splash damage now correctly damages open doors based on their actual colliders, fixing the previous inconsistency.&lt;/li&gt;
+&lt;li data-rust-commits="739927"&gt;Tattoos now correctly disappear on server wipe, fixing the bug where they survived when dead.&lt;/li&gt;
+&lt;li data-rust-commits="740011"&gt;Added artist stool and other tattoo system improvements for easier customization.&lt;/li&gt;
+&lt;li data-rust-commits="739598"&gt;Undergarments button now responds to clicks.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Rust+ Mobile App&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="739847"&gt;The Rust+ pairing screen now works even without push‑enabled devices and shows clear error feedback if push fails.&lt;/li&gt;
+&lt;li data-rust-commits="739847"&gt;Pairing screen now shows an error when trying to pair without any push‑enabled devices, instead of silently failing.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li data-rust-commits="739970"&gt;Fixed a memory leak that could cause UI crashes and prevented downed players from being unexpectedly removed from the UI.&lt;/li&gt;
+&lt;li data-rust-commits="739748"&gt;Corrected the raid window timer, ensuring the countdown displays accurately for players.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Performance &amp;amp; Stability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li data-rust-commits="739609"&gt;Resolved a DLSS startup issue that could hang the GPU, improving game launch stability for DLSS users.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Quality of Life&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li data-rust-commits="740116"&gt;Item option icons now display correctly when panels are active.&lt;/li&gt;
-&lt;li data-rust-commits="739937"&gt;Chat emoji videos stop playing when disconnected, preventing endless playback.&lt;/li&gt;
-&lt;li data-rust-commits="739748"&gt;Raid window timer display fixed for accurate countdowns.&lt;/li&gt;
-&lt;li data-rust-commits="739609"&gt;Fixed a DLSS issue that could hang the GPU at game start and added a preset option with safety checks.&lt;/li&gt;
-&lt;li data-rust-commits="739601"&gt;Adjusted the balloon signal alarm’s volume and pitch for clearer detection.&lt;/li&gt;
+&lt;li data-rust-commits="739937"&gt;Panels chat emoji videos stop correctly instead of looping until disconnect.&lt;/li&gt;
+&lt;li data-rust-commits="739712"&gt;Tattoo chairs now have proper colliders, restoring interaction.&lt;/li&gt;
+&lt;li data-rust-commits="739601"&gt;Balloon signal alarm volume and pitch tuned for clearer audio cues.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-27</guid>
-      <pubDate>Fri, 27 Nov 2026 22:17:22 -0500</pubDate>
+      <pubDate>Fri, 27 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Yesterday's Rust Updates — Nov 26</title>
+      <title>Rust Updates — 2 Days Ago — Nov 26</title>
       <description>&lt;div class="rust-dev-summary"&gt;
 &lt;p&gt;&lt;strong&gt;197 development commits&lt;/strong&gt;&lt;/p&gt;
 
@@ -102,50 +104,37 @@
       <pubDate>Thu, 26 Nov 2026 12:00:00 -0500</pubDate>
     </item>
     <item>
-      <title>Rust Updates — 2 Days Ago — Nov 25</title>
+      <title>Rust Development Updates — Nov 25</title>
       <description>&lt;div class="rust-dev-summary"&gt;
-&lt;p&gt;&lt;strong&gt;167 development commits&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;162 development commits&lt;/strong&gt;&lt;/p&gt;
 
 
-&lt;h3&gt;Combat &amp;amp; Weapons&lt;/h3&gt;
+&lt;h3&gt;Workshop &amp;amp; Economy&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738905"&gt;Recoil duration reduced by 75% on most weapons, making sustained fire feel more controllable.&lt;/li&gt;
+&lt;li data-rust-commits="738597,738598"&gt;Fixed bundled skins appearing blank after checkout and corrected fullscreen skin viewer paging on bundles.&lt;/li&gt;
+&lt;li data-rust-commits="738613"&gt;Fixed bundles of tradable skins being incorrectly marked as non‑tradable.&lt;/li&gt;
+&lt;li data-rust-commits="738599"&gt;Resolved crate generators not being recognized as bundles.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Movement &amp;amp; Controls&lt;/h3&gt;
+&lt;h3&gt;Movement &amp;amp; Interaction&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738780"&gt;Strafing now cancels sprint, and a crouch‑strafe bug has been fixed.&lt;/li&gt;
-&lt;li data-rust-commits="738688,738689,738690"&gt;Boat and cargo parenting bugs fixed: players no longer unintentionally transfer to cargo ships, exclusion zones prevent attachment to moving excavator arms, and ladder climbing from boats no longer drags players off.&lt;/li&gt;
+&lt;li data-rust-commits="738688,738689,738690,738707"&gt;Fixed several parenting bugs that caused players to be incorrectly attached to cargo ships, excavator arms, or dragged off ladders when moving between boats or climbing ladders. The system now prefers the current parent’s trigger, respects exclusion zones, and prevents unwanted ladder detachment.&lt;/li&gt;
+&lt;li data-rust-commits="738780"&gt;Strafing now cancels sprint and a crouch‑strafe bug has been fixed, making sprinting and crouching behave as expected.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Building &amp;amp; Structures&lt;/h3&gt;
+&lt;h3&gt;Combat Tweaks&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738632"&gt;Gingerbread physics material added to low and half walls, affecting building physics for gingerbread structures.&lt;/li&gt;
+&lt;li data-rust-commits="738905"&gt;Recoil application duration reduced by 75% on most weapons, resulting in tighter control while firing.&lt;/li&gt;
+&lt;li data-rust-commits="738573"&gt;Updated Scrap King physics material to metal, affecting weapon interactions.&lt;/li&gt;
+&lt;li data-rust-commits="738632"&gt;Added gingerbread physics material to low and half walls for gingerbread building skins.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Trading &amp;amp; Crate System&lt;/h3&gt;
+&lt;h3&gt;Tech Tree &amp;amp; Progression&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738613"&gt;Tradable skin bundles now retain their tradeable status, fixing incorrect non‑tradable markings.&lt;/li&gt;
-&lt;li data-rust-commits="738599"&gt;Crate generators are now correctly recognized as bundles, ensuring proper operation within the bundle system.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Tech Tree &amp;amp; UI&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="739050,739059"&gt;Tech‑tree shuffled with a new in‑editor graph editor and reorganised tier 1‑3 trees for Hardcore and Primitive modes; UI now opens up to eight times faster, cutting load time from ~1.2 s to ~0.15 s.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Boss &amp;amp; NPC Physics&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738573"&gt;Scrap King’s physics material changed to metal, altering its interactions and damage handling.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Customization&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738841"&gt;New console variable lets players hide all tattoos&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Lighting &amp;amp; Visuals&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li data-rust-commits="738568"&gt;Brightness transition at dawn and dusk is smoother&lt;/li&gt;
-&lt;li data-rust-commits="738565"&gt;Night light now works correctly with the anti‑gamma fix&lt;/li&gt;
-&lt;li data-rust-commits="738561"&gt;Added foreground and background floor geometry for night shadows to prevent gamma spikes; includes a toggle convar&lt;/li&gt;
+&lt;li data-rust-commits="739050"&gt;Tech tree shuffled and reorganized: new editor added, trees (IO, tier 1‑3) rearranged, new layouts for Hardcore and Primitive modes, and column alignment improvements.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Gameplay &amp;amp; Balance&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li data-rust-commits="738784"&gt;Sprint mechanics have been updated to the modern movement system, changing acceleration and stamina behavior for faster, smoother running.&lt;/li&gt;
+&lt;li data-rust-commits="739059"&gt;Tech tree opens up to fully unlocked Tier 2 in ~150 ms, a ten‑fold speedup with unlock results unchanged.&lt;/li&gt;
+&lt;li data-rust-commits="738604"&gt;Sandbox objects can now be selected with a single click, fixing the previous two‑click requirement.&lt;/li&gt;
+&lt;li data-rust-commits="738784"&gt;Sprint mechanics updated to the modern system, altering acceleration and stamina handling for smoother, more responsive sprinting.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;</description>
       <guid isPermaLink="false">rust-dev-2026-11-25</guid>
